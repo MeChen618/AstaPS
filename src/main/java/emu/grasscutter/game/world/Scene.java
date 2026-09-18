@@ -334,12 +334,12 @@ public class Scene {
 
     /** Wildlife meat that official scatters as one ground pickup per unit. */
     private static boolean isSplitGroundDropItem(int itemId) {
-        return itemId == 100061 // 兽肉
-                || itemId == 100064 // 禽肉
-                || itemId == 100086 // 小块兽肉
-                || itemId == 100087 // 小块禽肉
-                || itemId == 100094 // 冷鲜肉
-                || itemId == 100097; // 神秘的肉
+        return itemId == 100061 // raw meat
+                || itemId == 100064 // fowl
+                || itemId == 100086 // chunk of raw meat
+                || itemId == 100087 // bird egg / small fowl
+                || itemId == 100094 // chilled meat
+                || itemId == 100097; // mysterious meat
     }
 
     public void addDropEntity(GameItem item, GameEntity bornForm, Player player, boolean share) {
@@ -478,7 +478,7 @@ public class Scene {
         }
 
         // World chests are interact-only; AoE / auto-attacks must not break them
-        // (otherwise explore helpers treat them as gone and respawn → double F prompts).
+        // (otherwise explore helpers treat them as gone and respawn, giving double F prompts).
         // Exception: bramble/frozen/rock seals must still accept the matching element.
         if (target instanceof EntityGadget chestGadget) {
             try {
@@ -498,7 +498,8 @@ public class Scene {
         }
 
         GameEntity attacker = getEntityById(result.getAttackerId());
-        // 深赤之石破冰：持有 Dulins Blood 时攻击坚冰/冰封印，直接打碎并消耗 buff
+        // Dulin's Blood ice break: while the buff is held, hitting solid ice or an ice seal shatters it
+        // immediately and consumes the buff.
         try {
             if (emu.grasscutter.game.entity.gadget.ScarletQuartzCombatHelper.trySmashIce(
                     this, attacker, target)) {
@@ -528,19 +529,20 @@ public class Scene {
         if (!(target instanceof EntityAvatar)) {
             EntityAvatar arlecAttacker = resolveArlecchinoAttacker(attacker);
             if (arlecAttacker != null) {
-                // Q slash often reports ElementalBurst_Gadget as attackerId — still settle BoL clear.
+                // Q slash often reports ElementalBurst_Gadget as attackerId - still settle BoL clear.
                 if (ArlecchinoBurstBoL.isPending(arlecAttacker.getId())
                         || (attacker instanceof EntityAvatar)) {
                     ArlecchinoBurstBoL.onAttack(arlecAttacker, result);
                 }
-                // 红死之宴: only avatar Normal Attacks consume BoL, not gadget / CA / plunge / E / Q.
+                // Masque of the Red Death: only avatar Normal Attacks consume BoL, not gadget / CA / plunge / E / Q.
                 if (attacker instanceof EntityAvatar) {
                     reduceArlecchinoBoLOnNormalAttack(arlecAttacker, result);
                 }
             }
         }
 
-        // 克洛琳德：契只由贯夜治疗还契，普攻/驰猎绝不消耗（误套阿蕾命中扣契已移除）
+        // Clorinde: BoL is only paid down by Impale the Night healing. Normal attacks and Swift Hunt never
+        // consume it; the mistaken Arlecchino-style on-hit drain has been removed.
     }
 
     /**
@@ -592,7 +594,7 @@ public class Scene {
 
     /**
      * Masque of the Red Death: BoL ≥ 30% MaxHP. Official FireAttack_ReduceHPDebts only runs on
-     * NormalAttack_01..06 tags — 7.5% of current BoL, ICD ~0.03s. Charged/plunge/skill must not
+     * NormalAttack_01..06 tags - 7.5% of current BoL, ICD ~0.03s. Charged/plunge/skill must not
      * consume.
      */
     private void reduceArlecchinoBoLOnNormalAttack(EntityAvatar arlecchino, AttackResult result) {
@@ -633,7 +635,7 @@ public class Scene {
         if (result == null) {
             return false;
         }
-        // 7.0 often sends hashed anim ids with an empty string — use the util's hash table.
+        // 7.0 often sends hashed anim ids with an empty string - use the util's hash table.
         if (ArlecchinoBoLUtil.isRedDeathNormalAttackHit(result)) {
             return true;
         }
@@ -688,7 +690,8 @@ public class Scene {
 
         this.broadcastPacket(new PacketLifeStateChangeNotify(attackerId, target, LifeState.LIFE_DEAD));
 
-        // 芭芭拉六命：先发 LIFE_DEAD（倒下），再立刻复苏并回满血，角色留在场上不换人
+        // Barbara C6: send LIFE_DEAD first so the character goes down, then immediately revive to full HP,
+        // keeping her on-field without a switch.
         if (target instanceof EntityAvatar deadAvatar) {
             try {
                 if (PartyReviveHelper.tryBarbaraC6AfterDeath(deadAvatar)) {
@@ -1409,7 +1412,7 @@ public class Scene {
                         }
                     } else {
                         // Server is missing many late-region Lua groups (Fontaine+/Natlan SotS).
-                        // Client still has them locally — GroupSuiteNotify alone loads the NPC.
+                        // Client still has them locally - GroupSuiteNotify alone loads the NPC.
                         // Skipping here left goddess statues with no F tip after unlock.
                         if (i.getSuiteIdList() == null || i.getSuiteIdList().isEmpty()) {
                             return;

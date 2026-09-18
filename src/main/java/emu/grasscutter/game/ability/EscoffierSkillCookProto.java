@@ -4,17 +4,19 @@ import emu.grasscutter.net.packet.BasePacket;
 import java.io.ByteArrayOutputStream;
 
 /**
- * 爱可菲即兴烹饪协议手工编码。
+ * Hand-encoded protocol for Escoffier's improvised cooking.
  *
- * <p>早期可工作路径：充能条由客户端绘制，配合 SkillCookReq，且<strong>不发</strong> DataNotify。
- * DataNotify 字段写错会让客户端进入 CannotCreateFood，元素充能环消失。
+ * <p>The path known to work: the client draws the charge bar and sends SkillCookReq, with <strong>no</strong>
+ * DataNotify from the server.
+ * Getting a DataNotify field wrong puts the client into CannotCreateFood and the charge ring disappears.
  *
- * <p>解锁/允许烹饪通知只发 remain@1 + max@2（不发 refresh 字段）；达上限时 remain=0。
+ * <p>The unlock/allow-cooking notify sends only remain@1 and max@2, never a refresh field; remain is 0 at
+ * the cap.
  */
 final class EscoffierSkillCookProto {
     private EscoffierSkillCookProto() {}
 
-    /** 发菜成功回包：retcode@1 + ItemParam@2。 */
+    /** Successful dish response: retcode@1 plus ItemParam@2. */
     static BasePacket buildCookRsp(int itemId, int count) {
         ByteArrayOutputStream out = new ByteArrayOutputStream(24);
         writeUInt32Field(out, 1, 0);
@@ -22,20 +24,21 @@ final class EscoffierSkillCookProto {
         return simplePacket(EscoffierSkillCookOpcodes.COOK_RSP, out.toByteArray());
     }
 
-    /** 发菜失败回包。 */
+    /** Failed dish response. */
     static BasePacket buildCookRspError(int retcode) {
         ByteArrayOutputStream out = new ByteArrayOutputStream(8);
         writeUInt32Field(out, 1, retcode);
         return simplePacket(EscoffierSkillCookOpcodes.COOK_RSP, out.toByteArray());
     }
 
-    /** 最小额度包：remain_count@1、max_count@2。 */
+    /** Minimal quota packet: remain_count@1, max_count@2. */
     static BasePacket buildCookDataNotify(int usedCount, int maxWeekly, long nextResetEpochSec) {
         ByteArrayOutputStream out = new ByteArrayOutputStream(16);
         int remaining = Math.max(0, maxWeekly - usedCount);
         writeUInt32Field(out, 1, remaining);
         writeUInt32Field(out, 2, maxWeekly);
-        // 故意省略 field3：错误类型的刷新时间戳会毒化 CanCook / 充能 UI。
+        // field3 is deliberately omitted: a refresh timestamp of the wrong type poisons CanCook and the
+        // charge UI.
         return simplePacket(EscoffierSkillCookOpcodes.COOK_DATA_NOTIFY, out.toByteArray());
     }
 

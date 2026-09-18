@@ -14,11 +14,14 @@ import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 七七元素战技「仙法·寒病鬼差」的持续治疗（寒病鬼差周期回血）。
+ * Periodic healing from Qiqi's elemental skill, i.e. the Herald of Frost's recurring heal.
  *
- * <p>普攻命中回血、度厄真符印记回血走客户端 HealHP，本来就正常。周期治疗在官方配置里是
- * {@code onThinkInterval} / 服务端 HealHP，本服从不 tick，所以要在开 E 后用调度器按天赋参数补跳字回血。
- * 技能库 skills[0] 是额外攻击条目，战技是 skills 里带 CD、无元素消耗的那一项（默认 10352）。
+ * <p>Healing on normal-attack hits and from the burst's talisman sigil already works, since those go
+ * through the client's HealHP. The periodic heal is
+ * {@code onThinkInterval} plus a server-side HealHP in the official config, which never ticks here, so
+ * after the skill is cast a scheduler reproduces it from the talent parameters.
+ * In the skill depot skills[0] is the extra-attack entry; the elemental skill is the one with a cooldown
+ * and no elemental cost, 10352 by default.
  */
 public final class QiqiEHealHelper {
     public static final int QIQI_AVATAR_ID = 10000035;

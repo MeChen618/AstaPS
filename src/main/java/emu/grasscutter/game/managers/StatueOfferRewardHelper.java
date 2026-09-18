@@ -9,25 +9,25 @@ import java.util.*;
 
 /**
  * Statue / city offering rewards with per-nation multipliers, evenly split across reward levels
- * (typically Lv.2–10 = 9 steps). Stamina is unchanged (still from excel). Protected items keep
- * their original per-level amounts: shrine keys, traveler constellation memories, 追叙之石.
+ * (typically Lv.2-10 = 9 steps). Stamina is unchanged (still from excel). Protected items keep
+ * their original per-level amounts: shrine keys, traveler constellation memories and Crown-tier stones.
  */
 public final class StatueOfferRewardHelper {
     private StatueOfferRewardHelper() {}
 
-    /** 追叙之石 */
+    /** Reminiscence stone. */
     private static final int ITEM_REMINISCE_STONE = 100533;
-    /** 相遇之缘 */
+    /** Acquaint Fate. */
     private static final int ITEM_ACQUAINT = 224;
-    /** 冒险阅历 / 原石 */
+    /** Adventure EXP and primogems. */
     private static final int ITEM_ADVENTURE_EXP = 102;
     private static final int ITEM_PRIMOGEM = 201;
 
-    /** Traveler constellation “记忆” (主角命之座) */
+    /** Traveler constellation memories. */
     private static final IntSet CONSTELLATION_MEMORIES =
             new IntOpenHashSet(new int[] {912, 913, 914});
 
-    /** Shrine keys (地灵龛之钥) seen on statues */
+    /** Shrine keys seen on statues. */
     private static final IntSet SHRINE_KEYS =
             new IntOpenHashSet(new int[] {107008, 107018, 107025, 107027, 107031});
 
@@ -70,11 +70,12 @@ public final class StatueOfferRewardHelper {
             }
         }
 
-        // 至冬: RewardExcel 210382–210390 缺失 — 用与其它新区同结构的保底表，印记用冰之印 306。
+        // Snezhnaya: RewardExcel 210382-210390 is missing, so a fallback table with the same shape as the
+        // other new regions is used, with the cryo sigil 306.
         if (cityId == 8 && originalsTotal.isEmpty()) {
             originalsTotal.put(ITEM_ADVENTURE_EXP, 2160);
             originalsTotal.put(ITEM_PRIMOGEM, 900);
-            originalsTotal.put(306, 90); // 冰之印（勿用 308 月之印）
+            originalsTotal.put(306, 90); // cryo sigil - do NOT use 308, the lunar sigil
             for (var snap : snaps) {
                 snap.items.clear();
             }
@@ -90,7 +91,7 @@ public final class StatueOfferRewardHelper {
             int total = e.getIntValue();
             if (isProtected(itemId)) continue;
             int mult = multipliers.getOrDefault(itemId, 0);
-            if (mult <= 0) continue; // not boosted — keep original per-level below
+            if (mult <= 0) continue; // not boosted - keep original per-level below
             splits.put(itemId, evenSplit(total * mult, n));
         }
 
@@ -132,46 +133,46 @@ public final class StatueOfferRewardHelper {
     private static Int2IntOpenHashMap multipliersForCity(int cityId) {
         Int2IntOpenHashMap m = new Int2IntOpenHashMap();
         switch (cityId) {
-            case 1 -> { // 蒙德
+            case 1 -> { // Mondstadt
                 m.put(ITEM_PRIMOGEM, 55);
-                m.put(305, 10); // 风之印
+                m.put(305, 10); // anemo sigil
                 m.put(ITEM_ADVENTURE_EXP, 3);
             }
-            case 2 -> { // 璃月
+            case 2 -> { // Liyue
                 m.put(ITEM_PRIMOGEM, 55);
-                m.put(307, 10); // 岩之印
+                m.put(307, 10); // geo sigil
                 m.put(ITEM_ADVENTURE_EXP, 3);
             }
-            case 3 -> { // 稻妻
+            case 3 -> { // Inazuma
                 m.put(ITEM_PRIMOGEM, 25);
-                m.put(304, 10); // 雷之印
+                m.put(304, 10); // electro sigil
                 m.put(ITEM_ADVENTURE_EXP, 3);
             }
-            case 4 -> { // 须弥
+            case 4 -> { // Sumeru
                 m.put(ITEM_PRIMOGEM, 25);
-                m.put(303, 10); // 草之印
+                m.put(303, 10); // dendro sigil
                 m.put(ITEM_ADVENTURE_EXP, 3);
             }
-            case 5 -> { // 枫丹
+            case 5 -> { // Fontaine
                 m.put(ITEM_PRIMOGEM, 30);
-                m.put(302, 20); // 水之印
+                m.put(302, 20); // hydro sigil
                 m.put(ITEM_ADVENTURE_EXP, 5);
             }
-            case 6 -> { // 纳塔
+            case 6 -> { // Natlan
                 m.put(ITEM_PRIMOGEM, 25);
-                m.put(301, 20); // 火之印
+                m.put(301, 20); // pyro sigil
                 m.put(ITEM_ACQUAINT, 5);
                 m.put(ITEM_ADVENTURE_EXP, 5);
             }
-            case 7 -> { // 挪德卡莱
+            case 7 -> { // Nod-Krai
                 m.put(ITEM_PRIMOGEM, 25);
-                m.put(308, 20); // 月之印
+                m.put(308, 20); // lunar sigil
                 m.put(ITEM_ACQUAINT, 10);
                 m.put(ITEM_ADVENTURE_EXP, 5);
             }
-            case 8 -> { // 至冬
+            case 8 -> { // Snezhnaya
                 m.put(ITEM_PRIMOGEM, 25);
-                m.put(306, 20); // 冰之印
+                m.put(306, 20); // cryo sigil
                 m.put(ITEM_ADVENTURE_EXP, 5);
             }
             default -> {}
@@ -193,7 +194,7 @@ public final class StatueOfferRewardHelper {
     private static List<LevelSnap> loadOriginalSnaps(int cityId) {
         List<LevelSnap> snaps = new ArrayList<>();
 
-        // Cities 1–4: StatuePromote wins over CityLevelup for the same levels.
+        // Cities 1-4: StatuePromote wins over CityLevelup for the same levels.
         boolean usePromote = false;
         for (var data : GameData.getStatuePromoteDataMap().values()) {
             if (data.getCityId() == cityId) {

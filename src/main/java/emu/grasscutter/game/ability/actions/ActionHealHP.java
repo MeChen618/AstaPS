@@ -104,9 +104,11 @@ public final class ActionHealHP extends AbilityActionHandler {
                 amountByTargetMaxHPRatio * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
 
         String healTag = action.healTag;
-        // 不要在这里写 Dodge_HealFlag=1：满契强化贯夜要求起手 HealFlag==0，
-        // 写成 1 后 High 失败且不会落到 Medium，表现为「满契有时不强化」。
-        // 官方仅在 High 成功分支末尾置 1，并由 onBeingHealed 清回 0。
+        // Do NOT set Dodge_HealFlag=1 here: the enhanced full-BoL Impale requires HealFlag==0 at the start.
+        // Setting it to 1 makes High fail without falling back to Medium, which shows up as full BoL
+        // sometimes not enhancing.
+        // Officially it is set to 1 only at the end of the successful High branch, and cleared back to 0 by
+        // onBeingHealed.
 
         // Her burst clears the Bond and then heals off what it cleared, so the clear has to land
         // first - otherwise heal() below spends the payout paying the Bond straight back down.
@@ -123,8 +125,10 @@ public final class ActionHealHP extends AbilityActionHandler {
             ArlecchinoBurstBoL.onBurstHeal(burstHealer);
         }
 
-        // 克洛琳德：ForbidFoodHeal 会使 isConvertToHpDebt() 恒真；旧 ×0.8 只扣契不回血已删除。
-        // 贯夜/夜巡转契由文件头 handleHealHp 接管；此处若仍漏网再试一次。
+        // Clorinde: ForbidFoodHeal makes isConvertToHpDebt() always true. The old x0.8 path that paid down
+        // BoL without restoring HP has been removed.
+        // Impale and Night Vigil conversion are handled by handleHealHp at the top of the file; this is a
+        // second attempt for anything that slipped through.
         if (target.isConvertToHpDebt()
                 && target instanceof EntityAvatar debtAvatar
                 && debtAvatar.getAvatar() != null
