@@ -13,10 +13,12 @@ import emu.grasscutter.server.packet.send.PacketEvtBeingHealedNotify;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 
 /**
- * 菈乌玛一命「生之纺线」。
+ * Lauma's C1, Thread of Life.
  *
- * <p>客户端月绽放后多半只推 {@code MODIFIER_CHANGE}(HealHP)，不走服务端 {@code ApplyModifier}，
- * 因此除 ApplyModifier 外还要：E/Q 开 20s 窗、modifier 落地、月绽放 GV/mixin 信号上直接结算治疗。
+ * <p>After a Lunar Bloom the client usually pushes only {@code MODIFIER_CHANGE} (HealHP) and never goes
+ * through the server's {@code ApplyModifier},
+ * so besides ApplyModifier the heal is also settled directly on: E/Q opening the 20s window, the modifier
+ * attaching, and the Lunar Bloom GV/mixin signals.
  */
 public final class LaumaC1HealHelper {
     public static final int LAUMA_AVATAR_ID = 10000119;
@@ -52,7 +54,7 @@ public final class LaumaC1HealHelper {
                 && ABILITY_NAME.equals(ability.getData().abilityName);
     }
 
-    /** E / Q：开启 20s「生之纺线」窗口。 */
+    /** E and Q open the 20s Thread of Life window. */
     public static void onSkillStart(Player player, EntityAvatar caster, int skillId) {
         if (player == null || caster == null || caster.getAvatar() == null) {
             return;
@@ -70,7 +72,7 @@ public final class LaumaC1HealHelper {
         Grasscutter.getLogger().info("[LaumaC1] arm 20s window skillId={} uid={}", skillId, player.getUid());
     }
 
-    /** TriggerAbility / TeamHandler 落地时同样开窗。 */
+    /** TriggerAbility and TeamHandler attachment open the window too. */
     public static void onThreadOfLife(Player player) {
         if (player == null) {
             return;
@@ -109,7 +111,7 @@ public final class LaumaC1HealHelper {
         }
     }
 
-    /** 月绽放相关信号（GV / mixin / dew）。仅在生之纺线窗口内回血。 */
+    /** Lunar Bloom signals (GV, mixin, dew). Heals only inside the Thread of Life window. */
     public static void onMoonBloom(Player player) {
         if (player == null || !isWindowActive(player.getUid())) {
             return;

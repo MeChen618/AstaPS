@@ -484,7 +484,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         if (key == null) return;
 
-        // Client Q cinematic often CLEARs Cur_HPDebts before EvtDoSkillSucc — refuse + pre-arm.
+        // Client Q cinematic often CLEARs Cur_HPDebts before EvtDoSkillSucc - refuse + pre-arm.
         if (isArlecchinoBoLFloatKey(key)
                 && entity instanceof EntityAvatar av
                 && av.getAvatar() != null
@@ -667,8 +667,9 @@ public final class AbilityManager extends BasePlayerManager {
             // Compatibility hook must not cancel the normal skill event.
         }
 
-        // Clorinde BoL: E/Q/驰猎 一律走 ClorindeBoLUtil（开 E 不加契；Q 按天赋；驰猎开火赋契）
-        // 旧 stock applyClorindeBoL(0.35/0.66) 会错误在开 E 时赋契，已废弃。
+        // Clorinde BoL: E, Q and Swift Hunt all go through ClorindeBoLUtil. E grants nothing, Q follows the
+        // passive, and Swift Hunt grants on firing.
+        // The old stock applyClorindeBoL(0.35/0.66) wrongly granted on E and has been dropped.
 
         var skillData = GameData.getAvatarSkillDataMap().get(skillId);
         if (skillData == null) {
@@ -1093,7 +1094,7 @@ public final class AbilityManager extends BasePlayerManager {
                     });
             }
 
-            // 菈乌玛一命：HealHP 常只以 MODIFIER_CHANGE 到达，不经 ApplyModifier。
+            // Lauma C1: HealHP usually arrives only as MODIFIER_CHANGE, never through ApplyModifier.
             try {
                 if (LaumaC1HealHelper.isLaumaC1Ability(instancedAbilityData.abilityName)) {
                     LaumaC1HealHelper.onModifierAdded(this.player, instancedAbilityData.abilityName, modifierData);
@@ -1112,7 +1113,7 @@ public final class AbilityManager extends BasePlayerManager {
             }
 
             // Max HP ratio props (Yelan C4 / Furina overflow / Columbina C2, etc.) arrive as
-            // client MODIFIER_CHANGE, not via ActionAttachModifier — apply here.
+            // client MODIFIER_CHANGE, not via ActionAttachModifier - apply here.
             try {
                 String maxHpModName = null;
                 for (var e : instancedAbilityData.modifiers.entrySet()) {
@@ -1226,27 +1227,27 @@ public final class AbilityManager extends BasePlayerManager {
         float value = entry.getFloatValue();
         if (Float.isNaN(value)) return;
 
-        // MoonOvergrowPoint_All (草露 / 山月草露) is client-owned and capped at 3 in ability
-        // configs. Never force-echo a fake value — that wiped Columbina PermanentSkill_2's
+        // MoonOvergrowPoint_All (dew points) is client-owned and capped at 3 in ability
+        // configs. Never force-echo a fake value - that wiped Columbina PermanentSkill_2's
         // mountain dew grants and broke AddGlobalValue(max=3) bookkeeping.
 
         if ("_ABILITY_Clorinde_Dodge_HealFlag".equals(key) && value == 0f
                 && entity instanceof EntityAvatar clorinde
                 && clorinde.getAvatar().getAvatarId() == 10000098) {
-            // stock 清 flag 误加契 — 交给 util no-op
+            // Stock clearing the flag would wrongly grant BoL - delegated to the util, which no-ops.
             applyClorindeBoL(clorinde);
         }
 
         // Skirk void-rift absorb: AddSpecialEnergy is muteRemoteAction and never reaches the server.
-        // The client still syncs pickable count GVs — use those as the grant signal.
+        // The client still syncs pickable count GVs - use those as the grant signal.
         float previous = entity.getGlobalAbilityValues().getOrDefault(key, 0f);
         try {
             SkirkCunningHelper.onPickableGlobalFloat(this.player, entity, key, previous, value);
         } catch (Throwable ignored) {
         }
 
-        // 玛薇卡：客户端持续扣夜魂走 GLOBAL_FLOAT，不经 NyxSet/ChangeNyxValue。
-        // 必须在 put 之前挂钩，否则战意无法从夜魂消耗转化。
+        // Mavuika: the client drains Nightsoul through GLOBAL_FLOAT, not NyxSet/ChangeNyxValue.
+        // The hook must run before the put, otherwise Fighting Spirit cannot convert from that drain.
         try {
             if ("NyxValue".equals(key)
                     || "_ABILITY_Mavuika_IsNyxState".equals(key)
@@ -1260,11 +1261,11 @@ public final class AbilityManager extends BasePlayerManager {
             NightsoulStaminaExempt.markNyxCostActive(entity);
         }
 
-        // Official reclaim is ExtraAttack_AddHpDebts_* → ActionAddHPDebts only.
+        // Official reclaim is ExtraAttack_AddHpDebts_* via ActionAddHPDebts only.
         // A second grant here previously double-stacked 65%/130% and capped BoL instantly.
 
-        // Client predicts Q wipe via META_GLOBAL_FLOAT (Cur_HPDebts→0) ~2s before SkillSucc.
-        // That is what blanks the 契 bar mid-cinematic while the server still holds BoL.
+        // Client predicts Q wipe via META_GLOBAL_FLOAT (Cur_HPDebts to 0) ~2s before SkillSucc.
+        // That is what blanks the BoL bar mid-cinematic while the server still holds BoL.
         if (isArlecchinoBoLFloatKey(key)
                 && entity instanceof EntityAvatar av
                 && av.getAvatar() != null
@@ -1500,7 +1501,7 @@ public final class AbilityManager extends BasePlayerManager {
 
         var killState = AbilityMetaSetKilledState.parseFrom(invoke.getAbilityData());
         if (killState.getKilled()) {
-            // Avatar / client gadgets: never. Monsters: only when HP is already depleted —
+            // Avatar / client gadgets: never. Monsters: only when HP is already depleted -
             // BurstAtk / shield cleanup often sends SetKilled on the boss entity id and must not
             // clear weekly domains (Raiden 20125) or stack trounce flowers.
             if (entity instanceof EntityAvatar || entity instanceof EntityClientGadget) {
@@ -1636,7 +1637,7 @@ public final class AbilityManager extends BasePlayerManager {
         fireAbilityOnAdded(ability, entity);
     }
 
-    /** Runs {@code onAbilityStart} — used when TriggerAbility re-fires an existing ability. */
+    /** Runs {@code onAbilityStart} - used when TriggerAbility re-fires an existing ability. */
     public void fireAbilityOnAbilityStart(Ability ability, GameEntity entity) {
         var data = ability.getData();
         if (data == null || data.onAbilityStart == null) {
