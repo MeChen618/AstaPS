@@ -33,36 +33,38 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * 爱可菲长按 E「即兴烹饪」服务端逻辑。
+ * Server logic for Escoffier's hold-E "Improvised Cooking".
  *
- * <p>元素充能环由客户端绘制。早期可工作路径：可见充能条 + SkillCookReq，且<strong>不发</strong>
- * DataNotify。手编码 DataNotify / 服务端 Progress GV 曾导致 CannotCreateFood、充能条消失。
- * 恢复早期路径：客户端管条，服务端只管发菜。
+ * <p>The elemental charge ring is drawn by the client. The path known to work is: visible charge bar plus
+ * SkillCookReq, and <strong>no</strong>
+ * DataNotify. Hand-encoding DataNotify or driving a server-side Progress GV caused CannotCreateFood and
+ * made the charge bar disappear.
+ * This restores that path: the client owns the bar, the server only hands out dishes.
  */
 public final class EscoffierSkillCookHelper {
     public static final int ESCOFFIER_AVATAR_ID = EscoffierHealUtil.ESCOFFIER_AVATAR_ID;
-    /** 长按烹饪战技 ID。 */
+    /** Skill id for the hold-to-cook elemental skill. */
     public static final int HOLD_COOK_SKILL_ID = 11122;
-    /** 即兴烹饪锅 gadget。 */
+    /** The improvised cooking pot gadget. */
     public static final int COOK_GADGET_ID = 42112005;
-    /** 每周发菜上限。 */
+    /** Weekly cap on dishes handed out. */
     public static final int WEEKLY_MAX = 1000;
 
-    /** 优先等 SkillCookReq；超时后再用锅销毁兜底发奖。 */
+    /** Wait for SkillCookReq first; only fall back to granting on pot destruction after this timeout. */
     private static final int GADGET_DESTROY_GRANT_DELAY_SEC = 3;
-    /** 防重复 SkillCookReq；需短到允许同锅再次充能。 */
+    /** Guards against duplicate SkillCookReq; must stay short enough to allow recharging the same pot. */
     private static final long GRANT_ICD_MS = 2500L;
     private static final long UNLOCK_NOTIFY_THROTTLE_MS = 60_000L;
     private static final ZoneId RESET_ZONE = ZoneId.of("Asia/Shanghai");
 
-    /** 娑金殿堂 (5★). */
+    /** Sangonomiya-style 5-star dish. */
     private static final int DISH_GOLD = 108824;
-    /** 雾淞秋分 / 一捧绿野 (4★). */
+    /** The two 4-star dishes. */
     private static final int[] DISH_PURPLE = {108822, 108825};
-    /** 白浪拂沙 / 致水神 / 果果软糖 (3★). */
+    /** The three 3-star dishes. */
     private static final int[] DISH_BLUE = {108823, 108606, 108558};
 
-    /** 互斥权重合计 100；命中后再以 CHANCE_DOUBLE 判定是否双份同菜。 */
+    /** Mutually exclusive weights summing to 100; CHANCE_DOUBLE then decides whether the dish comes doubled. */
     private static final int CHANCE_GOLD = 65;
     private static final int CHANCE_EACH_PURPLE = 10;
     private static final int CHANCE_EACH_BLUE = 5;
@@ -77,7 +79,7 @@ public final class EscoffierSkillCookHelper {
     private static volatile boolean storeLoaded;
     private static final Int2LongOpenHashMap LAST_GRANT_MS = new Int2LongOpenHashMap();
     private static final Int2LongOpenHashMap LAST_UNLOCK_NOTIFY_MS = new Int2LongOpenHashMap();
-    /** 每 uid 一次烹饪会话，避免 SkillCookReq 与销毁兜底双发。 */
+    /** One cooking session per uid, so SkillCookReq and the destruction fallback cannot both pay out. */
     private static final Int2LongOpenHashMap COOK_SESSION = new Int2LongOpenHashMap();
     private static final Int2LongOpenHashMap GRANTED_SESSION = new Int2LongOpenHashMap();
     private static final Int2BooleanOpenHashMap COOK_PENDING = new Int2BooleanOpenHashMap();
@@ -94,8 +96,9 @@ public final class EscoffierSkillCookHelper {
     }
 
     /**
-     * 进场景等时机同步周剩余：有额度时节流发最小 DataNotify，清掉曾被毒化的 CannotCreateFood。
-     * 切勿频繁狂发——那正是充能条被干掉的原因。
+     * Syncs the weekly remainder on scene entry and similar moments: when quota is left, a throttled minimal
+     * DataNotify clears a previously poisoned CannotCreateFood.
+     * Do not spam this - that is exactly what killed the charge bar before.
      */
     public static void syncToClient(Player player) {
         if (player == null || !ownsEscoffier(player)) {
@@ -120,14 +123,14 @@ public final class EscoffierSkillCookHelper {
                 .info("[EscoffierCook] uid={} unlock DataNotify remain={}/{}", uid, remaining, WEEKLY_MAX);
     }
 
-    /** 长按烹饪战技：清服务端空壳锅，开新会话，等待客户端 SkillCookReq。 */
+    /** Hold-to-cook skill: drop server-side shell pots, open a new session, wait for the client's SkillCookReq. */
     public static void onHoldCookSkill(Player player) {
         if (player == null || !ownsEscoffier(player)) {
             return;
         }
         purgeServerCookShells(player);
         long session = beginCookSession(player.getUid());
-        // 不发 DataNotify / 不做服务端 Progress，对齐早期「客户端自管充能条」路径。
+        // No DataNotify and no server-side Progress, matching the path where the client owns the charge bar.
         Grasscutter.getLogger()
                 .info(
                         "[EscoffierCook] hold skill {} uid={} session={} waiting SkillCookReq (client bar)",
@@ -136,17 +139,17 @@ public final class EscoffierSkillCookHelper {
                         session);
     }
 
-    /** 客户端 EvtCreate 烹饪锅：记实体并开启/续上会话。 */
+    /** Client EvtCreate for the pot: record the entity and open or continue the session. */
     public static void onCookGadgetCreated(Player player, int entityId, int configId) {
         if (player == null || configId != COOK_GADGET_ID || !ownsEscoffier(player)) {
             return;
         }
-        // 清掉服务端重复 EntityGadget 空壳（施法者可见但无充能 UI）。
+        // Remove duplicate server-side EntityGadget shells - visible to the caster but with no charge UI.
         purgeServerCookShells(player);
         int uid = player.getUid();
         ACTIVE_COOK_GADGET.put(uid, entityId);
         long session = COOK_SESSION.get(uid);
-        // 新锅 / 上一轮发奖后再次充能 → 开新会话。
+        // A new pot, or recharging after the previous payout, starts a new session.
         if (!COOK_PENDING.get(uid)
                 || session == 0L
                 || GRANTED_SESSION.get(uid) == session) {
@@ -163,7 +166,7 @@ public final class EscoffierSkillCookHelper {
                         session);
     }
 
-    /** 移除本玩家头像侧非客户端烹饪锅（空壳）。 */
+    /** Removes shell pots on this player's side that did not come from the client. */
     public static void purgeServerCookShells(Player player) {
         if (player == null || player.getScene() == null || player.getTeamManager() == null) {
             return;
@@ -199,13 +202,13 @@ public final class EscoffierSkillCookHelper {
         }
     }
 
-    /** 客户端销毁烹饪锅：延迟兜底发奖（优先仍走 SkillCookReq）。 */
+    /** Client destroyed the pot: schedule the fallback payout, still preferring SkillCookReq. */
     public static void onCookGadgetDestroyed(Player player, int entityId) {
         if (player == null) {
             return;
         }
         int uid = player.getUid();
-        // 只认已跟踪的客户端锅，无关 EvtDestroy 不得打断本轮。
+        // Only tracked client pots count; an unrelated EvtDestroy must not interrupt this round.
         if (ACTIVE_COOK_GADGET.get(uid) != entityId) {
             return;
         }
@@ -216,7 +219,7 @@ public final class EscoffierSkillCookHelper {
             ACTIVE_COOK_GADGET.remove(uid);
             return;
         }
-        // 保留 COOK_PENDING，优先仍等 SkillCookReq；这里只清实体 id。
+        // Keep COOK_PENDING and keep waiting for SkillCookReq; only the entity id is cleared here.
         ACTIVE_COOK_GADGET.remove(uid);
         Grasscutter.getLogger()
                 .info(
@@ -237,17 +240,17 @@ public final class EscoffierSkillCookHelper {
                         GADGET_DESTROY_GRANT_DELAY_SEC);
     }
 
-    /** SkillCookReq 入口：同锅可再次充能，无需重按长 E。 */
+    /** SkillCookReq entry point: the same pot can recharge without holding E again. */
     public static void handleCookRequest(Player player) {
         if (player == null) {
             return;
         }
         int uid = player.getUid();
         long session = COOK_SESSION.get(uid);
-        // 同锅可再次充能并再发 SkillCookReq，无需重按长 E。
-        // 仅在上一轮已发奖（或从未开始）时开新会话。
+        // The same pot can recharge and send SkillCookReq again without another hold-E.
+        // Only open a new session once the previous round paid out, or if none ever started.
         if (session == 0L || GRANTED_SESSION.get(uid) == session) {
-            // 进程内从未开过锅时，忽略游离请求。
+            // Ignore stray requests when no pot was ever opened in this process.
             if (!COOK_PENDING.get(uid) && COOK_SESSION.get(uid) == 0L && LAST_GRANT_MS.get(uid) == 0L) {
                 Grasscutter.getLogger()
                         .info("[EscoffierCook] uid={} SkillCookReq ignored (no cook started)", uid);
@@ -307,14 +310,14 @@ public final class EscoffierSkillCookHelper {
         int previousGadgetEntity = ACTIVE_COOK_GADGET.get(uid);
         COOK_PENDING.remove(uid);
 
-        // 先占会话再入包，避免与销毁兜底竞态双发。
+        // Claim the session before granting, so the destruction fallback cannot race and pay twice.
         if (session != 0L) {
             GRANTED_SESSION.put(uid, session);
         }
 
         List<Integer> rewards = rollCookRewards();
         int itemId = rewards.get(0);
-        int count = rewards.size(); // 1 份；双份触发则为 2
+        int count = rewards.size(); // one dish, or two when the double roll hits
 
         GameItem granted = new GameItem(itemId, count);
         if (!player.getInventory().addItem(granted, ActionReason.SubfieldDrop, true)) {
@@ -323,7 +326,7 @@ public final class EscoffierSkillCookHelper {
             if (session != 0L && GRANTED_SESSION.get(uid) == session) {
                 GRANTED_SESSION.remove(uid);
             }
-            // 回滚 pending，真实充能完成仍可兑现。
+            // Roll the pending state back so a real completed charge can still pay out.
             COOK_PENDING.put(uid, true);
             if (previousGadgetEntity != 0) {
                 ACTIVE_COOK_GADGET.put(uid, previousGadgetEntity);
@@ -341,7 +344,8 @@ public final class EscoffierSkillCookHelper {
         LAST_GRANT_MS.put(uid, System.currentTimeMillis());
         purgeServerCookShells(player);
 
-        // 优先保留客户端锅实体 id 供下一轮充能；若销毁抢先，仍开会话以便 SkillCookReq 复用。
+        // Prefer keeping the client pot entity id for the next charge; if destruction wins the race, still
+        // open a session so SkillCookReq can reuse it.
         if (previousGadgetEntity != 0) {
             armReusePotCycle(player, previousGadgetEntity);
         } else {
@@ -404,8 +408,8 @@ public final class EscoffierSkillCookHelper {
     }
 
     /**
-     * 互斥抽取恰好一道菜，再以 65% 判定是否双份同菜。
-     * 权重：金 65，每个紫 10，每个蓝 5（合计 100）。
+     * Picks exactly one dish by mutually exclusive weights, then rolls 65% for a doubled portion.
+     * Weights: 65 for the gold dish, 10 per purple, 5 per blue (100 total).
      */
     private static List<Integer> rollCookRewards() {
         List<Integer> out = new ArrayList<>(2);

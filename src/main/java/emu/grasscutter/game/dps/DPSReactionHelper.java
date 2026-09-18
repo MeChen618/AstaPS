@@ -27,15 +27,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 /**
- * 从 AttackResult 识别具体反应名。
+ * Identifies the specific reaction name from an AttackResult.
  *
- * <p>月/星「视为反应伤害」的通用标记是能力配置里的 {@code attackTag}（如 {@code
- * MoonOvergrowDamage}），与角色无关。普通草/岩/雷技能没有该 tag，仍记元素伤害。
+ * <p>The generic marker for lunar/astral "counts as reaction damage" is the {@code attackTag} in the ability
+ * config (for example {@code
+ * MoonOvergrowDamage}), independent of the character. Ordinary Dendro/Geo/Electro skills carry no such tag
+ * and are still counted as elemental damage.
  */
 public final class DPSReactionHelper {
 
     private static final Map<Integer, String> HASH_TO_REACTION = new HashMap<>();
-    /** abilityName → 该能力 Damage 动作上出现过的月/星 attackTag。 */
+    /** abilityName to the lunar/astral attackTag seen on that ability's Damage action. */
     private static final Map<String, EnumSet<AttackTagKind>> ABILITY_ATTACK_TAGS =
             new ConcurrentHashMap<>();
 
@@ -51,52 +53,52 @@ public final class DPSReactionHelper {
     }
 
     static {
-        // 星
-        mapHash("TeamAbility_StarSuperconductor", "星超导");
-        mapHash("TeamAbility_StarSwirl_Ice", "星扩散");
-        mapHash("Avatar_StarSuperconductor_Field_Checker", "星超导");
-        mapHash("ElementalReaction_StarSuperconductor", "星超导");
-        mapHash("ElementalReaction_StarSwirl_Ice", "星扩散");
-        mapHash("Avatar_NewElementReaction_Preload_StarSuperconductor", "星超导");
-        mapHash("Avatar_NewElementReaction_Preload_StarSwirl_Ice", "星扩散");
+        // Astral
+        mapHash("TeamAbility_StarSuperconductor", "Astral Superconduct");
+        mapHash("TeamAbility_StarSwirl_Ice", "Astral Swirl");
+        mapHash("Avatar_StarSuperconductor_Field_Checker", "Astral Superconduct");
+        mapHash("ElementalReaction_StarSuperconductor", "Astral Superconduct");
+        mapHash("ElementalReaction_StarSwirl_Ice", "Astral Swirl");
+        mapHash("Avatar_NewElementReaction_Preload_StarSuperconductor", "Astral Superconduct");
+        mapHash("Avatar_NewElementReaction_Preload_StarSwirl_Ice", "Astral Swirl");
         for (int i = 1; i <= 12; i++) {
-            mapHash(String.format("StarSuperconducted_Attack%02d", i), "星超导");
-            mapHash(String.format("StarSuperconducted_Attack%d", i), "星超导");
-            mapHash(String.format("Player_Ice_StarSuperconducted_Attack%02d", i), "星超导");
+            mapHash(String.format("StarSuperconducted_Attack%02d", i), "Astral Superconduct");
+            mapHash(String.format("StarSuperconducted_Attack%d", i), "Astral Superconduct");
+            mapHash(String.format("Player_Ice_StarSuperconducted_Attack%02d", i), "Astral Superconduct");
         }
-        mapHash("StarSuperconducted_ExtraAttack", "星超导");
-        mapHash("StarSuperconducted_PlungeAttack", "星超导");
+        mapHash("StarSuperconducted_ExtraAttack", "Astral Superconduct");
+        mapHash("StarSuperconducted_PlungeAttack", "Astral Superconduct");
 
-        // 月
-        mapHash("TeamAbility_MoonShock", "月感电");
-        mapHash("TeamAbility_Reset_MoonOvergrow", "月绽放");
-        mapHash("TeamAbility_MoonCrystal_Water", "月结晶");
-        mapHash("TeamAbility_MoonPhase", "月感电");
-        mapHash("ElementalReaction_MoonShock", "月感电");
-        mapHash("ElementalReaction_MoonOvergrow", "月绽放");
-        mapHash("ElementalReaction_MoonCrystallize_Water", "月结晶");
-        mapHash("Avatar_NewElementReaction_Preload_MoonShock", "月感电");
-        mapHash("Avatar_NewElementReaction_Preload_MoonOvergrow", "月绽放");
-        mapHash("Avatar_NewElementReaction_Preload_MoonCrystallize_Water", "月结晶");
+        // Lunar
+        mapHash("TeamAbility_MoonShock", "Lunar Charged");
+        mapHash("TeamAbility_Reset_MoonOvergrow", "Lunar Bloom");
+        mapHash("TeamAbility_MoonCrystal_Water", "Lunar Crystallize");
+        mapHash("TeamAbility_MoonPhase", "Lunar Charged");
+        mapHash("ElementalReaction_MoonShock", "Lunar Charged");
+        mapHash("ElementalReaction_MoonOvergrow", "Lunar Bloom");
+        mapHash("ElementalReaction_MoonCrystallize_Water", "Lunar Crystallize");
+        mapHash("Avatar_NewElementReaction_Preload_MoonShock", "Lunar Charged");
+        mapHash("Avatar_NewElementReaction_Preload_MoonOvergrow", "Lunar Bloom");
+        mapHash("Avatar_NewElementReaction_Preload_MoonCrystallize_Water", "Lunar Crystallize");
 
-        // 经典转化/增幅（能力名路径）
-        mapHash("ElementalReaction_Explode", "超载");
-        mapHash("ElementalReaction_Superconductor", "超导");
-        mapHash("ElementalReaction_Electric", "感电");
-        mapHash("ElementalReaction_Stream", "感电");
-        mapHash("ElementalReaction_Burning", "燃烧");
-        mapHash("ElementalReaction_Swirl_Fire", "扩散");
-        mapHash("ElementalReaction_Swirl_Water", "扩散");
-        mapHash("ElementalReaction_Swirl_Electric", "扩散");
-        mapHash("ElementalReaction_Swirl_Ice", "扩散");
-        mapHash("ElementalReaction_FrozenBroken", "碎冰");
-        mapHash("ElementalReaction_Overgrow", "绽放");
-        mapHash("ElementalReaction_Overgrow_Mushroom_Electric", "超绽放");
-        mapHash("ElementalReaction_Overgrow_Mushroom_Fire", "烈绽放");
-        mapHash("ElementalReaction_Melt", "融化");
-        mapHash("ElementalReaction_Steam", "蒸发");
-        mapHash("ElementalReaction_Overdose_Electric", "超激化");
-        mapHash("ElementalReaction_Overdose_Grass", "蔓激化");
+        // Classic transformative/amplifying reactions, matched by ability name.
+        mapHash("ElementalReaction_Explode", "Overload");
+        mapHash("ElementalReaction_Superconductor", "Superconduct");
+        mapHash("ElementalReaction_Electric", "Electro-Charged");
+        mapHash("ElementalReaction_Stream", "Electro-Charged");
+        mapHash("ElementalReaction_Burning", "Burning");
+        mapHash("ElementalReaction_Swirl_Fire", "Swirl");
+        mapHash("ElementalReaction_Swirl_Water", "Swirl");
+        mapHash("ElementalReaction_Swirl_Electric", "Swirl");
+        mapHash("ElementalReaction_Swirl_Ice", "Swirl");
+        mapHash("ElementalReaction_FrozenBroken", "Shattered");
+        mapHash("ElementalReaction_Overgrow", "Bloom");
+        mapHash("ElementalReaction_Overgrow_Mushroom_Electric", "Hyperbloom");
+        mapHash("ElementalReaction_Overgrow_Mushroom_Fire", "Burgeon");
+        mapHash("ElementalReaction_Melt", "Melt");
+        mapHash("ElementalReaction_Steam", "Vaporize");
+        mapHash("ElementalReaction_Overdose_Electric", "Aggravate");
+        mapHash("ElementalReaction_Overdose_Grass", "Spread");
     }
 
     private DPSReactionHelper() {}
@@ -108,8 +110,9 @@ public final class DPSReactionHelper {
     }
 
     public static String detect(AttackResult result, GameEntity attacker, ElementType element) {
-        // 星超导：Field_Checker + 冰伤仍可归列。
-        // 月系：只认能力 attackTag / 反应能力名，禁止把整队草/岩/雷都改成月反应。
+        // Astral Superconduct: Field_Checker plus Cryo damage still classifies.
+        // Lunar family: match only on ability attackTag or reaction ability name. Never reclassify every
+        // Dendro/Geo/Electro hit in the party as a lunar reaction.
         if (result == null) {
             String named = fromStarField(attacker, element);
             if (named == null) probeOnce(null, attacker, element, null);
@@ -180,7 +183,7 @@ public final class DPSReactionHelper {
         return null;
     }
 
-    /** 按能力配置里的 attackTag 归列（全角色通用，不写死角色名）。 */
+    /** Classifies by the attackTag in the ability config - works for every character, no hardcoded names. */
     private static String fromAbilityAttackTag(String abilityName, ElementType element) {
         if (abilityName == null || abilityName.isEmpty()) return null;
         ensureAttackTagIndex();
@@ -190,20 +193,20 @@ public final class DPSReactionHelper {
     }
 
     private static String pickReaction(EnumSet<AttackTagKind> tags, ElementType element) {
-        if (element == ElementType.Grass && tags.contains(AttackTagKind.MOON_BLOOM)) return "月绽放";
-        if (element == ElementType.Electric && tags.contains(AttackTagKind.MOON_SHOCK)) return "月感电";
-        if (element == ElementType.Rock && tags.contains(AttackTagKind.MOON_CRYSTAL)) return "月结晶";
-        if (element == ElementType.Ice && tags.contains(AttackTagKind.STAR_SUPER)) return "星超导";
+        if (element == ElementType.Grass && tags.contains(AttackTagKind.MOON_BLOOM)) return "Lunar Bloom";
+        if (element == ElementType.Electric && tags.contains(AttackTagKind.MOON_SHOCK)) return "Lunar Charged";
+        if (element == ElementType.Rock && tags.contains(AttackTagKind.MOON_CRYSTAL)) return "Lunar Crystallize";
+        if (element == ElementType.Ice && tags.contains(AttackTagKind.STAR_SUPER)) return "Astral Superconduct";
         if ((element == ElementType.Ice || element == ElementType.Wind)
                 && tags.contains(AttackTagKind.STAR_SWIRL)) {
-            return "星扩散";
+            return "Astral Swirl";
         }
 
-        if (tags.contains(AttackTagKind.MOON_BLOOM)) return "月绽放";
-        if (tags.contains(AttackTagKind.MOON_SHOCK)) return "月感电";
-        if (tags.contains(AttackTagKind.MOON_CRYSTAL)) return "月结晶";
-        if (tags.contains(AttackTagKind.STAR_SUPER)) return "星超导";
-        if (tags.contains(AttackTagKind.STAR_SWIRL)) return "星扩散";
+        if (tags.contains(AttackTagKind.MOON_BLOOM)) return "Lunar Bloom";
+        if (tags.contains(AttackTagKind.MOON_SHOCK)) return "Lunar Charged";
+        if (tags.contains(AttackTagKind.MOON_CRYSTAL)) return "Lunar Crystallize";
+        if (tags.contains(AttackTagKind.STAR_SUPER)) return "Astral Superconduct";
+        if (tags.contains(AttackTagKind.STAR_SWIRL)) return "Astral Swirl";
         return null;
     }
 
@@ -234,8 +237,9 @@ public final class DPSReactionHelper {
     }
 
     /**
-     * 月绽放常见：真正带 {@code MoonOvergrowDamage} 的是 MoonLight Gadget，命中却记在
-     * {@code *_Damage_Handler} / {@code *_ExtraAttack} 上（奈芙尔幻戏等）。按角色前缀回填，不写死角色。
+     * Common for Lunar Bloom: the thing actually carrying {@code MoonOvergrowDamage} is the MoonLight gadget,
+     * while the hit is recorded on
+     * {@code *_Damage_Handler} or {@code *_ExtraAttack}. Backfilled by character prefix, not by hardcoded name.
      */
     private static void propagateMoonTagsToDamageAliases() {
         var snapshot = Map.copyOf(ABILITY_ATTACK_TAGS);
@@ -253,10 +257,10 @@ public final class DPSReactionHelper {
             if (tags.contains(AttackTagKind.MOON_CRYSTAL)) moonOnly.add(AttackTagKind.MOON_CRYSTAL);
             if (moonOnly.isEmpty()) continue;
 
-            // Damage_Handler 常转发月反应段伤害
+            // Damage_Handler commonly forwards the lunar reaction damage segment.
             mergeAbilityTags(prefix + "_Damage_Handler", moonOnly);
 
-            // 幻戏/月光重击：源能力名带 ExtraAttack+MoonLight / MoonExtraAttack
+            // Moonlight charged attacks: the source ability name carries ExtraAttack+MoonLight or MoonExtraAttack.
             String lower = name.toLowerCase(Locale.ROOT);
             if (lower.contains("extraattack_moonlight")
                     || lower.contains("moonlight_gadget")
@@ -366,20 +370,22 @@ public final class DPSReactionHelper {
         };
     }
 
-    /** 星反应场地：冰伤可归星超导/星扩散。月系不再按元素整类改判。 */
+    /** Astral reaction fields: Cryo damage can classify as Astral Superconduct/Swirl. Lunar no longer
+     * reclassifies by element wholesale. */
     private static String fromStarField(GameEntity entity, ElementType element) {
         if (element == null) return null;
         FieldFlags flags = scanTeamFields(entity);
-        if (flags.starSuper && element == ElementType.Ice) return "星超导";
+        if (flags.starSuper && element == ElementType.Ice) return "Astral Superconduct";
         if (flags.starSwirl && (element == ElementType.Ice || element == ElementType.Wind))
-            return "星扩散";
+            return "Astral Swirl";
         return null;
     }
 
-    /** 队伍开着月绽放时，普通「绽放」核按月绽放计（超绽/烈绽不动）。 */
+    /** While the party has Lunar Bloom active, plain Bloom cores count as Lunar Bloom. Hyperbloom and
+     * Burgeon are unaffected. */
     private static String upgradeBloomIfMoonTeam(String named, GameEntity entity) {
-        if (!"绽放".equals(named)) return named;
-        return scanTeamFields(entity).moonBloom ? "月绽放" : named;
+        if (!"Bloom".equals(named)) return named;
+        return scanTeamFields(entity).moonBloom ? "Lunar Bloom" : named;
     }
 
     private static FieldFlags scanTeamFields(GameEntity entity) {
@@ -460,9 +466,9 @@ public final class DPSReactionHelper {
     private static String amplifyByElement(ElementType element, float rate) {
         if (element == null) return null;
         return switch (element) {
-            case Ice -> "融化";
-            case Water -> "蒸发";
-            case Fire -> rate >= 1.75f ? "融化" : "蒸发";
+            case Ice -> "Melt";
+            case Water -> "Vaporize";
+            case Fire -> rate >= 1.75f ? "Melt" : "Vaporize";
             default -> null;
         };
     }
@@ -536,44 +542,47 @@ public final class DPSReactionHelper {
                 || s.contains("star_superconduct")
                 || s.contains("starsuperconductor")
                 || (s.contains("star") && s.contains("superconduct"))) {
-            return "星超导";
+            return "Astral Superconduct";
         }
         if (s.contains("starswirl") || (s.contains("star") && s.contains("swirl"))) {
-            return "星扩散";
+            return "Astral Swirl";
         }
         if (s.contains("moonshock")
                 || (s.contains("moon") && (s.contains("shock") || s.contains("感电")))) {
-            return "月感电";
+            return "Lunar Charged";
         }
         if (s.contains("moonovergrow")
                 || s.contains("moonbloom")
                 || (s.contains("moon") && (s.contains("overgrow") || s.contains("bloom")))) {
-            return "月绽放";
+            return "Lunar Bloom";
         }
         if (s.contains("mooncrystal")
                 || s.contains("mooncrystall")
                 || (s.contains("moon") && (s.contains("crystal") || s.contains("结晶")))) {
-            return "月结晶";
+            return "Lunar Crystallize";
         }
 
+        // The Chinese literals below are NOT display text and must stay in Chinese: they are matched
+        // against ability and reaction identifiers coming from the game's own data, which is Chinese on
+        // a CN client. Translating them would make these branches silently stop matching.
         if (s.contains("vaporize")
                 || s.contains("蒸发")
-                || (s.contains("steam") && s.contains("reaction"))) return "蒸发";
-        if (s.contains("melt") || s.contains("融化")) return "融化";
-        if (s.contains("overload") || s.contains("explode") || s.contains("超载")) return "超载";
-        if (s.contains("superconduct") || s.contains("超导")) return "超导";
+                || (s.contains("steam") && s.contains("reaction"))) return "Vaporize";
+        if (s.contains("melt") || s.contains("融化")) return "Melt";
+        if (s.contains("overload") || s.contains("explode") || s.contains("超载")) return "Overload";
+        if (s.contains("superconduct") || s.contains("超导")) return "Superconduct";
         if (s.contains("electrocharged")
                 || s.contains("electro_charged")
                 || (s.contains("stream") && s.contains("reaction"))
-                || s.contains("感电")) return "感电";
-        if (s.contains("burning") || s.contains("燃烧")) return "燃烧";
-        if (s.contains("shatter") || s.contains("frozenbroken") || s.contains("碎冰")) return "碎冰";
-        if (s.contains("swirl") || s.contains("扩散")) return "扩散";
-        if (s.contains("hyperbloom") || s.contains("超绽")) return "超绽放";
-        if (s.contains("burgeon") || s.contains("烈绽")) return "烈绽放";
-        if (s.contains("bloom") || s.contains("overgrow") || s.contains("绽放")) return "绽放";
-        if (s.contains("aggravate") || s.contains("超激")) return "超激化";
-        if (s.contains("spread") || s.contains("蔓激")) return "蔓激化";
+                || s.contains("感电")) return "Electro-Charged";
+        if (s.contains("burning") || s.contains("燃烧")) return "Burning";
+        if (s.contains("shatter") || s.contains("frozenbroken") || s.contains("碎冰")) return "Shattered";
+        if (s.contains("swirl") || s.contains("扩散")) return "Swirl";
+        if (s.contains("hyperbloom") || s.contains("超绽")) return "Hyperbloom";
+        if (s.contains("burgeon") || s.contains("烈绽")) return "Burgeon";
+        if (s.contains("bloom") || s.contains("overgrow") || s.contains("绽放")) return "Bloom";
+        if (s.contains("aggravate") || s.contains("超激")) return "Aggravate";
+        if (s.contains("spread") || s.contains("蔓激")) return "Spread";
         return null;
     }
 
@@ -582,22 +591,22 @@ public final class DPSReactionHelper {
         if (beyond) type -= 4700;
         else if (type >= 1 && type <= 5) return null;
         return switch (type) {
-            case 1 -> "超载";
-            case 2 -> "感电";
-            case 3, 4 -> "燃烧";
-            case 6 -> "绽放";
-            case 7 -> "融化";
-            case 12 -> "感电";
-            case 16 -> "超导";
-            case 17, 18, 19, 20, 21, 22, 23, 24 -> "扩散";
-            case 31 -> "碎冰";
-            case 34 -> "超激化";
-            case 35 -> "蔓激化";
-            case 40 -> "月感电";
-            case 41 -> "月绽放";
-            case 42 -> "月结晶";
-            case 43 -> "星超导";
-            case 44 -> "星扩散";
+            case 1 -> "Overload";
+            case 2 -> "Electro-Charged";
+            case 3, 4 -> "Burning";
+            case 6 -> "Bloom";
+            case 7 -> "Melt";
+            case 12 -> "Electro-Charged";
+            case 16 -> "Superconduct";
+            case 17, 18, 19, 20, 21, 22, 23, 24 -> "Swirl";
+            case 31 -> "Shattered";
+            case 34 -> "Aggravate";
+            case 35 -> "Spread";
+            case 40 -> "Lunar Charged";
+            case 41 -> "Lunar Bloom";
+            case 42 -> "Lunar Crystallize";
+            case 43 -> "Astral Superconduct";
+            case 44 -> "Astral Swirl";
             default -> null;
         };
     }

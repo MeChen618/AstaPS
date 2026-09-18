@@ -31,13 +31,13 @@ import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 
 /**
- * Clorinde Bond of Life — 官方：驰猎是「发射铳枪时」赋契，不依赖命中。
+ * Clorinde Bond of Life. Official behaviour: Swift Hunt grants BoL when the pistolet is FIRED,
  *
  * <ul>
- *   <li>开 E 不加契
- *   <li>夜巡中每次驰猎开火（GunShot / ShotGun_Attack）+35%MaxHP（契&lt;100%MaxHP）
- *   <li>大招按天赋加契
- *   <li>夜巡中：贯夜以外治疗 → 转契；贯夜 → 回血扣契
+ *   <li>Casting E grants no BoL
+ *   <li>During Night Vigil each Swift Hunt shot (GunShot / ShotGun_Attack) grants +35% MaxHP while BoL &lt; 100% MaxHP
+ *   <li>The burst grants BoL per her passive
+ *   <li>During Night Vigil: healing other than Impale the Night converts to BoL; Impale the Night heals and pays BoL down
  * </ul>
  */
 public final class ClorindeBoLUtil {
@@ -54,16 +54,16 @@ public final class ClorindeBoLUtil {
 
     private static final float SHOT_RATIO = 0.35f;
     private static final float HEAL_TO_BOL_RATIO = 0.8f;
-    /** 天赋缺省：贯夜治疗量 契&lt;100% / 契≥100%（详细属性 104% / 110%） */
+    /** Passive defaults for Impale the Night healing: BoL &lt; 100% / BoL &ge; 100% (104% / 110% in the detail panel). */
     private static final float DODGE_HEAL_RATIO_HAS_DEBT = 1.04f;
     private static final float DODGE_HEAL_RATIO_FULL_DEBT = 1.10f;
     private static final String FORBID_FOOD_HEAL = "_ABILITY_Avatar_ForbidFoodHeal";
-    /** 贯夜治疗去重（技能开始结算 + HealHP 可能双触发） */
+    /** Dedupes Impale the Night healing; the skill-start settle and HealHP can both fire. */
     private static final long DODGE_HEAL_ICD_MS = 500L;
-    /** 同一发铳枪多条 action 去重；需短于驰猎连发间隔 */
+    /** Dedupes multiple actions from one shot; must be shorter than the Swift Hunt burst interval. */
     private static final long SHOT_ICD_MS = 220L;
     private static final long VIGIL_MS = 9000L;
-    /** 贯夜短窗口：仅用于治疗识别辅助，不再用来拦截驰猎赋契 */
+    /** Short Impale the Night window, used only to help identify healing - no longer gates Swift Hunt BoL. */
     private static final long DODGE_WINDOW_MS = 800L;
 
     private static final Int2LongOpenHashMap LAST_SHOT_GRANT_MS = new Int2LongOpenHashMap();
@@ -94,13 +94,14 @@ public final class ClorindeBoLUtil {
         if (avatar == null) {
             return false;
         }
-        // 只用短时窗口；不要信粘住的全局 Dodge_HealFlag（贯夜后会一直为1，导致再也加不了契）
+        // Use the short window only. Do not trust the sticky global Dodge_HealFlag: it stays 1 after
+        // Impale the Night, which would block every later BoL grant.
         long until = DODGE_UNTIL_MS.getOrDefault(avatar.getId(), 0L);
         long now = System.currentTimeMillis();
         if (until > now) {
             return true;
         }
-        // 窗口已过：清掉我们写过的粘性 flag，避免后续误判
+        // Window has passed: clear the sticky flag we wrote so later checks are not misled.
         if (avatar.getGlobalAbilityValues() != null
                 && globalFlag(avatar, DODGE_HEAL_FLAG) > 0.01f) {
             avatar.getGlobalAbilityValues().put(DODGE_HEAL_FLAG, Float.valueOf(0f));
@@ -128,12 +129,13 @@ public final class ClorindeBoLUtil {
     }
 
     public static void applyNoArgHook(EntityAvatar avatar) {
-        // Dodge_HealFlag 清零时的误加契 — 忽略
+        // Spurious grant seen when Dodge_HealFlag is cleared - ignore.
     }
 
     /**
-     * 受伤后用 UpdateNotify 补推 HP_DEBTS + 强化档。
-     * 全量 AvatarFightPropNotify 不能带契（会不掉血），也不能不补推（契条/贯夜档会丢）。
+     * After damage, re-push HP_DEBTS and the enhancement tier via UpdateNotify.
+     * A full AvatarFightPropNotify must not carry BoL (HP would stop dropping), but skipping the
+     * re-push loses the BoL bar and the Impale the Night tier.
      */
     public static void onDamaged(EntityAvatar avatar) {
         if (!isClorinde(avatar)) {
@@ -176,13 +178,13 @@ public final class ClorindeBoLUtil {
             pushGlobalFloat(avatar, ACTIVE_FLAG, 1f);
             pushGlobalFloat(avatar, DODGE_HEAL_FLAG, 0f);
             VIGIL_UNTIL_MS.put(avatar.getId(), System.currentTimeMillis() + VIGIL_MS);
-            // 按当前真实契量刷新强化档（清掉上次贯夜 keepTier 残留的假满契）
+            // Refresh the tier from the real BoL, clearing any fake full-BoL left by the previous keepTier.
             float bolNow = avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
             float maxHp = avatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
             syncClorindeDebtTiers(avatar, bolNow, maxHp, true);
             Grasscutter.getLogger()
                     .info(
-                            "[BoL][Clorinde] E start — no BoL grant, vigil on, bol="
+                            "[BoL][Clorinde] E start - no BoL grant, vigil on, bol="
                                     + bolNow
                                     + " tier="
                                     + debtTier(bolNow, maxHp));
@@ -190,18 +192,19 @@ public final class ClorindeBoLUtil {
         }
         if (skillId == SKILL_DODGE) {
             DODGE_UNTIL_MS.put(avatar.getId(), System.currentTimeMillis() + DODGE_WINDOW_MS);
-            // 贯夜起手前先按当前契锁住强化档；heal 清契后也不能立刻把档位打成 0
+            // Lock the tier to the current BoL before Impale the Night starts; the tier must not drop
+            // to 0 the moment healing pays the BoL down.
             float bolNow = avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
             float maxHp = avatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
             syncClorindeDebtTiers(avatar, bolNow, maxHp, true);
             pushGlobalFloat(avatar, DODGE_HEAL_FLAG, 0f);
             Grasscutter.getLogger()
                     .info(
-                            "[BoL][Clorinde] Dodge/贯夜 window open tier="
+                            "[BoL][Clorinde] Dodge/Impale window open tier="
                                     + debtTier(bolNow, maxHp)
                                     + " bol="
                                     + bolNow);
-            // 不依赖客户端 Predicated 才治疗；有契就按契×比例结算还契回血
+            // Do not wait for the client's Predicated flag: if there is BoL, settle heal as BoL x ratio.
             tryDodgeHealFromSkill(avatar);
             return;
         }
@@ -209,7 +212,7 @@ public final class ClorindeBoLUtil {
             onBurst(avatar);
             return;
         }
-        // NA skill 上报不稳定且易与 GunShot 双计；赋契主路径走 gunshot-action
+        // NA skill reporting is unreliable and double-counts with GunShot; the main grant path is gunshot-action.
     }
 
     public static void onBurst(EntityAvatar avatar) {
@@ -220,8 +223,9 @@ public final class ClorindeBoLUtil {
     }
 
     /**
-     * GunShot 任意 action 执行 = 铳枪已发射（官方 onAbilityStart.AddHPDebts），不要求命中。
-     * 注意：不要用 isDodgeHeal 窗口拦赋契——连点贯夜会刷新窗口，导致后续驰猎永远加不上契。
+     * Any GunShot action executing means the pistolet fired (official onAbilityStart.AddHPDebts); no hit required.
+     * Do NOT gate the grant on the isDodgeHeal window: repeated Impale casts keep refreshing it, which
+     * would stop every later Swift Hunt from ever granting BoL.
      */
     public static void onAbilityAction(Ability ability, GameEntity target) {
         EntityAvatar avatar = resolveAvatar(ability, target);
@@ -238,7 +242,7 @@ public final class ClorindeBoLUtil {
     }
 
     /**
-     * 驰猎动画 modifier（ShotGun_Attack*）挂上 = 开火，不要求命中。
+     * The Swift Hunt animation modifier (ShotGun_Attack*) attaching means the shot fired; no hit required.
      */
     public static void onModifierChange(Player player, AbilityInvokeEntry entry) {
         if (player == null || entry == null || entry.getAbilityData() == null) {
@@ -287,7 +291,7 @@ public final class ClorindeBoLUtil {
         }
     }
 
-    /** 命中兜底：部分包体 GunShot action 不上报时仍赋契；与开火共用 ICD 防双加。 */
+    /** Hit fallback for builds where the GunShot action is not reported. Shares the fire ICD to avoid double grants. */
     public static boolean isSwiftHuntHit(AttackResult attackResult) {
         if (attackResult == null) {
             return true;
@@ -325,20 +329,21 @@ public final class ClorindeBoLUtil {
         if (!isClorinde(avatar) || !isNightVigil(avatar)) {
             return;
         }
-        // 贯夜窗口不再拦截赋契（连点贯夜会刷新窗口，否则驰猎永远加不上契）
+        // The Impale window no longer gates grants; repeated casts refresh it and would starve Swift Hunt.
         float maxHp = avatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
         if (maxHp <= 1f) {
             return;
         }
         float bol = avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-        // 已满契：官方不再加契，但必须维持强化档，否则客户端不判定强化普攻/契令
+        // BoL already full: no further grant, but the tier must be kept or the client stops recognising
+        // the enhanced normal attack.
         if (bol + 0.5f >= maxHp) {
             syncClorindeDebtTiers(avatar, bol, maxHp, true);
             return;
         }
         int eid = avatar.getId();
         long now = System.currentTimeMillis();
-        // executeAction 在线程池并发，必须同步 ICD，否则同一发会双加
+        // executeAction runs concurrently on the pool, so the ICD must be synchronised or one shot double-grants.
         synchronized (LAST_SHOT_GRANT_MS) {
             if (LAST_SHOT_GRANT_MS.containsKey(eid)
                     && now - LAST_SHOT_GRANT_MS.get(eid) < SHOT_ICD_MS) {
@@ -388,7 +393,7 @@ public final class ClorindeBoLUtil {
 
     public static boolean handleHealHp(
             Ability ability, AbilityModifierAction action, GameEntity target) {
-        // 夜巡转契 / 贯夜回血看的是「受治疗者」是否为克洛琳德，不是 ability owner
+        // Vigil conversion and Impale healing key off whether the HEAL TARGET is Clorinde, not the ability owner.
         EntityAvatar avatar = resolveClorindeHealTarget(ability, target);
         if (!isClorinde(avatar)) {
             return false;
@@ -419,7 +424,7 @@ public final class ClorindeBoLUtil {
                         ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
                 Grasscutter.getLogger()
                         .info(
-                                "[BoL][Clorinde] heal→BoL amount="
+                                "[BoL][Clorinde] heal->BoL amount="
                                         + amount
                                         + " ratio="
                                         + ratio
@@ -434,20 +439,22 @@ public final class ClorindeBoLUtil {
         return false;
     }
 
-    /** 技能 10983 上报时直接结算；与 HealHP 共用 ICD 防双结算。 */
+    /** Settles directly when skill 10983 is reported. Shares the HealHP ICD to avoid settling twice. */
     private static void tryDodgeHealFromSkill(EntityAvatar avatar) {
         float bol = avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
         if (bol <= 0.5f) {
-            Grasscutter.getLogger().info("[BoL][Clorinde] 贯夜 skill — no BoL to heal");
+            Grasscutter.getLogger().info("[BoL][Clorinde] Impale skill - no BoL to heal");
             return;
         }
         executeDodgeHeal(null, null, avatar, "skill-10983");
     }
 
     /**
-     * 贯夜：治疗量 = 当前契 × HasDebt/FullDebt 比例（天赋 104%/110%）。
-     * 官方不是单独「清空契」，而是治疗量高于契，经 {@link GameEntity#heal} 先还契再回血。
-     * 须避开 ActionHealHP 在 ForbidFoodHeal/convertToHpDebt 下的 ×0.8 只扣契不回血错路径。
+     * Impale the Night: heal amount = current BoL x the HasDebt/FullDebt ratio (104%/110% from the passive).
+     * Officially the BoL is not cleared separately; the heal simply exceeds it, and {@link GameEntity#heal}
+     * pays the BoL down first and then restores HP.
+     * This must avoid ActionHealHP's x0.8 path under ForbidFoodHeal/convertToHpDebt, which pays down BoL
+     * without restoring any HP.
      */
     private static boolean executeDodgeHeal(
             Ability ability, AbilityModifierAction action, EntityAvatar avatar, String reason) {
@@ -470,13 +477,15 @@ public final class ClorindeBoLUtil {
         float ratio = resolveDodgeHealRatio(ability, bol, maxHp);
         float expected = Math.max(0f, bol) * ratio;
 
-        // 配置栈常因 FullDebtHealHpRatio 未注入而算出 0/过小；贯夜以「契×比例」为准
+        // The config stack often computes 0 or too little because FullDebtHealHpRatio is not injected;
+        // Impale the Night uses BoL x ratio as the source of truth.
         float healAmount = resolveHealAmount(ability, action, avatar);
         if (healAmount < expected * 0.5f) {
             healAmount = expected;
         }
 
-        // 起手瞬间的强化档必须按 heal 前契量；清契后若立刻把 DodgeEnhanced=0，客户端会掉回弱贯夜
+        // The opening tier must use the pre-heal BoL. Setting DodgeEnhanced=0 right after the BoL is paid
+        // down makes the client fall back to the weak Impale.
         float castTier = debtTier(bol, maxHp);
         syncClorindeDebtTiers(avatar, bol, maxHp, true);
 
@@ -496,13 +505,13 @@ public final class ClorindeBoLUtil {
 
         Grasscutter.getLogger()
                 .info(
-                        "[BoL][Clorinde] 贯夜 heal ("
+                        "[BoL][Clorinde] Impale heal ("
                                 + reason
                                 + ") amount="
                                 + healAmount
                                 + " (bol="
                                 + bol
-                                + "×"
+                                + "x"
                                 + ratio
                                 + ") realHp="
                                 + realHp
@@ -515,7 +524,7 @@ public final class ClorindeBoLUtil {
         return true;
     }
 
-    /** 0=无契 / 1=有契未满 / 2=契≥100%MaxHP（对应 DodgeFlag_Rank / 强化贯夜） */
+    /** 0 = no BoL, 1 = partial BoL, 2 = BoL &ge; 100% MaxHP (maps to DodgeFlag_Rank / enhanced Impale). */
     private static float debtTier(float bol, float maxHp) {
         if (bol <= 0.5f || maxHp <= 1f) {
             return 0f;
@@ -524,9 +533,10 @@ public final class ClorindeBoLUtil {
     }
 
     /**
-     * 推克洛琳德强化档。force=true 时即使在贯夜窗口也按 bol 重算。
-     * 贯夜还契后 bol≈0 时短暂保留起手档给动画；一旦又开始叠契，立刻按真实契量改档，
-     * 避免 UI 仍显示满契强化而服务端只有 35%/70%。
+     * Pushes Clorinde's enhancement tier. force=true recomputes from bol even inside the Impale window.
+     * When bol is about 0 after Impale pays it down, the opening tier is briefly kept for the animation;
+     * as soon as BoL starts stacking again the tier follows the real value, so the UI cannot show a full-BoL
+     * enhancement while the server only has 35%/70%.
      */
     private static void syncClorindeDebtTiers(
             EntityAvatar avatar, float bol, float maxHp, boolean force) {
@@ -538,14 +548,15 @@ public final class ClorindeBoLUtil {
                 DODGE_UNTIL_MS.getOrDefault(avatar.getId(), 0L) > System.currentTimeMillis();
         if (!force && inDodge) {
             float cur = globalFlag(avatar, DODGE_ENHANCED);
-            // 还契后空契：保留动画档；已重新叠契：必须跟真实 bol，禁止假满契
+            // Empty right after payback: keep the animation tier. Already restacking: follow the real bol,
+            // never a fake full value.
             if (bol <= 0.5f && tier + 0.1f < cur) {
                 return;
             }
         }
         pushGlobalFloat(avatar, HP_DEBTS_ENHANCED, tier);
         pushGlobalFloat(avatar, DODGE_ENHANCED, tier);
-        // 满契 High 档额外要求 HealFlag==0；粘在 1 时 High 失败且不进 Medium
+        // The full-BoL High tier also needs HealFlag==0; stuck at 1 it fails High and never reaches Medium.
         if (tier >= 1f) {
             pushGlobalFloat(avatar, DODGE_HEAL_FLAG, 0f);
         }
@@ -558,13 +569,13 @@ public final class ClorindeBoLUtil {
         float tier = Math.max(0f, keepTier);
         pushGlobalFloat(avatar, HP_DEBTS_ENHANCED, tier);
         pushGlobalFloat(avatar, DODGE_ENHANCED, tier);
-        // 起手后仍保持 HealFlag=0，直到客户端 High 分支自己置 1
+        // Keep HealFlag=0 after the opening until the client's own High branch sets it to 1.
         if (tier >= 1f) {
             pushGlobalFloat(avatar, DODGE_HEAL_FLAG, 0f);
         }
     }
 
-    /** SGV + Ability META_GLOBAL_FLOAT，让客户端 ByTargetGlobalValue 能读到 */
+    /** SGV plus Ability META_GLOBAL_FLOAT so the client's ByTargetGlobalValue can read it. */
     private static void pushGlobalFloat(EntityAvatar avatar, String key, float value) {
         if (avatar == null || key == null || key.isEmpty()) {
             return;
@@ -637,7 +648,7 @@ public final class ClorindeBoLUtil {
         }
     }
 
-    /** 受治疗者为克洛琳德时优先用 target；否则回退 caster 解析。 */
+    /** Prefer the target when the heal target is Clorinde; otherwise fall back to resolving the caster. */
     private static EntityAvatar resolveClorindeHealTarget(Ability ability, GameEntity target) {
         if (target instanceof EntityAvatar ea && isClorinde(ea)) {
             return ea;
@@ -747,15 +758,17 @@ public final class ClorindeBoLUtil {
     }
 
     /**
-     * 克洛琳德契同步：只推 FIGHT_PROP_CUR_HP_DEBTS（契条）+ 她自己的强化档 GV。
-     * 不走阿蕾 Cur_HPDebts/_HPDebts；也不发 AvatarFightPropNotify（会剥掉 HP_DEBTS，切人才能看见）。
+     * Clorinde BoL sync: push only FIGHT_PROP_CUR_HP_DEBTS (the BoL bar) plus her own tier GV.
+     * Does not use Arlecchino's Cur_HPDebts/_HPDebts, and does not send AvatarFightPropNotify - that strips
+     * HP_DEBTS and the bar only reappears after switching characters.
      */
     public static void pushBoL(EntityAvatar avatar, float debts, ChangeHpDebtsReason reason) {
         pushBoL(avatar, debts, reason, Float.NaN);
     }
 
     /**
-     * @param keepTier NaN=按 debts 重算档；有值=贯夜还契后保留起手档（动画/特效还在读 DodgeEnhanced）
+     * @param keepTier NaN recomputes the tier from debts; a value keeps the opening tier after Impale pays
+     *     the BoL down, while animations and VFX are still reading DodgeEnhanced
      */
     public static void pushBoL(
             EntityAvatar avatar, float debts, ChangeHpDebtsReason reason, float keepTier) {
@@ -835,7 +848,7 @@ public final class ClorindeBoLUtil {
             if (data == null || data.modifiers == null || data.modifiers.isEmpty()) {
                 return null;
             }
-            // modifiers 多为 LinkedHashMap：按插入序取第 N 个
+            // modifiers is usually a LinkedHashMap, so take the Nth entry in insertion order.
             int i = 0;
             for (var e : data.modifiers.entrySet()) {
                 if (i == modifierLocalId) {
@@ -843,7 +856,7 @@ public final class ClorindeBoLUtil {
                 }
                 i++;
             }
-            // 部分版本 localId 与 AbilityModifier 内字段对应，尝试按值扫描
+            // In some versions localId corresponds to a field inside AbilityModifier; try scanning by value.
             for (var e : data.modifiers.entrySet()) {
                 AbilityModifier mod = e.getValue();
                 if (mod != null) {
