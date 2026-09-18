@@ -16,47 +16,50 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 供奉物（神樱 / 忍冬之树 / 桓那兰那树等）辅助：gadget→offeringId 映射、登录通知、交互回包。
+ * Helper for offering objects (Sacred Sakura, Frostbearing Tree, Tree of Dreams and the like):
+ * gadget to offeringId mapping, the login notify and the interaction responses.
  *
- * <p>客户端弹出 F 键依赖 SceneGadgetInfo.offering_info；打开供奉页依赖 PlayerOfferingDataNotify。
+ * <p>The client shows the F prompt based on SceneGadgetInfo.offering_info, and opens the offering page
+ * based on PlayerOfferingDataNotify.
  */
 public final class OfferingHelper {
-    /** 神樱 OfferingGadget */
+    /** Sacred Sakura OfferingGadget. */
     public static final int GADGET_SACRED_SAKURA = 70290094;
-    /** 神樱 offeringId（OPEN_STATE_ORAIONOKAMI） */
+    /** Sacred Sakura offeringId (OPEN_STATE_ORAIONOKAMI). */
     public static final int OFFERING_ORAIONOKAMI = 2;
     /** OPEN_STATE_ORAIONOKAMI */
     public static final int OPEN_STATE_ORAIONOKAMI = 2000;
 
-    /** 已知 OfferingGadget → offeringId（覆盖主流大世界供奉） */
+    /** Known OfferingGadget to offeringId, covering the main open-world offerings. */
     private static final Map<Integer, Integer> GADGET_TO_OFFERING = new LinkedHashMap<>();
 
     static {
-        GADGET_TO_OFFERING.put(70290032, 1); // 忍冬之树
-        GADGET_TO_OFFERING.put(GADGET_SACRED_SAKURA, OFFERING_ORAIONOKAMI); // 神樱
-        GADGET_TO_OFFERING.put(70290511, 5); // 桓那兰那树
-        GADGET_TO_OFFERING.put(70290803, 5); // 须弥重生之湖交互（同树系）
-        GADGET_TO_OFFERING.put(70330637, 7); // 许愿池
-        GADGET_TO_OFFERING.put(70292163, 8); //  cub龙
-        GADGET_TO_OFFERING.put(73002033, 9); // 纳塔部落供奉
+        GADGET_TO_OFFERING.put(70290032, 1); // Frostbearing Tree
+        GADGET_TO_OFFERING.put(GADGET_SACRED_SAKURA, OFFERING_ORAIONOKAMI); // Sacred Sakura
+        GADGET_TO_OFFERING.put(70290511, 5); // Tree of Dreams
+        GADGET_TO_OFFERING.put(70290803, 5); // Sumeru Lake of Rebirth interaction, same tree family
+        GADGET_TO_OFFERING.put(70330637, 7); // wishing pool
+        GADGET_TO_OFFERING.put(70292163, 8); // saurian cub
+        GADGET_TO_OFFERING.put(73002033, 9); // Natlan tribal offering
         GADGET_TO_OFFERING.put(73065005, 10);
         GADGET_TO_OFFERING.put(73065006, 11);
         GADGET_TO_OFFERING.put(73065007, 12);
         GADGET_TO_OFFERING.put(73074085, 13);
         GADGET_TO_OFFERING.put(73074086, 14);
         GADGET_TO_OFFERING.put(73074087, 15);
-        GADGET_TO_OFFERING.put(73077192, 16); // 天穹
+        GADGET_TO_OFFERING.put(73077192, 16); // firmament
     }
 
-    /** 进程缓存；真源以玩家 questGlobalVariables / JSON 落盘，避免重启吞印不记等级。 */
+    /** In-process cache. The source of truth is the player questGlobalVariables / JSON on disk, so a
+     * restart cannot swallow sigils without recording the level. */
     private static final ConcurrentHashMap<Integer, ConcurrentHashMap<Integer, Integer>> LEVELS =
             new ConcurrentHashMap<>();
 
-    /** 已领取等级奖励：uid → offeringId → levels */
+    /** Claimed level rewards: uid to offeringId to levels. */
     private static final ConcurrentHashMap<Integer, ConcurrentHashMap<Integer, java.util.Set<Integer>>>
             TAKEN = new ConcurrentHashMap<>();
 
-    /** questGlobalVariables 键：910000 + offeringId */
+    /** questGlobalVariables key: 910000 + offeringId. */
     private static final int QGV_OFFERING_BASE = 910000;
 
     private static final java.nio.file.Path LEVELS_FILE =
@@ -285,7 +288,8 @@ public final class OfferingHelper {
     }
 
     /**
-     * 7.0 实机字段（sniffer all.proto），generated OuterClass 字段号是错的，必须手写 wire。
+     * Field numbers taken from the live 7.0 protocol (sniffed all.proto). The generated OuterClass numbers
+     * are wrong here, so the wire format has to be written by hand.
      *
      * <pre>
      * PlayerOfferingData:
@@ -316,7 +320,8 @@ public final class OfferingHelper {
         return out.toByteArray();
     }
 
-    /** 登录下发已解锁供奉进度，客户端才认为「可供奉」并允许弹交互 UI。 */
+    /** Sends unlocked offering progress on login; without it the client does not consider the offering
+     * available and never shows the interaction UI. */
     public static void onPlayerLogin(Player player) {
         if (player == null || player.getSession() == null) {
             return;
@@ -346,16 +351,17 @@ public final class OfferingHelper {
                     default -> 0;
                 };
         if (openStateId == 0) {
-            // 其余供奉：私服探索向默认开放
+            // Remaining offerings: open by default for exploration on a private server.
             return true;
         }
         return player.getProgressManager().getOpenState(openStateId) > 0;
     }
 
     /**
-     * 玩家对供奉物按下交互：回 GadgetInteractRsp + PlayerOfferingRsp，打开供奉页。
+     * The player interacts with an offering: reply with GadgetInteractRsp plus PlayerOfferingRsp to open
+     * the offering page.
      *
-     * @return true 表示已处理
+     * @return true when handled
      */
     public static boolean tryInteract(Player player, EntityGadget gadget) {
         if (player == null || gadget == null) {
@@ -400,7 +406,8 @@ public final class OfferingHelper {
         return true;
     }
 
-    /** 缴纳：尽量连升多级（一键耗尽可用雷之印），不自动发奖；奖励走 TakeOfferingLevelReward。 */
+    /** Submitting: level up as many times as possible in one go, spending the available sigils, without
+     * granting rewards. Rewards go through TakeOfferingLevelReward. */
     public static boolean tryLevelUp(Player player, int offeringId) {
         return tryLevelUp(player, offeringId, null);
     }
@@ -446,7 +453,8 @@ public final class OfferingHelper {
         }
 
         setLevel(player, offeringId, cur);
-        // 不把奖励塞进 Rsp item_list，避免「升级立刻弹获得」；奖励页自领
+        // Do not stuff rewards into the Rsp item_list, which would pop an acquisition toast on level up.
+        // The reward page handles claiming.
         sendOfferingRsp(player, offeringId, Retcode.RET_SUCC_VALUE, null, requestHeader, true);
         syncOfferingNotify(player);
 
@@ -462,7 +470,7 @@ public final class OfferingHelper {
     }
 
     /**
-     * 奖励界面领取某一档。TakeOfferingLevelRewardReq: offering_id=1, level=10。
+     * Claims one tier from the reward screen. TakeOfferingLevelRewardReq: offering_id=1, level=10.
      */
     public static boolean tryTakeLevelReward(
             Player player, int offeringId, int takeLevel, byte[] requestHeader) {
@@ -545,7 +553,8 @@ public final class OfferingHelper {
     }
 
     /**
-     * 未注册 handler 时的兜底：仅接受已知 PlayerOfferingReq opcode，避免误伤其它包。
+     * Fallback for when no handler is registered: accept only the known PlayerOfferingReq opcode so other
+     * packets are not intercepted by mistake.
      */
     public static boolean tryHandleUnknownOfferingReq(Player player, int opcode, byte[] payload) {
         return tryHandleUnknownOfferingReq(player, opcode, payload, null);
@@ -617,7 +626,7 @@ public final class OfferingHelper {
         return GADGET_TO_OFFERING.containsValue(id) || id == OFFERING_ORAIONOKAMI;
     }
 
-    /** 全量同步供奉进度（字段号按 7.0 all.proto）。 */
+    /** Full sync of offering progress, using the 7.0 all.proto field numbers. */
     public static void syncOfferingNotify(Player player) {
         if (player == null || player.getSession() == null) {
             return;
@@ -681,7 +690,7 @@ public final class OfferingHelper {
             }
             // offering_data = 13
             ProtoWire.writeBytes(out, 13, wireOfferingData(player, offeringId, isNewMaxLevel));
-            // retcode = 14（强制写出，含 0）
+            // retcode = 14, always written out including 0
             ProtoWire.writeUint32Force(out, 14, retcode);
             sendRaw(player, PacketOpcodes.PlayerOfferingRsp, out.toByteArray(), requestHeader);
             Grasscutter.getLogger()
@@ -743,7 +752,7 @@ public final class OfferingHelper {
                                     "resources/ExcelBinOutput/OfferingLevelUpExcelConfigData.json");
                 }
                 String json = java.nio.file.Files.readString(p);
-                // 轻量解析：不依赖 Gson 字段名差异
+                // Lightweight parse that does not depend on Gson field-name differences.
                 var arr = new com.google.gson.JsonParser().parse(json).getAsJsonArray();
                 for (var el : arr) {
                     var o = el.getAsJsonObject();

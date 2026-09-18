@@ -14,16 +14,18 @@ import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 
 /**
- * 七七六命「起死回骸」与芭芭拉六命「将一切美好献给你」。
+ * Qiqi's C6 and Barbara's C6 revive constellations.
  *
- * <p>原因：官方 {@code ReviveDeadAvatar} 在本服能力管线几乎不落地，且 {@code EntityAvatar.heal}
- * 在 HP≤0 时直接返回，倒下角色无法靠普通治疗拉起。
+ * <p>Rationale: the official {@code ReviveDeadAvatar} barely lands in this server's ability pipeline, and
+ * {@code EntityAvatar.heal}
+ * returns immediately at HP &lt;= 0, so a downed character cannot be brought back by ordinary healing.
  *
- * <p>规则要点：
+ * <p>Key rules:
  * <ul>
- *   <li>七七：开大招后复活倒下队友至 50% 生命，15 分钟 CD
- *   <li>芭芭拉：必须先倒下（播死亡），再立刻复苏并回满血，15 分钟 CD（后台才生效）
- *   <li>与久岐忍六命（致死留 1 血）CD 完全独立，不共享
+ *   <li>Qiqi: casting the burst revives a downed teammate to 50% HP, 15 minute cooldown
+ *   <li>Barbara: the character must go down first so the death plays, then is immediately revived to full
+ *       HP, 15 minute cooldown, and only while she is off-field
+ *   <li>Completely independent of Kuki Shinobu's C6 survive-at-1-HP cooldown; they are not shared
  * </ul>
  */
 public final class PartyReviveHelper {
@@ -74,7 +76,7 @@ public final class PartyReviveHelper {
 
     /**
      * Ability-config path. Only consumes Qiqi/Barbara CD when the owning ability actually belongs
-     * to that character — never “whoever happens to be in the party”.
+     * to that character, never "whoever happens to be in the party".
      */
     public static int reviveFallenFromAbility(Ability ability, float ratio) {
         if (ability == null || ability.getPlayerOwner() == null) return 0;
@@ -121,8 +123,9 @@ public final class PartyReviveHelper {
     }
 
     /**
-     * 官方六命流程：角色先倒下，再立刻复苏至 100% 生命。
-     * 在 LIFE_DEAD 已发出（或即将发出）之后调用——不要做成「免死直接满血」。
+     * Official C6 flow: the character goes down first, then is immediately revived to 100% HP.
+     * Call this after LIFE_DEAD has been sent, or is about to be. Do not turn it into a
+     * never-die-just-heal-to-full effect.
      */
     public static boolean tryBarbaraC6AfterDeath(EntityAvatar dead) {
         if (dead == null || dead.getAvatar() == null || dead.getPlayer() == null) {
@@ -155,7 +158,7 @@ public final class PartyReviveHelper {
         if (hp <= 0f) return false;
         BARBARA_CD_UNTIL.put(uid, now + CD_MS);
         Grasscutter.getLogger()
-                .info("[BarbaraC6] die→revive entity={} uid={} hp={}", dead.getId(), uid, hp);
+                .info("[BarbaraC6] die-revive entity={} uid={} hp={}", dead.getId(), uid, hp);
         return true;
     }
 

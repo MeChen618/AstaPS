@@ -10,19 +10,23 @@ import java.io.ByteArrayOutputStream;
 import java.util.Map;
 
 /**
- * FLIJGBNHOBC (26781) — 以 sniffer all.proto 为准（修复包 README 的 2/5 编号是错的）：
+ * FLIJGBNHOBC (26781). Field numbers follow the sniffed all.proto; the 2/5 numbering in the fix pack's
+ * README is wrong:
  *
- *   OPLHCEOLCFB = 2   // 本周期已萃取数量（或产出增量）；客户端 remaining = ConstMax - 此值
- *   ACDENEEFIEJ = 8   // schedule id = 700（必须）
- *   CMBJDHDHLCC = 12  // 萃取进度
- *   PECGJPBDOAI = 13  // 已定义套装列表 PDENDJIGPKH
- *   ILJNAEPANNC = 15  // 周期结束 unix
+ *   OPLHCEOLCFB = 2   // extracted count this cycle (or the produced delta); the client computes
+ *                     // remaining = ConstMax - this value
+ *   ACDENEEFIEJ = 8   // schedule id = 700 (required)
+ *   CMBJDHDHLCC = 12  // extraction progress
+ *   PECGJPBDOAI = 13  // list of already defined sets, PDENDJIGPKH
+ *   ILJNAEPANNC = 15  // cycle end, unix time
  *
  * Nested PDENDJIGPKH: FAODDMOJFNN=9 setId, NOLPABPANIH=11 count
  *
- * 私服注意：
- * - 客户端 ConstValue 萃取上限默认 1，若下发 field2=已萃次数会立刻锁 UI；故默认不下发 field2。
- * - 套装可定义次数上限在 ConstValue PURCHASE_RELIQUARY_PARAM（默认 2）；field13 会扣减剩余次数。
+ * <p>Private-server notes:
+ * - The client ConstValue extraction cap defaults to 1, so sending field2 as the extracted count locks
+ *   the UI immediately. field2 is therefore not sent by default.
+ * - The cap on how often a set may be defined lives in ConstValue PURCHASE_RELIQUARY_PARAM (default 2),
+ *   and field13 decrements the remaining count.
  */
 public class PacketReliquaryOfferDataNotify extends BasePacket {
 
@@ -31,7 +35,8 @@ public class PacketReliquaryOfferDataNotify extends BasePacket {
     }
 
     /**
-     * @param announceExtracted 为 true 时下发本周期已萃取数量（需客户端 ConstMax>=10 才不会锁死）
+     * @param announceExtracted when true, send this cycle's extracted count; the client needs
+     *     ConstMax &gt;= 10 for this not to lock up
      */
     public PacketReliquaryOfferDataNotify(PlayerState state, boolean announceExtracted) {
         super(PacketOpcodes.ReliquaryOfferDataNotify);
@@ -52,8 +57,10 @@ public class PacketReliquaryOfferDataNotify extends BasePacket {
             ProtoWire.writeUint32Force(out, 12, state.progress);
         }
 
-        // 已定义套装列表会让客户端按 ConstValue(默认每套2次) 扣减「剩余可定义」。
-        // 私服若要放宽次数，默认不同步该列表，避免 UI 卡在 0/2；服务端仍可本地记账。
+        // Sending the defined-set list makes the client decrement "remaining definable" per ConstValue,
+        // which defaults to 2 per set.
+        // To relax that on a private server the list is not synced by default, so the UI does not stick at
+        // 0/2; the server still keeps its own tally.
         boolean syncDefinedSuites = false;
         if (syncDefinedSuites && state.definedSuites != null && !state.definedSuites.isEmpty()) {
             for (Map.Entry<Integer, Integer> e : state.definedSuites.entrySet()) {
