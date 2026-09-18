@@ -88,7 +88,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             // IMPORTANT: do this BEFORE OpenStateUpdateNotify so the login snapshot already
             // includes the bulk-unlocked map (remote applies these then notifies).
             this.player.getUnlockedScenePoints(3).add(7);
-            // Do NOT mass-unlock every city/world area here — map fog is owned by statue/waypoint
+            // Do NOT mass-unlock every city/world area here - map fog is owned by statue/waypoint
             // unlocks (see syncSceneAreasFromUnlockedPoints). Starter Mondstadt area only.
             this.player.getUnlockedSceneAreas(3).add(1);
             this.setOpenState(47, 1, false);
@@ -120,7 +120,8 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         // Send notify to the client (after questing-off fill so the snapshot is complete).
         player.getSession().send(new PacketOpenStateUpdateNotify(this.player));
 
-        // 神樱等供奉：登录下发 PlayerOfferingDataNotify，否则客户端不弹 F
+        // Offerings such as the Sacred Sakura: send PlayerOfferingDataNotify on login, otherwise the
+        // client never shows the F prompt.
         try {
             emu.grasscutter.game.entity.gadget.OfferingHelper.onPlayerLogin(this.player);
         } catch (Throwable ignored) {
@@ -289,7 +290,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         // Migrate: old GetScenePointRsp unlocked-all statues visually without writing the set.
         // Seed unlocked statues once so already-lit pillars stay lit; locked ones stay unlockable.
         this.seedUnlockedStatuesFromLegacyUnlockAll();
-        // Rebuild map fog from unlocked points (statues + waypoints) — one area per unlock.
+        // Rebuild map fog from unlocked points (statues + waypoints) - one area per unlock.
         this.syncSceneAreasFromUnlockedPoints(3);
 
         // Always mark statue Talk gates FINISHED so goddess F / heal / offer need no questing.
@@ -329,7 +330,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                 finished++;
             }
 
-            // Forge EVERY area Talk gate — locked pillars auto-unlock on EnterTrans; F tip ready.
+            // Forge EVERY area Talk gate - locked pillars auto-unlock on EnterTrans; F tip ready.
             finished += this.forgeAllStatueTalkGates();
         } catch (Throwable t) {
             emu.grasscutter.Grasscutter.getLogger()
@@ -406,8 +407,8 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         if (questId > 0) {
             var existing = this.player.getQuestManager().getQuestById(questId);
             if (existing != null) {
-                // Only notify when state actually flips — re-sending FINISHED on every EnterTrans
-                // makes the client replay quest rewards (角色经验×20 spam).
+                // Only notify when state actually flips - re-sending FINISHED on every EnterTrans
+                // makes the client replay quest rewards (character EXP x20 spam).
                 if (existing.getState() != QuestState.QUEST_STATE_FINISHED) {
                     existing.setState(QuestState.QUEST_STATE_FINISHED);
                     existing.setFinishTime(emu.grasscutter.utils.Utils.getCurrentSeconds());
@@ -423,15 +424,15 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             // Client Talk also needs QUEST_COND_SCENE_AREA_UNLOCKED for this area.
             this.unlockSceneAreaHierarchy(sceneId, areaId);
         }
-        // Goddess NPC: one GroupSuiteNotify per visit (debounced) — keeps F without SFX thrash.
+        // Goddess NPC: one GroupSuiteNotify per visit (debounced) - keeps F without SFX thrash.
         this.refreshStatueGoddessNpc(sceneId, pointId);
     }
 
     /**
-     * Load goddess NPC suite once per visit (F tip). Always unload on exit — leaving suites
+     * Load goddess NPC suite once per visit (F tip). Always unload on exit - leaving suites
      * loaded is what made Fontaine ambient/SFX intermittent after visiting a statue.
      *
-     * <p>Nod-Krai City 7 (1515–1517) has no SceneNpcBorn for 790x — spawn an invisible goddess
+     * <p>Nod-Krai City 7 (1515-1517) has no SceneNpcBorn for 790x - spawn an invisible goddess
      * NPC entity at the statue as fallback.
      */
     public void refreshStatueGoddessNpc(int sceneId, int pointId) {
@@ -479,9 +480,9 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                                 born.getGroupId(),
                                 born.getConfigId(),
                                 suite);
-                // Natlan Pyro is quest-gated in the CLIENT talk tree ("无法与火元素进行共鸣").
+                // Natlan Pyro is quest-gated in the CLIENT talk tree ("cannot resonate with Pyro").
                 // Spawn a Talk-style Worktop resonate that skips the gate without force-finishing
-                // the Archon quest — players keep「众望所归」receivable, no GM command needed.
+                // the Archon quest - players keep the related quest receivable, no GM command needed.
                 this.maybeSpawnQuestBypassResonateProxy(sceneId, pointId, pd, statuePos);
                 return;
             }
@@ -492,7 +493,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
 
     /**
      * For nations whose statue Talk blocks element resonate behind a quest (Natlan Pyro), spawn a
-     * small Worktop ring with option {@code 1159}「与镇石共鸣」so normal players can switch without
+     * small Worktop ring with option {@code 1159} "resonate with the statue" so normal players can switch without
      * {@code /se} and without {@code forcefinish}.
      */
     private void maybeSpawnQuestBypassResonateProxy(
@@ -563,7 +564,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             gadget.buildContent();
             if (gadget.getContent()
                     instanceof emu.grasscutter.game.entity.gadget.GadgetWorktop worktop) {
-                worktop.addWorktopOptions(new int[] {1159}); // 与镇石共鸣
+                worktop.addWorktopOptions(new int[] {1159}); // resonate with the statue
                 worktop.setOnSelectWorktopOptionEvent(
                         (ctx, option) -> {
                             try {
@@ -627,7 +628,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                                 ? pd.getRot()
                                 : new emu.grasscutter.game.world.Position());
 
-        // Thick Nod-Krai pillars block standing on center — ring of proxies + player/tranPos.
+        // Thick Nod-Krai pillars block standing on center - ring of proxies + player/tranPos.
         var spawnPoints = new java.util.ArrayList<emu.grasscutter.game.world.Position>();
         if (this.player.getPosition() != null) {
             spawnPoints.add(this.player.getPosition().clone());
@@ -679,9 +680,9 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             if (gadget.getContent()
                     instanceof emu.grasscutter.game.entity.gadget.GadgetWorktop worktop) {
                 // Client OptionExcel labels (stock client):
-                // 10010001 = 触摸 (Talk) — heal + offer
-                // 1159 = 与镇石共鸣 (Talk) — Traveler element resonate
-                // Do NOT use 1/2 (开门 / 解锁风场 gear icons).
+                // 10010001 = touch (Talk) - heal + offer
+                // 1159 = resonate with the statue (Talk) - Traveler element resonate
+                // Do NOT use 1/2 (open door / unlock wind field gear icons).
                 worktop.addWorktopOptions(new int[] {10010001, 1159});
                 worktop.setOnSelectWorktopOptionEvent(
                         (ctx, option) -> {
@@ -718,10 +719,10 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
 
     /**
      * Statue Worktop proxy (Nod-Krai / Snezhnaya). Uses client OptionExcel ids so the F-menu
-     * shows Talk-style labels instead of gear「开门/解锁风场」:
+     * shows Talk-style labels instead of the gear "open door / unlock wind field" ones:
      * <ul>
-     *   <li>{@code 10010001} 触摸 — heal + offer (+ auto-resonate if Traveler on-field)
-     *   <li>{@code 1159} 与镇石共鸣 — Traveler element resonate only
+     *   <li>{@code 10010001} touch - heal + offer (plus auto-resonate if the Traveler is on-field)
+     *   <li>{@code 1159} resonate with the statue - Traveler element resonate only
      * </ul>
      */
     private void handleStatueProxyOption(int areaId, int sceneId, int option) {
@@ -750,14 +751,14 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         }
 
         if (areaId <= 0) {
-            this.player.dropMessage("神像代理：已尝试回血");
+            this.player.dropMessage("Statue proxy: attempted to heal.");
             this.handleStatueResonate(areaId);
             return;
         }
         var city = sots.getCityByAreaId(areaId);
         if (city == null) {
             this.player.dropMessage(
-                    "神像代理：已回血（area=" + areaId + " 无城市绑定，无法供奉）");
+                    "Statue proxy: healed (area=" + areaId + " has no city binding, cannot offer).");
             this.handleStatueResonate(areaId);
             return;
         }
@@ -765,11 +766,11 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         int cityId = city.getCityId();
         String cityName =
                 switch (cityId) {
-                    case 7 -> "挪德卡莱";
-                    case 8 -> "至冬";
-                    case 6 -> "纳塔";
-                    case 5 -> "枫丹";
-                    default -> ("城市" + cityId);
+                    case 7 -> "Nod-Krai";
+                    case 8 -> "Snezhnaya";
+                    case 6 -> "Natlan";
+                    case 5 -> "Fontaine";
+                    default -> ("City " + cityId);
                 };
         var cityInfo = sots.getCityInfo(cityId);
 
@@ -790,23 +791,23 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
 
         int have = costItemId > 0 ? this.player.getInventory().getItemCountById(costItemId) : 0;
         if (costItemId <= 0) {
-            this.player.dropMessage("神像代理：已回血（" + cityName + " 已满级或无下一级）");
+            this.player.dropMessage("Statue proxy: healed (" + cityName + " is max level or has no next level).");
         } else if (have <= 0) {
             this.player.dropMessage(
-                    "神像代理：已回血。"
+                    "Statue proxy: healed. "
                             + cityName
-                            + " 需要神瞳 id="
+                            + " Requires oculus id="
                             + costItemId
-                            + "（至冬=107035，挪德卡莱=107030），背包没有");
+                            + " (Snezhnaya=107035, Nod-Krai=107030), which the inventory does not have.");
         } else {
             sots.levelUpSotS(areaId, sceneId, have);
             cityInfo = sots.getCityInfo(cityId);
             this.player.dropMessage(
                     String.format(
-                            "神像代理：%s area=%d 回血%s；神瞳%d×%d → city%d Lv.%d（结晶%d）",
+                            "Statue proxy: %s area=%d heal%s; oculi %d x%d -> city%d Lv.%d (crystals %d)",
                             cityName,
                             areaId,
-                            afterHpSum > beforeHpSum ? "成功" : "（已满）",
+                            afterHpSum > beforeHpSum ? "ok" : "(already full)",
                             costItemId,
                             have,
                             cityId,
@@ -822,13 +823,13 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
     private void handleStatueResonate(int areaId) {
         var element = this.resolveStatueElement(areaId);
         if (element == null || element.getDepotIndex() <= 0) {
-            this.player.dropMessage("神像共鸣：此区域未配置可共鸣元素");
+            this.player.dropMessage("Statue resonance: this area has no resonatable element configured.");
             return;
         }
 
         var entity = this.player.getTeamManager().getCurrentAvatarEntity();
         if (entity == null || entity.getAvatar() == null) {
-            this.player.dropMessage("神像共鸣：无当前角色");
+            this.player.dropMessage("Statue resonance: no active character.");
             return;
         }
         var avatar = entity.getAvatar();
@@ -836,19 +837,19 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         if (avatarId != emu.grasscutter.GameConstants.MAIN_CHARACTER_MALE
                 && avatarId != emu.grasscutter.GameConstants.MAIN_CHARACTER_FEMALE) {
             this.player.dropMessage(
-                    "神像共鸣：请先将旅行者设为当前角色，再选「与镇石共鸣」");
+                    "Statue resonance: make the Traveler the active character first, then pick resonate.");
             return;
         }
 
         String elemName =
                 switch (element) {
-                    case Wind -> "风";
-                    case Rock -> "岩";
-                    case Electric -> "雷";
-                    case Grass -> "草";
-                    case Water -> "水";
-                    case Fire -> "火";
-                    case Ice -> "冰";
+                    case Wind -> "Anemo";
+                    case Rock -> "Geo";
+                    case Electric -> "Electro";
+                    case Grass -> "Dendro";
+                    case Water -> "Hydro";
+                    case Fire -> "Pyro";
+                    case Ice -> "Cryo";
                     default -> element.name();
                 };
 
@@ -857,18 +858,18 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             if (this.player.getMainCharacterElement() == element
                     || (avatar.getSkillDepot() != null
                             && avatar.getSkillDepot().getElementType() == element)) {
-                this.player.dropMessage("神像共鸣：旅行者已是" + elemName + "元素");
+                this.player.dropMessage("Statue resonance: the Traveler is already " + elemName + ".");
             } else {
-                this.player.dropMessage("神像共鸣：无法切换到" + elemName + "（技能库缺失？）");
+                this.player.dropMessage("Statue resonance: cannot switch to " + elemName + " (missing skill depot?).");
             }
             return;
         }
 
         avatar.save();
         this.player.save();
-        // No quest force-finish — Archon quests stay receivable.
+        // No quest force-finish - Archon quests stay receivable.
         this.player.dropMessage(
-                "神像共鸣：旅行者已切换为" + elemName + "元素（不消耗任务进度）");
+                "Statue resonance: the Traveler switched to " + elemName + " (no quest progress consumed).");
     }
 
     /**
@@ -895,7 +896,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             case 4 -> emu.grasscutter.game.props.ElementType.Grass;
             case 5 -> emu.grasscutter.game.props.ElementType.Water;
             case 6 -> emu.grasscutter.game.props.ElementType.Fire;
-            case 7, 8 -> emu.grasscutter.game.props.ElementType.Ice; // 挪德卡莱/至冬（当前表）
+            case 7, 8 -> emu.grasscutter.game.props.ElementType.Ice; // Nod-Krai / Snezhnaya, per the current table
             default -> null;
         };
     }
@@ -929,7 +930,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                                                 .isGoddessNpc(born.getConfigId()));
                 if (!match) continue;
                 if (!this.player.getGoddessSuiteNotified().remove(born.getGroupId())) {
-                    // Suite already cleared this visit — still drop resonate proxies if any.
+                    // Suite already cleared this visit - still drop resonate proxies if any.
                     this.removeStatueWorktopProxies(pointId);
                     return;
                 }
@@ -992,25 +993,25 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         // Add the point to the list of unlocked points for its scene.
         this.player.getUnlockedScenePoints(sceneId).add(pointId);
 
-        // Map fog is statue-only (official: one SotS → one WorldArea). Waypoints/dungeon
-        // entries must not open areas — unlocking a Guili Plains TP was clearing 琼玑野 fog.
+        // Map fog is statue-only (official: one SotS gives one WorldArea). Waypoints and dungeon
+        // entries must not open areas - unlocking a Guili Plains TP was clearing Qiongji Yetan fog.
         if (isStatue && pointData != null && pointData.getAreaId() > 0) {
             this.unlockSceneAreaHierarchy(sceneId, pointData.getAreaId());
         }
 
         // Unlock rewards: statues vs waypoints/dungeon entries.
         if (isStatue) {
-            this.player.getInventory().addItem(201, 2888, ActionReason.UnlockPointReward); // 原石
-            this.player.getInventory().addItem(102, 800, ActionReason.UnlockPointReward); // 冒险阅历
-            this.player.getInventory().addItem(107009, 3, ActionReason.UnlockPointReward); // 脆弱树脂
-            this.player.getInventory().addItem(104003, 50, ActionReason.UnlockPointReward); // 大英雄的经验
-            this.player.getInventory().addItem(104013, 20, ActionReason.UnlockPointReward); // 精锻用魔矿
+            this.player.getInventory().addItem(201, 2888, ActionReason.UnlockPointReward); // primogems
+            this.player.getInventory().addItem(102, 800, ActionReason.UnlockPointReward); // adventure EXP
+            this.player.getInventory().addItem(107009, 3, ActionReason.UnlockPointReward); // fragile resin
+            this.player.getInventory().addItem(104003, 50, ActionReason.UnlockPointReward); // hero's wit
+            this.player.getInventory().addItem(104013, 20, ActionReason.UnlockPointReward); // mystic enhancement ore
         } else {
-            // 普通锚点 / 秘境入口
-            this.player.getInventory().addItem(201, 2888, ActionReason.UnlockPointReward); // 原石
-            this.player.getInventory().addItem(102, 300, ActionReason.UnlockPointReward); // 冒险阅历
-            this.player.getInventory().addItem(104003, 5, ActionReason.UnlockPointReward); // 大英雄的经验
-            this.player.getInventory().addItem(104013, 5, ActionReason.UnlockPointReward); // 精锻用魔矿
+            // Ordinary waypoint or domain entrance
+            this.player.getInventory().addItem(201, 2888, ActionReason.UnlockPointReward); // primogems
+            this.player.getInventory().addItem(102, 300, ActionReason.UnlockPointReward); // adventure EXP
+            this.player.getInventory().addItem(104003, 5, ActionReason.UnlockPointReward); // hero's wit
+            this.player.getInventory().addItem(104013, 5, ActionReason.UnlockPointReward); // mystic enhancement ore
         }
 
         // Fire quest trigger for trans point unlock.
@@ -1069,8 +1070,8 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
     }
 
     /**
-     * Unlock a world area and its hierarchy so statue fog matches the official “one statue → one
-     * region” behaviour (LEVEL_1 parent + LEVEL_2 children).
+     * Unlock a world area and its hierarchy so statue fog matches the official "one statue gives one
+     * region" behaviour (LEVEL_1 parent + LEVEL_2 children).
      */
     public void unlockSceneAreaHierarchy(int sceneId, int areaId) {
         if (areaId <= 0) return;
@@ -1123,7 +1124,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             if (this.player.isScenePointForceLocked(sceneId, pointId)) continue;
             var entry = GameData.getScenePointEntryById(sceneId, pointId);
             if (entry == null || entry.getPointData() == null) continue;
-            // Waypoints share areaId with statues — only SotS should justify fog.
+            // Waypoints share areaId with statues - only SotS should justify fog.
             if (!emu.grasscutter.game.managers.StatueTalkQuests.isStatuePoint(
                     entry.getPointData())) {
                 continue;

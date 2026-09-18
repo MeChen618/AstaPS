@@ -27,8 +27,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Spawn exploration / specialty markers near players on scene 3:
- * Nod-Krai (月神瞳/宝箱), Snezhnaya (冰神瞳/宝箱), Fontaine/Natlan/Sumeru
- * (水/火/草神瞳 + 宝箱 from region_explore_points.json), specialty plants.
+ * Nod-Krai (lunar oculi / chests), Snezhnaya (cryo oculi / chests), Fontaine/Natlan/Sumeru
+ * (hydro/pyro/dendro oculi plus chests from region_explore_points.json), specialty plants.
  */
 public final class NodKraiExploreSpawnHelper {
     private static final double NEAR_DIST = 120.0;
@@ -41,24 +41,24 @@ public final class NodKraiExploreSpawnHelper {
     private static final Path REGION_POINTS_FILE = Path.of("data", "region_explore_points.json");
     private static final Path CLAIMED_FILE = Path.of("data", "nodkrai_explore_claimed.json");
     private static final Path GUARD_KILL_FILE = Path.of("data", "nodkrai_guard_respawn.json");
-    /** Same as 讨伐: 12h after camp wipe before guards respawn. */
+    /** Same as the bounty system: 12h after a camp wipe before guards respawn. */
     private static final long GUARD_RESPAWN_MS = 12L * 60L * 60L * 1000L;
 
     // Exquisite/precious/remarkable: Nod-Krai handbook monsters (mapped to
     // closest existing ConfigMonster when assets missing).
-    // Common/mora: 讨伐普通 特辖队(84) + 巡陆艇(85)，每箱随机 5 只
-    private static final int GUARD_TOOTHTRAP = 24090101; // 讨伐精英 秘源机兵(74)
+    // Common/mora chests: bounty commons - Special Detachment (84) and Patrol Craft (85), 5 random per chest.
+    private static final int GUARD_TOOTHTRAP = 24090101; // bounty elite - Ruin Drake (74)
     private static final int[] COMMON_GUARD_POOL =
             new int[] {
-                // InvestigationMonsterConfig id=84 愚人众特辖队
+                // InvestigationMonsterConfig id=84 Fatui Special Detachment
                 23070101, 23070102, 23071101, 23071102, 23072101, 23073101, 23073102,
                 23074101, 23074102, 23075101, 23076101, 23076102, 23077101, 23077102,
                 23078101, 23078102, 23079101, 23079102, 23079201, 23079202, 23079301, 23079302,
-                // InvestigationMonsterConfig id=85 巡陆艇
+                // InvestigationMonsterConfig id=85 Patrol Craft
                 23080102, 23080201, 23080301, 23080302, 23080401, 23080402, 23080501,
                 23085101, 23085102, 23085201, 23085202, 23085301, 23085302
             };
-    // 精致/珍贵/奇藏/解密: 讨伐精英 霜夜灵嗣(82)+荒野狂猎(83)+蕴光异兽(86)，每箱 1 只
+    // Exquisite/precious/luxurious/puzzle chests: bounty elites 82, 83 and 86, one per chest.
     private static final int[] ELITE_GUARD_POOL =
             new int[] {
                 // id=82
@@ -69,7 +69,7 @@ public final class NodKraiExploreSpawnHelper {
                 // id=86
                 26300101, 26300201, 26300301
             };
-    // 至冬宝箱守卫: 愚人众
+    // Snezhnaya chest guards: Fatui.
     private static final int[] SNEZH_COMMON_GUARD_POOL =
             new int[] {
                 23020101, 23020102, 23021101, 23021102,
@@ -82,20 +82,20 @@ public final class NodKraiExploreSpawnHelper {
             };
     private static final int[] SNEZH_LUX_GUARD_POOL =
             new int[] {25080101, 25080201, 25080301, 25080401, 23060501};
-    // 须弥 3.6 宝箱守卫: 讨伐 丘丘游侠 (风/水)
+    // Sumeru 3.6 chest guards: bounty Hilichurl Rangers (anemo/hydro).
     private static final int[] SUMERU36_GUARD_POOL =
             new int[] {
                 21040101, 21040181, 21040182, // Anemo Hilichurl Rogue
                 21040201, 21040281, 21040282, 21040291, 21040292 // Hydro Hilichurl Rogue
             };
-    // 枫丹宝箱守卫 — 讨伐 Elite: 浊水幻灵(56)+隙境原体(57)+愚人众役人(60)
+    // Fontaine chest guards - bounty elites: 56, 57 and 60.
     private static final int[] FONTAINE_ELITE_GUARD_POOL =
             new int[] {
                 20051001, 20051101,
                 22110101, 22110201, 22110301, 22110402,
                 23060101, 23060201
             };
-    // 枫丹宝箱守卫 — 讨伐 Common: 发条机关(54)+原海异种(55)
+    // Fontaine chest guards - bounty commons: 54 and 55.
     private static final int[] FONTAINE_COMMON_GUARD_POOL =
             new int[] {
                 24060101, 24060102, 24065101, 24065102, 24060201, 24060202, 24065201, 24065202,
@@ -109,7 +109,7 @@ public final class NodKraiExploreSpawnHelper {
                 26155301, 26156101, 26156201, 26157101, 26157201, 26160101, 26160102, 26160201,
                 26160202, 26160301, 26160302
             };
-    // 纳塔宝箱守卫 — 讨伐 Common: 纳塔龙众(70)+部族龙形武士(71)
+    // Natlan chest guards - bounty commons: 70 and 71.
     private static final int[] NATLAN_COMMON_GUARD_POOL =
             new int[] {
                 26200101, 26200201, 26210101, 26210201, 26220101, 26220201,
@@ -118,7 +118,7 @@ public final class NodKraiExploreSpawnHelper {
                 25504101, 25504102, 25505101, 25505102, 25505201, 25505202,
                 25510101, 25510201, 25510301, 25510401, 25510501, 25510601
             };
-    // 纳塔宝箱守卫 — 讨伐 Elite: 大灵/熔岩游像/秘源机兵/深邃拟覆叶 等
+    // Natlan chest guards - bounty elites: greater spirits, lava statues, ruin drakes and similar.
     private static final int[] NATLAN_ELITE_GUARD_POOL =
             new int[] {
                 26190201, 26140201,
@@ -131,7 +131,7 @@ public final class NodKraiExploreSpawnHelper {
                 24110101, 24110111
             };
 
-    /** SW Hiisi open-sea map cursor — do not attach the three new camps here. */
+    /** SW Hiisi open-sea map cursor - do not attach the three new camps here. */
     private static final float EXCLUDE_X = 1650.0f;
     private static final float EXCLUDE_Z = 9100.0f;
     private static final double EXCLUDE_RADIUS = 450.0;
@@ -324,7 +324,7 @@ public final class NodKraiExploreSpawnHelper {
         int id = gid - SYNTH_GROUP_BASE;
         ensureClaimedLoaded();
         if (claimed.add(id)) {
-            // Chest is one-shot only. Do NOT wipe camp guards — they stay until killed
+            // Chest is one-shot only. Do NOT wipe camp guards - they stay until killed
             // and respawn on their own 12h timer via ensureGuards().
             try {
                 Scene scene = gadget.getScene();
@@ -375,7 +375,7 @@ public final class NodKraiExploreSpawnHelper {
 
                     boolean chestClaimed = claimed.contains(ep.id);
                     if (chestClaimed) {
-                        // Chest already looted once — still refresh/maintain guard camp.
+                        // Chest already looted once - still refresh/maintain guard camp.
                         if (wantsGuards(ep)) {
                             held.add(ep.id);
                             ensureGuards(scene, ep, player);
@@ -417,7 +417,7 @@ public final class NodKraiExploreSpawnHelper {
                 removeGroupEntities(scene, gid.intValue());
                 int id = gid.intValue() - SYNTH_GROUP_BASE;
                 held.remove(id);
-                // Leaving range is not a kill — clear hold without starting 12h cooldown.
+                // Leaving range is not a kill - clear hold without starting 12h cooldown.
                 guardHeld.remove(id);
             }
         } catch (Throwable ignored) {
@@ -444,7 +444,7 @@ public final class NodKraiExploreSpawnHelper {
         if (pos == null) return false;
         if (pos.getZ() >= 8800.0f) return true; // Nod-Krai
         if (inSnezhnayaBand(pos)) return true;
-        // Fontaine (incl. 4.0–4.6 Remuria / Nostoi)
+        // Fontaine (incl. 4.0-4.6 Remuria / Nostoi)
         if (pos.getZ() >= 2700.0f
                 && pos.getZ() <= 5600.0f
                 && pos.getX() >= 1000.0f
@@ -468,17 +468,17 @@ public final class NodKraiExploreSpawnHelper {
         return false;
     }
 
-    /** Snezhnaya explore ids are 10001–10486 (not Fontaine/Natlan/Sumeru36). */
+    /** Snezhnaya explore ids are 10001-10486 (not Fontaine/Natlan/Sumeru36). */
     private static boolean isSnezhnayaPoint(ExplorePoint ep) {
         return ep != null && ep.id >= 10000 && ep.id < 20000;
     }
 
-    /** region_explore_points.json Fontaine chests / hydro oculi (20000–29999). */
+    /** region_explore_points.json Fontaine chests / hydro oculi (20000-29999). */
     private static boolean isFontainePoint(ExplorePoint ep) {
         return ep != null && ep.id >= 20000 && ep.id < 30000;
     }
 
-    /** region_explore_points.json Natlan chests / pyro oculi (30000–39999). */
+    /** region_explore_points.json Natlan chests / pyro oculi (30000-39999). */
     private static boolean isNatlanPoint(ExplorePoint ep) {
         return ep != null && ep.id >= 30000 && ep.id < 40000;
     }
@@ -583,7 +583,7 @@ public final class NodKraiExploreSpawnHelper {
 
     private static int[] guardMonsterIds(ExplorePoint ep) {
         if (isFontainePoint(ep)) {
-            // 普通/摩拉: 发条+原海异种 3–5 只；精致及以上: 精英 1 只
+            // Common/mora: 3-5 clockwork and primordial beasts. Exquisite and above: one elite.
             if ("chest_common".equals(ep.kind) || "chest_mora".equals(ep.kind)) {
                 int n = 3 + Math.floorMod(ep.id, 3); // 3/4/5
                 return pickFromPool(FONTAINE_COMMON_GUARD_POOL, ep.id, n);
@@ -598,7 +598,7 @@ public final class NodKraiExploreSpawnHelper {
             return new int[0];
         }
         if (isNatlanPoint(ep)) {
-            // 普通/摩拉: 龙众+部族武士 5–6 只；精致及以上: 精英 1 只（按点位随机）
+            // Common/mora: 5-6 saurians and tribal warriors. Exquisite and above: one elite, seeded per point.
             if ("chest_common".equals(ep.kind) || "chest_mora".equals(ep.kind)) {
                 int n = 5 + Math.floorMod(ep.id, 2); // 5/6
                 return pickFromPool(NATLAN_COMMON_GUARD_POOL, ep.id, n);
@@ -613,7 +613,7 @@ public final class NodKraiExploreSpawnHelper {
             return new int[0];
         }
         if (isSumeru36Point(ep)) {
-            // 须弥 3.6 摩拉/精致宝箱: 各挂 1 只丘丘游侠
+            // Sumeru 3.6 mora and exquisite chests: one Hilichurl Ranger each.
             if ("chest_mora".equals(ep.kind)
                     || "chest_common".equals(ep.kind)
                     || "chest_exquisite".equals(ep.kind)
@@ -644,11 +644,11 @@ public final class NodKraiExploreSpawnHelper {
         if (isImportedRegionPoint(ep)) {
             return new int[0];
         }
-        // 普通 / 摩拉箱: 从特辖队+巡陆艇池中按点位种子随机抽 5 只
+        // Common and mora chests: 5 drawn from the detachment and patrol-craft pools, seeded per point.
         if ("chest_common".equals(ep.kind) || "chest_mora".equals(ep.kind)) {
             return pickFromPool(COMMON_GUARD_POOL, ep.id, 5);
         }
-        // 精致 / 珍贵 / 奇藏 / 解密: 蕴光异兽+霜夜灵嗣池，每箱 1 只
+        // Exquisite, precious, luxurious and puzzle chests: one from the two elite pools.
         if ("chest_exquisite".equals(ep.kind)
                 || "chest_precious".equals(ep.kind)
                 || "chest_remarkable".equals(ep.kind)
@@ -656,14 +656,14 @@ public final class NodKraiExploreSpawnHelper {
             if (isExcludedGuardSpot(ep)) return new int[0];
             return pickFromPool(ELITE_GUARD_POOL, ep.id, 1);
         }
-        // 华丽: 讨伐精英 秘源机兵(74)
+        // Luxurious: bounty elite Ruin Drake (74).
         if ("chest_luxurious".equals(ep.kind)) {
             return new int[] {GUARD_TOOTHTRAP};
         }
         return new int[0];
     }
 
-    /** Deterministic pick of n IDs from pool (same chest → same set). */
+    /** Deterministic pick of n IDs from pool (same chest gives the same set). */
     private static int[] pickFromPool(int[] poolSrc, int pointId, int n) {
         ArrayList<Integer> pool = new ArrayList<Integer>(poolSrc.length);
         for (int id : poolSrc) {
@@ -707,12 +707,12 @@ public final class NodKraiExploreSpawnHelper {
             guardHeld.add(ep.id);
             return;
         }
-        // Still some alive → do not refill mid-fight / mid-camp.
+        // Still some alive - do not refill mid-fight / mid-camp.
         if (countAliveGuards(scene, ep) > 0) {
             guardHeld.add(ep.id);
             return;
         }
-        // Camp wiped while we were holding it → start 12h timer.
+        // Camp wiped while we were holding it - start the 12h timer.
         if (guardHeld.remove(ep.id)) {
             markGuardsKilled(ep.id);
         }
@@ -792,14 +792,14 @@ public final class NodKraiExploreSpawnHelper {
     private static int resolveGadgetId(int gadgetId) {
         switch (gadgetId) {
             case 70210011:
-                return 70211101; // 普通的宝箱
+                return 70211101; // common chest
             case 70210021:
-                return 70211111; // 精致的宝箱
+                return 70211111; // exquisite chest
             case 70210031:
-                return 70211121; // 珍贵的宝箱
+                return 70211121; // precious chest
             case 70210041:
             case 70210051:
-                return 70211131; // 华丽的宝箱
+                return 70211131; // luxurious chest
             default:
                 return gadgetId;
         }
@@ -811,7 +811,7 @@ public final class NodKraiExploreSpawnHelper {
      * translating them would make DropSystem.queryDropData miss and silently drop no loot at all.
      * Written as escapes so this source stays pure ASCII while the keys remain byte-identical.
      */
-    /** Region-aware drop tags so WorldChestLootHelper grants the correct 之印. */
+    /** Region-aware drop tags so WorldChestLootHelper grants the correct region sigil. */
     private static String dropTagForKind(ExplorePoint ep) {
         String region = regionNameForPoint(ep);
         String kind = ep != null ? ep.kind : null;
@@ -858,7 +858,7 @@ public final class NodKraiExploreSpawnHelper {
             meta.isOneoff = true;
             gadget.setMetaGadget(meta);
         }
-        // Specialty materials: force gather item (needed when GatherExcel has no row, e.g. 子探测单元)
+        // Specialty materials: force gather item, needed when GatherExcel has no row for it.
         if (ep.itemId > 0) {
             try {
                 SpawnDataEntry entry = new SpawnDataEntry();
