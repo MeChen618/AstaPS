@@ -15,12 +15,12 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 神樱交互兜底：
+ * Sacred Sakura interaction fallback:
  *
  * <ul>
- *   <li>绝不删除脚本组实体（133220200 / config 200001）
- *   <li>仅在存在真实脚本神樱时，拆除我们自己的合成重复体
- *   <li>一个都没有时再补刷
+ *   <li>Never delete the script group entity (133220200 / config 200001)
+ *   <li>Only tear down our own synthesised duplicate when a real scripted sakura exists
+ *   <li>Spawn one only when none exists at all
  * </ul>
  */
 public final class OfferingSpawnHelper {
@@ -33,7 +33,7 @@ public final class OfferingSpawnHelper {
     private static final float LEAVE_DIST = 180f;
     private static final long CHECK_INTERVAL_MS = 2000L;
 
-    /** 脚本位：scene3_group133220200 config 200001 */
+    /** Script slot: scene3_group133220200 config 200001. */
     private static final Position SAKURA_POS =
             new Position(-2465.643f, 449.196f, -4422.203f);
 
@@ -95,7 +95,7 @@ public final class OfferingSpawnHelper {
             }
         }
 
-        // 有真实脚本/出生点实体：只拆合成重复，绝不删真实体
+        // A real scripted or born entity exists: remove only synthesised duplicates, never the real one.
         if (!realOnes.isEmpty()) {
             for (EntityGadget g : synthOnes) {
                 scene.removeEntity(g, VisionType.VisionType_VISION_REMOVE);
@@ -113,7 +113,7 @@ public final class OfferingSpawnHelper {
             return;
         }
 
-        // 仅有合成：保证只留一个且可交互
+        // Only synthesised ones: keep exactly one and make sure it is interactable.
         if (!synthOnes.isEmpty()) {
             EntityGadget keep = synthOnes.get(0);
             for (int i = 1; i < synthOnes.size(); i++) {
@@ -125,7 +125,7 @@ public final class OfferingSpawnHelper {
             return;
         }
 
-        // 一个都没有 → 补刷（脚本组未加载时）
+        // None at all: spawn one, which happens when the script group is not loaded.
         spawnSynth(scene);
     }
 
@@ -182,7 +182,7 @@ public final class OfferingSpawnHelper {
         return out;
     }
 
-    /** 挂 GadgetOffering + 强制可交互，必要时给客户端重发 Appear。 */
+    /** Attaches GadgetOffering, forces interactability and re-sends Appear to the client when needed. */
     private static void ensureInteractable(Scene scene, EntityGadget g) {
         try {
             boolean needRefresh = false;
@@ -196,7 +196,7 @@ public final class OfferingSpawnHelper {
             } else {
                 g.setInteractEnabled(true);
             }
-            // 每个实体只强制刷新一次，避免刷屏；保证 offering_info 进客户端
+            // Force-refresh each entity only once to avoid spam, while still getting offering_info to the client.
             if (needRefresh || refreshedEntityIds.add(g.getId())) {
                 scene.broadcastPacket(new PacketSceneEntityAppearNotify(g));
                 Grasscutter.getLogger()
@@ -212,7 +212,7 @@ public final class OfferingSpawnHelper {
         }
     }
 
-    /** 仅回收合成体；真实脚本实体永不因远离删除。 */
+    /** Reclaims synthesised entities only; a real scripted entity is never removed for being far away. */
     private static void maybeDespawnSynthOnly(Scene scene) {
         if (!spawnedSakura) {
             return;

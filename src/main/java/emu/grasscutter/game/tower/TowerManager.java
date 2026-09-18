@@ -21,7 +21,7 @@ import lombok.*;
 public class TowerManager extends BasePlayerManager {
     /**
      * Mid-half black screen via {@code ShowLoadingScreen} template 7 ({@code ENTER_TOWER}). Client
-     * LoadingTips text (海豹 etc.) is accepted as-is — tip wording is not fixed here.
+     * LoadingTips text (seal etc.) is accepted as-is — tip wording is not fixed here.
      */
     private static final int MID_HALF_CUTSCENE_ID = 59;
     /** {@code SITUATION_TYPE_ENTER_TOWER} — black dungeon loading screen. */
@@ -41,7 +41,7 @@ public class TowerManager extends BasePlayerManager {
     @Getter private int currentTimeLimit;
     private boolean forceChamberOneOnEnter;
     /**
-     * After 「重新配置队伍」, Lua must not ActiveChallenge again — that restarts the timer and blocks
+     * After "reconfigure team", Lua must not ActiveChallenge again — that restarts the timer and blocks
      * the in-dungeon team UI (logs show getCurLevelStars resume with remaining≈full).
      */
     @Getter private boolean awaitingTeamReconfigure;
@@ -61,13 +61,13 @@ public class TowerManager extends BasePlayerManager {
      */
     private List<List<Long>> pendingMidHalfTeamGuids;
     /**
-     * Remaining seconds after 上半 success ({@code TPL_TIME}). Kept on the manager so lower-half
+     * Remaining seconds after the upper half success ({@code TPL_TIME}). Kept on the manager so lower-half
      * {@code ActiveChallenge} cannot fall back to elapsed/~27s if the lua group var is raced.
      */
     @Getter private int abyssCarryRemainingSeconds;
 
     /**
-     * Active ConfigLevelEntity names for this tower run (渊月祝福 + floor LevelEntity). Empty outside
+     * Active ConfigLevelEntity names for this tower run (abyssal moon blessing + floor LevelEntity). Empty outside
      * a tower dungeon handoff.
      */
     @Getter private final List<String> activeLevelEntityConfigs = new ArrayList<>();
@@ -148,7 +148,7 @@ public class TowerManager extends BasePlayerManager {
         inProgress = true;
         currentTimeLimit = challenge != null ? challenge.getTimeLimit() : 0;
 
-        // Re-assert 上半/下半 when each half's challenge actually starts (client often resets the label).
+        // Re-assert the upper half/the lower half when each half's challenge actually starts (client often resets the label).
         notifyCurLevelRecordChange();
 
         // Hide the start-key prompt once the challenge is live.
@@ -247,8 +247,8 @@ public class TowerManager extends BasePlayerManager {
     }
 
     /**
-     * Restart the <b>current chamber</b> (not chamber 1). Used by 「重新挑战」/「重新配置队伍」so a
-     * retry on 第3间 stays on 第3间. Resets to 上半 with full chamber-start HP/energy.
+     * Restart the <b>current chamber</b> (not chamber 1). Used by "retry"/"reconfigure team"so a
+     * retry on chamber 3 stays on chamber 3. Resets to the upper half with full chamber-start HP/energy.
      */
     public void restartCurrentChamber() {
         int floorId = getTowerData().currentFloorId;
@@ -266,7 +266,7 @@ public class TowerManager extends BasePlayerManager {
         currentPossibleStars = 3;
         forceChamberOneOnEnter = false;
 
-        // Stay on this chamber; always retry from 上半.
+        // Stay on this chamber; always retry from the upper half.
         getTowerData().abyssTempTeamIndex = 0;
         resetTowerScriptStage();
 
@@ -400,7 +400,7 @@ public class TowerManager extends BasePlayerManager {
     }
 
     /**
-     * Unlock skipped floors with full stars (星之秘宝 still claimable) and grant 间之秘宝 for those
+     * Unlock skipped floors with full stars (star treasure still claimable) and grant chamber treasure for those
      * chambers. {@code skipToFloorIndex} is what the client uses to open mid-abyss directly.
      */
     private void applySkipFloorUnlock(
@@ -446,7 +446,7 @@ public class TowerManager extends BasePlayerManager {
             player.getInventory()
                     .addItems(items, emu.grasscutter.game.props.ActionReason.TowerSkipFloorReward);
             data.skipFloorGrantedRewards = granted;
-            data.skipFloorState = 3; // TAKEN_REWARD (间之秘宝 already granted; 星之秘宝 still manual)
+            data.skipFloorState = 3; // TAKEN_REWARD (chamber treasure already granted; star treasure still manual)
         } else {
             data.skipFloorState = 2; // HAS_REWARD
         }
@@ -462,7 +462,7 @@ public class TowerManager extends BasePlayerManager {
         for (int i = 0; i < LEVELS_PER_FLOOR; i++) {
             record.setLevelStars(firstLevelId + i, STARS_PER_LEVEL);
         }
-        // Leave floorStarRewardProgress at 0 so 星之秘宝 can still be claimed.
+        // Leave floorStarRewardProgress at 0 so star treasure can still be claimed.
         record.setFloorStarRewardProgress(0);
     }
 
@@ -570,8 +570,8 @@ public class TowerManager extends BasePlayerManager {
             return;
         }
         int floorId = floorData.getFloorId();
-        // Resume at the first uncleared chamber. Always resetting to 第1间 after「打完第一间退出领奖励」
-        // forced a full floor redo and left 星之秘宝 / 间之秘宝 claim state inconsistent for 第2/3间.
+        // Resume at the first uncleared chamber. Always resetting to chamber 1 after"clear chamber 1, leave, claim rewards"
+        // forced a full floor redo and left star treasure / chamber treasure claim state inconsistent for chambers 2 and 3.
         int resumeChamber = findResumeChamberIndex(floorId); // 0-based
         if (resumeChamber <= 0) {
             applyFloorStart(floorId);
@@ -608,7 +608,7 @@ public class TowerManager extends BasePlayerManager {
 
     /**
      * First 0-based chamber index with no stars yet. Returns 0 when the floor is empty or already
-     * full (full → restart from 第1间).
+     * full (full → restart from chamber 1).
      */
     private int findResumeChamberIndex(int floorId) {
         int firstLevelId = getFirstLevelId(floorId);
@@ -672,7 +672,7 @@ public class TowerManager extends BasePlayerManager {
 
     /**
      * Prefer server-tracked remaining for lower-half ActiveChallenge when lua TPL_TIME looks wrong
-     * (elapsed / seconds-only / wiped). Returns {@code luaTime} unchanged for fresh 上半 (600).
+     * (elapsed / seconds-only / wiped). Returns {@code luaTime} unchanged for a fresh upper half (600).
      */
     public int resolveAbyssChallengeTimeLimit(int luaTimeLimitOrGroupId) {
         // Fresh upper half always starts at full chamber time (typically 600).
@@ -812,9 +812,9 @@ public class TowerManager extends BasePlayerManager {
         var dungeonId = levelData.getDungeonId();
 
         notifyCurLevelRecordChange();
-        // Resolve 渊月祝福 / floor LevelEntity before handoff so enter-scene ability blocks include them.
+        // Resolve abyssal moon blessing / floor LevelEntity before handoff so enter-scene ability blocks include them.
         refreshLevelEntityConfigs();
-        // Always enter a chamber on 上半 team + 1号位.
+        // Always enter a chamber on the upper-half team + slot 1.
         getTowerData().abyssTempTeamIndex = 0;
         if (!player.getTeamManager().hasTemporaryTeam()) {
             ensureAbyssTemporaryTeams();
@@ -928,7 +928,7 @@ public class TowerManager extends BasePlayerManager {
 
     public void notifyCurLevelRecordChangeWhenDone(int stars) {
         // Premature settle during mid-half must not advance the chamber or flip team index
-        // back to 上半 — that cancels applyMidHalfTeamSwap.
+        // back to the upper half — that cancels applyMidHalfTeamSwap.
         if (midHalfCutscenePending) {
             Grasscutter.getLogger()
                     .warn(
@@ -954,14 +954,14 @@ public class TowerManager extends BasePlayerManager {
         }
 
         this.getTowerData().currentLevel++;
-        // Next chamber always begins on 上半 / team 0.
+        // Next chamber always begins on the upper half / team 0.
         getTowerData().abyssTempTeamIndex = 0;
 
         if (!this.hasNextLevel()) {
             // Unlock the next floor in the record map, but do NOT jump CurLevelRecord onto it.
-            // applyFloorStart(next) + notify(next,1) made the client show「是否继续挑战」on the next
-            // floor and blocked 领取奖励 for this floor's remaining 星之秘宝 (6/9 after an early 3-star
-            // claim, or 第2/3间 after「打完第一间退出领奖」).
+            // applyFloorStart(next) + notify(next,1) made the client show"continue challenge?"on the next
+            // floor and blocked claiming rewards for this floor's remaining star treasure (6/9 after an early 3-star
+            // claim, or chambers 2 and 3 after"clear chamber 1, leave, claim").
             var nextFloorId = this.getNextFloorId();
             if (nextFloorId > 0) {
                 recordMap.computeIfAbsent(nextFloorId, TowerLevelRecord::new);
@@ -1088,7 +1088,7 @@ public class TowerManager extends BasePlayerManager {
         if (progress == claimed) return false;
 
         if (!items.isEmpty()) {
-            // Merge stacks so the obtain popup shows totals (e.g. 150 原石) not three tiny bursts.
+            // Merge stacks so the obtain popup shows totals (e.g. 150 primogems) not three tiny bursts.
             var merged = new java.util.LinkedHashMap<Integer, Integer>();
             for (var item : items) {
                 merged.merge(item.getItemId(), item.getCount(), Integer::sum);
@@ -1137,7 +1137,7 @@ public class TowerManager extends BasePlayerManager {
         }
 
         // Upper-half challenge often stays inProgress through MirrorTeamSetUp — that keeps the
-        // left HUD on 「上半」 and keeps star-timer ticks going. Finish it quietly as success.
+        // left HUD on 「the upper half」 and keeps star-timer ticks going. Finish it quietly as success.
         inProgress = false;
         try {
             var scene = player.getScene();
@@ -1167,7 +1167,7 @@ public class TowerManager extends BasePlayerManager {
                         delayTicks,
                         bornPos);
 
-        // Flip UI to 下半 during the hold.
+        // Flip UI to the lower half during the hold.
         player
                 .getSession()
                 .send(
@@ -1340,7 +1340,7 @@ public class TowerManager extends BasePlayerManager {
             scene.broadcastPacket(new PacketScenePlayerLocationNotify(scene));
         }
 
-        // teamId 0 = 上半, 1+ = 下半 — force is_upper_part=false onto the wire (proto3 omits false).
+        // teamId 0 = the upper half, 1+ = the lower half — force is_upper_part=false onto the wire (proto3 omits false).
         boolean isUpper = teamId <= 0;
         player.sendPacket(PacketTowerCurLevelRecordChangeNotify.empty());
         player
@@ -1348,7 +1348,7 @@ public class TowerManager extends BasePlayerManager {
                 .send(
                         new PacketTowerCurLevelRecordChangeNotify(
                                 getTowerData().currentFloorId, getCurrentLevel(), isUpper, player));
-        // Refresh star objectives under the 下半 label.
+        // Refresh star objectives under the the lower half label.
         player
                 .getSession()
                 .send(
@@ -1358,7 +1358,7 @@ public class TowerManager extends BasePlayerManager {
         this.fillTeamEnergy();
         // Lower team entities are new — re-attach moon blessing / floor LevelEntity abilities.
         notifyTowerLevelEntityAbilities();
-        // Re-assert 下半 after ability/team packets (client often snaps back to 上半).
+        // Re-assert the lower half after ability/team packets (client often snaps back to the upper half).
         for (int sec : new int[] {1, 2, 3}) {
             final int at = sec;
             player

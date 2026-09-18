@@ -328,12 +328,12 @@ public final class SkirkCunningHelper {
     }
 
     /**
-     * 固有天赋「理外之理」：吸收虚境裂隙应回复 8 点蛇之狡计。
+     * The passive talent should restore 8 Serpent's Subtlety when a Void Rift is absorbed.
      *
-     * <p>配置里 {@code SkirkNew_Pickable_Energy_Revive} 默认是 0，且 {@code AddSpecialEnergy}
-     * 同时写了 {@code "ratio": 0.0} 与 {@code "value": "SkirkNew_Pickable_Energy_Revive"}。
-     * Gson 只绑定了 ratio，字符串 key 被丢掉，所以这里补上 special，并在
-     * {@link emu.grasscutter.game.ability.actions.ActionAddSpecialEnergy} 里显式取值。
+     * <p>In the config {@code SkirkNew_Pickable_Energy_Revive} defaults to 0, and {@code AddSpecialEnergy}
+     * carries both {@code "ratio": 0.0} and {@code "value": "SkirkNew_Pickable_Energy_Revive"}.
+     * Gson binds only ratio and drops the string key, so special is supplied here and read explicitly in
+     * {@link emu.grasscutter.game.ability.actions.ActionAddSpecialEnergy}.
      */
     public static void ensurePickableEnergyReviveSpecial(Ability ability, GameEntity gameEntity) {
         if (ability == null || !SkirkCunningHelper.isSkirk(gameEntity)) {
@@ -359,7 +359,7 @@ public final class SkirkCunningHelper {
         }
     }
 
-    /** 是否为 Avatar_SkirkNew_Pickable_Handler（声明裂隙回能 special）。 */
+    /** Whether this is Avatar_SkirkNew_Pickable_Handler, which declares the rift energy special. */
     public static boolean isPickableEnergyAbility(Ability ability) {
         if (ability == null) {
             return false;
@@ -379,8 +379,8 @@ public final class SkirkCunningHelper {
     }
 
     /**
-     * 虚境裂隙吸收应回复的蛇之狡计量。
-     * 非 Pickable 能力、缺天赋、或仍是配置里的 0 占位时返回 0。
+     * How much Serpent's Subtlety absorbing a Void Rift should restore.
+     * Returns 0 for a non-Pickable ability, a missing passive, or the placeholder 0 still in the config.
      */
     public static float resolvePickableEnergyRevive(Ability ability) {
         if (!SkirkCunningHelper.isPickableEnergyAbility(ability)) {
@@ -396,7 +396,7 @@ public final class SkirkCunningHelper {
         return 0.0f;
     }
 
-    /** 在实体上查找 Avatar_SkirkNew_Pickable_Handler，供 meta-energy 兜底。 */
+    /** Finds Avatar_SkirkNew_Pickable_Handler on the entity, for the meta-energy fallback. */
     public static Ability findPickableHandlerAbility(GameEntity gameEntity) {
         if (gameEntity == null) {
             return null;
@@ -440,7 +440,7 @@ public final class SkirkCunningHelper {
 
     /**
      * Client muteRemoteAction often skips AddSpecialEnergy. Only trust the absorb latch
-     * {@code _ABILITY_SkirkNew_Pickable_Count} (0→1 when Avatar_SkirkNew_Pickable starts).
+     * {@code _ABILITY_SkirkNew_Pickable_Count} (0 to 1 when Avatar_SkirkNew_Pickable starts).
      *
      * <p>Do NOT use {@code Pickable_Count_Temp}: that is a nearby-rift scan counter updated every
      * think interval and was incorrectly topping the bar to 100.
@@ -498,7 +498,7 @@ public final class SkirkCunningHelper {
     }
 
     /** Shared dedupe for GV latch and AddSpecialEnergy so one absorb cannot grant twice. */
-        /** 同一吸收只允许发一次 +8，防止 GV/AddSpecialEnergy 双通道重复。 */
+        /** Only one +8 per absorb, so the GV and AddSpecialEnergy paths cannot both fire. */
     public static boolean tryMarkPickableGrant(int entityId) {
         long now = System.currentTimeMillis();
         Long last = lastPickableSafetyGrantMs.put(entityId, now);
@@ -507,7 +507,7 @@ public final class SkirkCunningHelper {
 
     private static final ConcurrentHashMap<Integer, Long> lastPickableSafetyGrantMs = new ConcurrentHashMap<>();
 
-        /** 配置里 ratio 被写成 0 的 DynamicFloat 时，仍识别为裂隙回能。 */
+        /** Still recognised as rift energy when the config writes ratio as a DynamicFloat of 0. */
     public static boolean isPickableEnergyReviveRatio(DynamicFloat dynamicFloat) {
         if (dynamicFloat == null || !dynamicFloat.isDynamic()) {
             return false;
