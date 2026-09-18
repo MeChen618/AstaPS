@@ -22,14 +22,14 @@ import java.util.Locale;
 import java.util.Map;
 
 /**
- * Substitute for inventory「前往采集」.
+ * Substitute for the inventory "go gather" action.
  * Official material-icon pins are drawn by the client from Scene gather data (not MapMarks).
  * PS builds often lack that data for Natlan, so the button does nothing.
  * We place named MapMarks + optional detector hints from specialty_materials_points.json.
  */
 public final class SpecialtyMaterialTrackHelper {
     private static final Path MATERIALS_FILE = Path.of("data", "specialty_materials_points.json");
-    private static final String MARK_PREFIX = "特产:";
+    private static final String MARK_PREFIX = "Specialty:";
     private static final String LEGACY_PREFIX = "mat:";
     private static volatile Map<Integer, List<Position>> byItemId;
 
@@ -69,23 +69,23 @@ public final class SpecialtyMaterialTrackHelper {
     private static String displayName(int itemId) {
         switch (itemId) {
             case 101253:
-                return "枯叶紫英";
+                return "Purpurbloom";
             case 101255:
-                return "琉鳞石";
+                return "Dracolite";
             case 101254:
-                return "裂空晶花";
+                return "Skysplit Gem";
             case 101235:
-                return "柔灯铃";
+                return "Lumidouce Bell";
             case 101268:
-                return "冬日冰原";
+                return "Icegrass";
             case 101269:
-                return "松脂琥珀";
+                return "Pine Amber";
             case 101231:
-                return "茉洁草";
+                return "Clearwater Grass";
             case 101232:
-                return "苍晶螺";
+                return "Pale Crystal Shell";
             default:
-                return "材料" + itemId;
+                return "Material " + itemId;
         }
     }
 
@@ -93,15 +93,26 @@ public final class SpecialtyMaterialTrackHelper {
         return name != null
                 && (name.startsWith(MARK_PREFIX)
                         || name.startsWith(LEGACY_PREFIX)
-                        || name.startsWith("枯叶")
-                        || name.startsWith("琉鳞")
-                        || name.startsWith("柔灯")
-                        || name.startsWith("冬日")
-                        || name.startsWith("松脂")
-                        || name.startsWith("裂空")
-                        || name.startsWith("茉洁")
-                        || name.startsWith("苍晶")
-                        || name.startsWith("材料"));
+                        || name.startsWith("Purpurbloom")
+                        || name.startsWith("Dracolite")
+                        || name.startsWith("Lumidouce")
+                        || name.startsWith("Icegrass")
+                        || name.startsWith("Pine")
+                        || name.startsWith("Skysplit")
+                        || name.startsWith("Clearwater")
+                        || name.startsWith("Pale")
+                        || name.startsWith("Material")
+                        // Legacy marks created before the rename still carry the old Chinese names.
+                        // Kept as escapes so /trackmat clear can still remove them.
+                        || name.startsWith("\u67af\u53f6")
+                        || name.startsWith("\u7409\u9cde")
+                        || name.startsWith("\u67d4\u706f")
+                        || name.startsWith("\u51ac\u65e5")
+                        || name.startsWith("\u677e\u8102")
+                        || name.startsWith("\u88c2\u7a7a")
+                        || name.startsWith("\u8309\u6d01")
+                        || name.startsWith("\u82cd\u6676")
+                        || name.startsWith("\u6750\u6599"));
     }
 
     public static int resolveItemId(String token) {
@@ -113,18 +124,12 @@ public final class SpecialtyMaterialTrackHelper {
         }
         String t = token.toLowerCase(Locale.ROOT);
         Map<String, Integer> aliases = new HashMap<>();
-        aliases.put("枯叶紫英", 101253);
         aliases.put("purpurbloom", 101253);
         aliases.put("withering", 101253);
-        aliases.put("琉鳞石", 101255);
         aliases.put("dracolite", 101255);
-        aliases.put("裂空晶花", 101254);
         aliases.put("skysplit", 101254);
-        aliases.put("柔灯铃", 101235);
         aliases.put("lumidouce", 101235);
-        aliases.put("冬日冰原", 101268);
         aliases.put("icelea", 101268);
-        aliases.put("松脂琥珀", 101269);
         aliases.put("pineamber", 101269);
         aliases.put("pine", 101269);
         Integer id = aliases.get(t);
@@ -175,7 +180,7 @@ public final class SpecialtyMaterialTrackHelper {
         } catch (Throwable ignored) {
         }
         player.getSession().send(new PacketMarkMapRsp(marks));
-        // Detector notify carries materialId — client may show material-icon style hints.
+        // Detector notify carries materialId - client may show material-icon style hints.
         try {
             player.getSession().send(new PacketOneoffGatherPointDetectorDataNotify(itemId, points));
         } catch (Throwable t) {

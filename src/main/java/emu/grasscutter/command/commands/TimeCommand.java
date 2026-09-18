@@ -22,14 +22,14 @@ public final class TimeCommand implements CommandHandler {
             return;
         }
         if (targetPlayer == null) {
-            CommandHandler.sendMessage(sender, "请指定目标玩家 @UID。");
+            CommandHandler.sendMessage(sender, "Specify a target player with @UID.");
             return;
         }
 
         switch (args.get(0).toLowerCase()) {
             case "get" -> {
                 int minutes = targetPlayer.getWorld().getGameTime();
-                CommandHandler.sendMessage(sender, "当前游戏内时间: " + formatTime(minutes) + "。");
+                CommandHandler.sendMessage(sender, "Current in-game time: " + formatTime(minutes) + ".");
             }
             case "set" -> {
                 if (args.size() < 2) {
@@ -38,7 +38,7 @@ public final class TimeCommand implements CommandHandler {
                 }
                 int[] hm = parseTime(args.get(1));
                 if (hm == null) {
-                    CommandHandler.sendMessage(sender, "时间格式错误，应为 HH:mm（如 10:00）。");
+                    CommandHandler.sendMessage(sender, "Bad time format; expected HH:mm, for example 10:00.");
                     return;
                 }
                 boolean animate = args.size() >= 3 && parseBool(args.get(2));
@@ -54,12 +54,12 @@ public final class TimeCommand implements CommandHandler {
                 }
                 int[] hm = parseTime(args.get(1));
                 if (hm == null) {
-                    CommandHandler.sendMessage(sender, "时长格式错误，应为 HH:mm（如 00:10 或 10:00）。");
+                    CommandHandler.sendMessage(sender, "Bad duration format; expected HH:mm, for example 00:10.");
                     return;
                 }
                 int step = hm[0] * 60 + hm[1];
                 if (step == 0) {
-                    CommandHandler.sendMessage(sender, "步进时长为 0，未做修改。");
+                    CommandHandler.sendMessage(sender, "Step duration is 0; nothing changed.");
                     return;
                 }
                 boolean animate = args.size() >= 3 && parseBool(args.get(2));
@@ -87,8 +87,8 @@ public final class TimeCommand implements CommandHandler {
             CommandHandler.sendMessage(
                     sender,
                     isStep
-                            ? "时间已步进到 " + formatTime(targetMinute) + "。"
-                            : "时间已设置为 " + formatTime(targetMinute) + "。");
+                            ? "Time stepped to " + formatTime(targetMinute) + "."
+                            : "Time set to " + formatTime(targetMinute) + ".");
             return;
         }
 
@@ -118,11 +118,11 @@ public final class TimeCommand implements CommandHandler {
                 20);
         CommandHandler.sendMessage(
                 sender,
-                (isStep ? "时间正在平滑步进到 " : "时间正在平滑过渡到 ")
+                (isStep ? "Time is smoothly stepping to " : "Time is smoothly transitioning to ")
                         + formatTime(targetMinute)
-                        + "（"
+                        + " ("
                         + seconds
-                        + " 秒动画）。");
+                        + "s animation).");
     }
 
     /** Formats a minute-of-day (0-1439) value as {@code HH:mm}. */
