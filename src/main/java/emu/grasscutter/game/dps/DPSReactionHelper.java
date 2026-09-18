@@ -548,7 +548,7 @@ public final class DPSReactionHelper {
             return "Astral Swirl";
         }
         if (s.contains("moonshock")
-                || (s.contains("moon") && (s.contains("shock") || s.contains("感电")))) {
+                || (s.contains("moon") && (s.contains("shock") || s.contains("\u611f\u7535")))) {
             return "Lunar Charged";
         }
         if (s.contains("moonovergrow")
@@ -558,31 +558,32 @@ public final class DPSReactionHelper {
         }
         if (s.contains("mooncrystal")
                 || s.contains("mooncrystall")
-                || (s.contains("moon") && (s.contains("crystal") || s.contains("结晶")))) {
+                || (s.contains("moon") && (s.contains("crystal") || s.contains("\u7ed3\u6676")))) {
             return "Lunar Crystallize";
         }
 
-        // The Chinese literals below are NOT display text and must stay in Chinese: they are matched
+        // The escaped literals below are NOT display text and must stay as they are: they are matched
         // against ability and reaction identifiers coming from the game's own data, which is Chinese on
-        // a CN client. Translating them would make these branches silently stop matching.
+        // a CN client. They are written as escapes to keep this source pure ASCII. Translating or deleting
+        // them would make these branches silently stop matching.
         if (s.contains("vaporize")
-                || s.contains("蒸发")
+                || s.contains("\u84b8\u53d1")
                 || (s.contains("steam") && s.contains("reaction"))) return "Vaporize";
-        if (s.contains("melt") || s.contains("融化")) return "Melt";
-        if (s.contains("overload") || s.contains("explode") || s.contains("超载")) return "Overload";
-        if (s.contains("superconduct") || s.contains("超导")) return "Superconduct";
+        if (s.contains("melt") || s.contains("\u878d\u5316")) return "Melt";
+        if (s.contains("overload") || s.contains("explode") || s.contains("\u8d85\u8f7d")) return "Overload";
+        if (s.contains("superconduct") || s.contains("\u8d85\u5bfc")) return "Superconduct";
         if (s.contains("electrocharged")
                 || s.contains("electro_charged")
                 || (s.contains("stream") && s.contains("reaction"))
-                || s.contains("感电")) return "Electro-Charged";
-        if (s.contains("burning") || s.contains("燃烧")) return "Burning";
-        if (s.contains("shatter") || s.contains("frozenbroken") || s.contains("碎冰")) return "Shattered";
-        if (s.contains("swirl") || s.contains("扩散")) return "Swirl";
-        if (s.contains("hyperbloom") || s.contains("超绽")) return "Hyperbloom";
-        if (s.contains("burgeon") || s.contains("烈绽")) return "Burgeon";
-        if (s.contains("bloom") || s.contains("overgrow") || s.contains("绽放")) return "Bloom";
-        if (s.contains("aggravate") || s.contains("超激")) return "Aggravate";
-        if (s.contains("spread") || s.contains("蔓激")) return "Spread";
+                || s.contains("\u611f\u7535")) return "Electro-Charged";
+        if (s.contains("burning") || s.contains("\u71c3\u70e7")) return "Burning";
+        if (s.contains("shatter") || s.contains("frozenbroken") || s.contains("\u788e\u51b0")) return "Shattered";
+        if (s.contains("swirl") || s.contains("\u6269\u6563")) return "Swirl";
+        if (s.contains("hyperbloom") || s.contains("\u8d85\u7efd")) return "Hyperbloom";
+        if (s.contains("burgeon") || s.contains("\u70c8\u7efd")) return "Burgeon";
+        if (s.contains("bloom") || s.contains("overgrow") || s.contains("\u7efd\u653e")) return "Bloom";
+        if (s.contains("aggravate") || s.contains("\u8d85\u6fc0")) return "Aggravate";
+        if (s.contains("spread") || s.contains("\u8513\u6fc0")) return "Spread";
         return null;
     }
 

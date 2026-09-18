@@ -16,10 +16,10 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * DPS 测试的入口。
+ * Entry point for the DPS test.
  *
- * <p>好友「DPS」或任意聊天框发「dps30秒」即可开测；「dps停止」提前结束。
- * {@code /dps} 命令走的也是这里，两条路径行为一致。
+ * <p>Send "dps30" in any chat to start a 30 second run; "dpsstop" ends it early.
+ * The {@code /dps} command routes here too, so both paths behave identically.
  */
 public final class DPSMeter {
 
@@ -28,21 +28,21 @@ public final class DPSMeter {
     public static final int MAX_SECONDS = 120;
     public static final int MAX_TARGETS = 10;
 
-    /** 丘丘暴徒。不给它武器 AI 就起不来，会站在原地当靶子。 */
+    /** Hilichurl brute. Without a weapon its AI never starts, so it stands still and acts as a target. */
     private static final int TARGET_MONSTER_ID = 21020201;
 
     private static final int TARGET_LEVEL = 90;
 
-    /** 免前缀触发式：dps30秒 / dps30s / dps30。数字即秒数。 */
+    /** Prefix-free triggers: dps30 / dps30s. The number is the duration in seconds. */
     private static final Pattern CHAT_START =
-            Pattern.compile("^dps(\\d{1,3})(?:秒|s)?$", Pattern.CASE_INSENSITIVE);
+            Pattern.compile("^dps(\\d{1,3})s?$", Pattern.CASE_INSENSITIVE);
 
     private static final Pattern CHAT_STOP =
-            Pattern.compile("^dps(?:停|停止|结束|stop)$", Pattern.CASE_INSENSITIVE);
+            Pattern.compile("^dps(?:stop)$", Pattern.CASE_INSENSITIVE);
 
     private DPSMeter() {}
 
-    /** 从好友 DPS 指令器回消息（失败则退回控制台私聊）。 */
+    /** Replies through the friend DPS commander, falling back to a console whisper. */
     public static void reply(Player player, String message) {
         if (player == null) {
             CommandHandler.sendMessage(null, message);
@@ -62,9 +62,9 @@ public final class DPSMeter {
     }
 
     /**
-     * 尝试把一条聊天内容当作 DPS 指令处理。
+     * Tries to handle a chat message as a DPS command.
      *
-     * @return 已被当作指令消费（此时不应再作为聊天内容广播出去）
+     * @return true when consumed as a command, in which case it must not also be broadcast as chat
      */
     public static boolean handleChat(Player sender, String rawMessage) {
         if (sender == null || rawMessage == null) return false;
@@ -84,27 +84,28 @@ public final class DPSMeter {
         return true;
     }
 
-    /** 去掉空白、全角数字转半角、统一小写，这样中文输入法下打出来的内容也能命中。 */
+    /** Strips whitespace, folds full-width digits to ASCII and lowercases, so input typed with a CJK IME
+     * still matches. */
     private static String normalize(String message) {
         var builder = new StringBuilder(message.length());
         for (var i = 0; i < message.length(); i++) {
             var c = message.charAt(i);
-            if (c >= '０' && c <= '９') c -= 0xFEE0; // 全角 ０-９
-            if (c == '　' || Character.isWhitespace(c)) continue;
+            if (c >= '\uFF10' && c <= '\uFF19') c -= 0xFEE0; // full-width digits
+            if (c == '\u3000' || Character.isWhitespace(c)) continue; // ideographic space
             builder.append(Character.toLowerCase(c));
         }
         return builder.toString();
     }
 
     /**
-     * 开始一场 DPS 测试。
+     * Starts a DPS test run.
      *
-     * @param seconds 时长，会被夹到 [{@value MIN_SECONDS}, {@value MAX_SECONDS}] 秒
-     * @param targetCount 靶子数量，会被夹到 [1, {@value MAX_TARGETS}]
+     * @param seconds duration, clamped to [{@value MIN_SECONDS}, {@value MAX_SECONDS}] seconds
+     * @param targetCount number of targets, clamped to [1, {@value MAX_TARGETS}]
      */
     public static void start(Player player, int seconds, int targetCount) {
         if (player == null) {
-            CommandHandler.sendMessage(null, "DPS 测试只能由玩家发起。");
+            CommandHandler.sendMessage(null, "A DPS test can only be started by a player.");
             return;
         }
 
@@ -117,14 +118,14 @@ public final class DPSMeter {
             reply(
                     player,
                     running instanceof DPSChallenge
-                            ? "已有一场 DPS 测试正在进行，发送「dps停止」可提前结束。"
-                            : "当前场景正在进行其它挑战，无法开始 DPS 测试。");
+                            ? "A DPS test is already running. Send \"dpsstop\" to end it early."
+                            : "Another challenge is running in this scene, so a DPS test cannot start.");
             return;
         }
 
         var monsterData = GameData.getMonsterDataMap().get(TARGET_MONSTER_ID);
         if (monsterData == null) {
-            reply(player, "找不到靶子怪数据（" + TARGET_MONSTER_ID + "），请检查资源文件。");
+            reply(player, "No target monster data for " + TARGET_MONSTER_ID + "; check the resource files.");
             return;
         }
 
@@ -137,10 +138,10 @@ public final class DPSMeter {
         }
 
         List<ChallengeTrigger> triggers = new ArrayList<>(2);
-        triggers.add(new KillMonsterTrigger(DPSChallenge.CONFIG_ID)); // 打死靶子提前出结算
-        triggers.add(new DPSTimeTrigger()); // 时间到出结算
+        triggers.add(new KillMonsterTrigger(DPSChallenge.CONFIG_ID)); // killing the target settles early
+        triggers.add(new DPSTimeTrigger()); // settle when the timer runs out
 
-        // 开测前把队伍状态归位，免得上一把的残血/空大影响读数。
+        // Reset the party before starting so leftover low HP or spent bursts do not skew the reading.
         player.getTeamManager().getActiveTeam().forEach(DPSMeter::resetForTest);
 
         var challenge =
@@ -153,13 +154,13 @@ public final class DPSMeter {
         reply(
                 player,
                 count == 1
-                        ? String.format("DPS 测试已开始：%d 秒。发「dps停止」可提前结束。", timeLimit)
+                        ? String.format("DPS test started: %d seconds. Send \"dpsstop\" to end early.", timeLimit)
                         : String.format(
-                                "DPS 测试已开始：%d 秒 / %d 只靶子。发「dps停止」可提前结束。",
+                                "DPS test started: %d seconds / %d targets. Send \"dpsstop\" to end early.",
                                 timeLimit, count));
     }
 
-    /** 提前结束当前场景的 DPS 测试。 */
+    /** Ends the running DPS test in this scene early. */
     public static void stop(Player player) {
         if (player == null) return;
 
@@ -167,7 +168,7 @@ public final class DPSMeter {
                 && challenge.inProgress()) {
             challenge.done();
         } else {
-            reply(player, "当前没有正在进行的 DPS 测试。");
+            reply(player, "No DPS test is currently running.");
         }
     }
 

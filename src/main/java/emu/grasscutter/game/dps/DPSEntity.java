@@ -14,14 +14,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * DPS 测试用的靶子怪。
+ * Target dummy used by the DPS test.
  *
- * <p>伤害数值本身由客户端算好之后通过 {@code CombatInvocationsNotify} 上报，服务端只是把结果落到实体上，
- * 所以这里只需要在 {@link #damage} 上做统计，再把血条换算成一条对数曲线，保证靶子在测试期间不会被打死。
+ * <p>Damage numbers are computed by the client and reported through {@code CombatInvocationsNotify}; the
+ * server only records the result on the entity,
+ * so all that is needed here is accounting in {@link #damage} plus a logarithmic HP curve that keeps the
+ * dummy alive for the whole run.
  */
 public class DPSEntity extends EntityMonster {
 
-    /** 血条从满到空覆盖的伤害量级数（log10 刻度），越大血条掉得越慢。 */
+    /** Orders of magnitude of damage (log10) spanned from full to empty HP; larger drains the bar slower. */
     private static final double HP_BAR_DECADES = 8d;
 
     private float totalDamage;
@@ -33,7 +35,7 @@ public class DPSEntity extends EntityMonster {
 
     public DPSEntity(Scene scene, MonsterData monsterData, Position pos, Position rot, int level) {
         super(scene, monsterData, pos, rot, level);
-        // 归到伪 group 下，挑战的击杀判定与结束清场都依赖它。
+        // Filed under the pseudo group, which the challenge kill check and end-of-run cleanup both rely on.
         this.setGroupId(DPSChallenge.GROUP_ID);
         this.setConfigId(DPSChallenge.CONFIG_ID);
         this.setAiId(DPSChallenge.AI_CONFIG_ID);
@@ -51,18 +53,19 @@ public class DPSEntity extends EntityMonster {
         return this.hitCount;
     }
 
-    /** 按元素分列的直接伤害（不含已识别的反应伤害），只读。 */
+    /** Direct damage broken down by element, excluding recognised reaction damage. Read-only. */
     public Map<ElementType, Float> getDamageByElement() {
         return Collections.unmodifiableMap(this.damageByElement);
     }
 
-    /** 按反应分列的伤害，只读。 */
+    /** Damage broken down by reaction. Read-only. */
     public Map<String, Float> getDamageByReaction() {
         return Collections.unmodifiableMap(this.damageByReaction);
     }
 
     /**
-     * 不给靶子下发武器。丘丘暴徒拿不到斧子时 AI 无法初始化，靶子会站在原地不动，方便持续输出。
+     * Sends no weapon to the dummy. Without its axe the hilichurl brute never initialises its AI, so it
+     * stands still and can be hit continuously.
      */
     @Override
     public int getMonsterWeaponId() {
@@ -90,8 +93,9 @@ public class DPSEntity extends EntityMonster {
             this.damageByElement.merge(element, amount, Float::sum);
         }
 
-        // 血条按累计伤害对数衰减:靶子越打越残但永远留 1 点血,
-        // 这样 60 秒里怪不会中途死掉,同时元素微粒仍按掉血阈值正常掉落。
+        // HP decays logarithmically with cumulative damage: the dummy looks progressively beaten up but
+        // always keeps 1 HP, so it survives the full 60 seconds while elemental particles still drop on the
+        // usual HP thresholds.
         float maxHp = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
         float curHp = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
         if (!Float.isFinite(maxHp) || maxHp <= 1f || !Float.isFinite(curHp)) {

@@ -17,16 +17,18 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/** 一次 DPS 测试。挂在场景的 challenge 槽上，靠计时器或击杀靶子结束，结束时统一出结算。 */
+/** A single DPS test. Occupies the scene challenge slot, ends on the timer or on killing the target, and
+ * settles once either way. */
 public class DPSChallenge extends WorldChallenge {
 
-    /** 靶子怪所属的伪 group。不对应任何 lua 脚本，仅用于挑战的击杀判定与结束清场。 */
+    /** Pseudo group owning the target monster. Backed by no lua script; used only for the challenge kill
+     * check and for clearing the field at the end. */
     public static final int GROUP_ID = 50505051;
 
-    /** 靶子怪的 config id，需与 {@link #buildGroup} 里登记的 SceneMonster 一致。 */
+    /** Config id of the target monster; must match the SceneMonster registered in {@link #buildGroup}. */
     public static final int CONFIG_ID = 1;
 
-    /** 丘丘人通用 AI，配合「不下发武器」让靶子站着不动。 */
+    /** Generic hilichurl AI which, combined with sending no weapon, keeps the target standing still. */
     public static final int AI_CONFIG_ID = 12001001;
 
     private static final int CHALLENGE_ID = 180;
@@ -37,7 +39,8 @@ public class DPSChallenge extends WorldChallenge {
     private final ScheduledExecutorService ticker;
     private final AtomicBoolean settled = new AtomicBoolean();
 
-    /** 挂钟开测时刻。开世界常锁游戏时间，场景秒数不走，结算不能靠 sceneTime。 */
+    /** Wall-clock start time. The open world often locks game time so scene seconds stop advancing, which
+     * makes sceneTime unusable for settling. */
     private final long startedAtMs = System.currentTimeMillis();
 
     private final int configuredSeconds;
@@ -72,7 +75,8 @@ public class DPSChallenge extends WorldChallenge {
                         });
     }
 
-    /** 构造靶子怪所在的伪 group。{@code WorldChallenge#finish} 用它来清场。 */
+    /** Builds the pseudo group holding the target monster. {@code WorldChallenge#finish} uses it to clear
+     * the field. */
     public static SceneGroup buildGroup() {
         var monster = new SceneMonster();
         monster.config_id = CONFIG_ID;
@@ -83,22 +87,24 @@ public class DPSChallenge extends WorldChallenge {
         return group;
     }
 
-    /** 已过去的真实秒数（不受游戏时间锁定影响）。 */
+    /** Real seconds elapsed, unaffected by a game-time lock. */
     public int elapsedSeconds() {
         return (int) Math.max(0L, (System.currentTimeMillis() - this.startedAtMs) / 1000L);
     }
 
-    /** 剩余真实秒数。 */
+    /** Real seconds remaining. */
     public int remainingSeconds() {
         return Math.max(0, this.configuredSeconds - this.elapsedSeconds());
     }
 
     /**
-     * 不再每秒推 ChallengeDataNotify：视频里会反复闪「-1s」，还会把 17 秒跳回 21。
-     * 客户端用 BeginNotify 的 paramList 时长自行倒数；真正收尾靠挂钟。
+     * No longer pushes ChallengeDataNotify every second: it made the timer flash "-1s" repeatedly and jump
+     * from 17 back to 21.
+     * The client counts down from the duration in BeginNotify's paramList; the wall clock does the actual
+     * settling.
      */
     public void refreshClientTimer() {
-        // intentionally empty — see DPSTimeTrigger / tick()
+        // intentionally empty - see DPSTimeTrigger / tick()
     }
 
     @Override
@@ -120,7 +126,7 @@ public class DPSChallenge extends WorldChallenge {
         this.settle(false);
     }
 
-    /** 每秒推一次当前 DPS，并刷新客户端倒计时。 */
+    /** Pushes the current DPS once per second and refreshes the client countdown. */
     private void tick() {
         try {
             if (!this.inProgress()) {
@@ -131,7 +137,7 @@ public class DPSChallenge extends WorldChallenge {
                 this.fail();
                 return;
             }
-            // 挂钟到时主动收尾（场景时间锁定时 sceneTime 判据会失效）
+            // Settle from the wall clock; the sceneTime check fails while scene time is locked.
             if (this.elapsedSeconds() >= this.configuredSeconds) {
                 this.done();
                 return;
@@ -141,10 +147,10 @@ public class DPSChallenge extends WorldChallenge {
             DPSMeter.reply(
                     this.targetPlayer,
                     String.format(
-                            "当前 DPS - %.0f（剩余 %d 秒）", total - this.reportedDamage, remain));
+                            "Current DPS - %.0f (%d seconds left)", total - this.reportedDamage, remain));
             this.reportedDamage = total;
         } catch (Throwable throwable) {
-            Grasscutter.getLogger().warn("DPS 测试计时任务异常", throwable);
+            Grasscutter.getLogger().warn("The DPS test timer task threw.", throwable);
         }
     }
 
@@ -157,16 +163,17 @@ public class DPSChallenge extends WorldChallenge {
     }
 
     /**
-     * 收尾:停计时、清靶子、交还场景的 challenge 槽。只会执行一次。
+     * Settles: stops the timer, clears the targets and releases the scene challenge slot. Runs once only.
      *
-     * @param report 是否推送结算信息。中途被打断（玩家掉线、挑战失败）时不推送。
+     * @param report whether to push the result. Suppressed when interrupted, e.g. the player disconnected
+     *     or the challenge failed.
      */
     private void settle(boolean report) {
         if (!this.settled.compareAndSet(false, true)) return;
         this.ticker.shutdown();
 
         int seconds = Math.min(this.configuredSeconds, Math.max(this.elapsedSeconds(), 0));
-        // 若刚好超时收尾，显示配置时长更直观
+        // When settling right on the timeout, showing the configured duration reads better.
         if (this.elapsedSeconds() >= this.configuredSeconds) {
             seconds = this.configuredSeconds;
         }
@@ -206,14 +213,14 @@ public class DPSChallenge extends WorldChallenge {
             Map<ElementType, Float> byElement,
             Map<String, Float> byReaction) {
         var elapsed = Math.max(seconds, 1);
-        var message = new StringBuilder("DPS 测试结束，本次结果：");
-        message.append(String.format("\n用时 %d 秒", seconds));
-        message.append(String.format("\n总伤害 %.0f", total));
-        message.append(String.format("\n平均 DPS %.2f", total / elapsed));
-        message.append(String.format("\n命中次数 %d", hitCount));
-        message.append(String.format("\n单次最高 %.0f", maxHit));
+        var message = new StringBuilder("DPS test finished. Results:");
+        message.append(String.format("\nDuration %d s", seconds));
+        message.append(String.format("\nTotal damage %.0f", total));
+        message.append(String.format("\nAverage DPS %.2f", total / elapsed));
+        message.append(String.format("\nHits %d", hitCount));
+        message.append(String.format("\nHighest single hit %.0f", maxHit));
         if (!byElement.isEmpty()) {
-            message.append("\n元素伤害：");
+            message.append("\nElemental damage:");
             byElement.entrySet().stream()
                     .sorted((a, b) -> Float.compare(b.getValue(), a.getValue()))
                     .forEach(
@@ -228,7 +235,7 @@ public class DPSChallenge extends WorldChallenge {
                                                             : entry.getValue() * 100f / total)));
         }
         if (!byReaction.isEmpty()) {
-            message.append("\n反应伤害：");
+            message.append("\nReaction damage:");
             byReaction.entrySet().stream()
                     .sorted((a, b) -> Float.compare(b.getValue(), a.getValue()))
                     .forEach(
@@ -247,16 +254,16 @@ public class DPSChallenge extends WorldChallenge {
 
     private static String elementName(ElementType element) {
         return switch (element) {
-            case Fire -> "火";
-            case Water -> "水";
-            case Grass -> "草";
-            case Electric -> "雷";
-            case Ice -> "冰";
-            case Frozen -> "冻";
-            case Wind -> "风";
-            case Rock -> "岩";
-            case AntiFire -> "灭火";
-            case None -> "物理";
+            case Fire -> "Pyro";
+            case Water -> "Hydro";
+            case Grass -> "Dendro";
+            case Electric -> "Electro";
+            case Ice -> "Cryo";
+            case Frozen -> "Frozen";
+            case Wind -> "Anemo";
+            case Rock -> "Geo";
+            case AntiFire -> "Anti-Pyro";
+            case None -> "Physical";
             default -> element.name();
         };
     }
