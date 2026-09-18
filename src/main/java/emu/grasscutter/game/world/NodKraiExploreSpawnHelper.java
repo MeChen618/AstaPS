@@ -805,32 +805,38 @@ public final class NodKraiExploreSpawnHelper {
         }
     }
 
+    /*
+     * The escaped literals in the drop-tag methods below are keys into data/ChestDrop.json, whose
+     * index values are Chinese (215 of them). They are data identifiers, not display text -
+     * translating them would make DropSystem.queryDropData miss and silently drop no loot at all.
+     * Written as escapes so this source stays pure ASCII while the keys remain byte-identical.
+     */
     /** Region-aware drop tags so WorldChestLootHelper grants the correct 之印. */
     private static String dropTagForKind(ExplorePoint ep) {
         String region = regionNameForPoint(ep);
         String kind = ep != null ? ep.kind : null;
-        if (kind == null) return "解谜低级" + region;
+        if (kind == null) return "\u89e3\u8c1c\u4f4e\u7ea7" + region;
         switch (kind) {
             case "chest_luxurious":
             case "chest_remarkable":
-                return "解谜超级" + region;
+                return "\u89e3\u8c1c\u8d85\u7ea7" + region;
             case "chest_precious":
-                return "解谜高级" + region;
+                return "\u89e3\u8c1c\u9ad8\u7ea7" + region;
             case "chest_exquisite":
             case "chest_puzzle":
-                return "解谜中级" + region;
+                return "\u89e3\u8c1c\u4e2d\u7ea7" + region;
             default:
-                return "解谜低级" + region;
+                return "\u89e3\u8c1c\u4f4e\u7ea7" + region;
         }
     }
 
     private static String regionNameForPoint(ExplorePoint ep) {
-        if (ep == null) return "挪德卡莱";
-        if (ep.id >= 40000 && ep.id < 50000) return "须弥";
-        if (ep.id >= 30000 && ep.id < 40000) return "纳塔";
-        if (ep.id >= 20000 && ep.id < 30000) return "枫丹";
-        if (ep.id >= 10000 && ep.id < 20000) return "至冬";
-        return "挪德卡莱";
+        if (ep == null) return "\u632a\u5fb7\u5361\u83b1";
+        if (ep.id >= 40000 && ep.id < 50000) return "\u987b\u5f25";
+        if (ep.id >= 30000 && ep.id < 40000) return "\u7eb3\u5854";
+        if (ep.id >= 20000 && ep.id < 30000) return "\u67ab\u4e39";
+        if (ep.id >= 10000 && ep.id < 20000) return "\u81f3\u51ac";
+        return "\u632a\u5fb7\u5361\u83b1";
     }
 
     private static void spawnOne(Scene scene, ExplorePoint ep, Player player) {

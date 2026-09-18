@@ -579,20 +579,26 @@ public final class SnezhnayaExploreSpawnHelper {
         }
     }
 
+    /*
+     * The escaped literals in the drop-tag methods below are keys into data/ChestDrop.json, whose
+     * index values are Chinese (215 of them). They are data identifiers, not display text -
+     * translating them would make DropSystem.queryDropData miss and silently drop no loot at all.
+     * Written as escapes so this source stays pure ASCII while the keys remain byte-identical.
+     */
     /** Region-aware drop tags so WorldChestLootHelper grants 至冬 冰之印. */
     private static String dropTagForKind(String kind) {
-        if (kind == null) return "解谜低级至冬";
+        if (kind == null) return "\u89e3\u8c1c\u4f4e\u7ea7\u81f3\u51ac";
         switch (kind) {
             case "chest_luxurious":
             case "chest_remarkable":
-                return "解谜超级至冬";
+                return "\u89e3\u8c1c\u8d85\u7ea7\u81f3\u51ac";
             case "chest_precious":
-                return "解谜高级至冬";
+                return "\u89e3\u8c1c\u9ad8\u7ea7\u81f3\u51ac";
             case "chest_exquisite":
             case "chest_puzzle":
-                return "解谜中级至冬";
+                return "\u89e3\u8c1c\u4e2d\u7ea7\u81f3\u51ac";
             default:
-                return "解谜低级至冬";
+                return "\u89e3\u8c1c\u4f4e\u7ea7\u81f3\u51ac";
         }
     }
 
