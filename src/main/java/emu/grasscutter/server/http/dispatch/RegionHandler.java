@@ -107,6 +107,7 @@ public final class RegionHandler implements Router {
                             QueryCurrRegionHttpRsp.newBuilder()
                                     .setRegionInfo(regionInfo)
                                     .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                                    .setRegionCustomConfigEncrypted(buildRegionCustomConfigEncrypted())
                                     .build();
                     regions.put(
                             region.Name,
@@ -392,6 +393,90 @@ public final class RegionHandler implements Router {
         }
     }
 
+    /**
+     * The regionCustomConfig sent with cur_region, kept in step with the query_region_list one.
+     *
+     * <p>This is NOT the same thing as {@code regionConfigEncrypted}. The list endpoint's
+     * {@code ClientCustomConfigEncrypted} is XOR'd with DISPATCH_KEY, while cur_region's
+     * {@code RegionCustomConfigEncrypted} is decrypted by the client with a built-in public key
+     * and therefore has to be RSA. Two fields, two algorithms; neither substitutes for the other.
+     */
+    private static JsonObject buildRegionCustomConfig() {
+        var hiddenIcons = new JsonArray();
+        hiddenIcons.add(40);
+        hiddenIcons.add(41);
+        hiddenIcons.add(42);
+
+        var codeSwitch = new JsonArray();
+        codeSwitch.add(4334);
+
+        var customConfig = new JsonObject();
+        customConfig.addProperty("sdkenv", "2");
+        customConfig.addProperty("checkdevice", "false");
+        customConfig.addProperty("loadPatch", "false");
+        customConfig.addProperty("showexception", String.valueOf(GameConstants.DEBUG));
+        customConfig.addProperty("regionConfig", "pm");
+        customConfig.addProperty("downloadMode", "0");
+        customConfig.add("codeSwitch", codeSwitch);
+        customConfig.add("coverSwitch", hiddenIcons);
+        return customConfig;
+    }
+
+    /**
+     * See {@link #buildRegionCustomConfig()}: the cur_region copy must be RSA encrypted.
+     *
+     * <p>{@code JsonUtils.encode} is deliberately avoided here. It has pretty printing enabled,
+     * which would turn the plaintext into multi-line indented JSON before encryption - wasting RSA
+     * chunks and diverging from the compact plaintext that is known to work. Plain Gson emits a
+     * compact string.
+     */
+    private static ByteString buildRegionCustomConfigEncrypted() {
+        return encryptRegionCustomConfig(new Gson().toJson(buildRegionCustomConfig()));
+    }
+
+    /**
+     * Chunked RSA/PKCS#1 v1.5 encryption using the public key derived from the server signing key.
+     *
+     * <p>The client decrypts this with the public key patched in by Astrolabe/LunaGC, so the
+     * matching private key has to be turned back into a public key and used to encrypt - signing
+     * with the private key would not work. A missing key or unavailable algorithm yields an empty
+     * string, letting the client fall back to its defaults rather than failing the whole dispatch
+     * response.
+     */
+    private static ByteString encryptRegionCustomConfig(String json) {
+        try {
+            var key = Crypto.CUR_SIGNING_KEY;
+            if (key == null) return ByteString.EMPTY;
+
+            var keyFactory = java.security.KeyFactory.getInstance("RSA");
+            var privKeySpec =
+                    keyFactory.getKeySpec(key, java.security.spec.RSAPrivateCrtKeySpec.class);
+            var pubKeySpec =
+                    new java.security.spec.RSAPublicKeySpec(
+                            privKeySpec.getModulus(), privKeySpec.getPublicExponent());
+            var pubKey = keyFactory.generatePublic(pubKeySpec);
+
+            var cipher = javax.crypto.Cipher.getInstance("RSA/ECB/PKCS1Padding");
+            cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, pubKey);
+
+            byte[] data = json.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+            int keySize = ((java.security.interfaces.RSAKey) pubKey).getModulus().bitLength() / 8;
+            int chunkSize = keySize - 11;
+
+            var out = new java.io.ByteArrayOutputStream();
+            for (int i = 0; i < data.length; i += chunkSize) {
+                byte[] chunk =
+                        java.util.Arrays.copyOfRange(data, i, Math.min(i + chunkSize, data.length));
+                out.write(cipher.doFinal(chunk));
+            }
+            return ByteString.copyFrom(out.toByteArray());
+        } catch (Exception e) {
+            Grasscutter.getLogger()
+                    .warn("[Dispatch] Failed to encrypt RegionCustomConfig: {}", e.getMessage());
+            return ByteString.EMPTY;
+        }
+    }
+
     /** Rebuilds a region query while preserving configured response fields and applying a hotfix. */
     private static QueryCurrRegionHttpRsp buildRegionQuery(
             Context ctx, RegionData configuredRegion, RegionInfo hotfixRegion) {
@@ -399,6 +484,7 @@ public final class RegionHandler implements Router {
                 configuredRegion == null
                         ? QueryCurrRegionHttpRsp.newBuilder()
                                 .setClientSecretKey(ByteString.copyFrom(Crypto.DISPATCH_SEED))
+                                .setRegionCustomConfigEncrypted(buildRegionCustomConfigEncrypted())
                                 .build()
                         : configuredRegion.getRegionQuery();
         RegionInfo.Builder regionInfo =
