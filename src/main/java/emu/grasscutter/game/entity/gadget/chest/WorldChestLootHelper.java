@@ -123,15 +123,15 @@ public final class WorldChestLootHelper {
             // NodKraiExploreSpawnHelper SYNTH_GROUP_BASE = 910700000
             if (gid >= 910700000 && gid < 910800000) {
                 int id = gid - 910700000;
-                if (id >= 40000 && id < 50000) return 303; // 须弥 草之印
-                if (id >= 30000 && id < 40000) return 301; // 纳塔 火之印
-                if (id >= 20000 && id < 30000) return 302; // 枫丹 水之印
-                if (id >= 10000 && id < 20000) return 306; // 至冬 冰之印
-                if (id > 0 && id < 10000) return 308; // 挪德卡莱 月之印
+                if (id >= 40000 && id < 50000) return 303; // Sumeru, dendro sigil
+                if (id >= 30000 && id < 40000) return 301; // Natlan, pyro sigil
+                if (id >= 20000 && id < 30000) return 302; // Fontaine, hydro sigil
+                if (id >= 10000 && id < 20000) return 306; // Snezhnaya, cryo sigil
+                if (id > 0 && id < 10000) return 308; // Nod-Krai, lunar sigil
             }
             // SnezhnayaExploreSpawnHelper SYNTH_GROUP_BASE = 910800000
             if (gid >= 910800000 && gid < 910900000) {
-                return 306; // 至冬 冰之印
+                return 306; // Snezhnaya, cryo sigil
             }
         } catch (Throwable ignored) {
         }
@@ -159,7 +159,7 @@ public final class WorldChestLootHelper {
             if (string.contains("\u632a\u5fb7\u5361\u83b1")
                     || string.contains("\u8bfa\u5fb7\u514b\u83b1")
                     || string.contains("\u971c\u6708")) {
-                return 308; // 挪德卡莱 月之印
+                return 308; // Nod-Krai, lunar sigil
             }
             if (string.contains("\u8499\u5fb7")) {
                 return 305;
@@ -181,28 +181,28 @@ public final class WorldChestLootHelper {
         return WorldChestLootHelper.sigilByScene(n);
     }
 
-    /** 301火 302水 303草 304雷 305风 306冰 307岩 308月；0=未知 */
+    /** 301 pyro, 302 hydro, 303 dendro, 304 electro, 305 anemo, 306 cryo, 307 geo, 308 lunar; 0 unknown. */
     private static int sigilByPosition(Position pos) {
         if (pos == null) return 0;
         float x = pos.getX();
         float z = pos.getZ();
-        // 至冬
+        // Snezhnaya
         if (x >= 7000.0f && x <= 11000.0f && z >= 5200.0f && z <= 8800.0f) {
             return 306;
         }
-        // 挪德卡莱 / 北境高 Z → 月之印
+        // Nod-Krai and the far north (high Z): lunar sigil
         if (z >= 8800.0f) {
             return 308;
         }
-        // 枫丹
+        // Fontaine
         if (z >= 2700.0f && z <= 5600.0f && x >= 1000.0f && x <= 5200.0f) {
             return 302;
         }
-        // 纳塔
+        // Natlan
         if (z >= 6000.0f && z <= 11000.0f && x >= -4000.0f && x <= 2000.0f) {
             return 301;
         }
-        // 须弥 3.6 沙海
+        // Sumeru 3.6 desert
         if (z >= 5200.0f && z <= 7200.0f && x >= -500.0f && x <= 1500.0f) {
             return 303;
         }

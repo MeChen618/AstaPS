@@ -13,11 +13,13 @@ import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 久岐忍六命「割舍软弱之心」。
+ * Kuki Shinobu's C6, Sanctifier of Souls.
  *
- * <p>官方走 DoActionByEventMixin(HPDown)，本服不执行该 mixin。做法对齐 {@link HutaoC6Helper}：
- * 在服务端伤害结算里拦截——致死伤害改为留 1 血；生命值低于 25% 时临时加精通。
- * 两段效果各自约 60 秒 CD，与芭芭拉/七七的复活 CD 无关。
+ * <p>Officially this runs through DoActionByEventMixin(HPDown), which this server never executes. The
+ * approach matches {@link HutaoC6Helper}:
+ * intercept in the server-side damage settle - lethal damage instead leaves 1 HP, and Elemental Mastery
+ * is temporarily raised below 25% HP.
+ * Each half has its own roughly 60 second cooldown, unrelated to the Barbara and Qiqi revive cooldowns.
  */
 public final class ShinobuC6Helper {
     public static final int AVATAR_ID = 10000065;

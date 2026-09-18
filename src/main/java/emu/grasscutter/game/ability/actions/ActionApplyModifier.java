@@ -34,18 +34,20 @@ public final class ActionApplyModifier extends AbilityActionHandler {
         ability.getModifiers().put(action.modifierName, modifier);
         var manager = ability.getManager();
 
-        // 菈乌玛一命：在跑 onAdded 前先按精通结算回血，避免 GetFightProperty/HealHP 竞态与目标解析问题。
+        // Lauma C1: settle the mastery-scaled heal before running onAdded, avoiding a GetFightProperty and
+        // HealHP race plus target-resolution issues.
         boolean laumaC1Healed = LaumaC1HealHelper.isHealModifier(action.modifierName)
                 && LaumaC1HealHelper.tryHeal(ability);
 
         if (modifierData.onAdded != null) {
             for (var a : modifierData.onAdded) {
                 if (a == null) continue;
-                // 已由 helper 结算过则跳过 HealHP，防止双倍治疗；仍跑 GetFightProperty/特效等。
+                // Skip HealHP when the helper already settled it, to avoid double healing; GetFightProperty
+                // and the VFX still run.
                 if (laumaC1Healed && a.type == AbilityModifierAction.Type.HealHP) {
                     continue;
                 }
-                // onAdded 是序列：前一步写的全局值后一步要立刻读到。
+                // onAdded is a sequence: a global value written by one step must be readable by the next.
                 manager.executeActionNow(ability, a, abilityData, target);
             }
         }
@@ -60,8 +62,8 @@ public final class ActionApplyModifier extends AbilityActionHandler {
             EscoffierHealUtil.onStrikeModifier(ability);
         }
 
-        // 山月草露 UI is driven by RGV_TempMoonOvergrowPoint — grant when the talent's
-        // AddMoonOverGrowCount modifier lands (Moon Bloom in 月之领域).
+        // The dew-point UI is driven by RGV_TempMoonOvergrowPoint - grant when the talent's
+        // AddMoonOverGrowCount modifier lands (Lunar Bloom inside the lunar field).
         if (ColumbinaMountainDew.isAddMoonOverGrowModifier(action.modifierName)) {
             ColumbinaMountainDew.grantOne(ability, target);
         }

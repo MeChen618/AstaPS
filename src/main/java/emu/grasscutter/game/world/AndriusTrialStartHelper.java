@@ -18,11 +18,12 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 奔狼的领主：
+ * Lupus Boreas, Dominator of Wolves:
  * <ul>
- *   <li>开启试炼走 suite3 开场（特效/提醒），约 4 秒后再刷怪，避免无开场动画
- *   <li>领取征讨之花后不立刻刷怪，需再次点开启试炼
- *   <li>禁止 WorldBossSpawnHelper 对该组自动刷怪
+ *   <li>Starting the trial runs suite3 for the intro VFX and reminder, spawning the boss about 4 seconds
+ *       later so the intro animation is not skipped
+ *   <li>After claiming the trounce blossom nothing respawns until the trial is started again
+ *   <li>WorldBossSpawnHelper must not auto-spawn for this group
  * </ul>
  */
 public final class AndriusTrialStartHelper {
@@ -57,7 +58,8 @@ public final class AndriusTrialStartHelper {
     /** sceneId -> intro already scheduled (avoid double suite3). */
     private static final ConcurrentHashMap<Integer, Long> INTRO_UNTIL_MS = new ConcurrentHashMap<>();
     /**
-     * After kill / while trounce flower exists: keep「开启试炼」off (death anim + claim phase).
+     * After the kill, and while the trounce blossom exists, keep the "start trial" option off for the
+     * death animation and claim phase.
      * Cleared in {@link #onFlowerClaimed}.
      */
     private static final ConcurrentHashMap<Integer, Boolean> SUPPRESS_START_OPTIONS =
@@ -152,7 +154,7 @@ public final class AndriusTrialStartHelper {
         } catch (Throwable ignored) {
         }
         restoreIdleArena(scene);
-        Grasscutter.getLogger().info("AndriusTrialStartHelper flower claimed — idle arena, no auto respawn");
+        Grasscutter.getLogger().info("AndriusTrialStartHelper flower claimed - idle arena, no auto respawn");
     }
 
     public static void onBossKilled(EntityMonster monster) {
@@ -168,7 +170,7 @@ public final class AndriusTrialStartHelper {
             return;
         }
         INTRO_UNTIL_MS.remove(scene.getId());
-        // Hide「开启试炼」through death anim + flower; only restore after claim.
+        // Hide "start trial" through the death animation and flower; only restore after the claim.
         SUPPRESS_START_OPTIONS.put(scene.getId(), Boolean.TRUE);
         try {
             if (monster.getGroupId() <= 0) {
@@ -204,7 +206,7 @@ public final class AndriusTrialStartHelper {
         }
         clearArenaAftermath(scene);
         stripStartOptions(scene);
-        // Lua / group refresh may re-hang options mid death anim — keep stripping.
+        // Lua / group refresh may re-hang options mid death anim - keep stripping.
         scheduleStripBurst(scene);
         // Late-spawned ice gadgets / delayed ability creates
         scheduleAftermathBurst(scene);
@@ -302,7 +304,7 @@ public final class AndriusTrialStartHelper {
                         } catch (Throwable ignored) {
                         }
                     }
-                    // Keep suite5 off while flower/suppress — avoid「开启试炼」on death.
+                    // Keep suite5 off while the flower or suppression is active - avoids "start trial" on death.
                     if (suite5 != null && shouldHideStartOptions(scene)) {
                         try {
                             sm.removeGroupSuite(group, suite5);
@@ -351,7 +353,7 @@ public final class AndriusTrialStartHelper {
                     .info("AndriusTrialStartHelper cleared {} aftermath gadgets", remove.size());
         }
 
-        // Official lua: SetWeatherAreaState(4, 0) on kill — clear ESP_Monster_LupiBoreas weather.
+        // Official lua: SetWeatherAreaState(4, 0) on kill - clear ESP_Monster_LupiBoreas weather.
         try {
             for (Player p : scene.getPlayers()) {
                 try {
@@ -431,7 +433,7 @@ public final class AndriusTrialStartHelper {
                     .warn("AndriusTrialStartHelper suite3 failed: {}", t.toString());
         }
 
-        // Do NOT broadcast Reminder here — gadget 2222 create already does ShowReminder.
+        // Do NOT broadcast Reminder here - gadget 2222 create already does ShowReminder.
         // Early Reminder + Instant TimeAxis spawn was clipping the camera into the floor.
 
         // Fallback if TIME_AXIS / CreateMonster miss; official spawn is at ~4s.
@@ -737,7 +739,8 @@ public final class AndriusTrialStartHelper {
             meta.config_id = FLOWER_CONFIG_ID;
             meta.gadget_id = FLOWER_GADGET_ID;
             meta.pos = pos.clone();
-            meta.drop_tag = "北风狼";
+            // Drop tag keyed against the game data, which is Chinese; escaped to keep this file ASCII.
+            meta.drop_tag = "\u5317\u98ce\u72fc";
             meta.boss_chest = new emu.grasscutter.scripts.data.SceneBossChest();
             meta.boss_chest.monster_config_id = MONSTER_CONFIG_ID;
             meta.boss_chest.resin = 60;
