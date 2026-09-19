@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+option java_outer_classname = "GetBattlePassProductRspOuterClass";
+option java_multiple_files = true;
+
+message GetBattlePassProductRsp {
+	string product_id = 8;
+	int32 retcode = 11;
+	uint32 battle_pass_product_play_type = 12;
+	uint32 cur_schedule_id = 13;
+	string price_tier = 14;
+}

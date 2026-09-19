@@ -1,0 +1,636 @@
+package emu.grasscutter.game.gacha;
+
+import static emu.grasscutter.config.Configuration.*;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.game.gacha.GachaEpitomizedCompanionHelper;
+import emu.grasscutter.game.gacha.GachaEpitomizedPrefabHelper;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.net.proto.GachaInfoOuterClass.GachaInfo;
+import emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo;
+import emu.grasscutter.utils.Utils;
+import lombok.Getter;
+
+public class GachaBanner {
+    // Constants used by the BannerType enum
+    static final int[][] DEFAULT_WEIGHTS_4 = {{1, 510}, {8, 510}, {10, 10000}};
+    static final int[][] DEFAULT_WEIGHTS_4_WEAPON = {{1, 600}, {7, 600}, {8, 6600}, {10, 12600}};
+    static final int[][] DEFAULT_WEIGHTS_5 = {{1, 75}, {73, 150}, {90, 10000}};
+    static final int[][] DEFAULT_WEIGHTS_5_CHARACTER = {{1, 80}, {73, 80}, {90, 10000}};
+    static final int[][] DEFAULT_WEIGHTS_5_WEAPON = {{1, 100}, {62, 100}, {73, 7800}, {80, 10000}};
+    static final int[] DEFAULT_FALLBACK_ITEMS_4_POOL_1 = {
+        1014, 1020, 1023, 1024, 1025, 1027, 1031, 1032, 1034, 1036, 1039, 1043, 1044, 1045, 1048, 1053,
+        1055, 1056, 1059, 1064, 1065, 1067, 1068, 1072
+    }; // Default avatars
+    static final int[] DEFAULT_FALLBACK_ITEMS_4_POOL_2 = {
+        11401, 11402, 11403, 11405, 12401, 12402, 12403, 12405, 13401, 13407, 14401, 14402, 14403,
+        14409, 15401, 15402, 15403, 15405
+    }; // Default weapons
+    static final int[] DEFAULT_FALLBACK_ITEMS_5_POOL_1 = {
+        1003, 1016, 1042, 1035, 1041, 1069
+    }; // Default avatars
+    static final int[] DEFAULT_FALLBACK_ITEMS_5_POOL_2 = {
+        11501, 11502, 12501, 12502, 13502, 13505, 14501, 14502, 15501, 15502
+    }; // Default weapons
+    static final int[] EMPTY_POOL = {}; // Used to remove a type of fallback
+    private static final int[] EPITOMIZED_EXCLUDED_CHAR_IDS = {1005, 1007};
+    // Capturing Radiance (5.0+): chance in % for a lost coinflip to still hand out a featured item,
+    // indexed by how many coinflips were lost in a row before it. So the first 50/50 is a plain
+    // 50/50, the one after a single loss is 55/45, the one after two losses is 75/25, and a fourth
+    // loss in a row cannot happen. Character banners only.
+    static final int[] DEFAULT_CAPTURING_RADIANCE = {0, 10, 50, 100};
+    @Getter int scheduleId = -1;
+    @Getter int sortId = -1;
+    @Getter private int gachaType = -1;
+    @Getter private String prefabPath;
+    @Getter private String previewPrefabPath;
+    @Getter private String titlePath;
+    private int costItemId = 0;
+    private int costItemAmount = 1;
+    private int costItemId10 = 0;
+    private int costItemAmount10 = 10;
+    @Getter private int beginTime = 0;
+    @Getter private int endTime = 1924992000;
+    @Getter private int gachaTimesLimit = Integer.MAX_VALUE;
+    @Getter private int[] rateUpItems4 = {};
+    @Getter private int[] rateUpItems5 = {};
+    // This now handles default values for the fields below
+    @Getter private BannerType bannerType = BannerType.STANDARD;
+    // These don't change between banner types (apart from Standard having three extra 4star avatars)
+    @Getter
+    private int[] fallbackItems3 = {
+        11301, 11302, 11306, 12301, 12302, 12305, 13303, 14301, 14302, 14304, 15301, 15302, 15304
+    };
+
+    @Getter private int[] fallbackItems4Pool1 = DEFAULT_FALLBACK_ITEMS_4_POOL_1;
+    @Getter private int[] fallbackItems4Pool2 = DEFAULT_FALLBACK_ITEMS_4_POOL_2;
+    // Different banner types have different defaults, see above for default values and the enum for
+    // which are used where.
+    @Getter private int[] fallbackItems5Pool1;
+    @Getter private int[] fallbackItems5Pool2;
+    private int[][] weights4;
+    private int[][] weights5;
+    private int eventChance4 = -1; // Chance to win a featured event item
+    private int eventChance5 = -1; // Chance to win a featured event item
+    private int[] capturingRadianceChances = null; // Defaults to the banner type, see onLoad()
+    //
+    @Getter private boolean removeC6FromPool = false;
+
+    @Getter
+    private boolean autoStripRateUpFromFallback =
+            true; // Ensures that featured items won't "double dip" into the losing pool
+
+    private int[][] poolBalanceWeights4 = {
+        {1, 255}, {17, 255}, {21, 10455}
+    }; // Used to ensure that players won't go too many rolls without getting something from pool 1
+    // (avatar) or pool 2 (weapon)
+    private int[][] poolBalanceWeights5 = {{1, 30}, {147, 150}, {181, 10230}};
+    @Getter private int wishMaxProgress = 0;
+
+    // Epitomized-path routing fields introduced by the patched banner format.
+    private boolean epitomizedPath = false;
+    private int[] epitomizedItems5 = {};
+    private String pityGroup;
+    private String epitomizedTarget;
+
+    // Deprecated fields that were tolerated in early May 2022 but have apparently still being
+    // circulating in new custom configs
+    // For now, throw up big scary errors on load telling people that they will be banned outright in
+    // a future version
+    @Deprecated private int[] rateUpItems1 = {};
+    @Deprecated private int[] rateUpItems2 = {};
+    @Deprecated private int eventChance = -1;
+    @Deprecated private int costItem = 0;
+    @Deprecated private int softPity = -1;
+    @Deprecated private int hardPity = -1;
+    @Deprecated private int minItemType = -1;
+    @Deprecated private int maxItemType = -1;
+    @Getter private boolean deprecated = false;
+    @Getter private boolean disabled = false;
+
+    private void warnDeprecated(String name, String replacement) {
+        Grasscutter.getLogger()
+                .error(
+                        "Deprecated field found in Banners config: "
+                                + name
+                                + " was replaced back in early May 2022, use "
+                                + replacement
+                                + " instead. You MUST remove this field from your config.");
+        this.deprecated = true;
+    }
+
+    public void onLoad() {
+        // Handle deprecated configs
+        if (eventChance != -1) warnDeprecated("eventChance", "eventChance4 & eventChance5");
+        if (costItem != 0) warnDeprecated("costItem", "costItemId");
+        if (softPity != -1) warnDeprecated("softPity", "weights5");
+        if (hardPity != -1) warnDeprecated("hardPity", "weights5");
+        if (minItemType != -1) warnDeprecated("minItemType", "fallbackItems[4,5]Pool[1,2]");
+        if (maxItemType != -1) warnDeprecated("maxItemType", "fallbackItems[4,5]Pool[1,2]");
+        if (rateUpItems1.length > 0) warnDeprecated("rateUpItems1", "rateUpItems5");
+        if (rateUpItems2.length > 0) warnDeprecated("rateUpItems2", "rateUpItems4");
+
+        // Handle default values
+        if (this.previewPrefabPath != null
+                && this.previewPrefabPath.equals("UI_Tab_" + this.prefabPath))
+            Grasscutter.getLogger()
+                    .error(
+                            "Redundant field found in Banners config: previewPrefabPath does not need to be specified if it is identical to prefabPath prefixed with \"UI_Tab_\".");
+        if (this.previewPrefabPath == null || this.previewPrefabPath.isEmpty())
+            this.previewPrefabPath = "UI_Tab_" + this.prefabPath;
+        if (this.gachaType < 0) this.gachaType = this.bannerType.gachaType;
+        if (this.costItemId == 0) this.costItemId = this.bannerType.costItemId;
+        if (this.costItemId10 == 0) this.costItemId10 = this.costItemId;
+        if (this.weights4 == null) this.weights4 = this.bannerType.weights4;
+        if (this.weights5 == null) this.weights5 = this.bannerType.weights5;
+        if (this.eventChance4 < 0) this.eventChance4 = this.bannerType.eventChance4;
+        if (this.eventChance5 < 0) this.eventChance5 = this.bannerType.eventChance5;
+        if (this.fallbackItems5Pool1 == null)
+            this.fallbackItems5Pool1 = this.bannerType.fallbackItems5Pool1;
+        if (this.fallbackItems5Pool2 == null)
+            this.fallbackItems5Pool2 = this.bannerType.fallbackItems5Pool2;
+        if (this.capturingRadianceChances == null)
+            this.capturingRadianceChances =
+                    switch (this.bannerType) {
+                        case EVENT, CHARACTER, CHARACTER2 -> DEFAULT_CAPTURING_RADIANCE;
+                        default -> EMPTY_POOL; // Capturing Radiance only exists on character banners
+                    };
+        // Set max wish progress based on wish type, otherwise its 0.
+        // The Epitomized Path costs one Fate Point since 5.0; it was two from 2.0 to 4.8.
+        if (this.bannerType.equals(BannerType.WEAPON)) this.wishMaxProgress = 1;
+        if (this.bannerType.equals(BannerType.CHRONICLE)) this.wishMaxProgress = 1;
+        this.applyFallback4PoolRouting();
+    }
+
+    private void applyFallback4PoolRouting() {
+        if (this.isWeaponFocusedPool()) {
+            this.fallbackItems4Pool1 = EMPTY_POOL;
+        } else if (this.isCharacterFocusedPool()) {
+            this.fallbackItems4Pool2 = EMPTY_POOL;
+        }
+    }
+
+    public ItemParamData getCost(int numRolls) {
+        return switch (numRolls) {
+            case 10 -> new ItemParamData(costItemId10, costItemAmount10);
+            default -> new ItemParamData(costItemId, costItemAmount * numRolls);
+        };
+    }
+
+    @Deprecated
+    public int getCostItem() {
+        return costItemId;
+    }
+
+    public boolean hasEpitomized() {
+        if (isChronicleLinkedBanner()) return false;
+        return epitomizedPath || bannerType.equals(BannerType.WEAPON) || bannerType.equals(BannerType.CHRONICLE);
+    }
+
+    public boolean isWeaponFocusedPool() {
+        return scheduleId == 5098
+                || "CHRONICLE_WEAPON".equalsIgnoreCase(pityGroup)
+                || bannerType == BannerType.WEAPON;
+    }
+
+    public boolean isCharacterFocusedPool() {
+        if (scheduleId == 5099) return true;
+        if ("CHRONICLE".equalsIgnoreCase(pityGroup)
+                && !"CHRONICLE_WEAPON".equalsIgnoreCase(pityGroup)) return true;
+        return bannerType == BannerType.CHARACTER
+                || bannerType == BannerType.CHARACTER2
+                || bannerType == BannerType.EVENT;
+    }
+
+    public boolean isChronicleLinkedBanner() {
+        return scheduleId == 5098 || scheduleId == 5099;
+    }
+
+    public boolean isChronicleMixedBanner() {
+        return bannerType == BannerType.CHRONICLE && epitomizedPath && !isChronicleLinkedBanner();
+    }
+
+    public boolean isCharacterEpitomizedPool() {
+        return "CHARACTER".equalsIgnoreCase(epitomizedTarget);
+    }
+
+    public boolean isWeaponEpitomizedPool() {
+        return "WEAPON".equalsIgnoreCase(epitomizedTarget);
+    }
+
+    public boolean isValidEpitomizedWish(int itemId) {
+        if (itemId <= 0) return false;
+        if (scheduleId == 5098) return itemId >= 10000;
+        if (scheduleId == 5099) return itemId < 10000;
+        if (isCharacterEpitomizedPool() && itemId > 10000) return false;
+        if (isWeaponEpitomizedPool() && itemId > 0 && itemId < 10000) return false;
+        for (int candidate : resolveEpitomizedPathItems()) {
+            if (candidate == itemId) return true;
+        }
+        return !hasEpitomized() || rateUpItems5.length == 0 || rateUpItems5[0] == itemId;
+    }
+
+    private int[] resolveEpitomizedPathItems() {
+        int[] items;
+        if (epitomizedItems5 != null && epitomizedItems5.length > 0) items = epitomizedItems5;
+        else if (isCharacterEpitomizedPool() && fallbackItems5Pool1 != null && fallbackItems5Pool1.length > 0)
+            items = fallbackItems5Pool1;
+        else if (isWeaponEpitomizedPool() && fallbackItems5Pool2 != null && fallbackItems5Pool2.length > 0)
+            items = fallbackItems5Pool2;
+        else items = rateUpItems5;
+        return filterEpitomizedPathItems(items);
+    }
+
+    private int[] filterEpitomizedPathItems(int[] items) {
+        if (items == null || items.length == 0) return items == null ? EMPTY_POOL : items;
+        int kept = 0;
+        for (int id : items) if (!isExcludedEpitomizedItem(id)) kept++;
+        if (kept == items.length) return items;
+        int[] filtered = new int[kept];
+        int index = 0;
+        for (int id : items) if (!isExcludedEpitomizedItem(id)) filtered[index++] = id;
+        return filtered;
+    }
+
+    private boolean isExcludedEpitomizedItem(int itemId) {
+        if (!isCharacterEpitomizedPool()) return itemId == 20001;
+        if (itemId >= 3000 && itemId < 4000) return true;
+        for (int excluded : EPITOMIZED_EXCLUDED_CHAR_IDS) if (itemId == excluded) return true;
+        return false;
+    }
+
+    public boolean supportsCapturingRadiance() {
+        return false;
+    }
+
+    public int getTabSortId() {
+        return switch (scheduleId) {
+            case 803 -> 10000;
+            case 5002 -> 9000;
+            case 5003 -> 8000;
+            case 5099 -> 7000;
+            case 5098 -> 6000;
+            case 1 -> 5000;
+            default -> sortId;
+        };
+    }
+
+    public int sanitizeWishItemId(int itemId) {
+        return isValidEpitomizedWish(itemId) ? itemId : 0;
+    }
+
+    public void ensureFallback4Pools() {
+        this.applyFallback4PoolRouting();
+        if (this.isWeaponFocusedPool()) {
+            if (this.fallbackItems4Pool2 == null || this.fallbackItems4Pool2.length == 0) {
+                this.fallbackItems4Pool2 = GachaEpitomizedCompanionHelper.getAllFourStarWeapons();
+            }
+            if (this.fallbackItems4Pool2.length == 0) {
+                this.fallbackItems4Pool2 = DEFAULT_FALLBACK_ITEMS_4_POOL_2;
+            }
+        } else if (this.isCharacterFocusedPool()) {
+            if (this.fallbackItems4Pool1 == null || this.fallbackItems4Pool1.length == 0) {
+                this.fallbackItems4Pool1 = GachaEpitomizedCompanionHelper.getAllFourStarCharacters();
+            }
+            if (this.fallbackItems4Pool1.length == 0) {
+                this.fallbackItems4Pool1 = DEFAULT_FALLBACK_ITEMS_4_POOL_1;
+            }
+        } else {
+            if (this.fallbackItems4Pool1 == null) {
+                this.fallbackItems4Pool1 = DEFAULT_FALLBACK_ITEMS_4_POOL_1;
+            }
+            if (this.fallbackItems4Pool2 == null) {
+                this.fallbackItems4Pool2 = DEFAULT_FALLBACK_ITEMS_4_POOL_2;
+            }
+        }
+    }
+
+    public int getWeight(int rarity, int pity) {
+        return switch (rarity) {
+            case 4 -> Utils.lerp(pity, weights4);
+            default -> Utils.lerp(pity, weights5);
+        };
+    }
+
+    public int getPoolBalanceWeight(int rarity, int pity) {
+        return switch (rarity) {
+            case 4 -> Utils.lerp(pity, poolBalanceWeights4);
+            default -> Utils.lerp(pity, poolBalanceWeights5);
+        };
+    }
+
+    public int getCapturingRadianceChance(int consecutiveLosses) {
+        if (capturingRadianceChances == null || capturingRadianceChances.length == 0) return 0;
+        // Streaks longer than the table keep the last (guaranteed) entry
+        int index = Math.min(Math.max(consecutiveLosses, 0), capturingRadianceChances.length - 1);
+        return capturingRadianceChances[index];
+    }
+
+    public int getEventChance(int rarity) {
+        return switch (rarity) {
+            case 4 -> eventChance4;
+            default -> eventChance5;
+        };
+    }
+
+    public GachaInfo toProto(Player player) {
+        // TODO: use other Nonce/key insteadof session key to ensure the overall security for the player
+        String sessionKey = player.getAccount().getSessionKey();
+
+        String record =
+                "http"
+                        + (HTTP_ENCRYPTION.useInRouting ? "s" : "")
+                        + "://"
+                        + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress)
+                        + ":"
+                        + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
+                        + "/gacha?s="
+                        + sessionKey
+                        + "&gachaType="
+                        + gachaType;
+        String details =
+                "http"
+                        + (HTTP_ENCRYPTION.useInRouting ? "s" : "")
+                        + "://"
+                        + lr(HTTP_INFO.accessAddress, HTTP_INFO.bindAddress)
+                        + ":"
+                        + lr(HTTP_INFO.accessPort, HTTP_INFO.bindPort)
+                        + "/gacha/details?s="
+                        + sessionKey
+                        + "&scheduleId="
+                        + scheduleId;
+
+        // Grasscutter.getLogger().info("record = " + record);
+        PlayerGachaBannerInfo gachaInfo = player.getGachaInfo().getBannerInfo(this);
+        int rawWishItemId = gachaInfo.getWishItemId();
+        int linkedCharacterWish = GachaEpitomizedPrefabHelper.resolveChronicleCharacterWish(player);
+        int linkedWeaponWish = GachaEpitomizedPrefabHelper.resolveChronicleWeaponWish(player);
+        int wishItemId;
+        if (this.scheduleId == GachaEpitomizedPrefabHelper.LINKED_WEAPON_SCHEDULE_ID) {
+            wishItemId = linkedWeaponWish > 0 ? linkedWeaponWish : 0;
+            if (wishItemId > 0) gachaInfo.setWishItemId(wishItemId);
+        } else if (this.scheduleId == GachaEpitomizedPrefabHelper.LINKED_CHARACTER_SCHEDULE_ID) {
+            wishItemId = linkedCharacterWish > 0 ? linkedCharacterWish : 0;
+            if (wishItemId > 0) gachaInfo.setWishItemId(wishItemId);
+        } else {
+            wishItemId = this.sanitizeWishItemId(rawWishItemId);
+            if (wishItemId != rawWishItemId) {
+                boolean typeMismatchOnly =
+                        this.isCharacterEpitomizedPool() && rawWishItemId > 10000
+                                || this.isWeaponEpitomizedPool()
+                                        && rawWishItemId > 0
+                                        && rawWishItemId < 10000;
+                if (!typeMismatchOnly) gachaInfo.setWishItemId(wishItemId);
+            }
+        }
+        int leftGachaTimes =
+                switch (gachaTimesLimit) {
+                    case Integer.MAX_VALUE -> Integer.MAX_VALUE;
+                    default -> Math.max(gachaTimesLimit - gachaInfo.getTotalPulls(), 0);
+                };
+
+        String previewPath = this.getPreviewPrefabPath();
+        if (previewPath == null || previewPath.isEmpty()) {
+            previewPath = "UI_Tab_" + this.getPrefabPath();
+        }
+        GachaInfo.Builder info =
+                GachaInfo.newBuilder()
+                        .setGachaType(this.getGachaType())
+                        .setScheduleId(this.getScheduleId())
+                        .setBeginTime(this.getBeginTime())
+                        .setEndTime(this.getEndTime())
+                        .setCostItemId(this.costItemId)
+                        .setCostItemNum(this.costItemAmount)
+                        .setTenCostItemNum(this.costItemAmount10)
+                        .setTenCostItemId(this.costItemId10)
+                        .setGachaPrefabPath(this.getPrefabPath())
+                        .setGachaPreviewPrefabPath(previewPath)
+                        .setGachaProbUrl(details)
+                        .setGachaProbUrlOversea(details)
+                        .setGachaRecordUrl(record)
+                        .setGachaRecordUrlOversea(record)
+                        .setLeftGachaTimes(leftGachaTimes)
+                        .setGachaTimesLimit(gachaTimesLimit)
+                        .setGachaSortId(this.getTabSortId())
+                        .setIsNewWish(true);
+
+        if (hasEpitomized()) {
+            info.setWishItemId(wishItemId)
+                    .setWishProgress(gachaInfo.getFailedChosenItemPulls())
+                    .setWishMaxProgress(this.getWishMaxProgress());
+        }
+
+        if (this.getTitlePath() != null) {
+            info.setTitleTextmap(this.getTitlePath());
+        }
+
+        if (this.getRateUpItems5().length > 0) {
+            GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(1);
+
+            for (int id : getRateUpItems5()) {
+                upInfo.addItemIdList(id);
+                if (!hasEpitomized()) info.addDisplayUp5ItemList(id);
+            }
+
+            info.addGachaUpInfoList(upInfo);
+        }
+
+        if (this.hasEpitomized() && !this.isChronicleLinkedBanner()) {
+            for (int id : this.resolveEpitomizedPathItems()) {
+                info.addDisplayChronicle5ItemList(id);
+                info.addDisplayUp5ItemList(id);
+            }
+        }
+
+        if (this.scheduleId == GachaEpitomizedPrefabHelper.LINKED_CHARACTER_SCHEDULE_ID
+                && linkedCharacterWish > 0) {
+            info.setGachaType(BannerType.CHARACTER.gachaType);
+            GachaEpitomizedPrefabHelper.Skin skin =
+                    GachaEpitomizedPrefabHelper.resolve(linkedCharacterWish);
+            if (skin != null) {
+                info.setGachaPrefabPath(skin.getPrefabPath())
+                        .setGachaPreviewPrefabPath(skin.getPreviewPrefabPath());
+                if (skin.getTitlePath() != null && !skin.getTitlePath().isEmpty()) {
+                    info.setTitleTextmap(skin.getTitlePath());
+                }
+            }
+            GachaUpInfo.Builder linkedUp = GachaUpInfo.newBuilder().setItemParentType(1);
+            linkedUp.addItemIdList(linkedCharacterWish);
+            info.addDisplayUp5ItemList(linkedCharacterWish).addGachaUpInfoList(linkedUp);
+            int[] companion4 =
+                    GachaEpitomizedCompanionHelper.resolveCharacterRateUp4(
+                            linkedCharacterWish, this.getRateUpItems4());
+            if (companion4.length > 0) {
+                GachaUpInfo.Builder up4 = GachaUpInfo.newBuilder().setItemParentType(1);
+                for (int id : companion4) {
+                    if (id <= 0) continue;
+                    up4.addItemIdList(id);
+                    info.addDisplayUp4ItemList(id);
+                }
+                info.addGachaUpInfoList(up4);
+            }
+        }
+
+        if (this.scheduleId == GachaEpitomizedPrefabHelper.LINKED_WEAPON_SCHEDULE_ID
+                && linkedWeaponWish > 0) {
+            info.setGachaType(BannerType.WEAPON.gachaType);
+            GachaEpitomizedPrefabHelper.Skin skin =
+                    GachaEpitomizedPrefabHelper.resolve(linkedWeaponWish);
+            if (skin != null) {
+                info.setGachaPrefabPath(skin.getPrefabPath())
+                        .setGachaPreviewPrefabPath(skin.getPreviewPrefabPath());
+                if (skin.getTitlePath() != null && !skin.getTitlePath().isEmpty()) {
+                    info.setTitleTextmap(skin.getTitlePath());
+                }
+            }
+            info.setWishItemId(linkedWeaponWish)
+                    .setWishProgress(gachaInfo.getFailedChosenItemPulls())
+                    .setWishMaxProgress(this.getWishMaxProgress());
+            GachaUpInfo.Builder linkedUp = GachaUpInfo.newBuilder().setItemParentType(2);
+            linkedUp.addItemIdList(linkedWeaponWish);
+            int[] displayPair = GachaEpitomizedPrefabHelper.resolveWeaponDisplayPair(linkedWeaponWish);
+            if (displayPair.length >= 2) {
+                for (int id : displayPair) {
+                    if (id <= 0) continue;
+                    info.addDisplayUp5ItemList(id);
+                    linkedUp.addItemIdList(id);
+                }
+            } else {
+                info.addDisplayUp5ItemList(linkedWeaponWish);
+            }
+            info.addGachaUpInfoList(linkedUp);
+            int[] display4 = GachaEpitomizedCompanionHelper.resolveRateUp4(this, linkedWeaponWish);
+            if (display4.length > 5) {
+                display4 = GachaEpitomizedCompanionHelper.pickDisplaySample(display4, 5);
+            }
+            if (display4.length > 0) {
+                GachaUpInfo.Builder up4 = GachaUpInfo.newBuilder().setItemParentType(2);
+                for (int id : display4) {
+                    if (id <= 0) continue;
+                    up4.addItemIdList(id);
+                    info.addDisplayUp4ItemList(id);
+                }
+                info.addGachaUpInfoList(up4);
+            }
+        }
+
+        int[] displayRateUp4 =
+                this.hasEpitomized() && !this.isChronicleLinkedBanner()
+                        ? GachaEpitomizedCompanionHelper.resolveRateUp4(this, wishItemId)
+                        : this.getRateUpItems4();
+        if (displayRateUp4.length > 0) {
+            int parentType4 = this.isCharacterEpitomizedPool() ? 1 : 2;
+            GachaUpInfo.Builder upInfo = GachaUpInfo.newBuilder().setItemParentType(parentType4);
+            for (int id : displayRateUp4) {
+                upInfo.addItemIdList(id);
+            }
+            int[] displaySample =
+                    this.isCharacterEpitomizedPool()
+                            ? GachaEpitomizedCompanionHelper.pickDisplaySample(displayRateUp4, 4)
+                            : displayRateUp4.length > 5
+                                    ? GachaEpitomizedCompanionHelper.pickDisplaySample(displayRateUp4, 5)
+                                    : displayRateUp4;
+            for (int id : displaySample) {
+                info.addDisplayUp4ItemList(id);
+            }
+            info.addGachaUpInfoList(upInfo);
+        }
+
+        return info.build();
+    }
+
+    public enum BannerType {
+        STANDARD(
+                200,
+                224,
+                DEFAULT_WEIGHTS_4,
+                DEFAULT_WEIGHTS_5,
+                50,
+                50,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_1,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_2),
+        BEGINNER(
+                100,
+                224,
+                DEFAULT_WEIGHTS_4,
+                DEFAULT_WEIGHTS_5,
+                50,
+                50,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_1,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_2),
+        EVENT(
+                301,
+                223,
+                DEFAULT_WEIGHTS_4,
+                DEFAULT_WEIGHTS_5_CHARACTER,
+                50,
+                50,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_1,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_2), // Legacy value for CHARACTER
+        CHARACTER(
+                301,
+                223,
+                DEFAULT_WEIGHTS_4,
+                DEFAULT_WEIGHTS_5_CHARACTER,
+                50,
+                50,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_1,
+                EMPTY_POOL),
+        CHARACTER2(
+                400,
+                223,
+                DEFAULT_WEIGHTS_4,
+                DEFAULT_WEIGHTS_5_CHARACTER,
+                50,
+                50,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_1,
+                EMPTY_POOL),
+        WEAPON(
+                302,
+                223,
+                DEFAULT_WEIGHTS_4_WEAPON,
+                DEFAULT_WEIGHTS_5_WEAPON,
+                75,
+                75,
+                EMPTY_POOL,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_2),
+        CHRONICLE(
+                500,
+                223,
+                DEFAULT_WEIGHTS_4_WEAPON,
+                DEFAULT_WEIGHTS_5_WEAPON,
+                50,
+                50,
+                EMPTY_POOL,
+                DEFAULT_FALLBACK_ITEMS_5_POOL_2);
+
+        public final int gachaType;
+        public final int costItemId;
+        public final int[][] weights4;
+        public final int[][] weights5;
+        public final int eventChance4;
+        public final int eventChance5;
+        public final int[] fallbackItems5Pool1;
+        public final int[] fallbackItems5Pool2;
+
+        BannerType(
+                int gachaType,
+                int costItemId,
+                int[][] weights4,
+                int[][] weights5,
+                int eventChance4,
+                int eventChance5,
+                int[] fallbackItems5Pool1,
+                int[] fallbackItems5Pool2) {
+            this.gachaType = gachaType;
+            this.costItemId = costItemId;
+            this.weights4 = weights4;
+            this.weights5 = weights5;
+            this.eventChance4 = eventChance4;
+            this.eventChance5 = eventChance5;
+            this.fallbackItems5Pool1 = fallbackItems5Pool1;
+            this.fallbackItems5Pool2 = fallbackItems5Pool2;
+        }
+    }
+}

@@ -1,0 +1,699 @@
+package emu.grasscutter.game.entity;
+
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.*;
+import emu.grasscutter.game.ability.*;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.*;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
+import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
+import emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
+import emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo;
+import emu.grasscutter.net.proto.MotionStateOuterClass.MotionState;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
+import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
+import emu.grasscutter.net.proto.VectorOuterClass.Vector;
+import emu.grasscutter.scripts.data.controller.EntityController;
+import emu.grasscutter.net.proto.DetailAbilityInfoOuterClass.DetailAbilityInfo;
+import emu.grasscutter.net.proto.PropChangeDetailInfoOuterClass.PropChangeDetailInfo;
+import emu.grasscutter.server.event.entity.*;
+import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
+import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import it.unimi.dsi.fastutil.ints.*;
+import emu.grasscutter.*;
+import emu.grasscutter.data.GameData;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+import com.google.protobuf.ByteString;
+import com.google.protobuf.CodedOutputStream;
+import com.google.protobuf.UnknownFieldSet;
+
+import lombok.*;
+
+import static emu.grasscutter.GameConstants.ENTITY_ID_BIT_SHIFT;
+
+public abstract class GameEntity {
+    @Getter private final Scene scene;
+    private boolean restrictedFromHealing = false;
+    private boolean convertToHpDebt = false;
+    @Getter @Setter public int id;
+    @Getter @Setter private SpawnDataEntry spawnEntry;
+    @Setter private PropChangeDetailInfo propChangeDetailInfo;
+    @Getter @Setter private DetailAbilityInfo detailAbilityInfo;
+
+    @Getter @Setter private int campId;
+    @Getter @Setter private int campType;
+
+    @Getter @Setter private int blockId;
+    @Getter @Setter private int configId;
+    @Getter @Setter private int groupId;
+
+    @Getter @Setter private MotionState motionState;
+    @Getter @Setter private int lastMoveSceneTimeMs;
+
+    @Getter @Setter private int lastMoveReliableSeq;
+
+    @Getter @Setter private boolean lockHP;
+    /** Set when an ability modifier with {@code state: Invincible} is active. */
+    @Getter @Setter private boolean modifierInvincible;
+    private boolean limbo;
+    private float limboHpThreshold;
+
+    @Setter(AccessLevel.PROTECTED)
+    @Getter
+    private boolean isDead = false;
+
+    @Getter @Setter private EntityController entityController;
+    @Getter private ElementType lastAttackType = ElementType.None;
+
+    @Getter private List<Ability> instancedAbilities = new ArrayList<>();
+
+    @Getter
+    private Int2ObjectMap<AbilityModifierController> instancedModifiers =
+            new Int2ObjectOpenHashMap<>();
+
+    // Abilities run on a thread pool, so a plain HashMap here threw ConcurrentModificationException
+    // out of whichever action happened to be reading the values while another wrote them
+    @Getter private Map<String, Float> globalAbilityValues = new ConcurrentHashMap<>();
+    private long convertToHpDebtSetAtMs = 0L;
+
+    public GameEntity(Scene scene) {
+        this.scene = scene;
+        this.motionState = MotionState.MotionState_MOTION_NONE;
+    }
+
+    public abstract void initAbilities();
+
+    public EntityType getEntityType() {
+        return EntityIdType.toEntityType(this.getId() >> ENTITY_ID_BIT_SHIFT);
+    }
+    public boolean isConvertToHpDebt() {
+        Float forbidFoodHeal = this.getGlobalAbilityValues().get("_ABILITY_Avatar_ForbidFoodHeal");
+        long now = System.currentTimeMillis();
+        long timeoutMs = 5500L;
+        if (forbidFoodHeal != null && forbidFoodHeal > 0f) {
+            if (convertToHpDebtSetAtMs <= 0L) {
+                convertToHpDebtSetAtMs = now;
+            } else if (now - convertToHpDebtSetAtMs > timeoutMs) {
+                this.getGlobalAbilityValues().put("_ABILITY_Avatar_ForbidFoodHeal", 0f);
+                convertToHpDebt = false;
+                convertToHpDebtSetAtMs = 0L;
+                return false;
+            }
+            return true;
+        }
+        if (!convertToHpDebt) return false;
+        if (convertToHpDebtSetAtMs > 0L && now - convertToHpDebtSetAtMs > timeoutMs) {
+            convertToHpDebt = false;
+            return false;
+        }
+        return true;
+    }
+
+    public float getNyxValue() {
+        if (this.getGlobalAbilityValues().containsKey("NyxValue")) {
+            return this.getGlobalAbilityValues().get("NyxValue");
+        } else {
+            Grasscutter.getLogger().debug("NyxValue not found");
+            return 0f;
+        }
+    }
+
+    public void setConvertToHpDebt(boolean convertToHpDebt) {
+        this.convertToHpDebt = convertToHpDebt;
+        this.convertToHpDebtSetAtMs = convertToHpDebt ? System.currentTimeMillis() : 0L;
+    }
+
+    public boolean isConvertToHpDebtRaw() {
+        return convertToHpDebt;
+    }
+
+    /** Refresh the timeout while an ability still actively uses HP debt conversion. */
+    public void touchConvertToHpDebt() {
+        Float forbidFoodHeal = this.getGlobalAbilityValues().get("_ABILITY_Avatar_ForbidFoodHeal");
+        if (convertToHpDebt || (forbidFoodHeal != null && forbidFoodHeal > 0f)) {
+            convertToHpDebtSetAtMs = System.currentTimeMillis();
+        }
+    }
+
+    public abstract int getEntityTypeId();
+
+    public World getWorld() {
+        return this.getScene().getWorld();
+    }
+        public boolean isRestrictedFromHealing() {
+            return restrictedFromHealing;
+        }
+
+        public void setRestrictedFromHealing(boolean restricted) {
+            this.restrictedFromHealing = restricted;
+        }
+
+    public boolean isAlive() {
+        return !this.isDead;
+    }
+    public LifeState getLifeState() {
+        return this.isAlive() ? LifeState.LIFE_ALIVE : LifeState.LIFE_DEAD;
+    }
+
+    public abstract Int2FloatMap getFightProperties();
+
+    public abstract Position getPosition();
+
+    public abstract Position getRotation();
+
+    // Not every entity carries fight properties, and the ones that do can be asked for them before
+    // they are built. Reading one used to throw straight out of whatever ability action asked.
+    public void setFightProperty(FightProperty prop, float value) {
+        this.setFightProperty(prop.getId(), value);
+    }
+
+    public void setFightProperty(int id, float value) {
+        var properties = this.getFightProperties();
+        if (properties == null) return;
+
+        properties.put(id, value);
+    }
+
+    public void addFightProperty(FightProperty prop, float value) {
+        this.setFightProperty(prop.getId(), this.getFightProperty(prop) + value);
+    }
+
+    public float getFightProperty(FightProperty prop) {
+        var properties = this.getFightProperties();
+        return properties == null ? 0f : properties.getOrDefault(prop.getId(), 0f);
+    }
+
+    public boolean hasFightProperty(FightProperty prop) {
+        var properties = this.getFightProperties();
+        return properties != null && properties.containsKey(prop.getId());
+    }
+
+    public void addAllFightPropsToEntityInfo(SceneEntityInfo.Builder entityInfo) {
+        var properties = this.getFightProperties();
+        if (properties == null) return;
+
+        properties.forEach(
+                        (key, value) -> {
+                            if (key == 0) return;
+                            entityInfo.addFightPropList(
+                                    FightPropPair.newBuilder().setPropType(key).setPropValue(value).build());
+                        });
+    }
+
+    protected void setLimbo(float hpThreshold) {
+        limbo = true;
+        limboHpThreshold = hpThreshold;
+    }
+
+    /** Clear death-prevention limbo (e.g. after a temporary stage-control modifier ends). */
+    public void clearLimbo() {
+        limbo = false;
+        limboHpThreshold = 0f;
+    }
+
+    public boolean isLimbo() {
+        return limbo;
+    }
+
+    /**
+     * Applies fight-prop modifier properties when the owning {@link emu.grasscutter.game.ability.Ability}
+     * is known (needed to resolve DynamicFloat ability specials).
+     */
+    public void onAddAbilityModifier(AbilityModifier data, emu.grasscutter.game.ability.Ability ability, String modifierName) {
+        onAddAbilityModifier(data);
+        if (ability != null && modifierName != null) {
+            emu.grasscutter.game.ability.AbilityMaxHpRatioHelper.onModifierAdded(
+                    ability, modifierName, data, this);
+        }
+    }
+
+    public GameEntity getTrueOwner() {
+    if (this instanceof EntityClientGadget gadget) {
+        GameEntity owner = gadget.getScene().getEntityById(gadget.getOwnerEntityId());
+
+        return (owner instanceof EntityClientGadget) ? owner.getTrueOwner() : owner;
+    }
+    return this;
+}
+
+    public void onAddAbilityModifier(AbilityModifier data) {
+        if (data == null) {
+            return;
+        }
+        // LockHP / Invincible / shield-bar are combat states; they must apply even when the
+        // modifier has no Actor_* properties (Hypostasis ShieldModifier is LockHP-only).
+        if (data.state == AbilityModifier.State.LockHP) {
+            this.setLockHP(true);
+        }
+        if (data.state == AbilityModifier.State.Invincible) {
+            this.setModifierInvincible(true);
+        }
+        try {
+            if (emu.grasscutter.game.world.EffigyCombatHelper.isProtectiveModifier(data)
+                    && this instanceof EntityMonster monster
+                    && emu.grasscutter.game.world.EffigyCombatHelper.isEffigy(monster)) {
+                this.setLockHP(true);
+            }
+        } catch (Throwable ignored) {
+        }
+
+        if (data.state == AbilityModifier.State.Limbo) {
+            // No ability instance here to resolve a named special against, so an unresolvable
+            // one reads as zero. Limbo modifiers without an explicit threshold (e.g. Hu Tao C6)
+            // still need death-prevention, so fall back to a tiny floor.
+            float hpThresholdRatio =
+                    data.properties != null ? data.properties.Actor_HpThresholdRatio.get(0f) : 0f;
+            if (hpThresholdRatio <= 0.0f) {
+                hpThresholdRatio = 1e-6f;
+            }
+            Grasscutter.getLogger().debug("Limbo set to {}", hpThresholdRatio);
+            this.setLimbo(hpThresholdRatio);
+        }
+    }
+
+    /** Recompute Invincible from remaining instanced modifiers after a remove. */
+    public void refreshModifierInvincible() {
+        boolean inv = false;
+        if (this.instancedModifiers != null) {
+            for (var ctrl : this.instancedModifiers.values()) {
+                if (ctrl != null
+                        && ctrl.getModifierData() != null
+                        && ctrl.getModifierData().state == AbilityModifier.State.Invincible) {
+                    inv = true;
+                    break;
+                }
+            }
+        }
+        this.modifierInvincible = inv;
+    }
+
+    protected MotionInfo getMotionInfo() {
+        return MotionInfo.newBuilder()
+                .setPos(this.getPosition().toProto())
+                .setRot(this.getRotation().toProto())
+                .setSpeed(Vector.newBuilder())
+                .setState(this.getMotionState())
+                .build();
+    }
+
+    protected void injectIntMotionInfo(SceneEntityInfo.Builder entityInfo) {
+        try {
+            Position pos = this.getPosition();
+            Position rot = this.getRotation();
+            if (pos == null || rot == null) return;
+
+            int px = Math.round(pos.getX() * 1000f);
+            int py = Math.round(pos.getY() * 1000f);
+            int pz = Math.round(pos.getZ() * 1000f);
+            int rx = Math.round(rot.getX() * 1000f);
+            int ry = Math.round(rot.getY() * 1000f);
+            int rz = Math.round(rot.getZ() * 1000f);
+
+            ByteArrayOutputStream posOut = new ByteArrayOutputStream();
+            CodedOutputStream posCos = CodedOutputStream.newInstance(posOut);
+            posCos.writeInt32(1, px);
+            posCos.writeInt32(2, py);
+            posCos.writeInt32(3, pz);
+            posCos.flush();
+
+            ByteArrayOutputStream rotOut = new ByteArrayOutputStream();
+            CodedOutputStream rotCos = CodedOutputStream.newInstance(rotOut);
+            rotCos.writeInt32(1, rx);
+            rotCos.writeInt32(2, ry);
+            rotCos.writeInt32(3, rz);
+            rotCos.flush();
+
+            ByteArrayOutputStream msgOut = new ByteArrayOutputStream();
+            CodedOutputStream msgCos = CodedOutputStream.newInstance(msgOut);
+            msgCos.writeUInt32(1, this.getId());
+            msgCos.writeBytes(2, ByteString.copyFrom(posOut.toByteArray()));
+            msgCos.writeBytes(3, ByteString.copyFrom(rotOut.toByteArray()));
+            msgCos.writeEnum(4, this.getMotionState().getNumber());
+            msgCos.flush();
+
+            entityInfo.mergeUnknownFields(
+                UnknownFieldSet.newBuilder()
+                    .addField(25, UnknownFieldSet.Field.newBuilder()
+                        .addLengthDelimited(ByteString.copyFrom(msgOut.toByteArray()))
+                        .build())
+                    .build());
+        } catch (Exception e) {
+            Grasscutter.getLogger().error("Failed to inject EntityIntMotionInfo", e);
+        }
+    }
+
+    public float heal(float amount) {
+        return heal(amount, false);
+    }
+
+    public float heal(float amount, boolean mute) {
+        ClorindeBoLUtil.beforeHeal(this);
+        try {
+        if (this.getFightProperties() == null) {
+            return 0f;
+        }
+
+        float toHeal = 0f;
+        float toRepay = 0f;
+        float curHp = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        float maxHp = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        float curHpDebt = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+
+        if (curHp >= maxHp && curHpDebt <= 0) {
+            return 0f;
+        }
+
+        toRepay = Math.min(amount, curHpDebt);
+        toHeal = Math.min(maxHp - curHp, amount - toRepay);
+        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, toHeal);
+        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -toRepay);
+
+        if (toHeal > 0) {
+            this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
+        }
+        if (toRepay > 0) {
+            this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+
+            if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS) > 0) {
+                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, toRepay,
+                                                        mute
+                                                                ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
+                                                                : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
+
+                                                        ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY
+                ));
+            } else {
+                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, toRepay,
+                                                        mute
+                                                                ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
+                                                                : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
+
+                                                        ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
+                                                       ));
+            }
+        }
+
+        return toHeal;
+        } finally {
+            ClorindeBoLUtil.afterHeal(this);
+        }
+    }
+
+    public void damage(float amount) {
+        GameEntity ownerEntity = resolveOwnerEntity(this);
+        this.damage(amount, 0, ElementType.None);
+    }
+    private GameEntity resolveOwnerEntity(GameEntity owner) {
+        if (owner instanceof EntityClientGadget ownerGadget) {
+
+            GameEntity nextOwner = ownerGadget.getScene().getEntityById(ownerGadget.getOwnerEntityId());
+            return resolveOwnerEntity(nextOwner);
+        }
+        return owner;
+    }
+      public void addSpecialEnergy(float energy){
+       float curSpecialEnergy = getFightProperty(FightProperty.FIGHT_PROP_CUR_SPECIAL_ENERGY);
+       float maxSpecialEnergy = getFightProperty(FightProperty.FIGHT_PROP_MAX_SPECIAL_ENERGY);
+       // Nightsoul is spent through here too, as a negative, so it needs a floor as well as a cap.
+       curSpecialEnergy = Math.max(0, Math.min(maxSpecialEnergy, curSpecialEnergy + energy));
+       setFightProperty(FightProperty.FIGHT_PROP_CUR_SPECIAL_ENERGY, curSpecialEnergy);
+       this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_SPECIAL_ENERGY));
+    }
+
+    public void clearSpecialEnergy(){
+        setFightProperty(FightProperty.FIGHT_PROP_CUR_SPECIAL_ENERGY, 0);
+        this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_SPECIAL_ENERGY));
+    }
+
+    public void damage(float amount, ElementType attackType) {
+        this.damage(amount, 0, attackType);
+    }
+
+    public void damage(float amount, int killerId, ElementType attackType) {
+        this.damage(amount, killerId, attackType, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE, ChangeHpReason.ChangeHpReason_CHANGE_HP_NONE);
+    }
+
+    public void damage(float amount, PropChangeReason propChangeReason, ChangeHpReason changeHpReason) {
+        this.damage(amount, 0, ElementType.None, propChangeReason, changeHpReason);
+    }
+
+    public void damage(float amount, int killerId, ElementType attackType, PropChangeReason propChangeReason, ChangeHpReason changeHpReason) {
+
+        if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
+            return;
+        }
+
+        if (this.modifierInvincible) {
+            return;
+        }
+
+        EntityDamageEvent event =
+                new EntityDamageEvent(this, amount, attackType, this.getScene().getEntityById(killerId));
+        if (this.getScene() != null) {
+            MavuikaSpiritHelper.onAttackHit(this.getScene().getEntityById(killerId));
+        }
+        event.call();
+        if (event.isCanceled()) {
+            return;
+        }
+
+        float effectiveDamage = 0;
+        float curHp = getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        if (limbo) {
+            float maxHp = getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+            float curRatio = curHp / maxHp;
+            if (curRatio > limboHpThreshold) {
+
+                effectiveDamage = event.getDamage();
+            }
+            if (effectiveDamage >= curHp && limboHpThreshold > .0f) {
+
+                effectiveDamage = curHp - 1;
+            }
+        } else if (curHp != Float.POSITIVE_INFINITY && !lockHP
+                || lockHP && curHp <= event.getDamage()) {
+            effectiveDamage = event.getDamage();
+        }
+
+        if (this instanceof EntityAvatar avatarCandidate) {
+            try {
+                effectiveDamage =
+                        HutaoC6Helper.filterDamage(avatarCandidate, curHp, effectiveDamage);
+            } catch (Throwable t) {
+                Grasscutter.getLogger().warn("[HutaoC6] filterDamage failed", t);
+            }
+            try {
+                effectiveDamage =
+                        ShinobuC6Helper.filterDamage(avatarCandidate, curHp, effectiveDamage);
+            } catch (Throwable t) {
+                Grasscutter.getLogger().warn("[ShinobuC6] filterDamage failed", t);
+            }
+            // Barbara C6 does not cheat death here: officially the character goes down first and is then
+            // revived immediately. See Scene.killEntity.
+        }
+
+        this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -effectiveDamage);
+
+        this.lastAttackType = attackType;
+        this.checkIfDead();
+        this.runLuaCallbacks(event);
+
+        this.getScene()
+                .broadcastPacket(
+                        new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP));
+
+        if (effectiveDamage > 0) {
+            GameEntity attacker = this.getScene().getEntityById(killerId);
+            ChangeHpReason dmgHpReason;
+            if (attacker instanceof EntityAvatar) {
+                dmgHpReason = ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_AVATAR;
+            } else if (attacker instanceof EntityMonster) {
+                dmgHpReason = ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_MONSTER;
+            } else {
+                dmgHpReason = ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_ABILITY;
+            }
+            this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(
+                this, FightProperty.FIGHT_PROP_CUR_HP, -effectiveDamage,
+                PropChangeReason.PropChangeReason_PROP_CHANGE_NONE, dmgHpReason));
+        }
+
+        if (this instanceof EntityAvatar entityAvatar) {
+            // On damage, update HP with a single-property notify so a full AvatarFightPropNotify cannot
+            // wipe the Bond of Life bar;
+            // when BoL is present, onDamaged separately re-pushes HP_DEBTS and the enhancement tier.
+            entityAvatar
+                    .getPlayer()
+                    .sendPacket(
+                            new PacketAvatarFightPropUpdateNotify(
+                                    entityAvatar.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
+            try {
+                ClorindeBoLUtil.onDamaged(entityAvatar);
+            } catch (Throwable ignored) {
+            }
+        }
+
+        if (this.isDead) {
+            this.getScene().killEntity(this, killerId);
+        }
+    }
+
+    public void checkIfDead() {
+        if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
+            return;
+        }
+
+        if (this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP) <= 0f) {
+            this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
+            float debt = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+            if (debt >= 0) {
+                this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f);
+                this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
+                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -debt, PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_CLEAR));
+            }
+            this.isDead = true;
+        }
+    }
+
+    public void runLuaCallbacks(EntityDamageEvent event) {
+        if (entityController != null) {
+            entityController.onBeHurt(this, event.getAttackElementType(), true);
+        }
+    }
+
+    public void move(Position position, Position rotation) {
+
+        this.getPosition().set(position);
+        this.getRotation().set(rotation);
+    }
+
+    public void onInteract(Player player, GadgetInteractReq interactReq) {}
+
+    public void onCreate() {}
+
+    public void onRemoved() {}
+
+    private int[] parseCountRange(String range) {
+        var split = range.split(";");
+        if (split.length == 1)
+            return new int[] {Integer.parseInt(split[0]), Integer.parseInt(split[0])};
+        return new int[] {Integer.parseInt(split[0]), Integer.parseInt(split[1])};
+    }
+
+    public boolean dropSubfieldItem(int dropId) {
+        var drop = GameData.getDropSubfieldMappingMap().get(dropId);
+        if (drop == null) return false;
+        var dropTableEntry = GameData.getDropTableExcelConfigDataMap().get(drop.getItemId());
+        if (dropTableEntry == null) return false;
+
+        Int2ObjectMap<Integer> itemsToDrop = new Int2ObjectOpenHashMap<>();
+        switch (dropTableEntry.getRandomType()) {
+            case 0:
+                {
+                    int weightCount = 0;
+                    for (var entry : dropTableEntry.getDropVec()) weightCount += entry.getWeight();
+
+                    int randomValue = new Random().nextInt(weightCount);
+
+                    weightCount = 0;
+                    for (var entry : dropTableEntry.getDropVec()) {
+                        if (randomValue >= weightCount && randomValue < (weightCount + entry.getWeight())) {
+                            var countRange = parseCountRange(entry.getCountRange());
+                            itemsToDrop.put(
+                                    entry.getItemId(),
+                                    Integer.valueOf((new Random().nextBoolean() ? countRange[0] : countRange[1])));
+                        }
+                    }
+                }
+                break;
+            case 1:
+                {
+                    // weight is chance out of 10000 (10000 = always). Old check was inverted
+                    // (weight < roll), so SubfieldDrop ores/wood never dropped.
+                    for (var entry : dropTableEntry.getDropVec()) {
+                        if (new Random().nextInt(10000) < entry.getWeight()) {
+                            var countRange = parseCountRange(entry.getCountRange());
+                            itemsToDrop.put(
+                                    entry.getItemId(),
+                                    Integer.valueOf((new Random().nextBoolean() ? countRange[0] : countRange[1])));
+                        }
+                    }
+                }
+                break;
+        }
+
+        for (var entry : itemsToDrop.int2ObjectEntrySet()) {
+            var item =
+                    new EntityItem(
+                            scene,
+                            null,
+                            GameData.getItemDataMap().get(entry.getIntKey()),
+                            getPosition().nearby2d(1f).addY(0.5f),
+                            entry.getValue(),
+                            true);
+
+            scene.addEntity(item);
+        }
+
+        return true;
+    }
+
+    public boolean dropSubfield(String subfieldName) {
+        var subfieldMapping = GameData.getSubfieldMappingMap().get(getEntityTypeId());
+        if (subfieldMapping == null || subfieldMapping.getSubfields() == null) return false;
+
+        for (var entry : subfieldMapping.getSubfields()) {
+            if (entry.getSubfieldName().compareTo(subfieldName) == 0) {
+                return dropSubfieldItem(entry.getDrop_id());
+            }
+        }
+
+        return false;
+    }
+
+    public void onTick(int sceneTime) {
+        if (entityController != null) {
+            entityController.onTimer(this, sceneTime);
+        }
+    }
+
+    public int onClientExecuteRequest(int param1, int param2, int param3) {
+        if (entityController != null) {
+            return entityController.onClientExecuteRequest(this, param1, param2, param3);
+        }
+        return 0;
+    }
+
+    public void onDeath(int killerId) {
+
+        EntityDeathEvent event = new EntityDeathEvent(this, killerId);
+        event.call();
+
+        if (entityController != null) {
+            entityController.onDie(this, getLastAttackType());
+        }
+
+        this.isDead = true;
+    }
+
+    public void onAbilityValueUpdate() {
+
+    }
+
+    public abstract SceneEntityInfo toProto();
+
+    @Override
+    public String toString() {
+        return "Entity ID: %s; Group ID: %s; Config ID: %s"
+                .formatted(this.getId(), this.getGroupId(), this.getConfigId());
+    }
+}

@@ -1,0 +1,339 @@
+package emu.grasscutter.game.entity.gadget;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.common.ItemParamData;
+import emu.grasscutter.data.excels.RewardPreviewData;
+import emu.grasscutter.game.drop.BossChestDropTagResolver;
+import emu.grasscutter.game.drop.DropSystem;
+import emu.grasscutter.game.entity.EntityBaseGadget;
+import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.entity.gadget.chest.BossChestInteractHandler;
+import emu.grasscutter.game.entity.gadget.chest.ChestInteractHandler;
+import emu.grasscutter.game.entity.gadget.chest.WorldChestLootHelper;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.game.world.NodKraiExploreSpawnHelper;
+import emu.grasscutter.game.world.WorldBossSpawnHelper;
+import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.net.proto.BossChestInfoOuterClass;
+import emu.grasscutter.net.proto.GadgetInteractReqOuterClass;
+import emu.grasscutter.net.proto.InterOpTypeOuterClass;
+import emu.grasscutter.net.proto.InteractTypeOuterClass;
+import emu.grasscutter.net.proto.ResinCostTypeOuterClass;
+import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass;
+import emu.grasscutter.net.proto.VisionTypeOuterClass;
+import emu.grasscutter.scripts.SceneScriptManager;
+import emu.grasscutter.scripts.data.SceneBossChest;
+import emu.grasscutter.scripts.data.SceneGadget;
+import emu.grasscutter.scripts.data.SceneGroup;
+import emu.grasscutter.scripts.data.SceneMonster;
+import emu.grasscutter.server.packet.send.PacketGadgetAutoPickDropInfoNotify;
+import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
+import emu.grasscutter.server.packet.send.PacketWorldChestOpenNotify;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * World chests + world-boss trounce blossoms. When DropTable misses ChestDrop ids,
+ * falls back to InvestigationMonster reward preview.
+ */
+public class GadgetChest extends GadgetContent {
+    private static final int CHEST_OPENED_STATE = 102;
+
+    public GadgetChest(EntityGadget gadget) {
+        super(gadget);
+    }
+
+    @Override
+    public boolean onInteract(Player player, GadgetInteractReqOuterClass.GadgetInteractReq req) {
+        if (Grasscutter.getConfig().server.game.enableScriptInBigWorld) {
+            SceneGadget meta = resolveChestMeta();
+            DropSystem dropSystem = player.getServer().getDropSystem();
+            if (meta != null && meta.boss_chest != null) {
+                if (getGadget().getState() == CHEST_OPENED_STATE) {
+                    return false;
+                }
+                if (req.getOpType() == InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START) {
+                    player.sendPacket(
+                            new PacketGadgetInteractRsp(
+                                    getGadget(),
+                                    InteractTypeOuterClass.InteractType.InteractType_INTERACT_OPEN_CHEST,
+                                    InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START));
+                    return false;
+                }
+                int resinCost = meta.boss_chest.resin > 0 ? meta.boss_chest.resin : 40;
+                boolean spent = player.getResinManager().useResin(resinCost);
+                boolean ok = false;
+                if (spent) {
+                    try {
+                        if (meta.drop_tag != null) {
+                            ok = dropSystem.handleBossChestDrop(meta.drop_tag, player);
+                        }
+                    } catch (Throwable t) {
+                        player.getResinManager().addResin(resinCost);
+                        Grasscutter.getLogger()
+                                .warn(
+                                        "Boss chest drop threw group={} drop_tag={} uid={}",
+                                        getGadget().getGroupId(),
+                                        meta.drop_tag,
+                                        player.getUid(),
+                                        t);
+                        return false;
+                    }
+                    if (!ok) {
+                        ok = grantBossChestFallback(player, meta);
+                    }
+                }
+                if (ok) {
+                    try {
+                        player
+                                .getBattlePassManager()
+                                .triggerMission(
+                                        WatcherTriggerType.TRIGGER_WORLD_BOSS_REWARD,
+                                        meta.boss_chest.monster_config_id,
+                                        1);
+                    } catch (Throwable ignored) {
+                    }
+                    finishOpen(player, meta);
+                    WorldBossSpawnHelper.onBossChestClaimed(getGadget());
+                    Grasscutter.getLogger()
+                            .info(
+                                    "Trounce flower claimed uid={} group={} tag={}",
+                                    player.getUid(),
+                                    getGadget().getGroupId(),
+                                    meta.drop_tag);
+                    return false;
+                }
+                if (spent) {
+                    player.getResinManager().addResin(resinCost);
+                }
+                Grasscutter.getLogger()
+                        .warn(
+                                "Trounce flower claim failed uid={} group={} tag={} spent={}",
+                                player.getUid(),
+                                getGadget().getGroupId(),
+                                meta.drop_tag,
+                                spent);
+                return false;
+            }
+            if (player != player.getWorld().getHost()) {
+                return false;
+            }
+            if (getGadget().getState() == CHEST_OPENED_STATE) {
+                return false;
+            }
+            if (req.getOpType() == InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START) {
+                player.sendPacket(
+                        new PacketGadgetInteractRsp(
+                                getGadget(),
+                                InteractTypeOuterClass.InteractType.InteractType_INTERACT_OPEN_CHEST,
+                                InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START));
+                return false;
+            }
+            WorldChestLootHelper.grant(player, getGadget());
+            finishOpen(player, meta);
+            return false;
+        }
+
+        ChestInteractHandler handler =
+                getGadget()
+                        .getScene()
+                        .getWorld()
+                        .getServer()
+                        .getWorldDataSystem()
+                        .getChestInteractHandlerMap()
+                        .get(getGadget().getGadgetData().getJsonName());
+        if (handler == null) {
+            if (player != player.getWorld().getHost()) {
+                return false;
+            }
+            if (getGadget().getState() == CHEST_OPENED_STATE) {
+                return false;
+            }
+            if (req.getOpType() == InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START) {
+                player.sendPacket(
+                        new PacketGadgetInteractRsp(
+                                getGadget(),
+                                InteractTypeOuterClass.InteractType.InteractType_INTERACT_OPEN_CHEST,
+                                InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START));
+                return false;
+            }
+            WorldChestLootHelper.grant(player, getGadget());
+            finishOpen(player, null);
+            return false;
+        }
+
+        if (req.getOpType() == InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START
+                && handler.isTwoStep()) {
+            player.sendPacket(
+                    new PacketGadgetInteractRsp(
+                            getGadget(),
+                            InteractTypeOuterClass.InteractType.InteractType_INTERACT_OPEN_CHEST,
+                            InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_START));
+            return false;
+        }
+
+        boolean success;
+        if (handler instanceof BossChestInteractHandler bossHandler) {
+            success =
+                    bossHandler.onInteract(
+                            this,
+                            player,
+                            req.getResinCostType()
+                                    == ResinCostTypeOuterClass.ResinCostType.ResinCostType_CONDENSE);
+        } else {
+            WorldChestLootHelper.grant(player, getGadget());
+            success = true;
+        }
+        if (!success) {
+            return false;
+        }
+        if (getGadget().getMetaGadget() != null && getGadget().getMetaGadget().boss_chest != null) {
+            finishOpen(player, getGadget().getMetaGadget());
+            WorldBossSpawnHelper.onBossChestClaimed(getGadget());
+        } else {
+            finishOpen(player, null);
+        }
+        return false;
+    }
+
+    private boolean grantBossChestFallback(Player player, SceneGadget meta) {
+        return emu.grasscutter.game.drop.WorldBossChestLootHelper.grant(
+                player, meta, getGadget().getGroupId());
+    }
+
+    private void finishOpen(Player player, SceneGadget sceneGadget) {
+        EntityGadget entityGadget = getGadget();
+        entityGadget.updateState(CHEST_OPENED_STATE);
+        player.sendPacket(
+                new PacketGadgetInteractRsp(
+                        (EntityBaseGadget) entityGadget,
+                        InteractTypeOuterClass.InteractType.InteractType_INTERACT_OPEN_CHEST,
+                        InterOpTypeOuterClass.InterOpType.InterOpType_INTER_OP_FINISH));
+        int configId = sceneGadget != null ? sceneGadget.config_id : entityGadget.getConfigId();
+        try {
+            player.sendPacket(
+                    new PacketWorldChestOpenNotify(
+                            entityGadget.getGroupId(), player.getSceneId(), configId));
+        } catch (Throwable ignored) {
+        }
+        scheduleDespawn(entityGadget);
+        try {
+            NodKraiExploreSpawnHelper.markClaimed(getGadget());
+        } catch (Throwable ignored) {
+        }
+        try {
+            emu.grasscutter.game.world.SnezhnayaExploreSpawnHelper.markClaimed(getGadget());
+        } catch (Throwable ignored) {
+        }
+        try {
+            int gadgetId = entityGadget.getGadgetId();
+            player.getPlayerProgress().addHandbookChestOpen(1);
+            emu.grasscutter.game.player.InvestigationHandbookHelper.trigger(
+                    player,
+                    emu.grasscutter.game.props.WatcherTriggerType.TRIGGER_OPEN_CHEST_WITH_GADGET_ID,
+                    gadgetId,
+                    1);
+        } catch (Throwable ignored) {
+        }
+    }
+
+    private void scheduleDespawn(EntityGadget entityGadget) {
+        try {
+            if (entityGadget == null || entityGadget.getScene() == null) {
+                return;
+            }
+            // Boss trounce flowers: remove immediately with VISION_REMOVE so they do not linger
+            // as opened/smoke visuals while the world boss already respawned.
+            boolean bossFlower =
+                    entityGadget.getMetaGadget() != null
+                            && entityGadget.getMetaGadget().boss_chest != null;
+            // Scene scheduler ticks once per scene tick (~1s); 2 ≈ brief open animation then vanish.
+            int delayTicks = bossFlower ? 0 : 2;
+            int entityId = entityGadget.getId();
+            Runnable despawn =
+                    () -> {
+                        try {
+                            GameEntity entity = entityGadget.getScene().getEntityById(entityId);
+                            if (entity instanceof EntityGadget) {
+                                entityGadget
+                                        .getScene()
+                                        .removeEntity(
+                                                entity,
+                                                VisionTypeOuterClass.VisionType.VisionType_VISION_REMOVE);
+                            }
+                        } catch (Throwable t) {
+                            Grasscutter.getLogger().debug("Chest delayed despawn: {}", t.toString());
+                        }
+                    };
+            if (delayTicks <= 0) {
+                despawn.run();
+            } else {
+                entityGadget.getScene().getScheduler().scheduleDelayedTask(despawn, delayTicks);
+            }
+        } catch (Throwable t) {
+            Grasscutter.getLogger().warn("Chest scheduleDespawn failed: {}", t.toString());
+        }
+    }
+
+    @Override
+    public void onBuildProto(SceneGadgetInfoOuterClass.SceneGadgetInfo.Builder builder) {
+        SceneGadget sceneGadget = resolveChestMeta();
+        if (sceneGadget == null) {
+            return;
+        }
+        SceneBossChest bossChest = sceneGadget.boss_chest;
+        if (bossChest != null) {
+            List<Integer> uids =
+                    getGadget().getScene().getPlayers().stream().map(Player::getUid).toList();
+            builder.setBossChest(
+                    BossChestInfoOuterClass.BossChestInfo.newBuilder()
+                            .setMonsterConfigId(bossChest.monster_config_id)
+                            .setResin(bossChest.resin)
+                            .addAllQualifyUidList(uids)
+                            .addAllRemainUidList(uids)
+                            .build());
+        }
+    }
+
+    private SceneGadget resolveChestMeta() {
+        EntityGadget entityGadget = getGadget();
+        SceneGadget meta = entityGadget.getMetaGadget();
+        if (meta != null && meta.boss_chest != null && meta.drop_tag != null) {
+            return meta;
+        }
+        if (entityGadget.getScene() == null) {
+            return meta;
+        }
+        SceneScriptManager scriptManager = entityGadget.getScene().getScriptManager();
+        if (scriptManager == null) {
+            return meta;
+        }
+        SceneGroup group = scriptManager.getGroupById(entityGadget.getGroupId());
+        if (group == null) {
+            return meta;
+        }
+        if (group.gadgets == null || group.gadgets.isEmpty()) {
+            try {
+                scriptManager.loadGroupFromScript(group);
+            } catch (Throwable ignored) {
+            }
+            group = scriptManager.getGroupById(entityGadget.getGroupId());
+            if (group == null || group.gadgets == null) {
+                return meta;
+            }
+        }
+        SceneGadget fromGroup = group.gadgets.get(entityGadget.getConfigId());
+        if (fromGroup == null) {
+            return meta;
+        }
+        fromGroup.group = group;
+        entityGadget.setMetaGadget(fromGroup);
+        return fromGroup;
+    }
+}
