@@ -317,26 +317,10 @@ public final class AbilityManager extends BasePlayerManager {
         GameEntity target = ability.getOwner();
         Player player = getPlayer();
 
+        // The travellers burn phlogiston while gliding rather than through a cost mixin of their
+        // own, so the drain arrives here. Fuel is unlimited: answer with a full tank.
         if (handler == mixinHandlers.get(AbilityMixinData.Type.PhlogistonCostMixin)) {
-
-            EntityAvatar avatarEntity = player.getTeamManager().getCurrentAvatarEntity();
-            Avatar avatar = avatarEntity.getAvatar();
-            if (avatar.getAvatarId() == 10000106 || avatar.getAvatarId() == 10000107 || avatar.getAvatarId() == 10000105 || avatar.getAvatarId() == 10000103 || avatar.getAvatarId() == 10000100) {
-
-                Grasscutter.getLogger().trace("NyxValue: " + avatarEntity.getNyxValue());
-                float curPhlogiston = player.getPhlogistonValue();
-                float consume = 0.67f;
-                float updatedPhlogistonValue = curPhlogiston - consume;
-                updatedPhlogistonValue = Math.max(0, Math.min(100, updatedPhlogistonValue));
-                player.setPhlogistonValue(updatedPhlogistonValue);
-
-                player.sendPacket(new PacketServerGlobalValueChangeNotify(
-                    player.getTeamManager().getEntity().getId(),
-                    "SGV_PlayerTeam_Phlogiston",
-                    updatedPhlogistonValue
-                ));
-
-            }
+            Phlogiston.refill(player);
         }
 
         if (handler == mixinHandlers.get(AbilityMixinData.Type.SwitchHealToHPDebtsMixin)) {
