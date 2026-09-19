@@ -40,6 +40,7 @@ import emu.grasscutter.utils.helpers.ProtoHelper;
 import it.unimi.dsi.fastutil.ints.*;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Stream;
 import javax.annotation.*;
 import lombok.*;
@@ -820,22 +821,30 @@ public class Avatar {
             }
         }
 
-        try {
-            SymphonistWeaponHelper.onAfterRecalc(this);
-        } catch (Throwable t) {
-            Grasscutter.getLogger().warn("Symphonist recalc hook: {}", t.toString());
-        }
-        try {
-            AbilityMaxHpRatioHelper.afterRecalc(this);
-        } catch (Throwable t) {
-            Grasscutter.getLogger().warn("MaxHPRatio afterRecalc: {}", t.toString());
-        }
-        try {
-            WaterResonanceHelper.afterRecalc(this);
-        } catch (Throwable t) {
-            Grasscutter.getLogger().warn("WaterResonance afterRecalc: {}", t.toString());
-        }
+        runRecalcHook("Symphonist recalc hook", () -> SymphonistWeaponHelper.onAfterRecalc(this));
+        runRecalcHook("MaxHPRatio afterRecalc", () -> AbilityMaxHpRatioHelper.afterRecalc(this));
+        runRecalcHook("WaterResonance afterRecalc", () -> WaterResonanceHelper.afterRecalc(this));
         AvatarStatePersist.afterRecalc(this);
+    }
+
+    /**
+     * Runs one post-recalc hook, and reports a failure once rather than once per recalc.
+     *
+     * <p>Stats are recalculated constantly - on every equip, level, constellation and talent - so a
+     * hook that fails for one avatar fails for every recalc of it. One broken hook produced 1206 of
+     * the 1363 lines in a single server log.
+     */
+    private static void runRecalcHook(String name, Runnable hook) {
+        try {
+            hook.run();
+        } catch (Throwable t) {
+            var line = name + ": " + t;
+            if (REPORTED_RECALC_FAILURES.add(line)) {
+                Grasscutter.getLogger().warn("{} (further identical failures are at debug)", line);
+            } else {
+                Grasscutter.getLogger().debug(line);
+            }
+        }
     }
 
     public void addToExtraAbilityEmbryos(String openConfig) {
@@ -1114,8 +1123,17 @@ public class Avatar {
         return true;
     }
 
+    /** Post-recalc hook failures already reported, so each distinct one is named once. */
+    private static final Set<String> REPORTED_RECALC_FAILURES = ConcurrentHashMap.newKeySet();
+
     public EntityAvatar getAsEntity() {
-        for (EntityAvatar entity : getPlayer().getTeamManager().getActiveTeam()) {
+        // An avatar that is not attached to a player has no entity in any world. /give builds one
+        // before handing it over, and every recalc on it used to throw here and be caught and
+        // logged one layer up - 1206 warnings from a single /give all.
+        var owner = getPlayer();
+        if (owner == null || owner.getTeamManager() == null) return null;
+
+        for (EntityAvatar entity : owner.getTeamManager().getActiveTeam()) {
             if (entity.getAvatar() == this) {
                 return entity;
             }
