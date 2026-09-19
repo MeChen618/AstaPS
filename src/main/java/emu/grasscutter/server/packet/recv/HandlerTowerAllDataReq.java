@@ -1,11 +1,15 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.BuildConfig;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.tower.TowerAbyssFix;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.packet.send.PacketAntiAddictNotify;
 import emu.grasscutter.server.packet.send.PacketTowerAllDataRsp;
 import emu.grasscutter.server.packet.send.PacketTowerCurLevelRecordChangeNotify;
+import java.util.Objects;
 import java.util.TreeMap;
 
 @Opcodes(PacketOpcodes.TowerAllDataReq)
@@ -39,7 +43,31 @@ public class HandlerTowerAllDataReq extends PacketHandler {
             session.send(PacketTowerCurLevelRecordChangeNotify.empty());
         }
 
+        sendEntryNotice(player);
+
         session.send(
                 new PacketTowerAllDataRsp(session.getServer().getTowerSystem(), towerManager));
+    }
+
+    /**
+     * Shows the welcome notice once, and afterwards a notice when the server has been rebuilt since
+     * the player was last in.
+     *
+     * <p>This hangs off the abyss request rather than login because the client only renders an
+     * AntiAddictNotify once it is fully in the world; sent during the login handshake it is
+     * swallowed. The request arrives as part of the client's initial data sync, so in practice it
+     * is the first moment a message can actually be seen.
+     */
+    private static void sendEntryNotice(Player player) {
+        if (player.isPendingWelcomeNotice()) {
+            player.sendPacket(new PacketAntiAddictNotify(1, "Welcome to AstaPS"));
+            player.setPendingWelcomeNotice(false);
+        } else if (!Objects.equals(player.getLastSeenBuildHash(), BuildConfig.GIT_HASH)) {
+            player.sendPacket(
+                    new PacketAntiAddictNotify(
+                            1, "The server has been updated and restarted since you were last online."));
+        }
+
+        player.setLastSeenBuildHash(BuildConfig.GIT_HASH);
     }
 }

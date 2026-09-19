@@ -79,9 +79,14 @@ public final class GenericHandler implements Router {
         this.allRoutes(javalin, "/perf/config/verify", new HttpJsonResponse("{\"code\":0}"));
 
         // webstatic-sea.hoyoverse.com
+        // The SDK's localisation bundles - the strings on the login screen. plat_os is the path
+        // the Android client asks for and plat_oversea the one the PC client asks for; both are
+        // served from the same webstatic bundles.
+        //
+        // plat_os used to answer "{}", which is a valid but empty bundle, so the Android client
+        // had no strings to render and fell back to printing the raw keys.
         javalin.get("/admin/mi18n/plat_oversea/*", new WebStaticVersionResponse());
-
-        javalin.get("/admin/mi18n/plat_os/*", ctx -> ctx.result("{}"));
+        javalin.get("/admin/mi18n/plat_os/*", new WebStaticVersionResponse());
 
         this.allRoutes(javalin, "/hk4e_global/account/ma-passport/api/getConfig",
                 new HttpJsonResponse("{\"retcode\":0,\"message\":\"OK\",\"data\":{\"support_reactivate_account\":false,\"enable_ps_bind_account\":false,\"login_mode\":\"account_login\",\"guest_mode\":\"close\",\"realperson_mode\":\"none\",\"safeguard_type\":\"none\",\"apple_login_enabled\":false,\"facebook_login_enabled\":false,\"google_login_enabled\":false,\"twitter_login_enabled\":false}}"));
