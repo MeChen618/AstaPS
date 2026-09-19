@@ -90,7 +90,9 @@ public class MonsterData extends GameResource {
                 continue;
             }
 
-            if (gadget.getItemJsonName().equals("Default_MonsterWeapon")) {
+            // 13001 of the 30557 gadget rows omit itemJsonName. This runs while resources load,
+            // so a throw here costs the whole MonsterExcelConfigData.json, not one row.
+            if ("Default_MonsterWeapon".equals(gadget.getItemJsonName())) {
                 this.weaponId = id;
             }
         }

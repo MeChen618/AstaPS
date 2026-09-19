@@ -350,6 +350,11 @@ public final class Grasscutter {
         if (Grasscutter.getRunMode() == ServerRunMode.DISPATCH_ONLY && Grasscutter.noConsole) {
             logger.info(translate("messages.dispatch.no_commands_error"));
             return;
+        } else if (!config.server.game.enableConsole) {
+            // The loop below never runs, so saying "type help" would be an invitation to type at a
+            // prompt that is not there.
+            logger.info("Done! The console is disabled; set server.game.enableConsole to use it.");
+            return;
         } else {
             logger.info(translate("messages.status.done"));
         }
