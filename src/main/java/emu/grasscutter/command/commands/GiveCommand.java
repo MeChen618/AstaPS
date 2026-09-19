@@ -115,7 +115,9 @@ public final class GiveCommand implements CommandHandler {
         // automatically be 6
         for (AvatarData avatarData : GameData.getAvatarDataMap().values()) {
             int id = avatarData.getId();
-            boolean isTestAvatar = avatarData.getUseType().equals("AVATAR_TEST");
+            // Plenty of rows ship no useType at all, and dereferencing it killed the whole
+            // command on the first one - so /give all and /give avatars handed out nothing.
+            boolean isTestAvatar = "AVATAR_TEST".equals(avatarData.getUseType());
             if (id < 10000002 || id >= 10000901) continue; // Exclude test avatars in id range
             if (isTestAvatar) continue; // Exclude test avatars by type
             // owned ones are refused by addAvatar, so update them the way a single /give does
