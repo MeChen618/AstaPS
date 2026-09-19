@@ -135,7 +135,15 @@ public class BlossomManager {
                                     .forEach(
                                             spawn -> {
                                                 var type = BlossomType.valueOf(spawn.getGadgetId());
-                                                int previewReward = getPreviewReward(type, worldLevel);
+                                                Integer previewReward = getPreviewReward(type, worldLevel);
+                                                if (previewReward == null) {
+                                                    // No drop table for this blossom at this world level.
+                                                    // Listing it anyway is not an option - setRewardId
+                                                    // unboxes - and this runs on the scene tick, so one
+                                                    // unconfigured blossom would take the whole world down
+                                                    // with it. Leave it out of the notify instead.
+                                                    return;
+                                                }
                                                 blossoms.add(
                                                         BlossomBriefInfoOuterClass.BlossomBriefInfo.newBuilder()
                                                                 .setSceneId(sceneId)
