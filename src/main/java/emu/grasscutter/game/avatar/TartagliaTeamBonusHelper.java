@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 
 /**
- * Tartaglia utility passive 诸武精通 (PermanentSkill_3 / proud group 3323): while he is in the
+ * Tartaglia utility passive Master of Weaponry (PermanentSkill_3 / proud group 3323): while he is in the
  * party with the passive unlocked, all own-party members gain Normal Attack ExtraLevel +1.
  *
  * <p>Mirrors {@link SkirkTeamBonusHelper}: contribution is tracked under a negative proud-group
@@ -153,7 +153,7 @@ public final class TartagliaTeamBonusHelper {
                 logger.warn("TartagliaTeamBonus apply produced empty set uid={}", uid);
             } else {
                 APPLIED_BY_PLAYER.put(uid, next);
-                logger.info("Tartaglia 诸武精通 active for player {} ({} avatars)", uid, next.size());
+                logger.info("Tartaglia Master of Weaponry active for player {} ({} avatars)", uid, next.size());
             }
         } finally {
             REFRESH_IN_PROGRESS.set(Boolean.FALSE);

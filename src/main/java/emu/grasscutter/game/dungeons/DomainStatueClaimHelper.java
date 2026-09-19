@@ -38,7 +38,7 @@ public final class DomainStatueClaimHelper {
         NORMAL_1X(1, 20),
         /** 40 original resin → 2× */
         NORMAL_2X(2, 40),
-        /** 1 condensed → 3× (matches 地脈之花 UI) */
+        /** 1 condensed gives 3x, matching the ley line blossom UI. */
         CONDENSE(3, 0),
         /** 1 fragile → 3× */
         FRAGILE(3, 0),

@@ -43,7 +43,7 @@ public final class GadgetRewardStatue extends GadgetContent {
             }
         }
 
-        // Step 1: open 石化古树 selection UI (do not claim yet).
+        // Step 1: open the petrified tree selection UI without claiming yet.
         if (DomainStatueClaimHelper.shouldOpenUiOnly(req)) {
             player.sendPacket(
                     new PacketGadgetInteractRsp(
@@ -76,7 +76,7 @@ public final class GadgetRewardStatue extends GadgetContent {
             return false;
         }
 
-        // Original-resin rows: insufficient → replenish popup (补充), keep tree claimable.
+        // Original-resin rows: insufficient shows the replenish popup and keeps the tree claimable.
         if (mode.originalResinCost > 0
                 && DomainRewardStatueHelper.getCurrentResin(player) < mode.originalResinCost) {
             DomainRewardStatueHelper.sendResinNotEnoughPopup(player, getGadget());

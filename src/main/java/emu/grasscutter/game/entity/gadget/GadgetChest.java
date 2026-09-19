@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * World chests + world-boss trounce flowers (征讨之花). When DropTable misses ChestDrop ids,
+ * World chests + world-boss trounce blossoms. When DropTable misses ChestDrop ids,
  * falls back to InvestigationMonster reward preview.
  */
 public class GadgetChest extends GadgetContent {

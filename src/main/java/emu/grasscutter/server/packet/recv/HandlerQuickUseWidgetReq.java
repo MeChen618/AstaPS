@@ -25,7 +25,7 @@ public class HandlerQuickUseWidgetReq extends PacketHandler {
         synchronized (pl) {
             int materialId = pl.getWidgetId();
 
-            // 千音雅集: non-consumable UI widget — open repertoire, do not remove item.
+            // Repertoire: non-consumable UI widget — open repertoire, do not remove item.
             if (materialId == MusicGameBookSystem.GADGET_ITEM_ID) {
                 MusicGameBookSystem.sendDataNotify(pl);
                 proto.setRetcode(0).setMaterialId(materialId);
@@ -35,7 +35,7 @@ public class HandlerQuickUseWidgetReq extends PacketHandler {
                 return;
             }
 
-            // 圣言自明机: non-consumable — sync Offer data (fixes TxtItemName placeholders).
+            // Artifact Transmuter: non-consumable — sync Offer data (fixes TxtItemName placeholders).
             if (materialId == emu.grasscutter.game.systems.ArtifactTransmuterSystem.GADGET_ITEM_ID) {
                 emu.grasscutter.game.systems.ArtifactTransmuterSystem.ensureGadget(pl);
                 emu.grasscutter.game.systems.ArtifactTransmuterSystem.sendDataNotify(pl);

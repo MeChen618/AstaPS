@@ -13,7 +13,7 @@ import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.Scene;
 
 /**
- * Dulins Blood / 深赤之石 combat effect: ServerBuff notify alone only drives VFX.
+ * Dulin's Blood combat effect: ServerBuff notify alone only drives VFX.
  * Ice seals require BloodSmash / HAS_DULINS_BLOOD_BUFF — enforce smash on the server.
  */
 public final class ScarletQuartzCombatHelper {

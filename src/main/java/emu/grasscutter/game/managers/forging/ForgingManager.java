@@ -294,7 +294,7 @@ public final class ForgingManager extends BasePlayerManager {
      * Periodic forging updates.
      **********/
     public synchronized void sendPlayerForgingUpdate() {
-        // Compound (食材加工) has no local client timer refresh on 7.0; push when batches finish.
+        // Compound processing has no local client timer refresh on 7.0; push when batches finish.
         try {
             this.player.getCookingCompoundManager().onTick();
         } catch (Throwable ignored) {

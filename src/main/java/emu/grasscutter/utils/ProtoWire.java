@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/** Minimal protobuf wire helpers for Artifact Transmuter (圣言自明机) packets. */
+/** Minimal protobuf wire helpers for Artifact Transmuter packets. */
 public final class ProtoWire {
     private ProtoWire() {}
 

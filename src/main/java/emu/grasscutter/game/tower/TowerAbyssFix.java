@@ -113,7 +113,7 @@ public final class TowerAbyssFix {
     }
 
     /**
-     * Always start a chamber / half on 1号位. {@link TeamManager#useTemporaryTeam} can preserve the
+     * Always start a chamber / half in slot 1. {@link TeamManager#useTemporaryTeam} can preserve the
      * previous half's slot index; setting the index alone does not {@code replaceEntity}.
      */
     public static void forceLeadAvatar(Player player) {

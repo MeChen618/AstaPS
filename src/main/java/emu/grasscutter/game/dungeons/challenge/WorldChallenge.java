@@ -123,7 +123,7 @@ public class WorldChallenge {
                                                     String.valueOf(this.getChallengeId())));
         }
 
-        // Tower lua (TPL_TIME) expects REMAINING seconds in param2 ("将剩余时间记录…").
+        // Tower lua (TPL_TIME) expects REMAINING seconds in param2 (it records the remaining time).
         // Non-tower scripts historically used elapsed; keep that unless this is a tower dungeon.
         int param2 = finishedTime;
         boolean towerDungeon = dungeonManager != null && dungeonManager.isTowerDungeon();
@@ -150,7 +150,7 @@ public class WorldChallenge {
                                 .setEventSource(this.getChallengeIndex()));
 
         // Lua TowerMirrorTeamSetUp / stage=1 is async via callEvent. Pass-condition settle must
-        // wait, or the chamber settles on 上半 and the mid-half team swap is cancelled.
+        // wait, or the chamber settles on the upper half and the mid-half team swap is cancelled.
         if (towerDungeon && challengeSuccess != null) {
             try {
                 challengeSuccess.get(5, java.util.concurrent.TimeUnit.SECONDS);

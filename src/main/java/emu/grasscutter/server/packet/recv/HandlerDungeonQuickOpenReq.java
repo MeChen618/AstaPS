@@ -9,7 +9,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.GameSession;
 
 /**
- * Handbook / 备战 "quick open" path. Proto dump has no named BuyResin-style message for 7.0;
+ * Handbook preparation "quick open" path. Proto dump has no named BuyResin-style message for 7.0;
  * parse field 1 (uint32 dungeon_entry_config_id) from the raw body.
  */
 @Opcodes(PacketOpcodes.DungeonQuickOpenReq)

@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class PacketGetSceneAreaRsp extends BasePacket {
 
-    /** Unlock all scene areas so inventory「前往采集」can mark Natlan / Nod-Krai materials. */
+    /** Unlock all scene areas so the inventory "go gather" action can mark Natlan / Nod-Krai materials. */
     private static final java.util.List<Integer> ALL_AREAS =
             IntStream.rangeClosed(1, 1000).boxed().toList();
 

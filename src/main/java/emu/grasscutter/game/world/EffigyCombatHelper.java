@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Hypostasis (无相 / Effigy) shell & elemental-shield HP lock.
+ * Hypostasis (Effigy) shell & elemental-shield HP lock.
  *
  * <p>Official abilities use {@code LockHP} on the cube-shell modifier and {@code ShieldBarMixin} on
  * the elemental gauge (e.g. Pyro burning). The client shows those states, but the server previously

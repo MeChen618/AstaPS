@@ -7,7 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.Collection;
 
 /**
- * Adventurer Handbook 见闻 full sync ({@code PlayerInvestigationAllInfoNotify}).
+ * Adventurer Handbook Investigation full sync ({@code PlayerInvestigationAllInfoNotify}).
  *
  * <p>Uses 7.0 all-in-one.proto field numbers (no generated OuterClass in this tree).
  */

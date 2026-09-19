@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.game.GameSession;
 import com.google.protobuf.CodedInputStream;
 
-/** 供奉奖励页领取；7.0：offering_id=1, level=10。 */
+/** Claim from the offering reward page; 7.0 uses offering_id=1, level=10. */
 @Opcodes(PacketOpcodes.TakeOfferingLevelRewardReq)
 public class HandlerTakeOfferingLevelRewardReq extends PacketHandler {
     @Override

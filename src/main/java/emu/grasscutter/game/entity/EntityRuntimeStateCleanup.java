@@ -32,7 +32,7 @@ public final class EntityRuntimeStateCleanup {
         ActionAvatarSkillStart.clearEntityState(entityId);
         EnvironmentalSealHelper.clearEntityState(entityId);
         HutaoC6Helper.clearEntityState(entityId);
-        // 七七战技 HoT / 久岐忍六命 CD 等按 entity 清理
+        // Per-entity cleanup of the Qiqi skill HoT, the Kuki Shinobu C6 cooldown and similar.
         ShinobuC6Helper.clearEntityState(entityId);
         QiqiEHealHelper.clearEntityState(entityId);
     }

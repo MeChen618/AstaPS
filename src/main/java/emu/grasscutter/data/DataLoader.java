@@ -36,7 +36,7 @@ public class DataLoader {
             throws IOException, FileNotFoundException {
         try {
             InputStream is = load(resourcePath, true);
-            // Always UTF-8: ChestDrop/MonsterDrop tags are Chinese (e.g. 急冻树). Platform
+            // Always UTF-8: ChestDrop/MonsterDrop tags are Chinese. Platform
             // default (GBK on CN Windows) mojibakes keys so handleBossChestDrop never matches.
             return new InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8);
         } catch (FileNotFoundException exception) {

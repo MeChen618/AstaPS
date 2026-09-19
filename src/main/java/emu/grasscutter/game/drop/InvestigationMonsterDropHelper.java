@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Open-world Common/Elite drops from InvestigationMonster reward previews
- * (讨伐图鉴「概率获得」). Official killDropId rows are energy-only, so materials
+ * (bounty handbook "chance to obtain"). Official killDropId rows are energy-only, so materials
  * never land without this.
  */
 public final class InvestigationMonsterDropHelper {
@@ -218,7 +218,7 @@ public final class InvestigationMonsterDropHelper {
         if (level < 1) {
             level = 1;
         }
-        // Rough official open-world band (matches MonsterDrop 先遣队-ish scaling).
+        // Rough official open-world band (matches MonsterDrop vanguard-ish scaling).
         if (level < 20) {
             return 14 + ThreadLocalRandom.current().nextInt(8);
         }

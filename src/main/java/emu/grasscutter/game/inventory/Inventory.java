@@ -122,7 +122,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
             return false;
         }
 
-        // Consumables that apply on gain (深赤之石 etc.) never enter the bag.
+        // Consumables that apply on gain never enter the bag.
         if (data.isUseOnGain()) {
             try {
                 this.player.getProgressManager().addItemObtainedHistory(item.getItemId(), item.getCount());
@@ -172,7 +172,7 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                                     (item.getItemId() % 1000) + 10000000, reason, item));
         }
 
-        // useOnGain (elem balls) skip "获得" tip. Primogem(201)/Mora(202) are ADSORBATE in
+        // useOnGain (elem balls) skip the obtain tip. Primogem(201)/Mora(202) are ADSORBATE in
         // Excel but still show on the left tip list like normal items.
         if ((forceNotify || result) && !shouldSkipItemAddHint(item)) {
             ActionReason hintReason = reason;

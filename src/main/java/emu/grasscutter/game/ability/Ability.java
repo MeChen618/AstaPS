@@ -169,7 +169,7 @@ public class Ability {
                 else if (!data.modifiers.containsKey(modifierAction.modifierName)) continue;
 
                 // Must honor predicates — e.g. LupiBoreas RazorQuest_HPControl Limbo is quest-only.
-                // Applying it unconditionally leaves weekly Andrius stuck at 1 HP ("锁一丝").
+                // Applying it unconditionally leaves weekly Andrius stuck at 1 HP.
                 if (modifierAction.predicates != null && !modifierAction.predicates.isEmpty()) {
                     try {
                         @SuppressWarnings("unchecked")

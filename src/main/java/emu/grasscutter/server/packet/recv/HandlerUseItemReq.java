@@ -16,7 +16,7 @@ public class HandlerUseItemReq extends PacketHandler {
         UseItemReq req = UseItemReq.parseFrom(payload);
         GameItem item = session.getPlayer().getInventory().getItemByGuid(req.getGuid());
 
-        // 圣言自明机: useOp is NONE. Ack UseItemRsp, then full offer sync (FLIJ + companion).
+        // Artifact Transmuter: useOp is NONE. Ack UseItemRsp, then full offer sync (FLIJ + companion).
         if (item != null && item.getItemId() == ArtifactTransmuterSystem.GADGET_ITEM_ID) {
             ArtifactTransmuterSystem.ensureGadget(session.getPlayer());
             session.send(new PacketUseItemRsp(req.getTargetGuid(), item));
@@ -24,7 +24,7 @@ public class HandlerUseItemReq extends PacketHandler {
             return;
         }
 
-        // 千音雅集: opens MusicGameMainPage; sync MusicGameBookAllDataNotify.
+        // Repertoire: opens MusicGameMainPage; sync MusicGameBookAllDataNotify.
         if (item != null && item.getItemId() == MusicGameBookSystem.GADGET_ITEM_ID) {
             MusicGameBookSystem.ensureGadget(session.getPlayer());
             session.send(new PacketUseItemRsp(req.getTargetGuid(), item));

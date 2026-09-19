@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PacketTowerCurLevelRecordChangeNotify extends BasePacket {
 
-    /** Clears the client's "challenge in progress" banner (是否继续挑战). */
+    /** Clears the client's "challenge in progress" banner (the "continue challenge?" prompt). */
     public static PacketTowerCurLevelRecordChangeNotify empty() {
         PacketTowerCurLevelRecordChangeNotify packet =
                 new PacketTowerCurLevelRecordChangeNotify();
@@ -42,8 +42,8 @@ public class PacketTowerCurLevelRecordChangeNotify extends BasePacket {
         super(PacketOpcodes.TowerCurLevelRecordChangeNotify);
 
         // Build the entire TowerCurLevelRecord on the wire. Proto3 omits bool false, and the
-        // client keeps the previous 上半/下半 label unless is_upper_part is present — so always
-        // force-write field 9 (0=下半, 1=上半). Write it FIRST so a truncated parse still sees it.
+        // client keeps the previous upper/lower half label unless is_upper_part is present — so always
+        // force-write field 9 (0 = lower half, 1 = upper half). Write it FIRST so a truncated parse still sees it.
         ByteArrayOutputStream record = new ByteArrayOutputStream();
 
         // is_upper_part = 9 — always present (leading)

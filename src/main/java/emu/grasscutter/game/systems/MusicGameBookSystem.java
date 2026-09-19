@@ -9,7 +9,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 
 /**
- * 千音雅集 / Repertoire of Myriad Melodies (item 220110).
+ * Repertoire of Myriad Melodies (item 220110).
  *
  * <p>The widget is a pure UI opener: unlike a bomb or a Kamera it is never consumed, so both
  * {@code UseItemReq} and {@code QuickUseWidgetReq} have to answer without touching the stack and
@@ -23,7 +23,7 @@ import emu.grasscutter.net.packet.PacketOpcodes;
  * capture first.
  */
 public final class MusicGameBookSystem {
-    /** 千音雅集, adjacent to 圣言自明机 (220109) in the widget block. */
+    /** Repertoire of Myriad Melodies, adjacent to the Artifact Transmuter (220109) in the widget block. */
     public static final int GADGET_ITEM_ID = 220110;
 
     private MusicGameBookSystem() {}

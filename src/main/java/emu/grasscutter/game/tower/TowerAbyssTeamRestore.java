@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Rebuild abyss temporary parties from persisted GUIDs before mid-half swap / chamber enter.
  * {@code TeamManager.temporaryTeam} is transient and may be null while {@link TowerData#abyssTeamGuids}
- * still holds the selected parties — without this, {@code useTemporaryTeam(1)} NPEs or keeps 上半.
+ * still holds the selected parties — without this, {@code useTemporaryTeam(1)} NPEs or keeps the upper half.
  */
 public final class TowerAbyssTeamRestore {
     private TowerAbyssTeamRestore() {}

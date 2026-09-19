@@ -4,7 +4,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 
 /**
- * Empty success for GetMapMarkTipsReq (map tip query when opening map / 前往采集).
+ * Empty success for GetMapMarkTipsReq (map tip query when opening map or the go-gather action).
  * Proto fields vary by version; retcode=0 with no tips is accepted by client.
  */
 public class PacketGetMapMarkTipsRsp extends BasePacket {

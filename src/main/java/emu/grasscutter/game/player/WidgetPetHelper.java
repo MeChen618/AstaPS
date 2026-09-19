@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 
 /**
- * Follower gadgets (嫣朵拉 / 迷你仙灵 etc.) are not world entities. Equipping them attaches a
+ * Follower gadgets (Endora, mini seelies and similar) are not world entities. Equipping them attaches a
  * team ability group; the client renders the pet via SendEffectTrigger on that ability.
  */
 public final class WidgetPetHelper {

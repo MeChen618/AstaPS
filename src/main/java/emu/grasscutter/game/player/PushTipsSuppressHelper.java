@@ -14,7 +14,7 @@ import java.util.List;
  * Marks push tips as already finished so the feature-unlock toast does not cover a widget UI the
  * moment it opens.
  *
- * <p>The widget systems (圣言自明机, 千音雅集) push their data notify as soon as the gadget is used, and
+ * <p>The widget systems (Artifact Transmuter, Repertoire of Myriad Melodies) push their data notify as soon as the gadget is used, and
  * on a private server the matching tip is still unread - the client then paints the "new feature"
  * banner over the page that just opened. The official server never hits this because the tip was
  * finished long before, which is what {@code PushTipsAllDataNotify} (opcode 2160) carries: a list of
@@ -33,7 +33,7 @@ public final class PushTipsSuppressHelper {
     /** Field number of {@code repeated PushTipsData push_tips_list} inside the notify. */
     private static final int PUSH_TIPS_LIST_FIELD = 1;
 
-    /** Relic define / 圣言自明机 unlock tip. */
+    /** Relic define / Artifact Transmuter unlock tip. */
     private static final int TIP_RELIC_DEFINE = 7013;
 
     /**

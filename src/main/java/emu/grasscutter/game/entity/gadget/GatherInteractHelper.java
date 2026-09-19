@@ -358,7 +358,7 @@ public final class GatherInteractHelper {
       return controller != null && controller.startsWith("Gather_IceFlower");
    }
 
-   /** 绯樱绣球 (gadget 70520034 / Cherrypetals): unlocks on Electric. */
+   /** Sakura Bloom (gadget 70520034 / Cherrypetals): unlocks on Electro. */
    private static boolean isCherryPetals(EntityGadget gadget) {
       if (gadget == null) {
          return false;
@@ -371,7 +371,7 @@ public final class GatherInteractHelper {
 
    /**
     * Unlock gather interact after the correct element extinguishes/melts the flora.
-    * 烈焰花: Hydro/Cryo; 冰雾花: Pyro; 绯樱绣球: Electric.
+    * Flaming Flower: Hydro/Cryo; Frostbearing Flower: Pyro; Sakura Bloom: Electro.
     * ElementFlora also unlocks via client ExecuteGadgetLua.
     */
    public static boolean tryUnlockElementalFlora(EntityGadget gadget, emu.grasscutter.game.props.ElementType element) {

@@ -3,7 +3,7 @@ package emu.grasscutter.game.activity.leylinechallenge;
 import emu.grasscutter.game.player.Player;
 
 /**
- * 幽境危战 (LeyLineChallenge) entry flow.
+ * LeyLineChallenge entry flow.
  *
  * <p>Placeholder that pairs with {@link LeyLineChallengeGroupLoader}. The only caller is the
  * worktop-option fallback in {@code SelectWorktopOptionReq}, which is itself gated on

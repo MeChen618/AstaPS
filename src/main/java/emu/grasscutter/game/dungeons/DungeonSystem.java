@@ -145,7 +145,7 @@ public final class DungeonSystem extends BaseGameSystem {
                         player.getUid(),
                         dungeonId);
 
-        // Same-scene re-entry (重新挑战) must destroy the live chamber. transferPlayerToScene would
+        // Same-scene re-entry (retry) must destroy the live chamber. transferPlayerToScene would
         // otherwise set dontDestroyWhenEmpty and keep the previous monsters under the buff UI.
         Scene current = player.getScene();
         if (current != null
@@ -216,7 +216,7 @@ public final class DungeonSystem extends BaseGameSystem {
             player.getTowerManager().clearAbyssResume();
             player.getTowerManager().clearLevelEntityConfigs();
             // Finishing a floor advances CurLevelRecord to the next floor; without clearing it the
-            // abyss UI thinks a run is still active and blocks 领取奖励 with 是否继续挑战.
+            // abyss UI thinks a run is still active and blocks reward claiming with the "continue challenge?" prompt.
             player.sendPacket(
                     emu.grasscutter.server.packet.send.PacketTowerCurLevelRecordChangeNotify.empty());
         }
@@ -250,7 +250,7 @@ public final class DungeonSystem extends BaseGameSystem {
             TowerAbyssFix.endChallengeUi(player);
             var tower = player.getTowerManager();
             tower.onEnd();
-            // Keep current chamber; reset to 上半 + full chamber-start HP/energy + 1号位.
+            // Keep the current chamber; reset to the upper half with full chamber-start HP/energy and slot 1.
             tower.restartCurrentChamber();
         }
 

@@ -31,7 +31,7 @@ public class TowerData {
     /** {@code TowerAllDataRsp._TowerSkipFloorState} ordinal for this period. */
     int skipFloorState;
 
-    /** Item id → count granted as skipped-floor 间之秘宝 (shown in TowerAllDataRsp). */
+    /** Item id → count granted as skipped-floor chamber treasure (shown in TowerAllDataRsp). */
     Map<Integer, Integer> skipFloorGrantedRewards;
 
     @Transient int entryScene;

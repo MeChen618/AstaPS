@@ -5,7 +5,7 @@ import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ProudSkillExtraLevelNotifyOuterClass;
 
-/** Client notify for Tartaglia 诸武精通 (party Normal Attack +1). */
+/** Client notify for Tartaglia Master of Weaponry (party Normal Attack +1). */
 final class TartagliaTeamBonusNotify {
     private TartagliaTeamBonusNotify() {}
 

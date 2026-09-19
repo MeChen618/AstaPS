@@ -30,7 +30,7 @@ public class PlayerProgress {
     private Map<Integer, ItemGiveRecord> itemGivings;
     private Map<Integer, BargainRecord> bargains;
 
-    /** Adventurer Handbook (见闻/备战) targetId -> progress. */
+    /** Adventurer Handbook (Investigation/preparation) targetId -> progress. */
     private Map<Integer, Integer> investigationTargetProgress;
     /** Adventurer Handbook targetId -> state (2=complete, 3=reward taken). */
     private Map<Integer, Integer> investigationTargetState;

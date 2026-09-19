@@ -19,7 +19,7 @@ public class HandlerTowerGetFloorStarRewardReq extends PacketHandler {
         var player = session.getPlayer();
         var tower = player.getTowerManager();
 
-        // Always clear「是否继续挑战」so 领取奖励 works even if a prior floor-clear left a stale
+        // Always clear the "continue challenge?" prompt so reward claiming works even if a prior floor-clear left a stale
         // CurLevelRecord (e.g. client still thinks the next floor is active).
         session.send(PacketTowerCurLevelRecordChangeNotify.empty());
 
@@ -27,7 +27,7 @@ public class HandlerTowerGetFloorStarRewardReq extends PacketHandler {
         session.send(new PacketTowerGetFloorStarRewardRsp(floorId, ok ? 0 : -1));
 
         var record = tower.getRecordMap().get(floorId);
-        // Always refresh floor + full abyss data so 领取奖励 / checkmarks match claim cursor.
+        // Always refresh floor + full abyss data so reward claiming and checkmarks match the claim cursor.
         session.send(
                 new PacketTowerFloorRecordChangeNotify(
                         floorId,

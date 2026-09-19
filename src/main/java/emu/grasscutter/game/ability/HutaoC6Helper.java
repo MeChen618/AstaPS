@@ -13,7 +13,7 @@ import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Hu Tao C6「幽蝶能留一缕芳」.
+ * Hu Tao C6, Butterfly's Embrace.
  *
  * <p>Official config uses DoActionByEventMixin(HPDown) + thinkInterval, which this server does not
  * run. Hook damage / self-LoseHP instead: below 25% HP or lethal → survive at 1 HP, gain RES/CRIT

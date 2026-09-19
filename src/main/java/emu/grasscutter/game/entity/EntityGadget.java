@@ -269,7 +269,7 @@ public class EntityGadget extends EntityBaseGadget {
         } catch (Throwable ignored) {
         }
 
-        // 神樱等 OfferingGadget：即使 content 未挂上也要能开供奉页
+        // OfferingGadgets such as the Sacred Sakura must still open the offering page even when content is unset.
         try {
             if (emu.grasscutter.game.entity.gadget.OfferingHelper.tryInteract(player, this)) {
                 return;

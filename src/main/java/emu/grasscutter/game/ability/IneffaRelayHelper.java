@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Ineffa's Volti-tower (薇尔琪塔 / Relay) is client-owned via {@code EvtCreateGadgetNotify}.
+ * Ineffa's Volti-tower (Relay) is client-owned via {@code EvtCreateGadgetNotify}.
  *
  * <p>A server {@link EntityGadget} copy is an empty shell the caster can see. Those shells stack with
  * the real client summon (and with each other when replace misses), which matches the reported

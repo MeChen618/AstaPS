@@ -141,7 +141,7 @@ public final class DropSystem extends BaseGameSystem {
         SceneMonster sceneMonster = monster.getMetaMonster();
 
         // Wildlife (fox/boar/crane/pigeon…): prefer MonsterExcel.killDropId quantities
-        // (e.g. boar→兽肉, crane→禽肉). Lua drop_tag ("走兽"/"鸟类") used to map to empty stub
+        // (e.g. boar to raw meat, crane to fowl). Lua drop_tag used to map to an empty stub
         // DropTable rows — do not let those override a usable killDrop.
         boolean envAnimal = false;
         try {
@@ -194,7 +194,7 @@ public final class DropSystem extends BaseGameSystem {
             handled = applyEnvAnimalGatherDrop(monster);
         }
 
-        // Official killDrop / script drop_id are often energy-only; grant 讨伐 materials.
+        // Official killDrop / script drop_id are often energy-only; grant bounty materials.
         try {
             InvestigationMonsterDropHelper.tryDrop(monster);
         } catch (Throwable ignored) {

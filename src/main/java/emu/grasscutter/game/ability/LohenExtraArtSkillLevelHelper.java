@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.slf4j.Logger;
 
 /**
- * Lohen (洛恩 / 10000129) utility passive 「兴尽且去来」.
+ * Lohen (10000129) utility passive.
  *
  * <p>Official data applies open-config {@code Lohen_PermanentSkill_3_Talent}
  * ({@code AddTalentExtraLevel} talentIndex=2, +1) via modifier mixin {@code FNOJKLNOEAB} on
@@ -70,7 +70,7 @@ public final class LohenExtraArtSkillLevelHelper {
             player = avatar.getPlayer();
         }
         if (applyBonus(avatar, player)) {
-            logger.info("Lohen 乘兴 ExtraArt +1 active guid={}", avatar.getGuid());
+            logger.info("Lohen ExtraArt +1 active guid={}", avatar.getGuid());
         }
     }
 
@@ -95,7 +95,7 @@ public final class LohenExtraArtSkillLevelHelper {
             player = avatar.getPlayer();
         }
         if (removeBonus(avatar, player, true)) {
-            logger.info("Lohen 乘兴 ExtraArt +1 cleared guid={}", avatar.getGuid());
+            logger.info("Lohen ExtraArt +1 cleared guid={}", avatar.getGuid());
         }
     }
 
@@ -109,7 +109,7 @@ public final class LohenExtraArtSkillLevelHelper {
             return;
         }
         if (removeBonus(avatar, player, true)) {
-            logger.info("Lohen 乘兴 ExtraArt +1 cleared (modifier-change) guid={}", guid);
+            logger.info("Lohen ExtraArt +1 cleared (modifier-change) guid={}", guid);
         }
     }
 

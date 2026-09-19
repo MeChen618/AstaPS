@@ -4,7 +4,7 @@ import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.world.Scene;
 
 /**
- * 幽境危战 (LeyLineChallenge) entrance loader.
+ * LeyLineChallenge entrance loader.
  *
  * <p>Placeholder. {@link Scene} already calls {@link #ensureNearby} alongside the other
  * spawn helpers, and {@code SelectWorktopOptionReq} already gates its private-server entry path on

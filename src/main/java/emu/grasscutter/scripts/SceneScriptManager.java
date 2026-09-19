@@ -462,7 +462,7 @@ public class SceneScriptManager {
         return cachedSceneGroupsInstances;
     }
 
-    /** Reset tower mid-half carry vars so 「重新挑战」starts the chamber from 上半 again. */
+    /** Reset tower mid-half carry vars so a retry starts the chamber from the upper half again. */
     public void resetTowerStageVariables() {
         java.util.function.Consumer<Map<String, Integer>> reset =
                 vars -> {

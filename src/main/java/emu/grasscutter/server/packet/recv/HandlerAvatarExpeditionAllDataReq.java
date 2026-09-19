@@ -11,7 +11,7 @@ public class HandlerAvatarExpeditionAllDataReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var player = session.getPlayer();
-        // Client shows 一键领取 based on state==FINISH_WAIT_REWARD in this map.
+        // Client shows claim-all based on state==FINISH_WAIT_REWARD in this map.
         if (ExpeditionHelper.refreshFinishedStates(player)) {
             player.save();
             session.send(new PacketAvatarExpeditionDataNotify(player.getExpeditionInfo()));

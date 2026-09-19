@@ -96,7 +96,7 @@ public final class ArlecchinoBurstBoL {
 
     /**
      * Arm the Q lock from ability actions that often fire <em>before</em> {@code EvtDoSkillSucc}.
-     * Without this, ReduceHPDebts / SetGlobalValue zero 契 on the client at cast start.
+     * Without this, ReduceHPDebts / SetGlobalValue zero BoL on the client at cast start.
      */
     public static void tryPreArmFromAbility(Ability ability, EntityAvatar avatar) {
         if (avatar == null || avatar.getAvatar() == null) {

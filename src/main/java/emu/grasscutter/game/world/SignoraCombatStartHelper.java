@@ -3,7 +3,7 @@ package emu.grasscutter.game.world;
 import emu.grasscutter.game.entity.EntityMonster;
 
 /**
- * 「女士」罗莎琳 combat-start hook.
+ * La Signora combat-start hook.
  *
  * <p>Placeholder. The three entry points below are already wired into {@link EntityMonster} - tick,
  * damage and removal - but the fight data they need (group / config ids, the intro phase window, the

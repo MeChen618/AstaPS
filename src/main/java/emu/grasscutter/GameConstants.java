@@ -20,9 +20,9 @@ public final class GameConstants {
     public static final int MAX_FRIENDS = 60;
     public static final int MAX_FRIEND_REQUESTS = 50;
     public static final int SERVER_CONSOLE_UID = 99;
-    /** 好友「改密」指令器（与 PasswordFriendHandler.UID 一致）。 */
+    /** Password-change commander friend (matches PasswordFriendHandler.UID). */
     public static final int SERVER_PASSWORD_UID = 98;
-    /** 好友「DPS」指令器。 */
+    /** DPS commander friend. */
     public static final int SERVER_DPS_UID = 97;
 
     public static boolean isServerBotUid(int uid) {

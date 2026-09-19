@@ -47,14 +47,14 @@ public class HandlerSetWidgetSlotReq extends PacketHandler {
         // SetWidgetSlotRsp
         session.send(new PacketSetWidgetSlotRsp(req.getMaterialId()));
 
-        // Follower pets (嫣朵拉 / 迷你仙灵): optional helper may be absent from some jar builds.
+        // Follower pets (Endora, mini seelies): optional helper may be absent from some jar builds.
         tryInvokeWidgetPetHelper(player, previousMaterialId, player.getWidgetId());
 
-        // 千音雅集: equipping also primes MusicGameBook data for quick-use / UI.
+        // Repertoire: equipping also primes MusicGameBook data for quick-use / UI.
         if (attach && req.getMaterialId() == emu.grasscutter.game.systems.MusicGameBookSystem.GADGET_ITEM_ID) {
             emu.grasscutter.game.systems.MusicGameBookSystem.sendDataNotify(player);
         }
-        // 圣言自明机: equipping primes Offer data (avoids TxtItemName if opened without UseItem).
+        // Artifact Transmuter: equipping primes Offer data (avoids TxtItemName if opened without UseItem).
         if (attach && req.getMaterialId() == emu.grasscutter.game.systems.ArtifactTransmuterSystem.GADGET_ITEM_ID) {
             emu.grasscutter.game.systems.ArtifactTransmuterSystem.sendDataNotify(player);
         }

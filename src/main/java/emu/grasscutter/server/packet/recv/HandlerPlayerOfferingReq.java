@@ -5,7 +5,8 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.game.GameSession;
 import com.google.protobuf.CodedInputStream;
 
-/** 神樱等供奉「缴纳」：7.0 实机 opcode = {@link PacketOpcodes#PlayerOfferingReq} (1423)。 */
+/** Offering submit for the Sacred Sakura and similar; live 7.0 opcode is
+     * {@link PacketOpcodes#PlayerOfferingReq} (1423). */
 @Opcodes(PacketOpcodes.PlayerOfferingReq)
 public class HandlerPlayerOfferingReq extends PacketHandler {
     @Override

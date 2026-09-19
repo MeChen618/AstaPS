@@ -29,7 +29,7 @@ public class PacketOpenStateUpdateNotify extends BasePacket {
         });
 
         // Always unlock OPEN_STATE_RESIN (45). resinUsage only gates consumption — the map/HUD
-        // counter must still stack with widgets like 深渊 第X层第Y间.
+        // counter must still stack with widgets like the abyss floor/chamber display.
         player.getOpenStates().put(45, 1);
         proto.putOpenStateMap(45, 1);
 

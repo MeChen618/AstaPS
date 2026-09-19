@@ -63,7 +63,7 @@ public final class GameServerPacketHandler {
             this.registerPacketHandler(
                     emu.grasscutter.server.packet.recv.HandlerSeeMonsterReq.class);
         }
-        // ReliquaryDust (圣遗物重塑 / 105006)
+        // ReliquaryDust (artifact reshaping / 105006)
         registerIfAbsent(ReliquaryDustSystem.OPCODE_DUST_REQ,
                 emu.grasscutter.server.packet.recv.HandlerReliquaryDustReq.class);
         registerIfAbsent(ReliquaryDustSystem.OPCODE_DUST_COMPANION_REQ,
@@ -83,12 +83,12 @@ public final class GameServerPacketHandler {
             Grasscutter.getLogger()
                     .info("Registered BuyResinReq handler at opcode {}", PacketOpcodes.BuyResinReq);
         }
-        // Handbook 备战 / quick-open (may be missed by Reflections after hot-patch).
+        // Handbook preparation / quick-open (may be missed by Reflections after hot-patch).
         if (!this.handlers.containsKey(PacketOpcodes.DungeonQuickOpenReq)) {
             this.registerPacketHandler(
                     emu.grasscutter.server.packet.recv.HandlerDungeonQuickOpenReq.class);
         }
-        // Adventurer Handbook 见闻/备战 claim rewards.
+        // Adventurer Handbook Investigation/preparation claim rewards.
         registerIfAbsent(
                 PacketOpcodes.TakeInvestigationTargetRewardReq,
                 emu.grasscutter.server.packet.recv.HandlerTakeInvestigationTargetRewardReq.class);

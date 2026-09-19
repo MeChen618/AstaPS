@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Adventurer Handbook 见闻 / 备战 (Investigation) progress sync + live triggers.
+ * Adventurer Handbook Investigation progress sync plus live triggers.
  *
  * <p>Progress is persisted on {@link PlayerProgress} and recomputed from world/inventory state on
  * login so already-completed milestones show correctly.
@@ -41,14 +41,14 @@ public final class InvestigationHandbookHelper {
     private static final int OPEN_STATE_MANUAL = 1100;
     /** OPEN_ADVENTURE_MANUAL_CITY_MENGDE */
     private static final int OPEN_STATE_MENGDE_MANUAL = 1101;
-    /** OPEN_ADVENTURE_MANUAL_EDUCATION (备战) */
+    /** OPEN_ADVENTURE_MANUAL_EDUCATION (preparation). */
     private static final int OPEN_STATE_EDUCATION = 2801;
 
     private static final int STATE_IN_PROGRESS = 1;
     private static final int STATE_COMPLETE = 2;
     private static final int STATE_REWARD_TAKEN = 3;
 
-    /** Adventurer Handbook claim multiplier (见闻/备战奖励). */
+    /** Adventurer Handbook claim multiplier for investigation and preparation rewards. */
     private static final int REWARD_MULTIPLIER = 3;
 
     private static volatile boolean loaded;

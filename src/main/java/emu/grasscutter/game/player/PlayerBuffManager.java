@@ -143,7 +143,7 @@ public final class PlayerBuffManager extends BasePlayerManager {
                         new PacketServerBuffChangeNotify(
                                 getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF, buff));
 
-        // 深赤之石: ServerBuff alone is VFX-only; arm smash GVs + ability for ice seals.
+        // Dulin's Blood: ServerBuff alone is VFX-only; arm the smash GVs and ability for ice seals.
         try {
             if (buffId == emu.grasscutter.game.entity.gadget.ScarletQuartzCombatHelper.BUFF_ID
                     || buffData.getGroupId()

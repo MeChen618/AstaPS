@@ -11,7 +11,7 @@ public class HandlerGetMapMarkTipsReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var player = session.getPlayer();
-        // Opening the map: re-push resin so it stacks with 深渊 第X层第Y间 in the top-right.
+        // Opening the map: re-push resin so it stacks with the abyss floor/chamber widget in the top-right.
         if (player != null && player.getResinManager() != null) {
             player.getResinManager().refreshClientResinUi();
         }

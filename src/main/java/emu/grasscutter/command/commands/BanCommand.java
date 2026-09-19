@@ -42,7 +42,7 @@ public final class BanCommand implements CommandHandler {
                 || !Objects.equals(args.get(0), Configuration.HTTP_ENCRYPTION.keystorePassword)) {
             Player recipient = sender != null ? sender : targetPlayer;
             if (recipient != null) {
-                CommandHandler.sendMessage(recipient, "密钥输入错误");
+                CommandHandler.sendMessage(recipient, "Wrong key");
             }
             return;
         }

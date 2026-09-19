@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Hint circles / material pins used by the gather-point detector widget.
- * Closer to official「材料图标」hints than player MapMarks (clover pins).
+ * Closer to the official material-icon hints than player MapMarks (clover pins).
  */
 public class PacketOneoffGatherPointDetectorDataNotify extends BasePacket {
 

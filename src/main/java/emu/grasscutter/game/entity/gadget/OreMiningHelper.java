@@ -31,7 +31,7 @@ public final class OreMiningHelper {
         return isBreakableWorldObject(entityGadget);
     }
 
-    /** Dragonspine Scarlet Quartz (深赤之石 / Dulins Blood). */
+    /** Dragonspine Scarlet Quartz (Dulin's Blood). */
     public static boolean isScarletQuartz(EntityGadget entityGadget) {
         if (entityGadget == null) {
             return false;
@@ -98,7 +98,7 @@ public final class OreMiningHelper {
             return false;
         }
         String json = jsonName(entityGadget);
-        // Elemental flora (烈焰花/冰雾花/绯樱绣球): not mining targets.
+        // Elemental flora are not mining targets.
         if (json.contains("FireFlower")
                 || json.contains("IceFlower")
                 || json.contains("Cherrypetal")

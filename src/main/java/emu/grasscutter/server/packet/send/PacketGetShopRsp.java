@@ -70,7 +70,7 @@ public class PacketGetShopRsp extends BasePacket {
                     player.addShopLimit(info.getGoodsId(), 0, nextRefreshTime);
                 }
 
-                // Already-owned costumes: mark sold out so client shows 已拥有 and cannot buy again.
+                // Already-owned costumes: mark sold out so the client shows them as owned and they cannot be bought again.
                 boughtNum = Math.max(boughtNum, ownedCostumeBoughtNum(player, info));
                 if (info.getBuyLimit() > 0 && boughtNum >= info.getBuyLimit()) {
                     syncSoldOutLimit(player, info.getGoodsId(), boughtNum, nextRefreshTime);

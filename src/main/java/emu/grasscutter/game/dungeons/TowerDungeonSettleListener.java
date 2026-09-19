@@ -26,7 +26,7 @@ public class TowerDungeonSettleListener implements DungeonSettleListener {
 
         // Upper-half done → mid-half team swap still pending. Settling here resets
         // abyssTempTeamIndex to 0 / advances the chamber, so the timed swap is skipped and
-        // the player keeps 上半 into 下半 (or jumps to the next chamber).
+        // the player keeps the upper half into the lower half, or jumps to the next chamber.
         if (towerManager != null && towerManager.isMidHalfCutscenePending()) {
             emu.grasscutter.Grasscutter.getLogger()
                     .info(

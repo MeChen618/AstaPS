@@ -7,7 +7,7 @@ import emu.grasscutter.net.proto.OfferingInfoOuterClass.OfferingInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
 
 /**
- * OfferingGadget content：写入 offering_info，使客户端弹出供奉交互键。
+ * OfferingGadget content: writes offering_info so the client shows the offering interaction key.
  */
 public final class GadgetOffering extends GadgetContent {
     private final int offeringId;

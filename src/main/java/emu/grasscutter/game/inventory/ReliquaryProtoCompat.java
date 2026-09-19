@@ -12,7 +12,7 @@ import java.util.List;
  * obfuscated names ({@code setDCCECKHJPKB} / {@code addAllOIGPOFNBKGG}).
  *
  * <p>Live jar Reliquary only exposes field 7 ({@code OIGPOFNBKGG} = purchased). Field 8 (definite
- * / 保底两次紫标) is missing from that generated class, so we append packed field-8 bytes after
+ * / the two guaranteed purple marks) is missing from that generated class, so we append packed field-8 bytes after
  * {@code build()} when the definite setter cannot be resolved.
  */
 final class ReliquaryProtoCompat {

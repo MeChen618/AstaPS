@@ -53,7 +53,7 @@ public final class AchievementTriggerHelper {
     }
 
     /**
-     * Player hit something — feed max-crit-damage achievements (摧枯拉朽 82041–82043).
+     * Player hit something — feed max-crit-damage achievements (82041-82043).
      */
     public static void onAttackResult(Player player, AttackResult result, GameEntity target) {
         if (player == null || result == null || target == null) {

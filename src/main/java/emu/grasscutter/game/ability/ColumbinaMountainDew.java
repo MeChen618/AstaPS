@@ -6,11 +6,11 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
 
 /**
- * Columbina PermanentSkill_2 「山月草露」.
+ * Columbina PermanentSkill_2, Mountain Moon Dew.
  *
  * <p>Talent text: separate cap/duration from ordinary Verdant Dew ({@code MoonOvergrowPoint_All}),
  * consumed only after ordinary dew is exhausted. Ability JSON gates generation on
- * {@code RGV_TempMoonOvergrowPoint} but never writes it — the client UI for 山月草露 reads that
+ * {@code RGV_TempMoonOvergrowPoint} but never writes it - the client dew-point UI reads that
  * regional value.
  */
 public final class ColumbinaMountainDew {

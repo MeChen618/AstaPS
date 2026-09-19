@@ -3,7 +3,7 @@ package emu.grasscutter.game.world;
 import emu.grasscutter.game.entity.EntityMonster;
 
 /**
- * 若陀龙王 combat-start hook.
+ * Azhdaha combat-start hook.
  *
  * <p>Placeholder, same situation as {@link SignoraCombatStartHelper}: {@link EntityMonster} already
  * calls into it while building the monster's config abilities and on every tick, but the scene id

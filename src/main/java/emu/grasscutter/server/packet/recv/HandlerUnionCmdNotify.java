@@ -61,7 +61,7 @@ public class HandlerUnionCmdNotify extends PacketHandler {
 
         while (!session.getPlayer().getAttackResults().isEmpty()) {
             var attack = session.getPlayer().getAttackResults().poll();
-            // 供 DPS 靶子在 damage() 里区分反应伤害与元素伤害
+            // Lets the DPS dummy tell reaction damage from elemental damage inside damage().
             emu.grasscutter.game.dps.DPSAttackContext.set(attack);
             try {
                 session.getPlayer().getScene().handleAttack(attack);

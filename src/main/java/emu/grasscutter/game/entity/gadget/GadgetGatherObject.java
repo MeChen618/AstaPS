@@ -134,7 +134,7 @@ public final class GadgetGatherObject extends GadgetContent {
         this.minedRewardGiven = true;
         try {
             Scene scene = this.getGadget().getScene();
-            // Official: ore/crystal breaks → ground pickup. useOnGain (深赤之石) applies on collect.
+            // Official: ore and crystal breaks become ground pickups. useOnGain items apply on collect.
             int count = itemData.isUseOnGain() ? 1 : Utils.randomRange(1, 2);
             for (int i = 0; i < count; ++i) {
                 EntityItem drop =
@@ -243,11 +243,11 @@ public final class GadgetGatherObject extends GadgetContent {
 
     /**
      * Official specialty plants that grant more than 1 item per interact.
-     * e.g. Lumidouce Bell (柔灯铃) = 3 per plant.
+     * e.g. Lumidouce Bell = 3 per plant.
      */
     private static int resolveGatherYield(int itemId) {
         switch (itemId) {
-            case 101235: // 柔灯铃 Lumidouce Bell
+            case 101235: // Lumidouce Bell
                 return 3;
             default:
                 return 1;
