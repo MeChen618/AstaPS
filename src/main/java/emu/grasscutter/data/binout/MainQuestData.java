@@ -18,7 +18,13 @@ public class MainQuestData {
 
     private SubQuestData[] subQuests;
     private List<TalkData> talks;
-    private long[] preloadLuaList;
+    /**
+     * Nothing reads this: it exists so Gson has somewhere to put the field. It is typed as strings
+     * because the ids outgrew {@code long} in the 4.5-era resources, and a value past
+     * {@link Long#MAX_VALUE} makes Gson throw while parsing QuestData.json, which fails the whole
+     * quest load rather than just this field.
+     */
+    private List<String> preloadLuaList;
 
     public int getId() {
         return id;
