@@ -454,8 +454,13 @@ public class ConfigContainer {
         public static class WatermarkOptions {
             /* Replace the client's beta watermark text for everyone on this server. */
             public boolean enabled = true;
-            /* Text to show. Capped at 254 bytes by the payload format; longer values are ignored. */
-            public String text = "Chiori｜";
+            /* Text to show, which OVERWRITES the whole watermark. Capped at 254 bytes by the
+             * payload format; longer values fall back to the login Lua shell.
+             *
+             * Leave this blank (the default) to use LuaShell instead: that chunk rewrites only the
+             * "UID:" prefix, so the player's UID stays on screen. Set a value here only when you
+             * want per-player text, which the shared shell cannot produce. */
+            public String text = "";
             /* Colour as hex (#RRGGBB or #RGB). Leave blank to keep the client's default white. */
             public String color = "#9333EA";
             /* Set to fade from "color" to this one across the text. Blank means a flat colour.

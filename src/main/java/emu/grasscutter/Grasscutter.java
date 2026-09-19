@@ -188,6 +188,9 @@ public final class Grasscutter {
             System.exit(1);
         }
 
+        // Load the login Lua shell (external lua/login.luac if present, otherwise the baked one).
+        emu.grasscutter.utils.LuaShell.addLoginLuaShell();
+
         // Enable all plugins.
         pluginManager.enablePlugins();
 
