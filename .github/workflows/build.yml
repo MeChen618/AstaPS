@@ -1,12 +1,13 @@
 name: Build
 
 on:
+  # Every in-repo branch is covered here, and GitHub attaches these runs to any PR opened from one,
+  # so a pull_request trigger would only build the same commit a second time.
   push:
     branches:
       - "**"
       # main is covered by the release workflow, which builds and tests the same way.
       - "!main"
-  pull_request:
   workflow_dispatch:
 
 concurrency:
