@@ -92,4 +92,6 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 ## 致謝
 
-Grasscutter，以及建立在它之上的 LunaGC 與 Chiori。本倉庫根部的匯入提交中以姓名列出了各位作者。
+本伺服器基於 **Grasscutter**。參考專案：**LunaGC**、**HunkyMeow**。
+
+本倉庫根部的匯入提交中，以姓名列出了它所承載的各位作者。

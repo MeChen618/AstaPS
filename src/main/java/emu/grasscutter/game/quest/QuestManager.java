@@ -224,7 +224,10 @@ public final class QuestManager extends BasePlayerManager {
 
     public void onLogin() {
         if (this.isQuestingEnabled()) {
-            this.enableQuests();
+            // The sweep is what fills a fresh quest log at login; see questing.triggerAllOnLogin.
+            if (GAME_OPTIONS.questing.triggerAllOnLogin) {
+                this.enableQuests();
+            }
             this.sendGivingRecords();
         }
 

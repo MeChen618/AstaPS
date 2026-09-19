@@ -92,4 +92,6 @@ Released under the **GNU General Public License v3.0**. See [`LICENSE`](LICENSE)
 
 ## Credits
 
-Grasscutter, and the LunaGC and Chiori work built on it. The import commit at the root of this repository credits its authors by name.
+This server is based on **Grasscutter**. Reference projects: **LunaGC**, **HunkyMeow**.
+
+The import commit at the root of this repository credits by name the authors whose work it carries.

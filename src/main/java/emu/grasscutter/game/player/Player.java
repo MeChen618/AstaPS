@@ -130,6 +130,19 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter @Setter private Map<Integer, Set<Integer>> forceLockedScenePoints;
     @Getter @Setter private List<Integer> chatEmojiIdList;
     @Getter @Setter private boolean playedFirstLoginCutscene;
+
+    /**
+     * Whether this player has yet to see the welcome notice.
+     *
+     * <p>Defaults to true, so a player whose document predates this field sees the notice once.
+     */
+    @Getter @Setter private boolean pendingWelcomeNotice = true;
+
+    /**
+     * The server build this player last entered the world on, so a restart onto a new build can say
+     * so once. Null until they have entered at least once.
+     */
+    @Getter @Setter private String lastSeenBuildHash;
     @Getter @Setter private int lastBirthdayMailYear;
     private Set<Integer> forcedFinishedQuests;
     /** SotS goddess GroupSuiteNotify debounce (groupId) — not persisted. */

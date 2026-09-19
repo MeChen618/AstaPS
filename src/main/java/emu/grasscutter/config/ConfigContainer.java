@@ -547,6 +547,19 @@ public class ConfigContainer {
         public static class Questing {
             /* Should questing behavior be used? */
             public boolean enabled = false;
+
+            /**
+             * Sweep every quest's begin condition at login and start the ones that already qualify.
+             *
+             * <p>Off by default. The sweep fires QUEST_COND_NONE and a level-1 check, which between
+             * them start every quest that has no real prerequisite - so a fresh player arrives to a
+             * quest log already full of them.
+             *
+             * <p>Turning it off does not stop questing: a quest changing state still triggers
+             * whatever was waiting on it, so chains advance from whatever the player actually
+             * begins. It only stops the bulk fill at login.
+             */
+            public boolean triggerAllOnLogin = false;
         }
 
         public static class WatermarkOptions {
