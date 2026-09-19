@@ -81,6 +81,7 @@ public class Scene {
     @Getter @Setter private int killedMonsterCount;
     private Set<SceneNpcBornEntry> npcBornEntrySet;
     @Getter private boolean finishedLoading = false;
+    private int lastReportedSceneTime = Integer.MIN_VALUE;
     @Getter protected int tickCount = 0;
     @Getter private boolean isPaused = false;
 
@@ -802,7 +803,50 @@ public class Scene {
 
         this.finishLoading();
         this.checkPlayerRespawn();
+        if (this.tickCount % 50 == 0) this.reportFrozenState();
         if (this.tickCount++ % 10 == 0) this.broadcastPacket(new PacketSceneTimeNotify(this));
+    }
+
+    /**
+     * Reports the handful of flags that stop the client's world dead while its menus keep working:
+     * a paused world or scene, locked game time, a scene time that is not advancing, or a player
+     * stuck short of {@link Player.SceneLoadState#LOADED}. Any of these looks identical in game -
+     * the avatar will not walk and everything else stands still - and none of them logs anything on
+     * its own, so say so here rather than leaving it to be guessed at.
+     */
+    private void reportFrozenState() {
+        var world = this.getWorld();
+        if (world == null) return;
+
+        var sceneTime = this.getSceneTime();
+        var stalled = sceneTime == this.lastReportedSceneTime;
+        this.lastReportedSceneTime = sceneTime;
+
+        var notLoaded =
+                this.players.stream()
+                        .anyMatch(p -> p.getSceneLoadState() != Player.SceneLoadState.LOADED);
+        var frozen = this.isPaused || world.isPaused() || world.isTimeLocked() || stalled || notLoaded;
+
+        var line =
+                "Scene {} tick: sceneTime={} ({}), scenePaused={}, worldPaused={}, timeLocked={},"
+                    + " entities={}, players={}";
+        Object[] args = {
+            this.getId(),
+            sceneTime,
+            stalled ? "not advancing" : "advancing",
+            this.isPaused,
+            world.isPaused(),
+            world.isTimeLocked(),
+            this.getEntities().size(),
+            this.players.stream().map(p -> p.getUid() + ":" + p.getSceneLoadState()).toList()
+        };
+
+        // Only worth an operator's attention when something in there is actually wrong.
+        if (frozen) {
+            Grasscutter.getLogger().warn(line, args);
+        } else {
+            Grasscutter.getLogger().debug(line, args);
+        }
     }
 
     protected void checkPlayerRespawn() {
