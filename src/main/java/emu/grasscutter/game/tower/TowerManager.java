@@ -1137,7 +1137,7 @@ public class TowerManager extends BasePlayerManager {
         }
 
         // Upper-half challenge often stays inProgress through MirrorTeamSetUp — that keeps the
-        // left HUD on 「the upper half」 and keeps star-timer ticks going. Finish it quietly as success.
+        // left HUD on "the upper half" and keeps star-timer ticks going. Finish it quietly as success.
         inProgress = false;
         try {
             var scene = player.getScene();

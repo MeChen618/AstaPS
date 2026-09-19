@@ -241,7 +241,7 @@ public final class SkirkCunningBridge {
                 SkirkCunningBridge.syncBar(player, entityAvatar, f2);
                 SkirkCunningBridge.alignNyxGv(entityAvatar, f2);
             }
-            Grasscutter.getLogger().info("Skirk hover Q (\u5c3d): keep cunning=" + f2);
+            Grasscutter.getLogger().info("Skirk hover Q (Exhaust): keep cunning=" + f2);
         } else {
             SkirkCunningBridge.deactivateDrain(entityAvatar);
             SkirkCunningBridge.stopDrainTicker(entityAvatar.getId());
@@ -250,7 +250,7 @@ public final class SkirkCunningBridge {
             f2 = 0.0f;
             SkirkCunningBridge.syncBar(player, entityAvatar, 0.0f);
             SkirkCunningBridge.alignNyxGv(entityAvatar, 0.0f);
-            Grasscutter.getLogger().info("Skirk solo Q (\u706d): consume all cunning " + f3 + " -> 0");
+            Grasscutter.getLogger().info("Skirk solo Q (Extinguish): consume all cunning " + f3 + " -> 0");
         }
         if (!bl3) {
             TAP_PEAK_CUNNING.remove(entityAvatar.getId());

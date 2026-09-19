@@ -101,7 +101,7 @@ public final class SkirkTeamBonusHelper {
                 APPLIED_BY_PLAYER.remove(n);
             } else {
                 APPLIED_BY_PLAYER.put(n, hashSet);
-                logger.info("Skirk \u8bf8\u6b66\u76f8\u6388 active for player {} ({} avatars)", (Object)n, (Object)hashSet.size());
+                logger.info("Skirk shared-arts bonus active for player {} ({} avatars)", (Object)n, (Object)hashSet.size());
             }
         }
         finally {

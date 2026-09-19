@@ -18,7 +18,7 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import java.util.List;
 
-@Command(label="extralevel", aliases={"el", "\u7a81\u7834", "levelbreak"}, usage={"[avatarId]"}, permission="player.give", permissionTargeted="player.give.others")
+@Command(label="extralevel", aliases={"el", "levelbreak"}, usage={"[avatarId]"}, permission="player.give", permissionTargeted="player.give.others")
 public final class ExtraLevelCommand
 implements CommandHandler {
     public void execute(Player player, Player player2, List<String> list) {
