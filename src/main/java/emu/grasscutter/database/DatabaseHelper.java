@@ -2,6 +2,7 @@ package emu.grasscutter.database;
 
 import static com.mongodb.client.model.Filters.eq;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
 import com.mongodb.MongoWriteException;
 
 import dev.morphia.query.*;
@@ -421,6 +422,29 @@ public final class DatabaseHelper {
     }
 
     @Deprecated
+    /**
+     * Creates an account with a hashed password and an email address.
+     *
+     * <p>Separate from the two-argument version, which stores whatever it is handed verbatim.
+     * Account.verifyPassword accepts both a BCrypt hash and a legacy plaintext value, so a password
+     * stored raw does work - it just stays raw forever, since the authenticator only upgrades an
+     * account whose stored password is empty.
+     *
+     * @return the new account, or null if the username is taken.
+     */
+    public static Account createAccountWithHashedPassword(
+            String username, String password, String email) {
+        if (DatabaseHelper.getAccountByName(username) != null) return null;
+
+        var account = new Account();
+        account.setId(Integer.toString(DatabaseManager.getNextId(account)));
+        account.setUsername(username);
+        account.setPassword(BCrypt.withDefaults().hashToString(12, password.toCharArray()));
+        if (email != null && !email.isBlank()) account.setEmail(email);
+        DatabaseHelper.saveAccount(account);
+        return account;
+    }
+
     public static Account createAccountWithPassword(String username, String password) {
         // Unique names only
         Account exists = DatabaseHelper.getAccountByName(username);
