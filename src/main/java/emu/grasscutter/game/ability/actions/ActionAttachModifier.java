@@ -43,8 +43,9 @@ public final class ActionAttachModifier extends AbilityActionHandler {
             LohenExtraArtSkillLevelHelper.onModifierApplied(ability);
         }
 
-        // Team 目标原先只登记不跑 onAdded；菈乌玛一命 TeamHandler 需要立刻挂 AvatarHandler。
-        // 其它 target 仍交给客户端 MODIFIER_CHANGE，避免与编排路径双重执行。
+        // Team targets used to be registered without running onAdded, but the Lauma C1 TeamHandler needs
+        // the AvatarHandler attached immediately.
+        // Other targets are still left to the client MODIFIER_CHANGE, so the orchestrated path cannot run twice.
         if ("Team".equals(action.target)) {
             var manager = ability.getManager();
             if (manager != null && modifierData.onAdded != null) {

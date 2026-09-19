@@ -192,8 +192,9 @@ public class EntityAvatar extends GameEntity {
     }
 
     /**
-     * 倒下角色按最大生命比例复活。普通 {@link #heal} 在 HP≤0 时直接返回 0，
-     * 七七/芭芭拉六命必须走这条路径才能真正拉起来。
+     * Revives a downed character to a fraction of max HP. The ordinary {@link #heal} returns 0 outright at
+     * HP &lt;= 0,
+     * so the Qiqi and Barbara C6 revives have to come through here to actually bring the character back.
      */
     public float reviveToRatio(float ratio) {
         float curHp = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);

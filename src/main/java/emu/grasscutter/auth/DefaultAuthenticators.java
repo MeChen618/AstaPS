@@ -25,20 +25,20 @@ public final class DefaultAuthenticators {
 
     /** Builds formatted ban message for client SDK modal. */
     public static String buildBanMessage(Account account) {
-        if (account == null) return "账号已被封禁";
+        if (account == null) return "This account is banned.";
         int endTime = account.getBanEndTime();
         String timeStr;
         if (endTime <= 0) {
-            timeStr = "永久封禁";
+            timeStr = "permanent";
         } else {
             timeStr = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
                     .format(new java.util.Date(((long) endTime) * 1000L));
         }
         String reason = account.getBanReason();
         if (reason == null || reason.trim().isEmpty()) {
-            reason = "违反游戏相关守则";
+            reason = "violation of the game rules";
         }
-        return String.format("账号已被封禁\n解封时间：%s\n封禁原因：%s", timeStr, reason);
+        return String.format("This account is banned.\nUnban time: %s\nReason: %s", timeStr, reason);
     }
 
     /** Handles the authentication request from the username and password form. */

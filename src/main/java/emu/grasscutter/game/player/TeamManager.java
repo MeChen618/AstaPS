@@ -113,7 +113,7 @@ public final class TeamManager extends BasePlayerDataManager {
                     for (ConfigAbilityData ability : levelConfig.getTeamAbilities()) {
                         String skill = ability.getAbilityName();
                         if (skill == null || skill.isEmpty()) {
-                            Grasscutter.getLogger().warn("{} 中存在空能力名称", configName);
+                            Grasscutter.getLogger().warn("Empty ability name in {}", configName);
                             continue;
                         }
                         AbilityEmbryoOuterClass.AbilityEmbryo emb =
@@ -134,7 +134,7 @@ public final class TeamManager extends BasePlayerDataManager {
                 if (skill == null || skill.isEmpty()) {
                     continue;
                 }
-                // Never emit Dive_Team on land — leftover embryo after diving would replay ripples.
+                // Never emit Dive_Team on land - a leftover embryo after diving would replay ripples.
                 if (GameConstants.DIVE_TEAM_ABILITY.equals(skill)
                         && !emu.grasscutter.game.player.DiveAbilityHelper.isAttached(player)) {
                     continue;
@@ -522,7 +522,7 @@ public final class TeamManager extends BasePlayerDataManager {
     }
 
     public synchronized void setupAvatarTeam(int teamId, List<Long> list) {
-        // Must look up by teamId. Old bug used get(list.size()) / get(team.size()) → always wrote team 1.
+        // Must look up by teamId. An old bug used get(list.size()) / get(team.size()) and always wrote team 1.
         TeamInfo teamInfo = this.getTeams().get(teamId);
 
         // Always unblock client UI with SetUpAvatarTeamRsp, even on failure / empty team.
@@ -865,14 +865,14 @@ public final class TeamManager extends BasePlayerDataManager {
         EntityAvatar deadAvatar = this.getCurrentAvatarEntity();
         if (deadAvatar == null || deadAvatar.getId() != dieGuid) return;
 
-        // 已由芭芭拉六命在 killEntity 救回：不要再换人
+        // Already rescued by Barbara C6 in killEntity - do not switch characters.
         float curHp = deadAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
         if (deadAvatar.isAlive() && curHp > 0f) {
             this.getPlayer().sendPacket(new PacketAvatarDieAnimationEndRsp(deadAvatar.getId(), 0));
             return;
         }
 
-        // 兜底：若死亡未走 Scene.killEntity 的复苏逻辑
+        // Fallback for deaths that did not go through the revive logic in Scene.killEntity.
         try {
             if (PartyReviveHelper.tryBarbaraC6AfterDeath(deadAvatar)) {
                 Scene scene = this.getPlayer().getScene();
@@ -1056,7 +1056,7 @@ public final class TeamManager extends BasePlayerDataManager {
             this.getPlayer().sendPacket(new PacketEnterScenePeerNotify(this.getPlayer()));
             this.getPlayer().getPosition().set(reviveAt);
         } catch (Exception e) {
-            // Stay near death position — never dump to world-start beach.
+            // Stay near the death position - never dump the player on the world-start beach.
             Grasscutter.getLogger()
                     .warn("respawnTeam notify failed uid={}: {}", this.getPlayer().getUid(), e.toString());
             Position fallback = this.getPlayer().getPosition().clone();
@@ -1078,7 +1078,7 @@ public final class TeamManager extends BasePlayerDataManager {
     public Position getRespawnPosition() {
         // Prefer nearest unlocked teleport waypoint (TransPointNormal / SceneTransPoint).
         // Old filter only accepted exact "SceneTransPoint", which matches nothing in 7.0
-        // scene3 data ($type=TransPointNormal) → Optional.get() threw → START_POSITION beach.
+        // scene3 data ($type=TransPointNormal) made Optional.get() throw, landing on the START_POSITION beach.
         try {
             return RespawnPositionHelper.find(this.getPlayer());
         } catch (Throwable t) {

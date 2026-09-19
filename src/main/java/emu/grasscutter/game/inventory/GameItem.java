@@ -54,7 +54,7 @@ public class GameItem {
     /** Purple define-mark / star on relic card (Reliquary._is_relic_starred). */
     @Getter @Setter private boolean relicStarred;
     /**
-     * Affix ids chosen at 圣言自明机 define time (Reliquary._purchased_append_prop_id_list).
+     * Affix ids chosen when defined at the Artifact Transmuter (Reliquary._purchased_append_prop_id_list).
      * Client uses this for the define icon / tooltip.
      */
     @Getter @Setter private List<Integer> purchasedAppendPropIdList;
@@ -263,7 +263,8 @@ public class GameItem {
         // Build whitelist of fight props already on the relic
         Set<FightProperty> whitelist = this.getAppendFightProperties();
 
-        // 定义圣遗物：满级前指定副词条合计至少强化 2 次（多个指定词条均分）
+        // Defined artifacts: the chosen substats must gain at least 2 upgrades in total before max level,
+        // split evenly when several are chosen.
         Set<FightProperty> guarantee = this.getDefiniteFightPropsNeedingGuarantee();
         if (!guarantee.isEmpty()) {
             Set<FightProperty> forced = new HashSet<>(whitelist);
@@ -332,7 +333,7 @@ public class GameItem {
     }
 
     /**
-     * Mark as 圣言自明机-defined: purchased/definite drive purple guarantee UI.
+     * Mark as Artifact Transmuter defined: purchased/definite drive the purple guarantee UI.
      *
      * <p>Do not set {@code relicStarred}. That bit is the bag star toggle
      * ({@code SetReliquaryStarState}); leaving it true on define pushes clients into a broken
@@ -425,7 +426,7 @@ public class GameItem {
                         .setMainPropId(this.getMainPropId())
                         .addAllAppendPropIdList(this.getAppendPropIdList());
         // Defined relics: purple guarantee = purchased/definite. Do NOT wire _is_relic_starred
-        // for them — that bit opens a broken StarUp enhance UI on current clients.
+        // for them - that bit opens a broken StarUp enhance UI on current clients.
         boolean defined =
                 this.purchasedAppendPropIdList != null && !this.purchasedAppendPropIdList.isEmpty();
         ReliquaryProtoCompat.applyStarred(relic, !defined && this.isRelicStarred());
