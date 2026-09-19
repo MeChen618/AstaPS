@@ -169,7 +169,12 @@ public class BlossomManager {
         for (var data : dataMap.values()) {
             if (blossomChestId == data.getBlossomChestId()) {
                 var dropVecList = data.getDropVec();
-                if (worldLevel > dropVecList.length) {
+                if (dropVecList == null) {
+                    Grasscutter.getLogger()
+                            .debug("Blossom chest {} has no dropVec configured", blossomChestId);
+                    return null;
+                }
+                if (worldLevel < 0 || worldLevel >= dropVecList.length) {
                     Grasscutter.getLogger().error("Illegal world level {}", worldLevel);
                     return null;
                 }
