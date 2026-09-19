@@ -34,6 +34,16 @@ public class Account {
     private int banStartTime;
     private boolean isBanned;
 
+    /**
+     * The address that got this account banned, when the ban came from an IP ban rather than a
+     * person.
+     *
+     * <p>Held as its own field so unbanning an IP can find the accounts it took down by querying
+     * this, rather than pattern-matching the human-readable ban reason - which would stop working
+     * the moment anyone reworded that message.
+     */
+    private String bannedByIp;
+
     @Deprecated
     public Account() {
         this.permissions = new ArrayList<>();
@@ -162,6 +172,14 @@ public class Account {
 
     public void setLocale(Locale locale) {
         this.locale = locale;
+    }
+
+    public String getBannedByIp() {
+        return this.bannedByIp;
+    }
+
+    public void setBannedByIp(String bannedByIp) {
+        this.bannedByIp = bannedByIp;
     }
 
     public String getBanReason() {

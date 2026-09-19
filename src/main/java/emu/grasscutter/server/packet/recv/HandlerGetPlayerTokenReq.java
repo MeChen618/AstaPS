@@ -20,6 +20,16 @@ import javax.crypto.Cipher;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
 public class HandlerGetPlayerTokenReq extends PacketHandler {
+    /**
+     * Ban end time written for an account taken down by an IP ban.
+     *
+     * <p>An IP ban has no end of its own, but the ban screen needs one, so this stands in for "not
+     * coming back". banEndTime is an int of epoch seconds, so the furthest it can express is
+     * 2038-01-19 - upstream writes a 2099 timestamp here, which silently overflows. /unbanip is
+     * what actually lifts it.
+     */
+    private static final int IP_BAN_END_TIME = Integer.MAX_VALUE;
+
 
     // A 7.0 client renumbered this message, so the generated class cannot read it - it declares
     // field 3 a string where 7.0 sends a varint, and parseFrom throws on that rather than handing
@@ -91,6 +101,25 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         }
 
         session.setPlayer(player);
+
+        // An IP ban takes the account with it: without that, the same person just registers again
+        // from the same address. The account ban is what the client is actually told about, since
+        // it is the one the ban screen can explain.
+        var clientIp = session.getAddress().getAddress().getHostAddress();
+        if (DatabaseHelper.isIpBanned(clientIp)) {
+            var bannedAccount = session.getAccount();
+            if (!bannedAccount.isBanned()) {
+                bannedAccount.setBanned(true);
+                bannedAccount.setBannedByIp(clientIp);
+                bannedAccount.setBanReason(DatabaseHelper.IP_BAN_REASON_PREFIX + clientIp);
+                bannedAccount.setBanStartTime((int) (System.currentTimeMillis() / 1000));
+                bannedAccount.setBanEndTime(IP_BAN_END_TIME);
+                bannedAccount.save();
+                Grasscutter.getLogger()
+                    .warn("IP {} is banned; account {} was banned with it.",
+                        clientIp, bannedAccount.getUsername());
+            }
+        }
 
         if (session.getAccount().isBanned()) {
             session.setState(SessionState.ACCOUNT_BANNED);

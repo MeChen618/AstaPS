@@ -8,6 +8,7 @@ import dev.morphia.query.*;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.*;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.BannedIp;
 import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.activity.PlayerActivityData;
 import emu.grasscutter.game.activity.musicgame.MusicGameBeatmap;
@@ -181,6 +182,77 @@ public final class DatabaseHelper {
      */
     public static boolean isThreadPoolOverloaded(ThreadPoolExecutor executor, int maxCount) {
         return executor.getQueue().size() > maxCount * 0.7f;
+    }
+
+    /** The reason text written on an account auto-banned by an IP ban. */
+    public static final String IP_BAN_REASON_PREFIX = "Banned IP: ";
+
+    /**
+     * The prefix used before the ban reason was in English.
+     *
+     * <p>Accounts banned back then carry it and have no bannedByIp field, so unbanning an IP still
+     * matches on it to find them. Nothing writes it any more.
+     */
+    private static final String LEGACY_IP_BAN_REASON_PREFIX = "IP\u5df2\u5c01\u7981: ";
+
+    public static void saveBannedIp(BannedIp bannedIp) {
+        DatabaseHelper.eventExecutorAccount.submit(
+                () -> DatabaseManager.getAccountDatastore().save(bannedIp));
+    }
+
+    public static BannedIp getBannedIp(String ip) {
+        if (ip == null) return null;
+        return DatabaseManager.getAccountDatastore()
+                .find(BannedIp.class)
+                .filter(Filters.eq("_id", ip))
+                .first();
+    }
+
+    public static boolean isIpBanned(String ip) {
+        return DatabaseHelper.getBannedIp(ip) != null;
+    }
+
+    public static boolean removeBannedIp(String ip) {
+        var banned = DatabaseHelper.getBannedIp(ip);
+        if (banned == null) return false;
+        DatabaseManager.getAccountDatastore().delete(banned);
+        return true;
+    }
+
+    /**
+     * Every account that was banned because of this IP.
+     *
+     * <p>Matched on the bannedByIp field, with the old reason-text pattern as a fallback so
+     * accounts banned before that field existed are still found.
+     */
+    public static List<Account> getAccountsBannedByIp(String ip) {
+        if (ip == null) return List.of();
+        return DatabaseManager.getAccountDatastore()
+                .find(Account.class)
+                .filter(
+                        Filters.or(
+                                Filters.eq("bannedByIp", ip),
+                                Filters.regex("banReason")
+                                        .pattern(
+                                                "^"
+                                                        + java.util.regex.Pattern.quote(
+                                                                LEGACY_IP_BAN_REASON_PREFIX + ip))))
+                .iterator()
+                .toList();
+    }
+
+    /** Lifts the ban on every account this IP took down. Returns how many were unbanned. */
+    public static int unbanAccountsBannedByIp(String ip) {
+        var accounts = DatabaseHelper.getAccountsBannedByIp(ip);
+        for (var account : accounts) {
+            account.setBanned(false);
+            account.setBanReason(null);
+            account.setBanEndTime(0);
+            account.setBanStartTime(0);
+            account.setBannedByIp(null);
+            DatabaseHelper.saveAccountAsync(account);
+        }
+        return accounts.size();
     }
 
     /**
