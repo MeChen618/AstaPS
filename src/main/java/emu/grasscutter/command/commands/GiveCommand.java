@@ -24,7 +24,7 @@ import lombok.Setter;
         label = "give",
         aliases = {"g", "item", "giveitem"},
         usage = {
-            "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level>] [r<refinement>] [x<amount>] [c<constellation>] [sl<skilllevel>]",
+            "(<itemId>|<avatarId>|all|weapons|mats|avatars) [lv<level 1-100, default 100>] [r<refinement>] [x<amount>] [c<constellation>] [sl<skilllevel>]",
             "<artifactId> [lv<level>] [x<amount>] [<mainPropId>] [<appendPropId>[,<times>]]..."
         },
         permission = "player.give",
@@ -402,8 +402,8 @@ public final class GiveCommand implements CommandHandler {
                 CommandHandler.sendTranslatedMessage(sender, "commands.give.illegal_relic");
         } else {
             // Suitable for Avatars and Weapons
-            if (param.lvl < 1) param.lvl = 1;
-            if (param.lvl > 90) param.lvl = 90;
+            if (param.lvl < 1) param.lvl = DEFAULT_LEVEL;
+            if (param.lvl > MAX_LEVEL) param.lvl = MAX_LEVEL;
         }
 
         if (!args.isEmpty()) {
@@ -556,6 +556,24 @@ public final class GiveCommand implements CommandHandler {
         CommandHandler.sendTranslatedMessage(
                 sender, "commands.give.given", given, "artifacts of the set", targetPlayer.getUid());
     }
+
+    /**
+     * What an avatar or weapon is given at when no lv argument is passed.
+     *
+     * <p>Handing out level 1 meant every give was followed by a levelling command, so the default
+     * is the cap instead.
+     */
+    private static final int DEFAULT_LEVEL = 100;
+
+    /**
+     * The highest level an avatar or weapon can be given at.
+     *
+     * <p>AvatarCurveExcelConfigData and WeaponCurveExcelConfigData both carry 100 rows, so stats
+     * scale properly this far; past it the curve lookup finds nothing and the stats silently stop
+     * growing. Ascension caps at 90 in the promote tables, so getMinPromoteLevel returns its
+     * maximum of 6 for anything above 80 and levels 91-100 simply keep that ascension.
+     */
+    private static final int MAX_LEVEL = 100;
 
     private static class GiveItemParameters {
         public int id;
