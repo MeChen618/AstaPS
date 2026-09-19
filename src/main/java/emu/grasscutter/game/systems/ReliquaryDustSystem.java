@@ -27,20 +27,20 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * 圣遗物重塑 / ReliquaryDust (item 105006 启圣之尘).
+ * Artifact reshaping / ReliquaryDust (item 105006, Sanctifying Essence).
  *
  * <p>Protocol (7.0 sniffer obfuscated names):
  *
  * <ul>
- *   <li>C2S 7273 JGGGGCPPBPM — real reshape select (guid + chosen affix ids)
- *   <li>S2C 7281 / 25355 — select rsp + candidate notify (FKBHBPBNOJJ)
- *   <li>C2S 2210 / 21945 — adopt/reject candidate
- *   <li>C2S 21870 DODGOEFKAMF — NOT dust ({@code avatar_id_list}); must not reshape
- *   <li>C2S 26587 COEPHMIKICA — NOT dust ({@code avatar_id}); ack-only companion
+ *   <li>C2S 7273 JGGGGCPPBPM - real reshape select (guid + chosen affix ids)
+ *   <li>S2C 7281 / 25355 - select rsp + candidate notify (FKBHBPBNOJJ)
+ *   <li>C2S 2210 / 21945 - adopt/reject candidate
+ *   <li>C2S 21870 DODGOEFKAMF - NOT dust ({@code avatar_id_list}); must not reshape
+ *   <li>C2S 26587 COEPHMIKICA - NOT dust ({@code avatar_id}); ack-only companion
  * </ul>
  *
  * <p>Misbinding 21870 as reshape caused ghost pending via {@code findLikelyTarget} and sticky
- * 「上次圣遗物重塑尚未进行选择」.
+ * the "previous artifact reshape has not been chosen yet" dialog.
  *
  * Const: CONST_VALUE_RELIQUARY_DUST_PARAM_1/2
  */
@@ -55,7 +55,7 @@ public final class ReliquaryDustSystem {
     public static final int OPCODE_DUST_CONFIRM_REQ_B = 21945;
 
     /**
-     * SelectRsp opcode probe (local debugging only). Keep false on production — wrong opcodes and
+     * SelectRsp opcode probe (local debugging only). Keep false on production - wrong opcodes and
      * dust refunds must not ship to the live jar.
      */
     private static final boolean ENABLE_RSP_PROBE = false;
@@ -123,7 +123,7 @@ public final class ReliquaryDustSystem {
         }
     }
 
-    /** True for a few seconds after reshape — used to log every client opcode. */
+    /** True for a few seconds after a reshape - used to log every client opcode. */
     public static boolean shouldLogAllRecv(Player player) {
         if (player == null) {
             return false;
@@ -151,7 +151,7 @@ public final class ReliquaryDustSystem {
     private ReliquaryDustSystem() {}
 
     public static final class PlayerDustState {
-        public int progress; // 圣言解明 0..∞ (mod 6 cycles)
+        public int progress; // transmuter progress, unbounded, cycles mod 6
         public int highTierTriggered; // for prophecy every 3rd high-tier
         public long focusGuid;
         public List<Integer> chosenKeys = new ArrayList<>(); // slot idx or fightProp id
@@ -162,7 +162,7 @@ public final class ReliquaryDustSystem {
         public long guid;
         public List<Integer> oldAppend = new ArrayList<>();
         public List<Integer> newAppend = new ArrayList<>();
-        /** Client-chosen affix ids (for UI "已选择追加属性"). */
+        /** Client-chosen affix ids, for the "selected appended attributes" UI. */
         public List<Integer> chosenAffixIds = new ArrayList<>();
         public List<Integer> chosenFightPropIds = new ArrayList<>();
         public int cost;
@@ -311,7 +311,7 @@ public final class ReliquaryDustSystem {
                         hdr != null ? hdr.length : 0);
     }
 
-    /** C2S 7273 — primary ReliquaryDustReq (guid + chosen append affix ids). */
+    /** C2S 7273 - primary ReliquaryDustReq (guid + chosen append affix ids). */
     public static void handleSelect(Player player, byte[] payload) {
         handleSelect(player, payload, 0, null);
     }
@@ -343,7 +343,7 @@ public final class ReliquaryDustSystem {
                             st.focusGuid,
                             st.pending.guid);
             // Already have a candidate: re-push so client can open comparison (exit-dialog path).
-            // Keep retcode=0 — 14320 can toast as error and block the working exit→compare jump.
+            // Keep retcode=0 - 14320 can toast as an error and block the working exit-to-compare jump.
             sendReshapeSuccessPackets(player, 0, requestHeader, false);
             return;
         }
@@ -363,10 +363,10 @@ public final class ReliquaryDustSystem {
     }
 
     /**
-     * C2S 21870 DODGOEFKAMF — {@code repeated uint32 avatar_id_list = 3}. Not ReliquaryDust.
+     * C2S 21870 DODGOEFKAMF - {@code repeated uint32 avatar_id_list = 3}. Not ReliquaryDust.
      *
-     * <p>Previously this path called {@code doReshape} with guid=0 → {@code findLikelyTarget} and
-     * created a ghost candidate (25355), which sticky-loops the 「尚未进行选择」dialog. Ack only.
+     * <p>Previously this path called {@code doReshape} with guid=0, reaching {@code findLikelyTarget} and
+     * creating a ghost candidate (25355), which sticky-loops the unfinished-selection dialog. Ack only.
      */
     public static void handleDustReq(Player player, byte[] payload) {
         Map<Integer, List<Object>> fields = ProtoWire.parse(payload);
@@ -381,7 +381,7 @@ public final class ReliquaryDustSystem {
         player.sendPacket(new PacketReliquaryDustRsp(0));
     }
 
-    /** C2S 26587 — companion ping on confirm; always ack. */
+    /** C2S 26587 - companion ping on confirm; always ack. */
     public static void handleCompanionReq(Player player, byte[] payload) {
         Grasscutter.getLogger()
                 .info(
@@ -391,7 +391,7 @@ public final class ReliquaryDustSystem {
         player.sendPacket(new emu.grasscutter.server.packet.send.PacketReliquaryDustCompanionRsp(0));
     }
 
-    /** C2S 2210 / 21945 — adopt (true) or keep original (false). */
+    /** C2S 2210 / 21945 - adopt (true) or keep original (false). */
     public static void handleConfirm(Player player, byte[] payload, int opcode) {
         PlayerDustState st = state(player);
         Map<Integer, List<Object>> fields = ProtoWire.parse(payload);
@@ -435,7 +435,7 @@ public final class ReliquaryDustSystem {
         // Always wipe server pending after confirm attempt.
         st.pending = null;
         st.focusGuid = 0L;
-        // Empty 25355 only here (not on login) — clears client unfinished-reshape state.
+        // Empty 25355 only here, never on login - clears the client unfinished-reshape state.
         sendClearCandidateNotify(player);
         Grasscutter.getLogger()
                 .info(
@@ -496,7 +496,7 @@ public final class ReliquaryDustSystem {
             return 14320; // RET_RELIQUARY_DUST_EXIST_CANDIDATE_APPEND_PROP
         }
 
-        // Auto-choose from definite/purchased if client sent none (祝圣之霜定义).
+        // Auto-choose from the definite/purchased set when the client sent none.
         List<Integer> chosen = new ArrayList<>(chosenKeys == null ? List.of() : chosenKeys);
         if (chosen.size() < 2
                 && relic.getDefiniteAppendPropIdList() != null
@@ -588,7 +588,8 @@ public final class ReliquaryDustSystem {
         return 0;
     }
 
-    /** Push current 启圣之尘 stack (or ensure client saw the del) so UI count updates in-place. */
+    /** Push the current Sanctifying Essence stack, or make sure the client saw the delete, so the UI count
+     * updates in place. */
     private static void syncDustItem(Player player) {
         GameItem dust = player.getInventory().getItemById(DUST_ITEM_ID);
         if (dust != null) {
@@ -606,7 +607,7 @@ public final class ReliquaryDustSystem {
         if (guid != 0L && pending.guid != guid) {
             Grasscutter.getLogger()
                     .warn(
-                            "ReliquaryDust confirm guid mismatch uid={} req={} pending={} — applying pending",
+                            "ReliquaryDust confirm guid mismatch uid={} req={} pending={} - applying pending",
                             player.getUid(),
                             guid,
                             pending.guid);
@@ -664,9 +665,9 @@ public final class ReliquaryDustSystem {
         }
         int highIndex = crossedAt / 6;
         if (highIndex % 3 == 0) {
-            return 3; // 谕告
+            return 3; // oracle tier
         }
-        return 2; // 高阶
+        return 2; // high tier
     }
 
     private static int dustCost(GameItem relic) {

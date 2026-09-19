@@ -498,7 +498,8 @@ public abstract class GameEntity {
             } catch (Throwable t) {
                 Grasscutter.getLogger().warn("[ShinobuC6] filterDamage failed", t);
             }
-            // 芭芭拉六命不在这里免死：官方是先倒下再立刻复苏，见 Scene.killEntity
+            // Barbara C6 does not cheat death here: officially the character goes down first and is then
+            // revived immediately. See Scene.killEntity.
         }
 
         this.addFightProperty(FightProperty.FIGHT_PROP_CUR_HP, -effectiveDamage);
@@ -527,8 +528,9 @@ public abstract class GameEntity {
         }
 
         if (this instanceof EntityAvatar entityAvatar) {
-            // 受伤只用单属性更新血量，避免全量 AvatarFightPropNotify 冲掉契条；
-            // 有契时再由 onDamaged 单独补推 HP_DEBTS + 强化档。
+            // On damage, update HP with a single-property notify so a full AvatarFightPropNotify cannot
+            // wipe the Bond of Life bar;
+            // when BoL is present, onDamaged separately re-pushes HP_DEBTS and the enhancement tier.
             entityAvatar
                     .getPlayer()
                     .sendPacket(

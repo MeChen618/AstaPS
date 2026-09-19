@@ -1,12 +1,12 @@
 package emu.grasscutter.game.ability;
 
-/** 爱可菲长按 E「即兴烹饪」相关协议号。 */
+/** Protocol ids for Escoffier's hold-E improvised cooking. */
 public final class EscoffierSkillCookOpcodes {
-    /** 客户端充能完成请求发菜（空 payload）。 */
+    /** Client asks for the dish once charging completes; empty payload. */
     public static final int COOK_REQ = 26785;
-    /** 发菜结果回包。 */
+    /** Dish result response. */
     public static final int COOK_RSP = 8444;
-    /** 周次数剩余/上限同步（字段过多会毒化充能条）。 */
+    /** Weekly remaining/cap sync; sending too many fields poisons the charge bar. */
     public static final int COOK_DATA_NOTIFY = 21842;
 
     private EscoffierSkillCookOpcodes() {}

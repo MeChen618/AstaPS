@@ -88,24 +88,24 @@ public final class DomainDungeonHelper {
         } else if (n >= 40810 && n <= 40813) {
             n3 = 40506;
         } else if (n >= 40820 && n <= 40823) {
-            // Moonchild / NDKL Cycle3: client has no 40820-40823 art — reuse 失落的月庭
+            // Moonchild / NDKL Cycle3: the client has no 40820-40823 art, so reuse the Lost Lunar Court scene
             n3 = 40754 + (n - 40820);
         } else if (n >= 40824 && n <= 40827) {
-            // MDDungeon Cycle05: no client art — reuse 失落的月庭
+            // MDDungeon Cycle05: no client art, so reuse the Lost Lunar Court scene
             n3 = 40754 + (n - 40824);
         } else if (n >= 40828 && n <= 40831) {
-            // Ice Erosion: client has no 40828-40831 art — reuse 失落的月庭
+            // Ice Erosion: the client has no 40828-40831 art, so reuse the Lost Lunar Court scene
             n3 = 40754 + (n - 40828);
         } else if (n >= 40832 && n <= 40835) {
-            // Snezhnaya weapon: replicate 失落的月庭 (40754-40757) client scene art
+            // Snezhnaya weapon: replicate the Lost Lunar Court (40754-40757) client scene art
             n3 = 40754 + (n - 40832);
         } else if (n >= 40836 && n <= 40839) {
-            // Snezhnaya talent: replicate Fontaine 苍白的遗荣 / 无光深都同款场景 (40760-40763)
+            // Snezhnaya talent: replicate the Fontaine Pale Forgotten Glory / Lightless Depths scenes (40760-40763)
             n3 = 40760 + (n - 40836);
         } else if (n >= 40700 && n <= 40703) {
             n3 = n;
         } else if (n >= 40840 && n <= 40847) {
-            // Extra custom domains without client art — reuse 失落的月庭
+            // Extra custom domains without client art - reuse the Lost Lunar Court scene
             n3 = 40754 + ((n - 40840) % 4);
         } else if (n >= 40760 && n <= 40767) {
             n3 = n;
@@ -221,7 +221,7 @@ public final class DomainDungeonHelper {
         if (n >= 4651 && n <= 4662) {
             return 3;
         }
-        // SN talent IV (荒坠的圣迹): suite4 on shared Fontaine scene 40763
+        // SN talent IV: suite4 on the shared Fontaine scene 40763
         if (n == 4694 || n == 4698 || n == 4702) {
             return 4;
         }
