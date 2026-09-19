@@ -4,6 +4,8 @@ import com.google.protobuf.ByteString;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.net.proto.StopServerInfoOuterClass.StopServerInfo;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.utils.Crypto;
 
@@ -18,6 +20,51 @@ import emu.grasscutter.utils.Crypto;
 public class PacketGetPlayerTokenRsp extends BasePacket {
 
     /** No key exchange: the seed travels in the clear, the old pre-RSA way. */
+    /**
+     * Turns the player away with a message the client will actually show.
+     *
+     * <p>The client maps almost every non-zero retcode to its own built-in string and ignores
+     * {@code GetPlayerTokenRsp.msg}, so a reason written there never reaches the player - they just
+     * see a generic internal-error code. {@code StopServerInfo.content_msg} is the one field it
+     * renders verbatim, and it only reads it for {@code RET_STOP_SERVER}, which is why that retcode
+     * is used here regardless of the real reason.
+     */
+    public PacketGetPlayerTokenRsp(GameSession session, String message) {
+        super(PacketOpcodes.GetPlayerTokenRsp, true);
+        this.setUseDispatchKey(true);
+
+        var packet =
+            GetPlayerTokenRsp.newBuilder()
+                .setUid(session.getPlayer() != null ? session.getPlayer().getUid() : 0)
+                .setRetcode(Retcode.RET_STOP_SERVER_VALUE)
+                .setMsg(message)
+                .setStopServer(
+                    StopServerInfo.newBuilder()
+                        .setContentMsg(message)
+                        .setStopBeginTime(0)
+                        .setStopEndTime(Integer.MAX_VALUE)
+                        .build())
+                .setCountryCode("US")
+                .build();
+
+        this.setData(packet.toByteArray());
+    }
+
+    /** Turns the player away with a retcode the client already has its own wording for. */
+    public PacketGetPlayerTokenRsp(GameSession session, Retcode retcode) {
+        super(PacketOpcodes.GetPlayerTokenRsp, true);
+        this.setUseDispatchKey(true);
+
+        var packet =
+            GetPlayerTokenRsp.newBuilder()
+                .setUid(session.getPlayer() != null ? session.getPlayer().getUid() : 0)
+                .setRetcode(retcode.getNumber())
+                .setCountryCode("US")
+                .build();
+
+        this.setData(packet.toByteArray());
+    }
+
     public PacketGetPlayerTokenRsp(GameSession session, int keyId) {
         super(PacketOpcodes.GetPlayerTokenRsp, true);
         this.setUseDispatchKey(true);

@@ -379,6 +379,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
         WAITING_FOR_LOGIN,
         PICKING_CHARACTER,
         ACTIVE,
-        ACCOUNT_BANNED
+        ACCOUNT_BANNED,
+        /** Turned away because the server is already at its player limit. */
+        SERVER_MAX_PLAYER_OVERFLOW,
+        /** Turned away because the database save queues are backed up. */
+        DB_OVERLOAD
     }
 }

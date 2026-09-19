@@ -9,11 +9,13 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
 import emu.grasscutter.utils.*;
 import emu.grasscutter.utils.helpers.ByteHelper;
 import java.nio.ByteBuffer;
 import java.security.Signature;
+import java.util.concurrent.ThreadPoolExecutor;
 import javax.crypto.Cipher;
 
 @Opcodes(PacketOpcodes.GetPlayerTokenReq)
@@ -102,6 +104,40 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
             return;
         }
 
+        // Refuse the login while the server is already at its player limit. Unlike the guards
+        // below, the client has its own wording for this one, so it gets a plain retcode.
+        if (ACCOUNT.maxPlayer > -1
+                && Grasscutter.getGameServer().getPlayers().size() >= ACCOUNT.maxPlayer) {
+            session.setState(SessionState.SERVER_MAX_PLAYER_OVERFLOW);
+            session.send(
+                new PacketGetPlayerTokenRsp(session, Retcode.RET_MP_ALLOW_ENTER_PLAYER_FULL));
+            Grasscutter.getLogger()
+                .info("Refused uid {}: the server is full.", session.getPlayer().getUid());
+            return;
+        }
+
+        // Refuse the login while the save queues are backed up. Letting a player in at this point
+        // makes it worse: loading them is itself database work, and every save they then generate
+        // joins the same queue. Turning them away is what lets it drain.
+        if (isDatabaseOverloaded()) {
+            session.setState(SessionState.DB_OVERLOAD);
+            session.send(new PacketGetPlayerTokenRsp(session, "Server is overloaded, try again shortly"));
+            Grasscutter.getLogger()
+                .warn(
+                    "Refused uid {}: database queues are backed up (default {}/{}, account {}/{},"
+                        + " item {}/{}, group {}/{}).",
+                    session.getPlayer().getUid(),
+                    queueSize(DatabaseHelper.getEventExecutor()),
+                    DatabaseHelper.DEFAULT_QUEUE_CAPACITY,
+                    queueSize(DatabaseHelper.getEventExecutorAccount()),
+                    DatabaseHelper.ACCOUNT_QUEUE_CAPACITY,
+                    queueSize(DatabaseHelper.getEventExecutorItem()),
+                    DatabaseHelper.ITEM_QUEUE_CAPACITY,
+                    queueSize(DatabaseHelper.getEventExecutorGroup()),
+                    DatabaseHelper.GROUP_QUEUE_CAPACITY);
+            return;
+        }
+
         player.loadFromDatabase();
 
         if (Grasscutter.getConfig().server.game.useXorEncryption) {
@@ -174,5 +210,24 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
      */
     private static void switchWireKey(GameSession session) {
         session.setUseSecretKey(true);
+    }
+
+    private static boolean isDatabaseOverloaded() {
+        return DatabaseHelper.isThreadPoolOverloaded(
+                    (ThreadPoolExecutor) DatabaseHelper.getEventExecutor(),
+                    DatabaseHelper.DEFAULT_QUEUE_CAPACITY)
+                || DatabaseHelper.isThreadPoolOverloaded(
+                    (ThreadPoolExecutor) DatabaseHelper.getEventExecutorAccount(),
+                    DatabaseHelper.ACCOUNT_QUEUE_CAPACITY)
+                || DatabaseHelper.isThreadPoolOverloaded(
+                    (ThreadPoolExecutor) DatabaseHelper.getEventExecutorItem(),
+                    DatabaseHelper.ITEM_QUEUE_CAPACITY)
+                || DatabaseHelper.isThreadPoolOverloaded(
+                    (ThreadPoolExecutor) DatabaseHelper.getEventExecutorGroup(),
+                    DatabaseHelper.GROUP_QUEUE_CAPACITY);
+    }
+
+    private static int queueSize(java.util.concurrent.ExecutorService executor) {
+        return ((ThreadPoolExecutor) executor).getQueue().size();
     }
 }
