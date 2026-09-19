@@ -1285,6 +1285,14 @@ public class Scene {
         }
 
         var group = block.groups == null ? null : block.groups.get(group_id);
+        if (group == null) {
+            // The block's script never loaded, or it carries no such group, so there is nothing to
+            // tear down. The entities are already gone above; tell the client the group is
+            // unloaded and stop, rather than dereferencing a group that was never built.
+            this.broadcastPacket(new PacketGroupUnloadNotify(List.of(group_id)));
+            return;
+        }
+
         if (group.triggers != null) {
             group.triggers.values().forEach(getScriptManager()::deregisterTrigger);
         }
