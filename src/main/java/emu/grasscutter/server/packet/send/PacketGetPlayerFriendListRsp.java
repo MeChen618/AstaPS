@@ -20,7 +20,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
         super(PacketOpcodes.GetPlayerFriendListRsp);
 
         GetPlayerFriendListRsp.Builder proto = GetPlayerFriendListRsp.newBuilder();
-        // 三个都是添加，不互相替换：织锦 / 改密 / DPS
+        // All three are added, none replaces another: Chiori, password change and DPS.
         proto.addFriendList(buildBotFriend(GameConstants.SERVER_CONSOLE_UID, GAME_INFO.serverAccount));
         proto.addFriendList(buildPasswordFriend());
         proto.addFriendList(buildBotFriend(GameConstants.SERVER_DPS_UID, resolveDpsAccount()));
@@ -64,7 +64,7 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
         }
         ConsoleAccount fallback = new ConsoleAccount();
         fallback.nickName = "DPS";
-        fallback.signature = "发 dps30秒 开始，发 dps停止 提前结束";
+        fallback.signature = "Send dps30 to start, dpsstop to end early";
         fallback.adventureRank = 60;
         fallback.avatarId =
                 GAME_INFO.serverAccount != null ? GAME_INFO.serverAccount.avatarId : 10000007;

@@ -31,8 +31,10 @@ public class HandlerTowerAllDataReq extends PacketHandler {
                             stars);
         }
 
-        // Outside an active chamber challenge, clear stale 第X层第Y间 / 是否继续挑战 so 领取奖励 works
-        // after「打完第一间退出领奖再打满」and after clearing a floor (next floor used to stay armed).
+        // Outside an active chamber challenge, clear the stale floor/chamber and "continue challenge?" state
+        // so claiming rewards works
+        // after clearing chamber 1, leaving to claim and then finishing, and after clearing a floor, where
+        // the next floor used to stay armed.
         if (!TowerAbyssFix.isInTowerDungeon(player) || !towerManager.isInProgress()) {
             session.send(PacketTowerCurLevelRecordChangeNotify.empty());
         }

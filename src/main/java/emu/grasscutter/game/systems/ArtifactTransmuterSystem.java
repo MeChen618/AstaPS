@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
- * Artifact Transmuter / 圣言自明机 (item 220109).
+ * Artifact Transmuter (item 220109).
  * Protocol reconstructed from official CN 7.0 capture (packets.jsonl).
  */
 public final class ArtifactTransmuterSystem {
@@ -44,7 +44,7 @@ public final class ArtifactTransmuterSystem {
     public static final int MAX_PROGRESS = 100;
     /** Progress contributed per Sanctifying Essence (105003), matching capture. */
     public static final int PROGRESS_PER_ESSENCE = 2;
-    /** Private-server cycle: 3 days, up to 10 祝圣之霜 per cycle. */
+    /** Private-server cycle: 3 days, up to 10 Sanctifying Unction per cycle. */
     public static final int CYCLE_DURATION_SEC = 3 * 24 * 3600;
     public static final int MAX_ELIXIR_PER_CYCLE = 10;
 
@@ -201,14 +201,14 @@ public final class ArtifactTransmuterSystem {
      * Login: ensure gadget + suppress tips + full Offer sync.
      *
      * <p>Previously Offer was deferred until UseItem/QuickUse. On current clients the define UI
-     * often opens without those packets, leaving schedule unset → TxtItemName / Set Name
+     * often opens without those packets, leaving schedule unset, which shows TxtItemName / Set Name
      * placeholders. Sync Offer here with tip 7013 suppressed (same as {@link #sendDataNotify}).
      */
     public static void sendLoginNotify(Player player) {
         ensureGadget(player);
         emu.grasscutter.game.player.PushTipsSuppressHelper.suppressAll(player);
         repairInventoryDefinedTemplates(player);
-        // Full Offer sync on login — required for 圣言自明机 set list / main+sub pickers.
+        // Full Offer sync on login - required for the transmuter set list and main/sub pickers.
         sendDataNotify(player);
         Grasscutter.getLogger().info(
                 "ArtifactTransmuter login Offer synced uid={} schedule={}",
@@ -368,7 +368,7 @@ public final class ArtifactTransmuterSystem {
         Map<Integer, List<Object>> fields = ProtoWire.parse(payload);
 
         // Live 7.0 client uses fields 5/9/11/14 (not 1..5). Capture semantics in ascending order:
-        // groups, equipType, versionIdx, [schedule], mainIndex — schedule may be omitted.
+        // groups, equipType, versionIdx, [schedule], mainIndex - schedule may be omitted.
         List<Integer> groups = new ArrayList<>();
         int equipType = 1;
         int versionIdx = 1;
@@ -502,7 +502,7 @@ public final class ArtifactTransmuterSystem {
 
     /**
      * Official UI indexes offer sets as DFGNDLNPOIJ==5 (5★ filter pool), sorted by bagSortValue.
-     * Capture: HBLBDKIBOCG=46 → setId 15048.
+     * Capture: HBLBDKIBOCG=46 gives setId 15048.
      */
     private static List<Integer> offerSetOrder() {
         List<Integer> cached = OFFER_SET_ORDER;
@@ -577,8 +577,8 @@ public final class ArtifactTransmuterSystem {
     private static GameItem createDefinedReliquary(
             ReliquarySetData setData, int equipType, int mainFightPropId, List<Integer> subFightPropIds) {
         int setId = setData.getId();
-        // Old sets (角斗士~苍白…) ship appendPropNum 0..4 templates for the same slot.
-        // First-match used to grab appendPropNum=0/1/2 itemIds; client then hides 重塑 even at +20.
+        // Old sets such as Gladiator and Pale Flame ship appendPropNum 0..4 templates for the same slot.
+        // First-match used to grab appendPropNum=0/1/2 itemIds, after which the client hides reshaping even at +20.
         // Prefer classic 501 + appendPropNum>=3 (ideally 4), same as newer sets' only templates.
         ItemData piece = pickDefinedPiece(setId, equipType);
         if (piece == null) {
@@ -606,7 +606,7 @@ public final class ArtifactTransmuterSystem {
                     mainFightPropId, depotId, equipType);
         }
 
-        // Build append props using STANDARD 5★ depot 501.
+        // Build append props using the STANDARD 5-star depot 501.
         // Newer set depots 961-965 in resources are "compressed" (one inflated value per group),
         // which makes +0 relics show multi-roll stats (e.g. CRIT 9.7%).
         List<Integer> append = new ArrayList<>();
@@ -646,7 +646,7 @@ public final class ArtifactTransmuterSystem {
         }
         item.getAppendPropIdList().clear();
         item.getAppendPropIdList().addAll(append);
-        // Purple define icon + shared ≥2 upgrade hits on chosen lines (official tutorial).
+        // Purple define icon plus at least 2 shared upgrade hits on the chosen lines, per the official tutorial.
         item.markAsDefinedReliquary(chosenAffixIds);
         Grasscutter.getLogger().info(
                 "ArtifactTransmuter define stats item={} mainPropId={} mainFp={} chosenSubs={} append={} definite={} excelApn={} effApn={}",
@@ -662,7 +662,7 @@ public final class ArtifactTransmuterSystem {
     }
 
     /**
-     * Remap legacy defined relics that were stamped onto appendPropNum 0/1/2 templates (no 重塑
+     * Remap legacy defined relics stamped onto appendPropNum 0/1/2 templates, which have no reshape
      * tab) onto the preferred appendPropNum&gt;=3 classic piece for the same set/slot.
      *
      * @return true if itemId changed
@@ -707,7 +707,7 @@ public final class ArtifactTransmuterSystem {
     }
 
     /**
-     * Prefer classic 5★ templates with effective appendPropNum &gt;= 3 so 重塑 UI stays available
+     * Prefer classic 5-star templates with effective appendPropNum &gt;= 3 so the reshape UI stays available
      * after +20. Public for remapping already-crafted defined relics that used 0/1/2 templates.
      */
     public static ItemData pickDefinedPiece(int setId, int equipType) {
@@ -734,8 +734,8 @@ public final class ArtifactTransmuterSystem {
     }
 
     /**
-     * Classic open-world 5★ families encode initial affix count in the ones digit (71520..71524).
-     * Some server resource dumps wrongly flatten excel {@code appendPropNum} to 4 for every row —
+     * Classic open-world 5-star families encode the initial affix count in the ones digit (71520..71524).
+     * Some server resource dumps wrongly flatten excel {@code appendPropNum} to 4 for every row -
      * client still uses the real digit, so trust id%10 for classic 501+main depot pieces.
      */
     static int effectiveAppendPropNum(ItemData data) {
@@ -772,7 +772,7 @@ public final class ArtifactTransmuterSystem {
         } else if (apn >= 3) {
             score += 30;
         } else {
-            // Client ReliquaryDust gate uses real template index; 0/1/2 hide 重塑.
+            // The client ReliquaryDust gate uses the real template index; 0/1/2 hide reshaping.
             score -= 50;
         }
         return score;
@@ -782,7 +782,7 @@ public final class ArtifactTransmuterSystem {
         return depotId == 1000 || depotId == 2000 || depotId == 3000 || depotId == 4000 || depotId == 5000;
     }
 
-    /** Classic 5★ main-prop depots by EquipType value. */
+    /** Classic 5-star main-prop depots by EquipType value. */
     private static int classicMainDepotForEquip(int equipType) {
         return switch (equipType) {
             case 1 -> 4000; // flower

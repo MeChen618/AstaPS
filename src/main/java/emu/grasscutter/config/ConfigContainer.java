@@ -206,7 +206,7 @@ public class ConfigContainer {
         public GameOptions gameOptions = new GameOptions();
         public JoinOptions joinOptions = new JoinOptions();
         public ConsoleAccount serverAccount = new ConsoleAccount();
-        /** 好友列表 DPS 指令器账号外观。 */
+        /** Appearance of the DPS commander account in the friend list. */
         public ConsoleAccount dpsAccount = defaultDpsAccount();
 
         public VisionOptions[] visionOptions = new VisionOptions[] {
@@ -554,7 +554,7 @@ public class ConfigContainer {
 
     public static class JoinOptions {
         public int[] welcomeEmotes = {2007, 1002, 4010};
-        public String welcomeMessage = "欢迎来到织锦服测试";
+        public String welcomeMessage = "Welcome to the Chiori test server";
         public JoinOptions.Mail welcomeMail = new JoinOptions.Mail();
 
         public static class Mail {
@@ -581,7 +581,7 @@ public class ConfigContainer {
     private static ConsoleAccount defaultDpsAccount() {
         ConsoleAccount account = new ConsoleAccount();
         account.nickName = "DPS";
-        account.signature = "发 dps30秒 开始，发 dps停止 提前结束";
+        account.signature = "Send dps30 to start, dpsstop to end early";
         account.adventureRank = 60;
         return account;
     }

@@ -26,7 +26,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Spawn Snezhnaya (至冬) exploration markers (冰神瞳 / chests) from
+ * Spawn Snezhnaya exploration markers (cryo oculi and chests) from
  * data/snezhnaya_explore_points.json near players on scene 3.
  *
  * Chest guards: Fatui skirmisher / agent placeholders until official
@@ -41,7 +41,7 @@ public final class SnezhnayaExploreSpawnHelper {
     private static final Path POINTS_FILE = Path.of("data", "snezhnaya_explore_points.json");
     private static final Path CLAIMED_FILE = Path.of("data", "snezhnaya_explore_claimed.json");
     private static final Path GUARD_KILL_FILE = Path.of("data", "snezhnaya_guard_respawn.json");
-    /** Same as 讨伐: 12h after camp wipe before guards respawn. */
+    /** Same as the bounty system: 12h after a camp wipe before guards respawn. */
     private static final long GUARD_RESPAWN_MS = 12L * 60L * 60L * 1000L;
 
     // Common chests: Fatui skirmishers / agents
@@ -234,7 +234,7 @@ public final class SnezhnayaExploreSpawnHelper {
         int id = gid - SYNTH_GROUP_BASE;
         ensureClaimedLoaded();
         if (claimed.add(id)) {
-            // Chest is one-shot only. Do NOT wipe camp guards — they stay until killed
+            // Chest is one-shot only. Do NOT wipe camp guards - they stay until killed
             // and respawn on their own 12h timer via ensureGuards().
             try {
                 Scene scene = gadget.getScene();
@@ -285,7 +285,7 @@ public final class SnezhnayaExploreSpawnHelper {
 
                     boolean chestClaimed = claimed.contains(ep.id);
                     if (chestClaimed) {
-                        // Chest already looted once — still refresh/maintain guard camp.
+                        // Chest already looted once - still refresh/maintain guard camp.
                         if (wantsGuards(ep)) {
                             held.add(ep.id);
                             ensureGuards(scene, ep, player);
@@ -327,7 +327,7 @@ public final class SnezhnayaExploreSpawnHelper {
                 removeGroupEntities(scene, gid.intValue());
                 int id = gid.intValue() - SYNTH_GROUP_BASE;
                 held.remove(id);
-                // Leaving range is not a kill — clear hold without starting 12h cooldown.
+                // Leaving range is not a kill - clear hold without starting 12h cooldown.
                 guardHeld.remove(id);
             }
         } catch (Throwable ignored) {
@@ -438,7 +438,7 @@ public final class SnezhnayaExploreSpawnHelper {
         return new int[0];
     }
 
-    /** Deterministic pick of n IDs from pool (same chest → same set). */
+    /** Deterministic pick of n IDs from pool (same chest gives the same set). */
     private static int[] pickFromPool(int[] poolSrc, int pointId, int n) {
         ArrayList<Integer> pool = new ArrayList<Integer>(poolSrc.length);
         for (int id : poolSrc) {
@@ -482,12 +482,12 @@ public final class SnezhnayaExploreSpawnHelper {
             guardHeld.add(ep.id);
             return;
         }
-        // Still some alive → do not refill mid-fight / mid-camp.
+        // Still some alive - do not refill mid-fight / mid-camp.
         if (countAliveGuards(scene, ep) > 0) {
             guardHeld.add(ep.id);
             return;
         }
-        // Camp wiped while we were holding it → start 12h timer.
+        // Camp wiped while we were holding it - start the 12h timer.
         if (guardHeld.remove(ep.id)) {
             markGuardsKilled(ep.id);
         }
@@ -566,14 +566,14 @@ public final class SnezhnayaExploreSpawnHelper {
     private static int resolveGadgetId(int gadgetId) {
         switch (gadgetId) {
             case 70210011:
-                return 70211101; // 普通的宝箱
+                return 70211101; // common chest
             case 70210021:
-                return 70211111; // 精致的宝箱
+                return 70211111; // exquisite chest
             case 70210031:
-                return 70211121; // 珍贵的宝箱
+                return 70211121; // precious chest
             case 70210041:
             case 70210051:
-                return 70211131; // 华丽的宝箱
+                return 70211131; // luxurious chest
             default:
                 return gadgetId;
         }
@@ -585,7 +585,7 @@ public final class SnezhnayaExploreSpawnHelper {
      * translating them would make DropSystem.queryDropData miss and silently drop no loot at all.
      * Written as escapes so this source stays pure ASCII while the keys remain byte-identical.
      */
-    /** Region-aware drop tags so WorldChestLootHelper grants 至冬 冰之印. */
+    /** Region-aware drop tags so WorldChestLootHelper grants the Snezhnaya cryo sigil. */
     private static String dropTagForKind(String kind) {
         if (kind == null) return "\u89e3\u8c1c\u4f4e\u7ea7\u81f3\u51ac";
         switch (kind) {

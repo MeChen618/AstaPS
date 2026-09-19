@@ -9,7 +9,8 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 
-/** 补齐 ReviveDeadAvatar；按能力归属消耗七七/芭芭拉 CD，避免「队里有七七就误烧七七 CD」。 */
+/** Fills in ReviveDeadAvatar, charging the Qiqi or Barbara cooldown by which ability owns the revive so
+ * merely having Qiqi in the party cannot burn her cooldown. */
 @AbilityAction({
     AbilityModifierAction.Type.ReviveAvatar,
     AbilityModifierAction.Type.ReviveDeadAvatar

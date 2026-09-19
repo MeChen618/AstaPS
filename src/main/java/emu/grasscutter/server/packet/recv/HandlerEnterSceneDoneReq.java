@@ -26,7 +26,7 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
         player.setSceneLoadState(SceneLoadState.LOADED);
 
         // Suppress LUA SetMonsterBattleByGroup ForceAlert while nearby groups bootstrap
-        // under the player's feet (ENTER_REGION false-fires → hilichurl horn on login/reload).
+        // under the player's feet (ENTER_REGION false-fires, giving a hilichurl horn on login/reload).
         try {
             emu.grasscutter.game.world.WorldBossSpawnHelper.markPlayerTeleportGrace(player);
         } catch (Throwable ignored) {
@@ -79,7 +79,8 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
         } catch (Throwable ignored) {
         }
 
-        // 圣言自明机：进场景后再补一次 Offer（冷启动 onLogin 过长时 StoreNotify 延迟任务可能仍未发出）
+        // Artifact Transmuter: re-send Offer after entering the scene. On a slow cold start the delayed
+        // StoreNotify task from onLogin may not have fired yet.
         try {
             emu.grasscutter.game.systems.ArtifactTransmuterSystem.sendLoginNotifyOnce(player);
         } catch (Throwable t) {

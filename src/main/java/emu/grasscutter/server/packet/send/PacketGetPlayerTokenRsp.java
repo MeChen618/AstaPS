@@ -54,7 +54,8 @@ public class PacketGetPlayerTokenRsp extends BasePacket {
         if (blackEndTime > 0) {
             p.setBlackUidEndTime(blackEndTime);
         } else if (retcode == 21) {
-            // 永久封禁时设定远期时间戳（2035年），防止客户端接收空时间戳产生解析异常
+            // For a permanent ban use a far-future timestamp (2035) so the client does not hit a parse
+            // error on an empty one.
             p.setBlackUidEndTime(2051193600);
         }
 
