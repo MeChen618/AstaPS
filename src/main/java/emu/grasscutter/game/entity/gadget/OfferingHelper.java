@@ -333,7 +333,7 @@ public final class OfferingHelper {
             LEVELS.put(player.getUid(), loadPlayerLevels(player));
             syncOfferingNotify(player);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "OfferingHelper login notify uid={} sakuraLv={} notifyOp={}",
                             player.getUid(),
                             getLevel(player, OFFERING_ORAIONOKAMI),
@@ -397,7 +397,7 @@ public final class OfferingHelper {
         syncOfferingNotify(player);
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "OfferingHelper interact uid={} gadget={} offeringId={} lv={}",
                         player.getUid(),
                         gadget.getGadgetId(),
@@ -459,7 +459,7 @@ public final class OfferingHelper {
         syncOfferingNotify(player);
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "OfferingHelper offerAll uid={} offeringId={} ->{} steps={} lastRewardId={} (rewards pending claim)",
                         player.getUid(),
                         offeringId,
@@ -516,7 +516,7 @@ public final class OfferingHelper {
         sendTakeRewardRsp(player, offeringId, takeLevel, Retcode.RET_SUCC_VALUE, granted, requestHeader);
         syncOfferingNotify(player);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "OfferingHelper takeReward uid={} offeringId={} level={} items={}",
                         player.getUid(),
                         offeringId,
@@ -615,7 +615,7 @@ public final class OfferingHelper {
             }
         }
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "OfferingHelper handle opcode {} as PlayerOfferingReq offeringId={}",
                         opcode,
                         offeringId);
@@ -694,7 +694,7 @@ public final class OfferingHelper {
             ProtoWire.writeUint32Force(out, 14, retcode);
             sendRaw(player, PacketOpcodes.PlayerOfferingRsp, out.toByteArray(), requestHeader);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "OfferingHelper Rsp uid={} offeringId={} level={} ret={} items={} op={}",
                             player.getUid(),
                             offeringId,
@@ -783,7 +783,7 @@ public final class OfferingHelper {
                 }
                 levelsLoaded = true;
                 Grasscutter.getLogger()
-                        .info("OfferingHelper loaded {} level rows", LEVEL_ROWS.size());
+                        .debug("OfferingHelper loaded {} level rows", LEVEL_ROWS.size());
             } catch (Throwable t) {
                 Grasscutter.getLogger().warn("OfferingHelper load levels failed: {}", t.toString());
             }

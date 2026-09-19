@@ -30,6 +30,7 @@ import emu.grasscutter.server.threading.ThreadPoolConfigResolver;
 import emu.grasscutter.server.threading.ThreadPoolType;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import java.util.Collections;
+import java.util.IdentityHashMap;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.Set;
@@ -78,6 +79,17 @@ public final class DatabaseHelper {
      */
     private static final Set<SceneGroupInstance> pendingGroupSaves =
             Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+    /**
+     * Objects with a save already queued on the default pool.
+     *
+     * <p>A save writes the object as it is when the write runs, so a second one queued behind the
+     * first has nothing left to write. Without this, work that touches an object repeatedly queues
+     * a write every time: {@code /give all} alone put over a thousand avatar saves on a queue that
+     * holds 1024, and the server then turned players away as overloaded for minutes afterwards.
+     */
+    private static final Set<Object> pendingDefaultSaves =
+            Collections.synchronizedSet(Collections.newSetFromMap(new IdentityHashMap<>()));
 
     private static int coreThreads(int divisor) {
         return Math.max(1, AVAILABLE_PROCESSORS / divisor);
@@ -282,7 +294,27 @@ public final class DatabaseHelper {
         } else if (object instanceof Account account) {
             DatabaseHelper.eventExecutorAccount.submit(() -> saveWithRetry(account));
         } else {
-            DatabaseHelper.eventExecutor.submit(() -> saveWithRetry(object));
+            submitDefaultSave(object);
+        }
+    }
+
+    /** Queues a save on the default pool, unless one is already queued for this object. */
+    private static void submitDefaultSave(Object object) {
+        // Already queued: that pending write will pick up this change too.
+        if (!pendingDefaultSaves.add(object)) return;
+
+        try {
+            DatabaseHelper.eventExecutor.submit(
+                    () -> {
+                        // Cleared before the write, not after: anything changed while this one runs
+                        // has to be able to queue a write of its own.
+                        pendingDefaultSaves.remove(object);
+                        saveWithRetry(object);
+                    });
+        } catch (RuntimeException submitFailed) {
+            // Clear the mark, or a rejected submit would leave this object unable to queue again.
+            pendingDefaultSaves.remove(object);
+            throw submitFailed;
         }
     }
 

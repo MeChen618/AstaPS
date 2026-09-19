@@ -10,7 +10,6 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.battlepass.BattlePassSystem;
 import emu.grasscutter.game.chat.ChatSystem;
 import emu.grasscutter.game.chat.ChatSystemHandler;
-import emu.grasscutter.game.chat.PasswordFriendHandler;
 import emu.grasscutter.game.combine.CombineManger;
 import emu.grasscutter.game.drop.DropSystem;
 import emu.grasscutter.game.drop.DropSystemLegacy;
@@ -267,20 +266,6 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public SocialDetail.Builder getSocialDetailByUid(int id) {
-        if (id == GameConstants.SERVER_PASSWORD_UID) {
-            return SocialDetail.newBuilder()
-                    .setUid(id)
-                    .setProfilePicture(
-                            ProfilePicture.newBuilder().setAvatarId(PasswordFriendHandler.AVATAR_ID))
-                    .setNickname(PasswordFriendHandler.NICKNAME)
-                    .setSignature(PasswordFriendHandler.SIGNATURE)
-                    .setLevel(PasswordFriendHandler.LEVEL)
-                    .setWorldLevel(PasswordFriendHandler.WORLD_LEVEL)
-                    .setNameCardId(PasswordFriendHandler.NAME_CARD_ID)
-                    .setIsShowAvatar(false)
-                    .setFinishAchievementNum(0)
-                    .setFriendEnterHomeOptionValue(0);
-        }
         if (GameConstants.isServerBotUid(id)) {
             var serverAccount =
                     id == GameConstants.SERVER_DPS_UID && GAME_INFO.dpsAccount != null

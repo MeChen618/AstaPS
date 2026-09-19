@@ -46,7 +46,7 @@ public final class WidgetPetHelper {
     public static void onWidgetSlotChange(Player player, int previousMaterialId, int currentMaterialId) {
         ensureLoaded();
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "WidgetPetHelper slot change uid={} prev={} curr={}",
                         player.getUid(),
                         previousMaterialId,
@@ -69,7 +69,7 @@ public final class WidgetPetHelper {
             return;
         }
         Grasscutter.getLogger()
-                .info("WidgetPetHelper sync equipped uid={} material={}", player.getUid(), materialId);
+                .debug("WidgetPetHelper sync equipped uid={} material={}", player.getUid(), materialId);
         setAttach(player, materialId, true);
     }
 
@@ -106,7 +106,7 @@ public final class WidgetPetHelper {
             }
         }
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "WidgetPetHelper preload uid={} material={} abilities={}",
                         player.getUid(),
                         materialId,
@@ -138,7 +138,7 @@ public final class WidgetPetHelper {
         String groupName = widgetAbilityGroupMap.get(materialId);
         if (groupName == null || groupName.isEmpty()) {
             Grasscutter.getLogger()
-                    .info("WidgetPetHelper skip material={} (no abilityGroup)", materialId);
+                    .debug("WidgetPetHelper skip material={} (no abilityGroup)", materialId);
             return;
         }
 
@@ -196,7 +196,7 @@ public final class WidgetPetHelper {
         }
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "WidgetPetHelper {} material={} group={} abilities={} teamEntity={}",
                         isAttach ? "ATTACH" : "DETACH",
                         materialId,
@@ -356,7 +356,7 @@ public final class WidgetPetHelper {
             abilityGroupAbilities = Collections.unmodifiableMap(groups);
             LOADED.set(true);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "WidgetPetHelper loaded {} widget maps, {} ability groups",
                             map.size(),
                             groups.size());

@@ -20,15 +20,11 @@ public final class GameConstants {
     public static final int MAX_FRIENDS = 60;
     public static final int MAX_FRIEND_REQUESTS = 50;
     public static final int SERVER_CONSOLE_UID = 99;
-    /** Password-change commander friend (matches PasswordFriendHandler.UID). */
-    public static final int SERVER_PASSWORD_UID = 98;
     /** DPS commander friend. */
     public static final int SERVER_DPS_UID = 97;
 
     public static boolean isServerBotUid(int uid) {
-        return uid == SERVER_CONSOLE_UID
-                || uid == SERVER_PASSWORD_UID
-                || uid == SERVER_DPS_UID;
+        return uid == SERVER_CONSOLE_UID || uid == SERVER_DPS_UID;
     }
     public static final int BATTLE_PASS_MAX_LEVEL = 50;
     public static final int BATTLE_PASS_POINT_PER_LEVEL = 1000;

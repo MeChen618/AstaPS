@@ -71,7 +71,7 @@ public class PacketGetScenePointRsp extends BasePacket {
         }
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "GetScenePointRsp sceneId={} total={} unlocked={} locked={} hasStatue7={} uid={}",
                         sceneId,
                         pointIds.size(),

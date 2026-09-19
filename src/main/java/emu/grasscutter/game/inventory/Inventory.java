@@ -23,6 +23,10 @@ import javax.annotation.Nullable;
 import lombok.val;
 
 public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
+    /** Material types already reported as missing isUseOnGain, so each is named once. */
+    private static final Set<MaterialType> MISSING_USE_ON_GAIN_REPORTED =
+            Collections.synchronizedSet(EnumSet.noneOf(MaterialType.class));
+
     private final Long2ObjectMap<GameItem> store;
     private final Int2ObjectMap<InventoryTab> inventoryTypes;
 
@@ -394,11 +398,24 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
                     case MATERIAL_FLYCLOAK:
                     case MATERIAL_COSTUME:
                     case MATERIAL_NAMECARD:
-                        Grasscutter.getLogger()
-                                .warn(
-                                        "Attempted to add a "
-                                                + item.getItemData().getMaterialType().name()
-                                                + " to inventory, but item definition lacks isUseOnGain. This indicates a Resources error.");
+                        // The resource pack does not change while the server runs, so this is the
+                        // same complaint every time an item of that type is handed out. Once per
+                        // material type is enough to go and fix the pack.
+                        if (MISSING_USE_ON_GAIN_REPORTED.add(item.getItemData().getMaterialType())) {
+                            Grasscutter.getLogger()
+                                    .warn(
+                                            "Attempted to add a {} to inventory, but item definition"
+                                                + " lacks isUseOnGain. This indicates a Resources"
+                                                + " error. Further {} items are logged at debug.",
+                                            item.getItemData().getMaterialType().name(),
+                                            item.getItemData().getMaterialType().name());
+                        } else {
+                            Grasscutter.getLogger()
+                                    .debug(
+                                            "Attempted to add a {} to inventory, but item definition"
+                                                + " lacks isUseOnGain.",
+                                            item.getItemData().getMaterialType().name());
+                        }
                         return null;
                     default:
                         if (tab == null) {

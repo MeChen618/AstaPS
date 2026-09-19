@@ -135,7 +135,15 @@ public class BlossomManager {
                                     .forEach(
                                             spawn -> {
                                                 var type = BlossomType.valueOf(spawn.getGadgetId());
-                                                int previewReward = getPreviewReward(type, worldLevel);
+                                                Integer previewReward = getPreviewReward(type, worldLevel);
+                                                if (previewReward == null) {
+                                                    // No drop table for this blossom at this world level.
+                                                    // Listing it anyway is not an option - setRewardId
+                                                    // unboxes - and this runs on the scene tick, so one
+                                                    // unconfigured blossom would take the whole world down
+                                                    // with it. Leave it out of the notify instead.
+                                                    return;
+                                                }
                                                 blossoms.add(
                                                         BlossomBriefInfoOuterClass.BlossomBriefInfo.newBuilder()
                                                                 .setSceneId(sceneId)
@@ -169,7 +177,12 @@ public class BlossomManager {
         for (var data : dataMap.values()) {
             if (blossomChestId == data.getBlossomChestId()) {
                 var dropVecList = data.getDropVec();
-                if (worldLevel > dropVecList.length) {
+                if (dropVecList == null) {
+                    Grasscutter.getLogger()
+                            .debug("Blossom chest {} has no dropVec configured", blossomChestId);
+                    return null;
+                }
+                if (worldLevel < 0 || worldLevel >= dropVecList.length) {
                     Grasscutter.getLogger().error("Illegal world level {}", worldLevel);
                     return null;
                 }

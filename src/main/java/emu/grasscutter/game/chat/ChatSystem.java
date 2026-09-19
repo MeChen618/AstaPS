@@ -161,12 +161,6 @@ public class ChatSystem implements ChatSystemHandler {
         player.sendPacket(packet);
         putInHistory(player.getUid(), targetUid, packet.getChatInfo());
 
-        // Password-change commander
-        if (PasswordFriendHandler.isPasswordFriend(targetUid)) {
-            PasswordFriendHandler.handlePrivateMessage(player, message);
-            return;
-        }
-
         // DPS commander: handles DPS only and replies with usage for anything else
         if (targetUid == GameConstants.SERVER_DPS_UID) {
             if (!DPSMeter.handleChat(player, message)) {

@@ -210,7 +210,7 @@ public final class ArtifactTransmuterSystem {
         repairInventoryDefinedTemplates(player);
         // Full Offer sync on login - required for the transmuter set list and main/sub pickers.
         sendDataNotify(player);
-        Grasscutter.getLogger().info(
+        Grasscutter.getLogger().debug(
                 "ArtifactTransmuter login Offer synced uid={} schedule={}",
                 player.getUid(),
                 SCHEDULE_ID);
@@ -225,7 +225,7 @@ public final class ArtifactTransmuterSystem {
         player.sendPacket(new PacketReliquaryOfferDataNotify(st));
         emu.grasscutter.game.player.PushTipsSuppressHelper.suppressRelicDefine(player);
         ReliquaryDustSystem.sendDataNotify(player);
-        Grasscutter.getLogger().info(
+        Grasscutter.getLogger().debug(
                 "ArtifactTransmuter open Offer uid={} schedule={} remainElixir={}/{} progress={} cycleEnd={}",
                 player.getUid(),
                 SCHEDULE_ID,
@@ -258,7 +258,7 @@ public final class ArtifactTransmuterSystem {
         if (!changed.isEmpty()) {
             player.sendPacket(new emu.grasscutter.server.packet.send.PacketStoreItemChangeNotify(changed));
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "ArtifactTransmuter repaired-defined-templates uid={} count={}",
                             player.getUid(),
                             changed.size());
@@ -271,7 +271,7 @@ public final class ArtifactTransmuterSystem {
         if (remainingElixir(st) <= 0) {
             player.sendPacket(new PacketReliquaryOfferDataNotify(st));
             player.sendPacket(new PacketReliquaryOfferExtractRsp());
-            Grasscutter.getLogger().info("ArtifactTransmuter extract blocked uid={} cycle full", player.getUid());
+            Grasscutter.getLogger().debug("ArtifactTransmuter extract blocked uid={} cycle full", player.getUid());
             return;
         }
         Map<Integer, List<Object>> fields = ProtoWire.parse(payload);
@@ -357,7 +357,7 @@ public final class ArtifactTransmuterSystem {
         player.sendPacket(new PacketReliquaryOfferDataNotify(st));
         player.sendPacket(new PacketReliquaryOfferExtractRsp());
         saveState(player);
-        Grasscutter.getLogger().info(
+        Grasscutter.getLogger().debug(
                 "ArtifactTransmuter extract uid={} gainedProgress={} elixir={} remainProgress={} remainElixir={} cycleEnd={}",
                 player.getUid(), gained, elixirs, st.progress, remainingElixir(st), st.cycleEndUnix);
     }
@@ -433,7 +433,7 @@ public final class ArtifactTransmuterSystem {
             }
         }
 
-        Grasscutter.getLogger().info(
+        Grasscutter.getLogger().debug(
                 "ArtifactTransmuter define parse uid={} versionIdx={} equipType={} mainIndex={} groups={} decoded={}",
                 player.getUid(), versionIdx, equipType, mainIndex, groups, decoded);
 
@@ -471,7 +471,7 @@ public final class ArtifactTransmuterSystem {
         player.sendPacket(new PacketReliquaryOfferDataNotify(st));
         player.sendPacket(new PacketReliquaryOfferDefineRsp(versionIdx));
         saveState(player);
-        Grasscutter.getLogger().info(
+        Grasscutter.getLogger().debug(
                 "ArtifactTransmuter define uid={} set={} equipType={} mainFp={} subFps={} item={} mainPropId={} append={}",
                 player.getUid(),
                 setId,
@@ -558,7 +558,7 @@ public final class ArtifactTransmuterSystem {
                     .collect(Collectors.toList());
         }
         OFFER_SET_ORDER = ordered;
-        Grasscutter.getLogger().info("ArtifactTransmuter offer set pool size={}", ordered.size());
+        Grasscutter.getLogger().debug("ArtifactTransmuter offer set pool size={}", ordered.size());
         return ordered;
     }
 
@@ -648,7 +648,7 @@ public final class ArtifactTransmuterSystem {
         item.getAppendPropIdList().addAll(append);
         // Purple define icon plus at least 2 shared upgrade hits on the chosen lines, per the official tutorial.
         item.markAsDefinedReliquary(chosenAffixIds);
-        Grasscutter.getLogger().info(
+        Grasscutter.getLogger().debug(
                 "ArtifactTransmuter define stats item={} mainPropId={} mainFp={} chosenSubs={} append={} definite={} excelApn={} effApn={}",
                 item.getItemId(),
                 item.getMainPropId(),
@@ -694,7 +694,7 @@ public final class ArtifactTransmuterSystem {
         item.setItemId(better.getId());
         item.setItemData(better);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ArtifactTransmuter repair-defined-template guid={} {} -> {} (effApn {} -> {}, excel {} -> {})",
                         item.getGuid(),
                         oldId,

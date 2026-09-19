@@ -414,6 +414,9 @@ public final class Grasscutter {
     /** How often the status readout is logged. Short enough to catch a backlog, long enough to ignore. */
     private static final long MONITOR_INTERVAL_MINUTES = 3;
 
+    /** The last status verdict printed, so an unchanged one is not repeated at INFO. */
+    private static String lastReportedVerdict = null;
+
     private static ScheduledExecutorService runtimeMonitor;
 
     /**
@@ -450,7 +453,22 @@ public final class Grasscutter {
                     .toList();
             var health = ServerHealthSnapshot.from(runtime, pools);
 
-            logger.info(
+            // Twenty-two lines every three minutes buries everything else in the console, and
+            // a healthy server repeats the same twenty-two lines forever. Say it out loud only
+            // when the verdict actually changes; otherwise it is still there at debug.
+            var verdict =
+                    health.health()
+                            + "/"
+                            + health.bottleneck()
+                            + "/"
+                            + health.diagnosisText()
+                            + "/"
+                            + pools.stream().map(pool -> pool.name() + ":" + pool.health()).toList();
+            var changed = !verdict.equals(lastReportedVerdict);
+            lastReportedVerdict = verdict;
+            if (!changed && !logger.isDebugEnabled()) return;
+
+            log(changed,
                     """
                     ---------------------------- server status ----------------------------
                     health:      {}
@@ -482,8 +500,8 @@ public final class Grasscutter {
                     health.diagnosisText(),
                     health.suggestion());
 
-            pools.forEach(Grasscutter::logThreadPool);
-            logger.info("-----------------------------------------------------------------------");
+            pools.forEach(pool -> logThreadPool(pool, changed));
+            log(changed, "-----------------------------------------------------------------------");
         } catch (Throwable t) {
             // A monitor that kills its own schedule by throwing is worse than no monitor:
             // scheduleAtFixedRate cancels the task on the first exception and never says so.
@@ -505,8 +523,17 @@ public final class Grasscutter {
         return capacity < 0 ? "unbounded" : Integer.toString(capacity);
     }
 
-    private static void logThreadPool(ThreadPoolSnapshot snapshot) {
-        logger.info(
+    /** Logs at INFO when this readout says something new, and at DEBUG when it repeats. */
+    private static void log(boolean newsworthy, String format, Object... args) {
+        if (newsworthy) {
+            logger.info(format, args);
+        } else {
+            logger.debug(format, args);
+        }
+    }
+
+    private static void logThreadPool(ThreadPoolSnapshot snapshot, boolean newsworthy) {
+        log(newsworthy,
                 """
                 pool {}
                   type {} / health {} / {}

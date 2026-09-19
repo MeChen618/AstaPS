@@ -4,7 +4,6 @@ import static emu.grasscutter.config.Configuration.GAME_INFO;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.config.ConfigContainer.ConsoleAccount;
-import emu.grasscutter.game.chat.PasswordFriendHandler;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
@@ -20,9 +19,8 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
         super(PacketOpcodes.GetPlayerFriendListRsp);
 
         GetPlayerFriendListRsp.Builder proto = GetPlayerFriendListRsp.newBuilder();
-        // All three are added, none replaces another: Chiori, password change and DPS.
+        // Both are added, neither replaces the other: Chiori and DPS.
         proto.addFriendList(buildBotFriend(GameConstants.SERVER_CONSOLE_UID, GAME_INFO.serverAccount));
-        proto.addFriendList(buildPasswordFriend());
         proto.addFriendList(buildBotFriend(GameConstants.SERVER_DPS_UID, resolveDpsAccount()));
 
         for (Friendship friendship : player.getFriendsList().getFriends().values()) {
@@ -32,26 +30,6 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
         this.setData(proto);
     }
 
-    private static FriendBrief buildPasswordFriend() {
-        return FriendBrief.newBuilder()
-                .setUid(PasswordFriendHandler.UID)
-                .setNickname(PasswordFriendHandler.NICKNAME)
-                .setLevel(PasswordFriendHandler.LEVEL)
-                .setProfilePicture(
-                        ProfilePicture.newBuilder().setAvatarId(PasswordFriendHandler.AVATAR_ID))
-                .setWorldLevel(PasswordFriendHandler.WORLD_LEVEL)
-                .setSignature(PasswordFriendHandler.SIGNATURE)
-                .setLastActiveTime((int) (System.currentTimeMillis() / 1000f))
-                .setNameCardId(PasswordFriendHandler.NAME_CARD_ID)
-                .setOnlineState(FriendOnlineState.FriendOnlineState_FRIEND_ONLINE)
-                .setIsMpModeAvailable(false)
-                .setIsGameSource(true)
-                .setParam(0)
-                .setPlatformType(PlatformTypeOuterClass.PlatformType.PlatformType_CLOUD_PC)
-                .setIsInDuel(false)
-                .setIsDuelObservable(false)
-                .build();
-    }
 
     private static ConsoleAccount resolveDpsAccount() {
         try {

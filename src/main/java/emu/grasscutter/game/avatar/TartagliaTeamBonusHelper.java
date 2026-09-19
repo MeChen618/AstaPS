@@ -114,7 +114,7 @@ public final class TartagliaTeamBonusHelper {
         if (stateKey.equals(prevState)
                 && !missingContribution
                 && (!apply || (applied != null && !applied.isEmpty()))) {
-            logger.info(
+            logger.debug(
                     "TartagliaTeamBonus skip uid={} apply={} reason=unchanged team=[{}]",
                     uid,
                     apply,
@@ -127,7 +127,7 @@ public final class TartagliaTeamBonusHelper {
             applied = null;
         }
         LAST_STATE_BY_PLAYER.put(uid, stateKey);
-        logger.info(
+        logger.debug(
                 "TartagliaTeamBonus refresh uid={} teamSize={} apply={} reason={} team=[{}]",
                 uid,
                 team.size(),
@@ -153,7 +153,7 @@ public final class TartagliaTeamBonusHelper {
                 logger.warn("TartagliaTeamBonus apply produced empty set uid={}", uid);
             } else {
                 APPLIED_BY_PLAYER.put(uid, next);
-                logger.info("Tartaglia Master of Weaponry active for player {} ({} avatars)", uid, next.size());
+                logger.debug("Tartaglia Master of Weaponry active for player {} ({} avatars)", uid, next.size());
             }
         } finally {
             REFRESH_IN_PROGRESS.set(Boolean.FALSE);
@@ -355,7 +355,7 @@ public final class TartagliaTeamBonusHelper {
         setContribution(avatar, groupId, BONUS_AMOUNT);
         avatar.recalcStats(true);
         int extra = getTotalExtraLevel(avatar, groupId);
-        logger.info(
+        logger.debug(
                 "TartagliaTeamBonus applied avatarId={} guid={} naGroup={} extraLevel={}",
                 avatar.getAvatarId(),
                 avatar.getGuid(),

@@ -88,6 +88,17 @@ public class World implements Iterable<Player> {
         this.worldLevel = player.getWorldLevel();
         this.isMultiplayer = isMultiplayer;
         this.timeLocked = player.getProperty(PlayerProperty.PROP_IS_GAME_TIME_LOCKED) != 0;
+        if (this.timeLocked) {
+            // The lock is stored on the player, so a quest that locked it and was then skipped
+            // (or any other exec that never ran its unlock) leaves every future world frozen:
+            // world time stops, scene time stops with it, and the open world stops moving with
+            // no error anywhere. Say so at login rather than leaving it invisible.
+            Grasscutter.getLogger()
+                    .warn(
+                            "World for uid {} starts with game time locked, so nothing in the open"
+                                + " world will move. Use /time unlock to clear it.",
+                            player.getUid());
+        }
 
         this.lastUpdateTime = System.currentTimeMillis();
         this.currentWorldTime = host.getPlayerGameTime();
@@ -692,6 +703,13 @@ public class World implements Iterable<Player> {
      * @param locked True if the world time should be locked.
      */
     public void lockTime(boolean locked) {
+        if (this.timeLocked != locked) {
+            Grasscutter.getLogger()
+                    .info(
+                            "Game time for uid {} is now {}.",
+                            this.getHost().getUid(),
+                            locked ? "locked" : "unlocked");
+        }
         this.timeLocked = locked;
 
         // Notify players of the locking.

@@ -110,7 +110,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                 this.player.getOpenStates().put(id, 1);
             }
             emu.grasscutter.Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "Questing-off OpenState force-fill uid={} mapSize={} newlySet={}",
                             this.player.getUid(),
                             this.player.getOpenStates().size(),
@@ -337,7 +337,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                     .warn("Statue quest silent-finish failed uid={}", this.player.getUid(), t);
         }
         emu.grasscutter.Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Statue talk gates ready uid={} count={} (no quest prerequisite for F)",
                         this.player.getUid(),
                         finished);
@@ -473,7 +473,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                         new emu.grasscutter.server.packet.send.PacketGroupSuiteNotify(
                                 born.getGroupId(), suite));
                 emu.grasscutter.Grasscutter.getLogger()
-                        .info(
+                        .debug(
                                 "Force goddess suite uid={} point={} group={} npc={} suite={}",
                                 this.player.getUid(),
                                 pointId,
@@ -587,7 +587,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         }
         this.player.getGoddessNpcEntityByPoint().put(pointId, entityIds);
         emu.grasscutter.Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Spawn Natlan pyro-resonate proxies uid={} point={} count={} area={}",
                         this.player.getUid(),
                         pointId,
@@ -708,7 +708,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
 
         this.player.getGoddessNpcEntityByPoint().put(pointId, entityIds);
         emu.grasscutter.Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Spawn statue worktop proxies uid={} point={} npc={} count={} area={}",
                         this.player.getUid(),
                         pointId,
@@ -938,7 +938,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                         new emu.grasscutter.server.packet.send.PacketGroupUnloadNotify(
                                 java.util.List.of(born.getGroupId())));
                 emu.grasscutter.Grasscutter.getLogger()
-                        .info(
+                        .debug(
                                 "Unload goddess suite uid={} point={} group={}",
                                 this.player.getUid(),
                                 pointId,
@@ -966,7 +966,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             }
         }
         emu.grasscutter.Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Remove statue worktop proxies uid={} point={} count={}",
                         this.player.getUid(),
                         pointId,
@@ -1149,7 +1149,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.player.save();
         this.player.sendPacket(new PacketSceneAreaUnlockNotify(sceneId, justified));
         emu.grasscutter.Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Synced scene areas from points uid={} scene={} areas={}",
                         this.player.getUid(),
                         sceneId,
