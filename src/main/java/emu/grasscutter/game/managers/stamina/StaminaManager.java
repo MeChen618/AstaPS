@@ -335,7 +335,8 @@ public class StaminaManager extends BasePlayerManager {
         entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
         entity.getWorld().broadcastPacket(new PacketLifeStateChangeNotify(0, entity, LifeState.LIFE_DEAD));
 
-        // 芭芭拉六命：上面已播死亡 → 立刻满血复苏，不从场景移除
+        // Barbara C6: the death above already played, so revive to full HP immediately without removing
+        // the entity from the scene.
         if (entity instanceof EntityAvatar deadAvatar) {
             try {
                 if (emu.grasscutter.game.ability.PartyReviveHelper.tryBarbaraC6AfterDeath(deadAvatar)) {

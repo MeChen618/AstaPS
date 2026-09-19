@@ -15,11 +15,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * After trounce-flower claim: remove flower cleanly (VISION_REMOVE, not DIE), clear corpses,
- * immediately respawn world boss — matching live LunaGC.
+ * immediately respawn world boss - matching live LunaGC.
  */
 public final class WorldBossClaimHelper {
     private static final ConcurrentHashMap<Integer, Long> CLAIM_COOLDOWN_UNTIL = new ConcurrentHashMap<>();
-    /** Keep suppress short — only blocks corpse/script re-drop, not the next real kill's flower. */
+    /** Keep suppress short - it only blocks corpse/script re-drops, not the next real kill's flower. */
     private static final long FLOWER_SUPPRESS_MS = 2500L;
 
     private WorldBossClaimHelper() {}
@@ -93,16 +93,17 @@ public final class WorldBossClaimHelper {
             removeDead.setAccessible(true);
             removeDead.invoke(null, scene, entry);
 
-            // Do NOT updateState(102) here — finishOpen already did; re-broadcasting after purge
+            // Do NOT updateState(102) here - finishOpen already did; re-broadcasting after purge
             // leaves a lingering "opened/smoke" flower on the client.
             int removed = removeAllTrounceFlowers(scene, groupId);
             CLAIM_COOLDOWN_UNTIL.put(groupId, System.currentTimeMillis() + FLOWER_SUPPRESS_MS);
 
-            // 奔狼的领主：领花后不立刻刷怪，回到空场地 + 开启试炼操作台
+            // Lupus Boreas: after the flower is claimed nothing respawns; the arena goes empty and the
+            // start-trial worktop returns.
             if (emu.grasscutter.game.world.AndriusTrialStartHelper.shouldSkipClaimRespawn(groupId)) {
                 Grasscutter.getLogger()
                         .info(
-                                "WorldBossClaimHelper Andrius claimed — skip immediate respawn group {}, flowersRemoved={}",
+                                "WorldBossClaimHelper Andrius claimed - skip immediate respawn group {}, flowersRemoved={}",
                                 groupId,
                                 removed);
                 removeAllTrounceFlowers(scene, groupId);
@@ -135,7 +136,7 @@ public final class WorldBossClaimHelper {
                     int bossLv = (Integer) level.invoke(null, scene);
                     Grasscutter.getLogger()
                             .info(
-                                    "WorldBossClaimHelper claimed — immediate respawn group {} (WL{} -> L{}), flowersRemoved={}",
+                                    "WorldBossClaimHelper claimed - immediate respawn group {} (WL{} -> L{}), flowersRemoved={}",
                                     groupId,
                                     wl,
                                     bossLv,

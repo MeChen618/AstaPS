@@ -44,7 +44,7 @@ public final class NyxSkillHook {
                 EscoffierSkillCookHelper.onHoldCookSkill(player);
             }
             if (n3 == QiqiEHealHelper.QIQI_AVATAR_ID) {
-                // 七七 E：补寒病鬼差周期治疗；Q：六命复活倒下队友
+                // Qiqi E: supply the Herald of Frost periodic heal. Q: C6 revives a downed teammate.
                 QiqiEHealHelper.onSkillStart(player, entityAvatar, n);
                 if (n == PartyReviveHelper.QIQI_BURST_SKILL
                         || (entityAvatar.getAvatar().getSkillDepot() != null

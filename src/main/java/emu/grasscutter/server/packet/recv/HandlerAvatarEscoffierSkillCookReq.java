@@ -8,7 +8,8 @@ import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.server.game.GameSession;
 
-/** 爱可菲即兴烹饪：锅充能完成后客户端上报，服务端发菜。 */
+/** Escoffier's improvised cooking: the client reports once the pot finishes charging and the server hands
+ * out the dish. */
 @Opcodes(value = EscoffierSkillCookOpcodes.COOK_REQ)
 public class HandlerAvatarEscoffierSkillCookReq extends PacketHandler {
     @Override

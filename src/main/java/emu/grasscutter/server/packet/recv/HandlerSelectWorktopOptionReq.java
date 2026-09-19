@@ -51,7 +51,8 @@ public class HandlerSelectWorktopOptionReq extends PacketHandler {
             MissingDomainFallbackManager.handleSelectWorktopOption(
                     session.getPlayer().getScene(), entity, req.getOptionId());
 
-            // 幽境入口：选选项进本（私服兜底 F；官服走活动页 EnterReq）
+            // Secret-realm entrance: the option enters the domain. This is the private-server F fallback;
+            // officially it goes through the activity page EnterReq.
             if (entity instanceof EntityGadget leyGadget
                     && emu.grasscutter.game.activity.leylinechallenge.LeyLineChallengeGroupLoader
                             .isEntranceGadget(leyGadget)

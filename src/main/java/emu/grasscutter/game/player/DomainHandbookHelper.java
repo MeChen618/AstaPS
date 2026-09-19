@@ -21,10 +21,10 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * Adventurer Handbook 秘境 list sync (ported from known-good 6.6 DomainHandbook patch).
+ * Adventurer Handbook domain list sync (ported from the known-good 6.6 DomainHandbook patch).
  *
  * <p>Right-page domains only appear when dungeon-entry points are unlocked+unhidden and their
- * areas are unlocked. Also pushes GetDailyDungeonEntryInfoRsp when the client opens 秘境.
+ * areas are unlocked. Also pushes GetDailyDungeonEntryInfoRsp when the client opens the domain list.
  */
 public final class DomainHandbookHelper {
     private static final Path CONFIG_PATH =
@@ -57,7 +57,7 @@ public final class DomainHandbookHelper {
                             player.getUid(),
                             HANDBOOK_ENTRIES.values().stream().mapToInt(List::size).sum(),
                             HANDBOOK_AREAS.values().stream().mapToInt(Set::size).sum());
-            // 见闻 chapters (Investigation) — same login window as 秘境 unlock.
+            // Investigation chapters - same login window as the domain unlock.
             try {
                 InvestigationHandbookHelper.onPlayerLogin(player);
             } catch (Throwable t) {
@@ -81,7 +81,7 @@ public final class DomainHandbookHelper {
         }
     }
 
-    /** Client opens 冒险之证 → 秘境 (InteractDailyDungeonInfoNotify). */
+    /** Client opens Adventurer Handbook to the domain tab (InteractDailyDungeonInfoNotify). */
     public static boolean onInteractDailyDungeon(Player player) {
         if (player == null || player.getSession() == null) {
             return false;
@@ -131,8 +131,8 @@ public final class DomainHandbookHelper {
                 }
             }
             if (!pointIds.isEmpty()) {
-                // After applyUnlocks, handbook entry points are in the unlocked set —
-                // push them so 冒险之证 → 秘境 stays populated.
+                // After applyUnlocks, handbook entry points are in the unlocked set -
+                // push them so the handbook domain tab stays populated.
                 var unlocked = player.getUnlockedScenePoints(sceneId);
                 var already = new ArrayList<Integer>();
                 for (int pid : pointIds) {
@@ -156,7 +156,7 @@ public final class DomainHandbookHelper {
     }
 
     private static void applyUnlocks(Player player) {
-        // Unlock handbook dungeon-entry points only. Do NOT unlock HANDBOOK_AREAS —
+        // Unlock handbook dungeon-entry points only. Do NOT unlock HANDBOOK_AREAS -
         // that previously forced map fog/waypoints open on new accounts (a8e01cd).
         for (Map.Entry<Integer, List<Integer>> entry : HANDBOOK_ENTRIES.entrySet()) {
             player.getUnlockedScenePoints(entry.getKey()).addAll(entry.getValue());

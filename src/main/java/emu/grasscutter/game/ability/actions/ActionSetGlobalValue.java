@@ -38,7 +38,8 @@ public final class ActionSetGlobalValue extends AbilityActionHandler {
                 if (owner == null && target != null && target.getScene() != null) {
                     owner = target.getScene().getHost();
                 }
-                // 玛薇卡：夜魂消耗转战意 / 二命夜魂加持状态，必须在 put 之前读旧值。
+                // Mavuika: Nightsoul spend converting to Fighting Spirit, and the C2 blessing state, both
+                // need the old value read before the put.
                 if ("NyxValue".equals(valueKey)
                         || "_ABILITY_Mavuika_IsNyxState".equals(valueKey)
                         || "_ABILITY_Mavuika_IsSpecialMove".equals(valueKey)) {
@@ -53,7 +54,7 @@ public final class ActionSetGlobalValue extends AbilityActionHandler {
                         emu.grasscutter.game.ability.NightsoulStaminaExempt.markNyxCostActive(target);
                     }
                 }
-                // Highest priority: Arlecchino Q — pre-arm then refuse zeroing Cur_HPDebts.
+                // Highest priority: Arlecchino Q - pre-arm then refuse zeroing Cur_HPDebts.
                 if (("Cur_HPDebts".equals(valueKey)
                                 || "_HPDebts".equals(valueKey)
                                 || "_ABILITY_Cur_HPDebts".equals(valueKey))
@@ -62,7 +63,7 @@ public final class ActionSetGlobalValue extends AbilityActionHandler {
                         && av.getAvatar() != null
                         && av.getAvatar().getAvatarId() == 10000096) {
                     ArlecchinoBurstBoL.tryPreArmFromAbility(ability, av);
-                    // Any wipe of ability globals for Arlecchino BoL during/around Q — lock + repin.
+                    // Any wipe of ability globals for Arlecchino BoL during or around Q - lock and repin.
                     if (!ArlecchinoBurstBoL.isConsumeBlocked(av)) {
                         float cur = av.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
                         if (cur > 0.5f) {

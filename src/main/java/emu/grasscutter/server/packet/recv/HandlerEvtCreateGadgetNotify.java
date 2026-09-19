@@ -36,7 +36,7 @@ public class HandlerEvtCreateGadgetNotify extends PacketHandler {
         IneffaRelayHelper.onClientRelayCreated(session.getPlayer(), gadget);
         // Venti Stormeye / WindBlade: drop leftover server shells once the real client one exists.
         VentiSkillObjHelper.onClientSkillObjCreated(session.getPlayer(), gadget);
-        // 爱可菲即兴烹饪锅：登记实体并清服务端空壳。
+        // Escoffier's cooking pot: register the entity and clear the server-side shell.
         EscoffierSkillCookHelper.onCookGadgetCreated(
                 session.getPlayer(), gadget.getId(), gadget.getGadgetId());
     }

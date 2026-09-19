@@ -49,7 +49,7 @@ public final class PlayerRuntimeStateCleanup {
         run("Symphonist", () -> SymphonistWeaponHelper.clearPlayerState(player));
         run("Xilonen", () -> XilonenC6HealHelper.clearPlayerState(uid));
         run("HutaoC6", () -> HutaoC6Helper.clearPlayerState(player));
-        // 七七/芭芭拉六命复活 CD、久岐忍六命、七七 E 持续治疗
+        // Qiqi and Barbara C6 revive cooldowns, Kuki Shinobu C6, and the Qiqi E sustained heal.
         run("ShinobuC6", () -> ShinobuC6Helper.clearPlayerState(player));
         run("PartyRevive", () -> PartyReviveHelper.clearPlayerState(player));
         run("QiqiEHeal", () -> QiqiEHealHelper.clearPlayerState(player));

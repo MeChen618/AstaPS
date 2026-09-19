@@ -26,7 +26,7 @@ public class HandlerEvtDestroyGadgetNotify extends PacketHandler {
         if (gadgetId > 0) {
             IneffaRelayHelper.onClientGadgetDestroyed(session.getPlayer(), entityId, gadgetId);
         }
-        // 爱可菲即兴烹饪锅销毁：延迟兜底发菜（优先仍走 SkillCookReq）。
+        // Escoffier's cooking pot destroyed: schedule the fallback payout, still preferring SkillCookReq.
         EscoffierSkillCookHelper.onCookGadgetDestroyed(session.getPlayer(), entityId);
     }
 }

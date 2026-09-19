@@ -37,7 +37,8 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
 
         session.send(new PacketPostEnterSceneRsp(session.getPlayer()));
 
-        // 爱可菲即兴烹饪：进场景后轻量同步周剩余，避免 CannotCreateFood 残留。
+        // Escoffier's improvised cooking: lightly sync the weekly remainder after entering the scene so a
+        // stale CannotCreateFood does not linger.
         EscoffierSkillCookHelper.syncToClient(player);
 
         this.playOpeningCutscene(player);

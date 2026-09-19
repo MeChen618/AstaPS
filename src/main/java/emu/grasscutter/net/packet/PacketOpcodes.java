@@ -372,14 +372,14 @@ public final class PacketOpcodes {
     public static final int ReliquaryDecomposeRsp = 1730;
     public static final int ReliquaryUpgradeReq = 188;
     public static final int ReliquaryUpgradeRsp = 28190;
-    // 圣言自明机 / ReliquaryOffer (OS 7.0 capture)
+    // Artifact Transmuter / ReliquaryOffer (OS 7.0 capture)
     public static final int ReliquaryOfferDefineReq = 1486;
     public static final int ReliquaryOfferDefineRsp = 465;
     public static final int ReliquaryOfferExtractReq = 7873;
     public static final int ReliquaryOfferExtractRsp = 23850;
     public static final int ReliquaryOfferCompanionNotify = 25355;
     public static final int ReliquaryOfferDataNotify = 26781;
-    // 圣遗物重塑 / ReliquaryDust (启圣之尘 105006)
+    // Artifact reshaping / ReliquaryDust (Sanctifying Essence 105006)
     public static final int ReliquaryDustReq = 21870;
     public static final int ReliquaryDustRsp = 21898;
     public static final int ReliquaryDustCompanionReq = 26587;
@@ -1301,7 +1301,7 @@ public final class PacketOpcodes {
     public static final int PlayerNicknameAuditDataNotify = 27011;
     public static final int PlayerNicknameNotify = 1503;
     public static final int PlayerOfferingDataNotify = 622;
-    /** 供奉升级 / 缴纳；7.0 实机 = BNJLNEMKLFL（protocol_definition.json） */
+    /** Offering level-up / submit; live 7.0 = BNJLNEMKLFL (protocol_definition.json). */
     public static final int PlayerOfferingReq = 1423;
     public static final int PlayerOfferingRsp = 1112;
     public static final int PlayerQuitFromMpNotify = 27175;
