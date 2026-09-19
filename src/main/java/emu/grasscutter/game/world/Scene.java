@@ -1091,6 +1091,7 @@ public class Scene {
                                 g -> {
                                     for (var b : scriptManager.getBlocks().values()) {
                                         loadBlock(b);
+                                        if (b.groups == null) continue;
                                         SceneGroup group = b.groups.getOrDefault(g, null);
                                         if (group != null && !group.dynamic_load) return group;
                                     }
@@ -1283,7 +1284,7 @@ public class Scene {
                     new PacketSceneEntityDisappearNotify(toRemove, VisionType.VisionType_VISION_REMOVE));
         }
 
-        var group = block.groups.get(group_id);
+        var group = block.groups == null ? null : block.groups.get(group_id);
         if (group.triggers != null) {
             group.triggers.values().forEach(getScriptManager()::deregisterTrigger);
         }
