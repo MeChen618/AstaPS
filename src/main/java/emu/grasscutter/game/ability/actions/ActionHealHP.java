@@ -1,0 +1,221 @@
+package emu.grasscutter.game.ability.actions;
+
+import com.google.protobuf.ByteString;
+import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
+import emu.grasscutter.game.ability.Ability;
+import emu.grasscutter.game.ability.ArlecchinoBurstBoL;
+import emu.grasscutter.game.ability.ClorindeBoLUtil;
+import emu.grasscutter.game.entity.*;
+import emu.grasscutter.*;
+import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
+import emu.grasscutter.server.packet.send.PacketEvtBeingHealedNotify;
+import emu.grasscutter.game.props.FightProperty;
+import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
+
+@AbilityAction(AbilityModifierAction.Type.HealHP)
+public final class ActionHealHP extends AbilityActionHandler {
+    @Override
+    public boolean execute(
+            Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
+        if (ClorindeBoLUtil.handleHealHp(ability, action, target)) return true;
+        var owner = ability.getOwner();
+
+        if (owner instanceof EntityClientGadget ownerGadget) {
+            owner =
+                    ownerGadget
+                            .getScene()
+                            .getEntityById(ownerGadget.getOwnerEntityId());
+            if (DebugConstants.LOG_ABILITIES) {
+                Grasscutter.getLogger()
+                        .debug(
+                                "Owner {} has top owner {}: {}",
+                                ability.getOwner(),
+                                ownerGadget.getOwnerEntityId(),
+                                owner);
+            }
+        }
+        if (owner instanceof EntityClientGadget ownerGadget) {
+                owner = ownerGadget.getScene().getEntityById(ownerGadget.getOwnerEntityId());
+
+                if (ownerGadget.gadgetId == 41089013 || ownerGadget.gadgetId == 41089012 || ownerGadget.gadgetId == 41089011) {
+                    if (owner == null) {
+                        owner = ability.getPlayerOwner().getTeamManager().getCurrentAvatarEntity();
+                    }
+                }
+            }
+
+        if (owner == null) return false;
+
+        var properties = new Object2FloatOpenHashMap<String>();
+
+        // Globals first: HealHP formulas often MUL ability specials with keys written by
+        // GetFightProperty / SetGlobalValue (e.g. Lauma C1 _ABILITY_Lauma_Constellation_1_Mastery).
+        owner.getGlobalAbilityValues().forEach(properties::put);
+        if (target != null && target != owner) {
+            target.getGlobalAbilityValues().forEach(properties::put);
+        }
+
+        for (var property : FightProperty.values()) {
+            var name = property.name();
+            var value = owner.getFightProperty(property);
+            properties.put(name, value);
+        }
+
+        for (var e : ability.getAbilitySpecials().object2FloatEntrySet()) {
+            properties.put(e.getKey(), e.getFloatValue());
+        }
+
+        var amountByCasterMaxHPRatio = action.amountByCasterMaxHPRatio.get(properties, 0);
+        var amountByCasterAttackRatio = action.amountByCasterAttackRatio.get(properties, 0);
+        var amountByCasterCurrentHPRatio = action.amountByCasterCurrentHPRatio.get(properties, 0);
+        var amountByCasterDefRatio = action.amountByCasterDefRatio.get(properties, 0);
+        var amountByTargetCurrentHPRatio = action.amountByTargetCurrentHPRatio.get(properties, 0);
+        var amountByTargetMaxHPRatio = action.amountByTargetMaxHPRatio.get(properties, 0);
+        var amountToRegenerate = action.amount.get(properties, 0);
+
+        if (action.amount.get(ability) != 0 &&
+            (amountByCasterMaxHPRatio != 0 ||
+            amountByCasterAttackRatio != 0 ||
+            amountByCasterCurrentHPRatio != 0 ||
+            amountByCasterDefRatio != 0 ||
+            amountByTargetCurrentHPRatio != 0 ||
+            amountByTargetMaxHPRatio != 0)) {
+            amountToRegenerate += action.amount.get(ability);
+        }
+
+        amountToRegenerate +=
+                amountByCasterMaxHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        amountToRegenerate +=
+                amountByCasterAttackRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_ATTACK);
+        amountToRegenerate +=
+                amountByCasterCurrentHPRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        amountToRegenerate +=
+                amountByCasterDefRatio * owner.getFightProperty(FightProperty.FIGHT_PROP_CUR_DEFENSE);
+
+        var abilityRatio = 1.0f;
+        if (!action.ignoreAbilityProperty)
+            abilityRatio +=
+                    target.getFightProperty(FightProperty.FIGHT_PROP_HEAL_ADD)
+                            + target.getFightProperty(FightProperty.FIGHT_PROP_HEALED_ADD);
+
+        amountToRegenerate +=
+                amountByTargetCurrentHPRatio * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        amountToRegenerate +=
+                amountByTargetMaxHPRatio * target.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+
+        String healTag = action.healTag;
+        // 不要在这里写 Dodge_HealFlag=1：满契强化贯夜要求起手 HealFlag==0，
+        // 写成 1 后 High 失败且不会落到 Medium，表现为「满契有时不强化」。
+        // 官方仅在 High 成功分支末尾置 1，并由 onBeingHealed 清回 0。
+
+        // Her burst clears the Bond and then heals off what it cleared, so the clear has to land
+        // first - otherwise heal() below spends the payout paying the Bond straight back down.
+        String abilityName =
+                ability.getData() != null && ability.getData().abilityName != null
+                        ? ability.getData().abilityName
+                        : "";
+        if (target instanceof EntityAvatar burstHealer
+                && burstHealer.getAvatar() != null
+                && burstHealer.getAvatar().getAvatarId() == 10000096
+                && ((healTag != null && healTag.contains("ElementalBurst"))
+                        || abilityName.contains("ElementalBurst")
+                        || abilityName.contains("Burst"))) {
+            ArlecchinoBurstBoL.onBurstHeal(burstHealer);
+        }
+
+        // 克洛琳德：ForbidFoodHeal 会使 isConvertToHpDebt() 恒真；旧 ×0.8 只扣契不回血已删除。
+        // 贯夜/夜巡转契由文件头 handleHealHp 接管；此处若仍漏网再试一次。
+        if (target.isConvertToHpDebt()
+                && target instanceof EntityAvatar debtAvatar
+                && debtAvatar.getAvatar() != null
+                && debtAvatar.getAvatar().getAvatarId() == 10000098
+                && ClorindeBoLUtil.handleHealHp(ability, action, target)) {
+            return true;
+        }
+
+        if ("MizukiBurstSelf".equals(healTag)) {
+            amountToRegenerate *= 2.0f;
+            Grasscutter.getLogger().debug("Healing increased by 100% for target {}", target);
+        }
+
+        float finalAmount = amountToRegenerate * abilityRatio * action.healRatio.get(ability, 1f);
+
+        // otherTargets may retarget (e.g. Lauma C1 SelectTargetsByShape + CurLocalAvatar).
+        GameEntity healTarget = resolveHealTarget(ability, action, target);
+        if (healTarget == null) {
+            healTarget = target;
+        }
+        // Recalculate heal/healed bonuses against the actual recipient when retargeted.
+        if (healTarget != target && !action.ignoreAbilityProperty) {
+            float healAdd = owner.getFightProperty(FightProperty.FIGHT_PROP_HEAL_ADD);
+            float healedAdd = healTarget.getFightProperty(FightProperty.FIGHT_PROP_HEALED_ADD);
+            finalAmount = amountToRegenerate * (1.0f + healAdd + healedAdd) * action.healRatio.get(ability, 1f);
+        }
+
+        float realHeal = healTarget.heal(finalAmount, action.muteHealEffect);
+        if (realHeal > 0 && !action.muteHealEffect) {
+            healTarget.getWorld().broadcastPacket(new PacketEvtBeingHealedNotify(owner, healTarget, finalAmount, realHeal));
+        }
+
+        if (finalAmount > 0) {
+            var healOwner = owner;
+            for (var mod : healOwner.getInstancedModifiers().values()) {
+                var modData = mod.getModifierData();
+                var modAbility = mod.getAbility();
+                if (modData != null && modData.onHeal != null && modAbility != null) {
+                    for (var healEvt : modData.onHeal) {
+                        ability.getManager().executeAction(modAbility, healEvt, ByteString.EMPTY, healOwner);
+                    }
+                }
+            }
+        }
+
+        if (finalAmount > 0
+                && "Avatar_Furina_Constellation_2".equals(ability.getData().abilityName)
+                && healTarget instanceof EntityAvatar furinaTarget
+                && furinaTarget.getAvatar().getAvatarId() == 10000089) {
+            var player = ability.getPlayerOwner();
+            if (player != null) {
+                float baseAmount = finalAmount / abilityRatio;
+                var seen = new java.util.HashSet<Long>();
+                seen.add(furinaTarget.getAvatar().getGuid());
+                for (var member : player.getTeamManager().getActiveTeam()) {
+                    if (!seen.add(member.getAvatar().getGuid())) continue;
+                    if (member.isConvertToHpDebt()) continue;
+                    float memberRatio = 1.0f;
+                    if (!action.ignoreAbilityProperty)
+                        memberRatio += member.getFightProperty(FightProperty.FIGHT_PROP_HEAL_ADD)
+                            + member.getFightProperty(FightProperty.FIGHT_PROP_HEALED_ADD);
+                    float spreadAmount = baseAmount * memberRatio;
+                    float spreadReal = member.heal(spreadAmount, action.muteHealEffect);
+                    if (spreadReal > 0 && !action.muteHealEffect) {
+                        member.getWorld().broadcastPacket(new PacketEvtBeingHealedNotify(owner, member, spreadAmount, spreadReal));
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * When HealHP names {@code otherTargets} with base {@code CurLocalAvatar}, heal the on-field
+     * character instead of Self (off-field casters like Lauma C1).
+     */
+    private static GameEntity resolveHealTarget(
+            Ability ability, AbilityModifierAction action, GameEntity fallback) {
+        if (action.otherTargets == null || ability.getPlayerOwner() == null) {
+            return fallback;
+        }
+        Object base = action.otherTargets.get("AALABPOFJDA");
+        if (base == null) {
+            base = action.otherTargets.get("base");
+        }
+        if (!"CurLocalAvatar".equals(String.valueOf(base))
+                && !"OriginOwner".equals(String.valueOf(base))) {
+            return fallback;
+        }
+        var current = ability.getPlayerOwner().getTeamManager().getCurrentAvatarEntity();
+        return current != null ? current : fallback;
+    }
+}

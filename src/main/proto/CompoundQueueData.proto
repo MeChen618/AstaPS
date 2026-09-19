@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+option java_outer_classname = "CompoundQueueDataOuterClass";
+
+// 7.0 dump names kept for generated setters. Wire semantics (client UI verified):
+//   1 ECICJPBDGOC = finished/output count
+//   7 LINALGNMBCF = total queued count (output+wait) — NOT a timestamp
+//  13 compound_id
+//  15 waitCount(ICAFODEEDIE) = next output unix timestamp
+message CompoundQueueData {
+	uint32 ECICJPBDGOC = 1;
+	uint32 LINALGNMBCF = 7;
+	uint32 compound_id = 13;
+	uint32 waitCount = 15;
+}

@@ -1,0 +1,20 @@
+[package]
+name = "protoshark"
+version = "2.0.0"
+authors = ["KingRainbow44"]
+description = "Utilities for Google's Protocol Buffers schema"
+license = "MIT"
+readme = "README.md"
+keywords = ["protobuf"]
+repository = "https://github.com/ys4e/protoshark"
+edition = "2021"
+
+[dependencies]
+
+paste = "1"
+base64 = "0.22"
+serde = { version = "1", features = ["derive"] }
+
+[dev-dependencies]
+
+serde_json = "1"

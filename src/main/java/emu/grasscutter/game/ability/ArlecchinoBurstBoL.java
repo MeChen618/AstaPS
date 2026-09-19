@@ -1,0 +1,532 @@
+package emu.grasscutter.game.ability;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
+import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * Arlecchino Q Bond-of-Life settle.
+ *
+ * <ol>
+ *   <li>On cast: lock BoL for {@link #LOCK_MS} — consume blocked, AddHPDebts still allowed.
+ *   <li>After the lock: arm clear from the burst damage frame, then clear {@link
+ *       #CLEAR_AFTER_HIT_MS} later.
+ *   <li>If a slash arrived during the lock, clear at {@code lockEnd + CLEAR_AFTER_HIT_MS}.
+ *   <li>Miss / no slash: {@link #MISS_TIMEOUT_MS} from cast.
+ * </ol>
+ */
+public final class ArlecchinoBurstBoL {
+    private static final int ARLECCHINO_AVATAR_ID = 10000096;
+
+    public static final int ARLECCHINO_BURST_SKILL_ID = 10965;
+
+    private static final String BURST_ABILITY_MARKER = "Arlecchino_ElementalBurst";
+
+    /** Consume lock from cast. BoL can still increase. */
+    private static final long LOCK_MS = 1000L;
+
+    /** After damage frame (or lock end if slash was during lock). */
+    private static final long CLEAR_AFTER_HIT_MS = 100L;
+
+    /** Absolute ceiling from cast if no slash is recognized. */
+    private static final long MISS_TIMEOUT_MS = 4000L;
+
+    private static final ConcurrentHashMap<Integer, PendingBurst> PENDING = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<Integer, DeferredHeal> DEFERRED_HEAL =
+            new ConcurrentHashMap<>();
+
+    private ArlecchinoBurstBoL() {}
+
+    /**
+     * @param clearAtMs 0 until a slash is armed; then wall-clock clear time
+     * @param bolSnapshot BoL at first recognized slash, else -1
+     * @param castSnapshot BoL at cast (miss ceiling)
+     * @param slashAtMs first recognized slash wall time, else 0
+     */
+    private record PendingBurst(
+            EntityAvatar avatar,
+            long castAtMs,
+            long clearAtMs,
+            float bolSnapshot,
+            float castSnapshot,
+            long slashAtMs) {}
+
+    private record DeferredHeal(float amount, boolean mute) {}
+
+    public static void onBurstCast(EntityAvatar caster) {
+        if (caster == null || caster.getAvatar() == null) {
+            return;
+        }
+        if (caster.getAvatar().getAvatarId() != ARLECCHINO_AVATAR_ID) {
+            return;
+        }
+
+        long now = System.currentTimeMillis();
+        float curDebt = caster.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+        PendingBurst existing = PENDING.get(caster.getId());
+        if (existing != null && now - existing.castAtMs() < 1500L) {
+            repinClientBoL(caster);
+            return;
+        }
+
+        PENDING.put(caster.getId(), new PendingBurst(caster, now, 0L, -1f, curDebt, 0L));
+        Grasscutter.getLogger()
+                .info(
+                        "[BoL] Arlecchino burst: lock {} BoL for {}ms; then slash→+{}ms / miss→{}ms",
+                        curDebt,
+                        LOCK_MS,
+                        CLEAR_AFTER_HIT_MS,
+                        MISS_TIMEOUT_MS);
+        if (curDebt > 0f) {
+            // Non-zero change forces EntityFightPropChangeReasonNotify — client bar follows it.
+            ArlecchinoBoLSync.pushBoL(
+                    caster,
+                    curDebt,
+                    Math.max(0.01f, curDebt * 0.0001f),
+                    ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+        }
+    }
+
+    /**
+     * Arm the Q lock from ability actions that often fire <em>before</em> {@code EvtDoSkillSucc}.
+     * Without this, ReduceHPDebts / SetGlobalValue zero 契 on the client at cast start.
+     */
+    public static void tryPreArmFromAbility(Ability ability, EntityAvatar avatar) {
+        if (avatar == null || avatar.getAvatar() == null) {
+            return;
+        }
+        if (avatar.getAvatar().getAvatarId() != ARLECCHINO_AVATAR_ID) {
+            return;
+        }
+        if (isPending(avatar.getId())) {
+            return;
+        }
+        String name = "";
+        if (ability != null && ability.getData() != null && ability.getData().abilityName != null) {
+            name = ability.getData().abilityName;
+        }
+        String lower = name.toLowerCase(Locale.ROOT);
+        boolean burst =
+                lower.contains("elementalburst")
+                        || lower.contains("elemental_burst")
+                        || name.contains("Arlecchino_ElementalBurst")
+                        || name.contains("ElementalBurst");
+        if (burst) {
+            Grasscutter.getLogger()
+                    .info("[BoL] Arlecchino pre-arm lock from ability={}", name);
+            onBurstCast(avatar);
+        }
+    }
+
+    /** True if this Reduce looks like Q wipe (not Masque 7.5% NA). */
+    public static boolean looksLikeBurstWipe(Ability ability, float curDebt, float newDebt) {
+        if (curDebt <= 0.5f) {
+            return false;
+        }
+        String name = "";
+        if (ability != null && ability.getData() != null && ability.getData().abilityName != null) {
+            name = ability.getData().abilityName;
+        }
+        if (name.contains("FireAttack_Reduce") || name.contains("FireAttack_ReduceHPDebts")) {
+            return false;
+        }
+        if (name.contains("ElementalBurst")
+                || name.contains("Elemental_Burst")
+                || name.contains("HealToHpDebts")
+                        && name.toLowerCase(Locale.ROOT).contains("burst")) {
+            return true;
+        }
+        // Near-total wipe in one Reduce — Q cast clear, not NA sip.
+        return newDebt <= 0.5f || newDebt < curDebt * 0.15f;
+    }
+
+    /**
+     * Highest-priority consume lock: while Q is pending, BoL must not decrease via any path
+     * ({@link ArlecchinoBoLSync#pushBoL}, ReduceHPDebts, NA Masque, SetGlobalValue, …). Adds still
+     * allowed. Clear only through {@link #applyClear} after the 1s lock + slash/+100ms rules.
+     */
+    public static boolean isConsumeBlocked(int entityId) {
+        return PENDING.containsKey(entityId);
+    }
+
+    public static boolean isConsumeBlocked(EntityAvatar avatar) {
+        return avatar != null && isConsumeBlocked(avatar.getId());
+    }
+
+    /** {@link ArlecchinoBoLSync#pushBoL} uses this to allow the post-slash settle write. */
+    public static boolean allowAuthoritativeClear(int entityId) {
+        return CLEAR_BYPASS.contains(entityId);
+    }
+
+    private static final java.util.Set<Integer> CLEAR_BYPASS =
+            java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    public static void repinClientBoL(EntityAvatar avatar) {
+        if (avatar == null || !isPending(avatar.getId())) {
+            return;
+        }
+        float debt = avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+        if (debt <= 0f) {
+            PendingBurst pending = PENDING.get(avatar.getId());
+            if (pending != null && pending.castSnapshot() > 0f) {
+                debt = pending.castSnapshot();
+                avatar.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, debt);
+            } else {
+                return;
+            }
+        }
+        ArlecchinoBoLSync.pushBoL(
+                avatar,
+                debt,
+                0f,
+                ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+    }
+
+    public static boolean isPending(int entityId) {
+        return PENDING.containsKey(entityId);
+    }
+
+    /**
+     * Record / refresh slash. Clear is never before {@code cast + LOCK_MS + CLEAR_AFTER_HIT_MS}.
+     *
+     * <p>Only {@link #isBurstHit} counts — NA / E / teammate / DoT must not arm clear.
+     */
+    public static void onAttack(EntityAvatar attacker, AttackResult result) {
+        if (attacker == null || result == null) {
+            return;
+        }
+        if (attacker.getAvatar() == null || attacker.getAvatar().getAvatarId() != ARLECCHINO_AVATAR_ID) {
+            return;
+        }
+        PendingBurst cur = PENDING.get(attacker.getId());
+        if (cur == null) {
+            return;
+        }
+        if (result.getDamage() <= 0f) {
+            return;
+        }
+        // Resolve the packet attacker (often ElementalBurst_Gadget), not only the avatar.
+        GameEntity source = null;
+        if (attacker.getScene() != null) {
+            source = attacker.getScene().getEntityById(result.getAttackerId());
+        }
+        String abilityName = resolveBurstAbilityName(attacker, source, result);
+        if (!isBurstHit(attacker, source, result, abilityName)) {
+            return;
+        }
+
+        long now = System.currentTimeMillis();
+        float debtNow = attacker.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+        PENDING.computeIfPresent(
+                attacker.getId(),
+                (id, pending) -> {
+                    long slashAt = pending.slashAtMs() > 0L ? pending.slashAtMs() : now;
+                    // Keep earliest slash; refresh clear from that slash vs lock end.
+                    if (pending.slashAtMs() > 0L && now > pending.slashAtMs()) {
+                        // Later multi-hits: push clear to last hit + 100ms, still not before lock end.
+                        slashAt = now;
+                    }
+                    long lockEnd = pending.castAtMs() + LOCK_MS;
+                    long clearAt = Math.max(lockEnd, slashAt) + CLEAR_AFTER_HIT_MS;
+                    float snap = pending.bolSnapshot() >= 0f ? pending.bolSnapshot() : debtNow;
+                    long firstSlash = pending.slashAtMs() > 0L ? pending.slashAtMs() : now;
+                    Grasscutter.getLogger()
+                            .info(
+                                    "[BoL] Arlecchino burst: slash dmg={} anim={} ability={} snap={} lockLeft={}ms → clear in {}ms",
+                                    result.getDamage(),
+                                    result.getAnimEventId(),
+                                    abilityName,
+                                    snap,
+                                    Math.max(0L, lockEnd - System.currentTimeMillis()),
+                                    Math.max(0L, clearAt - System.currentTimeMillis()));
+                    return new PendingBurst(
+                            pending.avatar(),
+                            pending.castAtMs(),
+                            clearAt,
+                            snap,
+                            pending.castSnapshot(),
+                            firstSlash);
+                });
+    }
+
+    public static void onTick(Player player) {
+        if (player == null || PENDING.isEmpty()) {
+            return;
+        }
+        long now = System.currentTimeMillis();
+        for (var entry : List.copyOf(PENDING.entrySet())) {
+            PendingBurst pending = entry.getValue();
+            long lockEnd = pending.castAtMs() + LOCK_MS;
+
+            // Keep client bar pinned while we still hold BoL (client Q often zeros locally).
+            if (now < (pending.clearAtMs() > 0L ? pending.clearAtMs() : lockEnd + MISS_TIMEOUT_MS)) {
+                EntityAvatar av = pending.avatar();
+                if (av != null) {
+                    repinClientBoL(av);
+                }
+            }
+
+            // Never clear during the consume lock.
+            if (now < lockEnd) {
+                continue;
+            }
+
+            boolean due =
+                    (pending.clearAtMs() > 0L && now >= pending.clearAtMs())
+                            || (pending.clearAtMs() == 0L
+                                    && now - pending.castAtMs() >= MISS_TIMEOUT_MS);
+            if (!due) {
+                continue;
+            }
+            String reason =
+                    pending.clearAtMs() > 0L && now >= pending.clearAtMs()
+                            ? "post-slash"
+                            : "miss-timeout";
+            if (PENDING.remove(entry.getKey(), pending)) {
+                applyClear(
+                        pending.avatar(), pending.bolSnapshot(), pending.castSnapshot(), reason);
+            }
+        }
+    }
+
+    /**
+     * @return {@code true} if deferred (caller must skip immediate heal)
+     */
+    public static boolean prepareBurstHeal(EntityAvatar avatar, float amount, boolean mute) {
+        if (avatar == null) {
+            return false;
+        }
+        PendingBurst pending = PENDING.get(avatar.getId());
+        if (pending == null) {
+            return false;
+        }
+        long now = System.currentTimeMillis();
+        long lockEnd = pending.castAtMs() + LOCK_MS;
+        boolean hold =
+                now < lockEnd
+                        || (pending.clearAtMs() > 0L && now < pending.clearAtMs())
+                        || (pending.clearAtMs() == 0L
+                                && now - pending.castAtMs() < MISS_TIMEOUT_MS);
+        if (hold) {
+            if (amount > 0f) {
+                DEFERRED_HEAL.merge(
+                        avatar.getId(),
+                        new DeferredHeal(amount, mute),
+                        (a, b) ->
+                                new DeferredHeal(
+                                        Math.max(a.amount(), b.amount()), a.mute() && b.mute()));
+            }
+            Grasscutter.getLogger()
+                    .info(
+                            "[BoL] Arlecchino burst: defer heal amount={} (lockLeft={} clearAt={})",
+                            amount,
+                            Math.max(0L, lockEnd - now),
+                            pending.clearAtMs());
+            return true;
+        }
+        // Past hold — settle clear first, then flush this heal (do not fall through to heal()).
+        if (amount > 0f) {
+            DEFERRED_HEAL.merge(
+                    avatar.getId(),
+                    new DeferredHeal(amount, mute),
+                    (a, b) ->
+                            new DeferredHeal(
+                                    Math.max(a.amount(), b.amount()), a.mute() && b.mute()));
+        }
+        if (!PENDING.remove(avatar.getId(), pending)) {
+            return false;
+        }
+        applyClear(pending.avatar(), pending.bolSnapshot(), pending.castSnapshot(), "burst-heal");
+        return true;
+    }
+
+    public static void onBurstHeal(EntityAvatar avatar) {
+        prepareBurstHeal(avatar, 0f, true);
+    }
+
+    public static void clearEntityState(int entityId) {
+        PENDING.remove(entityId);
+        DEFERRED_HEAL.remove(entityId);
+    }
+
+    public static void clearPlayerState(Player player) {
+        if (player == null || player.getTeamManager() == null) {
+            return;
+        }
+        for (EntityAvatar avatar : player.getTeamManager().getActiveTeam()) {
+            if (avatar != null) {
+                PENDING.remove(avatar.getId());
+                DEFERRED_HEAL.remove(avatar.getId());
+            }
+        }
+    }
+
+    private static boolean isBurstHit(
+            EntityAvatar caster, GameEntity source, AttackResult result, String abilityName) {
+        if (isBurstAbilityName(abilityName)) {
+            return true;
+        }
+        // Q damage is often owned by the burst gadget — any of its abilities named ElementalBurst.
+        if (source != null && source != caster && sourceHasBurstAbility(source)) {
+            return true;
+        }
+        String animEvent = result != null ? result.getAnimEventId() : null;
+        if (animEvent == null || animEvent.isEmpty()) {
+            return false;
+        }
+        String s = animEvent.toLowerCase(Locale.ROOT);
+        return s.contains("arlecchino_elementalburst")
+                || s.contains("elementalburst_attack")
+                || (s.contains("elementalburst") && s.contains("arlecchino"));
+    }
+
+    private static boolean isBurstAbilityName(String name) {
+        if (name == null || name.isEmpty()) {
+            return false;
+        }
+        if (ArlecchinoBoLUtil.isBurstAttackAbility(name)) {
+            return true;
+        }
+        String lower = name.toLowerCase(Locale.ROOT);
+        // Bind to Arlecchino Q only — never generic teammate ElementalBurst.
+        return lower.contains("arlecchino_elementalburst")
+                || name.contains(BURST_ABILITY_MARKER)
+                || (lower.contains("elementalburst") && lower.contains("arlecchino"));
+    }
+
+    private static String resolveBurstAbilityName(
+            EntityAvatar caster, GameEntity source, AttackResult result) {
+        String fromCaster = resolveAbilityName(caster, result);
+        if (isBurstAbilityName(fromCaster)) {
+            return fromCaster;
+        }
+        if (source != null && source != caster) {
+            String fromSource = resolveAbilityName(source, result);
+            if (fromSource != null && !fromSource.isEmpty()) {
+                return fromSource;
+            }
+        }
+        return fromCaster;
+    }
+
+    private static String resolveAbilityName(GameEntity entity, AttackResult result) {
+        if (entity == null || result == null || !result.hasAbilityIdentifier()) {
+            return null;
+        }
+        try {
+            int instanced = result.getAbilityIdentifier().getInstancedAbilityId();
+            if (instanced <= 0) {
+                return null;
+            }
+            List<Ability> abilities = entity.getInstancedAbilities();
+            if (abilities == null || instanced > abilities.size()) {
+                return null;
+            }
+            Ability ability = abilities.get(instanced - 1);
+            if (ability == null || ability.getData() == null) {
+                return null;
+            }
+            return ability.getData().abilityName;
+        } catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private static boolean sourceHasBurstAbility(GameEntity source) {
+        try {
+            List<Ability> abilities = source.getInstancedAbilities();
+            if (abilities == null) {
+                return false;
+            }
+            for (Ability ability : abilities) {
+                if (ability == null || ability.getData() == null || ability.getData().abilityName == null) {
+                    continue;
+                }
+                if (isBurstAbilityName(ability.getData().abilityName)) {
+                    return true;
+                }
+            }
+        } catch (Exception ignored) {
+        }
+        return false;
+    }
+
+    private static void applyClear(
+            EntityAvatar avatar, float bolSnapshot, float castSnapshot, String reason) {
+        if (avatar == null || avatar.getAvatar() == null) {
+            return;
+        }
+
+        float curDebt = avatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+        ArlecchinoBoLSync.markPostBurstClear(avatar.getId());
+
+        float allowance = bolSnapshot >= 0f ? bolSnapshot : Math.max(0f, castSnapshot);
+        float toClear = Math.min(curDebt, allowance);
+        CLEAR_BYPASS.add(avatar.getId());
+        try {
+            if (toClear <= 0f) {
+                Grasscutter.getLogger()
+                        .info(
+                                "[BoL] Arlecchino burst: clear skip (cur={} snap={} reason={})",
+                                curDebt,
+                                bolSnapshot,
+                                reason);
+                if (curDebt > 0f) {
+                    ArlecchinoBoLSync.pushBoL(
+                            avatar,
+                            curDebt,
+                            0f,
+                            ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+                } else {
+                    ArlecchinoBoLSync.pushBoL(
+                            avatar,
+                            0f,
+                            0f,
+                            ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH);
+                }
+                flushDeferredHeal(avatar);
+                return;
+            }
+
+            float newDebt = Math.max(0f, curDebt - toClear);
+            ArlecchinoBoLSync.pushBoL(
+                    avatar,
+                    newDebt,
+                    -toClear,
+                    newDebt <= 0f
+                            ? ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
+                            : ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY);
+            Grasscutter.getLogger()
+                    .info(
+                            "[BoL] Arlecchino burst: cleared {} BoL → remain {} (snap={} reason={})",
+                            toClear,
+                            newDebt,
+                            bolSnapshot,
+                            reason);
+            flushDeferredHeal(avatar);
+        } finally {
+            CLEAR_BYPASS.remove(avatar.getId());
+        }
+    }
+
+    private static void flushDeferredHeal(EntityAvatar avatar) {
+        DeferredHeal deferred = DEFERRED_HEAL.remove(avatar.getId());
+        if (deferred == null || deferred.amount() <= 0f) {
+            return;
+        }
+        // Ordinary heal() returns 0 at full HP / convertToHpDebt; use BoLUtil burst HP path.
+        float real = ArlecchinoBoLUtil.applyBurstHeal(avatar, deferred.amount());
+        Grasscutter.getLogger()
+                .info(
+                        "[BoL] Arlecchino burst: flushed deferred heal amount={} real={}",
+                        deferred.amount(),
+                        real);
+    }
+}

@@ -1,0 +1,30 @@
+package emu.grasscutter.server.packet.recv;
+
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.game.tower.TowerAbyssFix;
+import emu.grasscutter.net.proto.TowerTeamOuterClass;
+import emu.grasscutter.net.proto.TowerTeamSelectReqOuterClass.TowerTeamSelectReq;
+import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.packet.send.PacketTowerTeamSelectRsp;
+
+@Opcodes(PacketOpcodes.TowerTeamSelectReq)
+public class HandlerTowerTeamSelectReq extends PacketHandler {
+
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        TowerTeamSelectReq req = TowerTeamSelectReq.parseFrom(payload);
+
+        var towerTeams =
+                req.getTowerTeamListList().stream()
+                        .map(TowerTeamOuterClass.TowerTeam::getAvatarGuidListList)
+                        .toList();
+
+        var player = session.getPlayer();
+        TowerAbyssFix.rememberEntry(player);
+        synchronized (player.getTowerManager()) {
+            player.getTowerManager().teamSelect(req.getFloorId(), towerTeams);
+        }
+
+        session.send(new PacketTowerTeamSelectRsp());
+    }
+}

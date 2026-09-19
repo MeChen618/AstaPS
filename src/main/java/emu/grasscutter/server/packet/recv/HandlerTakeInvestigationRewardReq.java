@@ -1,0 +1,39 @@
+package emu.grasscutter.server.packet.recv;
+
+import com.google.protobuf.CodedInputStream;
+import emu.grasscutter.game.player.InvestigationHandbookHelper;
+import emu.grasscutter.net.packet.Opcodes;
+import emu.grasscutter.net.packet.PacketHandler;
+import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.server.packet.send.PacketTakeInvestigationRewardRsp;
+
+/** TakeInvestigationRewardReq: id = 5 (chapter / investigation id) */
+@Opcodes(PacketOpcodes.TakeInvestigationRewardReq)
+public class HandlerTakeInvestigationRewardReq extends PacketHandler {
+    @Override
+    public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
+        int chapterId = readUInt32Field(payload, 5);
+        int retcode = InvestigationHandbookHelper.claimChapterReward(session.getPlayer(), chapterId);
+        session.send(new PacketTakeInvestigationRewardRsp(chapterId, retcode));
+    }
+
+    private static int readUInt32Field(byte[] payload, int fieldNum) {
+        if (payload == null || payload.length == 0) {
+            return 0;
+        }
+        try {
+            CodedInputStream input = CodedInputStream.newInstance(payload);
+            while (!input.isAtEnd()) {
+                int tag = input.readTag();
+                int field = tag >>> 3;
+                if (field == fieldNum) {
+                    return input.readUInt32();
+                }
+                input.skipField(tag);
+            }
+        } catch (Exception ignored) {
+        }
+        return 0;
+    }
+}

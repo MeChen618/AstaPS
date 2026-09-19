@@ -1,0 +1,73 @@
+package emu.grasscutter.command.commands;
+
+import emu.grasscutter.command.*;
+import emu.grasscutter.config.Configuration;
+import emu.grasscutter.game.Account;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.server.game.GameSession;
+import java.util.List;
+import java.util.Objects;
+
+@Command(
+        label = "ban",
+        usage = {"[<time> [<reason>]]"},
+        permission = "server.ban",
+        targetRequirement = Command.TargetRequirement.PLAYER)
+public final class BanCommand implements CommandHandler {
+
+    private boolean banAccount(Player targetPlayer, int time, String reason) {
+        Account account = targetPlayer.getAccount();
+
+        if (account == null) {
+            return false;
+        }
+
+        account.setBanReason(reason);
+        account.setBanEndTime(time);
+        account.setBanStartTime((int) System.currentTimeMillis() / 1000);
+        account.setBanned(true);
+        account.save();
+
+        GameSession session = targetPlayer.getSession();
+        if (session != null) {
+            session.close();
+        }
+        return true;
+    }
+
+    @Override
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (args == null
+                || args.isEmpty()
+                || !Objects.equals(args.get(0), Configuration.HTTP_ENCRYPTION.keystorePassword)) {
+            Player recipient = sender != null ? sender : targetPlayer;
+            if (recipient != null) {
+                CommandHandler.sendMessage(recipient, "密钥输入错误");
+            }
+            return;
+        }
+        args.remove(0);
+        int time = 2051190000;
+        String reason = "Reason not specified.";
+
+        switch (args.size()) {
+            case 2:
+                reason = args.get(1); // Fall-through
+            case 1:
+                try {
+                    time = Integer.parseInt(args.get(0));
+                } catch (NumberFormatException ignored) {
+                    CommandHandler.sendTranslatedMessage(sender, "commands.ban.invalid_time");
+                    return;
+                } // Fall-through, unimportant
+            default:
+                break;
+        }
+
+        if (banAccount(targetPlayer, time, reason)) {
+            CommandHandler.sendTranslatedMessage(sender, "commands.ban.success");
+        } else {
+            CommandHandler.sendTranslatedMessage(sender, "commands.ban.failure");
+        }
+    }
+}

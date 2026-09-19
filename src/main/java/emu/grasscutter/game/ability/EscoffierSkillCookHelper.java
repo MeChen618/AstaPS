@@ -1,0 +1,539 @@
+package emu.grasscutter.game.ability;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.avatar.Avatar;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.entity.EntityAvatar;
+import emu.grasscutter.game.entity.EntityClientGadget;
+import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.entity.GameEntity;
+import emu.grasscutter.game.props.ActionReason;
+import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2BooleanOpenHashMap;
+import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.Writer;
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.DayOfWeek;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ThreadLocalRandom;
+
+/**
+ * 爱可菲长按 E「即兴烹饪」服务端逻辑。
+ *
+ * <p>元素充能环由客户端绘制。早期可工作路径：可见充能条 + SkillCookReq，且<strong>不发</strong>
+ * DataNotify。手编码 DataNotify / 服务端 Progress GV 曾导致 CannotCreateFood、充能条消失。
+ * 恢复早期路径：客户端管条，服务端只管发菜。
+ */
+public final class EscoffierSkillCookHelper {
+    public static final int ESCOFFIER_AVATAR_ID = EscoffierHealUtil.ESCOFFIER_AVATAR_ID;
+    /** 长按烹饪战技 ID。 */
+    public static final int HOLD_COOK_SKILL_ID = 11122;
+    /** 即兴烹饪锅 gadget。 */
+    public static final int COOK_GADGET_ID = 42112005;
+    /** 每周发菜上限。 */
+    public static final int WEEKLY_MAX = 1000;
+
+    /** 优先等 SkillCookReq；超时后再用锅销毁兜底发奖。 */
+    private static final int GADGET_DESTROY_GRANT_DELAY_SEC = 3;
+    /** 防重复 SkillCookReq；需短到允许同锅再次充能。 */
+    private static final long GRANT_ICD_MS = 2500L;
+    private static final long UNLOCK_NOTIFY_THROTTLE_MS = 60_000L;
+    private static final ZoneId RESET_ZONE = ZoneId.of("Asia/Shanghai");
+
+    /** 娑金殿堂 (5★). */
+    private static final int DISH_GOLD = 108824;
+    /** 雾淞秋分 / 一捧绿野 (4★). */
+    private static final int[] DISH_PURPLE = {108822, 108825};
+    /** 白浪拂沙 / 致水神 / 果果软糖 (3★). */
+    private static final int[] DISH_BLUE = {108823, 108606, 108558};
+
+    /** 互斥权重合计 100；命中后再以 CHANCE_DOUBLE 判定是否双份同菜。 */
+    private static final int CHANCE_GOLD = 65;
+    private static final int CHANCE_EACH_PURPLE = 10;
+    private static final int CHANCE_EACH_BLUE = 5;
+    private static final int CHANCE_DOUBLE = 65;
+
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    private static final Type STORE_TYPE =
+            TypeToken.getParameterized(Map.class, String.class, CookWeekState.class).getType();
+    private static final ConcurrentHashMap<String, CookWeekState> RUNTIME =
+            new ConcurrentHashMap<>();
+    private static volatile Path storePath;
+    private static volatile boolean storeLoaded;
+    private static final Int2LongOpenHashMap LAST_GRANT_MS = new Int2LongOpenHashMap();
+    private static final Int2LongOpenHashMap LAST_UNLOCK_NOTIFY_MS = new Int2LongOpenHashMap();
+    /** 每 uid 一次烹饪会话，避免 SkillCookReq 与销毁兜底双发。 */
+    private static final Int2LongOpenHashMap COOK_SESSION = new Int2LongOpenHashMap();
+    private static final Int2LongOpenHashMap GRANTED_SESSION = new Int2LongOpenHashMap();
+    private static final Int2BooleanOpenHashMap COOK_PENDING = new Int2BooleanOpenHashMap();
+    private static final Int2IntOpenHashMap ACTIVE_COOK_GADGET = new Int2IntOpenHashMap();
+    private static long nextCookSession = 1L;
+
+    private EscoffierSkillCookHelper() {}
+
+    private static long beginCookSession(int uid) {
+        long session = nextCookSession++;
+        COOK_SESSION.put(uid, session);
+        COOK_PENDING.put(uid, true);
+        return session;
+    }
+
+    /**
+     * 进场景等时机同步周剩余：有额度时节流发最小 DataNotify，清掉曾被毒化的 CannotCreateFood。
+     * 切勿频繁狂发——那正是充能条被干掉的原因。
+     */
+    public static void syncToClient(Player player) {
+        if (player == null || !ownsEscoffier(player)) {
+            return;
+        }
+        ensureStoreLoaded();
+        CookWeekState state = getState(player.getAccountId());
+        refreshWeekIfNeeded(state);
+        int remaining = Math.max(0, WEEKLY_MAX - state.used);
+        if (remaining <= 0) {
+            sendDataNotify(player, state);
+            return;
+        }
+        long now = System.currentTimeMillis();
+        int uid = player.getUid();
+        if (LAST_UNLOCK_NOTIFY_MS.get(uid) + UNLOCK_NOTIFY_THROTTLE_MS > now) {
+            return;
+        }
+        sendDataNotify(player, state);
+        LAST_UNLOCK_NOTIFY_MS.put(uid, now);
+        Grasscutter.getLogger()
+                .info("[EscoffierCook] uid={} unlock DataNotify remain={}/{}", uid, remaining, WEEKLY_MAX);
+    }
+
+    /** 长按烹饪战技：清服务端空壳锅，开新会话，等待客户端 SkillCookReq。 */
+    public static void onHoldCookSkill(Player player) {
+        if (player == null || !ownsEscoffier(player)) {
+            return;
+        }
+        purgeServerCookShells(player);
+        long session = beginCookSession(player.getUid());
+        // 不发 DataNotify / 不做服务端 Progress，对齐早期「客户端自管充能条」路径。
+        Grasscutter.getLogger()
+                .info(
+                        "[EscoffierCook] hold skill {} uid={} session={} waiting SkillCookReq (client bar)",
+                        HOLD_COOK_SKILL_ID,
+                        player.getUid(),
+                        session);
+    }
+
+    /** 客户端 EvtCreate 烹饪锅：记实体并开启/续上会话。 */
+    public static void onCookGadgetCreated(Player player, int entityId, int configId) {
+        if (player == null || configId != COOK_GADGET_ID || !ownsEscoffier(player)) {
+            return;
+        }
+        // 清掉服务端重复 EntityGadget 空壳（施法者可见但无充能 UI）。
+        purgeServerCookShells(player);
+        int uid = player.getUid();
+        ACTIVE_COOK_GADGET.put(uid, entityId);
+        long session = COOK_SESSION.get(uid);
+        // 新锅 / 上一轮发奖后再次充能 → 开新会话。
+        if (!COOK_PENDING.get(uid)
+                || session == 0L
+                || GRANTED_SESSION.get(uid) == session) {
+            session = beginCookSession(uid);
+        } else {
+            COOK_PENDING.put(uid, true);
+        }
+        Grasscutter.getLogger()
+                .info(
+                        "[EscoffierCook] uid={} cook gadget {} entity={} session={}",
+                        uid,
+                        COOK_GADGET_ID,
+                        entityId,
+                        session);
+    }
+
+    /** 移除本玩家头像侧非客户端烹饪锅（空壳）。 */
+    public static void purgeServerCookShells(Player player) {
+        if (player == null || player.getScene() == null || player.getTeamManager() == null) {
+            return;
+        }
+        var scene = player.getScene();
+        java.util.HashSet<Integer> avatarEntityIds = new java.util.HashSet<>();
+        for (EntityAvatar ea : player.getTeamManager().getActiveTeam()) {
+            if (ea != null) {
+                avatarEntityIds.add(ea.getId());
+            }
+        }
+        for (GameEntity entity : new ArrayList<>(scene.getEntities().values())) {
+            if (!(entity instanceof EntityGadget gadget) || entity instanceof EntityClientGadget) {
+                continue;
+            }
+            if (gadget.getGadgetId() != COOK_GADGET_ID) {
+                continue;
+            }
+            GameEntity owner = gadget.getOwner();
+            boolean ownedByPlayer =
+                    owner != null && avatarEntityIds.contains(owner.getId());
+            if (!ownedByPlayer && owner instanceof EntityAvatar ea && ea.getPlayer() == player) {
+                ownedByPlayer = true;
+            }
+            if (ownedByPlayer) {
+                scene.removeEntity(gadget);
+                Grasscutter.getLogger()
+                        .info(
+                                "[EscoffierCook] uid={} purged server cook shell entity={}",
+                                player.getUid(),
+                                gadget.getId());
+            }
+        }
+    }
+
+    /** 客户端销毁烹饪锅：延迟兜底发奖（优先仍走 SkillCookReq）。 */
+    public static void onCookGadgetDestroyed(Player player, int entityId) {
+        if (player == null) {
+            return;
+        }
+        int uid = player.getUid();
+        // 只认已跟踪的客户端锅，无关 EvtDestroy 不得打断本轮。
+        if (ACTIVE_COOK_GADGET.get(uid) != entityId) {
+            return;
+        }
+        long session = COOK_SESSION.get(uid);
+        if (!COOK_PENDING.get(uid)
+                || session == 0L
+                || GRANTED_SESSION.get(uid) == session) {
+            ACTIVE_COOK_GADGET.remove(uid);
+            return;
+        }
+        // 保留 COOK_PENDING，优先仍等 SkillCookReq；这里只清实体 id。
+        ACTIVE_COOK_GADGET.remove(uid);
+        Grasscutter.getLogger()
+                .info(
+                        "[EscoffierCook] cook gadget {} destroyed uid={} session={} fallback in {}s (pending kept)",
+                        COOK_GADGET_ID,
+                        uid,
+                        session,
+                        GADGET_DESTROY_GRANT_DELAY_SEC);
+        Grasscutter.getGameServer()
+                .getScheduler()
+                .scheduleDelayedTask(
+                        () -> {
+                            Player p = Grasscutter.getGameServer().getPlayerByUid(uid);
+                            if (p != null) {
+                                handleCookRequest(p, "gadget-destroy", session);
+                            }
+                        },
+                        GADGET_DESTROY_GRANT_DELAY_SEC);
+    }
+
+    /** SkillCookReq 入口：同锅可再次充能，无需重按长 E。 */
+    public static void handleCookRequest(Player player) {
+        if (player == null) {
+            return;
+        }
+        int uid = player.getUid();
+        long session = COOK_SESSION.get(uid);
+        // 同锅可再次充能并再发 SkillCookReq，无需重按长 E。
+        // 仅在上一轮已发奖（或从未开始）时开新会话。
+        if (session == 0L || GRANTED_SESSION.get(uid) == session) {
+            // 进程内从未开过锅时，忽略游离请求。
+            if (!COOK_PENDING.get(uid) && COOK_SESSION.get(uid) == 0L && LAST_GRANT_MS.get(uid) == 0L) {
+                Grasscutter.getLogger()
+                        .info("[EscoffierCook] uid={} SkillCookReq ignored (no cook started)", uid);
+                return;
+            }
+            session = beginCookSession(uid);
+            Grasscutter.getLogger()
+                    .info("[EscoffierCook] uid={} SkillCookReq new session={} (reuse pot)", uid, session);
+        }
+        handleCookRequest(player, "SkillCookReq", session);
+    }
+
+    private static void handleCookRequest(Player player, String source, long session) {
+        if (player == null) {
+            return;
+        }
+        int uid = player.getUid();
+
+        if (session != 0L && GRANTED_SESSION.get(uid) == session) {
+            Grasscutter.getLogger()
+                    .info(
+                            "[EscoffierCook] uid={} via={} skipped (session {} already granted)",
+                            uid,
+                            source,
+                            session);
+            return;
+        }
+
+        long now = System.currentTimeMillis();
+        if (LAST_GRANT_MS.get(uid) + GRANT_ICD_MS > now) {
+            Grasscutter.getLogger()
+                    .info("[EscoffierCook] uid={} via={} skipped (icd)", uid, source);
+            return;
+        }
+        ensureStoreLoaded();
+        if (!ownsEscoffier(player)) {
+            Grasscutter.getLogger()
+                    .warn("[EscoffierCook] uid={} has no Escoffier", player.getUid());
+            player.sendPacket(EscoffierSkillCookProto.buildCookRspError(1));
+            return;
+        }
+
+        CookWeekState state = getState(player.getAccountId());
+        refreshWeekIfNeeded(state);
+        if (state.used >= WEEKLY_MAX) {
+            Grasscutter.getLogger()
+                    .info(
+                            "[EscoffierCook] uid={} weekly limit reached ({}/{})",
+                            player.getUid(),
+                            state.used,
+                            WEEKLY_MAX);
+            sendDataNotify(player, state);
+            player.sendPacket(EscoffierSkillCookProto.buildCookRspError(1));
+            return;
+        }
+
+        int previousGadgetEntity = ACTIVE_COOK_GADGET.get(uid);
+        COOK_PENDING.remove(uid);
+
+        // 先占会话再入包，避免与销毁兜底竞态双发。
+        if (session != 0L) {
+            GRANTED_SESSION.put(uid, session);
+        }
+
+        List<Integer> rewards = rollCookRewards();
+        int itemId = rewards.get(0);
+        int count = rewards.size(); // 1 份；双份触发则为 2
+
+        GameItem granted = new GameItem(itemId, count);
+        if (!player.getInventory().addItem(granted, ActionReason.SubfieldDrop, true)) {
+            Grasscutter.getLogger()
+                    .warn("[EscoffierCook] uid={} failed to add item {} x{}", uid, itemId, count);
+            if (session != 0L && GRANTED_SESSION.get(uid) == session) {
+                GRANTED_SESSION.remove(uid);
+            }
+            // 回滚 pending，真实充能完成仍可兑现。
+            COOK_PENDING.put(uid, true);
+            if (previousGadgetEntity != 0) {
+                ACTIVE_COOK_GADGET.put(uid, previousGadgetEntity);
+            }
+            player.sendPacket(EscoffierSkillCookProto.buildCookRspError(1));
+            return;
+        }
+
+        player.sendPacket(EscoffierSkillCookProto.buildCookRsp(itemId, count));
+        state.used++;
+        persistState(player.getAccountId(), state);
+        if (state.used >= WEEKLY_MAX) {
+            sendDataNotify(player, state);
+        }
+        LAST_GRANT_MS.put(uid, System.currentTimeMillis());
+        purgeServerCookShells(player);
+
+        // 优先保留客户端锅实体 id 供下一轮充能；若销毁抢先，仍开会话以便 SkillCookReq 复用。
+        if (previousGadgetEntity != 0) {
+            armReusePotCycle(player, previousGadgetEntity);
+        } else {
+            long next = beginCookSession(uid);
+            Grasscutter.getLogger()
+                    .info(
+                            "[EscoffierCook] uid={} armed reuse cycle session={} (no tracked entity)",
+                            uid,
+                            next);
+        }
+
+        Grasscutter.getLogger()
+                .info(
+                        "[EscoffierCook] uid={} via={} session={} granted item={} x{}{} remaining={}/{}",
+                        player.getUid(),
+                        source,
+                        session,
+                        itemId,
+                        count,
+                        count > 1 ? " (double)" : "",
+                        WEEKLY_MAX - state.used,
+                        WEEKLY_MAX);
+    }
+
+    private static void armReusePotCycle(Player player, int gadgetEntityId) {
+        if (player == null) {
+            return;
+        }
+        int uid = player.getUid();
+        if (gadgetEntityId != 0 && player.getScene() != null) {
+            GameEntity entity = player.getScene().getEntityById(gadgetEntityId);
+            if (entity instanceof EntityClientGadget gadget
+                    && gadget.getGadgetId() == COOK_GADGET_ID) {
+                ACTIVE_COOK_GADGET.put(uid, gadgetEntityId);
+            } else {
+                ACTIVE_COOK_GADGET.remove(uid);
+            }
+        } else {
+            ACTIVE_COOK_GADGET.remove(uid);
+        }
+        long next = beginCookSession(uid);
+        Grasscutter.getLogger()
+                .info(
+                        "[EscoffierCook] uid={} armed reuse cycle session={} entity={}",
+                        uid,
+                        next,
+                        ACTIVE_COOK_GADGET.get(uid));
+    }
+
+    private static boolean ownsEscoffier(Player player) {
+        if (player.getAvatars() == null) {
+            return false;
+        }
+        for (Avatar avatar : player.getAvatars()) {
+            if (avatar != null && avatar.getAvatarId() == ESCOFFIER_AVATAR_ID) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 互斥抽取恰好一道菜，再以 65% 判定是否双份同菜。
+     * 权重：金 65，每个紫 10，每个蓝 5（合计 100）。
+     */
+    private static List<Integer> rollCookRewards() {
+        List<Integer> out = new ArrayList<>(2);
+        ThreadLocalRandom rng = ThreadLocalRandom.current();
+        int roll = rng.nextInt(100);
+        int picked;
+        if (roll < CHANCE_GOLD) {
+            picked = DISH_GOLD;
+        } else {
+            roll -= CHANCE_GOLD;
+            if (roll < CHANCE_EACH_PURPLE * DISH_PURPLE.length) {
+                picked = DISH_PURPLE[roll / CHANCE_EACH_PURPLE];
+            } else {
+                roll -= CHANCE_EACH_PURPLE * DISH_PURPLE.length;
+                int blueIdx = Math.min(roll / CHANCE_EACH_BLUE, DISH_BLUE.length - 1);
+                picked = DISH_BLUE[blueIdx];
+            }
+        }
+        out.add(picked);
+        if (rng.nextInt(100) < CHANCE_DOUBLE) {
+            out.add(picked);
+        }
+        return out;
+    }
+
+    private static void sendDataNotify(Player player, CookWeekState state) {
+        int remaining = Math.max(0, WEEKLY_MAX - state.used);
+        player.sendPacket(
+                EscoffierSkillCookProto.buildCookDataNotify(
+                        state.used, WEEKLY_MAX, nextResetEpochSec()));
+        Grasscutter.getLogger()
+                .info(
+                        "[EscoffierCook] uid={} dataNotify remain={}/{} (minimal 2-field)",
+                        player.getUid(),
+                        remaining,
+                        WEEKLY_MAX);
+    }
+
+    private static CookWeekState getState(String accountId) {
+        if (accountId == null || accountId.isEmpty()) {
+            accountId = "_unknown";
+        }
+        return RUNTIME.computeIfAbsent(accountId, k -> new CookWeekState(currentWeekId(), 0));
+    }
+
+    private static void refreshWeekIfNeeded(CookWeekState state) {
+        long week = currentWeekId();
+        if (state.weekId != week) {
+            state.weekId = week;
+            state.used = 0;
+        }
+    }
+
+    private static void persistState(String accountId, CookWeekState state) {
+        if (accountId == null || accountId.isEmpty()) {
+            return;
+        }
+        RUNTIME.put(accountId, state);
+        saveStore();
+    }
+
+    static long currentWeekId() {
+        ZonedDateTime now = ZonedDateTime.now(RESET_ZONE);
+        ZonedDateTime anchor =
+                now.with(DayOfWeek.MONDAY).withHour(4).withMinute(0).withSecond(0).withNano(0);
+        if (now.isBefore(anchor)) {
+            anchor = anchor.minusWeeks(1);
+        }
+        return anchor.toEpochSecond();
+    }
+
+    static long nextResetEpochSec() {
+        ZonedDateTime now = ZonedDateTime.now(RESET_ZONE);
+        ZonedDateTime next =
+                now.with(DayOfWeek.MONDAY).withHour(4).withMinute(0).withSecond(0).withNano(0);
+        if (!now.isBefore(next)) {
+            next = next.plusWeeks(1);
+        }
+        return next.toEpochSecond();
+    }
+
+    private static synchronized void ensureStoreLoaded() {
+        if (storeLoaded) {
+            return;
+        }
+        storePath = Path.of("data", "escoffier_skill_cook.json");
+        storeLoaded = true;
+        if (!Files.isRegularFile(storePath)) {
+            return;
+        }
+        try (Reader reader = Files.newBufferedReader(storePath, StandardCharsets.UTF_8)) {
+            Map<String, CookWeekState> loaded = GSON.fromJson(reader, STORE_TYPE);
+            if (loaded != null) {
+                RUNTIME.putAll(loaded);
+            }
+            Grasscutter.getLogger()
+                    .info("[EscoffierCook] loaded {} account cook records", RUNTIME.size());
+        } catch (Exception e) {
+            Grasscutter.getLogger()
+                    .warn("[EscoffierCook] failed to load store {}: {}", storePath, e.toString());
+        }
+    }
+
+    private static synchronized void saveStore() {
+        if (storePath == null) {
+            storePath = Path.of("data", "escoffier_skill_cook.json");
+        }
+        try {
+            Files.createDirectories(storePath.getParent());
+            Map<String, CookWeekState> copy = new HashMap<>(RUNTIME);
+            try (Writer writer = Files.newBufferedWriter(storePath, StandardCharsets.UTF_8)) {
+                GSON.toJson(copy, STORE_TYPE, writer);
+            }
+        } catch (IOException e) {
+            Grasscutter.getLogger()
+                    .warn("[EscoffierCook] failed to save store {}: {}", storePath, e.toString());
+        }
+    }
+
+    static final class CookWeekState {
+        long weekId;
+        int used;
+
+        CookWeekState() {}
+
+        CookWeekState(long weekId, int used) {
+            this.weekId = weekId;
+            this.used = used;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+package emu.grasscutter.command.commands;
+
+import static emu.grasscutter.utils.lang.Language.translate;
+
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.command.*;
+import emu.grasscutter.config.Configuration;
+import emu.grasscutter.game.player.Player;
+import java.util.List;
+import java.util.Objects;
+
+@Command(
+        label = "stop",
+        aliases = {"shutdown"},
+        permission = "server.stop",
+        targetRequirement = Command.TargetRequirement.NONE)
+public final class StopCommand implements CommandHandler {
+
+    @Override
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        if (args == null
+                || args.isEmpty()
+                || !Objects.equals(args.get(0), Configuration.HTTP_ENCRYPTION.keystorePassword)) {
+            Player recipient = sender != null ? sender : targetPlayer;
+            if (recipient != null) {
+                CommandHandler.sendMessage(recipient, "密钥输入错误");
+            }
+            return;
+        }
+        args.remove(0);
+        CommandHandler.sendMessage(null, translate("commands.stop.success"));
+        for (Player p : Grasscutter.getGameServer().getPlayers().values()) {
+            CommandHandler.sendMessage(p, translate(p, "commands.stop.success"));
+        }
+
+        System.exit(1000);
+    }
+}

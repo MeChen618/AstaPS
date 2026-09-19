@@ -1,0 +1,23 @@
+package emu.grasscutter.server.packet.send;
+
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.UpdatePlayerShowAvatarListRspOuterClass.UpdatePlayerShowAvatarListRsp;
+import java.util.List;
+
+public class PacketUpdatePlayerShowAvatarListRsp extends BasePacket {
+
+    public PacketUpdatePlayerShowAvatarListRsp(
+            boolean isShowAvatar, boolean isShowConstellationNum, List<Integer> avatarIds) {
+        super(PacketOpcodes.UpdatePlayerShowAvatarListRsp);
+
+        UpdatePlayerShowAvatarListRsp proto =
+                UpdatePlayerShowAvatarListRsp.newBuilder()
+                        .setIsShowAvatar(isShowAvatar)
+                        .setIsShowConstellationNum(isShowConstellationNum)
+                        .addAllShowAvatarIdList(avatarIds)
+                        .setRetcode(0)
+                        .build();
+
+        this.setData(proto);
+    }
+}

@@ -1,0 +1,286 @@
+package emu.grasscutter.game.dungeons;
+
+import emu.grasscutter.*;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.excels.dungeon.*;
+import emu.grasscutter.game.dungeons.fallback.MissingDomainFallbackManager;
+import emu.grasscutter.game.dungeons.handlers.DungeonBaseHandler;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.tower.TowerAbyssFix;
+import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.world.*;
+import emu.grasscutter.net.packet.*;
+import emu.grasscutter.server.game.*;
+import emu.grasscutter.server.packet.send.PacketDungeonEntryInfoRsp;
+import it.unimi.dsi.fastutil.ints.*;
+import java.util.List;
+
+public final class DungeonSystem extends BaseGameSystem {
+    private static final BasicDungeonSettleListener basicDungeonSettleObserver =
+            new BasicDungeonSettleListener();
+    private final Int2ObjectMap<DungeonBaseHandler> passCondHandlers;
+
+    public DungeonSystem(GameServer server) {
+        super(server);
+
+        this.passCondHandlers = new Int2ObjectOpenHashMap<>();
+        this.registerHandlers();
+    }
+
+    public void registerHandlers() {
+        this.registerHandlers(this.passCondHandlers, DungeonBaseHandler.class);
+    }
+
+    public <T> void registerHandlers(Int2ObjectMap<T> map, Class<T> clazz) {
+        var handlerClasses = Grasscutter.reflector.getSubTypesOf(clazz);
+        for (var obj : handlerClasses) {
+            this.registerHandler(map, obj);
+        }
+    }
+
+    public <T> void registerHandler(Int2ObjectMap<T> map, Class<? extends T> handlerClass) {
+        try {
+            DungeonValue opcode = handlerClass.getAnnotation(DungeonValue.class);
+
+            if (opcode == null || opcode.value() == null) {
+                return;
+            }
+
+            map.put(opcode.value().ordinal(), handlerClass.getDeclaredConstructor().newInstance());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Sends the entry info for the given dungeon point to the player.
+     *
+     * @param player The player to send the entry info to.
+     * @param pointId The dungeon point ID.
+     */
+    public void sendEntryInfoFor(Player player, int pointId, int sceneId) {
+        var entry = GameData.getScenePointEntryById(sceneId, pointId);
+        if (entry == null) {
+            // An invalid point ID was sent.
+            player.sendPacket(new PacketDungeonEntryInfoRsp());
+            return;
+        }
+
+        // Check if the player has quests with dungeon IDs.
+        var questDungeons = player.getQuestManager().questsForDungeon(entry);
+        if (questDungeons.size() > 0) {
+            player.sendPacket(new PacketDungeonEntryInfoRsp(entry.getPointData(), questDungeons));
+        } else {
+            player.sendPacket(new PacketDungeonEntryInfoRsp(entry.getPointData()));
+        }
+    }
+
+    public boolean triggerCondition(
+            DungeonPassConfigData.DungeonPassCondition condition, int... params) {
+        var handler = passCondHandlers.get(condition.getCondType().ordinal());
+
+        if (handler == null) {
+            Grasscutter.getLogger()
+                    .debug("Could not trigger condition {} at {}", condition.getCondType(), params);
+            return false;
+        }
+
+        return handler.execute(condition, params);
+    }
+
+    public boolean enterDungeon(Player player, int pointId, int dungeonId, boolean savePrevious) {
+        DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
+
+        if (data == null) {
+            return false;
+        }
+        Grasscutter.getLogger()
+                .debug(
+                        "{} ({}) is trying to enter dungeon {}.",
+                        player.getNickname(),
+                        player.getUid(),
+                        dungeonId);
+
+        var sceneId = data.getSceneId();
+        var scene = player.getScene();
+        if (savePrevious) scene.setPrevScene(scene.getId());
+
+        // Domain / material / talent / weapon / relic: force teardown when reusing the same
+        // dungeon scene so old monsters/gadgets do not linger (mirrors tower handoff).
+        if (scene != null
+                && scene.getSceneType() == SceneType.SCENE_DUNGEON
+                && scene.getId() == sceneId
+                && DomainDungeonHelper.isDomainScene(scene)) {
+            scene.setDontDestroyWhenEmpty(false);
+            scene.removePlayer(player);
+        }
+
+        if (player.getWorld().transferPlayerToScene(player, sceneId, data)) {
+            scene = player.getScene();
+            scene.setDungeonManager(new DungeonManager(scene, data));
+            MissingDomainFallbackManager.install(scene, data);
+            scene.addDungeonSettleObserver(basicDungeonSettleObserver);
+            if (DomainDungeonHelper.isDomainScene(scene)) {
+                DomainDungeonHelper.onPlayerEnterDomain(player);
+            }
+        }
+
+        if (savePrevious) scene.setPrevScenePoint(pointId);
+        return true;
+    }
+
+    /** used in tower dungeons handoff */
+    public boolean handoffDungeon(
+            Player player, int dungeonId, List<DungeonSettleListener> dungeonSettleListeners) {
+        DungeonData data = GameData.getDungeonDataMap().get(dungeonId);
+
+        if (data == null) {
+            return false;
+        }
+        Grasscutter.getLogger()
+                .info(
+                        "{}({}) is trying to enter tower dungeon {}",
+                        player.getNickname(),
+                        player.getUid(),
+                        dungeonId);
+
+        // Same-scene re-entry (重新挑战) must destroy the live chamber. transferPlayerToScene would
+        // otherwise set dontDestroyWhenEmpty and keep the previous monsters under the buff UI.
+        Scene current = player.getScene();
+        if (current != null
+                && current.getSceneType() == SceneType.SCENE_DUNGEON
+                && (TowerAbyssFix.isInTowerDungeon(player)
+                        || (current.getDungeonManager() != null
+                                && current.getDungeonManager().isTowerDungeon()))) {
+            TowerAbyssFix.endChallengeUi(player);
+            current.setDontDestroyWhenEmpty(false);
+            current.removePlayer(player);
+        }
+
+        if (player.getWorld().transferPlayerToScene(player, data.getSceneId(), data)) {
+            var scene = player.getScene();
+            var dungeonManager = new DungeonManager(scene, data);
+            dungeonManager.setTowerDungeon(true);
+            scene.setDungeonManager(dungeonManager);
+            dungeonSettleListeners.forEach(scene::addDungeonSettleObserver);
+        }
+        return true;
+    }
+
+    public void exitDungeon(Player player) {
+        Scene scene = player.getScene();
+
+        if (scene == null || scene.getSceneType() != SceneType.SCENE_DUNGEON) {
+            return;
+        }
+
+        // Get previous scene
+        int prevScene = scene.getPrevScene() > 0 ? scene.getPrevScene() : 3;
+
+        // Get previous position
+        DungeonManager dungeonManager = scene.getDungeonManager();
+        DungeonData dungeonData = dungeonManager != null ? dungeonManager.getDungeonData() : null;
+        Position prevPos = new Position(GameConstants.START_POSITION);
+        boolean towerDungeon =
+                (dungeonManager != null && dungeonManager.isTowerDungeon())
+                        || TowerAbyssFix.isInTowerDungeon(player);
+
+        if (towerDungeon) {
+            prevScene = TowerAbyssFix.resolveExitScene(player, prevScene);
+            prevPos = TowerAbyssFix.resolveExitPosition(player, prevScene, scene.getPrevScenePoint());
+            player.getRotation().set(TowerAbyssFix.resolveExitRotation(player));
+        }
+
+        if (dungeonData != null) {
+            ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
+
+            if (!towerDungeon && entry != null) {
+                prevPos.set(entry.getPointData().getTranPos());
+            }
+            if (!dungeonManager.isFinishedSuccessfully()) {
+                dungeonManager.quitDungeon();
+            }
+
+            dungeonManager.unsetTrialTeam(player);
+        }
+        // clean temp team if it has
+        if (!player.getTeamManager().cleanTemporaryTeam()) {
+            // no temp team. Will use real current team, but check
+            // for any dead avatar to prevent switching into them.
+            player.getTeamManager().checkCurrentAvatarIsAlive(null);
+        }
+        if (towerDungeon) {
+            TowerAbyssFix.endChallengeUi(player);
+            TowerAbyssFix.clearEntry(player);
+            player.getTowerManager().clearAbyssResume();
+            player.getTowerManager().clearLevelEntityConfigs();
+            // Finishing a floor advances CurLevelRecord to the next floor; without clearing it the
+            // abyss UI thinks a run is still active and blocks 领取奖励 with 是否继续挑战.
+            player.sendPacket(
+                    emu.grasscutter.server.packet.send.PacketTowerCurLevelRecordChangeNotify.empty());
+        }
+        player.getTowerManager().clearEntry();
+        if (dungeonManager != null) {
+            dungeonManager.setTowerDungeon(false);
+        }
+
+        // Transfer player back to world after a small delay.
+        // This wait is important for avoiding double teleports,
+        // which specifically happen when player quits a dungeon
+        // by teleporting to map waypoints.
+        // From testing, 200ms seem reasonable.
+        player.getWorld().queueTransferPlayerToScene(player, prevScene, prevPos, 200);
+    }
+
+    public void restartDungeon(Player player) {
+        var scene = player.getScene();
+        if (scene == null) {
+            return;
+        }
+        var dungeonManager = scene.getDungeonManager();
+        if (dungeonManager == null || dungeonManager.getDungeonData() == null) {
+            return;
+        }
+        var dungeonData = dungeonManager.getDungeonData();
+        var sceneId = dungeonData.getSceneId();
+        var isTower = dungeonManager.isTowerDungeon();
+
+        if (isTower || TowerAbyssFix.isInTowerDungeon(player)) {
+            TowerAbyssFix.endChallengeUi(player);
+            var tower = player.getTowerManager();
+            tower.onEnd();
+            // Keep current chamber; reset to 上半 + full chamber-start HP/energy + 1号位.
+            tower.restartCurrentChamber();
+        }
+
+        // Forward over previous scene and scene point
+        var prevScene = scene.getPrevScene();
+        var pointId = scene.getPrevScenePoint();
+
+        // Force teardown so the scene is rebuilt fresh instead of reused stale.
+        scene.setDontDestroyWhenEmpty(false);
+        scene.getPlayers().forEach(scene::removePlayer);
+
+        if (player.getWorld().transferPlayerToScene(player, sceneId, dungeonData)) {
+            scene = player.getScene();
+            scene.setPrevScene(prevScene);
+            scene.setPrevScenePoint(pointId);
+            var newManager = new DungeonManager(scene, dungeonData);
+            newManager.setTowerDungeon(isTower);
+            scene.setDungeonManager(newManager);
+            if (isTower) {
+                scene.addDungeonSettleObserver(new TowerDungeonSettleListener());
+                // Re-apply lead avatar after scene rebuild.
+                TowerAbyssFix.prepareFirstChamber(player);
+                player.getTowerManager().notifyCurLevelRecordChange();
+            } else {
+                MissingDomainFallbackManager.install(scene, dungeonData);
+                scene.addDungeonSettleObserver(basicDungeonSettleObserver);
+                if (DomainDungeonHelper.isDomainScene(scene)) {
+                    DomainDungeonHelper.onPlayerEnterDomain(player);
+                }
+            }
+        }
+    }
+}

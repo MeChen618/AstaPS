@@ -1,0 +1,121 @@
+# Compiled class file
+*.class
+
+#idea
+*.idea
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.war
+*.nar
+*.ear
+*.zip
+*.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build/
+out/
+
+# Ignore Gradle properties
+gradle.properties
+
+# Eclipse
+.project
+.classpath
+.settings
+.metadata
+.properties
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+.loadpath
+.recommenders
+
+# VSCode
+.vscode
+
+# Grasscutter
+/cache
+/resources
+/logs
+/plugins
+/keys
+/language
+/languages
+/proto
+
+# Build product JARs at repo root (keep lib/ and gradle/wrapper tracked)
+/*.jar
+/*.jar.*
+LunaGC*.jar*
+_build_jar.log
+_transmuter_classes/
+
+/*.sh
+!entrypoint.sh
+
+GM Handbook*.txt
+handbook.html
+
+config.json
+mitmdump.exe
+mongod.exe
+
+gacha-mapping.js
+mappings.js
+BuildConfig.java
+data/hk4e/announcement/
+
+# lombok
+/.apt_generated/
+
+# macOS
+.DS_Store
+.directory
+
+# Hotswap Agent
+hotswap-agent.properties
+
+# Debug patches
+patches/*.patch
+
+# Artifact Signatures
+*.asc
+
+# Upstream resource dumps. Kept locally only as a source when updating
+# LunaGC-Resources; they are not part of the server.
+animegamedata2/
+YuanShenResources/
+
+# Everything local-only lives here and nothing in it is ever committed: the
+# client proto dumps and nameTranslation.txt, the scratch tooling that turns
+# them into src/main/proto, and dev-only launch scripts. Keeping it to one
+# ignored directory means `git add -A` cannot pick any of it up by accident.
+/local/
+
+/LunaGC/
+/LunaGC-Resources/
+_compile_en.txt
+_errs_only.txt
+_errors_clean.txt
+_compile_errors.txt
+.gitignore
+_errs_detail.txt
+_errors_filtered.txt
