@@ -12,7 +12,8 @@ public final class ApiHandler implements Router {
     public void applyRoutes(Javalin javalin) {
         javalin.get("/api/help", ServerStatusHandler::listRoutes);
         javalin.get("/api/status", ServerStatusHandler::serverStatus);
-        // The old path, kept so existing server-list tools keep working.
-        javalin.get("/status/server", ServerStatusHandler::serverStatusLegacy);
+        // /status/server is not registered here: GenericHandler already serves it, in the same
+        // shape, and Javalin throws on a second handler for the same method and path - which
+        // aborts the whole router registration, not just this route.
     }
 }

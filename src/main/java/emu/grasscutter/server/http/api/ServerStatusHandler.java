@@ -112,19 +112,6 @@ public final class ServerStatusHandler {
                 .toList();
     }
 
-    /** The original shape, for tools written against it. */
-    public static void serverStatusLegacy(Context ctx) {
-        ctx.contentType("application/json; charset=UTF-8");
-        ctx.result(
-                "{\"retcode\":0,\"status\":{\"playerCount\":"
-                        + onlinePlayers()
-                        + ",\"maxPlayer\":"
-                        + ACCOUNT.maxPlayer
-                        + ",\"version\":\""
-                        + GameConstants.VERSION
-                        + "\"}}");
-    }
-
     public static void listRoutes(Context ctx) {
         ctx.contentType("text/plain; charset=UTF-8");
         ctx.result(

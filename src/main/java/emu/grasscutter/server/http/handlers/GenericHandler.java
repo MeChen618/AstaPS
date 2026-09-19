@@ -11,7 +11,10 @@ import io.javalin.http.Context;
 /** Handles all generic, hard-coded responses. */
 public final class GenericHandler implements Router {
     private static void serverStatus(Context ctx) {
-        int playerCount = Grasscutter.getGameServer().getPlayers().size();
+        // A dispatch-only node has no game server, and this used to throw there rather than
+        // answer with zero.
+        var gameServer = Grasscutter.getGameServer();
+        int playerCount = gameServer == null ? 0 : gameServer.getPlayers().size();
         int maxPlayer = ACCOUNT.maxPlayer;
         String version = GameConstants.VERSION;
 
