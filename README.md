@@ -8,8 +8,6 @@ A private server for Genshin Impact **7.0.0**, built on Grasscutter.
 
 ## What it is
 
-AstaPS descends from Grasscutter by way of LunaGC and Chiori, and continues from there: the server is being brought up to 7.0.0 content while the parts underneath it get rebuilt rather than patched around.
-
 - **Up-to-date content.** Monster and gadget spawn data current with 7.0.0, Spiral Abyss rotations, domains, the artifact shop, battle pass, and the rest of the live-service surface.
 - **Built to survive a bad day.** Database writes are split across four bounded pools that apply backpressure instead of dropping a player's progress; one world throwing during a tick no longer stops everybody else's; a watchdog holds the tick while MongoDB is unreachable rather than letting play continue against a database that cannot record it.
 - **Visible when it is unwell.** A status readout logs CPU, memory, GC and every thread pool's queue depth on an interval, and `/api/status` serves the same figures over HTTP.
@@ -54,24 +52,6 @@ There is no registration page. An account is created either way:
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful where the launcher's password field is not usable. `account.autoCreate` turns this off for a closed server.
 
 Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
-
-## Configuration
-
-Everything lives in `config.json`, written on first run. The settings most worth knowing:
-
-| | |
-|---|---|
-| `server.game.enableConsole` | Whether the console accepts commands. Off means no prompt. |
-| `server.game.watchdog` | Pings MongoDB and holds the game tick while it is down. The timed restart is off by default — it is a plain process exit and needs something to start the server again. |
-| `server.threadPools` | Per-pool sizing for the database save pools. Every entry ships as `-1`, meaning "leave this one alone". |
-| `account.maxPlayer` | Enforced at login. `-1` is unlimited. |
-| `server.game.gameOptions.artifactShop` | The generated-artifact shop. See below. |
-
-### Artifact shop
-
-All 290 five-star artifact pieces — every slot of all 62 released sets — are sold at the general goods shop. Each purchase rolls a fresh artifact rather than handing over a fixed copy, the way an artifact domain does: the main stat comes from that slot's real pool and the substats from the game's own affix tables, so every number on the piece is one the game itself could have produced.
-
-Pieces arrive at +20 with nine substat rolls, weighted towards crit rate, crit damage, ATK%, elemental mastery and damage bonuses, and towards the higher tiers within each. Set `critWeight`, `damageWeight` and `highRollBias` to `1`, `1` and `0` for ordinary unweighted domain drops.
 
 ## Commands
 
