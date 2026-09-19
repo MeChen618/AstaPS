@@ -1,5 +1,6 @@
 package emu.grasscutter.data.excels.monster;
 
+import java.util.List;
 import com.google.gson.annotations.SerializedName;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.ResourceType.LoadPriority;
@@ -74,6 +75,11 @@ public class MonsterData extends GameResource {
 
     @Override
     public void onLoad() {
+        // 1527 of the 3408 rows omit "affix" entirely, so Gson leaves it null. Callers pass it
+        // straight to addAllAffixList, where protobuf rejects a null and the throw kills the tick
+        // that was spawning the monster - which is every tick, for 45% of all monsters.
+        if (this.affix == null) this.affix = List.of();
+
         for (int id : this.equips) {
             if (id == 0) {
                 continue;

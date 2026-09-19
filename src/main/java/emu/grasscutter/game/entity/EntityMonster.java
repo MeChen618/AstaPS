@@ -1,5 +1,6 @@
 package emu.grasscutter.game.entity;
 
+import java.util.ArrayList;
 import static emu.grasscutter.scripts.constants.EventType.EVENT_SPECIFIC_MONSTER_HP_CHANGE;
 
 import emu.grasscutter.data.GameData;
@@ -130,14 +131,20 @@ public class EntityMonster extends GameEntity {
 
         if (monsterData != null) {
             // TODO: Research if group affixes goes first
+            // Copied rather than appended to: affixes is the scene group's own list, shared by
+            // every spawn from that group, so addAll here grew it on each respawn.
             if (affixes == null) affixes = monsterData.getAffix();
-            else affixes.addAll(monsterData.getAffix());
+            else {
+                affixes = new ArrayList<>(affixes);
+                affixes.addAll(monsterData.getAffix());
+            }
         }
 
         if (affixes != null) {
             for (var affixId : affixes) {
                 var affix = GameData.getMonsterAffixDataMap().get(affixId.intValue());
-                if (!affix.isPreAdd()) continue;
+                // An id the affix table does not carry, which a resource set is free to contain.
+                if (affix == null || !affix.isPreAdd()) continue;
 
                 // Add the ability
                 for (var name : affix.getAbilityName()) {
@@ -185,7 +192,8 @@ public class EntityMonster extends GameEntity {
         if (affixes != null) {
             for (var affixId : affixes) {
                 var affix = GameData.getMonsterAffixDataMap().get(affixId.intValue());
-                if (affix.isPreAdd()) continue;
+                // As above: an id the affix table does not carry.
+                if (affix == null || affix.isPreAdd()) continue;
 
                 // Add the ability
                 for (var name : affix.getAbilityName()) {
