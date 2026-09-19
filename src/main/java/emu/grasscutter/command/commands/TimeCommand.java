@@ -10,7 +10,13 @@ import java.util.TimerTask;
 
 @Command(
         label = "time",
-        usage = {"set <HH:mm> [animate] [seconds]", "step <HH:mm> [animate] [seconds]", "get"},
+        usage = {
+            "set <HH:mm> [animate] [seconds]",
+            "step <HH:mm> [animate] [seconds]",
+            "get",
+            "lock",
+            "unlock"
+        },
         permission = "player.time",
         permissionTargeted = "player.time.others")
 public final class TimeCommand implements CommandHandler {
@@ -28,8 +34,25 @@ public final class TimeCommand implements CommandHandler {
 
         switch (args.get(0).toLowerCase()) {
             case "get" -> {
-                int minutes = targetPlayer.getWorld().getGameTime();
-                CommandHandler.sendMessage(sender, "Current in-game time: " + formatTime(minutes) + ".");
+                World world = targetPlayer.getWorld();
+                CommandHandler.sendMessage(
+                        sender,
+                        "Current in-game time: "
+                                + formatTime(world.getGameTime())
+                                + (world.isTimeLocked() ? " (locked)." : "."));
+            }
+            case "lock", "unlock" -> {
+                // A quest can lock game time and the lock is stored on the player, so a quest that
+                // was skipped before its unlock ran leaves the world frozen for good - world time
+                // stops, scene time stops with it, and nothing in the open world moves. This is the
+                // way back out.
+                boolean lock = args.get(0).equalsIgnoreCase("lock");
+                targetPlayer.getWorld().lockTime(lock);
+                CommandHandler.sendMessage(
+                        sender,
+                        lock
+                                ? "Game time is locked; the open world will stop moving."
+                                : "Game time is unlocked; the open world will move again.");
             }
             case "set" -> {
                 if (args.size() < 2) {
