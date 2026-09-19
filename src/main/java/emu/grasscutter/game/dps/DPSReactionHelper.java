@@ -615,10 +615,12 @@ public final class DPSReactionHelper {
     private static void probeOnce(
             AttackResult result, GameEntity attacker, ElementType element, String resolved) {
         if (PROBE_LEFT.getAndDecrement() <= 0) return;
+        // This is a probe, not a fault: it fires per attack and says nothing an operator acts on.
+        if (!Grasscutter.getLogger().isDebugEnabled()) return;
         try {
             if (result == null) {
                 Grasscutter.getLogger()
-                        .warn(
+                        .debug(
                                 "[DPS-REACT] miss result=null elem={} atk={}",
                                 element,
                                 attacker != null ? attacker.getClass().getSimpleName() : null);
@@ -636,7 +638,7 @@ public final class DPSReactionHelper {
                                     ability, EnumSet.noneOf(AttackTagKind.class))
                             : EnumSet.noneOf(AttackTagKind.class);
             Grasscutter.getLogger()
-                    .warn(
+                    .debug(
                             "[DPS-REACT] miss dmg={} elem={} anim={} ability={} atk={} hashes=[{}] attackTags={}",
                             result.getDamage(),
                             element,

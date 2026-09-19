@@ -52,7 +52,7 @@ public final class DomainHandbookHelper {
             LAST_FULL_SYNC_MS.remove(player.getUid());
             scheduleDeferredSync(player);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "DomainHandbook login-prepare uid={} entries={} areas={}",
                             player.getUid(),
                             HANDBOOK_ENTRIES.values().stream().mapToInt(List::size).sum(),
@@ -147,7 +147,7 @@ public final class DomainHandbookHelper {
             PacketGetDailyDungeonEntryInfoRsp.sendBothLayouts(player, sceneId);
         }
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "DomainHandbook sync uid={} reason={} points={} areas={}",
                         player.getUid(),
                         reason,
@@ -231,7 +231,7 @@ public final class DomainHandbookHelper {
             }
             loaded = true;
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "DomainHandbook loaded entries={} areaGroups={}",
                             HANDBOOK_ENTRIES.values().stream().mapToInt(List::size).sum(),
                             HANDBOOK_AREAS.values().stream().mapToInt(Set::size).sum());

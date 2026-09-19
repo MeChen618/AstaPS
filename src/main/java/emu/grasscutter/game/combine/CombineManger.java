@@ -44,7 +44,7 @@ public class CombineManger extends BaseGameSystem {
             player.getUnlockedCombines().add(data.getCombineId());
         }
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Unlocked {} combine recipes for player {}.",
                         player.getUnlockedCombines().size(),
                         player.getUid());
@@ -60,7 +60,7 @@ public class CombineManger extends BaseGameSystem {
 
     public CombineResult combineItem(Player player, int cid, int count) {
         Grasscutter.getLogger()
-                .info("Combine request from uid {}: combineId={}, count={}", player.getUid(), cid, count);
+                .debug("Combine request from uid {}: combineId={}, count={}", player.getUid(), cid, count);
 
         if (count <= 0) {
             player.sendPacket(new PacketCombineRsp(Retcode.RET_COMBINE_COUNT_TOO_LARGE_VALUE));
@@ -98,7 +98,7 @@ public class CombineManger extends BaseGameSystem {
         player.getInventory().addItem(combineData.getResultItemId(), resultCount, ActionReason.Combine);
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "Combine success for uid {}: combineId={}, resultItem={} x{}",
                         player.getUid(),
                         cid,

@@ -80,7 +80,7 @@ public class PacketGetDailyDungeonEntryInfoRsp extends BasePacket {
             }
             out.flush();
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "GetDailyDungeonEntryInfoRsp ({}) sceneId={} level={} entries={}",
                             layout,
                             sceneId,

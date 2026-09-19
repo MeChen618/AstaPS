@@ -84,7 +84,7 @@ public final class SkirkTeamBonusHelper {
             return;
         }
         LAST_STATE_BY_PLAYER.put(n, string);
-        logger.info("SkirkTeamBonus refresh uid={} teamSize={} elements=[{}] apply={} reason={}", n, list.size(), SkirkTeamBonusHelper.describeElements(list), bl, SkirkTeamBonusHelper.explainReason(list, bl));
+        logger.debug("SkirkTeamBonus refresh uid={} teamSize={} elements=[{}] apply={} reason={}", n, list.size(), SkirkTeamBonusHelper.describeElements(list), bl, SkirkTeamBonusHelper.explainReason(list, bl));
         REFRESH_IN_PROGRESS.set(Boolean.TRUE);
         try {
             SkirkTeamBonusHelper.clearAppliedBonuses(player, n, !bl);
@@ -101,7 +101,7 @@ public final class SkirkTeamBonusHelper {
                 APPLIED_BY_PLAYER.remove(n);
             } else {
                 APPLIED_BY_PLAYER.put(n, hashSet);
-                logger.info("Skirk shared-arts bonus active for player {} ({} avatars)", (Object)n, (Object)hashSet.size());
+                logger.debug("Skirk shared-arts bonus active for player {} ({} avatars)", (Object)n, (Object)hashSet.size());
             }
         }
         finally {

@@ -144,7 +144,7 @@ public final class InvestigationHandbookHelper {
                     .send(PacketPlayerInvestigationAllInfoNotify.asTargetNotify(targets));
 
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "InvestigationHandbook notify uid={} level={} chapters={} targets={}",
                             player.getUid(),
                             level,
@@ -267,7 +267,7 @@ public final class InvestigationHandbookHelper {
                 }
             }
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "Investigation target claimed uid={} questId={} targetId={} rewardId={} x{}",
                             player.getUid(),
                             questId,
@@ -330,7 +330,7 @@ public final class InvestigationHandbookHelper {
                                         List.of(chapterInfo)));
             }
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "Investigation chapter claimed uid={} chapterId={} rewardId={} x{}",
                             player.getUid(),
                             chapterId,
@@ -929,7 +929,7 @@ public final class InvestigationHandbookHelper {
             }
             loaded = true;
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "InvestigationHandbook loaded chapters={} targets={} triggerTypes={} rewardX{}",
                             CHAPTERS.size(),
                             TARGETS_BY_ID.size(),

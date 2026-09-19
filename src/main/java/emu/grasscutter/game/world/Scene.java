@@ -82,6 +82,7 @@ public class Scene {
     private Set<SceneNpcBornEntry> npcBornEntrySet;
     @Getter private boolean finishedLoading = false;
     private int lastReportedSceneTime = Integer.MIN_VALUE;
+    private String lastReportedFrozenState = null;
     @Getter protected int tickCount = 0;
     @Getter private boolean isPaused = false;
 
@@ -841,8 +842,14 @@ public class Scene {
             this.players.stream().map(p -> p.getUid() + ":" + p.getSceneLoadState()).toList()
         };
 
-        // Only worth an operator's attention when something in there is actually wrong.
-        if (frozen) {
+        // Only worth an operator's attention when something is wrong, and only when it is
+        // news: a world that stays frozen says so once, not every ten seconds forever.
+        var state = frozen + "/" + this.isPaused + "/" + world.isPaused() + "/" + world.isTimeLocked()
+                + "/" + stalled + "/" + notLoaded;
+        var changed = !state.equals(this.lastReportedFrozenState);
+        this.lastReportedFrozenState = state;
+
+        if (frozen && changed) {
             Grasscutter.getLogger().warn(line, args);
         } else {
             Grasscutter.getLogger().debug(line, args);

@@ -14,6 +14,9 @@ public final class GameServerPacketHandler {
 
     private final Int2ObjectMap<PacketHandler> handlers;
 
+    /** Opcodes already reported as unhandled, so each one is named once rather than per packet. */
+    private static final IntSet UNHANDLED_REPORTED = IntSets.synchronize(new IntOpenHashSet());
+
     public GameServerPacketHandler(Class<? extends PacketHandler> handlerClass) {
         this.handlers = new Int2ObjectOpenHashMap<>();
 
@@ -212,14 +215,28 @@ public final class GameServerPacketHandler {
                 }
                 hex = " hex=" + sb;
             }
-            Grasscutter.getLogger()
-                            .warn(
-                            "Unhandled packet opcode {} ({}) len={} from {}{}",
-                            opcode,
-                            PacketOpcodesUtils.getOpcodeName(opcode),
-                            payload == null ? 0 : payload.length,
-                            session.getAddress(),
-                            hex);
+            // A client re-sends an unanswered packet for as long as it wants an answer, so
+            // one missing handler used to fill the console by itself - ReadPrivateChatReq
+            // alone accounted for 68 lines in a seven-minute run. The first one names the
+            // opcode, which is all an operator needs to go and write the handler; the rest
+            // of them say nothing new and go to debug.
+            var firstTime = UNHANDLED_REPORTED.add(opcode);
+            var logger = Grasscutter.getLogger();
+            if (firstTime || logger.isDebugEnabled()) {
+                var line = "Unhandled packet opcode {} ({}) len={} from {}{}";
+                Object[] args = {
+                    opcode,
+                    PacketOpcodesUtils.getOpcodeName(opcode),
+                    payload == null ? 0 : payload.length,
+                    session.getAddress(),
+                    hex
+                };
+                if (firstTime) {
+                    logger.warn(line, args);
+                } else {
+                    logger.debug(line, args);
+                }
+            }
             if (session.getPlayer() != null) {
                 emu.grasscutter.game.systems.ReliquaryDustSystem.noteRecvOpcode(
                         session.getPlayer(), opcode);
