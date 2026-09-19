@@ -25,6 +25,15 @@ import emu.grasscutter.utils.lang.Language;
 import io.netty.util.concurrent.FastThreadLocalThread;
 import java.io.*;
 import java.util.Calendar;
+import java.util.Comparator;
+import java.util.Locale;
+import emu.grasscutter.server.threading.ManagedScheduledThreadPoolExecutor;
+import emu.grasscutter.server.threading.ServerHealthSnapshot;
+import emu.grasscutter.server.threading.ServerRuntimeSnapshot;
+import emu.grasscutter.server.threading.ThreadPoolConfigResolver;
+import emu.grasscutter.server.threading.ThreadPoolManager;
+import emu.grasscutter.server.threading.ThreadPoolSnapshot;
+import emu.grasscutter.server.threading.ThreadPoolType;
 import java.util.concurrent.*;
 import javax.annotation.Nullable;
 import lombok.*;
@@ -190,6 +199,9 @@ public final class Grasscutter {
 
         // Load the login Lua shell (external lua/login.luac if present, otherwise the baked one).
         emu.grasscutter.utils.LuaShell.addLoginLuaShell();
+
+        // Start the periodic status readout.
+        startRuntimeMonitor();
 
         // Enable all plugins.
         pluginManager.enablePlugins();
@@ -388,5 +400,128 @@ public final class Grasscutter {
         WHITELIST,
         BLACKLIST,
         NONE
+    }
+
+    /** How often the status readout is logged. Short enough to catch a backlog, long enough to ignore. */
+    private static final long MONITOR_INTERVAL_MINUTES = 3;
+
+    private static ScheduledExecutorService runtimeMonitor;
+
+    /**
+     * Logs CPU, memory and every managed thread pool on a fixed interval.
+     *
+     * <p>The numbers exist whether or not anyone looks at them; printing them periodically is what
+     * makes a queue backing up visible before it turns into players being refused at login.
+     */
+    private static void startRuntimeMonitor() {
+        if (runtimeMonitor != null) return;
+
+        var config = ThreadPoolConfigResolver.resolve(
+                "RUNTIME_MONITOR", ThreadPoolType.SCHEDULER, 1, 1, 0, 60);
+        runtimeMonitor = new ManagedScheduledThreadPoolExecutor(config, runnable -> {
+            var thread = new Thread(runnable, "runtime-monitor");
+            thread.setDaemon(true);
+            return thread;
+        });
+        runtimeMonitor.scheduleAtFixedRate(
+                Grasscutter::logRuntimeStatus,
+                MONITOR_INTERVAL_MINUTES,
+                MONITOR_INTERVAL_MINUTES,
+                TimeUnit.MINUTES);
+        Runtime.getRuntime().addShutdownHook(new Thread(runtimeMonitor::shutdownNow));
+    }
+
+    /** One pass of the status readout. */
+    public static void logRuntimeStatus() {
+        try {
+            var runtime = ServerRuntimeSnapshot.collect();
+            var pools = ThreadPoolManager.getInstance().getAll().stream()
+                    .map(ThreadPoolManager.getInstance()::snapshot)
+                    .sorted(Comparator.comparing(ThreadPoolSnapshot::name))
+                    .toList();
+            var health = ServerHealthSnapshot.from(runtime, pools);
+
+            logger.info(
+                    """
+                    ---------------------------- server status ----------------------------
+                    health:      {}
+                    CPU:         process {} / system {}
+                    JVM memory:  {}MB / {}MB ({})
+                    host memory: {}MB / {}MB ({})
+                    started:     {}
+                    sampled:     {}
+                    uptime:      {}
+                    GC:          {} collections / {} ms
+                    bottleneck:  {}
+                    diagnosis:   {}
+                    suggestion:  {}""",
+                    health.health(),
+                    formatPercent(runtime.processCpuLoad()),
+                    formatPercent(runtime.systemCpuLoad()),
+                    runtime.usedJvmMemory() / 1024 / 1024,
+                    runtime.maxJvmMemory() / 1024 / 1024,
+                    formatPercent(health.jvmMemoryUsage()),
+                    usedSystemMemoryMegabytes(runtime),
+                    runtime.totalSystemMemory() / 1024 / 1024,
+                    formatPercent(health.systemMemoryUsage()),
+                    runtime.startedAtText(),
+                    runtime.sampledAtText(),
+                    runtime.uptimeText(),
+                    runtime.gcCount(),
+                    runtime.gcTimeMillis(),
+                    health.bottleneck(),
+                    health.diagnosisText(),
+                    health.suggestion());
+
+            pools.forEach(Grasscutter::logThreadPool);
+            logger.info("-----------------------------------------------------------------------");
+        } catch (Throwable t) {
+            // A monitor that kills its own schedule by throwing is worse than no monitor:
+            // scheduleAtFixedRate cancels the task on the first exception and never says so.
+            logger.warn("Failed to log the server status.", t);
+        }
+    }
+
+    private static long usedSystemMemoryMegabytes(ServerRuntimeSnapshot runtime) {
+        if (runtime.totalSystemMemory() < 0 || runtime.freeSystemMemory() < 0) return -1L;
+        return (runtime.totalSystemMemory() - runtime.freeSystemMemory()) / 1024 / 1024;
+    }
+
+    /** Negative means the figure was not available, not that it was zero. */
+    private static String formatPercent(double value) {
+        return value < 0 ? "sampling" : String.format(Locale.ROOT, "%.2f%%", value * 100D);
+    }
+
+    private static String formatCapacity(int capacity) {
+        return capacity < 0 ? "unbounded" : Integer.toString(capacity);
+    }
+
+    private static void logThreadPool(ThreadPoolSnapshot snapshot) {
+        logger.info(
+                """
+                pool {}
+                  type {} / health {} / {}
+                  threads: active {} / live {} / core {} / max {}
+                  queue:   {} / {}
+                  tasks:   submitted {} / completed {} / failed {} / rejected {}
+                  timing:  average {}ms / longest {}ms
+                  {}""",
+                snapshot.name(),
+                snapshot.type(),
+                snapshot.health(),
+                snapshot.lifecycleState(),
+                snapshot.activeCount(),
+                snapshot.currentPoolSize(),
+                snapshot.corePoolSize(),
+                snapshot.maximumPoolSize(),
+                snapshot.queueSize(),
+                formatCapacity(snapshot.queueCapacity()),
+                snapshot.submittedTaskCount(),
+                snapshot.completedTaskCount(),
+                snapshot.failedTaskCount(),
+                snapshot.rejectedTaskCount(),
+                snapshot.averageExecutionMillis(),
+                snapshot.maxExecutionMillis(),
+                snapshot.diagnosisText());
     }
 }

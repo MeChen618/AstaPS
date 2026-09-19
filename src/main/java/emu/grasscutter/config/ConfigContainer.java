@@ -35,9 +35,27 @@ public class ConfigContainer {
      *              HTTP server should start immediately.
      * Version 13 - 'game.useUniquePacketKey' was added to control whether the
      *              encryption key used for packets is a constant or randomly generated.
+     * Version 14 - 'server.threadPools' was added for managed thread-pool sizing.
      */
     private static int version() {
-        return 13;
+        return 14;
+    }
+
+    /**
+     * Folds any pools the running config already names into the current default set.
+     *
+     * <p>A plain field copy would carry the old map over wholesale, so a pool added in a later
+     * version would never appear in config.json and could not be tuned. Taking the defaults first
+     * and overlaying the existing entries adds the new names while keeping every value the server
+     * owner has set.
+     */
+    private static ThreadPoolOptions mergeThreadPoolDefaults(ThreadPoolOptions existing) {
+        var merged = new ThreadPoolOptions();
+        Map<String, ThreadPoolDefinition> pools = new LinkedHashMap<>(merged.pools);
+        if (existing != null && existing.pools != null) pools.putAll(existing.pools);
+        merged.enabled = existing == null || existing.enabled;
+        merged.pools = pools;
+        return merged;
     }
 
     /**
@@ -68,7 +86,10 @@ public class ConfigContainer {
             } catch (Exception exception) {
                 Grasscutter.getLogger().error("Failed to update a configuration field.", exception);
             }
-        }); updated.version = version();
+        });
+
+        updated.server.threadPools = mergeThreadPoolDefaults(updated.server.threadPools);
+        updated.version = version();
 
         try { // Save configuration and reload.
             Grasscutter.saveConfig(updated);
@@ -125,9 +146,45 @@ public class ConfigContainer {
 
         public HTTP http = new HTTP();
         public Game game = new Game();
+        public ThreadPoolOptions threadPools = new ThreadPoolOptions();
 
         public Dispatch dispatch = new Dispatch();
         public DebugMode debugMode = new DebugMode();
+    }
+
+    /** Per-pool sizing overrides. Disabling this leaves every pool at its built-in sizing. */
+    public static class ThreadPoolOptions {
+        public boolean enabled = true;
+
+        /**
+         * Keyed by the pool name each pool registers under. Every entry ships as -1 across the
+         * board, which means "leave this pool alone": the file lists the tunable pools without
+         * changing any of them until someone edits a value.
+         */
+        public Map<String, ThreadPoolDefinition> pools =
+                Map.ofEntries(
+                        Map.entry("DATABASE_DEFAULT", new ThreadPoolDefinition()),
+                        Map.entry("DATABASE_ACCOUNT", new ThreadPoolDefinition()),
+                        Map.entry("DATABASE_ITEM", new ThreadPoolDefinition()),
+                        Map.entry("DATABASE_GROUP", new ThreadPoolDefinition()));
+    }
+
+    @NoArgsConstructor
+    public static class ThreadPoolDefinition {
+        /** Negative means "keep the pool's built-in value". */
+        public int coreThreads = -1;
+
+        public int maxThreads = -1;
+        public int queueCapacity = -1;
+        public long keepAliveSeconds = -1;
+
+        public ThreadPoolDefinition(
+                int coreThreads, int maxThreads, int queueCapacity, long keepAliveSeconds) {
+            this.coreThreads = coreThreads;
+            this.maxThreads = maxThreads;
+            this.queueCapacity = queueCapacity;
+            this.keepAliveSeconds = keepAliveSeconds;
+        }
     }
 
     public static class Language {
@@ -139,6 +196,18 @@ public class ConfigContainer {
     public static class Account {
         public boolean autoCreate = false;
         public boolean EXPERIMENTAL_RealPassword = false;
+
+        /**
+         * Take the account and the password from the username box together, as
+         * {@code account&&password}, and ignore the password box.
+         *
+         * <p>The launcher's password box is not always usable, so this puts both halves somewhere
+         * the player can definitely type them. It also turns autoCreate off for this path: a typo
+         * in the combined string would otherwise create a brand new account rather than fail the
+         * login.
+         */
+        public boolean useIntegrationPassword = false;
+
         public String[] defaultPermissions = {};
         public int maxPlayer = -1;
     }

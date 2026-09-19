@@ -22,25 +22,166 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.world.SceneGroupInstance;
 import emu.grasscutter.utils.objects.Returnable;
+import emu.grasscutter.server.threading.ManagedThreadPoolExecutor;
+import emu.grasscutter.server.threading.ThreadPoolConfig;
+import emu.grasscutter.server.threading.ThreadPoolConfigResolver;
+import emu.grasscutter.server.threading.ThreadPoolType;
 import io.netty.util.concurrent.FastThreadLocalThread;
+import java.util.Collections;
 import java.util.ConcurrentModificationException;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import lombok.Getter;
 
 public final class DatabaseHelper {
+    public static final int AVAILABLE_PROCESSORS = Runtime.getRuntime().availableProcessors();
+
+    /** Long enough that a pool which idles between logins does not churn its threads. */
+    private static final int DEFAULT_KEEP_ALIVE_SECONDS = 600;
+
+    /**
+     * Queue bounds, sized per pool against how much traffic each one actually carries.
+     *
+     * <p>They are bounds rather than the unbounded queue this used to use. An unbounded queue never
+     * rejects, so a database that cannot keep up simply grows the queue until the heap is gone,
+     * with nothing in the logs until it is too late. A bound turns that into backpressure the
+     * server can see and report.
+     */
+    public static final int DEFAULT_QUEUE_CAPACITY =
+            Math.min(Math.max(AVAILABLE_PROCESSORS * 512, 1024), 8192);
+
+    public static final int ACCOUNT_QUEUE_CAPACITY =
+            Math.min(Math.max(AVAILABLE_PROCESSORS * 64, 256), 2048);
+
+    public static final int ITEM_QUEUE_CAPACITY =
+            Math.min(Math.max(AVAILABLE_PROCESSORS * 1024, 2048), 16384);
+
+    public static final int GROUP_QUEUE_CAPACITY =
+            Math.min(Math.max(AVAILABLE_PROCESSORS * 512, 1024), 8192);
+
+    /**
+     * Group instances with a save already queued, so a second save for the same instance is folded
+     * into the pending one.
+     *
+     * <p>Scene scripts call cacheGadgetState and setCached constantly, and without this the same
+     * instance is queued hundreds of times a second for writes that all produce the same document.
+     * That alone keeps the group pool saturated on an otherwise idle server.
+     *
+     * <p>Membership is by object identity and is cleared before the write runs, not after, so a
+     * change made while the write is in flight queues a fresh save rather than being dropped.
+     */
+    private static final Set<SceneGroupInstance> pendingGroupSaves =
+            Collections.newSetFromMap(new ConcurrentHashMap<>());
+
+    private static int coreThreads(int divisor) {
+        return Math.max(1, AVAILABLE_PROCESSORS / divisor);
+    }
+
+    private static int maxThreads(int divisor) {
+        return Math.max(coreThreads(divisor), AVAILABLE_PROCESSORS / divisor + 1);
+    }
+
+    /** Netty thread-locals only work on its own thread type, which is why these are not plain threads. */
+    private static ThreadFactory databaseThreadFactory(String name) {
+        var counter = new AtomicInteger();
+        return runnable -> {
+            var thread = new FastThreadLocalThread(runnable, name + "-" + counter.incrementAndGet());
+            thread.setDaemon(true);
+            return thread;
+        };
+    }
+
+    private static ThreadPoolConfig databasePoolConfig(
+            String name, int coreThreads, int maxThreads, int queueCapacity) {
+        return ThreadPoolConfigResolver.resolve(
+                name,
+                ThreadPoolType.DATABASE,
+                coreThreads,
+                maxThreads,
+                queueCapacity,
+                DEFAULT_KEEP_ALIVE_SECONDS);
+    }
+
+    private static LinkedBlockingDeque<Runnable> databaseQueue(
+            ThreadPoolConfig config, int fallbackCapacity) {
+        int capacity = config.queueCapacity() > 0 ? config.queueCapacity() : fallbackCapacity;
+        return new LinkedBlockingDeque<>(capacity);
+    }
+
+    private static final ThreadPoolConfig DEFAULT_POOL_CONFIG =
+            databasePoolConfig(
+                    "DATABASE_DEFAULT",
+                    coreThreads(3),
+                    Math.max(coreThreads(3), AVAILABLE_PROCESSORS),
+                    DEFAULT_QUEUE_CAPACITY);
+    private static final ThreadPoolConfig ACCOUNT_POOL_CONFIG =
+            databasePoolConfig(
+                    "DATABASE_ACCOUNT",
+                    coreThreads(4),
+                    Math.max(coreThreads(4), AVAILABLE_PROCESSORS / 2 + 1),
+                    ACCOUNT_QUEUE_CAPACITY);
+    private static final ThreadPoolConfig ITEM_POOL_CONFIG =
+            databasePoolConfig("DATABASE_ITEM", coreThreads(3), maxThreads(2), ITEM_QUEUE_CAPACITY);
+    private static final ThreadPoolConfig GROUP_POOL_CONFIG =
+            databasePoolConfig("DATABASE_GROUP", coreThreads(3), maxThreads(2), GROUP_QUEUE_CAPACITY);
+
+    /*
+     * Four pools rather than one, so the traffic classes cannot starve each other: a burst of item
+     * writes used to sit in front of the account save that a login was waiting on.
+     *
+     * All four reject with CallerRunsPolicy. When a bounded queue fills, the submitting thread does
+     * the write itself: that stalls the caller, which is visible and self-limiting, where the
+     * AbortPolicy this replaces threw the save away and lost the player's progress silently.
+     */
     @Getter
     private static final ExecutorService eventExecutor =
-            new ThreadPoolExecutor(
-                    6,
-                    6,
-                    60,
-                    TimeUnit.SECONDS,
-                    new LinkedBlockingDeque<>(),
-                    FastThreadLocalThread::new,
-                    new ThreadPoolExecutor.AbortPolicy());
+            new ManagedThreadPoolExecutor(
+                    DEFAULT_POOL_CONFIG,
+                    databaseQueue(DEFAULT_POOL_CONFIG, DEFAULT_QUEUE_CAPACITY),
+                    databaseThreadFactory("database-default"),
+                    new ThreadPoolExecutor.CallerRunsPolicy());
+
+    /** Low volume, but a login blocks on it. */
+    @Getter
+    private static final ExecutorService eventExecutorAccount =
+            new ManagedThreadPoolExecutor(
+                    ACCOUNT_POOL_CONFIG,
+                    databaseQueue(ACCOUNT_POOL_CONFIG, ACCOUNT_QUEUE_CAPACITY),
+                    databaseThreadFactory("database-account"),
+                    new ThreadPoolExecutor.CallerRunsPolicy());
+
+    /** The highest-volume traffic on the server. */
+    @Getter
+    private static final ExecutorService eventExecutorItem =
+            new ManagedThreadPoolExecutor(
+                    ITEM_POOL_CONFIG,
+                    databaseQueue(ITEM_POOL_CONFIG, ITEM_QUEUE_CAPACITY),
+                    databaseThreadFactory("database-item"),
+                    new ThreadPoolExecutor.CallerRunsPolicy());
+
+    /** Driven by scene scripts, which is why the dedup above matters. */
+    @Getter
+    private static final ExecutorService eventExecutorGroup =
+            new ManagedThreadPoolExecutor(
+                    GROUP_POOL_CONFIG,
+                    databaseQueue(GROUP_POOL_CONFIG, GROUP_QUEUE_CAPACITY),
+                    databaseThreadFactory("database-group"),
+                    new ThreadPoolExecutor.CallerRunsPolicy());
+
+    /**
+     * Whether a pool is backed up far enough that the server should stop letting players in.
+     *
+     * <p>The threshold is below the queue bound on purpose: by the time a queue is actually full
+     * every submitting thread is running writes inline, and a login admitted at that point makes
+     * the stall worse.
+     */
+    public static boolean isThreadPoolOverloaded(ThreadPoolExecutor executor, int maxCount) {
+        return executor.getQueue().size() > maxCount * 0.7f;
+    }
 
     /**
      * Saves an object on the account datastore.
@@ -48,16 +189,45 @@ public final class DatabaseHelper {
      * @param object The object to save.
      */
     public static void saveAccountAsync(Object object) {
-        DatabaseHelper.eventExecutor.submit(() -> DatabaseManager.getAccountDatastore().save(object));
+        DatabaseHelper.eventExecutorAccount.submit(
+                () -> DatabaseManager.getAccountDatastore().save(object));
     }
 
     /**
-     * Saves an object on the game datastore.
+     * Saves an object on the game datastore, on the pool that matches what it is.
      *
      * @param object The object to save.
      */
     public static void saveGameAsync(Object object) {
-        DatabaseHelper.eventExecutor.submit(() -> saveWithRetry(object));
+        if (object == null) return;
+
+        // The three types are unrelated, so the order of these tests carries no meaning.
+        if (object instanceof GameItem gameItem) {
+            DatabaseHelper.eventExecutorItem.submit(() -> saveWithRetry(gameItem));
+        } else if (object instanceof SceneGroupInstance groupInstance) {
+            submitGroupSave(groupInstance);
+        } else if (object instanceof Account account) {
+            DatabaseHelper.eventExecutorAccount.submit(() -> saveWithRetry(account));
+        } else {
+            DatabaseHelper.eventExecutor.submit(() -> saveWithRetry(object));
+        }
+    }
+
+    private static void submitGroupSave(SceneGroupInstance groupInstance) {
+        // Already queued: that pending write will pick up this change too.
+        if (!pendingGroupSaves.add(groupInstance)) return;
+
+        try {
+            DatabaseHelper.eventExecutorGroup.submit(
+                    () -> {
+                        pendingGroupSaves.remove(groupInstance);
+                        saveWithRetry(groupInstance);
+                    });
+        } catch (RuntimeException submitFailed) {
+            // Clear the mark, or a rejected submit would leave this instance unable to queue again.
+            pendingGroupSaves.remove(groupInstance);
+            throw submitFailed;
+        }
     }
 
     /**
