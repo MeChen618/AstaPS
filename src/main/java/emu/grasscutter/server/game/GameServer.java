@@ -37,6 +37,7 @@ import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
 import emu.grasscutter.server.dispatch.DispatchClient;
+import emu.grasscutter.server.ServerWatchdog;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
@@ -320,6 +321,11 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public synchronized void onTick() {
+        // Nothing that happens in a tick can be recorded while the database is unreachable, and
+        // every save it would queue just piles up behind a connection that is not coming back.
+        // The watchdog clears this as soon as the database answers again.
+        if (ServerWatchdog.isDatabaseDown()) return;
+
         var tickStart = Instant.now();
 
         // Each of these is guarded on its own. One world or one player throwing used to abandon the

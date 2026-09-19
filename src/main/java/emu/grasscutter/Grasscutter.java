@@ -204,6 +204,9 @@ public final class Grasscutter {
         // Start the periodic status readout.
         startRuntimeMonitor();
 
+        // Start the database monitor and, if configured, the timed restart.
+        emu.grasscutter.server.ServerWatchdog.start();
+
         // Enable all plugins.
         pluginManager.enablePlugins();
 

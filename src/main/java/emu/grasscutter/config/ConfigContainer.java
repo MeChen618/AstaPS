@@ -36,9 +36,10 @@ public class ConfigContainer {
      * Version 13 - 'game.useUniquePacketKey' was added to control whether the
      *              encryption key used for packets is a constant or randomly generated.
      * Version 14 - 'server.threadPools' was added for managed thread-pool sizing.
+     * Version 15 - 'server.watchdog' was added for the database monitor and timed restart.
      */
     private static int version() {
-        return 14;
+        return 15;
     }
 
     /**
@@ -152,6 +153,31 @@ public class ConfigContainer {
         public DebugMode debugMode = new DebugMode();
     }
 
+    /** Automated maintenance checks. See ServerWatchdog. */
+    public static class WatchdogOptions {
+        /**
+         * Ping the database on an interval, and hold the game tick while it is unreachable.
+         *
+         * <p>Ticking on regardless means play continues against a database that cannot record any
+         * of it, and every save queued in the meantime piles up behind a connection that is not
+         * coming back.
+         */
+        public boolean enableDatabaseMonitor = true;
+
+        public int databaseCheckIntervalSeconds = 10;
+
+        /**
+         * Exit the process on an interval, after saving everyone, so a supervisor restarts it.
+         *
+         * <p>Off by default, unlike upstream. It is a plain System.exit: with no process manager
+         * configured to bring the server back, turning this on simply stops the server every
+         * autoRestartIntervalHours.
+         */
+        public boolean enableAutoRestart = false;
+
+        public int autoRestartIntervalHours = 24;
+    }
+
     /** Per-pool sizing overrides. Disabling this leaves every pool at its built-in sizing. */
     public static class ThreadPoolOptions {
         public boolean enabled = true;
@@ -232,6 +258,8 @@ public class ConfigContainer {
     }
 
     public static class Game {
+        public WatchdogOptions watchdog = new WatchdogOptions();
+
         public String bindAddress = "0.0.0.0";
         public int bindPort = 22101;
 
