@@ -35,7 +35,7 @@ public class ChatSystem implements ChatSystemHandler {
 
     private boolean tryInvokeCommand(Player sender, Player target, String rawMessage) {
         if (rawMessage.isEmpty()) return false;
-        // DPS 测试是免前缀的:聊天框直接发「dps30秒」即可,详见 DPSMeter。
+        // The DPS test is prefix-free: sending "dps30" in chat starts it. See DPSMeter.
         if (DPSMeter.handleChat(sender, rawMessage)) return true;
         if (!RE_PREFIXES.matcher(rawMessage.substring(0, 1)).matches()) return false;
         for (String line : rawMessage.substring(1).split("\n[/!]"))
@@ -161,19 +161,19 @@ public class ChatSystem implements ChatSystemHandler {
         player.sendPacket(packet);
         putInHistory(player.getUid(), targetUid, packet.getChatInfo());
 
-        // 改密指令器
+        // Password-change commander
         if (PasswordFriendHandler.isPasswordFriend(targetUid)) {
             PasswordFriendHandler.handlePrivateMessage(player, message);
             return;
         }
 
-        // DPS 指令器：只处理 DPS，其它内容回用法提示
+        // DPS commander: handles DPS only and replies with usage for anything else
         if (targetUid == GameConstants.SERVER_DPS_UID) {
             if (!DPSMeter.handleChat(player, message)) {
                 sendPrivateMessageFromBot(
                         GameConstants.SERVER_DPS_UID,
                         player.getUid(),
-                        "用法：发 dps30秒（或 dps60秒）开始测试；发 dps停止 提前结束。");
+                        "Usage: send dps30 (or dps60) to start a run; send dpsstop to end it early.");
             }
             return;
         }

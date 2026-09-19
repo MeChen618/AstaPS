@@ -106,7 +106,8 @@ public final class WorldBossSpawnHelper {
     private static final ConcurrentHashMap<Long, Long> lastBossSpawnAttemptMs;
     private static final ConcurrentHashMap<Integer, Long> lastNearbyCheckMs;
     private static final Set<Long> awaitingFlowerKeys;
-    /** Cleared flower while player far — spawn only when someone is near again (avoids invisible far-spawns). */
+    /** Cleared flower while the player was far - spawn only when someone is near again, which avoids
+     * invisible far-spawns. */
     private static final Set<Long> pendingRespawnKeys;
     private static final long LOGIN_GRACE_MS = 12000L;
     private static final ConcurrentHashMap<Integer, Long> loginGraceUntilMs;
@@ -283,7 +284,7 @@ public final class WorldBossSpawnHelper {
                 var4.block_id = var0.id;
                 var4.pos = var3.position.clone();
                 var4.refresh_id = var3.investigationId > 0 ? 1003 : 999999;
-                // Keep world bosses pinned: checkGroups otherwise unload/reload every tick → flicker.
+                // Keep world bosses pinned: otherwise checkGroups unloads and reloads every tick, causing flicker.
                 var4.dontUnload = true;
                 var4.dynamic_load = true;
                 var0.groups.put(var3.groupId, var4);
@@ -354,7 +355,7 @@ public final class WorldBossSpawnHelper {
                 return true;
             }
             if (awaitingFlowerKeys.contains(var3)) {
-                // Stale await with no flower entity → clear and allow respawn.
+                // Stale await with no flower entity - clear it and allow a respawn.
                 awaitingFlowerKeys.remove(var3);
                 return false;
             }
@@ -445,12 +446,12 @@ public final class WorldBossSpawnHelper {
         }
         WorldBossSpawnHelper.ensureIndexBuilt();
         BossSpawnEntry var2 = (BossSpawnEntry)bossByGroupId.get(var1);
-        // Accept form variants (e.g. 26230301/02/03) — exact id mismatch previously skipped flower tracking.
+        // Accept form variants (e.g. 26230301/02/03) - an exact id mismatch previously skipped flower tracking.
         if (var2 == null || !WorldBossSpawnHelper.isMatchingBossMonsterId(var2.monsterId, var0.getEntityTypeId())) {
             return;
         }
         // Real combat kill must always drop a flower. Claim/forceRespawn suppress only blocks
-        // corpse/script re-drops — clearing here fixes "killed too fast, no flower".
+        // corpse/script re-drops - clearing here fixes "killed too fast, no flower".
         WorldBossClaimHelper.clearFlowerSuppress(var1);
         Scene var3 = var0.getScene();
         long key = WorldBossSpawnHelper.spawnAttemptKey(var3.getId(), var1);
@@ -473,7 +474,7 @@ public final class WorldBossSpawnHelper {
         if (expected == actual) {
             return true;
         }
-        // Same 6-digit family with small suffix drift (01/02/03…).
+        // Same 6-digit family with small suffix drift (01/02/03...).
         return expected / 100 == actual / 100 && Math.abs(expected - actual) <= 10;
     }
 
@@ -530,7 +531,7 @@ public final class WorldBossSpawnHelper {
         if (var0 == null || var2 == null) {
             return;
         }
-        // 奔狼的领主：禁止接近自动刷怪，必须点「开启试炼」走开场
+        // Lupus Boreas: never auto-spawn on approach; the intro has to be started via the trial option.
         try {
             if (emu.grasscutter.game.world.AndriusTrialStartHelper.shouldBlockAutoSpawn(var2.groupId)) {
                 return;
@@ -541,7 +542,8 @@ public final class WorldBossSpawnHelper {
         long var5 = WorldBossSpawnHelper.spawnAttemptKey(var0.getId(), var2.groupId);
         double var7 = WorldBossSpawnHelper.nearestPlayerDistance(var0, var2);
 
-        // 征讨之花：玩家离太远 → 只清花并标记待刷新（远处不刷怪，避免客户端看不见的幽灵 BOSS）
+        // Trounce blossom: if the player is too far, only clear the flower and mark it pending. Spawning at
+        // range would create a boss the client cannot see.
         boolean flowerPending =
                 WorldBossSpawnHelper.hasUnclaimedBossChest(var0, var2)
                         || awaitingFlowerKeys.contains(var5);
@@ -611,7 +613,7 @@ public final class WorldBossSpawnHelper {
         // Empty arena or pending after abandon. Do NOT thrash-respawn an alive boss that is
         // merely outside a tight ring (same single-authority path as Fontaine/Natlan).
         if (alive && !nearPlayer) {
-            // True orphan: alive boss far from every player — despawn only; wait for approach.
+            // True orphan: a live boss far from every player - despawn only and wait for an approach.
             try {
                 BossFlowerGuard.despawnAliveBossMonsters(var0, var2.groupId, var2.monsterId);
             } catch (Throwable ignored) {
@@ -651,8 +653,8 @@ public final class WorldBossSpawnHelper {
     /**
      * True if an alive boss entity for this group is within spawn range of any player.
      * Must match {@link #BOSS_SPAWN_DISTANCE}: a tighter radius (e.g. 80) with a 220m spawn
-     * ring marks the boss as "ghost" while the player is still approaching → forceRespawn
-     * thrash → client keeps a stale entity id (untargetable / no damage either way).
+     * ring marks the boss as "ghost" while the player is still approaching, causing forceRespawn
+     * thrash, leaving the client with a stale entity id that is untargetable and takes no damage.
      */
     private static boolean isAliveBossNearAnyPlayer(Scene scene, BossSpawnEntry entry) {
         if (scene == null || entry == null || scene.getPlayers().isEmpty()) {
@@ -796,7 +798,7 @@ public final class WorldBossSpawnHelper {
                 OpenWorldSpawnHelper.clearGroupDeathRecords(scene, entry.groupId);
             } catch (Throwable ignored) {
             }
-            // Do NOT spawn while far — that creates client-invisible bosses that block later respawn.
+            // Do NOT spawn while far - that creates client-invisible bosses which block a later respawn.
             pendingRespawnKeys.add(key);
             WorldBossClaimHelper.suppressFlower(entry.groupId, 3000L);
             Grasscutter.getLogger()
@@ -971,7 +973,7 @@ public final class WorldBossSpawnHelper {
             float bz = var1.position.getZ();
             for (Player var5 : var0.getPlayers()) {
                 if (var5.getPosition() == null) continue;
-                // Horizontal distance only — underwater bosses (e.g. Emperor) have large Y delta
+                // Horizontal distance only - underwater bosses such as the Emperor have a large Y delta
                 // that falsely triggered "left flower" abandon within seconds of the kill.
                 float dx = var5.getPosition().getX() - bx;
                 float dz = var5.getPosition().getZ() - bz;
@@ -1409,7 +1411,7 @@ public final class WorldBossSpawnHelper {
         if (WorldBossSpawnHelper.isBossRespawnBlocked(var0, var2)) {
             return;
         }
-        // Non-java-exclusive bosses previously only loaded definitions and returned —
+        // Non-java-exclusive bosses previously only loaded definitions and returned -
         // injected stub groups (e.g. Icewind Suite 133402002) never got refreshGroupMonster.
         SceneGroup var3 = WorldBossSpawnHelper.resolveBossGroup(var0, var1, var2);
         if (var3 == null) {

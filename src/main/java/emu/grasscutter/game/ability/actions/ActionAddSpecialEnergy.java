@@ -55,7 +55,8 @@ extends AbilityActionHandler {
         if (Math.abs(f2) < 0.01f && SkirkCunningHelper.isSkirk(gameEntity2) && ActionAddSpecialEnergy.isExtraEnergyRatio(abilityModifierAction.ratio) && (f = ability.getAbilitySpecials().get("SkirkNew_Constellation_2_ExtraEnergy")) != null && f.floatValue() >= 9.5f) {
             f2 = f.floatValue();
         }
-        // 裂隙回能：配置 ratio=0 且 value=SkirkNew_Pickable_Energy_Revive，Gson 只留 ratio，这里显式取值。
+        // Rift energy: the config has ratio=0 with value=SkirkNew_Pickable_Energy_Revive, and Gson keeps
+        // only ratio, so the value is resolved explicitly here.
         if (Math.abs(f2) < 0.01f && SkirkCunningHelper.isSkirk(gameEntity2)) {
             float revive = SkirkCunningHelper.resolvePickableEnergyRevive(ability);
             if (revive >= 0.5f) {
@@ -68,7 +69,8 @@ extends AbilityActionHandler {
             }
         }
         int n2 = n = abilityModifierAction.ratio != null && abilityModifierAction.ratio.isDynamic() || abilityModifierAction.amount != null && abilityModifierAction.amount.isDynamic() || abilityModifierAction.ratio != null && abilityModifierAction.ratio.getConstant() != 0.0f || abilityModifierAction.amount != null && abilityModifierAction.amount.getConstant() != 0.0f ? 1 : 0;
-        // 玛薇卡式默认 +1.5 不得套到丝柯克裂隙吸收（其 ratio 故意为 0）。
+        // The Mavuika-style default of +1.5 must not be applied to Skirk's rift absorb, whose ratio is
+        // deliberately 0.
         if (f2 == 0.0f && n == 0 && !SkirkCunningHelper.isPickableEnergyAbility(ability)) {
             f2 = 1.5f;
         }
@@ -77,7 +79,7 @@ extends AbilityActionHandler {
             if (player == null && gameEntity2.getScene() != null) {
                 player = gameEntity2.getScene().getHost();
             }
-            // 裂隙回能也可能走 GV；同一吸收去重，只发一次 +8。
+            // Rift energy can also arrive via a GV; dedupe per absorb so only one +8 is granted.
             if (f2 > 0.5f
                     && f2 < 35.0f
                     && SkirkCunningHelper.isPickableEnergyAbility(ability)

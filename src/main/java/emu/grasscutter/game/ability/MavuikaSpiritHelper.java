@@ -21,11 +21,13 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * 玛薇卡战意（特殊能量）与命座辅助。
+ * Mavuika's Fighting Spirit (special energy) and constellation helper.
  *
- * <p>战意：附近角色消耗夜魂值时按 1:1（一命 +25%）转化为战意；附近普攻命中每 0.1s +1.5。
+ * <p>Fighting Spirit: Nightsoul spent by nearby characters converts 1:1 (+25% at C1), and nearby normal
+ * attack hits add 1.5 at most every 0.1s.
  *
- * <p>二命：夜魂加持期间基础攻击力 +200；焚曜之环形态对附近敌人防御 -20%。
+ * <p>C2: +200 base ATK while Nightsoul Blessing is active, and -20% DEF on nearby enemies in the Ring of
+ * Searing Radiance stance.
  */
 public final class MavuikaSpiritHelper {
     public static final int MAVUIKA_ID = 10000106;
@@ -123,7 +125,7 @@ public final class MavuikaSpiritHelper {
 
     /**
      * Optional Avatar.recalcStats hook. After recalc, fight props are rebuilt without our
-     * bonuses — mark them dead and reinject once.
+     * bonuses - mark them dead and reinject once.
      */
     public static void onAfterRecalc(Avatar avatar) {
         if (avatar == null || avatar.getAvatarId() != MAVUIKA_ID) {
