@@ -17,8 +17,12 @@ import org.junit.jupiter.api.Test;
  * skipping a field nobody wanted.
  */
 public final class MainQuestDataPreloadLuaTest {
-    /** Larger than Long.MAX_VALUE (9223372036854775807), which is the case that used to throw. */
-    private static final String OVERSIZED_ID = "18446744073709551615";
+    /**
+     * The value from the startup failure this test exists for: Gson reported "Expected a long but
+     * was 13231653233445166494 at path $.preloadLuaList[0]". It is larger than Long.MAX_VALUE
+     * (9223372036854775807).
+     */
+    private static final String OVERSIZED_ID = "13231653233445166494";
 
     private static String questJson(String... luaIds) {
         return "{\"id\":303,\"series\":99,\"titleTextMapHash\":123456789,"

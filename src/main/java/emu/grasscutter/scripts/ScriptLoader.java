@@ -72,11 +72,16 @@ public class ScriptLoader {
         return Collections.unmodifiableMap(missingScripts);
     }
 
-    /** Initializes the script engine. */
+    /**
+     * Initializes the script engine, once.
+     *
+     * <p>A second call returns rather than throwing. ResourceLoader.loadAll only marks itself done
+     * at the very end, so any resource that fails to parse leaves the flag false while this engine
+     * is already up; the next loadAll then re-entered here and killed the process with "already
+     * initialized", burying the parse error that actually caused it under an unrelated one.
+     */
     public static synchronized void init() throws Exception {
-        if (sm != null) {
-            throw new Exception("Script loader already initialized");
-        }
+        if (sm != null) return;
 
         // Create script engine
         ScriptLoader.sm = new ScriptEngineManager();
