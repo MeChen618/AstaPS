@@ -169,9 +169,11 @@ jar {
         attributes 'Main-Class': 'emu.grasscutter.Grasscutter'
     }
 
-    archiveBaseName = 'LunaGC'
+    archiveBaseName = 'grasscutter'
     if (project.hasProperty('jarFilename')) {
-        archiveFileName = "${jarFilename}.${archiveExtension}"
+        // archiveExtension is a lazy Property, so interpolating it directly stringifies the
+        // property itself and the jar lands under a filename containing its description.
+        archiveFileName = "${jarFilename}.${archiveExtension.get()}"
     }
 
     from {
@@ -190,7 +192,15 @@ jar {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        // GrasscutterTest boots a real server, so it needs MongoDB and the resources pack, which
+        // is gitignored. A fresh checkout cannot run it. Tagging lets CI ask for the tests that
+        // stand on their own (-PexcludeTags=integration) while a plain `gradlew test` still runs
+        // everything for anyone who has a working server checkout.
+        if (project.hasProperty('excludeTags')) {
+            excludeTags project.property('excludeTags').split(',')
+        }
+    }
     setMaxHeapSize('4G')
 }
 
