@@ -49,11 +49,11 @@ public final class DefaultAuthenticators {
 
             var requestData = request.getPasswordRequest();
             assert requestData != null; // This should never be null.
-            if (requestData.account != null
-                    && (requestData.account.contains(PasswordCompat.COMBINER)
-                            || requestData.account.length() >= 64
-                            || requestData.password != null && requestData.password.length() >= 64)) {
-                return PasswordCompat.authenticatePasswordRequest(request);
+            boolean useIntegrationPassword = ACCOUNT.useIntegrationPassword;
+            if (useIntegrationPassword) {
+                // Rewrites requestData.account and requestData.password in place, and nulls both
+                // when the username box did not hold the "account&&password" form.
+                requestData.parse();
             }
 
             boolean successfulLogin = false;
@@ -63,8 +63,10 @@ public final class DefaultAuthenticators {
 
             // Get account from database.
             Account account = DatabaseHelper.getAccountByName(requestData.account);
-            // Check if account exists.
-            if (account == null && ACCOUNT.autoCreate) {
+            // Check if account exists. Never auto-create on the integration path: there the whole
+            // credential comes from one free-text box, so a typo would silently make a new account
+            // instead of reporting a failed login.
+            if (account == null && ACCOUNT.autoCreate && !useIntegrationPassword) {
                 // This account has been created AUTOMATICALLY. There will be no permissions added.
                 account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
 
@@ -140,13 +142,6 @@ public final class DefaultAuthenticators {
 
             var requestData = request.getPasswordRequest();
             assert requestData != null; // This should never be null.
-            if (requestData.account != null
-                    && (requestData.account.contains(PasswordCompat.COMBINER)
-                            || requestData.account.length() >= 64
-                            || requestData.password != null && requestData.password.length() >= 64)) {
-                return PasswordCompat.authenticatePasswordRequest(request);
-            }
-
             boolean successfulLogin = false;
             String address = Utils.address(request.getContext());
             String responseMessage = translate("messages.dispatch.account.username_error");
