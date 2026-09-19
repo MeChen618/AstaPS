@@ -237,13 +237,6 @@ public class ConfigContainer {
         public String[] defaultPermissions = {};
         public int maxPlayer = -1;
 
-        /**
-         * Serve /account/register, where anyone who can reach the HTTP port may create an account.
-         *
-         * <p>Off by default. Upstream serves it unconditionally, which on a server exposed to the
-         * internet is an open account factory.
-         */
-        public boolean enableWebRegistration = false;
     }
 
     /* Server options. */

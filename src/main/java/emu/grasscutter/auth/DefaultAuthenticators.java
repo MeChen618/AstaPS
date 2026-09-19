@@ -61,14 +61,47 @@ public final class DefaultAuthenticators {
             String responseMessage = translate("messages.dispatch.account.username_error");
             String loggerMessage = "";
 
+            // Nothing usable came out of the username box. Stop here: signing in registers an
+            // unknown name, so falling through would try to register a null one.
+            if (requestData.account == null || requestData.account.isBlank()) {
+                response.retcode = -201;
+                response.message =
+                        useIntegrationPassword
+                                ? "Enter your account and password in the username box as"
+                                        + " account&&password."
+                                : responseMessage;
+                Grasscutter.getLogger()
+                        .info("[Dispatch] Client {} sent no usable account name.", address);
+                return response;
+            }
+
+            if (useIntegrationPassword
+                    && (requestData.password == null || requestData.password.isEmpty())) {
+                response.retcode = -201;
+                response.message = "The password half of account&&password is empty.";
+                Grasscutter.getLogger()
+                        .info("[Dispatch] Client {} sent an empty password half.", address);
+                return response;
+            }
+
             // Get account from database.
             Account account = DatabaseHelper.getAccountByName(requestData.account);
-            // Check if account exists. Never auto-create on the integration path: there the whole
-            // credential comes from one free-text box, so a typo would silently make a new account
-            // instead of reporting a failed login.
-            if (account == null && ACCOUNT.autoCreate && !useIntegrationPassword) {
+            // Signing in with a name nobody holds registers it, so there is no separate sign-up
+            // step: the launcher's login box is the sign-up form. autoCreate turns this off for a
+            // closed server.
+            //
+            // The cost is that a mistyped username registers that typo rather than reporting a bad
+            // login - unavoidable when the credential comes from one free-text box, and the reason
+            // the password is checked below for names that already exist.
+            if (account == null && ACCOUNT.autoCreate) {
                 // This account has been created AUTOMATICALLY. There will be no permissions added.
-                account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
+                account =
+                        useIntegrationPassword
+                                // The password came in with the name, so store it now, hashed. The
+                                // other path has none to store and locks one in on first sign-in.
+                                ? DatabaseHelper.createAccountWithHashedPassword(
+                                        requestData.account, requestData.password, null)
+                                : DatabaseHelper.createAccountWithUid(requestData.account, 0);
 
                 // Check if the account was created successfully.
                 if (account == null) {
