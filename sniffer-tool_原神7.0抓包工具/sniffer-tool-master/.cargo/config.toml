@@ -1,5 +1,0 @@
-# ys-kcp 依赖使用了 `#![feature(stmt_expr_attributes)]`，
-# 需要在 stable 工具链上开启 RUSTC_BOOTSTRAP 才能编译。
-# 若日后 ys-kcp 修复该问题，可删除本文件。
-[env]
-RUSTC_BOOTSTRAP = "1"
