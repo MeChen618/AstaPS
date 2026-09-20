@@ -227,7 +227,7 @@ public final class DPSReactionHelper {
             }
             propagateMoonTagsToDamageAliases();
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "[DPS-REACT] attackTag index: {} abilities from {} files",
                             ABILITY_ATTACK_TAGS.size(),
                             files);

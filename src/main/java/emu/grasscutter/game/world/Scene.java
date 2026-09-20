@@ -469,8 +469,10 @@ public class Scene {
         ElementType attackType = ElementType.getTypeByValue(result.getElementType());
 
         if (target == null) {
-            Grasscutter.getLogger().info("handleAttack: target not found defenseId={} attackerId={} damage={}", result.getDefenseId(), result.getAttackerId(), result.getDamage());
-            Grasscutter.getLogger().info("handleAttack unknownFields (defense_id = the monster entityId): {}", result.getUnknownFields().toString().replaceAll("\\s+", " "));
+            // Ordinary: the client keeps swinging at something the server already removed. One
+            // line per hit, and nobody acts on any of them.
+            Grasscutter.getLogger().debug("handleAttack: target not found defenseId={} attackerId={} damage={}", result.getDefenseId(), result.getAttackerId(), result.getDamage());
+            Grasscutter.getLogger().debug("handleAttack unknownFields (defense_id = the monster entityId): {}", result.getUnknownFields().toString().replaceAll("\\s+", " "));
             return;
         }
         if (target instanceof EntityAvatar) {

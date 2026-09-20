@@ -140,7 +140,7 @@ public final class ReliquaryDustSystem {
             return;
         }
         Grasscutter.getLogger()
-                .info("ReliquaryDust post-reshape RECV uid={} opcode={}", player.getUid(), opcode);
+                .debug("ReliquaryDust post-reshape RECV uid={} opcode={}", player.getUid(), opcode);
     }
 
     /** Min guaranteed upgrades for chosen lines by effect tier (1=normal,2=high,3=prophecy). */
@@ -202,13 +202,13 @@ public final class ReliquaryDustSystem {
         if (st.pending != null) {
             abandonPendingKeepOld(player, st);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "ReliquaryDust abandon-pending uid={} (inventory touch)",
                             player.getUid());
         }
         sendClearCandidateNotify(player);
         Grasscutter.getLogger()
-                .info("ReliquaryDust force-clear uid={}", player.getUid());
+                .debug("ReliquaryDust force-clear uid={}", player.getUid());
     }
 
     /** Restore old append if needed and drop server pending without adopting new. */
@@ -249,7 +249,7 @@ public final class ReliquaryDustSystem {
         if (selectRet != 0) {
             player.sendPacket(new PacketReliquaryDustSelectRsp(selectRet, hdr));
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "ReliquaryDust send-fail uid={} ret={} hdrLen={}",
                             player.getUid(),
                             selectRet,
@@ -274,7 +274,7 @@ public final class ReliquaryDustSystem {
                     st.pending.dustConsumed = false;
                     syncDustItem(player);
                     Grasscutter.getLogger()
-                            .info(
+                            .debug(
                                     "ReliquaryDust probe-refund uid={} amount={}",
                                     player.getUid(),
                                     st.pending.cost);
@@ -287,7 +287,7 @@ public final class ReliquaryDustSystem {
             retField = probe[1];
             RECV_LOG_UNTIL.put(player.getUid(), System.currentTimeMillis() + 8_000L);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "ReliquaryDust RspProbe uid={} idx={}/{} opcode={} retField={} guid={} hdrLen={} advance={}",
                             player.getUid(),
                             idx % SELECT_RSP_PROBES.length,
@@ -302,7 +302,7 @@ public final class ReliquaryDustSystem {
         player.sendPacket(new PacketReliquaryDustSelectRsp(opcode, retField, 0, hdr, guid));
         sendDataNotify(player);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust send-success uid={} opcode={} pending={} progress={} hdrLen={}",
                         player.getUid(),
                         opcode,
@@ -337,7 +337,7 @@ public final class ReliquaryDustSystem {
         if (st.pending != null && (guid == 0L || st.pending.guid == guid)) {
             ensurePendingShowsDiff(player, st.pending);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "ReliquaryDust select exist-candidate uid={} guid={} pending={}",
                             player.getUid(),
                             st.focusGuid,
@@ -349,7 +349,7 @@ public final class ReliquaryDustSystem {
         }
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust select/reshape uid={} guid={} chosen={} seq={} hdrLen={} hex={}",
                         player.getUid(),
                         st.focusGuid,
@@ -372,7 +372,7 @@ public final class ReliquaryDustSystem {
         Map<Integer, List<Object>> fields = ProtoWire.parse(payload);
         List<Integer> avatarIds = ProtoWire.asUint32List(fields.get(3));
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust ignore-non-dust-21870 uid={} avatarIds={} hex={}",
                         player.getUid(),
                         avatarIds,
@@ -384,7 +384,7 @@ public final class ReliquaryDustSystem {
     /** C2S 26587 - companion ping on confirm; always ack. */
     public static void handleCompanionReq(Player player, byte[] payload) {
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust companion uid={} hex={}",
                         player.getUid(),
                         toHex(payload));
@@ -420,7 +420,7 @@ public final class ReliquaryDustSystem {
         }
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust confirm uid={} op={} guid={} adopt={} choice={} fields={} hex={}",
                         player.getUid(),
                         opcode,
@@ -438,7 +438,7 @@ public final class ReliquaryDustSystem {
         // Empty 25355 only here, never on login - clears the client unfinished-reshape state.
         sendClearCandidateNotify(player);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust confirm-done uid={} ret={} pendingCleared=true",
                         player.getUid(),
                         ret);
@@ -463,7 +463,7 @@ public final class ReliquaryDustSystem {
         player.sendPacket(new PacketStoreItemChangeNotify(relic));
         pending.applied = false;
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust restored old append for compare uid={} guid={}",
                         player.getUid(),
                         pending.guid);
@@ -545,7 +545,7 @@ public final class ReliquaryDustSystem {
         }
         syncDustItem(player);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust consumed uid={} cost={} before={} after={}",
                         player.getUid(),
                         cost,
@@ -575,7 +575,7 @@ public final class ReliquaryDustSystem {
         ensurePendingShowsDiff(player, pending);
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "ReliquaryDust reshape uid={} guid={} tier={} guarantee={} cost={} progress={} old={} new={}",
                         player.getUid(),
                         guid,

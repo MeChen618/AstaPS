@@ -45,7 +45,7 @@ public final class AchievementTriggerHelper {
             }
             byTrigger = map;
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "AchievementTriggerHelper indexed {} trigger types ({} achievements)",
                             map.size(),
                             map.values().stream().mapToInt(List::size).sum());
@@ -145,7 +145,7 @@ public final class AchievementTriggerHelper {
         try {
             achievements.progress(best.getId(), value);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "AchievementTriggerHelper uid={} {} progress={} (dmg/max) achievement={}",
                             player.getUid(),
                             type,
