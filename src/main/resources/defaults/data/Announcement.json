@@ -3,20 +3,10 @@
     "templateId": 1,
     "type": "CENTER",
     "frequency": 1,
-    "content": "Welcome to Grasscutter PS!",
-    "beginTime": "2022-06-01T00:00:00+08:00",
-    "endTime": "2022-06-01T00:08:00+08:00",
-    "tick": false,
-    "interval": 1
-  },
-  {
-    "templateId": 2,
-    "type": "COUNTDOWN",
-    "frequency": 1,
-    "content": "Welcome to Grasscutter PS!",
-    "beginTime": "2022-06-01T00:00:00+08:00",
-    "endTime": "2022-06-01T00:08:00+08:00",
-    "tick": false,
-    "interval": 1
+    "content": "<color=#ff7ac8>W</color><color=#ff7cc9>e</color><color=#ff7fca>l</color><color=#ff81cb>c</color><color=#ff84cc>o</color><color=#ff86cd>m</color><color=#ff89ce>e</color> <color=#ff8ed0>t</color><color=#ff90d1>o</color> <color=#ff95d3>A</color><color=#ff98d4>s</color><color=#ff9ad5>t</color><color=#ff9cd6>a</color><color=#ff9fd7>P</color><color=#ffa1d8>S</color> <color=#ffa6da>-</color> <color=#ffabdc>t</color><color=#ffaedd>h</color><color=#ffb0de>i</color><color=#ffb3df>s</color> <color=#ffb8e1>s</color><color=#ffbae2>e</color><color=#ffbce4>r</color><color=#ffbfe5>v</color><color=#ffc1e6>e</color><color=#ffc4e7>r</color> <color=#ffc9e9>i</color><color=#ffcbea>s</color> <color=#ffd0ec>f</color><color=#ffd3ed>r</color><color=#ffd5ee>e</color><color=#ffd8ef>e</color> <color=#ffddf1>a</color><color=#ffdff2>n</color><color=#ffe1f3>d</color> <color=#ffe6f5>o</color><color=#ffe9f6>p</color><color=#ffebf7>e</color><color=#ffeef8>n</color> <color=#fff3fa>s</color><color=#fff5fb>o</color><color=#fff8fc>u</color><color=#fffafd>r</color><color=#fffdfe>c</color><color=#ffffff>e</color>",
+    "beginTime": "2020-01-01T00:00:00+08:00",
+    "endTime": "2040-01-01T00:00:00+08:00",
+    "tick": true,
+    "interval": 30
   }
 ]
