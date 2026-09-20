@@ -1840,6 +1840,80 @@ public class ScriptLib {
         return -1;
     }
 
+    /**
+     * The scene host's uid, or 0 when there is no scene or no host yet.
+     *
+     * <p>A group script calling a function this class does not define throws inside Lua, which
+     * takes the whole group's script down with it - so an unimplemented call is not a no-op, it is
+     * a group that never loads. The stubs below exist for that reason: they answer the call and
+     * return a harmless value, rather than leaving the name undefined.
+     */
+    public int GetSceneOwnerUid() {
+        var manager = this.sceneScriptManager.getIfExists();
+        if (manager == null || manager.getScene() == null || manager.getScene().getHost() == null) {
+            return 0;
+        }
+
+        return manager.getScene().getHost().getUid();
+    }
+
+    public int GetDeathZoneStatus() {
+        logger.debug("[LUA] Call fallback GetDeathZoneStatus");
+        return 0;
+    }
+
+    public int GetDeathZoneStatus(int configId) {
+        logger.debug("[LUA] Call fallback GetDeathZoneStatus with {}", configId);
+        return 0;
+    }
+
+    public int GetDeathZoneStatus(int groupId, int configId) {
+        logger.debug("[LUA] Call fallback GetDeathZoneStatus with {},{}", groupId, configId);
+        return 0;
+    }
+
+    public int SetPlayerEyePoint(int[] uidList, int groupId, int configId, int duration) {
+        logger.debug(
+                "[LUA] Call fallback SetPlayerEyePoint with {},{},{}", groupId, configId, duration);
+        return 0;
+    }
+
+    public int SetPlayerEyePoint(int uid, int groupId, int configId, int duration) {
+        logger.debug(
+                "[LUA] Call fallback SetPlayerEyePoint with {},{},{},{}",
+                uid,
+                groupId,
+                configId,
+                duration);
+        return 0;
+    }
+
+    public int TrySetPlayerEyePoint(int[] uidList, int groupId, int configId, int duration) {
+        logger.debug(
+                "[LUA] Call fallback TrySetPlayerEyePoint with {},{},{}", groupId, configId, duration);
+        return 0;
+    }
+
+    public int TrySetPlayerEyePoint(int uid, int groupId, int configId, int duration) {
+        logger.debug(
+                "[LUA] Call fallback TrySetPlayerEyePoint with {},{},{},{}",
+                uid,
+                groupId,
+                configId,
+                duration);
+        return 0;
+    }
+
+    public int SetPlayerGroupVisionType(int[] uidList, int[] visionTypeList) {
+        logger.debug("[LUA] Call fallback SetPlayerGroupVisionType");
+        return 0;
+    }
+
+    public int SetPlayerGroupVisionType(int[] uidList, int visionType) {
+        logger.debug("[LUA] Call fallback SetPlayerGroupVisionType with {}", visionType);
+        return 0;
+    }
+
     public int[] GetGatherConfigIdList() {
         logger.debug("[LUA] Call GetGatherConfigIdList");
         EntityGadget gadget = getCurrentEntityGadget();

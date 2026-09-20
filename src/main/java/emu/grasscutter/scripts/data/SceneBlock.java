@@ -46,6 +46,17 @@ public class SceneBlock {
     }
 
     public SceneBlock load(int sceneId, Bindings bindings) {
+        // SceneMeta is cached per scene id and shared by every block in that scene, so these are
+        // the same bindings object for all of them - and the script writes its groups into it.
+        // Two blocks evaluating at once therefore read each other's groups, and whichever loses
+        // the race keeps a set of groups that belong somewhere else. Serialising on the bindings
+        // is what makes "evaluate, then read groups" one step.
+        synchronized (bindings) {
+            return this.loadLocked(sceneId, bindings);
+        }
+    }
+
+    private SceneBlock loadLocked(int sceneId, Bindings bindings) {
         if (this.loaded) {
             return this;
         }
