@@ -25,7 +25,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     private int loadConfig() {
         try {
             List<AnnounceConfigItem> announceConfigItems =
-                    DataLoader.loadList("Announcement.json", AnnounceConfigItem.class);
+                    DataLoader.loadBundledList("Announcement.json", AnnounceConfigItem.class);
 
             announceConfigItemMap.clear();
             announceConfigItems.forEach(i -> announceConfigItemMap.put(i.getTemplateId(), i));
@@ -91,11 +91,21 @@ public class AnnouncementSystem extends BaseGameSystem {
                     .setBeginTime(Utils.getCurrentSeconds() + 1)
                     .setEndTime(Utils.getCurrentSeconds() + 10);
 
-            if (type == AnnounceType.CENTER) {
-                proto.setCenterSystemFrequency(frequency); // center_system_text unnamed in 7.0
-            } else {
-                proto.setCountDownFrequency(frequency);
-            }
+            // The text was never put on the wire at all: the client was handed a config id and
+            // three empty strings, and went looking for content that does not exist.
+            //
+            // 7.0 renumbered this message and left the three string fields unnamed. Between them
+            // they are the centre-screen text, the countdown text and the dungeon-entry text -
+            // which is which is not recoverable from the proto dump, so all three carry the
+            // content. Whichever one the client reads for this announce type, it finds the text.
+            var text = content == null ? "" : content;
+            proto.setENGJGCGFMMM(text).setLHMGGPMCDCN(text).setKFAGDOEAIPP(text);
+
+            // The two remaining uint32 fields are unnamed in 7.0 as well, and were being fed
+            // `frequency` on the assumption that they are the repeat intervals. A wrong value in
+            // an unidentified field is a far better explanation for a client crash than an empty
+            // string, and the server does not need them: AnnouncementTask already re-broadcasts
+            // on the config's own `interval`.
 
             return proto;
         }

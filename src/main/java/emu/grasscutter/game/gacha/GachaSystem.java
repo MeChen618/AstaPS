@@ -69,7 +69,7 @@ public class GachaSystem extends BaseGameSystem {
         int autoScheduleId = 1000;
         int autoSortId = 9000;
         try {
-            var banners = DataLoader.loadTableToList("Banners", GachaBanner.class);
+            var banners = DataLoader.loadBundledTableToList("Banners", GachaBanner.class);
             if (!banners.isEmpty()) {
                 for (var banner : banners) {
                     banner.onLoad();
