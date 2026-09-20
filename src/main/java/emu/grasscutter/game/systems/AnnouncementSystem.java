@@ -25,7 +25,7 @@ public class AnnouncementSystem extends BaseGameSystem {
     private int loadConfig() {
         try {
             List<AnnounceConfigItem> announceConfigItems =
-                    DataLoader.loadList("Announcement.json", AnnounceConfigItem.class);
+                    DataLoader.loadBundledList("Announcement.json", AnnounceConfigItem.class);
 
             announceConfigItemMap.clear();
             announceConfigItems.forEach(i -> announceConfigItemMap.put(i.getTemplateId(), i));
