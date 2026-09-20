@@ -19,7 +19,7 @@ public class HandlerAvatarEscoffierSkillCookReq extends PacketHandler {
             return;
         }
         Grasscutter.getLogger()
-                .info("[EscoffierCook] recv SkillCookReq uid={}", player.getUid());
+                .debug("[EscoffierCook] recv SkillCookReq uid={}", player.getUid());
         EscoffierSkillCookHelper.handleCookRequest(player);
     }
 }

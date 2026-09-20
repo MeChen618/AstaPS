@@ -21,6 +21,10 @@ import java.util.*;
  * be fought, for boot logs and for the non-rotating "newest playable" fallback.
  */
 public class TowerSystem extends BaseGameSystem {
+    /** Schedule ids already reported as missing, so each is named once rather than per lookup. */
+    private static final java.util.Set<Integer> MISSING_SCHEDULES_REPORTED =
+            java.util.concurrent.ConcurrentHashMap.newKeySet();
+
 
     /** Daily rotation rolls over at this hour (server local time). */
     private static final int ROTATION_HOUR = 4;
@@ -241,8 +245,12 @@ public class TowerSystem extends BaseGameSystem {
         // check does not understand still opens the abyss rather than closing it entirely.
         var fallback = GameData.getTowerScheduleDataMap().get(towerScheduleConfig.getScheduleId());
         if (fallback == null) {
-            Grasscutter.getLogger()
-                    .error(
+            // The resource pack does not change while the server runs, so this is the same
+            // complaint every time anyone opens the abyss - twelve lines in a ten-minute log.
+            var logger = Grasscutter.getLogger();
+            var firstTime = MISSING_SCHEDULES_REPORTED.add(towerScheduleConfig.getScheduleId());
+            (firstTime ? logger.atError() : logger.atDebug())
+                    .log(
                             "Could not get current tower schedule data by schedule id {}, please check your resource files",
                             towerScheduleConfig.getScheduleId());
         }

@@ -258,7 +258,7 @@ public class EnergyManager extends BasePlayerManager {
         this.pendingBurstMs = now;
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[Energy] burst pending skillId={} cost={} avatarId={} (wait ability confirm)",
                         skillId,
                         cost,
@@ -307,7 +307,7 @@ public class EnergyManager extends BasePlayerManager {
         this.lastBurstCastMs = now;
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[Energy] burst consume (confirmed) skillId={} cost={} avatarId={}",
                         skillId,
                         cost,
@@ -333,7 +333,7 @@ public class EnergyManager extends BasePlayerManager {
         }
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[Energy] burst pending expired (no ability confirm) skillId={} cost={} guid={}",
                         this.pendingBurstSkillId,
                         this.pendingBurstCost,

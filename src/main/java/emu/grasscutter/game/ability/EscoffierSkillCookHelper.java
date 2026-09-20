@@ -120,7 +120,7 @@ public final class EscoffierSkillCookHelper {
         sendDataNotify(player, state);
         LAST_UNLOCK_NOTIFY_MS.put(uid, now);
         Grasscutter.getLogger()
-                .info("[EscoffierCook] uid={} unlock DataNotify remain={}/{}", uid, remaining, WEEKLY_MAX);
+                .debug("[EscoffierCook] uid={} unlock DataNotify remain={}/{}", uid, remaining, WEEKLY_MAX);
     }
 
     /** Hold-to-cook skill: drop server-side shell pots, open a new session, wait for the client's SkillCookReq. */
@@ -132,7 +132,7 @@ public final class EscoffierSkillCookHelper {
         long session = beginCookSession(player.getUid());
         // No DataNotify and no server-side Progress, matching the path where the client owns the charge bar.
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[EscoffierCook] hold skill {} uid={} session={} waiting SkillCookReq (client bar)",
                         HOLD_COOK_SKILL_ID,
                         player.getUid(),
@@ -158,7 +158,7 @@ public final class EscoffierSkillCookHelper {
             COOK_PENDING.put(uid, true);
         }
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[EscoffierCook] uid={} cook gadget {} entity={} session={}",
                         uid,
                         COOK_GADGET_ID,
@@ -194,7 +194,7 @@ public final class EscoffierSkillCookHelper {
             if (ownedByPlayer) {
                 scene.removeEntity(gadget);
                 Grasscutter.getLogger()
-                        .info(
+                        .debug(
                                 "[EscoffierCook] uid={} purged server cook shell entity={}",
                                 player.getUid(),
                                 gadget.getId());
@@ -222,7 +222,7 @@ public final class EscoffierSkillCookHelper {
         // Keep COOK_PENDING and keep waiting for SkillCookReq; only the entity id is cleared here.
         ACTIVE_COOK_GADGET.remove(uid);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[EscoffierCook] cook gadget {} destroyed uid={} session={} fallback in {}s (pending kept)",
                         COOK_GADGET_ID,
                         uid,
@@ -253,12 +253,12 @@ public final class EscoffierSkillCookHelper {
             // Ignore stray requests when no pot was ever opened in this process.
             if (!COOK_PENDING.get(uid) && COOK_SESSION.get(uid) == 0L && LAST_GRANT_MS.get(uid) == 0L) {
                 Grasscutter.getLogger()
-                        .info("[EscoffierCook] uid={} SkillCookReq ignored (no cook started)", uid);
+                        .debug("[EscoffierCook] uid={} SkillCookReq ignored (no cook started)", uid);
                 return;
             }
             session = beginCookSession(uid);
             Grasscutter.getLogger()
-                    .info("[EscoffierCook] uid={} SkillCookReq new session={} (reuse pot)", uid, session);
+                    .debug("[EscoffierCook] uid={} SkillCookReq new session={} (reuse pot)", uid, session);
         }
         handleCookRequest(player, "SkillCookReq", session);
     }
@@ -271,7 +271,7 @@ public final class EscoffierSkillCookHelper {
 
         if (session != 0L && GRANTED_SESSION.get(uid) == session) {
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "[EscoffierCook] uid={} via={} skipped (session {} already granted)",
                             uid,
                             source,
@@ -282,7 +282,7 @@ public final class EscoffierSkillCookHelper {
         long now = System.currentTimeMillis();
         if (LAST_GRANT_MS.get(uid) + GRANT_ICD_MS > now) {
             Grasscutter.getLogger()
-                    .info("[EscoffierCook] uid={} via={} skipped (icd)", uid, source);
+                    .debug("[EscoffierCook] uid={} via={} skipped (icd)", uid, source);
             return;
         }
         ensureStoreLoaded();
@@ -297,7 +297,7 @@ public final class EscoffierSkillCookHelper {
         refreshWeekIfNeeded(state);
         if (state.used >= WEEKLY_MAX) {
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "[EscoffierCook] uid={} weekly limit reached ({}/{})",
                             player.getUid(),
                             state.used,
@@ -351,14 +351,14 @@ public final class EscoffierSkillCookHelper {
         } else {
             long next = beginCookSession(uid);
             Grasscutter.getLogger()
-                    .info(
+                    .debug(
                             "[EscoffierCook] uid={} armed reuse cycle session={} (no tracked entity)",
                             uid,
                             next);
         }
 
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[EscoffierCook] uid={} via={} session={} granted item={} x{}{} remaining={}/{}",
                         player.getUid(),
                         source,
@@ -388,7 +388,7 @@ public final class EscoffierSkillCookHelper {
         }
         long next = beginCookSession(uid);
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[EscoffierCook] uid={} armed reuse cycle session={} entity={}",
                         uid,
                         next,
@@ -441,7 +441,7 @@ public final class EscoffierSkillCookHelper {
                 EscoffierSkillCookProto.buildCookDataNotify(
                         state.used, WEEKLY_MAX, nextResetEpochSec()));
         Grasscutter.getLogger()
-                .info(
+                .debug(
                         "[EscoffierCook] uid={} dataNotify remain={}/{} (minimal 2-field)",
                         player.getUid(),
                         remaining,
@@ -506,7 +506,7 @@ public final class EscoffierSkillCookHelper {
                 RUNTIME.putAll(loaded);
             }
             Grasscutter.getLogger()
-                    .info("[EscoffierCook] loaded {} account cook records", RUNTIME.size());
+                    .debug("[EscoffierCook] loaded {} account cook records", RUNTIME.size());
         } catch (Exception e) {
             Grasscutter.getLogger()
                     .warn("[EscoffierCook] failed to load store {}: {}", storePath, e.toString());
