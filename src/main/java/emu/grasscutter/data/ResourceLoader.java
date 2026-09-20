@@ -818,7 +818,16 @@ public final class ResourceLoader {
             stream.forEach(
                     path -> {
                         try {
-                            targetMap.putAll(JsonUtils.loadToMap(path, String.class, configClass));
+                            // An empty or malformed file parses to null rather than an empty map,
+                            // and putAll(null) is what actually threw - one such file used to be
+                            // reported as a failure of the whole folder's class.
+                            var entries = JsonUtils.loadToMap(path, String.class, configClass);
+                            if (entries == null) {
+                                Grasscutter.getLogger()
+                                        .debug("No {} entries in {}.", className, path.toString());
+                                return;
+                            }
+                            targetMap.putAll(entries);
                         } catch (Exception e) {
                             Grasscutter.getLogger()
                                     .error("failed to load {} entries for {}", className, path.toString(), e);

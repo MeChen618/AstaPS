@@ -12,6 +12,7 @@ import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.world.Scene;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import emu.grasscutter.utils.FileUtils;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +26,13 @@ import java.util.concurrent.ThreadLocalRandom;
  * never land without this.
  */
 public final class InvestigationMonsterDropHelper {
+    // Resolved through FileUtils, so these follow the configured resource folder. Hardcoding
+    // "resources" meant every server that names its folder anything else - Resources-main, say -
+    // failed to read these and logged a stack trace on each monster kill.
     private static final Path INVEST_FILE =
-            Path.of("resources", "ExcelBinOutput", "InvestigationMonsterConfigData.json");
+            FileUtils.getExcelPath("InvestigationMonsterConfigData.json");
     private static final Path PREVIEW_FILE =
-            Path.of("resources", "ExcelBinOutput", "RewardPreviewExcelConfigData.json");
+            FileUtils.getExcelPath("RewardPreviewExcelConfigData.json");
 
     /** monsterId -> material entries (expected counts from preview). */
     private static volatile Map<Integer, List<MatRate>> byMonsterId;

@@ -24,6 +24,13 @@ public class ActivityData extends GameResource {
 
     @Override
     public void onLoad() {
+        // An activity with no watchers at all is ordinary. Throwing on it took every activity
+        // in the file down with it.
+        if (this.watcherId == null) {
+            this.watcherDataList = List.of();
+            return;
+        }
+
         this.watcherDataList =
                 watcherId.stream()
                         .map(item -> GameData.getActivityWatcherDataMap().get(item.intValue()))

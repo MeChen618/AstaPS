@@ -742,15 +742,11 @@ public final class OfferingHelper {
                 return;
             }
             try {
+                // Same as everywhere else: follow the configured resource folder rather than
+                // assuming it is called "resources".
                 java.nio.file.Path p =
-                        java.nio.file.Path.of(
-                                "resources/ExcelBinOutput/OfferingLevelUpExcelConfigData.json");
-                if (!java.nio.file.Files.exists(p)) {
-                    p =
-                            java.nio.file.Path.of(
-                                    System.getProperty("user.dir"),
-                                    "resources/ExcelBinOutput/OfferingLevelUpExcelConfigData.json");
-                }
+                        emu.grasscutter.utils.FileUtils.getExcelPath(
+                                "OfferingLevelUpExcelConfigData.json");
                 String json = java.nio.file.Files.readString(p);
                 // Lightweight parse that does not depend on Gson field-name differences.
                 var arr = new com.google.gson.JsonParser().parse(json).getAsJsonArray();
