@@ -19,16 +19,16 @@ public final class EMPEPKOOJHPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 GMNPPBLIBBG = 1;</code>
-     * @return The gMNPPBLIBBG.
-     */
-    int getGMNPPBLIBBG();
-
-    /**
      * <code>uint32 CCPFJLGOJDL = 2;</code>
      * @return The cCPFJLGOJDL.
      */
     int getCCPFJLGOJDL();
+
+    /**
+     * <code>uint32 GMNPPBLIBBG = 1;</code>
+     * @return The gMNPPBLIBBG.
+     */
+    int getGMNPPBLIBBG();
 
     /**
      * <code>uint32 BIFMGDOKBFC = 3;</code>
@@ -37,6 +37,10 @@ public final class EMPEPKOOJHPOuterClass {
     int getBIFMGDOKBFC();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EMPEPKOOJHP}
    */
   public static final class EMPEPKOOJHP extends
@@ -128,17 +132,6 @@ public final class EMPEPKOOJHPOuterClass {
               emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP.class, emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP.Builder.class);
     }
 
-    public static final int GMNPPBLIBBG_FIELD_NUMBER = 1;
-    private int gMNPPBLIBBG_;
-    /**
-     * <code>uint32 GMNPPBLIBBG = 1;</code>
-     * @return The gMNPPBLIBBG.
-     */
-    @java.lang.Override
-    public int getGMNPPBLIBBG() {
-      return gMNPPBLIBBG_;
-    }
-
     public static final int CCPFJLGOJDL_FIELD_NUMBER = 2;
     private int cCPFJLGOJDL_;
     /**
@@ -148,6 +141,17 @@ public final class EMPEPKOOJHPOuterClass {
     @java.lang.Override
     public int getCCPFJLGOJDL() {
       return cCPFJLGOJDL_;
+    }
+
+    public static final int GMNPPBLIBBG_FIELD_NUMBER = 1;
+    private int gMNPPBLIBBG_;
+    /**
+     * <code>uint32 GMNPPBLIBBG = 1;</code>
+     * @return The gMNPPBLIBBG.
+     */
+    @java.lang.Override
+    public int getGMNPPBLIBBG() {
+      return gMNPPBLIBBG_;
     }
 
     public static final int BIFMGDOKBFC_FIELD_NUMBER = 3;
@@ -220,10 +224,10 @@ public final class EMPEPKOOJHPOuterClass {
       }
       emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP other = (emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP) obj;
 
-      if (getGMNPPBLIBBG()
-          != other.getGMNPPBLIBBG()) return false;
       if (getCCPFJLGOJDL()
           != other.getCCPFJLGOJDL()) return false;
+      if (getGMNPPBLIBBG()
+          != other.getGMNPPBLIBBG()) return false;
       if (getBIFMGDOKBFC()
           != other.getBIFMGDOKBFC()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,10 +241,10 @@ public final class EMPEPKOOJHPOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GMNPPBLIBBG_FIELD_NUMBER;
-      hash = (53 * hash) + getGMNPPBLIBBG();
       hash = (37 * hash) + CCPFJLGOJDL_FIELD_NUMBER;
       hash = (53 * hash) + getCCPFJLGOJDL();
+      hash = (37 * hash) + GMNPPBLIBBG_FIELD_NUMBER;
+      hash = (53 * hash) + getGMNPPBLIBBG();
       hash = (37 * hash) + BIFMGDOKBFC_FIELD_NUMBER;
       hash = (53 * hash) + getBIFMGDOKBFC();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -339,6 +343,10 @@ public final class EMPEPKOOJHPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EMPEPKOOJHP}
      */
     public static final class Builder extends
@@ -376,9 +384,9 @@ public final class EMPEPKOOJHPOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gMNPPBLIBBG_ = 0;
-
         cCPFJLGOJDL_ = 0;
+
+        gMNPPBLIBBG_ = 0;
 
         bIFMGDOKBFC_ = 0;
 
@@ -408,8 +416,8 @@ public final class EMPEPKOOJHPOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP buildPartial() {
         emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP result = new emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP(this);
-        result.gMNPPBLIBBG_ = gMNPPBLIBBG_;
         result.cCPFJLGOJDL_ = cCPFJLGOJDL_;
+        result.gMNPPBLIBBG_ = gMNPPBLIBBG_;
         result.bIFMGDOKBFC_ = bIFMGDOKBFC_;
         onBuilt();
         return result;
@@ -459,11 +467,11 @@ public final class EMPEPKOOJHPOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP other) {
         if (other == emu.grasscutter.net.proto.EMPEPKOOJHPOuterClass.EMPEPKOOJHP.getDefaultInstance()) return this;
-        if (other.getGMNPPBLIBBG() != 0) {
-          setGMNPPBLIBBG(other.getGMNPPBLIBBG());
-        }
         if (other.getCCPFJLGOJDL() != 0) {
           setCCPFJLGOJDL(other.getCCPFJLGOJDL());
+        }
+        if (other.getGMNPPBLIBBG() != 0) {
+          setGMNPPBLIBBG(other.getGMNPPBLIBBG());
         }
         if (other.getBIFMGDOKBFC() != 0) {
           setBIFMGDOKBFC(other.getBIFMGDOKBFC());
@@ -497,37 +505,6 @@ public final class EMPEPKOOJHPOuterClass {
         return this;
       }
 
-      private int gMNPPBLIBBG_ ;
-      /**
-       * <code>uint32 GMNPPBLIBBG = 1;</code>
-       * @return The gMNPPBLIBBG.
-       */
-      @java.lang.Override
-      public int getGMNPPBLIBBG() {
-        return gMNPPBLIBBG_;
-      }
-      /**
-       * <code>uint32 GMNPPBLIBBG = 1;</code>
-       * @param value The gMNPPBLIBBG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGMNPPBLIBBG(int value) {
-        
-        gMNPPBLIBBG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GMNPPBLIBBG = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGMNPPBLIBBG() {
-        
-        gMNPPBLIBBG_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int cCPFJLGOJDL_ ;
       /**
        * <code>uint32 CCPFJLGOJDL = 2;</code>
@@ -555,6 +532,37 @@ public final class EMPEPKOOJHPOuterClass {
       public Builder clearCCPFJLGOJDL() {
         
         cCPFJLGOJDL_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gMNPPBLIBBG_ ;
+      /**
+       * <code>uint32 GMNPPBLIBBG = 1;</code>
+       * @return The gMNPPBLIBBG.
+       */
+      @java.lang.Override
+      public int getGMNPPBLIBBG() {
+        return gMNPPBLIBBG_;
+      }
+      /**
+       * <code>uint32 GMNPPBLIBBG = 1;</code>
+       * @param value The gMNPPBLIBBG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGMNPPBLIBBG(int value) {
+        
+        gMNPPBLIBBG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GMNPPBLIBBG = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGMNPPBLIBBG() {
+        
+        gMNPPBLIBBG_ = 0;
         onChanged();
         return this;
       }
@@ -656,10 +664,10 @@ public final class EMPEPKOOJHPOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021EMPEPKOOJHP.proto\"L\n\013EMPEPKOOJHP\022\023\n\013GM" +
-      "NPPBLIBBG\030\001 \001(\r\022\023\n\013CCPFJLGOJDL\030\002 \001(\r\022\023\n\013" +
-      "BIFMGDOKBFC\030\003 \001(\rB2\n\031emu.grasscutter.net" +
-      ".protoB\025EMPEPKOOJHPOuterClassb\006proto3"
+      "\n\021EMPEPKOOJHP.proto\"L\n\013EMPEPKOOJHP\022\023\n\013CC" +
+      "PFJLGOJDL\030\002 \001(\r\022\023\n\013GMNPPBLIBBG\030\001 \001(\r\022\023\n\013" +
+      "BIFMGDOKBFC\030\003 \001(\rB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -670,7 +678,7 @@ public final class EMPEPKOOJHPOuterClass {
     internal_static_EMPEPKOOJHP_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EMPEPKOOJHP_descriptor,
-        new java.lang.String[] { "GMNPPBLIBBG", "CCPFJLGOJDL", "BIFMGDOKBFC", });
+        new java.lang.String[] { "CCPFJLGOJDL", "GMNPPBLIBBG", "BIFMGDOKBFC", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

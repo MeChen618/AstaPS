@@ -19,45 +19,49 @@ public final class GearActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-     * @return Whether the jigsawPictureData field is set.
-     */
-    boolean hasJigsawPictureData();
-    /**
-     * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-     * @return The jigsawPictureData.
-     */
-    emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData getJigsawPictureData();
-    /**
-     * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-     */
-    emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder getJigsawPictureDataOrBuilder();
-
-    /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData> 
         getGearLevelDataListList();
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData getGearLevelDataList(int index);
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     int getGearLevelDataListCount();
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder> 
         getGearLevelDataListOrBuilderList();
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder getGearLevelDataListOrBuilder(
         int index);
+
+    /**
+     * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+     * @return Whether the jigsawPictureData field is set.
+     */
+    boolean hasJigsawPictureData();
+    /**
+     * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+     * @return The jigsawPictureData.
+     */
+    emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData getJigsawPictureData();
+    /**
+     * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+     */
+    emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder getJigsawPictureDataOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GearActivityDetailInfo}
    */
   public static final class GearActivityDetailInfo extends
@@ -105,6 +109,15 @@ public final class GearActivityDetailInfoOuterClass {
               done = true;
               break;
             case 50: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                gearLevelDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              gearLevelDataList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.parser(), extensionRegistry));
+              break;
+            }
+            case 114: {
               emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder subBuilder = null;
               if (jigsawPictureData_ != null) {
                 subBuilder = jigsawPictureData_.toBuilder();
@@ -115,15 +128,6 @@ public final class GearActivityDetailInfoOuterClass {
                 jigsawPictureData_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                gearLevelDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              gearLevelDataList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -161,43 +165,17 @@ public final class GearActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo.class, emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo.Builder.class);
     }
 
-    public static final int JIGSAW_PICTURE_DATA_FIELD_NUMBER = 6;
-    private emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData jigsawPictureData_;
-    /**
-     * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-     * @return Whether the jigsawPictureData field is set.
-     */
-    @java.lang.Override
-    public boolean hasJigsawPictureData() {
-      return jigsawPictureData_ != null;
-    }
-    /**
-     * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-     * @return The jigsawPictureData.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData getJigsawPictureData() {
-      return jigsawPictureData_ == null ? emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.getDefaultInstance() : jigsawPictureData_;
-    }
-    /**
-     * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder getJigsawPictureDataOrBuilder() {
-      return getJigsawPictureData();
-    }
-
-    public static final int GEAR_LEVEL_DATA_LIST_FIELD_NUMBER = 12;
+    public static final int GEAR_LEVEL_DATA_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData> gearLevelDataList_;
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData> getGearLevelDataListList() {
       return gearLevelDataList_;
     }
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder> 
@@ -205,26 +183,52 @@ public final class GearActivityDetailInfoOuterClass {
       return gearLevelDataList_;
     }
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     @java.lang.Override
     public int getGearLevelDataListCount() {
       return gearLevelDataList_.size();
     }
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData getGearLevelDataList(int index) {
       return gearLevelDataList_.get(index);
     }
     /**
-     * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+     * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder getGearLevelDataListOrBuilder(
         int index) {
       return gearLevelDataList_.get(index);
+    }
+
+    public static final int JIGSAW_PICTURE_DATA_FIELD_NUMBER = 14;
+    private emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData jigsawPictureData_;
+    /**
+     * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+     * @return Whether the jigsawPictureData field is set.
+     */
+    @java.lang.Override
+    public boolean hasJigsawPictureData() {
+      return jigsawPictureData_ != null;
+    }
+    /**
+     * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+     * @return The jigsawPictureData.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData getJigsawPictureData() {
+      return jigsawPictureData_ == null ? emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.getDefaultInstance() : jigsawPictureData_;
+    }
+    /**
+     * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder getJigsawPictureDataOrBuilder() {
+      return getJigsawPictureData();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -241,11 +245,11 @@ public final class GearActivityDetailInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (jigsawPictureData_ != null) {
-        output.writeMessage(6, getJigsawPictureData());
-      }
       for (int i = 0; i < gearLevelDataList_.size(); i++) {
-        output.writeMessage(12, gearLevelDataList_.get(i));
+        output.writeMessage(6, gearLevelDataList_.get(i));
+      }
+      if (jigsawPictureData_ != null) {
+        output.writeMessage(14, getJigsawPictureData());
       }
       unknownFields.writeTo(output);
     }
@@ -256,13 +260,13 @@ public final class GearActivityDetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (jigsawPictureData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getJigsawPictureData());
-      }
       for (int i = 0; i < gearLevelDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, gearLevelDataList_.get(i));
+          .computeMessageSize(6, gearLevelDataList_.get(i));
+      }
+      if (jigsawPictureData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getJigsawPictureData());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -279,13 +283,13 @@ public final class GearActivityDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo other = (emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo) obj;
 
+      if (!getGearLevelDataListList()
+          .equals(other.getGearLevelDataListList())) return false;
       if (hasJigsawPictureData() != other.hasJigsawPictureData()) return false;
       if (hasJigsawPictureData()) {
         if (!getJigsawPictureData()
             .equals(other.getJigsawPictureData())) return false;
       }
-      if (!getGearLevelDataListList()
-          .equals(other.getGearLevelDataListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -297,13 +301,13 @@ public final class GearActivityDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasJigsawPictureData()) {
-        hash = (37 * hash) + JIGSAW_PICTURE_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getJigsawPictureData().hashCode();
-      }
       if (getGearLevelDataListCount() > 0) {
         hash = (37 * hash) + GEAR_LEVEL_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGearLevelDataListList().hashCode();
+      }
+      if (hasJigsawPictureData()) {
+        hash = (37 * hash) + JIGSAW_PICTURE_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getJigsawPictureData().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -401,6 +405,10 @@ public final class GearActivityDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GearActivityDetailInfo}
      */
     public static final class Builder extends
@@ -439,17 +447,17 @@ public final class GearActivityDetailInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (jigsawPictureDataBuilder_ == null) {
-          jigsawPictureData_ = null;
-        } else {
-          jigsawPictureData_ = null;
-          jigsawPictureDataBuilder_ = null;
-        }
         if (gearLevelDataListBuilder_ == null) {
           gearLevelDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           gearLevelDataListBuilder_.clear();
+        }
+        if (jigsawPictureDataBuilder_ == null) {
+          jigsawPictureData_ = null;
+        } else {
+          jigsawPictureData_ = null;
+          jigsawPictureDataBuilder_ = null;
         }
         return this;
       }
@@ -478,11 +486,6 @@ public final class GearActivityDetailInfoOuterClass {
       public emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo buildPartial() {
         emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo result = new emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo(this);
         int from_bitField0_ = bitField0_;
-        if (jigsawPictureDataBuilder_ == null) {
-          result.jigsawPictureData_ = jigsawPictureData_;
-        } else {
-          result.jigsawPictureData_ = jigsawPictureDataBuilder_.build();
-        }
         if (gearLevelDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             gearLevelDataList_ = java.util.Collections.unmodifiableList(gearLevelDataList_);
@@ -491,6 +494,11 @@ public final class GearActivityDetailInfoOuterClass {
           result.gearLevelDataList_ = gearLevelDataList_;
         } else {
           result.gearLevelDataList_ = gearLevelDataListBuilder_.build();
+        }
+        if (jigsawPictureDataBuilder_ == null) {
+          result.jigsawPictureData_ = jigsawPictureData_;
+        } else {
+          result.jigsawPictureData_ = jigsawPictureDataBuilder_.build();
         }
         onBuilt();
         return result;
@@ -540,9 +548,6 @@ public final class GearActivityDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo other) {
         if (other == emu.grasscutter.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo.getDefaultInstance()) return this;
-        if (other.hasJigsawPictureData()) {
-          mergeJigsawPictureData(other.getJigsawPictureData());
-        }
         if (gearLevelDataListBuilder_ == null) {
           if (!other.gearLevelDataList_.isEmpty()) {
             if (gearLevelDataList_.isEmpty()) {
@@ -568,6 +573,9 @@ public final class GearActivityDetailInfoOuterClass {
               gearLevelDataListBuilder_.addAllMessages(other.gearLevelDataList_);
             }
           }
+        }
+        if (other.hasJigsawPictureData()) {
+          mergeJigsawPictureData(other.getJigsawPictureData());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -599,125 +607,6 @@ public final class GearActivityDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData jigsawPictureData_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder> jigsawPictureDataBuilder_;
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       * @return Whether the jigsawPictureData field is set.
-       */
-      public boolean hasJigsawPictureData() {
-        return jigsawPictureDataBuilder_ != null || jigsawPictureData_ != null;
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       * @return The jigsawPictureData.
-       */
-      public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData getJigsawPictureData() {
-        if (jigsawPictureDataBuilder_ == null) {
-          return jigsawPictureData_ == null ? emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.getDefaultInstance() : jigsawPictureData_;
-        } else {
-          return jigsawPictureDataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      public Builder setJigsawPictureData(emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData value) {
-        if (jigsawPictureDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          jigsawPictureData_ = value;
-          onChanged();
-        } else {
-          jigsawPictureDataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      public Builder setJigsawPictureData(
-          emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder builderForValue) {
-        if (jigsawPictureDataBuilder_ == null) {
-          jigsawPictureData_ = builderForValue.build();
-          onChanged();
-        } else {
-          jigsawPictureDataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      public Builder mergeJigsawPictureData(emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData value) {
-        if (jigsawPictureDataBuilder_ == null) {
-          if (jigsawPictureData_ != null) {
-            jigsawPictureData_ =
-              emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.newBuilder(jigsawPictureData_).mergeFrom(value).buildPartial();
-          } else {
-            jigsawPictureData_ = value;
-          }
-          onChanged();
-        } else {
-          jigsawPictureDataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      public Builder clearJigsawPictureData() {
-        if (jigsawPictureDataBuilder_ == null) {
-          jigsawPictureData_ = null;
-          onChanged();
-        } else {
-          jigsawPictureData_ = null;
-          jigsawPictureDataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder getJigsawPictureDataBuilder() {
-        
-        onChanged();
-        return getJigsawPictureDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder getJigsawPictureDataOrBuilder() {
-        if (jigsawPictureDataBuilder_ != null) {
-          return jigsawPictureDataBuilder_.getMessageOrBuilder();
-        } else {
-          return jigsawPictureData_ == null ?
-              emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.getDefaultInstance() : jigsawPictureData_;
-        }
-      }
-      /**
-       * <code>.JigsawPictureData jigsaw_picture_data = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder> 
-          getJigsawPictureDataFieldBuilder() {
-        if (jigsawPictureDataBuilder_ == null) {
-          jigsawPictureDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder>(
-                  getJigsawPictureData(),
-                  getParentForChildren(),
-                  isClean());
-          jigsawPictureData_ = null;
-        }
-        return jigsawPictureDataBuilder_;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData> gearLevelDataList_ =
         java.util.Collections.emptyList();
       private void ensureGearLevelDataListIsMutable() {
@@ -731,7 +620,7 @@ public final class GearActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder> gearLevelDataListBuilder_;
 
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData> getGearLevelDataListList() {
         if (gearLevelDataListBuilder_ == null) {
@@ -741,7 +630,7 @@ public final class GearActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public int getGearLevelDataListCount() {
         if (gearLevelDataListBuilder_ == null) {
@@ -751,7 +640,7 @@ public final class GearActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData getGearLevelDataList(int index) {
         if (gearLevelDataListBuilder_ == null) {
@@ -761,7 +650,7 @@ public final class GearActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder setGearLevelDataList(
           int index, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData value) {
@@ -778,7 +667,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder setGearLevelDataList(
           int index, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder builderForValue) {
@@ -792,7 +681,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder addGearLevelDataList(emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData value) {
         if (gearLevelDataListBuilder_ == null) {
@@ -808,7 +697,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder addGearLevelDataList(
           int index, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData value) {
@@ -825,7 +714,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder addGearLevelDataList(
           emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder builderForValue) {
@@ -839,7 +728,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder addGearLevelDataList(
           int index, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder builderForValue) {
@@ -853,7 +742,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder addAllGearLevelDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData> values) {
@@ -868,7 +757,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder clearGearLevelDataList() {
         if (gearLevelDataListBuilder_ == null) {
@@ -881,7 +770,7 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public Builder removeGearLevelDataList(int index) {
         if (gearLevelDataListBuilder_ == null) {
@@ -894,14 +783,14 @@ public final class GearActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder getGearLevelDataListBuilder(
           int index) {
         return getGearLevelDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder getGearLevelDataListOrBuilder(
           int index) {
@@ -911,7 +800,7 @@ public final class GearActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelDataOrBuilder> 
            getGearLevelDataListOrBuilderList() {
@@ -922,14 +811,14 @@ public final class GearActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder addGearLevelDataListBuilder() {
         return getGearLevelDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.getDefaultInstance());
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder addGearLevelDataListBuilder(
           int index) {
@@ -937,7 +826,7 @@ public final class GearActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.getDefaultInstance());
       }
       /**
-       * <code>repeated .GearLevelData gear_level_data_list = 12;</code>
+       * <code>repeated .GearLevelData gear_level_data_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder> 
            getGearLevelDataListBuilderList() {
@@ -956,6 +845,125 @@ public final class GearActivityDetailInfoOuterClass {
           gearLevelDataList_ = null;
         }
         return gearLevelDataListBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData jigsawPictureData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder> jigsawPictureDataBuilder_;
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       * @return Whether the jigsawPictureData field is set.
+       */
+      public boolean hasJigsawPictureData() {
+        return jigsawPictureDataBuilder_ != null || jigsawPictureData_ != null;
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       * @return The jigsawPictureData.
+       */
+      public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData getJigsawPictureData() {
+        if (jigsawPictureDataBuilder_ == null) {
+          return jigsawPictureData_ == null ? emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.getDefaultInstance() : jigsawPictureData_;
+        } else {
+          return jigsawPictureDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      public Builder setJigsawPictureData(emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData value) {
+        if (jigsawPictureDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          jigsawPictureData_ = value;
+          onChanged();
+        } else {
+          jigsawPictureDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      public Builder setJigsawPictureData(
+          emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder builderForValue) {
+        if (jigsawPictureDataBuilder_ == null) {
+          jigsawPictureData_ = builderForValue.build();
+          onChanged();
+        } else {
+          jigsawPictureDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      public Builder mergeJigsawPictureData(emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData value) {
+        if (jigsawPictureDataBuilder_ == null) {
+          if (jigsawPictureData_ != null) {
+            jigsawPictureData_ =
+              emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.newBuilder(jigsawPictureData_).mergeFrom(value).buildPartial();
+          } else {
+            jigsawPictureData_ = value;
+          }
+          onChanged();
+        } else {
+          jigsawPictureDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      public Builder clearJigsawPictureData() {
+        if (jigsawPictureDataBuilder_ == null) {
+          jigsawPictureData_ = null;
+          onChanged();
+        } else {
+          jigsawPictureData_ = null;
+          jigsawPictureDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder getJigsawPictureDataBuilder() {
+        
+        onChanged();
+        return getJigsawPictureDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      public emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder getJigsawPictureDataOrBuilder() {
+        if (jigsawPictureDataBuilder_ != null) {
+          return jigsawPictureDataBuilder_.getMessageOrBuilder();
+        } else {
+          return jigsawPictureData_ == null ?
+              emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.getDefaultInstance() : jigsawPictureData_;
+        }
+      }
+      /**
+       * <code>.JigsawPictureData jigsaw_picture_data = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder> 
+          getJigsawPictureDataFieldBuilder() {
+        if (jigsawPictureDataBuilder_ == null) {
+          jigsawPictureDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureData.Builder, emu.grasscutter.net.proto.JigsawPictureDataOuterClass.JigsawPictureDataOrBuilder>(
+                  getJigsawPictureData(),
+                  getParentForChildren(),
+                  isClean());
+          jigsawPictureData_ = null;
+        }
+        return jigsawPictureDataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1026,11 +1034,10 @@ public final class GearActivityDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034GearActivityDetailInfo.proto\032\023GearLeve" +
       "lData.proto\032\027JigsawPictureData.proto\"w\n\026" +
-      "GearActivityDetailInfo\022/\n\023jigsaw_picture" +
-      "_data\030\006 \001(\0132\022.JigsawPictureData\022,\n\024gear_" +
-      "level_data_list\030\014 \003(\0132\016.GearLevelDataB=\n" +
-      "\031emu.grasscutter.net.protoB GearActivity" +
-      "DetailInfoOuterClassb\006proto3"
+      "GearActivityDetailInfo\022,\n\024gear_level_dat" +
+      "a_list\030\006 \003(\0132\016.GearLevelData\022/\n\023jigsaw_p" +
+      "icture_data\030\016 \001(\0132\022.JigsawPictureDataB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1043,7 +1050,7 @@ public final class GearActivityDetailInfoOuterClass {
     internal_static_GearActivityDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GearActivityDetailInfo_descriptor,
-        new java.lang.String[] { "JigsawPictureData", "GearLevelDataList", });
+        new java.lang.String[] { "GearLevelDataList", "JigsawPictureData", });
     emu.grasscutter.net.proto.GearLevelDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.JigsawPictureDataOuterClass.getDescriptor();
   }

@@ -19,18 +19,22 @@ public final class EMMIEIAAMJMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 HABMJKBLIMA = 1;</code>
-     * @return The hABMJKBLIMA.
-     */
-    int getHABMJKBLIMA();
-
-    /**
      * <code>bool is_active = 2;</code>
      * @return The isActive.
      */
     boolean getIsActive();
+
+    /**
+     * <code>int32 HABMJKBLIMA = 1;</code>
+     * @return The hABMJKBLIMA.
+     */
+    int getHABMJKBLIMA();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EMMIEIAAMJM}
    */
   public static final class EMMIEIAAMJM extends
@@ -117,17 +121,6 @@ public final class EMMIEIAAMJMOuterClass {
               emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM.class, emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM.Builder.class);
     }
 
-    public static final int HABMJKBLIMA_FIELD_NUMBER = 1;
-    private int hABMJKBLIMA_;
-    /**
-     * <code>int32 HABMJKBLIMA = 1;</code>
-     * @return The hABMJKBLIMA.
-     */
-    @java.lang.Override
-    public int getHABMJKBLIMA() {
-      return hABMJKBLIMA_;
-    }
-
     public static final int IS_ACTIVE_FIELD_NUMBER = 2;
     private boolean isActive_;
     /**
@@ -137,6 +130,17 @@ public final class EMMIEIAAMJMOuterClass {
     @java.lang.Override
     public boolean getIsActive() {
       return isActive_;
+    }
+
+    public static final int HABMJKBLIMA_FIELD_NUMBER = 1;
+    private int hABMJKBLIMA_;
+    /**
+     * <code>int32 HABMJKBLIMA = 1;</code>
+     * @return The hABMJKBLIMA.
+     */
+    @java.lang.Override
+    public int getHABMJKBLIMA() {
+      return hABMJKBLIMA_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class EMMIEIAAMJMOuterClass {
       }
       emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM other = (emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM) obj;
 
-      if (getHABMJKBLIMA()
-          != other.getHABMJKBLIMA()) return false;
       if (getIsActive()
           != other.getIsActive()) return false;
+      if (getHABMJKBLIMA()
+          != other.getHABMJKBLIMA()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,11 +210,11 @@ public final class EMMIEIAAMJMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HABMJKBLIMA_FIELD_NUMBER;
-      hash = (53 * hash) + getHABMJKBLIMA();
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
+      hash = (37 * hash) + HABMJKBLIMA_FIELD_NUMBER;
+      hash = (53 * hash) + getHABMJKBLIMA();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -307,6 +311,10 @@ public final class EMMIEIAAMJMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EMMIEIAAMJM}
      */
     public static final class Builder extends
@@ -344,9 +352,9 @@ public final class EMMIEIAAMJMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hABMJKBLIMA_ = 0;
-
         isActive_ = false;
+
+        hABMJKBLIMA_ = 0;
 
         return this;
       }
@@ -374,8 +382,8 @@ public final class EMMIEIAAMJMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM buildPartial() {
         emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM result = new emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM(this);
-        result.hABMJKBLIMA_ = hABMJKBLIMA_;
         result.isActive_ = isActive_;
+        result.hABMJKBLIMA_ = hABMJKBLIMA_;
         onBuilt();
         return result;
       }
@@ -424,11 +432,11 @@ public final class EMMIEIAAMJMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM other) {
         if (other == emu.grasscutter.net.proto.EMMIEIAAMJMOuterClass.EMMIEIAAMJM.getDefaultInstance()) return this;
-        if (other.getHABMJKBLIMA() != 0) {
-          setHABMJKBLIMA(other.getHABMJKBLIMA());
-        }
         if (other.getIsActive() != false) {
           setIsActive(other.getIsActive());
+        }
+        if (other.getHABMJKBLIMA() != 0) {
+          setHABMJKBLIMA(other.getHABMJKBLIMA());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -459,37 +467,6 @@ public final class EMMIEIAAMJMOuterClass {
         return this;
       }
 
-      private int hABMJKBLIMA_ ;
-      /**
-       * <code>int32 HABMJKBLIMA = 1;</code>
-       * @return The hABMJKBLIMA.
-       */
-      @java.lang.Override
-      public int getHABMJKBLIMA() {
-        return hABMJKBLIMA_;
-      }
-      /**
-       * <code>int32 HABMJKBLIMA = 1;</code>
-       * @param value The hABMJKBLIMA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHABMJKBLIMA(int value) {
-        
-        hABMJKBLIMA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 HABMJKBLIMA = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHABMJKBLIMA() {
-        
-        hABMJKBLIMA_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isActive_ ;
       /**
        * <code>bool is_active = 2;</code>
@@ -517,6 +494,37 @@ public final class EMMIEIAAMJMOuterClass {
       public Builder clearIsActive() {
         
         isActive_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int hABMJKBLIMA_ ;
+      /**
+       * <code>int32 HABMJKBLIMA = 1;</code>
+       * @return The hABMJKBLIMA.
+       */
+      @java.lang.Override
+      public int getHABMJKBLIMA() {
+        return hABMJKBLIMA_;
+      }
+      /**
+       * <code>int32 HABMJKBLIMA = 1;</code>
+       * @param value The hABMJKBLIMA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHABMJKBLIMA(int value) {
+        
+        hABMJKBLIMA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 HABMJKBLIMA = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHABMJKBLIMA() {
+        
+        hABMJKBLIMA_ = 0;
         onChanged();
         return this;
       }
@@ -587,10 +595,9 @@ public final class EMMIEIAAMJMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021EMMIEIAAMJM.proto\"5\n\013EMMIEIAAMJM\022\023\n\013HA" +
-      "BMJKBLIMA\030\001 \001(\005\022\021\n\tis_active\030\002 \001(\010B2\n\031em" +
-      "u.grasscutter.net.protoB\025EMMIEIAAMJMOute" +
-      "rClassb\006proto3"
+      "\n\021EMMIEIAAMJM.proto\"5\n\013EMMIEIAAMJM\022\021\n\tis" +
+      "_active\030\002 \001(\010\022\023\n\013HABMJKBLIMA\030\001 \001(\005B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -601,7 +608,7 @@ public final class EMMIEIAAMJMOuterClass {
     internal_static_EMMIEIAAMJM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EMMIEIAAMJM_descriptor,
-        new java.lang.String[] { "HABMJKBLIMA", "IsActive", });
+        new java.lang.String[] { "IsActive", "HABMJKBLIMA", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

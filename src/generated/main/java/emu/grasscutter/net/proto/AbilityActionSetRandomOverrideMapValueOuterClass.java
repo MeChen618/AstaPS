@@ -520,9 +520,8 @@ public final class AbilityActionSetRandomOverrideMapValueOuterClass {
     java.lang.String[] descriptorData = {
       "\n,AbilityActionSetRandomOverrideMapValue" +
       ".proto\">\n&AbilityActionSetRandomOverride" +
-      "MapValue\022\024\n\014random_value\030\004 \001(\002BM\n\031emu.gr" +
-      "asscutter.net.protoB0AbilityActionSetRan" +
-      "domOverrideMapValueOuterClassb\006proto3"
+      "MapValue\022\024\n\014random_value\030\004 \001(\002B\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

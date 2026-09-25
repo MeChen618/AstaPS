@@ -19,32 +19,36 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-     * @return The enum numeric value on the wire for costumeChangeReason.
-     */
-    int getCostumeChangeReasonValue();
-    /**
-     * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-     * @return The costumeChangeReason.
-     */
-    emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason getCostumeChangeReason();
-
-    /**
-     * <code>.SceneEntityInfo entity_info = 10;</code>
+     * <code>.SceneEntityInfo entity_info = 8;</code>
      * @return Whether the entityInfo field is set.
      */
     boolean hasEntityInfo();
     /**
-     * <code>.SceneEntityInfo entity_info = 10;</code>
+     * <code>.SceneEntityInfo entity_info = 8;</code>
      * @return The entityInfo.
      */
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityInfo();
     /**
-     * <code>.SceneEntityInfo entity_info = 10;</code>
+     * <code>.SceneEntityInfo entity_info = 8;</code>
      */
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getEntityInfoOrBuilder();
+
+    /**
+     * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+     * @return The enum numeric value on the wire for costumeChangeReason.
+     */
+    int getCostumeChangeReasonValue();
+    /**
+     * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+     * @return The costumeChangeReason.
+     */
+    emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason getCostumeChangeReason();
   }
   /**
+   * <pre>
+   * CmdId: 20449
+   * </pre>
+   *
    * Protobuf type {@code AvatarChangeCostumeNotify}
    */
   public static final class AvatarChangeCostumeNotify extends
@@ -90,13 +94,13 @@ public final class AvatarChangeCostumeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 8: {
               int rawValue = input.readEnum();
 
               CostumeChangeReason_ = rawValue;
               break;
             }
-            case 82: {
+            case 66: {
               emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder subBuilder = null;
               if (entityInfo_ != null) {
                 subBuilder = entityInfo_.toBuilder();
@@ -141,29 +145,10 @@ public final class AvatarChangeCostumeNotifyOuterClass {
               emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify.class, emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify.Builder.class);
     }
 
-    public static final int _COSTUME_CHANGE_REASON_FIELD_NUMBER = 5;
-    private int CostumeChangeReason_;
-    /**
-     * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-     * @return The enum numeric value on the wire for costumeChangeReason.
-     */
-    @java.lang.Override public int getCostumeChangeReasonValue() {
-      return CostumeChangeReason_;
-    }
-    /**
-     * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-     * @return The costumeChangeReason.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason getCostumeChangeReason() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason result = emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason.valueOf(CostumeChangeReason_);
-      return result == null ? emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason.UNRECOGNIZED : result;
-    }
-
-    public static final int ENTITY_INFO_FIELD_NUMBER = 10;
+    public static final int ENTITY_INFO_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo entityInfo_;
     /**
-     * <code>.SceneEntityInfo entity_info = 10;</code>
+     * <code>.SceneEntityInfo entity_info = 8;</code>
      * @return Whether the entityInfo field is set.
      */
     @java.lang.Override
@@ -171,7 +156,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       return entityInfo_ != null;
     }
     /**
-     * <code>.SceneEntityInfo entity_info = 10;</code>
+     * <code>.SceneEntityInfo entity_info = 8;</code>
      * @return The entityInfo.
      */
     @java.lang.Override
@@ -179,11 +164,30 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       return entityInfo_ == null ? emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.getDefaultInstance() : entityInfo_;
     }
     /**
-     * <code>.SceneEntityInfo entity_info = 10;</code>
+     * <code>.SceneEntityInfo entity_info = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getEntityInfoOrBuilder() {
       return getEntityInfo();
+    }
+
+    public static final int _COSTUME_CHANGE_REASON_FIELD_NUMBER = 1;
+    private int CostumeChangeReason_;
+    /**
+     * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+     * @return The enum numeric value on the wire for costumeChangeReason.
+     */
+    @java.lang.Override public int getCostumeChangeReasonValue() {
+      return CostumeChangeReason_;
+    }
+    /**
+     * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+     * @return The costumeChangeReason.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason getCostumeChangeReason() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason result = emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason.valueOf(CostumeChangeReason_);
+      return result == null ? emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -200,11 +204,11 @@ public final class AvatarChangeCostumeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (CostumeChangeReason_ != emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason._AvatarChangeCostumeReason_NONE.getNumber()) {
-        output.writeEnum(5, CostumeChangeReason_);
+      if (CostumeChangeReason_ != emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason._AvatarChangeCostumeReason_NONE.getNumber()) {
+        output.writeEnum(1, CostumeChangeReason_);
       }
       if (entityInfo_ != null) {
-        output.writeMessage(10, getEntityInfo());
+        output.writeMessage(8, getEntityInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -215,13 +219,13 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (CostumeChangeReason_ != emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason._AvatarChangeCostumeReason_NONE.getNumber()) {
+      if (CostumeChangeReason_ != emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason._AvatarChangeCostumeReason_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, CostumeChangeReason_);
+          .computeEnumSize(1, CostumeChangeReason_);
       }
       if (entityInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getEntityInfo());
+          .computeMessageSize(8, getEntityInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -238,12 +242,12 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify other = (emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify) obj;
 
-      if (CostumeChangeReason_ != other.CostumeChangeReason_) return false;
       if (hasEntityInfo() != other.hasEntityInfo()) return false;
       if (hasEntityInfo()) {
         if (!getEntityInfo()
             .equals(other.getEntityInfo())) return false;
       }
+      if (CostumeChangeReason_ != other.CostumeChangeReason_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -255,12 +259,12 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + _COSTUME_CHANGE_REASON_FIELD_NUMBER;
-      hash = (53 * hash) + CostumeChangeReason_;
       if (hasEntityInfo()) {
         hash = (37 * hash) + ENTITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getEntityInfo().hashCode();
       }
+      hash = (37 * hash) + _COSTUME_CHANGE_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + CostumeChangeReason_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -357,6 +361,10 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 20449
+     * </pre>
+     *
      * Protobuf type {@code AvatarChangeCostumeNotify}
      */
     public static final class Builder extends
@@ -394,14 +402,14 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        CostumeChangeReason_ = 0;
-
         if (entityInfoBuilder_ == null) {
           entityInfo_ = null;
         } else {
           entityInfo_ = null;
           entityInfoBuilder_ = null;
         }
+        CostumeChangeReason_ = 0;
+
         return this;
       }
 
@@ -428,12 +436,12 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify buildPartial() {
         emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify result = new emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify(this);
-        result.CostumeChangeReason_ = CostumeChangeReason_;
         if (entityInfoBuilder_ == null) {
           result.entityInfo_ = entityInfo_;
         } else {
           result.entityInfo_ = entityInfoBuilder_.build();
         }
+        result.CostumeChangeReason_ = CostumeChangeReason_;
         onBuilt();
         return result;
       }
@@ -482,11 +490,11 @@ public final class AvatarChangeCostumeNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify other) {
         if (other == emu.grasscutter.net.proto.AvatarChangeCostumeNotifyOuterClass.AvatarChangeCostumeNotify.getDefaultInstance()) return this;
-        if (other.CostumeChangeReason_ != 0) {
-          setCostumeChangeReasonValue(other.getCostumeChangeReasonValue());
-        }
         if (other.hasEntityInfo()) {
           mergeEntityInfo(other.getEntityInfo());
+        }
+        if (other.CostumeChangeReason_ != 0) {
+          setCostumeChangeReasonValue(other.getCostumeChangeReasonValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -517,72 +525,18 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
 
-      private int CostumeChangeReason_ = 0;
-      /**
-       * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-       * @return The enum numeric value on the wire for costumeChangeReason.
-       */
-      @java.lang.Override public int getCostumeChangeReasonValue() {
-        return CostumeChangeReason_;
-      }
-      /**
-       * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-       * @param value The enum numeric value on the wire for costumeChangeReason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCostumeChangeReasonValue(int value) {
-        
-        CostumeChangeReason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-       * @return The costumeChangeReason.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason getCostumeChangeReason() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason result = emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason.valueOf(CostumeChangeReason_);
-        return result == null ? emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-       * @param value The costumeChangeReason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCostumeChangeReason(emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass._AvatarChangeCostumeReason value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        CostumeChangeReason_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>._AvatarChangeCostumeReason _costume_change_reason = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCostumeChangeReason() {
-        
-        CostumeChangeReason_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo entityInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder> entityInfoBuilder_;
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        * @return Whether the entityInfo field is set.
        */
       public boolean hasEntityInfo() {
         return entityInfoBuilder_ != null || entityInfo_ != null;
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        * @return The entityInfo.
        */
       public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo getEntityInfo() {
@@ -593,7 +547,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         }
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       public Builder setEntityInfo(emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
         if (entityInfoBuilder_ == null) {
@@ -609,7 +563,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       public Builder setEntityInfo(
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder builderForValue) {
@@ -623,7 +577,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       public Builder mergeEntityInfo(emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo value) {
         if (entityInfoBuilder_ == null) {
@@ -641,7 +595,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       public Builder clearEntityInfo() {
         if (entityInfoBuilder_ == null) {
@@ -655,7 +609,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder getEntityInfoBuilder() {
         
@@ -663,7 +617,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         return getEntityInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       public emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder getEntityInfoOrBuilder() {
         if (entityInfoBuilder_ != null) {
@@ -674,7 +628,7 @@ public final class AvatarChangeCostumeNotifyOuterClass {
         }
       }
       /**
-       * <code>.SceneEntityInfo entity_info = 10;</code>
+       * <code>.SceneEntityInfo entity_info = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder, emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder> 
@@ -688,6 +642,60 @@ public final class AvatarChangeCostumeNotifyOuterClass {
           entityInfo_ = null;
         }
         return entityInfoBuilder_;
+      }
+
+      private int CostumeChangeReason_ = 0;
+      /**
+       * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+       * @return The enum numeric value on the wire for costumeChangeReason.
+       */
+      @java.lang.Override public int getCostumeChangeReasonValue() {
+        return CostumeChangeReason_;
+      }
+      /**
+       * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+       * @param value The enum numeric value on the wire for costumeChangeReason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostumeChangeReasonValue(int value) {
+        
+        CostumeChangeReason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+       * @return The costumeChangeReason.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason getCostumeChangeReason() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason result = emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason.valueOf(CostumeChangeReason_);
+        return result == null ? emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+       * @param value The costumeChangeReason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCostumeChangeReason(emu.grasscutter.net.proto.AvatarChangeCostumeReason._AvatarChangeCostumeReason value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        CostumeChangeReason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>._AvatarChangeCostumeReason _costume_change_reason = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCostumeChangeReason() {
+        
+        CostumeChangeReason_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -759,26 +767,25 @@ public final class AvatarChangeCostumeNotifyOuterClass {
       "\n\037AvatarChangeCostumeNotify.proto\032\025Scene" +
       "EntityInfo.proto\032 _AvatarChangeCostumeRe" +
       "ason.proto\"\177\n\031AvatarChangeCostumeNotify\022" +
-      ";\n\026_costume_change_reason\030\005 \001(\0162\033._Avata" +
-      "rChangeCostumeReason\022%\n\013entity_info\030\n \001(" +
-      "\0132\020.SceneEntityInfoB@\n\031emu.grasscutter.n" +
-      "et.protoB#AvatarChangeCostumeNotifyOuter" +
-      "Classb\006proto3"
+      "%\n\013entity_info\030\010 \001(\0132\020.SceneEntityInfo\022;" +
+      "\n\026_costume_change_reason\030\001 \001(\0162\033._Avatar" +
+      "ChangeCostumeReasonB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.SceneEntityInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AvatarChangeCostumeReason.getDescriptor(),
         });
     internal_static_AvatarChangeCostumeNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_AvatarChangeCostumeNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AvatarChangeCostumeNotify_descriptor,
-        new java.lang.String[] { "CostumeChangeReason", "EntityInfo", });
+        new java.lang.String[] { "EntityInfo", "CostumeChangeReason", });
     emu.grasscutter.net.proto.SceneEntityInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto._AvatarChangeCostumeReasonOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AvatarChangeCostumeReason.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

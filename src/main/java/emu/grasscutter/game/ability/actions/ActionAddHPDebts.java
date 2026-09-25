@@ -9,7 +9,7 @@ import emu.grasscutter.game.ability.ClorindeBoLUtil;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
@@ -93,13 +93,13 @@ public final class ActionAddHPDebts extends AbilityActionHandler {
             return true;
         }
 
-        ChangeHpDebtsReason reason;
+        _ChangeHpDebtsReason reason;
         if (newDebt == 0f) {
-            reason = ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH;
+            reason = _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH;
         } else if (changeDebt > 0f) {
-            reason = ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY;
+            reason = _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY;
         } else {
-            reason = ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY;
+            reason = _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY;
         }
 
         if (avatar.getAvatar() != null && avatar.getAvatar().getAvatarId() == 10000096) {

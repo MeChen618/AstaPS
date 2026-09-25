@@ -19,12 +19,6 @@ public final class KFGKNLHHMPMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 index = 1;</code>
-     * @return The index.
-     */
-    int getIndex();
-
-    /**
      * <code>repeated uint32 EJBMKHMEMFF = 2;</code>
      * @return A list containing the eJBMKHMEMFF.
      */
@@ -40,8 +34,18 @@ public final class KFGKNLHHMPMOuterClass {
      * @return The eJBMKHMEMFF at the given index.
      */
     int getEJBMKHMEMFF(int index);
+
+    /**
+     * <code>int32 index = 1;</code>
+     * @return The index.
+     */
+    int getIndex();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KFGKNLHHMPM}
    */
   public static final class KFGKNLHHMPM extends
@@ -149,17 +153,6 @@ public final class KFGKNLHHMPMOuterClass {
               emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM.class, emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM.Builder.class);
     }
 
-    public static final int INDEX_FIELD_NUMBER = 1;
-    private int index_;
-    /**
-     * <code>int32 index = 1;</code>
-     * @return The index.
-     */
-    @java.lang.Override
-    public int getIndex() {
-      return index_;
-    }
-
     public static final int EJBMKHMEMFF_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList eJBMKHMEMFF_;
     /**
@@ -187,6 +180,17 @@ public final class KFGKNLHHMPMOuterClass {
       return eJBMKHMEMFF_.getInt(index);
     }
     private int eJBMKHMEMFFMemoizedSerializedSize = -1;
+
+    public static final int INDEX_FIELD_NUMBER = 1;
+    private int index_;
+    /**
+     * <code>int32 index = 1;</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public int getIndex() {
+      return index_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -255,10 +259,10 @@ public final class KFGKNLHHMPMOuterClass {
       }
       emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM other = (emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM) obj;
 
-      if (getIndex()
-          != other.getIndex()) return false;
       if (!getEJBMKHMEMFFList()
           .equals(other.getEJBMKHMEMFFList())) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -270,12 +274,12 @@ public final class KFGKNLHHMPMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getIndex();
       if (getEJBMKHMEMFFCount() > 0) {
         hash = (37 * hash) + EJBMKHMEMFF_FIELD_NUMBER;
         hash = (53 * hash) + getEJBMKHMEMFFList().hashCode();
       }
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,6 +376,10 @@ public final class KFGKNLHHMPMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KFGKNLHHMPM}
      */
     public static final class Builder extends
@@ -409,10 +417,10 @@ public final class KFGKNLHHMPMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        index_ = 0;
-
         eJBMKHMEMFF_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        index_ = 0;
+
         return this;
       }
 
@@ -440,12 +448,12 @@ public final class KFGKNLHHMPMOuterClass {
       public emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM buildPartial() {
         emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM result = new emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM(this);
         int from_bitField0_ = bitField0_;
-        result.index_ = index_;
         if (((bitField0_ & 0x00000001) != 0)) {
           eJBMKHMEMFF_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.eJBMKHMEMFF_ = eJBMKHMEMFF_;
+        result.index_ = index_;
         onBuilt();
         return result;
       }
@@ -494,9 +502,6 @@ public final class KFGKNLHHMPMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM other) {
         if (other == emu.grasscutter.net.proto.KFGKNLHHMPMOuterClass.KFGKNLHHMPM.getDefaultInstance()) return this;
-        if (other.getIndex() != 0) {
-          setIndex(other.getIndex());
-        }
         if (!other.eJBMKHMEMFF_.isEmpty()) {
           if (eJBMKHMEMFF_.isEmpty()) {
             eJBMKHMEMFF_ = other.eJBMKHMEMFF_;
@@ -506,6 +511,9 @@ public final class KFGKNLHHMPMOuterClass {
             eJBMKHMEMFF_.addAll(other.eJBMKHMEMFF_);
           }
           onChanged();
+        }
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,37 +544,6 @@ public final class KFGKNLHHMPMOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int index_ ;
-      /**
-       * <code>int32 index = 1;</code>
-       * @return The index.
-       */
-      @java.lang.Override
-      public int getIndex() {
-        return index_;
-      }
-      /**
-       * <code>int32 index = 1;</code>
-       * @param value The index to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIndex(int value) {
-        
-        index_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 index = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIndex() {
-        
-        index_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList eJBMKHMEMFF_ = emptyIntList();
       private void ensureEJBMKHMEMFFIsMutable() {
@@ -646,6 +623,37 @@ public final class KFGKNLHHMPMOuterClass {
         onChanged();
         return this;
       }
+
+      private int index_ ;
+      /**
+       * <code>int32 index = 1;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public int getIndex() {
+        return index_;
+      }
+      /**
+       * <code>int32 index = 1;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(int value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 index = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -713,10 +721,9 @@ public final class KFGKNLHHMPMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021KFGKNLHHMPM.proto\"1\n\013KFGKNLHHMPM\022\r\n\005in" +
-      "dex\030\001 \001(\005\022\023\n\013EJBMKHMEMFF\030\002 \003(\rB2\n\031emu.gr" +
-      "asscutter.net.protoB\025KFGKNLHHMPMOuterCla" +
-      "ssb\006proto3"
+      "\n\021KFGKNLHHMPM.proto\"1\n\013KFGKNLHHMPM\022\023\n\013EJ" +
+      "BMKHMEMFF\030\002 \003(\r\022\r\n\005index\030\001 \001(\005B\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -727,7 +734,7 @@ public final class KFGKNLHHMPMOuterClass {
     internal_static_KFGKNLHHMPM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KFGKNLHHMPM_descriptor,
-        new java.lang.String[] { "Index", "EJBMKHMEMFF", });
+        new java.lang.String[] { "EJBMKHMEMFF", "Index", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

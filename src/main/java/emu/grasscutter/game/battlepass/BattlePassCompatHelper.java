@@ -18,7 +18,7 @@
  *  emu.grasscutter.net.packet.BasePacket
  *  emu.grasscutter.net.proto.BattlePassCycleOuterClass$BattlePassCycle
  *  emu.grasscutter.net.proto.BattlePassProductOuterClass$BattlePassProduct
- *  emu.grasscutter.net.proto.BattlePassRewardPlanOptionOuterClass$BattlePassRewardPlanOption
+ *  emu.grasscutter.net.proto.BattlePassRewardPlanOption$_BattlePassRewardPlanOption
  *  emu.grasscutter.net.proto.BattlePassRewardTagOuterClass$BattlePassRewardTag
  *  emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass$BattlePassRewardTakeOption
  *  emu.grasscutter.net.proto.BattlePassScheduleOuterClass$BattlePassSchedule
@@ -46,7 +46,7 @@ import emu.grasscutter.game.props.ItemUseOp;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.BattlePassCycleOuterClass;
 import emu.grasscutter.net.proto.BattlePassProductOuterClass;
-import emu.grasscutter.net.proto.BattlePassRewardPlanOptionOuterClass;
+import emu.grasscutter.net.proto.BattlePassRewardPlanOption;
 import emu.grasscutter.net.proto.BattlePassRewardTagOuterClass;
 import emu.grasscutter.net.proto.BattlePassRewardTakeOptionOuterClass;
 import emu.grasscutter.net.proto.BattlePassScheduleOuterClass;
@@ -170,7 +170,7 @@ public final class BattlePassCompatHelper {
                         int n2 = BattlePassCompatHelper.scaledCount(itemParamData.getItemId(), itemParamData.getItemCount());
                         ((ArrayList)object).add(new GameItem(itemData, n2));
                     }
-                    BattlePassReward battlePassReward = new BattlePassReward(battlePassRewardTag.getLevel(), battlePassRewardTag.getRewardId(), battlePassRewardTag.getUnlockStatus() == BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID);
+                    BattlePassReward battlePassReward = new BattlePassReward(battlePassRewardTag.getLevel(), battlePassRewardTag.getRewardId(), battlePassRewardTag.getUnlockStatus() == BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID);
                     battlePassManager.getTakenRewards().put(battlePassReward.getRewardId(), battlePassReward);
                 }
                 battlePassManager.save();
@@ -252,9 +252,9 @@ public final class BattlePassCompatHelper {
         LocalDateTime localDateTime = LocalDateTime.of(localDate2.getYear(), localDate2.getMonthValue(), localDate2.getDayOfMonth(), 23, 59, 59);
         int n8 = (int)localDateTime.atZone(ZoneId.systemDefault()).toEpochSecond();
         BattlePassProductOuterClass.BattlePassProduct battlePassProduct = BattlePassProductOuterClass.BattlePassProduct.newBuilder().setNormalProductId("201").setExtraProductId("202").setUpgradeProductId("203").build();
-        BattlePassScheduleOuterClass.BattlePassSchedule.Builder builder = BattlePassScheduleOuterClass.BattlePassSchedule.newBuilder().setScheduleId(6700).setLevel(n4).setPoint(n5).setCurCyclePoints(n6).setBeginTime(n2).setEndTime(n3).setIsViewed(true).setPaidPlatformFlags(bl ? 3 : 0).setProductInfo(battlePassProduct).setUnlockStatus(bl ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_FREE).setCurCycle(BattlePassCycleOuterClass.BattlePassCycle.newBuilder().setBeginTime(n2).setEndTime(n8).setCycleIdx(1).build());
+        BattlePassScheduleOuterClass.BattlePassSchedule.Builder builder = BattlePassScheduleOuterClass.BattlePassSchedule.newBuilder().setScheduleId(6700).setLevel(n4).setPoint(n5).setCurCyclePoints(n6).setBeginTime(n2).setEndTime(n3).setIsViewed(true).setPaidPlatformFlags(bl ? 3 : 0).setProductInfo(battlePassProduct).setUnlockStatus(bl ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_FREE).setCurCycle(BattlePassCycleOuterClass.BattlePassCycle.newBuilder().setBeginTime(n2).setEndTime(n8).setCycleIdx(1).build());
         for (int i = 1; i <= 5; ++i) {
-            builder.addRewardPlanOptionList(BattlePassRewardPlanOptionOuterClass.BattlePassRewardPlanOption.newBuilder().setBattlePassPlan(n7).setFBHFDJJIDBD(i).setBajoajbladk(false).build());
+            builder.addRewardPlanOptionList(BattlePassRewardPlanOption._BattlePassRewardPlanOption.newBuilder().setBattlePassPlan(n7).setFBHFDJJIDBD(i).setENGHPDCKACD(false).build());
         }
         if (battlePassManager != null && battlePassManager.getTakenRewards() != null) {
             for (BattlePassReward battlePassReward : battlePassManager.getTakenRewards().values()) {
@@ -334,7 +334,7 @@ public final class BattlePassCompatHelper {
         if (list2 != null) {
             for (int n2 : list2) {
                 if (n2 <= 0 || battlePassManager.getTakenRewards().containsKey(n2)) continue;
-                list.add(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.newBuilder().setOptionIdx(1).setTag(BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder().setLevel(n).setRewardId(n2).setUnlockStatus(bl ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_FREE).build()).build());
+                list.add(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.newBuilder().setOptionIdx(1).setTag(BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder().setLevel(n).setRewardId(n2).setUnlockStatus(bl ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_FREE).build()).build());
             }
         }
     }

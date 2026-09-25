@@ -39,7 +39,7 @@ public class PacketTowerAllDataRsp extends BasePacket {
         var skipState =
                 TowerAllDataRsp._TowerSkipFloorState.forNumber(towerManager.getSkipFloorState());
         if (skipState == null) {
-            skipState = TowerAllDataRsp._TowerSkipFloorState.TOWER_SKIP_FLOOR_STATE_NONE;
+            skipState = TowerAllDataRsp._TowerSkipFloorState._TowerSkipFloorState_TOWER_SKIP_FLOOR_STATE_NONE;
         }
 
         var builder =

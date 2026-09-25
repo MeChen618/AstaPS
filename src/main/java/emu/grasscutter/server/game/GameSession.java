@@ -357,7 +357,10 @@ public class GameSession implements GameSessionManager.KcpChannel {
         }
 
     public void close() {
-        tunnel.close();
+        // Already disconnected (a second login from the same account closes the first
+        // session, which may have gone away on its own).
+        var tunnel = this.tunnel;
+        if (tunnel != null) tunnel.close();
     }
 
     public boolean isActive() {

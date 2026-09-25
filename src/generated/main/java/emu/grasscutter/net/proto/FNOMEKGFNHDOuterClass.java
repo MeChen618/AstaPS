@@ -19,22 +19,38 @@ public final class FNOMEKGFNHDOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 DAEPBFLMGIA = 1;</code>
-     * @return The dAEPBFLMGIA.
+     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
+     * @return A list containing the ePNEGANFHOI.
      */
-    int getDAEPBFLMGIA();
+    java.util.List<java.lang.Integer> getEPNEGANFHOIList();
+    /**
+     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
+     * @return The count of ePNEGANFHOI.
+     */
+    int getEPNEGANFHOICount();
+    /**
+     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
+     * @param index The index of the element to return.
+     * @return The ePNEGANFHOI at the given index.
+     */
+    int getEPNEGANFHOI(int index);
 
     /**
-     * <code>bool is_active = 2;</code>
-     * @return The isActive.
+     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+     * @return A list containing the fLLNDDECEDH.
      */
-    boolean getIsActive();
-
+    java.util.List<java.lang.Integer> getFLLNDDECEDHList();
     /**
-     * <code>int32 LJGHDOOCCGC = 3;</code>
-     * @return The lJGHDOOCCGC.
+     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+     * @return The count of fLLNDDECEDH.
      */
-    int getLJGHDOOCCGC();
+    int getFLLNDDECEDHCount();
+    /**
+     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+     * @param index The index of the element to return.
+     * @return The fLLNDDECEDH at the given index.
+     */
+    int getFLLNDDECEDH(int index);
 
     /**
      * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
@@ -71,40 +87,28 @@ public final class FNOMEKGFNHDOuterClass {
     int getNLCJGMKNNFN(int index);
 
     /**
-     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-     * @return A list containing the fLLNDDECEDH.
+     * <code>int32 LJGHDOOCCGC = 3;</code>
+     * @return The lJGHDOOCCGC.
      */
-    java.util.List<java.lang.Integer> getFLLNDDECEDHList();
-    /**
-     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-     * @return The count of fLLNDDECEDH.
-     */
-    int getFLLNDDECEDHCount();
-    /**
-     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-     * @param index The index of the element to return.
-     * @return The fLLNDDECEDH at the given index.
-     */
-    int getFLLNDDECEDH(int index);
+    int getLJGHDOOCCGC();
 
     /**
-     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
-     * @return A list containing the ePNEGANFHOI.
+     * <code>int32 DAEPBFLMGIA = 1;</code>
+     * @return The dAEPBFLMGIA.
      */
-    java.util.List<java.lang.Integer> getEPNEGANFHOIList();
+    int getDAEPBFLMGIA();
+
     /**
-     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
-     * @return The count of ePNEGANFHOI.
+     * <code>bool is_active = 2;</code>
+     * @return The isActive.
      */
-    int getEPNEGANFHOICount();
-    /**
-     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
-     * @param index The index of the element to return.
-     * @return The ePNEGANFHOI at the given index.
-     */
-    int getEPNEGANFHOI(int index);
+    boolean getIsActive();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FNOMEKGFNHD}
    */
   public static final class FNOMEKGFNHD extends
@@ -117,10 +121,10 @@ public final class FNOMEKGFNHDOuterClass {
       super(builder);
     }
     private FNOMEKGFNHD() {
+      ePNEGANFHOI_ = emptyIntList();
+      fLLNDDECEDH_ = emptyIntList();
       kPPJNBNEBJO_ = emptyIntList();
       nLCJGMKNNFN_ = emptyIntList();
-      fLLNDDECEDH_ = emptyIntList();
-      ePNEGANFHOI_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -170,9 +174,9 @@ public final class FNOMEKGFNHDOuterClass {
               break;
             }
             case 32: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 kPPJNBNEBJO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               kPPJNBNEBJO_.addInt(input.readUInt32());
               break;
@@ -180,9 +184,9 @@ public final class FNOMEKGFNHDOuterClass {
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
                 kPPJNBNEBJO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
                 kPPJNBNEBJO_.addInt(input.readUInt32());
@@ -191,9 +195,9 @@ public final class FNOMEKGFNHDOuterClass {
               break;
             }
             case 40: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 nLCJGMKNNFN_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               nLCJGMKNNFN_.addInt(input.readUInt32());
               break;
@@ -201,9 +205,9 @@ public final class FNOMEKGFNHDOuterClass {
             case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
                 nLCJGMKNNFN_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000008;
               }
               while (input.getBytesUntilLimit() > 0) {
                 nLCJGMKNNFN_.addInt(input.readUInt32());
@@ -212,9 +216,9 @@ public final class FNOMEKGFNHDOuterClass {
               break;
             }
             case 48: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 fLLNDDECEDH_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               fLLNDDECEDH_.addInt(input.readUInt32());
               break;
@@ -222,9 +226,9 @@ public final class FNOMEKGFNHDOuterClass {
             case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 fLLNDDECEDH_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 fLLNDDECEDH_.addInt(input.readUInt32());
@@ -233,9 +237,9 @@ public final class FNOMEKGFNHDOuterClass {
               break;
             }
             case 56: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ePNEGANFHOI_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               ePNEGANFHOI_.addInt(input.readUInt32());
               break;
@@ -243,9 +247,9 @@ public final class FNOMEKGFNHDOuterClass {
             case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 ePNEGANFHOI_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 ePNEGANFHOI_.addInt(input.readUInt32());
@@ -268,16 +272,16 @@ public final class FNOMEKGFNHDOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           kPPJNBNEBJO_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           nLCJGMKNNFN_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           fLLNDDECEDH_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           ePNEGANFHOI_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -297,38 +301,61 @@ public final class FNOMEKGFNHDOuterClass {
               emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD.class, emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD.Builder.class);
     }
 
-    public static final int DAEPBFLMGIA_FIELD_NUMBER = 1;
-    private int dAEPBFLMGIA_;
+    public static final int EPNEGANFHOI_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList ePNEGANFHOI_;
     /**
-     * <code>int32 DAEPBFLMGIA = 1;</code>
-     * @return The dAEPBFLMGIA.
+     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
+     * @return A list containing the ePNEGANFHOI.
      */
     @java.lang.Override
-    public int getDAEPBFLMGIA() {
-      return dAEPBFLMGIA_;
+    public java.util.List<java.lang.Integer>
+        getEPNEGANFHOIList() {
+      return ePNEGANFHOI_;
     }
+    /**
+     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
+     * @return The count of ePNEGANFHOI.
+     */
+    public int getEPNEGANFHOICount() {
+      return ePNEGANFHOI_.size();
+    }
+    /**
+     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
+     * @param index The index of the element to return.
+     * @return The ePNEGANFHOI at the given index.
+     */
+    public int getEPNEGANFHOI(int index) {
+      return ePNEGANFHOI_.getInt(index);
+    }
+    private int ePNEGANFHOIMemoizedSerializedSize = -1;
 
-    public static final int IS_ACTIVE_FIELD_NUMBER = 2;
-    private boolean isActive_;
+    public static final int FLLNDDECEDH_FIELD_NUMBER = 6;
+    private com.google.protobuf.Internal.IntList fLLNDDECEDH_;
     /**
-     * <code>bool is_active = 2;</code>
-     * @return The isActive.
+     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+     * @return A list containing the fLLNDDECEDH.
      */
     @java.lang.Override
-    public boolean getIsActive() {
-      return isActive_;
+    public java.util.List<java.lang.Integer>
+        getFLLNDDECEDHList() {
+      return fLLNDDECEDH_;
     }
-
-    public static final int LJGHDOOCCGC_FIELD_NUMBER = 3;
-    private int lJGHDOOCCGC_;
     /**
-     * <code>int32 LJGHDOOCCGC = 3;</code>
-     * @return The lJGHDOOCCGC.
+     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+     * @return The count of fLLNDDECEDH.
      */
-    @java.lang.Override
-    public int getLJGHDOOCCGC() {
-      return lJGHDOOCCGC_;
+    public int getFLLNDDECEDHCount() {
+      return fLLNDDECEDH_.size();
     }
+    /**
+     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+     * @param index The index of the element to return.
+     * @return The fLLNDDECEDH at the given index.
+     */
+    public int getFLLNDDECEDH(int index) {
+      return fLLNDDECEDH_.getInt(index);
+    }
+    private int fLLNDDECEDHMemoizedSerializedSize = -1;
 
     public static final int KPPJNBNEBJO_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList kPPJNBNEBJO_;
@@ -386,61 +413,38 @@ public final class FNOMEKGFNHDOuterClass {
     }
     private int nLCJGMKNNFNMemoizedSerializedSize = -1;
 
-    public static final int FLLNDDECEDH_FIELD_NUMBER = 6;
-    private com.google.protobuf.Internal.IntList fLLNDDECEDH_;
+    public static final int LJGHDOOCCGC_FIELD_NUMBER = 3;
+    private int lJGHDOOCCGC_;
     /**
-     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-     * @return A list containing the fLLNDDECEDH.
+     * <code>int32 LJGHDOOCCGC = 3;</code>
+     * @return The lJGHDOOCCGC.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getFLLNDDECEDHList() {
-      return fLLNDDECEDH_;
+    public int getLJGHDOOCCGC() {
+      return lJGHDOOCCGC_;
     }
-    /**
-     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-     * @return The count of fLLNDDECEDH.
-     */
-    public int getFLLNDDECEDHCount() {
-      return fLLNDDECEDH_.size();
-    }
-    /**
-     * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-     * @param index The index of the element to return.
-     * @return The fLLNDDECEDH at the given index.
-     */
-    public int getFLLNDDECEDH(int index) {
-      return fLLNDDECEDH_.getInt(index);
-    }
-    private int fLLNDDECEDHMemoizedSerializedSize = -1;
 
-    public static final int EPNEGANFHOI_FIELD_NUMBER = 7;
-    private com.google.protobuf.Internal.IntList ePNEGANFHOI_;
+    public static final int DAEPBFLMGIA_FIELD_NUMBER = 1;
+    private int dAEPBFLMGIA_;
     /**
-     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
-     * @return A list containing the ePNEGANFHOI.
+     * <code>int32 DAEPBFLMGIA = 1;</code>
+     * @return The dAEPBFLMGIA.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getEPNEGANFHOIList() {
-      return ePNEGANFHOI_;
+    public int getDAEPBFLMGIA() {
+      return dAEPBFLMGIA_;
     }
+
+    public static final int IS_ACTIVE_FIELD_NUMBER = 2;
+    private boolean isActive_;
     /**
-     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
-     * @return The count of ePNEGANFHOI.
+     * <code>bool is_active = 2;</code>
+     * @return The isActive.
      */
-    public int getEPNEGANFHOICount() {
-      return ePNEGANFHOI_.size();
+    @java.lang.Override
+    public boolean getIsActive() {
+      return isActive_;
     }
-    /**
-     * <code>repeated uint32 EPNEGANFHOI = 7;</code>
-     * @param index The index of the element to return.
-     * @return The ePNEGANFHOI at the given index.
-     */
-    public int getEPNEGANFHOI(int index) {
-      return ePNEGANFHOI_.getInt(index);
-    }
-    private int ePNEGANFHOIMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -586,20 +590,20 @@ public final class FNOMEKGFNHDOuterClass {
       }
       emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD other = (emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD) obj;
 
-      if (getDAEPBFLMGIA()
-          != other.getDAEPBFLMGIA()) return false;
-      if (getIsActive()
-          != other.getIsActive()) return false;
-      if (getLJGHDOOCCGC()
-          != other.getLJGHDOOCCGC()) return false;
+      if (!getEPNEGANFHOIList()
+          .equals(other.getEPNEGANFHOIList())) return false;
+      if (!getFLLNDDECEDHList()
+          .equals(other.getFLLNDDECEDHList())) return false;
       if (!getKPPJNBNEBJOList()
           .equals(other.getKPPJNBNEBJOList())) return false;
       if (!getNLCJGMKNNFNList()
           .equals(other.getNLCJGMKNNFNList())) return false;
-      if (!getFLLNDDECEDHList()
-          .equals(other.getFLLNDDECEDHList())) return false;
-      if (!getEPNEGANFHOIList()
-          .equals(other.getEPNEGANFHOIList())) return false;
+      if (getLJGHDOOCCGC()
+          != other.getLJGHDOOCCGC()) return false;
+      if (getDAEPBFLMGIA()
+          != other.getDAEPBFLMGIA()) return false;
+      if (getIsActive()
+          != other.getIsActive()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -611,13 +615,14 @@ public final class FNOMEKGFNHDOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DAEPBFLMGIA_FIELD_NUMBER;
-      hash = (53 * hash) + getDAEPBFLMGIA();
-      hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsActive());
-      hash = (37 * hash) + LJGHDOOCCGC_FIELD_NUMBER;
-      hash = (53 * hash) + getLJGHDOOCCGC();
+      if (getEPNEGANFHOICount() > 0) {
+        hash = (37 * hash) + EPNEGANFHOI_FIELD_NUMBER;
+        hash = (53 * hash) + getEPNEGANFHOIList().hashCode();
+      }
+      if (getFLLNDDECEDHCount() > 0) {
+        hash = (37 * hash) + FLLNDDECEDH_FIELD_NUMBER;
+        hash = (53 * hash) + getFLLNDDECEDHList().hashCode();
+      }
       if (getKPPJNBNEBJOCount() > 0) {
         hash = (37 * hash) + KPPJNBNEBJO_FIELD_NUMBER;
         hash = (53 * hash) + getKPPJNBNEBJOList().hashCode();
@@ -626,14 +631,13 @@ public final class FNOMEKGFNHDOuterClass {
         hash = (37 * hash) + NLCJGMKNNFN_FIELD_NUMBER;
         hash = (53 * hash) + getNLCJGMKNNFNList().hashCode();
       }
-      if (getFLLNDDECEDHCount() > 0) {
-        hash = (37 * hash) + FLLNDDECEDH_FIELD_NUMBER;
-        hash = (53 * hash) + getFLLNDDECEDHList().hashCode();
-      }
-      if (getEPNEGANFHOICount() > 0) {
-        hash = (37 * hash) + EPNEGANFHOI_FIELD_NUMBER;
-        hash = (53 * hash) + getEPNEGANFHOIList().hashCode();
-      }
+      hash = (37 * hash) + LJGHDOOCCGC_FIELD_NUMBER;
+      hash = (53 * hash) + getLJGHDOOCCGC();
+      hash = (37 * hash) + DAEPBFLMGIA_FIELD_NUMBER;
+      hash = (53 * hash) + getDAEPBFLMGIA();
+      hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsActive());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -730,6 +734,10 @@ public final class FNOMEKGFNHDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FNOMEKGFNHD}
      */
     public static final class Builder extends
@@ -767,20 +775,20 @@ public final class FNOMEKGFNHDOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        ePNEGANFHOI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        fLLNDDECEDH_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        kPPJNBNEBJO_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        nLCJGMKNNFN_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        lJGHDOOCCGC_ = 0;
+
         dAEPBFLMGIA_ = 0;
 
         isActive_ = false;
 
-        lJGHDOOCCGC_ = 0;
-
-        kPPJNBNEBJO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        nLCJGMKNNFN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        fLLNDDECEDH_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        ePNEGANFHOI_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -808,29 +816,29 @@ public final class FNOMEKGFNHDOuterClass {
       public emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD buildPartial() {
         emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD result = new emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD(this);
         int from_bitField0_ = bitField0_;
-        result.dAEPBFLMGIA_ = dAEPBFLMGIA_;
-        result.isActive_ = isActive_;
-        result.lJGHDOOCCGC_ = lJGHDOOCCGC_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          kPPJNBNEBJO_.makeImmutable();
+          ePNEGANFHOI_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.kPPJNBNEBJO_ = kPPJNBNEBJO_;
+        result.ePNEGANFHOI_ = ePNEGANFHOI_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          nLCJGMKNNFN_.makeImmutable();
+          fLLNDDECEDH_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.nLCJGMKNNFN_ = nLCJGMKNNFN_;
+        result.fLLNDDECEDH_ = fLLNDDECEDH_;
         if (((bitField0_ & 0x00000004) != 0)) {
-          fLLNDDECEDH_.makeImmutable();
+          kPPJNBNEBJO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.fLLNDDECEDH_ = fLLNDDECEDH_;
+        result.kPPJNBNEBJO_ = kPPJNBNEBJO_;
         if (((bitField0_ & 0x00000008) != 0)) {
-          ePNEGANFHOI_.makeImmutable();
+          nLCJGMKNNFN_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000008);
         }
-        result.ePNEGANFHOI_ = ePNEGANFHOI_;
+        result.nLCJGMKNNFN_ = nLCJGMKNNFN_;
+        result.lJGHDOOCCGC_ = lJGHDOOCCGC_;
+        result.dAEPBFLMGIA_ = dAEPBFLMGIA_;
+        result.isActive_ = isActive_;
         onBuilt();
         return result;
       }
@@ -879,19 +887,30 @@ public final class FNOMEKGFNHDOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD other) {
         if (other == emu.grasscutter.net.proto.FNOMEKGFNHDOuterClass.FNOMEKGFNHD.getDefaultInstance()) return this;
-        if (other.getDAEPBFLMGIA() != 0) {
-          setDAEPBFLMGIA(other.getDAEPBFLMGIA());
+        if (!other.ePNEGANFHOI_.isEmpty()) {
+          if (ePNEGANFHOI_.isEmpty()) {
+            ePNEGANFHOI_ = other.ePNEGANFHOI_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureEPNEGANFHOIIsMutable();
+            ePNEGANFHOI_.addAll(other.ePNEGANFHOI_);
+          }
+          onChanged();
         }
-        if (other.getIsActive() != false) {
-          setIsActive(other.getIsActive());
-        }
-        if (other.getLJGHDOOCCGC() != 0) {
-          setLJGHDOOCCGC(other.getLJGHDOOCCGC());
+        if (!other.fLLNDDECEDH_.isEmpty()) {
+          if (fLLNDDECEDH_.isEmpty()) {
+            fLLNDDECEDH_ = other.fLLNDDECEDH_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureFLLNDDECEDHIsMutable();
+            fLLNDDECEDH_.addAll(other.fLLNDDECEDH_);
+          }
+          onChanged();
         }
         if (!other.kPPJNBNEBJO_.isEmpty()) {
           if (kPPJNBNEBJO_.isEmpty()) {
             kPPJNBNEBJO_ = other.kPPJNBNEBJO_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureKPPJNBNEBJOIsMutable();
             kPPJNBNEBJO_.addAll(other.kPPJNBNEBJO_);
@@ -901,32 +920,21 @@ public final class FNOMEKGFNHDOuterClass {
         if (!other.nLCJGMKNNFN_.isEmpty()) {
           if (nLCJGMKNNFN_.isEmpty()) {
             nLCJGMKNNFN_ = other.nLCJGMKNNFN_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureNLCJGMKNNFNIsMutable();
             nLCJGMKNNFN_.addAll(other.nLCJGMKNNFN_);
           }
           onChanged();
         }
-        if (!other.fLLNDDECEDH_.isEmpty()) {
-          if (fLLNDDECEDH_.isEmpty()) {
-            fLLNDDECEDH_ = other.fLLNDDECEDH_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureFLLNDDECEDHIsMutable();
-            fLLNDDECEDH_.addAll(other.fLLNDDECEDH_);
-          }
-          onChanged();
+        if (other.getLJGHDOOCCGC() != 0) {
+          setLJGHDOOCCGC(other.getLJGHDOOCCGC());
         }
-        if (!other.ePNEGANFHOI_.isEmpty()) {
-          if (ePNEGANFHOI_.isEmpty()) {
-            ePNEGANFHOI_ = other.ePNEGANFHOI_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureEPNEGANFHOIIsMutable();
-            ePNEGANFHOI_.addAll(other.ePNEGANFHOI_);
-          }
-          onChanged();
+        if (other.getDAEPBFLMGIA() != 0) {
+          setDAEPBFLMGIA(other.getDAEPBFLMGIA());
+        }
+        if (other.getIsActive() != false) {
+          setIsActive(other.getIsActive());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -958,341 +966,11 @@ public final class FNOMEKGFNHDOuterClass {
       }
       private int bitField0_;
 
-      private int dAEPBFLMGIA_ ;
-      /**
-       * <code>int32 DAEPBFLMGIA = 1;</code>
-       * @return The dAEPBFLMGIA.
-       */
-      @java.lang.Override
-      public int getDAEPBFLMGIA() {
-        return dAEPBFLMGIA_;
-      }
-      /**
-       * <code>int32 DAEPBFLMGIA = 1;</code>
-       * @param value The dAEPBFLMGIA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDAEPBFLMGIA(int value) {
-        
-        dAEPBFLMGIA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 DAEPBFLMGIA = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDAEPBFLMGIA() {
-        
-        dAEPBFLMGIA_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isActive_ ;
-      /**
-       * <code>bool is_active = 2;</code>
-       * @return The isActive.
-       */
-      @java.lang.Override
-      public boolean getIsActive() {
-        return isActive_;
-      }
-      /**
-       * <code>bool is_active = 2;</code>
-       * @param value The isActive to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsActive(boolean value) {
-        
-        isActive_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_active = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsActive() {
-        
-        isActive_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int lJGHDOOCCGC_ ;
-      /**
-       * <code>int32 LJGHDOOCCGC = 3;</code>
-       * @return The lJGHDOOCCGC.
-       */
-      @java.lang.Override
-      public int getLJGHDOOCCGC() {
-        return lJGHDOOCCGC_;
-      }
-      /**
-       * <code>int32 LJGHDOOCCGC = 3;</code>
-       * @param value The lJGHDOOCCGC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLJGHDOOCCGC(int value) {
-        
-        lJGHDOOCCGC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 LJGHDOOCCGC = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLJGHDOOCCGC() {
-        
-        lJGHDOOCCGC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList kPPJNBNEBJO_ = emptyIntList();
-      private void ensureKPPJNBNEBJOIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          kPPJNBNEBJO_ = mutableCopy(kPPJNBNEBJO_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @return A list containing the kPPJNBNEBJO.
-       */
-      public java.util.List<java.lang.Integer>
-          getKPPJNBNEBJOList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(kPPJNBNEBJO_) : kPPJNBNEBJO_;
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @return The count of kPPJNBNEBJO.
-       */
-      public int getKPPJNBNEBJOCount() {
-        return kPPJNBNEBJO_.size();
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @param index The index of the element to return.
-       * @return The kPPJNBNEBJO at the given index.
-       */
-      public int getKPPJNBNEBJO(int index) {
-        return kPPJNBNEBJO_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @param index The index to set the value at.
-       * @param value The kPPJNBNEBJO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKPPJNBNEBJO(
-          int index, int value) {
-        ensureKPPJNBNEBJOIsMutable();
-        kPPJNBNEBJO_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @param value The kPPJNBNEBJO to add.
-       * @return This builder for chaining.
-       */
-      public Builder addKPPJNBNEBJO(int value) {
-        ensureKPPJNBNEBJOIsMutable();
-        kPPJNBNEBJO_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @param values The kPPJNBNEBJO to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllKPPJNBNEBJO(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureKPPJNBNEBJOIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, kPPJNBNEBJO_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKPPJNBNEBJO() {
-        kPPJNBNEBJO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList nLCJGMKNNFN_ = emptyIntList();
-      private void ensureNLCJGMKNNFNIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          nLCJGMKNNFN_ = mutableCopy(nLCJGMKNNFN_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @return A list containing the nLCJGMKNNFN.
-       */
-      public java.util.List<java.lang.Integer>
-          getNLCJGMKNNFNList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(nLCJGMKNNFN_) : nLCJGMKNNFN_;
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @return The count of nLCJGMKNNFN.
-       */
-      public int getNLCJGMKNNFNCount() {
-        return nLCJGMKNNFN_.size();
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @param index The index of the element to return.
-       * @return The nLCJGMKNNFN at the given index.
-       */
-      public int getNLCJGMKNNFN(int index) {
-        return nLCJGMKNNFN_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The nLCJGMKNNFN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNLCJGMKNNFN(
-          int index, int value) {
-        ensureNLCJGMKNNFNIsMutable();
-        nLCJGMKNNFN_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @param value The nLCJGMKNNFN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNLCJGMKNNFN(int value) {
-        ensureNLCJGMKNNFNIsMutable();
-        nLCJGMKNNFN_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @param values The nLCJGMKNNFN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllNLCJGMKNNFN(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNLCJGMKNNFNIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nLCJGMKNNFN_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNLCJGMKNNFN() {
-        nLCJGMKNNFN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList fLLNDDECEDH_ = emptyIntList();
-      private void ensureFLLNDDECEDHIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          fLLNDDECEDH_ = mutableCopy(fLLNDDECEDH_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @return A list containing the fLLNDDECEDH.
-       */
-      public java.util.List<java.lang.Integer>
-          getFLLNDDECEDHList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
-                 java.util.Collections.unmodifiableList(fLLNDDECEDH_) : fLLNDDECEDH_;
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @return The count of fLLNDDECEDH.
-       */
-      public int getFLLNDDECEDHCount() {
-        return fLLNDDECEDH_.size();
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @param index The index of the element to return.
-       * @return The fLLNDDECEDH at the given index.
-       */
-      public int getFLLNDDECEDH(int index) {
-        return fLLNDDECEDH_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @param index The index to set the value at.
-       * @param value The fLLNDDECEDH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFLLNDDECEDH(
-          int index, int value) {
-        ensureFLLNDDECEDHIsMutable();
-        fLLNDDECEDH_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @param value The fLLNDDECEDH to add.
-       * @return This builder for chaining.
-       */
-      public Builder addFLLNDDECEDH(int value) {
-        ensureFLLNDDECEDHIsMutable();
-        fLLNDDECEDH_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @param values The fLLNDDECEDH to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllFLLNDDECEDH(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureFLLNDDECEDHIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fLLNDDECEDH_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFLLNDDECEDH() {
-        fLLNDDECEDH_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList ePNEGANFHOI_ = emptyIntList();
       private void ensureEPNEGANFHOIIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           ePNEGANFHOI_ = mutableCopy(ePNEGANFHOI_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -1301,7 +979,7 @@ public final class FNOMEKGFNHDOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getEPNEGANFHOIList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(ePNEGANFHOI_) : ePNEGANFHOI_;
       }
       /**
@@ -1362,7 +1040,337 @@ public final class FNOMEKGFNHDOuterClass {
        */
       public Builder clearEPNEGANFHOI() {
         ePNEGANFHOI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList fLLNDDECEDH_ = emptyIntList();
+      private void ensureFLLNDDECEDHIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          fLLNDDECEDH_ = mutableCopy(fLLNDDECEDH_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @return A list containing the fLLNDDECEDH.
+       */
+      public java.util.List<java.lang.Integer>
+          getFLLNDDECEDHList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(fLLNDDECEDH_) : fLLNDDECEDH_;
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @return The count of fLLNDDECEDH.
+       */
+      public int getFLLNDDECEDHCount() {
+        return fLLNDDECEDH_.size();
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @param index The index of the element to return.
+       * @return The fLLNDDECEDH at the given index.
+       */
+      public int getFLLNDDECEDH(int index) {
+        return fLLNDDECEDH_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The fLLNDDECEDH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFLLNDDECEDH(
+          int index, int value) {
+        ensureFLLNDDECEDHIsMutable();
+        fLLNDDECEDH_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @param value The fLLNDDECEDH to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFLLNDDECEDH(int value) {
+        ensureFLLNDDECEDHIsMutable();
+        fLLNDDECEDH_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @param values The fLLNDDECEDH to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFLLNDDECEDH(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureFLLNDDECEDHIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, fLLNDDECEDH_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 FLLNDDECEDH = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFLLNDDECEDH() {
+        fLLNDDECEDH_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList kPPJNBNEBJO_ = emptyIntList();
+      private void ensureKPPJNBNEBJOIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          kPPJNBNEBJO_ = mutableCopy(kPPJNBNEBJO_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @return A list containing the kPPJNBNEBJO.
+       */
+      public java.util.List<java.lang.Integer>
+          getKPPJNBNEBJOList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(kPPJNBNEBJO_) : kPPJNBNEBJO_;
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @return The count of kPPJNBNEBJO.
+       */
+      public int getKPPJNBNEBJOCount() {
+        return kPPJNBNEBJO_.size();
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @param index The index of the element to return.
+       * @return The kPPJNBNEBJO at the given index.
+       */
+      public int getKPPJNBNEBJO(int index) {
+        return kPPJNBNEBJO_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The kPPJNBNEBJO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKPPJNBNEBJO(
+          int index, int value) {
+        ensureKPPJNBNEBJOIsMutable();
+        kPPJNBNEBJO_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @param value The kPPJNBNEBJO to add.
+       * @return This builder for chaining.
+       */
+      public Builder addKPPJNBNEBJO(int value) {
+        ensureKPPJNBNEBJOIsMutable();
+        kPPJNBNEBJO_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @param values The kPPJNBNEBJO to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllKPPJNBNEBJO(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureKPPJNBNEBJOIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, kPPJNBNEBJO_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 KPPJNBNEBJO = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKPPJNBNEBJO() {
+        kPPJNBNEBJO_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList nLCJGMKNNFN_ = emptyIntList();
+      private void ensureNLCJGMKNNFNIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          nLCJGMKNNFN_ = mutableCopy(nLCJGMKNNFN_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @return A list containing the nLCJGMKNNFN.
+       */
+      public java.util.List<java.lang.Integer>
+          getNLCJGMKNNFNList() {
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(nLCJGMKNNFN_) : nLCJGMKNNFN_;
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @return The count of nLCJGMKNNFN.
+       */
+      public int getNLCJGMKNNFNCount() {
+        return nLCJGMKNNFN_.size();
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @param index The index of the element to return.
+       * @return The nLCJGMKNNFN at the given index.
+       */
+      public int getNLCJGMKNNFN(int index) {
+        return nLCJGMKNNFN_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The nLCJGMKNNFN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNLCJGMKNNFN(
+          int index, int value) {
+        ensureNLCJGMKNNFNIsMutable();
+        nLCJGMKNNFN_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @param value The nLCJGMKNNFN to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNLCJGMKNNFN(int value) {
+        ensureNLCJGMKNNFNIsMutable();
+        nLCJGMKNNFN_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @param values The nLCJGMKNNFN to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNLCJGMKNNFN(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureNLCJGMKNNFNIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nLCJGMKNNFN_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 NLCJGMKNNFN = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNLCJGMKNNFN() {
+        nLCJGMKNNFN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      private int lJGHDOOCCGC_ ;
+      /**
+       * <code>int32 LJGHDOOCCGC = 3;</code>
+       * @return The lJGHDOOCCGC.
+       */
+      @java.lang.Override
+      public int getLJGHDOOCCGC() {
+        return lJGHDOOCCGC_;
+      }
+      /**
+       * <code>int32 LJGHDOOCCGC = 3;</code>
+       * @param value The lJGHDOOCCGC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLJGHDOOCCGC(int value) {
+        
+        lJGHDOOCCGC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 LJGHDOOCCGC = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLJGHDOOCCGC() {
+        
+        lJGHDOOCCGC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dAEPBFLMGIA_ ;
+      /**
+       * <code>int32 DAEPBFLMGIA = 1;</code>
+       * @return The dAEPBFLMGIA.
+       */
+      @java.lang.Override
+      public int getDAEPBFLMGIA() {
+        return dAEPBFLMGIA_;
+      }
+      /**
+       * <code>int32 DAEPBFLMGIA = 1;</code>
+       * @param value The dAEPBFLMGIA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDAEPBFLMGIA(int value) {
+        
+        dAEPBFLMGIA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 DAEPBFLMGIA = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDAEPBFLMGIA() {
+        
+        dAEPBFLMGIA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isActive_ ;
+      /**
+       * <code>bool is_active = 2;</code>
+       * @return The isActive.
+       */
+      @java.lang.Override
+      public boolean getIsActive() {
+        return isActive_;
+      }
+      /**
+       * <code>bool is_active = 2;</code>
+       * @param value The isActive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsActive(boolean value) {
+        
+        isActive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_active = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsActive() {
+        
+        isActive_ = false;
         onChanged();
         return this;
       }
@@ -1433,12 +1441,12 @@ public final class FNOMEKGFNHDOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021FNOMEKGFNHD.proto\"\236\001\n\013FNOMEKGFNHD\022\023\n\013D" +
-      "AEPBFLMGIA\030\001 \001(\005\022\021\n\tis_active\030\002 \001(\010\022\023\n\013L" +
-      "JGHDOOCCGC\030\003 \001(\005\022\023\n\013KPPJNBNEBJO\030\004 \003(\r\022\023\n" +
-      "\013NLCJGMKNNFN\030\005 \003(\r\022\023\n\013FLLNDDECEDH\030\006 \003(\r\022" +
-      "\023\n\013EPNEGANFHOI\030\007 \003(\rB2\n\031emu.grasscutter." +
-      "net.protoB\025FNOMEKGFNHDOuterClassb\006proto3"
+      "\n\021FNOMEKGFNHD.proto\"\236\001\n\013FNOMEKGFNHD\022\023\n\013E" +
+      "PNEGANFHOI\030\007 \003(\r\022\023\n\013FLLNDDECEDH\030\006 \003(\r\022\023\n" +
+      "\013KPPJNBNEBJO\030\004 \003(\r\022\023\n\013NLCJGMKNNFN\030\005 \003(\r\022" +
+      "\023\n\013LJGHDOOCCGC\030\003 \001(\005\022\023\n\013DAEPBFLMGIA\030\001 \001(" +
+      "\005\022\021\n\tis_active\030\002 \001(\010B\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1449,7 +1457,7 @@ public final class FNOMEKGFNHDOuterClass {
     internal_static_FNOMEKGFNHD_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FNOMEKGFNHD_descriptor,
-        new java.lang.String[] { "DAEPBFLMGIA", "IsActive", "LJGHDOOCCGC", "KPPJNBNEBJO", "NLCJGMKNNFN", "FLLNDDECEDH", "EPNEGANFHOI", });
+        new java.lang.String[] { "EPNEGANFHOI", "FLLNDDECEDH", "KPPJNBNEBJO", "NLCJGMKNNFN", "LJGHDOOCCGC", "DAEPBFLMGIA", "IsActive", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

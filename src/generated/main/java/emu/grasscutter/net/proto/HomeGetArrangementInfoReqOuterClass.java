@@ -645,8 +645,8 @@ public final class HomeGetArrangementInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037HomeGetArrangementInfoReq.proto\"2\n\031Hom" +
       "eGetArrangementInfoReq\022\025\n\rscene_id_list\030" +
-      "\010 \003(\rB@\n\031emu.grasscutter.net.protoB#Home" +
-      "GetArrangementInfoReqOuterClassb\006proto3"
+      "\010 \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

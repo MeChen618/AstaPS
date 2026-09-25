@@ -40,6 +40,10 @@ public final class MCBKGPEICPJOuterClass {
     int getLOIFEKALBKH();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MCBKGPEICPJ}
    */
   public static final class MCBKGPEICPJ extends
@@ -343,6 +347,10 @@ public final class MCBKGPEICPJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MCBKGPEICPJ}
      */
     public static final class Builder extends
@@ -721,9 +729,8 @@ public final class MCBKGPEICPJOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021MCBKGPEICPJ.proto\032\020Uint32Pair.proto\"D\n" +
       "\013MCBKGPEICPJ\022 \n\013IAHEMLEBGPH\030\001 \001(\0132\013.Uint" +
-      "32Pair\022\023\n\013LOIFEKALBKH\030\002 \001(\rB2\n\031emu.grass" +
-      "cutter.net.protoB\025MCBKGPEICPJOuterClassb" +
-      "\006proto3"
+      "32Pair\022\023\n\013LOIFEKALBKH\030\002 \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

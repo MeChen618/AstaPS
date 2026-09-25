@@ -19,16 +19,21 @@ public final class PHPBCLPALELOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 HNFMJGOFMBG = 2;</code>
-     * @return The hNFMJGOFMBG.
+     * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+     * @return A list containing the nHDHPIAOEGE.
      */
-    int getHNFMJGOFMBG();
-
+    java.util.List<java.lang.Integer> getNHDHPIAOEGEList();
     /**
-     * <code>uint32 NMHDKNDDLMC = 5;</code>
-     * @return The nMHDKNDDLMC.
+     * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+     * @return The count of nHDHPIAOEGE.
      */
-    int getNMHDKNDDLMC();
+    int getNHDHPIAOEGECount();
+    /**
+     * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+     * @param index The index of the element to return.
+     * @return The nHDHPIAOEGE at the given index.
+     */
+    int getNHDHPIAOEGE(int index);
 
     /**
      * <code>uint32 level_id = 8;</code>
@@ -37,41 +42,40 @@ public final class PHPBCLPALELOuterClass {
     int getLevelId();
 
     /**
-     * <code>bool is_finish = 9;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
-
-    /**
-     * <code>bool KIEMHBNNEBF = 11;</code>
-     * @return The kIEMHBNNEBF.
-     */
-    boolean getKIEMHBNNEBF();
-
-    /**
-     * <code>uint32 PDLNMDDFNPC = 13;</code>
+     * <code>uint32 PDLNMDDFNPC = 2;</code>
      * @return The pDLNMDDFNPC.
      */
     int getPDLNMDDFNPC();
 
     /**
-     * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-     * @return A list containing the nHDHPIAOEGE.
+     * <code>uint32 NMHDKNDDLMC = 1;</code>
+     * @return The nMHDKNDDLMC.
      */
-    java.util.List<java.lang.Integer> getNHDHPIAOEGEList();
+    int getNMHDKNDDLMC();
+
     /**
-     * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-     * @return The count of nHDHPIAOEGE.
+     * <code>uint32 HNFMJGOFMBG = 11;</code>
+     * @return The hNFMJGOFMBG.
      */
-    int getNHDHPIAOEGECount();
+    int getHNFMJGOFMBG();
+
     /**
-     * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-     * @param index The index of the element to return.
-     * @return The nHDHPIAOEGE at the given index.
+     * <code>bool KIEMHBNNEBF = 12;</code>
+     * @return The kIEMHBNNEBF.
      */
-    int getNHDHPIAOEGE(int index);
+    boolean getKIEMHBNNEBF();
+
+    /**
+     * <code>bool is_finish = 5;</code>
+     * @return The isFinish.
+     */
+    boolean getIsFinish();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PHPBCLPALEL}
    */
   public static final class PHPBCLPALEL extends
@@ -118,37 +122,22 @@ public final class PHPBCLPALELOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              hNFMJGOFMBG_ = input.readUInt32();
-              break;
-            }
-            case 40: {
+            case 8: {
 
               nMHDKNDDLMC_ = input.readUInt32();
               break;
             }
-            case 64: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              kIEMHBNNEBF_ = input.readBool();
-              break;
-            }
-            case 104: {
+            case 16: {
 
               pDLNMDDFNPC_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 40: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 nHDHPIAOEGE_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -156,7 +145,7 @@ public final class PHPBCLPALELOuterClass {
               nHDHPIAOEGE_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -167,6 +156,21 @@ public final class PHPBCLPALELOuterClass {
                 nHDHPIAOEGE_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 64: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              hNFMJGOFMBG_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              kIEMHBNNEBF_ = input.readBool();
               break;
             }
             default: {
@@ -204,27 +208,33 @@ public final class PHPBCLPALELOuterClass {
               emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL.class, emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL.Builder.class);
     }
 
-    public static final int HNFMJGOFMBG_FIELD_NUMBER = 2;
-    private int hNFMJGOFMBG_;
+    public static final int NHDHPIAOEGE_FIELD_NUMBER = 6;
+    private com.google.protobuf.Internal.IntList nHDHPIAOEGE_;
     /**
-     * <code>uint32 HNFMJGOFMBG = 2;</code>
-     * @return The hNFMJGOFMBG.
+     * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+     * @return A list containing the nHDHPIAOEGE.
      */
     @java.lang.Override
-    public int getHNFMJGOFMBG() {
-      return hNFMJGOFMBG_;
+    public java.util.List<java.lang.Integer>
+        getNHDHPIAOEGEList() {
+      return nHDHPIAOEGE_;
     }
-
-    public static final int NMHDKNDDLMC_FIELD_NUMBER = 5;
-    private int nMHDKNDDLMC_;
     /**
-     * <code>uint32 NMHDKNDDLMC = 5;</code>
-     * @return The nMHDKNDDLMC.
+     * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+     * @return The count of nHDHPIAOEGE.
      */
-    @java.lang.Override
-    public int getNMHDKNDDLMC() {
-      return nMHDKNDDLMC_;
+    public int getNHDHPIAOEGECount() {
+      return nHDHPIAOEGE_.size();
     }
+    /**
+     * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+     * @param index The index of the element to return.
+     * @return The nHDHPIAOEGE at the given index.
+     */
+    public int getNHDHPIAOEGE(int index) {
+      return nHDHPIAOEGE_.getInt(index);
+    }
+    private int nHDHPIAOEGEMemoizedSerializedSize = -1;
 
     public static final int LEVEL_ID_FIELD_NUMBER = 8;
     private int levelId_;
@@ -237,32 +247,10 @@ public final class PHPBCLPALELOuterClass {
       return levelId_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 9;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 9;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
-    public static final int KIEMHBNNEBF_FIELD_NUMBER = 11;
-    private boolean kIEMHBNNEBF_;
-    /**
-     * <code>bool KIEMHBNNEBF = 11;</code>
-     * @return The kIEMHBNNEBF.
-     */
-    @java.lang.Override
-    public boolean getKIEMHBNNEBF() {
-      return kIEMHBNNEBF_;
-    }
-
-    public static final int PDLNMDDFNPC_FIELD_NUMBER = 13;
+    public static final int PDLNMDDFNPC_FIELD_NUMBER = 2;
     private int pDLNMDDFNPC_;
     /**
-     * <code>uint32 PDLNMDDFNPC = 13;</code>
+     * <code>uint32 PDLNMDDFNPC = 2;</code>
      * @return The pDLNMDDFNPC.
      */
     @java.lang.Override
@@ -270,33 +258,49 @@ public final class PHPBCLPALELOuterClass {
       return pDLNMDDFNPC_;
     }
 
-    public static final int NHDHPIAOEGE_FIELD_NUMBER = 15;
-    private com.google.protobuf.Internal.IntList nHDHPIAOEGE_;
+    public static final int NMHDKNDDLMC_FIELD_NUMBER = 1;
+    private int nMHDKNDDLMC_;
     /**
-     * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-     * @return A list containing the nHDHPIAOEGE.
+     * <code>uint32 NMHDKNDDLMC = 1;</code>
+     * @return The nMHDKNDDLMC.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getNHDHPIAOEGEList() {
-      return nHDHPIAOEGE_;
+    public int getNMHDKNDDLMC() {
+      return nMHDKNDDLMC_;
     }
+
+    public static final int HNFMJGOFMBG_FIELD_NUMBER = 11;
+    private int hNFMJGOFMBG_;
     /**
-     * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-     * @return The count of nHDHPIAOEGE.
+     * <code>uint32 HNFMJGOFMBG = 11;</code>
+     * @return The hNFMJGOFMBG.
      */
-    public int getNHDHPIAOEGECount() {
-      return nHDHPIAOEGE_.size();
+    @java.lang.Override
+    public int getHNFMJGOFMBG() {
+      return hNFMJGOFMBG_;
     }
+
+    public static final int KIEMHBNNEBF_FIELD_NUMBER = 12;
+    private boolean kIEMHBNNEBF_;
     /**
-     * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-     * @param index The index of the element to return.
-     * @return The nHDHPIAOEGE at the given index.
+     * <code>bool KIEMHBNNEBF = 12;</code>
+     * @return The kIEMHBNNEBF.
      */
-    public int getNHDHPIAOEGE(int index) {
-      return nHDHPIAOEGE_.getInt(index);
+    @java.lang.Override
+    public boolean getKIEMHBNNEBF() {
+      return kIEMHBNNEBF_;
     }
-    private int nHDHPIAOEGEMemoizedSerializedSize = -1;
+
+    public static final int IS_FINISH_FIELD_NUMBER = 5;
+    private boolean isFinish_;
+    /**
+     * <code>bool is_finish = 5;</code>
+     * @return The isFinish.
+     */
+    @java.lang.Override
+    public boolean getIsFinish() {
+      return isFinish_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -313,30 +317,30 @@ public final class PHPBCLPALELOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (hNFMJGOFMBG_ != 0) {
-        output.writeUInt32(2, hNFMJGOFMBG_);
-      }
       if (nMHDKNDDLMC_ != 0) {
-        output.writeUInt32(5, nMHDKNDDLMC_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(8, levelId_);
-      }
-      if (isFinish_ != false) {
-        output.writeBool(9, isFinish_);
-      }
-      if (kIEMHBNNEBF_ != false) {
-        output.writeBool(11, kIEMHBNNEBF_);
+        output.writeUInt32(1, nMHDKNDDLMC_);
       }
       if (pDLNMDDFNPC_ != 0) {
-        output.writeUInt32(13, pDLNMDDFNPC_);
+        output.writeUInt32(2, pDLNMDDFNPC_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(5, isFinish_);
       }
       if (getNHDHPIAOEGEList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(nHDHPIAOEGEMemoizedSerializedSize);
       }
       for (int i = 0; i < nHDHPIAOEGE_.size(); i++) {
         output.writeUInt32NoTag(nHDHPIAOEGE_.getInt(i));
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(8, levelId_);
+      }
+      if (hNFMJGOFMBG_ != 0) {
+        output.writeUInt32(11, hNFMJGOFMBG_);
+      }
+      if (kIEMHBNNEBF_ != false) {
+        output.writeBool(12, kIEMHBNNEBF_);
       }
       unknownFields.writeTo(output);
     }
@@ -347,29 +351,17 @@ public final class PHPBCLPALELOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hNFMJGOFMBG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, hNFMJGOFMBG_);
-      }
       if (nMHDKNDDLMC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, nMHDKNDDLMC_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, levelId_);
-      }
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isFinish_);
-      }
-      if (kIEMHBNNEBF_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, kIEMHBNNEBF_);
+          .computeUInt32Size(1, nMHDKNDDLMC_);
       }
       if (pDLNMDDFNPC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, pDLNMDDFNPC_);
+          .computeUInt32Size(2, pDLNMDDFNPC_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, isFinish_);
       }
       {
         int dataSize = 0;
@@ -384,6 +376,18 @@ public final class PHPBCLPALELOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         nHDHPIAOEGEMemoizedSerializedSize = dataSize;
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, levelId_);
+      }
+      if (hNFMJGOFMBG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, hNFMJGOFMBG_);
+      }
+      if (kIEMHBNNEBF_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, kIEMHBNNEBF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -400,20 +404,20 @@ public final class PHPBCLPALELOuterClass {
       }
       emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL other = (emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL) obj;
 
-      if (getHNFMJGOFMBG()
-          != other.getHNFMJGOFMBG()) return false;
-      if (getNMHDKNDDLMC()
-          != other.getNMHDKNDDLMC()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
-      if (getKIEMHBNNEBF()
-          != other.getKIEMHBNNEBF()) return false;
-      if (getPDLNMDDFNPC()
-          != other.getPDLNMDDFNPC()) return false;
       if (!getNHDHPIAOEGEList()
           .equals(other.getNHDHPIAOEGEList())) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
+      if (getPDLNMDDFNPC()
+          != other.getPDLNMDDFNPC()) return false;
+      if (getNMHDKNDDLMC()
+          != other.getNMHDKNDDLMC()) return false;
+      if (getHNFMJGOFMBG()
+          != other.getHNFMJGOFMBG()) return false;
+      if (getKIEMHBNNEBF()
+          != other.getKIEMHBNNEBF()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -425,24 +429,24 @@ public final class PHPBCLPALELOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HNFMJGOFMBG_FIELD_NUMBER;
-      hash = (53 * hash) + getHNFMJGOFMBG();
-      hash = (37 * hash) + NMHDKNDDLMC_FIELD_NUMBER;
-      hash = (53 * hash) + getNMHDKNDDLMC();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
-      hash = (37 * hash) + KIEMHBNNEBF_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKIEMHBNNEBF());
-      hash = (37 * hash) + PDLNMDDFNPC_FIELD_NUMBER;
-      hash = (53 * hash) + getPDLNMDDFNPC();
       if (getNHDHPIAOEGECount() > 0) {
         hash = (37 * hash) + NHDHPIAOEGE_FIELD_NUMBER;
         hash = (53 * hash) + getNHDHPIAOEGEList().hashCode();
       }
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + PDLNMDDFNPC_FIELD_NUMBER;
+      hash = (53 * hash) + getPDLNMDDFNPC();
+      hash = (37 * hash) + NMHDKNDDLMC_FIELD_NUMBER;
+      hash = (53 * hash) + getNMHDKNDDLMC();
+      hash = (37 * hash) + HNFMJGOFMBG_FIELD_NUMBER;
+      hash = (53 * hash) + getHNFMJGOFMBG();
+      hash = (37 * hash) + KIEMHBNNEBF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getKIEMHBNNEBF());
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -539,6 +543,10 @@ public final class PHPBCLPALELOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PHPBCLPALEL}
      */
     public static final class Builder extends
@@ -576,20 +584,20 @@ public final class PHPBCLPALELOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hNFMJGOFMBG_ = 0;
-
-        nMHDKNDDLMC_ = 0;
-
+        nHDHPIAOEGE_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
-
-        isFinish_ = false;
-
-        kIEMHBNNEBF_ = false;
 
         pDLNMDDFNPC_ = 0;
 
-        nHDHPIAOEGE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        nMHDKNDDLMC_ = 0;
+
+        hNFMJGOFMBG_ = 0;
+
+        kIEMHBNNEBF_ = false;
+
+        isFinish_ = false;
+
         return this;
       }
 
@@ -617,17 +625,17 @@ public final class PHPBCLPALELOuterClass {
       public emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL buildPartial() {
         emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL result = new emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL(this);
         int from_bitField0_ = bitField0_;
-        result.hNFMJGOFMBG_ = hNFMJGOFMBG_;
-        result.nMHDKNDDLMC_ = nMHDKNDDLMC_;
-        result.levelId_ = levelId_;
-        result.isFinish_ = isFinish_;
-        result.kIEMHBNNEBF_ = kIEMHBNNEBF_;
-        result.pDLNMDDFNPC_ = pDLNMDDFNPC_;
         if (((bitField0_ & 0x00000001) != 0)) {
           nHDHPIAOEGE_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nHDHPIAOEGE_ = nHDHPIAOEGE_;
+        result.levelId_ = levelId_;
+        result.pDLNMDDFNPC_ = pDLNMDDFNPC_;
+        result.nMHDKNDDLMC_ = nMHDKNDDLMC_;
+        result.hNFMJGOFMBG_ = hNFMJGOFMBG_;
+        result.kIEMHBNNEBF_ = kIEMHBNNEBF_;
+        result.isFinish_ = isFinish_;
         onBuilt();
         return result;
       }
@@ -676,24 +684,6 @@ public final class PHPBCLPALELOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL other) {
         if (other == emu.grasscutter.net.proto.PHPBCLPALELOuterClass.PHPBCLPALEL.getDefaultInstance()) return this;
-        if (other.getHNFMJGOFMBG() != 0) {
-          setHNFMJGOFMBG(other.getHNFMJGOFMBG());
-        }
-        if (other.getNMHDKNDDLMC() != 0) {
-          setNMHDKNDDLMC(other.getNMHDKNDDLMC());
-        }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
-        if (other.getKIEMHBNNEBF() != false) {
-          setKIEMHBNNEBF(other.getKIEMHBNNEBF());
-        }
-        if (other.getPDLNMDDFNPC() != 0) {
-          setPDLNMDDFNPC(other.getPDLNMDDFNPC());
-        }
         if (!other.nHDHPIAOEGE_.isEmpty()) {
           if (nHDHPIAOEGE_.isEmpty()) {
             nHDHPIAOEGE_ = other.nHDHPIAOEGE_;
@@ -703,6 +693,24 @@ public final class PHPBCLPALELOuterClass {
             nHDHPIAOEGE_.addAll(other.nHDHPIAOEGE_);
           }
           onChanged();
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
+        }
+        if (other.getPDLNMDDFNPC() != 0) {
+          setPDLNMDDFNPC(other.getPDLNMDDFNPC());
+        }
+        if (other.getNMHDKNDDLMC() != 0) {
+          setNMHDKNDDLMC(other.getNMHDKNDDLMC());
+        }
+        if (other.getHNFMJGOFMBG() != 0) {
+          setHNFMJGOFMBG(other.getHNFMJGOFMBG());
+        }
+        if (other.getKIEMHBNNEBF() != false) {
+          setKIEMHBNNEBF(other.getKIEMHBNNEBF());
+        }
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -734,64 +742,81 @@ public final class PHPBCLPALELOuterClass {
       }
       private int bitField0_;
 
-      private int hNFMJGOFMBG_ ;
-      /**
-       * <code>uint32 HNFMJGOFMBG = 2;</code>
-       * @return The hNFMJGOFMBG.
-       */
-      @java.lang.Override
-      public int getHNFMJGOFMBG() {
-        return hNFMJGOFMBG_;
+      private com.google.protobuf.Internal.IntList nHDHPIAOEGE_ = emptyIntList();
+      private void ensureNHDHPIAOEGEIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          nHDHPIAOEGE_ = mutableCopy(nHDHPIAOEGE_);
+          bitField0_ |= 0x00000001;
+         }
       }
       /**
-       * <code>uint32 HNFMJGOFMBG = 2;</code>
-       * @param value The hNFMJGOFMBG to set.
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @return A list containing the nHDHPIAOEGE.
+       */
+      public java.util.List<java.lang.Integer>
+          getNHDHPIAOEGEList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(nHDHPIAOEGE_) : nHDHPIAOEGE_;
+      }
+      /**
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @return The count of nHDHPIAOEGE.
+       */
+      public int getNHDHPIAOEGECount() {
+        return nHDHPIAOEGE_.size();
+      }
+      /**
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @param index The index of the element to return.
+       * @return The nHDHPIAOEGE at the given index.
+       */
+      public int getNHDHPIAOEGE(int index) {
+        return nHDHPIAOEGE_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The nHDHPIAOEGE to set.
        * @return This builder for chaining.
        */
-      public Builder setHNFMJGOFMBG(int value) {
-        
-        hNFMJGOFMBG_ = value;
+      public Builder setNHDHPIAOEGE(
+          int index, int value) {
+        ensureNHDHPIAOEGEIsMutable();
+        nHDHPIAOEGE_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 HNFMJGOFMBG = 2;</code>
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @param value The nHDHPIAOEGE to add.
        * @return This builder for chaining.
        */
-      public Builder clearHNFMJGOFMBG() {
-        
-        hNFMJGOFMBG_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int nMHDKNDDLMC_ ;
-      /**
-       * <code>uint32 NMHDKNDDLMC = 5;</code>
-       * @return The nMHDKNDDLMC.
-       */
-      @java.lang.Override
-      public int getNMHDKNDDLMC() {
-        return nMHDKNDDLMC_;
-      }
-      /**
-       * <code>uint32 NMHDKNDDLMC = 5;</code>
-       * @param value The nMHDKNDDLMC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNMHDKNDDLMC(int value) {
-        
-        nMHDKNDDLMC_ = value;
+      public Builder addNHDHPIAOEGE(int value) {
+        ensureNHDHPIAOEGEIsMutable();
+        nHDHPIAOEGE_.addInt(value);
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NMHDKNDDLMC = 5;</code>
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @param values The nHDHPIAOEGE to add.
        * @return This builder for chaining.
        */
-      public Builder clearNMHDKNDDLMC() {
-        
-        nMHDKNDDLMC_ = 0;
+      public Builder addAllNHDHPIAOEGE(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureNHDHPIAOEGEIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nHDHPIAOEGE_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 NHDHPIAOEGE = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNHDHPIAOEGE() {
+        nHDHPIAOEGE_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -827,71 +852,9 @@ public final class PHPBCLPALELOuterClass {
         return this;
       }
 
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 9;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 9;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean kIEMHBNNEBF_ ;
-      /**
-       * <code>bool KIEMHBNNEBF = 11;</code>
-       * @return The kIEMHBNNEBF.
-       */
-      @java.lang.Override
-      public boolean getKIEMHBNNEBF() {
-        return kIEMHBNNEBF_;
-      }
-      /**
-       * <code>bool KIEMHBNNEBF = 11;</code>
-       * @param value The kIEMHBNNEBF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKIEMHBNNEBF(boolean value) {
-        
-        kIEMHBNNEBF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool KIEMHBNNEBF = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKIEMHBNNEBF() {
-        
-        kIEMHBNNEBF_ = false;
-        onChanged();
-        return this;
-      }
-
       private int pDLNMDDFNPC_ ;
       /**
-       * <code>uint32 PDLNMDDFNPC = 13;</code>
+       * <code>uint32 PDLNMDDFNPC = 2;</code>
        * @return The pDLNMDDFNPC.
        */
       @java.lang.Override
@@ -899,7 +862,7 @@ public final class PHPBCLPALELOuterClass {
         return pDLNMDDFNPC_;
       }
       /**
-       * <code>uint32 PDLNMDDFNPC = 13;</code>
+       * <code>uint32 PDLNMDDFNPC = 2;</code>
        * @param value The pDLNMDDFNPC to set.
        * @return This builder for chaining.
        */
@@ -910,7 +873,7 @@ public final class PHPBCLPALELOuterClass {
         return this;
       }
       /**
-       * <code>uint32 PDLNMDDFNPC = 13;</code>
+       * <code>uint32 PDLNMDDFNPC = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearPDLNMDDFNPC() {
@@ -920,81 +883,126 @@ public final class PHPBCLPALELOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList nHDHPIAOEGE_ = emptyIntList();
-      private void ensureNHDHPIAOEGEIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          nHDHPIAOEGE_ = mutableCopy(nHDHPIAOEGE_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private int nMHDKNDDLMC_ ;
       /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-       * @return A list containing the nHDHPIAOEGE.
+       * <code>uint32 NMHDKNDDLMC = 1;</code>
+       * @return The nMHDKNDDLMC.
        */
-      public java.util.List<java.lang.Integer>
-          getNHDHPIAOEGEList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(nHDHPIAOEGE_) : nHDHPIAOEGE_;
+      @java.lang.Override
+      public int getNMHDKNDDLMC() {
+        return nMHDKNDDLMC_;
       }
       /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-       * @return The count of nHDHPIAOEGE.
-       */
-      public int getNHDHPIAOEGECount() {
-        return nHDHPIAOEGE_.size();
-      }
-      /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-       * @param index The index of the element to return.
-       * @return The nHDHPIAOEGE at the given index.
-       */
-      public int getNHDHPIAOEGE(int index) {
-        return nHDHPIAOEGE_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-       * @param index The index to set the value at.
-       * @param value The nHDHPIAOEGE to set.
+       * <code>uint32 NMHDKNDDLMC = 1;</code>
+       * @param value The nMHDKNDDLMC to set.
        * @return This builder for chaining.
        */
-      public Builder setNHDHPIAOEGE(
-          int index, int value) {
-        ensureNHDHPIAOEGEIsMutable();
-        nHDHPIAOEGE_.setInt(index, value);
+      public Builder setNMHDKNDDLMC(int value) {
+        
+        nMHDKNDDLMC_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-       * @param value The nHDHPIAOEGE to add.
+       * <code>uint32 NMHDKNDDLMC = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder addNHDHPIAOEGE(int value) {
-        ensureNHDHPIAOEGEIsMutable();
-        nHDHPIAOEGE_.addInt(value);
+      public Builder clearNMHDKNDDLMC() {
+        
+        nMHDKNDDLMC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hNFMJGOFMBG_ ;
+      /**
+       * <code>uint32 HNFMJGOFMBG = 11;</code>
+       * @return The hNFMJGOFMBG.
+       */
+      @java.lang.Override
+      public int getHNFMJGOFMBG() {
+        return hNFMJGOFMBG_;
+      }
+      /**
+       * <code>uint32 HNFMJGOFMBG = 11;</code>
+       * @param value The hNFMJGOFMBG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHNFMJGOFMBG(int value) {
+        
+        hNFMJGOFMBG_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
-       * @param values The nHDHPIAOEGE to add.
+       * <code>uint32 HNFMJGOFMBG = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder addAllNHDHPIAOEGE(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNHDHPIAOEGEIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nHDHPIAOEGE_);
+      public Builder clearHNFMJGOFMBG() {
+        
+        hNFMJGOFMBG_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean kIEMHBNNEBF_ ;
+      /**
+       * <code>bool KIEMHBNNEBF = 12;</code>
+       * @return The kIEMHBNNEBF.
+       */
+      @java.lang.Override
+      public boolean getKIEMHBNNEBF() {
+        return kIEMHBNNEBF_;
+      }
+      /**
+       * <code>bool KIEMHBNNEBF = 12;</code>
+       * @param value The kIEMHBNNEBF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKIEMHBNNEBF(boolean value) {
+        
+        kIEMHBNNEBF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 NHDHPIAOEGE = 15;</code>
+       * <code>bool KIEMHBNNEBF = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNHDHPIAOEGE() {
-        nHDHPIAOEGE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearKIEMHBNNEBF() {
+        
+        kIEMHBNNEBF_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 5;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 5;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
         onChanged();
         return this;
       }
@@ -1065,12 +1073,12 @@ public final class PHPBCLPALELOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021PHPBCLPALEL.proto\"\233\001\n\013PHPBCLPALEL\022\023\n\013H" +
-      "NFMJGOFMBG\030\002 \001(\r\022\023\n\013NMHDKNDDLMC\030\005 \001(\r\022\020\n" +
-      "\010level_id\030\010 \001(\r\022\021\n\tis_finish\030\t \001(\010\022\023\n\013KI" +
-      "EMHBNNEBF\030\013 \001(\010\022\023\n\013PDLNMDDFNPC\030\r \001(\r\022\023\n\013" +
-      "NHDHPIAOEGE\030\017 \003(\rB2\n\031emu.grasscutter.net" +
-      ".protoB\025PHPBCLPALELOuterClassb\006proto3"
+      "\n\021PHPBCLPALEL.proto\"\233\001\n\013PHPBCLPALEL\022\023\n\013N" +
+      "HDHPIAOEGE\030\006 \003(\r\022\020\n\010level_id\030\010 \001(\r\022\023\n\013PD" +
+      "LNMDDFNPC\030\002 \001(\r\022\023\n\013NMHDKNDDLMC\030\001 \001(\r\022\023\n\013" +
+      "HNFMJGOFMBG\030\013 \001(\r\022\023\n\013KIEMHBNNEBF\030\014 \001(\010\022\021" +
+      "\n\tis_finish\030\005 \001(\010B\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1081,7 +1089,7 @@ public final class PHPBCLPALELOuterClass {
     internal_static_PHPBCLPALEL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PHPBCLPALEL_descriptor,
-        new java.lang.String[] { "HNFMJGOFMBG", "NMHDKNDDLMC", "LevelId", "IsFinish", "KIEMHBNNEBF", "PDLNMDDFNPC", "NHDHPIAOEGE", });
+        new java.lang.String[] { "NHDHPIAOEGE", "LevelId", "PDLNMDDFNPC", "NMHDKNDDLMC", "HNFMJGOFMBG", "KIEMHBNNEBF", "IsFinish", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -59,9 +59,8 @@ public class CookingManager extends BasePlayerManager {
 
     public void handlePlayerCookReq(PlayerCookReq req) {
         int recipeId = req.getRecipeId();
-        // 7.0 dump fields are obfuscated; pick a sane cook_count from candidates.
-        int count = firstSaneCount(req.getKLACBPCPCMJ(), req.getOLLOPKLIIAC(), req.getDDACKLBMIKL());
-        int quality = req.getJJPABEHGMCH();
+        int count = firstSaneCount(req.getCookCount());
+        int quality = req.getQteQuality();
         if (quality < 0 || quality > 3) {
             quality = 0;
         }

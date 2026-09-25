@@ -275,7 +275,7 @@ public class BattlePassManager extends BasePlayerDataManager {
                         new BattlePassReward(
                                 tag.getLevel(),
                                 tag.getRewardId(),
-                                tag.getUnlockStatus() == BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID);
+                                tag.getUnlockStatus() == BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID);
                 this.getTakenRewards().put(bpReward.getRewardId(), bpReward);
             }
 

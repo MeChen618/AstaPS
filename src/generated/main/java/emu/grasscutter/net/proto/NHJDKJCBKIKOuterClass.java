@@ -31,16 +31,16 @@ public final class NHJDKJCBKIKOuterClass {
     int getLDMLJMKMLPI();
 
     /**
-     * <code>bool DFAELBDOLDB = 3;</code>
-     * @return The dFAELBDOLDB.
-     */
-    boolean getDFAELBDOLDB();
-
-    /**
      * <code>bool NJECBOKKGIG = 4;</code>
      * @return The nJECBOKKGIG.
      */
     boolean getNJECBOKKGIG();
+
+    /**
+     * <code>bool DFAELBDOLDB = 3;</code>
+     * @return The dFAELBDOLDB.
+     */
+    boolean getDFAELBDOLDB();
 
     /**
      * <code>bool GDHFLGEBOBB = 5;</code>
@@ -55,6 +55,10 @@ public final class NHJDKJCBKIKOuterClass {
     boolean getOOCLDMOAJFL();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NHJDKJCBKIK}
    */
   public static final class NHJDKJCBKIK extends
@@ -183,17 +187,6 @@ public final class NHJDKJCBKIKOuterClass {
       return lDMLJMKMLPI_;
     }
 
-    public static final int DFAELBDOLDB_FIELD_NUMBER = 3;
-    private boolean dFAELBDOLDB_;
-    /**
-     * <code>bool DFAELBDOLDB = 3;</code>
-     * @return The dFAELBDOLDB.
-     */
-    @java.lang.Override
-    public boolean getDFAELBDOLDB() {
-      return dFAELBDOLDB_;
-    }
-
     public static final int NJECBOKKGIG_FIELD_NUMBER = 4;
     private boolean nJECBOKKGIG_;
     /**
@@ -203,6 +196,17 @@ public final class NHJDKJCBKIKOuterClass {
     @java.lang.Override
     public boolean getNJECBOKKGIG() {
       return nJECBOKKGIG_;
+    }
+
+    public static final int DFAELBDOLDB_FIELD_NUMBER = 3;
+    private boolean dFAELBDOLDB_;
+    /**
+     * <code>bool DFAELBDOLDB = 3;</code>
+     * @return The dFAELBDOLDB.
+     */
+    @java.lang.Override
+    public boolean getDFAELBDOLDB() {
+      return dFAELBDOLDB_;
     }
 
     public static final int GDHFLGEBOBB_FIELD_NUMBER = 5;
@@ -311,10 +315,10 @@ public final class NHJDKJCBKIKOuterClass {
           != other.getTypeGuid()) return false;
       if (getLDMLJMKMLPI()
           != other.getLDMLJMKMLPI()) return false;
-      if (getDFAELBDOLDB()
-          != other.getDFAELBDOLDB()) return false;
       if (getNJECBOKKGIG()
           != other.getNJECBOKKGIG()) return false;
+      if (getDFAELBDOLDB()
+          != other.getDFAELBDOLDB()) return false;
       if (getGDHFLGEBOBB()
           != other.getGDHFLGEBOBB()) return false;
       if (getOOCLDMOAJFL()
@@ -335,12 +339,12 @@ public final class NHJDKJCBKIKOuterClass {
           getTypeGuid());
       hash = (37 * hash) + LDMLJMKMLPI_FIELD_NUMBER;
       hash = (53 * hash) + getLDMLJMKMLPI();
-      hash = (37 * hash) + DFAELBDOLDB_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDFAELBDOLDB());
       hash = (37 * hash) + NJECBOKKGIG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNJECBOKKGIG());
+      hash = (37 * hash) + DFAELBDOLDB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDFAELBDOLDB());
       hash = (37 * hash) + GDHFLGEBOBB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getGDHFLGEBOBB());
@@ -443,6 +447,10 @@ public final class NHJDKJCBKIKOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NHJDKJCBKIK}
      */
     public static final class Builder extends
@@ -484,9 +492,9 @@ public final class NHJDKJCBKIKOuterClass {
 
         lDMLJMKMLPI_ = 0;
 
-        dFAELBDOLDB_ = false;
-
         nJECBOKKGIG_ = false;
+
+        dFAELBDOLDB_ = false;
 
         gDHFLGEBOBB_ = false;
 
@@ -520,8 +528,8 @@ public final class NHJDKJCBKIKOuterClass {
         emu.grasscutter.net.proto.NHJDKJCBKIKOuterClass.NHJDKJCBKIK result = new emu.grasscutter.net.proto.NHJDKJCBKIKOuterClass.NHJDKJCBKIK(this);
         result.TypeGuid_ = TypeGuid_;
         result.lDMLJMKMLPI_ = lDMLJMKMLPI_;
-        result.dFAELBDOLDB_ = dFAELBDOLDB_;
         result.nJECBOKKGIG_ = nJECBOKKGIG_;
+        result.dFAELBDOLDB_ = dFAELBDOLDB_;
         result.gDHFLGEBOBB_ = gDHFLGEBOBB_;
         result.oOCLDMOAJFL_ = oOCLDMOAJFL_;
         onBuilt();
@@ -578,11 +586,11 @@ public final class NHJDKJCBKIKOuterClass {
         if (other.getLDMLJMKMLPI() != 0) {
           setLDMLJMKMLPI(other.getLDMLJMKMLPI());
         }
-        if (other.getDFAELBDOLDB() != false) {
-          setDFAELBDOLDB(other.getDFAELBDOLDB());
-        }
         if (other.getNJECBOKKGIG() != false) {
           setNJECBOKKGIG(other.getNJECBOKKGIG());
+        }
+        if (other.getDFAELBDOLDB() != false) {
+          setDFAELBDOLDB(other.getDFAELBDOLDB());
         }
         if (other.getGDHFLGEBOBB() != false) {
           setGDHFLGEBOBB(other.getGDHFLGEBOBB());
@@ -681,37 +689,6 @@ public final class NHJDKJCBKIKOuterClass {
         return this;
       }
 
-      private boolean dFAELBDOLDB_ ;
-      /**
-       * <code>bool DFAELBDOLDB = 3;</code>
-       * @return The dFAELBDOLDB.
-       */
-      @java.lang.Override
-      public boolean getDFAELBDOLDB() {
-        return dFAELBDOLDB_;
-      }
-      /**
-       * <code>bool DFAELBDOLDB = 3;</code>
-       * @param value The dFAELBDOLDB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDFAELBDOLDB(boolean value) {
-        
-        dFAELBDOLDB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool DFAELBDOLDB = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDFAELBDOLDB() {
-        
-        dFAELBDOLDB_ = false;
-        onChanged();
-        return this;
-      }
-
       private boolean nJECBOKKGIG_ ;
       /**
        * <code>bool NJECBOKKGIG = 4;</code>
@@ -739,6 +716,37 @@ public final class NHJDKJCBKIKOuterClass {
       public Builder clearNJECBOKKGIG() {
         
         nJECBOKKGIG_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean dFAELBDOLDB_ ;
+      /**
+       * <code>bool DFAELBDOLDB = 3;</code>
+       * @return The dFAELBDOLDB.
+       */
+      @java.lang.Override
+      public boolean getDFAELBDOLDB() {
+        return dFAELBDOLDB_;
+      }
+      /**
+       * <code>bool DFAELBDOLDB = 3;</code>
+       * @param value The dFAELBDOLDB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDFAELBDOLDB(boolean value) {
+        
+        dFAELBDOLDB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool DFAELBDOLDB = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDFAELBDOLDB() {
+        
+        dFAELBDOLDB_ = false;
         onChanged();
         return this;
       }
@@ -873,10 +881,9 @@ public final class NHJDKJCBKIKOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021NHJDKJCBKIK.proto\"\212\001\n\013NHJDKJCBKIK\022\022\n\n_" +
       "type_guid\030\001 \001(\004\022\023\n\013LDMLJMKMLPI\030\002 \001(\005\022\023\n\013" +
-      "DFAELBDOLDB\030\003 \001(\010\022\023\n\013NJECBOKKGIG\030\004 \001(\010\022\023" +
+      "NJECBOKKGIG\030\004 \001(\010\022\023\n\013DFAELBDOLDB\030\003 \001(\010\022\023" +
       "\n\013GDHFLGEBOBB\030\005 \001(\010\022\023\n\013OOCLDMOAJFL\030\006 \001(\010" +
-      "B2\n\031emu.grasscutter.net.protoB\025NHJDKJCBK" +
-      "IKOuterClassb\006proto3"
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -887,7 +894,7 @@ public final class NHJDKJCBKIKOuterClass {
     internal_static_NHJDKJCBKIK_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NHJDKJCBKIK_descriptor,
-        new java.lang.String[] { "TypeGuid", "LDMLJMKMLPI", "DFAELBDOLDB", "NJECBOKKGIG", "GDHFLGEBOBB", "OOCLDMOAJFL", });
+        new java.lang.String[] { "TypeGuid", "LDMLJMKMLPI", "NJECBOKKGIG", "DFAELBDOLDB", "GDHFLGEBOBB", "OOCLDMOAJFL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,18 +19,22 @@ public final class ICELADLJBHMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 JDNEDLFHMML = 2;</code>
+     * <code>uint32 JDNEDLFHMML = 13;</code>
      * @return The jDNEDLFHMML.
      */
     int getJDNEDLFHMML();
 
     /**
-     * <code>uint32 JBEPCMGPOLJ = 7;</code>
+     * <code>uint32 JBEPCMGPOLJ = 5;</code>
      * @return The jBEPCMGPOLJ.
      */
     int getJBEPCMGPOLJ();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ICELADLJBHM}
    */
   public static final class ICELADLJBHM extends
@@ -75,14 +79,14 @@ public final class ICELADLJBHMOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              jDNEDLFHMML_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 40: {
 
               jBEPCMGPOLJ_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              jDNEDLFHMML_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class ICELADLJBHMOuterClass {
               emu.grasscutter.net.proto.ICELADLJBHMOuterClass.ICELADLJBHM.class, emu.grasscutter.net.proto.ICELADLJBHMOuterClass.ICELADLJBHM.Builder.class);
     }
 
-    public static final int JDNEDLFHMML_FIELD_NUMBER = 2;
+    public static final int JDNEDLFHMML_FIELD_NUMBER = 13;
     private int jDNEDLFHMML_;
     /**
-     * <code>uint32 JDNEDLFHMML = 2;</code>
+     * <code>uint32 JDNEDLFHMML = 13;</code>
      * @return The jDNEDLFHMML.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class ICELADLJBHMOuterClass {
       return jDNEDLFHMML_;
     }
 
-    public static final int JBEPCMGPOLJ_FIELD_NUMBER = 7;
+    public static final int JBEPCMGPOLJ_FIELD_NUMBER = 5;
     private int jBEPCMGPOLJ_;
     /**
-     * <code>uint32 JBEPCMGPOLJ = 7;</code>
+     * <code>uint32 JBEPCMGPOLJ = 5;</code>
      * @return The jBEPCMGPOLJ.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class ICELADLJBHMOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (jDNEDLFHMML_ != 0) {
-        output.writeUInt32(2, jDNEDLFHMML_);
-      }
       if (jBEPCMGPOLJ_ != 0) {
-        output.writeUInt32(7, jBEPCMGPOLJ_);
+        output.writeUInt32(5, jBEPCMGPOLJ_);
+      }
+      if (jDNEDLFHMML_ != 0) {
+        output.writeUInt32(13, jDNEDLFHMML_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class ICELADLJBHMOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (jDNEDLFHMML_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, jDNEDLFHMML_);
-      }
       if (jBEPCMGPOLJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, jBEPCMGPOLJ_);
+          .computeUInt32Size(5, jBEPCMGPOLJ_);
+      }
+      if (jDNEDLFHMML_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, jDNEDLFHMML_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class ICELADLJBHMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ICELADLJBHM}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class ICELADLJBHMOuterClass {
 
       private int jDNEDLFHMML_ ;
       /**
-       * <code>uint32 JDNEDLFHMML = 2;</code>
+       * <code>uint32 JDNEDLFHMML = 13;</code>
        * @return The jDNEDLFHMML.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class ICELADLJBHMOuterClass {
         return jDNEDLFHMML_;
       }
       /**
-       * <code>uint32 JDNEDLFHMML = 2;</code>
+       * <code>uint32 JDNEDLFHMML = 13;</code>
        * @param value The jDNEDLFHMML to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class ICELADLJBHMOuterClass {
         return this;
       }
       /**
-       * <code>uint32 JDNEDLFHMML = 2;</code>
+       * <code>uint32 JDNEDLFHMML = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearJDNEDLFHMML() {
@@ -491,7 +499,7 @@ public final class ICELADLJBHMOuterClass {
 
       private int jBEPCMGPOLJ_ ;
       /**
-       * <code>uint32 JBEPCMGPOLJ = 7;</code>
+       * <code>uint32 JBEPCMGPOLJ = 5;</code>
        * @return The jBEPCMGPOLJ.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class ICELADLJBHMOuterClass {
         return jBEPCMGPOLJ_;
       }
       /**
-       * <code>uint32 JBEPCMGPOLJ = 7;</code>
+       * <code>uint32 JBEPCMGPOLJ = 5;</code>
        * @param value The jBEPCMGPOLJ to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class ICELADLJBHMOuterClass {
         return this;
       }
       /**
-       * <code>uint32 JBEPCMGPOLJ = 7;</code>
+       * <code>uint32 JBEPCMGPOLJ = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearJBEPCMGPOLJ() {
@@ -587,9 +595,8 @@ public final class ICELADLJBHMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ICELADLJBHM.proto\"7\n\013ICELADLJBHM\022\023\n\013JD" +
-      "NEDLFHMML\030\002 \001(\r\022\023\n\013JBEPCMGPOLJ\030\007 \001(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025ICELADLJBHMOu" +
-      "terClassb\006proto3"
+      "NEDLFHMML\030\r \001(\r\022\023\n\013JBEPCMGPOLJ\030\005 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -152,8 +152,8 @@ public final class PHCHPFLPIFLOuterClass {
       "\n\021PHCHPFLPIFL.proto*h\n\013PHCHPFLPIFL\022\035\n\031PH" +
       "CHPFLPIFL_DEFAULT_VALUE\020\000\022\022\n\016PHCHPFLPIFL" +
       "__1\020\001\022\022\n\016PHCHPFLPIFL__2\020\002\022\022\n\016PHCHPFLPIFL" +
-      "__3\020\003B2\n\031emu.grasscutter.net.protoB\025PHCH" +
-      "PFLPIFLOuterClassb\006proto3"
+      "__3\020\003B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

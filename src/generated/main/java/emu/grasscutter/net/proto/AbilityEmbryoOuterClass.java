@@ -19,12 +19,6 @@ public final class AbilityEmbryoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 ability_id = 1;</code>
-     * @return The abilityId.
-     */
-    int getAbilityId();
-
-    /**
      * <code>fixed32 ability_name_hash = 2;</code>
      * @return The abilityNameHash.
      */
@@ -35,8 +29,18 @@ public final class AbilityEmbryoOuterClass {
      * @return The abilityOverrideNameHash.
      */
     int getAbilityOverrideNameHash();
+
+    /**
+     * <code>uint32 ability_id = 1;</code>
+     * @return The abilityId.
+     */
+    int getAbilityId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AbilityEmbryo}
    */
   public static final class AbilityEmbryo extends
@@ -128,17 +132,6 @@ public final class AbilityEmbryoOuterClass {
               emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo.class, emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo.Builder.class);
     }
 
-    public static final int ABILITY_ID_FIELD_NUMBER = 1;
-    private int abilityId_;
-    /**
-     * <code>uint32 ability_id = 1;</code>
-     * @return The abilityId.
-     */
-    @java.lang.Override
-    public int getAbilityId() {
-      return abilityId_;
-    }
-
     public static final int ABILITY_NAME_HASH_FIELD_NUMBER = 2;
     private int abilityNameHash_;
     /**
@@ -159,6 +152,17 @@ public final class AbilityEmbryoOuterClass {
     @java.lang.Override
     public int getAbilityOverrideNameHash() {
       return abilityOverrideNameHash_;
+    }
+
+    public static final int ABILITY_ID_FIELD_NUMBER = 1;
+    private int abilityId_;
+    /**
+     * <code>uint32 ability_id = 1;</code>
+     * @return The abilityId.
+     */
+    @java.lang.Override
+    public int getAbilityId() {
+      return abilityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -220,12 +224,12 @@ public final class AbilityEmbryoOuterClass {
       }
       emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo other = (emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo) obj;
 
-      if (getAbilityId()
-          != other.getAbilityId()) return false;
       if (getAbilityNameHash()
           != other.getAbilityNameHash()) return false;
       if (getAbilityOverrideNameHash()
           != other.getAbilityOverrideNameHash()) return false;
+      if (getAbilityId()
+          != other.getAbilityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,12 +241,12 @@ public final class AbilityEmbryoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ABILITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getAbilityId();
       hash = (37 * hash) + ABILITY_NAME_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getAbilityNameHash();
       hash = (37 * hash) + ABILITY_OVERRIDE_NAME_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getAbilityOverrideNameHash();
+      hash = (37 * hash) + ABILITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAbilityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -339,6 +343,10 @@ public final class AbilityEmbryoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AbilityEmbryo}
      */
     public static final class Builder extends
@@ -376,11 +384,11 @@ public final class AbilityEmbryoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        abilityId_ = 0;
-
         abilityNameHash_ = 0;
 
         abilityOverrideNameHash_ = 0;
+
+        abilityId_ = 0;
 
         return this;
       }
@@ -408,9 +416,9 @@ public final class AbilityEmbryoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo buildPartial() {
         emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo result = new emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo(this);
-        result.abilityId_ = abilityId_;
         result.abilityNameHash_ = abilityNameHash_;
         result.abilityOverrideNameHash_ = abilityOverrideNameHash_;
+        result.abilityId_ = abilityId_;
         onBuilt();
         return result;
       }
@@ -459,14 +467,14 @@ public final class AbilityEmbryoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo other) {
         if (other == emu.grasscutter.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo.getDefaultInstance()) return this;
-        if (other.getAbilityId() != 0) {
-          setAbilityId(other.getAbilityId());
-        }
         if (other.getAbilityNameHash() != 0) {
           setAbilityNameHash(other.getAbilityNameHash());
         }
         if (other.getAbilityOverrideNameHash() != 0) {
           setAbilityOverrideNameHash(other.getAbilityOverrideNameHash());
+        }
+        if (other.getAbilityId() != 0) {
+          setAbilityId(other.getAbilityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -494,37 +502,6 @@ public final class AbilityEmbryoOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int abilityId_ ;
-      /**
-       * <code>uint32 ability_id = 1;</code>
-       * @return The abilityId.
-       */
-      @java.lang.Override
-      public int getAbilityId() {
-        return abilityId_;
-      }
-      /**
-       * <code>uint32 ability_id = 1;</code>
-       * @param value The abilityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAbilityId(int value) {
-        
-        abilityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 ability_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAbilityId() {
-        
-        abilityId_ = 0;
-        onChanged();
         return this;
       }
 
@@ -586,6 +563,37 @@ public final class AbilityEmbryoOuterClass {
       public Builder clearAbilityOverrideNameHash() {
         
         abilityOverrideNameHash_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int abilityId_ ;
+      /**
+       * <code>uint32 ability_id = 1;</code>
+       * @return The abilityId.
+       */
+      @java.lang.Override
+      public int getAbilityId() {
+        return abilityId_;
+      }
+      /**
+       * <code>uint32 ability_id = 1;</code>
+       * @param value The abilityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAbilityId(int value) {
+        
+        abilityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 ability_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAbilityId() {
+        
+        abilityId_ = 0;
         onChanged();
         return this;
       }
@@ -656,11 +664,10 @@ public final class AbilityEmbryoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023AbilityEmbryo.proto\"b\n\rAbilityEmbryo\022\022" +
-      "\n\nability_id\030\001 \001(\r\022\031\n\021ability_name_hash\030" +
-      "\002 \001(\007\022\"\n\032ability_override_name_hash\030\003 \001(" +
-      "\007B4\n\031emu.grasscutter.net.protoB\027AbilityE" +
-      "mbryoOuterClassb\006proto3"
+      "\n\023AbilityEmbryo.proto\"b\n\rAbilityEmbryo\022\031" +
+      "\n\021ability_name_hash\030\002 \001(\007\022\"\n\032ability_ove" +
+      "rride_name_hash\030\003 \001(\007\022\022\n\nability_id\030\001 \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -671,7 +678,7 @@ public final class AbilityEmbryoOuterClass {
     internal_static_AbilityEmbryo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityEmbryo_descriptor,
-        new java.lang.String[] { "AbilityId", "AbilityNameHash", "AbilityOverrideNameHash", });
+        new java.lang.String[] { "AbilityNameHash", "AbilityOverrideNameHash", "AbilityId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

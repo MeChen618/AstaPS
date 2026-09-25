@@ -19,12 +19,6 @@ public final class RewardOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 reward_id = 1;</code>
-     * @return The rewardId.
-     */
-    int getRewardId();
-
-    /**
      * <code>repeated .ItemParam item_list = 2;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
@@ -47,10 +41,16 @@ public final class RewardOuterClass {
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 reward_id = 1;</code>
+     * @return The rewardId.
+     */
+    int getRewardId();
   }
   /**
    * <pre>
-   * Obf: HKODPBNKBHM
+   * CmdId: -
    * </pre>
    *
    * Protobuf type {@code Reward}
@@ -148,17 +148,6 @@ public final class RewardOuterClass {
               emu.grasscutter.net.proto.RewardOuterClass.Reward.class, emu.grasscutter.net.proto.RewardOuterClass.Reward.Builder.class);
     }
 
-    public static final int REWARD_ID_FIELD_NUMBER = 1;
-    private int rewardId_;
-    /**
-     * <code>uint32 reward_id = 1;</code>
-     * @return The rewardId.
-     */
-    @java.lang.Override
-    public int getRewardId() {
-      return rewardId_;
-    }
-
     public static final int ITEM_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
@@ -197,6 +186,17 @@ public final class RewardOuterClass {
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index) {
       return itemList_.get(index);
+    }
+
+    public static final int REWARD_ID_FIELD_NUMBER = 1;
+    private int rewardId_;
+    /**
+     * <code>uint32 reward_id = 1;</code>
+     * @return The rewardId.
+     */
+    @java.lang.Override
+    public int getRewardId() {
+      return rewardId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -251,10 +251,10 @@ public final class RewardOuterClass {
       }
       emu.grasscutter.net.proto.RewardOuterClass.Reward other = (emu.grasscutter.net.proto.RewardOuterClass.Reward) obj;
 
-      if (getRewardId()
-          != other.getRewardId()) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
+      if (getRewardId()
+          != other.getRewardId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -266,12 +266,12 @@ public final class RewardOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardId();
       if (getItemListCount() > 0) {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
+      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -369,7 +369,7 @@ public final class RewardOuterClass {
     }
     /**
      * <pre>
-     * Obf: HKODPBNKBHM
+     * CmdId: -
      * </pre>
      *
      * Protobuf type {@code Reward}
@@ -410,14 +410,14 @@ public final class RewardOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rewardId_ = 0;
-
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           itemListBuilder_.clear();
         }
+        rewardId_ = 0;
+
         return this;
       }
 
@@ -445,7 +445,6 @@ public final class RewardOuterClass {
       public emu.grasscutter.net.proto.RewardOuterClass.Reward buildPartial() {
         emu.grasscutter.net.proto.RewardOuterClass.Reward result = new emu.grasscutter.net.proto.RewardOuterClass.Reward(this);
         int from_bitField0_ = bitField0_;
-        result.rewardId_ = rewardId_;
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -455,6 +454,7 @@ public final class RewardOuterClass {
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
+        result.rewardId_ = rewardId_;
         onBuilt();
         return result;
       }
@@ -503,9 +503,6 @@ public final class RewardOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RewardOuterClass.Reward other) {
         if (other == emu.grasscutter.net.proto.RewardOuterClass.Reward.getDefaultInstance()) return this;
-        if (other.getRewardId() != 0) {
-          setRewardId(other.getRewardId());
-        }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
@@ -531,6 +528,9 @@ public final class RewardOuterClass {
               itemListBuilder_.addAllMessages(other.itemList_);
             }
           }
+        }
+        if (other.getRewardId() != 0) {
+          setRewardId(other.getRewardId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -561,37 +561,6 @@ public final class RewardOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int rewardId_ ;
-      /**
-       * <code>uint32 reward_id = 1;</code>
-       * @return The rewardId.
-       */
-      @java.lang.Override
-      public int getRewardId() {
-        return rewardId_;
-      }
-      /**
-       * <code>uint32 reward_id = 1;</code>
-       * @param value The rewardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRewardId(int value) {
-        
-        rewardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 reward_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRewardId() {
-        
-        rewardId_ = 0;
-        onChanged();
-        return this;
-      }
 
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
@@ -832,6 +801,37 @@ public final class RewardOuterClass {
         }
         return itemListBuilder_;
       }
+
+      private int rewardId_ ;
+      /**
+       * <code>uint32 reward_id = 1;</code>
+       * @return The rewardId.
+       */
+      @java.lang.Override
+      public int getRewardId() {
+        return rewardId_;
+      }
+      /**
+       * <code>uint32 reward_id = 1;</code>
+       * @param value The rewardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardId(int value) {
+        
+        rewardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardId() {
+        
+        rewardId_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -900,8 +900,8 @@ public final class RewardOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\014Reward.proto\032\017ItemParam.proto\":\n\006Rewar" +
-      "d\022\021\n\treward_id\030\001 \001(\r\022\035\n\titem_list\030\002 \003(\0132" +
-      "\n.ItemParamB\033\n\031emu.grasscutter.net.proto" +
+      "d\022\035\n\titem_list\030\002 \003(\0132\n.ItemParam\022\021\n\trewa" +
+      "rd_id\030\001 \001(\rB\033\n\031emu.grasscutter.net.proto" +
       "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -914,7 +914,7 @@ public final class RewardOuterClass {
     internal_static_Reward_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Reward_descriptor,
-        new java.lang.String[] { "RewardId", "ItemList", });
+        new java.lang.String[] { "ItemList", "RewardId", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

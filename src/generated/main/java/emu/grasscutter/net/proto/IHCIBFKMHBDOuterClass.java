@@ -19,23 +19,27 @@ public final class IHCIBFKMHBDOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+     * <code>repeated uint32 DCFDPHPKACE = 6;</code>
      * @return A list containing the dCFDPHPKACE.
      */
     java.util.List<java.lang.Integer> getDCFDPHPKACEList();
     /**
-     * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+     * <code>repeated uint32 DCFDPHPKACE = 6;</code>
      * @return The count of dCFDPHPKACE.
      */
     int getDCFDPHPKACECount();
     /**
-     * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+     * <code>repeated uint32 DCFDPHPKACE = 6;</code>
      * @param index The index of the element to return.
      * @return The dCFDPHPKACE at the given index.
      */
     int getDCFDPHPKACE(int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IHCIBFKMHBD}
    */
   public static final class IHCIBFKMHBD extends
@@ -82,7 +86,7 @@ public final class IHCIBFKMHBDOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 dCFDPHPKACE_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +94,7 @@ public final class IHCIBFKMHBDOuterClass {
               dCFDPHPKACE_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +142,10 @@ public final class IHCIBFKMHBDOuterClass {
               emu.grasscutter.net.proto.IHCIBFKMHBDOuterClass.IHCIBFKMHBD.class, emu.grasscutter.net.proto.IHCIBFKMHBDOuterClass.IHCIBFKMHBD.Builder.class);
     }
 
-    public static final int DCFDPHPKACE_FIELD_NUMBER = 12;
+    public static final int DCFDPHPKACE_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList dCFDPHPKACE_;
     /**
-     * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+     * <code>repeated uint32 DCFDPHPKACE = 6;</code>
      * @return A list containing the dCFDPHPKACE.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class IHCIBFKMHBDOuterClass {
       return dCFDPHPKACE_;
     }
     /**
-     * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+     * <code>repeated uint32 DCFDPHPKACE = 6;</code>
      * @return The count of dCFDPHPKACE.
      */
     public int getDCFDPHPKACECount() {
       return dCFDPHPKACE_.size();
     }
     /**
-     * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+     * <code>repeated uint32 DCFDPHPKACE = 6;</code>
      * @param index The index of the element to return.
      * @return The dCFDPHPKACE at the given index.
      */
@@ -182,7 +186,7 @@ public final class IHCIBFKMHBDOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getDCFDPHPKACEList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(dCFDPHPKACEMemoizedSerializedSize);
       }
       for (int i = 0; i < dCFDPHPKACE_.size(); i++) {
@@ -339,6 +343,10 @@ public final class IHCIBFKMHBDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IHCIBFKMHBD}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class IHCIBFKMHBDOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @return A list containing the dCFDPHPKACE.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class IHCIBFKMHBDOuterClass {
                  java.util.Collections.unmodifiableList(dCFDPHPKACE_) : dCFDPHPKACE_;
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @return The count of dCFDPHPKACE.
        */
       public int getDCFDPHPKACECount() {
         return dCFDPHPKACE_.size();
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @param index The index of the element to return.
        * @return The dCFDPHPKACE at the given index.
        */
@@ -530,7 +538,7 @@ public final class IHCIBFKMHBDOuterClass {
         return dCFDPHPKACE_.getInt(index);
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @param index The index to set the value at.
        * @param value The dCFDPHPKACE to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class IHCIBFKMHBDOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @param value The dCFDPHPKACE to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class IHCIBFKMHBDOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @param values The dCFDPHPKACE to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class IHCIBFKMHBDOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DCFDPHPKACE = 12;</code>
+       * <code>repeated uint32 DCFDPHPKACE = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearDCFDPHPKACE() {
@@ -644,8 +652,8 @@ public final class IHCIBFKMHBDOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021IHCIBFKMHBD.proto\"\"\n\013IHCIBFKMHBD\022\023\n\013DC" +
-      "FDPHPKACE\030\014 \003(\rB2\n\031emu.grasscutter.net.p" +
-      "rotoB\025IHCIBFKMHBDOuterClassb\006proto3"
+      "FDPHPKACE\030\006 \003(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -66,8 +66,8 @@ public class CookingCompoundManager extends BasePlayerManager {
                     CompoundQueueData.newBuilder()
                             .setCompoundId(item.getCompoundId())
                             // field1=finished, field7=total in queue, field15=next output unix time
-                            .setECICJPBDGOC(item.getOutputCount(currentTime))
-                            .setLINALGNMBCF(item.getTotalCount())
+                            .setWaitCount(item.getOutputCount(currentTime))
+                            .setOutputCount(item.getTotalCount())
                             .setWaitCount(item.getOutputTime(currentTime))
                             .build();
             compoundQueueData.add(data);
@@ -157,8 +157,8 @@ public class CookingCompoundManager extends BasePlayerManager {
         var data =
                 CompoundQueueData.newBuilder()
                         .setCompoundId(id)
-                        .setECICJPBDGOC(c.getOutputCount(currentTime))
-                        .setLINALGNMBCF(c.getTotalCount())
+                        .setWaitCount(c.getOutputCount(currentTime))
+                        .setOutputCount(c.getTotalCount())
                         .setWaitCount(c.getOutputTime(currentTime))
                         .build();
         player.sendPacket(new PacketPlayerCompoundMaterialRsp(data));

@@ -19,24 +19,28 @@ public final class NIMJOPLLFCBOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 3;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_finish = 11;</code>
+     * <code>bool is_finish = 2;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>bool is_open = 12;</code>
+     * <code>bool is_open = 6;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
+
+    /**
+     * <code>uint32 level_id = 4;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NIMJOPLLFCB}
    */
   public static final class NIMJOPLLFCB extends
@@ -81,17 +85,17 @@ public final class NIMJOPLLFCBOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 16: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 96: {
+            case 32: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
 
               isOpen_ = input.readBool();
               break;
@@ -128,21 +132,10 @@ public final class NIMJOPLLFCBOuterClass {
               emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB.class, emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 3;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 3;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 11;
+    public static final int IS_FINISH_FIELD_NUMBER = 2;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 11;</code>
+     * <code>bool is_finish = 2;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -150,15 +143,26 @@ public final class NIMJOPLLFCBOuterClass {
       return isFinish_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 12;
+    public static final int IS_OPEN_FIELD_NUMBER = 6;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 12;</code>
+     * <code>bool is_open = 6;</code>
      * @return The isOpen.
      */
     @java.lang.Override
     public boolean getIsOpen() {
       return isOpen_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 4;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 4;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -175,14 +179,14 @@ public final class NIMJOPLLFCBOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (levelId_ != 0) {
-        output.writeUInt32(3, levelId_);
-      }
       if (isFinish_ != false) {
-        output.writeBool(11, isFinish_);
+        output.writeBool(2, isFinish_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(4, levelId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(12, isOpen_);
+        output.writeBool(6, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -193,17 +197,17 @@ public final class NIMJOPLLFCBOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, levelId_);
-      }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isFinish_);
+          .computeBoolSize(2, isFinish_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, levelId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isOpen_);
+          .computeBoolSize(6, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,12 +224,12 @@ public final class NIMJOPLLFCBOuterClass {
       }
       emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB other = (emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getIsFinish()
           != other.getIsFinish()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,14 +241,14 @@ public final class NIMJOPLLFCBOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -341,6 +345,10 @@ public final class NIMJOPLLFCBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NIMJOPLLFCB}
      */
     public static final class Builder extends
@@ -378,11 +386,11 @@ public final class NIMJOPLLFCBOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
         isFinish_ = false;
 
         isOpen_ = false;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -410,9 +418,9 @@ public final class NIMJOPLLFCBOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB buildPartial() {
         emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB result = new emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB(this);
-        result.levelId_ = levelId_;
         result.isFinish_ = isFinish_;
         result.isOpen_ = isOpen_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -461,14 +469,14 @@ public final class NIMJOPLLFCBOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB other) {
         if (other == emu.grasscutter.net.proto.NIMJOPLLFCBOuterClass.NIMJOPLLFCB.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -499,40 +507,9 @@ public final class NIMJOPLLFCBOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 3;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 3;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isFinish_ ;
       /**
-       * <code>bool is_finish = 11;</code>
+       * <code>bool is_finish = 2;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -540,7 +517,7 @@ public final class NIMJOPLLFCBOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool is_finish = 11;</code>
+       * <code>bool is_finish = 2;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -551,7 +528,7 @@ public final class NIMJOPLLFCBOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finish = 11;</code>
+       * <code>bool is_finish = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
@@ -563,7 +540,7 @@ public final class NIMJOPLLFCBOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 12;</code>
+       * <code>bool is_open = 6;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -571,7 +548,7 @@ public final class NIMJOPLLFCBOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 12;</code>
+       * <code>bool is_open = 6;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -582,12 +559,43 @@ public final class NIMJOPLLFCBOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 12;</code>
+       * <code>bool is_open = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 4;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 4;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -658,10 +666,10 @@ public final class NIMJOPLLFCBOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021NIMJOPLLFCB.proto\"C\n\013NIMJOPLLFCB\022\020\n\010le" +
-      "vel_id\030\003 \001(\r\022\021\n\tis_finish\030\013 \001(\010\022\017\n\007is_op" +
-      "en\030\014 \001(\010B2\n\031emu.grasscutter.net.protoB\025N" +
-      "IMJOPLLFCBOuterClassb\006proto3"
+      "\n\021NIMJOPLLFCB.proto\"C\n\013NIMJOPLLFCB\022\021\n\tis" +
+      "_finish\030\002 \001(\010\022\017\n\007is_open\030\006 \001(\010\022\020\n\010level_" +
+      "id\030\004 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -672,7 +680,7 @@ public final class NIMJOPLLFCBOuterClass {
     internal_static_NIMJOPLLFCB_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NIMJOPLLFCB_descriptor,
-        new java.lang.String[] { "LevelId", "IsFinish", "IsOpen", });
+        new java.lang.String[] { "IsFinish", "IsOpen", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

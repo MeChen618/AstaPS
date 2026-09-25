@@ -42,6 +42,10 @@ public final class TowerTeamOuterClass {
     int getTowerTeamId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code TowerTeam}
    */
   public static final class TowerTeam extends
@@ -372,6 +376,10 @@ public final class TowerTeamOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code TowerTeam}
      */
     public static final class Builder extends
@@ -715,8 +723,7 @@ public final class TowerTeamOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017TowerTeam.proto\"<\n\tTowerTeam\022\030\n\020avatar" +
       "_guid_list\030\001 \003(\004\022\025\n\rtower_team_id\030\010 \001(\rB" +
-      "0\n\031emu.grasscutter.net.protoB\023TowerTeamO" +
-      "uterClassb\006proto3"
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

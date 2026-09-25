@@ -9,7 +9,7 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
-import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
+import emu.grasscutter.net.proto.ChangHpReasonOuterClass.ChangHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.event.player.PlayerLevelStatueEvent;
 import emu.grasscutter.server.packet.send.*;
@@ -142,7 +142,7 @@ public class SotSManager extends BasePlayerManager {
                                         ((float) needHP / 100),
                                         List.of(3),
                                         PropChangeReason.PropChangeReason_PROP_CHANGE_STATUE_RECOVER,
-                                        ChangeHpReason.ChangeHpReason_CHANGE_HP_ADD_STATUE));
+                                        ChangHpReason.ChangHpReason_CHANGE_HP_ADD_STATUE));
                 player
                         .getSession()
                         .send(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));

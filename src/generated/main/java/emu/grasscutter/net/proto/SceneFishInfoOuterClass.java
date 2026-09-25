@@ -19,18 +19,6 @@ public final class SceneFishInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 fish_id = 1;</code>
-     * @return The fishId.
-     */
-    int getFishId();
-
-    /**
-     * <code>uint32 fish_pool_entity_id = 2;</code>
-     * @return The fishPoolEntityId.
-     */
-    int getFishPoolEntityId();
-
-    /**
      * <code>.Vector fish_pool_pos = 3;</code>
      * @return Whether the fishPoolPos field is set.
      */
@@ -46,18 +34,34 @@ public final class SceneFishInfoOuterClass {
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getFishPoolPosOrBuilder();
 
     /**
-     * <code>uint32 fish_pool_gadget_id = 4;</code>
-     * @return The fishPoolGadgetId.
+     * <code>uint32 fish_id = 1;</code>
+     * @return The fishId.
      */
-    int getFishPoolGadgetId();
+    int getFishId();
 
     /**
      * <code>uint32 last_shock_time = 5;</code>
      * @return The lastShockTime.
      */
     int getLastShockTime();
+
+    /**
+     * <code>uint32 fish_pool_gadget_id = 4;</code>
+     * @return The fishPoolGadgetId.
+     */
+    int getFishPoolGadgetId();
+
+    /**
+     * <code>uint32 fish_pool_entity_id = 2;</code>
+     * @return The fishPoolEntityId.
+     */
+    int getFishPoolEntityId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code SceneFishInfo}
    */
   public static final class SceneFishInfo extends
@@ -167,28 +171,6 @@ public final class SceneFishInfoOuterClass {
               emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo.class, emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo.Builder.class);
     }
 
-    public static final int FISH_ID_FIELD_NUMBER = 1;
-    private int fishId_;
-    /**
-     * <code>uint32 fish_id = 1;</code>
-     * @return The fishId.
-     */
-    @java.lang.Override
-    public int getFishId() {
-      return fishId_;
-    }
-
-    public static final int FISH_POOL_ENTITY_ID_FIELD_NUMBER = 2;
-    private int fishPoolEntityId_;
-    /**
-     * <code>uint32 fish_pool_entity_id = 2;</code>
-     * @return The fishPoolEntityId.
-     */
-    @java.lang.Override
-    public int getFishPoolEntityId() {
-      return fishPoolEntityId_;
-    }
-
     public static final int FISH_POOL_POS_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector fishPoolPos_;
     /**
@@ -215,15 +197,15 @@ public final class SceneFishInfoOuterClass {
       return getFishPoolPos();
     }
 
-    public static final int FISH_POOL_GADGET_ID_FIELD_NUMBER = 4;
-    private int fishPoolGadgetId_;
+    public static final int FISH_ID_FIELD_NUMBER = 1;
+    private int fishId_;
     /**
-     * <code>uint32 fish_pool_gadget_id = 4;</code>
-     * @return The fishPoolGadgetId.
+     * <code>uint32 fish_id = 1;</code>
+     * @return The fishId.
      */
     @java.lang.Override
-    public int getFishPoolGadgetId() {
-      return fishPoolGadgetId_;
+    public int getFishId() {
+      return fishId_;
     }
 
     public static final int LAST_SHOCK_TIME_FIELD_NUMBER = 5;
@@ -235,6 +217,28 @@ public final class SceneFishInfoOuterClass {
     @java.lang.Override
     public int getLastShockTime() {
       return lastShockTime_;
+    }
+
+    public static final int FISH_POOL_GADGET_ID_FIELD_NUMBER = 4;
+    private int fishPoolGadgetId_;
+    /**
+     * <code>uint32 fish_pool_gadget_id = 4;</code>
+     * @return The fishPoolGadgetId.
+     */
+    @java.lang.Override
+    public int getFishPoolGadgetId() {
+      return fishPoolGadgetId_;
+    }
+
+    public static final int FISH_POOL_ENTITY_ID_FIELD_NUMBER = 2;
+    private int fishPoolEntityId_;
+    /**
+     * <code>uint32 fish_pool_entity_id = 2;</code>
+     * @return The fishPoolEntityId.
+     */
+    @java.lang.Override
+    public int getFishPoolEntityId() {
+      return fishPoolEntityId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -310,19 +314,19 @@ public final class SceneFishInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo other = (emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo) obj;
 
-      if (getFishId()
-          != other.getFishId()) return false;
-      if (getFishPoolEntityId()
-          != other.getFishPoolEntityId()) return false;
       if (hasFishPoolPos() != other.hasFishPoolPos()) return false;
       if (hasFishPoolPos()) {
         if (!getFishPoolPos()
             .equals(other.getFishPoolPos())) return false;
       }
-      if (getFishPoolGadgetId()
-          != other.getFishPoolGadgetId()) return false;
+      if (getFishId()
+          != other.getFishId()) return false;
       if (getLastShockTime()
           != other.getLastShockTime()) return false;
+      if (getFishPoolGadgetId()
+          != other.getFishPoolGadgetId()) return false;
+      if (getFishPoolEntityId()
+          != other.getFishPoolEntityId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -334,18 +338,18 @@ public final class SceneFishInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FISH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFishId();
-      hash = (37 * hash) + FISH_POOL_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFishPoolEntityId();
       if (hasFishPoolPos()) {
         hash = (37 * hash) + FISH_POOL_POS_FIELD_NUMBER;
         hash = (53 * hash) + getFishPoolPos().hashCode();
       }
-      hash = (37 * hash) + FISH_POOL_GADGET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFishPoolGadgetId();
+      hash = (37 * hash) + FISH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFishId();
       hash = (37 * hash) + LAST_SHOCK_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastShockTime();
+      hash = (37 * hash) + FISH_POOL_GADGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFishPoolGadgetId();
+      hash = (37 * hash) + FISH_POOL_ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFishPoolEntityId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -442,6 +446,10 @@ public final class SceneFishInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code SceneFishInfo}
      */
     public static final class Builder extends
@@ -479,19 +487,19 @@ public final class SceneFishInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fishId_ = 0;
-
-        fishPoolEntityId_ = 0;
-
         if (fishPoolPosBuilder_ == null) {
           fishPoolPos_ = null;
         } else {
           fishPoolPos_ = null;
           fishPoolPosBuilder_ = null;
         }
-        fishPoolGadgetId_ = 0;
+        fishId_ = 0;
 
         lastShockTime_ = 0;
+
+        fishPoolGadgetId_ = 0;
+
+        fishPoolEntityId_ = 0;
 
         return this;
       }
@@ -519,15 +527,15 @@ public final class SceneFishInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo buildPartial() {
         emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo result = new emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo(this);
-        result.fishId_ = fishId_;
-        result.fishPoolEntityId_ = fishPoolEntityId_;
         if (fishPoolPosBuilder_ == null) {
           result.fishPoolPos_ = fishPoolPos_;
         } else {
           result.fishPoolPos_ = fishPoolPosBuilder_.build();
         }
-        result.fishPoolGadgetId_ = fishPoolGadgetId_;
+        result.fishId_ = fishId_;
         result.lastShockTime_ = lastShockTime_;
+        result.fishPoolGadgetId_ = fishPoolGadgetId_;
+        result.fishPoolEntityId_ = fishPoolEntityId_;
         onBuilt();
         return result;
       }
@@ -576,20 +584,20 @@ public final class SceneFishInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo other) {
         if (other == emu.grasscutter.net.proto.SceneFishInfoOuterClass.SceneFishInfo.getDefaultInstance()) return this;
+        if (other.hasFishPoolPos()) {
+          mergeFishPoolPos(other.getFishPoolPos());
+        }
         if (other.getFishId() != 0) {
           setFishId(other.getFishId());
         }
-        if (other.getFishPoolEntityId() != 0) {
-          setFishPoolEntityId(other.getFishPoolEntityId());
-        }
-        if (other.hasFishPoolPos()) {
-          mergeFishPoolPos(other.getFishPoolPos());
+        if (other.getLastShockTime() != 0) {
+          setLastShockTime(other.getLastShockTime());
         }
         if (other.getFishPoolGadgetId() != 0) {
           setFishPoolGadgetId(other.getFishPoolGadgetId());
         }
-        if (other.getLastShockTime() != 0) {
-          setLastShockTime(other.getLastShockTime());
+        if (other.getFishPoolEntityId() != 0) {
+          setFishPoolEntityId(other.getFishPoolEntityId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -617,68 +625,6 @@ public final class SceneFishInfoOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int fishId_ ;
-      /**
-       * <code>uint32 fish_id = 1;</code>
-       * @return The fishId.
-       */
-      @java.lang.Override
-      public int getFishId() {
-        return fishId_;
-      }
-      /**
-       * <code>uint32 fish_id = 1;</code>
-       * @param value The fishId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFishId(int value) {
-        
-        fishId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 fish_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFishId() {
-        
-        fishId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int fishPoolEntityId_ ;
-      /**
-       * <code>uint32 fish_pool_entity_id = 2;</code>
-       * @return The fishPoolEntityId.
-       */
-      @java.lang.Override
-      public int getFishPoolEntityId() {
-        return fishPoolEntityId_;
-      }
-      /**
-       * <code>uint32 fish_pool_entity_id = 2;</code>
-       * @param value The fishPoolEntityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFishPoolEntityId(int value) {
-        
-        fishPoolEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 fish_pool_entity_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFishPoolEntityId() {
-        
-        fishPoolEntityId_ = 0;
-        onChanged();
         return this;
       }
 
@@ -801,33 +747,33 @@ public final class SceneFishInfoOuterClass {
         return fishPoolPosBuilder_;
       }
 
-      private int fishPoolGadgetId_ ;
+      private int fishId_ ;
       /**
-       * <code>uint32 fish_pool_gadget_id = 4;</code>
-       * @return The fishPoolGadgetId.
+       * <code>uint32 fish_id = 1;</code>
+       * @return The fishId.
        */
       @java.lang.Override
-      public int getFishPoolGadgetId() {
-        return fishPoolGadgetId_;
+      public int getFishId() {
+        return fishId_;
       }
       /**
-       * <code>uint32 fish_pool_gadget_id = 4;</code>
-       * @param value The fishPoolGadgetId to set.
+       * <code>uint32 fish_id = 1;</code>
+       * @param value The fishId to set.
        * @return This builder for chaining.
        */
-      public Builder setFishPoolGadgetId(int value) {
+      public Builder setFishId(int value) {
         
-        fishPoolGadgetId_ = value;
+        fishId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 fish_pool_gadget_id = 4;</code>
+       * <code>uint32 fish_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFishPoolGadgetId() {
+      public Builder clearFishId() {
         
-        fishPoolGadgetId_ = 0;
+        fishId_ = 0;
         onChanged();
         return this;
       }
@@ -859,6 +805,68 @@ public final class SceneFishInfoOuterClass {
       public Builder clearLastShockTime() {
         
         lastShockTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fishPoolGadgetId_ ;
+      /**
+       * <code>uint32 fish_pool_gadget_id = 4;</code>
+       * @return The fishPoolGadgetId.
+       */
+      @java.lang.Override
+      public int getFishPoolGadgetId() {
+        return fishPoolGadgetId_;
+      }
+      /**
+       * <code>uint32 fish_pool_gadget_id = 4;</code>
+       * @param value The fishPoolGadgetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFishPoolGadgetId(int value) {
+        
+        fishPoolGadgetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 fish_pool_gadget_id = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFishPoolGadgetId() {
+        
+        fishPoolGadgetId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fishPoolEntityId_ ;
+      /**
+       * <code>uint32 fish_pool_entity_id = 2;</code>
+       * @return The fishPoolEntityId.
+       */
+      @java.lang.Override
+      public int getFishPoolEntityId() {
+        return fishPoolEntityId_;
+      }
+      /**
+       * <code>uint32 fish_pool_entity_id = 2;</code>
+       * @param value The fishPoolEntityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFishPoolEntityId(int value) {
+        
+        fishPoolEntityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 fish_pool_entity_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFishPoolEntityId() {
+        
+        fishPoolEntityId_ = 0;
         onChanged();
         return this;
       }
@@ -930,12 +938,11 @@ public final class SceneFishInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023SceneFishInfo.proto\032\014Vector.proto\"\223\001\n\r" +
-      "SceneFishInfo\022\017\n\007fish_id\030\001 \001(\r\022\033\n\023fish_p" +
-      "ool_entity_id\030\002 \001(\r\022\036\n\rfish_pool_pos\030\003 \001" +
-      "(\0132\007.Vector\022\033\n\023fish_pool_gadget_id\030\004 \001(\r" +
-      "\022\027\n\017last_shock_time\030\005 \001(\rB4\n\031emu.grasscu" +
-      "tter.net.protoB\027SceneFishInfoOuterClassb" +
-      "\006proto3"
+      "SceneFishInfo\022\036\n\rfish_pool_pos\030\003 \001(\0132\007.V" +
+      "ector\022\017\n\007fish_id\030\001 \001(\r\022\027\n\017last_shock_tim" +
+      "e\030\005 \001(\r\022\033\n\023fish_pool_gadget_id\030\004 \001(\r\022\033\n\023" +
+      "fish_pool_entity_id\030\002 \001(\rB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -947,7 +954,7 @@ public final class SceneFishInfoOuterClass {
     internal_static_SceneFishInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneFishInfo_descriptor,
-        new java.lang.String[] { "FishId", "FishPoolEntityId", "FishPoolPos", "FishPoolGadgetId", "LastShockTime", });
+        new java.lang.String[] { "FishPoolPos", "FishId", "LastShockTime", "FishPoolGadgetId", "FishPoolEntityId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

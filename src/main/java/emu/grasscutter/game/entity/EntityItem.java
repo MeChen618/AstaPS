@@ -19,7 +19,7 @@ import emu.grasscutter.net.proto.ProtEntityTypeOuterClass.ProtEntityType;
 import emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.SceneGadgetInfoOuterClass.SceneGadgetInfo;
-import emu.grasscutter.net.proto._TrifleGadgetInfoOuterClass._TrifleGadgetInfo;
+import emu.grasscutter.net.proto.TrifleGadgetInfo._TrifleGadgetInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.server.packet.send.PacketGadgetInteractRsp;
 import emu.grasscutter.utils.helpers.ProtoHelper;
@@ -127,7 +127,7 @@ public class EntityItem extends EntityBaseGadget {
                         .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
-                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true))
+                                SceneEntityAiInfo.newBuilder().setIsEnteredCombat(true))
                         // Every other entity reports where it actually spawned; this one used to
                         // send an empty Vector, putting the drop's born position at the world
                         // origin while its model rendered at the real one.

@@ -147,7 +147,7 @@ public class EntityClientGadget extends EntityBaseGadget {
                         .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
-                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true))
+                                SceneEntityAiInfo.newBuilder().setIsEnteredCombat(true))
                         .setBornPos(Vector.newBuilder())
                         .build();
 

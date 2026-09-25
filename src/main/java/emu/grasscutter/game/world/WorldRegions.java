@@ -1,7 +1,7 @@
 package emu.grasscutter.game.world;
 
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.net.proto._LimitedRegionInfoOuterClass._LimitedRegionInfo;
+import emu.grasscutter.net.proto.LimitedRegionInfo._LimitedRegionInfo;
 import java.util.Set;
 import java.util.TreeSet;
 

@@ -19,12 +19,6 @@ public final class MassivePropParamOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 type = 1;</code>
-     * @return The type.
-     */
-    int getType();
-
-    /**
      * <code>repeated uint32 reaction_info_list = 2;</code>
      * @return A list containing the reactionInfoList.
      */
@@ -63,8 +57,18 @@ public final class MassivePropParamOuterClass {
      * @return The syncFlag.
      */
     int getSyncFlag();
+
+    /**
+     * <code>int32 type = 1;</code>
+     * @return The type.
+     */
+    int getType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MassivePropParam}
    */
   public static final class MassivePropParam extends
@@ -202,17 +206,6 @@ public final class MassivePropParamOuterClass {
               emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam.class, emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam.Builder.class);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
-    /**
-     * <code>int32 type = 1;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public int getType() {
-      return type_;
-    }
-
     public static final int REACTION_INFO_LIST_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList reactionInfoList_;
     /**
@@ -278,6 +271,17 @@ public final class MassivePropParamOuterClass {
     @java.lang.Override
     public int getSyncFlag() {
       return syncFlag_;
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>int32 type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public int getType() {
+      return type_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -372,14 +376,14 @@ public final class MassivePropParamOuterClass {
       }
       emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam other = (emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam) obj;
 
-      if (getType()
-          != other.getType()) return false;
       if (!getReactionInfoListList()
           .equals(other.getReactionInfoListList())) return false;
       if (!getParamListList()
           .equals(other.getParamListList())) return false;
       if (getSyncFlag()
           != other.getSyncFlag()) return false;
+      if (getType()
+          != other.getType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -391,8 +395,6 @@ public final class MassivePropParamOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
       if (getReactionInfoListCount() > 0) {
         hash = (37 * hash) + REACTION_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getReactionInfoListList().hashCode();
@@ -403,6 +405,8 @@ public final class MassivePropParamOuterClass {
       }
       hash = (37 * hash) + SYNC_FLAG_FIELD_NUMBER;
       hash = (53 * hash) + getSyncFlag();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -499,6 +503,10 @@ public final class MassivePropParamOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MassivePropParam}
      */
     public static final class Builder extends
@@ -536,13 +544,13 @@ public final class MassivePropParamOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        type_ = 0;
-
         reactionInfoList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         paramList_ = emptyFloatList();
         bitField0_ = (bitField0_ & ~0x00000002);
         syncFlag_ = 0;
+
+        type_ = 0;
 
         return this;
       }
@@ -571,7 +579,6 @@ public final class MassivePropParamOuterClass {
       public emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam buildPartial() {
         emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam result = new emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam(this);
         int from_bitField0_ = bitField0_;
-        result.type_ = type_;
         if (((bitField0_ & 0x00000001) != 0)) {
           reactionInfoList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -583,6 +590,7 @@ public final class MassivePropParamOuterClass {
         }
         result.paramList_ = paramList_;
         result.syncFlag_ = syncFlag_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -631,9 +639,6 @@ public final class MassivePropParamOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam other) {
         if (other == emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam.getDefaultInstance()) return this;
-        if (other.getType() != 0) {
-          setType(other.getType());
-        }
         if (!other.reactionInfoList_.isEmpty()) {
           if (reactionInfoList_.isEmpty()) {
             reactionInfoList_ = other.reactionInfoList_;
@@ -656,6 +661,9 @@ public final class MassivePropParamOuterClass {
         }
         if (other.getSyncFlag() != 0) {
           setSyncFlag(other.getSyncFlag());
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -686,37 +694,6 @@ public final class MassivePropParamOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int type_ ;
-      /**
-       * <code>int32 type = 1;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public int getType() {
-        return type_;
-      }
-      /**
-       * <code>int32 type = 1;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 type = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList reactionInfoList_ = emptyIntList();
       private void ensureReactionInfoListIsMutable() {
@@ -906,6 +883,37 @@ public final class MassivePropParamOuterClass {
         onChanged();
         return this;
       }
+
+      private int type_ ;
+      /**
+       * <code>int32 type = 1;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>int32 type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -974,10 +982,10 @@ public final class MassivePropParamOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026MassivePropParam.proto\"c\n\020MassivePropP" +
-      "aram\022\014\n\004type\030\001 \001(\005\022\032\n\022reaction_info_list" +
-      "\030\002 \003(\r\022\022\n\nparam_list\030\003 \003(\002\022\021\n\tsync_flag\030" +
-      "\004 \001(\rB7\n\031emu.grasscutter.net.protoB\032Mass" +
-      "ivePropParamOuterClassb\006proto3"
+      "aram\022\032\n\022reaction_info_list\030\002 \003(\r\022\022\n\npara" +
+      "m_list\030\003 \003(\002\022\021\n\tsync_flag\030\004 \001(\r\022\014\n\004type\030" +
+      "\001 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -988,7 +996,7 @@ public final class MassivePropParamOuterClass {
     internal_static_MassivePropParam_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MassivePropParam_descriptor,
-        new java.lang.String[] { "Type", "ReactionInfoList", "ParamList", "SyncFlag", });
+        new java.lang.String[] { "ReactionInfoList", "ParamList", "SyncFlag", "Type", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

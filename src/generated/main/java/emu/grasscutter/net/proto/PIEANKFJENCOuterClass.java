@@ -19,23 +19,27 @@ public final class PIEANKFJENCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+     * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
      * @return A list containing the aNLHEHHFCPO.
      */
     java.util.List<java.lang.Integer> getANLHEHHFCPOList();
     /**
-     * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+     * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
      * @return The count of aNLHEHHFCPO.
      */
     int getANLHEHHFCPOCount();
     /**
-     * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+     * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
      * @param index The index of the element to return.
      * @return The aNLHEHHFCPO at the given index.
      */
     int getANLHEHHFCPO(int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PIEANKFJENC}
    */
   public static final class PIEANKFJENC extends
@@ -82,7 +86,7 @@ public final class PIEANKFJENCOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aNLHEHHFCPO_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +94,7 @@ public final class PIEANKFJENCOuterClass {
               aNLHEHHFCPO_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +142,10 @@ public final class PIEANKFJENCOuterClass {
               emu.grasscutter.net.proto.PIEANKFJENCOuterClass.PIEANKFJENC.class, emu.grasscutter.net.proto.PIEANKFJENCOuterClass.PIEANKFJENC.Builder.class);
     }
 
-    public static final int ANLHEHHFCPO_FIELD_NUMBER = 1;
+    public static final int ANLHEHHFCPO_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList aNLHEHHFCPO_;
     /**
-     * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+     * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
      * @return A list containing the aNLHEHHFCPO.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class PIEANKFJENCOuterClass {
       return aNLHEHHFCPO_;
     }
     /**
-     * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+     * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
      * @return The count of aNLHEHHFCPO.
      */
     public int getANLHEHHFCPOCount() {
       return aNLHEHHFCPO_.size();
     }
     /**
-     * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+     * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
      * @param index The index of the element to return.
      * @return The aNLHEHHFCPO at the given index.
      */
@@ -182,7 +186,7 @@ public final class PIEANKFJENCOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getANLHEHHFCPOList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(aNLHEHHFCPOMemoizedSerializedSize);
       }
       for (int i = 0; i < aNLHEHHFCPO_.size(); i++) {
@@ -339,6 +343,10 @@ public final class PIEANKFJENCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PIEANKFJENC}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class PIEANKFJENCOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @return A list containing the aNLHEHHFCPO.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class PIEANKFJENCOuterClass {
                  java.util.Collections.unmodifiableList(aNLHEHHFCPO_) : aNLHEHHFCPO_;
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @return The count of aNLHEHHFCPO.
        */
       public int getANLHEHHFCPOCount() {
         return aNLHEHHFCPO_.size();
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @param index The index of the element to return.
        * @return The aNLHEHHFCPO at the given index.
        */
@@ -530,7 +538,7 @@ public final class PIEANKFJENCOuterClass {
         return aNLHEHHFCPO_.getInt(index);
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @param index The index to set the value at.
        * @param value The aNLHEHHFCPO to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class PIEANKFJENCOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @param value The aNLHEHHFCPO to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class PIEANKFJENCOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @param values The aNLHEHHFCPO to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class PIEANKFJENCOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 ANLHEHHFCPO = 1;</code>
+       * <code>repeated uint32 ANLHEHHFCPO = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearANLHEHHFCPO() {
@@ -644,8 +652,8 @@ public final class PIEANKFJENCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021PIEANKFJENC.proto\"\"\n\013PIEANKFJENC\022\023\n\013AN" +
-      "LHEHHFCPO\030\001 \003(\rB2\n\031emu.grasscutter.net.p" +
-      "rotoB\025PIEANKFJENCOuterClassb\006proto3"
+      "LHEHHFCPO\030\006 \003(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,7 +19,7 @@ public final class ActivityBannerNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 activity_id = 4;</code>
+     * <code>uint32 activity_id = 11;</code>
      * @return The activityId.
      */
     int getActivityId();
@@ -31,6 +31,10 @@ public final class ActivityBannerNotifyOuterClass {
     int getScheduleId();
   }
   /**
+   * <pre>
+   * CmdId: 26136
+   * </pre>
+   *
    * Protobuf type {@code ActivityBannerNotify}
    */
   public static final class ActivityBannerNotify extends
@@ -75,14 +79,14 @@ public final class ActivityBannerNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
+            case 72: {
 
               scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              activityId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class ActivityBannerNotifyOuterClass {
               emu.grasscutter.net.proto.ActivityBannerNotifyOuterClass.ActivityBannerNotify.class, emu.grasscutter.net.proto.ActivityBannerNotifyOuterClass.ActivityBannerNotify.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 11;
     private int activityId_;
     /**
-     * <code>uint32 activity_id = 4;</code>
+     * <code>uint32 activity_id = 11;</code>
      * @return The activityId.
      */
     @java.lang.Override
@@ -128,7 +132,7 @@ public final class ActivityBannerNotifyOuterClass {
       return activityId_;
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 8;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 9;
     private int scheduleId_;
     /**
      * <code>uint32 schedule_id = 9;</code>
@@ -153,11 +157,11 @@ public final class ActivityBannerNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (activityId_ != 0) {
-        output.writeUInt32(7, activityId_);
-      }
       if (scheduleId_ != 0) {
-        output.writeUInt32(8, scheduleId_);
+        output.writeUInt32(9, scheduleId_);
+      }
+      if (activityId_ != 0) {
+        output.writeUInt32(11, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class ActivityBannerNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (activityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, activityId_);
-      }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, scheduleId_);
+          .computeUInt32Size(9, scheduleId_);
+      }
+      if (activityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class ActivityBannerNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 26136
+     * </pre>
+     *
      * Protobuf type {@code ActivityBannerNotify}
      */
     public static final class Builder extends
@@ -325,6 +333,7 @@ public final class ActivityBannerNotifyOuterClass {
                 emu.grasscutter.net.proto.ActivityBannerNotifyOuterClass.ActivityBannerNotify.class, emu.grasscutter.net.proto.ActivityBannerNotifyOuterClass.ActivityBannerNotify.Builder.class);
       }
 
+      // Construct using emu.grasscutter.net.proto.ActivityBannerNotifyOuterClass.ActivityBannerNotify.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -459,7 +468,7 @@ public final class ActivityBannerNotifyOuterClass {
 
       private int activityId_ ;
       /**
-       * <code>uint32 activity_id = 4;</code>
+       * <code>uint32 activity_id = 11;</code>
        * @return The activityId.
        */
       @java.lang.Override
@@ -467,22 +476,22 @@ public final class ActivityBannerNotifyOuterClass {
         return activityId_;
       }
       /**
-       * <code>uint32 activity_id = 4;</code>
+       * <code>uint32 activity_id = 11;</code>
        * @param value The activityId to set.
        * @return This builder for chaining.
        */
       public Builder setActivityId(int value) {
-
+        
         activityId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 activity_id = 4;</code>
+       * <code>uint32 activity_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-
+        
         activityId_ = 0;
         onChanged();
         return this;
@@ -503,7 +512,7 @@ public final class ActivityBannerNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setScheduleId(int value) {
-
+        
         scheduleId_ = value;
         onChanged();
         return this;
@@ -513,7 +522,7 @@ public final class ActivityBannerNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-
+        
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -573,7 +582,7 @@ public final class ActivityBannerNotifyOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ActivityBannerNotify_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ActivityBannerNotify_fieldAccessorTable;
 
@@ -586,7 +595,7 @@ public final class ActivityBannerNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032ActivityBannerNotify.proto\"@\n\024Activity" +
-      "BannerNotify\022\023\n\013activity_id\030\004 \001(\r\022\023\n\013sch" +
+      "BannerNotify\022\023\n\013activity_id\030\013 \001(\r\022\023\n\013sch" +
       "edule_id\030\t \001(\rB\033\n\031emu.grasscutter.net.pr" +
       "otob\006proto3"
     };

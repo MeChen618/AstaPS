@@ -589,9 +589,8 @@ public final class PlayerApplyEnterMpResultReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!PlayerApplyEnterMpResultReq.proto\"C\n\033P" +
       "layerApplyEnterMpResultReq\022\021\n\tis_agreed\030" +
-      "\004 \001(\010\022\021\n\tapply_uid\030\010 \001(\rBB\n\031emu.grasscut" +
-      "ter.net.protoB%PlayerApplyEnterMpResultR" +
-      "eqOuterClassb\006proto3"
+      "\004 \001(\010\022\021\n\tapply_uid\030\010 \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

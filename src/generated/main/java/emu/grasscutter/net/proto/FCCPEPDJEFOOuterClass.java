@@ -19,30 +19,34 @@ public final class FCCPEPDJEFOOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_finished = 3;</code>
+     * <code>bool is_finished = 10;</code>
      * @return The isFinished.
      */
     boolean getIsFinished();
 
     /**
-     * <code>bool is_level_open = 5;</code>
+     * <code>bool is_level_open = 2;</code>
      * @return The isLevelOpen.
      */
     boolean getIsLevelOpen();
 
     /**
-     * <code>uint32 level_id = 7;</code>
+     * <code>uint32 level_id = 8;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>uint32 NHEFNKONPEI = 10;</code>
-     * @return The nHEFNKONPEI.
+     * <code>uint32 best_cost_time = 14;</code>
+     * @return The bestCostTime.
      */
-    int getNHEFNKONPEI();
+    int getBestCostTime();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FCCPEPDJEFO}
    */
   public static final class FCCPEPDJEFO extends
@@ -87,24 +91,24 @@ public final class FCCPEPDJEFOOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 40: {
+            case 16: {
 
               isLevelOpen_ = input.readBool();
               break;
             }
-            case 56: {
+            case 64: {
 
               levelId_ = input.readUInt32();
               break;
             }
             case 80: {
 
-              nHEFNKONPEI_ = input.readUInt32();
+              isFinished_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              bestCostTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,10 +143,10 @@ public final class FCCPEPDJEFOOuterClass {
               emu.grasscutter.net.proto.FCCPEPDJEFOOuterClass.FCCPEPDJEFO.class, emu.grasscutter.net.proto.FCCPEPDJEFOOuterClass.FCCPEPDJEFO.Builder.class);
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 3;
+    public static final int IS_FINISHED_FIELD_NUMBER = 10;
     private boolean isFinished_;
     /**
-     * <code>bool is_finished = 3;</code>
+     * <code>bool is_finished = 10;</code>
      * @return The isFinished.
      */
     @java.lang.Override
@@ -150,10 +154,10 @@ public final class FCCPEPDJEFOOuterClass {
       return isFinished_;
     }
 
-    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 5;
+    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 2;
     private boolean isLevelOpen_;
     /**
-     * <code>bool is_level_open = 5;</code>
+     * <code>bool is_level_open = 2;</code>
      * @return The isLevelOpen.
      */
     @java.lang.Override
@@ -161,10 +165,10 @@ public final class FCCPEPDJEFOOuterClass {
       return isLevelOpen_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 7;
+    public static final int LEVEL_ID_FIELD_NUMBER = 8;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 7;</code>
+     * <code>uint32 level_id = 8;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -172,15 +176,15 @@ public final class FCCPEPDJEFOOuterClass {
       return levelId_;
     }
 
-    public static final int NHEFNKONPEI_FIELD_NUMBER = 10;
-    private int nHEFNKONPEI_;
+    public static final int BEST_COST_TIME_FIELD_NUMBER = 14;
+    private int bestCostTime_;
     /**
-     * <code>uint32 NHEFNKONPEI = 10;</code>
-     * @return The nHEFNKONPEI.
+     * <code>uint32 best_cost_time = 14;</code>
+     * @return The bestCostTime.
      */
     @java.lang.Override
-    public int getNHEFNKONPEI() {
-      return nHEFNKONPEI_;
+    public int getBestCostTime() {
+      return bestCostTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,17 +201,17 @@ public final class FCCPEPDJEFOOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinished_ != false) {
-        output.writeBool(3, isFinished_);
-      }
       if (isLevelOpen_ != false) {
-        output.writeBool(5, isLevelOpen_);
+        output.writeBool(2, isLevelOpen_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(7, levelId_);
+        output.writeUInt32(8, levelId_);
       }
-      if (nHEFNKONPEI_ != 0) {
-        output.writeUInt32(10, nHEFNKONPEI_);
+      if (isFinished_ != false) {
+        output.writeBool(10, isFinished_);
+      }
+      if (bestCostTime_ != 0) {
+        output.writeUInt32(14, bestCostTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +222,21 @@ public final class FCCPEPDJEFOOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinished_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isFinished_);
-      }
       if (isLevelOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isLevelOpen_);
+          .computeBoolSize(2, isLevelOpen_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, levelId_);
+          .computeUInt32Size(8, levelId_);
       }
-      if (nHEFNKONPEI_ != 0) {
+      if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, nHEFNKONPEI_);
+          .computeBoolSize(10, isFinished_);
+      }
+      if (bestCostTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, bestCostTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -255,8 +259,8 @@ public final class FCCPEPDJEFOOuterClass {
           != other.getIsLevelOpen()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (getNHEFNKONPEI()
-          != other.getNHEFNKONPEI()) return false;
+      if (getBestCostTime()
+          != other.getBestCostTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -276,8 +280,8 @@ public final class FCCPEPDJEFOOuterClass {
           getIsLevelOpen());
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + NHEFNKONPEI_FIELD_NUMBER;
-      hash = (53 * hash) + getNHEFNKONPEI();
+      hash = (37 * hash) + BEST_COST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getBestCostTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class FCCPEPDJEFOOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FCCPEPDJEFO}
      */
     public static final class Builder extends
@@ -417,7 +425,7 @@ public final class FCCPEPDJEFOOuterClass {
 
         levelId_ = 0;
 
-        nHEFNKONPEI_ = 0;
+        bestCostTime_ = 0;
 
         return this;
       }
@@ -448,7 +456,7 @@ public final class FCCPEPDJEFOOuterClass {
         result.isFinished_ = isFinished_;
         result.isLevelOpen_ = isLevelOpen_;
         result.levelId_ = levelId_;
-        result.nHEFNKONPEI_ = nHEFNKONPEI_;
+        result.bestCostTime_ = bestCostTime_;
         onBuilt();
         return result;
       }
@@ -506,8 +514,8 @@ public final class FCCPEPDJEFOOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        if (other.getNHEFNKONPEI() != 0) {
-          setNHEFNKONPEI(other.getNHEFNKONPEI());
+        if (other.getBestCostTime() != 0) {
+          setBestCostTime(other.getBestCostTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -540,7 +548,7 @@ public final class FCCPEPDJEFOOuterClass {
 
       private boolean isFinished_ ;
       /**
-       * <code>bool is_finished = 3;</code>
+       * <code>bool is_finished = 10;</code>
        * @return The isFinished.
        */
       @java.lang.Override
@@ -548,7 +556,7 @@ public final class FCCPEPDJEFOOuterClass {
         return isFinished_;
       }
       /**
-       * <code>bool is_finished = 3;</code>
+       * <code>bool is_finished = 10;</code>
        * @param value The isFinished to set.
        * @return This builder for chaining.
        */
@@ -559,7 +567,7 @@ public final class FCCPEPDJEFOOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finished = 3;</code>
+       * <code>bool is_finished = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
@@ -571,7 +579,7 @@ public final class FCCPEPDJEFOOuterClass {
 
       private boolean isLevelOpen_ ;
       /**
-       * <code>bool is_level_open = 5;</code>
+       * <code>bool is_level_open = 2;</code>
        * @return The isLevelOpen.
        */
       @java.lang.Override
@@ -579,7 +587,7 @@ public final class FCCPEPDJEFOOuterClass {
         return isLevelOpen_;
       }
       /**
-       * <code>bool is_level_open = 5;</code>
+       * <code>bool is_level_open = 2;</code>
        * @param value The isLevelOpen to set.
        * @return This builder for chaining.
        */
@@ -590,7 +598,7 @@ public final class FCCPEPDJEFOOuterClass {
         return this;
       }
       /**
-       * <code>bool is_level_open = 5;</code>
+       * <code>bool is_level_open = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLevelOpen() {
@@ -602,7 +610,7 @@ public final class FCCPEPDJEFOOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 7;</code>
+       * <code>uint32 level_id = 8;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -610,7 +618,7 @@ public final class FCCPEPDJEFOOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 7;</code>
+       * <code>uint32 level_id = 8;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -621,7 +629,7 @@ public final class FCCPEPDJEFOOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 7;</code>
+       * <code>uint32 level_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -631,33 +639,33 @@ public final class FCCPEPDJEFOOuterClass {
         return this;
       }
 
-      private int nHEFNKONPEI_ ;
+      private int bestCostTime_ ;
       /**
-       * <code>uint32 NHEFNKONPEI = 10;</code>
-       * @return The nHEFNKONPEI.
+       * <code>uint32 best_cost_time = 14;</code>
+       * @return The bestCostTime.
        */
       @java.lang.Override
-      public int getNHEFNKONPEI() {
-        return nHEFNKONPEI_;
+      public int getBestCostTime() {
+        return bestCostTime_;
       }
       /**
-       * <code>uint32 NHEFNKONPEI = 10;</code>
-       * @param value The nHEFNKONPEI to set.
+       * <code>uint32 best_cost_time = 14;</code>
+       * @param value The bestCostTime to set.
        * @return This builder for chaining.
        */
-      public Builder setNHEFNKONPEI(int value) {
+      public Builder setBestCostTime(int value) {
         
-        nHEFNKONPEI_ = value;
+        bestCostTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NHEFNKONPEI = 10;</code>
+       * <code>uint32 best_cost_time = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNHEFNKONPEI() {
+      public Builder clearBestCostTime() {
         
-        nHEFNKONPEI_ = 0;
+        bestCostTime_ = 0;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class FCCPEPDJEFOOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021FCCPEPDJEFO.proto\"`\n\013FCCPEPDJEFO\022\023\n\013is" +
-      "_finished\030\003 \001(\010\022\025\n\ris_level_open\030\005 \001(\010\022\020" +
-      "\n\010level_id\030\007 \001(\r\022\023\n\013NHEFNKONPEI\030\n \001(\rB2\n" +
-      "\031emu.grasscutter.net.protoB\025FCCPEPDJEFOO" +
-      "uterClassb\006proto3"
+      "\n\021FCCPEPDJEFO.proto\"c\n\013FCCPEPDJEFO\022\023\n\013is" +
+      "_finished\030\n \001(\010\022\025\n\ris_level_open\030\002 \001(\010\022\020" +
+      "\n\010level_id\030\010 \001(\r\022\026\n\016best_cost_time\030\016 \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class FCCPEPDJEFOOuterClass {
     internal_static_FCCPEPDJEFO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FCCPEPDJEFO_descriptor,
-        new java.lang.String[] { "IsFinished", "IsLevelOpen", "LevelId", "NHEFNKONPEI", });
+        new java.lang.String[] { "IsFinished", "IsLevelOpen", "LevelId", "BestCostTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

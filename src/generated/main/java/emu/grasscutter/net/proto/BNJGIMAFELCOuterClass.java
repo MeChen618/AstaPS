@@ -19,16 +19,25 @@ public final class BNJGIMAFELCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>.Vector pos = 11;</code>
+     * @return Whether the pos field is set.
+     */
+    boolean hasPos();
+    /**
+     * <code>.Vector pos = 11;</code>
+     * @return The pos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
+    /**
+     * <code>.Vector pos = 11;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+
+    /**
      * <code>uint32 gadget_id = 1;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
-
-    /**
-     * <code>uint32 type = 3;</code>
-     * @return The type.
-     */
-    int getType();
 
     /**
      * <code>uint32 group_id = 8;</code>
@@ -37,27 +46,22 @@ public final class BNJGIMAFELCOuterClass {
     int getGroupId();
 
     /**
-     * <code>.Vector pos = 12;</code>
-     * @return Whether the pos field is set.
+     * <code>uint32 type = 7;</code>
+     * @return The type.
      */
-    boolean hasPos();
-    /**
-     * <code>.Vector pos = 12;</code>
-     * @return The pos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
-    /**
-     * <code>.Vector pos = 12;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
+    int getType();
 
     /**
-     * <code>uint32 config_id = 14;</code>
+     * <code>uint32 config_id = 4;</code>
      * @return The configId.
      */
     int getConfigId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BNJGIMAFELC}
    */
   public static final class BNJGIMAFELC extends
@@ -107,7 +111,12 @@ public final class BNJGIMAFELCOuterClass {
               gadgetId_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 32: {
+
+              configId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
 
               type_ = input.readUInt32();
               break;
@@ -117,7 +126,7 @@ public final class BNJGIMAFELCOuterClass {
               groupId_ = input.readUInt32();
               break;
             }
-            case 98: {
+            case 90: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
@@ -128,11 +137,6 @@ public final class BNJGIMAFELCOuterClass {
                 pos_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 112: {
-
-              configId_ = input.readUInt32();
               break;
             }
             default: {
@@ -167,6 +171,32 @@ public final class BNJGIMAFELCOuterClass {
               emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.class, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder.class);
     }
 
+    public static final int POS_FIELD_NUMBER = 11;
+    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+    /**
+     * <code>.Vector pos = 11;</code>
+     * @return Whether the pos field is set.
+     */
+    @java.lang.Override
+    public boolean hasPos() {
+      return pos_ != null;
+    }
+    /**
+     * <code>.Vector pos = 11;</code>
+     * @return The pos.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+    }
+    /**
+     * <code>.Vector pos = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+      return getPos();
+    }
+
     public static final int GADGET_ID_FIELD_NUMBER = 1;
     private int gadgetId_;
     /**
@@ -176,17 +206,6 @@ public final class BNJGIMAFELCOuterClass {
     @java.lang.Override
     public int getGadgetId() {
       return gadgetId_;
-    }
-
-    public static final int TYPE_FIELD_NUMBER = 3;
-    private int type_;
-    /**
-     * <code>uint32 type = 3;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public int getType() {
-      return type_;
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 8;
@@ -200,36 +219,21 @@ public final class BNJGIMAFELCOuterClass {
       return groupId_;
     }
 
-    public static final int POS_FIELD_NUMBER = 12;
-    private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+    public static final int TYPE_FIELD_NUMBER = 7;
+    private int type_;
     /**
-     * <code>.Vector pos = 12;</code>
-     * @return Whether the pos field is set.
+     * <code>uint32 type = 7;</code>
+     * @return The type.
      */
     @java.lang.Override
-    public boolean hasPos() {
-      return pos_ != null;
-    }
-    /**
-     * <code>.Vector pos = 12;</code>
-     * @return The pos.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
-      return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-    }
-    /**
-     * <code>.Vector pos = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+    public int getType() {
+      return type_;
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 14;
+    public static final int CONFIG_ID_FIELD_NUMBER = 4;
     private int configId_;
     /**
-     * <code>uint32 config_id = 14;</code>
+     * <code>uint32 config_id = 4;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -254,17 +258,17 @@ public final class BNJGIMAFELCOuterClass {
       if (gadgetId_ != 0) {
         output.writeUInt32(1, gadgetId_);
       }
+      if (configId_ != 0) {
+        output.writeUInt32(4, configId_);
+      }
       if (type_ != 0) {
-        output.writeUInt32(3, type_);
+        output.writeUInt32(7, type_);
       }
       if (groupId_ != 0) {
         output.writeUInt32(8, groupId_);
       }
       if (pos_ != null) {
-        output.writeMessage(12, getPos());
-      }
-      if (configId_ != 0) {
-        output.writeUInt32(14, configId_);
+        output.writeMessage(11, getPos());
       }
       unknownFields.writeTo(output);
     }
@@ -279,9 +283,13 @@ public final class BNJGIMAFELCOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, gadgetId_);
       }
+      if (configId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, configId_);
+      }
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, type_);
+          .computeUInt32Size(7, type_);
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -289,11 +297,7 @@ public final class BNJGIMAFELCOuterClass {
       }
       if (pos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getPos());
-      }
-      if (configId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, configId_);
+          .computeMessageSize(11, getPos());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -310,17 +314,17 @@ public final class BNJGIMAFELCOuterClass {
       }
       emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC other = (emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC) obj;
 
-      if (getGadgetId()
-          != other.getGadgetId()) return false;
-      if (getType()
-          != other.getType()) return false;
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
+      if (getGadgetId()
+          != other.getGadgetId()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
+      if (getType()
+          != other.getType()) return false;
       if (getConfigId()
           != other.getConfigId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -334,16 +338,16 @@ public final class BNJGIMAFELCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGadgetId();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
+      hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGadgetId();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -442,6 +446,10 @@ public final class BNJGIMAFELCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BNJGIMAFELC}
      */
     public static final class Builder extends
@@ -479,18 +487,18 @@ public final class BNJGIMAFELCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gadgetId_ = 0;
-
-        type_ = 0;
-
-        groupId_ = 0;
-
         if (posBuilder_ == null) {
           pos_ = null;
         } else {
           pos_ = null;
           posBuilder_ = null;
         }
+        gadgetId_ = 0;
+
+        groupId_ = 0;
+
+        type_ = 0;
+
         configId_ = 0;
 
         return this;
@@ -519,14 +527,14 @@ public final class BNJGIMAFELCOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC buildPartial() {
         emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC result = new emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC(this);
-        result.gadgetId_ = gadgetId_;
-        result.type_ = type_;
-        result.groupId_ = groupId_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
+        result.gadgetId_ = gadgetId_;
+        result.groupId_ = groupId_;
+        result.type_ = type_;
         result.configId_ = configId_;
         onBuilt();
         return result;
@@ -576,17 +584,17 @@ public final class BNJGIMAFELCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC other) {
         if (other == emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.getDefaultInstance()) return this;
+        if (other.hasPos()) {
+          mergePos(other.getPos());
+        }
         if (other.getGadgetId() != 0) {
           setGadgetId(other.getGadgetId());
-        }
-        if (other.getType() != 0) {
-          setType(other.getType());
         }
         if (other.getGroupId() != 0) {
           setGroupId(other.getGroupId());
         }
-        if (other.hasPos()) {
-          mergePos(other.getPos());
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
@@ -620,6 +628,125 @@ public final class BNJGIMAFELCOuterClass {
         return this;
       }
 
+      private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
+      /**
+       * <code>.Vector pos = 11;</code>
+       * @return Whether the pos field is set.
+       */
+      public boolean hasPos() {
+        return posBuilder_ != null || pos_ != null;
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       * @return The pos.
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
+        if (posBuilder_ == null) {
+          return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+        } else {
+          return posBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (posBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pos_ = value;
+          onChanged();
+        } else {
+          posBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      public Builder setPos(
+          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
+        if (posBuilder_ == null) {
+          pos_ = builderForValue.build();
+          onChanged();
+        } else {
+          posBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
+        if (posBuilder_ == null) {
+          if (pos_ != null) {
+            pos_ =
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          } else {
+            pos_ = value;
+          }
+          onChanged();
+        } else {
+          posBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      public Builder clearPos() {
+        if (posBuilder_ == null) {
+          pos_ = null;
+          onChanged();
+        } else {
+          pos_ = null;
+          posBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
+        
+        onChanged();
+        return getPosFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
+        if (posBuilder_ != null) {
+          return posBuilder_.getMessageOrBuilder();
+        } else {
+          return pos_ == null ?
+              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
+        }
+      }
+      /**
+       * <code>.Vector pos = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
+          getPosFieldBuilder() {
+        if (posBuilder_ == null) {
+          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
+                  getPos(),
+                  getParentForChildren(),
+                  isClean());
+          pos_ = null;
+        }
+        return posBuilder_;
+      }
+
       private int gadgetId_ ;
       /**
        * <code>uint32 gadget_id = 1;</code>
@@ -647,37 +774,6 @@ public final class BNJGIMAFELCOuterClass {
       public Builder clearGadgetId() {
         
         gadgetId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int type_ ;
-      /**
-       * <code>uint32 type = 3;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public int getType() {
-        return type_;
-      }
-      /**
-       * <code>uint32 type = 3;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 type = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
         onChanged();
         return this;
       }
@@ -713,128 +809,40 @@ public final class BNJGIMAFELCOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
+      private int type_ ;
       /**
-       * <code>.Vector pos = 12;</code>
-       * @return Whether the pos field is set.
+       * <code>uint32 type = 7;</code>
+       * @return The type.
        */
-      public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+      @java.lang.Override
+      public int getType() {
+        return type_;
       }
       /**
-       * <code>.Vector pos = 12;</code>
-       * @return The pos.
+       * <code>uint32 type = 7;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
        */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
-        if (posBuilder_ == null) {
-          return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-        } else {
-          return posBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.Vector pos = 12;</code>
-       */
-      public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (posBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          pos_ = value;
-          onChanged();
-        } else {
-          posBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 12;</code>
-       */
-      public Builder setPos(
-          emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
-        if (posBuilder_ == null) {
-          pos_ = builderForValue.build();
-          onChanged();
-        } else {
-          posBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 12;</code>
-       */
-      public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
-        if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
-          } else {
-            pos_ = value;
-          }
-          onChanged();
-        } else {
-          posBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 12;</code>
-       */
-      public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
-          posBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.Vector pos = 12;</code>
-       */
-      public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
+      public Builder setType(int value) {
         
+        type_ = value;
         onChanged();
-        return getPosFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.Vector pos = 12;</code>
+       * <code>uint32 type = 7;</code>
+       * @return This builder for chaining.
        */
-      public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-        if (posBuilder_ != null) {
-          return posBuilder_.getMessageOrBuilder();
-        } else {
-          return pos_ == null ?
-              emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
-        }
-      }
-      /**
-       * <code>.Vector pos = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
-          getPosFieldBuilder() {
-        if (posBuilder_ == null) {
-          posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder>(
-                  getPos(),
-                  getParentForChildren(),
-                  isClean());
-          pos_ = null;
-        }
-        return posBuilder_;
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
       }
 
       private int configId_ ;
       /**
-       * <code>uint32 config_id = 14;</code>
+       * <code>uint32 config_id = 4;</code>
        * @return The configId.
        */
       @java.lang.Override
@@ -842,7 +850,7 @@ public final class BNJGIMAFELCOuterClass {
         return configId_;
       }
       /**
-       * <code>uint32 config_id = 14;</code>
+       * <code>uint32 config_id = 4;</code>
        * @param value The configId to set.
        * @return This builder for chaining.
        */
@@ -853,7 +861,7 @@ public final class BNJGIMAFELCOuterClass {
         return this;
       }
       /**
-       * <code>uint32 config_id = 14;</code>
+       * <code>uint32 config_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
@@ -930,10 +938,10 @@ public final class BNJGIMAFELCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BNJGIMAFELC.proto\032\014Vector.proto\"i\n\013BNJ" +
-      "GIMAFELC\022\021\n\tgadget_id\030\001 \001(\r\022\014\n\004type\030\003 \001(" +
-      "\r\022\020\n\010group_id\030\010 \001(\r\022\024\n\003pos\030\014 \001(\0132\007.Vecto" +
-      "r\022\021\n\tconfig_id\030\016 \001(\rB2\n\031emu.grasscutter." +
-      "net.protoB\025BNJGIMAFELCOuterClassb\006proto3"
+      "GIMAFELC\022\024\n\003pos\030\013 \001(\0132\007.Vector\022\021\n\tgadget" +
+      "_id\030\001 \001(\r\022\020\n\010group_id\030\010 \001(\r\022\014\n\004type\030\007 \001(" +
+      "\r\022\021\n\tconfig_id\030\004 \001(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -945,7 +953,7 @@ public final class BNJGIMAFELCOuterClass {
     internal_static_BNJGIMAFELC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BNJGIMAFELC_descriptor,
-        new java.lang.String[] { "GadgetId", "Type", "GroupId", "Pos", "ConfigId", });
+        new java.lang.String[] { "Pos", "GadgetId", "GroupId", "Type", "ConfigId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

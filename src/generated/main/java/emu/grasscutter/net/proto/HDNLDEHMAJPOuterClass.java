@@ -19,30 +19,34 @@ public final class HDNLDEHMAJPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO> 
         getEPDBOGFDEHJList();
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO getEPDBOGFDEHJ(int index);
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     int getEPDBOGFDEHJCount();
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder> 
         getEPDBOGFDEHJOrBuilderList();
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder getEPDBOGFDEHJOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HDNLDEHMAJP}
    */
   public static final class HDNLDEHMAJP extends
@@ -89,7 +93,7 @@ public final class HDNLDEHMAJPOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 ePDBOGFDEHJ_ = new java.util.ArrayList<emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class HDNLDEHMAJPOuterClass {
               emu.grasscutter.net.proto.HDNLDEHMAJPOuterClass.HDNLDEHMAJP.class, emu.grasscutter.net.proto.HDNLDEHMAJPOuterClass.HDNLDEHMAJP.Builder.class);
     }
 
-    public static final int EPDBOGFDEHJ_FIELD_NUMBER = 2;
+    public static final int EPDBOGFDEHJ_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO> ePDBOGFDEHJ_;
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO> getEPDBOGFDEHJList() {
       return ePDBOGFDEHJ_;
     }
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder> 
@@ -151,21 +155,21 @@ public final class HDNLDEHMAJPOuterClass {
       return ePDBOGFDEHJ_;
     }
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     @java.lang.Override
     public int getEPDBOGFDEHJCount() {
       return ePDBOGFDEHJ_.size();
     }
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO getEPDBOGFDEHJ(int index) {
       return ePDBOGFDEHJ_.get(index);
     }
     /**
-     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+     * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder getEPDBOGFDEHJOrBuilder(
@@ -188,7 +192,7 @@ public final class HDNLDEHMAJPOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < ePDBOGFDEHJ_.size(); i++) {
-        output.writeMessage(2, ePDBOGFDEHJ_.get(i));
+        output.writeMessage(3, ePDBOGFDEHJ_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class HDNLDEHMAJPOuterClass {
       size = 0;
       for (int i = 0; i < ePDBOGFDEHJ_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, ePDBOGFDEHJ_.get(i));
+          .computeMessageSize(3, ePDBOGFDEHJ_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class HDNLDEHMAJPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HDNLDEHMAJP}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class HDNLDEHMAJPOuterClass {
           emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder> ePDBOGFDEHJBuilder_;
 
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO> getEPDBOGFDEHJList() {
         if (ePDBOGFDEHJBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class HDNLDEHMAJPOuterClass {
         }
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public int getEPDBOGFDEHJCount() {
         if (ePDBOGFDEHJBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class HDNLDEHMAJPOuterClass {
         }
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO getEPDBOGFDEHJ(int index) {
         if (ePDBOGFDEHJBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class HDNLDEHMAJPOuterClass {
         }
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder setEPDBOGFDEHJ(
           int index, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO value) {
@@ -575,7 +583,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder setEPDBOGFDEHJ(
           int index, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder addEPDBOGFDEHJ(emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO value) {
         if (ePDBOGFDEHJBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder addEPDBOGFDEHJ(
           int index, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO value) {
@@ -622,7 +630,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder addEPDBOGFDEHJ(
           emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder addEPDBOGFDEHJ(
           int index, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder addAllEPDBOGFDEHJ(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO> values) {
@@ -665,7 +673,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder clearEPDBOGFDEHJ() {
         if (ePDBOGFDEHJBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public Builder removeEPDBOGFDEHJ(int index) {
         if (ePDBOGFDEHJBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class HDNLDEHMAJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder getEPDBOGFDEHJBuilder(
           int index) {
         return getEPDBOGFDEHJFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder getEPDBOGFDEHJOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class HDNLDEHMAJPOuterClass {
         }
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIOOrBuilder> 
            getEPDBOGFDEHJOrBuilderList() {
@@ -719,14 +727,14 @@ public final class HDNLDEHMAJPOuterClass {
         }
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder addEPDBOGFDEHJBuilder() {
         return getEPDBOGFDEHJFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder addEPDBOGFDEHJBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class HDNLDEHMAJPOuterClass {
             index, emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 2;</code>
+       * <code>repeated .LOAAPGCPMIO EPDBOGFDEHJ = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.LOAAPGCPMIOOuterClass.LOAAPGCPMIO.Builder> 
            getEPDBOGFDEHJBuilderList() {
@@ -822,9 +830,9 @@ public final class HDNLDEHMAJPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HDNLDEHMAJP.proto\032\021LOAAPGCPMIO.proto\"0" +
-      "\n\013HDNLDEHMAJP\022!\n\013EPDBOGFDEHJ\030\002 \003(\0132\014.LOA" +
-      "APGCPMIOB2\n\031emu.grasscutter.net.protoB\025H" +
-      "DNLDEHMAJPOuterClassb\006proto3"
+      "\n\013HDNLDEHMAJP\022!\n\013EPDBOGFDEHJ\030\003 \003(\0132\014.LOA" +
+      "APGCPMIOB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

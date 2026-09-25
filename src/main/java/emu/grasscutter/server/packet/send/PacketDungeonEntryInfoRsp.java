@@ -77,7 +77,7 @@ public class PacketDungeonEntryInfoRsp extends BasePacket {
                 .setRetcode(0)
                 .setPointId(pointData.getId())
                 .setRecommendDungeonId(recommend)
-                .setJpmdjmadpil(true);
+                .setHGBKKNDDABP(true);
         DungeonEntryPointInfo.Builder entryPoint = DungeonEntryPointInfo.newBuilder()
                 .setPointId(pointData.getId())
                 .setSceneId(sceneId > 0 ? sceneId : 3)

@@ -19,42 +19,6 @@ public final class BMJNJLKCODGOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 start_time = 1;</code>
-     * @return The startTime.
-     */
-    long getStartTime();
-
-    /**
-     * <code>uint32 EEFABNDBKCO = 2;</code>
-     * @return The eEFABNDBKCO.
-     */
-    int getEEFABNDBKCO();
-
-    /**
-     * <code>uint32 HMHCGLCNBMK = 3;</code>
-     * @return The hMHCGLCNBMK.
-     */
-    int getHMHCGLCNBMK();
-
-    /**
-     * <code>float DEEKKONIOPE = 4;</code>
-     * @return The dEEKKONIOPE.
-     */
-    float getDEEKKONIOPE();
-
-    /**
-     * <code>float speed = 5;</code>
-     * @return The speed.
-     */
-    float getSpeed();
-
-    /**
-     * <code>bool is_started = 6;</code>
-     * @return The isStarted.
-     */
-    boolean getIsStarted();
-
-    /**
      * <code>repeated .AONPAENJADL BCOFNPNHJCI = 7;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AONPAENJADLOuterClass.AONPAENJADL> 
@@ -79,24 +43,70 @@ public final class BMJNJLKCODGOuterClass {
         int index);
 
     /**
+     * <code>uint64 start_time = 1;</code>
+     * @return The startTime.
+     */
+    long getStartTime();
+
+    /**
+     * <code>uint32 EEFABNDBKCO = 2;</code>
+     * @return The eEFABNDBKCO.
+     */
+    int getEEFABNDBKCO();
+
+    /**
+     * <code>bool is_started = 6;</code>
+     * @return The isStarted.
+     */
+    boolean getIsStarted();
+
+    /**
      * <code>bool OOPEGAGEENC = 8;</code>
      * @return The oOPEGAGEENC.
      */
     boolean getOOPEGAGEENC();
 
     /**
-     * <code>uint32 AKEMOJAMLEK = 9;</code>
-     * @return The aKEMOJAMLEK.
+     * <code>float DEEKKONIOPE = 4;</code>
+     * @return The dEEKKONIOPE.
      */
-    int getAKEMOJAMLEK();
+    float getDEEKKONIOPE();
+
+    /**
+     * <code>uint32 HMHCGLCNBMK = 3;</code>
+     * @return The hMHCGLCNBMK.
+     */
+    int getHMHCGLCNBMK();
+
+    /**
+     * <code>uint32 start_index = 11;</code>
+     * @return The startIndex.
+     */
+    int getStartIndex();
+
+    /**
+     * <code>float speed = 5;</code>
+     * @return The speed.
+     */
+    float getSpeed();
 
     /**
      * <code>uint32 LGIDIOIEGCI = 10;</code>
      * @return The lGIDIOIEGCI.
      */
     int getLGIDIOIEGCI();
+
+    /**
+     * <code>uint32 AKEMOJAMLEK = 9;</code>
+     * @return The aKEMOJAMLEK.
+     */
+    int getAKEMOJAMLEK();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BMJNJLKCODG}
    */
   public static final class BMJNJLKCODG extends
@@ -197,6 +207,11 @@ public final class BMJNJLKCODGOuterClass {
               lGIDIOIEGCI_ = input.readUInt32();
               break;
             }
+            case 88: {
+
+              startIndex_ = input.readUInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -230,72 +245,6 @@ public final class BMJNJLKCODGOuterClass {
       return emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.internal_static_BMJNJLKCODG_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG.class, emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG.Builder.class);
-    }
-
-    public static final int START_TIME_FIELD_NUMBER = 1;
-    private long startTime_;
-    /**
-     * <code>uint64 start_time = 1;</code>
-     * @return The startTime.
-     */
-    @java.lang.Override
-    public long getStartTime() {
-      return startTime_;
-    }
-
-    public static final int EEFABNDBKCO_FIELD_NUMBER = 2;
-    private int eEFABNDBKCO_;
-    /**
-     * <code>uint32 EEFABNDBKCO = 2;</code>
-     * @return The eEFABNDBKCO.
-     */
-    @java.lang.Override
-    public int getEEFABNDBKCO() {
-      return eEFABNDBKCO_;
-    }
-
-    public static final int HMHCGLCNBMK_FIELD_NUMBER = 3;
-    private int hMHCGLCNBMK_;
-    /**
-     * <code>uint32 HMHCGLCNBMK = 3;</code>
-     * @return The hMHCGLCNBMK.
-     */
-    @java.lang.Override
-    public int getHMHCGLCNBMK() {
-      return hMHCGLCNBMK_;
-    }
-
-    public static final int DEEKKONIOPE_FIELD_NUMBER = 4;
-    private float dEEKKONIOPE_;
-    /**
-     * <code>float DEEKKONIOPE = 4;</code>
-     * @return The dEEKKONIOPE.
-     */
-    @java.lang.Override
-    public float getDEEKKONIOPE() {
-      return dEEKKONIOPE_;
-    }
-
-    public static final int SPEED_FIELD_NUMBER = 5;
-    private float speed_;
-    /**
-     * <code>float speed = 5;</code>
-     * @return The speed.
-     */
-    @java.lang.Override
-    public float getSpeed() {
-      return speed_;
-    }
-
-    public static final int IS_STARTED_FIELD_NUMBER = 6;
-    private boolean isStarted_;
-    /**
-     * <code>bool is_started = 6;</code>
-     * @return The isStarted.
-     */
-    @java.lang.Override
-    public boolean getIsStarted() {
-      return isStarted_;
     }
 
     public static final int BCOFNPNHJCI_FIELD_NUMBER = 7;
@@ -338,6 +287,39 @@ public final class BMJNJLKCODGOuterClass {
       return bCOFNPNHJCI_.get(index);
     }
 
+    public static final int START_TIME_FIELD_NUMBER = 1;
+    private long startTime_;
+    /**
+     * <code>uint64 start_time = 1;</code>
+     * @return The startTime.
+     */
+    @java.lang.Override
+    public long getStartTime() {
+      return startTime_;
+    }
+
+    public static final int EEFABNDBKCO_FIELD_NUMBER = 2;
+    private int eEFABNDBKCO_;
+    /**
+     * <code>uint32 EEFABNDBKCO = 2;</code>
+     * @return The eEFABNDBKCO.
+     */
+    @java.lang.Override
+    public int getEEFABNDBKCO() {
+      return eEFABNDBKCO_;
+    }
+
+    public static final int IS_STARTED_FIELD_NUMBER = 6;
+    private boolean isStarted_;
+    /**
+     * <code>bool is_started = 6;</code>
+     * @return The isStarted.
+     */
+    @java.lang.Override
+    public boolean getIsStarted() {
+      return isStarted_;
+    }
+
     public static final int OOPEGAGEENC_FIELD_NUMBER = 8;
     private boolean oOPEGAGEENC_;
     /**
@@ -349,15 +331,48 @@ public final class BMJNJLKCODGOuterClass {
       return oOPEGAGEENC_;
     }
 
-    public static final int AKEMOJAMLEK_FIELD_NUMBER = 9;
-    private int aKEMOJAMLEK_;
+    public static final int DEEKKONIOPE_FIELD_NUMBER = 4;
+    private float dEEKKONIOPE_;
     /**
-     * <code>uint32 AKEMOJAMLEK = 9;</code>
-     * @return The aKEMOJAMLEK.
+     * <code>float DEEKKONIOPE = 4;</code>
+     * @return The dEEKKONIOPE.
      */
     @java.lang.Override
-    public int getAKEMOJAMLEK() {
-      return aKEMOJAMLEK_;
+    public float getDEEKKONIOPE() {
+      return dEEKKONIOPE_;
+    }
+
+    public static final int HMHCGLCNBMK_FIELD_NUMBER = 3;
+    private int hMHCGLCNBMK_;
+    /**
+     * <code>uint32 HMHCGLCNBMK = 3;</code>
+     * @return The hMHCGLCNBMK.
+     */
+    @java.lang.Override
+    public int getHMHCGLCNBMK() {
+      return hMHCGLCNBMK_;
+    }
+
+    public static final int START_INDEX_FIELD_NUMBER = 11;
+    private int startIndex_;
+    /**
+     * <code>uint32 start_index = 11;</code>
+     * @return The startIndex.
+     */
+    @java.lang.Override
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
+    public static final int SPEED_FIELD_NUMBER = 5;
+    private float speed_;
+    /**
+     * <code>float speed = 5;</code>
+     * @return The speed.
+     */
+    @java.lang.Override
+    public float getSpeed() {
+      return speed_;
     }
 
     public static final int LGIDIOIEGCI_FIELD_NUMBER = 10;
@@ -369,6 +384,17 @@ public final class BMJNJLKCODGOuterClass {
     @java.lang.Override
     public int getLGIDIOIEGCI() {
       return lGIDIOIEGCI_;
+    }
+
+    public static final int AKEMOJAMLEK_FIELD_NUMBER = 9;
+    private int aKEMOJAMLEK_;
+    /**
+     * <code>uint32 AKEMOJAMLEK = 9;</code>
+     * @return The aKEMOJAMLEK.
+     */
+    @java.lang.Override
+    public int getAKEMOJAMLEK() {
+      return aKEMOJAMLEK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -414,6 +440,9 @@ public final class BMJNJLKCODGOuterClass {
       }
       if (lGIDIOIEGCI_ != 0) {
         output.writeUInt32(10, lGIDIOIEGCI_);
+      }
+      if (startIndex_ != 0) {
+        output.writeUInt32(11, startIndex_);
       }
       unknownFields.writeTo(output);
     }
@@ -464,6 +493,10 @@ public final class BMJNJLKCODGOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, lGIDIOIEGCI_);
       }
+      if (startIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, startIndex_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -479,28 +512,30 @@ public final class BMJNJLKCODGOuterClass {
       }
       emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG other = (emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG) obj;
 
+      if (!getBCOFNPNHJCIList()
+          .equals(other.getBCOFNPNHJCIList())) return false;
       if (getStartTime()
           != other.getStartTime()) return false;
       if (getEEFABNDBKCO()
           != other.getEEFABNDBKCO()) return false;
-      if (getHMHCGLCNBMK()
-          != other.getHMHCGLCNBMK()) return false;
+      if (getIsStarted()
+          != other.getIsStarted()) return false;
+      if (getOOPEGAGEENC()
+          != other.getOOPEGAGEENC()) return false;
       if (java.lang.Float.floatToIntBits(getDEEKKONIOPE())
           != java.lang.Float.floatToIntBits(
               other.getDEEKKONIOPE())) return false;
+      if (getHMHCGLCNBMK()
+          != other.getHMHCGLCNBMK()) return false;
+      if (getStartIndex()
+          != other.getStartIndex()) return false;
       if (java.lang.Float.floatToIntBits(getSpeed())
           != java.lang.Float.floatToIntBits(
               other.getSpeed())) return false;
-      if (getIsStarted()
-          != other.getIsStarted()) return false;
-      if (!getBCOFNPNHJCIList()
-          .equals(other.getBCOFNPNHJCIList())) return false;
-      if (getOOPEGAGEENC()
-          != other.getOOPEGAGEENC()) return false;
-      if (getAKEMOJAMLEK()
-          != other.getAKEMOJAMLEK()) return false;
       if (getLGIDIOIEGCI()
           != other.getLGIDIOIEGCI()) return false;
+      if (getAKEMOJAMLEK()
+          != other.getAKEMOJAMLEK()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -512,33 +547,35 @@ public final class BMJNJLKCODGOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getBCOFNPNHJCICount() > 0) {
+        hash = (37 * hash) + BCOFNPNHJCI_FIELD_NUMBER;
+        hash = (53 * hash) + getBCOFNPNHJCIList().hashCode();
+      }
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getStartTime());
       hash = (37 * hash) + EEFABNDBKCO_FIELD_NUMBER;
       hash = (53 * hash) + getEEFABNDBKCO();
-      hash = (37 * hash) + HMHCGLCNBMK_FIELD_NUMBER;
-      hash = (53 * hash) + getHMHCGLCNBMK();
-      hash = (37 * hash) + DEEKKONIOPE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getDEEKKONIOPE());
-      hash = (37 * hash) + SPEED_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getSpeed());
       hash = (37 * hash) + IS_STARTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsStarted());
-      if (getBCOFNPNHJCICount() > 0) {
-        hash = (37 * hash) + BCOFNPNHJCI_FIELD_NUMBER;
-        hash = (53 * hash) + getBCOFNPNHJCIList().hashCode();
-      }
       hash = (37 * hash) + OOPEGAGEENC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getOOPEGAGEENC());
-      hash = (37 * hash) + AKEMOJAMLEK_FIELD_NUMBER;
-      hash = (53 * hash) + getAKEMOJAMLEK();
+      hash = (37 * hash) + DEEKKONIOPE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getDEEKKONIOPE());
+      hash = (37 * hash) + HMHCGLCNBMK_FIELD_NUMBER;
+      hash = (53 * hash) + getHMHCGLCNBMK();
+      hash = (37 * hash) + START_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getStartIndex();
+      hash = (37 * hash) + SPEED_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getSpeed());
       hash = (37 * hash) + LGIDIOIEGCI_FIELD_NUMBER;
       hash = (53 * hash) + getLGIDIOIEGCI();
+      hash = (37 * hash) + AKEMOJAMLEK_FIELD_NUMBER;
+      hash = (53 * hash) + getAKEMOJAMLEK();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -635,6 +672,10 @@ public final class BMJNJLKCODGOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BMJNJLKCODG}
      */
     public static final class Builder extends
@@ -673,29 +714,31 @@ public final class BMJNJLKCODGOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        startTime_ = 0L;
-
-        eEFABNDBKCO_ = 0;
-
-        hMHCGLCNBMK_ = 0;
-
-        dEEKKONIOPE_ = 0F;
-
-        speed_ = 0F;
-
-        isStarted_ = false;
-
         if (bCOFNPNHJCIBuilder_ == null) {
           bCOFNPNHJCI_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           bCOFNPNHJCIBuilder_.clear();
         }
+        startTime_ = 0L;
+
+        eEFABNDBKCO_ = 0;
+
+        isStarted_ = false;
+
         oOPEGAGEENC_ = false;
 
-        aKEMOJAMLEK_ = 0;
+        dEEKKONIOPE_ = 0F;
+
+        hMHCGLCNBMK_ = 0;
+
+        startIndex_ = 0;
+
+        speed_ = 0F;
 
         lGIDIOIEGCI_ = 0;
+
+        aKEMOJAMLEK_ = 0;
 
         return this;
       }
@@ -724,12 +767,6 @@ public final class BMJNJLKCODGOuterClass {
       public emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG buildPartial() {
         emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG result = new emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG(this);
         int from_bitField0_ = bitField0_;
-        result.startTime_ = startTime_;
-        result.eEFABNDBKCO_ = eEFABNDBKCO_;
-        result.hMHCGLCNBMK_ = hMHCGLCNBMK_;
-        result.dEEKKONIOPE_ = dEEKKONIOPE_;
-        result.speed_ = speed_;
-        result.isStarted_ = isStarted_;
         if (bCOFNPNHJCIBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             bCOFNPNHJCI_ = java.util.Collections.unmodifiableList(bCOFNPNHJCI_);
@@ -739,9 +776,16 @@ public final class BMJNJLKCODGOuterClass {
         } else {
           result.bCOFNPNHJCI_ = bCOFNPNHJCIBuilder_.build();
         }
+        result.startTime_ = startTime_;
+        result.eEFABNDBKCO_ = eEFABNDBKCO_;
+        result.isStarted_ = isStarted_;
         result.oOPEGAGEENC_ = oOPEGAGEENC_;
-        result.aKEMOJAMLEK_ = aKEMOJAMLEK_;
+        result.dEEKKONIOPE_ = dEEKKONIOPE_;
+        result.hMHCGLCNBMK_ = hMHCGLCNBMK_;
+        result.startIndex_ = startIndex_;
+        result.speed_ = speed_;
         result.lGIDIOIEGCI_ = lGIDIOIEGCI_;
+        result.aKEMOJAMLEK_ = aKEMOJAMLEK_;
         onBuilt();
         return result;
       }
@@ -790,24 +834,6 @@ public final class BMJNJLKCODGOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG other) {
         if (other == emu.grasscutter.net.proto.BMJNJLKCODGOuterClass.BMJNJLKCODG.getDefaultInstance()) return this;
-        if (other.getStartTime() != 0L) {
-          setStartTime(other.getStartTime());
-        }
-        if (other.getEEFABNDBKCO() != 0) {
-          setEEFABNDBKCO(other.getEEFABNDBKCO());
-        }
-        if (other.getHMHCGLCNBMK() != 0) {
-          setHMHCGLCNBMK(other.getHMHCGLCNBMK());
-        }
-        if (other.getDEEKKONIOPE() != 0F) {
-          setDEEKKONIOPE(other.getDEEKKONIOPE());
-        }
-        if (other.getSpeed() != 0F) {
-          setSpeed(other.getSpeed());
-        }
-        if (other.getIsStarted() != false) {
-          setIsStarted(other.getIsStarted());
-        }
         if (bCOFNPNHJCIBuilder_ == null) {
           if (!other.bCOFNPNHJCI_.isEmpty()) {
             if (bCOFNPNHJCI_.isEmpty()) {
@@ -834,14 +860,35 @@ public final class BMJNJLKCODGOuterClass {
             }
           }
         }
+        if (other.getStartTime() != 0L) {
+          setStartTime(other.getStartTime());
+        }
+        if (other.getEEFABNDBKCO() != 0) {
+          setEEFABNDBKCO(other.getEEFABNDBKCO());
+        }
+        if (other.getIsStarted() != false) {
+          setIsStarted(other.getIsStarted());
+        }
         if (other.getOOPEGAGEENC() != false) {
           setOOPEGAGEENC(other.getOOPEGAGEENC());
         }
-        if (other.getAKEMOJAMLEK() != 0) {
-          setAKEMOJAMLEK(other.getAKEMOJAMLEK());
+        if (other.getDEEKKONIOPE() != 0F) {
+          setDEEKKONIOPE(other.getDEEKKONIOPE());
+        }
+        if (other.getHMHCGLCNBMK() != 0) {
+          setHMHCGLCNBMK(other.getHMHCGLCNBMK());
+        }
+        if (other.getStartIndex() != 0) {
+          setStartIndex(other.getStartIndex());
+        }
+        if (other.getSpeed() != 0F) {
+          setSpeed(other.getSpeed());
         }
         if (other.getLGIDIOIEGCI() != 0) {
           setLGIDIOIEGCI(other.getLGIDIOIEGCI());
+        }
+        if (other.getAKEMOJAMLEK() != 0) {
+          setAKEMOJAMLEK(other.getAKEMOJAMLEK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -872,192 +919,6 @@ public final class BMJNJLKCODGOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private long startTime_ ;
-      /**
-       * <code>uint64 start_time = 1;</code>
-       * @return The startTime.
-       */
-      @java.lang.Override
-      public long getStartTime() {
-        return startTime_;
-      }
-      /**
-       * <code>uint64 start_time = 1;</code>
-       * @param value The startTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStartTime(long value) {
-        
-        startTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 start_time = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStartTime() {
-        
-        startTime_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int eEFABNDBKCO_ ;
-      /**
-       * <code>uint32 EEFABNDBKCO = 2;</code>
-       * @return The eEFABNDBKCO.
-       */
-      @java.lang.Override
-      public int getEEFABNDBKCO() {
-        return eEFABNDBKCO_;
-      }
-      /**
-       * <code>uint32 EEFABNDBKCO = 2;</code>
-       * @param value The eEFABNDBKCO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEEFABNDBKCO(int value) {
-        
-        eEFABNDBKCO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 EEFABNDBKCO = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEEFABNDBKCO() {
-        
-        eEFABNDBKCO_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int hMHCGLCNBMK_ ;
-      /**
-       * <code>uint32 HMHCGLCNBMK = 3;</code>
-       * @return The hMHCGLCNBMK.
-       */
-      @java.lang.Override
-      public int getHMHCGLCNBMK() {
-        return hMHCGLCNBMK_;
-      }
-      /**
-       * <code>uint32 HMHCGLCNBMK = 3;</code>
-       * @param value The hMHCGLCNBMK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHMHCGLCNBMK(int value) {
-        
-        hMHCGLCNBMK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HMHCGLCNBMK = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHMHCGLCNBMK() {
-        
-        hMHCGLCNBMK_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float dEEKKONIOPE_ ;
-      /**
-       * <code>float DEEKKONIOPE = 4;</code>
-       * @return The dEEKKONIOPE.
-       */
-      @java.lang.Override
-      public float getDEEKKONIOPE() {
-        return dEEKKONIOPE_;
-      }
-      /**
-       * <code>float DEEKKONIOPE = 4;</code>
-       * @param value The dEEKKONIOPE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDEEKKONIOPE(float value) {
-        
-        dEEKKONIOPE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float DEEKKONIOPE = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDEEKKONIOPE() {
-        
-        dEEKKONIOPE_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float speed_ ;
-      /**
-       * <code>float speed = 5;</code>
-       * @return The speed.
-       */
-      @java.lang.Override
-      public float getSpeed() {
-        return speed_;
-      }
-      /**
-       * <code>float speed = 5;</code>
-       * @param value The speed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSpeed(float value) {
-        
-        speed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float speed = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSpeed() {
-        
-        speed_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private boolean isStarted_ ;
-      /**
-       * <code>bool is_started = 6;</code>
-       * @return The isStarted.
-       */
-      @java.lang.Override
-      public boolean getIsStarted() {
-        return isStarted_;
-      }
-      /**
-       * <code>bool is_started = 6;</code>
-       * @param value The isStarted to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsStarted(boolean value) {
-        
-        isStarted_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_started = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsStarted() {
-        
-        isStarted_ = false;
-        onChanged();
-        return this;
-      }
 
       private java.util.List<emu.grasscutter.net.proto.AONPAENJADLOuterClass.AONPAENJADL> bCOFNPNHJCI_ =
         java.util.Collections.emptyList();
@@ -1299,6 +1160,99 @@ public final class BMJNJLKCODGOuterClass {
         return bCOFNPNHJCIBuilder_;
       }
 
+      private long startTime_ ;
+      /**
+       * <code>uint64 start_time = 1;</code>
+       * @return The startTime.
+       */
+      @java.lang.Override
+      public long getStartTime() {
+        return startTime_;
+      }
+      /**
+       * <code>uint64 start_time = 1;</code>
+       * @param value The startTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartTime(long value) {
+        
+        startTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 start_time = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartTime() {
+        
+        startTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int eEFABNDBKCO_ ;
+      /**
+       * <code>uint32 EEFABNDBKCO = 2;</code>
+       * @return The eEFABNDBKCO.
+       */
+      @java.lang.Override
+      public int getEEFABNDBKCO() {
+        return eEFABNDBKCO_;
+      }
+      /**
+       * <code>uint32 EEFABNDBKCO = 2;</code>
+       * @param value The eEFABNDBKCO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEEFABNDBKCO(int value) {
+        
+        eEFABNDBKCO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 EEFABNDBKCO = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEEFABNDBKCO() {
+        
+        eEFABNDBKCO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isStarted_ ;
+      /**
+       * <code>bool is_started = 6;</code>
+       * @return The isStarted.
+       */
+      @java.lang.Override
+      public boolean getIsStarted() {
+        return isStarted_;
+      }
+      /**
+       * <code>bool is_started = 6;</code>
+       * @param value The isStarted to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsStarted(boolean value) {
+        
+        isStarted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_started = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsStarted() {
+        
+        isStarted_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean oOPEGAGEENC_ ;
       /**
        * <code>bool OOPEGAGEENC = 8;</code>
@@ -1330,33 +1284,126 @@ public final class BMJNJLKCODGOuterClass {
         return this;
       }
 
-      private int aKEMOJAMLEK_ ;
+      private float dEEKKONIOPE_ ;
       /**
-       * <code>uint32 AKEMOJAMLEK = 9;</code>
-       * @return The aKEMOJAMLEK.
+       * <code>float DEEKKONIOPE = 4;</code>
+       * @return The dEEKKONIOPE.
        */
       @java.lang.Override
-      public int getAKEMOJAMLEK() {
-        return aKEMOJAMLEK_;
+      public float getDEEKKONIOPE() {
+        return dEEKKONIOPE_;
       }
       /**
-       * <code>uint32 AKEMOJAMLEK = 9;</code>
-       * @param value The aKEMOJAMLEK to set.
+       * <code>float DEEKKONIOPE = 4;</code>
+       * @param value The dEEKKONIOPE to set.
        * @return This builder for chaining.
        */
-      public Builder setAKEMOJAMLEK(int value) {
+      public Builder setDEEKKONIOPE(float value) {
         
-        aKEMOJAMLEK_ = value;
+        dEEKKONIOPE_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 AKEMOJAMLEK = 9;</code>
+       * <code>float DEEKKONIOPE = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAKEMOJAMLEK() {
+      public Builder clearDEEKKONIOPE() {
         
-        aKEMOJAMLEK_ = 0;
+        dEEKKONIOPE_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int hMHCGLCNBMK_ ;
+      /**
+       * <code>uint32 HMHCGLCNBMK = 3;</code>
+       * @return The hMHCGLCNBMK.
+       */
+      @java.lang.Override
+      public int getHMHCGLCNBMK() {
+        return hMHCGLCNBMK_;
+      }
+      /**
+       * <code>uint32 HMHCGLCNBMK = 3;</code>
+       * @param value The hMHCGLCNBMK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHMHCGLCNBMK(int value) {
+        
+        hMHCGLCNBMK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HMHCGLCNBMK = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHMHCGLCNBMK() {
+        
+        hMHCGLCNBMK_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int startIndex_ ;
+      /**
+       * <code>uint32 start_index = 11;</code>
+       * @return The startIndex.
+       */
+      @java.lang.Override
+      public int getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>uint32 start_index = 11;</code>
+       * @param value The startIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartIndex(int value) {
+        
+        startIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 start_index = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStartIndex() {
+        
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float speed_ ;
+      /**
+       * <code>float speed = 5;</code>
+       * @return The speed.
+       */
+      @java.lang.Override
+      public float getSpeed() {
+        return speed_;
+      }
+      /**
+       * <code>float speed = 5;</code>
+       * @param value The speed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSpeed(float value) {
+        
+        speed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float speed = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSpeed() {
+        
+        speed_ = 0F;
         onChanged();
         return this;
       }
@@ -1388,6 +1435,37 @@ public final class BMJNJLKCODGOuterClass {
       public Builder clearLGIDIOIEGCI() {
         
         lGIDIOIEGCI_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int aKEMOJAMLEK_ ;
+      /**
+       * <code>uint32 AKEMOJAMLEK = 9;</code>
+       * @return The aKEMOJAMLEK.
+       */
+      @java.lang.Override
+      public int getAKEMOJAMLEK() {
+        return aKEMOJAMLEK_;
+      }
+      /**
+       * <code>uint32 AKEMOJAMLEK = 9;</code>
+       * @param value The aKEMOJAMLEK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAKEMOJAMLEK(int value) {
+        
+        aKEMOJAMLEK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 AKEMOJAMLEK = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAKEMOJAMLEK() {
+        
+        aKEMOJAMLEK_ = 0;
         onChanged();
         return this;
       }
@@ -1458,15 +1536,15 @@ public final class BMJNJLKCODGOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BMJNJLKCODG.proto\032\021AONPAENJADL.proto\"\345" +
-      "\001\n\013BMJNJLKCODG\022\022\n\nstart_time\030\001 \001(\004\022\023\n\013EE" +
-      "FABNDBKCO\030\002 \001(\r\022\023\n\013HMHCGLCNBMK\030\003 \001(\r\022\023\n\013" +
-      "DEEKKONIOPE\030\004 \001(\002\022\r\n\005speed\030\005 \001(\002\022\022\n\nis_s" +
-      "tarted\030\006 \001(\010\022!\n\013BCOFNPNHJCI\030\007 \003(\0132\014.AONP" +
-      "AENJADL\022\023\n\013OOPEGAGEENC\030\010 \001(\010\022\023\n\013AKEMOJAM" +
-      "LEK\030\t \001(\r\022\023\n\013LGIDIOIEGCI\030\n \001(\rB2\n\031emu.gr" +
-      "asscutter.net.protoB\025BMJNJLKCODGOuterCla" +
-      "ssb\006proto3"
+      "\n\021BMJNJLKCODG.proto\032\021AONPAENJADL.proto\"\372" +
+      "\001\n\013BMJNJLKCODG\022!\n\013BCOFNPNHJCI\030\007 \003(\0132\014.AO" +
+      "NPAENJADL\022\022\n\nstart_time\030\001 \001(\004\022\023\n\013EEFABND" +
+      "BKCO\030\002 \001(\r\022\022\n\nis_started\030\006 \001(\010\022\023\n\013OOPEGA" +
+      "GEENC\030\010 \001(\010\022\023\n\013DEEKKONIOPE\030\004 \001(\002\022\023\n\013HMHC" +
+      "GLCNBMK\030\003 \001(\r\022\023\n\013start_index\030\013 \001(\r\022\r\n\005sp" +
+      "eed\030\005 \001(\002\022\023\n\013LGIDIOIEGCI\030\n \001(\r\022\023\n\013AKEMOJ" +
+      "AMLEK\030\t \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1478,7 +1556,7 @@ public final class BMJNJLKCODGOuterClass {
     internal_static_BMJNJLKCODG_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BMJNJLKCODG_descriptor,
-        new java.lang.String[] { "StartTime", "EEFABNDBKCO", "HMHCGLCNBMK", "DEEKKONIOPE", "Speed", "IsStarted", "BCOFNPNHJCI", "OOPEGAGEENC", "AKEMOJAMLEK", "LGIDIOIEGCI", });
+        new java.lang.String[] { "BCOFNPNHJCI", "StartTime", "EEFABNDBKCO", "IsStarted", "OOPEGAGEENC", "DEEKKONIOPE", "HMHCGLCNBMK", "StartIndex", "Speed", "LGIDIOIEGCI", "AKEMOJAMLEK", });
     emu.grasscutter.net.proto.AONPAENJADLOuterClass.getDescriptor();
   }
 

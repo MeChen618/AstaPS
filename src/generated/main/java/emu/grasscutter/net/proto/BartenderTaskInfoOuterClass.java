@@ -19,18 +19,22 @@ public final class BartenderTaskInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_finish = 9;</code>
+     * <code>bool is_finish = 14;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>uint32 id = 14;</code>
+     * <code>uint32 id = 4;</code>
      * @return The id.
      */
     int getId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BartenderTaskInfo}
    */
   public static final class BartenderTaskInfo extends
@@ -75,14 +79,14 @@ public final class BartenderTaskInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 32: {
 
-              isFinish_ = input.readBool();
+              id_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              id_ = input.readUInt32();
+              isFinish_ = input.readBool();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class BartenderTaskInfoOuterClass {
               emu.grasscutter.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.class, emu.grasscutter.net.proto.BartenderTaskInfoOuterClass.BartenderTaskInfo.Builder.class);
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 9;
+    public static final int IS_FINISH_FIELD_NUMBER = 14;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 9;</code>
+     * <code>bool is_finish = 14;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class BartenderTaskInfoOuterClass {
       return isFinish_;
     }
 
-    public static final int ID_FIELD_NUMBER = 14;
+    public static final int ID_FIELD_NUMBER = 4;
     private int id_;
     /**
-     * <code>uint32 id = 14;</code>
+     * <code>uint32 id = 4;</code>
      * @return The id.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class BartenderTaskInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinish_ != false) {
-        output.writeBool(9, isFinish_);
-      }
       if (id_ != 0) {
-        output.writeUInt32(14, id_);
+        output.writeUInt32(4, id_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(14, isFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class BartenderTaskInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isFinish_);
-      }
       if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, id_);
+          .computeUInt32Size(4, id_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,6 +311,10 @@ public final class BartenderTaskInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BartenderTaskInfo}
      */
     public static final class Builder extends
@@ -461,7 +469,7 @@ public final class BartenderTaskInfoOuterClass {
 
       private boolean isFinish_ ;
       /**
-       * <code>bool is_finish = 9;</code>
+       * <code>bool is_finish = 14;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -469,7 +477,7 @@ public final class BartenderTaskInfoOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool is_finish = 9;</code>
+       * <code>bool is_finish = 14;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -480,7 +488,7 @@ public final class BartenderTaskInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finish = 9;</code>
+       * <code>bool is_finish = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
@@ -492,7 +500,7 @@ public final class BartenderTaskInfoOuterClass {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 14;</code>
+       * <code>uint32 id = 4;</code>
        * @return The id.
        */
       @java.lang.Override
@@ -500,7 +508,7 @@ public final class BartenderTaskInfoOuterClass {
         return id_;
       }
       /**
-       * <code>uint32 id = 14;</code>
+       * <code>uint32 id = 4;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -511,7 +519,7 @@ public final class BartenderTaskInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 id = 14;</code>
+       * <code>uint32 id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -588,9 +596,8 @@ public final class BartenderTaskInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027BartenderTaskInfo.proto\"2\n\021BartenderTa" +
-      "skInfo\022\021\n\tis_finish\030\t \001(\010\022\n\n\002id\030\016 \001(\rB8\n" +
-      "\031emu.grasscutter.net.protoB\033BartenderTas" +
-      "kInfoOuterClassb\006proto3"
+      "skInfo\022\021\n\tis_finish\030\016 \001(\010\022\n\n\002id\030\004 \001(\rB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

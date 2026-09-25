@@ -34,6 +34,6 @@ public class ActivityCondExcelConfigData extends GameResource {
 
     @Override
     public void onLoad() {
-        cond.removeIf(c -> c.type == null);
+        if (cond != null) cond.removeIf(c -> c.type == null);
     }
 }

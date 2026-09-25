@@ -19,60 +19,6 @@ public final class IOJHNKOGKGCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 index = 1;</code>
-     * @return The index.
-     */
-    int getIndex();
-
-    /**
-     * <code>int32 LKJNKMLEDHN = 2;</code>
-     * @return The lKJNKMLEDHN.
-     */
-    int getLKJNKMLEDHN();
-
-    /**
-     * <code>int32 GMGNKGGBBAM = 3;</code>
-     * @return The gMGNKGGBBAM.
-     */
-    int getGMGNKGGBBAM();
-
-    /**
-     * <code>float BDFKCBOIAIP = 4;</code>
-     * @return The bDFKCBOIAIP.
-     */
-    float getBDFKCBOIAIP();
-
-    /**
-     * <code>bool JAIKAMEDKOB = 5;</code>
-     * @return The jAIKAMEDKOB.
-     */
-    boolean getJAIKAMEDKOB();
-
-    /**
-     * <code>float MCMDPFOIHAJ = 6;</code>
-     * @return The mCMDPFOIHAJ.
-     */
-    float getMCMDPFOIHAJ();
-
-    /**
-     * <code>bool FAPKCEDAPEO = 7;</code>
-     * @return The fAPKCEDAPEO.
-     */
-    boolean getFAPKCEDAPEO();
-
-    /**
-     * <code>bool GNKOHOGDMHL = 8;</code>
-     * @return The gNKOHOGDMHL.
-     */
-    boolean getGNKOHOGDMHL();
-
-    /**
-     * <code>float FCCPNLHMCPH = 9;</code>
-     * @return The fCCPNLHMCPH.
-     */
-    float getFCCPNLHMCPH();
-
-    /**
      * <code>string FICOICEGFJG = 10;</code>
      * @return The fICOICEGFJG.
      */
@@ -83,17 +29,6 @@ public final class IOJHNKOGKGCOuterClass {
      */
     com.google.protobuf.ByteString
         getFICOICEGFJGBytes();
-
-    /**
-     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-     * @return The enum numeric value on the wire for gKDBJJGGOAN.
-     */
-    int getGKDBJJGGOANValue();
-    /**
-     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-     * @return The gKDBJJGGOAN.
-     */
-    emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getGKDBJJGGOAN();
 
     /**
      * <code>.HHEDHCFPEKM AMJNELGDJCG = 12;</code>
@@ -109,8 +44,77 @@ public final class IOJHNKOGKGCOuterClass {
      * <code>.HHEDHCFPEKM AMJNELGDJCG = 12;</code>
      */
     emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKMOrBuilder getAMJNELGDJCGOrBuilder();
+
+    /**
+     * <code>int32 GMGNKGGBBAM = 3;</code>
+     * @return The gMGNKGGBBAM.
+     */
+    int getGMGNKGGBBAM();
+
+    /**
+     * <code>float MCMDPFOIHAJ = 6;</code>
+     * @return The mCMDPFOIHAJ.
+     */
+    float getMCMDPFOIHAJ();
+
+    /**
+     * <code>float FCCPNLHMCPH = 9;</code>
+     * @return The fCCPNLHMCPH.
+     */
+    float getFCCPNLHMCPH();
+
+    /**
+     * <code>bool JAIKAMEDKOB = 5;</code>
+     * @return The jAIKAMEDKOB.
+     */
+    boolean getJAIKAMEDKOB();
+
+    /**
+     * <code>bool GNKOHOGDMHL = 8;</code>
+     * @return The gNKOHOGDMHL.
+     */
+    boolean getGNKOHOGDMHL();
+
+    /**
+     * <code>bool FAPKCEDAPEO = 7;</code>
+     * @return The fAPKCEDAPEO.
+     */
+    boolean getFAPKCEDAPEO();
+
+    /**
+     * <code>int32 LKJNKMLEDHN = 2;</code>
+     * @return The lKJNKMLEDHN.
+     */
+    int getLKJNKMLEDHN();
+
+    /**
+     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+     * @return The enum numeric value on the wire for gKDBJJGGOAN.
+     */
+    int getGKDBJJGGOANValue();
+    /**
+     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+     * @return The gKDBJJGGOAN.
+     */
+    emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getGKDBJJGGOAN();
+
+    /**
+     * <code>int32 index = 1;</code>
+     * @return The index.
+     */
+    int getIndex();
+
+    /**
+     * <code>float BDFKCBOIAIP = 4;</code>
+     * @return The bDFKCBOIAIP.
+     */
+    float getBDFKCBOIAIP();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IOJHNKOGKGC}
    */
   public static final class IOJHNKOGKGC extends
@@ -259,105 +263,6 @@ public final class IOJHNKOGKGCOuterClass {
               emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC.class, emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC.Builder.class);
     }
 
-    public static final int INDEX_FIELD_NUMBER = 1;
-    private int index_;
-    /**
-     * <code>int32 index = 1;</code>
-     * @return The index.
-     */
-    @java.lang.Override
-    public int getIndex() {
-      return index_;
-    }
-
-    public static final int LKJNKMLEDHN_FIELD_NUMBER = 2;
-    private int lKJNKMLEDHN_;
-    /**
-     * <code>int32 LKJNKMLEDHN = 2;</code>
-     * @return The lKJNKMLEDHN.
-     */
-    @java.lang.Override
-    public int getLKJNKMLEDHN() {
-      return lKJNKMLEDHN_;
-    }
-
-    public static final int GMGNKGGBBAM_FIELD_NUMBER = 3;
-    private int gMGNKGGBBAM_;
-    /**
-     * <code>int32 GMGNKGGBBAM = 3;</code>
-     * @return The gMGNKGGBBAM.
-     */
-    @java.lang.Override
-    public int getGMGNKGGBBAM() {
-      return gMGNKGGBBAM_;
-    }
-
-    public static final int BDFKCBOIAIP_FIELD_NUMBER = 4;
-    private float bDFKCBOIAIP_;
-    /**
-     * <code>float BDFKCBOIAIP = 4;</code>
-     * @return The bDFKCBOIAIP.
-     */
-    @java.lang.Override
-    public float getBDFKCBOIAIP() {
-      return bDFKCBOIAIP_;
-    }
-
-    public static final int JAIKAMEDKOB_FIELD_NUMBER = 5;
-    private boolean jAIKAMEDKOB_;
-    /**
-     * <code>bool JAIKAMEDKOB = 5;</code>
-     * @return The jAIKAMEDKOB.
-     */
-    @java.lang.Override
-    public boolean getJAIKAMEDKOB() {
-      return jAIKAMEDKOB_;
-    }
-
-    public static final int MCMDPFOIHAJ_FIELD_NUMBER = 6;
-    private float mCMDPFOIHAJ_;
-    /**
-     * <code>float MCMDPFOIHAJ = 6;</code>
-     * @return The mCMDPFOIHAJ.
-     */
-    @java.lang.Override
-    public float getMCMDPFOIHAJ() {
-      return mCMDPFOIHAJ_;
-    }
-
-    public static final int FAPKCEDAPEO_FIELD_NUMBER = 7;
-    private boolean fAPKCEDAPEO_;
-    /**
-     * <code>bool FAPKCEDAPEO = 7;</code>
-     * @return The fAPKCEDAPEO.
-     */
-    @java.lang.Override
-    public boolean getFAPKCEDAPEO() {
-      return fAPKCEDAPEO_;
-    }
-
-    public static final int GNKOHOGDMHL_FIELD_NUMBER = 8;
-    private boolean gNKOHOGDMHL_;
-    /**
-     * <code>bool GNKOHOGDMHL = 8;</code>
-     * @return The gNKOHOGDMHL.
-     */
-    @java.lang.Override
-    public boolean getGNKOHOGDMHL() {
-      return gNKOHOGDMHL_;
-    }
-
-    public static final int FCCPNLHMCPH_FIELD_NUMBER = 9;
-    private float fCCPNLHMCPH_;
-    /**
-     * <code>float FCCPNLHMCPH = 9;</code>
-     * @return The fCCPNLHMCPH.
-     */
-    @java.lang.Override
-    public float getFCCPNLHMCPH() {
-      return fCCPNLHMCPH_;
-    }
-
     public static final int FICOICEGFJG_FIELD_NUMBER = 10;
     private volatile java.lang.Object fICOICEGFJG_;
     /**
@@ -396,25 +301,6 @@ public final class IOJHNKOGKGCOuterClass {
       }
     }
 
-    public static final int GKDBJJGGOAN_FIELD_NUMBER = 11;
-    private int gKDBJJGGOAN_;
-    /**
-     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-     * @return The enum numeric value on the wire for gKDBJJGGOAN.
-     */
-    @java.lang.Override public int getGKDBJJGGOANValue() {
-      return gKDBJJGGOAN_;
-    }
-    /**
-     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-     * @return The gKDBJJGGOAN.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getGKDBJJGGOAN() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP result = emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.valueOf(gKDBJJGGOAN_);
-      return result == null ? emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.UNRECOGNIZED : result;
-    }
-
     public static final int AMJNELGDJCG_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM aMJNELGDJCG_;
     /**
@@ -439,6 +325,124 @@ public final class IOJHNKOGKGCOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKMOrBuilder getAMJNELGDJCGOrBuilder() {
       return getAMJNELGDJCG();
+    }
+
+    public static final int GMGNKGGBBAM_FIELD_NUMBER = 3;
+    private int gMGNKGGBBAM_;
+    /**
+     * <code>int32 GMGNKGGBBAM = 3;</code>
+     * @return The gMGNKGGBBAM.
+     */
+    @java.lang.Override
+    public int getGMGNKGGBBAM() {
+      return gMGNKGGBBAM_;
+    }
+
+    public static final int MCMDPFOIHAJ_FIELD_NUMBER = 6;
+    private float mCMDPFOIHAJ_;
+    /**
+     * <code>float MCMDPFOIHAJ = 6;</code>
+     * @return The mCMDPFOIHAJ.
+     */
+    @java.lang.Override
+    public float getMCMDPFOIHAJ() {
+      return mCMDPFOIHAJ_;
+    }
+
+    public static final int FCCPNLHMCPH_FIELD_NUMBER = 9;
+    private float fCCPNLHMCPH_;
+    /**
+     * <code>float FCCPNLHMCPH = 9;</code>
+     * @return The fCCPNLHMCPH.
+     */
+    @java.lang.Override
+    public float getFCCPNLHMCPH() {
+      return fCCPNLHMCPH_;
+    }
+
+    public static final int JAIKAMEDKOB_FIELD_NUMBER = 5;
+    private boolean jAIKAMEDKOB_;
+    /**
+     * <code>bool JAIKAMEDKOB = 5;</code>
+     * @return The jAIKAMEDKOB.
+     */
+    @java.lang.Override
+    public boolean getJAIKAMEDKOB() {
+      return jAIKAMEDKOB_;
+    }
+
+    public static final int GNKOHOGDMHL_FIELD_NUMBER = 8;
+    private boolean gNKOHOGDMHL_;
+    /**
+     * <code>bool GNKOHOGDMHL = 8;</code>
+     * @return The gNKOHOGDMHL.
+     */
+    @java.lang.Override
+    public boolean getGNKOHOGDMHL() {
+      return gNKOHOGDMHL_;
+    }
+
+    public static final int FAPKCEDAPEO_FIELD_NUMBER = 7;
+    private boolean fAPKCEDAPEO_;
+    /**
+     * <code>bool FAPKCEDAPEO = 7;</code>
+     * @return The fAPKCEDAPEO.
+     */
+    @java.lang.Override
+    public boolean getFAPKCEDAPEO() {
+      return fAPKCEDAPEO_;
+    }
+
+    public static final int LKJNKMLEDHN_FIELD_NUMBER = 2;
+    private int lKJNKMLEDHN_;
+    /**
+     * <code>int32 LKJNKMLEDHN = 2;</code>
+     * @return The lKJNKMLEDHN.
+     */
+    @java.lang.Override
+    public int getLKJNKMLEDHN() {
+      return lKJNKMLEDHN_;
+    }
+
+    public static final int GKDBJJGGOAN_FIELD_NUMBER = 11;
+    private int gKDBJJGGOAN_;
+    /**
+     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+     * @return The enum numeric value on the wire for gKDBJJGGOAN.
+     */
+    @java.lang.Override public int getGKDBJJGGOANValue() {
+      return gKDBJJGGOAN_;
+    }
+    /**
+     * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+     * @return The gKDBJJGGOAN.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getGKDBJJGGOAN() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP result = emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.valueOf(gKDBJJGGOAN_);
+      return result == null ? emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.UNRECOGNIZED : result;
+    }
+
+    public static final int INDEX_FIELD_NUMBER = 1;
+    private int index_;
+    /**
+     * <code>int32 index = 1;</code>
+     * @return The index.
+     */
+    @java.lang.Override
+    public int getIndex() {
+      return index_;
+    }
+
+    public static final int BDFKCBOIAIP_FIELD_NUMBER = 4;
+    private float bDFKCBOIAIP_;
+    /**
+     * <code>float BDFKCBOIAIP = 4;</code>
+     * @return The bDFKCBOIAIP.
+     */
+    @java.lang.Override
+    public float getBDFKCBOIAIP() {
+      return bDFKCBOIAIP_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -562,35 +566,35 @@ public final class IOJHNKOGKGCOuterClass {
       }
       emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC other = (emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC) obj;
 
-      if (getIndex()
-          != other.getIndex()) return false;
-      if (getLKJNKMLEDHN()
-          != other.getLKJNKMLEDHN()) return false;
-      if (getGMGNKGGBBAM()
-          != other.getGMGNKGGBBAM()) return false;
-      if (java.lang.Float.floatToIntBits(getBDFKCBOIAIP())
-          != java.lang.Float.floatToIntBits(
-              other.getBDFKCBOIAIP())) return false;
-      if (getJAIKAMEDKOB()
-          != other.getJAIKAMEDKOB()) return false;
-      if (java.lang.Float.floatToIntBits(getMCMDPFOIHAJ())
-          != java.lang.Float.floatToIntBits(
-              other.getMCMDPFOIHAJ())) return false;
-      if (getFAPKCEDAPEO()
-          != other.getFAPKCEDAPEO()) return false;
-      if (getGNKOHOGDMHL()
-          != other.getGNKOHOGDMHL()) return false;
-      if (java.lang.Float.floatToIntBits(getFCCPNLHMCPH())
-          != java.lang.Float.floatToIntBits(
-              other.getFCCPNLHMCPH())) return false;
       if (!getFICOICEGFJG()
           .equals(other.getFICOICEGFJG())) return false;
-      if (gKDBJJGGOAN_ != other.gKDBJJGGOAN_) return false;
       if (hasAMJNELGDJCG() != other.hasAMJNELGDJCG()) return false;
       if (hasAMJNELGDJCG()) {
         if (!getAMJNELGDJCG()
             .equals(other.getAMJNELGDJCG())) return false;
       }
+      if (getGMGNKGGBBAM()
+          != other.getGMGNKGGBBAM()) return false;
+      if (java.lang.Float.floatToIntBits(getMCMDPFOIHAJ())
+          != java.lang.Float.floatToIntBits(
+              other.getMCMDPFOIHAJ())) return false;
+      if (java.lang.Float.floatToIntBits(getFCCPNLHMCPH())
+          != java.lang.Float.floatToIntBits(
+              other.getFCCPNLHMCPH())) return false;
+      if (getJAIKAMEDKOB()
+          != other.getJAIKAMEDKOB()) return false;
+      if (getGNKOHOGDMHL()
+          != other.getGNKOHOGDMHL()) return false;
+      if (getFAPKCEDAPEO()
+          != other.getFAPKCEDAPEO()) return false;
+      if (getLKJNKMLEDHN()
+          != other.getLKJNKMLEDHN()) return false;
+      if (gKDBJJGGOAN_ != other.gKDBJJGGOAN_) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
+      if (java.lang.Float.floatToIntBits(getBDFKCBOIAIP())
+          != java.lang.Float.floatToIntBits(
+              other.getBDFKCBOIAIP())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -602,38 +606,38 @@ public final class IOJHNKOGKGCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getIndex();
-      hash = (37 * hash) + LKJNKMLEDHN_FIELD_NUMBER;
-      hash = (53 * hash) + getLKJNKMLEDHN();
-      hash = (37 * hash) + GMGNKGGBBAM_FIELD_NUMBER;
-      hash = (53 * hash) + getGMGNKGGBBAM();
-      hash = (37 * hash) + BDFKCBOIAIP_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getBDFKCBOIAIP());
-      hash = (37 * hash) + JAIKAMEDKOB_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getJAIKAMEDKOB());
-      hash = (37 * hash) + MCMDPFOIHAJ_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getMCMDPFOIHAJ());
-      hash = (37 * hash) + FAPKCEDAPEO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFAPKCEDAPEO());
-      hash = (37 * hash) + GNKOHOGDMHL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGNKOHOGDMHL());
-      hash = (37 * hash) + FCCPNLHMCPH_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getFCCPNLHMCPH());
       hash = (37 * hash) + FICOICEGFJG_FIELD_NUMBER;
       hash = (53 * hash) + getFICOICEGFJG().hashCode();
-      hash = (37 * hash) + GKDBJJGGOAN_FIELD_NUMBER;
-      hash = (53 * hash) + gKDBJJGGOAN_;
       if (hasAMJNELGDJCG()) {
         hash = (37 * hash) + AMJNELGDJCG_FIELD_NUMBER;
         hash = (53 * hash) + getAMJNELGDJCG().hashCode();
       }
+      hash = (37 * hash) + GMGNKGGBBAM_FIELD_NUMBER;
+      hash = (53 * hash) + getGMGNKGGBBAM();
+      hash = (37 * hash) + MCMDPFOIHAJ_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getMCMDPFOIHAJ());
+      hash = (37 * hash) + FCCPNLHMCPH_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getFCCPNLHMCPH());
+      hash = (37 * hash) + JAIKAMEDKOB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getJAIKAMEDKOB());
+      hash = (37 * hash) + GNKOHOGDMHL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getGNKOHOGDMHL());
+      hash = (37 * hash) + FAPKCEDAPEO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getFAPKCEDAPEO());
+      hash = (37 * hash) + LKJNKMLEDHN_FIELD_NUMBER;
+      hash = (53 * hash) + getLKJNKMLEDHN();
+      hash = (37 * hash) + GKDBJJGGOAN_FIELD_NUMBER;
+      hash = (53 * hash) + gKDBJJGGOAN_;
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex();
+      hash = (37 * hash) + BDFKCBOIAIP_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getBDFKCBOIAIP());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -730,6 +734,10 @@ public final class IOJHNKOGKGCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IOJHNKOGKGC}
      */
     public static final class Builder extends
@@ -767,27 +775,7 @@ public final class IOJHNKOGKGCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        index_ = 0;
-
-        lKJNKMLEDHN_ = 0;
-
-        gMGNKGGBBAM_ = 0;
-
-        bDFKCBOIAIP_ = 0F;
-
-        jAIKAMEDKOB_ = false;
-
-        mCMDPFOIHAJ_ = 0F;
-
-        fAPKCEDAPEO_ = false;
-
-        gNKOHOGDMHL_ = false;
-
-        fCCPNLHMCPH_ = 0F;
-
         fICOICEGFJG_ = "";
-
-        gKDBJJGGOAN_ = 0;
 
         if (aMJNELGDJCGBuilder_ == null) {
           aMJNELGDJCG_ = null;
@@ -795,6 +783,26 @@ public final class IOJHNKOGKGCOuterClass {
           aMJNELGDJCG_ = null;
           aMJNELGDJCGBuilder_ = null;
         }
+        gMGNKGGBBAM_ = 0;
+
+        mCMDPFOIHAJ_ = 0F;
+
+        fCCPNLHMCPH_ = 0F;
+
+        jAIKAMEDKOB_ = false;
+
+        gNKOHOGDMHL_ = false;
+
+        fAPKCEDAPEO_ = false;
+
+        lKJNKMLEDHN_ = 0;
+
+        gKDBJJGGOAN_ = 0;
+
+        index_ = 0;
+
+        bDFKCBOIAIP_ = 0F;
+
         return this;
       }
 
@@ -821,22 +829,22 @@ public final class IOJHNKOGKGCOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC buildPartial() {
         emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC result = new emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC(this);
-        result.index_ = index_;
-        result.lKJNKMLEDHN_ = lKJNKMLEDHN_;
-        result.gMGNKGGBBAM_ = gMGNKGGBBAM_;
-        result.bDFKCBOIAIP_ = bDFKCBOIAIP_;
-        result.jAIKAMEDKOB_ = jAIKAMEDKOB_;
-        result.mCMDPFOIHAJ_ = mCMDPFOIHAJ_;
-        result.fAPKCEDAPEO_ = fAPKCEDAPEO_;
-        result.gNKOHOGDMHL_ = gNKOHOGDMHL_;
-        result.fCCPNLHMCPH_ = fCCPNLHMCPH_;
         result.fICOICEGFJG_ = fICOICEGFJG_;
-        result.gKDBJJGGOAN_ = gKDBJJGGOAN_;
         if (aMJNELGDJCGBuilder_ == null) {
           result.aMJNELGDJCG_ = aMJNELGDJCG_;
         } else {
           result.aMJNELGDJCG_ = aMJNELGDJCGBuilder_.build();
         }
+        result.gMGNKGGBBAM_ = gMGNKGGBBAM_;
+        result.mCMDPFOIHAJ_ = mCMDPFOIHAJ_;
+        result.fCCPNLHMCPH_ = fCCPNLHMCPH_;
+        result.jAIKAMEDKOB_ = jAIKAMEDKOB_;
+        result.gNKOHOGDMHL_ = gNKOHOGDMHL_;
+        result.fAPKCEDAPEO_ = fAPKCEDAPEO_;
+        result.lKJNKMLEDHN_ = lKJNKMLEDHN_;
+        result.gKDBJJGGOAN_ = gKDBJJGGOAN_;
+        result.index_ = index_;
+        result.bDFKCBOIAIP_ = bDFKCBOIAIP_;
         onBuilt();
         return result;
       }
@@ -885,42 +893,42 @@ public final class IOJHNKOGKGCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC other) {
         if (other == emu.grasscutter.net.proto.IOJHNKOGKGCOuterClass.IOJHNKOGKGC.getDefaultInstance()) return this;
-        if (other.getIndex() != 0) {
-          setIndex(other.getIndex());
-        }
-        if (other.getLKJNKMLEDHN() != 0) {
-          setLKJNKMLEDHN(other.getLKJNKMLEDHN());
-        }
-        if (other.getGMGNKGGBBAM() != 0) {
-          setGMGNKGGBBAM(other.getGMGNKGGBBAM());
-        }
-        if (other.getBDFKCBOIAIP() != 0F) {
-          setBDFKCBOIAIP(other.getBDFKCBOIAIP());
-        }
-        if (other.getJAIKAMEDKOB() != false) {
-          setJAIKAMEDKOB(other.getJAIKAMEDKOB());
-        }
-        if (other.getMCMDPFOIHAJ() != 0F) {
-          setMCMDPFOIHAJ(other.getMCMDPFOIHAJ());
-        }
-        if (other.getFAPKCEDAPEO() != false) {
-          setFAPKCEDAPEO(other.getFAPKCEDAPEO());
-        }
-        if (other.getGNKOHOGDMHL() != false) {
-          setGNKOHOGDMHL(other.getGNKOHOGDMHL());
-        }
-        if (other.getFCCPNLHMCPH() != 0F) {
-          setFCCPNLHMCPH(other.getFCCPNLHMCPH());
-        }
         if (!other.getFICOICEGFJG().isEmpty()) {
           fICOICEGFJG_ = other.fICOICEGFJG_;
           onChanged();
         }
+        if (other.hasAMJNELGDJCG()) {
+          mergeAMJNELGDJCG(other.getAMJNELGDJCG());
+        }
+        if (other.getGMGNKGGBBAM() != 0) {
+          setGMGNKGGBBAM(other.getGMGNKGGBBAM());
+        }
+        if (other.getMCMDPFOIHAJ() != 0F) {
+          setMCMDPFOIHAJ(other.getMCMDPFOIHAJ());
+        }
+        if (other.getFCCPNLHMCPH() != 0F) {
+          setFCCPNLHMCPH(other.getFCCPNLHMCPH());
+        }
+        if (other.getJAIKAMEDKOB() != false) {
+          setJAIKAMEDKOB(other.getJAIKAMEDKOB());
+        }
+        if (other.getGNKOHOGDMHL() != false) {
+          setGNKOHOGDMHL(other.getGNKOHOGDMHL());
+        }
+        if (other.getFAPKCEDAPEO() != false) {
+          setFAPKCEDAPEO(other.getFAPKCEDAPEO());
+        }
+        if (other.getLKJNKMLEDHN() != 0) {
+          setLKJNKMLEDHN(other.getLKJNKMLEDHN());
+        }
         if (other.gKDBJJGGOAN_ != 0) {
           setGKDBJJGGOANValue(other.getGKDBJJGGOANValue());
         }
-        if (other.hasAMJNELGDJCG()) {
-          mergeAMJNELGDJCG(other.getAMJNELGDJCG());
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
+        }
+        if (other.getBDFKCBOIAIP() != 0F) {
+          setBDFKCBOIAIP(other.getBDFKCBOIAIP());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -948,285 +956,6 @@ public final class IOJHNKOGKGCOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int index_ ;
-      /**
-       * <code>int32 index = 1;</code>
-       * @return The index.
-       */
-      @java.lang.Override
-      public int getIndex() {
-        return index_;
-      }
-      /**
-       * <code>int32 index = 1;</code>
-       * @param value The index to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIndex(int value) {
-        
-        index_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 index = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIndex() {
-        
-        index_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lKJNKMLEDHN_ ;
-      /**
-       * <code>int32 LKJNKMLEDHN = 2;</code>
-       * @return The lKJNKMLEDHN.
-       */
-      @java.lang.Override
-      public int getLKJNKMLEDHN() {
-        return lKJNKMLEDHN_;
-      }
-      /**
-       * <code>int32 LKJNKMLEDHN = 2;</code>
-       * @param value The lKJNKMLEDHN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLKJNKMLEDHN(int value) {
-        
-        lKJNKMLEDHN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 LKJNKMLEDHN = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLKJNKMLEDHN() {
-        
-        lKJNKMLEDHN_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int gMGNKGGBBAM_ ;
-      /**
-       * <code>int32 GMGNKGGBBAM = 3;</code>
-       * @return The gMGNKGGBBAM.
-       */
-      @java.lang.Override
-      public int getGMGNKGGBBAM() {
-        return gMGNKGGBBAM_;
-      }
-      /**
-       * <code>int32 GMGNKGGBBAM = 3;</code>
-       * @param value The gMGNKGGBBAM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGMGNKGGBBAM(int value) {
-        
-        gMGNKGGBBAM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 GMGNKGGBBAM = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGMGNKGGBBAM() {
-        
-        gMGNKGGBBAM_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float bDFKCBOIAIP_ ;
-      /**
-       * <code>float BDFKCBOIAIP = 4;</code>
-       * @return The bDFKCBOIAIP.
-       */
-      @java.lang.Override
-      public float getBDFKCBOIAIP() {
-        return bDFKCBOIAIP_;
-      }
-      /**
-       * <code>float BDFKCBOIAIP = 4;</code>
-       * @param value The bDFKCBOIAIP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBDFKCBOIAIP(float value) {
-        
-        bDFKCBOIAIP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float BDFKCBOIAIP = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBDFKCBOIAIP() {
-        
-        bDFKCBOIAIP_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private boolean jAIKAMEDKOB_ ;
-      /**
-       * <code>bool JAIKAMEDKOB = 5;</code>
-       * @return The jAIKAMEDKOB.
-       */
-      @java.lang.Override
-      public boolean getJAIKAMEDKOB() {
-        return jAIKAMEDKOB_;
-      }
-      /**
-       * <code>bool JAIKAMEDKOB = 5;</code>
-       * @param value The jAIKAMEDKOB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJAIKAMEDKOB(boolean value) {
-        
-        jAIKAMEDKOB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool JAIKAMEDKOB = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJAIKAMEDKOB() {
-        
-        jAIKAMEDKOB_ = false;
-        onChanged();
-        return this;
-      }
-
-      private float mCMDPFOIHAJ_ ;
-      /**
-       * <code>float MCMDPFOIHAJ = 6;</code>
-       * @return The mCMDPFOIHAJ.
-       */
-      @java.lang.Override
-      public float getMCMDPFOIHAJ() {
-        return mCMDPFOIHAJ_;
-      }
-      /**
-       * <code>float MCMDPFOIHAJ = 6;</code>
-       * @param value The mCMDPFOIHAJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMCMDPFOIHAJ(float value) {
-        
-        mCMDPFOIHAJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float MCMDPFOIHAJ = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMCMDPFOIHAJ() {
-        
-        mCMDPFOIHAJ_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private boolean fAPKCEDAPEO_ ;
-      /**
-       * <code>bool FAPKCEDAPEO = 7;</code>
-       * @return The fAPKCEDAPEO.
-       */
-      @java.lang.Override
-      public boolean getFAPKCEDAPEO() {
-        return fAPKCEDAPEO_;
-      }
-      /**
-       * <code>bool FAPKCEDAPEO = 7;</code>
-       * @param value The fAPKCEDAPEO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFAPKCEDAPEO(boolean value) {
-        
-        fAPKCEDAPEO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool FAPKCEDAPEO = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFAPKCEDAPEO() {
-        
-        fAPKCEDAPEO_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean gNKOHOGDMHL_ ;
-      /**
-       * <code>bool GNKOHOGDMHL = 8;</code>
-       * @return The gNKOHOGDMHL.
-       */
-      @java.lang.Override
-      public boolean getGNKOHOGDMHL() {
-        return gNKOHOGDMHL_;
-      }
-      /**
-       * <code>bool GNKOHOGDMHL = 8;</code>
-       * @param value The gNKOHOGDMHL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGNKOHOGDMHL(boolean value) {
-        
-        gNKOHOGDMHL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool GNKOHOGDMHL = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGNKOHOGDMHL() {
-        
-        gNKOHOGDMHL_ = false;
-        onChanged();
-        return this;
-      }
-
-      private float fCCPNLHMCPH_ ;
-      /**
-       * <code>float FCCPNLHMCPH = 9;</code>
-       * @return The fCCPNLHMCPH.
-       */
-      @java.lang.Override
-      public float getFCCPNLHMCPH() {
-        return fCCPNLHMCPH_;
-      }
-      /**
-       * <code>float FCCPNLHMCPH = 9;</code>
-       * @param value The fCCPNLHMCPH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFCCPNLHMCPH(float value) {
-        
-        fCCPNLHMCPH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float FCCPNLHMCPH = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFCCPNLHMCPH() {
-        
-        fCCPNLHMCPH_ = 0F;
-        onChanged();
         return this;
       }
 
@@ -1302,60 +1031,6 @@ public final class IOJHNKOGKGCOuterClass {
   checkByteStringIsUtf8(value);
         
         fICOICEGFJG_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int gKDBJJGGOAN_ = 0;
-      /**
-       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-       * @return The enum numeric value on the wire for gKDBJJGGOAN.
-       */
-      @java.lang.Override public int getGKDBJJGGOANValue() {
-        return gKDBJJGGOAN_;
-      }
-      /**
-       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-       * @param value The enum numeric value on the wire for gKDBJJGGOAN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGKDBJJGGOANValue(int value) {
-        
-        gKDBJJGGOAN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-       * @return The gKDBJJGGOAN.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getGKDBJJGGOAN() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP result = emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.valueOf(gKDBJJGGOAN_);
-        return result == null ? emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-       * @param value The gKDBJJGGOAN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGKDBJJGGOAN(emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        gKDBJJGGOAN_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGKDBJJGGOAN() {
-        
-        gKDBJJGGOAN_ = 0;
         onChanged();
         return this;
       }
@@ -1478,6 +1153,339 @@ public final class IOJHNKOGKGCOuterClass {
         }
         return aMJNELGDJCGBuilder_;
       }
+
+      private int gMGNKGGBBAM_ ;
+      /**
+       * <code>int32 GMGNKGGBBAM = 3;</code>
+       * @return The gMGNKGGBBAM.
+       */
+      @java.lang.Override
+      public int getGMGNKGGBBAM() {
+        return gMGNKGGBBAM_;
+      }
+      /**
+       * <code>int32 GMGNKGGBBAM = 3;</code>
+       * @param value The gMGNKGGBBAM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGMGNKGGBBAM(int value) {
+        
+        gMGNKGGBBAM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 GMGNKGGBBAM = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGMGNKGGBBAM() {
+        
+        gMGNKGGBBAM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float mCMDPFOIHAJ_ ;
+      /**
+       * <code>float MCMDPFOIHAJ = 6;</code>
+       * @return The mCMDPFOIHAJ.
+       */
+      @java.lang.Override
+      public float getMCMDPFOIHAJ() {
+        return mCMDPFOIHAJ_;
+      }
+      /**
+       * <code>float MCMDPFOIHAJ = 6;</code>
+       * @param value The mCMDPFOIHAJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMCMDPFOIHAJ(float value) {
+        
+        mCMDPFOIHAJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float MCMDPFOIHAJ = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMCMDPFOIHAJ() {
+        
+        mCMDPFOIHAJ_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float fCCPNLHMCPH_ ;
+      /**
+       * <code>float FCCPNLHMCPH = 9;</code>
+       * @return The fCCPNLHMCPH.
+       */
+      @java.lang.Override
+      public float getFCCPNLHMCPH() {
+        return fCCPNLHMCPH_;
+      }
+      /**
+       * <code>float FCCPNLHMCPH = 9;</code>
+       * @param value The fCCPNLHMCPH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFCCPNLHMCPH(float value) {
+        
+        fCCPNLHMCPH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float FCCPNLHMCPH = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFCCPNLHMCPH() {
+        
+        fCCPNLHMCPH_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean jAIKAMEDKOB_ ;
+      /**
+       * <code>bool JAIKAMEDKOB = 5;</code>
+       * @return The jAIKAMEDKOB.
+       */
+      @java.lang.Override
+      public boolean getJAIKAMEDKOB() {
+        return jAIKAMEDKOB_;
+      }
+      /**
+       * <code>bool JAIKAMEDKOB = 5;</code>
+       * @param value The jAIKAMEDKOB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJAIKAMEDKOB(boolean value) {
+        
+        jAIKAMEDKOB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool JAIKAMEDKOB = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJAIKAMEDKOB() {
+        
+        jAIKAMEDKOB_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean gNKOHOGDMHL_ ;
+      /**
+       * <code>bool GNKOHOGDMHL = 8;</code>
+       * @return The gNKOHOGDMHL.
+       */
+      @java.lang.Override
+      public boolean getGNKOHOGDMHL() {
+        return gNKOHOGDMHL_;
+      }
+      /**
+       * <code>bool GNKOHOGDMHL = 8;</code>
+       * @param value The gNKOHOGDMHL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGNKOHOGDMHL(boolean value) {
+        
+        gNKOHOGDMHL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool GNKOHOGDMHL = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGNKOHOGDMHL() {
+        
+        gNKOHOGDMHL_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean fAPKCEDAPEO_ ;
+      /**
+       * <code>bool FAPKCEDAPEO = 7;</code>
+       * @return The fAPKCEDAPEO.
+       */
+      @java.lang.Override
+      public boolean getFAPKCEDAPEO() {
+        return fAPKCEDAPEO_;
+      }
+      /**
+       * <code>bool FAPKCEDAPEO = 7;</code>
+       * @param value The fAPKCEDAPEO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFAPKCEDAPEO(boolean value) {
+        
+        fAPKCEDAPEO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool FAPKCEDAPEO = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFAPKCEDAPEO() {
+        
+        fAPKCEDAPEO_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int lKJNKMLEDHN_ ;
+      /**
+       * <code>int32 LKJNKMLEDHN = 2;</code>
+       * @return The lKJNKMLEDHN.
+       */
+      @java.lang.Override
+      public int getLKJNKMLEDHN() {
+        return lKJNKMLEDHN_;
+      }
+      /**
+       * <code>int32 LKJNKMLEDHN = 2;</code>
+       * @param value The lKJNKMLEDHN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLKJNKMLEDHN(int value) {
+        
+        lKJNKMLEDHN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 LKJNKMLEDHN = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLKJNKMLEDHN() {
+        
+        lKJNKMLEDHN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gKDBJJGGOAN_ = 0;
+      /**
+       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+       * @return The enum numeric value on the wire for gKDBJJGGOAN.
+       */
+      @java.lang.Override public int getGKDBJJGGOANValue() {
+        return gKDBJJGGOAN_;
+      }
+      /**
+       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+       * @param value The enum numeric value on the wire for gKDBJJGGOAN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGKDBJJGGOANValue(int value) {
+        
+        gKDBJJGGOAN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+       * @return The gKDBJJGGOAN.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getGKDBJJGGOAN() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP result = emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.valueOf(gKDBJJGGOAN_);
+        return result == null ? emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+       * @param value The gKDBJJGGOAN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGKDBJJGGOAN(emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        gKDBJJGGOAN_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.JEOKDCIGCFP GKDBJJGGOAN = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGKDBJJGGOAN() {
+        
+        gKDBJJGGOAN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int index_ ;
+      /**
+       * <code>int32 index = 1;</code>
+       * @return The index.
+       */
+      @java.lang.Override
+      public int getIndex() {
+        return index_;
+      }
+      /**
+       * <code>int32 index = 1;</code>
+       * @param value The index to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndex(int value) {
+        
+        index_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 index = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndex() {
+        
+        index_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float bDFKCBOIAIP_ ;
+      /**
+       * <code>float BDFKCBOIAIP = 4;</code>
+       * @return The bDFKCBOIAIP.
+       */
+      @java.lang.Override
+      public float getBDFKCBOIAIP() {
+        return bDFKCBOIAIP_;
+      }
+      /**
+       * <code>float BDFKCBOIAIP = 4;</code>
+       * @param value The bDFKCBOIAIP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBDFKCBOIAIP(float value) {
+        
+        bDFKCBOIAIP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float BDFKCBOIAIP = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBDFKCBOIAIP() {
+        
+        bDFKCBOIAIP_ = 0F;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1546,16 +1554,15 @@ public final class IOJHNKOGKGCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021IOJHNKOGKGC.proto\032\021HHEDHCFPEKM.proto\032\021" +
-      "JEOKDCIGCFP.proto\"\237\002\n\013IOJHNKOGKGC\022\r\n\005ind" +
-      "ex\030\001 \001(\005\022\023\n\013LKJNKMLEDHN\030\002 \001(\005\022\023\n\013GMGNKGG" +
-      "BBAM\030\003 \001(\005\022\023\n\013BDFKCBOIAIP\030\004 \001(\002\022\023\n\013JAIKA" +
-      "MEDKOB\030\005 \001(\010\022\023\n\013MCMDPFOIHAJ\030\006 \001(\002\022\023\n\013FAP" +
-      "KCEDAPEO\030\007 \001(\010\022\023\n\013GNKOHOGDMHL\030\010 \001(\010\022\023\n\013F" +
-      "CCPNLHMCPH\030\t \001(\002\022\023\n\013FICOICEGFJG\030\n \001(\t\022!\n" +
-      "\013GKDBJJGGOAN\030\013 \001(\0162\014.JEOKDCIGCFP\022!\n\013AMJN" +
-      "ELGDJCG\030\014 \001(\0132\014.HHEDHCFPEKMB2\n\031emu.grass" +
-      "cutter.net.protoB\025IOJHNKOGKGCOuterClassb" +
-      "\006proto3"
+      "JEOKDCIGCFP.proto\"\237\002\n\013IOJHNKOGKGC\022\023\n\013FIC" +
+      "OICEGFJG\030\n \001(\t\022!\n\013AMJNELGDJCG\030\014 \001(\0132\014.HH" +
+      "EDHCFPEKM\022\023\n\013GMGNKGGBBAM\030\003 \001(\005\022\023\n\013MCMDPF" +
+      "OIHAJ\030\006 \001(\002\022\023\n\013FCCPNLHMCPH\030\t \001(\002\022\023\n\013JAIK" +
+      "AMEDKOB\030\005 \001(\010\022\023\n\013GNKOHOGDMHL\030\010 \001(\010\022\023\n\013FA" +
+      "PKCEDAPEO\030\007 \001(\010\022\023\n\013LKJNKMLEDHN\030\002 \001(\005\022!\n\013" +
+      "GKDBJJGGOAN\030\013 \001(\0162\014.JEOKDCIGCFP\022\r\n\005index" +
+      "\030\001 \001(\005\022\023\n\013BDFKCBOIAIP\030\004 \001(\002B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1568,7 +1575,7 @@ public final class IOJHNKOGKGCOuterClass {
     internal_static_IOJHNKOGKGC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IOJHNKOGKGC_descriptor,
-        new java.lang.String[] { "Index", "LKJNKMLEDHN", "GMGNKGGBBAM", "BDFKCBOIAIP", "JAIKAMEDKOB", "MCMDPFOIHAJ", "FAPKCEDAPEO", "GNKOHOGDMHL", "FCCPNLHMCPH", "FICOICEGFJG", "GKDBJJGGOAN", "AMJNELGDJCG", });
+        new java.lang.String[] { "FICOICEGFJG", "AMJNELGDJCG", "GMGNKGGBBAM", "MCMDPFOIHAJ", "FCCPNLHMCPH", "JAIKAMEDKOB", "GNKOHOGDMHL", "FAPKCEDAPEO", "LKJNKMLEDHN", "GKDBJJGGOAN", "Index", "BDFKCBOIAIP", });
     emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.getDescriptor();
     emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.getDescriptor();
   }

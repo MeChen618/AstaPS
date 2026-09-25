@@ -19,18 +19,22 @@ public final class PlayerRTTInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 rtt = 3;</code>
-     * @return The rtt.
-     */
-    int getRtt();
-
-    /**
      * <code>uint32 uid = 11;</code>
      * @return The uid.
      */
     int getUid();
+
+    /**
+     * <code>uint32 rtt = 1;</code>
+     * @return The rtt.
+     */
+    int getRtt();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PlayerRTTInfo}
    */
   public static final class PlayerRTTInfo extends
@@ -75,7 +79,7 @@ public final class PlayerRTTInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               rtt_ = input.readUInt32();
               break;
@@ -117,17 +121,6 @@ public final class PlayerRTTInfoOuterClass {
               emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.class, emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.Builder.class);
     }
 
-    public static final int RTT_FIELD_NUMBER = 3;
-    private int rtt_;
-    /**
-     * <code>uint32 rtt = 3;</code>
-     * @return The rtt.
-     */
-    @java.lang.Override
-    public int getRtt() {
-      return rtt_;
-    }
-
     public static final int UID_FIELD_NUMBER = 11;
     private int uid_;
     /**
@@ -137,6 +130,17 @@ public final class PlayerRTTInfoOuterClass {
     @java.lang.Override
     public int getUid() {
       return uid_;
+    }
+
+    public static final int RTT_FIELD_NUMBER = 1;
+    private int rtt_;
+    /**
+     * <code>uint32 rtt = 1;</code>
+     * @return The rtt.
+     */
+    @java.lang.Override
+    public int getRtt() {
+      return rtt_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -154,7 +158,7 @@ public final class PlayerRTTInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (rtt_ != 0) {
-        output.writeUInt32(3, rtt_);
+        output.writeUInt32(1, rtt_);
       }
       if (uid_ != 0) {
         output.writeUInt32(11, uid_);
@@ -170,7 +174,7 @@ public final class PlayerRTTInfoOuterClass {
       size = 0;
       if (rtt_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, rtt_);
+          .computeUInt32Size(1, rtt_);
       }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -191,10 +195,10 @@ public final class PlayerRTTInfoOuterClass {
       }
       emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo other = (emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo) obj;
 
-      if (getRtt()
-          != other.getRtt()) return false;
       if (getUid()
           != other.getUid()) return false;
+      if (getRtt()
+          != other.getRtt()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class PlayerRTTInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RTT_FIELD_NUMBER;
-      hash = (53 * hash) + getRtt();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
+      hash = (37 * hash) + RTT_FIELD_NUMBER;
+      hash = (53 * hash) + getRtt();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class PlayerRTTInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PlayerRTTInfo}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class PlayerRTTInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        rtt_ = 0;
-
         uid_ = 0;
+
+        rtt_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class PlayerRTTInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo buildPartial() {
         emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo result = new emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo(this);
-        result.rtt_ = rtt_;
         result.uid_ = uid_;
+        result.rtt_ = rtt_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class PlayerRTTInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo other) {
         if (other == emu.grasscutter.net.proto.PlayerRTTInfoOuterClass.PlayerRTTInfo.getDefaultInstance()) return this;
-        if (other.getRtt() != 0) {
-          setRtt(other.getRtt());
-        }
         if (other.getUid() != 0) {
           setUid(other.getUid());
+        }
+        if (other.getRtt() != 0) {
+          setRtt(other.getRtt());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +466,6 @@ public final class PlayerRTTInfoOuterClass {
         return this;
       }
 
-      private int rtt_ ;
-      /**
-       * <code>uint32 rtt = 3;</code>
-       * @return The rtt.
-       */
-      @java.lang.Override
-      public int getRtt() {
-        return rtt_;
-      }
-      /**
-       * <code>uint32 rtt = 3;</code>
-       * @param value The rtt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRtt(int value) {
-        
-        rtt_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 rtt = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRtt() {
-        
-        rtt_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int uid_ ;
       /**
        * <code>uint32 uid = 11;</code>
@@ -516,6 +493,37 @@ public final class PlayerRTTInfoOuterClass {
       public Builder clearUid() {
         
         uid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rtt_ ;
+      /**
+       * <code>uint32 rtt = 1;</code>
+       * @return The rtt.
+       */
+      @java.lang.Override
+      public int getRtt() {
+        return rtt_;
+      }
+      /**
+       * <code>uint32 rtt = 1;</code>
+       * @param value The rtt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRtt(int value) {
+        
+        rtt_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 rtt = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRtt() {
+        
+        rtt_ = 0;
         onChanged();
         return this;
       }
@@ -587,9 +595,8 @@ public final class PlayerRTTInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023PlayerRTTInfo.proto\")\n\rPlayerRTTInfo\022\013" +
-      "\n\003rtt\030\003 \001(\r\022\013\n\003uid\030\013 \001(\rB4\n\031emu.grasscut" +
-      "ter.net.protoB\027PlayerRTTInfoOuterClassb\006" +
-      "proto3"
+      "\n\003uid\030\013 \001(\r\022\013\n\003rtt\030\001 \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class PlayerRTTInfoOuterClass {
     internal_static_PlayerRTTInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerRTTInfo_descriptor,
-        new java.lang.String[] { "Rtt", "Uid", });
+        new java.lang.String[] { "Uid", "Rtt", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -4,15 +4,15 @@
  * Could not load the following classes:
  *  emu.grasscutter.net.packet.BasePacket
  *  emu.grasscutter.net.proto.InvestigationMonsterOuterClass$InvestigationMonster
- *  emu.grasscutter.net.proto._InvestigationMonsterConfigOuterClass$_InvestigationMonsterConfig
- *  emu.grasscutter.net.proto._InvestigationMonsterDetailOuterClass$_InvestigationMonsterDetail
+ *  emu.grasscutter.net.proto.InvestigationMonsterConfig$_InvestigationMonsterConfig
+ *  emu.grasscutter.net.proto.InvestigationMonsterDetail$_InvestigationMonsterDetail
  */
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.InvestigationMonsterOuterClass;
-import emu.grasscutter.net.proto._InvestigationMonsterConfigOuterClass;
-import emu.grasscutter.net.proto._InvestigationMonsterDetailOuterClass;
+import emu.grasscutter.net.proto.InvestigationMonsterConfig;
+import emu.grasscutter.net.proto.InvestigationMonsterDetail;
 import java.io.ByteArrayOutputStream;
 
 public class PacketMarkTargetInvestigationMonsterNotify
@@ -23,9 +23,9 @@ extends BasePacket {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(64);
             PacketMarkTargetInvestigationMonsterNotify.writeVarint(byteArrayOutputStream, 24);
             PacketMarkTargetInvestigationMonsterNotify.writeVarint(byteArrayOutputStream, investigationMonster.getId());
-            _InvestigationMonsterConfigOuterClass._InvestigationMonsterConfig monsterConfig = null;
+            InvestigationMonsterConfig._InvestigationMonsterConfig monsterConfig = null;
             if (investigationMonster.getInvestigationMonsterDetailListCount() > 0) {
-                _InvestigationMonsterDetailOuterClass._InvestigationMonsterDetail detail =
+                InvestigationMonsterDetail._InvestigationMonsterDetail detail =
                         investigationMonster.getInvestigationMonsterDetailList(0);
                 if (detail != null && detail.hasMonsterConfig()) {
                     monsterConfig = detail.getMonsterConfig();

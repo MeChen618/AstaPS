@@ -49,7 +49,7 @@ public class PacketGetScenePointRsp extends BasePacket {
                             || !unlockedSet.contains(pointId);
 
             if (locked) {
-                p.addLockedPointList(pointId);
+                p.addHidePointList(pointId);
                 p.addUnhidePointList(pointId);
                 lockedCount++;
             } else {

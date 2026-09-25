@@ -25,12 +25,16 @@ public final class PlayerPropChangeNotifyOuterClass {
     int getPropType();
 
     /**
-     * <code>uint32 prop_delta = 8;</code>
+     * <code>uint32 prop_delta = 1;</code>
      * @return The propDelta.
      */
     int getPropDelta();
   }
   /**
+   * <pre>
+   * CmdId: 24846
+   * </pre>
+   *
    * Protobuf type {@code PlayerPropChangeNotify}
    */
   public static final class PlayerPropChangeNotify extends
@@ -75,14 +79,14 @@ public final class PlayerPropChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              propDelta_ = input.readUInt32();
+              break;
+            }
             case 32: {
 
               propType_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              propDelta_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,10 +132,10 @@ public final class PlayerPropChangeNotifyOuterClass {
       return propType_;
     }
 
-    public static final int PROP_DELTA_FIELD_NUMBER = 8;
+    public static final int PROP_DELTA_FIELD_NUMBER = 1;
     private int propDelta_;
     /**
-     * <code>uint32 prop_delta = 8;</code>
+     * <code>uint32 prop_delta = 1;</code>
      * @return The propDelta.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class PlayerPropChangeNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (propDelta_ != 0) {
+        output.writeUInt32(1, propDelta_);
+      }
       if (propType_ != 0) {
         output.writeUInt32(4, propType_);
-      }
-      if (propDelta_ != 0) {
-        output.writeUInt32(8, propDelta_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class PlayerPropChangeNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (propDelta_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, propDelta_);
+      }
       if (propType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, propType_);
-      }
-      if (propDelta_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, propDelta_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class PlayerPropChangeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 24846
+     * </pre>
+     *
      * Protobuf type {@code PlayerPropChangeNotify}
      */
     public static final class Builder extends
@@ -491,7 +499,7 @@ public final class PlayerPropChangeNotifyOuterClass {
 
       private int propDelta_ ;
       /**
-       * <code>uint32 prop_delta = 8;</code>
+       * <code>uint32 prop_delta = 1;</code>
        * @return The propDelta.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class PlayerPropChangeNotifyOuterClass {
         return propDelta_;
       }
       /**
-       * <code>uint32 prop_delta = 8;</code>
+       * <code>uint32 prop_delta = 1;</code>
        * @param value The propDelta to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class PlayerPropChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 prop_delta = 8;</code>
+       * <code>uint32 prop_delta = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearPropDelta() {
@@ -588,9 +596,8 @@ public final class PlayerPropChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034PlayerPropChangeNotify.proto\"?\n\026Player" +
       "PropChangeNotify\022\021\n\tprop_type\030\004 \001(\r\022\022\n\np" +
-      "rop_delta\030\010 \001(\rB=\n\031emu.grasscutter.net.p" +
-      "rotoB PlayerPropChangeNotifyOuterClassb\006" +
-      "proto3"
+      "rop_delta\030\001 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

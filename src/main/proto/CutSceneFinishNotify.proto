@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-option java_outer_classname = "CutSceneFinishNotifyOuterClass";
-
-// CmdId: 380 | client -> server when a cutscene finishes.
-message CutSceneFinishNotify {
-	uint32 cutscene_id = 9;
-}

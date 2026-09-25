@@ -19,30 +19,34 @@ public final class ANLGBIKALMFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 best_score = 2;</code>
-     * @return The bestScore.
+     * <code>bool CAMOAJLMJIO = 4;</code>
+     * @return The cAMOAJLMJIO.
      */
-    int getBestScore();
+    boolean getCAMOAJLMJIO();
 
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 9;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 stage_id = 11;</code>
+     * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>bool CAMOAJLMJIO = 14;</code>
-     * @return The cAMOAJLMJIO.
+     * <code>uint32 best_score = 11;</code>
+     * @return The bestScore.
      */
-    boolean getCAMOAJLMJIO();
+    int getBestScore();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ANLGBIKALMF}
    */
   public static final class ANLGBIKALMF extends
@@ -87,24 +91,24 @@ public final class ANLGBIKALMFOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 32: {
 
-              bestScore_ = input.readUInt32();
+              cAMOAJLMJIO_ = input.readBool();
               break;
             }
-            case 56: {
+            case 72: {
 
               isOpen_ = input.readBool();
               break;
             }
             case 88: {
 
-              stageId_ = input.readUInt32();
+              bestScore_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 104: {
 
-              cAMOAJLMJIO_ = input.readBool();
+              stageId_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,21 +143,21 @@ public final class ANLGBIKALMFOuterClass {
               emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF.class, emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF.Builder.class);
     }
 
-    public static final int BEST_SCORE_FIELD_NUMBER = 2;
-    private int bestScore_;
+    public static final int CAMOAJLMJIO_FIELD_NUMBER = 4;
+    private boolean cAMOAJLMJIO_;
     /**
-     * <code>uint32 best_score = 2;</code>
-     * @return The bestScore.
+     * <code>bool CAMOAJLMJIO = 4;</code>
+     * @return The cAMOAJLMJIO.
      */
     @java.lang.Override
-    public int getBestScore() {
-      return bestScore_;
+    public boolean getCAMOAJLMJIO() {
+      return cAMOAJLMJIO_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    public static final int IS_OPEN_FIELD_NUMBER = 9;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 9;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -161,10 +165,10 @@ public final class ANLGBIKALMFOuterClass {
       return isOpen_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 11;
+    public static final int STAGE_ID_FIELD_NUMBER = 13;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 11;</code>
+     * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -172,15 +176,15 @@ public final class ANLGBIKALMFOuterClass {
       return stageId_;
     }
 
-    public static final int CAMOAJLMJIO_FIELD_NUMBER = 14;
-    private boolean cAMOAJLMJIO_;
+    public static final int BEST_SCORE_FIELD_NUMBER = 11;
+    private int bestScore_;
     /**
-     * <code>bool CAMOAJLMJIO = 14;</code>
-     * @return The cAMOAJLMJIO.
+     * <code>uint32 best_score = 11;</code>
+     * @return The bestScore.
      */
     @java.lang.Override
-    public boolean getCAMOAJLMJIO() {
-      return cAMOAJLMJIO_;
+    public int getBestScore() {
+      return bestScore_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,17 +201,17 @@ public final class ANLGBIKALMFOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (bestScore_ != 0) {
-        output.writeUInt32(2, bestScore_);
+      if (cAMOAJLMJIO_ != false) {
+        output.writeBool(4, cAMOAJLMJIO_);
       }
       if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
+        output.writeBool(9, isOpen_);
+      }
+      if (bestScore_ != 0) {
+        output.writeUInt32(11, bestScore_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(11, stageId_);
-      }
-      if (cAMOAJLMJIO_ != false) {
-        output.writeBool(14, cAMOAJLMJIO_);
+        output.writeUInt32(13, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +222,21 @@ public final class ANLGBIKALMFOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (bestScore_ != 0) {
+      if (cAMOAJLMJIO_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, bestScore_);
+          .computeBoolSize(4, cAMOAJLMJIO_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
+          .computeBoolSize(9, isOpen_);
+      }
+      if (bestScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, bestScore_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, stageId_);
-      }
-      if (cAMOAJLMJIO_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, cAMOAJLMJIO_);
+          .computeUInt32Size(13, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,14 +253,14 @@ public final class ANLGBIKALMFOuterClass {
       }
       emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF other = (emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF) obj;
 
-      if (getBestScore()
-          != other.getBestScore()) return false;
+      if (getCAMOAJLMJIO()
+          != other.getCAMOAJLMJIO()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (getCAMOAJLMJIO()
-          != other.getCAMOAJLMJIO()) return false;
+      if (getBestScore()
+          != other.getBestScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,16 +272,16 @@ public final class ANLGBIKALMFOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getBestScore();
+      hash = (37 * hash) + CAMOAJLMJIO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCAMOAJLMJIO());
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + CAMOAJLMJIO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getCAMOAJLMJIO());
+      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getBestScore();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class ANLGBIKALMFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ANLGBIKALMF}
      */
     public static final class Builder extends
@@ -411,13 +419,13 @@ public final class ANLGBIKALMFOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bestScore_ = 0;
+        cAMOAJLMJIO_ = false;
 
         isOpen_ = false;
 
         stageId_ = 0;
 
-        cAMOAJLMJIO_ = false;
+        bestScore_ = 0;
 
         return this;
       }
@@ -445,10 +453,10 @@ public final class ANLGBIKALMFOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF buildPartial() {
         emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF result = new emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF(this);
-        result.bestScore_ = bestScore_;
+        result.cAMOAJLMJIO_ = cAMOAJLMJIO_;
         result.isOpen_ = isOpen_;
         result.stageId_ = stageId_;
-        result.cAMOAJLMJIO_ = cAMOAJLMJIO_;
+        result.bestScore_ = bestScore_;
         onBuilt();
         return result;
       }
@@ -497,8 +505,8 @@ public final class ANLGBIKALMFOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF other) {
         if (other == emu.grasscutter.net.proto.ANLGBIKALMFOuterClass.ANLGBIKALMF.getDefaultInstance()) return this;
-        if (other.getBestScore() != 0) {
-          setBestScore(other.getBestScore());
+        if (other.getCAMOAJLMJIO() != false) {
+          setCAMOAJLMJIO(other.getCAMOAJLMJIO());
         }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
@@ -506,8 +514,8 @@ public final class ANLGBIKALMFOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        if (other.getCAMOAJLMJIO() != false) {
-          setCAMOAJLMJIO(other.getCAMOAJLMJIO());
+        if (other.getBestScore() != 0) {
+          setBestScore(other.getBestScore());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -538,40 +546,40 @@ public final class ANLGBIKALMFOuterClass {
         return this;
       }
 
-      private int bestScore_ ;
+      private boolean cAMOAJLMJIO_ ;
       /**
-       * <code>uint32 best_score = 2;</code>
-       * @return The bestScore.
+       * <code>bool CAMOAJLMJIO = 4;</code>
+       * @return The cAMOAJLMJIO.
        */
       @java.lang.Override
-      public int getBestScore() {
-        return bestScore_;
+      public boolean getCAMOAJLMJIO() {
+        return cAMOAJLMJIO_;
       }
       /**
-       * <code>uint32 best_score = 2;</code>
-       * @param value The bestScore to set.
+       * <code>bool CAMOAJLMJIO = 4;</code>
+       * @param value The cAMOAJLMJIO to set.
        * @return This builder for chaining.
        */
-      public Builder setBestScore(int value) {
+      public Builder setCAMOAJLMJIO(boolean value) {
         
-        bestScore_ = value;
+        cAMOAJLMJIO_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 best_score = 2;</code>
+       * <code>bool CAMOAJLMJIO = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBestScore() {
+      public Builder clearCAMOAJLMJIO() {
         
-        bestScore_ = 0;
+        cAMOAJLMJIO_ = false;
         onChanged();
         return this;
       }
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 9;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -579,7 +587,7 @@ public final class ANLGBIKALMFOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 9;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -590,7 +598,7 @@ public final class ANLGBIKALMFOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -602,7 +610,7 @@ public final class ANLGBIKALMFOuterClass {
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 11;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -610,7 +618,7 @@ public final class ANLGBIKALMFOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 11;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -621,7 +629,7 @@ public final class ANLGBIKALMFOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 11;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -631,33 +639,33 @@ public final class ANLGBIKALMFOuterClass {
         return this;
       }
 
-      private boolean cAMOAJLMJIO_ ;
+      private int bestScore_ ;
       /**
-       * <code>bool CAMOAJLMJIO = 14;</code>
-       * @return The cAMOAJLMJIO.
+       * <code>uint32 best_score = 11;</code>
+       * @return The bestScore.
        */
       @java.lang.Override
-      public boolean getCAMOAJLMJIO() {
-        return cAMOAJLMJIO_;
+      public int getBestScore() {
+        return bestScore_;
       }
       /**
-       * <code>bool CAMOAJLMJIO = 14;</code>
-       * @param value The cAMOAJLMJIO to set.
+       * <code>uint32 best_score = 11;</code>
+       * @param value The bestScore to set.
        * @return This builder for chaining.
        */
-      public Builder setCAMOAJLMJIO(boolean value) {
+      public Builder setBestScore(int value) {
         
-        cAMOAJLMJIO_ = value;
+        bestScore_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool CAMOAJLMJIO = 14;</code>
+       * <code>uint32 best_score = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCAMOAJLMJIO() {
+      public Builder clearBestScore() {
         
-        cAMOAJLMJIO_ = false;
+        bestScore_ = 0;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class ANLGBIKALMFOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ANLGBIKALMF.proto\"Y\n\013ANLGBIKALMF\022\022\n\nbe" +
-      "st_score\030\002 \001(\r\022\017\n\007is_open\030\007 \001(\010\022\020\n\010stage" +
-      "_id\030\013 \001(\r\022\023\n\013CAMOAJLMJIO\030\016 \001(\010B2\n\031emu.gr" +
-      "asscutter.net.protoB\025ANLGBIKALMFOuterCla" +
-      "ssb\006proto3"
+      "\n\021ANLGBIKALMF.proto\"Y\n\013ANLGBIKALMF\022\023\n\013CA" +
+      "MOAJLMJIO\030\004 \001(\010\022\017\n\007is_open\030\t \001(\010\022\020\n\010stag" +
+      "e_id\030\r \001(\r\022\022\n\nbest_score\030\013 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class ANLGBIKALMFOuterClass {
     internal_static_ANLGBIKALMF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ANLGBIKALMF_descriptor,
-        new java.lang.String[] { "BestScore", "IsOpen", "StageId", "CAMOAJLMJIO", });
+        new java.lang.String[] { "CAMOAJLMJIO", "IsOpen", "StageId", "BestScore", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -11,7 +11,7 @@ import emu.grasscutter.game.ability.mixins.*;
 import emu.grasscutter.game.avatar.Avatar;
 
 import emu.grasscutter.net.proto.AbilityMetaSpecialEnergyOuterClass;
-import emu.grasscutter.net.proto.DetailAbilityInfoOuterClass.DetailAbilityInfo;
+import emu.grasscutter.net.proto.DetailAbilityInfo._DetailAbilityInfo;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityMonster;
@@ -37,7 +37,7 @@ import emu.grasscutter.utils.Utils;
 
 import emu.grasscutter.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument;
 import emu.grasscutter.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.packet.send.PacketAbilityInvocationsNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
@@ -317,12 +317,6 @@ public final class AbilityManager extends BasePlayerManager {
         GameEntity target = ability.getOwner();
         Player player = getPlayer();
 
-        // The travellers burn phlogiston while gliding rather than through a cost mixin of their
-        // own, so the drain arrives here. Fuel is unlimited: answer with a full tank.
-        if (handler == mixinHandlers.get(AbilityMixinData.Type.PhlogistonCostMixin)) {
-            Phlogiston.refill(player);
-        }
-
         if (handler == mixinHandlers.get(AbilityMixinData.Type.SwitchHealToHPDebtsMixin)) {
 
             if (target instanceof EntityAvatar avatar) {
@@ -432,7 +426,7 @@ public final class AbilityManager extends BasePlayerManager {
 
             case AbilityInvokeArgument_ABILITY_META_SET_KILLED_SETATE -> this.handleKillState(invoke);
             case AbilityInvokeArgument_ABILITY_META_ADD_SPECIAL_ENERGY_VALUE -> this.handleAddSpecialEnergy(invoke);
-            case ABILITY_META_UPDATE_MOON_OVERGROW_VALUE ->
+            case AbilityInvokeArgument_ABILITY_META_UPDATE_MOON_OVERGROW_VALUE ->
                 this.handleUpdateMoonOvergrowValue(invoke);
 
             default -> {
@@ -503,7 +497,7 @@ public final class AbilityManager extends BasePlayerManager {
     private void handleUpdateMoonOvergrowValue(AbilityInvokeEntry invoke)
         throws InvalidProtocolBufferException {
         var update = AbilityMetaUpdateMoonOvergrowValue.parseFrom(invoke.getAbilityData());
-        if (update.getUpdateType() != AbilityMetaUpdateMoonOvergrowValue._UpdateType.SET) return;
+        if (update.getUpdateType() != AbilityMetaUpdateMoonOvergrowValue._UpdateType._UpdateType_SET) return;
 
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
         if (entity == null) entity = this.player.getTeamManager().getEntity();
@@ -591,7 +585,7 @@ public final class AbilityManager extends BasePlayerManager {
 
             var data = ability.getData();
 
-            var detailAbility = DetailAbilityInfo.newBuilder()
+            var detailAbility = _DetailAbilityInfo.newBuilder()
                 .setParentAbilityName(AbilityString.newBuilder().setStr(data.abilityName))
                 .setInstancedAbilityId(head.getInstancedAbilityId())
                 .setInstancedModifierId(head.getInstancedModifierId())
@@ -909,7 +903,7 @@ public final class AbilityManager extends BasePlayerManager {
         var modChange = AbilityMetaModifierChange.parseFrom(invoke.getAbilityData());
         var head = invoke.getHead();
 
-        boolean isRemove = modChange.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED;
+        boolean isRemove = modChange.getAction() == ModifierAction.ModifierAction_REMOVED;
         if ((head.getInstancedAbilityId() == 0 && !isRemove) || head.getInstancedModifierId() > 2000) {
             return;
         }
@@ -930,7 +924,7 @@ public final class AbilityManager extends BasePlayerManager {
             return;
         }
 
-        if (modChange.getAction() == ModifierAction.MODIFIER_ACTION_ADDED) {
+        if (modChange.getAction() == ModifierAction.ModifierAction_ADDED) {
             AbilityData instancedAbilityData = null;
             Ability instancedAbility = null;
             boolean fromParentName = false;
@@ -1124,7 +1118,7 @@ public final class AbilityManager extends BasePlayerManager {
                 emu.grasscutter.game.world.EffigyCombatHelper.onModifiersChanged(entity);
             } catch (Throwable ignored) {
             }
-        } else if (modChange.getAction() == ModifierAction.MODIFIER_ACTION_REMOVED) {
+        } else if (modChange.getAction() == ModifierAction.ModifierAction_REMOVED) {
             AbilityModifierController removed =
                     entity.getInstancedModifiers().remove(head.getInstancedModifierId());
             try {

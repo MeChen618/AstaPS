@@ -36,6 +36,10 @@ public final class OELBHFBBGCDOuterClass {
     emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getStatus();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OELBHFBBGCD}
    */
   public static final class OELBHFBBGCD extends
@@ -320,6 +324,10 @@ public final class OELBHFBBGCDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OELBHFBBGCD}
      */
     public static final class Builder extends
@@ -625,9 +633,8 @@ public final class OELBHFBBGCDOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021OELBHFBBGCD.proto\032\021JEOKDCIGCFP.proto\"@" +
       "\n\013OELBHFBBGCD\022\023\n\013HBHHDIFGJHK\030\001 \001(\005\022\034\n\006st" +
-      "atus\030\002 \001(\0162\014.JEOKDCIGCFPB2\n\031emu.grasscut" +
-      "ter.net.protoB\025OELBHFBBGCDOuterClassb\006pr" +
-      "oto3"
+      "atus\030\002 \001(\0162\014.JEOKDCIGCFPB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

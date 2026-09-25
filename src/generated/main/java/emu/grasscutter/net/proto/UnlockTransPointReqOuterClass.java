@@ -588,8 +588,8 @@ public final class UnlockTransPointReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031UnlockTransPointReq.proto\"9\n\023UnlockTra" +
       "nsPointReq\022\020\n\010point_id\030\014 \001(\r\022\020\n\010scene_id" +
-      "\030\016 \001(\rB:\n\031emu.grasscutter.net.protoB\035Unl" +
-      "ockTransPointReqOuterClassb\006proto3"
+      "\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,12 +19,6 @@ public final class BJNDIAIEGJJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 FFKKKBEDKEC = 1;</code>
-     * @return The fFKKKBEDKEC.
-     */
-    int getFFKKKBEDKEC();
-
-    /**
      * <code>.CMPMKGIAPCH DINIIALNFFH = 2;</code>
      * @return Whether the dINIIALNFFH field is set.
      */
@@ -38,8 +32,18 @@ public final class BJNDIAIEGJJOuterClass {
      * <code>.CMPMKGIAPCH DINIIALNFFH = 2;</code>
      */
     emu.grasscutter.net.proto.CMPMKGIAPCHOuterClass.CMPMKGIAPCHOrBuilder getDINIIALNFFHOrBuilder();
+
+    /**
+     * <code>uint32 FFKKKBEDKEC = 1;</code>
+     * @return The fFKKKBEDKEC.
+     */
+    int getFFKKKBEDKEC();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BJNDIAIEGJJ}
    */
   public static final class BJNDIAIEGJJ extends
@@ -134,17 +138,6 @@ public final class BJNDIAIEGJJOuterClass {
               emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ.class, emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ.Builder.class);
     }
 
-    public static final int FFKKKBEDKEC_FIELD_NUMBER = 1;
-    private int fFKKKBEDKEC_;
-    /**
-     * <code>uint32 FFKKKBEDKEC = 1;</code>
-     * @return The fFKKKBEDKEC.
-     */
-    @java.lang.Override
-    public int getFFKKKBEDKEC() {
-      return fFKKKBEDKEC_;
-    }
-
     public static final int DINIIALNFFH_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.CMPMKGIAPCHOuterClass.CMPMKGIAPCH dINIIALNFFH_;
     /**
@@ -169,6 +162,17 @@ public final class BJNDIAIEGJJOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.CMPMKGIAPCHOuterClass.CMPMKGIAPCHOrBuilder getDINIIALNFFHOrBuilder() {
       return getDINIIALNFFH();
+    }
+
+    public static final int FFKKKBEDKEC_FIELD_NUMBER = 1;
+    private int fFKKKBEDKEC_;
+    /**
+     * <code>uint32 FFKKKBEDKEC = 1;</code>
+     * @return The fFKKKBEDKEC.
+     */
+    @java.lang.Override
+    public int getFFKKKBEDKEC() {
+      return fFKKKBEDKEC_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,13 +227,13 @@ public final class BJNDIAIEGJJOuterClass {
       }
       emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ other = (emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ) obj;
 
-      if (getFFKKKBEDKEC()
-          != other.getFFKKKBEDKEC()) return false;
       if (hasDINIIALNFFH() != other.hasDINIIALNFFH()) return false;
       if (hasDINIIALNFFH()) {
         if (!getDINIIALNFFH()
             .equals(other.getDINIIALNFFH())) return false;
       }
+      if (getFFKKKBEDKEC()
+          != other.getFFKKKBEDKEC()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +245,12 @@ public final class BJNDIAIEGJJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FFKKKBEDKEC_FIELD_NUMBER;
-      hash = (53 * hash) + getFFKKKBEDKEC();
       if (hasDINIIALNFFH()) {
         hash = (37 * hash) + DINIIALNFFH_FIELD_NUMBER;
         hash = (53 * hash) + getDINIIALNFFH().hashCode();
       }
+      hash = (37 * hash) + FFKKKBEDKEC_FIELD_NUMBER;
+      hash = (53 * hash) + getFFKKKBEDKEC();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,6 +347,10 @@ public final class BJNDIAIEGJJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BJNDIAIEGJJ}
      */
     public static final class Builder extends
@@ -380,14 +388,14 @@ public final class BJNDIAIEGJJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fFKKKBEDKEC_ = 0;
-
         if (dINIIALNFFHBuilder_ == null) {
           dINIIALNFFH_ = null;
         } else {
           dINIIALNFFH_ = null;
           dINIIALNFFHBuilder_ = null;
         }
+        fFKKKBEDKEC_ = 0;
+
         return this;
       }
 
@@ -414,12 +422,12 @@ public final class BJNDIAIEGJJOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ buildPartial() {
         emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ result = new emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ(this);
-        result.fFKKKBEDKEC_ = fFKKKBEDKEC_;
         if (dINIIALNFFHBuilder_ == null) {
           result.dINIIALNFFH_ = dINIIALNFFH_;
         } else {
           result.dINIIALNFFH_ = dINIIALNFFHBuilder_.build();
         }
+        result.fFKKKBEDKEC_ = fFKKKBEDKEC_;
         onBuilt();
         return result;
       }
@@ -468,11 +476,11 @@ public final class BJNDIAIEGJJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ other) {
         if (other == emu.grasscutter.net.proto.BJNDIAIEGJJOuterClass.BJNDIAIEGJJ.getDefaultInstance()) return this;
-        if (other.getFFKKKBEDKEC() != 0) {
-          setFFKKKBEDKEC(other.getFFKKKBEDKEC());
-        }
         if (other.hasDINIIALNFFH()) {
           mergeDINIIALNFFH(other.getDINIIALNFFH());
+        }
+        if (other.getFFKKKBEDKEC() != 0) {
+          setFFKKKBEDKEC(other.getFFKKKBEDKEC());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -500,37 +508,6 @@ public final class BJNDIAIEGJJOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int fFKKKBEDKEC_ ;
-      /**
-       * <code>uint32 FFKKKBEDKEC = 1;</code>
-       * @return The fFKKKBEDKEC.
-       */
-      @java.lang.Override
-      public int getFFKKKBEDKEC() {
-        return fFKKKBEDKEC_;
-      }
-      /**
-       * <code>uint32 FFKKKBEDKEC = 1;</code>
-       * @param value The fFKKKBEDKEC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFFKKKBEDKEC(int value) {
-        
-        fFKKKBEDKEC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FFKKKBEDKEC = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFFKKKBEDKEC() {
-        
-        fFKKKBEDKEC_ = 0;
-        onChanged();
         return this;
       }
 
@@ -652,6 +629,37 @@ public final class BJNDIAIEGJJOuterClass {
         }
         return dINIIALNFFHBuilder_;
       }
+
+      private int fFKKKBEDKEC_ ;
+      /**
+       * <code>uint32 FFKKKBEDKEC = 1;</code>
+       * @return The fFKKKBEDKEC.
+       */
+      @java.lang.Override
+      public int getFFKKKBEDKEC() {
+        return fFKKKBEDKEC_;
+      }
+      /**
+       * <code>uint32 FFKKKBEDKEC = 1;</code>
+       * @param value The fFKKKBEDKEC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFFKKKBEDKEC(int value) {
+        
+        fFKKKBEDKEC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FFKKKBEDKEC = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFFKKKBEDKEC() {
+        
+        fFKKKBEDKEC_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -720,10 +728,9 @@ public final class BJNDIAIEGJJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BJNDIAIEGJJ.proto\032\021CMPMKGIAPCH.proto\"E" +
-      "\n\013BJNDIAIEGJJ\022\023\n\013FFKKKBEDKEC\030\001 \001(\r\022!\n\013DI" +
-      "NIIALNFFH\030\002 \001(\0132\014.CMPMKGIAPCHB2\n\031emu.gra" +
-      "sscutter.net.protoB\025BJNDIAIEGJJOuterClas" +
-      "sb\006proto3"
+      "\n\013BJNDIAIEGJJ\022!\n\013DINIIALNFFH\030\002 \001(\0132\014.CMP" +
+      "MKGIAPCH\022\023\n\013FFKKKBEDKEC\030\001 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -735,7 +742,7 @@ public final class BJNDIAIEGJJOuterClass {
     internal_static_BJNDIAIEGJJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BJNDIAIEGJJ_descriptor,
-        new java.lang.String[] { "FFKKKBEDKEC", "DINIIALNFFH", });
+        new java.lang.String[] { "DINIIALNFFH", "FFKKKBEDKEC", });
     emu.grasscutter.net.proto.CMPMKGIAPCHOuterClass.getDescriptor();
   }
 

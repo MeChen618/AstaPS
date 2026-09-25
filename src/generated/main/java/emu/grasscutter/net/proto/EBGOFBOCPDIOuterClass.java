@@ -19,16 +19,22 @@ public final class EBGOFBOCPDIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool BKDPIJGILMM = 1;</code>
-     * @return The bKDPIJGILMM.
-     */
-    boolean getBKDPIJGILMM();
-
-    /**
      * <code>int32 MIBKOHJMCPD = 2;</code>
      * @return The mIBKOHJMCPD.
      */
     int getMIBKOHJMCPD();
+
+    /**
+     * <code>bool MLNKPJDBLBD = 5;</code>
+     * @return The mLNKPJDBLBD.
+     */
+    boolean getMLNKPJDBLBD();
+
+    /**
+     * <code>bool BKDPIJGILMM = 1;</code>
+     * @return The bKDPIJGILMM.
+     */
+    boolean getBKDPIJGILMM();
 
     /**
      * <code>bool MONJLHDADJO = 3;</code>
@@ -41,14 +47,12 @@ public final class EBGOFBOCPDIOuterClass {
      * @return The iKLHCJEKOKF.
      */
     int getIKLHCJEKOKF();
-
-    /**
-     * <code>bool MLNKPJDBLBD = 5;</code>
-     * @return The mLNKPJDBLBD.
-     */
-    boolean getMLNKPJDBLBD();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EBGOFBOCPDI}
    */
   public static final class EBGOFBOCPDI extends
@@ -150,17 +154,6 @@ public final class EBGOFBOCPDIOuterClass {
               emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI.class, emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI.Builder.class);
     }
 
-    public static final int BKDPIJGILMM_FIELD_NUMBER = 1;
-    private boolean bKDPIJGILMM_;
-    /**
-     * <code>bool BKDPIJGILMM = 1;</code>
-     * @return The bKDPIJGILMM.
-     */
-    @java.lang.Override
-    public boolean getBKDPIJGILMM() {
-      return bKDPIJGILMM_;
-    }
-
     public static final int MIBKOHJMCPD_FIELD_NUMBER = 2;
     private int mIBKOHJMCPD_;
     /**
@@ -170,6 +163,28 @@ public final class EBGOFBOCPDIOuterClass {
     @java.lang.Override
     public int getMIBKOHJMCPD() {
       return mIBKOHJMCPD_;
+    }
+
+    public static final int MLNKPJDBLBD_FIELD_NUMBER = 5;
+    private boolean mLNKPJDBLBD_;
+    /**
+     * <code>bool MLNKPJDBLBD = 5;</code>
+     * @return The mLNKPJDBLBD.
+     */
+    @java.lang.Override
+    public boolean getMLNKPJDBLBD() {
+      return mLNKPJDBLBD_;
+    }
+
+    public static final int BKDPIJGILMM_FIELD_NUMBER = 1;
+    private boolean bKDPIJGILMM_;
+    /**
+     * <code>bool BKDPIJGILMM = 1;</code>
+     * @return The bKDPIJGILMM.
+     */
+    @java.lang.Override
+    public boolean getBKDPIJGILMM() {
+      return bKDPIJGILMM_;
     }
 
     public static final int MONJLHDADJO_FIELD_NUMBER = 3;
@@ -192,17 +207,6 @@ public final class EBGOFBOCPDIOuterClass {
     @java.lang.Override
     public int getIKLHCJEKOKF() {
       return iKLHCJEKOKF_;
-    }
-
-    public static final int MLNKPJDBLBD_FIELD_NUMBER = 5;
-    private boolean mLNKPJDBLBD_;
-    /**
-     * <code>bool MLNKPJDBLBD = 5;</code>
-     * @return The mLNKPJDBLBD.
-     */
-    @java.lang.Override
-    public boolean getMLNKPJDBLBD() {
-      return mLNKPJDBLBD_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -278,16 +282,16 @@ public final class EBGOFBOCPDIOuterClass {
       }
       emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI other = (emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI) obj;
 
-      if (getBKDPIJGILMM()
-          != other.getBKDPIJGILMM()) return false;
       if (getMIBKOHJMCPD()
           != other.getMIBKOHJMCPD()) return false;
+      if (getMLNKPJDBLBD()
+          != other.getMLNKPJDBLBD()) return false;
+      if (getBKDPIJGILMM()
+          != other.getBKDPIJGILMM()) return false;
       if (getMONJLHDADJO()
           != other.getMONJLHDADJO()) return false;
       if (getIKLHCJEKOKF()
           != other.getIKLHCJEKOKF()) return false;
-      if (getMLNKPJDBLBD()
-          != other.getMLNKPJDBLBD()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -299,19 +303,19 @@ public final class EBGOFBOCPDIOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIBKOHJMCPD_FIELD_NUMBER;
+      hash = (53 * hash) + getMIBKOHJMCPD();
+      hash = (37 * hash) + MLNKPJDBLBD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getMLNKPJDBLBD());
       hash = (37 * hash) + BKDPIJGILMM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getBKDPIJGILMM());
-      hash = (37 * hash) + MIBKOHJMCPD_FIELD_NUMBER;
-      hash = (53 * hash) + getMIBKOHJMCPD();
       hash = (37 * hash) + MONJLHDADJO_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getMONJLHDADJO());
       hash = (37 * hash) + IKLHCJEKOKF_FIELD_NUMBER;
       hash = (53 * hash) + getIKLHCJEKOKF();
-      hash = (37 * hash) + MLNKPJDBLBD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMLNKPJDBLBD());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -408,6 +412,10 @@ public final class EBGOFBOCPDIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EBGOFBOCPDI}
      */
     public static final class Builder extends
@@ -445,15 +453,15 @@ public final class EBGOFBOCPDIOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bKDPIJGILMM_ = false;
-
         mIBKOHJMCPD_ = 0;
+
+        mLNKPJDBLBD_ = false;
+
+        bKDPIJGILMM_ = false;
 
         mONJLHDADJO_ = false;
 
         iKLHCJEKOKF_ = 0;
-
-        mLNKPJDBLBD_ = false;
 
         return this;
       }
@@ -481,11 +489,11 @@ public final class EBGOFBOCPDIOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI buildPartial() {
         emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI result = new emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI(this);
-        result.bKDPIJGILMM_ = bKDPIJGILMM_;
         result.mIBKOHJMCPD_ = mIBKOHJMCPD_;
+        result.mLNKPJDBLBD_ = mLNKPJDBLBD_;
+        result.bKDPIJGILMM_ = bKDPIJGILMM_;
         result.mONJLHDADJO_ = mONJLHDADJO_;
         result.iKLHCJEKOKF_ = iKLHCJEKOKF_;
-        result.mLNKPJDBLBD_ = mLNKPJDBLBD_;
         onBuilt();
         return result;
       }
@@ -534,20 +542,20 @@ public final class EBGOFBOCPDIOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI other) {
         if (other == emu.grasscutter.net.proto.EBGOFBOCPDIOuterClass.EBGOFBOCPDI.getDefaultInstance()) return this;
-        if (other.getBKDPIJGILMM() != false) {
-          setBKDPIJGILMM(other.getBKDPIJGILMM());
-        }
         if (other.getMIBKOHJMCPD() != 0) {
           setMIBKOHJMCPD(other.getMIBKOHJMCPD());
+        }
+        if (other.getMLNKPJDBLBD() != false) {
+          setMLNKPJDBLBD(other.getMLNKPJDBLBD());
+        }
+        if (other.getBKDPIJGILMM() != false) {
+          setBKDPIJGILMM(other.getBKDPIJGILMM());
         }
         if (other.getMONJLHDADJO() != false) {
           setMONJLHDADJO(other.getMONJLHDADJO());
         }
         if (other.getIKLHCJEKOKF() != 0) {
           setIKLHCJEKOKF(other.getIKLHCJEKOKF());
-        }
-        if (other.getMLNKPJDBLBD() != false) {
-          setMLNKPJDBLBD(other.getMLNKPJDBLBD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -578,37 +586,6 @@ public final class EBGOFBOCPDIOuterClass {
         return this;
       }
 
-      private boolean bKDPIJGILMM_ ;
-      /**
-       * <code>bool BKDPIJGILMM = 1;</code>
-       * @return The bKDPIJGILMM.
-       */
-      @java.lang.Override
-      public boolean getBKDPIJGILMM() {
-        return bKDPIJGILMM_;
-      }
-      /**
-       * <code>bool BKDPIJGILMM = 1;</code>
-       * @param value The bKDPIJGILMM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBKDPIJGILMM(boolean value) {
-        
-        bKDPIJGILMM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool BKDPIJGILMM = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBKDPIJGILMM() {
-        
-        bKDPIJGILMM_ = false;
-        onChanged();
-        return this;
-      }
-
       private int mIBKOHJMCPD_ ;
       /**
        * <code>int32 MIBKOHJMCPD = 2;</code>
@@ -636,6 +613,68 @@ public final class EBGOFBOCPDIOuterClass {
       public Builder clearMIBKOHJMCPD() {
         
         mIBKOHJMCPD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean mLNKPJDBLBD_ ;
+      /**
+       * <code>bool MLNKPJDBLBD = 5;</code>
+       * @return The mLNKPJDBLBD.
+       */
+      @java.lang.Override
+      public boolean getMLNKPJDBLBD() {
+        return mLNKPJDBLBD_;
+      }
+      /**
+       * <code>bool MLNKPJDBLBD = 5;</code>
+       * @param value The mLNKPJDBLBD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMLNKPJDBLBD(boolean value) {
+        
+        mLNKPJDBLBD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool MLNKPJDBLBD = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMLNKPJDBLBD() {
+        
+        mLNKPJDBLBD_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean bKDPIJGILMM_ ;
+      /**
+       * <code>bool BKDPIJGILMM = 1;</code>
+       * @return The bKDPIJGILMM.
+       */
+      @java.lang.Override
+      public boolean getBKDPIJGILMM() {
+        return bKDPIJGILMM_;
+      }
+      /**
+       * <code>bool BKDPIJGILMM = 1;</code>
+       * @param value The bKDPIJGILMM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBKDPIJGILMM(boolean value) {
+        
+        bKDPIJGILMM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool BKDPIJGILMM = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBKDPIJGILMM() {
+        
+        bKDPIJGILMM_ = false;
         onChanged();
         return this;
       }
@@ -698,37 +737,6 @@ public final class EBGOFBOCPDIOuterClass {
       public Builder clearIKLHCJEKOKF() {
         
         iKLHCJEKOKF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean mLNKPJDBLBD_ ;
-      /**
-       * <code>bool MLNKPJDBLBD = 5;</code>
-       * @return The mLNKPJDBLBD.
-       */
-      @java.lang.Override
-      public boolean getMLNKPJDBLBD() {
-        return mLNKPJDBLBD_;
-      }
-      /**
-       * <code>bool MLNKPJDBLBD = 5;</code>
-       * @param value The mLNKPJDBLBD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMLNKPJDBLBD(boolean value) {
-        
-        mLNKPJDBLBD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool MLNKPJDBLBD = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMLNKPJDBLBD() {
-        
-        mLNKPJDBLBD_ = false;
         onChanged();
         return this;
       }
@@ -799,11 +807,11 @@ public final class EBGOFBOCPDIOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021EBGOFBOCPDI.proto\"v\n\013EBGOFBOCPDI\022\023\n\013BK" +
-      "DPIJGILMM\030\001 \001(\010\022\023\n\013MIBKOHJMCPD\030\002 \001(\005\022\023\n\013" +
-      "MONJLHDADJO\030\003 \001(\010\022\023\n\013IKLHCJEKOKF\030\004 \001(\r\022\023" +
-      "\n\013MLNKPJDBLBD\030\005 \001(\010B2\n\031emu.grasscutter.n" +
-      "et.protoB\025EBGOFBOCPDIOuterClassb\006proto3"
+      "\n\021EBGOFBOCPDI.proto\"v\n\013EBGOFBOCPDI\022\023\n\013MI" +
+      "BKOHJMCPD\030\002 \001(\005\022\023\n\013MLNKPJDBLBD\030\005 \001(\010\022\023\n\013" +
+      "BKDPIJGILMM\030\001 \001(\010\022\023\n\013MONJLHDADJO\030\003 \001(\010\022\023" +
+      "\n\013IKLHCJEKOKF\030\004 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -814,7 +822,7 @@ public final class EBGOFBOCPDIOuterClass {
     internal_static_EBGOFBOCPDI_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EBGOFBOCPDI_descriptor,
-        new java.lang.String[] { "BKDPIJGILMM", "MIBKOHJMCPD", "MONJLHDADJO", "IKLHCJEKOKF", "MLNKPJDBLBD", });
+        new java.lang.String[] { "MIBKOHJMCPD", "MLNKPJDBLBD", "BKDPIJGILMM", "MONJLHDADJO", "IKLHCJEKOKF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

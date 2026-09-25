@@ -19,51 +19,51 @@ public final class GBAOLFCECGMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool LAOJFDMECIB = 3;</code>
-     * @return The lAOJFDMECIB.
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
      */
-    boolean getLAOJFDMECIB();
+    java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> 
+        getMarkListList();
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC getMarkList(int index);
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    int getMarkListCount();
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder> 
+        getMarkListOrBuilderList();
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder getMarkListOrBuilder(
+        int index);
 
     /**
-     * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
+     * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
      * @return A list containing the jLGIAAGNLCO.
      */
     java.util.List<java.lang.Integer> getJLGIAAGNLCOList();
     /**
-     * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
+     * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
      * @return The count of jLGIAAGNLCO.
      */
     int getJLGIAAGNLCOCount();
     /**
-     * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
+     * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
      * @param index The index of the element to return.
      * @return The jLGIAAGNLCO at the given index.
      */
     int getJLGIAAGNLCO(int index);
 
     /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+     * <code>bool LAOJFDMECIB = 1;</code>
+     * @return The lAOJFDMECIB.
      */
-    java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> 
-        getMarkListList();
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC getMarkList(int index);
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    int getMarkListCount();
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder> 
-        getMarkListOrBuilderList();
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder getMarkListOrBuilder(
-        int index);
+    boolean getLAOJFDMECIB();
 
     /**
      * <code>bool NNBCNODJNBG = 14;</code>
@@ -72,6 +72,10 @@ public final class GBAOLFCECGMOuterClass {
     boolean getNNBCNODJNBG();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GBAOLFCECGM}
    */
   public static final class GBAOLFCECGM extends
@@ -84,8 +88,8 @@ public final class GBAOLFCECGMOuterClass {
       super(builder);
     }
     private GBAOLFCECGM() {
-      jLGIAAGNLCO_ = emptyIntList();
       markList_ = java.util.Collections.emptyList();
+      jLGIAAGNLCO_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -119,25 +123,25 @@ public final class GBAOLFCECGMOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               lAOJFDMECIB_ = input.readBool();
               break;
             }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 jLGIAAGNLCO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               jLGIAAGNLCO_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 jLGIAAGNLCO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 jLGIAAGNLCO_.addInt(input.readUInt32());
@@ -145,18 +149,18 @@ public final class GBAOLFCECGMOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                markList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              markList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.parser(), extensionRegistry));
-              break;
-            }
             case 112: {
 
               nNBCNODJNBG_ = input.readBool();
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                markList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              markList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -174,10 +178,10 @@ public final class GBAOLFCECGMOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           jLGIAAGNLCO_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           markList_ = java.util.Collections.unmodifiableList(markList_);
         }
         this.unknownFields = unknownFields.build();
@@ -197,21 +201,50 @@ public final class GBAOLFCECGMOuterClass {
               emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM.class, emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM.Builder.class);
     }
 
-    public static final int LAOJFDMECIB_FIELD_NUMBER = 3;
-    private boolean lAOJFDMECIB_;
+    public static final int MARK_LIST_FIELD_NUMBER = 15;
+    private java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> markList_;
     /**
-     * <code>bool LAOJFDMECIB = 3;</code>
-     * @return The lAOJFDMECIB.
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
      */
     @java.lang.Override
-    public boolean getLAOJFDMECIB() {
-      return lAOJFDMECIB_;
+    public java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> getMarkListList() {
+      return markList_;
+    }
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder> 
+        getMarkListOrBuilderList() {
+      return markList_;
+    }
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    @java.lang.Override
+    public int getMarkListCount() {
+      return markList_.size();
+    }
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC getMarkList(int index) {
+      return markList_.get(index);
+    }
+    /**
+     * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder getMarkListOrBuilder(
+        int index) {
+      return markList_.get(index);
     }
 
-    public static final int JLGIAAGNLCO_FIELD_NUMBER = 7;
+    public static final int JLGIAAGNLCO_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList jLGIAAGNLCO_;
     /**
-     * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
+     * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
      * @return A list containing the jLGIAAGNLCO.
      */
     @java.lang.Override
@@ -220,14 +253,14 @@ public final class GBAOLFCECGMOuterClass {
       return jLGIAAGNLCO_;
     }
     /**
-     * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
+     * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
      * @return The count of jLGIAAGNLCO.
      */
     public int getJLGIAAGNLCOCount() {
       return jLGIAAGNLCO_.size();
     }
     /**
-     * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
+     * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
      * @param index The index of the element to return.
      * @return The jLGIAAGNLCO at the given index.
      */
@@ -236,44 +269,15 @@ public final class GBAOLFCECGMOuterClass {
     }
     private int jLGIAAGNLCOMemoizedSerializedSize = -1;
 
-    public static final int MARK_LIST_FIELD_NUMBER = 11;
-    private java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> markList_;
+    public static final int LAOJFDMECIB_FIELD_NUMBER = 1;
+    private boolean lAOJFDMECIB_;
     /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+     * <code>bool LAOJFDMECIB = 1;</code>
+     * @return The lAOJFDMECIB.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> getMarkListList() {
-      return markList_;
-    }
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder> 
-        getMarkListOrBuilderList() {
-      return markList_;
-    }
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    @java.lang.Override
-    public int getMarkListCount() {
-      return markList_.size();
-    }
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC getMarkList(int index) {
-      return markList_.get(index);
-    }
-    /**
-     * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder getMarkListOrBuilder(
-        int index) {
-      return markList_.get(index);
+    public boolean getLAOJFDMECIB() {
+      return lAOJFDMECIB_;
     }
 
     public static final int NNBCNODJNBG_FIELD_NUMBER = 14;
@@ -303,20 +307,20 @@ public final class GBAOLFCECGMOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (lAOJFDMECIB_ != false) {
-        output.writeBool(3, lAOJFDMECIB_);
+        output.writeBool(1, lAOJFDMECIB_);
       }
       if (getJLGIAAGNLCOList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(jLGIAAGNLCOMemoizedSerializedSize);
       }
       for (int i = 0; i < jLGIAAGNLCO_.size(); i++) {
         output.writeUInt32NoTag(jLGIAAGNLCO_.getInt(i));
       }
-      for (int i = 0; i < markList_.size(); i++) {
-        output.writeMessage(11, markList_.get(i));
-      }
       if (nNBCNODJNBG_ != false) {
         output.writeBool(14, nNBCNODJNBG_);
+      }
+      for (int i = 0; i < markList_.size(); i++) {
+        output.writeMessage(15, markList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -329,7 +333,7 @@ public final class GBAOLFCECGMOuterClass {
       size = 0;
       if (lAOJFDMECIB_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, lAOJFDMECIB_);
+          .computeBoolSize(1, lAOJFDMECIB_);
       }
       {
         int dataSize = 0;
@@ -345,13 +349,13 @@ public final class GBAOLFCECGMOuterClass {
         }
         jLGIAAGNLCOMemoizedSerializedSize = dataSize;
       }
-      for (int i = 0; i < markList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, markList_.get(i));
-      }
       if (nNBCNODJNBG_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, nNBCNODJNBG_);
+      }
+      for (int i = 0; i < markList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, markList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -368,12 +372,12 @@ public final class GBAOLFCECGMOuterClass {
       }
       emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM other = (emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM) obj;
 
-      if (getLAOJFDMECIB()
-          != other.getLAOJFDMECIB()) return false;
-      if (!getJLGIAAGNLCOList()
-          .equals(other.getJLGIAAGNLCOList())) return false;
       if (!getMarkListList()
           .equals(other.getMarkListList())) return false;
+      if (!getJLGIAAGNLCOList()
+          .equals(other.getJLGIAAGNLCOList())) return false;
+      if (getLAOJFDMECIB()
+          != other.getLAOJFDMECIB()) return false;
       if (getNNBCNODJNBG()
           != other.getNNBCNODJNBG()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -387,17 +391,17 @@ public final class GBAOLFCECGMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LAOJFDMECIB_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getLAOJFDMECIB());
-      if (getJLGIAAGNLCOCount() > 0) {
-        hash = (37 * hash) + JLGIAAGNLCO_FIELD_NUMBER;
-        hash = (53 * hash) + getJLGIAAGNLCOList().hashCode();
-      }
       if (getMarkListCount() > 0) {
         hash = (37 * hash) + MARK_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMarkListList().hashCode();
       }
+      if (getJLGIAAGNLCOCount() > 0) {
+        hash = (37 * hash) + JLGIAAGNLCO_FIELD_NUMBER;
+        hash = (53 * hash) + getJLGIAAGNLCOList().hashCode();
+      }
+      hash = (37 * hash) + LAOJFDMECIB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getLAOJFDMECIB());
       hash = (37 * hash) + NNBCNODJNBG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNNBCNODJNBG());
@@ -497,6 +501,10 @@ public final class GBAOLFCECGMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GBAOLFCECGM}
      */
     public static final class Builder extends
@@ -535,16 +543,16 @@ public final class GBAOLFCECGMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lAOJFDMECIB_ = false;
-
-        jLGIAAGNLCO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (markListBuilder_ == null) {
           markList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           markListBuilder_.clear();
         }
+        jLGIAAGNLCO_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lAOJFDMECIB_ = false;
+
         nNBCNODJNBG_ = false;
 
         return this;
@@ -574,21 +582,21 @@ public final class GBAOLFCECGMOuterClass {
       public emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM buildPartial() {
         emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM result = new emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM(this);
         int from_bitField0_ = bitField0_;
-        result.lAOJFDMECIB_ = lAOJFDMECIB_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          jLGIAAGNLCO_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.jLGIAAGNLCO_ = jLGIAAGNLCO_;
         if (markListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             markList_ = java.util.Collections.unmodifiableList(markList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.markList_ = markList_;
         } else {
           result.markList_ = markListBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          jLGIAAGNLCO_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.jLGIAAGNLCO_ = jLGIAAGNLCO_;
+        result.lAOJFDMECIB_ = lAOJFDMECIB_;
         result.nNBCNODJNBG_ = nNBCNODJNBG_;
         onBuilt();
         return result;
@@ -638,24 +646,11 @@ public final class GBAOLFCECGMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM other) {
         if (other == emu.grasscutter.net.proto.GBAOLFCECGMOuterClass.GBAOLFCECGM.getDefaultInstance()) return this;
-        if (other.getLAOJFDMECIB() != false) {
-          setLAOJFDMECIB(other.getLAOJFDMECIB());
-        }
-        if (!other.jLGIAAGNLCO_.isEmpty()) {
-          if (jLGIAAGNLCO_.isEmpty()) {
-            jLGIAAGNLCO_ = other.jLGIAAGNLCO_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureJLGIAAGNLCOIsMutable();
-            jLGIAAGNLCO_.addAll(other.jLGIAAGNLCO_);
-          }
-          onChanged();
-        }
         if (markListBuilder_ == null) {
           if (!other.markList_.isEmpty()) {
             if (markList_.isEmpty()) {
               markList_ = other.markList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureMarkListIsMutable();
               markList_.addAll(other.markList_);
@@ -668,7 +663,7 @@ public final class GBAOLFCECGMOuterClass {
               markListBuilder_.dispose();
               markListBuilder_ = null;
               markList_ = other.markList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               markListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMarkListFieldBuilder() : null;
@@ -676,6 +671,19 @@ public final class GBAOLFCECGMOuterClass {
               markListBuilder_.addAllMessages(other.markList_);
             }
           }
+        }
+        if (!other.jLGIAAGNLCO_.isEmpty()) {
+          if (jLGIAAGNLCO_.isEmpty()) {
+            jLGIAAGNLCO_ = other.jLGIAAGNLCO_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureJLGIAAGNLCOIsMutable();
+            jLGIAAGNLCO_.addAll(other.jLGIAAGNLCO_);
+          }
+          onChanged();
+        }
+        if (other.getLAOJFDMECIB() != false) {
+          setLAOJFDMECIB(other.getLAOJFDMECIB());
         }
         if (other.getNNBCNODJNBG() != false) {
           setNNBCNODJNBG(other.getNNBCNODJNBG());
@@ -710,122 +718,12 @@ public final class GBAOLFCECGMOuterClass {
       }
       private int bitField0_;
 
-      private boolean lAOJFDMECIB_ ;
-      /**
-       * <code>bool LAOJFDMECIB = 3;</code>
-       * @return The lAOJFDMECIB.
-       */
-      @java.lang.Override
-      public boolean getLAOJFDMECIB() {
-        return lAOJFDMECIB_;
-      }
-      /**
-       * <code>bool LAOJFDMECIB = 3;</code>
-       * @param value The lAOJFDMECIB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLAOJFDMECIB(boolean value) {
-        
-        lAOJFDMECIB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool LAOJFDMECIB = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLAOJFDMECIB() {
-        
-        lAOJFDMECIB_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList jLGIAAGNLCO_ = emptyIntList();
-      private void ensureJLGIAAGNLCOIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          jLGIAAGNLCO_ = mutableCopy(jLGIAAGNLCO_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @return A list containing the jLGIAAGNLCO.
-       */
-      public java.util.List<java.lang.Integer>
-          getJLGIAAGNLCOList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(jLGIAAGNLCO_) : jLGIAAGNLCO_;
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @return The count of jLGIAAGNLCO.
-       */
-      public int getJLGIAAGNLCOCount() {
-        return jLGIAAGNLCO_.size();
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @param index The index of the element to return.
-       * @return The jLGIAAGNLCO at the given index.
-       */
-      public int getJLGIAAGNLCO(int index) {
-        return jLGIAAGNLCO_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The jLGIAAGNLCO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJLGIAAGNLCO(
-          int index, int value) {
-        ensureJLGIAAGNLCOIsMutable();
-        jLGIAAGNLCO_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @param value The jLGIAAGNLCO to add.
-       * @return This builder for chaining.
-       */
-      public Builder addJLGIAAGNLCO(int value) {
-        ensureJLGIAAGNLCOIsMutable();
-        jLGIAAGNLCO_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @param values The jLGIAAGNLCO to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllJLGIAAGNLCO(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureJLGIAAGNLCOIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jLGIAAGNLCO_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 JLGIAAGNLCO = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJLGIAAGNLCO() {
-        jLGIAAGNLCO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> markList_ =
         java.util.Collections.emptyList();
       private void ensureMarkListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           markList_ = new java.util.ArrayList<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC>(markList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -833,7 +731,7 @@ public final class GBAOLFCECGMOuterClass {
           emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder> markListBuilder_;
 
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> getMarkListList() {
         if (markListBuilder_ == null) {
@@ -843,7 +741,7 @@ public final class GBAOLFCECGMOuterClass {
         }
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public int getMarkListCount() {
         if (markListBuilder_ == null) {
@@ -853,7 +751,7 @@ public final class GBAOLFCECGMOuterClass {
         }
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC getMarkList(int index) {
         if (markListBuilder_ == null) {
@@ -863,7 +761,7 @@ public final class GBAOLFCECGMOuterClass {
         }
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder setMarkList(
           int index, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC value) {
@@ -880,7 +778,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder setMarkList(
           int index, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder builderForValue) {
@@ -894,7 +792,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder addMarkList(emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC value) {
         if (markListBuilder_ == null) {
@@ -910,7 +808,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder addMarkList(
           int index, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC value) {
@@ -927,7 +825,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder addMarkList(
           emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder builderForValue) {
@@ -941,7 +839,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder addMarkList(
           int index, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder builderForValue) {
@@ -955,7 +853,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder addAllMarkList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC> values) {
@@ -970,12 +868,12 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder clearMarkList() {
         if (markListBuilder_ == null) {
           markList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           markListBuilder_.clear();
@@ -983,7 +881,7 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public Builder removeMarkList(int index) {
         if (markListBuilder_ == null) {
@@ -996,14 +894,14 @@ public final class GBAOLFCECGMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder getMarkListBuilder(
           int index) {
         return getMarkListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder getMarkListOrBuilder(
           int index) {
@@ -1013,7 +911,7 @@ public final class GBAOLFCECGMOuterClass {
         }
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder> 
            getMarkListOrBuilderList() {
@@ -1024,14 +922,14 @@ public final class GBAOLFCECGMOuterClass {
         }
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder addMarkListBuilder() {
         return getMarkListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.getDefaultInstance());
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder addMarkListBuilder(
           int index) {
@@ -1039,7 +937,7 @@ public final class GBAOLFCECGMOuterClass {
             index, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.getDefaultInstance());
       }
       /**
-       * <code>repeated .BNJGIMAFELC mark_list = 11;</code>
+       * <code>repeated .BNJGIMAFELC mark_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder> 
            getMarkListBuilderList() {
@@ -1052,12 +950,122 @@ public final class GBAOLFCECGMOuterClass {
           markListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELC.Builder, emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.BNJGIMAFELCOrBuilder>(
                   markList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           markList_ = null;
         }
         return markListBuilder_;
+      }
+
+      private com.google.protobuf.Internal.IntList jLGIAAGNLCO_ = emptyIntList();
+      private void ensureJLGIAAGNLCOIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          jLGIAAGNLCO_ = mutableCopy(jLGIAAGNLCO_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @return A list containing the jLGIAAGNLCO.
+       */
+      public java.util.List<java.lang.Integer>
+          getJLGIAAGNLCOList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(jLGIAAGNLCO_) : jLGIAAGNLCO_;
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @return The count of jLGIAAGNLCO.
+       */
+      public int getJLGIAAGNLCOCount() {
+        return jLGIAAGNLCO_.size();
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @param index The index of the element to return.
+       * @return The jLGIAAGNLCO at the given index.
+       */
+      public int getJLGIAAGNLCO(int index) {
+        return jLGIAAGNLCO_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @param index The index to set the value at.
+       * @param value The jLGIAAGNLCO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJLGIAAGNLCO(
+          int index, int value) {
+        ensureJLGIAAGNLCOIsMutable();
+        jLGIAAGNLCO_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @param value The jLGIAAGNLCO to add.
+       * @return This builder for chaining.
+       */
+      public Builder addJLGIAAGNLCO(int value) {
+        ensureJLGIAAGNLCOIsMutable();
+        jLGIAAGNLCO_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @param values The jLGIAAGNLCO to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllJLGIAAGNLCO(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureJLGIAAGNLCOIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, jLGIAAGNLCO_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 JLGIAAGNLCO = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJLGIAAGNLCO() {
+        jLGIAAGNLCO_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private boolean lAOJFDMECIB_ ;
+      /**
+       * <code>bool LAOJFDMECIB = 1;</code>
+       * @return The lAOJFDMECIB.
+       */
+      @java.lang.Override
+      public boolean getLAOJFDMECIB() {
+        return lAOJFDMECIB_;
+      }
+      /**
+       * <code>bool LAOJFDMECIB = 1;</code>
+       * @param value The lAOJFDMECIB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLAOJFDMECIB(boolean value) {
+        
+        lAOJFDMECIB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool LAOJFDMECIB = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLAOJFDMECIB() {
+        
+        lAOJFDMECIB_ = false;
+        onChanged();
+        return this;
       }
 
       private boolean nNBCNODJNBG_ ;
@@ -1158,11 +1166,10 @@ public final class GBAOLFCECGMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021GBAOLFCECGM.proto\032\021BNJGIMAFELC.proto\"m" +
-      "\n\013GBAOLFCECGM\022\023\n\013LAOJFDMECIB\030\003 \001(\010\022\023\n\013JL" +
-      "GIAAGNLCO\030\007 \003(\r\022\037\n\tmark_list\030\013 \003(\0132\014.BNJ" +
-      "GIMAFELC\022\023\n\013NNBCNODJNBG\030\016 \001(\010B2\n\031emu.gra" +
-      "sscutter.net.protoB\025GBAOLFCECGMOuterClas" +
-      "sb\006proto3"
+      "\n\013GBAOLFCECGM\022\037\n\tmark_list\030\017 \003(\0132\014.BNJGI" +
+      "MAFELC\022\023\n\013JLGIAAGNLCO\030\014 \003(\r\022\023\n\013LAOJFDMEC" +
+      "IB\030\001 \001(\010\022\023\n\013NNBCNODJNBG\030\016 \001(\010B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1174,7 +1181,7 @@ public final class GBAOLFCECGMOuterClass {
     internal_static_GBAOLFCECGM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GBAOLFCECGM_descriptor,
-        new java.lang.String[] { "LAOJFDMECIB", "JLGIAAGNLCO", "MarkList", "NNBCNODJNBG", });
+        new java.lang.String[] { "MarkList", "JLGIAAGNLCO", "LAOJFDMECIB", "NNBCNODJNBG", });
     emu.grasscutter.net.proto.BNJGIMAFELCOuterClass.getDescriptor();
   }
 

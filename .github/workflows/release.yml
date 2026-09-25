@@ -45,10 +45,10 @@ jobs:
             -o src/main/resources/html/handbook.html
 
       - name: Build jar
-        run: ./gradlew jar -PskipHandbook=1 -PjarFilename=grasscutter
+        run: ./gradlew jar -PskipHandbook=1 -PjarFilename=grasscutter -Dorg.gradle.jvmargs=-Xmx4g
 
       - name: Test
-        run: ./gradlew test -PexcludeTags=integration
+        run: ./gradlew test -PexcludeTags=integration -Dorg.gradle.jvmargs=-Xmx4g
 
       - name: Publish release
         uses: softprops/action-gh-release@v2

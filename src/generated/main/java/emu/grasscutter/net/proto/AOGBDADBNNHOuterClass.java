@@ -19,23 +19,27 @@ public final class AOGBDADBNNHOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 value = 1;</code>
-     * @return The value.
-     */
-    int getValue();
-
-    /**
-     * <code>.EGHMHMPPMLL key = 9;</code>
+     * <code>.EGHMHMPPMLL key = 3;</code>
      * @return The enum numeric value on the wire for key.
      */
     int getKeyValue();
     /**
-     * <code>.EGHMHMPPMLL key = 9;</code>
+     * <code>.EGHMHMPPMLL key = 3;</code>
      * @return The key.
      */
     emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL getKey();
+
+    /**
+     * <code>uint32 value = 6;</code>
+     * @return The value.
+     */
+    int getValue();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AOGBDADBNNH}
    */
   public static final class AOGBDADBNNH extends
@@ -81,15 +85,15 @@ public final class AOGBDADBNNHOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              value_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 24: {
               int rawValue = input.readEnum();
 
               key_ = rawValue;
+              break;
+            }
+            case 48: {
+
+              value_ = input.readUInt32();
               break;
             }
             default: {
@@ -124,34 +128,34 @@ public final class AOGBDADBNNHOuterClass {
               emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH.class, emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH.Builder.class);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 1;
-    private int value_;
-    /**
-     * <code>uint32 value = 1;</code>
-     * @return The value.
-     */
-    @java.lang.Override
-    public int getValue() {
-      return value_;
-    }
-
-    public static final int KEY_FIELD_NUMBER = 9;
+    public static final int KEY_FIELD_NUMBER = 3;
     private int key_;
     /**
-     * <code>.EGHMHMPPMLL key = 9;</code>
+     * <code>.EGHMHMPPMLL key = 3;</code>
      * @return The enum numeric value on the wire for key.
      */
     @java.lang.Override public int getKeyValue() {
       return key_;
     }
     /**
-     * <code>.EGHMHMPPMLL key = 9;</code>
+     * <code>.EGHMHMPPMLL key = 3;</code>
      * @return The key.
      */
     @java.lang.Override public emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL getKey() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL result = emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL.valueOf(key_);
       return result == null ? emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL.UNRECOGNIZED : result;
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 6;
+    private int value_;
+    /**
+     * <code>uint32 value = 6;</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public int getValue() {
+      return value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -168,11 +172,11 @@ public final class AOGBDADBNNHOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (value_ != 0) {
-        output.writeUInt32(1, value_);
-      }
       if (key_ != emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL.EGHMHMPPMLL_NONE.getNumber()) {
-        output.writeEnum(9, key_);
+        output.writeEnum(3, key_);
+      }
+      if (value_ != 0) {
+        output.writeUInt32(6, value_);
       }
       unknownFields.writeTo(output);
     }
@@ -183,13 +187,13 @@ public final class AOGBDADBNNHOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (value_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, value_);
-      }
       if (key_ != emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL.EGHMHMPPMLL_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(9, key_);
+          .computeEnumSize(3, key_);
+      }
+      if (value_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, value_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,9 +210,9 @@ public final class AOGBDADBNNHOuterClass {
       }
       emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH other = (emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH) obj;
 
+      if (key_ != other.key_) return false;
       if (getValue()
           != other.getValue()) return false;
-      if (key_ != other.key_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -220,10 +224,10 @@ public final class AOGBDADBNNHOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + key_;
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -320,6 +324,10 @@ public final class AOGBDADBNNHOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AOGBDADBNNH}
      */
     public static final class Builder extends
@@ -357,9 +365,9 @@ public final class AOGBDADBNNHOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        value_ = 0;
-
         key_ = 0;
+
+        value_ = 0;
 
         return this;
       }
@@ -387,8 +395,8 @@ public final class AOGBDADBNNHOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH buildPartial() {
         emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH result = new emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH(this);
-        result.value_ = value_;
         result.key_ = key_;
+        result.value_ = value_;
         onBuilt();
         return result;
       }
@@ -437,11 +445,11 @@ public final class AOGBDADBNNHOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH other) {
         if (other == emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.AOGBDADBNNH.getDefaultInstance()) return this;
-        if (other.getValue() != 0) {
-          setValue(other.getValue());
-        }
         if (other.key_ != 0) {
           setKeyValue(other.getKeyValue());
+        }
+        if (other.getValue() != 0) {
+          setValue(other.getValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -472,47 +480,16 @@ public final class AOGBDADBNNHOuterClass {
         return this;
       }
 
-      private int value_ ;
-      /**
-       * <code>uint32 value = 1;</code>
-       * @return The value.
-       */
-      @java.lang.Override
-      public int getValue() {
-        return value_;
-      }
-      /**
-       * <code>uint32 value = 1;</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValue(int value) {
-        
-        value_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 value = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-        
-        value_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int key_ = 0;
       /**
-       * <code>.EGHMHMPPMLL key = 9;</code>
+       * <code>.EGHMHMPPMLL key = 3;</code>
        * @return The enum numeric value on the wire for key.
        */
       @java.lang.Override public int getKeyValue() {
         return key_;
       }
       /**
-       * <code>.EGHMHMPPMLL key = 9;</code>
+       * <code>.EGHMHMPPMLL key = 3;</code>
        * @param value The enum numeric value on the wire for key to set.
        * @return This builder for chaining.
        */
@@ -523,7 +500,7 @@ public final class AOGBDADBNNHOuterClass {
         return this;
       }
       /**
-       * <code>.EGHMHMPPMLL key = 9;</code>
+       * <code>.EGHMHMPPMLL key = 3;</code>
        * @return The key.
        */
       @java.lang.Override
@@ -533,7 +510,7 @@ public final class AOGBDADBNNHOuterClass {
         return result == null ? emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.EGHMHMPPMLL.UNRECOGNIZED : result;
       }
       /**
-       * <code>.EGHMHMPPMLL key = 9;</code>
+       * <code>.EGHMHMPPMLL key = 3;</code>
        * @param value The key to set.
        * @return This builder for chaining.
        */
@@ -547,12 +524,43 @@ public final class AOGBDADBNNHOuterClass {
         return this;
       }
       /**
-       * <code>.EGHMHMPPMLL key = 9;</code>
+       * <code>.EGHMHMPPMLL key = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearKey() {
         
         key_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int value_ ;
+      /**
+       * <code>uint32 value = 6;</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public int getValue() {
+        return value_;
+      }
+      /**
+       * <code>uint32 value = 6;</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(int value) {
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 value = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        
+        value_ = 0;
         onChanged();
         return this;
       }
@@ -624,9 +632,9 @@ public final class AOGBDADBNNHOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021AOGBDADBNNH.proto\032\021EGHMHMPPMLL.proto\"7" +
-      "\n\013AOGBDADBNNH\022\r\n\005value\030\001 \001(\r\022\031\n\003key\030\t \001(" +
-      "\0162\014.EGHMHMPPMLLB2\n\031emu.grasscutter.net.p" +
-      "rotoB\025AOGBDADBNNHOuterClassb\006proto3"
+      "\n\013AOGBDADBNNH\022\031\n\003key\030\003 \001(\0162\014.EGHMHMPPMLL" +
+      "\022\r\n\005value\030\006 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -638,7 +646,7 @@ public final class AOGBDADBNNHOuterClass {
     internal_static_AOGBDADBNNH_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AOGBDADBNNH_descriptor,
-        new java.lang.String[] { "Value", "Key", });
+        new java.lang.String[] { "Key", "Value", });
     emu.grasscutter.net.proto.EGHMHMPPMLLOuterClass.getDescriptor();
   }
 

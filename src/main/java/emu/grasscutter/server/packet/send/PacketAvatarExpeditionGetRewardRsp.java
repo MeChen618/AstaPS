@@ -5,8 +5,8 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
-import emu.grasscutter.net.proto._AvatarExpeditionBasicInfoOuterClass._AvatarExpeditionBasicInfo;
-import emu.grasscutter.net.proto._AvatarExpeditionRewardInfoOuterClass._AvatarExpeditionRewardInfo;
+import emu.grasscutter.net.proto.AvatarExpeditionBasicInfo._AvatarExpeditionBasicInfo;
+import emu.grasscutter.net.proto.AvatarExpeditionRewardInfo._AvatarExpeditionRewardInfo;
 import java.util.*;
 
 public class PacketAvatarExpeditionGetRewardRsp extends BasePacket {

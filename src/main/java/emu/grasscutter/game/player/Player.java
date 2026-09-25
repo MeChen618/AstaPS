@@ -240,7 +240,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter @Setter private ElementType mainCharacterElement = ElementType.None;
 
     @Getter @Setter private Map<Integer, CityInfoData> cityInfoData;
-    @Getter @Setter private float phlogistonValue;
+    @Getter private float phlogistonValue = 100.0f; // 燃素值
 
     @Deprecated
     @SuppressWarnings({"rawtypes", "unchecked"})
@@ -364,6 +364,15 @@ public class Player implements PlayerHook, FieldFetch {
     public Player getPlayer() {
         return this;
     }
+    public void setPhlogistonValue(float value) {
+        if (value < 0) value = 0;
+        else if (value > 100) value = 100;
+
+        if (value == this.phlogistonValue) return;
+
+        this.phlogistonValue = value;
+    }
+
     public float addPhlogistonValue(float amount) {
         setPhlogistonValue(getPhlogistonValue() + amount);
         return getPhlogistonValue();
@@ -625,7 +634,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.setOrFetch(PlayerProperty.PROP_DIVE_MAX_STAMINA,
                 withQuesting ? 10000 : 0);
         this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 200);
-
+        this.setOrFetch(PlayerProperty.PROP_PHLOGISTON_MAX_VALUE, 10000);
         this.setProperty(PlayerProperty.PROP_PHLOGISTON_ENABLE, 1);
 
         this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
@@ -1273,7 +1282,7 @@ public class Player implements PlayerHook, FieldFetch {
             this.getUid(),
             this.getNickname(),
             false,
-            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.SYSTEM_JUDGE));
+            PlayerApplyEnterHomeResultNotifyOuterClass.PlayerApplyEnterHomeResultNotify.Reason.Reason_SYSTEM_JUDGE));
         req.getRequester().sendPacket(new PacketTryEnterHomeRsp());
         return true;
     }

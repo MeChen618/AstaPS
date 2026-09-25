@@ -31,6 +31,10 @@ public final class COEBLNIFMOBOuterClass {
     int getConfigId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code COEBLNIFMOB}
    */
   public static final class COEBLNIFMOB extends
@@ -306,6 +310,10 @@ public final class COEBLNIFMOBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code COEBLNIFMOB}
      */
     public static final class Builder extends
@@ -587,9 +595,8 @@ public final class COEBLNIFMOBOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021COEBLNIFMOB.proto\"2\n\013COEBLNIFMOB\022\020\n\010gr" +
-      "oup_id\030\001 \001(\r\022\021\n\tconfig_id\030\002 \001(\rB2\n\031emu.g" +
-      "rasscutter.net.protoB\025COEBLNIFMOBOuterCl" +
-      "assb\006proto3"
+      "oup_id\030\001 \001(\r\022\021\n\tconfig_id\030\002 \001(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

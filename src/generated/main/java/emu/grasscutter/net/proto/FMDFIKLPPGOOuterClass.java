@@ -19,23 +19,27 @@ public final class FMDFIKLPPGOOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+     * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
      * @return A list containing the lBFEIKNJNPM.
      */
     java.util.List<java.lang.Integer> getLBFEIKNJNPMList();
     /**
-     * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+     * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
      * @return The count of lBFEIKNJNPM.
      */
     int getLBFEIKNJNPMCount();
     /**
-     * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+     * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
      * @param index The index of the element to return.
      * @return The lBFEIKNJNPM at the given index.
      */
     int getLBFEIKNJNPM(int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FMDFIKLPPGO}
    */
   public static final class FMDFIKLPPGO extends
@@ -82,7 +86,7 @@ public final class FMDFIKLPPGOOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 lBFEIKNJNPM_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +94,7 @@ public final class FMDFIKLPPGOOuterClass {
               lBFEIKNJNPM_.addInt(input.readUInt32());
               break;
             }
-            case 114: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +142,10 @@ public final class FMDFIKLPPGOOuterClass {
               emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.class, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder.class);
     }
 
-    public static final int LBFEIKNJNPM_FIELD_NUMBER = 14;
+    public static final int LBFEIKNJNPM_FIELD_NUMBER = 10;
     private com.google.protobuf.Internal.IntList lBFEIKNJNPM_;
     /**
-     * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+     * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
      * @return A list containing the lBFEIKNJNPM.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class FMDFIKLPPGOOuterClass {
       return lBFEIKNJNPM_;
     }
     /**
-     * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+     * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
      * @return The count of lBFEIKNJNPM.
      */
     public int getLBFEIKNJNPMCount() {
       return lBFEIKNJNPM_.size();
     }
     /**
-     * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+     * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
      * @param index The index of the element to return.
      * @return The lBFEIKNJNPM at the given index.
      */
@@ -182,7 +186,7 @@ public final class FMDFIKLPPGOOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getLBFEIKNJNPMList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(lBFEIKNJNPMMemoizedSerializedSize);
       }
       for (int i = 0; i < lBFEIKNJNPM_.size(); i++) {
@@ -339,6 +343,10 @@ public final class FMDFIKLPPGOOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FMDFIKLPPGO}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class FMDFIKLPPGOOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @return A list containing the lBFEIKNJNPM.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class FMDFIKLPPGOOuterClass {
                  java.util.Collections.unmodifiableList(lBFEIKNJNPM_) : lBFEIKNJNPM_;
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @return The count of lBFEIKNJNPM.
        */
       public int getLBFEIKNJNPMCount() {
         return lBFEIKNJNPM_.size();
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @param index The index of the element to return.
        * @return The lBFEIKNJNPM at the given index.
        */
@@ -530,7 +538,7 @@ public final class FMDFIKLPPGOOuterClass {
         return lBFEIKNJNPM_.getInt(index);
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @param index The index to set the value at.
        * @param value The lBFEIKNJNPM to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class FMDFIKLPPGOOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @param value The lBFEIKNJNPM to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class FMDFIKLPPGOOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @param values The lBFEIKNJNPM to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class FMDFIKLPPGOOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 LBFEIKNJNPM = 14;</code>
+       * <code>repeated uint32 LBFEIKNJNPM = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearLBFEIKNJNPM() {
@@ -644,8 +652,8 @@ public final class FMDFIKLPPGOOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021FMDFIKLPPGO.proto\"\"\n\013FMDFIKLPPGO\022\023\n\013LB" +
-      "FEIKNJNPM\030\016 \003(\rB2\n\031emu.grasscutter.net.p" +
-      "rotoB\025FMDFIKLPPGOOuterClassb\006proto3"
+      "FEIKNJNPM\030\n \003(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,18 +19,22 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 5;</code>
+     * <code>uint32 avatar_id = 4;</code>
      * @return The avatarId.
      */
     int getAvatarId();
 
     /**
-     * <code>uint32 costume_id = 7;</code>
+     * <code>uint32 costume_id = 6;</code>
      * @return The costumeId.
      */
     int getCostumeId();
   }
   /**
+   * <pre>
+   * CmdId: 28844
+   * </pre>
+   *
    * Protobuf type {@code HomeAvatarCostumeChangeNotify}
    */
   public static final class HomeAvatarCostumeChangeNotify extends
@@ -75,12 +79,12 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 32: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 48: {
 
               costumeId_ = input.readUInt32();
               break;
@@ -117,10 +121,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
               emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.class, emu.grasscutter.net.proto.HomeAvatarCostumeChangeNotifyOuterClass.HomeAvatarCostumeChangeNotify.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 5;
+    public static final int AVATAR_ID_FIELD_NUMBER = 4;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 5;</code>
+     * <code>uint32 avatar_id = 4;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       return avatarId_;
     }
 
-    public static final int COSTUME_ID_FIELD_NUMBER = 7;
+    public static final int COSTUME_ID_FIELD_NUMBER = 6;
     private int costumeId_;
     /**
-     * <code>uint32 costume_id = 7;</code>
+     * <code>uint32 costume_id = 6;</code>
      * @return The costumeId.
      */
     @java.lang.Override
@@ -154,10 +158,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarId_ != 0) {
-        output.writeUInt32(5, avatarId_);
+        output.writeUInt32(4, avatarId_);
       }
       if (costumeId_ != 0) {
-        output.writeUInt32(7, costumeId_);
+        output.writeUInt32(6, costumeId_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +174,11 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       size = 0;
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, avatarId_);
+          .computeUInt32Size(4, avatarId_);
       }
       if (costumeId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, costumeId_);
+          .computeUInt32Size(6, costumeId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 28844
+     * </pre>
+     *
      * Protobuf type {@code HomeAvatarCostumeChangeNotify}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 5;</code>
+       * <code>uint32 avatar_id = 4;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 5;</code>
+       * <code>uint32 avatar_id = 4;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 5;</code>
+       * <code>uint32 avatar_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -491,7 +499,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
 
       private int costumeId_ ;
       /**
-       * <code>uint32 costume_id = 7;</code>
+       * <code>uint32 costume_id = 6;</code>
        * @return The costumeId.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return costumeId_;
       }
       /**
-       * <code>uint32 costume_id = 7;</code>
+       * <code>uint32 costume_id = 6;</code>
        * @param value The costumeId to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 costume_id = 7;</code>
+       * <code>uint32 costume_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
@@ -588,9 +596,8 @@ public final class HomeAvatarCostumeChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n#HomeAvatarCostumeChangeNotify.proto\"F\n" +
       "\035HomeAvatarCostumeChangeNotify\022\021\n\tavatar" +
-      "_id\030\005 \001(\r\022\022\n\ncostume_id\030\007 \001(\rBD\n\031emu.gra" +
-      "sscutter.net.protoB\'HomeAvatarCostumeCha" +
-      "ngeNotifyOuterClassb\006proto3"
+      "_id\030\004 \001(\r\022\022\n\ncostume_id\030\006 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

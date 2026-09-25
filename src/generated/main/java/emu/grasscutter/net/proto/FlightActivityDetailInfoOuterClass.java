@@ -43,18 +43,22 @@ public final class FlightActivityDetailInfoOuterClass {
         int index);
 
     /**
-     * <code>uint32 preview_reward_id = 9;</code>
+     * <code>uint32 preview_reward_id = 10;</code>
      * @return The previewRewardId.
      */
     int getPreviewRewardId();
 
     /**
-     * <code>uint32 min_open_player_level = 12;</code>
+     * <code>uint32 min_open_player_level = 15;</code>
      * @return The minOpenPlayerLevel.
      */
     int getMinOpenPlayerLevel();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FlightActivityDetailInfo}
    */
   public static final class FlightActivityDetailInfo extends
@@ -110,12 +114,12 @@ public final class FlightActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.FlightDailyRecordOuterClass.FlightDailyRecord.parser(), extensionRegistry));
               break;
             }
-            case 72: {
+            case 80: {
 
               previewRewardId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 120: {
 
               minOpenPlayerLevel_ = input.readUInt32();
               break;
@@ -195,10 +199,10 @@ public final class FlightActivityDetailInfoOuterClass {
       return dailyRecordList_.get(index);
     }
 
-    public static final int PREVIEW_REWARD_ID_FIELD_NUMBER = 9;
+    public static final int PREVIEW_REWARD_ID_FIELD_NUMBER = 10;
     private int previewRewardId_;
     /**
-     * <code>uint32 preview_reward_id = 9;</code>
+     * <code>uint32 preview_reward_id = 10;</code>
      * @return The previewRewardId.
      */
     @java.lang.Override
@@ -206,10 +210,10 @@ public final class FlightActivityDetailInfoOuterClass {
       return previewRewardId_;
     }
 
-    public static final int MIN_OPEN_PLAYER_LEVEL_FIELD_NUMBER = 12;
+    public static final int MIN_OPEN_PLAYER_LEVEL_FIELD_NUMBER = 15;
     private int minOpenPlayerLevel_;
     /**
-     * <code>uint32 min_open_player_level = 12;</code>
+     * <code>uint32 min_open_player_level = 15;</code>
      * @return The minOpenPlayerLevel.
      */
     @java.lang.Override
@@ -235,10 +239,10 @@ public final class FlightActivityDetailInfoOuterClass {
         output.writeMessage(8, dailyRecordList_.get(i));
       }
       if (previewRewardId_ != 0) {
-        output.writeUInt32(9, previewRewardId_);
+        output.writeUInt32(10, previewRewardId_);
       }
       if (minOpenPlayerLevel_ != 0) {
-        output.writeUInt32(12, minOpenPlayerLevel_);
+        output.writeUInt32(15, minOpenPlayerLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -255,11 +259,11 @@ public final class FlightActivityDetailInfoOuterClass {
       }
       if (previewRewardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, previewRewardId_);
+          .computeUInt32Size(10, previewRewardId_);
       }
       if (minOpenPlayerLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, minOpenPlayerLevel_);
+          .computeUInt32Size(15, minOpenPlayerLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -397,6 +401,10 @@ public final class FlightActivityDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FlightActivityDetailInfo}
      */
     public static final class Builder extends
@@ -835,7 +843,7 @@ public final class FlightActivityDetailInfoOuterClass {
 
       private int previewRewardId_ ;
       /**
-       * <code>uint32 preview_reward_id = 9;</code>
+       * <code>uint32 preview_reward_id = 10;</code>
        * @return The previewRewardId.
        */
       @java.lang.Override
@@ -843,7 +851,7 @@ public final class FlightActivityDetailInfoOuterClass {
         return previewRewardId_;
       }
       /**
-       * <code>uint32 preview_reward_id = 9;</code>
+       * <code>uint32 preview_reward_id = 10;</code>
        * @param value The previewRewardId to set.
        * @return This builder for chaining.
        */
@@ -854,7 +862,7 @@ public final class FlightActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 preview_reward_id = 9;</code>
+       * <code>uint32 preview_reward_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearPreviewRewardId() {
@@ -866,7 +874,7 @@ public final class FlightActivityDetailInfoOuterClass {
 
       private int minOpenPlayerLevel_ ;
       /**
-       * <code>uint32 min_open_player_level = 12;</code>
+       * <code>uint32 min_open_player_level = 15;</code>
        * @return The minOpenPlayerLevel.
        */
       @java.lang.Override
@@ -874,7 +882,7 @@ public final class FlightActivityDetailInfoOuterClass {
         return minOpenPlayerLevel_;
       }
       /**
-       * <code>uint32 min_open_player_level = 12;</code>
+       * <code>uint32 min_open_player_level = 15;</code>
        * @param value The minOpenPlayerLevel to set.
        * @return This builder for chaining.
        */
@@ -885,7 +893,7 @@ public final class FlightActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 min_open_player_level = 12;</code>
+       * <code>uint32 min_open_player_level = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearMinOpenPlayerLevel() {
@@ -964,10 +972,9 @@ public final class FlightActivityDetailInfoOuterClass {
       "\n\036FlightActivityDetailInfo.proto\032\027Flight" +
       "DailyRecord.proto\"\203\001\n\030FlightActivityDeta" +
       "ilInfo\022-\n\021daily_record_list\030\010 \003(\0132\022.Flig" +
-      "htDailyRecord\022\031\n\021preview_reward_id\030\t \001(\r" +
-      "\022\035\n\025min_open_player_level\030\014 \001(\rB?\n\031emu.g" +
-      "rasscutter.net.protoB\"FlightActivityDeta" +
-      "ilInfoOuterClassb\006proto3"
+      "htDailyRecord\022\031\n\021preview_reward_id\030\n \001(\r" +
+      "\022\035\n\025min_open_player_level\030\017 \001(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,24 +19,28 @@ public final class JLCGGDBJIJMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 IILFPOGNOCO = 2;</code>
-     * @return The iILFPOGNOCO.
-     */
-    int getIILFPOGNOCO();
-
-    /**
-     * <code>uint32 JCJCKHNDFIK = 7;</code>
-     * @return The jCJCKHNDFIK.
-     */
-    int getJCJCKHNDFIK();
-
-    /**
-     * <code>uint32 POBNCEDDLGD = 15;</code>
+     * <code>uint32 POBNCEDDLGD = 9;</code>
      * @return The pOBNCEDDLGD.
      */
     int getPOBNCEDDLGD();
+
+    /**
+     * <code>uint32 _goal_id = 12;</code>
+     * @return The goalId.
+     */
+    int getGoalId();
+
+    /**
+     * <code>uint32 IILFPOGNOCO = 6;</code>
+     * @return The iILFPOGNOCO.
+     */
+    int getIILFPOGNOCO();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JLCGGDBJIJM}
    */
   public static final class JLCGGDBJIJM extends
@@ -81,19 +85,19 @@ public final class JLCGGDBJIJMOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 48: {
 
               iILFPOGNOCO_ = input.readUInt32();
               break;
             }
-            case 56: {
-
-              jCJCKHNDFIK_ = input.readUInt32();
-              break;
-            }
-            case 120: {
+            case 72: {
 
               pOBNCEDDLGD_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
+              GoalId_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,37 +132,37 @@ public final class JLCGGDBJIJMOuterClass {
               emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM.class, emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM.Builder.class);
     }
 
-    public static final int IILFPOGNOCO_FIELD_NUMBER = 2;
-    private int iILFPOGNOCO_;
-    /**
-     * <code>uint32 IILFPOGNOCO = 2;</code>
-     * @return The iILFPOGNOCO.
-     */
-    @java.lang.Override
-    public int getIILFPOGNOCO() {
-      return iILFPOGNOCO_;
-    }
-
-    public static final int JCJCKHNDFIK_FIELD_NUMBER = 7;
-    private int jCJCKHNDFIK_;
-    /**
-     * <code>uint32 JCJCKHNDFIK = 7;</code>
-     * @return The jCJCKHNDFIK.
-     */
-    @java.lang.Override
-    public int getJCJCKHNDFIK() {
-      return jCJCKHNDFIK_;
-    }
-
-    public static final int POBNCEDDLGD_FIELD_NUMBER = 15;
+    public static final int POBNCEDDLGD_FIELD_NUMBER = 9;
     private int pOBNCEDDLGD_;
     /**
-     * <code>uint32 POBNCEDDLGD = 15;</code>
+     * <code>uint32 POBNCEDDLGD = 9;</code>
      * @return The pOBNCEDDLGD.
      */
     @java.lang.Override
     public int getPOBNCEDDLGD() {
       return pOBNCEDDLGD_;
+    }
+
+    public static final int _GOAL_ID_FIELD_NUMBER = 12;
+    private int GoalId_;
+    /**
+     * <code>uint32 _goal_id = 12;</code>
+     * @return The goalId.
+     */
+    @java.lang.Override
+    public int getGoalId() {
+      return GoalId_;
+    }
+
+    public static final int IILFPOGNOCO_FIELD_NUMBER = 6;
+    private int iILFPOGNOCO_;
+    /**
+     * <code>uint32 IILFPOGNOCO = 6;</code>
+     * @return The iILFPOGNOCO.
+     */
+    @java.lang.Override
+    public int getIILFPOGNOCO() {
+      return iILFPOGNOCO_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,13 +180,13 @@ public final class JLCGGDBJIJMOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (iILFPOGNOCO_ != 0) {
-        output.writeUInt32(2, iILFPOGNOCO_);
-      }
-      if (jCJCKHNDFIK_ != 0) {
-        output.writeUInt32(7, jCJCKHNDFIK_);
+        output.writeUInt32(6, iILFPOGNOCO_);
       }
       if (pOBNCEDDLGD_ != 0) {
-        output.writeUInt32(15, pOBNCEDDLGD_);
+        output.writeUInt32(9, pOBNCEDDLGD_);
+      }
+      if (GoalId_ != 0) {
+        output.writeUInt32(12, GoalId_);
       }
       unknownFields.writeTo(output);
     }
@@ -195,15 +199,15 @@ public final class JLCGGDBJIJMOuterClass {
       size = 0;
       if (iILFPOGNOCO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, iILFPOGNOCO_);
-      }
-      if (jCJCKHNDFIK_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, jCJCKHNDFIK_);
+          .computeUInt32Size(6, iILFPOGNOCO_);
       }
       if (pOBNCEDDLGD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, pOBNCEDDLGD_);
+          .computeUInt32Size(9, pOBNCEDDLGD_);
+      }
+      if (GoalId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, GoalId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,12 +224,12 @@ public final class JLCGGDBJIJMOuterClass {
       }
       emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM other = (emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM) obj;
 
-      if (getIILFPOGNOCO()
-          != other.getIILFPOGNOCO()) return false;
-      if (getJCJCKHNDFIK()
-          != other.getJCJCKHNDFIK()) return false;
       if (getPOBNCEDDLGD()
           != other.getPOBNCEDDLGD()) return false;
+      if (getGoalId()
+          != other.getGoalId()) return false;
+      if (getIILFPOGNOCO()
+          != other.getIILFPOGNOCO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,12 +241,12 @@ public final class JLCGGDBJIJMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IILFPOGNOCO_FIELD_NUMBER;
-      hash = (53 * hash) + getIILFPOGNOCO();
-      hash = (37 * hash) + JCJCKHNDFIK_FIELD_NUMBER;
-      hash = (53 * hash) + getJCJCKHNDFIK();
       hash = (37 * hash) + POBNCEDDLGD_FIELD_NUMBER;
       hash = (53 * hash) + getPOBNCEDDLGD();
+      hash = (37 * hash) + _GOAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGoalId();
+      hash = (37 * hash) + IILFPOGNOCO_FIELD_NUMBER;
+      hash = (53 * hash) + getIILFPOGNOCO();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -339,6 +343,10 @@ public final class JLCGGDBJIJMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JLCGGDBJIJM}
      */
     public static final class Builder extends
@@ -376,11 +384,11 @@ public final class JLCGGDBJIJMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iILFPOGNOCO_ = 0;
-
-        jCJCKHNDFIK_ = 0;
-
         pOBNCEDDLGD_ = 0;
+
+        GoalId_ = 0;
+
+        iILFPOGNOCO_ = 0;
 
         return this;
       }
@@ -408,9 +416,9 @@ public final class JLCGGDBJIJMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM buildPartial() {
         emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM result = new emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM(this);
-        result.iILFPOGNOCO_ = iILFPOGNOCO_;
-        result.jCJCKHNDFIK_ = jCJCKHNDFIK_;
         result.pOBNCEDDLGD_ = pOBNCEDDLGD_;
+        result.GoalId_ = GoalId_;
+        result.iILFPOGNOCO_ = iILFPOGNOCO_;
         onBuilt();
         return result;
       }
@@ -459,14 +467,14 @@ public final class JLCGGDBJIJMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM other) {
         if (other == emu.grasscutter.net.proto.JLCGGDBJIJMOuterClass.JLCGGDBJIJM.getDefaultInstance()) return this;
-        if (other.getIILFPOGNOCO() != 0) {
-          setIILFPOGNOCO(other.getIILFPOGNOCO());
-        }
-        if (other.getJCJCKHNDFIK() != 0) {
-          setJCJCKHNDFIK(other.getJCJCKHNDFIK());
-        }
         if (other.getPOBNCEDDLGD() != 0) {
           setPOBNCEDDLGD(other.getPOBNCEDDLGD());
+        }
+        if (other.getGoalId() != 0) {
+          setGoalId(other.getGoalId());
+        }
+        if (other.getIILFPOGNOCO() != 0) {
+          setIILFPOGNOCO(other.getIILFPOGNOCO());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -497,71 +505,9 @@ public final class JLCGGDBJIJMOuterClass {
         return this;
       }
 
-      private int iILFPOGNOCO_ ;
-      /**
-       * <code>uint32 IILFPOGNOCO = 2;</code>
-       * @return The iILFPOGNOCO.
-       */
-      @java.lang.Override
-      public int getIILFPOGNOCO() {
-        return iILFPOGNOCO_;
-      }
-      /**
-       * <code>uint32 IILFPOGNOCO = 2;</code>
-       * @param value The iILFPOGNOCO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIILFPOGNOCO(int value) {
-        
-        iILFPOGNOCO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 IILFPOGNOCO = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIILFPOGNOCO() {
-        
-        iILFPOGNOCO_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int jCJCKHNDFIK_ ;
-      /**
-       * <code>uint32 JCJCKHNDFIK = 7;</code>
-       * @return The jCJCKHNDFIK.
-       */
-      @java.lang.Override
-      public int getJCJCKHNDFIK() {
-        return jCJCKHNDFIK_;
-      }
-      /**
-       * <code>uint32 JCJCKHNDFIK = 7;</code>
-       * @param value The jCJCKHNDFIK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJCJCKHNDFIK(int value) {
-        
-        jCJCKHNDFIK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JCJCKHNDFIK = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJCJCKHNDFIK() {
-        
-        jCJCKHNDFIK_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pOBNCEDDLGD_ ;
       /**
-       * <code>uint32 POBNCEDDLGD = 15;</code>
+       * <code>uint32 POBNCEDDLGD = 9;</code>
        * @return The pOBNCEDDLGD.
        */
       @java.lang.Override
@@ -569,7 +515,7 @@ public final class JLCGGDBJIJMOuterClass {
         return pOBNCEDDLGD_;
       }
       /**
-       * <code>uint32 POBNCEDDLGD = 15;</code>
+       * <code>uint32 POBNCEDDLGD = 9;</code>
        * @param value The pOBNCEDDLGD to set.
        * @return This builder for chaining.
        */
@@ -580,12 +526,74 @@ public final class JLCGGDBJIJMOuterClass {
         return this;
       }
       /**
-       * <code>uint32 POBNCEDDLGD = 15;</code>
+       * <code>uint32 POBNCEDDLGD = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearPOBNCEDDLGD() {
         
         pOBNCEDDLGD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int GoalId_ ;
+      /**
+       * <code>uint32 _goal_id = 12;</code>
+       * @return The goalId.
+       */
+      @java.lang.Override
+      public int getGoalId() {
+        return GoalId_;
+      }
+      /**
+       * <code>uint32 _goal_id = 12;</code>
+       * @param value The goalId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGoalId(int value) {
+        
+        GoalId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 _goal_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGoalId() {
+        
+        GoalId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iILFPOGNOCO_ ;
+      /**
+       * <code>uint32 IILFPOGNOCO = 6;</code>
+       * @return The iILFPOGNOCO.
+       */
+      @java.lang.Override
+      public int getIILFPOGNOCO() {
+        return iILFPOGNOCO_;
+      }
+      /**
+       * <code>uint32 IILFPOGNOCO = 6;</code>
+       * @param value The iILFPOGNOCO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIILFPOGNOCO(int value) {
+        
+        iILFPOGNOCO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IILFPOGNOCO = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIILFPOGNOCO() {
+        
+        iILFPOGNOCO_ = 0;
         onChanged();
         return this;
       }
@@ -656,10 +664,10 @@ public final class JLCGGDBJIJMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021JLCGGDBJIJM.proto\"L\n\013JLCGGDBJIJM\022\023\n\013II" +
-      "LFPOGNOCO\030\002 \001(\r\022\023\n\013JCJCKHNDFIK\030\007 \001(\r\022\023\n\013" +
-      "POBNCEDDLGD\030\017 \001(\rB2\n\031emu.grasscutter.net" +
-      ".protoB\025JLCGGDBJIJMOuterClassb\006proto3"
+      "\n\021JLCGGDBJIJM.proto\"I\n\013JLCGGDBJIJM\022\023\n\013PO" +
+      "BNCEDDLGD\030\t \001(\r\022\020\n\010_goal_id\030\014 \001(\r\022\023\n\013IIL" +
+      "FPOGNOCO\030\006 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -670,7 +678,7 @@ public final class JLCGGDBJIJMOuterClass {
     internal_static_JLCGGDBJIJM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JLCGGDBJIJM_descriptor,
-        new java.lang.String[] { "IILFPOGNOCO", "JCJCKHNDFIK", "POBNCEDDLGD", });
+        new java.lang.String[] { "POBNCEDDLGD", "GoalId", "IILFPOGNOCO", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,16 +19,38 @@ public final class GLHICJGJDLPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DIKAJGKLPGO = 1;</code>
-     * @return The dIKAJGKLPGO.
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
      */
-    int getDIKAJGKLPGO();
-
+    int getCOICCEMLBODCount();
     /**
-     * <code>uint32 section_id = 2;</code>
-     * @return The sectionId.
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
      */
-    int getSectionId();
+    boolean containsCOICCEMLBOD(
+        int key);
+    /**
+     * Use {@link #getCOICCEMLBODMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
+    getCOICCEMLBOD();
+    /**
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
+    getCOICCEMLBODMap();
+    /**
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+
+    emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrDefault(
+        int key,
+        emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND defaultValue);
+    /**
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+
+    emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrThrow(
+        int key);
 
     /**
      * <code>map&lt;uint32, .JAGCAMGLGDP&gt; MIJCCHLCPBA = 3;</code>
@@ -65,40 +87,22 @@ public final class GLHICJGJDLPOuterClass {
         int key);
 
     /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     * <code>uint32 DIKAJGKLPGO = 1;</code>
+     * @return The dIKAJGKLPGO.
      */
-    int getCOICCEMLBODCount();
-    /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-     */
-    boolean containsCOICCEMLBOD(
-        int key);
-    /**
-     * Use {@link #getCOICCEMLBODMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
-    getCOICCEMLBOD();
-    /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-     */
-    java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
-    getCOICCEMLBODMap();
-    /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-     */
+    int getDIKAJGKLPGO();
 
-    emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrDefault(
-        int key,
-        emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND defaultValue);
     /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     * <code>uint32 section_id = 2;</code>
+     * @return The sectionId.
      */
-
-    emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrThrow(
-        int key);
+    int getSectionId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GLHICJGJDLP}
    */
   public static final class GLHICJGJDLP extends
@@ -155,10 +159,10 @@ public final class GLHICJGJDLPOuterClass {
               break;
             }
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 mIJCCHLCPBA_ = com.google.protobuf.MapField.newMapField(
                     MIJCCHLCPBADefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.JAGCAMGLGDPOuterClass.JAGCAMGLGDP>
               mIJCCHLCPBA__ = input.readMessage(
@@ -168,10 +172,10 @@ public final class GLHICJGJDLPOuterClass {
               break;
             }
             case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 cOICCEMLBOD_ = com.google.protobuf.MapField.newMapField(
                     COICCEMLBODDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
               cOICCEMLBOD__ = input.readMessage(
@@ -209,10 +213,10 @@ public final class GLHICJGJDLPOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 3:
-          return internalGetMIJCCHLCPBA();
         case 4:
           return internalGetCOICCEMLBOD();
+        case 3:
+          return internalGetMIJCCHLCPBA();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -226,26 +230,85 @@ public final class GLHICJGJDLPOuterClass {
               emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP.class, emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP.Builder.class);
     }
 
-    public static final int DIKAJGKLPGO_FIELD_NUMBER = 1;
-    private int dIKAJGKLPGO_;
-    /**
-     * <code>uint32 DIKAJGKLPGO = 1;</code>
-     * @return The dIKAJGKLPGO.
-     */
-    @java.lang.Override
-    public int getDIKAJGKLPGO() {
-      return dIKAJGKLPGO_;
+    public static final int COICCEMLBOD_FIELD_NUMBER = 4;
+    private static final class COICCEMLBODDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>newDefaultInstance(
+                  emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.internal_static_GLHICJGJDLP_COICCEMLBODEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> cOICCEMLBOD_;
+    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
+    internalGetCOICCEMLBOD() {
+      if (cOICCEMLBOD_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            COICCEMLBODDefaultEntryHolder.defaultEntry);
+      }
+      return cOICCEMLBOD_;
     }
 
-    public static final int SECTION_ID_FIELD_NUMBER = 2;
-    private int sectionId_;
+    public int getCOICCEMLBODCount() {
+      return internalGetCOICCEMLBOD().getMap().size();
+    }
     /**
-     * <code>uint32 section_id = 2;</code>
-     * @return The sectionId.
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsCOICCEMLBOD(
+        int key) {
+      
+      return internalGetCOICCEMLBOD().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getCOICCEMLBODMap()} instead.
      */
     @java.lang.Override
-    public int getSectionId() {
-      return sectionId_;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBOD() {
+      return getCOICCEMLBODMap();
+    }
+    /**
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBODMap() {
+      return internalGetCOICCEMLBOD().getMap();
+    }
+    /**
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+    @java.lang.Override
+
+    public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrDefault(
+        int key,
+        emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND defaultValue) {
+      
+      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
+          internalGetCOICCEMLBOD().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     */
+    @java.lang.Override
+
+    public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
+          internalGetCOICCEMLBOD().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     public static final int MIJCCHLCPBA_FIELD_NUMBER = 3;
@@ -329,85 +392,26 @@ public final class GLHICJGJDLPOuterClass {
       return map.get(key);
     }
 
-    public static final int COICCEMLBOD_FIELD_NUMBER = 4;
-    private static final class COICCEMLBODDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>newDefaultInstance(
-                  emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.internal_static_GLHICJGJDLP_COICCEMLBODEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> cOICCEMLBOD_;
-    private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
-    internalGetCOICCEMLBOD() {
-      if (cOICCEMLBOD_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            COICCEMLBODDefaultEntryHolder.defaultEntry);
-      }
-      return cOICCEMLBOD_;
-    }
-
-    public int getCOICCEMLBODCount() {
-      return internalGetCOICCEMLBOD().getMap().size();
-    }
+    public static final int DIKAJGKLPGO_FIELD_NUMBER = 1;
+    private int dIKAJGKLPGO_;
     /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsCOICCEMLBOD(
-        int key) {
-      
-      return internalGetCOICCEMLBOD().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getCOICCEMLBODMap()} instead.
+     * <code>uint32 DIKAJGKLPGO = 1;</code>
+     * @return The dIKAJGKLPGO.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBOD() {
-      return getCOICCEMLBODMap();
+    public int getDIKAJGKLPGO() {
+      return dIKAJGKLPGO_;
     }
+
+    public static final int SECTION_ID_FIELD_NUMBER = 2;
+    private int sectionId_;
     /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+     * <code>uint32 section_id = 2;</code>
+     * @return The sectionId.
      */
     @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBODMap() {
-      return internalGetCOICCEMLBOD().getMap();
-    }
-    /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrDefault(
-        int key,
-        emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND defaultValue) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
-          internalGetCOICCEMLBOD().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-     */
-    @java.lang.Override
-
-    public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
-          internalGetCOICCEMLBOD().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public int getSectionId() {
+      return sectionId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -494,14 +498,14 @@ public final class GLHICJGJDLPOuterClass {
       }
       emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP other = (emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP) obj;
 
+      if (!internalGetCOICCEMLBOD().equals(
+          other.internalGetCOICCEMLBOD())) return false;
+      if (!internalGetMIJCCHLCPBA().equals(
+          other.internalGetMIJCCHLCPBA())) return false;
       if (getDIKAJGKLPGO()
           != other.getDIKAJGKLPGO()) return false;
       if (getSectionId()
           != other.getSectionId()) return false;
-      if (!internalGetMIJCCHLCPBA().equals(
-          other.internalGetMIJCCHLCPBA())) return false;
-      if (!internalGetCOICCEMLBOD().equals(
-          other.internalGetCOICCEMLBOD())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -513,18 +517,18 @@ public final class GLHICJGJDLPOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIKAJGKLPGO_FIELD_NUMBER;
-      hash = (53 * hash) + getDIKAJGKLPGO();
-      hash = (37 * hash) + SECTION_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSectionId();
-      if (!internalGetMIJCCHLCPBA().getMap().isEmpty()) {
-        hash = (37 * hash) + MIJCCHLCPBA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetMIJCCHLCPBA().hashCode();
-      }
       if (!internalGetCOICCEMLBOD().getMap().isEmpty()) {
         hash = (37 * hash) + COICCEMLBOD_FIELD_NUMBER;
         hash = (53 * hash) + internalGetCOICCEMLBOD().hashCode();
       }
+      if (!internalGetMIJCCHLCPBA().getMap().isEmpty()) {
+        hash = (37 * hash) + MIJCCHLCPBA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMIJCCHLCPBA().hashCode();
+      }
+      hash = (37 * hash) + DIKAJGKLPGO_FIELD_NUMBER;
+      hash = (53 * hash) + getDIKAJGKLPGO();
+      hash = (37 * hash) + SECTION_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSectionId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -621,6 +625,10 @@ public final class GLHICJGJDLPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GLHICJGJDLP}
      */
     public static final class Builder extends
@@ -636,10 +644,10 @@ public final class GLHICJGJDLPOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 3:
-            return internalGetMIJCCHLCPBA();
           case 4:
             return internalGetCOICCEMLBOD();
+          case 3:
+            return internalGetMIJCCHLCPBA();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -649,10 +657,10 @@ public final class GLHICJGJDLPOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 3:
-            return internalGetMutableMIJCCHLCPBA();
           case 4:
             return internalGetMutableCOICCEMLBOD();
+          case 3:
+            return internalGetMutableMIJCCHLCPBA();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -684,12 +692,12 @@ public final class GLHICJGJDLPOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        internalGetMutableCOICCEMLBOD().clear();
+        internalGetMutableMIJCCHLCPBA().clear();
         dIKAJGKLPGO_ = 0;
 
         sectionId_ = 0;
 
-        internalGetMutableMIJCCHLCPBA().clear();
-        internalGetMutableCOICCEMLBOD().clear();
         return this;
       }
 
@@ -717,12 +725,12 @@ public final class GLHICJGJDLPOuterClass {
       public emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP buildPartial() {
         emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP result = new emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP(this);
         int from_bitField0_ = bitField0_;
-        result.dIKAJGKLPGO_ = dIKAJGKLPGO_;
-        result.sectionId_ = sectionId_;
-        result.mIJCCHLCPBA_ = internalGetMIJCCHLCPBA();
-        result.mIJCCHLCPBA_.makeImmutable();
         result.cOICCEMLBOD_ = internalGetCOICCEMLBOD();
         result.cOICCEMLBOD_.makeImmutable();
+        result.mIJCCHLCPBA_ = internalGetMIJCCHLCPBA();
+        result.mIJCCHLCPBA_.makeImmutable();
+        result.dIKAJGKLPGO_ = dIKAJGKLPGO_;
+        result.sectionId_ = sectionId_;
         onBuilt();
         return result;
       }
@@ -771,16 +779,16 @@ public final class GLHICJGJDLPOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP other) {
         if (other == emu.grasscutter.net.proto.GLHICJGJDLPOuterClass.GLHICJGJDLP.getDefaultInstance()) return this;
+        internalGetMutableCOICCEMLBOD().mergeFrom(
+            other.internalGetCOICCEMLBOD());
+        internalGetMutableMIJCCHLCPBA().mergeFrom(
+            other.internalGetMIJCCHLCPBA());
         if (other.getDIKAJGKLPGO() != 0) {
           setDIKAJGKLPGO(other.getDIKAJGKLPGO());
         }
         if (other.getSectionId() != 0) {
           setSectionId(other.getSectionId());
         }
-        internalGetMutableMIJCCHLCPBA().mergeFrom(
-            other.internalGetMIJCCHLCPBA());
-        internalGetMutableCOICCEMLBOD().mergeFrom(
-            other.internalGetCOICCEMLBOD());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -811,65 +819,131 @@ public final class GLHICJGJDLPOuterClass {
       }
       private int bitField0_;
 
-      private int dIKAJGKLPGO_ ;
-      /**
-       * <code>uint32 DIKAJGKLPGO = 1;</code>
-       * @return The dIKAJGKLPGO.
-       */
-      @java.lang.Override
-      public int getDIKAJGKLPGO() {
-        return dIKAJGKLPGO_;
+      private com.google.protobuf.MapField<
+          java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> cOICCEMLBOD_;
+      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
+      internalGetCOICCEMLBOD() {
+        if (cOICCEMLBOD_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              COICCEMLBODDefaultEntryHolder.defaultEntry);
+        }
+        return cOICCEMLBOD_;
       }
-      /**
-       * <code>uint32 DIKAJGKLPGO = 1;</code>
-       * @param value The dIKAJGKLPGO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDIKAJGKLPGO(int value) {
-        
-        dIKAJGKLPGO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DIKAJGKLPGO = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDIKAJGKLPGO() {
-        
-        dIKAJGKLPGO_ = 0;
-        onChanged();
-        return this;
+      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
+      internalGetMutableCOICCEMLBOD() {
+        onChanged();;
+        if (cOICCEMLBOD_ == null) {
+          cOICCEMLBOD_ = com.google.protobuf.MapField.newMapField(
+              COICCEMLBODDefaultEntryHolder.defaultEntry);
+        }
+        if (!cOICCEMLBOD_.isMutable()) {
+          cOICCEMLBOD_ = cOICCEMLBOD_.copy();
+        }
+        return cOICCEMLBOD_;
       }
 
-      private int sectionId_ ;
-      /**
-       * <code>uint32 section_id = 2;</code>
-       * @return The sectionId.
-       */
-      @java.lang.Override
-      public int getSectionId() {
-        return sectionId_;
+      public int getCOICCEMLBODCount() {
+        return internalGetCOICCEMLBOD().getMap().size();
       }
       /**
-       * <code>uint32 section_id = 2;</code>
-       * @param value The sectionId to set.
-       * @return This builder for chaining.
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
        */
-      public Builder setSectionId(int value) {
+
+      @java.lang.Override
+      public boolean containsCOICCEMLBOD(
+          int key) {
         
-        sectionId_ = value;
-        onChanged();
+        return internalGetCOICCEMLBOD().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getCOICCEMLBODMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBOD() {
+        return getCOICCEMLBODMap();
+      }
+      /**
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBODMap() {
+        return internalGetCOICCEMLBOD().getMap();
+      }
+      /**
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       */
+      @java.lang.Override
+
+      public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrDefault(
+          int key,
+          emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND defaultValue) {
+        
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
+            internalGetCOICCEMLBOD().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       */
+      @java.lang.Override
+
+      public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
+            internalGetCOICCEMLBOD().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearCOICCEMLBOD() {
+        internalGetMutableCOICCEMLBOD().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>uint32 section_id = 2;</code>
-       * @return This builder for chaining.
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
        */
-      public Builder clearSectionId() {
+
+      public Builder removeCOICCEMLBOD(
+          int key) {
         
-        sectionId_ = 0;
-        onChanged();
+        internalGetMutableCOICCEMLBOD().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
+      getMutableCOICCEMLBOD() {
+        return internalGetMutableCOICCEMLBOD().getMutableMap();
+      }
+      /**
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       */
+      public Builder putCOICCEMLBOD(
+          int key,
+          emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND value) {
+        
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableCOICCEMLBOD().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       */
+
+      public Builder putAllCOICCEMLBOD(
+          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> values) {
+        internalGetMutableCOICCEMLBOD().getMutableMap()
+            .putAll(values);
         return this;
       }
 
@@ -1001,131 +1075,65 @@ public final class GLHICJGJDLPOuterClass {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> cOICCEMLBOD_;
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
-      internalGetCOICCEMLBOD() {
-        if (cOICCEMLBOD_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              COICCEMLBODDefaultEntryHolder.defaultEntry);
-        }
-        return cOICCEMLBOD_;
-      }
-      private com.google.protobuf.MapField<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
-      internalGetMutableCOICCEMLBOD() {
-        onChanged();;
-        if (cOICCEMLBOD_ == null) {
-          cOICCEMLBOD_ = com.google.protobuf.MapField.newMapField(
-              COICCEMLBODDefaultEntryHolder.defaultEntry);
-        }
-        if (!cOICCEMLBOD_.isMutable()) {
-          cOICCEMLBOD_ = cOICCEMLBOD_.copy();
-        }
-        return cOICCEMLBOD_;
-      }
-
-      public int getCOICCEMLBODCount() {
-        return internalGetCOICCEMLBOD().getMap().size();
+      private int dIKAJGKLPGO_ ;
+      /**
+       * <code>uint32 DIKAJGKLPGO = 1;</code>
+       * @return The dIKAJGKLPGO.
+       */
+      @java.lang.Override
+      public int getDIKAJGKLPGO() {
+        return dIKAJGKLPGO_;
       }
       /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       * <code>uint32 DIKAJGKLPGO = 1;</code>
+       * @param value The dIKAJGKLPGO to set.
+       * @return This builder for chaining.
        */
-
-      @java.lang.Override
-      public boolean containsCOICCEMLBOD(
-          int key) {
+      public Builder setDIKAJGKLPGO(int value) {
         
-        return internalGetCOICCEMLBOD().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getCOICCEMLBODMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBOD() {
-        return getCOICCEMLBODMap();
-      }
-      /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> getCOICCEMLBODMap() {
-        return internalGetCOICCEMLBOD().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrDefault(
-          int key,
-          emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND defaultValue) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
-            internalGetCOICCEMLBOD().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-       */
-      @java.lang.Override
-
-      public emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND getCOICCEMLBODOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> map =
-            internalGetCOICCEMLBOD().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearCOICCEMLBOD() {
-        internalGetMutableCOICCEMLBOD().getMutableMap()
-            .clear();
+        dIKAJGKLPGO_ = value;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
+       * <code>uint32 DIKAJGKLPGO = 1;</code>
+       * @return This builder for chaining.
        */
-
-      public Builder removeCOICCEMLBOD(
-          int key) {
+      public Builder clearDIKAJGKLPGO() {
         
-        internalGetMutableCOICCEMLBOD().getMutableMap()
-            .remove(key);
+        dIKAJGKLPGO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sectionId_ ;
+      /**
+       * <code>uint32 section_id = 2;</code>
+       * @return The sectionId.
+       */
+      @java.lang.Override
+      public int getSectionId() {
+        return sectionId_;
+      }
+      /**
+       * <code>uint32 section_id = 2;</code>
+       * @param value The sectionId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSectionId(int value) {
+        
+        sectionId_ = value;
+        onChanged();
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>uint32 section_id = 2;</code>
+       * @return This builder for chaining.
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND>
-      getMutableCOICCEMLBOD() {
-        return internalGetMutableCOICCEMLBOD().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-       */
-      public Builder putCOICCEMLBOD(
-          int key,
-          emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND value) {
+      public Builder clearSectionId() {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCOICCEMLBOD().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, .EPBLMMLPIND&gt; COICCEMLBOD = 4;</code>
-       */
-
-      public Builder putAllCOICCEMLBOD(
-          java.util.Map<java.lang.Integer, emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.EPBLMMLPIND> values) {
-        internalGetMutableCOICCEMLBOD().getMutableMap()
-            .putAll(values);
+        sectionId_ = 0;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -1187,15 +1195,15 @@ public final class GLHICJGJDLPOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GLHICJGJDLP_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GLHICJGJDLP_COICCEMLBODEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GLHICJGJDLP_COICCEMLBODEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1206,16 +1214,15 @@ public final class GLHICJGJDLPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021GLHICJGJDLP.proto\032\021EPBLMMLPIND.proto\032\021" +
-      "JAGCAMGLGDP.proto\"\242\002\n\013GLHICJGJDLP\022\023\n\013DIK" +
-      "AJGKLPGO\030\001 \001(\r\022\022\n\nsection_id\030\002 \001(\r\0222\n\013MI" +
-      "JCCHLCPBA\030\003 \003(\0132\035.GLHICJGJDLP.MIJCCHLCPB" +
-      "AEntry\0222\n\013COICCEMLBOD\030\004 \003(\0132\035.GLHICJGJDL" +
-      "P.COICCEMLBODEntry\032@\n\020MIJCCHLCPBAEntry\022\013" +
-      "\n\003key\030\001 \001(\r\022\033\n\005value\030\002 \001(\0132\014.JAGCAMGLGDP" +
-      ":\0028\001\032@\n\020COICCEMLBODEntry\022\013\n\003key\030\001 \001(\r\022\033\n" +
-      "\005value\030\002 \001(\0132\014.EPBLMMLPIND:\0028\001B2\n\031emu.gr" +
-      "asscutter.net.protoB\025GLHICJGJDLPOuterCla" +
-      "ssb\006proto3"
+      "JAGCAMGLGDP.proto\"\242\002\n\013GLHICJGJDLP\0222\n\013COI" +
+      "CCEMLBOD\030\004 \003(\0132\035.GLHICJGJDLP.COICCEMLBOD" +
+      "Entry\0222\n\013MIJCCHLCPBA\030\003 \003(\0132\035.GLHICJGJDLP" +
+      ".MIJCCHLCPBAEntry\022\023\n\013DIKAJGKLPGO\030\001 \001(\r\022\022" +
+      "\n\nsection_id\030\002 \001(\r\032@\n\020COICCEMLBODEntry\022\013" +
+      "\n\003key\030\001 \001(\r\022\033\n\005value\030\002 \001(\0132\014.EPBLMMLPIND" +
+      ":\0028\001\032@\n\020MIJCCHLCPBAEntry\022\013\n\003key\030\001 \001(\r\022\033\n" +
+      "\005value\030\002 \001(\0132\014.JAGCAMGLGDP:\0028\001B\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1228,18 +1235,18 @@ public final class GLHICJGJDLPOuterClass {
     internal_static_GLHICJGJDLP_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GLHICJGJDLP_descriptor,
-        new java.lang.String[] { "DIKAJGKLPGO", "SectionId", "MIJCCHLCPBA", "COICCEMLBOD", });
-    internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_descriptor =
-      internal_static_GLHICJGJDLP_descriptor.getNestedTypes().get(0);
-    internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "COICCEMLBOD", "MIJCCHLCPBA", "DIKAJGKLPGO", "SectionId", });
     internal_static_GLHICJGJDLP_COICCEMLBODEntry_descriptor =
-      internal_static_GLHICJGJDLP_descriptor.getNestedTypes().get(1);
+      internal_static_GLHICJGJDLP_descriptor.getNestedTypes().get(0);
     internal_static_GLHICJGJDLP_COICCEMLBODEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GLHICJGJDLP_COICCEMLBODEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_descriptor =
+      internal_static_GLHICJGJDLP_descriptor.getNestedTypes().get(1);
+    internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_GLHICJGJDLP_MIJCCHLCPBAEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     emu.grasscutter.net.proto.EPBLMMLPINDOuterClass.getDescriptor();
     emu.grasscutter.net.proto.JAGCAMGLGDPOuterClass.getDescriptor();

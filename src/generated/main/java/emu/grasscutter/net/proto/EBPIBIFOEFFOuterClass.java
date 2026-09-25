@@ -19,18 +19,22 @@ public final class EBPIBIFOEFFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 avatar_id = 3;</code>
+     * <code>uint32 avatar_id = 8;</code>
      * @return The avatarId.
      */
     int getAvatarId();
 
     /**
-     * <code>bool is_trial_avatar = 15;</code>
+     * <code>bool is_trial_avatar = 12;</code>
      * @return The isTrialAvatar.
      */
     boolean getIsTrialAvatar();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EBPIBIFOEFF}
    */
   public static final class EBPIBIFOEFF extends
@@ -75,12 +79,12 @@ public final class EBPIBIFOEFFOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 64: {
 
               avatarId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 96: {
 
               isTrialAvatar_ = input.readBool();
               break;
@@ -117,10 +121,10 @@ public final class EBPIBIFOEFFOuterClass {
               emu.grasscutter.net.proto.EBPIBIFOEFFOuterClass.EBPIBIFOEFF.class, emu.grasscutter.net.proto.EBPIBIFOEFFOuterClass.EBPIBIFOEFF.Builder.class);
     }
 
-    public static final int AVATAR_ID_FIELD_NUMBER = 3;
+    public static final int AVATAR_ID_FIELD_NUMBER = 8;
     private int avatarId_;
     /**
-     * <code>uint32 avatar_id = 3;</code>
+     * <code>uint32 avatar_id = 8;</code>
      * @return The avatarId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class EBPIBIFOEFFOuterClass {
       return avatarId_;
     }
 
-    public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 15;
+    public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 12;
     private boolean isTrialAvatar_;
     /**
-     * <code>bool is_trial_avatar = 15;</code>
+     * <code>bool is_trial_avatar = 12;</code>
      * @return The isTrialAvatar.
      */
     @java.lang.Override
@@ -154,10 +158,10 @@ public final class EBPIBIFOEFFOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (avatarId_ != 0) {
-        output.writeUInt32(3, avatarId_);
+        output.writeUInt32(8, avatarId_);
       }
       if (isTrialAvatar_ != false) {
-        output.writeBool(15, isTrialAvatar_);
+        output.writeBool(12, isTrialAvatar_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +174,11 @@ public final class EBPIBIFOEFFOuterClass {
       size = 0;
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, avatarId_);
+          .computeUInt32Size(8, avatarId_);
       }
       if (isTrialAvatar_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isTrialAvatar_);
+          .computeBoolSize(12, isTrialAvatar_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,6 +311,10 @@ public final class EBPIBIFOEFFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EBPIBIFOEFF}
      */
     public static final class Builder extends
@@ -461,7 +469,7 @@ public final class EBPIBIFOEFFOuterClass {
 
       private int avatarId_ ;
       /**
-       * <code>uint32 avatar_id = 3;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @return The avatarId.
        */
       @java.lang.Override
@@ -469,7 +477,7 @@ public final class EBPIBIFOEFFOuterClass {
         return avatarId_;
       }
       /**
-       * <code>uint32 avatar_id = 3;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @param value The avatarId to set.
        * @return This builder for chaining.
        */
@@ -480,7 +488,7 @@ public final class EBPIBIFOEFFOuterClass {
         return this;
       }
       /**
-       * <code>uint32 avatar_id = 3;</code>
+       * <code>uint32 avatar_id = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
@@ -492,7 +500,7 @@ public final class EBPIBIFOEFFOuterClass {
 
       private boolean isTrialAvatar_ ;
       /**
-       * <code>bool is_trial_avatar = 15;</code>
+       * <code>bool is_trial_avatar = 12;</code>
        * @return The isTrialAvatar.
        */
       @java.lang.Override
@@ -500,7 +508,7 @@ public final class EBPIBIFOEFFOuterClass {
         return isTrialAvatar_;
       }
       /**
-       * <code>bool is_trial_avatar = 15;</code>
+       * <code>bool is_trial_avatar = 12;</code>
        * @param value The isTrialAvatar to set.
        * @return This builder for chaining.
        */
@@ -511,7 +519,7 @@ public final class EBPIBIFOEFFOuterClass {
         return this;
       }
       /**
-       * <code>bool is_trial_avatar = 15;</code>
+       * <code>bool is_trial_avatar = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrialAvatar() {
@@ -588,9 +596,8 @@ public final class EBPIBIFOEFFOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021EBPIBIFOEFF.proto\"9\n\013EBPIBIFOEFF\022\021\n\tav" +
-      "atar_id\030\003 \001(\r\022\027\n\017is_trial_avatar\030\017 \001(\010B2" +
-      "\n\031emu.grasscutter.net.protoB\025EBPIBIFOEFF" +
-      "OuterClassb\006proto3"
+      "atar_id\030\010 \001(\r\022\027\n\017is_trial_avatar\030\014 \001(\010B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

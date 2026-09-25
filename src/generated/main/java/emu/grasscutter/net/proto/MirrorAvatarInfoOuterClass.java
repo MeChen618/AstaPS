@@ -19,18 +19,22 @@ public final class MirrorAvatarInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 copy_from_avatar_type = 1;</code>
-     * @return The copyFromAvatarType.
-     */
-    int getCopyFromAvatarType();
-
-    /**
      * <code>uint64 LEEHFFLICIK = 2;</code>
      * @return The lEEHFFLICIK.
      */
     long getLEEHFFLICIK();
+
+    /**
+     * <code>uint32 copy_from_avatar_type = 1;</code>
+     * @return The copyFromAvatarType.
+     */
+    int getCopyFromAvatarType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MirrorAvatarInfo}
    */
   public static final class MirrorAvatarInfo extends
@@ -117,17 +121,6 @@ public final class MirrorAvatarInfoOuterClass {
               emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo.class, emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo.Builder.class);
     }
 
-    public static final int COPY_FROM_AVATAR_TYPE_FIELD_NUMBER = 1;
-    private int copyFromAvatarType_;
-    /**
-     * <code>uint32 copy_from_avatar_type = 1;</code>
-     * @return The copyFromAvatarType.
-     */
-    @java.lang.Override
-    public int getCopyFromAvatarType() {
-      return copyFromAvatarType_;
-    }
-
     public static final int LEEHFFLICIK_FIELD_NUMBER = 2;
     private long lEEHFFLICIK_;
     /**
@@ -137,6 +130,17 @@ public final class MirrorAvatarInfoOuterClass {
     @java.lang.Override
     public long getLEEHFFLICIK() {
       return lEEHFFLICIK_;
+    }
+
+    public static final int COPY_FROM_AVATAR_TYPE_FIELD_NUMBER = 1;
+    private int copyFromAvatarType_;
+    /**
+     * <code>uint32 copy_from_avatar_type = 1;</code>
+     * @return The copyFromAvatarType.
+     */
+    @java.lang.Override
+    public int getCopyFromAvatarType() {
+      return copyFromAvatarType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class MirrorAvatarInfoOuterClass {
       }
       emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo other = (emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo) obj;
 
-      if (getCopyFromAvatarType()
-          != other.getCopyFromAvatarType()) return false;
       if (getLEEHFFLICIK()
           != other.getLEEHFFLICIK()) return false;
+      if (getCopyFromAvatarType()
+          != other.getCopyFromAvatarType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,11 +210,11 @@ public final class MirrorAvatarInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COPY_FROM_AVATAR_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getCopyFromAvatarType();
       hash = (37 * hash) + LEEHFFLICIK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLEEHFFLICIK());
+      hash = (37 * hash) + COPY_FROM_AVATAR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getCopyFromAvatarType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -307,6 +311,10 @@ public final class MirrorAvatarInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MirrorAvatarInfo}
      */
     public static final class Builder extends
@@ -344,9 +352,9 @@ public final class MirrorAvatarInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        copyFromAvatarType_ = 0;
-
         lEEHFFLICIK_ = 0L;
+
+        copyFromAvatarType_ = 0;
 
         return this;
       }
@@ -374,8 +382,8 @@ public final class MirrorAvatarInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo buildPartial() {
         emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo result = new emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo(this);
-        result.copyFromAvatarType_ = copyFromAvatarType_;
         result.lEEHFFLICIK_ = lEEHFFLICIK_;
+        result.copyFromAvatarType_ = copyFromAvatarType_;
         onBuilt();
         return result;
       }
@@ -424,11 +432,11 @@ public final class MirrorAvatarInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo other) {
         if (other == emu.grasscutter.net.proto.MirrorAvatarInfoOuterClass.MirrorAvatarInfo.getDefaultInstance()) return this;
-        if (other.getCopyFromAvatarType() != 0) {
-          setCopyFromAvatarType(other.getCopyFromAvatarType());
-        }
         if (other.getLEEHFFLICIK() != 0L) {
           setLEEHFFLICIK(other.getLEEHFFLICIK());
+        }
+        if (other.getCopyFromAvatarType() != 0) {
+          setCopyFromAvatarType(other.getCopyFromAvatarType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -459,37 +467,6 @@ public final class MirrorAvatarInfoOuterClass {
         return this;
       }
 
-      private int copyFromAvatarType_ ;
-      /**
-       * <code>uint32 copy_from_avatar_type = 1;</code>
-       * @return The copyFromAvatarType.
-       */
-      @java.lang.Override
-      public int getCopyFromAvatarType() {
-        return copyFromAvatarType_;
-      }
-      /**
-       * <code>uint32 copy_from_avatar_type = 1;</code>
-       * @param value The copyFromAvatarType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCopyFromAvatarType(int value) {
-        
-        copyFromAvatarType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 copy_from_avatar_type = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCopyFromAvatarType() {
-        
-        copyFromAvatarType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private long lEEHFFLICIK_ ;
       /**
        * <code>uint64 LEEHFFLICIK = 2;</code>
@@ -517,6 +494,37 @@ public final class MirrorAvatarInfoOuterClass {
       public Builder clearLEEHFFLICIK() {
         
         lEEHFFLICIK_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int copyFromAvatarType_ ;
+      /**
+       * <code>uint32 copy_from_avatar_type = 1;</code>
+       * @return The copyFromAvatarType.
+       */
+      @java.lang.Override
+      public int getCopyFromAvatarType() {
+        return copyFromAvatarType_;
+      }
+      /**
+       * <code>uint32 copy_from_avatar_type = 1;</code>
+       * @param value The copyFromAvatarType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCopyFromAvatarType(int value) {
+        
+        copyFromAvatarType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 copy_from_avatar_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCopyFromAvatarType() {
+        
+        copyFromAvatarType_ = 0;
         onChanged();
         return this;
       }
@@ -588,10 +596,9 @@ public final class MirrorAvatarInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026MirrorAvatarInfo.proto\"F\n\020MirrorAvatar" +
-      "Info\022\035\n\025copy_from_avatar_type\030\001 \001(\r\022\023\n\013L" +
-      "EEHFFLICIK\030\002 \001(\004B7\n\031emu.grasscutter.net." +
-      "protoB\032MirrorAvatarInfoOuterClassb\006proto" +
-      "3"
+      "Info\022\023\n\013LEEHFFLICIK\030\002 \001(\004\022\035\n\025copy_from_a" +
+      "vatar_type\030\001 \001(\rB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -602,7 +609,7 @@ public final class MirrorAvatarInfoOuterClass {
     internal_static_MirrorAvatarInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MirrorAvatarInfo_descriptor,
-        new java.lang.String[] { "CopyFromAvatarType", "LEEHFFLICIK", });
+        new java.lang.String[] { "LEEHFFLICIK", "CopyFromAvatarType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

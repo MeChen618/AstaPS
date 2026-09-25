@@ -19,30 +19,6 @@ public final class JIEHJMIEHPMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool ODDFFNIOBLN = 1;</code>
-     * @return The oDDFFNIOBLN.
-     */
-    boolean getODDFFNIOBLN();
-
-    /**
-     * <code>uint32 level_id = 5;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>uint32 best_score = 6;</code>
-     * @return The bestScore.
-     */
-    int getBestScore();
-
-    /**
-     * <code>bool KLGNBKEEEIE = 7;</code>
-     * @return The kLGNBKEEEIE.
-     */
-    boolean getKLGNBKEEEIE();
-
-    /**
      * <code>repeated uint32 BLFDFGAGOIG = 11;</code>
      * @return A list containing the bLFDFGAGOIG.
      */
@@ -60,23 +36,51 @@ public final class JIEHJMIEHPMOuterClass {
     int getBLFDFGAGOIG(int index);
 
     /**
-     * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+     * <code>repeated uint32 OJIDBAFJECO = 2;</code>
      * @return A list containing the oJIDBAFJECO.
      */
     java.util.List<java.lang.Integer> getOJIDBAFJECOList();
     /**
-     * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+     * <code>repeated uint32 OJIDBAFJECO = 2;</code>
      * @return The count of oJIDBAFJECO.
      */
     int getOJIDBAFJECOCount();
     /**
-     * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+     * <code>repeated uint32 OJIDBAFJECO = 2;</code>
      * @param index The index of the element to return.
      * @return The oJIDBAFJECO at the given index.
      */
     int getOJIDBAFJECO(int index);
+
+    /**
+     * <code>bool KLGNBKEEEIE = 12;</code>
+     * @return The kLGNBKEEEIE.
+     */
+    boolean getKLGNBKEEEIE();
+
+    /**
+     * <code>bool ODDFFNIOBLN = 4;</code>
+     * @return The oDDFFNIOBLN.
+     */
+    boolean getODDFFNIOBLN();
+
+    /**
+     * <code>uint32 best_score = 10;</code>
+     * @return The bestScore.
+     */
+    int getBestScore();
+
+    /**
+     * <code>uint32 level_id = 9;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JIEHJMIEHPM}
    */
   public static final class JIEHJMIEHPM extends
@@ -124,24 +128,40 @@ public final class JIEHJMIEHPMOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                oJIDBAFJECO_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              oJIDBAFJECO_.addInt(input.readUInt32());
+              break;
+            }
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                oJIDBAFJECO_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                oJIDBAFJECO_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 32: {
 
               oDDFFNIOBLN_ = input.readBool();
               break;
             }
-            case 40: {
+            case 72: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 80: {
 
               bestScore_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              kLGNBKEEEIE_ = input.readBool();
               break;
             }
             case 88: {
@@ -165,25 +185,9 @@ public final class JIEHJMIEHPMOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                oJIDBAFJECO_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              oJIDBAFJECO_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                oJIDBAFJECO_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                oJIDBAFJECO_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
+            case 96: {
+
+              kLGNBKEEEIE_ = input.readBool();
               break;
             }
             default: {
@@ -201,11 +205,11 @@ public final class JIEHJMIEHPMOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bLFDFGAGOIG_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           oJIDBAFJECO_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          bLFDFGAGOIG_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -222,50 +226,6 @@ public final class JIEHJMIEHPMOuterClass {
       return emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.internal_static_JIEHJMIEHPM_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM.class, emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM.Builder.class);
-    }
-
-    public static final int ODDFFNIOBLN_FIELD_NUMBER = 1;
-    private boolean oDDFFNIOBLN_;
-    /**
-     * <code>bool ODDFFNIOBLN = 1;</code>
-     * @return The oDDFFNIOBLN.
-     */
-    @java.lang.Override
-    public boolean getODDFFNIOBLN() {
-      return oDDFFNIOBLN_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 5;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int BEST_SCORE_FIELD_NUMBER = 6;
-    private int bestScore_;
-    /**
-     * <code>uint32 best_score = 6;</code>
-     * @return The bestScore.
-     */
-    @java.lang.Override
-    public int getBestScore() {
-      return bestScore_;
-    }
-
-    public static final int KLGNBKEEEIE_FIELD_NUMBER = 7;
-    private boolean kLGNBKEEEIE_;
-    /**
-     * <code>bool KLGNBKEEEIE = 7;</code>
-     * @return The kLGNBKEEEIE.
-     */
-    @java.lang.Override
-    public boolean getKLGNBKEEEIE() {
-      return kLGNBKEEEIE_;
     }
 
     public static final int BLFDFGAGOIG_FIELD_NUMBER = 11;
@@ -296,10 +256,10 @@ public final class JIEHJMIEHPMOuterClass {
     }
     private int bLFDFGAGOIGMemoizedSerializedSize = -1;
 
-    public static final int OJIDBAFJECO_FIELD_NUMBER = 13;
+    public static final int OJIDBAFJECO_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList oJIDBAFJECO_;
     /**
-     * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+     * <code>repeated uint32 OJIDBAFJECO = 2;</code>
      * @return A list containing the oJIDBAFJECO.
      */
     @java.lang.Override
@@ -308,14 +268,14 @@ public final class JIEHJMIEHPMOuterClass {
       return oJIDBAFJECO_;
     }
     /**
-     * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+     * <code>repeated uint32 OJIDBAFJECO = 2;</code>
      * @return The count of oJIDBAFJECO.
      */
     public int getOJIDBAFJECOCount() {
       return oJIDBAFJECO_.size();
     }
     /**
-     * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+     * <code>repeated uint32 OJIDBAFJECO = 2;</code>
      * @param index The index of the element to return.
      * @return The oJIDBAFJECO at the given index.
      */
@@ -323,6 +283,50 @@ public final class JIEHJMIEHPMOuterClass {
       return oJIDBAFJECO_.getInt(index);
     }
     private int oJIDBAFJECOMemoizedSerializedSize = -1;
+
+    public static final int KLGNBKEEEIE_FIELD_NUMBER = 12;
+    private boolean kLGNBKEEEIE_;
+    /**
+     * <code>bool KLGNBKEEEIE = 12;</code>
+     * @return The kLGNBKEEEIE.
+     */
+    @java.lang.Override
+    public boolean getKLGNBKEEEIE() {
+      return kLGNBKEEEIE_;
+    }
+
+    public static final int ODDFFNIOBLN_FIELD_NUMBER = 4;
+    private boolean oDDFFNIOBLN_;
+    /**
+     * <code>bool ODDFFNIOBLN = 4;</code>
+     * @return The oDDFFNIOBLN.
+     */
+    @java.lang.Override
+    public boolean getODDFFNIOBLN() {
+      return oDDFFNIOBLN_;
+    }
+
+    public static final int BEST_SCORE_FIELD_NUMBER = 10;
+    private int bestScore_;
+    /**
+     * <code>uint32 best_score = 10;</code>
+     * @return The bestScore.
+     */
+    @java.lang.Override
+    public int getBestScore() {
+      return bestScore_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 9;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 9;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -339,17 +343,21 @@ public final class JIEHJMIEHPMOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (getOJIDBAFJECOList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(oJIDBAFJECOMemoizedSerializedSize);
+      }
+      for (int i = 0; i < oJIDBAFJECO_.size(); i++) {
+        output.writeUInt32NoTag(oJIDBAFJECO_.getInt(i));
+      }
       if (oDDFFNIOBLN_ != false) {
-        output.writeBool(1, oDDFFNIOBLN_);
+        output.writeBool(4, oDDFFNIOBLN_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
+        output.writeUInt32(9, levelId_);
       }
       if (bestScore_ != 0) {
-        output.writeUInt32(6, bestScore_);
-      }
-      if (kLGNBKEEEIE_ != false) {
-        output.writeBool(7, kLGNBKEEEIE_);
+        output.writeUInt32(10, bestScore_);
       }
       if (getBLFDFGAGOIGList().size() > 0) {
         output.writeUInt32NoTag(90);
@@ -358,12 +366,8 @@ public final class JIEHJMIEHPMOuterClass {
       for (int i = 0; i < bLFDFGAGOIG_.size(); i++) {
         output.writeUInt32NoTag(bLFDFGAGOIG_.getInt(i));
       }
-      if (getOJIDBAFJECOList().size() > 0) {
-        output.writeUInt32NoTag(106);
-        output.writeUInt32NoTag(oJIDBAFJECOMemoizedSerializedSize);
-      }
-      for (int i = 0; i < oJIDBAFJECO_.size(); i++) {
-        output.writeUInt32NoTag(oJIDBAFJECO_.getInt(i));
+      if (kLGNBKEEEIE_ != false) {
+        output.writeBool(12, kLGNBKEEEIE_);
       }
       unknownFields.writeTo(output);
     }
@@ -374,21 +378,31 @@ public final class JIEHJMIEHPMOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < oJIDBAFJECO_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(oJIDBAFJECO_.getInt(i));
+        }
+        size += dataSize;
+        if (!getOJIDBAFJECOList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        oJIDBAFJECOMemoizedSerializedSize = dataSize;
+      }
       if (oDDFFNIOBLN_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, oDDFFNIOBLN_);
+          .computeBoolSize(4, oDDFFNIOBLN_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
+          .computeUInt32Size(9, levelId_);
       }
       if (bestScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, bestScore_);
-      }
-      if (kLGNBKEEEIE_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, kLGNBKEEEIE_);
+          .computeUInt32Size(10, bestScore_);
       }
       {
         int dataSize = 0;
@@ -404,19 +418,9 @@ public final class JIEHJMIEHPMOuterClass {
         }
         bLFDFGAGOIGMemoizedSerializedSize = dataSize;
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < oJIDBAFJECO_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(oJIDBAFJECO_.getInt(i));
-        }
-        size += dataSize;
-        if (!getOJIDBAFJECOList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        oJIDBAFJECOMemoizedSerializedSize = dataSize;
+      if (kLGNBKEEEIE_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, kLGNBKEEEIE_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -433,18 +437,18 @@ public final class JIEHJMIEHPMOuterClass {
       }
       emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM other = (emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM) obj;
 
-      if (getODDFFNIOBLN()
-          != other.getODDFFNIOBLN()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getBestScore()
-          != other.getBestScore()) return false;
-      if (getKLGNBKEEEIE()
-          != other.getKLGNBKEEEIE()) return false;
       if (!getBLFDFGAGOIGList()
           .equals(other.getBLFDFGAGOIGList())) return false;
       if (!getOJIDBAFJECOList()
           .equals(other.getOJIDBAFJECOList())) return false;
+      if (getKLGNBKEEEIE()
+          != other.getKLGNBKEEEIE()) return false;
+      if (getODDFFNIOBLN()
+          != other.getODDFFNIOBLN()) return false;
+      if (getBestScore()
+          != other.getBestScore()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -456,16 +460,6 @@ public final class JIEHJMIEHPMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ODDFFNIOBLN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getODDFFNIOBLN());
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getBestScore();
-      hash = (37 * hash) + KLGNBKEEEIE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKLGNBKEEEIE());
       if (getBLFDFGAGOIGCount() > 0) {
         hash = (37 * hash) + BLFDFGAGOIG_FIELD_NUMBER;
         hash = (53 * hash) + getBLFDFGAGOIGList().hashCode();
@@ -474,6 +468,16 @@ public final class JIEHJMIEHPMOuterClass {
         hash = (37 * hash) + OJIDBAFJECO_FIELD_NUMBER;
         hash = (53 * hash) + getOJIDBAFJECOList().hashCode();
       }
+      hash = (37 * hash) + KLGNBKEEEIE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getKLGNBKEEEIE());
+      hash = (37 * hash) + ODDFFNIOBLN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getODDFFNIOBLN());
+      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getBestScore();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -570,6 +574,10 @@ public final class JIEHJMIEHPMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JIEHJMIEHPM}
      */
     public static final class Builder extends
@@ -607,18 +615,18 @@ public final class JIEHJMIEHPMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        oDDFFNIOBLN_ = false;
-
-        levelId_ = 0;
-
-        bestScore_ = 0;
-
-        kLGNBKEEEIE_ = false;
-
         bLFDFGAGOIG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         oJIDBAFJECO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        kLGNBKEEEIE_ = false;
+
+        oDDFFNIOBLN_ = false;
+
+        bestScore_ = 0;
+
+        levelId_ = 0;
+
         return this;
       }
 
@@ -646,10 +654,6 @@ public final class JIEHJMIEHPMOuterClass {
       public emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM buildPartial() {
         emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM result = new emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM(this);
         int from_bitField0_ = bitField0_;
-        result.oDDFFNIOBLN_ = oDDFFNIOBLN_;
-        result.levelId_ = levelId_;
-        result.bestScore_ = bestScore_;
-        result.kLGNBKEEEIE_ = kLGNBKEEEIE_;
         if (((bitField0_ & 0x00000001) != 0)) {
           bLFDFGAGOIG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -660,6 +664,10 @@ public final class JIEHJMIEHPMOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.oJIDBAFJECO_ = oJIDBAFJECO_;
+        result.kLGNBKEEEIE_ = kLGNBKEEEIE_;
+        result.oDDFFNIOBLN_ = oDDFFNIOBLN_;
+        result.bestScore_ = bestScore_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -708,18 +716,6 @@ public final class JIEHJMIEHPMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM other) {
         if (other == emu.grasscutter.net.proto.JIEHJMIEHPMOuterClass.JIEHJMIEHPM.getDefaultInstance()) return this;
-        if (other.getODDFFNIOBLN() != false) {
-          setODDFFNIOBLN(other.getODDFFNIOBLN());
-        }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getBestScore() != 0) {
-          setBestScore(other.getBestScore());
-        }
-        if (other.getKLGNBKEEEIE() != false) {
-          setKLGNBKEEEIE(other.getKLGNBKEEEIE());
-        }
         if (!other.bLFDFGAGOIG_.isEmpty()) {
           if (bLFDFGAGOIG_.isEmpty()) {
             bLFDFGAGOIG_ = other.bLFDFGAGOIG_;
@@ -739,6 +735,18 @@ public final class JIEHJMIEHPMOuterClass {
             oJIDBAFJECO_.addAll(other.oJIDBAFJECO_);
           }
           onChanged();
+        }
+        if (other.getKLGNBKEEEIE() != false) {
+          setKLGNBKEEEIE(other.getKLGNBKEEEIE());
+        }
+        if (other.getODDFFNIOBLN() != false) {
+          setODDFFNIOBLN(other.getODDFFNIOBLN());
+        }
+        if (other.getBestScore() != 0) {
+          setBestScore(other.getBestScore());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -769,130 +777,6 @@ public final class JIEHJMIEHPMOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private boolean oDDFFNIOBLN_ ;
-      /**
-       * <code>bool ODDFFNIOBLN = 1;</code>
-       * @return The oDDFFNIOBLN.
-       */
-      @java.lang.Override
-      public boolean getODDFFNIOBLN() {
-        return oDDFFNIOBLN_;
-      }
-      /**
-       * <code>bool ODDFFNIOBLN = 1;</code>
-       * @param value The oDDFFNIOBLN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setODDFFNIOBLN(boolean value) {
-        
-        oDDFFNIOBLN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool ODDFFNIOBLN = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearODDFFNIOBLN() {
-        
-        oDDFFNIOBLN_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 5;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 5;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int bestScore_ ;
-      /**
-       * <code>uint32 best_score = 6;</code>
-       * @return The bestScore.
-       */
-      @java.lang.Override
-      public int getBestScore() {
-        return bestScore_;
-      }
-      /**
-       * <code>uint32 best_score = 6;</code>
-       * @param value The bestScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBestScore(int value) {
-        
-        bestScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 best_score = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBestScore() {
-        
-        bestScore_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean kLGNBKEEEIE_ ;
-      /**
-       * <code>bool KLGNBKEEEIE = 7;</code>
-       * @return The kLGNBKEEEIE.
-       */
-      @java.lang.Override
-      public boolean getKLGNBKEEEIE() {
-        return kLGNBKEEEIE_;
-      }
-      /**
-       * <code>bool KLGNBKEEEIE = 7;</code>
-       * @param value The kLGNBKEEEIE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKLGNBKEEEIE(boolean value) {
-        
-        kLGNBKEEEIE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool KLGNBKEEEIE = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKLGNBKEEEIE() {
-        
-        kLGNBKEEEIE_ = false;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList bLFDFGAGOIG_ = emptyIntList();
       private void ensureBLFDFGAGOIGIsMutable() {
@@ -981,7 +865,7 @@ public final class JIEHJMIEHPMOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @return A list containing the oJIDBAFJECO.
        */
       public java.util.List<java.lang.Integer>
@@ -990,14 +874,14 @@ public final class JIEHJMIEHPMOuterClass {
                  java.util.Collections.unmodifiableList(oJIDBAFJECO_) : oJIDBAFJECO_;
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @return The count of oJIDBAFJECO.
        */
       public int getOJIDBAFJECOCount() {
         return oJIDBAFJECO_.size();
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @param index The index of the element to return.
        * @return The oJIDBAFJECO at the given index.
        */
@@ -1005,7 +889,7 @@ public final class JIEHJMIEHPMOuterClass {
         return oJIDBAFJECO_.getInt(index);
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @param index The index to set the value at.
        * @param value The oJIDBAFJECO to set.
        * @return This builder for chaining.
@@ -1018,7 +902,7 @@ public final class JIEHJMIEHPMOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @param value The oJIDBAFJECO to add.
        * @return This builder for chaining.
        */
@@ -1029,7 +913,7 @@ public final class JIEHJMIEHPMOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @param values The oJIDBAFJECO to add.
        * @return This builder for chaining.
        */
@@ -1042,12 +926,136 @@ public final class JIEHJMIEHPMOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 OJIDBAFJECO = 13;</code>
+       * <code>repeated uint32 OJIDBAFJECO = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearOJIDBAFJECO() {
         oJIDBAFJECO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private boolean kLGNBKEEEIE_ ;
+      /**
+       * <code>bool KLGNBKEEEIE = 12;</code>
+       * @return The kLGNBKEEEIE.
+       */
+      @java.lang.Override
+      public boolean getKLGNBKEEEIE() {
+        return kLGNBKEEEIE_;
+      }
+      /**
+       * <code>bool KLGNBKEEEIE = 12;</code>
+       * @param value The kLGNBKEEEIE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKLGNBKEEEIE(boolean value) {
+        
+        kLGNBKEEEIE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool KLGNBKEEEIE = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKLGNBKEEEIE() {
+        
+        kLGNBKEEEIE_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean oDDFFNIOBLN_ ;
+      /**
+       * <code>bool ODDFFNIOBLN = 4;</code>
+       * @return The oDDFFNIOBLN.
+       */
+      @java.lang.Override
+      public boolean getODDFFNIOBLN() {
+        return oDDFFNIOBLN_;
+      }
+      /**
+       * <code>bool ODDFFNIOBLN = 4;</code>
+       * @param value The oDDFFNIOBLN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setODDFFNIOBLN(boolean value) {
+        
+        oDDFFNIOBLN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool ODDFFNIOBLN = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearODDFFNIOBLN() {
+        
+        oDDFFNIOBLN_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int bestScore_ ;
+      /**
+       * <code>uint32 best_score = 10;</code>
+       * @return The bestScore.
+       */
+      @java.lang.Override
+      public int getBestScore() {
+        return bestScore_;
+      }
+      /**
+       * <code>uint32 best_score = 10;</code>
+       * @param value The bestScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBestScore(int value) {
+        
+        bestScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 best_score = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBestScore() {
+        
+        bestScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 9;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 9;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -1118,12 +1126,11 @@ public final class JIEHJMIEHPMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021JIEHJMIEHPM.proto\"\207\001\n\013JIEHJMIEHPM\022\023\n\013O" +
-      "DDFFNIOBLN\030\001 \001(\010\022\020\n\010level_id\030\005 \001(\r\022\022\n\nbe" +
-      "st_score\030\006 \001(\r\022\023\n\013KLGNBKEEEIE\030\007 \001(\010\022\023\n\013B" +
-      "LFDFGAGOIG\030\013 \003(\r\022\023\n\013OJIDBAFJECO\030\r \003(\rB2\n" +
-      "\031emu.grasscutter.net.protoB\025JIEHJMIEHPMO" +
-      "uterClassb\006proto3"
+      "\n\021JIEHJMIEHPM.proto\"\207\001\n\013JIEHJMIEHPM\022\023\n\013B" +
+      "LFDFGAGOIG\030\013 \003(\r\022\023\n\013OJIDBAFJECO\030\002 \003(\r\022\023\n" +
+      "\013KLGNBKEEEIE\030\014 \001(\010\022\023\n\013ODDFFNIOBLN\030\004 \001(\010\022" +
+      "\022\n\nbest_score\030\n \001(\r\022\020\n\010level_id\030\t \001(\rB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1134,7 +1141,7 @@ public final class JIEHJMIEHPMOuterClass {
     internal_static_JIEHJMIEHPM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JIEHJMIEHPM_descriptor,
-        new java.lang.String[] { "ODDFFNIOBLN", "LevelId", "BestScore", "KLGNBKEEEIE", "BLFDFGAGOIG", "OJIDBAFJECO", });
+        new java.lang.String[] { "BLFDFGAGOIG", "OJIDBAFJECO", "KLGNBKEEEIE", "ODDFFNIOBLN", "BestScore", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

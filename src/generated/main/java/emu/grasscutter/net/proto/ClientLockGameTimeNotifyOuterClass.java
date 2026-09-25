@@ -518,9 +518,8 @@ public final class ClientLockGameTimeNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036ClientLockGameTimeNotify.proto\"+\n\030Clie" +
-      "ntLockGameTimeNotify\022\017\n\007is_lock\030\017 \001(\010B?\n" +
-      "\031emu.grasscutter.net.protoB\"ClientLockGa" +
-      "meTimeNotifyOuterClassb\006proto3"
+      "ntLockGameTimeNotify\022\017\n\007is_lock\030\017 \001(\010B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

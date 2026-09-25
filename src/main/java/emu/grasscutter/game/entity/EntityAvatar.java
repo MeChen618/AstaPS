@@ -15,7 +15,7 @@ import emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncState
 import emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility;
 import emu.grasscutter.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair;
 import emu.grasscutter.net.proto.ChangeEnergyReasonOuterClass.ChangeEnergyReason;
-import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
+import emu.grasscutter.net.proto.ChangHpReasonOuterClass.ChangHpReason;
 import emu.grasscutter.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo;
 import emu.grasscutter.net.proto.EntityClientDataOuterClass.EntityClientData;
 import emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo;
@@ -180,7 +180,7 @@ public class EntityAvatar extends GameEntity {
                                     mute
                                             ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
                                             : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
-                                    ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_ABILITY));
+                                    ChangHpReason.ChangHpReason_CHANGE_HP_SUB_ABILITY));
         }
 
         return healed;
@@ -371,7 +371,7 @@ public class EntityAvatar extends GameEntity {
                         .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
-                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true))
+                                SceneEntityAiInfo.newBuilder().setIsEnteredCombat(true))
                         .setBornPos(Vector.newBuilder())
                         .build();
 
@@ -423,10 +423,7 @@ public class EntityAvatar extends GameEntity {
             }
         }
 
-        boolean inNatlan = this.getPlayer().getScene() != null && this.getPlayer().getScene().getId() == 101;
-        int phlogistonHash = Utils.abilityHash("DynamicAbility_Phlogiston");
         for (int id : GameConstants.DEFAULT_ABILITY_HASHES) {
-            if (id == phlogistonHash && !inNatlan) continue;
             AbilityEmbryo emb =
                     AbilityEmbryo.newBuilder()
                             .setAbilityId(++embryoId)

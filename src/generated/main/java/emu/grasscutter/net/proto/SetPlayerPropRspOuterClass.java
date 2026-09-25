@@ -516,14 +516,14 @@ public final class SetPlayerPropRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026SetPlayerPropRsp.proto\"#\n\020SetPlayerPro" +
-      "pRsp\022\017\n\007retcode\030\006 \001(\005B7\n\031emu.grasscutter" +
-      ".net.protoB\032SetPlayerPropRspOuterClassb\006" +
-      "proto3"
+      "\n\026SetPlayerPropRsp.proto\032\rRetcode.proto\"" +
+      "#\n\020SetPlayerPropRsp\022\017\n\007retcode\030\006 \001(\005B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_SetPlayerPropRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -531,6 +531,7 @@ public final class SetPlayerPropRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SetPlayerPropRsp_descriptor,
         new java.lang.String[] { "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

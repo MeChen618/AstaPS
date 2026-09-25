@@ -19,101 +19,105 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gain_crystal_exp = 2;</code>
-     * @return The gainCrystalExp.
-     */
-    int getGainCrystalExp();
-
-    /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo> 
         getChestPosListList();
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo getChestPosList(int index);
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     int getChestPosListCount();
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder> 
         getChestPosListOrBuilderList();
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder getChestPosListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+     * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+     * @return A list containing the unlockedCrystalSkillList.
+     */
+    java.util.List<java.lang.Integer> getUnlockedCrystalSkillListList();
+    /**
+     * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+     * @return The count of unlockedCrystalSkillList.
+     */
+    int getUnlockedCrystalSkillListCount();
+    /**
+     * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+     * @param index The index of the element to return.
+     * @return The unlockedCrystalSkillList at the given index.
+     */
+    int getUnlockedCrystalSkillList(int index);
+
+    /**
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> 
         getStageListList();
     /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
      */
     emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getStageList(int index);
     /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
      */
     int getStageListCount();
     /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder> 
         getStageListOrBuilderList();
     /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
      */
     emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder getStageListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> 
         getChallengePosListList();
     /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
      */
     emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo getChallengePosList(int index);
     /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
      */
     int getChallengePosListCount();
     /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder> 
         getChallengePosListOrBuilderList();
     /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
      */
     emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder getChallengePosListOrBuilder(
         int index);
 
     /**
-     * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-     * @return A list containing the unlockedCrystalSkillList.
+     * <code>uint32 gain_crystal_exp = 5;</code>
+     * @return The gainCrystalExp.
      */
-    java.util.List<java.lang.Integer> getUnlockedCrystalSkillListList();
-    /**
-     * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-     * @return The count of unlockedCrystalSkillList.
-     */
-    int getUnlockedCrystalSkillListCount();
-    /**
-     * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-     * @param index The index of the element to return.
-     * @return The unlockedCrystalSkillList at the given index.
-     */
-    int getUnlockedCrystalSkillList(int index);
+    int getGainCrystalExp();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MichiaeMatsuriActivityDetailInfo}
    */
   public static final class MichiaeMatsuriActivityDetailInfo extends
@@ -127,9 +131,9 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
     }
     private MichiaeMatsuriActivityDetailInfo() {
       chestPosList_ = java.util.Collections.emptyList();
+      unlockedCrystalSkillList_ = emptyIntList();
       stageList_ = java.util.Collections.emptyList();
       challengePosList_ = java.util.Collections.emptyList();
-      unlockedCrystalSkillList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -163,12 +167,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              gainCrystalExp_ = input.readUInt32();
-              break;
-            }
-            case 58: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 chestPosList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -177,38 +176,43 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.parser(), extensionRegistry));
               break;
             }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 stageList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               stageList_.add(
                   input.readMessage(emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.parser(), extensionRegistry));
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            case 40: {
+
+              gainCrystalExp_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                 challengePosList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               challengePosList_.add(
                   input.readMessage(emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.parser(), extensionRegistry));
               break;
             }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 unlockedCrystalSkillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               unlockedCrystalSkillList_.addInt(input.readUInt32());
               break;
             }
-            case 82: {
+            case 106: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 unlockedCrystalSkillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 unlockedCrystalSkillList_.addInt(input.readUInt32());
@@ -234,13 +238,13 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           chestPosList_ = java.util.Collections.unmodifiableList(chestPosList_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           stageList_ = java.util.Collections.unmodifiableList(stageList_);
         }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
           challengePosList_ = java.util.Collections.unmodifiableList(challengePosList_);
         }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           unlockedCrystalSkillList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -260,28 +264,17 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo.class, emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo.Builder.class);
     }
 
-    public static final int GAIN_CRYSTAL_EXP_FIELD_NUMBER = 2;
-    private int gainCrystalExp_;
-    /**
-     * <code>uint32 gain_crystal_exp = 2;</code>
-     * @return The gainCrystalExp.
-     */
-    @java.lang.Override
-    public int getGainCrystalExp() {
-      return gainCrystalExp_;
-    }
-
-    public static final int CHEST_POS_LIST_FIELD_NUMBER = 7;
+    public static final int CHEST_POS_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo> chestPosList_;
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo> getChestPosListList() {
       return chestPosList_;
     }
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder> 
@@ -289,21 +282,21 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       return chestPosList_;
     }
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     @java.lang.Override
     public int getChestPosListCount() {
       return chestPosList_.size();
     }
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo getChestPosList(int index) {
       return chestPosList_.get(index);
     }
     /**
-     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+     * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder getChestPosListOrBuilder(
@@ -311,90 +304,10 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       return chestPosList_.get(index);
     }
 
-    public static final int STAGE_LIST_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> stageList_;
-    /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> getStageListList() {
-      return stageList_;
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder> 
-        getStageListOrBuilderList() {
-      return stageList_;
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
-     */
-    @java.lang.Override
-    public int getStageListCount() {
-      return stageList_.size();
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getStageList(int index) {
-      return stageList_.get(index);
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder getStageListOrBuilder(
-        int index) {
-      return stageList_.get(index);
-    }
-
-    public static final int CHALLENGE_POS_LIST_FIELD_NUMBER = 9;
-    private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> challengePosList_;
-    /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> getChallengePosListList() {
-      return challengePosList_;
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder> 
-        getChallengePosListOrBuilderList() {
-      return challengePosList_;
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
-     */
-    @java.lang.Override
-    public int getChallengePosListCount() {
-      return challengePosList_.size();
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo getChallengePosList(int index) {
-      return challengePosList_.get(index);
-    }
-    /**
-     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder getChallengePosListOrBuilder(
-        int index) {
-      return challengePosList_.get(index);
-    }
-
-    public static final int UNLOCKED_CRYSTAL_SKILL_LIST_FIELD_NUMBER = 10;
+    public static final int UNLOCKED_CRYSTAL_SKILL_LIST_FIELD_NUMBER = 13;
     private com.google.protobuf.Internal.IntList unlockedCrystalSkillList_;
     /**
-     * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
+     * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
      * @return A list containing the unlockedCrystalSkillList.
      */
     @java.lang.Override
@@ -403,14 +316,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       return unlockedCrystalSkillList_;
     }
     /**
-     * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
+     * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
      * @return The count of unlockedCrystalSkillList.
      */
     public int getUnlockedCrystalSkillListCount() {
       return unlockedCrystalSkillList_.size();
     }
     /**
-     * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
+     * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
      * @param index The index of the element to return.
      * @return The unlockedCrystalSkillList at the given index.
      */
@@ -418,6 +331,97 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       return unlockedCrystalSkillList_.getInt(index);
     }
     private int unlockedCrystalSkillListMemoizedSerializedSize = -1;
+
+    public static final int STAGE_LIST_FIELD_NUMBER = 3;
+    private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> stageList_;
+    /**
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> getStageListList() {
+      return stageList_;
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder> 
+        getStageListOrBuilderList() {
+      return stageList_;
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
+     */
+    @java.lang.Override
+    public int getStageListCount() {
+      return stageList_.size();
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getStageList(int index) {
+      return stageList_.get(index);
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder getStageListOrBuilder(
+        int index) {
+      return stageList_.get(index);
+    }
+
+    public static final int CHALLENGE_POS_LIST_FIELD_NUMBER = 11;
+    private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> challengePosList_;
+    /**
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> getChallengePosListList() {
+      return challengePosList_;
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder> 
+        getChallengePosListOrBuilderList() {
+      return challengePosList_;
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
+     */
+    @java.lang.Override
+    public int getChallengePosListCount() {
+      return challengePosList_.size();
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo getChallengePosList(int index) {
+      return challengePosList_.get(index);
+    }
+    /**
+     * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder getChallengePosListOrBuilder(
+        int index) {
+      return challengePosList_.get(index);
+    }
+
+    public static final int GAIN_CRYSTAL_EXP_FIELD_NUMBER = 5;
+    private int gainCrystalExp_;
+    /**
+     * <code>uint32 gain_crystal_exp = 5;</code>
+     * @return The gainCrystalExp.
+     */
+    @java.lang.Override
+    public int getGainCrystalExp() {
+      return gainCrystalExp_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -434,20 +438,20 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (gainCrystalExp_ != 0) {
-        output.writeUInt32(2, gainCrystalExp_);
-      }
       for (int i = 0; i < chestPosList_.size(); i++) {
-        output.writeMessage(7, chestPosList_.get(i));
+        output.writeMessage(2, chestPosList_.get(i));
       }
       for (int i = 0; i < stageList_.size(); i++) {
-        output.writeMessage(8, stageList_.get(i));
+        output.writeMessage(3, stageList_.get(i));
+      }
+      if (gainCrystalExp_ != 0) {
+        output.writeUInt32(5, gainCrystalExp_);
       }
       for (int i = 0; i < challengePosList_.size(); i++) {
-        output.writeMessage(9, challengePosList_.get(i));
+        output.writeMessage(11, challengePosList_.get(i));
       }
       if (getUnlockedCrystalSkillListList().size() > 0) {
-        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(106);
         output.writeUInt32NoTag(unlockedCrystalSkillListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedCrystalSkillList_.size(); i++) {
@@ -462,21 +466,21 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (gainCrystalExp_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, gainCrystalExp_);
-      }
       for (int i = 0; i < chestPosList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, chestPosList_.get(i));
+          .computeMessageSize(2, chestPosList_.get(i));
       }
       for (int i = 0; i < stageList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, stageList_.get(i));
+          .computeMessageSize(3, stageList_.get(i));
+      }
+      if (gainCrystalExp_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, gainCrystalExp_);
       }
       for (int i = 0; i < challengePosList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, challengePosList_.get(i));
+          .computeMessageSize(11, challengePosList_.get(i));
       }
       {
         int dataSize = 0;
@@ -507,16 +511,16 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo other = (emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo) obj;
 
-      if (getGainCrystalExp()
-          != other.getGainCrystalExp()) return false;
       if (!getChestPosListList()
           .equals(other.getChestPosListList())) return false;
+      if (!getUnlockedCrystalSkillListList()
+          .equals(other.getUnlockedCrystalSkillListList())) return false;
       if (!getStageListList()
           .equals(other.getStageListList())) return false;
       if (!getChallengePosListList()
           .equals(other.getChallengePosListList())) return false;
-      if (!getUnlockedCrystalSkillListList()
-          .equals(other.getUnlockedCrystalSkillListList())) return false;
+      if (getGainCrystalExp()
+          != other.getGainCrystalExp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -528,11 +532,13 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GAIN_CRYSTAL_EXP_FIELD_NUMBER;
-      hash = (53 * hash) + getGainCrystalExp();
       if (getChestPosListCount() > 0) {
         hash = (37 * hash) + CHEST_POS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChestPosListList().hashCode();
+      }
+      if (getUnlockedCrystalSkillListCount() > 0) {
+        hash = (37 * hash) + UNLOCKED_CRYSTAL_SKILL_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getUnlockedCrystalSkillListList().hashCode();
       }
       if (getStageListCount() > 0) {
         hash = (37 * hash) + STAGE_LIST_FIELD_NUMBER;
@@ -542,10 +548,8 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         hash = (37 * hash) + CHALLENGE_POS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChallengePosListList().hashCode();
       }
-      if (getUnlockedCrystalSkillListCount() > 0) {
-        hash = (37 * hash) + UNLOCKED_CRYSTAL_SKILL_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getUnlockedCrystalSkillListList().hashCode();
-      }
+      hash = (37 * hash) + GAIN_CRYSTAL_EXP_FIELD_NUMBER;
+      hash = (53 * hash) + getGainCrystalExp();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -642,6 +646,10 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MichiaeMatsuriActivityDetailInfo}
      */
     public static final class Builder extends
@@ -682,28 +690,28 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        gainCrystalExp_ = 0;
-
         if (chestPosListBuilder_ == null) {
           chestPosList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           chestPosListBuilder_.clear();
         }
+        unlockedCrystalSkillList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (stageListBuilder_ == null) {
           stageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           stageListBuilder_.clear();
         }
         if (challengePosListBuilder_ == null) {
           challengePosList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           challengePosListBuilder_.clear();
         }
-        unlockedCrystalSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        gainCrystalExp_ = 0;
+
         return this;
       }
 
@@ -731,7 +739,6 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       public emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo buildPartial() {
         emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo result = new emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo(this);
         int from_bitField0_ = bitField0_;
-        result.gainCrystalExp_ = gainCrystalExp_;
         if (chestPosListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             chestPosList_ = java.util.Collections.unmodifiableList(chestPosList_);
@@ -741,29 +748,30 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         } else {
           result.chestPosList_ = chestPosListBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          unlockedCrystalSkillList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.unlockedCrystalSkillList_ = unlockedCrystalSkillList_;
         if (stageListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             stageList_ = java.util.Collections.unmodifiableList(stageList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.stageList_ = stageList_;
         } else {
           result.stageList_ = stageListBuilder_.build();
         }
         if (challengePosListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             challengePosList_ = java.util.Collections.unmodifiableList(challengePosList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.challengePosList_ = challengePosList_;
         } else {
           result.challengePosList_ = challengePosListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
-          unlockedCrystalSkillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.unlockedCrystalSkillList_ = unlockedCrystalSkillList_;
+        result.gainCrystalExp_ = gainCrystalExp_;
         onBuilt();
         return result;
       }
@@ -812,9 +820,6 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo other) {
         if (other == emu.grasscutter.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo.getDefaultInstance()) return this;
-        if (other.getGainCrystalExp() != 0) {
-          setGainCrystalExp(other.getGainCrystalExp());
-        }
         if (chestPosListBuilder_ == null) {
           if (!other.chestPosList_.isEmpty()) {
             if (chestPosList_.isEmpty()) {
@@ -841,11 +846,21 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
             }
           }
         }
+        if (!other.unlockedCrystalSkillList_.isEmpty()) {
+          if (unlockedCrystalSkillList_.isEmpty()) {
+            unlockedCrystalSkillList_ = other.unlockedCrystalSkillList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUnlockedCrystalSkillListIsMutable();
+            unlockedCrystalSkillList_.addAll(other.unlockedCrystalSkillList_);
+          }
+          onChanged();
+        }
         if (stageListBuilder_ == null) {
           if (!other.stageList_.isEmpty()) {
             if (stageList_.isEmpty()) {
               stageList_ = other.stageList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureStageListIsMutable();
               stageList_.addAll(other.stageList_);
@@ -858,7 +873,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
               stageListBuilder_.dispose();
               stageListBuilder_ = null;
               stageList_ = other.stageList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               stageListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStageListFieldBuilder() : null;
@@ -871,7 +886,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
           if (!other.challengePosList_.isEmpty()) {
             if (challengePosList_.isEmpty()) {
               challengePosList_ = other.challengePosList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureChallengePosListIsMutable();
               challengePosList_.addAll(other.challengePosList_);
@@ -884,7 +899,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
               challengePosListBuilder_.dispose();
               challengePosListBuilder_ = null;
               challengePosList_ = other.challengePosList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               challengePosListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChallengePosListFieldBuilder() : null;
@@ -893,15 +908,8 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
             }
           }
         }
-        if (!other.unlockedCrystalSkillList_.isEmpty()) {
-          if (unlockedCrystalSkillList_.isEmpty()) {
-            unlockedCrystalSkillList_ = other.unlockedCrystalSkillList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureUnlockedCrystalSkillListIsMutable();
-            unlockedCrystalSkillList_.addAll(other.unlockedCrystalSkillList_);
-          }
-          onChanged();
+        if (other.getGainCrystalExp() != 0) {
+          setGainCrystalExp(other.getGainCrystalExp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -933,37 +941,6 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private int gainCrystalExp_ ;
-      /**
-       * <code>uint32 gain_crystal_exp = 2;</code>
-       * @return The gainCrystalExp.
-       */
-      @java.lang.Override
-      public int getGainCrystalExp() {
-        return gainCrystalExp_;
-      }
-      /**
-       * <code>uint32 gain_crystal_exp = 2;</code>
-       * @param value The gainCrystalExp to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGainCrystalExp(int value) {
-        
-        gainCrystalExp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gain_crystal_exp = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGainCrystalExp() {
-        
-        gainCrystalExp_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo> chestPosList_ =
         java.util.Collections.emptyList();
       private void ensureChestPosListIsMutable() {
@@ -977,7 +954,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder> chestPosListBuilder_;
 
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo> getChestPosListList() {
         if (chestPosListBuilder_ == null) {
@@ -987,7 +964,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public int getChestPosListCount() {
         if (chestPosListBuilder_ == null) {
@@ -997,7 +974,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo getChestPosList(int index) {
         if (chestPosListBuilder_ == null) {
@@ -1007,7 +984,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder setChestPosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo value) {
@@ -1024,7 +1001,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder setChestPosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder builderForValue) {
@@ -1038,7 +1015,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder addChestPosList(emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo value) {
         if (chestPosListBuilder_ == null) {
@@ -1054,7 +1031,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder addChestPosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo value) {
@@ -1071,7 +1048,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder addChestPosList(
           emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder builderForValue) {
@@ -1085,7 +1062,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder addChestPosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder builderForValue) {
@@ -1099,7 +1076,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder addAllChestPosList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo> values) {
@@ -1114,7 +1091,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder clearChestPosList() {
         if (chestPosListBuilder_ == null) {
@@ -1127,7 +1104,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public Builder removeChestPosList(int index) {
         if (chestPosListBuilder_ == null) {
@@ -1140,14 +1117,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder getChestPosListBuilder(
           int index) {
         return getChestPosListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder getChestPosListOrBuilder(
           int index) {
@@ -1157,7 +1134,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfoOrBuilder> 
            getChestPosListOrBuilderList() {
@@ -1168,14 +1145,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder addChestPosListBuilder() {
         return getChestPosListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder addChestPosListBuilder(
           int index) {
@@ -1183,7 +1160,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 7;</code>
+       * <code>repeated .MichiaeMatsuriChestPositionInfo chest_pos_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.MichiaeMatsuriChestPositionInfo.Builder> 
            getChestPosListBuilderList() {
@@ -1204,12 +1181,91 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return chestPosListBuilder_;
       }
 
+      private com.google.protobuf.Internal.IntList unlockedCrystalSkillList_ = emptyIntList();
+      private void ensureUnlockedCrystalSkillListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          unlockedCrystalSkillList_ = mutableCopy(unlockedCrystalSkillList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @return A list containing the unlockedCrystalSkillList.
+       */
+      public java.util.List<java.lang.Integer>
+          getUnlockedCrystalSkillListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(unlockedCrystalSkillList_) : unlockedCrystalSkillList_;
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @return The count of unlockedCrystalSkillList.
+       */
+      public int getUnlockedCrystalSkillListCount() {
+        return unlockedCrystalSkillList_.size();
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @param index The index of the element to return.
+       * @return The unlockedCrystalSkillList at the given index.
+       */
+      public int getUnlockedCrystalSkillList(int index) {
+        return unlockedCrystalSkillList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @param index The index to set the value at.
+       * @param value The unlockedCrystalSkillList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnlockedCrystalSkillList(
+          int index, int value) {
+        ensureUnlockedCrystalSkillListIsMutable();
+        unlockedCrystalSkillList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @param value The unlockedCrystalSkillList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUnlockedCrystalSkillList(int value) {
+        ensureUnlockedCrystalSkillListIsMutable();
+        unlockedCrystalSkillList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @param values The unlockedCrystalSkillList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUnlockedCrystalSkillList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUnlockedCrystalSkillListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, unlockedCrystalSkillList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 unlocked_crystal_skill_list = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnlockedCrystalSkillList() {
+        unlockedCrystalSkillList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> stageList_ =
         java.util.Collections.emptyList();
       private void ensureStageListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           stageList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage>(stageList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1217,7 +1273,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder> stageListBuilder_;
 
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> getStageListList() {
         if (stageListBuilder_ == null) {
@@ -1227,7 +1283,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public int getStageListCount() {
         if (stageListBuilder_ == null) {
@@ -1237,7 +1293,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage getStageList(int index) {
         if (stageListBuilder_ == null) {
@@ -1247,7 +1303,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder setStageList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage value) {
@@ -1264,7 +1320,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder setStageList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder builderForValue) {
@@ -1278,7 +1334,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder addStageList(emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage value) {
         if (stageListBuilder_ == null) {
@@ -1294,7 +1350,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder addStageList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage value) {
@@ -1311,7 +1367,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder addStageList(
           emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder builderForValue) {
@@ -1325,7 +1381,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder addStageList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder builderForValue) {
@@ -1339,7 +1395,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder addAllStageList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage> values) {
@@ -1354,12 +1410,12 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder clearStageList() {
         if (stageListBuilder_ == null) {
           stageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           stageListBuilder_.clear();
@@ -1367,7 +1423,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public Builder removeStageList(int index) {
         if (stageListBuilder_ == null) {
@@ -1380,14 +1436,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder getStageListBuilder(
           int index) {
         return getStageListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder getStageListOrBuilder(
           int index) {
@@ -1397,7 +1453,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder> 
            getStageListOrBuilderList() {
@@ -1408,14 +1464,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder addStageListBuilder() {
         return getStageListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.getDefaultInstance());
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder addStageListBuilder(
           int index) {
@@ -1423,7 +1479,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.getDefaultInstance());
       }
       /**
-       * <code>repeated .MichiaeMatsuriStage stage_list = 8;</code>
+       * <code>repeated .MichiaeMatsuriStage stage_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder> 
            getStageListBuilderList() {
@@ -1436,7 +1492,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
           stageListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStageOrBuilder>(
                   stageList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           stageList_ = null;
@@ -1447,9 +1503,9 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       private java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> challengePosList_ =
         java.util.Collections.emptyList();
       private void ensureChallengePosListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           challengePosList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo>(challengePosList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1457,7 +1513,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder> challengePosListBuilder_;
 
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> getChallengePosListList() {
         if (challengePosListBuilder_ == null) {
@@ -1467,7 +1523,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public int getChallengePosListCount() {
         if (challengePosListBuilder_ == null) {
@@ -1477,7 +1533,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo getChallengePosList(int index) {
         if (challengePosListBuilder_ == null) {
@@ -1487,7 +1543,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder setChallengePosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo value) {
@@ -1504,7 +1560,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder setChallengePosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder builderForValue) {
@@ -1518,7 +1574,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder addChallengePosList(emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo value) {
         if (challengePosListBuilder_ == null) {
@@ -1534,7 +1590,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder addChallengePosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo value) {
@@ -1551,7 +1607,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder addChallengePosList(
           emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder builderForValue) {
@@ -1565,7 +1621,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder addChallengePosList(
           int index, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder builderForValue) {
@@ -1579,7 +1635,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder addAllChallengePosList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo> values) {
@@ -1594,12 +1650,12 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder clearChallengePosList() {
         if (challengePosListBuilder_ == null) {
           challengePosList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           challengePosListBuilder_.clear();
@@ -1607,7 +1663,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public Builder removeChallengePosList(int index) {
         if (challengePosListBuilder_ == null) {
@@ -1620,14 +1676,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder getChallengePosListBuilder(
           int index) {
         return getChallengePosListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder getChallengePosListOrBuilder(
           int index) {
@@ -1637,7 +1693,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder> 
            getChallengePosListOrBuilderList() {
@@ -1648,14 +1704,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder addChallengePosListBuilder() {
         return getChallengePosListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder addChallengePosListBuilder(
           int index) {
@@ -1663,7 +1719,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 9;</code>
+       * <code>repeated .MichiaeMatsuriChallengePositionInfo challenge_pos_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder> 
            getChallengePosListBuilderList() {
@@ -1676,7 +1732,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
           challengePosListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfo.Builder, emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.MichiaeMatsuriChallengePositionInfoOrBuilder>(
                   challengePosList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           challengePosList_ = null;
@@ -1684,81 +1740,33 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
         return challengePosListBuilder_;
       }
 
-      private com.google.protobuf.Internal.IntList unlockedCrystalSkillList_ = emptyIntList();
-      private void ensureUnlockedCrystalSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          unlockedCrystalSkillList_ = mutableCopy(unlockedCrystalSkillList_);
-          bitField0_ |= 0x00000008;
-         }
-      }
+      private int gainCrystalExp_ ;
       /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @return A list containing the unlockedCrystalSkillList.
+       * <code>uint32 gain_crystal_exp = 5;</code>
+       * @return The gainCrystalExp.
        */
-      public java.util.List<java.lang.Integer>
-          getUnlockedCrystalSkillListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
-                 java.util.Collections.unmodifiableList(unlockedCrystalSkillList_) : unlockedCrystalSkillList_;
+      @java.lang.Override
+      public int getGainCrystalExp() {
+        return gainCrystalExp_;
       }
       /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @return The count of unlockedCrystalSkillList.
-       */
-      public int getUnlockedCrystalSkillListCount() {
-        return unlockedCrystalSkillList_.size();
-      }
-      /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @param index The index of the element to return.
-       * @return The unlockedCrystalSkillList at the given index.
-       */
-      public int getUnlockedCrystalSkillList(int index) {
-        return unlockedCrystalSkillList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @param index The index to set the value at.
-       * @param value The unlockedCrystalSkillList to set.
+       * <code>uint32 gain_crystal_exp = 5;</code>
+       * @param value The gainCrystalExp to set.
        * @return This builder for chaining.
        */
-      public Builder setUnlockedCrystalSkillList(
-          int index, int value) {
-        ensureUnlockedCrystalSkillListIsMutable();
-        unlockedCrystalSkillList_.setInt(index, value);
+      public Builder setGainCrystalExp(int value) {
+        
+        gainCrystalExp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @param value The unlockedCrystalSkillList to add.
+       * <code>uint32 gain_crystal_exp = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder addUnlockedCrystalSkillList(int value) {
-        ensureUnlockedCrystalSkillListIsMutable();
-        unlockedCrystalSkillList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @param values The unlockedCrystalSkillList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllUnlockedCrystalSkillList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureUnlockedCrystalSkillListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, unlockedCrystalSkillList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 unlocked_crystal_skill_list = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnlockedCrystalSkillList() {
-        unlockedCrystalSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+      public Builder clearGainCrystalExp() {
+        
+        gainCrystalExp_ = 0;
         onChanged();
         return this;
       }
@@ -1833,15 +1841,14 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
       "\032)MichiaeMatsuriChallengePositionInfo.pr" +
       "oto\032%MichiaeMatsuriChestPositionInfo.pro" +
       "to\032\031MichiaeMatsuriStage.proto\"\207\002\n Michia" +
-      "eMatsuriActivityDetailInfo\022\030\n\020gain_cryst" +
-      "al_exp\030\002 \001(\r\0228\n\016chest_pos_list\030\007 \003(\0132 .M" +
-      "ichiaeMatsuriChestPositionInfo\022(\n\nstage_" +
-      "list\030\010 \003(\0132\024.MichiaeMatsuriStage\022@\n\022chal" +
-      "lenge_pos_list\030\t \003(\0132$.MichiaeMatsuriCha" +
-      "llengePositionInfo\022#\n\033unlocked_crystal_s" +
-      "kill_list\030\n \003(\rBG\n\031emu.grasscutter.net.p" +
-      "rotoB*MichiaeMatsuriActivityDetailInfoOu" +
-      "terClassb\006proto3"
+      "eMatsuriActivityDetailInfo\0228\n\016chest_pos_" +
+      "list\030\002 \003(\0132 .MichiaeMatsuriChestPosition" +
+      "Info\022#\n\033unlocked_crystal_skill_list\030\r \003(" +
+      "\r\022(\n\nstage_list\030\003 \003(\0132\024.MichiaeMatsuriSt" +
+      "age\022@\n\022challenge_pos_list\030\013 \003(\0132$.Michia" +
+      "eMatsuriChallengePositionInfo\022\030\n\020gain_cr" +
+      "ystal_exp\030\005 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1855,7 +1862,7 @@ public final class MichiaeMatsuriActivityDetailInfoOuterClass {
     internal_static_MichiaeMatsuriActivityDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MichiaeMatsuriActivityDetailInfo_descriptor,
-        new java.lang.String[] { "GainCrystalExp", "ChestPosList", "StageList", "ChallengePosList", "UnlockedCrystalSkillList", });
+        new java.lang.String[] { "ChestPosList", "UnlockedCrystalSkillList", "StageList", "ChallengePosList", "GainCrystalExp", });
     emu.grasscutter.net.proto.MichiaeMatsuriChallengePositionInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MichiaeMatsuriChestPositionInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.getDescriptor();

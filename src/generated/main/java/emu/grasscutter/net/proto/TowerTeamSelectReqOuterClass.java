@@ -19,56 +19,40 @@ public final class TowerTeamSelectReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> 
         getTowerTeamListList();
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam getTowerTeamList(int index);
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     int getTowerTeamListCount();
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder> 
         getTowerTeamListOrBuilderList();
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder getTowerTeamListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 floor_id = 9;</code>
+     * <code>uint32 floor_id = 3;</code>
      * @return The floorId.
      */
     int getFloorId();
   }
   /**
+   * <pre>
+   * CmdId: 20134
+   * </pre>
+   *
    * Protobuf type {@code TowerTeamSelectReq}
    */
   public static final class TowerTeamSelectReq extends
@@ -115,18 +99,18 @@ public final class TowerTeamSelectReqOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 24: {
+
+              floorId_ = input.readUInt32();
+              break;
+            }
+            case 50: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 towerTeamList_ = new java.util.ArrayList<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam>();
                 mutable_bitField0_ |= 0x00000001;
               }
               towerTeamList_.add(
                   input.readMessage(emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              floorId_ = input.readUInt32();
               break;
             }
             default: {
@@ -164,25 +148,17 @@ public final class TowerTeamSelectReqOuterClass {
               emu.grasscutter.net.proto.TowerTeamSelectReqOuterClass.TowerTeamSelectReq.class, emu.grasscutter.net.proto.TowerTeamSelectReqOuterClass.TowerTeamSelectReq.Builder.class);
     }
 
-    public static final int TOWER_TEAM_LIST_FIELD_NUMBER = 8;
+    public static final int TOWER_TEAM_LIST_FIELD_NUMBER = 6;
     private java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> towerTeamList_;
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> getTowerTeamListList() {
       return towerTeamList_;
     }
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder> 
@@ -190,33 +166,21 @@ public final class TowerTeamSelectReqOuterClass {
       return towerTeamList_;
     }
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     @java.lang.Override
     public int getTowerTeamListCount() {
       return towerTeamList_.size();
     }
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam getTowerTeamList(int index) {
       return towerTeamList_.get(index);
     }
     /**
-     * <pre>
-     * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-     * </pre>
-     *
-     * <code>repeated .TowerTeam tower_team_list = 8;</code>
+     * <code>repeated .TowerTeam tower_team_list = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder getTowerTeamListOrBuilder(
@@ -224,10 +188,10 @@ public final class TowerTeamSelectReqOuterClass {
       return towerTeamList_.get(index);
     }
 
-    public static final int FLOOR_ID_FIELD_NUMBER = 9;
+    public static final int FLOOR_ID_FIELD_NUMBER = 3;
     private int floorId_;
     /**
-     * <code>uint32 floor_id = 9;</code>
+     * <code>uint32 floor_id = 3;</code>
      * @return The floorId.
      */
     @java.lang.Override
@@ -249,11 +213,11 @@ public final class TowerTeamSelectReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < towerTeamList_.size(); i++) {
-        output.writeMessage(8, towerTeamList_.get(i));
-      }
       if (floorId_ != 0) {
-        output.writeUInt32(9, floorId_);
+        output.writeUInt32(3, floorId_);
+      }
+      for (int i = 0; i < towerTeamList_.size(); i++) {
+        output.writeMessage(6, towerTeamList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -264,13 +228,13 @@ public final class TowerTeamSelectReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < towerTeamList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, towerTeamList_.get(i));
-      }
       if (floorId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, floorId_);
+          .computeUInt32Size(3, floorId_);
+      }
+      for (int i = 0; i < towerTeamList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, towerTeamList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -404,6 +368,10 @@ public final class TowerTeamSelectReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 20134
+     * </pre>
+     *
      * Protobuf type {@code TowerTeamSelectReq}
      */
     public static final class Builder extends
@@ -607,11 +575,7 @@ public final class TowerTeamSelectReqOuterClass {
           emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder> towerTeamListBuilder_;
 
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> getTowerTeamListList() {
         if (towerTeamListBuilder_ == null) {
@@ -621,11 +585,7 @@ public final class TowerTeamSelectReqOuterClass {
         }
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public int getTowerTeamListCount() {
         if (towerTeamListBuilder_ == null) {
@@ -635,11 +595,7 @@ public final class TowerTeamSelectReqOuterClass {
         }
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam getTowerTeamList(int index) {
         if (towerTeamListBuilder_ == null) {
@@ -649,11 +605,7 @@ public final class TowerTeamSelectReqOuterClass {
         }
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder setTowerTeamList(
           int index, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam value) {
@@ -670,11 +622,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder setTowerTeamList(
           int index, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder builderForValue) {
@@ -688,11 +636,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder addTowerTeamList(emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam value) {
         if (towerTeamListBuilder_ == null) {
@@ -708,11 +652,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder addTowerTeamList(
           int index, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam value) {
@@ -729,11 +669,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder addTowerTeamList(
           emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder builderForValue) {
@@ -747,11 +683,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder addTowerTeamList(
           int index, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder builderForValue) {
@@ -765,11 +697,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder addAllTowerTeamList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam> values) {
@@ -784,11 +712,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder clearTowerTeamList() {
         if (towerTeamListBuilder_ == null) {
@@ -801,11 +725,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public Builder removeTowerTeamList(int index) {
         if (towerTeamListBuilder_ == null) {
@@ -818,22 +738,14 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder getTowerTeamListBuilder(
           int index) {
         return getTowerTeamListFieldBuilder().getBuilder(index);
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder getTowerTeamListOrBuilder(
           int index) {
@@ -843,11 +755,7 @@ public final class TowerTeamSelectReqOuterClass {
         }
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder> 
            getTowerTeamListOrBuilderList() {
@@ -858,22 +766,14 @@ public final class TowerTeamSelectReqOuterClass {
         }
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder addTowerTeamListBuilder() {
         return getTowerTeamListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.getDefaultInstance());
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder addTowerTeamListBuilder(
           int index) {
@@ -881,11 +781,7 @@ public final class TowerTeamSelectReqOuterClass {
             index, emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.getDefaultInstance());
       }
       /**
-       * <pre>
-       * 7.0 client WriteTo uses field 8 (not 6 — that number belongs to TowerCurLevelRecord).
-       * </pre>
-       *
-       * <code>repeated .TowerTeam tower_team_list = 8;</code>
+       * <code>repeated .TowerTeam tower_team_list = 6;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.TowerTeamOuterClass.TowerTeam.Builder> 
            getTowerTeamListBuilderList() {
@@ -908,7 +804,7 @@ public final class TowerTeamSelectReqOuterClass {
 
       private int floorId_ ;
       /**
-       * <code>uint32 floor_id = 9;</code>
+       * <code>uint32 floor_id = 3;</code>
        * @return The floorId.
        */
       @java.lang.Override
@@ -916,7 +812,7 @@ public final class TowerTeamSelectReqOuterClass {
         return floorId_;
       }
       /**
-       * <code>uint32 floor_id = 9;</code>
+       * <code>uint32 floor_id = 3;</code>
        * @param value The floorId to set.
        * @return This builder for chaining.
        */
@@ -927,7 +823,7 @@ public final class TowerTeamSelectReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 floor_id = 9;</code>
+       * <code>uint32 floor_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearFloorId() {
@@ -1005,9 +901,8 @@ public final class TowerTeamSelectReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030TowerTeamSelectReq.proto\032\017TowerTeam.pr" +
       "oto\"K\n\022TowerTeamSelectReq\022#\n\017tower_team_" +
-      "list\030\010 \003(\0132\n.TowerTeam\022\020\n\010floor_id\030\t \001(\r" +
-      "B9\n\031emu.grasscutter.net.protoB\034TowerTeam" +
-      "SelectReqOuterClassb\006proto3"
+      "list\030\006 \003(\0132\n.TowerTeam\022\020\n\010floor_id\030\003 \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

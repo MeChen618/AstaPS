@@ -33,7 +33,7 @@ public class PacketScenePointUnlockNotify extends BasePacket {
         ScenePointUnlockNotify.Builder p =
                 ScenePointUnlockNotify.newBuilder()
                         .setSceneId(sceneId)
-                        .addAllLockedPointList(pointIds)
+                        .addAllHidePointList(pointIds)
                         .addAllHidePointList(pointIds);
 
         packet.setData(p);

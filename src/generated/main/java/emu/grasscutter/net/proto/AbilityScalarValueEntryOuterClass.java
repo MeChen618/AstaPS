@@ -40,6 +40,10 @@ public final class AbilityScalarValueEntryOuterClass {
     float getFloatValue();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AbilityScalarValueEntry}
    */
   public static final class AbilityScalarValueEntry extends
@@ -345,6 +349,10 @@ public final class AbilityScalarValueEntryOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AbilityScalarValueEntry}
      */
     public static final class Builder extends
@@ -724,9 +732,8 @@ public final class AbilityScalarValueEntryOuterClass {
       "\n\035AbilityScalarValueEntry.proto\032\023Ability" +
       "String.proto\"K\n\027AbilityScalarValueEntry\022" +
       "\033\n\003key\030\001 \001(\0132\016.AbilityString\022\023\n\013float_va" +
-      "lue\030\003 \001(\002B>\n\031emu.grasscutter.net.protoB!" +
-      "AbilityScalarValueEntryOuterClassb\006proto" +
-      "3"
+      "lue\030\003 \001(\002B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

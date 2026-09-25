@@ -31,18 +31,22 @@ public final class NGKOPBGLDJMOuterClass {
         getDKJPGNMLLDPBytes();
 
     /**
-     * <code>uint32 client_version = 2;</code>
-     * @return The clientVersion.
-     */
-    int getClientVersion();
-
-    /**
      * <code>uint32 AHMNIINDBBN = 3;</code>
      * @return The aHMNIINDBBN.
      */
     int getAHMNIINDBBN();
+
+    /**
+     * <code>uint32 client_version = 2;</code>
+     * @return The clientVersion.
+     */
+    int getClientVersion();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NGKOPBGLDJM}
    */
   public static final class NGKOPBGLDJM extends
@@ -174,17 +178,6 @@ public final class NGKOPBGLDJMOuterClass {
       }
     }
 
-    public static final int CLIENT_VERSION_FIELD_NUMBER = 2;
-    private int clientVersion_;
-    /**
-     * <code>uint32 client_version = 2;</code>
-     * @return The clientVersion.
-     */
-    @java.lang.Override
-    public int getClientVersion() {
-      return clientVersion_;
-    }
-
     public static final int AHMNIINDBBN_FIELD_NUMBER = 3;
     private int aHMNIINDBBN_;
     /**
@@ -194,6 +187,17 @@ public final class NGKOPBGLDJMOuterClass {
     @java.lang.Override
     public int getAHMNIINDBBN() {
       return aHMNIINDBBN_;
+    }
+
+    public static final int CLIENT_VERSION_FIELD_NUMBER = 2;
+    private int clientVersion_;
+    /**
+     * <code>uint32 client_version = 2;</code>
+     * @return The clientVersion.
+     */
+    @java.lang.Override
+    public int getClientVersion() {
+      return clientVersion_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -256,10 +260,10 @@ public final class NGKOPBGLDJMOuterClass {
 
       if (!getDKJPGNMLLDP()
           .equals(other.getDKJPGNMLLDP())) return false;
-      if (getClientVersion()
-          != other.getClientVersion()) return false;
       if (getAHMNIINDBBN()
           != other.getAHMNIINDBBN()) return false;
+      if (getClientVersion()
+          != other.getClientVersion()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,10 +277,10 @@ public final class NGKOPBGLDJMOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DKJPGNMLLDP_FIELD_NUMBER;
       hash = (53 * hash) + getDKJPGNMLLDP().hashCode();
-      hash = (37 * hash) + CLIENT_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getClientVersion();
       hash = (37 * hash) + AHMNIINDBBN_FIELD_NUMBER;
       hash = (53 * hash) + getAHMNIINDBBN();
+      hash = (37 * hash) + CLIENT_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getClientVersion();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -373,6 +377,10 @@ public final class NGKOPBGLDJMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NGKOPBGLDJM}
      */
     public static final class Builder extends
@@ -412,9 +420,9 @@ public final class NGKOPBGLDJMOuterClass {
         super.clear();
         dKJPGNMLLDP_ = "";
 
-        clientVersion_ = 0;
-
         aHMNIINDBBN_ = 0;
+
+        clientVersion_ = 0;
 
         return this;
       }
@@ -443,8 +451,8 @@ public final class NGKOPBGLDJMOuterClass {
       public emu.grasscutter.net.proto.NGKOPBGLDJMOuterClass.NGKOPBGLDJM buildPartial() {
         emu.grasscutter.net.proto.NGKOPBGLDJMOuterClass.NGKOPBGLDJM result = new emu.grasscutter.net.proto.NGKOPBGLDJMOuterClass.NGKOPBGLDJM(this);
         result.dKJPGNMLLDP_ = dKJPGNMLLDP_;
-        result.clientVersion_ = clientVersion_;
         result.aHMNIINDBBN_ = aHMNIINDBBN_;
+        result.clientVersion_ = clientVersion_;
         onBuilt();
         return result;
       }
@@ -497,11 +505,11 @@ public final class NGKOPBGLDJMOuterClass {
           dKJPGNMLLDP_ = other.dKJPGNMLLDP_;
           onChanged();
         }
-        if (other.getClientVersion() != 0) {
-          setClientVersion(other.getClientVersion());
-        }
         if (other.getAHMNIINDBBN() != 0) {
           setAHMNIINDBBN(other.getAHMNIINDBBN());
+        }
+        if (other.getClientVersion() != 0) {
+          setClientVersion(other.getClientVersion());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -608,37 +616,6 @@ public final class NGKOPBGLDJMOuterClass {
         return this;
       }
 
-      private int clientVersion_ ;
-      /**
-       * <code>uint32 client_version = 2;</code>
-       * @return The clientVersion.
-       */
-      @java.lang.Override
-      public int getClientVersion() {
-        return clientVersion_;
-      }
-      /**
-       * <code>uint32 client_version = 2;</code>
-       * @param value The clientVersion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClientVersion(int value) {
-        
-        clientVersion_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 client_version = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClientVersion() {
-        
-        clientVersion_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int aHMNIINDBBN_ ;
       /**
        * <code>uint32 AHMNIINDBBN = 3;</code>
@@ -666,6 +643,37 @@ public final class NGKOPBGLDJMOuterClass {
       public Builder clearAHMNIINDBBN() {
         
         aHMNIINDBBN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int clientVersion_ ;
+      /**
+       * <code>uint32 client_version = 2;</code>
+       * @return The clientVersion.
+       */
+      @java.lang.Override
+      public int getClientVersion() {
+        return clientVersion_;
+      }
+      /**
+       * <code>uint32 client_version = 2;</code>
+       * @param value The clientVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientVersion(int value) {
+        
+        clientVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 client_version = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientVersion() {
+        
+        clientVersion_ = 0;
         onChanged();
         return this;
       }
@@ -737,9 +745,9 @@ public final class NGKOPBGLDJMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021NGKOPBGLDJM.proto\"O\n\013NGKOPBGLDJM\022\023\n\013DK" +
-      "JPGNMLLDP\030\001 \001(\t\022\026\n\016client_version\030\002 \001(\r\022" +
-      "\023\n\013AHMNIINDBBN\030\003 \001(\rB2\n\031emu.grasscutter." +
-      "net.protoB\025NGKOPBGLDJMOuterClassb\006proto3"
+      "JPGNMLLDP\030\001 \001(\t\022\023\n\013AHMNIINDBBN\030\003 \001(\r\022\026\n\016" +
+      "client_version\030\002 \001(\rB\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -750,7 +758,7 @@ public final class NGKOPBGLDJMOuterClass {
     internal_static_NGKOPBGLDJM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NGKOPBGLDJM_descriptor,
-        new java.lang.String[] { "DKJPGNMLLDP", "ClientVersion", "AHMNIINDBBN", });
+        new java.lang.String[] { "DKJPGNMLLDP", "AHMNIINDBBN", "ClientVersion", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -61,6 +61,10 @@ public final class LPEEBGCIIFMOuterClass {
     int getLDLKNBIMPNL();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code LPEEBGCIIFM}
    */
   public static final class LPEEBGCIIFM extends
@@ -431,6 +435,10 @@ public final class LPEEBGCIIFMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code LPEEBGCIIFM}
      */
     public static final class Builder extends
@@ -1044,8 +1052,8 @@ public final class LPEEBGCIIFMOuterClass {
       "\n\021LPEEBGCIIFM.proto\032\021OELBHFBBGCD.proto\"Z" +
       "\n\013LPEEBGCIIFM\022\023\n\013MPGBICGMCDG\030\001 \001(\t\022!\n\013FC" +
       "PKHKOHIEG\030\002 \003(\0132\014.OELBHFBBGCD\022\023\n\013LDLKNBI" +
-      "MPNL\030\003 \001(\005B2\n\031emu.grasscutter.net.protoB" +
-      "\025LPEEBGCIIFMOuterClassb\006proto3"
+      "MPNL\030\003 \001(\005B\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

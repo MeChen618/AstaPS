@@ -19,21 +19,25 @@ public final class HBJLPIDKENDOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+     * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
      * @return Whether the mKKHNCMBLIG field is set.
      */
     boolean hasMKKHNCMBLIG();
     /**
-     * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+     * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
      * @return The mKKHNCMBLIG.
      */
     emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC getMKKHNCMBLIG();
     /**
-     * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+     * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
      */
     emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGACOrBuilder getMKKHNCMBLIGOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HBJLPIDKEND}
    */
   public static final class HBJLPIDKEND extends
@@ -78,7 +82,7 @@ public final class HBJLPIDKENDOuterClass {
             case 0:
               done = true;
               break;
-            case 98: {
+            case 42: {
               emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.Builder subBuilder = null;
               if (mKKHNCMBLIG_ != null) {
                 subBuilder = mKKHNCMBLIG_.toBuilder();
@@ -123,10 +127,10 @@ public final class HBJLPIDKENDOuterClass {
               emu.grasscutter.net.proto.HBJLPIDKENDOuterClass.HBJLPIDKEND.class, emu.grasscutter.net.proto.HBJLPIDKENDOuterClass.HBJLPIDKEND.Builder.class);
     }
 
-    public static final int MKKHNCMBLIG_FIELD_NUMBER = 12;
+    public static final int MKKHNCMBLIG_FIELD_NUMBER = 5;
     private emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC mKKHNCMBLIG_;
     /**
-     * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+     * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
      * @return Whether the mKKHNCMBLIG field is set.
      */
     @java.lang.Override
@@ -134,7 +138,7 @@ public final class HBJLPIDKENDOuterClass {
       return mKKHNCMBLIG_ != null;
     }
     /**
-     * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+     * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
      * @return The mKKHNCMBLIG.
      */
     @java.lang.Override
@@ -142,7 +146,7 @@ public final class HBJLPIDKENDOuterClass {
       return mKKHNCMBLIG_ == null ? emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.getDefaultInstance() : mKKHNCMBLIG_;
     }
     /**
-     * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+     * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGACOrBuilder getMKKHNCMBLIGOrBuilder() {
@@ -164,7 +168,7 @@ public final class HBJLPIDKENDOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (mKKHNCMBLIG_ != null) {
-        output.writeMessage(12, getMKKHNCMBLIG());
+        output.writeMessage(5, getMKKHNCMBLIG());
       }
       unknownFields.writeTo(output);
     }
@@ -177,7 +181,7 @@ public final class HBJLPIDKENDOuterClass {
       size = 0;
       if (mKKHNCMBLIG_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getMKKHNCMBLIG());
+          .computeMessageSize(5, getMKKHNCMBLIG());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -310,6 +314,10 @@ public final class HBJLPIDKENDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HBJLPIDKEND}
      */
     public static final class Builder extends
@@ -468,14 +476,14 @@ public final class HBJLPIDKENDOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC, emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.Builder, emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGACOrBuilder> mKKHNCMBLIGBuilder_;
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        * @return Whether the mKKHNCMBLIG field is set.
        */
       public boolean hasMKKHNCMBLIG() {
         return mKKHNCMBLIGBuilder_ != null || mKKHNCMBLIG_ != null;
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        * @return The mKKHNCMBLIG.
        */
       public emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC getMKKHNCMBLIG() {
@@ -486,7 +494,7 @@ public final class HBJLPIDKENDOuterClass {
         }
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       public Builder setMKKHNCMBLIG(emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC value) {
         if (mKKHNCMBLIGBuilder_ == null) {
@@ -502,7 +510,7 @@ public final class HBJLPIDKENDOuterClass {
         return this;
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       public Builder setMKKHNCMBLIG(
           emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.Builder builderForValue) {
@@ -516,7 +524,7 @@ public final class HBJLPIDKENDOuterClass {
         return this;
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       public Builder mergeMKKHNCMBLIG(emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC value) {
         if (mKKHNCMBLIGBuilder_ == null) {
@@ -534,7 +542,7 @@ public final class HBJLPIDKENDOuterClass {
         return this;
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       public Builder clearMKKHNCMBLIG() {
         if (mKKHNCMBLIGBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class HBJLPIDKENDOuterClass {
         return this;
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       public emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.Builder getMKKHNCMBLIGBuilder() {
         
@@ -556,7 +564,7 @@ public final class HBJLPIDKENDOuterClass {
         return getMKKHNCMBLIGFieldBuilder().getBuilder();
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       public emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGACOrBuilder getMKKHNCMBLIGOrBuilder() {
         if (mKKHNCMBLIGBuilder_ != null) {
@@ -567,7 +575,7 @@ public final class HBJLPIDKENDOuterClass {
         }
       }
       /**
-       * <code>.JJAAPEINGAC MKKHNCMBLIG = 12;</code>
+       * <code>.JJAAPEINGAC MKKHNCMBLIG = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC, emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.Builder, emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGACOrBuilder> 
@@ -650,9 +658,9 @@ public final class HBJLPIDKENDOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HBJLPIDKEND.proto\032\021JJAAPEINGAC.proto\"0" +
-      "\n\013HBJLPIDKEND\022!\n\013MKKHNCMBLIG\030\014 \001(\0132\014.JJA" +
-      "APEINGACB2\n\031emu.grasscutter.net.protoB\025H" +
-      "BJLPIDKENDOuterClassb\006proto3"
+      "\n\013HBJLPIDKEND\022!\n\013MKKHNCMBLIG\030\005 \001(\0132\014.JJA" +
+      "APEINGACB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

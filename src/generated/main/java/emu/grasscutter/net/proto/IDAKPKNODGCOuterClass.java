@@ -31,6 +31,10 @@ public final class IDAKPKNODGCOuterClass {
     float getCurValue();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IDAKPKNODGC}
    */
   public static final class IDAKPKNODGC extends
@@ -308,6 +312,10 @@ public final class IDAKPKNODGCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IDAKPKNODGC}
      */
     public static final class Builder extends
@@ -589,9 +597,8 @@ public final class IDAKPKNODGCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021IDAKPKNODGC.proto\",\n\013IDAKPKNODGC\022\n\n\002id" +
-      "\030\001 \001(\r\022\021\n\tcur_value\030\002 \001(\002B2\n\031emu.grasscu" +
-      "tter.net.protoB\025IDAKPKNODGCOuterClassb\006p" +
-      "roto3"
+      "\030\001 \001(\r\022\021\n\tcur_value\030\002 \001(\002B\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

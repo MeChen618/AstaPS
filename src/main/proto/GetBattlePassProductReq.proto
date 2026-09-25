@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-option java_package = "emu.grasscutter.net.proto";
-option java_outer_classname = "GetBattlePassProductReqOuterClass";
-option java_multiple_files = true;
-
-message GetBattlePassProductReq {
-	uint32 battle_pass_product_play_type = 14;
-}

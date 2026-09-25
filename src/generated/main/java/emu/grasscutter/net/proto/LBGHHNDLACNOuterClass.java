@@ -19,18 +19,22 @@ public final class LBGHHNDLACNOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 max_score = 12;</code>
-     * @return The maxScore.
-     */
-    int getMaxScore();
-
-    /**
-     * <code>uint32 level_id = 14;</code>
+     * <code>uint32 level_id = 3;</code>
      * @return The levelId.
      */
     int getLevelId();
+
+    /**
+     * <code>uint32 max_score = 10;</code>
+     * @return The maxScore.
+     */
+    int getMaxScore();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code LBGHHNDLACN}
    */
   public static final class LBGHHNDLACN extends
@@ -75,14 +79,14 @@ public final class LBGHHNDLACNOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 24: {
 
               levelId_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              maxScore_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +121,26 @@ public final class LBGHHNDLACNOuterClass {
               emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN.class, emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN.Builder.class);
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 12;
-    private int maxScore_;
-    /**
-     * <code>uint32 max_score = 12;</code>
-     * @return The maxScore.
-     */
-    @java.lang.Override
-    public int getMaxScore() {
-      return maxScore_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 14;
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 14;</code>
+     * <code>uint32 level_id = 3;</code>
      * @return The levelId.
      */
     @java.lang.Override
     public int getLevelId() {
       return levelId_;
+    }
+
+    public static final int MAX_SCORE_FIELD_NUMBER = 10;
+    private int maxScore_;
+    /**
+     * <code>uint32 max_score = 10;</code>
+     * @return The maxScore.
+     */
+    @java.lang.Override
+    public int getMaxScore() {
+      return maxScore_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +157,11 @@ public final class LBGHHNDLACNOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (maxScore_ != 0) {
-        output.writeUInt32(12, maxScore_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(14, levelId_);
+        output.writeUInt32(3, levelId_);
+      }
+      if (maxScore_ != 0) {
+        output.writeUInt32(10, maxScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class LBGHHNDLACNOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (maxScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, maxScore_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, levelId_);
+          .computeUInt32Size(3, levelId_);
+      }
+      if (maxScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, maxScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +195,10 @@ public final class LBGHHNDLACNOuterClass {
       }
       emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN other = (emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN) obj;
 
-      if (getMaxScore()
-          != other.getMaxScore()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
+      if (getMaxScore()
+          != other.getMaxScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class LBGHHNDLACNOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxScore();
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxScore();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class LBGHHNDLACNOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code LBGHHNDLACN}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class LBGHHNDLACNOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        maxScore_ = 0;
-
         levelId_ = 0;
+
+        maxScore_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class LBGHHNDLACNOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN buildPartial() {
         emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN result = new emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN(this);
-        result.maxScore_ = maxScore_;
         result.levelId_ = levelId_;
+        result.maxScore_ = maxScore_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class LBGHHNDLACNOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN other) {
         if (other == emu.grasscutter.net.proto.LBGHHNDLACNOuterClass.LBGHHNDLACN.getDefaultInstance()) return this;
-        if (other.getMaxScore() != 0) {
-          setMaxScore(other.getMaxScore());
-        }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
+        }
+        if (other.getMaxScore() != 0) {
+          setMaxScore(other.getMaxScore());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,40 +466,9 @@ public final class LBGHHNDLACNOuterClass {
         return this;
       }
 
-      private int maxScore_ ;
-      /**
-       * <code>uint32 max_score = 12;</code>
-       * @return The maxScore.
-       */
-      @java.lang.Override
-      public int getMaxScore() {
-        return maxScore_;
-      }
-      /**
-       * <code>uint32 max_score = 12;</code>
-       * @param value The maxScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxScore(int value) {
-        
-        maxScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 max_score = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxScore() {
-        
-        maxScore_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 14;</code>
+       * <code>uint32 level_id = 3;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -499,7 +476,7 @@ public final class LBGHHNDLACNOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 14;</code>
+       * <code>uint32 level_id = 3;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -510,12 +487,43 @@ public final class LBGHHNDLACNOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 14;</code>
+       * <code>uint32 level_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
         
         levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxScore_ ;
+      /**
+       * <code>uint32 max_score = 10;</code>
+       * @return The maxScore.
+       */
+      @java.lang.Override
+      public int getMaxScore() {
+        return maxScore_;
+      }
+      /**
+       * <code>uint32 max_score = 10;</code>
+       * @param value The maxScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxScore(int value) {
+        
+        maxScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 max_score = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxScore() {
+        
+        maxScore_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class LBGHHNDLACNOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021LBGHHNDLACN.proto\"2\n\013LBGHHNDLACN\022\021\n\tma" +
-      "x_score\030\014 \001(\r\022\020\n\010level_id\030\016 \001(\rB2\n\031emu.g" +
-      "rasscutter.net.protoB\025LBGHHNDLACNOuterCl" +
-      "assb\006proto3"
+      "\n\021LBGHHNDLACN.proto\"2\n\013LBGHHNDLACN\022\020\n\010le" +
+      "vel_id\030\003 \001(\r\022\021\n\tmax_score\030\n \001(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class LBGHHNDLACNOuterClass {
     internal_static_LBGHHNDLACN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LBGHHNDLACN_descriptor,
-        new java.lang.String[] { "MaxScore", "LevelId", });
+        new java.lang.String[] { "LevelId", "MaxScore", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -644,9 +644,8 @@ public final class CombineDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027CombineDataNotify.proto\",\n\021CombineData" +
-      "Notify\022\027\n\017combine_id_list\030\t \003(\rB8\n\031emu.g" +
-      "rasscutter.net.protoB\033CombineDataNotifyO" +
-      "uterClassb\006proto3"
+      "Notify\022\027\n\017combine_id_list\030\t \003(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

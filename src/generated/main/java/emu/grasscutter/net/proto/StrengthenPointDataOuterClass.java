@@ -19,18 +19,22 @@ public final class StrengthenPointDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 GPCEEMPGCGO = 4;</code>
+     * <code>uint32 GPCEEMPGCGO = 13;</code>
      * @return The gPCEEMPGCGO.
      */
     int getGPCEEMPGCGO();
 
     /**
-     * <code>uint32 LDNJNMPHLFD = 9;</code>
+     * <code>uint32 LDNJNMPHLFD = 12;</code>
      * @return The lDNJNMPHLFD.
      */
     int getLDNJNMPHLFD();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code StrengthenPointData}
    */
   public static final class StrengthenPointData extends
@@ -75,14 +79,14 @@ public final class StrengthenPointDataOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
-
-              gPCEEMPGCGO_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 96: {
 
               lDNJNMPHLFD_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              gPCEEMPGCGO_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class StrengthenPointDataOuterClass {
               emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.class, emu.grasscutter.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.Builder.class);
     }
 
-    public static final int GPCEEMPGCGO_FIELD_NUMBER = 4;
+    public static final int GPCEEMPGCGO_FIELD_NUMBER = 13;
     private int gPCEEMPGCGO_;
     /**
-     * <code>uint32 GPCEEMPGCGO = 4;</code>
+     * <code>uint32 GPCEEMPGCGO = 13;</code>
      * @return The gPCEEMPGCGO.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class StrengthenPointDataOuterClass {
       return gPCEEMPGCGO_;
     }
 
-    public static final int LDNJNMPHLFD_FIELD_NUMBER = 9;
+    public static final int LDNJNMPHLFD_FIELD_NUMBER = 12;
     private int lDNJNMPHLFD_;
     /**
-     * <code>uint32 LDNJNMPHLFD = 9;</code>
+     * <code>uint32 LDNJNMPHLFD = 12;</code>
      * @return The lDNJNMPHLFD.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class StrengthenPointDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (gPCEEMPGCGO_ != 0) {
-        output.writeUInt32(4, gPCEEMPGCGO_);
-      }
       if (lDNJNMPHLFD_ != 0) {
-        output.writeUInt32(9, lDNJNMPHLFD_);
+        output.writeUInt32(12, lDNJNMPHLFD_);
+      }
+      if (gPCEEMPGCGO_ != 0) {
+        output.writeUInt32(13, gPCEEMPGCGO_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class StrengthenPointDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (gPCEEMPGCGO_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, gPCEEMPGCGO_);
-      }
       if (lDNJNMPHLFD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, lDNJNMPHLFD_);
+          .computeUInt32Size(12, lDNJNMPHLFD_);
+      }
+      if (gPCEEMPGCGO_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, gPCEEMPGCGO_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class StrengthenPointDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code StrengthenPointData}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class StrengthenPointDataOuterClass {
 
       private int gPCEEMPGCGO_ ;
       /**
-       * <code>uint32 GPCEEMPGCGO = 4;</code>
+       * <code>uint32 GPCEEMPGCGO = 13;</code>
        * @return The gPCEEMPGCGO.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class StrengthenPointDataOuterClass {
         return gPCEEMPGCGO_;
       }
       /**
-       * <code>uint32 GPCEEMPGCGO = 4;</code>
+       * <code>uint32 GPCEEMPGCGO = 13;</code>
        * @param value The gPCEEMPGCGO to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class StrengthenPointDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 GPCEEMPGCGO = 4;</code>
+       * <code>uint32 GPCEEMPGCGO = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearGPCEEMPGCGO() {
@@ -491,7 +499,7 @@ public final class StrengthenPointDataOuterClass {
 
       private int lDNJNMPHLFD_ ;
       /**
-       * <code>uint32 LDNJNMPHLFD = 9;</code>
+       * <code>uint32 LDNJNMPHLFD = 12;</code>
        * @return The lDNJNMPHLFD.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class StrengthenPointDataOuterClass {
         return lDNJNMPHLFD_;
       }
       /**
-       * <code>uint32 LDNJNMPHLFD = 9;</code>
+       * <code>uint32 LDNJNMPHLFD = 12;</code>
        * @param value The lDNJNMPHLFD to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class StrengthenPointDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 LDNJNMPHLFD = 9;</code>
+       * <code>uint32 LDNJNMPHLFD = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearLDNJNMPHLFD() {
@@ -587,9 +595,9 @@ public final class StrengthenPointDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031StrengthenPointData.proto\"?\n\023Strengthe" +
-      "nPointData\022\023\n\013GPCEEMPGCGO\030\004 \001(\r\022\023\n\013LDNJN" +
-      "MPHLFD\030\t \001(\rB:\n\031emu.grasscutter.net.prot" +
-      "oB\035StrengthenPointDataOuterClassb\006proto3"
+      "nPointData\022\023\n\013GPCEEMPGCGO\030\r \001(\r\022\023\n\013LDNJN" +
+      "MPHLFD\030\014 \001(\rB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

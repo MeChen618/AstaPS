@@ -517,9 +517,8 @@ public final class PersonalSceneJumpReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032PersonalSceneJumpReq.proto\"(\n\024Personal" +
-      "SceneJumpReq\022\020\n\010point_id\030\005 \001(\rB;\n\031emu.gr" +
-      "asscutter.net.protoB\036PersonalSceneJumpRe" +
-      "qOuterClassb\006proto3"
+      "SceneJumpReq\022\020\n\010point_id\030\005 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

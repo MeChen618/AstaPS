@@ -2,7 +2,7 @@ package emu.grasscutter.game.ability;
 
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
@@ -38,7 +38,7 @@ public final class ArlecchinoBoLSync {
      * refused and the client bar is re-pinned. Increases still apply. Authoritative Q clear uses a
      * short bypass inside {@code ArlecchinoBurstBoL.applyClear}.
      */
-    public static void pushBoL(EntityAvatar avatar, float newDebt, float change, ChangeHpDebtsReason reason) {
+    public static void pushBoL(EntityAvatar avatar, float newDebt, float change, _ChangeHpDebtsReason reason) {
         if (avatar == null || avatar.getScene() == null) {
             return;
         }

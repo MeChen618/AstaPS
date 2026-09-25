@@ -19,18 +19,22 @@ public final class DPEEOGGEECKOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 KHJHFLNMNPC = 8;</code>
+     * @return The kHJHFLNMNPC.
+     */
+    int getKHJHFLNMNPC();
+
+    /**
      * <code>uint32 BLCPLGCJEBJ = 4;</code>
      * @return The bLCPLGCJEBJ.
      */
     int getBLCPLGCJEBJ();
-
-    /**
-     * <code>uint32 KHJHFLNMNPC = 10;</code>
-     * @return The kHJHFLNMNPC.
-     */
-    int getKHJHFLNMNPC();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code DPEEOGGEECK}
    */
   public static final class DPEEOGGEECK extends
@@ -80,7 +84,7 @@ public final class DPEEOGGEECKOuterClass {
               bLCPLGCJEBJ_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 64: {
 
               kHJHFLNMNPC_ = input.readUInt32();
               break;
@@ -117,6 +121,17 @@ public final class DPEEOGGEECKOuterClass {
               emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK.class, emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK.Builder.class);
     }
 
+    public static final int KHJHFLNMNPC_FIELD_NUMBER = 8;
+    private int kHJHFLNMNPC_;
+    /**
+     * <code>uint32 KHJHFLNMNPC = 8;</code>
+     * @return The kHJHFLNMNPC.
+     */
+    @java.lang.Override
+    public int getKHJHFLNMNPC() {
+      return kHJHFLNMNPC_;
+    }
+
     public static final int BLCPLGCJEBJ_FIELD_NUMBER = 4;
     private int bLCPLGCJEBJ_;
     /**
@@ -126,17 +141,6 @@ public final class DPEEOGGEECKOuterClass {
     @java.lang.Override
     public int getBLCPLGCJEBJ() {
       return bLCPLGCJEBJ_;
-    }
-
-    public static final int KHJHFLNMNPC_FIELD_NUMBER = 10;
-    private int kHJHFLNMNPC_;
-    /**
-     * <code>uint32 KHJHFLNMNPC = 10;</code>
-     * @return The kHJHFLNMNPC.
-     */
-    @java.lang.Override
-    public int getKHJHFLNMNPC() {
-      return kHJHFLNMNPC_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -157,7 +161,7 @@ public final class DPEEOGGEECKOuterClass {
         output.writeUInt32(4, bLCPLGCJEBJ_);
       }
       if (kHJHFLNMNPC_ != 0) {
-        output.writeUInt32(10, kHJHFLNMNPC_);
+        output.writeUInt32(8, kHJHFLNMNPC_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,7 +178,7 @@ public final class DPEEOGGEECKOuterClass {
       }
       if (kHJHFLNMNPC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, kHJHFLNMNPC_);
+          .computeUInt32Size(8, kHJHFLNMNPC_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +195,10 @@ public final class DPEEOGGEECKOuterClass {
       }
       emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK other = (emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK) obj;
 
-      if (getBLCPLGCJEBJ()
-          != other.getBLCPLGCJEBJ()) return false;
       if (getKHJHFLNMNPC()
           != other.getKHJHFLNMNPC()) return false;
+      if (getBLCPLGCJEBJ()
+          != other.getBLCPLGCJEBJ()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class DPEEOGGEECKOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BLCPLGCJEBJ_FIELD_NUMBER;
-      hash = (53 * hash) + getBLCPLGCJEBJ();
       hash = (37 * hash) + KHJHFLNMNPC_FIELD_NUMBER;
       hash = (53 * hash) + getKHJHFLNMNPC();
+      hash = (37 * hash) + BLCPLGCJEBJ_FIELD_NUMBER;
+      hash = (53 * hash) + getBLCPLGCJEBJ();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class DPEEOGGEECKOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code DPEEOGGEECK}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class DPEEOGGEECKOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bLCPLGCJEBJ_ = 0;
-
         kHJHFLNMNPC_ = 0;
+
+        bLCPLGCJEBJ_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class DPEEOGGEECKOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK buildPartial() {
         emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK result = new emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK(this);
-        result.bLCPLGCJEBJ_ = bLCPLGCJEBJ_;
         result.kHJHFLNMNPC_ = kHJHFLNMNPC_;
+        result.bLCPLGCJEBJ_ = bLCPLGCJEBJ_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class DPEEOGGEECKOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK other) {
         if (other == emu.grasscutter.net.proto.DPEEOGGEECKOuterClass.DPEEOGGEECK.getDefaultInstance()) return this;
-        if (other.getBLCPLGCJEBJ() != 0) {
-          setBLCPLGCJEBJ(other.getBLCPLGCJEBJ());
-        }
         if (other.getKHJHFLNMNPC() != 0) {
           setKHJHFLNMNPC(other.getKHJHFLNMNPC());
+        }
+        if (other.getBLCPLGCJEBJ() != 0) {
+          setBLCPLGCJEBJ(other.getBLCPLGCJEBJ());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,6 +466,37 @@ public final class DPEEOGGEECKOuterClass {
         return this;
       }
 
+      private int kHJHFLNMNPC_ ;
+      /**
+       * <code>uint32 KHJHFLNMNPC = 8;</code>
+       * @return The kHJHFLNMNPC.
+       */
+      @java.lang.Override
+      public int getKHJHFLNMNPC() {
+        return kHJHFLNMNPC_;
+      }
+      /**
+       * <code>uint32 KHJHFLNMNPC = 8;</code>
+       * @param value The kHJHFLNMNPC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKHJHFLNMNPC(int value) {
+        
+        kHJHFLNMNPC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KHJHFLNMNPC = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKHJHFLNMNPC() {
+        
+        kHJHFLNMNPC_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int bLCPLGCJEBJ_ ;
       /**
        * <code>uint32 BLCPLGCJEBJ = 4;</code>
@@ -485,37 +524,6 @@ public final class DPEEOGGEECKOuterClass {
       public Builder clearBLCPLGCJEBJ() {
         
         bLCPLGCJEBJ_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int kHJHFLNMNPC_ ;
-      /**
-       * <code>uint32 KHJHFLNMNPC = 10;</code>
-       * @return The kHJHFLNMNPC.
-       */
-      @java.lang.Override
-      public int getKHJHFLNMNPC() {
-        return kHJHFLNMNPC_;
-      }
-      /**
-       * <code>uint32 KHJHFLNMNPC = 10;</code>
-       * @param value The kHJHFLNMNPC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKHJHFLNMNPC(int value) {
-        
-        kHJHFLNMNPC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KHJHFLNMNPC = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKHJHFLNMNPC() {
-        
-        kHJHFLNMNPC_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class DPEEOGGEECKOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021DPEEOGGEECK.proto\"7\n\013DPEEOGGEECK\022\023\n\013BL" +
-      "CPLGCJEBJ\030\004 \001(\r\022\023\n\013KHJHFLNMNPC\030\n \001(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025DPEEOGGEECKOu" +
-      "terClassb\006proto3"
+      "\n\021DPEEOGGEECK.proto\"7\n\013DPEEOGGEECK\022\023\n\013KH" +
+      "JHFLNMNPC\030\010 \001(\r\022\023\n\013BLCPLGCJEBJ\030\004 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class DPEEOGGEECKOuterClass {
     internal_static_DPEEOGGEECK_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DPEEOGGEECK_descriptor,
-        new java.lang.String[] { "BLCPLGCJEBJ", "KHJHFLNMNPC", });
+        new java.lang.String[] { "KHJHFLNMNPC", "BLCPLGCJEBJ", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

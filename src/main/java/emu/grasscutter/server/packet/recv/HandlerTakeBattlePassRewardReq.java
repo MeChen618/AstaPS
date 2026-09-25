@@ -60,7 +60,7 @@ public class HandlerTakeBattlePassRewardReq extends PacketHandler {
             int rewardId = option.getTag().getRewardId();
             int level = option.getTag().getLevel();
             boolean paid = option.getTag().getUnlockStatus()
-                    == BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID;
+                    == BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID;
             manager.getTakenRewards().remove(rewardId);
             List<GameItem> items = BattlePassSelectChestHelper.grant(player, rewardId, option.getOptionIdx(), paid);
             if (items.isEmpty()) continue;
@@ -115,9 +115,9 @@ public class HandlerTakeBattlePassRewardReq extends PacketHandler {
                 unlock = firstVarint(tag, 4, 13);
             }
             if (rewardId <= 0) return null;
-            var status = unlock == BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID.getNumber()
-                    ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID
-                    : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_FREE;
+            var status = unlock == BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID.getNumber()
+                    ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID
+                    : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_FREE;
             var builder = BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.newBuilder()
                     .setTag(BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder().setRewardId(rewardId)
                             .setLevel(level).setUnlockStatus(status).build());
@@ -149,10 +149,9 @@ public class HandlerTakeBattlePassRewardReq extends PacketHandler {
         for (Integer id : ids) {
             if (id == null || id <= 0 || taken.containsKey(id) || BattlePassSelectChestHelper.isSelectableReward(id)) continue;
             result.add(BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.newBuilder().setOptionIdx(1)
-                    .setRewardType(paid ? 2 : 1)
                     .setTag(BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder().setRewardId(id).setLevel(level)
-                            .setUnlockStatus(paid ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID
-                                    : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_FREE).build()).build());
+                            .setUnlockStatus(paid ? BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID
+                                    : BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_FREE).build()).build());
         }
     }
 

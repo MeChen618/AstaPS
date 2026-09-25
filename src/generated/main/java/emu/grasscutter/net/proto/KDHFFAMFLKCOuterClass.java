@@ -19,30 +19,34 @@ public final class KDHFFAMFLKCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DNIBBKLBBJE = 1;</code>
-     * @return The dNIBBKLBBJE.
-     */
-    int getDNIBBKLBBJE();
-
-    /**
-     * <code>uint32 rotation = 5;</code>
-     * @return The rotation.
-     */
-    int getRotation();
-
-    /**
-     * <code>uint32 LAPJDMHDDIP = 8;</code>
+     * <code>uint32 LAPJDMHDDIP = 12;</code>
      * @return The lAPJDMHDDIP.
      */
     int getLAPJDMHDDIP();
 
     /**
-     * <code>uint32 MHFDNNEMNJB = 12;</code>
+     * <code>uint32 rotation = 14;</code>
+     * @return The rotation.
+     */
+    int getRotation();
+
+    /**
+     * <code>uint32 MHFDNNEMNJB = 1;</code>
      * @return The mHFDNNEMNJB.
      */
     int getMHFDNNEMNJB();
+
+    /**
+     * <code>uint32 DNIBBKLBBJE = 4;</code>
+     * @return The dNIBBKLBBJE.
+     */
+    int getDNIBBKLBBJE();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KDHFFAMFLKC}
    */
   public static final class KDHFFAMFLKC extends
@@ -89,22 +93,22 @@ public final class KDHFFAMFLKCOuterClass {
               break;
             case 8: {
 
+              mHFDNNEMNJB_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
               dNIBBKLBBJE_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              rotation_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              lAPJDMHDDIP_ = input.readUInt32();
               break;
             }
             case 96: {
 
-              mHFDNNEMNJB_ = input.readUInt32();
+              lAPJDMHDDIP_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              rotation_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,32 +143,10 @@ public final class KDHFFAMFLKCOuterClass {
               emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC.class, emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC.Builder.class);
     }
 
-    public static final int DNIBBKLBBJE_FIELD_NUMBER = 1;
-    private int dNIBBKLBBJE_;
-    /**
-     * <code>uint32 DNIBBKLBBJE = 1;</code>
-     * @return The dNIBBKLBBJE.
-     */
-    @java.lang.Override
-    public int getDNIBBKLBBJE() {
-      return dNIBBKLBBJE_;
-    }
-
-    public static final int ROTATION_FIELD_NUMBER = 5;
-    private int rotation_;
-    /**
-     * <code>uint32 rotation = 5;</code>
-     * @return The rotation.
-     */
-    @java.lang.Override
-    public int getRotation() {
-      return rotation_;
-    }
-
-    public static final int LAPJDMHDDIP_FIELD_NUMBER = 8;
+    public static final int LAPJDMHDDIP_FIELD_NUMBER = 12;
     private int lAPJDMHDDIP_;
     /**
-     * <code>uint32 LAPJDMHDDIP = 8;</code>
+     * <code>uint32 LAPJDMHDDIP = 12;</code>
      * @return The lAPJDMHDDIP.
      */
     @java.lang.Override
@@ -172,15 +154,37 @@ public final class KDHFFAMFLKCOuterClass {
       return lAPJDMHDDIP_;
     }
 
-    public static final int MHFDNNEMNJB_FIELD_NUMBER = 12;
+    public static final int ROTATION_FIELD_NUMBER = 14;
+    private int rotation_;
+    /**
+     * <code>uint32 rotation = 14;</code>
+     * @return The rotation.
+     */
+    @java.lang.Override
+    public int getRotation() {
+      return rotation_;
+    }
+
+    public static final int MHFDNNEMNJB_FIELD_NUMBER = 1;
     private int mHFDNNEMNJB_;
     /**
-     * <code>uint32 MHFDNNEMNJB = 12;</code>
+     * <code>uint32 MHFDNNEMNJB = 1;</code>
      * @return The mHFDNNEMNJB.
      */
     @java.lang.Override
     public int getMHFDNNEMNJB() {
       return mHFDNNEMNJB_;
+    }
+
+    public static final int DNIBBKLBBJE_FIELD_NUMBER = 4;
+    private int dNIBBKLBBJE_;
+    /**
+     * <code>uint32 DNIBBKLBBJE = 4;</code>
+     * @return The dNIBBKLBBJE.
+     */
+    @java.lang.Override
+    public int getDNIBBKLBBJE() {
+      return dNIBBKLBBJE_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,17 +201,17 @@ public final class KDHFFAMFLKCOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dNIBBKLBBJE_ != 0) {
-        output.writeUInt32(1, dNIBBKLBBJE_);
+      if (mHFDNNEMNJB_ != 0) {
+        output.writeUInt32(1, mHFDNNEMNJB_);
       }
-      if (rotation_ != 0) {
-        output.writeUInt32(5, rotation_);
+      if (dNIBBKLBBJE_ != 0) {
+        output.writeUInt32(4, dNIBBKLBBJE_);
       }
       if (lAPJDMHDDIP_ != 0) {
-        output.writeUInt32(8, lAPJDMHDDIP_);
+        output.writeUInt32(12, lAPJDMHDDIP_);
       }
-      if (mHFDNNEMNJB_ != 0) {
-        output.writeUInt32(12, mHFDNNEMNJB_);
+      if (rotation_ != 0) {
+        output.writeUInt32(14, rotation_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +222,21 @@ public final class KDHFFAMFLKCOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (mHFDNNEMNJB_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, mHFDNNEMNJB_);
+      }
       if (dNIBBKLBBJE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, dNIBBKLBBJE_);
-      }
-      if (rotation_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, rotation_);
+          .computeUInt32Size(4, dNIBBKLBBJE_);
       }
       if (lAPJDMHDDIP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lAPJDMHDDIP_);
+          .computeUInt32Size(12, lAPJDMHDDIP_);
       }
-      if (mHFDNNEMNJB_ != 0) {
+      if (rotation_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, mHFDNNEMNJB_);
+          .computeUInt32Size(14, rotation_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,14 +253,14 @@ public final class KDHFFAMFLKCOuterClass {
       }
       emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC other = (emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC) obj;
 
-      if (getDNIBBKLBBJE()
-          != other.getDNIBBKLBBJE()) return false;
-      if (getRotation()
-          != other.getRotation()) return false;
       if (getLAPJDMHDDIP()
           != other.getLAPJDMHDDIP()) return false;
+      if (getRotation()
+          != other.getRotation()) return false;
       if (getMHFDNNEMNJB()
           != other.getMHFDNNEMNJB()) return false;
+      if (getDNIBBKLBBJE()
+          != other.getDNIBBKLBBJE()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,14 +272,14 @@ public final class KDHFFAMFLKCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DNIBBKLBBJE_FIELD_NUMBER;
-      hash = (53 * hash) + getDNIBBKLBBJE();
-      hash = (37 * hash) + ROTATION_FIELD_NUMBER;
-      hash = (53 * hash) + getRotation();
       hash = (37 * hash) + LAPJDMHDDIP_FIELD_NUMBER;
       hash = (53 * hash) + getLAPJDMHDDIP();
+      hash = (37 * hash) + ROTATION_FIELD_NUMBER;
+      hash = (53 * hash) + getRotation();
       hash = (37 * hash) + MHFDNNEMNJB_FIELD_NUMBER;
       hash = (53 * hash) + getMHFDNNEMNJB();
+      hash = (37 * hash) + DNIBBKLBBJE_FIELD_NUMBER;
+      hash = (53 * hash) + getDNIBBKLBBJE();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,6 +376,10 @@ public final class KDHFFAMFLKCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KDHFFAMFLKC}
      */
     public static final class Builder extends
@@ -409,13 +417,13 @@ public final class KDHFFAMFLKCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dNIBBKLBBJE_ = 0;
+        lAPJDMHDDIP_ = 0;
 
         rotation_ = 0;
 
-        lAPJDMHDDIP_ = 0;
-
         mHFDNNEMNJB_ = 0;
+
+        dNIBBKLBBJE_ = 0;
 
         return this;
       }
@@ -443,10 +451,10 @@ public final class KDHFFAMFLKCOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC buildPartial() {
         emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC result = new emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC(this);
-        result.dNIBBKLBBJE_ = dNIBBKLBBJE_;
-        result.rotation_ = rotation_;
         result.lAPJDMHDDIP_ = lAPJDMHDDIP_;
+        result.rotation_ = rotation_;
         result.mHFDNNEMNJB_ = mHFDNNEMNJB_;
+        result.dNIBBKLBBJE_ = dNIBBKLBBJE_;
         onBuilt();
         return result;
       }
@@ -495,17 +503,17 @@ public final class KDHFFAMFLKCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC other) {
         if (other == emu.grasscutter.net.proto.KDHFFAMFLKCOuterClass.KDHFFAMFLKC.getDefaultInstance()) return this;
-        if (other.getDNIBBKLBBJE() != 0) {
-          setDNIBBKLBBJE(other.getDNIBBKLBBJE());
+        if (other.getLAPJDMHDDIP() != 0) {
+          setLAPJDMHDDIP(other.getLAPJDMHDDIP());
         }
         if (other.getRotation() != 0) {
           setRotation(other.getRotation());
         }
-        if (other.getLAPJDMHDDIP() != 0) {
-          setLAPJDMHDDIP(other.getLAPJDMHDDIP());
-        }
         if (other.getMHFDNNEMNJB() != 0) {
           setMHFDNNEMNJB(other.getMHFDNNEMNJB());
+        }
+        if (other.getDNIBBKLBBJE() != 0) {
+          setDNIBBKLBBJE(other.getDNIBBKLBBJE());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,71 +544,9 @@ public final class KDHFFAMFLKCOuterClass {
         return this;
       }
 
-      private int dNIBBKLBBJE_ ;
-      /**
-       * <code>uint32 DNIBBKLBBJE = 1;</code>
-       * @return The dNIBBKLBBJE.
-       */
-      @java.lang.Override
-      public int getDNIBBKLBBJE() {
-        return dNIBBKLBBJE_;
-      }
-      /**
-       * <code>uint32 DNIBBKLBBJE = 1;</code>
-       * @param value The dNIBBKLBBJE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDNIBBKLBBJE(int value) {
-        
-        dNIBBKLBBJE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DNIBBKLBBJE = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDNIBBKLBBJE() {
-        
-        dNIBBKLBBJE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int rotation_ ;
-      /**
-       * <code>uint32 rotation = 5;</code>
-       * @return The rotation.
-       */
-      @java.lang.Override
-      public int getRotation() {
-        return rotation_;
-      }
-      /**
-       * <code>uint32 rotation = 5;</code>
-       * @param value The rotation to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRotation(int value) {
-        
-        rotation_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 rotation = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRotation() {
-        
-        rotation_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int lAPJDMHDDIP_ ;
       /**
-       * <code>uint32 LAPJDMHDDIP = 8;</code>
+       * <code>uint32 LAPJDMHDDIP = 12;</code>
        * @return The lAPJDMHDDIP.
        */
       @java.lang.Override
@@ -608,7 +554,7 @@ public final class KDHFFAMFLKCOuterClass {
         return lAPJDMHDDIP_;
       }
       /**
-       * <code>uint32 LAPJDMHDDIP = 8;</code>
+       * <code>uint32 LAPJDMHDDIP = 12;</code>
        * @param value The lAPJDMHDDIP to set.
        * @return This builder for chaining.
        */
@@ -619,7 +565,7 @@ public final class KDHFFAMFLKCOuterClass {
         return this;
       }
       /**
-       * <code>uint32 LAPJDMHDDIP = 8;</code>
+       * <code>uint32 LAPJDMHDDIP = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearLAPJDMHDDIP() {
@@ -629,9 +575,40 @@ public final class KDHFFAMFLKCOuterClass {
         return this;
       }
 
+      private int rotation_ ;
+      /**
+       * <code>uint32 rotation = 14;</code>
+       * @return The rotation.
+       */
+      @java.lang.Override
+      public int getRotation() {
+        return rotation_;
+      }
+      /**
+       * <code>uint32 rotation = 14;</code>
+       * @param value The rotation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRotation(int value) {
+        
+        rotation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 rotation = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRotation() {
+        
+        rotation_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int mHFDNNEMNJB_ ;
       /**
-       * <code>uint32 MHFDNNEMNJB = 12;</code>
+       * <code>uint32 MHFDNNEMNJB = 1;</code>
        * @return The mHFDNNEMNJB.
        */
       @java.lang.Override
@@ -639,7 +616,7 @@ public final class KDHFFAMFLKCOuterClass {
         return mHFDNNEMNJB_;
       }
       /**
-       * <code>uint32 MHFDNNEMNJB = 12;</code>
+       * <code>uint32 MHFDNNEMNJB = 1;</code>
        * @param value The mHFDNNEMNJB to set.
        * @return This builder for chaining.
        */
@@ -650,12 +627,43 @@ public final class KDHFFAMFLKCOuterClass {
         return this;
       }
       /**
-       * <code>uint32 MHFDNNEMNJB = 12;</code>
+       * <code>uint32 MHFDNNEMNJB = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMHFDNNEMNJB() {
         
         mHFDNNEMNJB_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dNIBBKLBBJE_ ;
+      /**
+       * <code>uint32 DNIBBKLBBJE = 4;</code>
+       * @return The dNIBBKLBBJE.
+       */
+      @java.lang.Override
+      public int getDNIBBKLBBJE() {
+        return dNIBBKLBBJE_;
+      }
+      /**
+       * <code>uint32 DNIBBKLBBJE = 4;</code>
+       * @param value The dNIBBKLBBJE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDNIBBKLBBJE(int value) {
+        
+        dNIBBKLBBJE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 DNIBBKLBBJE = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDNIBBKLBBJE() {
+        
+        dNIBBKLBBJE_ = 0;
         onChanged();
         return this;
       }
@@ -726,11 +734,10 @@ public final class KDHFFAMFLKCOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021KDHFFAMFLKC.proto\"^\n\013KDHFFAMFLKC\022\023\n\013DN" +
-      "IBBKLBBJE\030\001 \001(\r\022\020\n\010rotation\030\005 \001(\r\022\023\n\013LAP" +
-      "JDMHDDIP\030\010 \001(\r\022\023\n\013MHFDNNEMNJB\030\014 \001(\rB2\n\031e" +
-      "mu.grasscutter.net.protoB\025KDHFFAMFLKCOut" +
-      "erClassb\006proto3"
+      "\n\021KDHFFAMFLKC.proto\"^\n\013KDHFFAMFLKC\022\023\n\013LA" +
+      "PJDMHDDIP\030\014 \001(\r\022\020\n\010rotation\030\016 \001(\r\022\023\n\013MHF" +
+      "DNNEMNJB\030\001 \001(\r\022\023\n\013DNIBBKLBBJE\030\004 \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -741,7 +748,7 @@ public final class KDHFFAMFLKCOuterClass {
     internal_static_KDHFFAMFLKC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KDHFFAMFLKC_descriptor,
-        new java.lang.String[] { "DNIBBKLBBJE", "Rotation", "LAPJDMHDDIP", "MHFDNNEMNJB", });
+        new java.lang.String[] { "LAPJDMHDDIP", "Rotation", "MHFDNNEMNJB", "DNIBBKLBBJE", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

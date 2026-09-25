@@ -19,10 +19,10 @@ public final class SceneNpcInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 npc_id = 1;</code>
-     * @return The npcId.
+     * <code>uint32 parent_quest_id = 3;</code>
+     * @return The parentQuestId.
      */
-    int getNpcId();
+    int getParentQuestId();
 
     /**
      * <code>uint32 room_id = 2;</code>
@@ -31,10 +31,10 @@ public final class SceneNpcInfoOuterClass {
     int getRoomId();
 
     /**
-     * <code>uint32 parent_quest_id = 3;</code>
-     * @return The parentQuestId.
+     * <code>uint32 npc_id = 1;</code>
+     * @return The npcId.
      */
-    int getParentQuestId();
+    int getNpcId();
 
     /**
      * <code>uint32 block_id = 4;</code>
@@ -43,6 +43,10 @@ public final class SceneNpcInfoOuterClass {
     int getBlockId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code SceneNpcInfo}
    */
   public static final class SceneNpcInfo extends
@@ -139,15 +143,15 @@ public final class SceneNpcInfoOuterClass {
               emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.class, emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.Builder.class);
     }
 
-    public static final int NPC_ID_FIELD_NUMBER = 1;
-    private int npcId_;
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
+    private int parentQuestId_;
     /**
-     * <code>uint32 npc_id = 1;</code>
-     * @return The npcId.
+     * <code>uint32 parent_quest_id = 3;</code>
+     * @return The parentQuestId.
      */
     @java.lang.Override
-    public int getNpcId() {
-      return npcId_;
+    public int getParentQuestId() {
+      return parentQuestId_;
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 2;
@@ -161,15 +165,15 @@ public final class SceneNpcInfoOuterClass {
       return roomId_;
     }
 
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
-    private int parentQuestId_;
+    public static final int NPC_ID_FIELD_NUMBER = 1;
+    private int npcId_;
     /**
-     * <code>uint32 parent_quest_id = 3;</code>
-     * @return The parentQuestId.
+     * <code>uint32 npc_id = 1;</code>
+     * @return The npcId.
      */
     @java.lang.Override
-    public int getParentQuestId() {
-      return parentQuestId_;
+    public int getNpcId() {
+      return npcId_;
     }
 
     public static final int BLOCK_ID_FIELD_NUMBER = 4;
@@ -249,12 +253,12 @@ public final class SceneNpcInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo other = (emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo) obj;
 
-      if (getNpcId()
-          != other.getNpcId()) return false;
-      if (getRoomId()
-          != other.getRoomId()) return false;
       if (getParentQuestId()
           != other.getParentQuestId()) return false;
+      if (getRoomId()
+          != other.getRoomId()) return false;
+      if (getNpcId()
+          != other.getNpcId()) return false;
       if (getBlockId()
           != other.getBlockId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -268,12 +272,12 @@ public final class SceneNpcInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NPC_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getNpcId();
-      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRoomId();
       hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getParentQuestId();
+      hash = (37 * hash) + ROOM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRoomId();
+      hash = (37 * hash) + NPC_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getNpcId();
       hash = (37 * hash) + BLOCK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBlockId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -372,6 +376,10 @@ public final class SceneNpcInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code SceneNpcInfo}
      */
     public static final class Builder extends
@@ -409,11 +417,11 @@ public final class SceneNpcInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        npcId_ = 0;
+        parentQuestId_ = 0;
 
         roomId_ = 0;
 
-        parentQuestId_ = 0;
+        npcId_ = 0;
 
         blockId_ = 0;
 
@@ -443,9 +451,9 @@ public final class SceneNpcInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo buildPartial() {
         emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo result = new emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo(this);
-        result.npcId_ = npcId_;
-        result.roomId_ = roomId_;
         result.parentQuestId_ = parentQuestId_;
+        result.roomId_ = roomId_;
+        result.npcId_ = npcId_;
         result.blockId_ = blockId_;
         onBuilt();
         return result;
@@ -495,14 +503,14 @@ public final class SceneNpcInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo other) {
         if (other == emu.grasscutter.net.proto.SceneNpcInfoOuterClass.SceneNpcInfo.getDefaultInstance()) return this;
-        if (other.getNpcId() != 0) {
-          setNpcId(other.getNpcId());
+        if (other.getParentQuestId() != 0) {
+          setParentQuestId(other.getParentQuestId());
         }
         if (other.getRoomId() != 0) {
           setRoomId(other.getRoomId());
         }
-        if (other.getParentQuestId() != 0) {
-          setParentQuestId(other.getParentQuestId());
+        if (other.getNpcId() != 0) {
+          setNpcId(other.getNpcId());
         }
         if (other.getBlockId() != 0) {
           setBlockId(other.getBlockId());
@@ -536,33 +544,33 @@ public final class SceneNpcInfoOuterClass {
         return this;
       }
 
-      private int npcId_ ;
+      private int parentQuestId_ ;
       /**
-       * <code>uint32 npc_id = 1;</code>
-       * @return The npcId.
+       * <code>uint32 parent_quest_id = 3;</code>
+       * @return The parentQuestId.
        */
       @java.lang.Override
-      public int getNpcId() {
-        return npcId_;
+      public int getParentQuestId() {
+        return parentQuestId_;
       }
       /**
-       * <code>uint32 npc_id = 1;</code>
-       * @param value The npcId to set.
+       * <code>uint32 parent_quest_id = 3;</code>
+       * @param value The parentQuestId to set.
        * @return This builder for chaining.
        */
-      public Builder setNpcId(int value) {
+      public Builder setParentQuestId(int value) {
         
-        npcId_ = value;
+        parentQuestId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 npc_id = 1;</code>
+       * <code>uint32 parent_quest_id = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNpcId() {
+      public Builder clearParentQuestId() {
         
-        npcId_ = 0;
+        parentQuestId_ = 0;
         onChanged();
         return this;
       }
@@ -598,33 +606,33 @@ public final class SceneNpcInfoOuterClass {
         return this;
       }
 
-      private int parentQuestId_ ;
+      private int npcId_ ;
       /**
-       * <code>uint32 parent_quest_id = 3;</code>
-       * @return The parentQuestId.
+       * <code>uint32 npc_id = 1;</code>
+       * @return The npcId.
        */
       @java.lang.Override
-      public int getParentQuestId() {
-        return parentQuestId_;
+      public int getNpcId() {
+        return npcId_;
       }
       /**
-       * <code>uint32 parent_quest_id = 3;</code>
-       * @param value The parentQuestId to set.
+       * <code>uint32 npc_id = 1;</code>
+       * @param value The npcId to set.
        * @return This builder for chaining.
        */
-      public Builder setParentQuestId(int value) {
+      public Builder setNpcId(int value) {
         
-        parentQuestId_ = value;
+        npcId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 parent_quest_id = 3;</code>
+       * <code>uint32 npc_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearParentQuestId() {
+      public Builder clearNpcId() {
         
-        parentQuestId_ = 0;
+        npcId_ = 0;
         onChanged();
         return this;
       }
@@ -726,11 +734,10 @@ public final class SceneNpcInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022SceneNpcInfo.proto\"Z\n\014SceneNpcInfo\022\016\n\006" +
-      "npc_id\030\001 \001(\r\022\017\n\007room_id\030\002 \001(\r\022\027\n\017parent_" +
-      "quest_id\030\003 \001(\r\022\020\n\010block_id\030\004 \001(\rB3\n\031emu." +
-      "grasscutter.net.protoB\026SceneNpcInfoOuter" +
-      "Classb\006proto3"
+      "\n\022SceneNpcInfo.proto\"Z\n\014SceneNpcInfo\022\027\n\017" +
+      "parent_quest_id\030\003 \001(\r\022\017\n\007room_id\030\002 \001(\r\022\016" +
+      "\n\006npc_id\030\001 \001(\r\022\020\n\010block_id\030\004 \001(\rB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -741,7 +748,7 @@ public final class SceneNpcInfoOuterClass {
     internal_static_SceneNpcInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneNpcInfo_descriptor,
-        new java.lang.String[] { "NpcId", "RoomId", "ParentQuestId", "BlockId", });
+        new java.lang.String[] { "ParentQuestId", "RoomId", "NpcId", "BlockId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

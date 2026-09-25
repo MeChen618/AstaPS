@@ -587,15 +587,15 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'DungeonSlipRevivePointActivateRsp.prot" +
-      "o\"R\n!DungeonSlipRevivePointActivateRsp\022\034" +
-      "\n\024slip_revive_point_id\030\003 \001(\r\022\017\n\007retcode\030" +
-      "\t \001(\005BH\n\031emu.grasscutter.net.protoB+Dung" +
-      "eonSlipRevivePointActivateRspOuterClassb" +
-      "\006proto3"
+      "o\032\rRetcode.proto\"R\n!DungeonSlipRevivePoi" +
+      "ntActivateRsp\022\034\n\024slip_revive_point_id\030\003 " +
+      "\001(\r\022\017\n\007retcode\030\t \001(\005B\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_DungeonSlipRevivePointActivateRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -603,6 +603,7 @@ public final class DungeonSlipRevivePointActivateRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonSlipRevivePointActivateRsp_descriptor,
         new java.lang.String[] { "SlipRevivePointId", "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

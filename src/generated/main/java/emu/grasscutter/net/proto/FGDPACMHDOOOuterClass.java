@@ -19,18 +19,22 @@ public final class FGDPACMHDOOOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 key_hash = 1;</code>
-     * @return The keyHash.
-     */
-    int getKeyHash();
-
-    /**
      * <code>int32 value = 2;</code>
      * @return The value.
      */
     int getValue();
+
+    /**
+     * <code>int32 key_hash = 1;</code>
+     * @return The keyHash.
+     */
+    int getKeyHash();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FGDPACMHDOO}
    */
   public static final class FGDPACMHDOO extends
@@ -117,17 +121,6 @@ public final class FGDPACMHDOOOuterClass {
               emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO.class, emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO.Builder.class);
     }
 
-    public static final int KEY_HASH_FIELD_NUMBER = 1;
-    private int keyHash_;
-    /**
-     * <code>int32 key_hash = 1;</code>
-     * @return The keyHash.
-     */
-    @java.lang.Override
-    public int getKeyHash() {
-      return keyHash_;
-    }
-
     public static final int VALUE_FIELD_NUMBER = 2;
     private int value_;
     /**
@@ -137,6 +130,17 @@ public final class FGDPACMHDOOOuterClass {
     @java.lang.Override
     public int getValue() {
       return value_;
+    }
+
+    public static final int KEY_HASH_FIELD_NUMBER = 1;
+    private int keyHash_;
+    /**
+     * <code>int32 key_hash = 1;</code>
+     * @return The keyHash.
+     */
+    @java.lang.Override
+    public int getKeyHash() {
+      return keyHash_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class FGDPACMHDOOOuterClass {
       }
       emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO other = (emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO) obj;
 
-      if (getKeyHash()
-          != other.getKeyHash()) return false;
       if (getValue()
           != other.getValue()) return false;
+      if (getKeyHash()
+          != other.getKeyHash()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class FGDPACMHDOOOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyHash();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue();
+      hash = (37 * hash) + KEY_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyHash();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class FGDPACMHDOOOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FGDPACMHDOO}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class FGDPACMHDOOOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        keyHash_ = 0;
-
         value_ = 0;
+
+        keyHash_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class FGDPACMHDOOOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO buildPartial() {
         emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO result = new emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO(this);
-        result.keyHash_ = keyHash_;
         result.value_ = value_;
+        result.keyHash_ = keyHash_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class FGDPACMHDOOOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO other) {
         if (other == emu.grasscutter.net.proto.FGDPACMHDOOOuterClass.FGDPACMHDOO.getDefaultInstance()) return this;
-        if (other.getKeyHash() != 0) {
-          setKeyHash(other.getKeyHash());
-        }
         if (other.getValue() != 0) {
           setValue(other.getValue());
+        }
+        if (other.getKeyHash() != 0) {
+          setKeyHash(other.getKeyHash());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +466,6 @@ public final class FGDPACMHDOOOuterClass {
         return this;
       }
 
-      private int keyHash_ ;
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @return The keyHash.
-       */
-      @java.lang.Override
-      public int getKeyHash() {
-        return keyHash_;
-      }
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @param value The keyHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyHash(int value) {
-        
-        keyHash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKeyHash() {
-        
-        keyHash_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int value_ ;
       /**
        * <code>int32 value = 2;</code>
@@ -516,6 +493,37 @@ public final class FGDPACMHDOOOuterClass {
       public Builder clearValue() {
         
         value_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int keyHash_ ;
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @return The keyHash.
+       */
+      @java.lang.Override
+      public int getKeyHash() {
+        return keyHash_;
+      }
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @param value The keyHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyHash(int value) {
+        
+        keyHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyHash() {
+        
+        keyHash_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class FGDPACMHDOOOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021FGDPACMHDOO.proto\".\n\013FGDPACMHDOO\022\020\n\010ke" +
-      "y_hash\030\001 \001(\005\022\r\n\005value\030\002 \001(\005B2\n\031emu.grass" +
-      "cutter.net.protoB\025FGDPACMHDOOOuterClassb" +
-      "\006proto3"
+      "\n\021FGDPACMHDOO.proto\".\n\013FGDPACMHDOO\022\r\n\005va" +
+      "lue\030\002 \001(\005\022\020\n\010key_hash\030\001 \001(\005B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class FGDPACMHDOOOuterClass {
     internal_static_FGDPACMHDOO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FGDPACMHDOO_descriptor,
-        new java.lang.String[] { "KeyHash", "Value", });
+        new java.lang.String[] { "Value", "KeyHash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

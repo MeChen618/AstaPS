@@ -129,7 +129,7 @@ public final class GetUgcBriefInfoReqOuterClass {
               emu.grasscutter.net.proto.GetUgcBriefInfoReqOuterClass.GetUgcBriefInfoReq.class, emu.grasscutter.net.proto.GetUgcBriefInfoReqOuterClass.GetUgcBriefInfoReq.Builder.class);
     }
 
-    public static final int UgcType_FIELD_NUMBER = 2;
+    public static final int UGC_TYPE_FIELD_NUMBER = 2;
     private int ugcType_;
     /**
      * <code>.UgcType ugc_type = 2;</code>
@@ -225,7 +225,7 @@ public final class GetUgcBriefInfoReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UgcType_FIELD_NUMBER;
+      hash = (37 * hash) + UGC_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + ugcType_;
       hash = (37 * hash) + UGC_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -497,7 +497,7 @@ public final class GetUgcBriefInfoReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcTypeValue(int value) {
-
+        
         ugcType_ = value;
         onChanged();
         return this;
@@ -521,7 +521,7 @@ public final class GetUgcBriefInfoReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         ugcType_ = value.getNumber();
         onChanged();
         return this;
@@ -531,7 +531,7 @@ public final class GetUgcBriefInfoReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcType() {
-
+        
         ugcType_ = 0;
         onChanged();
         return this;
@@ -552,7 +552,7 @@ public final class GetUgcBriefInfoReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcGuid(long value) {
-
+        
         ugcGuid_ = value;
         onChanged();
         return this;
@@ -562,7 +562,7 @@ public final class GetUgcBriefInfoReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcGuid() {
-
+        
         ugcGuid_ = 0L;
         onChanged();
         return this;
@@ -622,7 +622,7 @@ public final class GetUgcBriefInfoReqOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_GetUgcBriefInfoReq_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_GetUgcBriefInfoReq_fieldAccessorTable;
 

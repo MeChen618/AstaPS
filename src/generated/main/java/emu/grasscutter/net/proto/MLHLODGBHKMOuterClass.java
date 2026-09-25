@@ -19,78 +19,82 @@ public final class MLHLODGBHKMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 FCJFGPBEEKD = 1;</code>
-     * @return The fCJFGPBEEKD.
-     */
-    int getFCJFGPBEEKD();
-
-    /**
-     * <code>uint32 PAEIDOBHKMA = 2;</code>
-     * @return The pAEIDOBHKMA.
-     */
-    int getPAEIDOBHKMA();
-
-    /**
-     * <code>bool is_finish = 4;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
-
-    /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> 
         getLIFIMBEPICCList();
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getLIFIMBEPICC(int index);
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     int getLIFIMBEPICCCount();
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
         getLIFIMBEPICCOrBuilderList();
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder getLIFIMBEPICCOrBuilder(
         int index);
 
     /**
-     * <code>uint32 PBBBLFJECID = 7;</code>
-     * @return The pBBBLFJECID.
-     */
-    int getPBBBLFJECID();
-
-    /**
-     * <code>uint32 GHNIABHCKPO = 9;</code>
-     * @return The gHNIABHCKPO.
-     */
-    int getGHNIABHCKPO();
-
-    /**
-     * <code>uint32 level_id = 11;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_open = 12;</code>
+     * <code>bool is_open = 4;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 MLIINJCDNGJ = 15;</code>
+     * <code>bool is_finish = 8;</code>
+     * @return The isFinish.
+     */
+    boolean getIsFinish();
+
+    /**
+     * <code>uint32 PAEIDOBHKMA = 5;</code>
+     * @return The pAEIDOBHKMA.
+     */
+    int getPAEIDOBHKMA();
+
+    /**
+     * <code>uint32 FCJFGPBEEKD = 2;</code>
+     * @return The fCJFGPBEEKD.
+     */
+    int getFCJFGPBEEKD();
+
+    /**
+     * <code>uint32 PBBBLFJECID = 15;</code>
+     * @return The pBBBLFJECID.
+     */
+    int getPBBBLFJECID();
+
+    /**
+     * <code>uint32 level_id = 1;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
+
+    /**
+     * <code>uint32 GHNIABHCKPO = 3;</code>
+     * @return The gHNIABHCKPO.
+     */
+    int getGHNIABHCKPO();
+
+    /**
+     * <code>uint32 MLIINJCDNGJ = 9;</code>
      * @return The mLIINJCDNGJ.
      */
     int getMLIINJCDNGJ();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MLHLODGBHKM}
    */
   public static final class MLHLODGBHKM extends
@@ -139,20 +143,40 @@ public final class MLHLODGBHKMOuterClass {
               break;
             case 8: {
 
-              fCJFGPBEEKD_ = input.readUInt32();
+              levelId_ = input.readUInt32();
               break;
             }
             case 16: {
 
-              pAEIDOBHKMA_ = input.readUInt32();
+              fCJFGPBEEKD_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              gHNIABHCKPO_ = input.readUInt32();
               break;
             }
             case 32: {
 
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              pAEIDOBHKMA_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
               isFinish_ = input.readBool();
               break;
             }
-            case 42: {
+            case 72: {
+
+              mLIINJCDNGJ_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 lIFIMBEPICC_ = new java.util.ArrayList<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo>();
                 mutable_bitField0_ |= 0x00000001;
@@ -161,29 +185,9 @@ public final class MLHLODGBHKMOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.parser(), extensionRegistry));
               break;
             }
-            case 56: {
-
-              pBBBLFJECID_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              gHNIABHCKPO_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
             case 120: {
 
-              mLIINJCDNGJ_ = input.readUInt32();
+              pBBBLFJECID_ = input.readUInt32();
               break;
             }
             default: {
@@ -221,50 +225,17 @@ public final class MLHLODGBHKMOuterClass {
               emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM.class, emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM.Builder.class);
     }
 
-    public static final int FCJFGPBEEKD_FIELD_NUMBER = 1;
-    private int fCJFGPBEEKD_;
-    /**
-     * <code>uint32 FCJFGPBEEKD = 1;</code>
-     * @return The fCJFGPBEEKD.
-     */
-    @java.lang.Override
-    public int getFCJFGPBEEKD() {
-      return fCJFGPBEEKD_;
-    }
-
-    public static final int PAEIDOBHKMA_FIELD_NUMBER = 2;
-    private int pAEIDOBHKMA_;
-    /**
-     * <code>uint32 PAEIDOBHKMA = 2;</code>
-     * @return The pAEIDOBHKMA.
-     */
-    @java.lang.Override
-    public int getPAEIDOBHKMA() {
-      return pAEIDOBHKMA_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 4;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 4;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
-    public static final int LIFIMBEPICC_FIELD_NUMBER = 5;
+    public static final int LIFIMBEPICC_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> lIFIMBEPICC_;
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> getLIFIMBEPICCList() {
       return lIFIMBEPICC_;
     }
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
@@ -272,21 +243,21 @@ public final class MLHLODGBHKMOuterClass {
       return lIFIMBEPICC_;
     }
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     @java.lang.Override
     public int getLIFIMBEPICCCount() {
       return lIFIMBEPICC_.size();
     }
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getLIFIMBEPICC(int index) {
       return lIFIMBEPICC_.get(index);
     }
     /**
-     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+     * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder getLIFIMBEPICCOrBuilder(
@@ -294,43 +265,10 @@ public final class MLHLODGBHKMOuterClass {
       return lIFIMBEPICC_.get(index);
     }
 
-    public static final int PBBBLFJECID_FIELD_NUMBER = 7;
-    private int pBBBLFJECID_;
-    /**
-     * <code>uint32 PBBBLFJECID = 7;</code>
-     * @return The pBBBLFJECID.
-     */
-    @java.lang.Override
-    public int getPBBBLFJECID() {
-      return pBBBLFJECID_;
-    }
-
-    public static final int GHNIABHCKPO_FIELD_NUMBER = 9;
-    private int gHNIABHCKPO_;
-    /**
-     * <code>uint32 GHNIABHCKPO = 9;</code>
-     * @return The gHNIABHCKPO.
-     */
-    @java.lang.Override
-    public int getGHNIABHCKPO() {
-      return gHNIABHCKPO_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 11;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 11;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 12;
+    public static final int IS_OPEN_FIELD_NUMBER = 4;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 12;</code>
+     * <code>bool is_open = 4;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -338,10 +276,76 @@ public final class MLHLODGBHKMOuterClass {
       return isOpen_;
     }
 
-    public static final int MLIINJCDNGJ_FIELD_NUMBER = 15;
+    public static final int IS_FINISH_FIELD_NUMBER = 8;
+    private boolean isFinish_;
+    /**
+     * <code>bool is_finish = 8;</code>
+     * @return The isFinish.
+     */
+    @java.lang.Override
+    public boolean getIsFinish() {
+      return isFinish_;
+    }
+
+    public static final int PAEIDOBHKMA_FIELD_NUMBER = 5;
+    private int pAEIDOBHKMA_;
+    /**
+     * <code>uint32 PAEIDOBHKMA = 5;</code>
+     * @return The pAEIDOBHKMA.
+     */
+    @java.lang.Override
+    public int getPAEIDOBHKMA() {
+      return pAEIDOBHKMA_;
+    }
+
+    public static final int FCJFGPBEEKD_FIELD_NUMBER = 2;
+    private int fCJFGPBEEKD_;
+    /**
+     * <code>uint32 FCJFGPBEEKD = 2;</code>
+     * @return The fCJFGPBEEKD.
+     */
+    @java.lang.Override
+    public int getFCJFGPBEEKD() {
+      return fCJFGPBEEKD_;
+    }
+
+    public static final int PBBBLFJECID_FIELD_NUMBER = 15;
+    private int pBBBLFJECID_;
+    /**
+     * <code>uint32 PBBBLFJECID = 15;</code>
+     * @return The pBBBLFJECID.
+     */
+    @java.lang.Override
+    public int getPBBBLFJECID() {
+      return pBBBLFJECID_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 1;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 1;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
+
+    public static final int GHNIABHCKPO_FIELD_NUMBER = 3;
+    private int gHNIABHCKPO_;
+    /**
+     * <code>uint32 GHNIABHCKPO = 3;</code>
+     * @return The gHNIABHCKPO.
+     */
+    @java.lang.Override
+    public int getGHNIABHCKPO() {
+      return gHNIABHCKPO_;
+    }
+
+    public static final int MLIINJCDNGJ_FIELD_NUMBER = 9;
     private int mLIINJCDNGJ_;
     /**
-     * <code>uint32 MLIINJCDNGJ = 15;</code>
+     * <code>uint32 MLIINJCDNGJ = 9;</code>
      * @return The mLIINJCDNGJ.
      */
     @java.lang.Override
@@ -363,32 +367,32 @@ public final class MLHLODGBHKMOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (levelId_ != 0) {
+        output.writeUInt32(1, levelId_);
+      }
       if (fCJFGPBEEKD_ != 0) {
-        output.writeUInt32(1, fCJFGPBEEKD_);
-      }
-      if (pAEIDOBHKMA_ != 0) {
-        output.writeUInt32(2, pAEIDOBHKMA_);
-      }
-      if (isFinish_ != false) {
-        output.writeBool(4, isFinish_);
-      }
-      for (int i = 0; i < lIFIMBEPICC_.size(); i++) {
-        output.writeMessage(5, lIFIMBEPICC_.get(i));
-      }
-      if (pBBBLFJECID_ != 0) {
-        output.writeUInt32(7, pBBBLFJECID_);
+        output.writeUInt32(2, fCJFGPBEEKD_);
       }
       if (gHNIABHCKPO_ != 0) {
-        output.writeUInt32(9, gHNIABHCKPO_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(11, levelId_);
+        output.writeUInt32(3, gHNIABHCKPO_);
       }
       if (isOpen_ != false) {
-        output.writeBool(12, isOpen_);
+        output.writeBool(4, isOpen_);
+      }
+      if (pAEIDOBHKMA_ != 0) {
+        output.writeUInt32(5, pAEIDOBHKMA_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(8, isFinish_);
       }
       if (mLIINJCDNGJ_ != 0) {
-        output.writeUInt32(15, mLIINJCDNGJ_);
+        output.writeUInt32(9, mLIINJCDNGJ_);
+      }
+      for (int i = 0; i < lIFIMBEPICC_.size(); i++) {
+        output.writeMessage(10, lIFIMBEPICC_.get(i));
+      }
+      if (pBBBLFJECID_ != 0) {
+        output.writeUInt32(15, pBBBLFJECID_);
       }
       unknownFields.writeTo(output);
     }
@@ -399,41 +403,41 @@ public final class MLHLODGBHKMOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, levelId_);
+      }
       if (fCJFGPBEEKD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, fCJFGPBEEKD_);
-      }
-      if (pAEIDOBHKMA_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, pAEIDOBHKMA_);
-      }
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isFinish_);
-      }
-      for (int i = 0; i < lIFIMBEPICC_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, lIFIMBEPICC_.get(i));
-      }
-      if (pBBBLFJECID_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, pBBBLFJECID_);
+          .computeUInt32Size(2, fCJFGPBEEKD_);
       }
       if (gHNIABHCKPO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, gHNIABHCKPO_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, levelId_);
+          .computeUInt32Size(3, gHNIABHCKPO_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isOpen_);
+          .computeBoolSize(4, isOpen_);
+      }
+      if (pAEIDOBHKMA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, pAEIDOBHKMA_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isFinish_);
       }
       if (mLIINJCDNGJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, mLIINJCDNGJ_);
+          .computeUInt32Size(9, mLIINJCDNGJ_);
+      }
+      for (int i = 0; i < lIFIMBEPICC_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, lIFIMBEPICC_.get(i));
+      }
+      if (pBBBLFJECID_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, pBBBLFJECID_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -450,22 +454,22 @@ public final class MLHLODGBHKMOuterClass {
       }
       emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM other = (emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM) obj;
 
-      if (getFCJFGPBEEKD()
-          != other.getFCJFGPBEEKD()) return false;
-      if (getPAEIDOBHKMA()
-          != other.getPAEIDOBHKMA()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (!getLIFIMBEPICCList()
           .equals(other.getLIFIMBEPICCList())) return false;
-      if (getPBBBLFJECID()
-          != other.getPBBBLFJECID()) return false;
-      if (getGHNIABHCKPO()
-          != other.getGHNIABHCKPO()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getPAEIDOBHKMA()
+          != other.getPAEIDOBHKMA()) return false;
+      if (getFCJFGPBEEKD()
+          != other.getFCJFGPBEEKD()) return false;
+      if (getPBBBLFJECID()
+          != other.getPBBBLFJECID()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
+      if (getGHNIABHCKPO()
+          != other.getGHNIABHCKPO()) return false;
       if (getMLIINJCDNGJ()
           != other.getMLIINJCDNGJ()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -479,26 +483,26 @@ public final class MLHLODGBHKMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FCJFGPBEEKD_FIELD_NUMBER;
-      hash = (53 * hash) + getFCJFGPBEEKD();
-      hash = (37 * hash) + PAEIDOBHKMA_FIELD_NUMBER;
-      hash = (53 * hash) + getPAEIDOBHKMA();
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
       if (getLIFIMBEPICCCount() > 0) {
         hash = (37 * hash) + LIFIMBEPICC_FIELD_NUMBER;
         hash = (53 * hash) + getLIFIMBEPICCList().hashCode();
       }
-      hash = (37 * hash) + PBBBLFJECID_FIELD_NUMBER;
-      hash = (53 * hash) + getPBBBLFJECID();
-      hash = (37 * hash) + GHNIABHCKPO_FIELD_NUMBER;
-      hash = (53 * hash) + getGHNIABHCKPO();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
+      hash = (37 * hash) + PAEIDOBHKMA_FIELD_NUMBER;
+      hash = (53 * hash) + getPAEIDOBHKMA();
+      hash = (37 * hash) + FCJFGPBEEKD_FIELD_NUMBER;
+      hash = (53 * hash) + getFCJFGPBEEKD();
+      hash = (37 * hash) + PBBBLFJECID_FIELD_NUMBER;
+      hash = (53 * hash) + getPBBBLFJECID();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + GHNIABHCKPO_FIELD_NUMBER;
+      hash = (53 * hash) + getGHNIABHCKPO();
       hash = (37 * hash) + MLIINJCDNGJ_FIELD_NUMBER;
       hash = (53 * hash) + getMLIINJCDNGJ();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -597,6 +601,10 @@ public final class MLHLODGBHKMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MLHLODGBHKM}
      */
     public static final class Builder extends
@@ -635,25 +643,25 @@ public final class MLHLODGBHKMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fCJFGPBEEKD_ = 0;
-
-        pAEIDOBHKMA_ = 0;
-
-        isFinish_ = false;
-
         if (lIFIMBEPICCBuilder_ == null) {
           lIFIMBEPICC_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           lIFIMBEPICCBuilder_.clear();
         }
-        pBBBLFJECID_ = 0;
+        isOpen_ = false;
 
-        gHNIABHCKPO_ = 0;
+        isFinish_ = false;
+
+        pAEIDOBHKMA_ = 0;
+
+        fCJFGPBEEKD_ = 0;
+
+        pBBBLFJECID_ = 0;
 
         levelId_ = 0;
 
-        isOpen_ = false;
+        gHNIABHCKPO_ = 0;
 
         mLIINJCDNGJ_ = 0;
 
@@ -684,9 +692,6 @@ public final class MLHLODGBHKMOuterClass {
       public emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM buildPartial() {
         emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM result = new emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM(this);
         int from_bitField0_ = bitField0_;
-        result.fCJFGPBEEKD_ = fCJFGPBEEKD_;
-        result.pAEIDOBHKMA_ = pAEIDOBHKMA_;
-        result.isFinish_ = isFinish_;
         if (lIFIMBEPICCBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             lIFIMBEPICC_ = java.util.Collections.unmodifiableList(lIFIMBEPICC_);
@@ -696,10 +701,13 @@ public final class MLHLODGBHKMOuterClass {
         } else {
           result.lIFIMBEPICC_ = lIFIMBEPICCBuilder_.build();
         }
-        result.pBBBLFJECID_ = pBBBLFJECID_;
-        result.gHNIABHCKPO_ = gHNIABHCKPO_;
-        result.levelId_ = levelId_;
         result.isOpen_ = isOpen_;
+        result.isFinish_ = isFinish_;
+        result.pAEIDOBHKMA_ = pAEIDOBHKMA_;
+        result.fCJFGPBEEKD_ = fCJFGPBEEKD_;
+        result.pBBBLFJECID_ = pBBBLFJECID_;
+        result.levelId_ = levelId_;
+        result.gHNIABHCKPO_ = gHNIABHCKPO_;
         result.mLIINJCDNGJ_ = mLIINJCDNGJ_;
         onBuilt();
         return result;
@@ -749,15 +757,6 @@ public final class MLHLODGBHKMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM other) {
         if (other == emu.grasscutter.net.proto.MLHLODGBHKMOuterClass.MLHLODGBHKM.getDefaultInstance()) return this;
-        if (other.getFCJFGPBEEKD() != 0) {
-          setFCJFGPBEEKD(other.getFCJFGPBEEKD());
-        }
-        if (other.getPAEIDOBHKMA() != 0) {
-          setPAEIDOBHKMA(other.getPAEIDOBHKMA());
-        }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
         if (lIFIMBEPICCBuilder_ == null) {
           if (!other.lIFIMBEPICC_.isEmpty()) {
             if (lIFIMBEPICC_.isEmpty()) {
@@ -784,17 +783,26 @@ public final class MLHLODGBHKMOuterClass {
             }
           }
         }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
+        }
+        if (other.getPAEIDOBHKMA() != 0) {
+          setPAEIDOBHKMA(other.getPAEIDOBHKMA());
+        }
+        if (other.getFCJFGPBEEKD() != 0) {
+          setFCJFGPBEEKD(other.getFCJFGPBEEKD());
+        }
         if (other.getPBBBLFJECID() != 0) {
           setPBBBLFJECID(other.getPBBBLFJECID());
-        }
-        if (other.getGHNIABHCKPO() != 0) {
-          setGHNIABHCKPO(other.getGHNIABHCKPO());
         }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getGHNIABHCKPO() != 0) {
+          setGHNIABHCKPO(other.getGHNIABHCKPO());
         }
         if (other.getMLIINJCDNGJ() != 0) {
           setMLIINJCDNGJ(other.getMLIINJCDNGJ());
@@ -829,99 +837,6 @@ public final class MLHLODGBHKMOuterClass {
       }
       private int bitField0_;
 
-      private int fCJFGPBEEKD_ ;
-      /**
-       * <code>uint32 FCJFGPBEEKD = 1;</code>
-       * @return The fCJFGPBEEKD.
-       */
-      @java.lang.Override
-      public int getFCJFGPBEEKD() {
-        return fCJFGPBEEKD_;
-      }
-      /**
-       * <code>uint32 FCJFGPBEEKD = 1;</code>
-       * @param value The fCJFGPBEEKD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFCJFGPBEEKD(int value) {
-        
-        fCJFGPBEEKD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FCJFGPBEEKD = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFCJFGPBEEKD() {
-        
-        fCJFGPBEEKD_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int pAEIDOBHKMA_ ;
-      /**
-       * <code>uint32 PAEIDOBHKMA = 2;</code>
-       * @return The pAEIDOBHKMA.
-       */
-      @java.lang.Override
-      public int getPAEIDOBHKMA() {
-        return pAEIDOBHKMA_;
-      }
-      /**
-       * <code>uint32 PAEIDOBHKMA = 2;</code>
-       * @param value The pAEIDOBHKMA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPAEIDOBHKMA(int value) {
-        
-        pAEIDOBHKMA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 PAEIDOBHKMA = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPAEIDOBHKMA() {
-        
-        pAEIDOBHKMA_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> lIFIMBEPICC_ =
         java.util.Collections.emptyList();
       private void ensureLIFIMBEPICCIsMutable() {
@@ -935,7 +850,7 @@ public final class MLHLODGBHKMOuterClass {
           emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> lIFIMBEPICCBuilder_;
 
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> getLIFIMBEPICCList() {
         if (lIFIMBEPICCBuilder_ == null) {
@@ -945,7 +860,7 @@ public final class MLHLODGBHKMOuterClass {
         }
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public int getLIFIMBEPICCCount() {
         if (lIFIMBEPICCBuilder_ == null) {
@@ -955,7 +870,7 @@ public final class MLHLODGBHKMOuterClass {
         }
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo getLIFIMBEPICC(int index) {
         if (lIFIMBEPICCBuilder_ == null) {
@@ -965,7 +880,7 @@ public final class MLHLODGBHKMOuterClass {
         }
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder setLIFIMBEPICC(
           int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
@@ -982,7 +897,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder setLIFIMBEPICC(
           int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder builderForValue) {
@@ -996,7 +911,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder addLIFIMBEPICC(emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
         if (lIFIMBEPICCBuilder_ == null) {
@@ -1012,7 +927,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder addLIFIMBEPICC(
           int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo value) {
@@ -1029,7 +944,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder addLIFIMBEPICC(
           emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder builderForValue) {
@@ -1043,7 +958,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder addLIFIMBEPICC(
           int index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder builderForValue) {
@@ -1057,7 +972,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder addAllLIFIMBEPICC(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo> values) {
@@ -1072,7 +987,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder clearLIFIMBEPICC() {
         if (lIFIMBEPICCBuilder_ == null) {
@@ -1085,7 +1000,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public Builder removeLIFIMBEPICC(int index) {
         if (lIFIMBEPICCBuilder_ == null) {
@@ -1098,14 +1013,14 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder getLIFIMBEPICCBuilder(
           int index) {
         return getLIFIMBEPICCFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder getLIFIMBEPICCOrBuilder(
           int index) {
@@ -1115,7 +1030,7 @@ public final class MLHLODGBHKMOuterClass {
         }
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfoOrBuilder> 
            getLIFIMBEPICCOrBuilderList() {
@@ -1126,14 +1041,14 @@ public final class MLHLODGBHKMOuterClass {
         }
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder addLIFIMBEPICCBuilder() {
         return getLIFIMBEPICCFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder addLIFIMBEPICCBuilder(
           int index) {
@@ -1141,7 +1056,7 @@ public final class MLHLODGBHKMOuterClass {
             index, emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 5;</code>
+       * <code>repeated .ShowAvatarInfo LIFIMBEPICC = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.ShowAvatarInfo.Builder> 
            getLIFIMBEPICCBuilderList() {
@@ -1162,102 +1077,9 @@ public final class MLHLODGBHKMOuterClass {
         return lIFIMBEPICCBuilder_;
       }
 
-      private int pBBBLFJECID_ ;
-      /**
-       * <code>uint32 PBBBLFJECID = 7;</code>
-       * @return The pBBBLFJECID.
-       */
-      @java.lang.Override
-      public int getPBBBLFJECID() {
-        return pBBBLFJECID_;
-      }
-      /**
-       * <code>uint32 PBBBLFJECID = 7;</code>
-       * @param value The pBBBLFJECID to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPBBBLFJECID(int value) {
-        
-        pBBBLFJECID_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 PBBBLFJECID = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPBBBLFJECID() {
-        
-        pBBBLFJECID_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int gHNIABHCKPO_ ;
-      /**
-       * <code>uint32 GHNIABHCKPO = 9;</code>
-       * @return The gHNIABHCKPO.
-       */
-      @java.lang.Override
-      public int getGHNIABHCKPO() {
-        return gHNIABHCKPO_;
-      }
-      /**
-       * <code>uint32 GHNIABHCKPO = 9;</code>
-       * @param value The gHNIABHCKPO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGHNIABHCKPO(int value) {
-        
-        gHNIABHCKPO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GHNIABHCKPO = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGHNIABHCKPO() {
-        
-        gHNIABHCKPO_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 11;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 11;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 12;</code>
+       * <code>bool is_open = 4;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -1265,7 +1087,7 @@ public final class MLHLODGBHKMOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 12;</code>
+       * <code>bool is_open = 4;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -1276,7 +1098,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 12;</code>
+       * <code>bool is_open = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -1286,9 +1108,195 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
 
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int pAEIDOBHKMA_ ;
+      /**
+       * <code>uint32 PAEIDOBHKMA = 5;</code>
+       * @return The pAEIDOBHKMA.
+       */
+      @java.lang.Override
+      public int getPAEIDOBHKMA() {
+        return pAEIDOBHKMA_;
+      }
+      /**
+       * <code>uint32 PAEIDOBHKMA = 5;</code>
+       * @param value The pAEIDOBHKMA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPAEIDOBHKMA(int value) {
+        
+        pAEIDOBHKMA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PAEIDOBHKMA = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPAEIDOBHKMA() {
+        
+        pAEIDOBHKMA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fCJFGPBEEKD_ ;
+      /**
+       * <code>uint32 FCJFGPBEEKD = 2;</code>
+       * @return The fCJFGPBEEKD.
+       */
+      @java.lang.Override
+      public int getFCJFGPBEEKD() {
+        return fCJFGPBEEKD_;
+      }
+      /**
+       * <code>uint32 FCJFGPBEEKD = 2;</code>
+       * @param value The fCJFGPBEEKD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFCJFGPBEEKD(int value) {
+        
+        fCJFGPBEEKD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FCJFGPBEEKD = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFCJFGPBEEKD() {
+        
+        fCJFGPBEEKD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pBBBLFJECID_ ;
+      /**
+       * <code>uint32 PBBBLFJECID = 15;</code>
+       * @return The pBBBLFJECID.
+       */
+      @java.lang.Override
+      public int getPBBBLFJECID() {
+        return pBBBLFJECID_;
+      }
+      /**
+       * <code>uint32 PBBBLFJECID = 15;</code>
+       * @param value The pBBBLFJECID to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPBBBLFJECID(int value) {
+        
+        pBBBLFJECID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PBBBLFJECID = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPBBBLFJECID() {
+        
+        pBBBLFJECID_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 1;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 1;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gHNIABHCKPO_ ;
+      /**
+       * <code>uint32 GHNIABHCKPO = 3;</code>
+       * @return The gHNIABHCKPO.
+       */
+      @java.lang.Override
+      public int getGHNIABHCKPO() {
+        return gHNIABHCKPO_;
+      }
+      /**
+       * <code>uint32 GHNIABHCKPO = 3;</code>
+       * @param value The gHNIABHCKPO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGHNIABHCKPO(int value) {
+        
+        gHNIABHCKPO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GHNIABHCKPO = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGHNIABHCKPO() {
+        
+        gHNIABHCKPO_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int mLIINJCDNGJ_ ;
       /**
-       * <code>uint32 MLIINJCDNGJ = 15;</code>
+       * <code>uint32 MLIINJCDNGJ = 9;</code>
        * @return The mLIINJCDNGJ.
        */
       @java.lang.Override
@@ -1296,7 +1304,7 @@ public final class MLHLODGBHKMOuterClass {
         return mLIINJCDNGJ_;
       }
       /**
-       * <code>uint32 MLIINJCDNGJ = 15;</code>
+       * <code>uint32 MLIINJCDNGJ = 9;</code>
        * @param value The mLIINJCDNGJ to set.
        * @return This builder for chaining.
        */
@@ -1307,7 +1315,7 @@ public final class MLHLODGBHKMOuterClass {
         return this;
       }
       /**
-       * <code>uint32 MLIINJCDNGJ = 15;</code>
+       * <code>uint32 MLIINJCDNGJ = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearMLIINJCDNGJ() {
@@ -1384,13 +1392,13 @@ public final class MLHLODGBHKMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021MLHLODGBHKM.proto\032\024ShowAvatarInfo.prot" +
-      "o\"\322\001\n\013MLHLODGBHKM\022\023\n\013FCJFGPBEEKD\030\001 \001(\r\022\023" +
-      "\n\013PAEIDOBHKMA\030\002 \001(\r\022\021\n\tis_finish\030\004 \001(\010\022$" +
-      "\n\013LIFIMBEPICC\030\005 \003(\0132\017.ShowAvatarInfo\022\023\n\013" +
-      "PBBBLFJECID\030\007 \001(\r\022\023\n\013GHNIABHCKPO\030\t \001(\r\022\020" +
-      "\n\010level_id\030\013 \001(\r\022\017\n\007is_open\030\014 \001(\010\022\023\n\013MLI" +
-      "INJCDNGJ\030\017 \001(\rB2\n\031emu.grasscutter.net.pr" +
-      "otoB\025MLHLODGBHKMOuterClassb\006proto3"
+      "o\"\322\001\n\013MLHLODGBHKM\022$\n\013LIFIMBEPICC\030\n \003(\0132\017" +
+      ".ShowAvatarInfo\022\017\n\007is_open\030\004 \001(\010\022\021\n\tis_f" +
+      "inish\030\010 \001(\010\022\023\n\013PAEIDOBHKMA\030\005 \001(\r\022\023\n\013FCJF" +
+      "GPBEEKD\030\002 \001(\r\022\023\n\013PBBBLFJECID\030\017 \001(\r\022\020\n\010le" +
+      "vel_id\030\001 \001(\r\022\023\n\013GHNIABHCKPO\030\003 \001(\r\022\023\n\013MLI" +
+      "INJCDNGJ\030\t \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1402,7 +1410,7 @@ public final class MLHLODGBHKMOuterClass {
     internal_static_MLHLODGBHKM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MLHLODGBHKM_descriptor,
-        new java.lang.String[] { "FCJFGPBEEKD", "PAEIDOBHKMA", "IsFinish", "LIFIMBEPICC", "PBBBLFJECID", "GHNIABHCKPO", "LevelId", "IsOpen", "MLIINJCDNGJ", });
+        new java.lang.String[] { "LIFIMBEPICC", "IsOpen", "IsFinish", "PAEIDOBHKMA", "FCJFGPBEEKD", "PBBBLFJECID", "LevelId", "GHNIABHCKPO", "MLIINJCDNGJ", });
     emu.grasscutter.net.proto.ShowAvatarInfoOuterClass.getDescriptor();
   }
 

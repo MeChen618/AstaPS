@@ -792,9 +792,8 @@ public final class PlatformChangeRouteNotifyOuterClass {
       "\n\037PlatformChangeRouteNotify.proto\032\022Platf" +
       "ormInfo.proto\"c\n\031PlatformChangeRouteNoti" +
       "fy\022\037\n\010platform\030\007 \001(\0132\r.PlatformInfo\022\021\n\te" +
-      "ntity_id\030\010 \001(\r\022\022\n\nscene_time\030\014 \001(\rB@\n\031em" +
-      "u.grasscutter.net.protoB#PlatformChangeR" +
-      "outeNotifyOuterClassb\006proto3"
+      "ntity_id\030\010 \001(\r\022\022\n\nscene_time\030\014 \001(\rB\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

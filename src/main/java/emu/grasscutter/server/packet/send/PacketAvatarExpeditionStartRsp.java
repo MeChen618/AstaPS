@@ -3,7 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarExpeditionStartRspOuterClass.AvatarExpeditionStartRsp;
-import emu.grasscutter.net.proto._AvatarExpeditionBasicInfoOuterClass._AvatarExpeditionBasicInfo;
+import emu.grasscutter.net.proto.AvatarExpeditionBasicInfo._AvatarExpeditionBasicInfo;
 import java.util.Collection;
 import java.util.Map;
 

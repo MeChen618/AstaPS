@@ -31,9 +31,9 @@ public class PacketServerAnnounceNotify extends BasePacket {
                         .setConfigId(configId)
                         .setBeginTime(Utils.getCurrentSeconds() + 1)
                         .setEndTime(Utils.getCurrentSeconds() + 2)
-                        .setENGJGCGFMMM(text)
-                        .setLHMGGPMCDCN(text)
-                        .setKFAGDOEAIPP(text)
+                        .setDungeonConfirmText(text)
+                        .setCountDownText(text)
+                        .setCenterSystemText(text)
                         .build());
 
         this.setData(proto);

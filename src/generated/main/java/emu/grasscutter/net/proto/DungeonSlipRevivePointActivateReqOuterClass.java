@@ -518,9 +518,8 @@ public final class DungeonSlipRevivePointActivateReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'DungeonSlipRevivePointActivateReq.prot" +
       "o\"A\n!DungeonSlipRevivePointActivateReq\022\034" +
-      "\n\024slip_revive_point_id\030\007 \001(\rBH\n\031emu.gras" +
-      "scutter.net.protoB+DungeonSlipRevivePoin" +
-      "tActivateReqOuterClassb\006proto3"
+      "\n\024slip_revive_point_id\030\007 \001(\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

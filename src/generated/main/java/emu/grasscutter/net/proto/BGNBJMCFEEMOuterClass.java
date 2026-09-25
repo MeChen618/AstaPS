@@ -31,6 +31,10 @@ public final class BGNBJMCFEEMOuterClass {
     float getDENEBOMILAI();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BGNBJMCFEEM}
    */
   public static final class BGNBJMCFEEM extends
@@ -309,6 +313,10 @@ public final class BGNBJMCFEEMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BGNBJMCFEEM}
      */
     public static final class Builder extends
@@ -590,9 +598,8 @@ public final class BGNBJMCFEEMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BGNBJMCFEEM.proto\"7\n\013BGNBJMCFEEM\022\023\n\013DI" +
-      "ANLDINACO\030\001 \001(\010\022\023\n\013DENEBOMILAI\030\002 \001(\002B2\n\031" +
-      "emu.grasscutter.net.protoB\025BGNBJMCFEEMOu" +
-      "terClassb\006proto3"
+      "ANLDINACO\030\001 \001(\010\022\023\n\013DENEBOMILAI\030\002 \001(\002B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

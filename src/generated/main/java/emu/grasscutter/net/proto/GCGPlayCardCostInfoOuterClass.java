@@ -19,36 +19,40 @@ public final class GCGPlayCardCostInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 card_id = 1;</code>
-     * @return The cardId.
-     */
-    int getCardId();
-
-    /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG> 
         getTokenListList();
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG getTokenList(int index);
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     int getTokenListCount();
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder> 
         getTokenListOrBuilderList();
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder getTokenListOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 card_id = 6;</code>
+     * @return The cardId.
+     */
+    int getCardId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GCGPlayCardCostInfo}
    */
   public static final class GCGPlayCardCostInfo extends
@@ -95,12 +99,12 @@ public final class GCGPlayCardCostInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
 
               cardId_ = input.readUInt32();
               break;
             }
-            case 34: {
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 tokenList_ = new java.util.ArrayList<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG>();
                 mutable_bitField0_ |= 0x00000001;
@@ -144,28 +148,17 @@ public final class GCGPlayCardCostInfoOuterClass {
               emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.class, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder.class);
     }
 
-    public static final int CARD_ID_FIELD_NUMBER = 1;
-    private int cardId_;
-    /**
-     * <code>uint32 card_id = 1;</code>
-     * @return The cardId.
-     */
-    @java.lang.Override
-    public int getCardId() {
-      return cardId_;
-    }
-
-    public static final int TOKEN_LIST_FIELD_NUMBER = 4;
+    public static final int TOKEN_LIST_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG> tokenList_;
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG> getTokenListList() {
       return tokenList_;
     }
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder> 
@@ -173,26 +166,37 @@ public final class GCGPlayCardCostInfoOuterClass {
       return tokenList_;
     }
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     @java.lang.Override
     public int getTokenListCount() {
       return tokenList_.size();
     }
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG getTokenList(int index) {
       return tokenList_.get(index);
     }
     /**
-     * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+     * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder getTokenListOrBuilder(
         int index) {
       return tokenList_.get(index);
+    }
+
+    public static final int CARD_ID_FIELD_NUMBER = 6;
+    private int cardId_;
+    /**
+     * <code>uint32 card_id = 6;</code>
+     * @return The cardId.
+     */
+    @java.lang.Override
+    public int getCardId() {
+      return cardId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -210,10 +214,10 @@ public final class GCGPlayCardCostInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (cardId_ != 0) {
-        output.writeUInt32(1, cardId_);
+        output.writeUInt32(6, cardId_);
       }
       for (int i = 0; i < tokenList_.size(); i++) {
-        output.writeMessage(4, tokenList_.get(i));
+        output.writeMessage(10, tokenList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -226,11 +230,11 @@ public final class GCGPlayCardCostInfoOuterClass {
       size = 0;
       if (cardId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, cardId_);
+          .computeUInt32Size(6, cardId_);
       }
       for (int i = 0; i < tokenList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, tokenList_.get(i));
+          .computeMessageSize(10, tokenList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -247,10 +251,10 @@ public final class GCGPlayCardCostInfoOuterClass {
       }
       emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo other = (emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo) obj;
 
-      if (getCardId()
-          != other.getCardId()) return false;
       if (!getTokenListList()
           .equals(other.getTokenListList())) return false;
+      if (getCardId()
+          != other.getCardId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -262,12 +266,12 @@ public final class GCGPlayCardCostInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getCardId();
       if (getTokenListCount() > 0) {
         hash = (37 * hash) + TOKEN_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTokenListList().hashCode();
       }
+      hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCardId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -364,6 +368,10 @@ public final class GCGPlayCardCostInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GCGPlayCardCostInfo}
      */
     public static final class Builder extends
@@ -402,14 +410,14 @@ public final class GCGPlayCardCostInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cardId_ = 0;
-
         if (tokenListBuilder_ == null) {
           tokenList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           tokenListBuilder_.clear();
         }
+        cardId_ = 0;
+
         return this;
       }
 
@@ -437,7 +445,6 @@ public final class GCGPlayCardCostInfoOuterClass {
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo buildPartial() {
         emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo result = new emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo(this);
         int from_bitField0_ = bitField0_;
-        result.cardId_ = cardId_;
         if (tokenListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             tokenList_ = java.util.Collections.unmodifiableList(tokenList_);
@@ -447,6 +454,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         } else {
           result.tokenList_ = tokenListBuilder_.build();
         }
+        result.cardId_ = cardId_;
         onBuilt();
         return result;
       }
@@ -495,9 +503,6 @@ public final class GCGPlayCardCostInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo other) {
         if (other == emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance()) return this;
-        if (other.getCardId() != 0) {
-          setCardId(other.getCardId());
-        }
         if (tokenListBuilder_ == null) {
           if (!other.tokenList_.isEmpty()) {
             if (tokenList_.isEmpty()) {
@@ -523,6 +528,9 @@ public final class GCGPlayCardCostInfoOuterClass {
               tokenListBuilder_.addAllMessages(other.tokenList_);
             }
           }
+        }
+        if (other.getCardId() != 0) {
+          setCardId(other.getCardId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -554,37 +562,6 @@ public final class GCGPlayCardCostInfoOuterClass {
       }
       private int bitField0_;
 
-      private int cardId_ ;
-      /**
-       * <code>uint32 card_id = 1;</code>
-       * @return The cardId.
-       */
-      @java.lang.Override
-      public int getCardId() {
-        return cardId_;
-      }
-      /**
-       * <code>uint32 card_id = 1;</code>
-       * @param value The cardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCardId(int value) {
-        
-        cardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 card_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCardId() {
-        
-        cardId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG> tokenList_ =
         java.util.Collections.emptyList();
       private void ensureTokenListIsMutable() {
@@ -598,7 +575,7 @@ public final class GCGPlayCardCostInfoOuterClass {
           emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder> tokenListBuilder_;
 
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG> getTokenListList() {
         if (tokenListBuilder_ == null) {
@@ -608,7 +585,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public int getTokenListCount() {
         if (tokenListBuilder_ == null) {
@@ -618,7 +595,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG getTokenList(int index) {
         if (tokenListBuilder_ == null) {
@@ -628,7 +605,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder setTokenList(
           int index, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG value) {
@@ -645,7 +622,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder setTokenList(
           int index, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder builderForValue) {
@@ -659,7 +636,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder addTokenList(emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG value) {
         if (tokenListBuilder_ == null) {
@@ -675,7 +652,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder addTokenList(
           int index, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG value) {
@@ -692,7 +669,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder addTokenList(
           emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder builderForValue) {
@@ -706,7 +683,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder addTokenList(
           int index, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder builderForValue) {
@@ -720,7 +697,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder addAllTokenList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG> values) {
@@ -735,7 +712,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder clearTokenList() {
         if (tokenListBuilder_ == null) {
@@ -748,7 +725,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public Builder removeTokenList(int index) {
         if (tokenListBuilder_ == null) {
@@ -761,14 +738,14 @@ public final class GCGPlayCardCostInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder getTokenListBuilder(
           int index) {
         return getTokenListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder getTokenListOrBuilder(
           int index) {
@@ -778,7 +755,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGGOrBuilder> 
            getTokenListOrBuilderList() {
@@ -789,14 +766,14 @@ public final class GCGPlayCardCostInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder addTokenListBuilder() {
         return getTokenListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.getDefaultInstance());
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder addTokenListBuilder(
           int index) {
@@ -804,7 +781,7 @@ public final class GCGPlayCardCostInfoOuterClass {
             index, emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.getDefaultInstance());
       }
       /**
-       * <code>repeated .NAOPGAHKGGG token_list = 4;</code>
+       * <code>repeated .NAOPGAHKGGG token_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.NAOPGAHKGGG.Builder> 
            getTokenListBuilderList() {
@@ -823,6 +800,37 @@ public final class GCGPlayCardCostInfoOuterClass {
           tokenList_ = null;
         }
         return tokenListBuilder_;
+      }
+
+      private int cardId_ ;
+      /**
+       * <code>uint32 card_id = 6;</code>
+       * @return The cardId.
+       */
+      @java.lang.Override
+      public int getCardId() {
+        return cardId_;
+      }
+      /**
+       * <code>uint32 card_id = 6;</code>
+       * @param value The cardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCardId(int value) {
+        
+        cardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 card_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCardId() {
+        
+        cardId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -892,10 +900,9 @@ public final class GCGPlayCardCostInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031GCGPlayCardCostInfo.proto\032\021NAOPGAHKGGG" +
-      ".proto\"H\n\023GCGPlayCardCostInfo\022\017\n\007card_id" +
-      "\030\001 \001(\r\022 \n\ntoken_list\030\004 \003(\0132\014.NAOPGAHKGGG" +
-      "B:\n\031emu.grasscutter.net.protoB\035GCGPlayCa" +
-      "rdCostInfoOuterClassb\006proto3"
+      ".proto\"H\n\023GCGPlayCardCostInfo\022 \n\ntoken_l" +
+      "ist\030\n \003(\0132\014.NAOPGAHKGGG\022\017\n\007card_id\030\006 \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -907,7 +914,7 @@ public final class GCGPlayCardCostInfoOuterClass {
     internal_static_GCGPlayCardCostInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GCGPlayCardCostInfo_descriptor,
-        new java.lang.String[] { "CardId", "TokenList", });
+        new java.lang.String[] { "TokenList", "CardId", });
     emu.grasscutter.net.proto.NAOPGAHKGGGOuterClass.getDescriptor();
   }
 

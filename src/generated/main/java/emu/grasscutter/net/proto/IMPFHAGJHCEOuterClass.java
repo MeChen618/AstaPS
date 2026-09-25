@@ -19,16 +19,16 @@ public final class IMPFHAGJHCEOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MPKGOMIOBOL = 1;</code>
-     * @return The mPKGOMIOBOL.
-     */
-    int getMPKGOMIOBOL();
-
-    /**
      * <code>uint32 BMNOGGNIIFO = 2;</code>
      * @return The bMNOGGNIIFO.
      */
     int getBMNOGGNIIFO();
+
+    /**
+     * <code>uint32 MPKGOMIOBOL = 1;</code>
+     * @return The mPKGOMIOBOL.
+     */
+    int getMPKGOMIOBOL();
 
     /**
      * <code>uint32 AGBBCDCFJIP = 3;</code>
@@ -37,6 +37,10 @@ public final class IMPFHAGJHCEOuterClass {
     int getAGBBCDCFJIP();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IMPFHAGJHCE}
    */
   public static final class IMPFHAGJHCE extends
@@ -128,17 +132,6 @@ public final class IMPFHAGJHCEOuterClass {
               emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE.class, emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE.Builder.class);
     }
 
-    public static final int MPKGOMIOBOL_FIELD_NUMBER = 1;
-    private int mPKGOMIOBOL_;
-    /**
-     * <code>uint32 MPKGOMIOBOL = 1;</code>
-     * @return The mPKGOMIOBOL.
-     */
-    @java.lang.Override
-    public int getMPKGOMIOBOL() {
-      return mPKGOMIOBOL_;
-    }
-
     public static final int BMNOGGNIIFO_FIELD_NUMBER = 2;
     private int bMNOGGNIIFO_;
     /**
@@ -148,6 +141,17 @@ public final class IMPFHAGJHCEOuterClass {
     @java.lang.Override
     public int getBMNOGGNIIFO() {
       return bMNOGGNIIFO_;
+    }
+
+    public static final int MPKGOMIOBOL_FIELD_NUMBER = 1;
+    private int mPKGOMIOBOL_;
+    /**
+     * <code>uint32 MPKGOMIOBOL = 1;</code>
+     * @return The mPKGOMIOBOL.
+     */
+    @java.lang.Override
+    public int getMPKGOMIOBOL() {
+      return mPKGOMIOBOL_;
     }
 
     public static final int AGBBCDCFJIP_FIELD_NUMBER = 3;
@@ -220,10 +224,10 @@ public final class IMPFHAGJHCEOuterClass {
       }
       emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE other = (emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE) obj;
 
-      if (getMPKGOMIOBOL()
-          != other.getMPKGOMIOBOL()) return false;
       if (getBMNOGGNIIFO()
           != other.getBMNOGGNIIFO()) return false;
+      if (getMPKGOMIOBOL()
+          != other.getMPKGOMIOBOL()) return false;
       if (getAGBBCDCFJIP()
           != other.getAGBBCDCFJIP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,10 +241,10 @@ public final class IMPFHAGJHCEOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MPKGOMIOBOL_FIELD_NUMBER;
-      hash = (53 * hash) + getMPKGOMIOBOL();
       hash = (37 * hash) + BMNOGGNIIFO_FIELD_NUMBER;
       hash = (53 * hash) + getBMNOGGNIIFO();
+      hash = (37 * hash) + MPKGOMIOBOL_FIELD_NUMBER;
+      hash = (53 * hash) + getMPKGOMIOBOL();
       hash = (37 * hash) + AGBBCDCFJIP_FIELD_NUMBER;
       hash = (53 * hash) + getAGBBCDCFJIP();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -339,6 +343,10 @@ public final class IMPFHAGJHCEOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IMPFHAGJHCE}
      */
     public static final class Builder extends
@@ -376,9 +384,9 @@ public final class IMPFHAGJHCEOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mPKGOMIOBOL_ = 0;
-
         bMNOGGNIIFO_ = 0;
+
+        mPKGOMIOBOL_ = 0;
 
         aGBBCDCFJIP_ = 0;
 
@@ -408,8 +416,8 @@ public final class IMPFHAGJHCEOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE buildPartial() {
         emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE result = new emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE(this);
-        result.mPKGOMIOBOL_ = mPKGOMIOBOL_;
         result.bMNOGGNIIFO_ = bMNOGGNIIFO_;
+        result.mPKGOMIOBOL_ = mPKGOMIOBOL_;
         result.aGBBCDCFJIP_ = aGBBCDCFJIP_;
         onBuilt();
         return result;
@@ -459,11 +467,11 @@ public final class IMPFHAGJHCEOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE other) {
         if (other == emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE.getDefaultInstance()) return this;
-        if (other.getMPKGOMIOBOL() != 0) {
-          setMPKGOMIOBOL(other.getMPKGOMIOBOL());
-        }
         if (other.getBMNOGGNIIFO() != 0) {
           setBMNOGGNIIFO(other.getBMNOGGNIIFO());
+        }
+        if (other.getMPKGOMIOBOL() != 0) {
+          setMPKGOMIOBOL(other.getMPKGOMIOBOL());
         }
         if (other.getAGBBCDCFJIP() != 0) {
           setAGBBCDCFJIP(other.getAGBBCDCFJIP());
@@ -497,37 +505,6 @@ public final class IMPFHAGJHCEOuterClass {
         return this;
       }
 
-      private int mPKGOMIOBOL_ ;
-      /**
-       * <code>uint32 MPKGOMIOBOL = 1;</code>
-       * @return The mPKGOMIOBOL.
-       */
-      @java.lang.Override
-      public int getMPKGOMIOBOL() {
-        return mPKGOMIOBOL_;
-      }
-      /**
-       * <code>uint32 MPKGOMIOBOL = 1;</code>
-       * @param value The mPKGOMIOBOL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMPKGOMIOBOL(int value) {
-        
-        mPKGOMIOBOL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MPKGOMIOBOL = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMPKGOMIOBOL() {
-        
-        mPKGOMIOBOL_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int bMNOGGNIIFO_ ;
       /**
        * <code>uint32 BMNOGGNIIFO = 2;</code>
@@ -555,6 +532,37 @@ public final class IMPFHAGJHCEOuterClass {
       public Builder clearBMNOGGNIIFO() {
         
         bMNOGGNIIFO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int mPKGOMIOBOL_ ;
+      /**
+       * <code>uint32 MPKGOMIOBOL = 1;</code>
+       * @return The mPKGOMIOBOL.
+       */
+      @java.lang.Override
+      public int getMPKGOMIOBOL() {
+        return mPKGOMIOBOL_;
+      }
+      /**
+       * <code>uint32 MPKGOMIOBOL = 1;</code>
+       * @param value The mPKGOMIOBOL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMPKGOMIOBOL(int value) {
+        
+        mPKGOMIOBOL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MPKGOMIOBOL = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMPKGOMIOBOL() {
+        
+        mPKGOMIOBOL_ = 0;
         onChanged();
         return this;
       }
@@ -656,10 +664,10 @@ public final class IMPFHAGJHCEOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021IMPFHAGJHCE.proto\"L\n\013IMPFHAGJHCE\022\023\n\013MP" +
-      "KGOMIOBOL\030\001 \001(\r\022\023\n\013BMNOGGNIIFO\030\002 \001(\r\022\023\n\013" +
-      "AGBBCDCFJIP\030\003 \001(\rB2\n\031emu.grasscutter.net" +
-      ".protoB\025IMPFHAGJHCEOuterClassb\006proto3"
+      "\n\021IMPFHAGJHCE.proto\"L\n\013IMPFHAGJHCE\022\023\n\013BM" +
+      "NOGGNIIFO\030\002 \001(\r\022\023\n\013MPKGOMIOBOL\030\001 \001(\r\022\023\n\013" +
+      "AGBBCDCFJIP\030\003 \001(\rB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -670,7 +678,7 @@ public final class IMPFHAGJHCEOuterClass {
     internal_static_IMPFHAGJHCE_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IMPFHAGJHCE_descriptor,
-        new java.lang.String[] { "MPKGOMIOBOL", "BMNOGGNIIFO", "AGBBCDCFJIP", });
+        new java.lang.String[] { "BMNOGGNIIFO", "MPKGOMIOBOL", "AGBBCDCFJIP", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

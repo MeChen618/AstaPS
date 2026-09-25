@@ -19,18 +19,22 @@ public final class GKLJODICHJNOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 key_hash = 1;</code>
-     * @return The keyHash.
-     */
-    int getKeyHash();
-
-    /**
      * <code>float value = 2;</code>
      * @return The value.
      */
     float getValue();
+
+    /**
+     * <code>int32 key_hash = 1;</code>
+     * @return The keyHash.
+     */
+    int getKeyHash();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GKLJODICHJN}
    */
   public static final class GKLJODICHJN extends
@@ -117,17 +121,6 @@ public final class GKLJODICHJNOuterClass {
               emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN.class, emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN.Builder.class);
     }
 
-    public static final int KEY_HASH_FIELD_NUMBER = 1;
-    private int keyHash_;
-    /**
-     * <code>int32 key_hash = 1;</code>
-     * @return The keyHash.
-     */
-    @java.lang.Override
-    public int getKeyHash() {
-      return keyHash_;
-    }
-
     public static final int VALUE_FIELD_NUMBER = 2;
     private float value_;
     /**
@@ -137,6 +130,17 @@ public final class GKLJODICHJNOuterClass {
     @java.lang.Override
     public float getValue() {
       return value_;
+    }
+
+    public static final int KEY_HASH_FIELD_NUMBER = 1;
+    private int keyHash_;
+    /**
+     * <code>int32 key_hash = 1;</code>
+     * @return The keyHash.
+     */
+    @java.lang.Override
+    public int getKeyHash() {
+      return keyHash_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,11 +195,11 @@ public final class GKLJODICHJNOuterClass {
       }
       emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN other = (emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN) obj;
 
-      if (getKeyHash()
-          != other.getKeyHash()) return false;
       if (java.lang.Float.floatToIntBits(getValue())
           != java.lang.Float.floatToIntBits(
               other.getValue())) return false;
+      if (getKeyHash()
+          != other.getKeyHash()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -207,11 +211,11 @@ public final class GKLJODICHJNOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyHash();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getValue());
+      hash = (37 * hash) + KEY_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyHash();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -308,6 +312,10 @@ public final class GKLJODICHJNOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GKLJODICHJN}
      */
     public static final class Builder extends
@@ -345,9 +353,9 @@ public final class GKLJODICHJNOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        keyHash_ = 0;
-
         value_ = 0F;
+
+        keyHash_ = 0;
 
         return this;
       }
@@ -375,8 +383,8 @@ public final class GKLJODICHJNOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN buildPartial() {
         emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN result = new emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN(this);
-        result.keyHash_ = keyHash_;
         result.value_ = value_;
+        result.keyHash_ = keyHash_;
         onBuilt();
         return result;
       }
@@ -425,11 +433,11 @@ public final class GKLJODICHJNOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN other) {
         if (other == emu.grasscutter.net.proto.GKLJODICHJNOuterClass.GKLJODICHJN.getDefaultInstance()) return this;
-        if (other.getKeyHash() != 0) {
-          setKeyHash(other.getKeyHash());
-        }
         if (other.getValue() != 0F) {
           setValue(other.getValue());
+        }
+        if (other.getKeyHash() != 0) {
+          setKeyHash(other.getKeyHash());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -460,37 +468,6 @@ public final class GKLJODICHJNOuterClass {
         return this;
       }
 
-      private int keyHash_ ;
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @return The keyHash.
-       */
-      @java.lang.Override
-      public int getKeyHash() {
-        return keyHash_;
-      }
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @param value The keyHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyHash(int value) {
-        
-        keyHash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKeyHash() {
-        
-        keyHash_ = 0;
-        onChanged();
-        return this;
-      }
-
       private float value_ ;
       /**
        * <code>float value = 2;</code>
@@ -518,6 +495,37 @@ public final class GKLJODICHJNOuterClass {
       public Builder clearValue() {
         
         value_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int keyHash_ ;
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @return The keyHash.
+       */
+      @java.lang.Override
+      public int getKeyHash() {
+        return keyHash_;
+      }
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @param value The keyHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyHash(int value) {
+        
+        keyHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyHash() {
+        
+        keyHash_ = 0;
         onChanged();
         return this;
       }
@@ -588,10 +596,9 @@ public final class GKLJODICHJNOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021GKLJODICHJN.proto\".\n\013GKLJODICHJN\022\020\n\010ke" +
-      "y_hash\030\001 \001(\005\022\r\n\005value\030\002 \001(\002B2\n\031emu.grass" +
-      "cutter.net.protoB\025GKLJODICHJNOuterClassb" +
-      "\006proto3"
+      "\n\021GKLJODICHJN.proto\".\n\013GKLJODICHJN\022\r\n\005va" +
+      "lue\030\002 \001(\002\022\020\n\010key_hash\030\001 \001(\005B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -602,7 +609,7 @@ public final class GKLJODICHJNOuterClass {
     internal_static_GKLJODICHJN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GKLJODICHJN_descriptor,
-        new java.lang.String[] { "KeyHash", "Value", });
+        new java.lang.String[] { "Value", "KeyHash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

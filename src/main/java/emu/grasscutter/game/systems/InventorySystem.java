@@ -12,7 +12,7 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.props.ItemUseAction.*;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
-import emu.grasscutter.net.proto.MaterialInfoOuterClass.MaterialInfo;
+import emu.grasscutter.net.proto.MaterilaInfoOuterClass.MaterilaInfo;
 import emu.grasscutter.server.event.player.*;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.send.*;
@@ -859,12 +859,12 @@ public class InventorySystem extends BaseGameSystem {
         avatar.unlockConstellation();
     }
 
-    public void destroyMaterial(Player player, List<MaterialInfo> list) {
+    public void destroyMaterial(Player player, List<MaterilaInfo> list) {
         // Return materials
         val returnMaterialMap = new Int2IntOpenHashMap();
         val inventory = player.getInventory();
 
-        for (MaterialInfo info : list) {
+        for (MaterilaInfo info : list) {
             // Sanity check
             if (info.getCount() <= 0) {
                 continue;

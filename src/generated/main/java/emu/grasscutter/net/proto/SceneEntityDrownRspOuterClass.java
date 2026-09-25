@@ -586,14 +586,15 @@ public final class SceneEntityDrownRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031SceneEntityDrownRsp.proto\"9\n\023SceneEnti" +
-      "tyDrownRsp\022\021\n\tentity_id\030\004 \001(\r\022\017\n\007retcode" +
-      "\030\r \001(\005B:\n\031emu.grasscutter.net.protoB\035Sce" +
-      "neEntityDrownRspOuterClassb\006proto3"
+      "\n\031SceneEntityDrownRsp.proto\032\rRetcode.pro" +
+      "to\"9\n\023SceneEntityDrownRsp\022\021\n\tentity_id\030\004" +
+      " \001(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_SceneEntityDrownRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -601,6 +602,7 @@ public final class SceneEntityDrownRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityDrownRsp_descriptor,
         new java.lang.String[] { "EntityId", "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

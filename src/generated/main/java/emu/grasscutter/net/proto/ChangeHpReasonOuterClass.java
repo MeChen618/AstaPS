@@ -20,328 +20,272 @@ public final class ChangeHpReasonOuterClass {
   public enum ChangeHpReason
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>ChangeHpReason_CHANGE_HP_NONE = 0;</code>
+     * <code>CHANGE_HP_REASON_NONE = 0;</code>
      */
-    ChangeHpReason_CHANGE_HP_NONE(0),
+    CHANGE_HP_REASON_NONE(0),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_AVATAR = 1;</code>
+     * <code>CHANGE_HP_REASON_SUB_AVATAR = 1;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_AVATAR(1),
+    CHANGE_HP_REASON_SUB_AVATAR(1),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_MONSTER = 2;</code>
+     * <code>CHANGE_HP_REASON_SUB_MONSTER = 2;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_MONSTER(2),
+    CHANGE_HP_REASON_SUB_MONSTER(2),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_GEAR = 3;</code>
+     * <code>CHANGE_HP_REASON_SUB_GEAR = 3;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_GEAR(3),
+    CHANGE_HP_REASON_SUB_GEAR(3),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_ENVIR = 4;</code>
+     * <code>CHANGE_HP_REASON_SUB_ENVIR = 4;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_ENVIR(4),
+    CHANGE_HP_REASON_SUB_ENVIR(4),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_FALL = 5;</code>
+     * <code>CHANGE_HP_REASON_SUB_FALL = 5;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_FALL(5),
+    CHANGE_HP_REASON_SUB_FALL(5),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_DRAWN = 6;</code>
+     * <code>CHANGE_HP_REASON_SUB_DRAWN = 6;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_DRAWN(6),
+    CHANGE_HP_REASON_SUB_DRAWN(6),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_ABYSS = 7;</code>
+     * <code>CHANGE_HP_REASON_SUB_ABYSS = 7;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_ABYSS(7),
+    CHANGE_HP_REASON_SUB_ABYSS(7),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_ABILITY = 8;</code>
+     * <code>CHANGE_HP_REASON_SUB_ABILITY = 8;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_ABILITY(8),
+    CHANGE_HP_REASON_SUB_ABILITY(8),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_SUMMON = 9;</code>
+     * <code>CHANGE_HP_REASON_SUB_SUMMON = 9;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_SUMMON(9),
+    CHANGE_HP_REASON_SUB_SUMMON(9),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_SCRIPT = 10;</code>
+     * <code>CHANGE_HP_REASON_SUB_SCRIPT = 10;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_SCRIPT(10),
+    CHANGE_HP_REASON_SUB_SCRIPT(10),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_GM = 11;</code>
+     * <code>CHANGE_HP_REASON_SUB_GM = 11;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_GM(11),
+    CHANGE_HP_REASON_SUB_GM(11),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_KILL_SELF = 12;</code>
+     * <code>CHANGE_HP_REASON_SUB_KILL_SELF = 12;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_KILL_SELF(12),
+    CHANGE_HP_REASON_SUB_KILL_SELF(12),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_CLIMATE_COLD = 13;</code>
+     * <code>CHANGE_HP_REASON_SUB_CLIMATE_COLD = 13;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_CLIMATE_COLD(13),
+    CHANGE_HP_REASON_SUB_CLIMATE_COLD(13),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_STORM_LIGHTNING = 14;</code>
+     * <code>CHANGE_HP_REASON_SUB_STORM_LIGHTNING = 14;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_STORM_LIGHTNING(14),
+    CHANGE_HP_REASON_SUB_STORM_LIGHTNING(14),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_KILL_SERVER_GADGET = 15;</code>
+     * <code>CHANGE_HP_REASON_SUB_KILL_SERVER_GADGET = 15;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_KILL_SERVER_GADGET(15),
+    CHANGE_HP_REASON_SUB_KILL_SERVER_GADGET(15),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_REPLACE = 16;</code>
+     * <code>CHANGE_HP_REASON_SUB_REPLACE = 16;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_REPLACE(16),
+    CHANGE_HP_REASON_SUB_REPLACE(16),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_PLAYER_LEAVE = 17;</code>
+     * <code>CHANGE_HP_REASON_SUB_PLAYER_LEAVE = 17;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_PLAYER_LEAVE(17),
+    CHANGE_HP_REASON_SUB_PLAYER_LEAVE(17),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ATTACK_BY_ENERGY = 18;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_ENERGY = 18;</code>
      */
-    ChangeHpReason_CHANGE_HP_ATTACK_BY_ENERGY(18),
+    CHANGE_HP_REASON_ATTACK_BY_ENERGY(18),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ATTACK_BY_RECYCLE = 19;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_RECYCLE = 19;</code>
      */
-    ChangeHpReason_CHANGE_HP_ATTACK_BY_RECYCLE(19),
+    CHANGE_HP_REASON_ATTACK_BY_RECYCLE(19),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_PLAYER_BACK = 20;</code>
+     * <code>CHANGE_HP_REASON_SUB_PLAYER_BACK = 20;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_PLAYER_BACK(20),
+    CHANGE_HP_REASON_SUB_PLAYER_BACK(20),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_UGC = 21;</code>
+     * <code>CHANGE_HP_REASON_SUB_UGC = 21;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_UGC(21),
+    CHANGE_HP_REASON_SUB_UGC(21),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_DIRTY_WATER_EROSION = 22;</code>
+     * <code>CHANGE_HP_REASON_BY_LUA = 51;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_DIRTY_WATER_EROSION(22),
+    CHANGE_HP_REASON_BY_LUA(51),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_DESTROY_SELF = 23;</code>
+     * <code>CHANGE_HP_REASON_ADD_ABILITY = 101;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_DESTROY_SELF(23),
+    CHANGE_HP_REASON_ADD_ABILITY(101),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_LIQUID_PHLOGISTON = 24;</code>
+     * <code>CHANGE_HP_REASON_ADD_ITEM = 102;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_LIQUID_PHLOGISTON(24),
+    CHANGE_HP_REASON_ADD_ITEM(102),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_LEVEL_FORCE_DIE = 25;</code>
+     * <code>CHANGE_HP_REASON_ADD_REVIVE = 103;</code>
      */
-    ChangeHpReason_CHANGE_HP_SUB_LEVEL_FORCE_DIE(25),
+    CHANGE_HP_REASON_ADD_REVIVE(103),
     /**
-     * <code>CHANGE_HP_SUB_HEART_BLOOD_USED_OUT = 26;</code>
+     * <code>CHANGE_HP_REASON_ADD_UPGRADE = 104;</code>
      */
-    CHANGE_HP_SUB_HEART_BLOOD_USED_OUT(26),
+    CHANGE_HP_REASON_ADD_UPGRADE(104),
     /**
-     * <code>CHANGE_HP_SUB_BEYOND_BL_UEPRINT = 27;</code>
+     * <code>CHANGE_HP_REASON_ADD_STATUE = 105;</code>
      */
-    CHANGE_HP_SUB_BEYOND_BL_UEPRINT(27),
+    CHANGE_HP_REASON_ADD_STATUE(105),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_BY_LUA = 51;</code>
+     * <code>CHANGE_HP_REASON_ADD_BACKGROUND = 106;</code>
      */
-    ChangeHpReason_CHANGE_HP_BY_LUA(51),
+    CHANGE_HP_REASON_ADD_BACKGROUND(106),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_ABILITY = 101;</code>
+     * <code>CHANGE_HP_REASON_ADD_GM = 107;</code>
      */
-    ChangeHpReason_CHANGE_HP_ADD_ABILITY(101),
+    CHANGE_HP_REASON_ADD_GM(107),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_ITEM = 102;</code>
+     * <code>CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY = 108;</code>
      */
-    ChangeHpReason_CHANGE_HP_ADD_ITEM(102),
+    CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY(108),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_REVIVE = 103;</code>
+     * <code>CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING = 109;</code>
      */
-    ChangeHpReason_CHANGE_HP_ADD_REVIVE(103),
+    CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING(109),
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_UPGRADE = 104;</code>
+     * <code>CHANGE_HP_REASON_ADD_EFFIGY_CHALLENGE_V_5 = 110;</code>
      */
-    ChangeHpReason_CHANGE_HP_ADD_UPGRADE(104),
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_STATUE = 105;</code>
-     */
-    ChangeHpReason_CHANGE_HP_ADD_STATUE(105),
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_BACKGROUND = 106;</code>
-     */
-    ChangeHpReason_CHANGE_HP_ADD_BACKGROUND(106),
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_GM = 107;</code>
-     */
-    ChangeHpReason_CHANGE_HP_ADD_GM(107),
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_TRIAL_AVATAR_ACTIVITY = 108;</code>
-     */
-    ChangeHpReason_CHANGE_HP_ADD_TRIAL_AVATAR_ACTIVITY(108),
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_ROUGUELIKE_SPRING = 109;</code>
-     */
-    ChangeHpReason_CHANGE_HP_ADD_ROUGUELIKE_SPRING(109),
-    /**
-     * <code>CHANGE_HP_ADD_EFFIGY_CHALLENGE_V5 = 110;</code>
-     */
-    CHANGE_HP_ADD_EFFIGY_CHALLENGE_V5(110),
-    /**
-     * <code>CHANGE_HP_ADD_BEYOND_BLUEPRINT = 111;</code>
-     */
-    CHANGE_HP_ADD_BEYOND_BLUEPRINT(111),
+    CHANGE_HP_REASON_ADD_EFFIGY_CHALLENGE_V_5(110),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>ChangeHpReason_CHANGE_HP_NONE = 0;</code>
+     * <code>CHANGE_HP_REASON_NONE = 0;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_NONE_VALUE = 0;
+    public static final int CHANGE_HP_REASON_NONE_VALUE = 0;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_AVATAR = 1;</code>
+     * <code>CHANGE_HP_REASON_SUB_AVATAR = 1;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_AVATAR_VALUE = 1;
+    public static final int CHANGE_HP_REASON_SUB_AVATAR_VALUE = 1;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_MONSTER = 2;</code>
+     * <code>CHANGE_HP_REASON_SUB_MONSTER = 2;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_MONSTER_VALUE = 2;
+    public static final int CHANGE_HP_REASON_SUB_MONSTER_VALUE = 2;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_GEAR = 3;</code>
+     * <code>CHANGE_HP_REASON_SUB_GEAR = 3;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_GEAR_VALUE = 3;
+    public static final int CHANGE_HP_REASON_SUB_GEAR_VALUE = 3;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_ENVIR = 4;</code>
+     * <code>CHANGE_HP_REASON_SUB_ENVIR = 4;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_ENVIR_VALUE = 4;
+    public static final int CHANGE_HP_REASON_SUB_ENVIR_VALUE = 4;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_FALL = 5;</code>
+     * <code>CHANGE_HP_REASON_SUB_FALL = 5;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_FALL_VALUE = 5;
+    public static final int CHANGE_HP_REASON_SUB_FALL_VALUE = 5;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_DRAWN = 6;</code>
+     * <code>CHANGE_HP_REASON_SUB_DRAWN = 6;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_DRAWN_VALUE = 6;
+    public static final int CHANGE_HP_REASON_SUB_DRAWN_VALUE = 6;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_ABYSS = 7;</code>
+     * <code>CHANGE_HP_REASON_SUB_ABYSS = 7;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_ABYSS_VALUE = 7;
+    public static final int CHANGE_HP_REASON_SUB_ABYSS_VALUE = 7;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_ABILITY = 8;</code>
+     * <code>CHANGE_HP_REASON_SUB_ABILITY = 8;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_ABILITY_VALUE = 8;
+    public static final int CHANGE_HP_REASON_SUB_ABILITY_VALUE = 8;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_SUMMON = 9;</code>
+     * <code>CHANGE_HP_REASON_SUB_SUMMON = 9;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_SUMMON_VALUE = 9;
+    public static final int CHANGE_HP_REASON_SUB_SUMMON_VALUE = 9;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_SCRIPT = 10;</code>
+     * <code>CHANGE_HP_REASON_SUB_SCRIPT = 10;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_SCRIPT_VALUE = 10;
+    public static final int CHANGE_HP_REASON_SUB_SCRIPT_VALUE = 10;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_GM = 11;</code>
+     * <code>CHANGE_HP_REASON_SUB_GM = 11;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_GM_VALUE = 11;
+    public static final int CHANGE_HP_REASON_SUB_GM_VALUE = 11;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_KILL_SELF = 12;</code>
+     * <code>CHANGE_HP_REASON_SUB_KILL_SELF = 12;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_KILL_SELF_VALUE = 12;
+    public static final int CHANGE_HP_REASON_SUB_KILL_SELF_VALUE = 12;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_CLIMATE_COLD = 13;</code>
+     * <code>CHANGE_HP_REASON_SUB_CLIMATE_COLD = 13;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_CLIMATE_COLD_VALUE = 13;
+    public static final int CHANGE_HP_REASON_SUB_CLIMATE_COLD_VALUE = 13;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_STORM_LIGHTNING = 14;</code>
+     * <code>CHANGE_HP_REASON_SUB_STORM_LIGHTNING = 14;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_STORM_LIGHTNING_VALUE = 14;
+    public static final int CHANGE_HP_REASON_SUB_STORM_LIGHTNING_VALUE = 14;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_KILL_SERVER_GADGET = 15;</code>
+     * <code>CHANGE_HP_REASON_SUB_KILL_SERVER_GADGET = 15;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_KILL_SERVER_GADGET_VALUE = 15;
+    public static final int CHANGE_HP_REASON_SUB_KILL_SERVER_GADGET_VALUE = 15;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_REPLACE = 16;</code>
+     * <code>CHANGE_HP_REASON_SUB_REPLACE = 16;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_REPLACE_VALUE = 16;
+    public static final int CHANGE_HP_REASON_SUB_REPLACE_VALUE = 16;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_PLAYER_LEAVE = 17;</code>
+     * <code>CHANGE_HP_REASON_SUB_PLAYER_LEAVE = 17;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_PLAYER_LEAVE_VALUE = 17;
+    public static final int CHANGE_HP_REASON_SUB_PLAYER_LEAVE_VALUE = 17;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ATTACK_BY_ENERGY = 18;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_ENERGY = 18;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_ATTACK_BY_ENERGY_VALUE = 18;
+    public static final int CHANGE_HP_REASON_ATTACK_BY_ENERGY_VALUE = 18;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ATTACK_BY_RECYCLE = 19;</code>
+     * <code>CHANGE_HP_REASON_ATTACK_BY_RECYCLE = 19;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_ATTACK_BY_RECYCLE_VALUE = 19;
+    public static final int CHANGE_HP_REASON_ATTACK_BY_RECYCLE_VALUE = 19;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_PLAYER_BACK = 20;</code>
+     * <code>CHANGE_HP_REASON_SUB_PLAYER_BACK = 20;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_PLAYER_BACK_VALUE = 20;
+    public static final int CHANGE_HP_REASON_SUB_PLAYER_BACK_VALUE = 20;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_UGC = 21;</code>
+     * <code>CHANGE_HP_REASON_SUB_UGC = 21;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_UGC_VALUE = 21;
+    public static final int CHANGE_HP_REASON_SUB_UGC_VALUE = 21;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_DIRTY_WATER_EROSION = 22;</code>
+     * <code>CHANGE_HP_REASON_BY_LUA = 51;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_DIRTY_WATER_EROSION_VALUE = 22;
+    public static final int CHANGE_HP_REASON_BY_LUA_VALUE = 51;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_DESTROY_SELF = 23;</code>
+     * <code>CHANGE_HP_REASON_ADD_ABILITY = 101;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_DESTROY_SELF_VALUE = 23;
+    public static final int CHANGE_HP_REASON_ADD_ABILITY_VALUE = 101;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_LIQUID_PHLOGISTON = 24;</code>
+     * <code>CHANGE_HP_REASON_ADD_ITEM = 102;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_LIQUID_PHLOGISTON_VALUE = 24;
+    public static final int CHANGE_HP_REASON_ADD_ITEM_VALUE = 102;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_SUB_LEVEL_FORCE_DIE = 25;</code>
+     * <code>CHANGE_HP_REASON_ADD_REVIVE = 103;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_SUB_LEVEL_FORCE_DIE_VALUE = 25;
+    public static final int CHANGE_HP_REASON_ADD_REVIVE_VALUE = 103;
     /**
-     * <code>CHANGE_HP_SUB_HEART_BLOOD_USED_OUT = 26;</code>
+     * <code>CHANGE_HP_REASON_ADD_UPGRADE = 104;</code>
      */
-    public static final int CHANGE_HP_SUB_HEART_BLOOD_USED_OUT_VALUE = 26;
+    public static final int CHANGE_HP_REASON_ADD_UPGRADE_VALUE = 104;
     /**
-     * <code>CHANGE_HP_SUB_BEYOND_BL_UEPRINT = 27;</code>
+     * <code>CHANGE_HP_REASON_ADD_STATUE = 105;</code>
      */
-    public static final int CHANGE_HP_SUB_BEYOND_BL_UEPRINT_VALUE = 27;
+    public static final int CHANGE_HP_REASON_ADD_STATUE_VALUE = 105;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_BY_LUA = 51;</code>
+     * <code>CHANGE_HP_REASON_ADD_BACKGROUND = 106;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_BY_LUA_VALUE = 51;
+    public static final int CHANGE_HP_REASON_ADD_BACKGROUND_VALUE = 106;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_ABILITY = 101;</code>
+     * <code>CHANGE_HP_REASON_ADD_GM = 107;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_ABILITY_VALUE = 101;
+    public static final int CHANGE_HP_REASON_ADD_GM_VALUE = 107;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_ITEM = 102;</code>
+     * <code>CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY = 108;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_ITEM_VALUE = 102;
+    public static final int CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY_VALUE = 108;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_REVIVE = 103;</code>
+     * <code>CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING = 109;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_REVIVE_VALUE = 103;
+    public static final int CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING_VALUE = 109;
     /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_UPGRADE = 104;</code>
+     * <code>CHANGE_HP_REASON_ADD_EFFIGY_CHALLENGE_V_5 = 110;</code>
      */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_UPGRADE_VALUE = 104;
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_STATUE = 105;</code>
-     */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_STATUE_VALUE = 105;
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_BACKGROUND = 106;</code>
-     */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_BACKGROUND_VALUE = 106;
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_GM = 107;</code>
-     */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_GM_VALUE = 107;
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_TRIAL_AVATAR_ACTIVITY = 108;</code>
-     */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_TRIAL_AVATAR_ACTIVITY_VALUE = 108;
-    /**
-     * <code>ChangeHpReason_CHANGE_HP_ADD_ROUGUELIKE_SPRING = 109;</code>
-     */
-    public static final int ChangeHpReason_CHANGE_HP_ADD_ROUGUELIKE_SPRING_VALUE = 109;
-    /**
-     * <code>CHANGE_HP_ADD_EFFIGY_CHALLENGE_V5 = 110;</code>
-     */
-    public static final int CHANGE_HP_ADD_EFFIGY_CHALLENGE_V5_VALUE = 110;
-    /**
-     * <code>CHANGE_HP_ADD_BEYOND_BLUEPRINT = 111;</code>
-     */
-    public static final int CHANGE_HP_ADD_BEYOND_BLUEPRINT_VALUE = 111;
+    public static final int CHANGE_HP_REASON_ADD_EFFIGY_CHALLENGE_V_5_VALUE = 110;
 
 
     public final int getNumber() {
@@ -368,46 +312,39 @@ public final class ChangeHpReasonOuterClass {
      */
     public static ChangeHpReason forNumber(int value) {
       switch (value) {
-        case 0: return ChangeHpReason_CHANGE_HP_NONE;
-        case 1: return ChangeHpReason_CHANGE_HP_SUB_AVATAR;
-        case 2: return ChangeHpReason_CHANGE_HP_SUB_MONSTER;
-        case 3: return ChangeHpReason_CHANGE_HP_SUB_GEAR;
-        case 4: return ChangeHpReason_CHANGE_HP_SUB_ENVIR;
-        case 5: return ChangeHpReason_CHANGE_HP_SUB_FALL;
-        case 6: return ChangeHpReason_CHANGE_HP_SUB_DRAWN;
-        case 7: return ChangeHpReason_CHANGE_HP_SUB_ABYSS;
-        case 8: return ChangeHpReason_CHANGE_HP_SUB_ABILITY;
-        case 9: return ChangeHpReason_CHANGE_HP_SUB_SUMMON;
-        case 10: return ChangeHpReason_CHANGE_HP_SUB_SCRIPT;
-        case 11: return ChangeHpReason_CHANGE_HP_SUB_GM;
-        case 12: return ChangeHpReason_CHANGE_HP_SUB_KILL_SELF;
-        case 13: return ChangeHpReason_CHANGE_HP_SUB_CLIMATE_COLD;
-        case 14: return ChangeHpReason_CHANGE_HP_SUB_STORM_LIGHTNING;
-        case 15: return ChangeHpReason_CHANGE_HP_SUB_KILL_SERVER_GADGET;
-        case 16: return ChangeHpReason_CHANGE_HP_SUB_REPLACE;
-        case 17: return ChangeHpReason_CHANGE_HP_SUB_PLAYER_LEAVE;
-        case 18: return ChangeHpReason_CHANGE_HP_ATTACK_BY_ENERGY;
-        case 19: return ChangeHpReason_CHANGE_HP_ATTACK_BY_RECYCLE;
-        case 20: return ChangeHpReason_CHANGE_HP_SUB_PLAYER_BACK;
-        case 21: return ChangeHpReason_CHANGE_HP_SUB_UGC;
-        case 22: return ChangeHpReason_CHANGE_HP_SUB_DIRTY_WATER_EROSION;
-        case 23: return ChangeHpReason_CHANGE_HP_SUB_DESTROY_SELF;
-        case 24: return ChangeHpReason_CHANGE_HP_SUB_LIQUID_PHLOGISTON;
-        case 25: return ChangeHpReason_CHANGE_HP_SUB_LEVEL_FORCE_DIE;
-        case 26: return CHANGE_HP_SUB_HEART_BLOOD_USED_OUT;
-        case 27: return CHANGE_HP_SUB_BEYOND_BL_UEPRINT;
-        case 51: return ChangeHpReason_CHANGE_HP_BY_LUA;
-        case 101: return ChangeHpReason_CHANGE_HP_ADD_ABILITY;
-        case 102: return ChangeHpReason_CHANGE_HP_ADD_ITEM;
-        case 103: return ChangeHpReason_CHANGE_HP_ADD_REVIVE;
-        case 104: return ChangeHpReason_CHANGE_HP_ADD_UPGRADE;
-        case 105: return ChangeHpReason_CHANGE_HP_ADD_STATUE;
-        case 106: return ChangeHpReason_CHANGE_HP_ADD_BACKGROUND;
-        case 107: return ChangeHpReason_CHANGE_HP_ADD_GM;
-        case 108: return ChangeHpReason_CHANGE_HP_ADD_TRIAL_AVATAR_ACTIVITY;
-        case 109: return ChangeHpReason_CHANGE_HP_ADD_ROUGUELIKE_SPRING;
-        case 110: return CHANGE_HP_ADD_EFFIGY_CHALLENGE_V5;
-        case 111: return CHANGE_HP_ADD_BEYOND_BLUEPRINT;
+        case 0: return CHANGE_HP_REASON_NONE;
+        case 1: return CHANGE_HP_REASON_SUB_AVATAR;
+        case 2: return CHANGE_HP_REASON_SUB_MONSTER;
+        case 3: return CHANGE_HP_REASON_SUB_GEAR;
+        case 4: return CHANGE_HP_REASON_SUB_ENVIR;
+        case 5: return CHANGE_HP_REASON_SUB_FALL;
+        case 6: return CHANGE_HP_REASON_SUB_DRAWN;
+        case 7: return CHANGE_HP_REASON_SUB_ABYSS;
+        case 8: return CHANGE_HP_REASON_SUB_ABILITY;
+        case 9: return CHANGE_HP_REASON_SUB_SUMMON;
+        case 10: return CHANGE_HP_REASON_SUB_SCRIPT;
+        case 11: return CHANGE_HP_REASON_SUB_GM;
+        case 12: return CHANGE_HP_REASON_SUB_KILL_SELF;
+        case 13: return CHANGE_HP_REASON_SUB_CLIMATE_COLD;
+        case 14: return CHANGE_HP_REASON_SUB_STORM_LIGHTNING;
+        case 15: return CHANGE_HP_REASON_SUB_KILL_SERVER_GADGET;
+        case 16: return CHANGE_HP_REASON_SUB_REPLACE;
+        case 17: return CHANGE_HP_REASON_SUB_PLAYER_LEAVE;
+        case 18: return CHANGE_HP_REASON_ATTACK_BY_ENERGY;
+        case 19: return CHANGE_HP_REASON_ATTACK_BY_RECYCLE;
+        case 20: return CHANGE_HP_REASON_SUB_PLAYER_BACK;
+        case 21: return CHANGE_HP_REASON_SUB_UGC;
+        case 51: return CHANGE_HP_REASON_BY_LUA;
+        case 101: return CHANGE_HP_REASON_ADD_ABILITY;
+        case 102: return CHANGE_HP_REASON_ADD_ITEM;
+        case 103: return CHANGE_HP_REASON_ADD_REVIVE;
+        case 104: return CHANGE_HP_REASON_ADD_UPGRADE;
+        case 105: return CHANGE_HP_REASON_ADD_STATUE;
+        case 106: return CHANGE_HP_REASON_ADD_BACKGROUND;
+        case 107: return CHANGE_HP_REASON_ADD_GM;
+        case 108: return CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVITY;
+        case 109: return CHANGE_HP_REASON_ADD_ROGUELIKE_SPRING;
+        case 110: return CHANGE_HP_REASON_ADD_EFFIGY_CHALLENGE_V_5;
         default: return null;
       }
     }
@@ -473,52 +410,37 @@ public final class ChangeHpReasonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ChangeHpReason.proto*\316\r\n\016ChangeHpReaso" +
-      "n\022!\n\035ChangeHpReason_CHANGE_HP_NONE\020\000\022\'\n#" +
-      "ChangeHpReason_CHANGE_HP_SUB_AVATAR\020\001\022(\n" +
-      "$ChangeHpReason_CHANGE_HP_SUB_MONSTER\020\002\022" +
-      "%\n!ChangeHpReason_CHANGE_HP_SUB_GEAR\020\003\022&" +
-      "\n\"ChangeHpReason_CHANGE_HP_SUB_ENVIR\020\004\022%" +
-      "\n!ChangeHpReason_CHANGE_HP_SUB_FALL\020\005\022&\n" +
-      "\"ChangeHpReason_CHANGE_HP_SUB_DRAWN\020\006\022&\n" +
-      "\"ChangeHpReason_CHANGE_HP_SUB_ABYSS\020\007\022(\n" +
-      "$ChangeHpReason_CHANGE_HP_SUB_ABILITY\020\010\022" +
-      "\'\n#ChangeHpReason_CHANGE_HP_SUB_SUMMON\020\t" +
-      "\022\'\n#ChangeHpReason_CHANGE_HP_SUB_SCRIPT\020" +
-      "\n\022#\n\037ChangeHpReason_CHANGE_HP_SUB_GM\020\013\022*" +
-      "\n&ChangeHpReason_CHANGE_HP_SUB_KILL_SELF" +
-      "\020\014\022-\n)ChangeHpReason_CHANGE_HP_SUB_CLIMA" +
-      "TE_COLD\020\r\0220\n,ChangeHpReason_CHANGE_HP_SU" +
-      "B_STORM_LIGHTNING\020\016\0223\n/ChangeHpReason_CH" +
-      "ANGE_HP_SUB_KILL_SERVER_GADGET\020\017\022(\n$Chan" +
-      "geHpReason_CHANGE_HP_SUB_REPLACE\020\020\022-\n)Ch" +
-      "angeHpReason_CHANGE_HP_SUB_PLAYER_LEAVE\020" +
-      "\021\022-\n)ChangeHpReason_CHANGE_HP_ATTACK_BY_" +
-      "ENERGY\020\022\022.\n*ChangeHpReason_CHANGE_HP_ATT" +
-      "ACK_BY_RECYCLE\020\023\022,\n(ChangeHpReason_CHANG" +
-      "E_HP_SUB_PLAYER_BACK\020\024\022$\n ChangeHpReason" +
-      "_CHANGE_HP_SUB_UGC\020\025\0224\n0ChangeHpReason_C" +
-      "HANGE_HP_SUB_DIRTY_WATER_EROSION\020\026\022-\n)Ch" +
-      "angeHpReason_CHANGE_HP_SUB_DESTROY_SELF\020" +
-      "\027\0222\n.ChangeHpReason_CHANGE_HP_SUB_LIQUID" +
-      "_PHLOGISTON\020\030\0220\n,ChangeHpReason_CHANGE_H" +
-      "P_SUB_LEVEL_FORCE_DIE\020\031\022&\n\"CHANGE_HP_SUB" +
-      "_HEART_BLOOD_USED_OUT\020\032\022#\n\037CHANGE_HP_SUB" +
-      "_BEYOND_BL_UEPRINT\020\033\022#\n\037ChangeHpReason_C" +
-      "HANGE_HP_BY_LUA\0203\022(\n$ChangeHpReason_CHAN" +
-      "GE_HP_ADD_ABILITY\020e\022%\n!ChangeHpReason_CH" +
-      "ANGE_HP_ADD_ITEM\020f\022\'\n#ChangeHpReason_CHA" +
-      "NGE_HP_ADD_REVIVE\020g\022(\n$ChangeHpReason_CH" +
-      "ANGE_HP_ADD_UPGRADE\020h\022\'\n#ChangeHpReason_" +
-      "CHANGE_HP_ADD_STATUE\020i\022+\n\'ChangeHpReason" +
-      "_CHANGE_HP_ADD_BACKGROUND\020j\022#\n\037ChangeHpR" +
-      "eason_CHANGE_HP_ADD_GM\020k\0226\n2ChangeHpReas" +
-      "on_CHANGE_HP_ADD_TRIAL_AVATAR_ACTIVITY\020l" +
-      "\0222\n.ChangeHpReason_CHANGE_HP_ADD_ROUGUEL" +
-      "IKE_SPRING\020m\022%\n!CHANGE_HP_ADD_EFFIGY_CHA" +
-      "LLENGE_V5\020n\022\"\n\036CHANGE_HP_ADD_BEYOND_BLUE" +
-      "PRINT\020oB5\n\031emu.grasscutter.net.protoB\030Ch" +
-      "angeHpReasonOuterClassb\006proto3"
+      "\n\024ChangeHpReason.proto*\231\t\n\016ChangeHpReaso" +
+      "n\022\031\n\025CHANGE_HP_REASON_NONE\020\000\022\037\n\033CHANGE_H" +
+      "P_REASON_SUB_AVATAR\020\001\022 \n\034CHANGE_HP_REASO" +
+      "N_SUB_MONSTER\020\002\022\035\n\031CHANGE_HP_REASON_SUB_" +
+      "GEAR\020\003\022\036\n\032CHANGE_HP_REASON_SUB_ENVIR\020\004\022\035" +
+      "\n\031CHANGE_HP_REASON_SUB_FALL\020\005\022\036\n\032CHANGE_" +
+      "HP_REASON_SUB_DRAWN\020\006\022\036\n\032CHANGE_HP_REASO" +
+      "N_SUB_ABYSS\020\007\022 \n\034CHANGE_HP_REASON_SUB_AB" +
+      "ILITY\020\010\022\037\n\033CHANGE_HP_REASON_SUB_SUMMON\020\t" +
+      "\022\037\n\033CHANGE_HP_REASON_SUB_SCRIPT\020\n\022\033\n\027CHA" +
+      "NGE_HP_REASON_SUB_GM\020\013\022\"\n\036CHANGE_HP_REAS" +
+      "ON_SUB_KILL_SELF\020\014\022%\n!CHANGE_HP_REASON_S" +
+      "UB_CLIMATE_COLD\020\r\022(\n$CHANGE_HP_REASON_SU" +
+      "B_STORM_LIGHTNING\020\016\022+\n\'CHANGE_HP_REASON_" +
+      "SUB_KILL_SERVER_GADGET\020\017\022 \n\034CHANGE_HP_RE" +
+      "ASON_SUB_REPLACE\020\020\022%\n!CHANGE_HP_REASON_S" +
+      "UB_PLAYER_LEAVE\020\021\022%\n!CHANGE_HP_REASON_AT" +
+      "TACK_BY_ENERGY\020\022\022&\n\"CHANGE_HP_REASON_ATT" +
+      "ACK_BY_RECYCLE\020\023\022$\n CHANGE_HP_REASON_SUB" +
+      "_PLAYER_BACK\020\024\022\034\n\030CHANGE_HP_REASON_SUB_U" +
+      "GC\020\025\022\033\n\027CHANGE_HP_REASON_BY_LUA\0203\022 \n\034CHA" +
+      "NGE_HP_REASON_ADD_ABILITY\020e\022\035\n\031CHANGE_HP" +
+      "_REASON_ADD_ITEM\020f\022\037\n\033CHANGE_HP_REASON_A" +
+      "DD_REVIVE\020g\022 \n\034CHANGE_HP_REASON_ADD_UPGR" +
+      "ADE\020h\022\037\n\033CHANGE_HP_REASON_ADD_STATUE\020i\022#" +
+      "\n\037CHANGE_HP_REASON_ADD_BACKGROUND\020j\022\033\n\027C" +
+      "HANGE_HP_REASON_ADD_GM\020k\022.\n*CHANGE_HP_RE" +
+      "ASON_ADD_TRIAL_AVATAR_ACTIVITY\020l\022)\n%CHAN" +
+      "GE_HP_REASON_ADD_ROGUELIKE_SPRING\020m\022-\n)C" +
+      "HANGE_HP_REASON_ADD_EFFIGY_CHALLENGE_V_5" +
+      "\020nB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

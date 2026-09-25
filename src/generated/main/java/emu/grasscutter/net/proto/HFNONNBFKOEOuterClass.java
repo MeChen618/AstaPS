@@ -19,30 +19,34 @@ public final class HFNONNBFKOEOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC> 
         getLevelInfoListList();
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC getLevelInfoList(int index);
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     int getLevelInfoListCount();
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder> 
         getLevelInfoListOrBuilderList();
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder getLevelInfoListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HFNONNBFKOE}
    */
   public static final class HFNONNBFKOE extends
@@ -89,7 +93,7 @@ public final class HFNONNBFKOEOuterClass {
             case 0:
               done = true;
               break;
-            case 42: {
+            case 98: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class HFNONNBFKOEOuterClass {
               emu.grasscutter.net.proto.HFNONNBFKOEOuterClass.HFNONNBFKOE.class, emu.grasscutter.net.proto.HFNONNBFKOEOuterClass.HFNONNBFKOE.Builder.class);
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 5;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC> levelInfoList_;
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder> 
@@ -151,21 +155,21 @@ public final class HFNONNBFKOEOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+     * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder getLevelInfoListOrBuilder(
@@ -188,7 +192,7 @@ public final class HFNONNBFKOEOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(5, levelInfoList_.get(i));
+        output.writeMessage(12, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class HFNONNBFKOEOuterClass {
       size = 0;
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, levelInfoList_.get(i));
+          .computeMessageSize(12, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class HFNONNBFKOEOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HFNONNBFKOE}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class HFNONNBFKOEOuterClass {
           emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class HFNONNBFKOEOuterClass {
         }
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class HFNONNBFKOEOuterClass {
         }
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class HFNONNBFKOEOuterClass {
         }
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC value) {
@@ -575,7 +583,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC value) {
         if (levelInfoListBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC value) {
@@ -622,7 +630,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC> values) {
@@ -665,7 +673,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class HFNONNBFKOEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class HFNONNBFKOEOuterClass {
         }
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDECOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -719,14 +727,14 @@ public final class HFNONNBFKOEOuterClass {
         }
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.getDefaultInstance());
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder addLevelInfoListBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class HFNONNBFKOEOuterClass {
             index, emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.getDefaultInstance());
       }
       /**
-       * <code>repeated .KCENLPAJDEC level_info_list = 5;</code>
+       * <code>repeated .KCENLPAJDEC level_info_list = 12;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.KCENLPAJDECOuterClass.KCENLPAJDEC.Builder> 
            getLevelInfoListBuilderList() {
@@ -822,9 +830,9 @@ public final class HFNONNBFKOEOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HFNONNBFKOE.proto\032\021KCENLPAJDEC.proto\"4" +
-      "\n\013HFNONNBFKOE\022%\n\017level_info_list\030\005 \003(\0132\014" +
-      ".KCENLPAJDECB2\n\031emu.grasscutter.net.prot" +
-      "oB\025HFNONNBFKOEOuterClassb\006proto3"
+      "\n\013HFNONNBFKOE\022%\n\017level_info_list\030\014 \003(\0132\014" +
+      ".KCENLPAJDECB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

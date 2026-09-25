@@ -25,18 +25,22 @@ public final class OBLGMFAIFCMOuterClass {
     int getItemId();
 
     /**
-     * <code>uint32 EFPBHJOIBJH = 2;</code>
-     * @return The eFPBHJOIBJH.
-     */
-    int getEFPBHJOIBJH();
-
-    /**
      * <code>bool is_new = 3;</code>
      * @return The isNew.
      */
     boolean getIsNew();
+
+    /**
+     * <code>uint32 item_count = 2;</code>
+     * @return The itemCount.
+     */
+    int getItemCount();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OBLGMFAIFCM}
    */
   public static final class OBLGMFAIFCM extends
@@ -88,7 +92,7 @@ public final class OBLGMFAIFCMOuterClass {
             }
             case 16: {
 
-              eFPBHJOIBJH_ = input.readUInt32();
+              itemCount_ = input.readUInt32();
               break;
             }
             case 24: {
@@ -139,17 +143,6 @@ public final class OBLGMFAIFCMOuterClass {
       return itemId_;
     }
 
-    public static final int EFPBHJOIBJH_FIELD_NUMBER = 2;
-    private int eFPBHJOIBJH_;
-    /**
-     * <code>uint32 EFPBHJOIBJH = 2;</code>
-     * @return The eFPBHJOIBJH.
-     */
-    @java.lang.Override
-    public int getEFPBHJOIBJH() {
-      return eFPBHJOIBJH_;
-    }
-
     public static final int IS_NEW_FIELD_NUMBER = 3;
     private boolean isNew_;
     /**
@@ -159,6 +152,17 @@ public final class OBLGMFAIFCMOuterClass {
     @java.lang.Override
     public boolean getIsNew() {
       return isNew_;
+    }
+
+    public static final int ITEM_COUNT_FIELD_NUMBER = 2;
+    private int itemCount_;
+    /**
+     * <code>uint32 item_count = 2;</code>
+     * @return The itemCount.
+     */
+    @java.lang.Override
+    public int getItemCount() {
+      return itemCount_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -178,8 +182,8 @@ public final class OBLGMFAIFCMOuterClass {
       if (itemId_ != 0) {
         output.writeUInt32(1, itemId_);
       }
-      if (eFPBHJOIBJH_ != 0) {
-        output.writeUInt32(2, eFPBHJOIBJH_);
+      if (itemCount_ != 0) {
+        output.writeUInt32(2, itemCount_);
       }
       if (isNew_ != false) {
         output.writeBool(3, isNew_);
@@ -197,9 +201,9 @@ public final class OBLGMFAIFCMOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, itemId_);
       }
-      if (eFPBHJOIBJH_ != 0) {
+      if (itemCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, eFPBHJOIBJH_);
+          .computeUInt32Size(2, itemCount_);
       }
       if (isNew_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -222,10 +226,10 @@ public final class OBLGMFAIFCMOuterClass {
 
       if (getItemId()
           != other.getItemId()) return false;
-      if (getEFPBHJOIBJH()
-          != other.getEFPBHJOIBJH()) return false;
       if (getIsNew()
           != other.getIsNew()) return false;
+      if (getItemCount()
+          != other.getItemCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -239,11 +243,11 @@ public final class OBLGMFAIFCMOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
-      hash = (37 * hash) + EFPBHJOIBJH_FIELD_NUMBER;
-      hash = (53 * hash) + getEFPBHJOIBJH();
       hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNew());
+      hash = (37 * hash) + ITEM_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getItemCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -340,6 +344,10 @@ public final class OBLGMFAIFCMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OBLGMFAIFCM}
      */
     public static final class Builder extends
@@ -379,9 +387,9 @@ public final class OBLGMFAIFCMOuterClass {
         super.clear();
         itemId_ = 0;
 
-        eFPBHJOIBJH_ = 0;
-
         isNew_ = false;
+
+        itemCount_ = 0;
 
         return this;
       }
@@ -410,8 +418,8 @@ public final class OBLGMFAIFCMOuterClass {
       public emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCM buildPartial() {
         emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCM result = new emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCM(this);
         result.itemId_ = itemId_;
-        result.eFPBHJOIBJH_ = eFPBHJOIBJH_;
         result.isNew_ = isNew_;
+        result.itemCount_ = itemCount_;
         onBuilt();
         return result;
       }
@@ -463,11 +471,11 @@ public final class OBLGMFAIFCMOuterClass {
         if (other.getItemId() != 0) {
           setItemId(other.getItemId());
         }
-        if (other.getEFPBHJOIBJH() != 0) {
-          setEFPBHJOIBJH(other.getEFPBHJOIBJH());
-        }
         if (other.getIsNew() != false) {
           setIsNew(other.getIsNew());
+        }
+        if (other.getItemCount() != 0) {
+          setItemCount(other.getItemCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -529,37 +537,6 @@ public final class OBLGMFAIFCMOuterClass {
         return this;
       }
 
-      private int eFPBHJOIBJH_ ;
-      /**
-       * <code>uint32 EFPBHJOIBJH = 2;</code>
-       * @return The eFPBHJOIBJH.
-       */
-      @java.lang.Override
-      public int getEFPBHJOIBJH() {
-        return eFPBHJOIBJH_;
-      }
-      /**
-       * <code>uint32 EFPBHJOIBJH = 2;</code>
-       * @param value The eFPBHJOIBJH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEFPBHJOIBJH(int value) {
-        
-        eFPBHJOIBJH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 EFPBHJOIBJH = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEFPBHJOIBJH() {
-        
-        eFPBHJOIBJH_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isNew_ ;
       /**
        * <code>bool is_new = 3;</code>
@@ -587,6 +564,37 @@ public final class OBLGMFAIFCMOuterClass {
       public Builder clearIsNew() {
         
         isNew_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int itemCount_ ;
+      /**
+       * <code>uint32 item_count = 2;</code>
+       * @return The itemCount.
+       */
+      @java.lang.Override
+      public int getItemCount() {
+        return itemCount_;
+      }
+      /**
+       * <code>uint32 item_count = 2;</code>
+       * @param value The itemCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemCount(int value) {
+        
+        itemCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 item_count = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemCount() {
+        
+        itemCount_ = 0;
         onChanged();
         return this;
       }
@@ -657,10 +665,10 @@ public final class OBLGMFAIFCMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021OBLGMFAIFCM.proto\"C\n\013OBLGMFAIFCM\022\017\n\007it" +
-      "em_id\030\001 \001(\r\022\023\n\013EFPBHJOIBJH\030\002 \001(\r\022\016\n\006is_n" +
-      "ew\030\003 \001(\010B2\n\031emu.grasscutter.net.protoB\025O" +
-      "BLGMFAIFCMOuterClassb\006proto3"
+      "\n\021OBLGMFAIFCM.proto\"B\n\013OBLGMFAIFCM\022\017\n\007it" +
+      "em_id\030\001 \001(\r\022\016\n\006is_new\030\003 \001(\010\022\022\n\nitem_coun" +
+      "t\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -671,7 +679,7 @@ public final class OBLGMFAIFCMOuterClass {
     internal_static_OBLGMFAIFCM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OBLGMFAIFCM_descriptor,
-        new java.lang.String[] { "ItemId", "EFPBHJOIBJH", "IsNew", });
+        new java.lang.String[] { "ItemId", "IsNew", "ItemCount", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

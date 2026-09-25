@@ -481,8 +481,8 @@ public class GameMainQuest {
                 ParentQuest.newBuilder()
                         .setParentQuestId(getParentQuestId())
                         .setIsFinished(isFinished())
-                        .setParentQuestState(getState().getValue())
-                        .setVideoKey(QuestManager.getQuestKey(parentQuestId));
+                        .setParentQuestState(getState().getValue());
+        // 7.1: ParentQuest no longer has the uint64 video_key field
 
         if (withChildQuests) {
             for (var quest : this.getChildQuests().values()) {

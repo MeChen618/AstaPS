@@ -19,477 +19,6 @@ public final class KEGLGHJKEGPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-     * @return Whether the customValueComp field is set.
-     */
-    boolean hasCustomValueComp();
-    /**
-     * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-     * @return The customValueComp.
-     */
-    emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK getCustomValueComp();
-    /**
-     * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-     */
-    emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJKOrBuilder getCustomValueCompOrBuilder();
-
-    /**
-     * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-     * @return Whether the timerComp field is set.
-     */
-    boolean hasTimerComp();
-    /**
-     * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-     * @return The timerComp.
-     */
-    emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN getTimerComp();
-    /**
-     * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-     */
-    emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBNOrBuilder getTimerCompOrBuilder();
-
-    /**
-     * <code>.NJABMDONHPI move_comp = 14;</code>
-     * @return Whether the moveComp field is set.
-     */
-    boolean hasMoveComp();
-    /**
-     * <code>.NJABMDONHPI move_comp = 14;</code>
-     * @return The moveComp.
-     */
-    emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI getMoveComp();
-    /**
-     * <code>.NJABMDONHPI move_comp = 14;</code>
-     */
-    emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPIOrBuilder getMoveCompOrBuilder();
-
-    /**
-     * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-     * @return Whether the clientTriggerComp field is set.
-     */
-    boolean hasClientTriggerComp();
-    /**
-     * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-     * @return The clientTriggerComp.
-     */
-    emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD getClientTriggerComp();
-    /**
-     * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-     */
-    emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABDOrBuilder getClientTriggerCompOrBuilder();
-
-    /**
-     * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-     * @return Whether the effectComp field is set.
-     */
-    boolean hasEffectComp();
-    /**
-     * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-     * @return The effectComp.
-     */
-    emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF getEffectComp();
-    /**
-     * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-     */
-    emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOFOrBuilder getEffectCompOrBuilder();
-
-    /**
-     * <code>.AGFINCBOPDE collision_comp = 18;</code>
-     * @return Whether the collisionComp field is set.
-     */
-    boolean hasCollisionComp();
-    /**
-     * <code>.AGFINCBOPDE collision_comp = 18;</code>
-     * @return The collisionComp.
-     */
-    emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE getCollisionComp();
-    /**
-     * <code>.AGFINCBOPDE collision_comp = 18;</code>
-     */
-    emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDEOrBuilder getCollisionCompOrBuilder();
-
-    /**
-     * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-     * @return Whether the followMoveComp field is set.
-     */
-    boolean hasFollowMoveComp();
-    /**
-     * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-     * @return The followMoveComp.
-     */
-    emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED getFollowMoveComp();
-    /**
-     * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-     */
-    emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKEDOrBuilder getFollowMoveCompOrBuilder();
-
-    /**
-     * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-     * @return Whether the bulletMoveComp field is set.
-     */
-    boolean hasBulletMoveComp();
-    /**
-     * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-     * @return The bulletMoveComp.
-     */
-    emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ getBulletMoveComp();
-    /**
-     * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-     */
-    emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJOrBuilder getBulletMoveCompOrBuilder();
-
-    /**
-     * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-     * @return Whether the hitDetectionComp field is set.
-     */
-    boolean hasHitDetectionComp();
-    /**
-     * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-     * @return The hitDetectionComp.
-     */
-    emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG getHitDetectionComp();
-    /**
-     * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-     */
-    emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHGOrBuilder getHitDetectionCompOrBuilder();
-
-    /**
-     * <code>.BANABAFODKK camera_comp = 23;</code>
-     * @return Whether the cameraComp field is set.
-     */
-    boolean hasCameraComp();
-    /**
-     * <code>.BANABAFODKK camera_comp = 23;</code>
-     * @return The cameraComp.
-     */
-    emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK getCameraComp();
-    /**
-     * <code>.BANABAFODKK camera_comp = 23;</code>
-     */
-    emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKKOrBuilder getCameraCompOrBuilder();
-
-    /**
-     * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-     * @return Whether the roleStatusComp field is set.
-     */
-    boolean hasRoleStatusComp();
-    /**
-     * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-     * @return The roleStatusComp.
-     */
-    emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK getRoleStatusComp();
-    /**
-     * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-     */
-    emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDKOrBuilder getRoleStatusCompOrBuilder();
-
-    /**
-     * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-     * @return Whether the avatarDisturberComp field is set.
-     */
-    boolean hasAvatarDisturberComp();
-    /**
-     * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-     * @return The avatarDisturberComp.
-     */
-    emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN getAvatarDisturberComp();
-    /**
-     * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-     */
-    emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEINOrBuilder getAvatarDisturberCompOrBuilder();
-
-    /**
-     * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-     * @return Whether the countDownComp field is set.
-     */
-    boolean hasCountDownComp();
-    /**
-     * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-     * @return The countDownComp.
-     */
-    emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA getCountDownComp();
-    /**
-     * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-     */
-    emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMAOrBuilder getCountDownCompOrBuilder();
-
-    /**
-     * <code>.JNCFEAMFKNA option_comp = 27;</code>
-     * @return Whether the optionComp field is set.
-     */
-    boolean hasOptionComp();
-    /**
-     * <code>.JNCFEAMFKNA option_comp = 27;</code>
-     * @return The optionComp.
-     */
-    emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA getOptionComp();
-    /**
-     * <code>.JNCFEAMFKNA option_comp = 27;</code>
-     */
-    emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNAOrBuilder getOptionCompOrBuilder();
-
-    /**
-     * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-     * @return Whether the hitboxComp field is set.
-     */
-    boolean hasHitboxComp();
-    /**
-     * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-     * @return The hitboxComp.
-     */
-    emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG getHitboxComp();
-    /**
-     * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-     */
-    emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJGOrBuilder getHitboxCompOrBuilder();
-
-    /**
-     * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-     * @return Whether the customSkillComp field is set.
-     */
-    boolean hasCustomSkillComp();
-    /**
-     * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-     * @return The customSkillComp.
-     */
-    emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB getCustomSkillComp();
-    /**
-     * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-     */
-    emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPBOrBuilder getCustomSkillCompOrBuilder();
-
-    /**
-     * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-     * @return Whether the enmityComp field is set.
-     */
-    boolean hasEnmityComp();
-    /**
-     * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-     * @return The enmityComp.
-     */
-    emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB getEnmityComp();
-    /**
-     * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-     */
-    emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFBOrBuilder getEnmityCompOrBuilder();
-
-    /**
-     * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-     * @return Whether the nameplateComp field is set.
-     */
-    boolean hasNameplateComp();
-    /**
-     * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-     * @return The nameplateComp.
-     */
-    emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA getNameplateComp();
-    /**
-     * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-     */
-    emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGAOrBuilder getNameplateCompOrBuilder();
-
-    /**
-     * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-     * @return Whether the talkComp field is set.
-     */
-    boolean hasTalkComp();
-    /**
-     * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-     * @return The talkComp.
-     */
-    emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP getTalkComp();
-    /**
-     * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-     */
-    emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIPOrBuilder getTalkCompOrBuilder();
-
-    /**
-     * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-     * @return Whether the soundEffectComp field is set.
-     */
-    boolean hasSoundEffectComp();
-    /**
-     * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-     * @return The soundEffectComp.
-     */
-    emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ getSoundEffectComp();
-    /**
-     * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-     */
-    emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJOrBuilder getSoundEffectCompOrBuilder();
-
-    /**
-     * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-     * @return Whether the monsterPatrolComp field is set.
-     */
-    boolean hasMonsterPatrolComp();
-    /**
-     * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-     * @return The monsterPatrolComp.
-     */
-    emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN getMonsterPatrolComp();
-    /**
-     * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-     */
-    emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKNOrBuilder getMonsterPatrolCompOrBuilder();
-
-    /**
-     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-     * @return Whether the levelStateMachineComp field is set.
-     */
-    boolean hasLevelStateMachineComp();
-    /**
-     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-     * @return The levelStateMachineComp.
-     */
-    emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp getLevelStateMachineComp();
-    /**
-     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-     */
-    emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineCompOrBuilder getLevelStateMachineCompOrBuilder();
-
-    /**
-     * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-     * @return Whether the minimapMarkComp field is set.
-     */
-    boolean hasMinimapMarkComp();
-    /**
-     * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-     * @return The minimapMarkComp.
-     */
-    emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK getMinimapMarkComp();
-    /**
-     * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-     */
-    emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNKOrBuilder getMinimapMarkCompOrBuilder();
-
-    /**
-     * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-     * @return Whether the stuffBagComp field is set.
-     */
-    boolean hasStuffBagComp();
-    /**
-     * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-     * @return The stuffBagComp.
-     */
-    emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO getStuffBagComp();
-    /**
-     * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-     */
-    emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGOOrBuilder getStuffBagCompOrBuilder();
-
-    /**
-     * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-     * @return Whether the equipStuffBagComp field is set.
-     */
-    boolean hasEquipStuffBagComp();
-    /**
-     * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-     * @return The equipStuffBagComp.
-     */
-    emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI getEquipStuffBagComp();
-    /**
-     * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-     */
-    emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBIOrBuilder getEquipStuffBagCompOrBuilder();
-
-    /**
-     * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-     * @return Whether the dropGatherComp field is set.
-     */
-    boolean hasDropGatherComp();
-    /**
-     * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-     * @return The dropGatherComp.
-     */
-    emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ getDropGatherComp();
-    /**
-     * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-     */
-    emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJOrBuilder getDropGatherCompOrBuilder();
-
-    /**
-     * <code>.IKOIHIANENH light_group_comp = 41;</code>
-     * @return Whether the lightGroupComp field is set.
-     */
-    boolean hasLightGroupComp();
-    /**
-     * <code>.IKOIHIANENH light_group_comp = 41;</code>
-     * @return The lightGroupComp.
-     */
-    emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH getLightGroupComp();
-    /**
-     * <code>.IKOIHIANENH light_group_comp = 41;</code>
-     */
-    emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENHOrBuilder getLightGroupCompOrBuilder();
-
-    /**
-     * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-     * @return Whether the scanEntityComp field is set.
-     */
-    boolean hasScanEntityComp();
-    /**
-     * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-     * @return The scanEntityComp.
-     */
-    emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD getScanEntityComp();
-    /**
-     * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-     */
-    emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDDOrBuilder getScanEntityCompOrBuilder();
-
-    /**
-     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-     * @return Whether the subSwitchComp field is set.
-     */
-    boolean hasSubSwitchComp();
-    /**
-     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-     * @return The subSwitchComp.
-     */
-    emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp getSubSwitchComp();
-    /**
-     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-     */
-    emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchCompOrBuilder getSubSwitchCompOrBuilder();
-
-    /**
-     * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-     * @return Whether the monsterAiComp field is set.
-     */
-    boolean hasMonsterAiComp();
-    /**
-     * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-     * @return The monsterAiComp.
-     */
-    emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ getMonsterAiComp();
-    /**
-     * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-     */
-    emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJOrBuilder getMonsterAiCompOrBuilder();
-
-    /**
-     * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-     * @return Whether the vehicleComp field is set.
-     */
-    boolean hasVehicleComp();
-    /**
-     * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-     * @return The vehicleComp.
-     */
-    emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK getVehicleComp();
-    /**
-     * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-     */
-    emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFKOrBuilder getVehicleCompOrBuilder();
-
-    /**
-     * <code>bool is_active = 1;</code>
-     * @return The isActive.
-     */
-    boolean getIsActive();
-
-    /**
      * <code>.AELIBNHFODD NHGKKKAOKMN = 2;</code>
      * @return The enum numeric value on the wire for nHGKKKAOKMN.
      */
@@ -500,9 +29,484 @@ public final class KEGLGHJKEGPOuterClass {
      */
     emu.grasscutter.net.proto.AELIBNHFODDOuterClass.AELIBNHFODD getNHGKKKAOKMN();
 
+    /**
+     * <code>bool is_active = 1;</code>
+     * @return The isActive.
+     */
+    boolean getIsActive();
+
+    /**
+     * <code>.CustomValueComp custom_value_comp = 11;</code>
+     * @return Whether the customValueComp field is set.
+     */
+    boolean hasCustomValueComp();
+    /**
+     * <code>.CustomValueComp custom_value_comp = 11;</code>
+     * @return The customValueComp.
+     */
+    emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp getCustomValueComp();
+    /**
+     * <code>.CustomValueComp custom_value_comp = 11;</code>
+     */
+    emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueCompOrBuilder getCustomValueCompOrBuilder();
+
+    /**
+     * <code>.TimerComp timer_comp = 13;</code>
+     * @return Whether the timerComp field is set.
+     */
+    boolean hasTimerComp();
+    /**
+     * <code>.TimerComp timer_comp = 13;</code>
+     * @return The timerComp.
+     */
+    emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp getTimerComp();
+    /**
+     * <code>.TimerComp timer_comp = 13;</code>
+     */
+    emu.grasscutter.net.proto.TimerCompOuterClass.TimerCompOrBuilder getTimerCompOrBuilder();
+
+    /**
+     * <code>.MoveComp move_comp = 14;</code>
+     * @return Whether the moveComp field is set.
+     */
+    boolean hasMoveComp();
+    /**
+     * <code>.MoveComp move_comp = 14;</code>
+     * @return The moveComp.
+     */
+    emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp getMoveComp();
+    /**
+     * <code>.MoveComp move_comp = 14;</code>
+     */
+    emu.grasscutter.net.proto.MoveCompOuterClass.MoveCompOrBuilder getMoveCompOrBuilder();
+
+    /**
+     * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+     * @return Whether the clientTriggerComp field is set.
+     */
+    boolean hasClientTriggerComp();
+    /**
+     * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+     * @return The clientTriggerComp.
+     */
+    emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp getClientTriggerComp();
+    /**
+     * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+     */
+    emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerCompOrBuilder getClientTriggerCompOrBuilder();
+
+    /**
+     * <code>.EffectComp effect_comp = 16;</code>
+     * @return Whether the effectComp field is set.
+     */
+    boolean hasEffectComp();
+    /**
+     * <code>.EffectComp effect_comp = 16;</code>
+     * @return The effectComp.
+     */
+    emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp getEffectComp();
+    /**
+     * <code>.EffectComp effect_comp = 16;</code>
+     */
+    emu.grasscutter.net.proto.EffectCompOuterClass.EffectCompOrBuilder getEffectCompOrBuilder();
+
+    /**
+     * <code>.CollisionComp collision_comp = 18;</code>
+     * @return Whether the collisionComp field is set.
+     */
+    boolean hasCollisionComp();
+    /**
+     * <code>.CollisionComp collision_comp = 18;</code>
+     * @return The collisionComp.
+     */
+    emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp getCollisionComp();
+    /**
+     * <code>.CollisionComp collision_comp = 18;</code>
+     */
+    emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionCompOrBuilder getCollisionCompOrBuilder();
+
+    /**
+     * <code>.FollowMoveComp follow_move_comp = 19;</code>
+     * @return Whether the followMoveComp field is set.
+     */
+    boolean hasFollowMoveComp();
+    /**
+     * <code>.FollowMoveComp follow_move_comp = 19;</code>
+     * @return The followMoveComp.
+     */
+    emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp getFollowMoveComp();
+    /**
+     * <code>.FollowMoveComp follow_move_comp = 19;</code>
+     */
+    emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveCompOrBuilder getFollowMoveCompOrBuilder();
+
+    /**
+     * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+     * @return Whether the bulletMoveComp field is set.
+     */
+    boolean hasBulletMoveComp();
+    /**
+     * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+     * @return The bulletMoveComp.
+     */
+    emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp getBulletMoveComp();
+    /**
+     * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+     */
+    emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveCompOrBuilder getBulletMoveCompOrBuilder();
+
+    /**
+     * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+     * @return Whether the hitDetectionComp field is set.
+     */
+    boolean hasHitDetectionComp();
+    /**
+     * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+     * @return The hitDetectionComp.
+     */
+    emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp getHitDetectionComp();
+    /**
+     * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+     */
+    emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionCompOrBuilder getHitDetectionCompOrBuilder();
+
+    /**
+     * <code>.CameraComp camera_comp = 23;</code>
+     * @return Whether the cameraComp field is set.
+     */
+    boolean hasCameraComp();
+    /**
+     * <code>.CameraComp camera_comp = 23;</code>
+     * @return The cameraComp.
+     */
+    emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp getCameraComp();
+    /**
+     * <code>.CameraComp camera_comp = 23;</code>
+     */
+    emu.grasscutter.net.proto.CameraCompOuterClass.CameraCompOrBuilder getCameraCompOrBuilder();
+
+    /**
+     * <code>.RoleStatusComp role_status_comp = 24;</code>
+     * @return Whether the roleStatusComp field is set.
+     */
+    boolean hasRoleStatusComp();
+    /**
+     * <code>.RoleStatusComp role_status_comp = 24;</code>
+     * @return The roleStatusComp.
+     */
+    emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp getRoleStatusComp();
+    /**
+     * <code>.RoleStatusComp role_status_comp = 24;</code>
+     */
+    emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusCompOrBuilder getRoleStatusCompOrBuilder();
+
+    /**
+     * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+     * @return Whether the avatarDisturberComp field is set.
+     */
+    boolean hasAvatarDisturberComp();
+    /**
+     * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+     * @return The avatarDisturberComp.
+     */
+    emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp getAvatarDisturberComp();
+    /**
+     * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+     */
+    emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberCompOrBuilder getAvatarDisturberCompOrBuilder();
+
+    /**
+     * <code>.CountDownComp count_down_comp = 26;</code>
+     * @return Whether the countDownComp field is set.
+     */
+    boolean hasCountDownComp();
+    /**
+     * <code>.CountDownComp count_down_comp = 26;</code>
+     * @return The countDownComp.
+     */
+    emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp getCountDownComp();
+    /**
+     * <code>.CountDownComp count_down_comp = 26;</code>
+     */
+    emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownCompOrBuilder getCountDownCompOrBuilder();
+
+    /**
+     * <code>.OptionComp option_comp = 27;</code>
+     * @return Whether the optionComp field is set.
+     */
+    boolean hasOptionComp();
+    /**
+     * <code>.OptionComp option_comp = 27;</code>
+     * @return The optionComp.
+     */
+    emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp getOptionComp();
+    /**
+     * <code>.OptionComp option_comp = 27;</code>
+     */
+    emu.grasscutter.net.proto.OptionCompOuterClass.OptionCompOrBuilder getOptionCompOrBuilder();
+
+    /**
+     * <code>.HitboxComp hitbox_comp = 28;</code>
+     * @return Whether the hitboxComp field is set.
+     */
+    boolean hasHitboxComp();
+    /**
+     * <code>.HitboxComp hitbox_comp = 28;</code>
+     * @return The hitboxComp.
+     */
+    emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp getHitboxComp();
+    /**
+     * <code>.HitboxComp hitbox_comp = 28;</code>
+     */
+    emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxCompOrBuilder getHitboxCompOrBuilder();
+
+    /**
+     * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+     * @return Whether the customSkillComp field is set.
+     */
+    boolean hasCustomSkillComp();
+    /**
+     * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+     * @return The customSkillComp.
+     */
+    emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp getCustomSkillComp();
+    /**
+     * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+     */
+    emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillCompOrBuilder getCustomSkillCompOrBuilder();
+
+    /**
+     * <code>.EnmityComp enmity_comp = 31;</code>
+     * @return Whether the enmityComp field is set.
+     */
+    boolean hasEnmityComp();
+    /**
+     * <code>.EnmityComp enmity_comp = 31;</code>
+     * @return The enmityComp.
+     */
+    emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp getEnmityComp();
+    /**
+     * <code>.EnmityComp enmity_comp = 31;</code>
+     */
+    emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityCompOrBuilder getEnmityCompOrBuilder();
+
+    /**
+     * <code>.NameplateComp nameplate_comp = 32;</code>
+     * @return Whether the nameplateComp field is set.
+     */
+    boolean hasNameplateComp();
+    /**
+     * <code>.NameplateComp nameplate_comp = 32;</code>
+     * @return The nameplateComp.
+     */
+    emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp getNameplateComp();
+    /**
+     * <code>.NameplateComp nameplate_comp = 32;</code>
+     */
+    emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateCompOrBuilder getNameplateCompOrBuilder();
+
+    /**
+     * <code>.TalkComp talk_comp = 33;</code>
+     * @return Whether the talkComp field is set.
+     */
+    boolean hasTalkComp();
+    /**
+     * <code>.TalkComp talk_comp = 33;</code>
+     * @return The talkComp.
+     */
+    emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp getTalkComp();
+    /**
+     * <code>.TalkComp talk_comp = 33;</code>
+     */
+    emu.grasscutter.net.proto.TalkCompOuterClass.TalkCompOrBuilder getTalkCompOrBuilder();
+
+    /**
+     * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+     * @return Whether the soundEffectComp field is set.
+     */
+    boolean hasSoundEffectComp();
+    /**
+     * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+     * @return The soundEffectComp.
+     */
+    emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp getSoundEffectComp();
+    /**
+     * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+     */
+    emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectCompOrBuilder getSoundEffectCompOrBuilder();
+
+    /**
+     * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+     * @return Whether the monsterPatrolComp field is set.
+     */
+    boolean hasMonsterPatrolComp();
+    /**
+     * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+     * @return The monsterPatrolComp.
+     */
+    emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp getMonsterPatrolComp();
+    /**
+     * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+     */
+    emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolCompOrBuilder getMonsterPatrolCompOrBuilder();
+
+    /**
+     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+     * @return Whether the levelStateMachineComp field is set.
+     */
+    boolean hasLevelStateMachineComp();
+    /**
+     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+     * @return The levelStateMachineComp.
+     */
+    emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp getLevelStateMachineComp();
+    /**
+     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+     */
+    emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineCompOrBuilder getLevelStateMachineCompOrBuilder();
+
+    /**
+     * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+     * @return Whether the minimapMarkComp field is set.
+     */
+    boolean hasMinimapMarkComp();
+    /**
+     * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+     * @return The minimapMarkComp.
+     */
+    emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp getMinimapMarkComp();
+    /**
+     * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+     */
+    emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkCompOrBuilder getMinimapMarkCompOrBuilder();
+
+    /**
+     * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+     * @return Whether the stuffBagComp field is set.
+     */
+    boolean hasStuffBagComp();
+    /**
+     * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+     * @return The stuffBagComp.
+     */
+    emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp getStuffBagComp();
+    /**
+     * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+     */
+    emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagCompOrBuilder getStuffBagCompOrBuilder();
+
+    /**
+     * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+     * @return Whether the equipStuffBagComp field is set.
+     */
+    boolean hasEquipStuffBagComp();
+    /**
+     * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+     * @return The equipStuffBagComp.
+     */
+    emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp getEquipStuffBagComp();
+    /**
+     * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+     */
+    emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagCompOrBuilder getEquipStuffBagCompOrBuilder();
+
+    /**
+     * <code>.DropGatherComp drop_gather_comp = 40;</code>
+     * @return Whether the dropGatherComp field is set.
+     */
+    boolean hasDropGatherComp();
+    /**
+     * <code>.DropGatherComp drop_gather_comp = 40;</code>
+     * @return The dropGatherComp.
+     */
+    emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp getDropGatherComp();
+    /**
+     * <code>.DropGatherComp drop_gather_comp = 40;</code>
+     */
+    emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherCompOrBuilder getDropGatherCompOrBuilder();
+
+    /**
+     * <code>.LightGroupComp light_group_comp = 41;</code>
+     * @return Whether the lightGroupComp field is set.
+     */
+    boolean hasLightGroupComp();
+    /**
+     * <code>.LightGroupComp light_group_comp = 41;</code>
+     * @return The lightGroupComp.
+     */
+    emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp getLightGroupComp();
+    /**
+     * <code>.LightGroupComp light_group_comp = 41;</code>
+     */
+    emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupCompOrBuilder getLightGroupCompOrBuilder();
+
+    /**
+     * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+     * @return Whether the scanEntityComp field is set.
+     */
+    boolean hasScanEntityComp();
+    /**
+     * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+     * @return The scanEntityComp.
+     */
+    emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp getScanEntityComp();
+    /**
+     * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+     */
+    emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityCompOrBuilder getScanEntityCompOrBuilder();
+
+    /**
+     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+     * @return Whether the subSwitchComp field is set.
+     */
+    boolean hasSubSwitchComp();
+    /**
+     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+     * @return The subSwitchComp.
+     */
+    emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp getSubSwitchComp();
+    /**
+     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+     */
+    emu.grasscutter.net.proto.SubSwitchComp._SubSwitchCompOrBuilder getSubSwitchCompOrBuilder();
+
+    /**
+     * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+     * @return Whether the monsterAiComp field is set.
+     */
+    boolean hasMonsterAiComp();
+    /**
+     * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+     * @return The monsterAiComp.
+     */
+    emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp getMonsterAiComp();
+    /**
+     * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+     */
+    emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiCompOrBuilder getMonsterAiCompOrBuilder();
+
+    /**
+     * <code>.VehicleComp vehicle_comp = 45;</code>
+     * @return Whether the vehicleComp field is set.
+     */
+    boolean hasVehicleComp();
+    /**
+     * <code>.VehicleComp vehicle_comp = 45;</code>
+     * @return The vehicleComp.
+     */
+    emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp getVehicleComp();
+    /**
+     * <code>.VehicleComp vehicle_comp = 45;</code>
+     */
+    emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleCompOrBuilder getVehicleCompOrBuilder();
+
     public emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP.DetailCase getDetailCase();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KEGLGHJKEGP}
    */
   public static final class KEGLGHJKEGP extends
@@ -560,434 +564,434 @@ public final class KEGLGHJKEGPOuterClass {
               break;
             }
             case 90: {
-              emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.Builder subBuilder = null;
+              emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.Builder subBuilder = null;
               if (detailCase_ == 11) {
-                subBuilder = ((emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 11;
               break;
             }
             case 106: {
-              emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.Builder subBuilder = null;
+              emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.Builder subBuilder = null;
               if (detailCase_ == 13) {
-                subBuilder = ((emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 13;
               break;
             }
             case 114: {
-              emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.Builder subBuilder = null;
+              emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.Builder subBuilder = null;
               if (detailCase_ == 14) {
-                subBuilder = ((emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 14;
               break;
             }
             case 122: {
-              emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.Builder subBuilder = null;
+              emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.Builder subBuilder = null;
               if (detailCase_ == 15) {
-                subBuilder = ((emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 15;
               break;
             }
             case 130: {
-              emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.Builder subBuilder = null;
+              emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.Builder subBuilder = null;
               if (detailCase_ == 16) {
-                subBuilder = ((emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 16;
               break;
             }
             case 146: {
-              emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.Builder subBuilder = null;
+              emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.Builder subBuilder = null;
               if (detailCase_ == 18) {
-                subBuilder = ((emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 18;
               break;
             }
             case 154: {
-              emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.Builder subBuilder = null;
+              emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.Builder subBuilder = null;
               if (detailCase_ == 19) {
-                subBuilder = ((emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 19;
               break;
             }
             case 170: {
-              emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.Builder subBuilder = null;
+              emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.Builder subBuilder = null;
               if (detailCase_ == 21) {
-                subBuilder = ((emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 21;
               break;
             }
             case 178: {
-              emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.Builder subBuilder = null;
+              emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.Builder subBuilder = null;
               if (detailCase_ == 22) {
-                subBuilder = ((emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 22;
               break;
             }
             case 186: {
-              emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.Builder subBuilder = null;
+              emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.Builder subBuilder = null;
               if (detailCase_ == 23) {
-                subBuilder = ((emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 23;
               break;
             }
             case 194: {
-              emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.Builder subBuilder = null;
+              emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.Builder subBuilder = null;
               if (detailCase_ == 24) {
-                subBuilder = ((emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 24;
               break;
             }
             case 202: {
-              emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.Builder subBuilder = null;
+              emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.Builder subBuilder = null;
               if (detailCase_ == 25) {
-                subBuilder = ((emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 25;
               break;
             }
             case 210: {
-              emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.Builder subBuilder = null;
+              emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.Builder subBuilder = null;
               if (detailCase_ == 26) {
-                subBuilder = ((emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 26;
               break;
             }
             case 218: {
-              emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.Builder subBuilder = null;
+              emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.Builder subBuilder = null;
               if (detailCase_ == 27) {
-                subBuilder = ((emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 27;
               break;
             }
             case 226: {
-              emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.Builder subBuilder = null;
+              emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.Builder subBuilder = null;
               if (detailCase_ == 28) {
-                subBuilder = ((emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 28;
               break;
             }
             case 234: {
-              emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.Builder subBuilder = null;
+              emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.Builder subBuilder = null;
               if (detailCase_ == 29) {
-                subBuilder = ((emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 29;
               break;
             }
             case 250: {
-              emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.Builder subBuilder = null;
+              emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.Builder subBuilder = null;
               if (detailCase_ == 31) {
-                subBuilder = ((emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 31;
               break;
             }
             case 258: {
-              emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.Builder subBuilder = null;
+              emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.Builder subBuilder = null;
               if (detailCase_ == 32) {
-                subBuilder = ((emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 32;
               break;
             }
             case 266: {
-              emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.Builder subBuilder = null;
+              emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.Builder subBuilder = null;
               if (detailCase_ == 33) {
-                subBuilder = ((emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 33;
               break;
             }
             case 274: {
-              emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.Builder subBuilder = null;
+              emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.Builder subBuilder = null;
               if (detailCase_ == 34) {
-                subBuilder = ((emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 34;
               break;
             }
             case 282: {
-              emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.Builder subBuilder = null;
+              emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.Builder subBuilder = null;
               if (detailCase_ == 35) {
-                subBuilder = ((emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 35;
               break;
             }
             case 290: {
-              emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.Builder subBuilder = null;
+              emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.Builder subBuilder = null;
               if (detailCase_ == 36) {
-                subBuilder = ((emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 36;
               break;
             }
             case 298: {
-              emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.Builder subBuilder = null;
+              emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.Builder subBuilder = null;
               if (detailCase_ == 37) {
-                subBuilder = ((emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 37;
               break;
             }
             case 306: {
-              emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.Builder subBuilder = null;
+              emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.Builder subBuilder = null;
               if (detailCase_ == 38) {
-                subBuilder = ((emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 38;
               break;
             }
             case 314: {
-              emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.Builder subBuilder = null;
+              emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.Builder subBuilder = null;
               if (detailCase_ == 39) {
-                subBuilder = ((emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 39;
               break;
             }
             case 322: {
-              emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.Builder subBuilder = null;
+              emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.Builder subBuilder = null;
               if (detailCase_ == 40) {
-                subBuilder = ((emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 40;
               break;
             }
             case 330: {
-              emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.Builder subBuilder = null;
+              emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.Builder subBuilder = null;
               if (detailCase_ == 41) {
-                subBuilder = ((emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 41;
               break;
             }
             case 338: {
-              emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.Builder subBuilder = null;
+              emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.Builder subBuilder = null;
               if (detailCase_ == 42) {
-                subBuilder = ((emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 42;
               break;
             }
             case 346: {
-              emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.Builder subBuilder = null;
+              emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.Builder subBuilder = null;
               if (detailCase_ == 43) {
-                subBuilder = ((emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 43;
               break;
             }
             case 354: {
-              emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.Builder subBuilder = null;
+              emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.Builder subBuilder = null;
               if (detailCase_ == 44) {
-                subBuilder = ((emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 44;
               break;
             }
             case 362: {
-              emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.Builder subBuilder = null;
+              emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.Builder subBuilder = null;
               if (detailCase_ == 45) {
-                subBuilder = ((emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_).toBuilder();
+                subBuilder = ((emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_).toBuilder();
               }
               detail_ =
-                  input.readMessage(emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.parser(), extensionRegistry);
+                  input.readMessage(emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_);
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_);
                 detail_ = subBuilder.buildPartial();
               }
               detailCase_ = 45;
@@ -1124,978 +1128,6 @@ public final class KEGLGHJKEGPOuterClass {
           detailCase_);
     }
 
-    public static final int CUSTOM_VALUE_COMP_FIELD_NUMBER = 11;
-    /**
-     * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-     * @return Whether the customValueComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasCustomValueComp() {
-      return detailCase_ == 11;
-    }
-    /**
-     * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-     * @return The customValueComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK getCustomValueComp() {
-      if (detailCase_ == 11) {
-         return (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_;
-      }
-      return emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance();
-    }
-    /**
-     * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJKOrBuilder getCustomValueCompOrBuilder() {
-      if (detailCase_ == 11) {
-         return (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_;
-      }
-      return emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance();
-    }
-
-    public static final int TIMER_COMP_FIELD_NUMBER = 13;
-    /**
-     * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-     * @return Whether the timerComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasTimerComp() {
-      return detailCase_ == 13;
-    }
-    /**
-     * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-     * @return The timerComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN getTimerComp() {
-      if (detailCase_ == 13) {
-         return (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_;
-      }
-      return emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance();
-    }
-    /**
-     * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBNOrBuilder getTimerCompOrBuilder() {
-      if (detailCase_ == 13) {
-         return (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_;
-      }
-      return emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance();
-    }
-
-    public static final int MOVE_COMP_FIELD_NUMBER = 14;
-    /**
-     * <code>.NJABMDONHPI move_comp = 14;</code>
-     * @return Whether the moveComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasMoveComp() {
-      return detailCase_ == 14;
-    }
-    /**
-     * <code>.NJABMDONHPI move_comp = 14;</code>
-     * @return The moveComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI getMoveComp() {
-      if (detailCase_ == 14) {
-         return (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_;
-      }
-      return emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance();
-    }
-    /**
-     * <code>.NJABMDONHPI move_comp = 14;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPIOrBuilder getMoveCompOrBuilder() {
-      if (detailCase_ == 14) {
-         return (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_;
-      }
-      return emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance();
-    }
-
-    public static final int CLIENT_TRIGGER_COMP_FIELD_NUMBER = 15;
-    /**
-     * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-     * @return Whether the clientTriggerComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasClientTriggerComp() {
-      return detailCase_ == 15;
-    }
-    /**
-     * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-     * @return The clientTriggerComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD getClientTriggerComp() {
-      if (detailCase_ == 15) {
-         return (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_;
-      }
-      return emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance();
-    }
-    /**
-     * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABDOrBuilder getClientTriggerCompOrBuilder() {
-      if (detailCase_ == 15) {
-         return (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_;
-      }
-      return emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance();
-    }
-
-    public static final int EFFECT_COMP_FIELD_NUMBER = 16;
-    /**
-     * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-     * @return Whether the effectComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasEffectComp() {
-      return detailCase_ == 16;
-    }
-    /**
-     * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-     * @return The effectComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF getEffectComp() {
-      if (detailCase_ == 16) {
-         return (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_;
-      }
-      return emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance();
-    }
-    /**
-     * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOFOrBuilder getEffectCompOrBuilder() {
-      if (detailCase_ == 16) {
-         return (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_;
-      }
-      return emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance();
-    }
-
-    public static final int COLLISION_COMP_FIELD_NUMBER = 18;
-    /**
-     * <code>.AGFINCBOPDE collision_comp = 18;</code>
-     * @return Whether the collisionComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasCollisionComp() {
-      return detailCase_ == 18;
-    }
-    /**
-     * <code>.AGFINCBOPDE collision_comp = 18;</code>
-     * @return The collisionComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE getCollisionComp() {
-      if (detailCase_ == 18) {
-         return (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_;
-      }
-      return emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance();
-    }
-    /**
-     * <code>.AGFINCBOPDE collision_comp = 18;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDEOrBuilder getCollisionCompOrBuilder() {
-      if (detailCase_ == 18) {
-         return (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_;
-      }
-      return emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance();
-    }
-
-    public static final int FOLLOW_MOVE_COMP_FIELD_NUMBER = 19;
-    /**
-     * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-     * @return Whether the followMoveComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasFollowMoveComp() {
-      return detailCase_ == 19;
-    }
-    /**
-     * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-     * @return The followMoveComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED getFollowMoveComp() {
-      if (detailCase_ == 19) {
-         return (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_;
-      }
-      return emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance();
-    }
-    /**
-     * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKEDOrBuilder getFollowMoveCompOrBuilder() {
-      if (detailCase_ == 19) {
-         return (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_;
-      }
-      return emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance();
-    }
-
-    public static final int BULLET_MOVE_COMP_FIELD_NUMBER = 21;
-    /**
-     * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-     * @return Whether the bulletMoveComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasBulletMoveComp() {
-      return detailCase_ == 21;
-    }
-    /**
-     * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-     * @return The bulletMoveComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ getBulletMoveComp() {
-      if (detailCase_ == 21) {
-         return (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_;
-      }
-      return emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance();
-    }
-    /**
-     * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJOrBuilder getBulletMoveCompOrBuilder() {
-      if (detailCase_ == 21) {
-         return (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_;
-      }
-      return emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance();
-    }
-
-    public static final int HIT_DETECTION_COMP_FIELD_NUMBER = 22;
-    /**
-     * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-     * @return Whether the hitDetectionComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasHitDetectionComp() {
-      return detailCase_ == 22;
-    }
-    /**
-     * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-     * @return The hitDetectionComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG getHitDetectionComp() {
-      if (detailCase_ == 22) {
-         return (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_;
-      }
-      return emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance();
-    }
-    /**
-     * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHGOrBuilder getHitDetectionCompOrBuilder() {
-      if (detailCase_ == 22) {
-         return (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_;
-      }
-      return emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance();
-    }
-
-    public static final int CAMERA_COMP_FIELD_NUMBER = 23;
-    /**
-     * <code>.BANABAFODKK camera_comp = 23;</code>
-     * @return Whether the cameraComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasCameraComp() {
-      return detailCase_ == 23;
-    }
-    /**
-     * <code>.BANABAFODKK camera_comp = 23;</code>
-     * @return The cameraComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK getCameraComp() {
-      if (detailCase_ == 23) {
-         return (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_;
-      }
-      return emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance();
-    }
-    /**
-     * <code>.BANABAFODKK camera_comp = 23;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKKOrBuilder getCameraCompOrBuilder() {
-      if (detailCase_ == 23) {
-         return (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_;
-      }
-      return emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance();
-    }
-
-    public static final int ROLE_STATUS_COMP_FIELD_NUMBER = 24;
-    /**
-     * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-     * @return Whether the roleStatusComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasRoleStatusComp() {
-      return detailCase_ == 24;
-    }
-    /**
-     * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-     * @return The roleStatusComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK getRoleStatusComp() {
-      if (detailCase_ == 24) {
-         return (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_;
-      }
-      return emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance();
-    }
-    /**
-     * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDKOrBuilder getRoleStatusCompOrBuilder() {
-      if (detailCase_ == 24) {
-         return (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_;
-      }
-      return emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance();
-    }
-
-    public static final int AVATAR_DISTURBER_COMP_FIELD_NUMBER = 25;
-    /**
-     * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-     * @return Whether the avatarDisturberComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasAvatarDisturberComp() {
-      return detailCase_ == 25;
-    }
-    /**
-     * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-     * @return The avatarDisturberComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN getAvatarDisturberComp() {
-      if (detailCase_ == 25) {
-         return (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_;
-      }
-      return emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance();
-    }
-    /**
-     * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEINOrBuilder getAvatarDisturberCompOrBuilder() {
-      if (detailCase_ == 25) {
-         return (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_;
-      }
-      return emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance();
-    }
-
-    public static final int COUNT_DOWN_COMP_FIELD_NUMBER = 26;
-    /**
-     * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-     * @return Whether the countDownComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasCountDownComp() {
-      return detailCase_ == 26;
-    }
-    /**
-     * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-     * @return The countDownComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA getCountDownComp() {
-      if (detailCase_ == 26) {
-         return (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_;
-      }
-      return emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance();
-    }
-    /**
-     * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMAOrBuilder getCountDownCompOrBuilder() {
-      if (detailCase_ == 26) {
-         return (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_;
-      }
-      return emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance();
-    }
-
-    public static final int OPTION_COMP_FIELD_NUMBER = 27;
-    /**
-     * <code>.JNCFEAMFKNA option_comp = 27;</code>
-     * @return Whether the optionComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasOptionComp() {
-      return detailCase_ == 27;
-    }
-    /**
-     * <code>.JNCFEAMFKNA option_comp = 27;</code>
-     * @return The optionComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA getOptionComp() {
-      if (detailCase_ == 27) {
-         return (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_;
-      }
-      return emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance();
-    }
-    /**
-     * <code>.JNCFEAMFKNA option_comp = 27;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNAOrBuilder getOptionCompOrBuilder() {
-      if (detailCase_ == 27) {
-         return (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_;
-      }
-      return emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance();
-    }
-
-    public static final int HITBOX_COMP_FIELD_NUMBER = 28;
-    /**
-     * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-     * @return Whether the hitboxComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasHitboxComp() {
-      return detailCase_ == 28;
-    }
-    /**
-     * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-     * @return The hitboxComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG getHitboxComp() {
-      if (detailCase_ == 28) {
-         return (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_;
-      }
-      return emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance();
-    }
-    /**
-     * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJGOrBuilder getHitboxCompOrBuilder() {
-      if (detailCase_ == 28) {
-         return (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_;
-      }
-      return emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance();
-    }
-
-    public static final int CUSTOM_SKILL_COMP_FIELD_NUMBER = 29;
-    /**
-     * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-     * @return Whether the customSkillComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasCustomSkillComp() {
-      return detailCase_ == 29;
-    }
-    /**
-     * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-     * @return The customSkillComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB getCustomSkillComp() {
-      if (detailCase_ == 29) {
-         return (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_;
-      }
-      return emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance();
-    }
-    /**
-     * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPBOrBuilder getCustomSkillCompOrBuilder() {
-      if (detailCase_ == 29) {
-         return (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_;
-      }
-      return emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance();
-    }
-
-    public static final int ENMITY_COMP_FIELD_NUMBER = 31;
-    /**
-     * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-     * @return Whether the enmityComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnmityComp() {
-      return detailCase_ == 31;
-    }
-    /**
-     * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-     * @return The enmityComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB getEnmityComp() {
-      if (detailCase_ == 31) {
-         return (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_;
-      }
-      return emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance();
-    }
-    /**
-     * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFBOrBuilder getEnmityCompOrBuilder() {
-      if (detailCase_ == 31) {
-         return (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_;
-      }
-      return emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance();
-    }
-
-    public static final int NAMEPLATE_COMP_FIELD_NUMBER = 32;
-    /**
-     * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-     * @return Whether the nameplateComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasNameplateComp() {
-      return detailCase_ == 32;
-    }
-    /**
-     * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-     * @return The nameplateComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA getNameplateComp() {
-      if (detailCase_ == 32) {
-         return (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_;
-      }
-      return emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance();
-    }
-    /**
-     * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGAOrBuilder getNameplateCompOrBuilder() {
-      if (detailCase_ == 32) {
-         return (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_;
-      }
-      return emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance();
-    }
-
-    public static final int TALK_COMP_FIELD_NUMBER = 33;
-    /**
-     * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-     * @return Whether the talkComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasTalkComp() {
-      return detailCase_ == 33;
-    }
-    /**
-     * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-     * @return The talkComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP getTalkComp() {
-      if (detailCase_ == 33) {
-         return (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_;
-      }
-      return emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance();
-    }
-    /**
-     * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIPOrBuilder getTalkCompOrBuilder() {
-      if (detailCase_ == 33) {
-         return (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_;
-      }
-      return emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance();
-    }
-
-    public static final int SOUND_EFFECT_COMP_FIELD_NUMBER = 34;
-    /**
-     * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-     * @return Whether the soundEffectComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasSoundEffectComp() {
-      return detailCase_ == 34;
-    }
-    /**
-     * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-     * @return The soundEffectComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ getSoundEffectComp() {
-      if (detailCase_ == 34) {
-         return (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_;
-      }
-      return emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance();
-    }
-    /**
-     * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJOrBuilder getSoundEffectCompOrBuilder() {
-      if (detailCase_ == 34) {
-         return (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_;
-      }
-      return emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance();
-    }
-
-    public static final int MONSTER_PATROL_COMP_FIELD_NUMBER = 35;
-    /**
-     * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-     * @return Whether the monsterPatrolComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasMonsterPatrolComp() {
-      return detailCase_ == 35;
-    }
-    /**
-     * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-     * @return The monsterPatrolComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN getMonsterPatrolComp() {
-      if (detailCase_ == 35) {
-         return (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_;
-      }
-      return emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance();
-    }
-    /**
-     * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKNOrBuilder getMonsterPatrolCompOrBuilder() {
-      if (detailCase_ == 35) {
-         return (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_;
-      }
-      return emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance();
-    }
-
-    public static final int LEVEL_STATE_MACHINE_COMP_FIELD_NUMBER = 36;
-    /**
-     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-     * @return Whether the levelStateMachineComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasLevelStateMachineComp() {
-      return detailCase_ == 36;
-    }
-    /**
-     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-     * @return The levelStateMachineComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp getLevelStateMachineComp() {
-      if (detailCase_ == 36) {
-         return (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_;
-      }
-      return emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance();
-    }
-    /**
-     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineCompOrBuilder getLevelStateMachineCompOrBuilder() {
-      if (detailCase_ == 36) {
-         return (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_;
-      }
-      return emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance();
-    }
-
-    public static final int MINIMAP_MARK_COMP_FIELD_NUMBER = 37;
-    /**
-     * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-     * @return Whether the minimapMarkComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasMinimapMarkComp() {
-      return detailCase_ == 37;
-    }
-    /**
-     * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-     * @return The minimapMarkComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK getMinimapMarkComp() {
-      if (detailCase_ == 37) {
-         return (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_;
-      }
-      return emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance();
-    }
-    /**
-     * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNKOrBuilder getMinimapMarkCompOrBuilder() {
-      if (detailCase_ == 37) {
-         return (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_;
-      }
-      return emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance();
-    }
-
-    public static final int STUFF_BAG_COMP_FIELD_NUMBER = 38;
-    /**
-     * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-     * @return Whether the stuffBagComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasStuffBagComp() {
-      return detailCase_ == 38;
-    }
-    /**
-     * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-     * @return The stuffBagComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO getStuffBagComp() {
-      if (detailCase_ == 38) {
-         return (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_;
-      }
-      return emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance();
-    }
-    /**
-     * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGOOrBuilder getStuffBagCompOrBuilder() {
-      if (detailCase_ == 38) {
-         return (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_;
-      }
-      return emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance();
-    }
-
-    public static final int EQUIP_STUFF_BAG_COMP_FIELD_NUMBER = 39;
-    /**
-     * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-     * @return Whether the equipStuffBagComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasEquipStuffBagComp() {
-      return detailCase_ == 39;
-    }
-    /**
-     * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-     * @return The equipStuffBagComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI getEquipStuffBagComp() {
-      if (detailCase_ == 39) {
-         return (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_;
-      }
-      return emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance();
-    }
-    /**
-     * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBIOrBuilder getEquipStuffBagCompOrBuilder() {
-      if (detailCase_ == 39) {
-         return (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_;
-      }
-      return emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance();
-    }
-
-    public static final int DROP_GATHER_COMP_FIELD_NUMBER = 40;
-    /**
-     * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-     * @return Whether the dropGatherComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasDropGatherComp() {
-      return detailCase_ == 40;
-    }
-    /**
-     * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-     * @return The dropGatherComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ getDropGatherComp() {
-      if (detailCase_ == 40) {
-         return (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_;
-      }
-      return emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance();
-    }
-    /**
-     * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJOrBuilder getDropGatherCompOrBuilder() {
-      if (detailCase_ == 40) {
-         return (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_;
-      }
-      return emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance();
-    }
-
-    public static final int LIGHT_GROUP_COMP_FIELD_NUMBER = 41;
-    /**
-     * <code>.IKOIHIANENH light_group_comp = 41;</code>
-     * @return Whether the lightGroupComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasLightGroupComp() {
-      return detailCase_ == 41;
-    }
-    /**
-     * <code>.IKOIHIANENH light_group_comp = 41;</code>
-     * @return The lightGroupComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH getLightGroupComp() {
-      if (detailCase_ == 41) {
-         return (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_;
-      }
-      return emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance();
-    }
-    /**
-     * <code>.IKOIHIANENH light_group_comp = 41;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENHOrBuilder getLightGroupCompOrBuilder() {
-      if (detailCase_ == 41) {
-         return (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_;
-      }
-      return emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance();
-    }
-
-    public static final int SCAN_ENTITY_COMP_FIELD_NUMBER = 42;
-    /**
-     * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-     * @return Whether the scanEntityComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasScanEntityComp() {
-      return detailCase_ == 42;
-    }
-    /**
-     * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-     * @return The scanEntityComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD getScanEntityComp() {
-      if (detailCase_ == 42) {
-         return (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_;
-      }
-      return emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance();
-    }
-    /**
-     * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDDOrBuilder getScanEntityCompOrBuilder() {
-      if (detailCase_ == 42) {
-         return (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_;
-      }
-      return emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance();
-    }
-
-    public static final int SUB_SWITCH_COMP_FIELD_NUMBER = 43;
-    /**
-     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-     * @return Whether the subSwitchComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasSubSwitchComp() {
-      return detailCase_ == 43;
-    }
-    /**
-     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-     * @return The subSwitchComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp getSubSwitchComp() {
-      if (detailCase_ == 43) {
-         return (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_;
-      }
-      return emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance();
-    }
-    /**
-     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchCompOrBuilder getSubSwitchCompOrBuilder() {
-      if (detailCase_ == 43) {
-         return (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_;
-      }
-      return emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance();
-    }
-
-    public static final int MONSTER_AI_COMP_FIELD_NUMBER = 44;
-    /**
-     * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-     * @return Whether the monsterAiComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasMonsterAiComp() {
-      return detailCase_ == 44;
-    }
-    /**
-     * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-     * @return The monsterAiComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ getMonsterAiComp() {
-      if (detailCase_ == 44) {
-         return (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_;
-      }
-      return emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance();
-    }
-    /**
-     * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJOrBuilder getMonsterAiCompOrBuilder() {
-      if (detailCase_ == 44) {
-         return (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_;
-      }
-      return emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance();
-    }
-
-    public static final int VEHICLE_COMP_FIELD_NUMBER = 45;
-    /**
-     * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-     * @return Whether the vehicleComp field is set.
-     */
-    @java.lang.Override
-    public boolean hasVehicleComp() {
-      return detailCase_ == 45;
-    }
-    /**
-     * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-     * @return The vehicleComp.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK getVehicleComp() {
-      if (detailCase_ == 45) {
-         return (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_;
-      }
-      return emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance();
-    }
-    /**
-     * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFKOrBuilder getVehicleCompOrBuilder() {
-      if (detailCase_ == 45) {
-         return (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_;
-      }
-      return emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance();
-    }
-
-    public static final int IS_ACTIVE_FIELD_NUMBER = 1;
-    private boolean isActive_;
-    /**
-     * <code>bool is_active = 1;</code>
-     * @return The isActive.
-     */
-    @java.lang.Override
-    public boolean getIsActive() {
-      return isActive_;
-    }
-
     public static final int NHGKKKAOKMN_FIELD_NUMBER = 2;
     private int nHGKKKAOKMN_;
     /**
@@ -2113,6 +1145,978 @@ public final class KEGLGHJKEGPOuterClass {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.AELIBNHFODDOuterClass.AELIBNHFODD result = emu.grasscutter.net.proto.AELIBNHFODDOuterClass.AELIBNHFODD.valueOf(nHGKKKAOKMN_);
       return result == null ? emu.grasscutter.net.proto.AELIBNHFODDOuterClass.AELIBNHFODD.UNRECOGNIZED : result;
+    }
+
+    public static final int IS_ACTIVE_FIELD_NUMBER = 1;
+    private boolean isActive_;
+    /**
+     * <code>bool is_active = 1;</code>
+     * @return The isActive.
+     */
+    @java.lang.Override
+    public boolean getIsActive() {
+      return isActive_;
+    }
+
+    public static final int CUSTOM_VALUE_COMP_FIELD_NUMBER = 11;
+    /**
+     * <code>.CustomValueComp custom_value_comp = 11;</code>
+     * @return Whether the customValueComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomValueComp() {
+      return detailCase_ == 11;
+    }
+    /**
+     * <code>.CustomValueComp custom_value_comp = 11;</code>
+     * @return The customValueComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp getCustomValueComp() {
+      if (detailCase_ == 11) {
+         return (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance();
+    }
+    /**
+     * <code>.CustomValueComp custom_value_comp = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueCompOrBuilder getCustomValueCompOrBuilder() {
+      if (detailCase_ == 11) {
+         return (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance();
+    }
+
+    public static final int TIMER_COMP_FIELD_NUMBER = 13;
+    /**
+     * <code>.TimerComp timer_comp = 13;</code>
+     * @return Whether the timerComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasTimerComp() {
+      return detailCase_ == 13;
+    }
+    /**
+     * <code>.TimerComp timer_comp = 13;</code>
+     * @return The timerComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp getTimerComp() {
+      if (detailCase_ == 13) {
+         return (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_;
+      }
+      return emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance();
+    }
+    /**
+     * <code>.TimerComp timer_comp = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TimerCompOuterClass.TimerCompOrBuilder getTimerCompOrBuilder() {
+      if (detailCase_ == 13) {
+         return (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_;
+      }
+      return emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance();
+    }
+
+    public static final int MOVE_COMP_FIELD_NUMBER = 14;
+    /**
+     * <code>.MoveComp move_comp = 14;</code>
+     * @return Whether the moveComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasMoveComp() {
+      return detailCase_ == 14;
+    }
+    /**
+     * <code>.MoveComp move_comp = 14;</code>
+     * @return The moveComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp getMoveComp() {
+      if (detailCase_ == 14) {
+         return (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance();
+    }
+    /**
+     * <code>.MoveComp move_comp = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MoveCompOuterClass.MoveCompOrBuilder getMoveCompOrBuilder() {
+      if (detailCase_ == 14) {
+         return (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance();
+    }
+
+    public static final int CLIENT_TRIGGER_COMP_FIELD_NUMBER = 15;
+    /**
+     * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+     * @return Whether the clientTriggerComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasClientTriggerComp() {
+      return detailCase_ == 15;
+    }
+    /**
+     * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+     * @return The clientTriggerComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp getClientTriggerComp() {
+      if (detailCase_ == 15) {
+         return (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_;
+      }
+      return emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance();
+    }
+    /**
+     * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerCompOrBuilder getClientTriggerCompOrBuilder() {
+      if (detailCase_ == 15) {
+         return (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_;
+      }
+      return emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance();
+    }
+
+    public static final int EFFECT_COMP_FIELD_NUMBER = 16;
+    /**
+     * <code>.EffectComp effect_comp = 16;</code>
+     * @return Whether the effectComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasEffectComp() {
+      return detailCase_ == 16;
+    }
+    /**
+     * <code>.EffectComp effect_comp = 16;</code>
+     * @return The effectComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp getEffectComp() {
+      if (detailCase_ == 16) {
+         return (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_;
+      }
+      return emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance();
+    }
+    /**
+     * <code>.EffectComp effect_comp = 16;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.EffectCompOuterClass.EffectCompOrBuilder getEffectCompOrBuilder() {
+      if (detailCase_ == 16) {
+         return (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_;
+      }
+      return emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance();
+    }
+
+    public static final int COLLISION_COMP_FIELD_NUMBER = 18;
+    /**
+     * <code>.CollisionComp collision_comp = 18;</code>
+     * @return Whether the collisionComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasCollisionComp() {
+      return detailCase_ == 18;
+    }
+    /**
+     * <code>.CollisionComp collision_comp = 18;</code>
+     * @return The collisionComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp getCollisionComp() {
+      if (detailCase_ == 18) {
+         return (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance();
+    }
+    /**
+     * <code>.CollisionComp collision_comp = 18;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionCompOrBuilder getCollisionCompOrBuilder() {
+      if (detailCase_ == 18) {
+         return (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance();
+    }
+
+    public static final int FOLLOW_MOVE_COMP_FIELD_NUMBER = 19;
+    /**
+     * <code>.FollowMoveComp follow_move_comp = 19;</code>
+     * @return Whether the followMoveComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasFollowMoveComp() {
+      return detailCase_ == 19;
+    }
+    /**
+     * <code>.FollowMoveComp follow_move_comp = 19;</code>
+     * @return The followMoveComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp getFollowMoveComp() {
+      if (detailCase_ == 19) {
+         return (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_;
+      }
+      return emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance();
+    }
+    /**
+     * <code>.FollowMoveComp follow_move_comp = 19;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveCompOrBuilder getFollowMoveCompOrBuilder() {
+      if (detailCase_ == 19) {
+         return (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_;
+      }
+      return emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance();
+    }
+
+    public static final int BULLET_MOVE_COMP_FIELD_NUMBER = 21;
+    /**
+     * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+     * @return Whether the bulletMoveComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasBulletMoveComp() {
+      return detailCase_ == 21;
+    }
+    /**
+     * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+     * @return The bulletMoveComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp getBulletMoveComp() {
+      if (detailCase_ == 21) {
+         return (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_;
+      }
+      return emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance();
+    }
+    /**
+     * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveCompOrBuilder getBulletMoveCompOrBuilder() {
+      if (detailCase_ == 21) {
+         return (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_;
+      }
+      return emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance();
+    }
+
+    public static final int HIT_DETECTION_COMP_FIELD_NUMBER = 22;
+    /**
+     * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+     * @return Whether the hitDetectionComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasHitDetectionComp() {
+      return detailCase_ == 22;
+    }
+    /**
+     * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+     * @return The hitDetectionComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp getHitDetectionComp() {
+      if (detailCase_ == 22) {
+         return (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_;
+      }
+      return emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance();
+    }
+    /**
+     * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionCompOrBuilder getHitDetectionCompOrBuilder() {
+      if (detailCase_ == 22) {
+         return (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_;
+      }
+      return emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance();
+    }
+
+    public static final int CAMERA_COMP_FIELD_NUMBER = 23;
+    /**
+     * <code>.CameraComp camera_comp = 23;</code>
+     * @return Whether the cameraComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasCameraComp() {
+      return detailCase_ == 23;
+    }
+    /**
+     * <code>.CameraComp camera_comp = 23;</code>
+     * @return The cameraComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp getCameraComp() {
+      if (detailCase_ == 23) {
+         return (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance();
+    }
+    /**
+     * <code>.CameraComp camera_comp = 23;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CameraCompOuterClass.CameraCompOrBuilder getCameraCompOrBuilder() {
+      if (detailCase_ == 23) {
+         return (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance();
+    }
+
+    public static final int ROLE_STATUS_COMP_FIELD_NUMBER = 24;
+    /**
+     * <code>.RoleStatusComp role_status_comp = 24;</code>
+     * @return Whether the roleStatusComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoleStatusComp() {
+      return detailCase_ == 24;
+    }
+    /**
+     * <code>.RoleStatusComp role_status_comp = 24;</code>
+     * @return The roleStatusComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp getRoleStatusComp() {
+      if (detailCase_ == 24) {
+         return (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_;
+      }
+      return emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance();
+    }
+    /**
+     * <code>.RoleStatusComp role_status_comp = 24;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusCompOrBuilder getRoleStatusCompOrBuilder() {
+      if (detailCase_ == 24) {
+         return (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_;
+      }
+      return emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance();
+    }
+
+    public static final int AVATAR_DISTURBER_COMP_FIELD_NUMBER = 25;
+    /**
+     * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+     * @return Whether the avatarDisturberComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvatarDisturberComp() {
+      return detailCase_ == 25;
+    }
+    /**
+     * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+     * @return The avatarDisturberComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp getAvatarDisturberComp() {
+      if (detailCase_ == 25) {
+         return (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_;
+      }
+      return emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance();
+    }
+    /**
+     * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberCompOrBuilder getAvatarDisturberCompOrBuilder() {
+      if (detailCase_ == 25) {
+         return (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_;
+      }
+      return emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance();
+    }
+
+    public static final int COUNT_DOWN_COMP_FIELD_NUMBER = 26;
+    /**
+     * <code>.CountDownComp count_down_comp = 26;</code>
+     * @return Whether the countDownComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasCountDownComp() {
+      return detailCase_ == 26;
+    }
+    /**
+     * <code>.CountDownComp count_down_comp = 26;</code>
+     * @return The countDownComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp getCountDownComp() {
+      if (detailCase_ == 26) {
+         return (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance();
+    }
+    /**
+     * <code>.CountDownComp count_down_comp = 26;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownCompOrBuilder getCountDownCompOrBuilder() {
+      if (detailCase_ == 26) {
+         return (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance();
+    }
+
+    public static final int OPTION_COMP_FIELD_NUMBER = 27;
+    /**
+     * <code>.OptionComp option_comp = 27;</code>
+     * @return Whether the optionComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasOptionComp() {
+      return detailCase_ == 27;
+    }
+    /**
+     * <code>.OptionComp option_comp = 27;</code>
+     * @return The optionComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp getOptionComp() {
+      if (detailCase_ == 27) {
+         return (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_;
+      }
+      return emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance();
+    }
+    /**
+     * <code>.OptionComp option_comp = 27;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OptionCompOuterClass.OptionCompOrBuilder getOptionCompOrBuilder() {
+      if (detailCase_ == 27) {
+         return (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_;
+      }
+      return emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance();
+    }
+
+    public static final int HITBOX_COMP_FIELD_NUMBER = 28;
+    /**
+     * <code>.HitboxComp hitbox_comp = 28;</code>
+     * @return Whether the hitboxComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasHitboxComp() {
+      return detailCase_ == 28;
+    }
+    /**
+     * <code>.HitboxComp hitbox_comp = 28;</code>
+     * @return The hitboxComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp getHitboxComp() {
+      if (detailCase_ == 28) {
+         return (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_;
+      }
+      return emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance();
+    }
+    /**
+     * <code>.HitboxComp hitbox_comp = 28;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxCompOrBuilder getHitboxCompOrBuilder() {
+      if (detailCase_ == 28) {
+         return (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_;
+      }
+      return emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance();
+    }
+
+    public static final int CUSTOM_SKILL_COMP_FIELD_NUMBER = 29;
+    /**
+     * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+     * @return Whether the customSkillComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomSkillComp() {
+      return detailCase_ == 29;
+    }
+    /**
+     * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+     * @return The customSkillComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp getCustomSkillComp() {
+      if (detailCase_ == 29) {
+         return (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance();
+    }
+    /**
+     * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillCompOrBuilder getCustomSkillCompOrBuilder() {
+      if (detailCase_ == 29) {
+         return (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_;
+      }
+      return emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance();
+    }
+
+    public static final int ENMITY_COMP_FIELD_NUMBER = 31;
+    /**
+     * <code>.EnmityComp enmity_comp = 31;</code>
+     * @return Whether the enmityComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnmityComp() {
+      return detailCase_ == 31;
+    }
+    /**
+     * <code>.EnmityComp enmity_comp = 31;</code>
+     * @return The enmityComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp getEnmityComp() {
+      if (detailCase_ == 31) {
+         return (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_;
+      }
+      return emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance();
+    }
+    /**
+     * <code>.EnmityComp enmity_comp = 31;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityCompOrBuilder getEnmityCompOrBuilder() {
+      if (detailCase_ == 31) {
+         return (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_;
+      }
+      return emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance();
+    }
+
+    public static final int NAMEPLATE_COMP_FIELD_NUMBER = 32;
+    /**
+     * <code>.NameplateComp nameplate_comp = 32;</code>
+     * @return Whether the nameplateComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasNameplateComp() {
+      return detailCase_ == 32;
+    }
+    /**
+     * <code>.NameplateComp nameplate_comp = 32;</code>
+     * @return The nameplateComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp getNameplateComp() {
+      if (detailCase_ == 32) {
+         return (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_;
+      }
+      return emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance();
+    }
+    /**
+     * <code>.NameplateComp nameplate_comp = 32;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateCompOrBuilder getNameplateCompOrBuilder() {
+      if (detailCase_ == 32) {
+         return (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_;
+      }
+      return emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance();
+    }
+
+    public static final int TALK_COMP_FIELD_NUMBER = 33;
+    /**
+     * <code>.TalkComp talk_comp = 33;</code>
+     * @return Whether the talkComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasTalkComp() {
+      return detailCase_ == 33;
+    }
+    /**
+     * <code>.TalkComp talk_comp = 33;</code>
+     * @return The talkComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp getTalkComp() {
+      if (detailCase_ == 33) {
+         return (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_;
+      }
+      return emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance();
+    }
+    /**
+     * <code>.TalkComp talk_comp = 33;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.TalkCompOuterClass.TalkCompOrBuilder getTalkCompOrBuilder() {
+      if (detailCase_ == 33) {
+         return (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_;
+      }
+      return emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance();
+    }
+
+    public static final int SOUND_EFFECT_COMP_FIELD_NUMBER = 34;
+    /**
+     * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+     * @return Whether the soundEffectComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasSoundEffectComp() {
+      return detailCase_ == 34;
+    }
+    /**
+     * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+     * @return The soundEffectComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp getSoundEffectComp() {
+      if (detailCase_ == 34) {
+         return (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_;
+      }
+      return emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance();
+    }
+    /**
+     * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectCompOrBuilder getSoundEffectCompOrBuilder() {
+      if (detailCase_ == 34) {
+         return (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_;
+      }
+      return emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance();
+    }
+
+    public static final int MONSTER_PATROL_COMP_FIELD_NUMBER = 35;
+    /**
+     * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+     * @return Whether the monsterPatrolComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasMonsterPatrolComp() {
+      return detailCase_ == 35;
+    }
+    /**
+     * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+     * @return The monsterPatrolComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp getMonsterPatrolComp() {
+      if (detailCase_ == 35) {
+         return (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance();
+    }
+    /**
+     * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolCompOrBuilder getMonsterPatrolCompOrBuilder() {
+      if (detailCase_ == 35) {
+         return (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance();
+    }
+
+    public static final int LEVEL_STATE_MACHINE_COMP_FIELD_NUMBER = 36;
+    /**
+     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+     * @return Whether the levelStateMachineComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasLevelStateMachineComp() {
+      return detailCase_ == 36;
+    }
+    /**
+     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+     * @return The levelStateMachineComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp getLevelStateMachineComp() {
+      if (detailCase_ == 36) {
+         return (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_;
+      }
+      return emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance();
+    }
+    /**
+     * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineCompOrBuilder getLevelStateMachineCompOrBuilder() {
+      if (detailCase_ == 36) {
+         return (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_;
+      }
+      return emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance();
+    }
+
+    public static final int MINIMAP_MARK_COMP_FIELD_NUMBER = 37;
+    /**
+     * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+     * @return Whether the minimapMarkComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinimapMarkComp() {
+      return detailCase_ == 37;
+    }
+    /**
+     * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+     * @return The minimapMarkComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp getMinimapMarkComp() {
+      if (detailCase_ == 37) {
+         return (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance();
+    }
+    /**
+     * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkCompOrBuilder getMinimapMarkCompOrBuilder() {
+      if (detailCase_ == 37) {
+         return (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance();
+    }
+
+    public static final int STUFF_BAG_COMP_FIELD_NUMBER = 38;
+    /**
+     * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+     * @return Whether the stuffBagComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasStuffBagComp() {
+      return detailCase_ == 38;
+    }
+    /**
+     * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+     * @return The stuffBagComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp getStuffBagComp() {
+      if (detailCase_ == 38) {
+         return (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_;
+      }
+      return emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance();
+    }
+    /**
+     * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagCompOrBuilder getStuffBagCompOrBuilder() {
+      if (detailCase_ == 38) {
+         return (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_;
+      }
+      return emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance();
+    }
+
+    public static final int EQUIP_STUFF_BAG_COMP_FIELD_NUMBER = 39;
+    /**
+     * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+     * @return Whether the equipStuffBagComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasEquipStuffBagComp() {
+      return detailCase_ == 39;
+    }
+    /**
+     * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+     * @return The equipStuffBagComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp getEquipStuffBagComp() {
+      if (detailCase_ == 39) {
+         return (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_;
+      }
+      return emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance();
+    }
+    /**
+     * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagCompOrBuilder getEquipStuffBagCompOrBuilder() {
+      if (detailCase_ == 39) {
+         return (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_;
+      }
+      return emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance();
+    }
+
+    public static final int DROP_GATHER_COMP_FIELD_NUMBER = 40;
+    /**
+     * <code>.DropGatherComp drop_gather_comp = 40;</code>
+     * @return Whether the dropGatherComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasDropGatherComp() {
+      return detailCase_ == 40;
+    }
+    /**
+     * <code>.DropGatherComp drop_gather_comp = 40;</code>
+     * @return The dropGatherComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp getDropGatherComp() {
+      if (detailCase_ == 40) {
+         return (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_;
+      }
+      return emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance();
+    }
+    /**
+     * <code>.DropGatherComp drop_gather_comp = 40;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherCompOrBuilder getDropGatherCompOrBuilder() {
+      if (detailCase_ == 40) {
+         return (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_;
+      }
+      return emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance();
+    }
+
+    public static final int LIGHT_GROUP_COMP_FIELD_NUMBER = 41;
+    /**
+     * <code>.LightGroupComp light_group_comp = 41;</code>
+     * @return Whether the lightGroupComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasLightGroupComp() {
+      return detailCase_ == 41;
+    }
+    /**
+     * <code>.LightGroupComp light_group_comp = 41;</code>
+     * @return The lightGroupComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp getLightGroupComp() {
+      if (detailCase_ == 41) {
+         return (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_;
+      }
+      return emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance();
+    }
+    /**
+     * <code>.LightGroupComp light_group_comp = 41;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupCompOrBuilder getLightGroupCompOrBuilder() {
+      if (detailCase_ == 41) {
+         return (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_;
+      }
+      return emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance();
+    }
+
+    public static final int SCAN_ENTITY_COMP_FIELD_NUMBER = 42;
+    /**
+     * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+     * @return Whether the scanEntityComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasScanEntityComp() {
+      return detailCase_ == 42;
+    }
+    /**
+     * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+     * @return The scanEntityComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp getScanEntityComp() {
+      if (detailCase_ == 42) {
+         return (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_;
+      }
+      return emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance();
+    }
+    /**
+     * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityCompOrBuilder getScanEntityCompOrBuilder() {
+      if (detailCase_ == 42) {
+         return (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_;
+      }
+      return emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance();
+    }
+
+    public static final int SUB_SWITCH_COMP_FIELD_NUMBER = 43;
+    /**
+     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+     * @return Whether the subSwitchComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasSubSwitchComp() {
+      return detailCase_ == 43;
+    }
+    /**
+     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+     * @return The subSwitchComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp getSubSwitchComp() {
+      if (detailCase_ == 43) {
+         return (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_;
+      }
+      return emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance();
+    }
+    /**
+     * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SubSwitchComp._SubSwitchCompOrBuilder getSubSwitchCompOrBuilder() {
+      if (detailCase_ == 43) {
+         return (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_;
+      }
+      return emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance();
+    }
+
+    public static final int MONSTER_AI_COMP_FIELD_NUMBER = 44;
+    /**
+     * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+     * @return Whether the monsterAiComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasMonsterAiComp() {
+      return detailCase_ == 44;
+    }
+    /**
+     * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+     * @return The monsterAiComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp getMonsterAiComp() {
+      if (detailCase_ == 44) {
+         return (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance();
+    }
+    /**
+     * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiCompOrBuilder getMonsterAiCompOrBuilder() {
+      if (detailCase_ == 44) {
+         return (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_;
+      }
+      return emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance();
+    }
+
+    public static final int VEHICLE_COMP_FIELD_NUMBER = 45;
+    /**
+     * <code>.VehicleComp vehicle_comp = 45;</code>
+     * @return Whether the vehicleComp field is set.
+     */
+    @java.lang.Override
+    public boolean hasVehicleComp() {
+      return detailCase_ == 45;
+    }
+    /**
+     * <code>.VehicleComp vehicle_comp = 45;</code>
+     * @return The vehicleComp.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp getVehicleComp() {
+      if (detailCase_ == 45) {
+         return (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_;
+      }
+      return emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance();
+    }
+    /**
+     * <code>.VehicleComp vehicle_comp = 45;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleCompOrBuilder getVehicleCompOrBuilder() {
+      if (detailCase_ == 45) {
+         return (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_;
+      }
+      return emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2136,97 +2140,97 @@ public final class KEGLGHJKEGPOuterClass {
         output.writeEnum(2, nHGKKKAOKMN_);
       }
       if (detailCase_ == 11) {
-        output.writeMessage(11, (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_);
+        output.writeMessage(11, (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_);
       }
       if (detailCase_ == 13) {
-        output.writeMessage(13, (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_);
+        output.writeMessage(13, (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_);
       }
       if (detailCase_ == 14) {
-        output.writeMessage(14, (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_);
+        output.writeMessage(14, (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_);
       }
       if (detailCase_ == 15) {
-        output.writeMessage(15, (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_);
+        output.writeMessage(15, (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_);
       }
       if (detailCase_ == 16) {
-        output.writeMessage(16, (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_);
+        output.writeMessage(16, (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_);
       }
       if (detailCase_ == 18) {
-        output.writeMessage(18, (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_);
+        output.writeMessage(18, (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_);
       }
       if (detailCase_ == 19) {
-        output.writeMessage(19, (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_);
+        output.writeMessage(19, (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_);
       }
       if (detailCase_ == 21) {
-        output.writeMessage(21, (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_);
+        output.writeMessage(21, (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_);
       }
       if (detailCase_ == 22) {
-        output.writeMessage(22, (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_);
+        output.writeMessage(22, (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_);
       }
       if (detailCase_ == 23) {
-        output.writeMessage(23, (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_);
+        output.writeMessage(23, (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_);
       }
       if (detailCase_ == 24) {
-        output.writeMessage(24, (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_);
+        output.writeMessage(24, (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_);
       }
       if (detailCase_ == 25) {
-        output.writeMessage(25, (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_);
+        output.writeMessage(25, (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_);
       }
       if (detailCase_ == 26) {
-        output.writeMessage(26, (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_);
+        output.writeMessage(26, (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_);
       }
       if (detailCase_ == 27) {
-        output.writeMessage(27, (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_);
+        output.writeMessage(27, (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_);
       }
       if (detailCase_ == 28) {
-        output.writeMessage(28, (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_);
+        output.writeMessage(28, (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_);
       }
       if (detailCase_ == 29) {
-        output.writeMessage(29, (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_);
+        output.writeMessage(29, (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_);
       }
       if (detailCase_ == 31) {
-        output.writeMessage(31, (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_);
+        output.writeMessage(31, (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_);
       }
       if (detailCase_ == 32) {
-        output.writeMessage(32, (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_);
+        output.writeMessage(32, (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_);
       }
       if (detailCase_ == 33) {
-        output.writeMessage(33, (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_);
+        output.writeMessage(33, (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_);
       }
       if (detailCase_ == 34) {
-        output.writeMessage(34, (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_);
+        output.writeMessage(34, (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_);
       }
       if (detailCase_ == 35) {
-        output.writeMessage(35, (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_);
+        output.writeMessage(35, (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_);
       }
       if (detailCase_ == 36) {
-        output.writeMessage(36, (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_);
+        output.writeMessage(36, (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_);
       }
       if (detailCase_ == 37) {
-        output.writeMessage(37, (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_);
+        output.writeMessage(37, (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_);
       }
       if (detailCase_ == 38) {
-        output.writeMessage(38, (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_);
+        output.writeMessage(38, (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_);
       }
       if (detailCase_ == 39) {
-        output.writeMessage(39, (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_);
+        output.writeMessage(39, (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_);
       }
       if (detailCase_ == 40) {
-        output.writeMessage(40, (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_);
+        output.writeMessage(40, (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_);
       }
       if (detailCase_ == 41) {
-        output.writeMessage(41, (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_);
+        output.writeMessage(41, (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_);
       }
       if (detailCase_ == 42) {
-        output.writeMessage(42, (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_);
+        output.writeMessage(42, (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_);
       }
       if (detailCase_ == 43) {
-        output.writeMessage(43, (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_);
+        output.writeMessage(43, (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_);
       }
       if (detailCase_ == 44) {
-        output.writeMessage(44, (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_);
+        output.writeMessage(44, (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_);
       }
       if (detailCase_ == 45) {
-        output.writeMessage(45, (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_);
+        output.writeMessage(45, (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_);
       }
       unknownFields.writeTo(output);
     }
@@ -2247,127 +2251,127 @@ public final class KEGLGHJKEGPOuterClass {
       }
       if (detailCase_ == 11) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_);
+          .computeMessageSize(11, (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_);
       }
       if (detailCase_ == 13) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_);
+          .computeMessageSize(13, (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_);
       }
       if (detailCase_ == 14) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_);
+          .computeMessageSize(14, (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_);
       }
       if (detailCase_ == 15) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_);
+          .computeMessageSize(15, (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_);
       }
       if (detailCase_ == 16) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_);
+          .computeMessageSize(16, (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_);
       }
       if (detailCase_ == 18) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_);
+          .computeMessageSize(18, (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_);
       }
       if (detailCase_ == 19) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_);
+          .computeMessageSize(19, (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_);
       }
       if (detailCase_ == 21) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(21, (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_);
+          .computeMessageSize(21, (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_);
       }
       if (detailCase_ == 22) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(22, (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_);
+          .computeMessageSize(22, (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_);
       }
       if (detailCase_ == 23) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(23, (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_);
+          .computeMessageSize(23, (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_);
       }
       if (detailCase_ == 24) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(24, (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_);
+          .computeMessageSize(24, (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_);
       }
       if (detailCase_ == 25) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_);
+          .computeMessageSize(25, (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_);
       }
       if (detailCase_ == 26) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_);
+          .computeMessageSize(26, (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_);
       }
       if (detailCase_ == 27) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27, (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_);
+          .computeMessageSize(27, (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_);
       }
       if (detailCase_ == 28) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(28, (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_);
+          .computeMessageSize(28, (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_);
       }
       if (detailCase_ == 29) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(29, (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_);
+          .computeMessageSize(29, (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_);
       }
       if (detailCase_ == 31) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(31, (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_);
+          .computeMessageSize(31, (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_);
       }
       if (detailCase_ == 32) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(32, (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_);
+          .computeMessageSize(32, (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_);
       }
       if (detailCase_ == 33) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(33, (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_);
+          .computeMessageSize(33, (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_);
       }
       if (detailCase_ == 34) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(34, (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_);
+          .computeMessageSize(34, (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_);
       }
       if (detailCase_ == 35) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(35, (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_);
+          .computeMessageSize(35, (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_);
       }
       if (detailCase_ == 36) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(36, (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_);
+          .computeMessageSize(36, (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_);
       }
       if (detailCase_ == 37) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(37, (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_);
+          .computeMessageSize(37, (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_);
       }
       if (detailCase_ == 38) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(38, (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_);
+          .computeMessageSize(38, (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_);
       }
       if (detailCase_ == 39) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(39, (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_);
+          .computeMessageSize(39, (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_);
       }
       if (detailCase_ == 40) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(40, (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_);
+          .computeMessageSize(40, (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_);
       }
       if (detailCase_ == 41) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(41, (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_);
+          .computeMessageSize(41, (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_);
       }
       if (detailCase_ == 42) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(42, (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_);
+          .computeMessageSize(42, (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_);
       }
       if (detailCase_ == 43) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(43, (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_);
+          .computeMessageSize(43, (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_);
       }
       if (detailCase_ == 44) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(44, (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_);
+          .computeMessageSize(44, (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_);
       }
       if (detailCase_ == 45) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(45, (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_);
+          .computeMessageSize(45, (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2384,9 +2388,9 @@ public final class KEGLGHJKEGPOuterClass {
       }
       emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP other = (emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP) obj;
 
+      if (nHGKKKAOKMN_ != other.nHGKKKAOKMN_) return false;
       if (getIsActive()
           != other.getIsActive()) return false;
-      if (nHGKKKAOKMN_ != other.nHGKKKAOKMN_) return false;
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
         case 11:
@@ -2527,11 +2531,11 @@ public final class KEGLGHJKEGPOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NHGKKKAOKMN_FIELD_NUMBER;
+      hash = (53 * hash) + nHGKKKAOKMN_;
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
-      hash = (37 * hash) + NHGKKKAOKMN_FIELD_NUMBER;
-      hash = (53 * hash) + nHGKKKAOKMN_;
       switch (detailCase_) {
         case 11:
           hash = (37 * hash) + CUSTOM_VALUE_COMP_FIELD_NUMBER;
@@ -2756,6 +2760,10 @@ public final class KEGLGHJKEGPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KEGLGHJKEGP}
      */
     public static final class Builder extends
@@ -2793,9 +2801,9 @@ public final class KEGLGHJKEGPOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isActive_ = false;
-
         nHGKKKAOKMN_ = 0;
+
+        isActive_ = false;
 
         detailCase_ = 0;
         detail_ = null;
@@ -2825,6 +2833,8 @@ public final class KEGLGHJKEGPOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP buildPartial() {
         emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP result = new emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP(this);
+        result.nHGKKKAOKMN_ = nHGKKKAOKMN_;
+        result.isActive_ = isActive_;
         if (detailCase_ == 11) {
           if (customValueCompBuilder_ == null) {
             result.detail_ = detail_;
@@ -3042,8 +3052,6 @@ public final class KEGLGHJKEGPOuterClass {
             result.detail_ = vehicleCompBuilder_.build();
           }
         }
-        result.isActive_ = isActive_;
-        result.nHGKKKAOKMN_ = nHGKKKAOKMN_;
         result.detailCase_ = detailCase_;
         onBuilt();
         return result;
@@ -3093,11 +3101,11 @@ public final class KEGLGHJKEGPOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP other) {
         if (other == emu.grasscutter.net.proto.KEGLGHJKEGPOuterClass.KEGLGHJKEGP.getDefaultInstance()) return this;
-        if (other.getIsActive() != false) {
-          setIsActive(other.getIsActive());
-        }
         if (other.nHGKKKAOKMN_ != 0) {
           setNHGKKKAOKMNValue(other.getNHGKKKAOKMNValue());
+        }
+        if (other.getIsActive() != false) {
+          setIsActive(other.getIsActive());
         }
         switch (other.getDetailCase()) {
           case CUSTOM_VALUE_COMP: {
@@ -3272,4408 +3280,6 @@ public final class KEGLGHJKEGPOuterClass {
       }
 
 
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK, emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.Builder, emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJKOrBuilder> customValueCompBuilder_;
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       * @return Whether the customValueComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasCustomValueComp() {
-        return detailCase_ == 11;
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       * @return The customValueComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK getCustomValueComp() {
-        if (customValueCompBuilder_ == null) {
-          if (detailCase_ == 11) {
-            return (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_;
-          }
-          return emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance();
-        } else {
-          if (detailCase_ == 11) {
-            return customValueCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      public Builder setCustomValueComp(emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK value) {
-        if (customValueCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          customValueCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      public Builder setCustomValueComp(
-          emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.Builder builderForValue) {
-        if (customValueCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          customValueCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      public Builder mergeCustomValueComp(emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK value) {
-        if (customValueCompBuilder_ == null) {
-          if (detailCase_ == 11 &&
-              detail_ != emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.newBuilder((emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 11) {
-            customValueCompBuilder_.mergeFrom(value);
-          }
-          customValueCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 11;
-        return this;
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      public Builder clearCustomValueComp() {
-        if (customValueCompBuilder_ == null) {
-          if (detailCase_ == 11) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 11) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          customValueCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      public emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.Builder getCustomValueCompBuilder() {
-        return getCustomValueCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJKOrBuilder getCustomValueCompOrBuilder() {
-        if ((detailCase_ == 11) && (customValueCompBuilder_ != null)) {
-          return customValueCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 11) {
-            return (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_;
-          }
-          return emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IBFPCNHCJJK custom_value_comp = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK, emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.Builder, emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJKOrBuilder> 
-          getCustomValueCompFieldBuilder() {
-        if (customValueCompBuilder_ == null) {
-          if (!(detailCase_ == 11)) {
-            detail_ = emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.getDefaultInstance();
-          }
-          customValueCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK, emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK.Builder, emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJKOrBuilder>(
-                  (emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.IBFPCNHCJJK) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 11;
-        onChanged();;
-        return customValueCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN, emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.Builder, emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBNOrBuilder> timerCompBuilder_;
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       * @return Whether the timerComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasTimerComp() {
-        return detailCase_ == 13;
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       * @return The timerComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN getTimerComp() {
-        if (timerCompBuilder_ == null) {
-          if (detailCase_ == 13) {
-            return (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_;
-          }
-          return emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance();
-        } else {
-          if (detailCase_ == 13) {
-            return timerCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      public Builder setTimerComp(emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN value) {
-        if (timerCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          timerCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 13;
-        return this;
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      public Builder setTimerComp(
-          emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.Builder builderForValue) {
-        if (timerCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          timerCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 13;
-        return this;
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      public Builder mergeTimerComp(emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN value) {
-        if (timerCompBuilder_ == null) {
-          if (detailCase_ == 13 &&
-              detail_ != emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.newBuilder((emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 13) {
-            timerCompBuilder_.mergeFrom(value);
-          }
-          timerCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 13;
-        return this;
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      public Builder clearTimerComp() {
-        if (timerCompBuilder_ == null) {
-          if (detailCase_ == 13) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 13) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          timerCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      public emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.Builder getTimerCompBuilder() {
-        return getTimerCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBNOrBuilder getTimerCompOrBuilder() {
-        if ((detailCase_ == 13) && (timerCompBuilder_ != null)) {
-          return timerCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 13) {
-            return (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_;
-          }
-          return emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.FOOFKCNOCBN timer_comp = 13;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN, emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.Builder, emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBNOrBuilder> 
-          getTimerCompFieldBuilder() {
-        if (timerCompBuilder_ == null) {
-          if (!(detailCase_ == 13)) {
-            detail_ = emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.getDefaultInstance();
-          }
-          timerCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN, emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN.Builder, emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBNOrBuilder>(
-                  (emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.FOOFKCNOCBN) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 13;
-        onChanged();;
-        return timerCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI, emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.Builder, emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPIOrBuilder> moveCompBuilder_;
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       * @return Whether the moveComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasMoveComp() {
-        return detailCase_ == 14;
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       * @return The moveComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI getMoveComp() {
-        if (moveCompBuilder_ == null) {
-          if (detailCase_ == 14) {
-            return (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_;
-          }
-          return emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance();
-        } else {
-          if (detailCase_ == 14) {
-            return moveCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      public Builder setMoveComp(emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI value) {
-        if (moveCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          moveCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 14;
-        return this;
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      public Builder setMoveComp(
-          emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.Builder builderForValue) {
-        if (moveCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          moveCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 14;
-        return this;
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      public Builder mergeMoveComp(emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI value) {
-        if (moveCompBuilder_ == null) {
-          if (detailCase_ == 14 &&
-              detail_ != emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.newBuilder((emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 14) {
-            moveCompBuilder_.mergeFrom(value);
-          }
-          moveCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 14;
-        return this;
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      public Builder clearMoveComp() {
-        if (moveCompBuilder_ == null) {
-          if (detailCase_ == 14) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 14) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          moveCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      public emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.Builder getMoveCompBuilder() {
-        return getMoveCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPIOrBuilder getMoveCompOrBuilder() {
-        if ((detailCase_ == 14) && (moveCompBuilder_ != null)) {
-          return moveCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 14) {
-            return (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_;
-          }
-          return emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.NJABMDONHPI move_comp = 14;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI, emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.Builder, emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPIOrBuilder> 
-          getMoveCompFieldBuilder() {
-        if (moveCompBuilder_ == null) {
-          if (!(detailCase_ == 14)) {
-            detail_ = emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.getDefaultInstance();
-          }
-          moveCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI, emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI.Builder, emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPIOrBuilder>(
-                  (emu.grasscutter.net.proto.NJABMDONHPIOuterClass.NJABMDONHPI) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 14;
-        onChanged();;
-        return moveCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD, emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.Builder, emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABDOrBuilder> clientTriggerCompBuilder_;
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       * @return Whether the clientTriggerComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasClientTriggerComp() {
-        return detailCase_ == 15;
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       * @return The clientTriggerComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD getClientTriggerComp() {
-        if (clientTriggerCompBuilder_ == null) {
-          if (detailCase_ == 15) {
-            return (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_;
-          }
-          return emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance();
-        } else {
-          if (detailCase_ == 15) {
-            return clientTriggerCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      public Builder setClientTriggerComp(emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD value) {
-        if (clientTriggerCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          clientTriggerCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 15;
-        return this;
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      public Builder setClientTriggerComp(
-          emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.Builder builderForValue) {
-        if (clientTriggerCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          clientTriggerCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 15;
-        return this;
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      public Builder mergeClientTriggerComp(emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD value) {
-        if (clientTriggerCompBuilder_ == null) {
-          if (detailCase_ == 15 &&
-              detail_ != emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.newBuilder((emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 15) {
-            clientTriggerCompBuilder_.mergeFrom(value);
-          }
-          clientTriggerCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 15;
-        return this;
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      public Builder clearClientTriggerComp() {
-        if (clientTriggerCompBuilder_ == null) {
-          if (detailCase_ == 15) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 15) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          clientTriggerCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      public emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.Builder getClientTriggerCompBuilder() {
-        return getClientTriggerCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABDOrBuilder getClientTriggerCompOrBuilder() {
-        if ((detailCase_ == 15) && (clientTriggerCompBuilder_ != null)) {
-          return clientTriggerCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 15) {
-            return (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_;
-          }
-          return emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OCMDIBLDABD client_trigger_comp = 15;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD, emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.Builder, emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABDOrBuilder> 
-          getClientTriggerCompFieldBuilder() {
-        if (clientTriggerCompBuilder_ == null) {
-          if (!(detailCase_ == 15)) {
-            detail_ = emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.getDefaultInstance();
-          }
-          clientTriggerCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD, emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD.Builder, emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABDOrBuilder>(
-                  (emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.OCMDIBLDABD) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 15;
-        onChanged();;
-        return clientTriggerCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF, emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.Builder, emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOFOrBuilder> effectCompBuilder_;
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       * @return Whether the effectComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasEffectComp() {
-        return detailCase_ == 16;
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       * @return The effectComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF getEffectComp() {
-        if (effectCompBuilder_ == null) {
-          if (detailCase_ == 16) {
-            return (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_;
-          }
-          return emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance();
-        } else {
-          if (detailCase_ == 16) {
-            return effectCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      public Builder setEffectComp(emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF value) {
-        if (effectCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          effectCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 16;
-        return this;
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      public Builder setEffectComp(
-          emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.Builder builderForValue) {
-        if (effectCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          effectCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 16;
-        return this;
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      public Builder mergeEffectComp(emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF value) {
-        if (effectCompBuilder_ == null) {
-          if (detailCase_ == 16 &&
-              detail_ != emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.newBuilder((emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 16) {
-            effectCompBuilder_.mergeFrom(value);
-          }
-          effectCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 16;
-        return this;
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      public Builder clearEffectComp() {
-        if (effectCompBuilder_ == null) {
-          if (detailCase_ == 16) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 16) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          effectCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      public emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.Builder getEffectCompBuilder() {
-        return getEffectCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOFOrBuilder getEffectCompOrBuilder() {
-        if ((detailCase_ == 16) && (effectCompBuilder_ != null)) {
-          return effectCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 16) {
-            return (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_;
-          }
-          return emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.JEFEGBIEMOF effect_comp = 16;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF, emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.Builder, emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOFOrBuilder> 
-          getEffectCompFieldBuilder() {
-        if (effectCompBuilder_ == null) {
-          if (!(detailCase_ == 16)) {
-            detail_ = emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.getDefaultInstance();
-          }
-          effectCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF, emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF.Builder, emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOFOrBuilder>(
-                  (emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.JEFEGBIEMOF) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 16;
-        onChanged();;
-        return effectCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE, emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.Builder, emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDEOrBuilder> collisionCompBuilder_;
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       * @return Whether the collisionComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasCollisionComp() {
-        return detailCase_ == 18;
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       * @return The collisionComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE getCollisionComp() {
-        if (collisionCompBuilder_ == null) {
-          if (detailCase_ == 18) {
-            return (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_;
-          }
-          return emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance();
-        } else {
-          if (detailCase_ == 18) {
-            return collisionCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      public Builder setCollisionComp(emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE value) {
-        if (collisionCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          collisionCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 18;
-        return this;
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      public Builder setCollisionComp(
-          emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.Builder builderForValue) {
-        if (collisionCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          collisionCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 18;
-        return this;
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      public Builder mergeCollisionComp(emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE value) {
-        if (collisionCompBuilder_ == null) {
-          if (detailCase_ == 18 &&
-              detail_ != emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.newBuilder((emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 18) {
-            collisionCompBuilder_.mergeFrom(value);
-          }
-          collisionCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 18;
-        return this;
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      public Builder clearCollisionComp() {
-        if (collisionCompBuilder_ == null) {
-          if (detailCase_ == 18) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 18) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          collisionCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      public emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.Builder getCollisionCompBuilder() {
-        return getCollisionCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDEOrBuilder getCollisionCompOrBuilder() {
-        if ((detailCase_ == 18) && (collisionCompBuilder_ != null)) {
-          return collisionCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 18) {
-            return (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_;
-          }
-          return emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.AGFINCBOPDE collision_comp = 18;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE, emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.Builder, emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDEOrBuilder> 
-          getCollisionCompFieldBuilder() {
-        if (collisionCompBuilder_ == null) {
-          if (!(detailCase_ == 18)) {
-            detail_ = emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.getDefaultInstance();
-          }
-          collisionCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE, emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE.Builder, emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDEOrBuilder>(
-                  (emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.AGFINCBOPDE) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 18;
-        onChanged();;
-        return collisionCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED, emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.Builder, emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKEDOrBuilder> followMoveCompBuilder_;
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       * @return Whether the followMoveComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasFollowMoveComp() {
-        return detailCase_ == 19;
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       * @return The followMoveComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED getFollowMoveComp() {
-        if (followMoveCompBuilder_ == null) {
-          if (detailCase_ == 19) {
-            return (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_;
-          }
-          return emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance();
-        } else {
-          if (detailCase_ == 19) {
-            return followMoveCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      public Builder setFollowMoveComp(emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED value) {
-        if (followMoveCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          followMoveCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 19;
-        return this;
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      public Builder setFollowMoveComp(
-          emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.Builder builderForValue) {
-        if (followMoveCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          followMoveCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 19;
-        return this;
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      public Builder mergeFollowMoveComp(emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED value) {
-        if (followMoveCompBuilder_ == null) {
-          if (detailCase_ == 19 &&
-              detail_ != emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.newBuilder((emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 19) {
-            followMoveCompBuilder_.mergeFrom(value);
-          }
-          followMoveCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 19;
-        return this;
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      public Builder clearFollowMoveComp() {
-        if (followMoveCompBuilder_ == null) {
-          if (detailCase_ == 19) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 19) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          followMoveCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      public emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.Builder getFollowMoveCompBuilder() {
-        return getFollowMoveCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKEDOrBuilder getFollowMoveCompOrBuilder() {
-        if ((detailCase_ == 19) && (followMoveCompBuilder_ != null)) {
-          return followMoveCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 19) {
-            return (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_;
-          }
-          return emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.FDKOFMMNKED follow_move_comp = 19;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED, emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.Builder, emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKEDOrBuilder> 
-          getFollowMoveCompFieldBuilder() {
-        if (followMoveCompBuilder_ == null) {
-          if (!(detailCase_ == 19)) {
-            detail_ = emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.getDefaultInstance();
-          }
-          followMoveCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED, emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED.Builder, emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKEDOrBuilder>(
-                  (emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.FDKOFMMNKED) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 19;
-        onChanged();;
-        return followMoveCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ, emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.Builder, emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJOrBuilder> bulletMoveCompBuilder_;
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       * @return Whether the bulletMoveComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasBulletMoveComp() {
-        return detailCase_ == 21;
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       * @return The bulletMoveComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ getBulletMoveComp() {
-        if (bulletMoveCompBuilder_ == null) {
-          if (detailCase_ == 21) {
-            return (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_;
-          }
-          return emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance();
-        } else {
-          if (detailCase_ == 21) {
-            return bulletMoveCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      public Builder setBulletMoveComp(emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ value) {
-        if (bulletMoveCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          bulletMoveCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 21;
-        return this;
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      public Builder setBulletMoveComp(
-          emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.Builder builderForValue) {
-        if (bulletMoveCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          bulletMoveCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 21;
-        return this;
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      public Builder mergeBulletMoveComp(emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ value) {
-        if (bulletMoveCompBuilder_ == null) {
-          if (detailCase_ == 21 &&
-              detail_ != emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.newBuilder((emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 21) {
-            bulletMoveCompBuilder_.mergeFrom(value);
-          }
-          bulletMoveCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 21;
-        return this;
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      public Builder clearBulletMoveComp() {
-        if (bulletMoveCompBuilder_ == null) {
-          if (detailCase_ == 21) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 21) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          bulletMoveCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      public emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.Builder getBulletMoveCompBuilder() {
-        return getBulletMoveCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJOrBuilder getBulletMoveCompOrBuilder() {
-        if ((detailCase_ == 21) && (bulletMoveCompBuilder_ != null)) {
-          return bulletMoveCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 21) {
-            return (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_;
-          }
-          return emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IIHJBEGADCJ bullet_move_comp = 21;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ, emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.Builder, emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJOrBuilder> 
-          getBulletMoveCompFieldBuilder() {
-        if (bulletMoveCompBuilder_ == null) {
-          if (!(detailCase_ == 21)) {
-            detail_ = emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.getDefaultInstance();
-          }
-          bulletMoveCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ, emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ.Builder, emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJOrBuilder>(
-                  (emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.IIHJBEGADCJ) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 21;
-        onChanged();;
-        return bulletMoveCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG, emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.Builder, emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHGOrBuilder> hitDetectionCompBuilder_;
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       * @return Whether the hitDetectionComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasHitDetectionComp() {
-        return detailCase_ == 22;
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       * @return The hitDetectionComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG getHitDetectionComp() {
-        if (hitDetectionCompBuilder_ == null) {
-          if (detailCase_ == 22) {
-            return (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_;
-          }
-          return emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance();
-        } else {
-          if (detailCase_ == 22) {
-            return hitDetectionCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      public Builder setHitDetectionComp(emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG value) {
-        if (hitDetectionCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          hitDetectionCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 22;
-        return this;
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      public Builder setHitDetectionComp(
-          emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.Builder builderForValue) {
-        if (hitDetectionCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          hitDetectionCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 22;
-        return this;
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      public Builder mergeHitDetectionComp(emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG value) {
-        if (hitDetectionCompBuilder_ == null) {
-          if (detailCase_ == 22 &&
-              detail_ != emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.newBuilder((emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 22) {
-            hitDetectionCompBuilder_.mergeFrom(value);
-          }
-          hitDetectionCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 22;
-        return this;
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      public Builder clearHitDetectionComp() {
-        if (hitDetectionCompBuilder_ == null) {
-          if (detailCase_ == 22) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 22) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          hitDetectionCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      public emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.Builder getHitDetectionCompBuilder() {
-        return getHitDetectionCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHGOrBuilder getHitDetectionCompOrBuilder() {
-        if ((detailCase_ == 22) && (hitDetectionCompBuilder_ != null)) {
-          return hitDetectionCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 22) {
-            return (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_;
-          }
-          return emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KPIBJLNPBHG hit_detection_comp = 22;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG, emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.Builder, emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHGOrBuilder> 
-          getHitDetectionCompFieldBuilder() {
-        if (hitDetectionCompBuilder_ == null) {
-          if (!(detailCase_ == 22)) {
-            detail_ = emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.getDefaultInstance();
-          }
-          hitDetectionCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG, emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG.Builder, emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHGOrBuilder>(
-                  (emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.KPIBJLNPBHG) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 22;
-        onChanged();;
-        return hitDetectionCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK, emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.Builder, emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKKOrBuilder> cameraCompBuilder_;
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       * @return Whether the cameraComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasCameraComp() {
-        return detailCase_ == 23;
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       * @return The cameraComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK getCameraComp() {
-        if (cameraCompBuilder_ == null) {
-          if (detailCase_ == 23) {
-            return (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_;
-          }
-          return emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance();
-        } else {
-          if (detailCase_ == 23) {
-            return cameraCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      public Builder setCameraComp(emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK value) {
-        if (cameraCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          cameraCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 23;
-        return this;
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      public Builder setCameraComp(
-          emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.Builder builderForValue) {
-        if (cameraCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          cameraCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 23;
-        return this;
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      public Builder mergeCameraComp(emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK value) {
-        if (cameraCompBuilder_ == null) {
-          if (detailCase_ == 23 &&
-              detail_ != emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.newBuilder((emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 23) {
-            cameraCompBuilder_.mergeFrom(value);
-          }
-          cameraCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 23;
-        return this;
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      public Builder clearCameraComp() {
-        if (cameraCompBuilder_ == null) {
-          if (detailCase_ == 23) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 23) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          cameraCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      public emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.Builder getCameraCompBuilder() {
-        return getCameraCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKKOrBuilder getCameraCompOrBuilder() {
-        if ((detailCase_ == 23) && (cameraCompBuilder_ != null)) {
-          return cameraCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 23) {
-            return (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_;
-          }
-          return emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.BANABAFODKK camera_comp = 23;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK, emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.Builder, emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKKOrBuilder> 
-          getCameraCompFieldBuilder() {
-        if (cameraCompBuilder_ == null) {
-          if (!(detailCase_ == 23)) {
-            detail_ = emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.getDefaultInstance();
-          }
-          cameraCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK, emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK.Builder, emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKKOrBuilder>(
-                  (emu.grasscutter.net.proto.BANABAFODKKOuterClass.BANABAFODKK) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 23;
-        onChanged();;
-        return cameraCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK, emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.Builder, emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDKOrBuilder> roleStatusCompBuilder_;
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       * @return Whether the roleStatusComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasRoleStatusComp() {
-        return detailCase_ == 24;
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       * @return The roleStatusComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK getRoleStatusComp() {
-        if (roleStatusCompBuilder_ == null) {
-          if (detailCase_ == 24) {
-            return (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_;
-          }
-          return emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance();
-        } else {
-          if (detailCase_ == 24) {
-            return roleStatusCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      public Builder setRoleStatusComp(emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK value) {
-        if (roleStatusCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          roleStatusCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 24;
-        return this;
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      public Builder setRoleStatusComp(
-          emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.Builder builderForValue) {
-        if (roleStatusCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          roleStatusCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 24;
-        return this;
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      public Builder mergeRoleStatusComp(emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK value) {
-        if (roleStatusCompBuilder_ == null) {
-          if (detailCase_ == 24 &&
-              detail_ != emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.newBuilder((emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 24) {
-            roleStatusCompBuilder_.mergeFrom(value);
-          }
-          roleStatusCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 24;
-        return this;
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      public Builder clearRoleStatusComp() {
-        if (roleStatusCompBuilder_ == null) {
-          if (detailCase_ == 24) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 24) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          roleStatusCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      public emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.Builder getRoleStatusCompBuilder() {
-        return getRoleStatusCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDKOrBuilder getRoleStatusCompOrBuilder() {
-        if ((detailCase_ == 24) && (roleStatusCompBuilder_ != null)) {
-          return roleStatusCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 24) {
-            return (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_;
-          }
-          return emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OFGPCHCLFDK role_status_comp = 24;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK, emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.Builder, emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDKOrBuilder> 
-          getRoleStatusCompFieldBuilder() {
-        if (roleStatusCompBuilder_ == null) {
-          if (!(detailCase_ == 24)) {
-            detail_ = emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.getDefaultInstance();
-          }
-          roleStatusCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK, emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK.Builder, emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDKOrBuilder>(
-                  (emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.OFGPCHCLFDK) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 24;
-        onChanged();;
-        return roleStatusCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN, emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.Builder, emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEINOrBuilder> avatarDisturberCompBuilder_;
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       * @return Whether the avatarDisturberComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasAvatarDisturberComp() {
-        return detailCase_ == 25;
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       * @return The avatarDisturberComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN getAvatarDisturberComp() {
-        if (avatarDisturberCompBuilder_ == null) {
-          if (detailCase_ == 25) {
-            return (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_;
-          }
-          return emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance();
-        } else {
-          if (detailCase_ == 25) {
-            return avatarDisturberCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      public Builder setAvatarDisturberComp(emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN value) {
-        if (avatarDisturberCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          avatarDisturberCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 25;
-        return this;
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      public Builder setAvatarDisturberComp(
-          emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.Builder builderForValue) {
-        if (avatarDisturberCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          avatarDisturberCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 25;
-        return this;
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      public Builder mergeAvatarDisturberComp(emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN value) {
-        if (avatarDisturberCompBuilder_ == null) {
-          if (detailCase_ == 25 &&
-              detail_ != emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.newBuilder((emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 25) {
-            avatarDisturberCompBuilder_.mergeFrom(value);
-          }
-          avatarDisturberCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 25;
-        return this;
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      public Builder clearAvatarDisturberComp() {
-        if (avatarDisturberCompBuilder_ == null) {
-          if (detailCase_ == 25) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 25) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          avatarDisturberCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      public emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.Builder getAvatarDisturberCompBuilder() {
-        return getAvatarDisturberCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEINOrBuilder getAvatarDisturberCompOrBuilder() {
-        if ((detailCase_ == 25) && (avatarDisturberCompBuilder_ != null)) {
-          return avatarDisturberCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 25) {
-            return (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_;
-          }
-          return emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IKOMHKPAEIN avatar_disturber_comp = 25;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN, emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.Builder, emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEINOrBuilder> 
-          getAvatarDisturberCompFieldBuilder() {
-        if (avatarDisturberCompBuilder_ == null) {
-          if (!(detailCase_ == 25)) {
-            detail_ = emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.getDefaultInstance();
-          }
-          avatarDisturberCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN, emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN.Builder, emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEINOrBuilder>(
-                  (emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.IKOMHKPAEIN) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 25;
-        onChanged();;
-        return avatarDisturberCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA, emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.Builder, emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMAOrBuilder> countDownCompBuilder_;
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       * @return Whether the countDownComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasCountDownComp() {
-        return detailCase_ == 26;
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       * @return The countDownComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA getCountDownComp() {
-        if (countDownCompBuilder_ == null) {
-          if (detailCase_ == 26) {
-            return (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_;
-          }
-          return emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance();
-        } else {
-          if (detailCase_ == 26) {
-            return countDownCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      public Builder setCountDownComp(emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA value) {
-        if (countDownCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          countDownCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 26;
-        return this;
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      public Builder setCountDownComp(
-          emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.Builder builderForValue) {
-        if (countDownCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          countDownCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 26;
-        return this;
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      public Builder mergeCountDownComp(emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA value) {
-        if (countDownCompBuilder_ == null) {
-          if (detailCase_ == 26 &&
-              detail_ != emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.newBuilder((emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 26) {
-            countDownCompBuilder_.mergeFrom(value);
-          }
-          countDownCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 26;
-        return this;
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      public Builder clearCountDownComp() {
-        if (countDownCompBuilder_ == null) {
-          if (detailCase_ == 26) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 26) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          countDownCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      public emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.Builder getCountDownCompBuilder() {
-        return getCountDownCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMAOrBuilder getCountDownCompOrBuilder() {
-        if ((detailCase_ == 26) && (countDownCompBuilder_ != null)) {
-          return countDownCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 26) {
-            return (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_;
-          }
-          return emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.FKCJKMGFGMA count_down_comp = 26;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA, emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.Builder, emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMAOrBuilder> 
-          getCountDownCompFieldBuilder() {
-        if (countDownCompBuilder_ == null) {
-          if (!(detailCase_ == 26)) {
-            detail_ = emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.getDefaultInstance();
-          }
-          countDownCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA, emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA.Builder, emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMAOrBuilder>(
-                  (emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.FKCJKMGFGMA) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 26;
-        onChanged();;
-        return countDownCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA, emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.Builder, emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNAOrBuilder> optionCompBuilder_;
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       * @return Whether the optionComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasOptionComp() {
-        return detailCase_ == 27;
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       * @return The optionComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA getOptionComp() {
-        if (optionCompBuilder_ == null) {
-          if (detailCase_ == 27) {
-            return (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_;
-          }
-          return emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance();
-        } else {
-          if (detailCase_ == 27) {
-            return optionCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      public Builder setOptionComp(emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA value) {
-        if (optionCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          optionCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 27;
-        return this;
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      public Builder setOptionComp(
-          emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.Builder builderForValue) {
-        if (optionCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          optionCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 27;
-        return this;
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      public Builder mergeOptionComp(emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA value) {
-        if (optionCompBuilder_ == null) {
-          if (detailCase_ == 27 &&
-              detail_ != emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.newBuilder((emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 27) {
-            optionCompBuilder_.mergeFrom(value);
-          }
-          optionCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 27;
-        return this;
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      public Builder clearOptionComp() {
-        if (optionCompBuilder_ == null) {
-          if (detailCase_ == 27) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 27) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          optionCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      public emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.Builder getOptionCompBuilder() {
-        return getOptionCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNAOrBuilder getOptionCompOrBuilder() {
-        if ((detailCase_ == 27) && (optionCompBuilder_ != null)) {
-          return optionCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 27) {
-            return (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_;
-          }
-          return emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.JNCFEAMFKNA option_comp = 27;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA, emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.Builder, emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNAOrBuilder> 
-          getOptionCompFieldBuilder() {
-        if (optionCompBuilder_ == null) {
-          if (!(detailCase_ == 27)) {
-            detail_ = emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.getDefaultInstance();
-          }
-          optionCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA, emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA.Builder, emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNAOrBuilder>(
-                  (emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.JNCFEAMFKNA) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 27;
-        onChanged();;
-        return optionCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG, emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.Builder, emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJGOrBuilder> hitboxCompBuilder_;
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       * @return Whether the hitboxComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasHitboxComp() {
-        return detailCase_ == 28;
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       * @return The hitboxComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG getHitboxComp() {
-        if (hitboxCompBuilder_ == null) {
-          if (detailCase_ == 28) {
-            return (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_;
-          }
-          return emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance();
-        } else {
-          if (detailCase_ == 28) {
-            return hitboxCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      public Builder setHitboxComp(emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG value) {
-        if (hitboxCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          hitboxCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 28;
-        return this;
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      public Builder setHitboxComp(
-          emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.Builder builderForValue) {
-        if (hitboxCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          hitboxCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 28;
-        return this;
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      public Builder mergeHitboxComp(emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG value) {
-        if (hitboxCompBuilder_ == null) {
-          if (detailCase_ == 28 &&
-              detail_ != emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.newBuilder((emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 28) {
-            hitboxCompBuilder_.mergeFrom(value);
-          }
-          hitboxCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 28;
-        return this;
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      public Builder clearHitboxComp() {
-        if (hitboxCompBuilder_ == null) {
-          if (detailCase_ == 28) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 28) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          hitboxCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      public emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.Builder getHitboxCompBuilder() {
-        return getHitboxCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJGOrBuilder getHitboxCompOrBuilder() {
-        if ((detailCase_ == 28) && (hitboxCompBuilder_ != null)) {
-          return hitboxCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 28) {
-            return (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_;
-          }
-          return emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.HALLKJDALJG hitbox_comp = 28;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG, emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.Builder, emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJGOrBuilder> 
-          getHitboxCompFieldBuilder() {
-        if (hitboxCompBuilder_ == null) {
-          if (!(detailCase_ == 28)) {
-            detail_ = emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.getDefaultInstance();
-          }
-          hitboxCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG, emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG.Builder, emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJGOrBuilder>(
-                  (emu.grasscutter.net.proto.HALLKJDALJGOuterClass.HALLKJDALJG) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 28;
-        onChanged();;
-        return hitboxCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB, emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.Builder, emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPBOrBuilder> customSkillCompBuilder_;
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       * @return Whether the customSkillComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasCustomSkillComp() {
-        return detailCase_ == 29;
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       * @return The customSkillComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB getCustomSkillComp() {
-        if (customSkillCompBuilder_ == null) {
-          if (detailCase_ == 29) {
-            return (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_;
-          }
-          return emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance();
-        } else {
-          if (detailCase_ == 29) {
-            return customSkillCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      public Builder setCustomSkillComp(emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB value) {
-        if (customSkillCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          customSkillCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 29;
-        return this;
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      public Builder setCustomSkillComp(
-          emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.Builder builderForValue) {
-        if (customSkillCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          customSkillCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 29;
-        return this;
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      public Builder mergeCustomSkillComp(emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB value) {
-        if (customSkillCompBuilder_ == null) {
-          if (detailCase_ == 29 &&
-              detail_ != emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.newBuilder((emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 29) {
-            customSkillCompBuilder_.mergeFrom(value);
-          }
-          customSkillCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 29;
-        return this;
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      public Builder clearCustomSkillComp() {
-        if (customSkillCompBuilder_ == null) {
-          if (detailCase_ == 29) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 29) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          customSkillCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      public emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.Builder getCustomSkillCompBuilder() {
-        return getCustomSkillCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPBOrBuilder getCustomSkillCompOrBuilder() {
-        if ((detailCase_ == 29) && (customSkillCompBuilder_ != null)) {
-          return customSkillCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 29) {
-            return (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_;
-          }
-          return emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.HIHENKCOEPB custom_skill_comp = 29;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB, emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.Builder, emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPBOrBuilder> 
-          getCustomSkillCompFieldBuilder() {
-        if (customSkillCompBuilder_ == null) {
-          if (!(detailCase_ == 29)) {
-            detail_ = emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.getDefaultInstance();
-          }
-          customSkillCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB, emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB.Builder, emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPBOrBuilder>(
-                  (emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.HIHENKCOEPB) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 29;
-        onChanged();;
-        return customSkillCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB, emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.Builder, emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFBOrBuilder> enmityCompBuilder_;
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       * @return Whether the enmityComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnmityComp() {
-        return detailCase_ == 31;
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       * @return The enmityComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB getEnmityComp() {
-        if (enmityCompBuilder_ == null) {
-          if (detailCase_ == 31) {
-            return (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_;
-          }
-          return emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance();
-        } else {
-          if (detailCase_ == 31) {
-            return enmityCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      public Builder setEnmityComp(emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB value) {
-        if (enmityCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          enmityCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 31;
-        return this;
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      public Builder setEnmityComp(
-          emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.Builder builderForValue) {
-        if (enmityCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          enmityCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 31;
-        return this;
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      public Builder mergeEnmityComp(emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB value) {
-        if (enmityCompBuilder_ == null) {
-          if (detailCase_ == 31 &&
-              detail_ != emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.newBuilder((emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 31) {
-            enmityCompBuilder_.mergeFrom(value);
-          }
-          enmityCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 31;
-        return this;
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      public Builder clearEnmityComp() {
-        if (enmityCompBuilder_ == null) {
-          if (detailCase_ == 31) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 31) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          enmityCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      public emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.Builder getEnmityCompBuilder() {
-        return getEnmityCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFBOrBuilder getEnmityCompOrBuilder() {
-        if ((detailCase_ == 31) && (enmityCompBuilder_ != null)) {
-          return enmityCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 31) {
-            return (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_;
-          }
-          return emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.MPLJGNOKEFB enmity_comp = 31;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB, emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.Builder, emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFBOrBuilder> 
-          getEnmityCompFieldBuilder() {
-        if (enmityCompBuilder_ == null) {
-          if (!(detailCase_ == 31)) {
-            detail_ = emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.getDefaultInstance();
-          }
-          enmityCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB, emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB.Builder, emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFBOrBuilder>(
-                  (emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.MPLJGNOKEFB) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 31;
-        onChanged();;
-        return enmityCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA, emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.Builder, emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGAOrBuilder> nameplateCompBuilder_;
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       * @return Whether the nameplateComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasNameplateComp() {
-        return detailCase_ == 32;
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       * @return The nameplateComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA getNameplateComp() {
-        if (nameplateCompBuilder_ == null) {
-          if (detailCase_ == 32) {
-            return (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_;
-          }
-          return emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance();
-        } else {
-          if (detailCase_ == 32) {
-            return nameplateCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      public Builder setNameplateComp(emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA value) {
-        if (nameplateCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          nameplateCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 32;
-        return this;
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      public Builder setNameplateComp(
-          emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.Builder builderForValue) {
-        if (nameplateCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          nameplateCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 32;
-        return this;
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      public Builder mergeNameplateComp(emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA value) {
-        if (nameplateCompBuilder_ == null) {
-          if (detailCase_ == 32 &&
-              detail_ != emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.newBuilder((emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 32) {
-            nameplateCompBuilder_.mergeFrom(value);
-          }
-          nameplateCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 32;
-        return this;
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      public Builder clearNameplateComp() {
-        if (nameplateCompBuilder_ == null) {
-          if (detailCase_ == 32) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 32) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          nameplateCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      public emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.Builder getNameplateCompBuilder() {
-        return getNameplateCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGAOrBuilder getNameplateCompOrBuilder() {
-        if ((detailCase_ == 32) && (nameplateCompBuilder_ != null)) {
-          return nameplateCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 32) {
-            return (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_;
-          }
-          return emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OKDEHNGHKGA nameplate_comp = 32;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA, emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.Builder, emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGAOrBuilder> 
-          getNameplateCompFieldBuilder() {
-        if (nameplateCompBuilder_ == null) {
-          if (!(detailCase_ == 32)) {
-            detail_ = emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.getDefaultInstance();
-          }
-          nameplateCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA, emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA.Builder, emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGAOrBuilder>(
-                  (emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.OKDEHNGHKGA) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 32;
-        onChanged();;
-        return nameplateCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP, emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.Builder, emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIPOrBuilder> talkCompBuilder_;
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       * @return Whether the talkComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasTalkComp() {
-        return detailCase_ == 33;
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       * @return The talkComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP getTalkComp() {
-        if (talkCompBuilder_ == null) {
-          if (detailCase_ == 33) {
-            return (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_;
-          }
-          return emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance();
-        } else {
-          if (detailCase_ == 33) {
-            return talkCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      public Builder setTalkComp(emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP value) {
-        if (talkCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          talkCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 33;
-        return this;
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      public Builder setTalkComp(
-          emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.Builder builderForValue) {
-        if (talkCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          talkCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 33;
-        return this;
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      public Builder mergeTalkComp(emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP value) {
-        if (talkCompBuilder_ == null) {
-          if (detailCase_ == 33 &&
-              detail_ != emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.newBuilder((emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 33) {
-            talkCompBuilder_.mergeFrom(value);
-          }
-          talkCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 33;
-        return this;
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      public Builder clearTalkComp() {
-        if (talkCompBuilder_ == null) {
-          if (detailCase_ == 33) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 33) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          talkCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      public emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.Builder getTalkCompBuilder() {
-        return getTalkCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIPOrBuilder getTalkCompOrBuilder() {
-        if ((detailCase_ == 33) && (talkCompBuilder_ != null)) {
-          return talkCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 33) {
-            return (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_;
-          }
-          return emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.PHFAOBBPOIP talk_comp = 33;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP, emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.Builder, emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIPOrBuilder> 
-          getTalkCompFieldBuilder() {
-        if (talkCompBuilder_ == null) {
-          if (!(detailCase_ == 33)) {
-            detail_ = emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.getDefaultInstance();
-          }
-          talkCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP, emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP.Builder, emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIPOrBuilder>(
-                  (emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.PHFAOBBPOIP) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 33;
-        onChanged();;
-        return talkCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ, emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.Builder, emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJOrBuilder> soundEffectCompBuilder_;
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       * @return Whether the soundEffectComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasSoundEffectComp() {
-        return detailCase_ == 34;
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       * @return The soundEffectComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ getSoundEffectComp() {
-        if (soundEffectCompBuilder_ == null) {
-          if (detailCase_ == 34) {
-            return (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_;
-          }
-          return emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance();
-        } else {
-          if (detailCase_ == 34) {
-            return soundEffectCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      public Builder setSoundEffectComp(emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ value) {
-        if (soundEffectCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          soundEffectCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 34;
-        return this;
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      public Builder setSoundEffectComp(
-          emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.Builder builderForValue) {
-        if (soundEffectCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          soundEffectCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 34;
-        return this;
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      public Builder mergeSoundEffectComp(emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ value) {
-        if (soundEffectCompBuilder_ == null) {
-          if (detailCase_ == 34 &&
-              detail_ != emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.newBuilder((emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 34) {
-            soundEffectCompBuilder_.mergeFrom(value);
-          }
-          soundEffectCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 34;
-        return this;
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      public Builder clearSoundEffectComp() {
-        if (soundEffectCompBuilder_ == null) {
-          if (detailCase_ == 34) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 34) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          soundEffectCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      public emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.Builder getSoundEffectCompBuilder() {
-        return getSoundEffectCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJOrBuilder getSoundEffectCompOrBuilder() {
-        if ((detailCase_ == 34) && (soundEffectCompBuilder_ != null)) {
-          return soundEffectCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 34) {
-            return (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_;
-          }
-          return emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.MCKANJDJLLJ sound_effect_comp = 34;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ, emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.Builder, emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJOrBuilder> 
-          getSoundEffectCompFieldBuilder() {
-        if (soundEffectCompBuilder_ == null) {
-          if (!(detailCase_ == 34)) {
-            detail_ = emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.getDefaultInstance();
-          }
-          soundEffectCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ, emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ.Builder, emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJOrBuilder>(
-                  (emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.MCKANJDJLLJ) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 34;
-        onChanged();;
-        return soundEffectCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN, emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.Builder, emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKNOrBuilder> monsterPatrolCompBuilder_;
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       * @return Whether the monsterPatrolComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasMonsterPatrolComp() {
-        return detailCase_ == 35;
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       * @return The monsterPatrolComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN getMonsterPatrolComp() {
-        if (monsterPatrolCompBuilder_ == null) {
-          if (detailCase_ == 35) {
-            return (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_;
-          }
-          return emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance();
-        } else {
-          if (detailCase_ == 35) {
-            return monsterPatrolCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      public Builder setMonsterPatrolComp(emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN value) {
-        if (monsterPatrolCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          monsterPatrolCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 35;
-        return this;
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      public Builder setMonsterPatrolComp(
-          emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.Builder builderForValue) {
-        if (monsterPatrolCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          monsterPatrolCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 35;
-        return this;
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      public Builder mergeMonsterPatrolComp(emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN value) {
-        if (monsterPatrolCompBuilder_ == null) {
-          if (detailCase_ == 35 &&
-              detail_ != emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.newBuilder((emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 35) {
-            monsterPatrolCompBuilder_.mergeFrom(value);
-          }
-          monsterPatrolCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 35;
-        return this;
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      public Builder clearMonsterPatrolComp() {
-        if (monsterPatrolCompBuilder_ == null) {
-          if (detailCase_ == 35) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 35) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          monsterPatrolCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      public emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.Builder getMonsterPatrolCompBuilder() {
-        return getMonsterPatrolCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKNOrBuilder getMonsterPatrolCompOrBuilder() {
-        if ((detailCase_ == 35) && (monsterPatrolCompBuilder_ != null)) {
-          return monsterPatrolCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 35) {
-            return (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_;
-          }
-          return emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.GECFKHFMNKN monster_patrol_comp = 35;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN, emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.Builder, emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKNOrBuilder> 
-          getMonsterPatrolCompFieldBuilder() {
-        if (monsterPatrolCompBuilder_ == null) {
-          if (!(detailCase_ == 35)) {
-            detail_ = emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.getDefaultInstance();
-          }
-          monsterPatrolCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN, emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN.Builder, emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKNOrBuilder>(
-                  (emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.GECFKHFMNKN) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 35;
-        onChanged();;
-        return monsterPatrolCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp, emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.Builder, emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineCompOrBuilder> levelStateMachineCompBuilder_;
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       * @return Whether the levelStateMachineComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasLevelStateMachineComp() {
-        return detailCase_ == 36;
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       * @return The levelStateMachineComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp getLevelStateMachineComp() {
-        if (levelStateMachineCompBuilder_ == null) {
-          if (detailCase_ == 36) {
-            return (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_;
-          }
-          return emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance();
-        } else {
-          if (detailCase_ == 36) {
-            return levelStateMachineCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      public Builder setLevelStateMachineComp(emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp value) {
-        if (levelStateMachineCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          levelStateMachineCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 36;
-        return this;
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      public Builder setLevelStateMachineComp(
-          emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.Builder builderForValue) {
-        if (levelStateMachineCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          levelStateMachineCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 36;
-        return this;
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      public Builder mergeLevelStateMachineComp(emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp value) {
-        if (levelStateMachineCompBuilder_ == null) {
-          if (detailCase_ == 36 &&
-              detail_ != emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.newBuilder((emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 36) {
-            levelStateMachineCompBuilder_.mergeFrom(value);
-          }
-          levelStateMachineCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 36;
-        return this;
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      public Builder clearLevelStateMachineComp() {
-        if (levelStateMachineCompBuilder_ == null) {
-          if (detailCase_ == 36) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 36) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          levelStateMachineCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      public emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.Builder getLevelStateMachineCompBuilder() {
-        return getLevelStateMachineCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineCompOrBuilder getLevelStateMachineCompOrBuilder() {
-        if ((detailCase_ == 36) && (levelStateMachineCompBuilder_ != null)) {
-          return levelStateMachineCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 36) {
-            return (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_;
-          }
-          return emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp, emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.Builder, emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineCompOrBuilder> 
-          getLevelStateMachineCompFieldBuilder() {
-        if (levelStateMachineCompBuilder_ == null) {
-          if (!(detailCase_ == 36)) {
-            detail_ = emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.getDefaultInstance();
-          }
-          levelStateMachineCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp, emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp.Builder, emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineCompOrBuilder>(
-                  (emu.grasscutter.net.proto._LevelStateMachineCompOuterClass._LevelStateMachineComp) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 36;
-        onChanged();;
-        return levelStateMachineCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK, emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.Builder, emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNKOrBuilder> minimapMarkCompBuilder_;
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       * @return Whether the minimapMarkComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasMinimapMarkComp() {
-        return detailCase_ == 37;
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       * @return The minimapMarkComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK getMinimapMarkComp() {
-        if (minimapMarkCompBuilder_ == null) {
-          if (detailCase_ == 37) {
-            return (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_;
-          }
-          return emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance();
-        } else {
-          if (detailCase_ == 37) {
-            return minimapMarkCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      public Builder setMinimapMarkComp(emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK value) {
-        if (minimapMarkCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          minimapMarkCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 37;
-        return this;
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      public Builder setMinimapMarkComp(
-          emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.Builder builderForValue) {
-        if (minimapMarkCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          minimapMarkCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 37;
-        return this;
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      public Builder mergeMinimapMarkComp(emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK value) {
-        if (minimapMarkCompBuilder_ == null) {
-          if (detailCase_ == 37 &&
-              detail_ != emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.newBuilder((emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 37) {
-            minimapMarkCompBuilder_.mergeFrom(value);
-          }
-          minimapMarkCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 37;
-        return this;
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      public Builder clearMinimapMarkComp() {
-        if (minimapMarkCompBuilder_ == null) {
-          if (detailCase_ == 37) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 37) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          minimapMarkCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      public emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.Builder getMinimapMarkCompBuilder() {
-        return getMinimapMarkCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNKOrBuilder getMinimapMarkCompOrBuilder() {
-        if ((detailCase_ == 37) && (minimapMarkCompBuilder_ != null)) {
-          return minimapMarkCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 37) {
-            return (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_;
-          }
-          return emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.LDJMONFNHNK minimap_mark_comp = 37;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK, emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.Builder, emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNKOrBuilder> 
-          getMinimapMarkCompFieldBuilder() {
-        if (minimapMarkCompBuilder_ == null) {
-          if (!(detailCase_ == 37)) {
-            detail_ = emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.getDefaultInstance();
-          }
-          minimapMarkCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK, emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK.Builder, emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNKOrBuilder>(
-                  (emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.LDJMONFNHNK) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 37;
-        onChanged();;
-        return minimapMarkCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO, emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.Builder, emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGOOrBuilder> stuffBagCompBuilder_;
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       * @return Whether the stuffBagComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasStuffBagComp() {
-        return detailCase_ == 38;
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       * @return The stuffBagComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO getStuffBagComp() {
-        if (stuffBagCompBuilder_ == null) {
-          if (detailCase_ == 38) {
-            return (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_;
-          }
-          return emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance();
-        } else {
-          if (detailCase_ == 38) {
-            return stuffBagCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      public Builder setStuffBagComp(emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO value) {
-        if (stuffBagCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          stuffBagCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 38;
-        return this;
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      public Builder setStuffBagComp(
-          emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.Builder builderForValue) {
-        if (stuffBagCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          stuffBagCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 38;
-        return this;
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      public Builder mergeStuffBagComp(emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO value) {
-        if (stuffBagCompBuilder_ == null) {
-          if (detailCase_ == 38 &&
-              detail_ != emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.newBuilder((emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 38) {
-            stuffBagCompBuilder_.mergeFrom(value);
-          }
-          stuffBagCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 38;
-        return this;
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      public Builder clearStuffBagComp() {
-        if (stuffBagCompBuilder_ == null) {
-          if (detailCase_ == 38) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 38) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          stuffBagCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      public emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.Builder getStuffBagCompBuilder() {
-        return getStuffBagCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGOOrBuilder getStuffBagCompOrBuilder() {
-        if ((detailCase_ == 38) && (stuffBagCompBuilder_ != null)) {
-          return stuffBagCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 38) {
-            return (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_;
-          }
-          return emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KCJGBIPCHGO stuff_bag_comp = 38;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO, emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.Builder, emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGOOrBuilder> 
-          getStuffBagCompFieldBuilder() {
-        if (stuffBagCompBuilder_ == null) {
-          if (!(detailCase_ == 38)) {
-            detail_ = emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.getDefaultInstance();
-          }
-          stuffBagCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO, emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO.Builder, emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGOOrBuilder>(
-                  (emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.KCJGBIPCHGO) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 38;
-        onChanged();;
-        return stuffBagCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI, emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.Builder, emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBIOrBuilder> equipStuffBagCompBuilder_;
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       * @return Whether the equipStuffBagComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasEquipStuffBagComp() {
-        return detailCase_ == 39;
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       * @return The equipStuffBagComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI getEquipStuffBagComp() {
-        if (equipStuffBagCompBuilder_ == null) {
-          if (detailCase_ == 39) {
-            return (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_;
-          }
-          return emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance();
-        } else {
-          if (detailCase_ == 39) {
-            return equipStuffBagCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      public Builder setEquipStuffBagComp(emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI value) {
-        if (equipStuffBagCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          equipStuffBagCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 39;
-        return this;
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      public Builder setEquipStuffBagComp(
-          emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.Builder builderForValue) {
-        if (equipStuffBagCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          equipStuffBagCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 39;
-        return this;
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      public Builder mergeEquipStuffBagComp(emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI value) {
-        if (equipStuffBagCompBuilder_ == null) {
-          if (detailCase_ == 39 &&
-              detail_ != emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.newBuilder((emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 39) {
-            equipStuffBagCompBuilder_.mergeFrom(value);
-          }
-          equipStuffBagCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 39;
-        return this;
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      public Builder clearEquipStuffBagComp() {
-        if (equipStuffBagCompBuilder_ == null) {
-          if (detailCase_ == 39) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 39) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          equipStuffBagCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      public emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.Builder getEquipStuffBagCompBuilder() {
-        return getEquipStuffBagCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBIOrBuilder getEquipStuffBagCompOrBuilder() {
-        if ((detailCase_ == 39) && (equipStuffBagCompBuilder_ != null)) {
-          return equipStuffBagCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 39) {
-            return (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_;
-          }
-          return emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KNBCNCGHKBI equip_stuff_bag_comp = 39;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI, emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.Builder, emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBIOrBuilder> 
-          getEquipStuffBagCompFieldBuilder() {
-        if (equipStuffBagCompBuilder_ == null) {
-          if (!(detailCase_ == 39)) {
-            detail_ = emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.getDefaultInstance();
-          }
-          equipStuffBagCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI, emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI.Builder, emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBIOrBuilder>(
-                  (emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.KNBCNCGHKBI) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 39;
-        onChanged();;
-        return equipStuffBagCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ, emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.Builder, emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJOrBuilder> dropGatherCompBuilder_;
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       * @return Whether the dropGatherComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasDropGatherComp() {
-        return detailCase_ == 40;
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       * @return The dropGatherComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ getDropGatherComp() {
-        if (dropGatherCompBuilder_ == null) {
-          if (detailCase_ == 40) {
-            return (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_;
-          }
-          return emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance();
-        } else {
-          if (detailCase_ == 40) {
-            return dropGatherCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      public Builder setDropGatherComp(emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ value) {
-        if (dropGatherCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          dropGatherCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 40;
-        return this;
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      public Builder setDropGatherComp(
-          emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.Builder builderForValue) {
-        if (dropGatherCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          dropGatherCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 40;
-        return this;
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      public Builder mergeDropGatherComp(emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ value) {
-        if (dropGatherCompBuilder_ == null) {
-          if (detailCase_ == 40 &&
-              detail_ != emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.newBuilder((emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 40) {
-            dropGatherCompBuilder_.mergeFrom(value);
-          }
-          dropGatherCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 40;
-        return this;
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      public Builder clearDropGatherComp() {
-        if (dropGatherCompBuilder_ == null) {
-          if (detailCase_ == 40) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 40) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          dropGatherCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      public emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.Builder getDropGatherCompBuilder() {
-        return getDropGatherCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJOrBuilder getDropGatherCompOrBuilder() {
-        if ((detailCase_ == 40) && (dropGatherCompBuilder_ != null)) {
-          return dropGatherCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 40) {
-            return (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_;
-          }
-          return emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IAMFJKNIDPJ drop_gather_comp = 40;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ, emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.Builder, emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJOrBuilder> 
-          getDropGatherCompFieldBuilder() {
-        if (dropGatherCompBuilder_ == null) {
-          if (!(detailCase_ == 40)) {
-            detail_ = emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.getDefaultInstance();
-          }
-          dropGatherCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ, emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ.Builder, emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJOrBuilder>(
-                  (emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.IAMFJKNIDPJ) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 40;
-        onChanged();;
-        return dropGatherCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH, emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.Builder, emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENHOrBuilder> lightGroupCompBuilder_;
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       * @return Whether the lightGroupComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasLightGroupComp() {
-        return detailCase_ == 41;
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       * @return The lightGroupComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH getLightGroupComp() {
-        if (lightGroupCompBuilder_ == null) {
-          if (detailCase_ == 41) {
-            return (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_;
-          }
-          return emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance();
-        } else {
-          if (detailCase_ == 41) {
-            return lightGroupCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      public Builder setLightGroupComp(emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH value) {
-        if (lightGroupCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          lightGroupCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 41;
-        return this;
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      public Builder setLightGroupComp(
-          emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.Builder builderForValue) {
-        if (lightGroupCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          lightGroupCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 41;
-        return this;
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      public Builder mergeLightGroupComp(emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH value) {
-        if (lightGroupCompBuilder_ == null) {
-          if (detailCase_ == 41 &&
-              detail_ != emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.newBuilder((emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 41) {
-            lightGroupCompBuilder_.mergeFrom(value);
-          }
-          lightGroupCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 41;
-        return this;
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      public Builder clearLightGroupComp() {
-        if (lightGroupCompBuilder_ == null) {
-          if (detailCase_ == 41) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 41) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          lightGroupCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      public emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.Builder getLightGroupCompBuilder() {
-        return getLightGroupCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENHOrBuilder getLightGroupCompOrBuilder() {
-        if ((detailCase_ == 41) && (lightGroupCompBuilder_ != null)) {
-          return lightGroupCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 41) {
-            return (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_;
-          }
-          return emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.IKOIHIANENH light_group_comp = 41;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH, emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.Builder, emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENHOrBuilder> 
-          getLightGroupCompFieldBuilder() {
-        if (lightGroupCompBuilder_ == null) {
-          if (!(detailCase_ == 41)) {
-            detail_ = emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.getDefaultInstance();
-          }
-          lightGroupCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH, emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH.Builder, emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENHOrBuilder>(
-                  (emu.grasscutter.net.proto.IKOIHIANENHOuterClass.IKOIHIANENH) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 41;
-        onChanged();;
-        return lightGroupCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD, emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.Builder, emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDDOrBuilder> scanEntityCompBuilder_;
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       * @return Whether the scanEntityComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasScanEntityComp() {
-        return detailCase_ == 42;
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       * @return The scanEntityComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD getScanEntityComp() {
-        if (scanEntityCompBuilder_ == null) {
-          if (detailCase_ == 42) {
-            return (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_;
-          }
-          return emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance();
-        } else {
-          if (detailCase_ == 42) {
-            return scanEntityCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      public Builder setScanEntityComp(emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD value) {
-        if (scanEntityCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          scanEntityCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 42;
-        return this;
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      public Builder setScanEntityComp(
-          emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.Builder builderForValue) {
-        if (scanEntityCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          scanEntityCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 42;
-        return this;
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      public Builder mergeScanEntityComp(emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD value) {
-        if (scanEntityCompBuilder_ == null) {
-          if (detailCase_ == 42 &&
-              detail_ != emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.newBuilder((emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 42) {
-            scanEntityCompBuilder_.mergeFrom(value);
-          }
-          scanEntityCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 42;
-        return this;
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      public Builder clearScanEntityComp() {
-        if (scanEntityCompBuilder_ == null) {
-          if (detailCase_ == 42) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 42) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          scanEntityCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      public emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.Builder getScanEntityCompBuilder() {
-        return getScanEntityCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDDOrBuilder getScanEntityCompOrBuilder() {
-        if ((detailCase_ == 42) && (scanEntityCompBuilder_ != null)) {
-          return scanEntityCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 42) {
-            return (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_;
-          }
-          return emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.NJEMOPGNEDD scan_entity_comp = 42;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD, emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.Builder, emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDDOrBuilder> 
-          getScanEntityCompFieldBuilder() {
-        if (scanEntityCompBuilder_ == null) {
-          if (!(detailCase_ == 42)) {
-            detail_ = emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.getDefaultInstance();
-          }
-          scanEntityCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD, emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD.Builder, emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDDOrBuilder>(
-                  (emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.NJEMOPGNEDD) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 42;
-        onChanged();;
-        return scanEntityCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp, emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.Builder, emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchCompOrBuilder> subSwitchCompBuilder_;
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       * @return Whether the subSwitchComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasSubSwitchComp() {
-        return detailCase_ == 43;
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       * @return The subSwitchComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp getSubSwitchComp() {
-        if (subSwitchCompBuilder_ == null) {
-          if (detailCase_ == 43) {
-            return (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_;
-          }
-          return emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance();
-        } else {
-          if (detailCase_ == 43) {
-            return subSwitchCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      public Builder setSubSwitchComp(emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp value) {
-        if (subSwitchCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          subSwitchCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 43;
-        return this;
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      public Builder setSubSwitchComp(
-          emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.Builder builderForValue) {
-        if (subSwitchCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          subSwitchCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 43;
-        return this;
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      public Builder mergeSubSwitchComp(emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp value) {
-        if (subSwitchCompBuilder_ == null) {
-          if (detailCase_ == 43 &&
-              detail_ != emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.newBuilder((emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 43) {
-            subSwitchCompBuilder_.mergeFrom(value);
-          }
-          subSwitchCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 43;
-        return this;
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      public Builder clearSubSwitchComp() {
-        if (subSwitchCompBuilder_ == null) {
-          if (detailCase_ == 43) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 43) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          subSwitchCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      public emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.Builder getSubSwitchCompBuilder() {
-        return getSubSwitchCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchCompOrBuilder getSubSwitchCompOrBuilder() {
-        if ((detailCase_ == 43) && (subSwitchCompBuilder_ != null)) {
-          return subSwitchCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 43) {
-            return (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_;
-          }
-          return emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp, emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.Builder, emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchCompOrBuilder> 
-          getSubSwitchCompFieldBuilder() {
-        if (subSwitchCompBuilder_ == null) {
-          if (!(detailCase_ == 43)) {
-            detail_ = emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.getDefaultInstance();
-          }
-          subSwitchCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp, emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp.Builder, emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchCompOrBuilder>(
-                  (emu.grasscutter.net.proto._SubSwitchCompOuterClass._SubSwitchComp) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 43;
-        onChanged();;
-        return subSwitchCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ, emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.Builder, emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJOrBuilder> monsterAiCompBuilder_;
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       * @return Whether the monsterAiComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasMonsterAiComp() {
-        return detailCase_ == 44;
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       * @return The monsterAiComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ getMonsterAiComp() {
-        if (monsterAiCompBuilder_ == null) {
-          if (detailCase_ == 44) {
-            return (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_;
-          }
-          return emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance();
-        } else {
-          if (detailCase_ == 44) {
-            return monsterAiCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      public Builder setMonsterAiComp(emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ value) {
-        if (monsterAiCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          monsterAiCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 44;
-        return this;
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      public Builder setMonsterAiComp(
-          emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.Builder builderForValue) {
-        if (monsterAiCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          monsterAiCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 44;
-        return this;
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      public Builder mergeMonsterAiComp(emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ value) {
-        if (monsterAiCompBuilder_ == null) {
-          if (detailCase_ == 44 &&
-              detail_ != emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.newBuilder((emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 44) {
-            monsterAiCompBuilder_.mergeFrom(value);
-          }
-          monsterAiCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 44;
-        return this;
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      public Builder clearMonsterAiComp() {
-        if (monsterAiCompBuilder_ == null) {
-          if (detailCase_ == 44) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 44) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          monsterAiCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      public emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.Builder getMonsterAiCompBuilder() {
-        return getMonsterAiCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJOrBuilder getMonsterAiCompOrBuilder() {
-        if ((detailCase_ == 44) && (monsterAiCompBuilder_ != null)) {
-          return monsterAiCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 44) {
-            return (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_;
-          }
-          return emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.KFMJCGEOPJJ monster_ai_comp = 44;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ, emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.Builder, emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJOrBuilder> 
-          getMonsterAiCompFieldBuilder() {
-        if (monsterAiCompBuilder_ == null) {
-          if (!(detailCase_ == 44)) {
-            detail_ = emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.getDefaultInstance();
-          }
-          monsterAiCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ, emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ.Builder, emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJOrBuilder>(
-                  (emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.KFMJCGEOPJJ) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 44;
-        onChanged();;
-        return monsterAiCompBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK, emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.Builder, emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFKOrBuilder> vehicleCompBuilder_;
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       * @return Whether the vehicleComp field is set.
-       */
-      @java.lang.Override
-      public boolean hasVehicleComp() {
-        return detailCase_ == 45;
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       * @return The vehicleComp.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK getVehicleComp() {
-        if (vehicleCompBuilder_ == null) {
-          if (detailCase_ == 45) {
-            return (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_;
-          }
-          return emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance();
-        } else {
-          if (detailCase_ == 45) {
-            return vehicleCompBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      public Builder setVehicleComp(emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK value) {
-        if (vehicleCompBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          vehicleCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 45;
-        return this;
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      public Builder setVehicleComp(
-          emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.Builder builderForValue) {
-        if (vehicleCompBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          vehicleCompBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 45;
-        return this;
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      public Builder mergeVehicleComp(emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK value) {
-        if (vehicleCompBuilder_ == null) {
-          if (detailCase_ == 45 &&
-              detail_ != emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.newBuilder((emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 45) {
-            vehicleCompBuilder_.mergeFrom(value);
-          }
-          vehicleCompBuilder_.setMessage(value);
-        }
-        detailCase_ = 45;
-        return this;
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      public Builder clearVehicleComp() {
-        if (vehicleCompBuilder_ == null) {
-          if (detailCase_ == 45) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 45) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          vehicleCompBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      public emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.Builder getVehicleCompBuilder() {
-        return getVehicleCompFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFKOrBuilder getVehicleCompOrBuilder() {
-        if ((detailCase_ == 45) && (vehicleCompBuilder_ != null)) {
-          return vehicleCompBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 45) {
-            return (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_;
-          }
-          return emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>.OLOLDMPHCFK vehicle_comp = 45;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK, emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.Builder, emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFKOrBuilder> 
-          getVehicleCompFieldBuilder() {
-        if (vehicleCompBuilder_ == null) {
-          if (!(detailCase_ == 45)) {
-            detail_ = emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.getDefaultInstance();
-          }
-          vehicleCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK, emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK.Builder, emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFKOrBuilder>(
-                  (emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.OLOLDMPHCFK) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 45;
-        onChanged();;
-        return vehicleCompBuilder_;
-      }
-
-      private boolean isActive_ ;
-      /**
-       * <code>bool is_active = 1;</code>
-       * @return The isActive.
-       */
-      @java.lang.Override
-      public boolean getIsActive() {
-        return isActive_;
-      }
-      /**
-       * <code>bool is_active = 1;</code>
-       * @param value The isActive to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsActive(boolean value) {
-        
-        isActive_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_active = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsActive() {
-        
-        isActive_ = false;
-        onChanged();
-        return this;
-      }
-
       private int nHGKKKAOKMN_ = 0;
       /**
        * <code>.AELIBNHFODD NHGKKKAOKMN = 2;</code>
@@ -7726,6 +3332,4408 @@ public final class KEGLGHJKEGPOuterClass {
         nHGKKKAOKMN_ = 0;
         onChanged();
         return this;
+      }
+
+      private boolean isActive_ ;
+      /**
+       * <code>bool is_active = 1;</code>
+       * @return The isActive.
+       */
+      @java.lang.Override
+      public boolean getIsActive() {
+        return isActive_;
+      }
+      /**
+       * <code>bool is_active = 1;</code>
+       * @param value The isActive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsActive(boolean value) {
+        
+        isActive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_active = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsActive() {
+        
+        isActive_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp, emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.Builder, emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueCompOrBuilder> customValueCompBuilder_;
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       * @return Whether the customValueComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomValueComp() {
+        return detailCase_ == 11;
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       * @return The customValueComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp getCustomValueComp() {
+        if (customValueCompBuilder_ == null) {
+          if (detailCase_ == 11) {
+            return (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 11) {
+            return customValueCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      public Builder setCustomValueComp(emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp value) {
+        if (customValueCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          customValueCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      public Builder setCustomValueComp(
+          emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.Builder builderForValue) {
+        if (customValueCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          customValueCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      public Builder mergeCustomValueComp(emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp value) {
+        if (customValueCompBuilder_ == null) {
+          if (detailCase_ == 11 &&
+              detail_ != emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.newBuilder((emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 11) {
+            customValueCompBuilder_.mergeFrom(value);
+          }
+          customValueCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      public Builder clearCustomValueComp() {
+        if (customValueCompBuilder_ == null) {
+          if (detailCase_ == 11) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 11) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          customValueCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      public emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.Builder getCustomValueCompBuilder() {
+        return getCustomValueCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueCompOrBuilder getCustomValueCompOrBuilder() {
+        if ((detailCase_ == 11) && (customValueCompBuilder_ != null)) {
+          return customValueCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 11) {
+            return (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CustomValueComp custom_value_comp = 11;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp, emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.Builder, emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueCompOrBuilder> 
+          getCustomValueCompFieldBuilder() {
+        if (customValueCompBuilder_ == null) {
+          if (!(detailCase_ == 11)) {
+            detail_ = emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.getDefaultInstance();
+          }
+          customValueCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp, emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp.Builder, emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueCompOrBuilder>(
+                  (emu.grasscutter.net.proto.CustomValueCompOuterClass.CustomValueComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 11;
+        onChanged();;
+        return customValueCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp, emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.Builder, emu.grasscutter.net.proto.TimerCompOuterClass.TimerCompOrBuilder> timerCompBuilder_;
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       * @return Whether the timerComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasTimerComp() {
+        return detailCase_ == 13;
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       * @return The timerComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp getTimerComp() {
+        if (timerCompBuilder_ == null) {
+          if (detailCase_ == 13) {
+            return (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_;
+          }
+          return emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 13) {
+            return timerCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      public Builder setTimerComp(emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp value) {
+        if (timerCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          timerCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      public Builder setTimerComp(
+          emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.Builder builderForValue) {
+        if (timerCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          timerCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      public Builder mergeTimerComp(emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp value) {
+        if (timerCompBuilder_ == null) {
+          if (detailCase_ == 13 &&
+              detail_ != emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.newBuilder((emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 13) {
+            timerCompBuilder_.mergeFrom(value);
+          }
+          timerCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 13;
+        return this;
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      public Builder clearTimerComp() {
+        if (timerCompBuilder_ == null) {
+          if (detailCase_ == 13) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 13) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          timerCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      public emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.Builder getTimerCompBuilder() {
+        return getTimerCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TimerCompOuterClass.TimerCompOrBuilder getTimerCompOrBuilder() {
+        if ((detailCase_ == 13) && (timerCompBuilder_ != null)) {
+          return timerCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 13) {
+            return (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_;
+          }
+          return emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.TimerComp timer_comp = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp, emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.Builder, emu.grasscutter.net.proto.TimerCompOuterClass.TimerCompOrBuilder> 
+          getTimerCompFieldBuilder() {
+        if (timerCompBuilder_ == null) {
+          if (!(detailCase_ == 13)) {
+            detail_ = emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.getDefaultInstance();
+          }
+          timerCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp, emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp.Builder, emu.grasscutter.net.proto.TimerCompOuterClass.TimerCompOrBuilder>(
+                  (emu.grasscutter.net.proto.TimerCompOuterClass.TimerComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 13;
+        onChanged();;
+        return timerCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp, emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.Builder, emu.grasscutter.net.proto.MoveCompOuterClass.MoveCompOrBuilder> moveCompBuilder_;
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       * @return Whether the moveComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasMoveComp() {
+        return detailCase_ == 14;
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       * @return The moveComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp getMoveComp() {
+        if (moveCompBuilder_ == null) {
+          if (detailCase_ == 14) {
+            return (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 14) {
+            return moveCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      public Builder setMoveComp(emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp value) {
+        if (moveCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          moveCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      public Builder setMoveComp(
+          emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.Builder builderForValue) {
+        if (moveCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          moveCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      public Builder mergeMoveComp(emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp value) {
+        if (moveCompBuilder_ == null) {
+          if (detailCase_ == 14 &&
+              detail_ != emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.newBuilder((emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 14) {
+            moveCompBuilder_.mergeFrom(value);
+          }
+          moveCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 14;
+        return this;
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      public Builder clearMoveComp() {
+        if (moveCompBuilder_ == null) {
+          if (detailCase_ == 14) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 14) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          moveCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      public emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.Builder getMoveCompBuilder() {
+        return getMoveCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MoveCompOuterClass.MoveCompOrBuilder getMoveCompOrBuilder() {
+        if ((detailCase_ == 14) && (moveCompBuilder_ != null)) {
+          return moveCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 14) {
+            return (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MoveComp move_comp = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp, emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.Builder, emu.grasscutter.net.proto.MoveCompOuterClass.MoveCompOrBuilder> 
+          getMoveCompFieldBuilder() {
+        if (moveCompBuilder_ == null) {
+          if (!(detailCase_ == 14)) {
+            detail_ = emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.getDefaultInstance();
+          }
+          moveCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp, emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp.Builder, emu.grasscutter.net.proto.MoveCompOuterClass.MoveCompOrBuilder>(
+                  (emu.grasscutter.net.proto.MoveCompOuterClass.MoveComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 14;
+        onChanged();;
+        return moveCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp, emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.Builder, emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerCompOrBuilder> clientTriggerCompBuilder_;
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       * @return Whether the clientTriggerComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasClientTriggerComp() {
+        return detailCase_ == 15;
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       * @return The clientTriggerComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp getClientTriggerComp() {
+        if (clientTriggerCompBuilder_ == null) {
+          if (detailCase_ == 15) {
+            return (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_;
+          }
+          return emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 15) {
+            return clientTriggerCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      public Builder setClientTriggerComp(emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp value) {
+        if (clientTriggerCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          clientTriggerCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      public Builder setClientTriggerComp(
+          emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.Builder builderForValue) {
+        if (clientTriggerCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientTriggerCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      public Builder mergeClientTriggerComp(emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp value) {
+        if (clientTriggerCompBuilder_ == null) {
+          if (detailCase_ == 15 &&
+              detail_ != emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.newBuilder((emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 15) {
+            clientTriggerCompBuilder_.mergeFrom(value);
+          }
+          clientTriggerCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 15;
+        return this;
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      public Builder clearClientTriggerComp() {
+        if (clientTriggerCompBuilder_ == null) {
+          if (detailCase_ == 15) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 15) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          clientTriggerCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      public emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.Builder getClientTriggerCompBuilder() {
+        return getClientTriggerCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerCompOrBuilder getClientTriggerCompOrBuilder() {
+        if ((detailCase_ == 15) && (clientTriggerCompBuilder_ != null)) {
+          return clientTriggerCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 15) {
+            return (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_;
+          }
+          return emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ClientTriggerComp client_trigger_comp = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp, emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.Builder, emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerCompOrBuilder> 
+          getClientTriggerCompFieldBuilder() {
+        if (clientTriggerCompBuilder_ == null) {
+          if (!(detailCase_ == 15)) {
+            detail_ = emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.getDefaultInstance();
+          }
+          clientTriggerCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp, emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp.Builder, emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerCompOrBuilder>(
+                  (emu.grasscutter.net.proto.ClientTriggerCompOuterClass.ClientTriggerComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 15;
+        onChanged();;
+        return clientTriggerCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp, emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.Builder, emu.grasscutter.net.proto.EffectCompOuterClass.EffectCompOrBuilder> effectCompBuilder_;
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       * @return Whether the effectComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasEffectComp() {
+        return detailCase_ == 16;
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       * @return The effectComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp getEffectComp() {
+        if (effectCompBuilder_ == null) {
+          if (detailCase_ == 16) {
+            return (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_;
+          }
+          return emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 16) {
+            return effectCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      public Builder setEffectComp(emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp value) {
+        if (effectCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          effectCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      public Builder setEffectComp(
+          emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.Builder builderForValue) {
+        if (effectCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          effectCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      public Builder mergeEffectComp(emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp value) {
+        if (effectCompBuilder_ == null) {
+          if (detailCase_ == 16 &&
+              detail_ != emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.newBuilder((emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 16) {
+            effectCompBuilder_.mergeFrom(value);
+          }
+          effectCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 16;
+        return this;
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      public Builder clearEffectComp() {
+        if (effectCompBuilder_ == null) {
+          if (detailCase_ == 16) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 16) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          effectCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      public emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.Builder getEffectCompBuilder() {
+        return getEffectCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EffectCompOuterClass.EffectCompOrBuilder getEffectCompOrBuilder() {
+        if ((detailCase_ == 16) && (effectCompBuilder_ != null)) {
+          return effectCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 16) {
+            return (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_;
+          }
+          return emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.EffectComp effect_comp = 16;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp, emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.Builder, emu.grasscutter.net.proto.EffectCompOuterClass.EffectCompOrBuilder> 
+          getEffectCompFieldBuilder() {
+        if (effectCompBuilder_ == null) {
+          if (!(detailCase_ == 16)) {
+            detail_ = emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.getDefaultInstance();
+          }
+          effectCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp, emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp.Builder, emu.grasscutter.net.proto.EffectCompOuterClass.EffectCompOrBuilder>(
+                  (emu.grasscutter.net.proto.EffectCompOuterClass.EffectComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 16;
+        onChanged();;
+        return effectCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp, emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.Builder, emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionCompOrBuilder> collisionCompBuilder_;
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       * @return Whether the collisionComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasCollisionComp() {
+        return detailCase_ == 18;
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       * @return The collisionComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp getCollisionComp() {
+        if (collisionCompBuilder_ == null) {
+          if (detailCase_ == 18) {
+            return (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 18) {
+            return collisionCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      public Builder setCollisionComp(emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp value) {
+        if (collisionCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          collisionCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      public Builder setCollisionComp(
+          emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.Builder builderForValue) {
+        if (collisionCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          collisionCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      public Builder mergeCollisionComp(emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp value) {
+        if (collisionCompBuilder_ == null) {
+          if (detailCase_ == 18 &&
+              detail_ != emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.newBuilder((emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 18) {
+            collisionCompBuilder_.mergeFrom(value);
+          }
+          collisionCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 18;
+        return this;
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      public Builder clearCollisionComp() {
+        if (collisionCompBuilder_ == null) {
+          if (detailCase_ == 18) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 18) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          collisionCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      public emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.Builder getCollisionCompBuilder() {
+        return getCollisionCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionCompOrBuilder getCollisionCompOrBuilder() {
+        if ((detailCase_ == 18) && (collisionCompBuilder_ != null)) {
+          return collisionCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 18) {
+            return (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CollisionComp collision_comp = 18;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp, emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.Builder, emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionCompOrBuilder> 
+          getCollisionCompFieldBuilder() {
+        if (collisionCompBuilder_ == null) {
+          if (!(detailCase_ == 18)) {
+            detail_ = emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.getDefaultInstance();
+          }
+          collisionCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp, emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp.Builder, emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionCompOrBuilder>(
+                  (emu.grasscutter.net.proto.CollisionCompOuterClass.CollisionComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 18;
+        onChanged();;
+        return collisionCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp, emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.Builder, emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveCompOrBuilder> followMoveCompBuilder_;
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       * @return Whether the followMoveComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasFollowMoveComp() {
+        return detailCase_ == 19;
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       * @return The followMoveComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp getFollowMoveComp() {
+        if (followMoveCompBuilder_ == null) {
+          if (detailCase_ == 19) {
+            return (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_;
+          }
+          return emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 19) {
+            return followMoveCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      public Builder setFollowMoveComp(emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp value) {
+        if (followMoveCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          followMoveCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 19;
+        return this;
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      public Builder setFollowMoveComp(
+          emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.Builder builderForValue) {
+        if (followMoveCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          followMoveCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 19;
+        return this;
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      public Builder mergeFollowMoveComp(emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp value) {
+        if (followMoveCompBuilder_ == null) {
+          if (detailCase_ == 19 &&
+              detail_ != emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.newBuilder((emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 19) {
+            followMoveCompBuilder_.mergeFrom(value);
+          }
+          followMoveCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 19;
+        return this;
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      public Builder clearFollowMoveComp() {
+        if (followMoveCompBuilder_ == null) {
+          if (detailCase_ == 19) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 19) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          followMoveCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      public emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.Builder getFollowMoveCompBuilder() {
+        return getFollowMoveCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveCompOrBuilder getFollowMoveCompOrBuilder() {
+        if ((detailCase_ == 19) && (followMoveCompBuilder_ != null)) {
+          return followMoveCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 19) {
+            return (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_;
+          }
+          return emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.FollowMoveComp follow_move_comp = 19;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp, emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.Builder, emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveCompOrBuilder> 
+          getFollowMoveCompFieldBuilder() {
+        if (followMoveCompBuilder_ == null) {
+          if (!(detailCase_ == 19)) {
+            detail_ = emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.getDefaultInstance();
+          }
+          followMoveCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp, emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp.Builder, emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveCompOrBuilder>(
+                  (emu.grasscutter.net.proto.FollowMoveCompOuterClass.FollowMoveComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 19;
+        onChanged();;
+        return followMoveCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp, emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.Builder, emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveCompOrBuilder> bulletMoveCompBuilder_;
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       * @return Whether the bulletMoveComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasBulletMoveComp() {
+        return detailCase_ == 21;
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       * @return The bulletMoveComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp getBulletMoveComp() {
+        if (bulletMoveCompBuilder_ == null) {
+          if (detailCase_ == 21) {
+            return (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_;
+          }
+          return emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 21) {
+            return bulletMoveCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      public Builder setBulletMoveComp(emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp value) {
+        if (bulletMoveCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          bulletMoveCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      public Builder setBulletMoveComp(
+          emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.Builder builderForValue) {
+        if (bulletMoveCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          bulletMoveCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      public Builder mergeBulletMoveComp(emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp value) {
+        if (bulletMoveCompBuilder_ == null) {
+          if (detailCase_ == 21 &&
+              detail_ != emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.newBuilder((emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 21) {
+            bulletMoveCompBuilder_.mergeFrom(value);
+          }
+          bulletMoveCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 21;
+        return this;
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      public Builder clearBulletMoveComp() {
+        if (bulletMoveCompBuilder_ == null) {
+          if (detailCase_ == 21) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 21) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          bulletMoveCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      public emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.Builder getBulletMoveCompBuilder() {
+        return getBulletMoveCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveCompOrBuilder getBulletMoveCompOrBuilder() {
+        if ((detailCase_ == 21) && (bulletMoveCompBuilder_ != null)) {
+          return bulletMoveCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 21) {
+            return (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_;
+          }
+          return emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.BulletMoveComp bullet_move_comp = 21;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp, emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.Builder, emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveCompOrBuilder> 
+          getBulletMoveCompFieldBuilder() {
+        if (bulletMoveCompBuilder_ == null) {
+          if (!(detailCase_ == 21)) {
+            detail_ = emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.getDefaultInstance();
+          }
+          bulletMoveCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp, emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp.Builder, emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveCompOrBuilder>(
+                  (emu.grasscutter.net.proto.BulletMoveCompOuterClass.BulletMoveComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 21;
+        onChanged();;
+        return bulletMoveCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp, emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.Builder, emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionCompOrBuilder> hitDetectionCompBuilder_;
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       * @return Whether the hitDetectionComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasHitDetectionComp() {
+        return detailCase_ == 22;
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       * @return The hitDetectionComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp getHitDetectionComp() {
+        if (hitDetectionCompBuilder_ == null) {
+          if (detailCase_ == 22) {
+            return (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_;
+          }
+          return emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 22) {
+            return hitDetectionCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      public Builder setHitDetectionComp(emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp value) {
+        if (hitDetectionCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          hitDetectionCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 22;
+        return this;
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      public Builder setHitDetectionComp(
+          emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.Builder builderForValue) {
+        if (hitDetectionCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          hitDetectionCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 22;
+        return this;
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      public Builder mergeHitDetectionComp(emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp value) {
+        if (hitDetectionCompBuilder_ == null) {
+          if (detailCase_ == 22 &&
+              detail_ != emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.newBuilder((emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 22) {
+            hitDetectionCompBuilder_.mergeFrom(value);
+          }
+          hitDetectionCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 22;
+        return this;
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      public Builder clearHitDetectionComp() {
+        if (hitDetectionCompBuilder_ == null) {
+          if (detailCase_ == 22) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 22) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          hitDetectionCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      public emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.Builder getHitDetectionCompBuilder() {
+        return getHitDetectionCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionCompOrBuilder getHitDetectionCompOrBuilder() {
+        if ((detailCase_ == 22) && (hitDetectionCompBuilder_ != null)) {
+          return hitDetectionCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 22) {
+            return (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_;
+          }
+          return emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.HitDetectionComp hit_detection_comp = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp, emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.Builder, emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionCompOrBuilder> 
+          getHitDetectionCompFieldBuilder() {
+        if (hitDetectionCompBuilder_ == null) {
+          if (!(detailCase_ == 22)) {
+            detail_ = emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.getDefaultInstance();
+          }
+          hitDetectionCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp, emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp.Builder, emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionCompOrBuilder>(
+                  (emu.grasscutter.net.proto.HitDetectionCompOuterClass.HitDetectionComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 22;
+        onChanged();;
+        return hitDetectionCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp, emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.Builder, emu.grasscutter.net.proto.CameraCompOuterClass.CameraCompOrBuilder> cameraCompBuilder_;
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       * @return Whether the cameraComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasCameraComp() {
+        return detailCase_ == 23;
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       * @return The cameraComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp getCameraComp() {
+        if (cameraCompBuilder_ == null) {
+          if (detailCase_ == 23) {
+            return (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 23) {
+            return cameraCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      public Builder setCameraComp(emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp value) {
+        if (cameraCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          cameraCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 23;
+        return this;
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      public Builder setCameraComp(
+          emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.Builder builderForValue) {
+        if (cameraCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          cameraCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 23;
+        return this;
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      public Builder mergeCameraComp(emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp value) {
+        if (cameraCompBuilder_ == null) {
+          if (detailCase_ == 23 &&
+              detail_ != emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.newBuilder((emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 23) {
+            cameraCompBuilder_.mergeFrom(value);
+          }
+          cameraCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 23;
+        return this;
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      public Builder clearCameraComp() {
+        if (cameraCompBuilder_ == null) {
+          if (detailCase_ == 23) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 23) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          cameraCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      public emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.Builder getCameraCompBuilder() {
+        return getCameraCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CameraCompOuterClass.CameraCompOrBuilder getCameraCompOrBuilder() {
+        if ((detailCase_ == 23) && (cameraCompBuilder_ != null)) {
+          return cameraCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 23) {
+            return (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CameraComp camera_comp = 23;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp, emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.Builder, emu.grasscutter.net.proto.CameraCompOuterClass.CameraCompOrBuilder> 
+          getCameraCompFieldBuilder() {
+        if (cameraCompBuilder_ == null) {
+          if (!(detailCase_ == 23)) {
+            detail_ = emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.getDefaultInstance();
+          }
+          cameraCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp, emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp.Builder, emu.grasscutter.net.proto.CameraCompOuterClass.CameraCompOrBuilder>(
+                  (emu.grasscutter.net.proto.CameraCompOuterClass.CameraComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 23;
+        onChanged();;
+        return cameraCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp, emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.Builder, emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusCompOrBuilder> roleStatusCompBuilder_;
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       * @return Whether the roleStatusComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasRoleStatusComp() {
+        return detailCase_ == 24;
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       * @return The roleStatusComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp getRoleStatusComp() {
+        if (roleStatusCompBuilder_ == null) {
+          if (detailCase_ == 24) {
+            return (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_;
+          }
+          return emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 24) {
+            return roleStatusCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      public Builder setRoleStatusComp(emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp value) {
+        if (roleStatusCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          roleStatusCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 24;
+        return this;
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      public Builder setRoleStatusComp(
+          emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.Builder builderForValue) {
+        if (roleStatusCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          roleStatusCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 24;
+        return this;
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      public Builder mergeRoleStatusComp(emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp value) {
+        if (roleStatusCompBuilder_ == null) {
+          if (detailCase_ == 24 &&
+              detail_ != emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.newBuilder((emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 24) {
+            roleStatusCompBuilder_.mergeFrom(value);
+          }
+          roleStatusCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 24;
+        return this;
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      public Builder clearRoleStatusComp() {
+        if (roleStatusCompBuilder_ == null) {
+          if (detailCase_ == 24) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 24) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          roleStatusCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      public emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.Builder getRoleStatusCompBuilder() {
+        return getRoleStatusCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusCompOrBuilder getRoleStatusCompOrBuilder() {
+        if ((detailCase_ == 24) && (roleStatusCompBuilder_ != null)) {
+          return roleStatusCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 24) {
+            return (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_;
+          }
+          return emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.RoleStatusComp role_status_comp = 24;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp, emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.Builder, emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusCompOrBuilder> 
+          getRoleStatusCompFieldBuilder() {
+        if (roleStatusCompBuilder_ == null) {
+          if (!(detailCase_ == 24)) {
+            detail_ = emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.getDefaultInstance();
+          }
+          roleStatusCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp, emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp.Builder, emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusCompOrBuilder>(
+                  (emu.grasscutter.net.proto.RoleStatusCompOuterClass.RoleStatusComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 24;
+        onChanged();;
+        return roleStatusCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp, emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.Builder, emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberCompOrBuilder> avatarDisturberCompBuilder_;
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       * @return Whether the avatarDisturberComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasAvatarDisturberComp() {
+        return detailCase_ == 25;
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       * @return The avatarDisturberComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp getAvatarDisturberComp() {
+        if (avatarDisturberCompBuilder_ == null) {
+          if (detailCase_ == 25) {
+            return (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_;
+          }
+          return emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 25) {
+            return avatarDisturberCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      public Builder setAvatarDisturberComp(emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp value) {
+        if (avatarDisturberCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          avatarDisturberCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 25;
+        return this;
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      public Builder setAvatarDisturberComp(
+          emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.Builder builderForValue) {
+        if (avatarDisturberCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          avatarDisturberCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 25;
+        return this;
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      public Builder mergeAvatarDisturberComp(emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp value) {
+        if (avatarDisturberCompBuilder_ == null) {
+          if (detailCase_ == 25 &&
+              detail_ != emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.newBuilder((emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 25) {
+            avatarDisturberCompBuilder_.mergeFrom(value);
+          }
+          avatarDisturberCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 25;
+        return this;
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      public Builder clearAvatarDisturberComp() {
+        if (avatarDisturberCompBuilder_ == null) {
+          if (detailCase_ == 25) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 25) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          avatarDisturberCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      public emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.Builder getAvatarDisturberCompBuilder() {
+        return getAvatarDisturberCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberCompOrBuilder getAvatarDisturberCompOrBuilder() {
+        if ((detailCase_ == 25) && (avatarDisturberCompBuilder_ != null)) {
+          return avatarDisturberCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 25) {
+            return (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_;
+          }
+          return emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.AvatarDisturberComp avatar_disturber_comp = 25;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp, emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.Builder, emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberCompOrBuilder> 
+          getAvatarDisturberCompFieldBuilder() {
+        if (avatarDisturberCompBuilder_ == null) {
+          if (!(detailCase_ == 25)) {
+            detail_ = emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.getDefaultInstance();
+          }
+          avatarDisturberCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp, emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp.Builder, emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberCompOrBuilder>(
+                  (emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.AvatarDisturberComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 25;
+        onChanged();;
+        return avatarDisturberCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp, emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.Builder, emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownCompOrBuilder> countDownCompBuilder_;
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       * @return Whether the countDownComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasCountDownComp() {
+        return detailCase_ == 26;
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       * @return The countDownComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp getCountDownComp() {
+        if (countDownCompBuilder_ == null) {
+          if (detailCase_ == 26) {
+            return (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 26) {
+            return countDownCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      public Builder setCountDownComp(emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp value) {
+        if (countDownCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          countDownCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 26;
+        return this;
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      public Builder setCountDownComp(
+          emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.Builder builderForValue) {
+        if (countDownCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          countDownCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 26;
+        return this;
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      public Builder mergeCountDownComp(emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp value) {
+        if (countDownCompBuilder_ == null) {
+          if (detailCase_ == 26 &&
+              detail_ != emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.newBuilder((emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 26) {
+            countDownCompBuilder_.mergeFrom(value);
+          }
+          countDownCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 26;
+        return this;
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      public Builder clearCountDownComp() {
+        if (countDownCompBuilder_ == null) {
+          if (detailCase_ == 26) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 26) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          countDownCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      public emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.Builder getCountDownCompBuilder() {
+        return getCountDownCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownCompOrBuilder getCountDownCompOrBuilder() {
+        if ((detailCase_ == 26) && (countDownCompBuilder_ != null)) {
+          return countDownCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 26) {
+            return (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CountDownComp count_down_comp = 26;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp, emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.Builder, emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownCompOrBuilder> 
+          getCountDownCompFieldBuilder() {
+        if (countDownCompBuilder_ == null) {
+          if (!(detailCase_ == 26)) {
+            detail_ = emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.getDefaultInstance();
+          }
+          countDownCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp, emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp.Builder, emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownCompOrBuilder>(
+                  (emu.grasscutter.net.proto.CountDownCompOuterClass.CountDownComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 26;
+        onChanged();;
+        return countDownCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp, emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.Builder, emu.grasscutter.net.proto.OptionCompOuterClass.OptionCompOrBuilder> optionCompBuilder_;
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       * @return Whether the optionComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasOptionComp() {
+        return detailCase_ == 27;
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       * @return The optionComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp getOptionComp() {
+        if (optionCompBuilder_ == null) {
+          if (detailCase_ == 27) {
+            return (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_;
+          }
+          return emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 27) {
+            return optionCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      public Builder setOptionComp(emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp value) {
+        if (optionCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          optionCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 27;
+        return this;
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      public Builder setOptionComp(
+          emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.Builder builderForValue) {
+        if (optionCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 27;
+        return this;
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      public Builder mergeOptionComp(emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp value) {
+        if (optionCompBuilder_ == null) {
+          if (detailCase_ == 27 &&
+              detail_ != emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.newBuilder((emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 27) {
+            optionCompBuilder_.mergeFrom(value);
+          }
+          optionCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 27;
+        return this;
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      public Builder clearOptionComp() {
+        if (optionCompBuilder_ == null) {
+          if (detailCase_ == 27) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 27) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          optionCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      public emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.Builder getOptionCompBuilder() {
+        return getOptionCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OptionCompOuterClass.OptionCompOrBuilder getOptionCompOrBuilder() {
+        if ((detailCase_ == 27) && (optionCompBuilder_ != null)) {
+          return optionCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 27) {
+            return (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_;
+          }
+          return emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.OptionComp option_comp = 27;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp, emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.Builder, emu.grasscutter.net.proto.OptionCompOuterClass.OptionCompOrBuilder> 
+          getOptionCompFieldBuilder() {
+        if (optionCompBuilder_ == null) {
+          if (!(detailCase_ == 27)) {
+            detail_ = emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.getDefaultInstance();
+          }
+          optionCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp, emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp.Builder, emu.grasscutter.net.proto.OptionCompOuterClass.OptionCompOrBuilder>(
+                  (emu.grasscutter.net.proto.OptionCompOuterClass.OptionComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 27;
+        onChanged();;
+        return optionCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp, emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.Builder, emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxCompOrBuilder> hitboxCompBuilder_;
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       * @return Whether the hitboxComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasHitboxComp() {
+        return detailCase_ == 28;
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       * @return The hitboxComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp getHitboxComp() {
+        if (hitboxCompBuilder_ == null) {
+          if (detailCase_ == 28) {
+            return (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_;
+          }
+          return emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 28) {
+            return hitboxCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      public Builder setHitboxComp(emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp value) {
+        if (hitboxCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          hitboxCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 28;
+        return this;
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      public Builder setHitboxComp(
+          emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.Builder builderForValue) {
+        if (hitboxCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          hitboxCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 28;
+        return this;
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      public Builder mergeHitboxComp(emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp value) {
+        if (hitboxCompBuilder_ == null) {
+          if (detailCase_ == 28 &&
+              detail_ != emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.newBuilder((emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 28) {
+            hitboxCompBuilder_.mergeFrom(value);
+          }
+          hitboxCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 28;
+        return this;
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      public Builder clearHitboxComp() {
+        if (hitboxCompBuilder_ == null) {
+          if (detailCase_ == 28) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 28) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          hitboxCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      public emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.Builder getHitboxCompBuilder() {
+        return getHitboxCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxCompOrBuilder getHitboxCompOrBuilder() {
+        if ((detailCase_ == 28) && (hitboxCompBuilder_ != null)) {
+          return hitboxCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 28) {
+            return (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_;
+          }
+          return emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.HitboxComp hitbox_comp = 28;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp, emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.Builder, emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxCompOrBuilder> 
+          getHitboxCompFieldBuilder() {
+        if (hitboxCompBuilder_ == null) {
+          if (!(detailCase_ == 28)) {
+            detail_ = emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.getDefaultInstance();
+          }
+          hitboxCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp, emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp.Builder, emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxCompOrBuilder>(
+                  (emu.grasscutter.net.proto.HitboxCompOuterClass.HitboxComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 28;
+        onChanged();;
+        return hitboxCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp, emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.Builder, emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillCompOrBuilder> customSkillCompBuilder_;
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       * @return Whether the customSkillComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasCustomSkillComp() {
+        return detailCase_ == 29;
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       * @return The customSkillComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp getCustomSkillComp() {
+        if (customSkillCompBuilder_ == null) {
+          if (detailCase_ == 29) {
+            return (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 29) {
+            return customSkillCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      public Builder setCustomSkillComp(emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp value) {
+        if (customSkillCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          customSkillCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 29;
+        return this;
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      public Builder setCustomSkillComp(
+          emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.Builder builderForValue) {
+        if (customSkillCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          customSkillCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 29;
+        return this;
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      public Builder mergeCustomSkillComp(emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp value) {
+        if (customSkillCompBuilder_ == null) {
+          if (detailCase_ == 29 &&
+              detail_ != emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.newBuilder((emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 29) {
+            customSkillCompBuilder_.mergeFrom(value);
+          }
+          customSkillCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 29;
+        return this;
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      public Builder clearCustomSkillComp() {
+        if (customSkillCompBuilder_ == null) {
+          if (detailCase_ == 29) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 29) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          customSkillCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      public emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.Builder getCustomSkillCompBuilder() {
+        return getCustomSkillCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillCompOrBuilder getCustomSkillCompOrBuilder() {
+        if ((detailCase_ == 29) && (customSkillCompBuilder_ != null)) {
+          return customSkillCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 29) {
+            return (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_;
+          }
+          return emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.CustomSkillComp custom_skill_comp = 29;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp, emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.Builder, emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillCompOrBuilder> 
+          getCustomSkillCompFieldBuilder() {
+        if (customSkillCompBuilder_ == null) {
+          if (!(detailCase_ == 29)) {
+            detail_ = emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.getDefaultInstance();
+          }
+          customSkillCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp, emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp.Builder, emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillCompOrBuilder>(
+                  (emu.grasscutter.net.proto.CustomSkillCompOuterClass.CustomSkillComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 29;
+        onChanged();;
+        return customSkillCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp, emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.Builder, emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityCompOrBuilder> enmityCompBuilder_;
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       * @return Whether the enmityComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnmityComp() {
+        return detailCase_ == 31;
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       * @return The enmityComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp getEnmityComp() {
+        if (enmityCompBuilder_ == null) {
+          if (detailCase_ == 31) {
+            return (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_;
+          }
+          return emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 31) {
+            return enmityCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      public Builder setEnmityComp(emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp value) {
+        if (enmityCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          enmityCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 31;
+        return this;
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      public Builder setEnmityComp(
+          emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.Builder builderForValue) {
+        if (enmityCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          enmityCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 31;
+        return this;
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      public Builder mergeEnmityComp(emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp value) {
+        if (enmityCompBuilder_ == null) {
+          if (detailCase_ == 31 &&
+              detail_ != emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.newBuilder((emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 31) {
+            enmityCompBuilder_.mergeFrom(value);
+          }
+          enmityCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 31;
+        return this;
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      public Builder clearEnmityComp() {
+        if (enmityCompBuilder_ == null) {
+          if (detailCase_ == 31) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 31) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          enmityCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      public emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.Builder getEnmityCompBuilder() {
+        return getEnmityCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityCompOrBuilder getEnmityCompOrBuilder() {
+        if ((detailCase_ == 31) && (enmityCompBuilder_ != null)) {
+          return enmityCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 31) {
+            return (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_;
+          }
+          return emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.EnmityComp enmity_comp = 31;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp, emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.Builder, emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityCompOrBuilder> 
+          getEnmityCompFieldBuilder() {
+        if (enmityCompBuilder_ == null) {
+          if (!(detailCase_ == 31)) {
+            detail_ = emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.getDefaultInstance();
+          }
+          enmityCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp, emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp.Builder, emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityCompOrBuilder>(
+                  (emu.grasscutter.net.proto.EnmityCompOuterClass.EnmityComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 31;
+        onChanged();;
+        return enmityCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp, emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.Builder, emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateCompOrBuilder> nameplateCompBuilder_;
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       * @return Whether the nameplateComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasNameplateComp() {
+        return detailCase_ == 32;
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       * @return The nameplateComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp getNameplateComp() {
+        if (nameplateCompBuilder_ == null) {
+          if (detailCase_ == 32) {
+            return (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_;
+          }
+          return emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 32) {
+            return nameplateCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      public Builder setNameplateComp(emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp value) {
+        if (nameplateCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          nameplateCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 32;
+        return this;
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      public Builder setNameplateComp(
+          emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.Builder builderForValue) {
+        if (nameplateCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          nameplateCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 32;
+        return this;
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      public Builder mergeNameplateComp(emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp value) {
+        if (nameplateCompBuilder_ == null) {
+          if (detailCase_ == 32 &&
+              detail_ != emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.newBuilder((emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 32) {
+            nameplateCompBuilder_.mergeFrom(value);
+          }
+          nameplateCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 32;
+        return this;
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      public Builder clearNameplateComp() {
+        if (nameplateCompBuilder_ == null) {
+          if (detailCase_ == 32) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 32) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          nameplateCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      public emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.Builder getNameplateCompBuilder() {
+        return getNameplateCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateCompOrBuilder getNameplateCompOrBuilder() {
+        if ((detailCase_ == 32) && (nameplateCompBuilder_ != null)) {
+          return nameplateCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 32) {
+            return (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_;
+          }
+          return emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.NameplateComp nameplate_comp = 32;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp, emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.Builder, emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateCompOrBuilder> 
+          getNameplateCompFieldBuilder() {
+        if (nameplateCompBuilder_ == null) {
+          if (!(detailCase_ == 32)) {
+            detail_ = emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.getDefaultInstance();
+          }
+          nameplateCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp, emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp.Builder, emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateCompOrBuilder>(
+                  (emu.grasscutter.net.proto.NameplateCompOuterClass.NameplateComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 32;
+        onChanged();;
+        return nameplateCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp, emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.Builder, emu.grasscutter.net.proto.TalkCompOuterClass.TalkCompOrBuilder> talkCompBuilder_;
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       * @return Whether the talkComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasTalkComp() {
+        return detailCase_ == 33;
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       * @return The talkComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp getTalkComp() {
+        if (talkCompBuilder_ == null) {
+          if (detailCase_ == 33) {
+            return (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_;
+          }
+          return emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 33) {
+            return talkCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      public Builder setTalkComp(emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp value) {
+        if (talkCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          talkCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 33;
+        return this;
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      public Builder setTalkComp(
+          emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.Builder builderForValue) {
+        if (talkCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          talkCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 33;
+        return this;
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      public Builder mergeTalkComp(emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp value) {
+        if (talkCompBuilder_ == null) {
+          if (detailCase_ == 33 &&
+              detail_ != emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.newBuilder((emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 33) {
+            talkCompBuilder_.mergeFrom(value);
+          }
+          talkCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 33;
+        return this;
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      public Builder clearTalkComp() {
+        if (talkCompBuilder_ == null) {
+          if (detailCase_ == 33) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 33) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          talkCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      public emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.Builder getTalkCompBuilder() {
+        return getTalkCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.TalkCompOuterClass.TalkCompOrBuilder getTalkCompOrBuilder() {
+        if ((detailCase_ == 33) && (talkCompBuilder_ != null)) {
+          return talkCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 33) {
+            return (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_;
+          }
+          return emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.TalkComp talk_comp = 33;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp, emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.Builder, emu.grasscutter.net.proto.TalkCompOuterClass.TalkCompOrBuilder> 
+          getTalkCompFieldBuilder() {
+        if (talkCompBuilder_ == null) {
+          if (!(detailCase_ == 33)) {
+            detail_ = emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.getDefaultInstance();
+          }
+          talkCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp, emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp.Builder, emu.grasscutter.net.proto.TalkCompOuterClass.TalkCompOrBuilder>(
+                  (emu.grasscutter.net.proto.TalkCompOuterClass.TalkComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 33;
+        onChanged();;
+        return talkCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp, emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.Builder, emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectCompOrBuilder> soundEffectCompBuilder_;
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       * @return Whether the soundEffectComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasSoundEffectComp() {
+        return detailCase_ == 34;
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       * @return The soundEffectComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp getSoundEffectComp() {
+        if (soundEffectCompBuilder_ == null) {
+          if (detailCase_ == 34) {
+            return (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_;
+          }
+          return emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 34) {
+            return soundEffectCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      public Builder setSoundEffectComp(emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp value) {
+        if (soundEffectCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          soundEffectCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 34;
+        return this;
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      public Builder setSoundEffectComp(
+          emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.Builder builderForValue) {
+        if (soundEffectCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          soundEffectCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 34;
+        return this;
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      public Builder mergeSoundEffectComp(emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp value) {
+        if (soundEffectCompBuilder_ == null) {
+          if (detailCase_ == 34 &&
+              detail_ != emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.newBuilder((emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 34) {
+            soundEffectCompBuilder_.mergeFrom(value);
+          }
+          soundEffectCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 34;
+        return this;
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      public Builder clearSoundEffectComp() {
+        if (soundEffectCompBuilder_ == null) {
+          if (detailCase_ == 34) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 34) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          soundEffectCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      public emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.Builder getSoundEffectCompBuilder() {
+        return getSoundEffectCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectCompOrBuilder getSoundEffectCompOrBuilder() {
+        if ((detailCase_ == 34) && (soundEffectCompBuilder_ != null)) {
+          return soundEffectCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 34) {
+            return (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_;
+          }
+          return emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.SoundEffectComp sound_effect_comp = 34;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp, emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.Builder, emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectCompOrBuilder> 
+          getSoundEffectCompFieldBuilder() {
+        if (soundEffectCompBuilder_ == null) {
+          if (!(detailCase_ == 34)) {
+            detail_ = emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.getDefaultInstance();
+          }
+          soundEffectCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp, emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp.Builder, emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectCompOrBuilder>(
+                  (emu.grasscutter.net.proto.SoundEffectCompOuterClass.SoundEffectComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 34;
+        onChanged();;
+        return soundEffectCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp, emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.Builder, emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolCompOrBuilder> monsterPatrolCompBuilder_;
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       * @return Whether the monsterPatrolComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasMonsterPatrolComp() {
+        return detailCase_ == 35;
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       * @return The monsterPatrolComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp getMonsterPatrolComp() {
+        if (monsterPatrolCompBuilder_ == null) {
+          if (detailCase_ == 35) {
+            return (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 35) {
+            return monsterPatrolCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      public Builder setMonsterPatrolComp(emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp value) {
+        if (monsterPatrolCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          monsterPatrolCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 35;
+        return this;
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      public Builder setMonsterPatrolComp(
+          emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.Builder builderForValue) {
+        if (monsterPatrolCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          monsterPatrolCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 35;
+        return this;
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      public Builder mergeMonsterPatrolComp(emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp value) {
+        if (monsterPatrolCompBuilder_ == null) {
+          if (detailCase_ == 35 &&
+              detail_ != emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.newBuilder((emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 35) {
+            monsterPatrolCompBuilder_.mergeFrom(value);
+          }
+          monsterPatrolCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 35;
+        return this;
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      public Builder clearMonsterPatrolComp() {
+        if (monsterPatrolCompBuilder_ == null) {
+          if (detailCase_ == 35) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 35) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          monsterPatrolCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      public emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.Builder getMonsterPatrolCompBuilder() {
+        return getMonsterPatrolCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolCompOrBuilder getMonsterPatrolCompOrBuilder() {
+        if ((detailCase_ == 35) && (monsterPatrolCompBuilder_ != null)) {
+          return monsterPatrolCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 35) {
+            return (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MonsterPatrolComp monster_patrol_comp = 35;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp, emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.Builder, emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolCompOrBuilder> 
+          getMonsterPatrolCompFieldBuilder() {
+        if (monsterPatrolCompBuilder_ == null) {
+          if (!(detailCase_ == 35)) {
+            detail_ = emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.getDefaultInstance();
+          }
+          monsterPatrolCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp, emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp.Builder, emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolCompOrBuilder>(
+                  (emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.MonsterPatrolComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 35;
+        onChanged();;
+        return monsterPatrolCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp, emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.Builder, emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineCompOrBuilder> levelStateMachineCompBuilder_;
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       * @return Whether the levelStateMachineComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasLevelStateMachineComp() {
+        return detailCase_ == 36;
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       * @return The levelStateMachineComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp getLevelStateMachineComp() {
+        if (levelStateMachineCompBuilder_ == null) {
+          if (detailCase_ == 36) {
+            return (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_;
+          }
+          return emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 36) {
+            return levelStateMachineCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      public Builder setLevelStateMachineComp(emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp value) {
+        if (levelStateMachineCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          levelStateMachineCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 36;
+        return this;
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      public Builder setLevelStateMachineComp(
+          emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.Builder builderForValue) {
+        if (levelStateMachineCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          levelStateMachineCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 36;
+        return this;
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      public Builder mergeLevelStateMachineComp(emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp value) {
+        if (levelStateMachineCompBuilder_ == null) {
+          if (detailCase_ == 36 &&
+              detail_ != emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.newBuilder((emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 36) {
+            levelStateMachineCompBuilder_.mergeFrom(value);
+          }
+          levelStateMachineCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 36;
+        return this;
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      public Builder clearLevelStateMachineComp() {
+        if (levelStateMachineCompBuilder_ == null) {
+          if (detailCase_ == 36) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 36) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          levelStateMachineCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      public emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.Builder getLevelStateMachineCompBuilder() {
+        return getLevelStateMachineCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineCompOrBuilder getLevelStateMachineCompOrBuilder() {
+        if ((detailCase_ == 36) && (levelStateMachineCompBuilder_ != null)) {
+          return levelStateMachineCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 36) {
+            return (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_;
+          }
+          return emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._LevelStateMachineComp level_state_machine_comp = 36;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp, emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.Builder, emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineCompOrBuilder> 
+          getLevelStateMachineCompFieldBuilder() {
+        if (levelStateMachineCompBuilder_ == null) {
+          if (!(detailCase_ == 36)) {
+            detail_ = emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.getDefaultInstance();
+          }
+          levelStateMachineCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp, emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp.Builder, emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineCompOrBuilder>(
+                  (emu.grasscutter.net.proto.LevelStateMachineComp._LevelStateMachineComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 36;
+        onChanged();;
+        return levelStateMachineCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp, emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.Builder, emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkCompOrBuilder> minimapMarkCompBuilder_;
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       * @return Whether the minimapMarkComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinimapMarkComp() {
+        return detailCase_ == 37;
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       * @return The minimapMarkComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp getMinimapMarkComp() {
+        if (minimapMarkCompBuilder_ == null) {
+          if (detailCase_ == 37) {
+            return (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 37) {
+            return minimapMarkCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      public Builder setMinimapMarkComp(emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp value) {
+        if (minimapMarkCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          minimapMarkCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 37;
+        return this;
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      public Builder setMinimapMarkComp(
+          emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.Builder builderForValue) {
+        if (minimapMarkCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          minimapMarkCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 37;
+        return this;
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      public Builder mergeMinimapMarkComp(emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp value) {
+        if (minimapMarkCompBuilder_ == null) {
+          if (detailCase_ == 37 &&
+              detail_ != emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.newBuilder((emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 37) {
+            minimapMarkCompBuilder_.mergeFrom(value);
+          }
+          minimapMarkCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 37;
+        return this;
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      public Builder clearMinimapMarkComp() {
+        if (minimapMarkCompBuilder_ == null) {
+          if (detailCase_ == 37) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 37) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          minimapMarkCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      public emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.Builder getMinimapMarkCompBuilder() {
+        return getMinimapMarkCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkCompOrBuilder getMinimapMarkCompOrBuilder() {
+        if ((detailCase_ == 37) && (minimapMarkCompBuilder_ != null)) {
+          return minimapMarkCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 37) {
+            return (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MinimapMarkComp minimap_mark_comp = 37;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp, emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.Builder, emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkCompOrBuilder> 
+          getMinimapMarkCompFieldBuilder() {
+        if (minimapMarkCompBuilder_ == null) {
+          if (!(detailCase_ == 37)) {
+            detail_ = emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.getDefaultInstance();
+          }
+          minimapMarkCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp, emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp.Builder, emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkCompOrBuilder>(
+                  (emu.grasscutter.net.proto.MinimapMarkCompOuterClass.MinimapMarkComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 37;
+        onChanged();;
+        return minimapMarkCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp, emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.Builder, emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagCompOrBuilder> stuffBagCompBuilder_;
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       * @return Whether the stuffBagComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasStuffBagComp() {
+        return detailCase_ == 38;
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       * @return The stuffBagComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp getStuffBagComp() {
+        if (stuffBagCompBuilder_ == null) {
+          if (detailCase_ == 38) {
+            return (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_;
+          }
+          return emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 38) {
+            return stuffBagCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      public Builder setStuffBagComp(emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp value) {
+        if (stuffBagCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          stuffBagCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 38;
+        return this;
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      public Builder setStuffBagComp(
+          emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.Builder builderForValue) {
+        if (stuffBagCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          stuffBagCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 38;
+        return this;
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      public Builder mergeStuffBagComp(emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp value) {
+        if (stuffBagCompBuilder_ == null) {
+          if (detailCase_ == 38 &&
+              detail_ != emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.newBuilder((emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 38) {
+            stuffBagCompBuilder_.mergeFrom(value);
+          }
+          stuffBagCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 38;
+        return this;
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      public Builder clearStuffBagComp() {
+        if (stuffBagCompBuilder_ == null) {
+          if (detailCase_ == 38) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 38) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          stuffBagCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      public emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.Builder getStuffBagCompBuilder() {
+        return getStuffBagCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagCompOrBuilder getStuffBagCompOrBuilder() {
+        if ((detailCase_ == 38) && (stuffBagCompBuilder_ != null)) {
+          return stuffBagCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 38) {
+            return (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_;
+          }
+          return emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.StuffBagComp stuff_bag_comp = 38;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp, emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.Builder, emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagCompOrBuilder> 
+          getStuffBagCompFieldBuilder() {
+        if (stuffBagCompBuilder_ == null) {
+          if (!(detailCase_ == 38)) {
+            detail_ = emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.getDefaultInstance();
+          }
+          stuffBagCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp, emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp.Builder, emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagCompOrBuilder>(
+                  (emu.grasscutter.net.proto.StuffBagCompOuterClass.StuffBagComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 38;
+        onChanged();;
+        return stuffBagCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp, emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.Builder, emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagCompOrBuilder> equipStuffBagCompBuilder_;
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       * @return Whether the equipStuffBagComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasEquipStuffBagComp() {
+        return detailCase_ == 39;
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       * @return The equipStuffBagComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp getEquipStuffBagComp() {
+        if (equipStuffBagCompBuilder_ == null) {
+          if (detailCase_ == 39) {
+            return (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_;
+          }
+          return emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 39) {
+            return equipStuffBagCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      public Builder setEquipStuffBagComp(emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp value) {
+        if (equipStuffBagCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          equipStuffBagCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 39;
+        return this;
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      public Builder setEquipStuffBagComp(
+          emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.Builder builderForValue) {
+        if (equipStuffBagCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          equipStuffBagCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 39;
+        return this;
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      public Builder mergeEquipStuffBagComp(emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp value) {
+        if (equipStuffBagCompBuilder_ == null) {
+          if (detailCase_ == 39 &&
+              detail_ != emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.newBuilder((emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 39) {
+            equipStuffBagCompBuilder_.mergeFrom(value);
+          }
+          equipStuffBagCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 39;
+        return this;
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      public Builder clearEquipStuffBagComp() {
+        if (equipStuffBagCompBuilder_ == null) {
+          if (detailCase_ == 39) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 39) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          equipStuffBagCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      public emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.Builder getEquipStuffBagCompBuilder() {
+        return getEquipStuffBagCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagCompOrBuilder getEquipStuffBagCompOrBuilder() {
+        if ((detailCase_ == 39) && (equipStuffBagCompBuilder_ != null)) {
+          return equipStuffBagCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 39) {
+            return (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_;
+          }
+          return emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.EquipStuffBagComp equip_stuff_bag_comp = 39;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp, emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.Builder, emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagCompOrBuilder> 
+          getEquipStuffBagCompFieldBuilder() {
+        if (equipStuffBagCompBuilder_ == null) {
+          if (!(detailCase_ == 39)) {
+            detail_ = emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.getDefaultInstance();
+          }
+          equipStuffBagCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp, emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp.Builder, emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagCompOrBuilder>(
+                  (emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.EquipStuffBagComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 39;
+        onChanged();;
+        return equipStuffBagCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp, emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.Builder, emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherCompOrBuilder> dropGatherCompBuilder_;
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       * @return Whether the dropGatherComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasDropGatherComp() {
+        return detailCase_ == 40;
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       * @return The dropGatherComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp getDropGatherComp() {
+        if (dropGatherCompBuilder_ == null) {
+          if (detailCase_ == 40) {
+            return (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_;
+          }
+          return emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 40) {
+            return dropGatherCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      public Builder setDropGatherComp(emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp value) {
+        if (dropGatherCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          dropGatherCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 40;
+        return this;
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      public Builder setDropGatherComp(
+          emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.Builder builderForValue) {
+        if (dropGatherCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          dropGatherCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 40;
+        return this;
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      public Builder mergeDropGatherComp(emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp value) {
+        if (dropGatherCompBuilder_ == null) {
+          if (detailCase_ == 40 &&
+              detail_ != emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.newBuilder((emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 40) {
+            dropGatherCompBuilder_.mergeFrom(value);
+          }
+          dropGatherCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 40;
+        return this;
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      public Builder clearDropGatherComp() {
+        if (dropGatherCompBuilder_ == null) {
+          if (detailCase_ == 40) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 40) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          dropGatherCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      public emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.Builder getDropGatherCompBuilder() {
+        return getDropGatherCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherCompOrBuilder getDropGatherCompOrBuilder() {
+        if ((detailCase_ == 40) && (dropGatherCompBuilder_ != null)) {
+          return dropGatherCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 40) {
+            return (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_;
+          }
+          return emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.DropGatherComp drop_gather_comp = 40;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp, emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.Builder, emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherCompOrBuilder> 
+          getDropGatherCompFieldBuilder() {
+        if (dropGatherCompBuilder_ == null) {
+          if (!(detailCase_ == 40)) {
+            detail_ = emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.getDefaultInstance();
+          }
+          dropGatherCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp, emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp.Builder, emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherCompOrBuilder>(
+                  (emu.grasscutter.net.proto.DropGatherCompOuterClass.DropGatherComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 40;
+        onChanged();;
+        return dropGatherCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp, emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.Builder, emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupCompOrBuilder> lightGroupCompBuilder_;
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       * @return Whether the lightGroupComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasLightGroupComp() {
+        return detailCase_ == 41;
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       * @return The lightGroupComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp getLightGroupComp() {
+        if (lightGroupCompBuilder_ == null) {
+          if (detailCase_ == 41) {
+            return (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_;
+          }
+          return emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 41) {
+            return lightGroupCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      public Builder setLightGroupComp(emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp value) {
+        if (lightGroupCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          lightGroupCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 41;
+        return this;
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      public Builder setLightGroupComp(
+          emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.Builder builderForValue) {
+        if (lightGroupCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          lightGroupCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 41;
+        return this;
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      public Builder mergeLightGroupComp(emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp value) {
+        if (lightGroupCompBuilder_ == null) {
+          if (detailCase_ == 41 &&
+              detail_ != emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.newBuilder((emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 41) {
+            lightGroupCompBuilder_.mergeFrom(value);
+          }
+          lightGroupCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 41;
+        return this;
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      public Builder clearLightGroupComp() {
+        if (lightGroupCompBuilder_ == null) {
+          if (detailCase_ == 41) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 41) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          lightGroupCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      public emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.Builder getLightGroupCompBuilder() {
+        return getLightGroupCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupCompOrBuilder getLightGroupCompOrBuilder() {
+        if ((detailCase_ == 41) && (lightGroupCompBuilder_ != null)) {
+          return lightGroupCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 41) {
+            return (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_;
+          }
+          return emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.LightGroupComp light_group_comp = 41;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp, emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.Builder, emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupCompOrBuilder> 
+          getLightGroupCompFieldBuilder() {
+        if (lightGroupCompBuilder_ == null) {
+          if (!(detailCase_ == 41)) {
+            detail_ = emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.getDefaultInstance();
+          }
+          lightGroupCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp, emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp.Builder, emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupCompOrBuilder>(
+                  (emu.grasscutter.net.proto.LightGroupCompOuterClass.LightGroupComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 41;
+        onChanged();;
+        return lightGroupCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp, emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.Builder, emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityCompOrBuilder> scanEntityCompBuilder_;
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       * @return Whether the scanEntityComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasScanEntityComp() {
+        return detailCase_ == 42;
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       * @return The scanEntityComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp getScanEntityComp() {
+        if (scanEntityCompBuilder_ == null) {
+          if (detailCase_ == 42) {
+            return (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_;
+          }
+          return emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 42) {
+            return scanEntityCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      public Builder setScanEntityComp(emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp value) {
+        if (scanEntityCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          scanEntityCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 42;
+        return this;
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      public Builder setScanEntityComp(
+          emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.Builder builderForValue) {
+        if (scanEntityCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          scanEntityCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 42;
+        return this;
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      public Builder mergeScanEntityComp(emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp value) {
+        if (scanEntityCompBuilder_ == null) {
+          if (detailCase_ == 42 &&
+              detail_ != emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.newBuilder((emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 42) {
+            scanEntityCompBuilder_.mergeFrom(value);
+          }
+          scanEntityCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 42;
+        return this;
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      public Builder clearScanEntityComp() {
+        if (scanEntityCompBuilder_ == null) {
+          if (detailCase_ == 42) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 42) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          scanEntityCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      public emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.Builder getScanEntityCompBuilder() {
+        return getScanEntityCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityCompOrBuilder getScanEntityCompOrBuilder() {
+        if ((detailCase_ == 42) && (scanEntityCompBuilder_ != null)) {
+          return scanEntityCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 42) {
+            return (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_;
+          }
+          return emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.ScanEntityComp scan_entity_comp = 42;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp, emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.Builder, emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityCompOrBuilder> 
+          getScanEntityCompFieldBuilder() {
+        if (scanEntityCompBuilder_ == null) {
+          if (!(detailCase_ == 42)) {
+            detail_ = emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.getDefaultInstance();
+          }
+          scanEntityCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp, emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp.Builder, emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityCompOrBuilder>(
+                  (emu.grasscutter.net.proto.ScanEntityCompOuterClass.ScanEntityComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 42;
+        onChanged();;
+        return scanEntityCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp, emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.Builder, emu.grasscutter.net.proto.SubSwitchComp._SubSwitchCompOrBuilder> subSwitchCompBuilder_;
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       * @return Whether the subSwitchComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasSubSwitchComp() {
+        return detailCase_ == 43;
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       * @return The subSwitchComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp getSubSwitchComp() {
+        if (subSwitchCompBuilder_ == null) {
+          if (detailCase_ == 43) {
+            return (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_;
+          }
+          return emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 43) {
+            return subSwitchCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      public Builder setSubSwitchComp(emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp value) {
+        if (subSwitchCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          subSwitchCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 43;
+        return this;
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      public Builder setSubSwitchComp(
+          emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.Builder builderForValue) {
+        if (subSwitchCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          subSwitchCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 43;
+        return this;
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      public Builder mergeSubSwitchComp(emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp value) {
+        if (subSwitchCompBuilder_ == null) {
+          if (detailCase_ == 43 &&
+              detail_ != emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.newBuilder((emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 43) {
+            subSwitchCompBuilder_.mergeFrom(value);
+          }
+          subSwitchCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 43;
+        return this;
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      public Builder clearSubSwitchComp() {
+        if (subSwitchCompBuilder_ == null) {
+          if (detailCase_ == 43) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 43) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          subSwitchCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      public emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.Builder getSubSwitchCompBuilder() {
+        return getSubSwitchCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.SubSwitchComp._SubSwitchCompOrBuilder getSubSwitchCompOrBuilder() {
+        if ((detailCase_ == 43) && (subSwitchCompBuilder_ != null)) {
+          return subSwitchCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 43) {
+            return (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_;
+          }
+          return emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._SubSwitchComp sub_switch_comp = 43;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp, emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.Builder, emu.grasscutter.net.proto.SubSwitchComp._SubSwitchCompOrBuilder> 
+          getSubSwitchCompFieldBuilder() {
+        if (subSwitchCompBuilder_ == null) {
+          if (!(detailCase_ == 43)) {
+            detail_ = emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.getDefaultInstance();
+          }
+          subSwitchCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp, emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp.Builder, emu.grasscutter.net.proto.SubSwitchComp._SubSwitchCompOrBuilder>(
+                  (emu.grasscutter.net.proto.SubSwitchComp._SubSwitchComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 43;
+        onChanged();;
+        return subSwitchCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp, emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.Builder, emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiCompOrBuilder> monsterAiCompBuilder_;
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       * @return Whether the monsterAiComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasMonsterAiComp() {
+        return detailCase_ == 44;
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       * @return The monsterAiComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp getMonsterAiComp() {
+        if (monsterAiCompBuilder_ == null) {
+          if (detailCase_ == 44) {
+            return (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 44) {
+            return monsterAiCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      public Builder setMonsterAiComp(emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp value) {
+        if (monsterAiCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          monsterAiCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 44;
+        return this;
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      public Builder setMonsterAiComp(
+          emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.Builder builderForValue) {
+        if (monsterAiCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          monsterAiCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 44;
+        return this;
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      public Builder mergeMonsterAiComp(emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp value) {
+        if (monsterAiCompBuilder_ == null) {
+          if (detailCase_ == 44 &&
+              detail_ != emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.newBuilder((emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 44) {
+            monsterAiCompBuilder_.mergeFrom(value);
+          }
+          monsterAiCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 44;
+        return this;
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      public Builder clearMonsterAiComp() {
+        if (monsterAiCompBuilder_ == null) {
+          if (detailCase_ == 44) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 44) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          monsterAiCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      public emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.Builder getMonsterAiCompBuilder() {
+        return getMonsterAiCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiCompOrBuilder getMonsterAiCompOrBuilder() {
+        if ((detailCase_ == 44) && (monsterAiCompBuilder_ != null)) {
+          return monsterAiCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 44) {
+            return (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_;
+          }
+          return emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.MonsterAiComp monster_ai_comp = 44;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp, emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.Builder, emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiCompOrBuilder> 
+          getMonsterAiCompFieldBuilder() {
+        if (monsterAiCompBuilder_ == null) {
+          if (!(detailCase_ == 44)) {
+            detail_ = emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.getDefaultInstance();
+          }
+          monsterAiCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp, emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp.Builder, emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiCompOrBuilder>(
+                  (emu.grasscutter.net.proto.MonsterAiCompOuterClass.MonsterAiComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 44;
+        onChanged();;
+        return monsterAiCompBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp, emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.Builder, emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleCompOrBuilder> vehicleCompBuilder_;
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       * @return Whether the vehicleComp field is set.
+       */
+      @java.lang.Override
+      public boolean hasVehicleComp() {
+        return detailCase_ == 45;
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       * @return The vehicleComp.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp getVehicleComp() {
+        if (vehicleCompBuilder_ == null) {
+          if (detailCase_ == 45) {
+            return (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_;
+          }
+          return emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance();
+        } else {
+          if (detailCase_ == 45) {
+            return vehicleCompBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      public Builder setVehicleComp(emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp value) {
+        if (vehicleCompBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          vehicleCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 45;
+        return this;
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      public Builder setVehicleComp(
+          emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.Builder builderForValue) {
+        if (vehicleCompBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          vehicleCompBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 45;
+        return this;
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      public Builder mergeVehicleComp(emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp value) {
+        if (vehicleCompBuilder_ == null) {
+          if (detailCase_ == 45 &&
+              detail_ != emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.newBuilder((emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 45) {
+            vehicleCompBuilder_.mergeFrom(value);
+          }
+          vehicleCompBuilder_.setMessage(value);
+        }
+        detailCase_ = 45;
+        return this;
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      public Builder clearVehicleComp() {
+        if (vehicleCompBuilder_ == null) {
+          if (detailCase_ == 45) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 45) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          vehicleCompBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      public emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.Builder getVehicleCompBuilder() {
+        return getVehicleCompFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleCompOrBuilder getVehicleCompOrBuilder() {
+        if ((detailCase_ == 45) && (vehicleCompBuilder_ != null)) {
+          return vehicleCompBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 45) {
+            return (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_;
+          }
+          return emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.VehicleComp vehicle_comp = 45;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp, emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.Builder, emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleCompOrBuilder> 
+          getVehicleCompFieldBuilder() {
+        if (vehicleCompBuilder_ == null) {
+          if (!(detailCase_ == 45)) {
+            detail_ = emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.getDefaultInstance();
+          }
+          vehicleCompBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp, emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp.Builder, emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleCompOrBuilder>(
+                  (emu.grasscutter.net.proto.VehicleCompOuterClass.VehicleComp) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 45;
+        onChanged();;
+        return vehicleCompBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -7794,133 +7802,136 @@ public final class KEGLGHJKEGPOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021KEGLGHJKEGP.proto\032\021AELIBNHFODD.proto\032\021" +
-      "AGFINCBOPDE.proto\032\021BANABAFODKK.proto\032\021FD" +
-      "KOFMMNKED.proto\032\021FKCJKMGFGMA.proto\032\021FOOF" +
-      "KCNOCBN.proto\032\021GECFKHFMNKN.proto\032\021HALLKJ" +
-      "DALJG.proto\032\021HIHENKCOEPB.proto\032\021IAMFJKNI" +
-      "DPJ.proto\032\021IBFPCNHCJJK.proto\032\021IIHJBEGADC" +
-      "J.proto\032\021IKOIHIANENH.proto\032\021IKOMHKPAEIN." +
-      "proto\032\021JEFEGBIEMOF.proto\032\021JNCFEAMFKNA.pr" +
-      "oto\032\021KCJGBIPCHGO.proto\032\021KFMJCGEOPJJ.prot" +
-      "o\032\021KNBCNCGHKBI.proto\032\021KPIBJLNPBHG.proto\032" +
-      "\021LDJMONFNHNK.proto\032\021MCKANJDJLLJ.proto\032\021M" +
-      "PLJGNOKEFB.proto\032\021NJABMDONHPI.proto\032\021NJE" +
-      "MOPGNEDD.proto\032\021OCMDIBLDABD.proto\032\021OFGPC" +
-      "HCLFDK.proto\032\021OKDEHNGHKGA.proto\032\021OLOLDMP" +
-      "HCFK.proto\032\021PHFAOBBPOIP.proto\032\034_LevelSta" +
-      "teMachineComp.proto\032\024_SubSwitchComp.prot" +
-      "o\"\324\n\n\013KEGLGHJKEGP\022)\n\021custom_value_comp\030\013" +
-      " \001(\0132\014.IBFPCNHCJJKH\000\022\"\n\ntimer_comp\030\r \001(\013" +
-      "2\014.FOOFKCNOCBNH\000\022!\n\tmove_comp\030\016 \001(\0132\014.NJ" +
-      "ABMDONHPIH\000\022+\n\023client_trigger_comp\030\017 \001(\013" +
-      "2\014.OCMDIBLDABDH\000\022#\n\013effect_comp\030\020 \001(\0132\014." +
-      "JEFEGBIEMOFH\000\022&\n\016collision_comp\030\022 \001(\0132\014." +
-      "AGFINCBOPDEH\000\022(\n\020follow_move_comp\030\023 \001(\0132" +
-      "\014.FDKOFMMNKEDH\000\022(\n\020bullet_move_comp\030\025 \001(" +
-      "\0132\014.IIHJBEGADCJH\000\022*\n\022hit_detection_comp\030" +
-      "\026 \001(\0132\014.KPIBJLNPBHGH\000\022#\n\013camera_comp\030\027 \001" +
-      "(\0132\014.BANABAFODKKH\000\022(\n\020role_status_comp\030\030" +
-      " \001(\0132\014.OFGPCHCLFDKH\000\022-\n\025avatar_disturber" +
-      "_comp\030\031 \001(\0132\014.IKOMHKPAEINH\000\022\'\n\017count_dow" +
-      "n_comp\030\032 \001(\0132\014.FKCJKMGFGMAH\000\022#\n\013option_c" +
-      "omp\030\033 \001(\0132\014.JNCFEAMFKNAH\000\022#\n\013hitbox_comp" +
-      "\030\034 \001(\0132\014.HALLKJDALJGH\000\022)\n\021custom_skill_c" +
-      "omp\030\035 \001(\0132\014.HIHENKCOEPBH\000\022#\n\013enmity_comp" +
-      "\030\037 \001(\0132\014.MPLJGNOKEFBH\000\022&\n\016nameplate_comp" +
-      "\030  \001(\0132\014.OKDEHNGHKGAH\000\022!\n\ttalk_comp\030! \001(" +
-      "\0132\014.PHFAOBBPOIPH\000\022)\n\021sound_effect_comp\030\"" +
-      " \001(\0132\014.MCKANJDJLLJH\000\022+\n\023monster_patrol_c" +
-      "omp\030# \001(\0132\014.GECFKHFMNKNH\000\022;\n\030level_state" +
-      "_machine_comp\030$ \001(\0132\027._LevelStateMachine" +
-      "CompH\000\022)\n\021minimap_mark_comp\030% \001(\0132\014.LDJM" +
-      "ONFNHNKH\000\022&\n\016stuff_bag_comp\030& \001(\0132\014.KCJG" +
-      "BIPCHGOH\000\022,\n\024equip_stuff_bag_comp\030\' \001(\0132" +
-      "\014.KNBCNCGHKBIH\000\022(\n\020drop_gather_comp\030( \001(" +
-      "\0132\014.IAMFJKNIDPJH\000\022(\n\020light_group_comp\030) " +
-      "\001(\0132\014.IKOIHIANENHH\000\022(\n\020scan_entity_comp\030" +
-      "* \001(\0132\014.NJEMOPGNEDDH\000\022*\n\017sub_switch_comp" +
-      "\030+ \001(\0132\017._SubSwitchCompH\000\022\'\n\017monster_ai_" +
-      "comp\030, \001(\0132\014.KFMJCGEOPJJH\000\022$\n\014vehicle_co" +
-      "mp\030- \001(\0132\014.OLOLDMPHCFKH\000\022\021\n\tis_active\030\001 " +
-      "\001(\010\022!\n\013NHGKKKAOKMN\030\002 \001(\0162\014.AELIBNHFODDB\010" +
-      "\n\006detailB2\n\031emu.grasscutter.net.protoB\025K" +
-      "EGLGHJKEGPOuterClassb\006proto3"
+      "\n\021KEGLGHJKEGP.proto\032\021AELIBNHFODD.proto\032\031" +
+      "AvatarDisturberComp.proto\032\024BulletMoveCom" +
+      "p.proto\032\020CameraComp.proto\032\027ClientTrigger" +
+      "Comp.proto\032\023CollisionComp.proto\032\023CountDo" +
+      "wnComp.proto\032\025CustomSkillComp.proto\032\025Cus" +
+      "tomValueComp.proto\032\024DropGatherComp.proto" +
+      "\032\020EffectComp.proto\032\020EnmityComp.proto\032\027Eq" +
+      "uipStuffBagComp.proto\032\024FollowMoveComp.pr" +
+      "oto\032\026HitDetectionComp.proto\032\020HitboxComp." +
+      "proto\032\024LightGroupComp.proto\032\025MinimapMark" +
+      "Comp.proto\032\023MonsterAiComp.proto\032\027Monster" +
+      "PatrolComp.proto\032\016MoveComp.proto\032\023Namepl" +
+      "ateComp.proto\032\020OptionComp.proto\032\024RoleSta" +
+      "tusComp.proto\032\024ScanEntityComp.proto\032\025Sou" +
+      "ndEffectComp.proto\032\022StuffBagComp.proto\032\016" +
+      "TalkComp.proto\032\017TimerComp.proto\032\021Vehicle" +
+      "Comp.proto\032\034_LevelStateMachineComp.proto" +
+      "\032\024_SubSwitchComp.proto\"\221\013\n\013KEGLGHJKEGP\022!" +
+      "\n\013NHGKKKAOKMN\030\002 \001(\0162\014.AELIBNHFODD\022\021\n\tis_" +
+      "active\030\001 \001(\010\022-\n\021custom_value_comp\030\013 \001(\0132" +
+      "\020.CustomValueCompH\000\022 \n\ntimer_comp\030\r \001(\0132" +
+      "\n.TimerCompH\000\022\036\n\tmove_comp\030\016 \001(\0132\t.MoveC" +
+      "ompH\000\0221\n\023client_trigger_comp\030\017 \001(\0132\022.Cli" +
+      "entTriggerCompH\000\022\"\n\013effect_comp\030\020 \001(\0132\013." +
+      "EffectCompH\000\022(\n\016collision_comp\030\022 \001(\0132\016.C" +
+      "ollisionCompH\000\022+\n\020follow_move_comp\030\023 \001(\013" +
+      "2\017.FollowMoveCompH\000\022+\n\020bullet_move_comp\030" +
+      "\025 \001(\0132\017.BulletMoveCompH\000\022/\n\022hit_detectio" +
+      "n_comp\030\026 \001(\0132\021.HitDetectionCompH\000\022\"\n\013cam" +
+      "era_comp\030\027 \001(\0132\013.CameraCompH\000\022+\n\020role_st" +
+      "atus_comp\030\030 \001(\0132\017.RoleStatusCompH\000\0225\n\025av" +
+      "atar_disturber_comp\030\031 \001(\0132\024.AvatarDistur" +
+      "berCompH\000\022)\n\017count_down_comp\030\032 \001(\0132\016.Cou" +
+      "ntDownCompH\000\022\"\n\013option_comp\030\033 \001(\0132\013.Opti" +
+      "onCompH\000\022\"\n\013hitbox_comp\030\034 \001(\0132\013.HitboxCo" +
+      "mpH\000\022-\n\021custom_skill_comp\030\035 \001(\0132\020.Custom" +
+      "SkillCompH\000\022\"\n\013enmity_comp\030\037 \001(\0132\013.Enmit" +
+      "yCompH\000\022(\n\016nameplate_comp\030  \001(\0132\016.Namepl" +
+      "ateCompH\000\022\036\n\ttalk_comp\030! \001(\0132\t.TalkCompH" +
+      "\000\022-\n\021sound_effect_comp\030\" \001(\0132\020.SoundEffe" +
+      "ctCompH\000\0221\n\023monster_patrol_comp\030# \001(\0132\022." +
+      "MonsterPatrolCompH\000\022;\n\030level_state_machi" +
+      "ne_comp\030$ \001(\0132\027._LevelStateMachineCompH\000" +
+      "\022-\n\021minimap_mark_comp\030% \001(\0132\020.MinimapMar" +
+      "kCompH\000\022\'\n\016stuff_bag_comp\030& \001(\0132\r.StuffB" +
+      "agCompH\000\0222\n\024equip_stuff_bag_comp\030\' \001(\0132\022" +
+      ".EquipStuffBagCompH\000\022+\n\020drop_gather_comp" +
+      "\030( \001(\0132\017.DropGatherCompH\000\022+\n\020light_group" +
+      "_comp\030) \001(\0132\017.LightGroupCompH\000\022+\n\020scan_e" +
+      "ntity_comp\030* \001(\0132\017.ScanEntityCompH\000\022*\n\017s" +
+      "ub_switch_comp\030+ \001(\0132\017._SubSwitchCompH\000\022" +
+      ")\n\017monster_ai_comp\030, \001(\0132\016.MonsterAiComp" +
+      "H\000\022$\n\014vehicle_comp\030- \001(\0132\014.VehicleCompH\000" +
+      "B\010\n\006detailB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.AELIBNHFODDOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.BANABAFODKKOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.HALLKJDALJGOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.IKOIHIANENHOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.NJABMDONHPIOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto._LevelStateMachineCompOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto._SubSwitchCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.BulletMoveCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CameraCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ClientTriggerCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CollisionCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CountDownCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CustomSkillCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CustomValueCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.DropGatherCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EffectCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EnmityCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.FollowMoveCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HitDetectionCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.HitboxCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.LightGroupCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MinimapMarkCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MonsterAiCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.MoveCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.NameplateCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.OptionCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.RoleStatusCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ScanEntityCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.SoundEffectCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.StuffBagCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.TalkCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.TimerCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.VehicleCompOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.LevelStateMachineComp.getDescriptor(),
+          emu.grasscutter.net.proto.SubSwitchComp.getDescriptor(),
         });
     internal_static_KEGLGHJKEGP_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_KEGLGHJKEGP_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KEGLGHJKEGP_descriptor,
-        new java.lang.String[] { "CustomValueComp", "TimerComp", "MoveComp", "ClientTriggerComp", "EffectComp", "CollisionComp", "FollowMoveComp", "BulletMoveComp", "HitDetectionComp", "CameraComp", "RoleStatusComp", "AvatarDisturberComp", "CountDownComp", "OptionComp", "HitboxComp", "CustomSkillComp", "EnmityComp", "NameplateComp", "TalkComp", "SoundEffectComp", "MonsterPatrolComp", "LevelStateMachineComp", "MinimapMarkComp", "StuffBagComp", "EquipStuffBagComp", "DropGatherComp", "LightGroupComp", "ScanEntityComp", "SubSwitchComp", "MonsterAiComp", "VehicleComp", "IsActive", "NHGKKKAOKMN", "Detail", });
+        new java.lang.String[] { "NHGKKKAOKMN", "IsActive", "CustomValueComp", "TimerComp", "MoveComp", "ClientTriggerComp", "EffectComp", "CollisionComp", "FollowMoveComp", "BulletMoveComp", "HitDetectionComp", "CameraComp", "RoleStatusComp", "AvatarDisturberComp", "CountDownComp", "OptionComp", "HitboxComp", "CustomSkillComp", "EnmityComp", "NameplateComp", "TalkComp", "SoundEffectComp", "MonsterPatrolComp", "LevelStateMachineComp", "MinimapMarkComp", "StuffBagComp", "EquipStuffBagComp", "DropGatherComp", "LightGroupComp", "ScanEntityComp", "SubSwitchComp", "MonsterAiComp", "VehicleComp", "Detail", });
     emu.grasscutter.net.proto.AELIBNHFODDOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.AGFINCBOPDEOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.BANABAFODKKOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.FDKOFMMNKEDOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.FKCJKMGFGMAOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.FOOFKCNOCBNOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.GECFKHFMNKNOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.HALLKJDALJGOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.HIHENKCOEPBOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IAMFJKNIDPJOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IBFPCNHCJJKOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IIHJBEGADCJOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IKOIHIANENHOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.IKOMHKPAEINOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.JEFEGBIEMOFOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.JNCFEAMFKNAOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.KCJGBIPCHGOOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.KFMJCGEOPJJOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.KNBCNCGHKBIOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.KPIBJLNPBHGOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.LDJMONFNHNKOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.MCKANJDJLLJOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.MPLJGNOKEFBOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.NJABMDONHPIOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.NJEMOPGNEDDOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.OCMDIBLDABDOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.OFGPCHCLFDKOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.OKDEHNGHKGAOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.OLOLDMPHCFKOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.PHFAOBBPOIPOuterClass.getDescriptor();
-    emu.grasscutter.net.proto._LevelStateMachineCompOuterClass.getDescriptor();
-    emu.grasscutter.net.proto._SubSwitchCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.AvatarDisturberCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.BulletMoveCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CameraCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ClientTriggerCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CollisionCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CountDownCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CustomSkillCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.CustomValueCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.DropGatherCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EffectCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EnmityCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.EquipStuffBagCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.FollowMoveCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.HitDetectionCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.HitboxCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.LightGroupCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.MinimapMarkCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.MonsterAiCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.MonsterPatrolCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.MoveCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.NameplateCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.OptionCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.RoleStatusCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.ScanEntityCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.SoundEffectCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.StuffBagCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.TalkCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.TimerCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.VehicleCompOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.LevelStateMachineComp.getDescriptor();
+    emu.grasscutter.net.proto.SubSwitchComp.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

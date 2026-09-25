@@ -19,42 +19,46 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> 
+        getLevelInfoListList();
+    /**
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo getLevelInfoList(int index);
+    /**
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
+     */
+    int getLevelInfoListCount();
+    /**
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder> 
+        getLevelInfoListOrBuilderList();
+    /**
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder getLevelInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>bool is_open = 10;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
      */
     int getStageId();
-
-    /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> 
-        getLevelInfoListList();
-    /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo getLevelInfoList(int index);
-    /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
-     */
-    int getLevelInfoListCount();
-    /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder> 
-        getLevelInfoListOrBuilderList();
-    /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder getLevelInfoListOrBuilder(
-        int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code SeaLampV3ShadowStageInfo}
    */
   public static final class SeaLampV3ShadowStageInfo extends
@@ -101,23 +105,23 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 96: {
+            case 8: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 122: {
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               levelInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 80: {
+
+              isOpen_ = input.readBool();
               break;
             }
             default: {
@@ -155,39 +159,17 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
               emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo.class, emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 7;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int STAGE_ID_FIELD_NUMBER = 12;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 12;</code>
-     * @return The stageId.
-     */
-    @java.lang.Override
-    public int getStageId() {
-      return stageId_;
-    }
-
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 15;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> levelInfoList_;
     /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder> 
@@ -195,26 +177,48 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+     * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder getLevelInfoListOrBuilder(
         int index) {
       return levelInfoList_.get(index);
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 10;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 10;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 1;
+    private int stageId_;
+    /**
+     * <code>uint32 stage_id = 1;</code>
+     * @return The stageId.
+     */
+    @java.lang.Override
+    public int getStageId() {
+      return stageId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -231,14 +235,14 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
-      }
       if (stageId_ != 0) {
-        output.writeUInt32(12, stageId_);
+        output.writeUInt32(1, stageId_);
       }
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(15, levelInfoList_.get(i));
+        output.writeMessage(8, levelInfoList_.get(i));
+      }
+      if (isOpen_ != false) {
+        output.writeBool(10, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -249,17 +253,17 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
-      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, stageId_);
+          .computeUInt32Size(1, stageId_);
       }
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, levelInfoList_.get(i));
+          .computeMessageSize(8, levelInfoList_.get(i));
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -276,12 +280,12 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       }
       emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo other = (emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo) obj;
 
+      if (!getLevelInfoListList()
+          .equals(other.getLevelInfoListList())) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!getLevelInfoListList()
-          .equals(other.getLevelInfoListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -293,15 +297,15 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getLevelInfoListCount() > 0) {
+        hash = (37 * hash) + LEVEL_INFO_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getLevelInfoListList().hashCode();
+      }
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      if (getLevelInfoListCount() > 0) {
-        hash = (37 * hash) + LEVEL_INFO_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getLevelInfoListList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -398,6 +402,10 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code SeaLampV3ShadowStageInfo}
      */
     public static final class Builder extends
@@ -436,16 +444,16 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isOpen_ = false;
-
-        stageId_ = 0;
-
         if (levelInfoListBuilder_ == null) {
           levelInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           levelInfoListBuilder_.clear();
         }
+        isOpen_ = false;
+
+        stageId_ = 0;
+
         return this;
       }
 
@@ -473,8 +481,6 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       public emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo buildPartial() {
         emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo result = new emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo(this);
         int from_bitField0_ = bitField0_;
-        result.isOpen_ = isOpen_;
-        result.stageId_ = stageId_;
         if (levelInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             levelInfoList_ = java.util.Collections.unmodifiableList(levelInfoList_);
@@ -484,6 +490,8 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         } else {
           result.levelInfoList_ = levelInfoListBuilder_.build();
         }
+        result.isOpen_ = isOpen_;
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
       }
@@ -532,12 +540,6 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo other) {
         if (other == emu.grasscutter.net.proto.SeaLampV3ShadowStageInfoOuterClass.SeaLampV3ShadowStageInfo.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
         if (levelInfoListBuilder_ == null) {
           if (!other.levelInfoList_.isEmpty()) {
             if (levelInfoList_.isEmpty()) {
@@ -563,6 +565,12 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
               levelInfoListBuilder_.addAllMessages(other.levelInfoList_);
             }
           }
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -594,68 +602,6 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
       }
       private int bitField0_;
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 7;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 7;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 12;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 12;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> levelInfoList_ =
         java.util.Collections.emptyList();
       private void ensureLevelInfoListIsMutable() {
@@ -669,7 +615,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
           emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -679,7 +625,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -689,7 +635,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -699,7 +645,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo value) {
@@ -716,7 +662,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder builderForValue) {
@@ -730,7 +676,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo value) {
         if (levelInfoListBuilder_ == null) {
@@ -746,7 +692,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo value) {
@@ -763,7 +709,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder builderForValue) {
@@ -777,7 +723,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder builderForValue) {
@@ -791,7 +737,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo> values) {
@@ -806,7 +752,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -819,7 +765,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -832,14 +778,14 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -849,7 +795,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfoOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -860,14 +806,14 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder addLevelInfoListBuilder(
           int index) {
@@ -875,7 +821,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
             index, emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 15;</code>
+       * <code>repeated .SeaLampV3ShadowLevelInfo level_info_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.SeaLampV3ShadowLevelInfo.Builder> 
            getLevelInfoListBuilderList() {
@@ -894,6 +840,68 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
           levelInfoList_ = null;
         }
         return levelInfoListBuilder_;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 10;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 10;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 1;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 1;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -964,11 +972,10 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036SeaLampV3ShadowStageInfo.proto\032\036SeaLam" +
       "pV3ShadowLevelInfo.proto\"q\n\030SeaLampV3Sha" +
-      "dowStageInfo\022\017\n\007is_open\030\007 \001(\010\022\020\n\010stage_i" +
-      "d\030\014 \001(\r\0222\n\017level_info_list\030\017 \003(\0132\031.SeaLa" +
-      "mpV3ShadowLevelInfoB?\n\031emu.grasscutter.n" +
-      "et.protoB\"SeaLampV3ShadowStageInfoOuterC" +
-      "lassb\006proto3"
+      "dowStageInfo\0222\n\017level_info_list\030\010 \003(\0132\031." +
+      "SeaLampV3ShadowLevelInfo\022\017\n\007is_open\030\n \001(" +
+      "\010\022\020\n\010stage_id\030\001 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -980,7 +987,7 @@ public final class SeaLampV3ShadowStageInfoOuterClass {
     internal_static_SeaLampV3ShadowStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SeaLampV3ShadowStageInfo_descriptor,
-        new java.lang.String[] { "IsOpen", "StageId", "LevelInfoList", });
+        new java.lang.String[] { "LevelInfoList", "IsOpen", "StageId", });
     emu.grasscutter.net.proto.SeaLampV3ShadowLevelInfoOuterClass.getDescriptor();
   }
 

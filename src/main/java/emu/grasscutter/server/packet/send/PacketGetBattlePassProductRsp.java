@@ -4,7 +4,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.GetBattlePassProductRsp;
+import emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp;
 
 public class PacketGetBattlePassProductRsp
 extends BasePacket {

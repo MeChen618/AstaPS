@@ -25,16 +25,34 @@ public final class OKJOINFCNLJOuterClass {
     int getLKJNKMLEDHN();
 
     /**
-     * <code>float begin_time = 2;</code>
-     * @return The beginTime.
+     * <code>float BDFKCBOIAIP = 7;</code>
+     * @return The bDFKCBOIAIP.
      */
-    float getBeginTime();
+    float getBDFKCBOIAIP();
 
     /**
      * <code>float end_time = 3;</code>
      * @return The endTime.
      */
     float getEndTime();
+
+    /**
+     * <code>int32 GMGNKGGBBAM = 6;</code>
+     * @return The gMGNKGGBBAM.
+     */
+    int getGMGNKGGBBAM();
+
+    /**
+     * <code>float begin_time = 2;</code>
+     * @return The beginTime.
+     */
+    float getBeginTime();
+
+    /**
+     * <code>bool OFDMGHJACIC = 8;</code>
+     * @return The oFDMGHJACIC.
+     */
+    boolean getOFDMGHJACIC();
 
     /**
      * <code>bool JAIKAMEDKOB = 4;</code>
@@ -47,26 +65,12 @@ public final class OKJOINFCNLJOuterClass {
      * @return The mCMDPFOIHAJ.
      */
     float getMCMDPFOIHAJ();
-
-    /**
-     * <code>int32 GMGNKGGBBAM = 6;</code>
-     * @return The gMGNKGGBBAM.
-     */
-    int getGMGNKGGBBAM();
-
-    /**
-     * <code>float BDFKCBOIAIP = 7;</code>
-     * @return The bDFKCBOIAIP.
-     */
-    float getBDFKCBOIAIP();
-
-    /**
-     * <code>bool OFDMGHJACIC = 8;</code>
-     * @return The oFDMGHJACIC.
-     */
-    boolean getOFDMGHJACIC();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OKJOINFCNLJ}
    */
   public static final class OKJOINFCNLJ extends
@@ -194,15 +198,15 @@ public final class OKJOINFCNLJOuterClass {
       return lKJNKMLEDHN_;
     }
 
-    public static final int BEGIN_TIME_FIELD_NUMBER = 2;
-    private float beginTime_;
+    public static final int BDFKCBOIAIP_FIELD_NUMBER = 7;
+    private float bDFKCBOIAIP_;
     /**
-     * <code>float begin_time = 2;</code>
-     * @return The beginTime.
+     * <code>float BDFKCBOIAIP = 7;</code>
+     * @return The bDFKCBOIAIP.
      */
     @java.lang.Override
-    public float getBeginTime() {
-      return beginTime_;
+    public float getBDFKCBOIAIP() {
+      return bDFKCBOIAIP_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 3;
@@ -214,6 +218,39 @@ public final class OKJOINFCNLJOuterClass {
     @java.lang.Override
     public float getEndTime() {
       return endTime_;
+    }
+
+    public static final int GMGNKGGBBAM_FIELD_NUMBER = 6;
+    private int gMGNKGGBBAM_;
+    /**
+     * <code>int32 GMGNKGGBBAM = 6;</code>
+     * @return The gMGNKGGBBAM.
+     */
+    @java.lang.Override
+    public int getGMGNKGGBBAM() {
+      return gMGNKGGBBAM_;
+    }
+
+    public static final int BEGIN_TIME_FIELD_NUMBER = 2;
+    private float beginTime_;
+    /**
+     * <code>float begin_time = 2;</code>
+     * @return The beginTime.
+     */
+    @java.lang.Override
+    public float getBeginTime() {
+      return beginTime_;
+    }
+
+    public static final int OFDMGHJACIC_FIELD_NUMBER = 8;
+    private boolean oFDMGHJACIC_;
+    /**
+     * <code>bool OFDMGHJACIC = 8;</code>
+     * @return The oFDMGHJACIC.
+     */
+    @java.lang.Override
+    public boolean getOFDMGHJACIC() {
+      return oFDMGHJACIC_;
     }
 
     public static final int JAIKAMEDKOB_FIELD_NUMBER = 4;
@@ -236,39 +273,6 @@ public final class OKJOINFCNLJOuterClass {
     @java.lang.Override
     public float getMCMDPFOIHAJ() {
       return mCMDPFOIHAJ_;
-    }
-
-    public static final int GMGNKGGBBAM_FIELD_NUMBER = 6;
-    private int gMGNKGGBBAM_;
-    /**
-     * <code>int32 GMGNKGGBBAM = 6;</code>
-     * @return The gMGNKGGBBAM.
-     */
-    @java.lang.Override
-    public int getGMGNKGGBBAM() {
-      return gMGNKGGBBAM_;
-    }
-
-    public static final int BDFKCBOIAIP_FIELD_NUMBER = 7;
-    private float bDFKCBOIAIP_;
-    /**
-     * <code>float BDFKCBOIAIP = 7;</code>
-     * @return The bDFKCBOIAIP.
-     */
-    @java.lang.Override
-    public float getBDFKCBOIAIP() {
-      return bDFKCBOIAIP_;
-    }
-
-    public static final int OFDMGHJACIC_FIELD_NUMBER = 8;
-    private boolean oFDMGHJACIC_;
-    /**
-     * <code>bool OFDMGHJACIC = 8;</code>
-     * @return The oFDMGHJACIC.
-     */
-    @java.lang.Override
-    public boolean getOFDMGHJACIC() {
-      return oFDMGHJACIC_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -367,24 +371,24 @@ public final class OKJOINFCNLJOuterClass {
 
       if (getLKJNKMLEDHN()
           != other.getLKJNKMLEDHN()) return false;
-      if (java.lang.Float.floatToIntBits(getBeginTime())
+      if (java.lang.Float.floatToIntBits(getBDFKCBOIAIP())
           != java.lang.Float.floatToIntBits(
-              other.getBeginTime())) return false;
+              other.getBDFKCBOIAIP())) return false;
       if (java.lang.Float.floatToIntBits(getEndTime())
           != java.lang.Float.floatToIntBits(
               other.getEndTime())) return false;
+      if (getGMGNKGGBBAM()
+          != other.getGMGNKGGBBAM()) return false;
+      if (java.lang.Float.floatToIntBits(getBeginTime())
+          != java.lang.Float.floatToIntBits(
+              other.getBeginTime())) return false;
+      if (getOFDMGHJACIC()
+          != other.getOFDMGHJACIC()) return false;
       if (getJAIKAMEDKOB()
           != other.getJAIKAMEDKOB()) return false;
       if (java.lang.Float.floatToIntBits(getMCMDPFOIHAJ())
           != java.lang.Float.floatToIntBits(
               other.getMCMDPFOIHAJ())) return false;
-      if (getGMGNKGGBBAM()
-          != other.getGMGNKGGBBAM()) return false;
-      if (java.lang.Float.floatToIntBits(getBDFKCBOIAIP())
-          != java.lang.Float.floatToIntBits(
-              other.getBDFKCBOIAIP())) return false;
-      if (getOFDMGHJACIC()
-          != other.getOFDMGHJACIC()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -398,26 +402,26 @@ public final class OKJOINFCNLJOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LKJNKMLEDHN_FIELD_NUMBER;
       hash = (53 * hash) + getLKJNKMLEDHN();
-      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
+      hash = (37 * hash) + BDFKCBOIAIP_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getBeginTime());
+          getBDFKCBOIAIP());
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getEndTime());
+      hash = (37 * hash) + GMGNKGGBBAM_FIELD_NUMBER;
+      hash = (53 * hash) + getGMGNKGGBBAM();
+      hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getBeginTime());
+      hash = (37 * hash) + OFDMGHJACIC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOFDMGHJACIC());
       hash = (37 * hash) + JAIKAMEDKOB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getJAIKAMEDKOB());
       hash = (37 * hash) + MCMDPFOIHAJ_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getMCMDPFOIHAJ());
-      hash = (37 * hash) + GMGNKGGBBAM_FIELD_NUMBER;
-      hash = (53 * hash) + getGMGNKGGBBAM();
-      hash = (37 * hash) + BDFKCBOIAIP_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getBDFKCBOIAIP());
-      hash = (37 * hash) + OFDMGHJACIC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getOFDMGHJACIC());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -514,6 +518,10 @@ public final class OKJOINFCNLJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OKJOINFCNLJ}
      */
     public static final class Builder extends
@@ -553,19 +561,19 @@ public final class OKJOINFCNLJOuterClass {
         super.clear();
         lKJNKMLEDHN_ = 0;
 
-        beginTime_ = 0F;
+        bDFKCBOIAIP_ = 0F;
 
         endTime_ = 0F;
+
+        gMGNKGGBBAM_ = 0;
+
+        beginTime_ = 0F;
+
+        oFDMGHJACIC_ = false;
 
         jAIKAMEDKOB_ = false;
 
         mCMDPFOIHAJ_ = 0F;
-
-        gMGNKGGBBAM_ = 0;
-
-        bDFKCBOIAIP_ = 0F;
-
-        oFDMGHJACIC_ = false;
 
         return this;
       }
@@ -594,13 +602,13 @@ public final class OKJOINFCNLJOuterClass {
       public emu.grasscutter.net.proto.OKJOINFCNLJOuterClass.OKJOINFCNLJ buildPartial() {
         emu.grasscutter.net.proto.OKJOINFCNLJOuterClass.OKJOINFCNLJ result = new emu.grasscutter.net.proto.OKJOINFCNLJOuterClass.OKJOINFCNLJ(this);
         result.lKJNKMLEDHN_ = lKJNKMLEDHN_;
-        result.beginTime_ = beginTime_;
+        result.bDFKCBOIAIP_ = bDFKCBOIAIP_;
         result.endTime_ = endTime_;
+        result.gMGNKGGBBAM_ = gMGNKGGBBAM_;
+        result.beginTime_ = beginTime_;
+        result.oFDMGHJACIC_ = oFDMGHJACIC_;
         result.jAIKAMEDKOB_ = jAIKAMEDKOB_;
         result.mCMDPFOIHAJ_ = mCMDPFOIHAJ_;
-        result.gMGNKGGBBAM_ = gMGNKGGBBAM_;
-        result.bDFKCBOIAIP_ = bDFKCBOIAIP_;
-        result.oFDMGHJACIC_ = oFDMGHJACIC_;
         onBuilt();
         return result;
       }
@@ -652,26 +660,26 @@ public final class OKJOINFCNLJOuterClass {
         if (other.getLKJNKMLEDHN() != 0) {
           setLKJNKMLEDHN(other.getLKJNKMLEDHN());
         }
-        if (other.getBeginTime() != 0F) {
-          setBeginTime(other.getBeginTime());
+        if (other.getBDFKCBOIAIP() != 0F) {
+          setBDFKCBOIAIP(other.getBDFKCBOIAIP());
         }
         if (other.getEndTime() != 0F) {
           setEndTime(other.getEndTime());
+        }
+        if (other.getGMGNKGGBBAM() != 0) {
+          setGMGNKGGBBAM(other.getGMGNKGGBBAM());
+        }
+        if (other.getBeginTime() != 0F) {
+          setBeginTime(other.getBeginTime());
+        }
+        if (other.getOFDMGHJACIC() != false) {
+          setOFDMGHJACIC(other.getOFDMGHJACIC());
         }
         if (other.getJAIKAMEDKOB() != false) {
           setJAIKAMEDKOB(other.getJAIKAMEDKOB());
         }
         if (other.getMCMDPFOIHAJ() != 0F) {
           setMCMDPFOIHAJ(other.getMCMDPFOIHAJ());
-        }
-        if (other.getGMGNKGGBBAM() != 0) {
-          setGMGNKGGBBAM(other.getGMGNKGGBBAM());
-        }
-        if (other.getBDFKCBOIAIP() != 0F) {
-          setBDFKCBOIAIP(other.getBDFKCBOIAIP());
-        }
-        if (other.getOFDMGHJACIC() != false) {
-          setOFDMGHJACIC(other.getOFDMGHJACIC());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -733,33 +741,33 @@ public final class OKJOINFCNLJOuterClass {
         return this;
       }
 
-      private float beginTime_ ;
+      private float bDFKCBOIAIP_ ;
       /**
-       * <code>float begin_time = 2;</code>
-       * @return The beginTime.
+       * <code>float BDFKCBOIAIP = 7;</code>
+       * @return The bDFKCBOIAIP.
        */
       @java.lang.Override
-      public float getBeginTime() {
-        return beginTime_;
+      public float getBDFKCBOIAIP() {
+        return bDFKCBOIAIP_;
       }
       /**
-       * <code>float begin_time = 2;</code>
-       * @param value The beginTime to set.
+       * <code>float BDFKCBOIAIP = 7;</code>
+       * @param value The bDFKCBOIAIP to set.
        * @return This builder for chaining.
        */
-      public Builder setBeginTime(float value) {
+      public Builder setBDFKCBOIAIP(float value) {
         
-        beginTime_ = value;
+        bDFKCBOIAIP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>float begin_time = 2;</code>
+       * <code>float BDFKCBOIAIP = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBeginTime() {
+      public Builder clearBDFKCBOIAIP() {
         
-        beginTime_ = 0F;
+        bDFKCBOIAIP_ = 0F;
         onChanged();
         return this;
       }
@@ -791,6 +799,99 @@ public final class OKJOINFCNLJOuterClass {
       public Builder clearEndTime() {
         
         endTime_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int gMGNKGGBBAM_ ;
+      /**
+       * <code>int32 GMGNKGGBBAM = 6;</code>
+       * @return The gMGNKGGBBAM.
+       */
+      @java.lang.Override
+      public int getGMGNKGGBBAM() {
+        return gMGNKGGBBAM_;
+      }
+      /**
+       * <code>int32 GMGNKGGBBAM = 6;</code>
+       * @param value The gMGNKGGBBAM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGMGNKGGBBAM(int value) {
+        
+        gMGNKGGBBAM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 GMGNKGGBBAM = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGMGNKGGBBAM() {
+        
+        gMGNKGGBBAM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float beginTime_ ;
+      /**
+       * <code>float begin_time = 2;</code>
+       * @return The beginTime.
+       */
+      @java.lang.Override
+      public float getBeginTime() {
+        return beginTime_;
+      }
+      /**
+       * <code>float begin_time = 2;</code>
+       * @param value The beginTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBeginTime(float value) {
+        
+        beginTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float begin_time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBeginTime() {
+        
+        beginTime_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean oFDMGHJACIC_ ;
+      /**
+       * <code>bool OFDMGHJACIC = 8;</code>
+       * @return The oFDMGHJACIC.
+       */
+      @java.lang.Override
+      public boolean getOFDMGHJACIC() {
+        return oFDMGHJACIC_;
+      }
+      /**
+       * <code>bool OFDMGHJACIC = 8;</code>
+       * @param value The oFDMGHJACIC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOFDMGHJACIC(boolean value) {
+        
+        oFDMGHJACIC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool OFDMGHJACIC = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOFDMGHJACIC() {
+        
+        oFDMGHJACIC_ = false;
         onChanged();
         return this;
       }
@@ -853,99 +954,6 @@ public final class OKJOINFCNLJOuterClass {
       public Builder clearMCMDPFOIHAJ() {
         
         mCMDPFOIHAJ_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private int gMGNKGGBBAM_ ;
-      /**
-       * <code>int32 GMGNKGGBBAM = 6;</code>
-       * @return The gMGNKGGBBAM.
-       */
-      @java.lang.Override
-      public int getGMGNKGGBBAM() {
-        return gMGNKGGBBAM_;
-      }
-      /**
-       * <code>int32 GMGNKGGBBAM = 6;</code>
-       * @param value The gMGNKGGBBAM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGMGNKGGBBAM(int value) {
-        
-        gMGNKGGBBAM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 GMGNKGGBBAM = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGMGNKGGBBAM() {
-        
-        gMGNKGGBBAM_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float bDFKCBOIAIP_ ;
-      /**
-       * <code>float BDFKCBOIAIP = 7;</code>
-       * @return The bDFKCBOIAIP.
-       */
-      @java.lang.Override
-      public float getBDFKCBOIAIP() {
-        return bDFKCBOIAIP_;
-      }
-      /**
-       * <code>float BDFKCBOIAIP = 7;</code>
-       * @param value The bDFKCBOIAIP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBDFKCBOIAIP(float value) {
-        
-        bDFKCBOIAIP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float BDFKCBOIAIP = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBDFKCBOIAIP() {
-        
-        bDFKCBOIAIP_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private boolean oFDMGHJACIC_ ;
-      /**
-       * <code>bool OFDMGHJACIC = 8;</code>
-       * @return The oFDMGHJACIC.
-       */
-      @java.lang.Override
-      public boolean getOFDMGHJACIC() {
-        return oFDMGHJACIC_;
-      }
-      /**
-       * <code>bool OFDMGHJACIC = 8;</code>
-       * @param value The oFDMGHJACIC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOFDMGHJACIC(boolean value) {
-        
-        oFDMGHJACIC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool OFDMGHJACIC = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOFDMGHJACIC() {
-        
-        oFDMGHJACIC_ = false;
         onChanged();
         return this;
       }
@@ -1017,12 +1025,11 @@ public final class OKJOINFCNLJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021OKJOINFCNLJ.proto\"\261\001\n\013OKJOINFCNLJ\022\023\n\013L" +
-      "KJNKMLEDHN\030\001 \001(\005\022\022\n\nbegin_time\030\002 \001(\002\022\020\n\010" +
-      "end_time\030\003 \001(\002\022\023\n\013JAIKAMEDKOB\030\004 \001(\010\022\023\n\013M" +
-      "CMDPFOIHAJ\030\005 \001(\002\022\023\n\013GMGNKGGBBAM\030\006 \001(\005\022\023\n" +
-      "\013BDFKCBOIAIP\030\007 \001(\002\022\023\n\013OFDMGHJACIC\030\010 \001(\010B" +
-      "2\n\031emu.grasscutter.net.protoB\025OKJOINFCNL" +
-      "JOuterClassb\006proto3"
+      "KJNKMLEDHN\030\001 \001(\005\022\023\n\013BDFKCBOIAIP\030\007 \001(\002\022\020\n" +
+      "\010end_time\030\003 \001(\002\022\023\n\013GMGNKGGBBAM\030\006 \001(\005\022\022\n\n" +
+      "begin_time\030\002 \001(\002\022\023\n\013OFDMGHJACIC\030\010 \001(\010\022\023\n" +
+      "\013JAIKAMEDKOB\030\004 \001(\010\022\023\n\013MCMDPFOIHAJ\030\005 \001(\002B" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1033,7 +1040,7 @@ public final class OKJOINFCNLJOuterClass {
     internal_static_OKJOINFCNLJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OKJOINFCNLJ_descriptor,
-        new java.lang.String[] { "LKJNKMLEDHN", "BeginTime", "EndTime", "JAIKAMEDKOB", "MCMDPFOIHAJ", "GMGNKGGBBAM", "BDFKCBOIAIP", "OFDMGHJACIC", });
+        new java.lang.String[] { "LKJNKMLEDHN", "BDFKCBOIAIP", "EndTime", "GMGNKGGBBAM", "BeginTime", "OFDMGHJACIC", "JAIKAMEDKOB", "MCMDPFOIHAJ", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

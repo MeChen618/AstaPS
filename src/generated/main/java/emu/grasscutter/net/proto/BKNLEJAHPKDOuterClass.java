@@ -19,10 +19,10 @@ public final class BKNLEJAHPKDOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool KHEJLNDOHPI = 1;</code>
-     * @return The kHEJLNDOHPI.
+     * <code>int32 GFIOCBDAHFE = 3;</code>
+     * @return The gFIOCBDAHFE.
      */
-    boolean getKHEJLNDOHPI();
+    int getGFIOCBDAHFE();
 
     /**
      * <code>int32 NCGPNAAHOEP = 2;</code>
@@ -31,10 +31,10 @@ public final class BKNLEJAHPKDOuterClass {
     int getNCGPNAAHOEP();
 
     /**
-     * <code>int32 GFIOCBDAHFE = 3;</code>
-     * @return The gFIOCBDAHFE.
+     * <code>bool KHEJLNDOHPI = 1;</code>
+     * @return The kHEJLNDOHPI.
      */
-    int getGFIOCBDAHFE();
+    boolean getKHEJLNDOHPI();
 
     /**
      * <code>bool HOIOBBJGJCP = 4;</code>
@@ -43,6 +43,10 @@ public final class BKNLEJAHPKDOuterClass {
     boolean getHOIOBBJGJCP();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BKNLEJAHPKD}
    */
   public static final class BKNLEJAHPKD extends
@@ -139,15 +143,15 @@ public final class BKNLEJAHPKDOuterClass {
               emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD.class, emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD.Builder.class);
     }
 
-    public static final int KHEJLNDOHPI_FIELD_NUMBER = 1;
-    private boolean kHEJLNDOHPI_;
+    public static final int GFIOCBDAHFE_FIELD_NUMBER = 3;
+    private int gFIOCBDAHFE_;
     /**
-     * <code>bool KHEJLNDOHPI = 1;</code>
-     * @return The kHEJLNDOHPI.
+     * <code>int32 GFIOCBDAHFE = 3;</code>
+     * @return The gFIOCBDAHFE.
      */
     @java.lang.Override
-    public boolean getKHEJLNDOHPI() {
-      return kHEJLNDOHPI_;
+    public int getGFIOCBDAHFE() {
+      return gFIOCBDAHFE_;
     }
 
     public static final int NCGPNAAHOEP_FIELD_NUMBER = 2;
@@ -161,15 +165,15 @@ public final class BKNLEJAHPKDOuterClass {
       return nCGPNAAHOEP_;
     }
 
-    public static final int GFIOCBDAHFE_FIELD_NUMBER = 3;
-    private int gFIOCBDAHFE_;
+    public static final int KHEJLNDOHPI_FIELD_NUMBER = 1;
+    private boolean kHEJLNDOHPI_;
     /**
-     * <code>int32 GFIOCBDAHFE = 3;</code>
-     * @return The gFIOCBDAHFE.
+     * <code>bool KHEJLNDOHPI = 1;</code>
+     * @return The kHEJLNDOHPI.
      */
     @java.lang.Override
-    public int getGFIOCBDAHFE() {
-      return gFIOCBDAHFE_;
+    public boolean getKHEJLNDOHPI() {
+      return kHEJLNDOHPI_;
     }
 
     public static final int HOIOBBJGJCP_FIELD_NUMBER = 4;
@@ -249,12 +253,12 @@ public final class BKNLEJAHPKDOuterClass {
       }
       emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD other = (emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD) obj;
 
-      if (getKHEJLNDOHPI()
-          != other.getKHEJLNDOHPI()) return false;
-      if (getNCGPNAAHOEP()
-          != other.getNCGPNAAHOEP()) return false;
       if (getGFIOCBDAHFE()
           != other.getGFIOCBDAHFE()) return false;
+      if (getNCGPNAAHOEP()
+          != other.getNCGPNAAHOEP()) return false;
+      if (getKHEJLNDOHPI()
+          != other.getKHEJLNDOHPI()) return false;
       if (getHOIOBBJGJCP()
           != other.getHOIOBBJGJCP()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -268,13 +272,13 @@ public final class BKNLEJAHPKDOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + GFIOCBDAHFE_FIELD_NUMBER;
+      hash = (53 * hash) + getGFIOCBDAHFE();
+      hash = (37 * hash) + NCGPNAAHOEP_FIELD_NUMBER;
+      hash = (53 * hash) + getNCGPNAAHOEP();
       hash = (37 * hash) + KHEJLNDOHPI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getKHEJLNDOHPI());
-      hash = (37 * hash) + NCGPNAAHOEP_FIELD_NUMBER;
-      hash = (53 * hash) + getNCGPNAAHOEP();
-      hash = (37 * hash) + GFIOCBDAHFE_FIELD_NUMBER;
-      hash = (53 * hash) + getGFIOCBDAHFE();
       hash = (37 * hash) + HOIOBBJGJCP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getHOIOBBJGJCP());
@@ -374,6 +378,10 @@ public final class BKNLEJAHPKDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BKNLEJAHPKD}
      */
     public static final class Builder extends
@@ -411,11 +419,11 @@ public final class BKNLEJAHPKDOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        kHEJLNDOHPI_ = false;
+        gFIOCBDAHFE_ = 0;
 
         nCGPNAAHOEP_ = 0;
 
-        gFIOCBDAHFE_ = 0;
+        kHEJLNDOHPI_ = false;
 
         hOIOBBJGJCP_ = false;
 
@@ -445,9 +453,9 @@ public final class BKNLEJAHPKDOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD buildPartial() {
         emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD result = new emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD(this);
-        result.kHEJLNDOHPI_ = kHEJLNDOHPI_;
-        result.nCGPNAAHOEP_ = nCGPNAAHOEP_;
         result.gFIOCBDAHFE_ = gFIOCBDAHFE_;
+        result.nCGPNAAHOEP_ = nCGPNAAHOEP_;
+        result.kHEJLNDOHPI_ = kHEJLNDOHPI_;
         result.hOIOBBJGJCP_ = hOIOBBJGJCP_;
         onBuilt();
         return result;
@@ -497,14 +505,14 @@ public final class BKNLEJAHPKDOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD other) {
         if (other == emu.grasscutter.net.proto.BKNLEJAHPKDOuterClass.BKNLEJAHPKD.getDefaultInstance()) return this;
-        if (other.getKHEJLNDOHPI() != false) {
-          setKHEJLNDOHPI(other.getKHEJLNDOHPI());
+        if (other.getGFIOCBDAHFE() != 0) {
+          setGFIOCBDAHFE(other.getGFIOCBDAHFE());
         }
         if (other.getNCGPNAAHOEP() != 0) {
           setNCGPNAAHOEP(other.getNCGPNAAHOEP());
         }
-        if (other.getGFIOCBDAHFE() != 0) {
-          setGFIOCBDAHFE(other.getGFIOCBDAHFE());
+        if (other.getKHEJLNDOHPI() != false) {
+          setKHEJLNDOHPI(other.getKHEJLNDOHPI());
         }
         if (other.getHOIOBBJGJCP() != false) {
           setHOIOBBJGJCP(other.getHOIOBBJGJCP());
@@ -538,33 +546,33 @@ public final class BKNLEJAHPKDOuterClass {
         return this;
       }
 
-      private boolean kHEJLNDOHPI_ ;
+      private int gFIOCBDAHFE_ ;
       /**
-       * <code>bool KHEJLNDOHPI = 1;</code>
-       * @return The kHEJLNDOHPI.
+       * <code>int32 GFIOCBDAHFE = 3;</code>
+       * @return The gFIOCBDAHFE.
        */
       @java.lang.Override
-      public boolean getKHEJLNDOHPI() {
-        return kHEJLNDOHPI_;
+      public int getGFIOCBDAHFE() {
+        return gFIOCBDAHFE_;
       }
       /**
-       * <code>bool KHEJLNDOHPI = 1;</code>
-       * @param value The kHEJLNDOHPI to set.
+       * <code>int32 GFIOCBDAHFE = 3;</code>
+       * @param value The gFIOCBDAHFE to set.
        * @return This builder for chaining.
        */
-      public Builder setKHEJLNDOHPI(boolean value) {
+      public Builder setGFIOCBDAHFE(int value) {
         
-        kHEJLNDOHPI_ = value;
+        gFIOCBDAHFE_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool KHEJLNDOHPI = 1;</code>
+       * <code>int32 GFIOCBDAHFE = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearKHEJLNDOHPI() {
+      public Builder clearGFIOCBDAHFE() {
         
-        kHEJLNDOHPI_ = false;
+        gFIOCBDAHFE_ = 0;
         onChanged();
         return this;
       }
@@ -600,33 +608,33 @@ public final class BKNLEJAHPKDOuterClass {
         return this;
       }
 
-      private int gFIOCBDAHFE_ ;
+      private boolean kHEJLNDOHPI_ ;
       /**
-       * <code>int32 GFIOCBDAHFE = 3;</code>
-       * @return The gFIOCBDAHFE.
+       * <code>bool KHEJLNDOHPI = 1;</code>
+       * @return The kHEJLNDOHPI.
        */
       @java.lang.Override
-      public int getGFIOCBDAHFE() {
-        return gFIOCBDAHFE_;
+      public boolean getKHEJLNDOHPI() {
+        return kHEJLNDOHPI_;
       }
       /**
-       * <code>int32 GFIOCBDAHFE = 3;</code>
-       * @param value The gFIOCBDAHFE to set.
+       * <code>bool KHEJLNDOHPI = 1;</code>
+       * @param value The kHEJLNDOHPI to set.
        * @return This builder for chaining.
        */
-      public Builder setGFIOCBDAHFE(int value) {
+      public Builder setKHEJLNDOHPI(boolean value) {
         
-        gFIOCBDAHFE_ = value;
+        kHEJLNDOHPI_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 GFIOCBDAHFE = 3;</code>
+       * <code>bool KHEJLNDOHPI = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearGFIOCBDAHFE() {
+      public Builder clearKHEJLNDOHPI() {
         
-        gFIOCBDAHFE_ = 0;
+        kHEJLNDOHPI_ = false;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class BKNLEJAHPKDOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BKNLEJAHPKD.proto\"a\n\013BKNLEJAHPKD\022\023\n\013KH" +
-      "EJLNDOHPI\030\001 \001(\010\022\023\n\013NCGPNAAHOEP\030\002 \001(\005\022\023\n\013" +
-      "GFIOCBDAHFE\030\003 \001(\005\022\023\n\013HOIOBBJGJCP\030\004 \001(\010B2" +
-      "\n\031emu.grasscutter.net.protoB\025BKNLEJAHPKD" +
-      "OuterClassb\006proto3"
+      "\n\021BKNLEJAHPKD.proto\"a\n\013BKNLEJAHPKD\022\023\n\013GF" +
+      "IOCBDAHFE\030\003 \001(\005\022\023\n\013NCGPNAAHOEP\030\002 \001(\005\022\023\n\013" +
+      "KHEJLNDOHPI\030\001 \001(\010\022\023\n\013HOIOBBJGJCP\030\004 \001(\010B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class BKNLEJAHPKDOuterClass {
     internal_static_BKNLEJAHPKD_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BKNLEJAHPKD_descriptor,
-        new java.lang.String[] { "KHEJLNDOHPI", "NCGPNAAHOEP", "GFIOCBDAHFE", "HOIOBBJGJCP", });
+        new java.lang.String[] { "GFIOCBDAHFE", "NCGPNAAHOEP", "KHEJLNDOHPI", "HOIOBBJGJCP", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

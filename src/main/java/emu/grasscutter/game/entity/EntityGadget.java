@@ -388,7 +388,7 @@ public class EntityGadget extends EntityBaseGadget {
             int killerId,
             ElementType attackType,
             PropChangeReasonOuterClass.PropChangeReason propChangeReason,
-            ChangeHpReasonOuterClass.ChangeHpReason changeHpReason) {
+            ChangHpReasonOuterClass.ChangHpReason changeHpReason) {
         // Sealed bramble/frozen/rock chests clear via EnvironmentalSealHelper; never kill them.
         try {
             boolean isChest =
@@ -550,7 +550,7 @@ public class EntityGadget extends EntityBaseGadget {
                         .setAbilityInfo(AbilitySyncStateInfo.newBuilder())
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
-                                SceneEntityAiInfo.newBuilder().setIsAiOpen(true))
+                                SceneEntityAiInfo.newBuilder().setIsEnteredCombat(true))
                         .setBornPos(bornPos.toProto())
                         .build();
 

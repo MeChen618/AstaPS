@@ -19,30 +19,34 @@ public final class OOHHKGLNCINOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI> 
         getLevelInfoListList();
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI getLevelInfoList(int index);
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     int getLevelInfoListCount();
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder> 
         getLevelInfoListOrBuilderList();
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder getLevelInfoListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OOHHKGLNCIN}
    */
   public static final class OOHHKGLNCIN extends
@@ -89,7 +93,7 @@ public final class OOHHKGLNCINOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
+            case 90: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class OOHHKGLNCINOuterClass {
               emu.grasscutter.net.proto.OOHHKGLNCINOuterClass.OOHHKGLNCIN.class, emu.grasscutter.net.proto.OOHHKGLNCINOuterClass.OOHHKGLNCIN.Builder.class);
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 6;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 11;
     private java.util.List<emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI> levelInfoList_;
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder> 
@@ -151,21 +155,21 @@ public final class OOHHKGLNCINOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+     * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder getLevelInfoListOrBuilder(
@@ -188,7 +192,7 @@ public final class OOHHKGLNCINOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(6, levelInfoList_.get(i));
+        output.writeMessage(11, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class OOHHKGLNCINOuterClass {
       size = 0;
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, levelInfoList_.get(i));
+          .computeMessageSize(11, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class OOHHKGLNCINOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OOHHKGLNCIN}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class OOHHKGLNCINOuterClass {
           emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class OOHHKGLNCINOuterClass {
         }
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class OOHHKGLNCINOuterClass {
         }
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class OOHHKGLNCINOuterClass {
         }
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI value) {
@@ -575,7 +583,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI value) {
         if (levelInfoListBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI value) {
@@ -622,7 +630,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI> values) {
@@ -665,7 +673,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class OOHHKGLNCINOuterClass {
         return this;
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class OOHHKGLNCINOuterClass {
         }
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPIOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -719,14 +727,14 @@ public final class OOHHKGLNCINOuterClass {
         }
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.getDefaultInstance());
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder addLevelInfoListBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class OOHHKGLNCINOuterClass {
             index, emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.getDefaultInstance());
       }
       /**
-       * <code>repeated .DJBEAHLAPPI level_info_list = 6;</code>
+       * <code>repeated .DJBEAHLAPPI level_info_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.DJBEAHLAPPIOuterClass.DJBEAHLAPPI.Builder> 
            getLevelInfoListBuilderList() {
@@ -822,9 +830,9 @@ public final class OOHHKGLNCINOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021OOHHKGLNCIN.proto\032\021DJBEAHLAPPI.proto\"4" +
-      "\n\013OOHHKGLNCIN\022%\n\017level_info_list\030\006 \003(\0132\014" +
-      ".DJBEAHLAPPIB2\n\031emu.grasscutter.net.prot" +
-      "oB\025OOHHKGLNCINOuterClassb\006proto3"
+      "\n\013OOHHKGLNCIN\022%\n\017level_info_list\030\013 \003(\0132\014" +
+      ".DJBEAHLAPPIB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

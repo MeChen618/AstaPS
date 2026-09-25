@@ -19,76 +19,80 @@ public final class JJAAPEINGACOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 NMKGLEHEEIN = 1;</code>
-     * @return The nMKGLEHEEIN.
-     */
-    int getNMKGLEHEEIN();
-
-    /**
-     * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+     * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
      * @return A list containing the aJJGPPPBOAB.
      */
     java.util.List<java.lang.Integer> getAJJGPPPBOABList();
     /**
-     * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+     * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
      * @return The count of aJJGPPPBOAB.
      */
     int getAJJGPPPBOABCount();
     /**
-     * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+     * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
      * @param index The index of the element to return.
      * @return The aJJGPPPBOAB at the given index.
      */
     int getAJJGPPPBOAB(int index);
 
     /**
-     * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+     * <code>repeated uint32 EGLADOIBKMG = 1;</code>
      * @return A list containing the eGLADOIBKMG.
      */
     java.util.List<java.lang.Integer> getEGLADOIBKMGList();
     /**
-     * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+     * <code>repeated uint32 EGLADOIBKMG = 1;</code>
      * @return The count of eGLADOIBKMG.
      */
     int getEGLADOIBKMGCount();
     /**
-     * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+     * <code>repeated uint32 EGLADOIBKMG = 1;</code>
      * @param index The index of the element to return.
      * @return The eGLADOIBKMG at the given index.
      */
     int getEGLADOIBKMG(int index);
 
     /**
-     * <code>uint32 FHJEAPIGJLG = 11;</code>
-     * @return The fHJEAPIGJLG.
-     */
-    int getFHJEAPIGJLG();
-
-    /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> 
         getMNIGABGNNBKList();
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getMNIGABGNNBK(int index);
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     int getMNIGABGNNBKCount();
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
         getMNIGABGNNBKOrBuilderList();
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getMNIGABGNNBKOrBuilder(
         int index);
+
+    /**
+     * <code>uint32 NMKGLEHEEIN = 3;</code>
+     * @return The nMKGLEHEEIN.
+     */
+    int getNMKGLEHEEIN();
+
+    /**
+     * <code>uint32 FHJEAPIGJLG = 12;</code>
+     * @return The fHJEAPIGJLG.
+     */
+    int getFHJEAPIGJLG();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JJAAPEINGAC}
    */
   public static final class JJAAPEINGAC extends
@@ -138,32 +142,6 @@ public final class JJAAPEINGACOuterClass {
               done = true;
               break;
             case 8: {
-
-              nMKGLEHEEIN_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                aJJGPPPBOAB_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              aJJGPPPBOAB_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                aJJGPPPBOAB_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                aJJGPPPBOAB_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 56: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 eGLADOIBKMG_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -171,7 +149,7 @@ public final class JJAAPEINGACOuterClass {
               eGLADOIBKMG_.addInt(input.readUInt32());
               break;
             }
-            case 58: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -184,18 +162,44 @@ public final class JJAAPEINGACOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 88: {
-
-              fHJEAPIGJLG_ = input.readUInt32();
+            case 16: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                aJJGPPPBOAB_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              aJJGPPPBOAB_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 18: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                aJJGPPPBOAB_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                aJJGPPPBOAB_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 24: {
+
+              nMKGLEHEEIN_ = input.readUInt32();
+              break;
+            }
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 mNIGABGNNBK_ = new java.util.ArrayList<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo>();
                 mutable_bitField0_ |= 0x00000004;
               }
               mNIGABGNNBK_.add(
                   input.readMessage(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
+
+              fHJEAPIGJLG_ = input.readUInt32();
               break;
             }
             default: {
@@ -213,11 +217,11 @@ public final class JJAAPEINGACOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          aJJGPPPBOAB_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           eGLADOIBKMG_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          aJJGPPPBOAB_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           mNIGABGNNBK_ = java.util.Collections.unmodifiableList(mNIGABGNNBK_);
@@ -239,21 +243,10 @@ public final class JJAAPEINGACOuterClass {
               emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.class, emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.Builder.class);
     }
 
-    public static final int NMKGLEHEEIN_FIELD_NUMBER = 1;
-    private int nMKGLEHEEIN_;
-    /**
-     * <code>uint32 NMKGLEHEEIN = 1;</code>
-     * @return The nMKGLEHEEIN.
-     */
-    @java.lang.Override
-    public int getNMKGLEHEEIN() {
-      return nMKGLEHEEIN_;
-    }
-
-    public static final int AJJGPPPBOAB_FIELD_NUMBER = 6;
+    public static final int AJJGPPPBOAB_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList aJJGPPPBOAB_;
     /**
-     * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+     * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
      * @return A list containing the aJJGPPPBOAB.
      */
     @java.lang.Override
@@ -262,14 +255,14 @@ public final class JJAAPEINGACOuterClass {
       return aJJGPPPBOAB_;
     }
     /**
-     * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+     * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
      * @return The count of aJJGPPPBOAB.
      */
     public int getAJJGPPPBOABCount() {
       return aJJGPPPBOAB_.size();
     }
     /**
-     * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+     * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
      * @param index The index of the element to return.
      * @return The aJJGPPPBOAB at the given index.
      */
@@ -278,10 +271,10 @@ public final class JJAAPEINGACOuterClass {
     }
     private int aJJGPPPBOABMemoizedSerializedSize = -1;
 
-    public static final int EGLADOIBKMG_FIELD_NUMBER = 7;
+    public static final int EGLADOIBKMG_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList eGLADOIBKMG_;
     /**
-     * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+     * <code>repeated uint32 EGLADOIBKMG = 1;</code>
      * @return A list containing the eGLADOIBKMG.
      */
     @java.lang.Override
@@ -290,14 +283,14 @@ public final class JJAAPEINGACOuterClass {
       return eGLADOIBKMG_;
     }
     /**
-     * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+     * <code>repeated uint32 EGLADOIBKMG = 1;</code>
      * @return The count of eGLADOIBKMG.
      */
     public int getEGLADOIBKMGCount() {
       return eGLADOIBKMG_.size();
     }
     /**
-     * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+     * <code>repeated uint32 EGLADOIBKMG = 1;</code>
      * @param index The index of the element to return.
      * @return The eGLADOIBKMG at the given index.
      */
@@ -306,28 +299,17 @@ public final class JJAAPEINGACOuterClass {
     }
     private int eGLADOIBKMGMemoizedSerializedSize = -1;
 
-    public static final int FHJEAPIGJLG_FIELD_NUMBER = 11;
-    private int fHJEAPIGJLG_;
-    /**
-     * <code>uint32 FHJEAPIGJLG = 11;</code>
-     * @return The fHJEAPIGJLG.
-     */
-    @java.lang.Override
-    public int getFHJEAPIGJLG() {
-      return fHJEAPIGJLG_;
-    }
-
-    public static final int MNIGABGNNBK_FIELD_NUMBER = 12;
+    public static final int MNIGABGNNBK_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> mNIGABGNNBK_;
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> getMNIGABGNNBKList() {
       return mNIGABGNNBK_;
     }
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
@@ -335,26 +317,48 @@ public final class JJAAPEINGACOuterClass {
       return mNIGABGNNBK_;
     }
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     @java.lang.Override
     public int getMNIGABGNNBKCount() {
       return mNIGABGNNBK_.size();
     }
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getMNIGABGNNBK(int index) {
       return mNIGABGNNBK_.get(index);
     }
     /**
-     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+     * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getMNIGABGNNBKOrBuilder(
         int index) {
       return mNIGABGNNBK_.get(index);
+    }
+
+    public static final int NMKGLEHEEIN_FIELD_NUMBER = 3;
+    private int nMKGLEHEEIN_;
+    /**
+     * <code>uint32 NMKGLEHEEIN = 3;</code>
+     * @return The nMKGLEHEEIN.
+     */
+    @java.lang.Override
+    public int getNMKGLEHEEIN() {
+      return nMKGLEHEEIN_;
+    }
+
+    public static final int FHJEAPIGJLG_FIELD_NUMBER = 12;
+    private int fHJEAPIGJLG_;
+    /**
+     * <code>uint32 FHJEAPIGJLG = 12;</code>
+     * @return The fHJEAPIGJLG.
+     */
+    @java.lang.Override
+    public int getFHJEAPIGJLG() {
+      return fHJEAPIGJLG_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -372,28 +376,28 @@ public final class JJAAPEINGACOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (nMKGLEHEEIN_ != 0) {
-        output.writeUInt32(1, nMKGLEHEEIN_);
-      }
-      if (getAJJGPPPBOABList().size() > 0) {
-        output.writeUInt32NoTag(50);
-        output.writeUInt32NoTag(aJJGPPPBOABMemoizedSerializedSize);
-      }
-      for (int i = 0; i < aJJGPPPBOAB_.size(); i++) {
-        output.writeUInt32NoTag(aJJGPPPBOAB_.getInt(i));
-      }
       if (getEGLADOIBKMGList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(eGLADOIBKMGMemoizedSerializedSize);
       }
       for (int i = 0; i < eGLADOIBKMG_.size(); i++) {
         output.writeUInt32NoTag(eGLADOIBKMG_.getInt(i));
       }
-      if (fHJEAPIGJLG_ != 0) {
-        output.writeUInt32(11, fHJEAPIGJLG_);
+      if (getAJJGPPPBOABList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(aJJGPPPBOABMemoizedSerializedSize);
+      }
+      for (int i = 0; i < aJJGPPPBOAB_.size(); i++) {
+        output.writeUInt32NoTag(aJJGPPPBOAB_.getInt(i));
+      }
+      if (nMKGLEHEEIN_ != 0) {
+        output.writeUInt32(3, nMKGLEHEEIN_);
       }
       for (int i = 0; i < mNIGABGNNBK_.size(); i++) {
-        output.writeMessage(12, mNIGABGNNBK_.get(i));
+        output.writeMessage(8, mNIGABGNNBK_.get(i));
+      }
+      if (fHJEAPIGJLG_ != 0) {
+        output.writeUInt32(12, fHJEAPIGJLG_);
       }
       unknownFields.writeTo(output);
     }
@@ -404,9 +408,19 @@ public final class JJAAPEINGACOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (nMKGLEHEEIN_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, nMKGLEHEEIN_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < eGLADOIBKMG_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(eGLADOIBKMG_.getInt(i));
+        }
+        size += dataSize;
+        if (!getEGLADOIBKMGList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        eGLADOIBKMGMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
@@ -422,27 +436,17 @@ public final class JJAAPEINGACOuterClass {
         }
         aJJGPPPBOABMemoizedSerializedSize = dataSize;
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < eGLADOIBKMG_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(eGLADOIBKMG_.getInt(i));
-        }
-        size += dataSize;
-        if (!getEGLADOIBKMGList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        eGLADOIBKMGMemoizedSerializedSize = dataSize;
-      }
-      if (fHJEAPIGJLG_ != 0) {
+      if (nMKGLEHEEIN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, fHJEAPIGJLG_);
+          .computeUInt32Size(3, nMKGLEHEEIN_);
       }
       for (int i = 0; i < mNIGABGNNBK_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, mNIGABGNNBK_.get(i));
+          .computeMessageSize(8, mNIGABGNNBK_.get(i));
+      }
+      if (fHJEAPIGJLG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, fHJEAPIGJLG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -459,16 +463,16 @@ public final class JJAAPEINGACOuterClass {
       }
       emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC other = (emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC) obj;
 
-      if (getNMKGLEHEEIN()
-          != other.getNMKGLEHEEIN()) return false;
       if (!getAJJGPPPBOABList()
           .equals(other.getAJJGPPPBOABList())) return false;
       if (!getEGLADOIBKMGList()
           .equals(other.getEGLADOIBKMGList())) return false;
-      if (getFHJEAPIGJLG()
-          != other.getFHJEAPIGJLG()) return false;
       if (!getMNIGABGNNBKList()
           .equals(other.getMNIGABGNNBKList())) return false;
+      if (getNMKGLEHEEIN()
+          != other.getNMKGLEHEEIN()) return false;
+      if (getFHJEAPIGJLG()
+          != other.getFHJEAPIGJLG()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -480,8 +484,6 @@ public final class JJAAPEINGACOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NMKGLEHEEIN_FIELD_NUMBER;
-      hash = (53 * hash) + getNMKGLEHEEIN();
       if (getAJJGPPPBOABCount() > 0) {
         hash = (37 * hash) + AJJGPPPBOAB_FIELD_NUMBER;
         hash = (53 * hash) + getAJJGPPPBOABList().hashCode();
@@ -490,12 +492,14 @@ public final class JJAAPEINGACOuterClass {
         hash = (37 * hash) + EGLADOIBKMG_FIELD_NUMBER;
         hash = (53 * hash) + getEGLADOIBKMGList().hashCode();
       }
-      hash = (37 * hash) + FHJEAPIGJLG_FIELD_NUMBER;
-      hash = (53 * hash) + getFHJEAPIGJLG();
       if (getMNIGABGNNBKCount() > 0) {
         hash = (37 * hash) + MNIGABGNNBK_FIELD_NUMBER;
         hash = (53 * hash) + getMNIGABGNNBKList().hashCode();
       }
+      hash = (37 * hash) + NMKGLEHEEIN_FIELD_NUMBER;
+      hash = (53 * hash) + getNMKGLEHEEIN();
+      hash = (37 * hash) + FHJEAPIGJLG_FIELD_NUMBER;
+      hash = (53 * hash) + getFHJEAPIGJLG();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -592,6 +596,10 @@ public final class JJAAPEINGACOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JJAAPEINGAC}
      */
     public static final class Builder extends
@@ -630,20 +638,20 @@ public final class JJAAPEINGACOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        nMKGLEHEEIN_ = 0;
-
         aJJGPPPBOAB_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         eGLADOIBKMG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        fHJEAPIGJLG_ = 0;
-
         if (mNIGABGNNBKBuilder_ == null) {
           mNIGABGNNBK_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           mNIGABGNNBKBuilder_.clear();
         }
+        nMKGLEHEEIN_ = 0;
+
+        fHJEAPIGJLG_ = 0;
+
         return this;
       }
 
@@ -671,7 +679,6 @@ public final class JJAAPEINGACOuterClass {
       public emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC buildPartial() {
         emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC result = new emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC(this);
         int from_bitField0_ = bitField0_;
-        result.nMKGLEHEEIN_ = nMKGLEHEEIN_;
         if (((bitField0_ & 0x00000001) != 0)) {
           aJJGPPPBOAB_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -682,7 +689,6 @@ public final class JJAAPEINGACOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.eGLADOIBKMG_ = eGLADOIBKMG_;
-        result.fHJEAPIGJLG_ = fHJEAPIGJLG_;
         if (mNIGABGNNBKBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0)) {
             mNIGABGNNBK_ = java.util.Collections.unmodifiableList(mNIGABGNNBK_);
@@ -692,6 +698,8 @@ public final class JJAAPEINGACOuterClass {
         } else {
           result.mNIGABGNNBK_ = mNIGABGNNBKBuilder_.build();
         }
+        result.nMKGLEHEEIN_ = nMKGLEHEEIN_;
+        result.fHJEAPIGJLG_ = fHJEAPIGJLG_;
         onBuilt();
         return result;
       }
@@ -740,9 +748,6 @@ public final class JJAAPEINGACOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC other) {
         if (other == emu.grasscutter.net.proto.JJAAPEINGACOuterClass.JJAAPEINGAC.getDefaultInstance()) return this;
-        if (other.getNMKGLEHEEIN() != 0) {
-          setNMKGLEHEEIN(other.getNMKGLEHEEIN());
-        }
         if (!other.aJJGPPPBOAB_.isEmpty()) {
           if (aJJGPPPBOAB_.isEmpty()) {
             aJJGPPPBOAB_ = other.aJJGPPPBOAB_;
@@ -762,9 +767,6 @@ public final class JJAAPEINGACOuterClass {
             eGLADOIBKMG_.addAll(other.eGLADOIBKMG_);
           }
           onChanged();
-        }
-        if (other.getFHJEAPIGJLG() != 0) {
-          setFHJEAPIGJLG(other.getFHJEAPIGJLG());
         }
         if (mNIGABGNNBKBuilder_ == null) {
           if (!other.mNIGABGNNBK_.isEmpty()) {
@@ -791,6 +793,12 @@ public final class JJAAPEINGACOuterClass {
               mNIGABGNNBKBuilder_.addAllMessages(other.mNIGABGNNBK_);
             }
           }
+        }
+        if (other.getNMKGLEHEEIN() != 0) {
+          setNMKGLEHEEIN(other.getNMKGLEHEEIN());
+        }
+        if (other.getFHJEAPIGJLG() != 0) {
+          setFHJEAPIGJLG(other.getFHJEAPIGJLG());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -822,37 +830,6 @@ public final class JJAAPEINGACOuterClass {
       }
       private int bitField0_;
 
-      private int nMKGLEHEEIN_ ;
-      /**
-       * <code>uint32 NMKGLEHEEIN = 1;</code>
-       * @return The nMKGLEHEEIN.
-       */
-      @java.lang.Override
-      public int getNMKGLEHEEIN() {
-        return nMKGLEHEEIN_;
-      }
-      /**
-       * <code>uint32 NMKGLEHEEIN = 1;</code>
-       * @param value The nMKGLEHEEIN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNMKGLEHEEIN(int value) {
-        
-        nMKGLEHEEIN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NMKGLEHEEIN = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNMKGLEHEEIN() {
-        
-        nMKGLEHEEIN_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList aJJGPPPBOAB_ = emptyIntList();
       private void ensureAJJGPPPBOABIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -861,7 +838,7 @@ public final class JJAAPEINGACOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @return A list containing the aJJGPPPBOAB.
        */
       public java.util.List<java.lang.Integer>
@@ -870,14 +847,14 @@ public final class JJAAPEINGACOuterClass {
                  java.util.Collections.unmodifiableList(aJJGPPPBOAB_) : aJJGPPPBOAB_;
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @return The count of aJJGPPPBOAB.
        */
       public int getAJJGPPPBOABCount() {
         return aJJGPPPBOAB_.size();
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @param index The index of the element to return.
        * @return The aJJGPPPBOAB at the given index.
        */
@@ -885,7 +862,7 @@ public final class JJAAPEINGACOuterClass {
         return aJJGPPPBOAB_.getInt(index);
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @param index The index to set the value at.
        * @param value The aJJGPPPBOAB to set.
        * @return This builder for chaining.
@@ -898,7 +875,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @param value The aJJGPPPBOAB to add.
        * @return This builder for chaining.
        */
@@ -909,7 +886,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @param values The aJJGPPPBOAB to add.
        * @return This builder for chaining.
        */
@@ -922,7 +899,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 AJJGPPPBOAB = 6;</code>
+       * <code>repeated uint32 AJJGPPPBOAB = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAJJGPPPBOAB() {
@@ -940,7 +917,7 @@ public final class JJAAPEINGACOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @return A list containing the eGLADOIBKMG.
        */
       public java.util.List<java.lang.Integer>
@@ -949,14 +926,14 @@ public final class JJAAPEINGACOuterClass {
                  java.util.Collections.unmodifiableList(eGLADOIBKMG_) : eGLADOIBKMG_;
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @return The count of eGLADOIBKMG.
        */
       public int getEGLADOIBKMGCount() {
         return eGLADOIBKMG_.size();
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @param index The index of the element to return.
        * @return The eGLADOIBKMG at the given index.
        */
@@ -964,7 +941,7 @@ public final class JJAAPEINGACOuterClass {
         return eGLADOIBKMG_.getInt(index);
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @param index The index to set the value at.
        * @param value The eGLADOIBKMG to set.
        * @return This builder for chaining.
@@ -977,7 +954,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @param value The eGLADOIBKMG to add.
        * @return This builder for chaining.
        */
@@ -988,7 +965,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @param values The eGLADOIBKMG to add.
        * @return This builder for chaining.
        */
@@ -1001,43 +978,12 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EGLADOIBKMG = 7;</code>
+       * <code>repeated uint32 EGLADOIBKMG = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearEGLADOIBKMG() {
         eGLADOIBKMG_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private int fHJEAPIGJLG_ ;
-      /**
-       * <code>uint32 FHJEAPIGJLG = 11;</code>
-       * @return The fHJEAPIGJLG.
-       */
-      @java.lang.Override
-      public int getFHJEAPIGJLG() {
-        return fHJEAPIGJLG_;
-      }
-      /**
-       * <code>uint32 FHJEAPIGJLG = 11;</code>
-       * @param value The fHJEAPIGJLG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFHJEAPIGJLG(int value) {
-        
-        fHJEAPIGJLG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FHJEAPIGJLG = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFHJEAPIGJLG() {
-        
-        fHJEAPIGJLG_ = 0;
         onChanged();
         return this;
       }
@@ -1055,7 +1001,7 @@ public final class JJAAPEINGACOuterClass {
           emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> mNIGABGNNBKBuilder_;
 
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> getMNIGABGNNBKList() {
         if (mNIGABGNNBKBuilder_ == null) {
@@ -1065,7 +1011,7 @@ public final class JJAAPEINGACOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public int getMNIGABGNNBKCount() {
         if (mNIGABGNNBKBuilder_ == null) {
@@ -1075,7 +1021,7 @@ public final class JJAAPEINGACOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo getMNIGABGNNBK(int index) {
         if (mNIGABGNNBKBuilder_ == null) {
@@ -1085,7 +1031,7 @@ public final class JJAAPEINGACOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder setMNIGABGNNBK(
           int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
@@ -1102,7 +1048,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder setMNIGABGNNBK(
           int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
@@ -1116,7 +1062,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder addMNIGABGNNBK(emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
         if (mNIGABGNNBKBuilder_ == null) {
@@ -1132,7 +1078,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder addMNIGABGNNBK(
           int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo value) {
@@ -1149,7 +1095,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder addMNIGABGNNBK(
           emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
@@ -1163,7 +1109,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder addMNIGABGNNBK(
           int index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder builderForValue) {
@@ -1177,7 +1123,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder addAllMNIGABGNNBK(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> values) {
@@ -1192,7 +1138,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder clearMNIGABGNNBK() {
         if (mNIGABGNNBKBuilder_ == null) {
@@ -1205,7 +1151,7 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public Builder removeMNIGABGNNBK(int index) {
         if (mNIGABGNNBKBuilder_ == null) {
@@ -1218,14 +1164,14 @@ public final class JJAAPEINGACOuterClass {
         return this;
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder getMNIGABGNNBKBuilder(
           int index) {
         return getMNIGABGNNBKFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder getMNIGABGNNBKOrBuilder(
           int index) {
@@ -1235,7 +1181,7 @@ public final class JJAAPEINGACOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfoOrBuilder> 
            getMNIGABGNNBKOrBuilderList() {
@@ -1246,14 +1192,14 @@ public final class JJAAPEINGACOuterClass {
         }
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder addMNIGABGNNBKBuilder() {
         return getMNIGABGNNBKFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder addMNIGABGNNBKBuilder(
           int index) {
@@ -1261,7 +1207,7 @@ public final class JJAAPEINGACOuterClass {
             index, emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 12;</code>
+       * <code>repeated .GCGPlayCardCostInfo MNIGABGNNBK = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.Builder> 
            getMNIGABGNNBKBuilderList() {
@@ -1280,6 +1226,68 @@ public final class JJAAPEINGACOuterClass {
           mNIGABGNNBK_ = null;
         }
         return mNIGABGNNBKBuilder_;
+      }
+
+      private int nMKGLEHEEIN_ ;
+      /**
+       * <code>uint32 NMKGLEHEEIN = 3;</code>
+       * @return The nMKGLEHEEIN.
+       */
+      @java.lang.Override
+      public int getNMKGLEHEEIN() {
+        return nMKGLEHEEIN_;
+      }
+      /**
+       * <code>uint32 NMKGLEHEEIN = 3;</code>
+       * @param value The nMKGLEHEEIN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNMKGLEHEEIN(int value) {
+        
+        nMKGLEHEEIN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NMKGLEHEEIN = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNMKGLEHEEIN() {
+        
+        nMKGLEHEEIN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fHJEAPIGJLG_ ;
+      /**
+       * <code>uint32 FHJEAPIGJLG = 12;</code>
+       * @return The fHJEAPIGJLG.
+       */
+      @java.lang.Override
+      public int getFHJEAPIGJLG() {
+        return fHJEAPIGJLG_;
+      }
+      /**
+       * <code>uint32 FHJEAPIGJLG = 12;</code>
+       * @param value The fHJEAPIGJLG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFHJEAPIGJLG(int value) {
+        
+        fHJEAPIGJLG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FHJEAPIGJLG = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFHJEAPIGJLG() {
+        
+        fHJEAPIGJLG_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1349,12 +1357,11 @@ public final class JJAAPEINGACOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021JJAAPEINGAC.proto\032\031GCGPlayCardCostInfo" +
-      ".proto\"\214\001\n\013JJAAPEINGAC\022\023\n\013NMKGLEHEEIN\030\001 " +
-      "\001(\r\022\023\n\013AJJGPPPBOAB\030\006 \003(\r\022\023\n\013EGLADOIBKMG\030" +
-      "\007 \003(\r\022\023\n\013FHJEAPIGJLG\030\013 \001(\r\022)\n\013MNIGABGNNB" +
-      "K\030\014 \003(\0132\024.GCGPlayCardCostInfoB2\n\031emu.gra" +
-      "sscutter.net.protoB\025JJAAPEINGACOuterClas" +
-      "sb\006proto3"
+      ".proto\"\214\001\n\013JJAAPEINGAC\022\023\n\013AJJGPPPBOAB\030\002 " +
+      "\003(\r\022\023\n\013EGLADOIBKMG\030\001 \003(\r\022)\n\013MNIGABGNNBK\030" +
+      "\010 \003(\0132\024.GCGPlayCardCostInfo\022\023\n\013NMKGLEHEE" +
+      "IN\030\003 \001(\r\022\023\n\013FHJEAPIGJLG\030\014 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1366,7 +1373,7 @@ public final class JJAAPEINGACOuterClass {
     internal_static_JJAAPEINGAC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JJAAPEINGAC_descriptor,
-        new java.lang.String[] { "NMKGLEHEEIN", "AJJGPPPBOAB", "EGLADOIBKMG", "FHJEAPIGJLG", "MNIGABGNNBK", });
+        new java.lang.String[] { "AJJGPPPBOAB", "EGLADOIBKMG", "MNIGABGNNBK", "NMKGLEHEEIN", "FHJEAPIGJLG", });
     emu.grasscutter.net.proto.GCGPlayCardCostInfoOuterClass.getDescriptor();
   }
 

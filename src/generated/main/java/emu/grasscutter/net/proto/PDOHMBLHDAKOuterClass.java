@@ -31,18 +31,6 @@ public final class PDOHMBLHDAKOuterClass {
         getENOPBNNPDFBBytes();
 
     /**
-     * <code>uint32 KKHKMDNENCL = 2;</code>
-     * @return The kKHKMDNENCL.
-     */
-    int getKKHKMDNENCL();
-
-    /**
-     * <code>uint32 JNLJNHALBOC = 3;</code>
-     * @return The jNLJNHALBOC.
-     */
-    int getJNLJNHALBOC();
-
-    /**
      * <code>.FJFKBKCECBC MNNMOFNEFEK = 4;</code>
      * @return Whether the mNNMOFNEFEK field is set.
      */
@@ -68,8 +56,24 @@ public final class PDOHMBLHDAKOuterClass {
      */
     com.google.protobuf.ByteString
         getPECGECKPLMFBytes();
+
+    /**
+     * <code>uint32 JNLJNHALBOC = 3;</code>
+     * @return The jNLJNHALBOC.
+     */
+    int getJNLJNHALBOC();
+
+    /**
+     * <code>uint32 KKHKMDNENCL = 2;</code>
+     * @return The kKHKMDNENCL.
+     */
+    int getKKHKMDNENCL();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PDOHMBLHDAK}
    */
   public static final class PDOHMBLHDAK extends
@@ -221,28 +225,6 @@ public final class PDOHMBLHDAKOuterClass {
       }
     }
 
-    public static final int KKHKMDNENCL_FIELD_NUMBER = 2;
-    private int kKHKMDNENCL_;
-    /**
-     * <code>uint32 KKHKMDNENCL = 2;</code>
-     * @return The kKHKMDNENCL.
-     */
-    @java.lang.Override
-    public int getKKHKMDNENCL() {
-      return kKHKMDNENCL_;
-    }
-
-    public static final int JNLJNHALBOC_FIELD_NUMBER = 3;
-    private int jNLJNHALBOC_;
-    /**
-     * <code>uint32 JNLJNHALBOC = 3;</code>
-     * @return The jNLJNHALBOC.
-     */
-    @java.lang.Override
-    public int getJNLJNHALBOC() {
-      return jNLJNHALBOC_;
-    }
-
     public static final int MNNMOFNEFEK_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC mNNMOFNEFEK_;
     /**
@@ -305,6 +287,28 @@ public final class PDOHMBLHDAKOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int JNLJNHALBOC_FIELD_NUMBER = 3;
+    private int jNLJNHALBOC_;
+    /**
+     * <code>uint32 JNLJNHALBOC = 3;</code>
+     * @return The jNLJNHALBOC.
+     */
+    @java.lang.Override
+    public int getJNLJNHALBOC() {
+      return jNLJNHALBOC_;
+    }
+
+    public static final int KKHKMDNENCL_FIELD_NUMBER = 2;
+    private int kKHKMDNENCL_;
+    /**
+     * <code>uint32 KKHKMDNENCL = 2;</code>
+     * @return The kKHKMDNENCL.
+     */
+    @java.lang.Override
+    public int getKKHKMDNENCL() {
+      return kKHKMDNENCL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -380,10 +384,6 @@ public final class PDOHMBLHDAKOuterClass {
 
       if (!getENOPBNNPDFB()
           .equals(other.getENOPBNNPDFB())) return false;
-      if (getKKHKMDNENCL()
-          != other.getKKHKMDNENCL()) return false;
-      if (getJNLJNHALBOC()
-          != other.getJNLJNHALBOC()) return false;
       if (hasMNNMOFNEFEK() != other.hasMNNMOFNEFEK()) return false;
       if (hasMNNMOFNEFEK()) {
         if (!getMNNMOFNEFEK()
@@ -391,6 +391,10 @@ public final class PDOHMBLHDAKOuterClass {
       }
       if (!getPECGECKPLMF()
           .equals(other.getPECGECKPLMF())) return false;
+      if (getJNLJNHALBOC()
+          != other.getJNLJNHALBOC()) return false;
+      if (getKKHKMDNENCL()
+          != other.getKKHKMDNENCL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -404,16 +408,16 @@ public final class PDOHMBLHDAKOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENOPBNNPDFB_FIELD_NUMBER;
       hash = (53 * hash) + getENOPBNNPDFB().hashCode();
-      hash = (37 * hash) + KKHKMDNENCL_FIELD_NUMBER;
-      hash = (53 * hash) + getKKHKMDNENCL();
-      hash = (37 * hash) + JNLJNHALBOC_FIELD_NUMBER;
-      hash = (53 * hash) + getJNLJNHALBOC();
       if (hasMNNMOFNEFEK()) {
         hash = (37 * hash) + MNNMOFNEFEK_FIELD_NUMBER;
         hash = (53 * hash) + getMNNMOFNEFEK().hashCode();
       }
       hash = (37 * hash) + PECGECKPLMF_FIELD_NUMBER;
       hash = (53 * hash) + getPECGECKPLMF().hashCode();
+      hash = (37 * hash) + JNLJNHALBOC_FIELD_NUMBER;
+      hash = (53 * hash) + getJNLJNHALBOC();
+      hash = (37 * hash) + KKHKMDNENCL_FIELD_NUMBER;
+      hash = (53 * hash) + getKKHKMDNENCL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -510,6 +514,10 @@ public final class PDOHMBLHDAKOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PDOHMBLHDAK}
      */
     public static final class Builder extends
@@ -549,10 +557,6 @@ public final class PDOHMBLHDAKOuterClass {
         super.clear();
         eNOPBNNPDFB_ = "";
 
-        kKHKMDNENCL_ = 0;
-
-        jNLJNHALBOC_ = 0;
-
         if (mNNMOFNEFEKBuilder_ == null) {
           mNNMOFNEFEK_ = null;
         } else {
@@ -560,6 +564,10 @@ public final class PDOHMBLHDAKOuterClass {
           mNNMOFNEFEKBuilder_ = null;
         }
         pECGECKPLMF_ = "";
+
+        jNLJNHALBOC_ = 0;
+
+        kKHKMDNENCL_ = 0;
 
         return this;
       }
@@ -588,14 +596,14 @@ public final class PDOHMBLHDAKOuterClass {
       public emu.grasscutter.net.proto.PDOHMBLHDAKOuterClass.PDOHMBLHDAK buildPartial() {
         emu.grasscutter.net.proto.PDOHMBLHDAKOuterClass.PDOHMBLHDAK result = new emu.grasscutter.net.proto.PDOHMBLHDAKOuterClass.PDOHMBLHDAK(this);
         result.eNOPBNNPDFB_ = eNOPBNNPDFB_;
-        result.kKHKMDNENCL_ = kKHKMDNENCL_;
-        result.jNLJNHALBOC_ = jNLJNHALBOC_;
         if (mNNMOFNEFEKBuilder_ == null) {
           result.mNNMOFNEFEK_ = mNNMOFNEFEK_;
         } else {
           result.mNNMOFNEFEK_ = mNNMOFNEFEKBuilder_.build();
         }
         result.pECGECKPLMF_ = pECGECKPLMF_;
+        result.jNLJNHALBOC_ = jNLJNHALBOC_;
+        result.kKHKMDNENCL_ = kKHKMDNENCL_;
         onBuilt();
         return result;
       }
@@ -648,18 +656,18 @@ public final class PDOHMBLHDAKOuterClass {
           eNOPBNNPDFB_ = other.eNOPBNNPDFB_;
           onChanged();
         }
-        if (other.getKKHKMDNENCL() != 0) {
-          setKKHKMDNENCL(other.getKKHKMDNENCL());
-        }
-        if (other.getJNLJNHALBOC() != 0) {
-          setJNLJNHALBOC(other.getJNLJNHALBOC());
-        }
         if (other.hasMNNMOFNEFEK()) {
           mergeMNNMOFNEFEK(other.getMNNMOFNEFEK());
         }
         if (!other.getPECGECKPLMF().isEmpty()) {
           pECGECKPLMF_ = other.pECGECKPLMF_;
           onChanged();
+        }
+        if (other.getJNLJNHALBOC() != 0) {
+          setJNLJNHALBOC(other.getJNLJNHALBOC());
+        }
+        if (other.getKKHKMDNENCL() != 0) {
+          setKKHKMDNENCL(other.getKKHKMDNENCL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -762,68 +770,6 @@ public final class PDOHMBLHDAKOuterClass {
   checkByteStringIsUtf8(value);
         
         eNOPBNNPDFB_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int kKHKMDNENCL_ ;
-      /**
-       * <code>uint32 KKHKMDNENCL = 2;</code>
-       * @return The kKHKMDNENCL.
-       */
-      @java.lang.Override
-      public int getKKHKMDNENCL() {
-        return kKHKMDNENCL_;
-      }
-      /**
-       * <code>uint32 KKHKMDNENCL = 2;</code>
-       * @param value The kKHKMDNENCL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKKHKMDNENCL(int value) {
-        
-        kKHKMDNENCL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KKHKMDNENCL = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKKHKMDNENCL() {
-        
-        kKHKMDNENCL_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int jNLJNHALBOC_ ;
-      /**
-       * <code>uint32 JNLJNHALBOC = 3;</code>
-       * @return The jNLJNHALBOC.
-       */
-      @java.lang.Override
-      public int getJNLJNHALBOC() {
-        return jNLJNHALBOC_;
-      }
-      /**
-       * <code>uint32 JNLJNHALBOC = 3;</code>
-       * @param value The jNLJNHALBOC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJNLJNHALBOC(int value) {
-        
-        jNLJNHALBOC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 JNLJNHALBOC = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJNLJNHALBOC() {
-        
-        jNLJNHALBOC_ = 0;
         onChanged();
         return this;
       }
@@ -1022,6 +968,68 @@ public final class PDOHMBLHDAKOuterClass {
         onChanged();
         return this;
       }
+
+      private int jNLJNHALBOC_ ;
+      /**
+       * <code>uint32 JNLJNHALBOC = 3;</code>
+       * @return The jNLJNHALBOC.
+       */
+      @java.lang.Override
+      public int getJNLJNHALBOC() {
+        return jNLJNHALBOC_;
+      }
+      /**
+       * <code>uint32 JNLJNHALBOC = 3;</code>
+       * @param value The jNLJNHALBOC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJNLJNHALBOC(int value) {
+        
+        jNLJNHALBOC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 JNLJNHALBOC = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJNLJNHALBOC() {
+        
+        jNLJNHALBOC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kKHKMDNENCL_ ;
+      /**
+       * <code>uint32 KKHKMDNENCL = 2;</code>
+       * @return The kKHKMDNENCL.
+       */
+      @java.lang.Override
+      public int getKKHKMDNENCL() {
+        return kKHKMDNENCL_;
+      }
+      /**
+       * <code>uint32 KKHKMDNENCL = 2;</code>
+       * @param value The kKHKMDNENCL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKKHKMDNENCL(int value) {
+        
+        kKHKMDNENCL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KKHKMDNENCL = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKKHKMDNENCL() {
+        
+        kKHKMDNENCL_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1090,11 +1098,11 @@ public final class PDOHMBLHDAKOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021PDOHMBLHDAK.proto\032\021FJFKBKCECBC.proto\"\204" +
-      "\001\n\013PDOHMBLHDAK\022\023\n\013ENOPBNNPDFB\030\001 \001(\t\022\023\n\013K" +
-      "KHKMDNENCL\030\002 \001(\r\022\023\n\013JNLJNHALBOC\030\003 \001(\r\022!\n" +
-      "\013MNNMOFNEFEK\030\004 \001(\0132\014.FJFKBKCECBC\022\023\n\013PECG" +
-      "ECKPLMF\030\005 \001(\tB2\n\031emu.grasscutter.net.pro" +
-      "toB\025PDOHMBLHDAKOuterClassb\006proto3"
+      "\001\n\013PDOHMBLHDAK\022\023\n\013ENOPBNNPDFB\030\001 \001(\t\022!\n\013M" +
+      "NNMOFNEFEK\030\004 \001(\0132\014.FJFKBKCECBC\022\023\n\013PECGEC" +
+      "KPLMF\030\005 \001(\t\022\023\n\013JNLJNHALBOC\030\003 \001(\r\022\023\n\013KKHK" +
+      "MDNENCL\030\002 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1106,7 +1114,7 @@ public final class PDOHMBLHDAKOuterClass {
     internal_static_PDOHMBLHDAK_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PDOHMBLHDAK_descriptor,
-        new java.lang.String[] { "ENOPBNNPDFB", "KKHKMDNENCL", "JNLJNHALBOC", "MNNMOFNEFEK", "PECGECKPLMF", });
+        new java.lang.String[] { "ENOPBNNPDFB", "MNNMOFNEFEK", "PECGECKPLMF", "JNLJNHALBOC", "KKHKMDNENCL", });
     emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.getDescriptor();
   }
 

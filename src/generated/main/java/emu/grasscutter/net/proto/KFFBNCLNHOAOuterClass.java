@@ -19,27 +19,31 @@ public final class KFFBNCLNHOAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 trial_avatar_id = 7;</code>
-     * @return The trialAvatarId.
-     */
-    int getTrialAvatarId();
-
-    /**
-     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
      * @return Whether the fGGLBLAFNLD field is set.
      */
     boolean hasFGGLBLAFNLD();
     /**
-     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
      * @return The fGGLBLAFNLD.
      */
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getFGGLBLAFNLD();
     /**
-     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
      */
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getFGGLBLAFNLDOrBuilder();
+
+    /**
+     * <code>uint32 trial_avatar_id = 1;</code>
+     * @return The trialAvatarId.
+     */
+    int getTrialAvatarId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KFFBNCLNHOA}
    */
   public static final class KFFBNCLNHOA extends
@@ -84,12 +88,12 @@ public final class KFFBNCLNHOAOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 8: {
 
               trialAvatarId_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 82: {
               emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder subBuilder = null;
               if (fGGLBLAFNLD_ != null) {
                 subBuilder = fGGLBLAFNLD_.toBuilder();
@@ -134,21 +138,10 @@ public final class KFFBNCLNHOAOuterClass {
               emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA.class, emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA.Builder.class);
     }
 
-    public static final int TRIAL_AVATAR_ID_FIELD_NUMBER = 7;
-    private int trialAvatarId_;
-    /**
-     * <code>uint32 trial_avatar_id = 7;</code>
-     * @return The trialAvatarId.
-     */
-    @java.lang.Override
-    public int getTrialAvatarId() {
-      return trialAvatarId_;
-    }
-
-    public static final int FGGLBLAFNLD_FIELD_NUMBER = 14;
+    public static final int FGGLBLAFNLD_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo fGGLBLAFNLD_;
     /**
-     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
      * @return Whether the fGGLBLAFNLD field is set.
      */
     @java.lang.Override
@@ -156,7 +149,7 @@ public final class KFFBNCLNHOAOuterClass {
       return fGGLBLAFNLD_ != null;
     }
     /**
-     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
      * @return The fGGLBLAFNLD.
      */
     @java.lang.Override
@@ -164,11 +157,22 @@ public final class KFFBNCLNHOAOuterClass {
       return fGGLBLAFNLD_ == null ? emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.getDefaultInstance() : fGGLBLAFNLD_;
     }
     /**
-     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+     * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getFGGLBLAFNLDOrBuilder() {
       return getFGGLBLAFNLD();
+    }
+
+    public static final int TRIAL_AVATAR_ID_FIELD_NUMBER = 1;
+    private int trialAvatarId_;
+    /**
+     * <code>uint32 trial_avatar_id = 1;</code>
+     * @return The trialAvatarId.
+     */
+    @java.lang.Override
+    public int getTrialAvatarId() {
+      return trialAvatarId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -186,10 +190,10 @@ public final class KFFBNCLNHOAOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (trialAvatarId_ != 0) {
-        output.writeUInt32(7, trialAvatarId_);
+        output.writeUInt32(1, trialAvatarId_);
       }
       if (fGGLBLAFNLD_ != null) {
-        output.writeMessage(14, getFGGLBLAFNLD());
+        output.writeMessage(10, getFGGLBLAFNLD());
       }
       unknownFields.writeTo(output);
     }
@@ -202,11 +206,11 @@ public final class KFFBNCLNHOAOuterClass {
       size = 0;
       if (trialAvatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, trialAvatarId_);
+          .computeUInt32Size(1, trialAvatarId_);
       }
       if (fGGLBLAFNLD_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getFGGLBLAFNLD());
+          .computeMessageSize(10, getFGGLBLAFNLD());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -223,13 +227,13 @@ public final class KFFBNCLNHOAOuterClass {
       }
       emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA other = (emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA) obj;
 
-      if (getTrialAvatarId()
-          != other.getTrialAvatarId()) return false;
       if (hasFGGLBLAFNLD() != other.hasFGGLBLAFNLD()) return false;
       if (hasFGGLBLAFNLD()) {
         if (!getFGGLBLAFNLD()
             .equals(other.getFGGLBLAFNLD())) return false;
       }
+      if (getTrialAvatarId()
+          != other.getTrialAvatarId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +245,12 @@ public final class KFFBNCLNHOAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TRIAL_AVATAR_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTrialAvatarId();
       if (hasFGGLBLAFNLD()) {
         hash = (37 * hash) + FGGLBLAFNLD_FIELD_NUMBER;
         hash = (53 * hash) + getFGGLBLAFNLD().hashCode();
       }
+      hash = (37 * hash) + TRIAL_AVATAR_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTrialAvatarId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,6 +347,10 @@ public final class KFFBNCLNHOAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KFFBNCLNHOA}
      */
     public static final class Builder extends
@@ -380,14 +388,14 @@ public final class KFFBNCLNHOAOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        trialAvatarId_ = 0;
-
         if (fGGLBLAFNLDBuilder_ == null) {
           fGGLBLAFNLD_ = null;
         } else {
           fGGLBLAFNLD_ = null;
           fGGLBLAFNLDBuilder_ = null;
         }
+        trialAvatarId_ = 0;
+
         return this;
       }
 
@@ -414,12 +422,12 @@ public final class KFFBNCLNHOAOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA buildPartial() {
         emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA result = new emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA(this);
-        result.trialAvatarId_ = trialAvatarId_;
         if (fGGLBLAFNLDBuilder_ == null) {
           result.fGGLBLAFNLD_ = fGGLBLAFNLD_;
         } else {
           result.fGGLBLAFNLD_ = fGGLBLAFNLDBuilder_.build();
         }
+        result.trialAvatarId_ = trialAvatarId_;
         onBuilt();
         return result;
       }
@@ -468,11 +476,11 @@ public final class KFFBNCLNHOAOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA other) {
         if (other == emu.grasscutter.net.proto.KFFBNCLNHOAOuterClass.KFFBNCLNHOA.getDefaultInstance()) return this;
-        if (other.getTrialAvatarId() != 0) {
-          setTrialAvatarId(other.getTrialAvatarId());
-        }
         if (other.hasFGGLBLAFNLD()) {
           mergeFGGLBLAFNLD(other.getFGGLBLAFNLD());
+        }
+        if (other.getTrialAvatarId() != 0) {
+          setTrialAvatarId(other.getTrialAvatarId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -503,49 +511,18 @@ public final class KFFBNCLNHOAOuterClass {
         return this;
       }
 
-      private int trialAvatarId_ ;
-      /**
-       * <code>uint32 trial_avatar_id = 7;</code>
-       * @return The trialAvatarId.
-       */
-      @java.lang.Override
-      public int getTrialAvatarId() {
-        return trialAvatarId_;
-      }
-      /**
-       * <code>uint32 trial_avatar_id = 7;</code>
-       * @param value The trialAvatarId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTrialAvatarId(int value) {
-        
-        trialAvatarId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 trial_avatar_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTrialAvatarId() {
-        
-        trialAvatarId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo fGGLBLAFNLD_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> fGGLBLAFNLDBuilder_;
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        * @return Whether the fGGLBLAFNLD field is set.
        */
       public boolean hasFGGLBLAFNLD() {
         return fGGLBLAFNLDBuilder_ != null || fGGLBLAFNLD_ != null;
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        * @return The fGGLBLAFNLD.
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getFGGLBLAFNLD() {
@@ -556,7 +533,7 @@ public final class KFFBNCLNHOAOuterClass {
         }
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       public Builder setFGGLBLAFNLD(emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
         if (fGGLBLAFNLDBuilder_ == null) {
@@ -572,7 +549,7 @@ public final class KFFBNCLNHOAOuterClass {
         return this;
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       public Builder setFGGLBLAFNLD(
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -586,7 +563,7 @@ public final class KFFBNCLNHOAOuterClass {
         return this;
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       public Builder mergeFGGLBLAFNLD(emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
         if (fGGLBLAFNLDBuilder_ == null) {
@@ -604,7 +581,7 @@ public final class KFFBNCLNHOAOuterClass {
         return this;
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       public Builder clearFGGLBLAFNLD() {
         if (fGGLBLAFNLDBuilder_ == null) {
@@ -618,7 +595,7 @@ public final class KFFBNCLNHOAOuterClass {
         return this;
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder getFGGLBLAFNLDBuilder() {
         
@@ -626,7 +603,7 @@ public final class KFFBNCLNHOAOuterClass {
         return getFGGLBLAFNLDFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getFGGLBLAFNLDOrBuilder() {
         if (fGGLBLAFNLDBuilder_ != null) {
@@ -637,7 +614,7 @@ public final class KFFBNCLNHOAOuterClass {
         }
       }
       /**
-       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 14;</code>
+       * <code>.SocialShowAvatarInfo FGGLBLAFNLD = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
@@ -651,6 +628,37 @@ public final class KFFBNCLNHOAOuterClass {
           fGGLBLAFNLD_ = null;
         }
         return fGGLBLAFNLDBuilder_;
+      }
+
+      private int trialAvatarId_ ;
+      /**
+       * <code>uint32 trial_avatar_id = 1;</code>
+       * @return The trialAvatarId.
+       */
+      @java.lang.Override
+      public int getTrialAvatarId() {
+        return trialAvatarId_;
+      }
+      /**
+       * <code>uint32 trial_avatar_id = 1;</code>
+       * @param value The trialAvatarId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrialAvatarId(int value) {
+        
+        trialAvatarId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 trial_avatar_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTrialAvatarId() {
+        
+        trialAvatarId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -720,10 +728,10 @@ public final class KFFBNCLNHOAOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021KFFBNCLNHOA.proto\032\032SocialShowAvatarInf" +
-      "o.proto\"R\n\013KFFBNCLNHOA\022\027\n\017trial_avatar_i" +
-      "d\030\007 \001(\r\022*\n\013FGGLBLAFNLD\030\016 \001(\0132\025.SocialSho" +
-      "wAvatarInfoB2\n\031emu.grasscutter.net.proto" +
-      "B\025KFFBNCLNHOAOuterClassb\006proto3"
+      "o.proto\"R\n\013KFFBNCLNHOA\022*\n\013FGGLBLAFNLD\030\n " +
+      "\001(\0132\025.SocialShowAvatarInfo\022\027\n\017trial_avat" +
+      "ar_id\030\001 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -735,7 +743,7 @@ public final class KFFBNCLNHOAOuterClass {
     internal_static_KFFBNCLNHOA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KFFBNCLNHOA_descriptor,
-        new java.lang.String[] { "TrialAvatarId", "FGGLBLAFNLD", });
+        new java.lang.String[] { "FGGLBLAFNLD", "TrialAvatarId", });
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
   }
 

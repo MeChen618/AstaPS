@@ -36,6 +36,10 @@ public final class DeshretObeliskGadgetInfoOuterClass {
     int getArgumentList(int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code DeshretObeliskGadgetInfo}
    */
   public static final class DeshretObeliskGadgetInfo extends
@@ -339,6 +343,10 @@ public final class DeshretObeliskGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code DeshretObeliskGadgetInfo}
      */
     public static final class Builder extends
@@ -645,8 +653,7 @@ public final class DeshretObeliskGadgetInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036DeshretObeliskGadgetInfo.proto\"1\n\030Desh" +
       "retObeliskGadgetInfo\022\025\n\rargument_list\030\001 " +
-      "\003(\rB?\n\031emu.grasscutter.net.protoB\"Deshre" +
-      "tObeliskGadgetInfoOuterClassb\006proto3"
+      "\003(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

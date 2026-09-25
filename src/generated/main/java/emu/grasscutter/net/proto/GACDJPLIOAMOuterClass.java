@@ -25,6 +25,10 @@ public final class GACDJPLIOAMOuterClass {
     long getKHNEGCBPFMP();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GACDJPLIOAM}
    */
   public static final class GACDJPLIOAM extends
@@ -274,6 +278,10 @@ public final class GACDJPLIOAMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GACDJPLIOAM}
      */
     public static final class Builder extends
@@ -518,8 +526,8 @@ public final class GACDJPLIOAMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021GACDJPLIOAM.proto\"\"\n\013GACDJPLIOAM\022\023\n\013KH" +
-      "NEGCBPFMP\030\001 \001(\004B2\n\031emu.grasscutter.net.p" +
-      "rotoB\025GACDJPLIOAMOuterClassb\006proto3"
+      "NEGCBPFMP\030\001 \001(\004B\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

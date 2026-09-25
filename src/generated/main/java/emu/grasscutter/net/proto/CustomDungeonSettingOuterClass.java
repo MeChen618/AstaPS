@@ -19,61 +19,61 @@ public final class CustomDungeonSettingOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_forbid_skill = 8;</code>
-     * @return The isForbidSkill.
-     */
-    boolean getIsForbidSkill();
-
-    /**
-     * <code>uint32 KADOPMBDBPG = 5;</code>
-     * @return The kADOPMBDBPG.
-     */
-    int getKADOPMBDBPG();
-
-    /**
-     * <code>uint32 KHCGPFHNHMP = 4;</code>
-     * @return The kHCGPFHNHMP.
-     */
-    int getKHCGPFHNHMP();
-
-    /**
-     * <code>uint32 ACMIGHKKLKJ = 1;</code>
-     * @return The aCMIGHKKLKJ.
-     */
-    int getACMIGHKKLKJ();
-
-    /**
-     * <code>uint32 HPFNIKCNFEE = 7;</code>
-     * @return The hPFNIKCNFEE.
-     */
-    int getHPFNIKCNFEE();
-
-    /**
-     * <code>repeated uint32 open_room_list = 6;</code>
+     * <code>repeated uint32 open_room_list = 12;</code>
      * @return A list containing the openRoomList.
      */
     java.util.List<java.lang.Integer> getOpenRoomListList();
     /**
-     * <code>repeated uint32 open_room_list = 6;</code>
+     * <code>repeated uint32 open_room_list = 12;</code>
      * @return The count of openRoomList.
      */
     int getOpenRoomListCount();
     /**
-     * <code>repeated uint32 open_room_list = 6;</code>
+     * <code>repeated uint32 open_room_list = 12;</code>
      * @param index The index of the element to return.
      * @return The openRoomList at the given index.
      */
     int getOpenRoomList(int index);
 
     /**
-     * <code>bool is_arrive_finish = 10;</code>
+     * <code>uint32 life_num = 4;</code>
+     * @return The lifeNum.
+     */
+    int getLifeNum();
+
+    /**
+     * <code>bool is_arrive_finish = 2;</code>
      * @return The isArriveFinish.
      */
     boolean getIsArriveFinish();
+
+    /**
+     * <code>bool is_forbid_skill = 15;</code>
+     * @return The isForbidSkill.
+     */
+    boolean getIsForbidSkill();
+
+    /**
+     * <code>uint32 GAGBCOCEGOF = 13;</code>
+     * @return The gAGBCOCEGOF.
+     */
+    int getGAGBCOCEGOF();
+
+    /**
+     * <code>uint32 FFCCNDMDMJA = 11;</code>
+     * @return The fFCCNDMDMJA.
+     */
+    int getFFCCNDMDMJA();
+
+    /**
+     * <code>uint32 GGIFKDDJFAL = 7;</code>
+     * @return The gGIFKDDJFAL.
+     */
+    int getGGIFKDDJFAL();
   }
   /**
    * <pre>
-   * Obf: KDLMJBEFIOD
+   * CmdId: -
    * </pre>
    *
    * Protobuf type {@code CustomDungeonSetting}
@@ -122,19 +122,24 @@ public final class CustomDungeonSettingOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
-              aCMIGHKKLKJ_ = input.readUInt32();
+              isArriveFinish_ = input.readBool();
               break;
             }
             case 32: {
 
-              kHCGPFHNHMP_ = input.readUInt32();
+              lifeNum_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 56: {
 
-              kADOPMBDBPG_ = input.readUInt32();
+              gGIFKDDJFAL_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              fFCCNDMDMJA_ = input.readUInt32();
               break;
             }
             case 96: {
@@ -158,19 +163,14 @@ public final class CustomDungeonSettingOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 56: {
+            case 104: {
 
-              hPFNIKCNFEE_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              isForbidSkill_ = input.readBool();
+              gAGBCOCEGOF_ = input.readUInt32();
               break;
             }
             case 120: {
 
-              isArriveFinish_ = input.readBool();
+              isForbidSkill_ = input.readBool();
               break;
             }
             default: {
@@ -208,65 +208,10 @@ public final class CustomDungeonSettingOuterClass {
               emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.class, emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.Builder.class);
     }
 
-    public static final int IS_FORBID_SKILL_FIELD_NUMBER = 14;
-    private boolean isForbidSkill_;
-    /**
-     * <code>bool is_forbid_skill = 8;</code>
-     * @return The isForbidSkill.
-     */
-    @java.lang.Override
-    public boolean getIsForbidSkill() {
-      return isForbidSkill_;
-    }
-
-    public static final int KADOPMBDBPG_FIELD_NUMBER = 5;
-    private int kADOPMBDBPG_;
-    /**
-     * <code>uint32 KADOPMBDBPG = 5;</code>
-     * @return The kADOPMBDBPG.
-     */
-    @java.lang.Override
-    public int getKADOPMBDBPG() {
-      return kADOPMBDBPG_;
-    }
-
-    public static final int KHCGPFHNHMP_FIELD_NUMBER = 4;
-    private int kHCGPFHNHMP_;
-    /**
-     * <code>uint32 KHCGPFHNHMP = 4;</code>
-     * @return The kHCGPFHNHMP.
-     */
-    @java.lang.Override
-    public int getKHCGPFHNHMP() {
-      return kHCGPFHNHMP_;
-    }
-
-    public static final int ACMIGHKKLKJ_FIELD_NUMBER = 1;
-    private int aCMIGHKKLKJ_;
-    /**
-     * <code>uint32 ACMIGHKKLKJ = 1;</code>
-     * @return The aCMIGHKKLKJ.
-     */
-    @java.lang.Override
-    public int getACMIGHKKLKJ() {
-      return aCMIGHKKLKJ_;
-    }
-
-    public static final int HPFNIKCNFEE_FIELD_NUMBER = 7;
-    private int hPFNIKCNFEE_;
-    /**
-     * <code>uint32 HPFNIKCNFEE = 7;</code>
-     * @return The hPFNIKCNFEE.
-     */
-    @java.lang.Override
-    public int getHPFNIKCNFEE() {
-      return hPFNIKCNFEE_;
-    }
-
     public static final int OPEN_ROOM_LIST_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList openRoomList_;
     /**
-     * <code>repeated uint32 open_room_list = 6;</code>
+     * <code>repeated uint32 open_room_list = 12;</code>
      * @return A list containing the openRoomList.
      */
     @java.lang.Override
@@ -275,14 +220,14 @@ public final class CustomDungeonSettingOuterClass {
       return openRoomList_;
     }
     /**
-     * <code>repeated uint32 open_room_list = 6;</code>
+     * <code>repeated uint32 open_room_list = 12;</code>
      * @return The count of openRoomList.
      */
     public int getOpenRoomListCount() {
       return openRoomList_.size();
     }
     /**
-     * <code>repeated uint32 open_room_list = 6;</code>
+     * <code>repeated uint32 open_room_list = 12;</code>
      * @param index The index of the element to return.
      * @return The openRoomList at the given index.
      */
@@ -291,15 +236,70 @@ public final class CustomDungeonSettingOuterClass {
     }
     private int openRoomListMemoizedSerializedSize = -1;
 
-    public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 15;
+    public static final int LIFE_NUM_FIELD_NUMBER = 4;
+    private int lifeNum_;
+    /**
+     * <code>uint32 life_num = 4;</code>
+     * @return The lifeNum.
+     */
+    @java.lang.Override
+    public int getLifeNum() {
+      return lifeNum_;
+    }
+
+    public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 2;
     private boolean isArriveFinish_;
     /**
-     * <code>bool is_arrive_finish = 10;</code>
+     * <code>bool is_arrive_finish = 2;</code>
      * @return The isArriveFinish.
      */
     @java.lang.Override
     public boolean getIsArriveFinish() {
       return isArriveFinish_;
+    }
+
+    public static final int IS_FORBID_SKILL_FIELD_NUMBER = 15;
+    private boolean isForbidSkill_;
+    /**
+     * <code>bool is_forbid_skill = 15;</code>
+     * @return The isForbidSkill.
+     */
+    @java.lang.Override
+    public boolean getIsForbidSkill() {
+      return isForbidSkill_;
+    }
+
+    public static final int GAGBCOCEGOF_FIELD_NUMBER = 13;
+    private int gAGBCOCEGOF_;
+    /**
+     * <code>uint32 GAGBCOCEGOF = 13;</code>
+     * @return The gAGBCOCEGOF.
+     */
+    @java.lang.Override
+    public int getGAGBCOCEGOF() {
+      return gAGBCOCEGOF_;
+    }
+
+    public static final int FFCCNDMDMJA_FIELD_NUMBER = 11;
+    private int fFCCNDMDMJA_;
+    /**
+     * <code>uint32 FFCCNDMDMJA = 11;</code>
+     * @return The fFCCNDMDMJA.
+     */
+    @java.lang.Override
+    public int getFFCCNDMDMJA() {
+      return fFCCNDMDMJA_;
+    }
+
+    public static final int GGIFKDDJFAL_FIELD_NUMBER = 7;
+    private int gGIFKDDJFAL_;
+    /**
+     * <code>uint32 GGIFKDDJFAL = 7;</code>
+     * @return The gGIFKDDJFAL.
+     */
+    @java.lang.Override
+    public int getGGIFKDDJFAL() {
+      return gGIFKDDJFAL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -317,14 +317,17 @@ public final class CustomDungeonSettingOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (aCMIGHKKLKJ_ != 0) {
-        output.writeUInt32(1, aCMIGHKKLKJ_);
+      if (isArriveFinish_ != false) {
+        output.writeBool(2, isArriveFinish_);
       }
-      if (kHCGPFHNHMP_ != 0) {
-        output.writeUInt32(4, kHCGPFHNHMP_);
+      if (lifeNum_ != 0) {
+        output.writeUInt32(4, lifeNum_);
       }
-      if (kADOPMBDBPG_ != 0) {
-        output.writeUInt32(5, kADOPMBDBPG_);
+      if (gGIFKDDJFAL_ != 0) {
+        output.writeUInt32(7, gGIFKDDJFAL_);
+      }
+      if (fFCCNDMDMJA_ != 0) {
+        output.writeUInt32(11, fFCCNDMDMJA_);
       }
       if (getOpenRoomListList().size() > 0) {
         output.writeUInt32NoTag(98);
@@ -333,14 +336,11 @@ public final class CustomDungeonSettingOuterClass {
       for (int i = 0; i < openRoomList_.size(); i++) {
         output.writeUInt32NoTag(openRoomList_.getInt(i));
       }
-      if (hPFNIKCNFEE_ != 0) {
-        output.writeUInt32(7, hPFNIKCNFEE_);
+      if (gAGBCOCEGOF_ != 0) {
+        output.writeUInt32(13, gAGBCOCEGOF_);
       }
       if (isForbidSkill_ != false) {
-        output.writeBool(14, isForbidSkill_);
-      }
-      if (isArriveFinish_ != false) {
-        output.writeBool(15, isArriveFinish_);
+        output.writeBool(15, isForbidSkill_);
       }
       unknownFields.writeTo(output);
     }
@@ -351,17 +351,21 @@ public final class CustomDungeonSettingOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (aCMIGHKKLKJ_ != 0) {
+      if (isArriveFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, aCMIGHKKLKJ_);
+          .computeBoolSize(2, isArriveFinish_);
       }
-      if (kHCGPFHNHMP_ != 0) {
+      if (lifeNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, kHCGPFHNHMP_);
+          .computeUInt32Size(4, lifeNum_);
       }
-      if (kADOPMBDBPG_ != 0) {
+      if (gGIFKDDJFAL_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, kADOPMBDBPG_);
+          .computeUInt32Size(7, gGIFKDDJFAL_);
+      }
+      if (fFCCNDMDMJA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, fFCCNDMDMJA_);
       }
       {
         int dataSize = 0;
@@ -377,17 +381,13 @@ public final class CustomDungeonSettingOuterClass {
         }
         openRoomListMemoizedSerializedSize = dataSize;
       }
-      if (hPFNIKCNFEE_ != 0) {
+      if (gAGBCOCEGOF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, hPFNIKCNFEE_);
+          .computeUInt32Size(13, gAGBCOCEGOF_);
       }
       if (isForbidSkill_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isForbidSkill_);
-      }
-      if (isArriveFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isArriveFinish_);
+          .computeBoolSize(15, isForbidSkill_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -404,20 +404,20 @@ public final class CustomDungeonSettingOuterClass {
       }
       emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting other = (emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting) obj;
 
-      if (getIsForbidSkill()
-          != other.getIsForbidSkill()) return false;
-      if (getKADOPMBDBPG()
-          != other.getKADOPMBDBPG()) return false;
-      if (getKHCGPFHNHMP()
-          != other.getKHCGPFHNHMP()) return false;
-      if (getACMIGHKKLKJ()
-          != other.getACMIGHKKLKJ()) return false;
-      if (getHPFNIKCNFEE()
-          != other.getHPFNIKCNFEE()) return false;
       if (!getOpenRoomListList()
           .equals(other.getOpenRoomListList())) return false;
+      if (getLifeNum()
+          != other.getLifeNum()) return false;
       if (getIsArriveFinish()
           != other.getIsArriveFinish()) return false;
+      if (getIsForbidSkill()
+          != other.getIsForbidSkill()) return false;
+      if (getGAGBCOCEGOF()
+          != other.getGAGBCOCEGOF()) return false;
+      if (getFFCCNDMDMJA()
+          != other.getFFCCNDMDMJA()) return false;
+      if (getGGIFKDDJFAL()
+          != other.getGGIFKDDJFAL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -429,24 +429,24 @@ public final class CustomDungeonSettingOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_FORBID_SKILL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsForbidSkill());
-      hash = (37 * hash) + KADOPMBDBPG_FIELD_NUMBER;
-      hash = (53 * hash) + getKADOPMBDBPG();
-      hash = (37 * hash) + KHCGPFHNHMP_FIELD_NUMBER;
-      hash = (53 * hash) + getKHCGPFHNHMP();
-      hash = (37 * hash) + ACMIGHKKLKJ_FIELD_NUMBER;
-      hash = (53 * hash) + getACMIGHKKLKJ();
-      hash = (37 * hash) + HPFNIKCNFEE_FIELD_NUMBER;
-      hash = (53 * hash) + getHPFNIKCNFEE();
       if (getOpenRoomListCount() > 0) {
         hash = (37 * hash) + OPEN_ROOM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOpenRoomListList().hashCode();
       }
+      hash = (37 * hash) + LIFE_NUM_FIELD_NUMBER;
+      hash = (53 * hash) + getLifeNum();
       hash = (37 * hash) + IS_ARRIVE_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsArriveFinish());
+      hash = (37 * hash) + IS_FORBID_SKILL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsForbidSkill());
+      hash = (37 * hash) + GAGBCOCEGOF_FIELD_NUMBER;
+      hash = (53 * hash) + getGAGBCOCEGOF();
+      hash = (37 * hash) + FFCCNDMDMJA_FIELD_NUMBER;
+      hash = (53 * hash) + getFFCCNDMDMJA();
+      hash = (37 * hash) + GGIFKDDJFAL_FIELD_NUMBER;
+      hash = (53 * hash) + getGGIFKDDJFAL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -544,7 +544,7 @@ public final class CustomDungeonSettingOuterClass {
     }
     /**
      * <pre>
-     * Obf: KDLMJBEFIOD
+     * CmdId: -
      * </pre>
      *
      * Protobuf type {@code CustomDungeonSetting}
@@ -584,19 +584,19 @@ public final class CustomDungeonSettingOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isForbidSkill_ = false;
-
-        kADOPMBDBPG_ = 0;
-
-        kHCGPFHNHMP_ = 0;
-
-        aCMIGHKKLKJ_ = 0;
-
-        hPFNIKCNFEE_ = 0;
-
         openRoomList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        lifeNum_ = 0;
+
         isArriveFinish_ = false;
+
+        isForbidSkill_ = false;
+
+        gAGBCOCEGOF_ = 0;
+
+        fFCCNDMDMJA_ = 0;
+
+        gGIFKDDJFAL_ = 0;
 
         return this;
       }
@@ -625,17 +625,17 @@ public final class CustomDungeonSettingOuterClass {
       public emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting buildPartial() {
         emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting result = new emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting(this);
         int from_bitField0_ = bitField0_;
-        result.isForbidSkill_ = isForbidSkill_;
-        result.kADOPMBDBPG_ = kADOPMBDBPG_;
-        result.kHCGPFHNHMP_ = kHCGPFHNHMP_;
-        result.aCMIGHKKLKJ_ = aCMIGHKKLKJ_;
-        result.hPFNIKCNFEE_ = hPFNIKCNFEE_;
         if (((bitField0_ & 0x00000001) != 0)) {
           openRoomList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.openRoomList_ = openRoomList_;
+        result.lifeNum_ = lifeNum_;
         result.isArriveFinish_ = isArriveFinish_;
+        result.isForbidSkill_ = isForbidSkill_;
+        result.gAGBCOCEGOF_ = gAGBCOCEGOF_;
+        result.fFCCNDMDMJA_ = fFCCNDMDMJA_;
+        result.gGIFKDDJFAL_ = gGIFKDDJFAL_;
         onBuilt();
         return result;
       }
@@ -684,21 +684,6 @@ public final class CustomDungeonSettingOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting other) {
         if (other == emu.grasscutter.net.proto.CustomDungeonSettingOuterClass.CustomDungeonSetting.getDefaultInstance()) return this;
-        if (other.getIsForbidSkill() != false) {
-          setIsForbidSkill(other.getIsForbidSkill());
-        }
-        if (other.getKADOPMBDBPG() != 0) {
-          setKADOPMBDBPG(other.getKADOPMBDBPG());
-        }
-        if (other.getKHCGPFHNHMP() != 0) {
-          setKHCGPFHNHMP(other.getKHCGPFHNHMP());
-        }
-        if (other.getACMIGHKKLKJ() != 0) {
-          setACMIGHKKLKJ(other.getACMIGHKKLKJ());
-        }
-        if (other.getHPFNIKCNFEE() != 0) {
-          setHPFNIKCNFEE(other.getHPFNIKCNFEE());
-        }
         if (!other.openRoomList_.isEmpty()) {
           if (openRoomList_.isEmpty()) {
             openRoomList_ = other.openRoomList_;
@@ -709,8 +694,23 @@ public final class CustomDungeonSettingOuterClass {
           }
           onChanged();
         }
+        if (other.getLifeNum() != 0) {
+          setLifeNum(other.getLifeNum());
+        }
         if (other.getIsArriveFinish() != false) {
           setIsArriveFinish(other.getIsArriveFinish());
+        }
+        if (other.getIsForbidSkill() != false) {
+          setIsForbidSkill(other.getIsForbidSkill());
+        }
+        if (other.getGAGBCOCEGOF() != 0) {
+          setGAGBCOCEGOF(other.getGAGBCOCEGOF());
+        }
+        if (other.getFFCCNDMDMJA() != 0) {
+          setFFCCNDMDMJA(other.getFFCCNDMDMJA());
+        }
+        if (other.getGGIFKDDJFAL() != 0) {
+          setGGIFKDDJFAL(other.getGGIFKDDJFAL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -742,161 +742,6 @@ public final class CustomDungeonSettingOuterClass {
       }
       private int bitField0_;
 
-      private boolean isForbidSkill_ ;
-      /**
-       * <code>bool is_forbid_skill = 8;</code>
-       * @return The isForbidSkill.
-       */
-      @java.lang.Override
-      public boolean getIsForbidSkill() {
-        return isForbidSkill_;
-      }
-      /**
-       * <code>bool is_forbid_skill = 8;</code>
-       * @param value The isForbidSkill to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsForbidSkill(boolean value) {
-        
-        isForbidSkill_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_forbid_skill = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsForbidSkill() {
-        
-        isForbidSkill_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int kADOPMBDBPG_ ;
-      /**
-       * <code>uint32 KADOPMBDBPG = 5;</code>
-       * @return The kADOPMBDBPG.
-       */
-      @java.lang.Override
-      public int getKADOPMBDBPG() {
-        return kADOPMBDBPG_;
-      }
-      /**
-       * <code>uint32 KADOPMBDBPG = 5;</code>
-       * @param value The kADOPMBDBPG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKADOPMBDBPG(int value) {
-        
-        kADOPMBDBPG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KADOPMBDBPG = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKADOPMBDBPG() {
-        
-        kADOPMBDBPG_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int kHCGPFHNHMP_ ;
-      /**
-       * <code>uint32 KHCGPFHNHMP = 4;</code>
-       * @return The kHCGPFHNHMP.
-       */
-      @java.lang.Override
-      public int getKHCGPFHNHMP() {
-        return kHCGPFHNHMP_;
-      }
-      /**
-       * <code>uint32 KHCGPFHNHMP = 4;</code>
-       * @param value The kHCGPFHNHMP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKHCGPFHNHMP(int value) {
-        
-        kHCGPFHNHMP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KHCGPFHNHMP = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKHCGPFHNHMP() {
-        
-        kHCGPFHNHMP_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int aCMIGHKKLKJ_ ;
-      /**
-       * <code>uint32 ACMIGHKKLKJ = 1;</code>
-       * @return The aCMIGHKKLKJ.
-       */
-      @java.lang.Override
-      public int getACMIGHKKLKJ() {
-        return aCMIGHKKLKJ_;
-      }
-      /**
-       * <code>uint32 ACMIGHKKLKJ = 1;</code>
-       * @param value The aCMIGHKKLKJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setACMIGHKKLKJ(int value) {
-        
-        aCMIGHKKLKJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 ACMIGHKKLKJ = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearACMIGHKKLKJ() {
-        
-        aCMIGHKKLKJ_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int hPFNIKCNFEE_ ;
-      /**
-       * <code>uint32 HPFNIKCNFEE = 7;</code>
-       * @return The hPFNIKCNFEE.
-       */
-      @java.lang.Override
-      public int getHPFNIKCNFEE() {
-        return hPFNIKCNFEE_;
-      }
-      /**
-       * <code>uint32 HPFNIKCNFEE = 7;</code>
-       * @param value The hPFNIKCNFEE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHPFNIKCNFEE(int value) {
-        
-        hPFNIKCNFEE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HPFNIKCNFEE = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHPFNIKCNFEE() {
-        
-        hPFNIKCNFEE_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList openRoomList_ = emptyIntList();
       private void ensureOpenRoomListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -905,7 +750,7 @@ public final class CustomDungeonSettingOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @return A list containing the openRoomList.
        */
       public java.util.List<java.lang.Integer>
@@ -914,14 +759,14 @@ public final class CustomDungeonSettingOuterClass {
                  java.util.Collections.unmodifiableList(openRoomList_) : openRoomList_;
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @return The count of openRoomList.
        */
       public int getOpenRoomListCount() {
         return openRoomList_.size();
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @param index The index of the element to return.
        * @return The openRoomList at the given index.
        */
@@ -929,7 +774,7 @@ public final class CustomDungeonSettingOuterClass {
         return openRoomList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @param index The index to set the value at.
        * @param value The openRoomList to set.
        * @return This builder for chaining.
@@ -942,7 +787,7 @@ public final class CustomDungeonSettingOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @param value The openRoomList to add.
        * @return This builder for chaining.
        */
@@ -953,7 +798,7 @@ public final class CustomDungeonSettingOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @param values The openRoomList to add.
        * @return This builder for chaining.
        */
@@ -966,7 +811,7 @@ public final class CustomDungeonSettingOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 open_room_list = 6;</code>
+       * <code>repeated uint32 open_room_list = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpenRoomList() {
@@ -976,9 +821,40 @@ public final class CustomDungeonSettingOuterClass {
         return this;
       }
 
+      private int lifeNum_ ;
+      /**
+       * <code>uint32 life_num = 4;</code>
+       * @return The lifeNum.
+       */
+      @java.lang.Override
+      public int getLifeNum() {
+        return lifeNum_;
+      }
+      /**
+       * <code>uint32 life_num = 4;</code>
+       * @param value The lifeNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLifeNum(int value) {
+        
+        lifeNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 life_num = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLifeNum() {
+        
+        lifeNum_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isArriveFinish_ ;
       /**
-       * <code>bool is_arrive_finish = 10;</code>
+       * <code>bool is_arrive_finish = 2;</code>
        * @return The isArriveFinish.
        */
       @java.lang.Override
@@ -986,7 +862,7 @@ public final class CustomDungeonSettingOuterClass {
         return isArriveFinish_;
       }
       /**
-       * <code>bool is_arrive_finish = 10;</code>
+       * <code>bool is_arrive_finish = 2;</code>
        * @param value The isArriveFinish to set.
        * @return This builder for chaining.
        */
@@ -997,12 +873,136 @@ public final class CustomDungeonSettingOuterClass {
         return this;
       }
       /**
-       * <code>bool is_arrive_finish = 10;</code>
+       * <code>bool is_arrive_finish = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsArriveFinish() {
         
         isArriveFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isForbidSkill_ ;
+      /**
+       * <code>bool is_forbid_skill = 15;</code>
+       * @return The isForbidSkill.
+       */
+      @java.lang.Override
+      public boolean getIsForbidSkill() {
+        return isForbidSkill_;
+      }
+      /**
+       * <code>bool is_forbid_skill = 15;</code>
+       * @param value The isForbidSkill to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsForbidSkill(boolean value) {
+        
+        isForbidSkill_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_forbid_skill = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsForbidSkill() {
+        
+        isForbidSkill_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int gAGBCOCEGOF_ ;
+      /**
+       * <code>uint32 GAGBCOCEGOF = 13;</code>
+       * @return The gAGBCOCEGOF.
+       */
+      @java.lang.Override
+      public int getGAGBCOCEGOF() {
+        return gAGBCOCEGOF_;
+      }
+      /**
+       * <code>uint32 GAGBCOCEGOF = 13;</code>
+       * @param value The gAGBCOCEGOF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGAGBCOCEGOF(int value) {
+        
+        gAGBCOCEGOF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GAGBCOCEGOF = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGAGBCOCEGOF() {
+        
+        gAGBCOCEGOF_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fFCCNDMDMJA_ ;
+      /**
+       * <code>uint32 FFCCNDMDMJA = 11;</code>
+       * @return The fFCCNDMDMJA.
+       */
+      @java.lang.Override
+      public int getFFCCNDMDMJA() {
+        return fFCCNDMDMJA_;
+      }
+      /**
+       * <code>uint32 FFCCNDMDMJA = 11;</code>
+       * @param value The fFCCNDMDMJA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFFCCNDMDMJA(int value) {
+        
+        fFCCNDMDMJA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FFCCNDMDMJA = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFFCCNDMDMJA() {
+        
+        fFCCNDMDMJA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gGIFKDDJFAL_ ;
+      /**
+       * <code>uint32 GGIFKDDJFAL = 7;</code>
+       * @return The gGIFKDDJFAL.
+       */
+      @java.lang.Override
+      public int getGGIFKDDJFAL() {
+        return gGIFKDDJFAL_;
+      }
+      /**
+       * <code>uint32 GGIFKDDJFAL = 7;</code>
+       * @param value The gGIFKDDJFAL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGGIFKDDJFAL(int value) {
+        
+        gGIFKDDJFAL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GGIFKDDJFAL = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGGIFKDDJFAL() {
+        
+        gGIFKDDJFAL_ = 0;
         onChanged();
         return this;
       }
@@ -1073,13 +1073,13 @@ public final class CustomDungeonSettingOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032CustomDungeonSetting.proto\"\265\001\n\024CustomD" +
-      "ungeonSetting\022\027\n\017is_forbid_skill\030\010 \001(\010\022\023" +
-      "\n\013KADOPMBDBPG\030\005 \001(\r\022\023\n\013KHCGPFHNHMP\030\004 \001(\r" +
-      "\022\023\n\013ACMIGHKKLKJ\030\001 \001(\r\022\023\n\013HPFNIKCNFEE\030\007 \001" +
-      "(\r\022\026\n\016open_room_list\030\006 \003(\r\022\030\n\020is_arrive_" +
-      "finish\030\n \001(\010B\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "\n\032CustomDungeonSetting.proto\"\262\001\n\024CustomD" +
+      "ungeonSetting\022\026\n\016open_room_list\030\014 \003(\r\022\020\n" +
+      "\010life_num\030\004 \001(\r\022\030\n\020is_arrive_finish\030\002 \001(" +
+      "\010\022\027\n\017is_forbid_skill\030\017 \001(\010\022\023\n\013GAGBCOCEGO" +
+      "F\030\r \001(\r\022\023\n\013FFCCNDMDMJA\030\013 \001(\r\022\023\n\013GGIFKDDJ" +
+      "FAL\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1090,7 +1090,7 @@ public final class CustomDungeonSettingOuterClass {
     internal_static_CustomDungeonSetting_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CustomDungeonSetting_descriptor,
-        new java.lang.String[] { "IsForbidSkill", "KADOPMBDBPG", "KHCGPFHNHMP", "ACMIGHKKLKJ", "HPFNIKCNFEE", "OpenRoomList", "IsArriveFinish", });
+        new java.lang.String[] { "OpenRoomList", "LifeNum", "IsArriveFinish", "IsForbidSkill", "GAGBCOCEGOF", "FFCCNDMDMJA", "GGIFKDDJFAL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

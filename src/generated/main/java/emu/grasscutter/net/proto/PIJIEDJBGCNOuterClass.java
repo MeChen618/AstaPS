@@ -19,12 +19,16 @@ public final class PIJIEDJBGCNOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool DMOAFJHLHMH = 14;</code>
+     * <code>bool DMOAFJHLHMH = 7;</code>
      * @return The dMOAFJHLHMH.
      */
     boolean getDMOAFJHLHMH();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PIJIEDJBGCN}
    */
   public static final class PIJIEDJBGCN extends
@@ -69,7 +73,7 @@ public final class PIJIEDJBGCNOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 56: {
 
               dMOAFJHLHMH_ = input.readBool();
               break;
@@ -106,10 +110,10 @@ public final class PIJIEDJBGCNOuterClass {
               emu.grasscutter.net.proto.PIJIEDJBGCNOuterClass.PIJIEDJBGCN.class, emu.grasscutter.net.proto.PIJIEDJBGCNOuterClass.PIJIEDJBGCN.Builder.class);
     }
 
-    public static final int DMOAFJHLHMH_FIELD_NUMBER = 14;
+    public static final int DMOAFJHLHMH_FIELD_NUMBER = 7;
     private boolean dMOAFJHLHMH_;
     /**
-     * <code>bool DMOAFJHLHMH = 14;</code>
+     * <code>bool DMOAFJHLHMH = 7;</code>
      * @return The dMOAFJHLHMH.
      */
     @java.lang.Override
@@ -132,7 +136,7 @@ public final class PIJIEDJBGCNOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dMOAFJHLHMH_ != false) {
-        output.writeBool(14, dMOAFJHLHMH_);
+        output.writeBool(7, dMOAFJHLHMH_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +149,7 @@ public final class PIJIEDJBGCNOuterClass {
       size = 0;
       if (dMOAFJHLHMH_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, dMOAFJHLHMH_);
+          .computeBoolSize(7, dMOAFJHLHMH_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -274,6 +278,10 @@ public final class PIJIEDJBGCNOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PIJIEDJBGCN}
      */
     public static final class Builder extends
@@ -422,7 +430,7 @@ public final class PIJIEDJBGCNOuterClass {
 
       private boolean dMOAFJHLHMH_ ;
       /**
-       * <code>bool DMOAFJHLHMH = 14;</code>
+       * <code>bool DMOAFJHLHMH = 7;</code>
        * @return The dMOAFJHLHMH.
        */
       @java.lang.Override
@@ -430,7 +438,7 @@ public final class PIJIEDJBGCNOuterClass {
         return dMOAFJHLHMH_;
       }
       /**
-       * <code>bool DMOAFJHLHMH = 14;</code>
+       * <code>bool DMOAFJHLHMH = 7;</code>
        * @param value The dMOAFJHLHMH to set.
        * @return This builder for chaining.
        */
@@ -441,7 +449,7 @@ public final class PIJIEDJBGCNOuterClass {
         return this;
       }
       /**
-       * <code>bool DMOAFJHLHMH = 14;</code>
+       * <code>bool DMOAFJHLHMH = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearDMOAFJHLHMH() {
@@ -518,8 +526,8 @@ public final class PIJIEDJBGCNOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021PIJIEDJBGCN.proto\"\"\n\013PIJIEDJBGCN\022\023\n\013DM" +
-      "OAFJHLHMH\030\016 \001(\010B2\n\031emu.grasscutter.net.p" +
-      "rotoB\025PIJIEDJBGCNOuterClassb\006proto3"
+      "OAFJHLHMH\030\007 \001(\010B\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

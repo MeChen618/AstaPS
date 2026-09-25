@@ -19,24 +19,6 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_viewed = 2;</code>
-     * @return The isViewed.
-     */
-    boolean getIsViewed();
-
-    /**
-     * <code>bool have_cur_schedule = 4;</code>
-     * @return The haveCurSchedule.
-     */
-    boolean getHaveCurSchedule();
-
-    /**
-     * <code>bool phlgoaddenj = 8;</code>
-     * @return The phlgoaddenj.
-     */
-    boolean getPhlgoaddenj();
-
-    /**
      * <code>.BattlePassSchedule cur_schedule = 10;</code>
      * @return Whether the curSchedule field is set.
      */
@@ -52,18 +34,34 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
     emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassScheduleOrBuilder getCurScheduleOrBuilder();
 
     /**
-     * <code>uint32 _battle_pass_plan = 12;</code>
+     * <code>uint32 _battle_pass_plan = 11;</code>
      * @return The battlePassPlan.
      */
     int getBattlePassPlan();
 
     /**
-     * <code>uint32 reward_type = 16000;</code>
-     * @return The rewardType.
+     * <code>bool HBHFBAGFADF = 1;</code>
+     * @return The hBHFBAGFADF.
      */
-    int getRewardType();
+    boolean getHBHFBAGFADF();
+
+    /**
+     * <code>bool have_cur_schedule = 4;</code>
+     * @return The haveCurSchedule.
+     */
+    boolean getHaveCurSchedule();
+
+    /**
+     * <code>bool is_viewed = 9;</code>
+     * @return The isViewed.
+     */
+    boolean getIsViewed();
   }
   /**
+   * <pre>
+   * CmdId: 25334
+   * </pre>
+   *
    * Protobuf type {@code BattlePassCurScheduleUpdateNotify}
    */
   public static final class BattlePassCurScheduleUpdateNotify extends
@@ -108,9 +106,9 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
-              isViewed_ = input.readBool();
+              hBHFBAGFADF_ = input.readBool();
               break;
             }
             case 32: {
@@ -118,9 +116,9 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
               haveCurSchedule_ = input.readBool();
               break;
             }
-            case 64: {
+            case 72: {
 
-              phlgoaddenj_ = input.readBool();
+              isViewed_ = input.readBool();
               break;
             }
             case 82: {
@@ -136,14 +134,9 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
 
               break;
             }
-            case 96: {
+            case 88: {
 
               BattlePassPlan_ = input.readUInt32();
-              break;
-            }
-            case 128000: {
-
-              rewardType_ = input.readUInt32();
               break;
             }
             default: {
@@ -178,39 +171,6 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
               emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify.class, emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify.Builder.class);
     }
 
-    public static final int IS_VIEWED_FIELD_NUMBER = 2;
-    private boolean isViewed_;
-    /**
-     * <code>bool is_viewed = 2;</code>
-     * @return The isViewed.
-     */
-    @java.lang.Override
-    public boolean getIsViewed() {
-      return isViewed_;
-    }
-
-    public static final int HAVE_CUR_SCHEDULE_FIELD_NUMBER = 4;
-    private boolean haveCurSchedule_;
-    /**
-     * <code>bool have_cur_schedule = 4;</code>
-     * @return The haveCurSchedule.
-     */
-    @java.lang.Override
-    public boolean getHaveCurSchedule() {
-      return haveCurSchedule_;
-    }
-
-    public static final int PHLGOADDENJ_FIELD_NUMBER = 8;
-    private boolean phlgoaddenj_;
-    /**
-     * <code>bool phlgoaddenj = 8;</code>
-     * @return The phlgoaddenj.
-     */
-    @java.lang.Override
-    public boolean getPhlgoaddenj() {
-      return phlgoaddenj_;
-    }
-
     public static final int CUR_SCHEDULE_FIELD_NUMBER = 10;
     private emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule curSchedule_;
     /**
@@ -237,10 +197,10 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       return getCurSchedule();
     }
 
-    public static final int _BATTLE_PASS_PLAN_FIELD_NUMBER = 12;
+    public static final int _BATTLE_PASS_PLAN_FIELD_NUMBER = 11;
     private int BattlePassPlan_;
     /**
-     * <code>uint32 _battle_pass_plan = 12;</code>
+     * <code>uint32 _battle_pass_plan = 11;</code>
      * @return The battlePassPlan.
      */
     @java.lang.Override
@@ -248,15 +208,37 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       return BattlePassPlan_;
     }
 
-    public static final int REWARD_TYPE_FIELD_NUMBER = 16000;
-    private int rewardType_;
+    public static final int HBHFBAGFADF_FIELD_NUMBER = 1;
+    private boolean hBHFBAGFADF_;
     /**
-     * <code>uint32 reward_type = 16000;</code>
-     * @return The rewardType.
+     * <code>bool HBHFBAGFADF = 1;</code>
+     * @return The hBHFBAGFADF.
      */
     @java.lang.Override
-    public int getRewardType() {
-      return rewardType_;
+    public boolean getHBHFBAGFADF() {
+      return hBHFBAGFADF_;
+    }
+
+    public static final int HAVE_CUR_SCHEDULE_FIELD_NUMBER = 4;
+    private boolean haveCurSchedule_;
+    /**
+     * <code>bool have_cur_schedule = 4;</code>
+     * @return The haveCurSchedule.
+     */
+    @java.lang.Override
+    public boolean getHaveCurSchedule() {
+      return haveCurSchedule_;
+    }
+
+    public static final int IS_VIEWED_FIELD_NUMBER = 9;
+    private boolean isViewed_;
+    /**
+     * <code>bool is_viewed = 9;</code>
+     * @return The isViewed.
+     */
+    @java.lang.Override
+    public boolean getIsViewed() {
+      return isViewed_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -273,23 +255,20 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isViewed_ != false) {
-        output.writeBool(2, isViewed_);
+      if (hBHFBAGFADF_ != false) {
+        output.writeBool(1, hBHFBAGFADF_);
       }
       if (haveCurSchedule_ != false) {
         output.writeBool(4, haveCurSchedule_);
       }
-      if (phlgoaddenj_ != false) {
-        output.writeBool(8, phlgoaddenj_);
+      if (isViewed_ != false) {
+        output.writeBool(9, isViewed_);
       }
       if (curSchedule_ != null) {
         output.writeMessage(10, getCurSchedule());
       }
       if (BattlePassPlan_ != 0) {
-        output.writeUInt32(12, BattlePassPlan_);
-      }
-      if (rewardType_ != 0) {
-        output.writeUInt32(16000, rewardType_);
+        output.writeUInt32(11, BattlePassPlan_);
       }
       unknownFields.writeTo(output);
     }
@@ -300,17 +279,17 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isViewed_ != false) {
+      if (hBHFBAGFADF_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isViewed_);
+          .computeBoolSize(1, hBHFBAGFADF_);
       }
       if (haveCurSchedule_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, haveCurSchedule_);
       }
-      if (phlgoaddenj_ != false) {
+      if (isViewed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, phlgoaddenj_);
+          .computeBoolSize(9, isViewed_);
       }
       if (curSchedule_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -318,11 +297,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       }
       if (BattlePassPlan_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, BattlePassPlan_);
-      }
-      if (rewardType_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16000, rewardType_);
+          .computeUInt32Size(11, BattlePassPlan_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -339,12 +314,6 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       }
       emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify other = (emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify) obj;
 
-      if (getIsViewed()
-          != other.getIsViewed()) return false;
-      if (getHaveCurSchedule()
-          != other.getHaveCurSchedule()) return false;
-      if (getPhlgoaddenj()
-          != other.getPhlgoaddenj()) return false;
       if (hasCurSchedule() != other.hasCurSchedule()) return false;
       if (hasCurSchedule()) {
         if (!getCurSchedule()
@@ -352,8 +321,12 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       }
       if (getBattlePassPlan()
           != other.getBattlePassPlan()) return false;
-      if (getRewardType()
-          != other.getRewardType()) return false;
+      if (getHBHFBAGFADF()
+          != other.getHBHFBAGFADF()) return false;
+      if (getHaveCurSchedule()
+          != other.getHaveCurSchedule()) return false;
+      if (getIsViewed()
+          != other.getIsViewed()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -365,23 +338,21 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_VIEWED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsViewed());
-      hash = (37 * hash) + HAVE_CUR_SCHEDULE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getHaveCurSchedule());
-      hash = (37 * hash) + PHLGOADDENJ_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPhlgoaddenj());
       if (hasCurSchedule()) {
         hash = (37 * hash) + CUR_SCHEDULE_FIELD_NUMBER;
         hash = (53 * hash) + getCurSchedule().hashCode();
       }
       hash = (37 * hash) + _BATTLE_PASS_PLAN_FIELD_NUMBER;
       hash = (53 * hash) + getBattlePassPlan();
-      hash = (37 * hash) + REWARD_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardType();
+      hash = (37 * hash) + HBHFBAGFADF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHBHFBAGFADF());
+      hash = (37 * hash) + HAVE_CUR_SCHEDULE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getHaveCurSchedule());
+      hash = (37 * hash) + IS_VIEWED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsViewed());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -478,6 +449,10 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 25334
+     * </pre>
+     *
      * Protobuf type {@code BattlePassCurScheduleUpdateNotify}
      */
     public static final class Builder extends
@@ -515,12 +490,6 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isViewed_ = false;
-
-        haveCurSchedule_ = false;
-
-        phlgoaddenj_ = false;
-
         if (curScheduleBuilder_ == null) {
           curSchedule_ = null;
         } else {
@@ -529,7 +498,11 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         }
         BattlePassPlan_ = 0;
 
-        rewardType_ = 0;
+        hBHFBAGFADF_ = false;
+
+        haveCurSchedule_ = false;
+
+        isViewed_ = false;
 
         return this;
       }
@@ -557,16 +530,15 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify buildPartial() {
         emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify result = new emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify(this);
-        result.isViewed_ = isViewed_;
-        result.haveCurSchedule_ = haveCurSchedule_;
-        result.phlgoaddenj_ = phlgoaddenj_;
         if (curScheduleBuilder_ == null) {
           result.curSchedule_ = curSchedule_;
         } else {
           result.curSchedule_ = curScheduleBuilder_.build();
         }
         result.BattlePassPlan_ = BattlePassPlan_;
-        result.rewardType_ = rewardType_;
+        result.hBHFBAGFADF_ = hBHFBAGFADF_;
+        result.haveCurSchedule_ = haveCurSchedule_;
+        result.isViewed_ = isViewed_;
         onBuilt();
         return result;
       }
@@ -615,23 +587,20 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify other) {
         if (other == emu.grasscutter.net.proto.BattlePassCurScheduleUpdateNotifyOuterClass.BattlePassCurScheduleUpdateNotify.getDefaultInstance()) return this;
-        if (other.getIsViewed() != false) {
-          setIsViewed(other.getIsViewed());
-        }
-        if (other.getHaveCurSchedule() != false) {
-          setHaveCurSchedule(other.getHaveCurSchedule());
-        }
-        if (other.getPhlgoaddenj() != false) {
-          setPhlgoaddenj(other.getPhlgoaddenj());
-        }
         if (other.hasCurSchedule()) {
           mergeCurSchedule(other.getCurSchedule());
         }
         if (other.getBattlePassPlan() != 0) {
           setBattlePassPlan(other.getBattlePassPlan());
         }
-        if (other.getRewardType() != 0) {
-          setRewardType(other.getRewardType());
+        if (other.getHBHFBAGFADF() != false) {
+          setHBHFBAGFADF(other.getHBHFBAGFADF());
+        }
+        if (other.getHaveCurSchedule() != false) {
+          setHaveCurSchedule(other.getHaveCurSchedule());
+        }
+        if (other.getIsViewed() != false) {
+          setIsViewed(other.getIsViewed());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -659,99 +628,6 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private boolean isViewed_ ;
-      /**
-       * <code>bool is_viewed = 2;</code>
-       * @return The isViewed.
-       */
-      @java.lang.Override
-      public boolean getIsViewed() {
-        return isViewed_;
-      }
-      /**
-       * <code>bool is_viewed = 2;</code>
-       * @param value The isViewed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsViewed(boolean value) {
-        
-        isViewed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_viewed = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsViewed() {
-        
-        isViewed_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean haveCurSchedule_ ;
-      /**
-       * <code>bool have_cur_schedule = 4;</code>
-       * @return The haveCurSchedule.
-       */
-      @java.lang.Override
-      public boolean getHaveCurSchedule() {
-        return haveCurSchedule_;
-      }
-      /**
-       * <code>bool have_cur_schedule = 4;</code>
-       * @param value The haveCurSchedule to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHaveCurSchedule(boolean value) {
-        
-        haveCurSchedule_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool have_cur_schedule = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHaveCurSchedule() {
-        
-        haveCurSchedule_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean phlgoaddenj_ ;
-      /**
-       * <code>bool phlgoaddenj = 8;</code>
-       * @return The phlgoaddenj.
-       */
-      @java.lang.Override
-      public boolean getPhlgoaddenj() {
-        return phlgoaddenj_;
-      }
-      /**
-       * <code>bool phlgoaddenj = 8;</code>
-       * @param value The phlgoaddenj to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPhlgoaddenj(boolean value) {
-        
-        phlgoaddenj_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool phlgoaddenj = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPhlgoaddenj() {
-        
-        phlgoaddenj_ = false;
-        onChanged();
         return this;
       }
 
@@ -876,7 +752,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
 
       private int BattlePassPlan_ ;
       /**
-       * <code>uint32 _battle_pass_plan = 12;</code>
+       * <code>uint32 _battle_pass_plan = 11;</code>
        * @return The battlePassPlan.
        */
       @java.lang.Override
@@ -884,7 +760,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         return BattlePassPlan_;
       }
       /**
-       * <code>uint32 _battle_pass_plan = 12;</code>
+       * <code>uint32 _battle_pass_plan = 11;</code>
        * @param value The battlePassPlan to set.
        * @return This builder for chaining.
        */
@@ -895,7 +771,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 _battle_pass_plan = 12;</code>
+       * <code>uint32 _battle_pass_plan = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearBattlePassPlan() {
@@ -905,33 +781,95 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
         return this;
       }
 
-      private int rewardType_ ;
+      private boolean hBHFBAGFADF_ ;
       /**
-       * <code>uint32 reward_type = 16000;</code>
-       * @return The rewardType.
+       * <code>bool HBHFBAGFADF = 1;</code>
+       * @return The hBHFBAGFADF.
        */
       @java.lang.Override
-      public int getRewardType() {
-        return rewardType_;
+      public boolean getHBHFBAGFADF() {
+        return hBHFBAGFADF_;
       }
       /**
-       * <code>uint32 reward_type = 16000;</code>
-       * @param value The rewardType to set.
+       * <code>bool HBHFBAGFADF = 1;</code>
+       * @param value The hBHFBAGFADF to set.
        * @return This builder for chaining.
        */
-      public Builder setRewardType(int value) {
+      public Builder setHBHFBAGFADF(boolean value) {
         
-        rewardType_ = value;
+        hBHFBAGFADF_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 reward_type = 16000;</code>
+       * <code>bool HBHFBAGFADF = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearRewardType() {
+      public Builder clearHBHFBAGFADF() {
         
-        rewardType_ = 0;
+        hBHFBAGFADF_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean haveCurSchedule_ ;
+      /**
+       * <code>bool have_cur_schedule = 4;</code>
+       * @return The haveCurSchedule.
+       */
+      @java.lang.Override
+      public boolean getHaveCurSchedule() {
+        return haveCurSchedule_;
+      }
+      /**
+       * <code>bool have_cur_schedule = 4;</code>
+       * @param value The haveCurSchedule to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHaveCurSchedule(boolean value) {
+        
+        haveCurSchedule_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool have_cur_schedule = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHaveCurSchedule() {
+        
+        haveCurSchedule_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isViewed_ ;
+      /**
+       * <code>bool is_viewed = 9;</code>
+       * @return The isViewed.
+       */
+      @java.lang.Override
+      public boolean getIsViewed() {
+        return isViewed_;
+      }
+      /**
+       * <code>bool is_viewed = 9;</code>
+       * @param value The isViewed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsViewed(boolean value) {
+        
+        isViewed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_viewed = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsViewed() {
+        
+        isViewed_ = false;
         onChanged();
         return this;
       }
@@ -1003,14 +941,12 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\'BattlePassCurScheduleUpdateNotify.prot" +
-      "o\032\030BattlePassSchedule.proto\"\302\001\n!BattlePa" +
-      "ssCurScheduleUpdateNotify\022\021\n\tis_viewed\030\002" +
-      " \001(\010\022\031\n\021have_cur_schedule\030\004 \001(\010\022\023\n\013phlgo" +
-      "addenj\030\010 \001(\010\022)\n\014cur_schedule\030\n \001(\0132\023.Bat" +
-      "tlePassSchedule\022\031\n\021_battle_pass_plan\030\014 \001" +
-      "(\r\022\024\n\013reward_type\030\200} \001(\rBH\n\031emu.grasscut" +
-      "ter.net.protoB+BattlePassCurScheduleUpda" +
-      "teNotifyOuterClassb\006proto3"
+      "o\032\030BattlePassSchedule.proto\"\254\001\n!BattlePa" +
+      "ssCurScheduleUpdateNotify\022)\n\014cur_schedul" +
+      "e\030\n \001(\0132\023.BattlePassSchedule\022\031\n\021_battle_" +
+      "pass_plan\030\013 \001(\r\022\023\n\013HBHFBAGFADF\030\001 \001(\010\022\031\n\021" +
+      "have_cur_schedule\030\004 \001(\010\022\021\n\tis_viewed\030\t \001" +
+      "(\010B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1022,7 +958,7 @@ public final class BattlePassCurScheduleUpdateNotifyOuterClass {
     internal_static_BattlePassCurScheduleUpdateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BattlePassCurScheduleUpdateNotify_descriptor,
-        new java.lang.String[] { "IsViewed", "HaveCurSchedule", "Phlgoaddenj", "CurSchedule", "BattlePassPlan", "RewardType", });
+        new java.lang.String[] { "CurSchedule", "BattlePassPlan", "HBHFBAGFADF", "HaveCurSchedule", "IsViewed", });
     emu.grasscutter.net.proto.BattlePassScheduleOuterClass.getDescriptor();
   }
 

@@ -19,30 +19,34 @@ public final class MDCLJNPDHKGOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH> 
         getLevelInfoListList();
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH getLevelInfoList(int index);
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     int getLevelInfoListCount();
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder> 
         getLevelInfoListOrBuilderList();
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder getLevelInfoListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MDCLJNPDHKG}
    */
   public static final class MDCLJNPDHKG extends
@@ -89,7 +93,7 @@ public final class MDCLJNPDHKGOuterClass {
             case 0:
               done = true;
               break;
-            case 114: {
+            case 26: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class MDCLJNPDHKGOuterClass {
               emu.grasscutter.net.proto.MDCLJNPDHKGOuterClass.MDCLJNPDHKG.class, emu.grasscutter.net.proto.MDCLJNPDHKGOuterClass.MDCLJNPDHKG.Builder.class);
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 14;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH> levelInfoList_;
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder> 
@@ -151,21 +155,21 @@ public final class MDCLJNPDHKGOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+     * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder getLevelInfoListOrBuilder(
@@ -188,7 +192,7 @@ public final class MDCLJNPDHKGOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(14, levelInfoList_.get(i));
+        output.writeMessage(3, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class MDCLJNPDHKGOuterClass {
       size = 0;
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, levelInfoList_.get(i));
+          .computeMessageSize(3, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class MDCLJNPDHKGOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MDCLJNPDHKG}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class MDCLJNPDHKGOuterClass {
           emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class MDCLJNPDHKGOuterClass {
         }
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class MDCLJNPDHKGOuterClass {
         }
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class MDCLJNPDHKGOuterClass {
         }
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH value) {
@@ -575,7 +583,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH value) {
         if (levelInfoListBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH value) {
@@ -622,7 +630,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH> values) {
@@ -665,7 +673,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class MDCLJNPDHKGOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class MDCLJNPDHKGOuterClass {
         }
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGHOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -719,14 +727,14 @@ public final class MDCLJNPDHKGOuterClass {
         }
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.getDefaultInstance());
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder addLevelInfoListBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class MDCLJNPDHKGOuterClass {
             index, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.getDefaultInstance());
       }
       /**
-       * <code>repeated .KNPLPLPHFGH level_info_list = 14;</code>
+       * <code>repeated .KNPLPLPHFGH level_info_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder> 
            getLevelInfoListBuilderList() {
@@ -822,9 +830,9 @@ public final class MDCLJNPDHKGOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021MDCLJNPDHKG.proto\032\021KNPLPLPHFGH.proto\"4" +
-      "\n\013MDCLJNPDHKG\022%\n\017level_info_list\030\016 \003(\0132\014" +
-      ".KNPLPLPHFGHB2\n\031emu.grasscutter.net.prot" +
-      "oB\025MDCLJNPDHKGOuterClassb\006proto3"
+      "\n\013MDCLJNPDHKG\022%\n\017level_info_list\030\003 \003(\0132\014" +
+      ".KNPLPLPHFGHB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

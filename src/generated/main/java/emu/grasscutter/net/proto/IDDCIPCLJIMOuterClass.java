@@ -19,30 +19,34 @@ public final class IDDCIPCLJIMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_finish = 2;</code>
+     * <code>bool is_open = 10;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>bool is_finish = 8;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>uint32 level_id = 3;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>uint32 OALJEAIMDID = 4;</code>
+     * <code>uint32 OALJEAIMDID = 12;</code>
      * @return The oALJEAIMDID.
      */
     int getOALJEAIMDID();
 
     /**
-     * <code>bool is_open = 13;</code>
-     * @return The isOpen.
+     * <code>uint32 level_id = 5;</code>
+     * @return The levelId.
      */
-    boolean getIsOpen();
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IDDCIPCLJIM}
    */
   public static final class IDDCIPCLJIM extends
@@ -87,24 +91,24 @@ public final class IDDCIPCLJIMOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 24: {
+            case 40: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 64: {
 
-              oALJEAIMDID_ = input.readUInt32();
+              isFinish_ = input.readBool();
               break;
             }
-            case 104: {
+            case 80: {
 
               isOpen_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              oALJEAIMDID_ = input.readUInt32();
               break;
             }
             default: {
@@ -139,10 +143,21 @@ public final class IDDCIPCLJIMOuterClass {
               emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM.class, emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM.Builder.class);
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 2;
+    public static final int IS_OPEN_FIELD_NUMBER = 10;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 10;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int IS_FINISH_FIELD_NUMBER = 8;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 2;</code>
+     * <code>bool is_finish = 8;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -150,21 +165,10 @@ public final class IDDCIPCLJIMOuterClass {
       return isFinish_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 3;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 3;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int OALJEAIMDID_FIELD_NUMBER = 4;
+    public static final int OALJEAIMDID_FIELD_NUMBER = 12;
     private int oALJEAIMDID_;
     /**
-     * <code>uint32 OALJEAIMDID = 4;</code>
+     * <code>uint32 OALJEAIMDID = 12;</code>
      * @return The oALJEAIMDID.
      */
     @java.lang.Override
@@ -172,15 +176,15 @@ public final class IDDCIPCLJIMOuterClass {
       return oALJEAIMDID_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
-    private boolean isOpen_;
+    public static final int LEVEL_ID_FIELD_NUMBER = 5;
+    private int levelId_;
     /**
-     * <code>bool is_open = 13;</code>
-     * @return The isOpen.
+     * <code>uint32 level_id = 5;</code>
+     * @return The levelId.
      */
     @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,17 +201,17 @@ public final class IDDCIPCLJIMOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinish_ != false) {
-        output.writeBool(2, isFinish_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(3, levelId_);
+        output.writeUInt32(5, levelId_);
       }
-      if (oALJEAIMDID_ != 0) {
-        output.writeUInt32(4, oALJEAIMDID_);
+      if (isFinish_ != false) {
+        output.writeBool(8, isFinish_);
       }
       if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+        output.writeBool(10, isOpen_);
+      }
+      if (oALJEAIMDID_ != 0) {
+        output.writeUInt32(12, oALJEAIMDID_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +222,21 @@ public final class IDDCIPCLJIMOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isFinish_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, levelId_);
+          .computeUInt32Size(5, levelId_);
       }
-      if (oALJEAIMDID_ != 0) {
+      if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, oALJEAIMDID_);
+          .computeBoolSize(8, isFinish_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeBoolSize(10, isOpen_);
+      }
+      if (oALJEAIMDID_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, oALJEAIMDID_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,14 +253,14 @@ public final class IDDCIPCLJIMOuterClass {
       }
       emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM other = (emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM) obj;
 
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getOALJEAIMDID()
-          != other.getOALJEAIMDID()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getOALJEAIMDID()
+          != other.getOALJEAIMDID()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,16 +272,16 @@ public final class IDDCIPCLJIMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + OALJEAIMDID_FIELD_NUMBER;
-      hash = (53 * hash) + getOALJEAIMDID();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
+      hash = (37 * hash) + OALJEAIMDID_FIELD_NUMBER;
+      hash = (53 * hash) + getOALJEAIMDID();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class IDDCIPCLJIMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IDDCIPCLJIM}
      */
     public static final class Builder extends
@@ -411,13 +419,13 @@ public final class IDDCIPCLJIMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isFinish_ = false;
+        isOpen_ = false;
 
-        levelId_ = 0;
+        isFinish_ = false;
 
         oALJEAIMDID_ = 0;
 
-        isOpen_ = false;
+        levelId_ = 0;
 
         return this;
       }
@@ -445,10 +453,10 @@ public final class IDDCIPCLJIMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM buildPartial() {
         emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM result = new emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM(this);
-        result.isFinish_ = isFinish_;
-        result.levelId_ = levelId_;
-        result.oALJEAIMDID_ = oALJEAIMDID_;
         result.isOpen_ = isOpen_;
+        result.isFinish_ = isFinish_;
+        result.oALJEAIMDID_ = oALJEAIMDID_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -497,17 +505,17 @@ public final class IDDCIPCLJIMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM other) {
         if (other == emu.grasscutter.net.proto.IDDCIPCLJIMOuterClass.IDDCIPCLJIM.getDefaultInstance()) return this;
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
-        }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
         }
         if (other.getOALJEAIMDID() != 0) {
           setOALJEAIMDID(other.getOALJEAIMDID());
         }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -538,102 +546,9 @@ public final class IDDCIPCLJIMOuterClass {
         return this;
       }
 
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 2;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 2;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 3;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 3;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int oALJEAIMDID_ ;
-      /**
-       * <code>uint32 OALJEAIMDID = 4;</code>
-       * @return The oALJEAIMDID.
-       */
-      @java.lang.Override
-      public int getOALJEAIMDID() {
-        return oALJEAIMDID_;
-      }
-      /**
-       * <code>uint32 OALJEAIMDID = 4;</code>
-       * @param value The oALJEAIMDID to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOALJEAIMDID(int value) {
-        
-        oALJEAIMDID_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 OALJEAIMDID = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOALJEAIMDID() {
-        
-        oALJEAIMDID_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 10;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -641,7 +556,7 @@ public final class IDDCIPCLJIMOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 10;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -652,12 +567,105 @@ public final class IDDCIPCLJIMOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int oALJEAIMDID_ ;
+      /**
+       * <code>uint32 OALJEAIMDID = 12;</code>
+       * @return The oALJEAIMDID.
+       */
+      @java.lang.Override
+      public int getOALJEAIMDID() {
+        return oALJEAIMDID_;
+      }
+      /**
+       * <code>uint32 OALJEAIMDID = 12;</code>
+       * @param value The oALJEAIMDID to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOALJEAIMDID(int value) {
+        
+        oALJEAIMDID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 OALJEAIMDID = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOALJEAIMDID() {
+        
+        oALJEAIMDID_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 5;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 5;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class IDDCIPCLJIMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021IDDCIPCLJIM.proto\"X\n\013IDDCIPCLJIM\022\021\n\tis" +
-      "_finish\030\002 \001(\010\022\020\n\010level_id\030\003 \001(\r\022\023\n\013OALJE" +
-      "AIMDID\030\004 \001(\r\022\017\n\007is_open\030\r \001(\010B2\n\031emu.gra" +
-      "sscutter.net.protoB\025IDDCIPCLJIMOuterClas" +
-      "sb\006proto3"
+      "\n\021IDDCIPCLJIM.proto\"X\n\013IDDCIPCLJIM\022\017\n\007is" +
+      "_open\030\n \001(\010\022\021\n\tis_finish\030\010 \001(\010\022\023\n\013OALJEA" +
+      "IMDID\030\014 \001(\r\022\020\n\010level_id\030\005 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class IDDCIPCLJIMOuterClass {
     internal_static_IDDCIPCLJIM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IDDCIPCLJIM_descriptor,
-        new java.lang.String[] { "IsFinish", "LevelId", "OALJEAIMDID", "IsOpen", });
+        new java.lang.String[] { "IsOpen", "IsFinish", "OALJEAIMDID", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

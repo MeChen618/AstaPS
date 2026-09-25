@@ -4,7 +4,7 @@ import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.command.*;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.*;
@@ -39,7 +39,7 @@ public final class HealCommand implements CommandHandler {
                                     .broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
                                     entity.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE,
 
-                                    ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
+                                    _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
                                    ));
                                    }
 

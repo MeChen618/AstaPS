@@ -19,35 +19,39 @@ public final class ParentQuestRandomInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entrance_id = 1;</code>
-     * @return The entranceId.
-     */
-    int getEntranceId();
-
-    /**
-     * <code>repeated uint32 factor_list = 9;</code>
+     * <code>repeated uint32 factor_list = 1;</code>
      * @return A list containing the factorList.
      */
     java.util.List<java.lang.Integer> getFactorListList();
     /**
-     * <code>repeated uint32 factor_list = 9;</code>
+     * <code>repeated uint32 factor_list = 1;</code>
      * @return The count of factorList.
      */
     int getFactorListCount();
     /**
-     * <code>repeated uint32 factor_list = 9;</code>
+     * <code>repeated uint32 factor_list = 1;</code>
      * @param index The index of the element to return.
      * @return The factorList at the given index.
      */
     int getFactorList(int index);
 
     /**
-     * <code>uint32 template_id = 13;</code>
+     * <code>uint32 entrance_id = 11;</code>
+     * @return The entranceId.
+     */
+    int getEntranceId();
+
+    /**
+     * <code>uint32 template_id = 6;</code>
      * @return The templateId.
      */
     int getTemplateId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ParentQuestRandomInfo}
    */
   public static final class ParentQuestRandomInfo extends
@@ -95,11 +99,6 @@ public final class ParentQuestRandomInfoOuterClass {
               done = true;
               break;
             case 8: {
-
-              entranceId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 factorList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -107,7 +106,7 @@ public final class ParentQuestRandomInfoOuterClass {
               factorList_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -120,9 +119,14 @@ public final class ParentQuestRandomInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
+            case 48: {
 
               templateId_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              entranceId_ = input.readUInt32();
               break;
             }
             default: {
@@ -160,21 +164,10 @@ public final class ParentQuestRandomInfoOuterClass {
               emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.class, emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.Builder.class);
     }
 
-    public static final int ENTRANCE_ID_FIELD_NUMBER = 1;
-    private int entranceId_;
-    /**
-     * <code>uint32 entrance_id = 1;</code>
-     * @return The entranceId.
-     */
-    @java.lang.Override
-    public int getEntranceId() {
-      return entranceId_;
-    }
-
-    public static final int FACTOR_LIST_FIELD_NUMBER = 9;
+    public static final int FACTOR_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList factorList_;
     /**
-     * <code>repeated uint32 factor_list = 9;</code>
+     * <code>repeated uint32 factor_list = 1;</code>
      * @return A list containing the factorList.
      */
     @java.lang.Override
@@ -183,14 +176,14 @@ public final class ParentQuestRandomInfoOuterClass {
       return factorList_;
     }
     /**
-     * <code>repeated uint32 factor_list = 9;</code>
+     * <code>repeated uint32 factor_list = 1;</code>
      * @return The count of factorList.
      */
     public int getFactorListCount() {
       return factorList_.size();
     }
     /**
-     * <code>repeated uint32 factor_list = 9;</code>
+     * <code>repeated uint32 factor_list = 1;</code>
      * @param index The index of the element to return.
      * @return The factorList at the given index.
      */
@@ -199,10 +192,21 @@ public final class ParentQuestRandomInfoOuterClass {
     }
     private int factorListMemoizedSerializedSize = -1;
 
-    public static final int TEMPLATE_ID_FIELD_NUMBER = 13;
+    public static final int ENTRANCE_ID_FIELD_NUMBER = 11;
+    private int entranceId_;
+    /**
+     * <code>uint32 entrance_id = 11;</code>
+     * @return The entranceId.
+     */
+    @java.lang.Override
+    public int getEntranceId() {
+      return entranceId_;
+    }
+
+    public static final int TEMPLATE_ID_FIELD_NUMBER = 6;
     private int templateId_;
     /**
-     * <code>uint32 template_id = 13;</code>
+     * <code>uint32 template_id = 6;</code>
      * @return The templateId.
      */
     @java.lang.Override
@@ -225,18 +229,18 @@ public final class ParentQuestRandomInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (entranceId_ != 0) {
-        output.writeUInt32(1, entranceId_);
-      }
       if (getFactorListList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(factorListMemoizedSerializedSize);
       }
       for (int i = 0; i < factorList_.size(); i++) {
         output.writeUInt32NoTag(factorList_.getInt(i));
       }
       if (templateId_ != 0) {
-        output.writeUInt32(13, templateId_);
+        output.writeUInt32(6, templateId_);
+      }
+      if (entranceId_ != 0) {
+        output.writeUInt32(11, entranceId_);
       }
       unknownFields.writeTo(output);
     }
@@ -247,10 +251,6 @@ public final class ParentQuestRandomInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entranceId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, entranceId_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < factorList_.size(); i++) {
@@ -267,7 +267,11 @@ public final class ParentQuestRandomInfoOuterClass {
       }
       if (templateId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, templateId_);
+          .computeUInt32Size(6, templateId_);
+      }
+      if (entranceId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, entranceId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -284,10 +288,10 @@ public final class ParentQuestRandomInfoOuterClass {
       }
       emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo other = (emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo) obj;
 
-      if (getEntranceId()
-          != other.getEntranceId()) return false;
       if (!getFactorListList()
           .equals(other.getFactorListList())) return false;
+      if (getEntranceId()
+          != other.getEntranceId()) return false;
       if (getTemplateId()
           != other.getTemplateId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -301,12 +305,12 @@ public final class ParentQuestRandomInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTRANCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntranceId();
       if (getFactorListCount() > 0) {
         hash = (37 * hash) + FACTOR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFactorListList().hashCode();
       }
+      hash = (37 * hash) + ENTRANCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntranceId();
       hash = (37 * hash) + TEMPLATE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTemplateId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -405,6 +409,10 @@ public final class ParentQuestRandomInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ParentQuestRandomInfo}
      */
     public static final class Builder extends
@@ -442,10 +450,10 @@ public final class ParentQuestRandomInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entranceId_ = 0;
-
         factorList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        entranceId_ = 0;
+
         templateId_ = 0;
 
         return this;
@@ -475,12 +483,12 @@ public final class ParentQuestRandomInfoOuterClass {
       public emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo buildPartial() {
         emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo result = new emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo(this);
         int from_bitField0_ = bitField0_;
-        result.entranceId_ = entranceId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           factorList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.factorList_ = factorList_;
+        result.entranceId_ = entranceId_;
         result.templateId_ = templateId_;
         onBuilt();
         return result;
@@ -530,9 +538,6 @@ public final class ParentQuestRandomInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo other) {
         if (other == emu.grasscutter.net.proto.ParentQuestRandomInfoOuterClass.ParentQuestRandomInfo.getDefaultInstance()) return this;
-        if (other.getEntranceId() != 0) {
-          setEntranceId(other.getEntranceId());
-        }
         if (!other.factorList_.isEmpty()) {
           if (factorList_.isEmpty()) {
             factorList_ = other.factorList_;
@@ -542,6 +547,9 @@ public final class ParentQuestRandomInfoOuterClass {
             factorList_.addAll(other.factorList_);
           }
           onChanged();
+        }
+        if (other.getEntranceId() != 0) {
+          setEntranceId(other.getEntranceId());
         }
         if (other.getTemplateId() != 0) {
           setTemplateId(other.getTemplateId());
@@ -576,37 +584,6 @@ public final class ParentQuestRandomInfoOuterClass {
       }
       private int bitField0_;
 
-      private int entranceId_ ;
-      /**
-       * <code>uint32 entrance_id = 1;</code>
-       * @return The entranceId.
-       */
-      @java.lang.Override
-      public int getEntranceId() {
-        return entranceId_;
-      }
-      /**
-       * <code>uint32 entrance_id = 1;</code>
-       * @param value The entranceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntranceId(int value) {
-        
-        entranceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entrance_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntranceId() {
-        
-        entranceId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList factorList_ = emptyIntList();
       private void ensureFactorListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -615,7 +592,7 @@ public final class ParentQuestRandomInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @return A list containing the factorList.
        */
       public java.util.List<java.lang.Integer>
@@ -624,14 +601,14 @@ public final class ParentQuestRandomInfoOuterClass {
                  java.util.Collections.unmodifiableList(factorList_) : factorList_;
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @return The count of factorList.
        */
       public int getFactorListCount() {
         return factorList_.size();
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @param index The index of the element to return.
        * @return The factorList at the given index.
        */
@@ -639,7 +616,7 @@ public final class ParentQuestRandomInfoOuterClass {
         return factorList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The factorList to set.
        * @return This builder for chaining.
@@ -652,7 +629,7 @@ public final class ParentQuestRandomInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @param value The factorList to add.
        * @return This builder for chaining.
        */
@@ -663,7 +640,7 @@ public final class ParentQuestRandomInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @param values The factorList to add.
        * @return This builder for chaining.
        */
@@ -676,7 +653,7 @@ public final class ParentQuestRandomInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 factor_list = 9;</code>
+       * <code>repeated uint32 factor_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearFactorList() {
@@ -686,9 +663,40 @@ public final class ParentQuestRandomInfoOuterClass {
         return this;
       }
 
+      private int entranceId_ ;
+      /**
+       * <code>uint32 entrance_id = 11;</code>
+       * @return The entranceId.
+       */
+      @java.lang.Override
+      public int getEntranceId() {
+        return entranceId_;
+      }
+      /**
+       * <code>uint32 entrance_id = 11;</code>
+       * @param value The entranceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntranceId(int value) {
+        
+        entranceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entrance_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntranceId() {
+        
+        entranceId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int templateId_ ;
       /**
-       * <code>uint32 template_id = 13;</code>
+       * <code>uint32 template_id = 6;</code>
        * @return The templateId.
        */
       @java.lang.Override
@@ -696,7 +704,7 @@ public final class ParentQuestRandomInfoOuterClass {
         return templateId_;
       }
       /**
-       * <code>uint32 template_id = 13;</code>
+       * <code>uint32 template_id = 6;</code>
        * @param value The templateId to set.
        * @return This builder for chaining.
        */
@@ -707,7 +715,7 @@ public final class ParentQuestRandomInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 template_id = 13;</code>
+       * <code>uint32 template_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearTemplateId() {
@@ -784,10 +792,9 @@ public final class ParentQuestRandomInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ParentQuestRandomInfo.proto\"V\n\025ParentQ" +
-      "uestRandomInfo\022\023\n\013entrance_id\030\001 \001(\r\022\023\n\013f" +
-      "actor_list\030\t \003(\r\022\023\n\013template_id\030\r \001(\rB<\n" +
-      "\031emu.grasscutter.net.protoB\037ParentQuestR" +
-      "andomInfoOuterClassb\006proto3"
+      "uestRandomInfo\022\023\n\013factor_list\030\001 \003(\r\022\023\n\013e" +
+      "ntrance_id\030\013 \001(\r\022\023\n\013template_id\030\006 \001(\rB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -798,7 +805,7 @@ public final class ParentQuestRandomInfoOuterClass {
     internal_static_ParentQuestRandomInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ParentQuestRandomInfo_descriptor,
-        new java.lang.String[] { "EntranceId", "FactorList", "TemplateId", });
+        new java.lang.String[] { "FactorList", "EntranceId", "TemplateId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

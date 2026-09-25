@@ -19,36 +19,40 @@ public final class PPOBOBDKPHIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA> 
         getBFCKJBCPFLFList();
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA getBFCKJBCPFLF(int index);
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     int getBFCKJBCPFLFCount();
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder> 
         getBFCKJBCPFLFOrBuilderList();
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder getBFCKJBCPFLFOrBuilder(
         int index);
 
     /**
-     * <code>uint32 schedule_id = 8;</code>
+     * <code>uint32 schedule_id = 6;</code>
      * @return The scheduleId.
      */
     int getScheduleId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PPOBOBDKPHI}
    */
   public static final class PPOBOBDKPHI extends
@@ -95,18 +99,18 @@ public final class PPOBOBDKPHIOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 48: {
+
+              scheduleId_ = input.readUInt32();
+              break;
+            }
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bFCKJBCPFLF_ = new java.util.ArrayList<emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA>();
                 mutable_bitField0_ |= 0x00000001;
               }
               bFCKJBCPFLF_.add(
                   input.readMessage(emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              scheduleId_ = input.readUInt32();
               break;
             }
             default: {
@@ -144,17 +148,17 @@ public final class PPOBOBDKPHIOuterClass {
               emu.grasscutter.net.proto.PPOBOBDKPHIOuterClass.PPOBOBDKPHI.class, emu.grasscutter.net.proto.PPOBOBDKPHIOuterClass.PPOBOBDKPHI.Builder.class);
     }
 
-    public static final int BFCKJBCPFLF_FIELD_NUMBER = 2;
+    public static final int BFCKJBCPFLF_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA> bFCKJBCPFLF_;
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA> getBFCKJBCPFLFList() {
       return bFCKJBCPFLF_;
     }
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder> 
@@ -162,21 +166,21 @@ public final class PPOBOBDKPHIOuterClass {
       return bFCKJBCPFLF_;
     }
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     @java.lang.Override
     public int getBFCKJBCPFLFCount() {
       return bFCKJBCPFLF_.size();
     }
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA getBFCKJBCPFLF(int index) {
       return bFCKJBCPFLF_.get(index);
     }
     /**
-     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+     * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder getBFCKJBCPFLFOrBuilder(
@@ -184,10 +188,10 @@ public final class PPOBOBDKPHIOuterClass {
       return bFCKJBCPFLF_.get(index);
     }
 
-    public static final int SCHEDULE_ID_FIELD_NUMBER = 8;
+    public static final int SCHEDULE_ID_FIELD_NUMBER = 6;
     private int scheduleId_;
     /**
-     * <code>uint32 schedule_id = 8;</code>
+     * <code>uint32 schedule_id = 6;</code>
      * @return The scheduleId.
      */
     @java.lang.Override
@@ -209,11 +213,11 @@ public final class PPOBOBDKPHIOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < bFCKJBCPFLF_.size(); i++) {
-        output.writeMessage(2, bFCKJBCPFLF_.get(i));
-      }
       if (scheduleId_ != 0) {
-        output.writeUInt32(8, scheduleId_);
+        output.writeUInt32(6, scheduleId_);
+      }
+      for (int i = 0; i < bFCKJBCPFLF_.size(); i++) {
+        output.writeMessage(14, bFCKJBCPFLF_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -224,13 +228,13 @@ public final class PPOBOBDKPHIOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < bFCKJBCPFLF_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, bFCKJBCPFLF_.get(i));
-      }
       if (scheduleId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, scheduleId_);
+          .computeUInt32Size(6, scheduleId_);
+      }
+      for (int i = 0; i < bFCKJBCPFLF_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, bFCKJBCPFLF_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -364,6 +368,10 @@ public final class PPOBOBDKPHIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PPOBOBDKPHI}
      */
     public static final class Builder extends
@@ -567,7 +575,7 @@ public final class PPOBOBDKPHIOuterClass {
           emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder> bFCKJBCPFLFBuilder_;
 
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA> getBFCKJBCPFLFList() {
         if (bFCKJBCPFLFBuilder_ == null) {
@@ -577,7 +585,7 @@ public final class PPOBOBDKPHIOuterClass {
         }
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public int getBFCKJBCPFLFCount() {
         if (bFCKJBCPFLFBuilder_ == null) {
@@ -587,7 +595,7 @@ public final class PPOBOBDKPHIOuterClass {
         }
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA getBFCKJBCPFLF(int index) {
         if (bFCKJBCPFLFBuilder_ == null) {
@@ -597,7 +605,7 @@ public final class PPOBOBDKPHIOuterClass {
         }
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder setBFCKJBCPFLF(
           int index, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA value) {
@@ -614,7 +622,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder setBFCKJBCPFLF(
           int index, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder builderForValue) {
@@ -628,7 +636,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder addBFCKJBCPFLF(emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA value) {
         if (bFCKJBCPFLFBuilder_ == null) {
@@ -644,7 +652,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder addBFCKJBCPFLF(
           int index, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA value) {
@@ -661,7 +669,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder addBFCKJBCPFLF(
           emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder builderForValue) {
@@ -675,7 +683,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder addBFCKJBCPFLF(
           int index, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder builderForValue) {
@@ -689,7 +697,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder addAllBFCKJBCPFLF(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA> values) {
@@ -704,7 +712,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder clearBFCKJBCPFLF() {
         if (bFCKJBCPFLFBuilder_ == null) {
@@ -717,7 +725,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public Builder removeBFCKJBCPFLF(int index) {
         if (bFCKJBCPFLFBuilder_ == null) {
@@ -730,14 +738,14 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder getBFCKJBCPFLFBuilder(
           int index) {
         return getBFCKJBCPFLFFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder getBFCKJBCPFLFOrBuilder(
           int index) {
@@ -747,7 +755,7 @@ public final class PPOBOBDKPHIOuterClass {
         }
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHAOrBuilder> 
            getBFCKJBCPFLFOrBuilderList() {
@@ -758,14 +766,14 @@ public final class PPOBOBDKPHIOuterClass {
         }
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder addBFCKJBCPFLFBuilder() {
         return getBFCKJBCPFLFFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.getDefaultInstance());
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder addBFCKJBCPFLFBuilder(
           int index) {
@@ -773,7 +781,7 @@ public final class PPOBOBDKPHIOuterClass {
             index, emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.getDefaultInstance());
       }
       /**
-       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 2;</code>
+       * <code>repeated .KFBPPANOKHA BFCKJBCPFLF = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.KFBPPANOKHAOuterClass.KFBPPANOKHA.Builder> 
            getBFCKJBCPFLFBuilderList() {
@@ -796,7 +804,7 @@ public final class PPOBOBDKPHIOuterClass {
 
       private int scheduleId_ ;
       /**
-       * <code>uint32 schedule_id = 8;</code>
+       * <code>uint32 schedule_id = 6;</code>
        * @return The scheduleId.
        */
       @java.lang.Override
@@ -804,7 +812,7 @@ public final class PPOBOBDKPHIOuterClass {
         return scheduleId_;
       }
       /**
-       * <code>uint32 schedule_id = 8;</code>
+       * <code>uint32 schedule_id = 6;</code>
        * @param value The scheduleId to set.
        * @return This builder for chaining.
        */
@@ -815,7 +823,7 @@ public final class PPOBOBDKPHIOuterClass {
         return this;
       }
       /**
-       * <code>uint32 schedule_id = 8;</code>
+       * <code>uint32 schedule_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
@@ -892,10 +900,9 @@ public final class PPOBOBDKPHIOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021PPOBOBDKPHI.proto\032\021KFBPPANOKHA.proto\"E" +
-      "\n\013PPOBOBDKPHI\022!\n\013BFCKJBCPFLF\030\002 \003(\0132\014.KFB" +
-      "PPANOKHA\022\023\n\013schedule_id\030\010 \001(\rB2\n\031emu.gra" +
-      "sscutter.net.protoB\025PPOBOBDKPHIOuterClas" +
-      "sb\006proto3"
+      "\n\013PPOBOBDKPHI\022!\n\013BFCKJBCPFLF\030\016 \003(\0132\014.KFB" +
+      "PPANOKHA\022\023\n\013schedule_id\030\006 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -49,6 +49,10 @@ public final class FJFKBKCECBCOuterClass {
     public emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC.DetailCase getDetailCase();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FJFKBKCECBC}
    */
   public static final class FJFKBKCECBC extends
@@ -435,6 +439,10 @@ public final class FJFKBKCECBCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FJFKBKCECBC}
      */
     public static final class Builder extends
@@ -820,8 +828,8 @@ public final class FJFKBKCECBCOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021FJFKBKCECBC.proto\"E\n\013FJFKBKCECBC\022\027\n\rpr" +
       "imitive_str\030\001 \001(\tH\000\022\023\n\thash_code\030\002 \001(\rH\000" +
-      "B\010\n\006detailB2\n\031emu.grasscutter.net.protoB" +
-      "\025FJFKBKCECBCOuterClassb\006proto3"
+      "B\010\n\006detailB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

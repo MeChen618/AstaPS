@@ -19,38 +19,19 @@ public final class SceneEntityAiInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>.MonsterRoute monster_route = 9;</code>
+     * @return Whether the monsterRoute field is set.
      */
-    int getSkillCdMapCount();
+    boolean hasMonsterRoute();
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>.MonsterRoute monster_route = 9;</code>
+     * @return The monsterRoute.
      */
-    boolean containsSkillCdMap(
-        int key);
+    emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute();
     /**
-     * Use {@link #getSkillCdMapMap()} instead.
+     * <code>.MonsterRoute monster_route = 9;</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getSkillCdMap();
-    /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-     */
-    java.util.Map<java.lang.Integer, java.lang.Integer>
-    getSkillCdMapMap();
-    /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-     */
-
-    int getSkillCdMapOrDefault(
-        int key,
-        int defaultValue);
-    /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-     */
-
-    int getSkillCdMapOrThrow(
-        int key);
+    emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder();
 
     /**
      * <code>.ServantInfo servant_info = 4;</code>
@@ -102,6 +83,55 @@ public final class SceneEntityAiInfoOuterClass {
         int key);
 
     /**
+     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+     * @return Whether the hCPPLEOKNMH field is set.
+     */
+    boolean hasHCPPLEOKNMH();
+    /**
+     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+     * @return The hCPPLEOKNMH.
+     */
+    emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC getHCPPLEOKNMH();
+    /**
+     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+     */
+    emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder getHCPPLEOKNMHOrBuilder();
+
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+    int getSkillCdMapCount();
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+    boolean containsSkillCdMap(
+        int key);
+    /**
+     * Use {@link #getSkillCdMapMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getSkillCdMap();
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+    java.util.Map<java.lang.Integer, java.lang.Integer>
+    getSkillCdMapMap();
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+
+    int getSkillCdMapOrDefault(
+        int key,
+        int defaultValue);
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+
+    int getSkillCdMapOrThrow(
+        int key);
+
+    /**
      * <code>map&lt;uint32, uint32&gt; skill_group_cd_map = 6;</code>
      */
     int getSkillGroupCdMapCount();
@@ -136,48 +166,22 @@ public final class SceneEntityAiInfoOuterClass {
         int key);
 
     /**
+     * <code>bool is_entered_combat = 8;</code>
+     * @return The isEnteredCombat.
+     */
+    boolean getIsEnteredCombat();
+
+    /**
      * <code>uint32 cur_tactic = 7;</code>
      * @return The curTactic.
      */
     int getCurTactic();
-
-    /**
-     * <code>bool is_ai_open = 8;</code>
-     * @return The isAiOpen.
-     */
-    boolean getIsAiOpen();
-
-    /**
-     * <code>.MonsterRoute monster_route = 9;</code>
-     * @return Whether the monsterRoute field is set.
-     */
-    boolean hasMonsterRoute();
-    /**
-     * <code>.MonsterRoute monster_route = 9;</code>
-     * @return The monsterRoute.
-     */
-    emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute();
-    /**
-     * <code>.MonsterRoute monster_route = 9;</code>
-     */
-    emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder();
-
-    /**
-     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-     * @return Whether the hCPPLEOKNMH field is set.
-     */
-    boolean hasHCPPLEOKNMH();
-    /**
-     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-     * @return The hCPPLEOKNMH.
-     */
-    emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC getHCPPLEOKNMH();
-    /**
-     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-     */
-    emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder getHCPPLEOKNMHOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code SceneEntityAiInfo}
    */
   public static final class SceneEntityAiInfo extends
@@ -224,10 +228,10 @@ public final class SceneEntityAiInfoOuterClass {
               done = true;
               break;
             case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 skillCdMap_ = com.google.protobuf.MapField.newMapField(
                     SkillCdMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
               skillCdMap__ = input.readMessage(
@@ -250,10 +254,10 @@ public final class SceneEntityAiInfoOuterClass {
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 aiThreatMap_ = com.google.protobuf.MapField.newMapField(
                     AiThreatMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
               aiThreatMap__ = input.readMessage(
@@ -282,7 +286,7 @@ public final class SceneEntityAiInfoOuterClass {
             }
             case 64: {
 
-              isAiOpen_ = input.readBool();
+              isEnteredCombat_ = input.readBool();
               break;
             }
             case 74: {
@@ -340,10 +344,10 @@ public final class SceneEntityAiInfoOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 3:
-          return internalGetSkillCdMap();
         case 5:
           return internalGetAiThreatMap();
+        case 3:
+          return internalGetSkillCdMap();
         case 6:
           return internalGetSkillGroupCdMap();
         default:
@@ -359,85 +363,30 @@ public final class SceneEntityAiInfoOuterClass {
               emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.class, emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.Builder.class);
     }
 
-    public static final int SKILL_CD_MAP_FIELD_NUMBER = 3;
-    private static final class SkillCdMapDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.Integer, java.lang.Integer> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0,
-                  com.google.protobuf.WireFormat.FieldType.UINT32,
-                  0);
-    }
-    private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> skillCdMap_;
-    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetSkillCdMap() {
-      if (skillCdMap_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            SkillCdMapDefaultEntryHolder.defaultEntry);
-      }
-      return skillCdMap_;
-    }
-
-    public int getSkillCdMapCount() {
-      return internalGetSkillCdMap().getMap().size();
-    }
+    public static final int MONSTER_ROUTE_FIELD_NUMBER = 9;
+    private emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute monsterRoute_;
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-     */
-
-    @java.lang.Override
-    public boolean containsSkillCdMap(
-        int key) {
-      
-      return internalGetSkillCdMap().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getSkillCdMapMap()} instead.
+     * <code>.MonsterRoute monster_route = 9;</code>
+     * @return Whether the monsterRoute field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMap() {
-      return getSkillCdMapMap();
+    public boolean hasMonsterRoute() {
+      return monsterRoute_ != null;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>.MonsterRoute monster_route = 9;</code>
+     * @return The monsterRoute.
      */
     @java.lang.Override
-
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMapMap() {
-      return internalGetSkillCdMap().getMap();
+    public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute() {
+      return monsterRoute_ == null ? emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     * <code>.MonsterRoute monster_route = 9;</code>
      */
     @java.lang.Override
-
-    public int getSkillCdMapOrDefault(
-        int key,
-        int defaultValue) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetSkillCdMap().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-     */
-    @java.lang.Override
-
-    public int getSkillCdMapOrThrow(
-        int key) {
-      
-      java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetSkillCdMap().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder() {
+      return getMonsterRoute();
     }
 
     public static final int SERVANT_INFO_FIELD_NUMBER = 4;
@@ -547,6 +496,113 @@ public final class SceneEntityAiInfoOuterClass {
       return map.get(key);
     }
 
+    public static final int HCPPLEOKNMH_FIELD_NUMBER = 10;
+    private emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC hCPPLEOKNMH_;
+    /**
+     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+     * @return Whether the hCPPLEOKNMH field is set.
+     */
+    @java.lang.Override
+    public boolean hasHCPPLEOKNMH() {
+      return hCPPLEOKNMH_ != null;
+    }
+    /**
+     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+     * @return The hCPPLEOKNMH.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC getHCPPLEOKNMH() {
+      return hCPPLEOKNMH_ == null ? emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.getDefaultInstance() : hCPPLEOKNMH_;
+    }
+    /**
+     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder getHCPPLEOKNMHOrBuilder() {
+      return getHCPPLEOKNMH();
+    }
+
+    public static final int SKILL_CD_MAP_FIELD_NUMBER = 3;
+    private static final class SkillCdMapDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.Integer, java.lang.Integer> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
+                  emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0,
+                  com.google.protobuf.WireFormat.FieldType.UINT32,
+                  0);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.Integer, java.lang.Integer> skillCdMap_;
+    private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+    internalGetSkillCdMap() {
+      if (skillCdMap_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SkillCdMapDefaultEntryHolder.defaultEntry);
+      }
+      return skillCdMap_;
+    }
+
+    public int getSkillCdMapCount() {
+      return internalGetSkillCdMap().getMap().size();
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsSkillCdMap(
+        int key) {
+      
+      return internalGetSkillCdMap().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSkillCdMapMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMap() {
+      return getSkillCdMapMap();
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMapMap() {
+      return internalGetSkillCdMap().getMap();
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+    @java.lang.Override
+
+    public int getSkillCdMapOrDefault(
+        int key,
+        int defaultValue) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetSkillCdMap().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+     */
+    @java.lang.Override
+
+    public int getSkillCdMapOrThrow(
+        int key) {
+      
+      java.util.Map<java.lang.Integer, java.lang.Integer> map =
+          internalGetSkillCdMap().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     public static final int SKILL_GROUP_CD_MAP_FIELD_NUMBER = 6;
     private static final class SkillGroupCdMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
@@ -628,6 +684,17 @@ public final class SceneEntityAiInfoOuterClass {
       return map.get(key);
     }
 
+    public static final int IS_ENTERED_COMBAT_FIELD_NUMBER = 8;
+    private boolean isEnteredCombat_;
+    /**
+     * <code>bool is_entered_combat = 8;</code>
+     * @return The isEnteredCombat.
+     */
+    @java.lang.Override
+    public boolean getIsEnteredCombat() {
+      return isEnteredCombat_;
+    }
+
     public static final int CUR_TACTIC_FIELD_NUMBER = 7;
     private int curTactic_;
     /**
@@ -637,69 +704,6 @@ public final class SceneEntityAiInfoOuterClass {
     @java.lang.Override
     public int getCurTactic() {
       return curTactic_;
-    }
-
-    public static final int IS_AI_OPEN_FIELD_NUMBER = 8;
-    private boolean isAiOpen_;
-    /**
-     * <code>bool is_ai_open = 8;</code>
-     * @return The isAiOpen.
-     */
-    @java.lang.Override
-    public boolean getIsAiOpen() {
-      return isAiOpen_;
-    }
-
-    public static final int MONSTER_ROUTE_FIELD_NUMBER = 9;
-    private emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute monsterRoute_;
-    /**
-     * <code>.MonsterRoute monster_route = 9;</code>
-     * @return Whether the monsterRoute field is set.
-     */
-    @java.lang.Override
-    public boolean hasMonsterRoute() {
-      return monsterRoute_ != null;
-    }
-    /**
-     * <code>.MonsterRoute monster_route = 9;</code>
-     * @return The monsterRoute.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute() {
-      return monsterRoute_ == null ? emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
-    }
-    /**
-     * <code>.MonsterRoute monster_route = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder() {
-      return getMonsterRoute();
-    }
-
-    public static final int HCPPLEOKNMH_FIELD_NUMBER = 10;
-    private emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC hCPPLEOKNMH_;
-    /**
-     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-     * @return Whether the hCPPLEOKNMH field is set.
-     */
-    @java.lang.Override
-    public boolean hasHCPPLEOKNMH() {
-      return hCPPLEOKNMH_ != null;
-    }
-    /**
-     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-     * @return The hCPPLEOKNMH.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC getHCPPLEOKNMH() {
-      return hCPPLEOKNMH_ == null ? emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.getDefaultInstance() : hCPPLEOKNMH_;
-    }
-    /**
-     * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder getHCPPLEOKNMHOrBuilder() {
-      return getHCPPLEOKNMH();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -740,8 +744,8 @@ public final class SceneEntityAiInfoOuterClass {
       if (curTactic_ != 0) {
         output.writeUInt32(7, curTactic_);
       }
-      if (isAiOpen_ != false) {
-        output.writeBool(8, isAiOpen_);
+      if (isEnteredCombat_ != false) {
+        output.writeBool(8, isEnteredCombat_);
       }
       if (monsterRoute_ != null) {
         output.writeMessage(9, getMonsterRoute());
@@ -796,9 +800,9 @@ public final class SceneEntityAiInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, curTactic_);
       }
-      if (isAiOpen_ != false) {
+      if (isEnteredCombat_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isAiOpen_);
+          .computeBoolSize(8, isEnteredCombat_);
       }
       if (monsterRoute_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -823,8 +827,11 @@ public final class SceneEntityAiInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo other = (emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo) obj;
 
-      if (!internalGetSkillCdMap().equals(
-          other.internalGetSkillCdMap())) return false;
+      if (hasMonsterRoute() != other.hasMonsterRoute()) return false;
+      if (hasMonsterRoute()) {
+        if (!getMonsterRoute()
+            .equals(other.getMonsterRoute())) return false;
+      }
       if (hasServantInfo() != other.hasServantInfo()) return false;
       if (hasServantInfo()) {
         if (!getServantInfo()
@@ -832,22 +839,19 @@ public final class SceneEntityAiInfoOuterClass {
       }
       if (!internalGetAiThreatMap().equals(
           other.internalGetAiThreatMap())) return false;
-      if (!internalGetSkillGroupCdMap().equals(
-          other.internalGetSkillGroupCdMap())) return false;
-      if (getCurTactic()
-          != other.getCurTactic()) return false;
-      if (getIsAiOpen()
-          != other.getIsAiOpen()) return false;
-      if (hasMonsterRoute() != other.hasMonsterRoute()) return false;
-      if (hasMonsterRoute()) {
-        if (!getMonsterRoute()
-            .equals(other.getMonsterRoute())) return false;
-      }
       if (hasHCPPLEOKNMH() != other.hasHCPPLEOKNMH()) return false;
       if (hasHCPPLEOKNMH()) {
         if (!getHCPPLEOKNMH()
             .equals(other.getHCPPLEOKNMH())) return false;
       }
+      if (!internalGetSkillCdMap().equals(
+          other.internalGetSkillCdMap())) return false;
+      if (!internalGetSkillGroupCdMap().equals(
+          other.internalGetSkillGroupCdMap())) return false;
+      if (getIsEnteredCombat()
+          != other.getIsEnteredCombat()) return false;
+      if (getCurTactic()
+          != other.getCurTactic()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -859,9 +863,9 @@ public final class SceneEntityAiInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetSkillCdMap().getMap().isEmpty()) {
-        hash = (37 * hash) + SKILL_CD_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetSkillCdMap().hashCode();
+      if (hasMonsterRoute()) {
+        hash = (37 * hash) + MONSTER_ROUTE_FIELD_NUMBER;
+        hash = (53 * hash) + getMonsterRoute().hashCode();
       }
       if (hasServantInfo()) {
         hash = (37 * hash) + SERVANT_INFO_FIELD_NUMBER;
@@ -871,23 +875,23 @@ public final class SceneEntityAiInfoOuterClass {
         hash = (37 * hash) + AI_THREAT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAiThreatMap().hashCode();
       }
-      if (!internalGetSkillGroupCdMap().getMap().isEmpty()) {
-        hash = (37 * hash) + SKILL_GROUP_CD_MAP_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetSkillGroupCdMap().hashCode();
-      }
-      hash = (37 * hash) + CUR_TACTIC_FIELD_NUMBER;
-      hash = (53 * hash) + getCurTactic();
-      hash = (37 * hash) + IS_AI_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsAiOpen());
-      if (hasMonsterRoute()) {
-        hash = (37 * hash) + MONSTER_ROUTE_FIELD_NUMBER;
-        hash = (53 * hash) + getMonsterRoute().hashCode();
-      }
       if (hasHCPPLEOKNMH()) {
         hash = (37 * hash) + HCPPLEOKNMH_FIELD_NUMBER;
         hash = (53 * hash) + getHCPPLEOKNMH().hashCode();
       }
+      if (!internalGetSkillCdMap().getMap().isEmpty()) {
+        hash = (37 * hash) + SKILL_CD_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSkillCdMap().hashCode();
+      }
+      if (!internalGetSkillGroupCdMap().getMap().isEmpty()) {
+        hash = (37 * hash) + SKILL_GROUP_CD_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetSkillGroupCdMap().hashCode();
+      }
+      hash = (37 * hash) + IS_ENTERED_COMBAT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsEnteredCombat());
+      hash = (37 * hash) + CUR_TACTIC_FIELD_NUMBER;
+      hash = (53 * hash) + getCurTactic();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -984,6 +988,10 @@ public final class SceneEntityAiInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code SceneEntityAiInfo}
      */
     public static final class Builder extends
@@ -999,10 +1007,10 @@ public final class SceneEntityAiInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 3:
-            return internalGetSkillCdMap();
           case 5:
             return internalGetAiThreatMap();
+          case 3:
+            return internalGetSkillCdMap();
           case 6:
             return internalGetSkillGroupCdMap();
           default:
@@ -1014,10 +1022,10 @@ public final class SceneEntityAiInfoOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 3:
-            return internalGetMutableSkillCdMap();
           case 5:
             return internalGetMutableAiThreatMap();
+          case 3:
+            return internalGetMutableSkillCdMap();
           case 6:
             return internalGetMutableSkillGroupCdMap();
           default:
@@ -1051,7 +1059,12 @@ public final class SceneEntityAiInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableSkillCdMap().clear();
+        if (monsterRouteBuilder_ == null) {
+          monsterRoute_ = null;
+        } else {
+          monsterRoute_ = null;
+          monsterRouteBuilder_ = null;
+        }
         if (servantInfoBuilder_ == null) {
           servantInfo_ = null;
         } else {
@@ -1059,23 +1072,18 @@ public final class SceneEntityAiInfoOuterClass {
           servantInfoBuilder_ = null;
         }
         internalGetMutableAiThreatMap().clear();
-        internalGetMutableSkillGroupCdMap().clear();
-        curTactic_ = 0;
-
-        isAiOpen_ = false;
-
-        if (monsterRouteBuilder_ == null) {
-          monsterRoute_ = null;
-        } else {
-          monsterRoute_ = null;
-          monsterRouteBuilder_ = null;
-        }
         if (hCPPLEOKNMHBuilder_ == null) {
           hCPPLEOKNMH_ = null;
         } else {
           hCPPLEOKNMH_ = null;
           hCPPLEOKNMHBuilder_ = null;
         }
+        internalGetMutableSkillCdMap().clear();
+        internalGetMutableSkillGroupCdMap().clear();
+        isEnteredCombat_ = false;
+
+        curTactic_ = 0;
+
         return this;
       }
 
@@ -1103,8 +1111,11 @@ public final class SceneEntityAiInfoOuterClass {
       public emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo buildPartial() {
         emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo result = new emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo(this);
         int from_bitField0_ = bitField0_;
-        result.skillCdMap_ = internalGetSkillCdMap();
-        result.skillCdMap_.makeImmutable();
+        if (monsterRouteBuilder_ == null) {
+          result.monsterRoute_ = monsterRoute_;
+        } else {
+          result.monsterRoute_ = monsterRouteBuilder_.build();
+        }
         if (servantInfoBuilder_ == null) {
           result.servantInfo_ = servantInfo_;
         } else {
@@ -1112,20 +1123,17 @@ public final class SceneEntityAiInfoOuterClass {
         }
         result.aiThreatMap_ = internalGetAiThreatMap();
         result.aiThreatMap_.makeImmutable();
-        result.skillGroupCdMap_ = internalGetSkillGroupCdMap();
-        result.skillGroupCdMap_.makeImmutable();
-        result.curTactic_ = curTactic_;
-        result.isAiOpen_ = isAiOpen_;
-        if (monsterRouteBuilder_ == null) {
-          result.monsterRoute_ = monsterRoute_;
-        } else {
-          result.monsterRoute_ = monsterRouteBuilder_.build();
-        }
         if (hCPPLEOKNMHBuilder_ == null) {
           result.hCPPLEOKNMH_ = hCPPLEOKNMH_;
         } else {
           result.hCPPLEOKNMH_ = hCPPLEOKNMHBuilder_.build();
         }
+        result.skillCdMap_ = internalGetSkillCdMap();
+        result.skillCdMap_.makeImmutable();
+        result.skillGroupCdMap_ = internalGetSkillGroupCdMap();
+        result.skillGroupCdMap_.makeImmutable();
+        result.isEnteredCombat_ = isEnteredCombat_;
+        result.curTactic_ = curTactic_;
         onBuilt();
         return result;
       }
@@ -1174,26 +1182,26 @@ public final class SceneEntityAiInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo other) {
         if (other == emu.grasscutter.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.getDefaultInstance()) return this;
-        internalGetMutableSkillCdMap().mergeFrom(
-            other.internalGetSkillCdMap());
+        if (other.hasMonsterRoute()) {
+          mergeMonsterRoute(other.getMonsterRoute());
+        }
         if (other.hasServantInfo()) {
           mergeServantInfo(other.getServantInfo());
         }
         internalGetMutableAiThreatMap().mergeFrom(
             other.internalGetAiThreatMap());
-        internalGetMutableSkillGroupCdMap().mergeFrom(
-            other.internalGetSkillGroupCdMap());
-        if (other.getCurTactic() != 0) {
-          setCurTactic(other.getCurTactic());
-        }
-        if (other.getIsAiOpen() != false) {
-          setIsAiOpen(other.getIsAiOpen());
-        }
-        if (other.hasMonsterRoute()) {
-          mergeMonsterRoute(other.getMonsterRoute());
-        }
         if (other.hasHCPPLEOKNMH()) {
           mergeHCPPLEOKNMH(other.getHCPPLEOKNMH());
+        }
+        internalGetMutableSkillCdMap().mergeFrom(
+            other.internalGetSkillCdMap());
+        internalGetMutableSkillGroupCdMap().mergeFrom(
+            other.internalGetSkillGroupCdMap());
+        if (other.getIsEnteredCombat() != false) {
+          setIsEnteredCombat(other.getIsEnteredCombat());
+        }
+        if (other.getCurTactic() != 0) {
+          setCurTactic(other.getCurTactic());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1225,132 +1233,123 @@ public final class SceneEntityAiInfoOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> skillCdMap_;
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetSkillCdMap() {
-        if (skillCdMap_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              SkillCdMapDefaultEntryHolder.defaultEntry);
+      private emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute monsterRoute_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder> monsterRouteBuilder_;
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       * @return Whether the monsterRoute field is set.
+       */
+      public boolean hasMonsterRoute() {
+        return monsterRouteBuilder_ != null || monsterRoute_ != null;
+      }
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       * @return The monsterRoute.
+       */
+      public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute() {
+        if (monsterRouteBuilder_ == null) {
+          return monsterRoute_ == null ? emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
+        } else {
+          return monsterRouteBuilder_.getMessage();
         }
-        return skillCdMap_;
       }
-      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableSkillCdMap() {
-        onChanged();;
-        if (skillCdMap_ == null) {
-          skillCdMap_ = com.google.protobuf.MapField.newMapField(
-              SkillCdMapDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       */
+      public Builder setMonsterRoute(emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute value) {
+        if (monsterRouteBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          monsterRoute_ = value;
+          onChanged();
+        } else {
+          monsterRouteBuilder_.setMessage(value);
         }
-        if (!skillCdMap_.isMutable()) {
-          skillCdMap_ = skillCdMap_.copy();
-        }
-        return skillCdMap_;
-      }
 
-      public int getSkillCdMapCount() {
-        return internalGetSkillCdMap().getMap().size();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-       */
-
-      @java.lang.Override
-      public boolean containsSkillCdMap(
-          int key) {
-        
-        return internalGetSkillCdMap().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getSkillCdMapMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMap() {
-        return getSkillCdMapMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMapMap() {
-        return internalGetSkillCdMap().getMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-       */
-      @java.lang.Override
-
-      public int getSkillCdMapOrDefault(
-          int key,
-          int defaultValue) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetSkillCdMap().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-       */
-      @java.lang.Override
-
-      public int getSkillCdMapOrThrow(
-          int key) {
-        
-        java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetSkillCdMap().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearSkillCdMap() {
-        internalGetMutableSkillCdMap().getMutableMap()
-            .clear();
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       * <code>.MonsterRoute monster_route = 9;</code>
        */
+      public Builder setMonsterRoute(
+          emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder builderForValue) {
+        if (monsterRouteBuilder_ == null) {
+          monsterRoute_ = builderForValue.build();
+          onChanged();
+        } else {
+          monsterRouteBuilder_.setMessage(builderForValue.build());
+        }
 
-      public Builder removeSkillCdMap(
-          int key) {
-        
-        internalGetMutableSkillCdMap().getMutableMap()
-            .remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>.MonsterRoute monster_route = 9;</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableSkillCdMap() {
-        return internalGetMutableSkillCdMap().getMutableMap();
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-       */
-      public Builder putSkillCdMap(
-          int key,
-          int value) {
-        
-        
-        internalGetMutableSkillCdMap().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
-       */
+      public Builder mergeMonsterRoute(emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute value) {
+        if (monsterRouteBuilder_ == null) {
+          if (monsterRoute_ != null) {
+            monsterRoute_ =
+              emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.newBuilder(monsterRoute_).mergeFrom(value).buildPartial();
+          } else {
+            monsterRoute_ = value;
+          }
+          onChanged();
+        } else {
+          monsterRouteBuilder_.mergeFrom(value);
+        }
 
-      public Builder putAllSkillCdMap(
-          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableSkillCdMap().getMutableMap()
-            .putAll(values);
         return this;
+      }
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       */
+      public Builder clearMonsterRoute() {
+        if (monsterRouteBuilder_ == null) {
+          monsterRoute_ = null;
+          onChanged();
+        } else {
+          monsterRoute_ = null;
+          monsterRouteBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       */
+      public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder getMonsterRouteBuilder() {
+        
+        onChanged();
+        return getMonsterRouteFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       */
+      public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder() {
+        if (monsterRouteBuilder_ != null) {
+          return monsterRouteBuilder_.getMessageOrBuilder();
+        } else {
+          return monsterRoute_ == null ?
+              emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
+        }
+      }
+      /**
+       * <code>.MonsterRoute monster_route = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder> 
+          getMonsterRouteFieldBuilder() {
+        if (monsterRouteBuilder_ == null) {
+          monsterRouteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder>(
+                  getMonsterRoute(),
+                  getParentForChildren(),
+                  isClean());
+          monsterRoute_ = null;
+        }
+        return monsterRouteBuilder_;
       }
 
       private emu.grasscutter.net.proto.ServantInfoOuterClass.ServantInfo servantInfo_;
@@ -1600,6 +1599,253 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
 
+      private emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC hCPPLEOKNMH_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder> hCPPLEOKNMHBuilder_;
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       * @return Whether the hCPPLEOKNMH field is set.
+       */
+      public boolean hasHCPPLEOKNMH() {
+        return hCPPLEOKNMHBuilder_ != null || hCPPLEOKNMH_ != null;
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       * @return The hCPPLEOKNMH.
+       */
+      public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC getHCPPLEOKNMH() {
+        if (hCPPLEOKNMHBuilder_ == null) {
+          return hCPPLEOKNMH_ == null ? emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.getDefaultInstance() : hCPPLEOKNMH_;
+        } else {
+          return hCPPLEOKNMHBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      public Builder setHCPPLEOKNMH(emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC value) {
+        if (hCPPLEOKNMHBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hCPPLEOKNMH_ = value;
+          onChanged();
+        } else {
+          hCPPLEOKNMHBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      public Builder setHCPPLEOKNMH(
+          emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder builderForValue) {
+        if (hCPPLEOKNMHBuilder_ == null) {
+          hCPPLEOKNMH_ = builderForValue.build();
+          onChanged();
+        } else {
+          hCPPLEOKNMHBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      public Builder mergeHCPPLEOKNMH(emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC value) {
+        if (hCPPLEOKNMHBuilder_ == null) {
+          if (hCPPLEOKNMH_ != null) {
+            hCPPLEOKNMH_ =
+              emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.newBuilder(hCPPLEOKNMH_).mergeFrom(value).buildPartial();
+          } else {
+            hCPPLEOKNMH_ = value;
+          }
+          onChanged();
+        } else {
+          hCPPLEOKNMHBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      public Builder clearHCPPLEOKNMH() {
+        if (hCPPLEOKNMHBuilder_ == null) {
+          hCPPLEOKNMH_ = null;
+          onChanged();
+        } else {
+          hCPPLEOKNMH_ = null;
+          hCPPLEOKNMHBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder getHCPPLEOKNMHBuilder() {
+        
+        onChanged();
+        return getHCPPLEOKNMHFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder getHCPPLEOKNMHOrBuilder() {
+        if (hCPPLEOKNMHBuilder_ != null) {
+          return hCPPLEOKNMHBuilder_.getMessageOrBuilder();
+        } else {
+          return hCPPLEOKNMH_ == null ?
+              emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.getDefaultInstance() : hCPPLEOKNMH_;
+        }
+      }
+      /**
+       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder> 
+          getHCPPLEOKNMHFieldBuilder() {
+        if (hCPPLEOKNMHBuilder_ == null) {
+          hCPPLEOKNMHBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder>(
+                  getHCPPLEOKNMH(),
+                  getParentForChildren(),
+                  isClean());
+          hCPPLEOKNMH_ = null;
+        }
+        return hCPPLEOKNMHBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.Integer, java.lang.Integer> skillCdMap_;
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetSkillCdMap() {
+        if (skillCdMap_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              SkillCdMapDefaultEntryHolder.defaultEntry);
+        }
+        return skillCdMap_;
+      }
+      private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
+      internalGetMutableSkillCdMap() {
+        onChanged();;
+        if (skillCdMap_ == null) {
+          skillCdMap_ = com.google.protobuf.MapField.newMapField(
+              SkillCdMapDefaultEntryHolder.defaultEntry);
+        }
+        if (!skillCdMap_.isMutable()) {
+          skillCdMap_ = skillCdMap_.copy();
+        }
+        return skillCdMap_;
+      }
+
+      public int getSkillCdMapCount() {
+        return internalGetSkillCdMap().getMap().size();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsSkillCdMap(
+          int key) {
+        
+        return internalGetSkillCdMap().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSkillCdMapMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMap() {
+        return getSkillCdMapMap();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillCdMapMap() {
+        return internalGetSkillCdMap().getMap();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+      @java.lang.Override
+
+      public int getSkillCdMapOrDefault(
+          int key,
+          int defaultValue) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetSkillCdMap().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+      @java.lang.Override
+
+      public int getSkillCdMapOrThrow(
+          int key) {
+        
+        java.util.Map<java.lang.Integer, java.lang.Integer> map =
+            internalGetSkillCdMap().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearSkillCdMap() {
+        internalGetMutableSkillCdMap().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+
+      public Builder removeSkillCdMap(
+          int key) {
+        
+        internalGetMutableSkillCdMap().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.Integer, java.lang.Integer>
+      getMutableSkillCdMap() {
+        return internalGetMutableSkillCdMap().getMutableMap();
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+      public Builder putSkillCdMap(
+          int key,
+          int value) {
+        
+        
+        internalGetMutableSkillCdMap().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;uint32, uint32&gt; skill_cd_map = 3;</code>
+       */
+
+      public Builder putAllSkillCdMap(
+          java.util.Map<java.lang.Integer, java.lang.Integer> values) {
+        internalGetMutableSkillCdMap().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> skillGroupCdMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -1728,6 +1974,37 @@ public final class SceneEntityAiInfoOuterClass {
         return this;
       }
 
+      private boolean isEnteredCombat_ ;
+      /**
+       * <code>bool is_entered_combat = 8;</code>
+       * @return The isEnteredCombat.
+       */
+      @java.lang.Override
+      public boolean getIsEnteredCombat() {
+        return isEnteredCombat_;
+      }
+      /**
+       * <code>bool is_entered_combat = 8;</code>
+       * @param value The isEnteredCombat to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsEnteredCombat(boolean value) {
+        
+        isEnteredCombat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_entered_combat = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsEnteredCombat() {
+        
+        isEnteredCombat_ = false;
+        onChanged();
+        return this;
+      }
+
       private int curTactic_ ;
       /**
        * <code>uint32 cur_tactic = 7;</code>
@@ -1757,275 +2034,6 @@ public final class SceneEntityAiInfoOuterClass {
         curTactic_ = 0;
         onChanged();
         return this;
-      }
-
-      private boolean isAiOpen_ ;
-      /**
-       * <code>bool is_ai_open = 8;</code>
-       * @return The isAiOpen.
-       */
-      @java.lang.Override
-      public boolean getIsAiOpen() {
-        return isAiOpen_;
-      }
-      /**
-       * <code>bool is_ai_open = 8;</code>
-       * @param value The isAiOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsAiOpen(boolean value) {
-        
-        isAiOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_ai_open = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsAiOpen() {
-        
-        isAiOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute monsterRoute_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder> monsterRouteBuilder_;
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       * @return Whether the monsterRoute field is set.
-       */
-      public boolean hasMonsterRoute() {
-        return monsterRouteBuilder_ != null || monsterRoute_ != null;
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       * @return The monsterRoute.
-       */
-      public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute getMonsterRoute() {
-        if (monsterRouteBuilder_ == null) {
-          return monsterRoute_ == null ? emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
-        } else {
-          return monsterRouteBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      public Builder setMonsterRoute(emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute value) {
-        if (monsterRouteBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          monsterRoute_ = value;
-          onChanged();
-        } else {
-          monsterRouteBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      public Builder setMonsterRoute(
-          emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder builderForValue) {
-        if (monsterRouteBuilder_ == null) {
-          monsterRoute_ = builderForValue.build();
-          onChanged();
-        } else {
-          monsterRouteBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      public Builder mergeMonsterRoute(emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute value) {
-        if (monsterRouteBuilder_ == null) {
-          if (monsterRoute_ != null) {
-            monsterRoute_ =
-              emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.newBuilder(monsterRoute_).mergeFrom(value).buildPartial();
-          } else {
-            monsterRoute_ = value;
-          }
-          onChanged();
-        } else {
-          monsterRouteBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      public Builder clearMonsterRoute() {
-        if (monsterRouteBuilder_ == null) {
-          monsterRoute_ = null;
-          onChanged();
-        } else {
-          monsterRoute_ = null;
-          monsterRouteBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder getMonsterRouteBuilder() {
-        
-        onChanged();
-        return getMonsterRouteFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      public emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder getMonsterRouteOrBuilder() {
-        if (monsterRouteBuilder_ != null) {
-          return monsterRouteBuilder_.getMessageOrBuilder();
-        } else {
-          return monsterRoute_ == null ?
-              emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.getDefaultInstance() : monsterRoute_;
-        }
-      }
-      /**
-       * <code>.MonsterRoute monster_route = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder> 
-          getMonsterRouteFieldBuilder() {
-        if (monsterRouteBuilder_ == null) {
-          monsterRouteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRoute.Builder, emu.grasscutter.net.proto.MonsterRouteOuterClass.MonsterRouteOrBuilder>(
-                  getMonsterRoute(),
-                  getParentForChildren(),
-                  isClean());
-          monsterRoute_ = null;
-        }
-        return monsterRouteBuilder_;
-      }
-
-      private emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC hCPPLEOKNMH_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder> hCPPLEOKNMHBuilder_;
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       * @return Whether the hCPPLEOKNMH field is set.
-       */
-      public boolean hasHCPPLEOKNMH() {
-        return hCPPLEOKNMHBuilder_ != null || hCPPLEOKNMH_ != null;
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       * @return The hCPPLEOKNMH.
-       */
-      public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC getHCPPLEOKNMH() {
-        if (hCPPLEOKNMHBuilder_ == null) {
-          return hCPPLEOKNMH_ == null ? emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.getDefaultInstance() : hCPPLEOKNMH_;
-        } else {
-          return hCPPLEOKNMHBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      public Builder setHCPPLEOKNMH(emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC value) {
-        if (hCPPLEOKNMHBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hCPPLEOKNMH_ = value;
-          onChanged();
-        } else {
-          hCPPLEOKNMHBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      public Builder setHCPPLEOKNMH(
-          emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder builderForValue) {
-        if (hCPPLEOKNMHBuilder_ == null) {
-          hCPPLEOKNMH_ = builderForValue.build();
-          onChanged();
-        } else {
-          hCPPLEOKNMHBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      public Builder mergeHCPPLEOKNMH(emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC value) {
-        if (hCPPLEOKNMHBuilder_ == null) {
-          if (hCPPLEOKNMH_ != null) {
-            hCPPLEOKNMH_ =
-              emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.newBuilder(hCPPLEOKNMH_).mergeFrom(value).buildPartial();
-          } else {
-            hCPPLEOKNMH_ = value;
-          }
-          onChanged();
-        } else {
-          hCPPLEOKNMHBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      public Builder clearHCPPLEOKNMH() {
-        if (hCPPLEOKNMHBuilder_ == null) {
-          hCPPLEOKNMH_ = null;
-          onChanged();
-        } else {
-          hCPPLEOKNMH_ = null;
-          hCPPLEOKNMHBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder getHCPPLEOKNMHBuilder() {
-        
-        onChanged();
-        return getHCPPLEOKNMHFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      public emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder getHCPPLEOKNMHOrBuilder() {
-        if (hCPPLEOKNMHBuilder_ != null) {
-          return hCPPLEOKNMHBuilder_.getMessageOrBuilder();
-        } else {
-          return hCPPLEOKNMH_ == null ?
-              emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.getDefaultInstance() : hCPPLEOKNMH_;
-        }
-      }
-      /**
-       * <code>.AGDDMMIAGHC HCPPLEOKNMH = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder> 
-          getHCPPLEOKNMHFieldBuilder() {
-        if (hCPPLEOKNMHBuilder_ == null) {
-          hCPPLEOKNMHBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHC.Builder, emu.grasscutter.net.proto.AGDDMMIAGHCOuterClass.AGDDMMIAGHCOrBuilder>(
-                  getHCPPLEOKNMH(),
-                  getParentForChildren(),
-                  isClean());
-          hCPPLEOKNMH_ = null;
-        }
-        return hCPPLEOKNMHBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2086,15 +2094,15 @@ public final class SceneEntityAiInfoOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SceneEntityAiInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_SceneEntityAiInfo_SkillCdMapEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SceneEntityAiInfo_AiThreatMapEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_SceneEntityAiInfo_AiThreatMapEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_SceneEntityAiInfo_SkillCdMapEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_SceneEntityAiInfo_SkillGroupCdMapEntry_descriptor;
   private static final 
@@ -2111,21 +2119,21 @@ public final class SceneEntityAiInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027SceneEntityAiInfo.proto\032\021AGDDMMIAGHC.p" +
       "roto\032\022MonsterRoute.proto\032\021ServantInfo.pr" +
-      "oto\"\202\004\n\021SceneEntityAiInfo\0228\n\014skill_cd_ma" +
-      "p\030\003 \003(\0132\".SceneEntityAiInfo.SkillCdMapEn" +
-      "try\022\"\n\014servant_info\030\004 \001(\0132\014.ServantInfo\022" +
-      ":\n\rai_threat_map\030\005 \003(\0132#.SceneEntityAiIn" +
-      "fo.AiThreatMapEntry\022C\n\022skill_group_cd_ma" +
-      "p\030\006 \003(\0132\'.SceneEntityAiInfo.SkillGroupCd" +
-      "MapEntry\022\022\n\ncur_tactic\030\007 \001(\r\022\022\n\nis_ai_op" +
-      "en\030\010 \001(\010\022$\n\rmonster_route\030\t \001(\0132\r.Monste" +
-      "rRoute\022!\n\013HCPPLEOKNMH\030\n \001(\0132\014.AGDDMMIAGH" +
-      "C\0321\n\017SkillCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005val" +
-      "ue\030\002 \001(\r:\0028\001\0322\n\020AiThreatMapEntry\022\013\n\003key\030" +
-      "\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0326\n\024SkillGroupCd" +
-      "MapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001" +
-      "B8\n\031emu.grasscutter.net.protoB\033SceneEnti" +
-      "tyAiInfoOuterClassb\006proto3"
+      "oto\"\211\004\n\021SceneEntityAiInfo\022$\n\rmonster_rou" +
+      "te\030\t \001(\0132\r.MonsterRoute\022\"\n\014servant_info\030" +
+      "\004 \001(\0132\014.ServantInfo\022:\n\rai_threat_map\030\005 \003" +
+      "(\0132#.SceneEntityAiInfo.AiThreatMapEntry\022" +
+      "!\n\013HCPPLEOKNMH\030\n \001(\0132\014.AGDDMMIAGHC\0228\n\014sk" +
+      "ill_cd_map\030\003 \003(\0132\".SceneEntityAiInfo.Ski" +
+      "llCdMapEntry\022C\n\022skill_group_cd_map\030\006 \003(\013" +
+      "2\'.SceneEntityAiInfo.SkillGroupCdMapEntr" +
+      "y\022\031\n\021is_entered_combat\030\010 \001(\010\022\022\n\ncur_tact" +
+      "ic\030\007 \001(\r\0322\n\020AiThreatMapEntry\022\013\n\003key\030\001 \001(" +
+      "\r\022\r\n\005value\030\002 \001(\r:\0028\001\0321\n\017SkillCdMapEntry\022" +
+      "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0326\n\024Skill" +
+      "GroupCdMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 " +
+      "\001(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2139,18 +2147,18 @@ public final class SceneEntityAiInfoOuterClass {
     internal_static_SceneEntityAiInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityAiInfo_descriptor,
-        new java.lang.String[] { "SkillCdMap", "ServantInfo", "AiThreatMap", "SkillGroupCdMap", "CurTactic", "IsAiOpen", "MonsterRoute", "HCPPLEOKNMH", });
-    internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor =
-      internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(0);
-    internal_static_SceneEntityAiInfo_SkillCdMapEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "MonsterRoute", "ServantInfo", "AiThreatMap", "HCPPLEOKNMH", "SkillCdMap", "SkillGroupCdMap", "IsEnteredCombat", "CurTactic", });
     internal_static_SceneEntityAiInfo_AiThreatMapEntry_descriptor =
-      internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(1);
+      internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(0);
     internal_static_SceneEntityAiInfo_AiThreatMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneEntityAiInfo_AiThreatMapEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor =
+      internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(1);
+    internal_static_SceneEntityAiInfo_SkillCdMapEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_SceneEntityAiInfo_SkillCdMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_SceneEntityAiInfo_SkillGroupCdMapEntry_descriptor =
       internal_static_SceneEntityAiInfo_descriptor.getNestedTypes().get(2);

@@ -19,30 +19,34 @@ public final class KNPLPLPHFGHOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 left_time = 1;</code>
-     * @return The leftTime.
-     */
-    int getLeftTime();
-
-    /**
-     * <code>bool is_finish = 5;</code>
+     * <code>bool is_finish = 15;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_open = 13;</code>
+     * <code>bool is_open = 12;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
+
+    /**
+     * <code>uint32 left_time = 11;</code>
+     * @return The leftTime.
+     */
+    int getLeftTime();
+
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KNPLPLPHFGH}
    */
   public static final class KNPLPLPHFGH extends
@@ -87,24 +91,24 @@ public final class KNPLPLPHFGHOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              leftTime_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 72: {
+            case 24: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 88: {
+
+              leftTime_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               isOpen_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              isFinish_ = input.readBool();
               break;
             }
             default: {
@@ -139,21 +143,10 @@ public final class KNPLPLPHFGHOuterClass {
               emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.class, emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.Builder.class);
     }
 
-    public static final int LEFT_TIME_FIELD_NUMBER = 1;
-    private int leftTime_;
-    /**
-     * <code>uint32 left_time = 1;</code>
-     * @return The leftTime.
-     */
-    @java.lang.Override
-    public int getLeftTime() {
-      return leftTime_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 5;
+    public static final int IS_FINISH_FIELD_NUMBER = 15;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 5;</code>
+     * <code>bool is_finish = 15;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -161,26 +154,37 @@ public final class KNPLPLPHFGHOuterClass {
       return isFinish_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 9;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
+    public static final int IS_OPEN_FIELD_NUMBER = 12;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 13;</code>
+     * <code>bool is_open = 12;</code>
      * @return The isOpen.
      */
     @java.lang.Override
     public boolean getIsOpen() {
       return isOpen_;
+    }
+
+    public static final int LEFT_TIME_FIELD_NUMBER = 11;
+    private int leftTime_;
+    /**
+     * <code>uint32 left_time = 11;</code>
+     * @return The leftTime.
+     */
+    @java.lang.Override
+    public int getLeftTime() {
+      return leftTime_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,17 +201,17 @@ public final class KNPLPLPHFGHOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (leftTime_ != 0) {
-        output.writeUInt32(1, leftTime_);
-      }
-      if (isFinish_ != false) {
-        output.writeBool(5, isFinish_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(9, levelId_);
+        output.writeUInt32(3, levelId_);
+      }
+      if (leftTime_ != 0) {
+        output.writeUInt32(11, leftTime_);
       }
       if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+        output.writeBool(12, isOpen_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(15, isFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +222,21 @@ public final class KNPLPLPHFGHOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (leftTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, leftTime_);
-      }
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isFinish_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, levelId_);
+          .computeUInt32Size(3, levelId_);
+      }
+      if (leftTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, leftTime_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeBoolSize(12, isOpen_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, isFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,14 +253,14 @@ public final class KNPLPLPHFGHOuterClass {
       }
       emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH other = (emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH) obj;
 
-      if (getLeftTime()
-          != other.getLeftTime()) return false;
       if (getIsFinish()
           != other.getIsFinish()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getLeftTime()
+          != other.getLeftTime()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,16 +272,16 @@ public final class KNPLPLPHFGHOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEFT_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getLeftTime();
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + LEFT_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLeftTime();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class KNPLPLPHFGHOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KNPLPLPHFGH}
      */
     public static final class Builder extends
@@ -411,13 +419,13 @@ public final class KNPLPLPHFGHOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        leftTime_ = 0;
-
         isFinish_ = false;
 
-        levelId_ = 0;
-
         isOpen_ = false;
+
+        leftTime_ = 0;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -445,10 +453,10 @@ public final class KNPLPLPHFGHOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH buildPartial() {
         emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH result = new emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH(this);
-        result.leftTime_ = leftTime_;
         result.isFinish_ = isFinish_;
-        result.levelId_ = levelId_;
         result.isOpen_ = isOpen_;
+        result.leftTime_ = leftTime_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -497,17 +505,17 @@ public final class KNPLPLPHFGHOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH other) {
         if (other == emu.grasscutter.net.proto.KNPLPLPHFGHOuterClass.KNPLPLPHFGH.getDefaultInstance()) return this;
-        if (other.getLeftTime() != 0) {
-          setLeftTime(other.getLeftTime());
-        }
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
+        }
+        if (other.getLeftTime() != 0) {
+          setLeftTime(other.getLeftTime());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -538,40 +546,9 @@ public final class KNPLPLPHFGHOuterClass {
         return this;
       }
 
-      private int leftTime_ ;
-      /**
-       * <code>uint32 left_time = 1;</code>
-       * @return The leftTime.
-       */
-      @java.lang.Override
-      public int getLeftTime() {
-        return leftTime_;
-      }
-      /**
-       * <code>uint32 left_time = 1;</code>
-       * @param value The leftTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLeftTime(int value) {
-        
-        leftTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 left_time = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLeftTime() {
-        
-        leftTime_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isFinish_ ;
       /**
-       * <code>bool is_finish = 5;</code>
+       * <code>bool is_finish = 15;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -579,7 +556,7 @@ public final class KNPLPLPHFGHOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool is_finish = 5;</code>
+       * <code>bool is_finish = 15;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -590,7 +567,7 @@ public final class KNPLPLPHFGHOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finish = 5;</code>
+       * <code>bool is_finish = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
@@ -600,40 +577,9 @@ public final class KNPLPLPHFGHOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 12;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -641,7 +587,7 @@ public final class KNPLPLPHFGHOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 12;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -652,12 +598,74 @@ public final class KNPLPLPHFGHOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int leftTime_ ;
+      /**
+       * <code>uint32 left_time = 11;</code>
+       * @return The leftTime.
+       */
+      @java.lang.Override
+      public int getLeftTime() {
+        return leftTime_;
+      }
+      /**
+       * <code>uint32 left_time = 11;</code>
+       * @param value The leftTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLeftTime(int value) {
+        
+        leftTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 left_time = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLeftTime() {
+        
+        leftTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class KNPLPLPHFGHOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021KNPLPLPHFGH.proto\"V\n\013KNPLPLPHFGH\022\021\n\tle" +
-      "ft_time\030\001 \001(\r\022\021\n\tis_finish\030\005 \001(\010\022\020\n\010leve" +
-      "l_id\030\t \001(\r\022\017\n\007is_open\030\r \001(\010B2\n\031emu.grass" +
-      "cutter.net.protoB\025KNPLPLPHFGHOuterClassb" +
-      "\006proto3"
+      "\n\021KNPLPLPHFGH.proto\"V\n\013KNPLPLPHFGH\022\021\n\tis" +
+      "_finish\030\017 \001(\010\022\017\n\007is_open\030\014 \001(\010\022\021\n\tleft_t" +
+      "ime\030\013 \001(\r\022\020\n\010level_id\030\003 \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class KNPLPLPHFGHOuterClass {
     internal_static_KNPLPLPHFGH_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KNPLPLPHFGH_descriptor,
-        new java.lang.String[] { "LeftTime", "IsFinish", "LevelId", "IsOpen", });
+        new java.lang.String[] { "IsFinish", "IsOpen", "LeftTime", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,48 +19,52 @@ public final class BEGGDNFNJJPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     java.util.List<emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO> 
         getBBJHGNFMGLAList();
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO getBBJHGNFMGLA(int index);
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     int getBBJHGNFMGLACount();
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder> 
         getBBJHGNFMGLAOrBuilderList();
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder getBBJHGNFMGLAOrBuilder(
         int index);
 
     /**
-     * <code>uint32 level_id = 5;</code>
+     * <code>uint32 level_id = 13;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>bool is_finish = 10;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
-
-    /**
-     * <code>bool is_open = 15;</code>
+     * <code>bool is_open = 7;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
+
+    /**
+     * <code>bool is_finish = 12;</code>
+     * @return The isFinish.
+     */
+    boolean getIsFinish();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BEGGDNFNJJP}
    */
   public static final class BEGGDNFNJJP extends
@@ -107,7 +111,12 @@ public final class BEGGDNFNJJPOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 56: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bBJHGNFMGLA_ = new java.util.ArrayList<emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO>();
                 mutable_bitField0_ |= 0x00000001;
@@ -116,19 +125,14 @@ public final class BEGGDNFNJJPOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.parser(), extensionRegistry));
               break;
             }
-            case 40: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 96: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 120: {
+            case 104: {
 
-              isOpen_ = input.readBool();
+              levelId_ = input.readUInt32();
               break;
             }
             default: {
@@ -166,17 +170,17 @@ public final class BEGGDNFNJJPOuterClass {
               emu.grasscutter.net.proto.BEGGDNFNJJPOuterClass.BEGGDNFNJJP.class, emu.grasscutter.net.proto.BEGGDNFNJJPOuterClass.BEGGDNFNJJP.Builder.class);
     }
 
-    public static final int BBJHGNFMGLA_FIELD_NUMBER = 3;
+    public static final int BBJHGNFMGLA_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO> bBJHGNFMGLA_;
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO> getBBJHGNFMGLAList() {
       return bBJHGNFMGLA_;
     }
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder> 
@@ -184,21 +188,21 @@ public final class BEGGDNFNJJPOuterClass {
       return bBJHGNFMGLA_;
     }
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     @java.lang.Override
     public int getBBJHGNFMGLACount() {
       return bBJHGNFMGLA_.size();
     }
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO getBBJHGNFMGLA(int index) {
       return bBJHGNFMGLA_.get(index);
     }
     /**
-     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+     * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder getBBJHGNFMGLAOrBuilder(
@@ -206,10 +210,10 @@ public final class BEGGDNFNJJPOuterClass {
       return bBJHGNFMGLA_.get(index);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
+    public static final int LEVEL_ID_FIELD_NUMBER = 13;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 5;</code>
+     * <code>uint32 level_id = 13;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -217,26 +221,26 @@ public final class BEGGDNFNJJPOuterClass {
       return levelId_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 10;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 10;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 15;
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 15;</code>
+     * <code>bool is_open = 7;</code>
      * @return The isOpen.
      */
     @java.lang.Override
     public boolean getIsOpen() {
       return isOpen_;
+    }
+
+    public static final int IS_FINISH_FIELD_NUMBER = 12;
+    private boolean isFinish_;
+    /**
+     * <code>bool is_finish = 12;</code>
+     * @return The isFinish.
+     */
+    @java.lang.Override
+    public boolean getIsFinish() {
+      return isFinish_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -253,17 +257,17 @@ public final class BEGGDNFNJJPOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < bBJHGNFMGLA_.size(); i++) {
-        output.writeMessage(3, bBJHGNFMGLA_.get(i));
+      if (isOpen_ != false) {
+        output.writeBool(7, isOpen_);
       }
-      if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
+      for (int i = 0; i < bBJHGNFMGLA_.size(); i++) {
+        output.writeMessage(8, bBJHGNFMGLA_.get(i));
       }
       if (isFinish_ != false) {
-        output.writeBool(10, isFinish_);
+        output.writeBool(12, isFinish_);
       }
-      if (isOpen_ != false) {
-        output.writeBool(15, isOpen_);
+      if (levelId_ != 0) {
+        output.writeUInt32(13, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -274,21 +278,21 @@ public final class BEGGDNFNJJPOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isOpen_);
+      }
       for (int i = 0; i < bBJHGNFMGLA_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, bBJHGNFMGLA_.get(i));
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
+          .computeMessageSize(8, bBJHGNFMGLA_.get(i));
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isFinish_);
+          .computeBoolSize(12, isFinish_);
       }
-      if (isOpen_ != false) {
+      if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isOpen_);
+          .computeUInt32Size(13, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -309,10 +313,10 @@ public final class BEGGDNFNJJPOuterClass {
           .equals(other.getBBJHGNFMGLAList())) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -330,12 +334,12 @@ public final class BEGGDNFNJJPOuterClass {
       }
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -432,6 +436,10 @@ public final class BEGGDNFNJJPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BEGGDNFNJJP}
      */
     public static final class Builder extends
@@ -478,9 +486,9 @@ public final class BEGGDNFNJJPOuterClass {
         }
         levelId_ = 0;
 
-        isFinish_ = false;
-
         isOpen_ = false;
+
+        isFinish_ = false;
 
         return this;
       }
@@ -519,8 +527,8 @@ public final class BEGGDNFNJJPOuterClass {
           result.bBJHGNFMGLA_ = bBJHGNFMGLABuilder_.build();
         }
         result.levelId_ = levelId_;
-        result.isFinish_ = isFinish_;
         result.isOpen_ = isOpen_;
+        result.isFinish_ = isFinish_;
         onBuilt();
         return result;
       }
@@ -598,11 +606,11 @@ public final class BEGGDNFNJJPOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
+        }
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -647,7 +655,7 @@ public final class BEGGDNFNJJPOuterClass {
           emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder> bBJHGNFMGLABuilder_;
 
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO> getBBJHGNFMGLAList() {
         if (bBJHGNFMGLABuilder_ == null) {
@@ -657,7 +665,7 @@ public final class BEGGDNFNJJPOuterClass {
         }
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public int getBBJHGNFMGLACount() {
         if (bBJHGNFMGLABuilder_ == null) {
@@ -667,7 +675,7 @@ public final class BEGGDNFNJJPOuterClass {
         }
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO getBBJHGNFMGLA(int index) {
         if (bBJHGNFMGLABuilder_ == null) {
@@ -677,7 +685,7 @@ public final class BEGGDNFNJJPOuterClass {
         }
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder setBBJHGNFMGLA(
           int index, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO value) {
@@ -694,7 +702,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder setBBJHGNFMGLA(
           int index, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder builderForValue) {
@@ -708,7 +716,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder addBBJHGNFMGLA(emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO value) {
         if (bBJHGNFMGLABuilder_ == null) {
@@ -724,7 +732,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder addBBJHGNFMGLA(
           int index, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO value) {
@@ -741,7 +749,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder addBBJHGNFMGLA(
           emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder builderForValue) {
@@ -755,7 +763,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder addBBJHGNFMGLA(
           int index, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder builderForValue) {
@@ -769,7 +777,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder addAllBBJHGNFMGLA(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO> values) {
@@ -784,7 +792,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder clearBBJHGNFMGLA() {
         if (bBJHGNFMGLABuilder_ == null) {
@@ -797,7 +805,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public Builder removeBBJHGNFMGLA(int index) {
         if (bBJHGNFMGLABuilder_ == null) {
@@ -810,14 +818,14 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder getBBJHGNFMGLABuilder(
           int index) {
         return getBBJHGNFMGLAFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder getBBJHGNFMGLAOrBuilder(
           int index) {
@@ -827,7 +835,7 @@ public final class BEGGDNFNJJPOuterClass {
         }
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGOOrBuilder> 
            getBBJHGNFMGLAOrBuilderList() {
@@ -838,14 +846,14 @@ public final class BEGGDNFNJJPOuterClass {
         }
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder addBBJHGNFMGLABuilder() {
         return getBBJHGNFMGLAFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.getDefaultInstance());
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder addBBJHGNFMGLABuilder(
           int index) {
@@ -853,7 +861,7 @@ public final class BEGGDNFNJJPOuterClass {
             index, emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.getDefaultInstance());
       }
       /**
-       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 3;</code>
+       * <code>repeated .FMDFIKLPPGO BBJHGNFMGLA = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.FMDFIKLPPGO.Builder> 
            getBBJHGNFMGLABuilderList() {
@@ -876,7 +884,7 @@ public final class BEGGDNFNJJPOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 13;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -884,7 +892,7 @@ public final class BEGGDNFNJJPOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 13;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -895,7 +903,7 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -905,40 +913,9 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
 
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 10;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 10;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 15;</code>
+       * <code>bool is_open = 7;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -946,7 +923,7 @@ public final class BEGGDNFNJJPOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 15;</code>
+       * <code>bool is_open = 7;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -957,12 +934,43 @@ public final class BEGGDNFNJJPOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 15;</code>
+       * <code>bool is_open = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 12;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 12;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
         onChanged();
         return this;
       }
@@ -1034,11 +1042,10 @@ public final class BEGGDNFNJJPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BEGGDNFNJJP.proto\032\021FMDFIKLPPGO.proto\"f" +
-      "\n\013BEGGDNFNJJP\022!\n\013BBJHGNFMGLA\030\003 \003(\0132\014.FMD" +
-      "FIKLPPGO\022\020\n\010level_id\030\005 \001(\r\022\021\n\tis_finish\030" +
-      "\n \001(\010\022\017\n\007is_open\030\017 \001(\010B2\n\031emu.grasscutte" +
-      "r.net.protoB\025BEGGDNFNJJPOuterClassb\006prot" +
-      "o3"
+      "\n\013BEGGDNFNJJP\022!\n\013BBJHGNFMGLA\030\010 \003(\0132\014.FMD" +
+      "FIKLPPGO\022\020\n\010level_id\030\r \001(\r\022\017\n\007is_open\030\007 " +
+      "\001(\010\022\021\n\tis_finish\030\014 \001(\010B\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1050,7 +1057,7 @@ public final class BEGGDNFNJJPOuterClass {
     internal_static_BEGGDNFNJJP_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BEGGDNFNJJP_descriptor,
-        new java.lang.String[] { "BBJHGNFMGLA", "LevelId", "IsFinish", "IsOpen", });
+        new java.lang.String[] { "BBJHGNFMGLA", "LevelId", "IsOpen", "IsFinish", });
     emu.grasscutter.net.proto.FMDFIKLPPGOOuterClass.getDescriptor();
   }
 

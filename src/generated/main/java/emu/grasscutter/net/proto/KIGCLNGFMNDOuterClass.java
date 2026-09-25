@@ -19,12 +19,6 @@ public final class KIGCLNGFMNDOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MMCBCEOJBPB = 1;</code>
-     * @return The mMCBCEOJBPB.
-     */
-    int getMMCBCEOJBPB();
-
-    /**
      * <code>repeated uint32 ENIINHOKAJO = 2;</code>
      * @return A list containing the eNIINHOKAJO.
      */
@@ -40,8 +34,18 @@ public final class KIGCLNGFMNDOuterClass {
      * @return The eNIINHOKAJO at the given index.
      */
     int getENIINHOKAJO(int index);
+
+    /**
+     * <code>uint32 MMCBCEOJBPB = 1;</code>
+     * @return The mMCBCEOJBPB.
+     */
+    int getMMCBCEOJBPB();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KIGCLNGFMND}
    */
   public static final class KIGCLNGFMND extends
@@ -149,17 +153,6 @@ public final class KIGCLNGFMNDOuterClass {
               emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND.class, emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND.Builder.class);
     }
 
-    public static final int MMCBCEOJBPB_FIELD_NUMBER = 1;
-    private int mMCBCEOJBPB_;
-    /**
-     * <code>uint32 MMCBCEOJBPB = 1;</code>
-     * @return The mMCBCEOJBPB.
-     */
-    @java.lang.Override
-    public int getMMCBCEOJBPB() {
-      return mMCBCEOJBPB_;
-    }
-
     public static final int ENIINHOKAJO_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList eNIINHOKAJO_;
     /**
@@ -187,6 +180,17 @@ public final class KIGCLNGFMNDOuterClass {
       return eNIINHOKAJO_.getInt(index);
     }
     private int eNIINHOKAJOMemoizedSerializedSize = -1;
+
+    public static final int MMCBCEOJBPB_FIELD_NUMBER = 1;
+    private int mMCBCEOJBPB_;
+    /**
+     * <code>uint32 MMCBCEOJBPB = 1;</code>
+     * @return The mMCBCEOJBPB.
+     */
+    @java.lang.Override
+    public int getMMCBCEOJBPB() {
+      return mMCBCEOJBPB_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -255,10 +259,10 @@ public final class KIGCLNGFMNDOuterClass {
       }
       emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND other = (emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND) obj;
 
-      if (getMMCBCEOJBPB()
-          != other.getMMCBCEOJBPB()) return false;
       if (!getENIINHOKAJOList()
           .equals(other.getENIINHOKAJOList())) return false;
+      if (getMMCBCEOJBPB()
+          != other.getMMCBCEOJBPB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -270,12 +274,12 @@ public final class KIGCLNGFMNDOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MMCBCEOJBPB_FIELD_NUMBER;
-      hash = (53 * hash) + getMMCBCEOJBPB();
       if (getENIINHOKAJOCount() > 0) {
         hash = (37 * hash) + ENIINHOKAJO_FIELD_NUMBER;
         hash = (53 * hash) + getENIINHOKAJOList().hashCode();
       }
+      hash = (37 * hash) + MMCBCEOJBPB_FIELD_NUMBER;
+      hash = (53 * hash) + getMMCBCEOJBPB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,6 +376,10 @@ public final class KIGCLNGFMNDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KIGCLNGFMND}
      */
     public static final class Builder extends
@@ -409,10 +417,10 @@ public final class KIGCLNGFMNDOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mMCBCEOJBPB_ = 0;
-
         eNIINHOKAJO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        mMCBCEOJBPB_ = 0;
+
         return this;
       }
 
@@ -440,12 +448,12 @@ public final class KIGCLNGFMNDOuterClass {
       public emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND buildPartial() {
         emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND result = new emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND(this);
         int from_bitField0_ = bitField0_;
-        result.mMCBCEOJBPB_ = mMCBCEOJBPB_;
         if (((bitField0_ & 0x00000001) != 0)) {
           eNIINHOKAJO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.eNIINHOKAJO_ = eNIINHOKAJO_;
+        result.mMCBCEOJBPB_ = mMCBCEOJBPB_;
         onBuilt();
         return result;
       }
@@ -494,9 +502,6 @@ public final class KIGCLNGFMNDOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND other) {
         if (other == emu.grasscutter.net.proto.KIGCLNGFMNDOuterClass.KIGCLNGFMND.getDefaultInstance()) return this;
-        if (other.getMMCBCEOJBPB() != 0) {
-          setMMCBCEOJBPB(other.getMMCBCEOJBPB());
-        }
         if (!other.eNIINHOKAJO_.isEmpty()) {
           if (eNIINHOKAJO_.isEmpty()) {
             eNIINHOKAJO_ = other.eNIINHOKAJO_;
@@ -506,6 +511,9 @@ public final class KIGCLNGFMNDOuterClass {
             eNIINHOKAJO_.addAll(other.eNIINHOKAJO_);
           }
           onChanged();
+        }
+        if (other.getMMCBCEOJBPB() != 0) {
+          setMMCBCEOJBPB(other.getMMCBCEOJBPB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,37 +544,6 @@ public final class KIGCLNGFMNDOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int mMCBCEOJBPB_ ;
-      /**
-       * <code>uint32 MMCBCEOJBPB = 1;</code>
-       * @return The mMCBCEOJBPB.
-       */
-      @java.lang.Override
-      public int getMMCBCEOJBPB() {
-        return mMCBCEOJBPB_;
-      }
-      /**
-       * <code>uint32 MMCBCEOJBPB = 1;</code>
-       * @param value The mMCBCEOJBPB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMMCBCEOJBPB(int value) {
-        
-        mMCBCEOJBPB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MMCBCEOJBPB = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMMCBCEOJBPB() {
-        
-        mMCBCEOJBPB_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList eNIINHOKAJO_ = emptyIntList();
       private void ensureENIINHOKAJOIsMutable() {
@@ -646,6 +623,37 @@ public final class KIGCLNGFMNDOuterClass {
         onChanged();
         return this;
       }
+
+      private int mMCBCEOJBPB_ ;
+      /**
+       * <code>uint32 MMCBCEOJBPB = 1;</code>
+       * @return The mMCBCEOJBPB.
+       */
+      @java.lang.Override
+      public int getMMCBCEOJBPB() {
+        return mMCBCEOJBPB_;
+      }
+      /**
+       * <code>uint32 MMCBCEOJBPB = 1;</code>
+       * @param value The mMCBCEOJBPB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMMCBCEOJBPB(int value) {
+        
+        mMCBCEOJBPB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MMCBCEOJBPB = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMMCBCEOJBPB() {
+        
+        mMCBCEOJBPB_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -713,10 +721,9 @@ public final class KIGCLNGFMNDOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021KIGCLNGFMND.proto\"7\n\013KIGCLNGFMND\022\023\n\013MM" +
-      "CBCEOJBPB\030\001 \001(\r\022\023\n\013ENIINHOKAJO\030\002 \003(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025KIGCLNGFMNDOu" +
-      "terClassb\006proto3"
+      "\n\021KIGCLNGFMND.proto\"7\n\013KIGCLNGFMND\022\023\n\013EN" +
+      "IINHOKAJO\030\002 \003(\r\022\023\n\013MMCBCEOJBPB\030\001 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -727,7 +734,7 @@ public final class KIGCLNGFMNDOuterClass {
     internal_static_KIGCLNGFMND_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KIGCLNGFMND_descriptor,
-        new java.lang.String[] { "MMCBCEOJBPB", "ENIINHOKAJO", });
+        new java.lang.String[] { "ENIINHOKAJO", "MMCBCEOJBPB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -645,8 +645,7 @@ public final class TakeAchievementGoalRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"TakeAchievementGoalRewardReq.proto\"/\n\034" +
       "TakeAchievementGoalRewardReq\022\017\n\007id_list\030" +
-      "\r \003(\rBC\n\031emu.grasscutter.net.protoB&Take" +
-      "AchievementGoalRewardReqOuterClassb\006prot" +
+      "\r \003(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
       "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -18,17 +18,32 @@ public final class DropItemRspOuterClass {
       // @@protoc_insertion_point(interface_extends:DropItemRsp)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>int32 retcode = 4;</code>
+     * @return The retcode.
+     */
     int getRetcode();
 
+    /**
+     * <code>.StoreType store_type = 1;</code>
+     * @return The enum numeric value on the wire for storeType.
+     */
     int getStoreTypeValue();
-
+    /**
+     * <code>.StoreType store_type = 1;</code>
+     * @return The storeType.
+     */
     emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType getStoreType();
 
+    /**
+     * <code>uint64 guid = 6;</code>
+     * @return The guid.
+     */
     long getGuid();
   }
   /**
    * <pre>
-   * CmdId: 7417
+   * CmdId: 26750
    * </pre>
    *
    * Protobuf type {@code DropItemRsp}
@@ -76,20 +91,20 @@ public final class DropItemRspOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
-
-              guid_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
             case 8: {
               int rawValue = input.readEnum();
 
               storeType_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 48: {
+
+              guid_ = input.readUInt64();
               break;
             }
             default: {
@@ -124,9 +139,12 @@ public final class DropItemRspOuterClass {
               emu.grasscutter.net.proto.DropItemRspOuterClass.DropItemRsp.class, emu.grasscutter.net.proto.DropItemRspOuterClass.DropItemRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 4;
     private int retcode_;
-
+    /**
+     * <code>int32 retcode = 4;</code>
+     * @return The retcode.
+     */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
@@ -134,20 +152,29 @@ public final class DropItemRspOuterClass {
 
     public static final int STORE_TYPE_FIELD_NUMBER = 1;
     private int storeType_;
-
+    /**
+     * <code>.StoreType store_type = 1;</code>
+     * @return The enum numeric value on the wire for storeType.
+     */
     @java.lang.Override public int getStoreTypeValue() {
       return storeType_;
     }
-
+    /**
+     * <code>.StoreType store_type = 1;</code>
+     * @return The storeType.
+     */
     @java.lang.Override public emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType result = emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
       return result == null ? emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
     }
 
-    public static final int GUID_FIELD_NUMBER = 5;
+    public static final int GUID_FIELD_NUMBER = 6;
     private long guid_;
-
+    /**
+     * <code>uint64 guid = 6;</code>
+     * @return The guid.
+     */
     @java.lang.Override
     public long getGuid() {
       return guid_;
@@ -167,14 +194,14 @@ public final class DropItemRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (guid_ != 0L) {
-        output.writeUInt64(5, guid_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
-      }
       if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.StoreType_STORE_NONE.getNumber()) {
         output.writeEnum(1, storeType_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(4, retcode_);
+      }
+      if (guid_ != 0L) {
+        output.writeUInt64(6, guid_);
       }
       unknownFields.writeTo(output);
     }
@@ -185,17 +212,17 @@ public final class DropItemRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (guid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, guid_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
-      }
       if (storeType_ != emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.StoreType_STORE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, storeType_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, retcode_);
+      }
+      if (guid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, guid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -332,7 +359,7 @@ public final class DropItemRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 7417
+     * CmdId: 26750
      * </pre>
      *
      * Protobuf type {@code DropItemRsp}
@@ -494,79 +521,116 @@ public final class DropItemRspOuterClass {
       }
 
       private int retcode_ ;
-
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @return The retcode.
+       */
       @java.lang.Override
       public int getRetcode() {
         return retcode_;
       }
-
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
       public Builder setRetcode(int value) {
-
+        
         retcode_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>int32 retcode = 4;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearRetcode() {
-
+        
         retcode_ = 0;
         onChanged();
         return this;
       }
 
       private int storeType_ = 0;
-
+      /**
+       * <code>.StoreType store_type = 1;</code>
+       * @return The enum numeric value on the wire for storeType.
+       */
       @java.lang.Override public int getStoreTypeValue() {
         return storeType_;
       }
-
+      /**
+       * <code>.StoreType store_type = 1;</code>
+       * @param value The enum numeric value on the wire for storeType to set.
+       * @return This builder for chaining.
+       */
       public Builder setStoreTypeValue(int value) {
-
+        
         storeType_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>.StoreType store_type = 1;</code>
+       * @return The storeType.
+       */
       @java.lang.Override
       public emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType getStoreType() {
         @SuppressWarnings("deprecation")
         emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType result = emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.valueOf(storeType_);
         return result == null ? emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType.UNRECOGNIZED : result;
       }
-
+      /**
+       * <code>.StoreType store_type = 1;</code>
+       * @param value The storeType to set.
+       * @return This builder for chaining.
+       */
       public Builder setStoreType(emu.grasscutter.net.proto.StoreTypeOuterClass.StoreType value) {
         if (value == null) {
           throw new NullPointerException();
         }
-
+        
         storeType_ = value.getNumber();
         onChanged();
         return this;
       }
-
+      /**
+       * <code>.StoreType store_type = 1;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearStoreType() {
-
+        
         storeType_ = 0;
         onChanged();
         return this;
       }
 
       private long guid_ ;
-
+      /**
+       * <code>uint64 guid = 6;</code>
+       * @return The guid.
+       */
       @java.lang.Override
       public long getGuid() {
         return guid_;
       }
-
+      /**
+       * <code>uint64 guid = 6;</code>
+       * @param value The guid to set.
+       * @return This builder for chaining.
+       */
       public Builder setGuid(long value) {
-
+        
         guid_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>uint64 guid = 6;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearGuid() {
-
+        
         guid_ = 0L;
         onChanged();
         return this;
@@ -582,6 +646,7 @@ public final class DropItemRspOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:DropItemRsp)
     }
@@ -625,7 +690,7 @@ public final class DropItemRspOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_DropItemRsp_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_DropItemRsp_fieldAccessorTable;
 
@@ -638,8 +703,8 @@ public final class DropItemRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021DropItemRsp.proto\032\017StoreType.proto\"L\n\013" +
-      "DropItemRsp\022\017\n\007retcode\030\006 \001(\005\022\036\n\nstore_ty" +
-      "pe\030\n \001(\0162\n.StoreType\022\014\n\004guid\030\002 \001(\004B\033\n\031em" +
+      "DropItemRsp\022\017\n\007retcode\030\004 \001(\005\022\036\n\nstore_ty" +
+      "pe\030\001 \001(\0162\n.StoreType\022\014\n\004guid\030\006 \001(\004B\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

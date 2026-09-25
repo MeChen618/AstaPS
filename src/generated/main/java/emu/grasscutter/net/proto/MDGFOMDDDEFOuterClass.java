@@ -19,24 +19,6 @@ public final class MDGFOMDDDEFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool FBAGAPBIFHA = 1;</code>
-     * @return The fBAGAPBIFHA.
-     */
-    boolean getFBAGAPBIFHA();
-
-    /**
-     * <code>int32 ONIFLNLBNBL = 2;</code>
-     * @return The oNIFLNLBNBL.
-     */
-    int getONIFLNLBNBL();
-
-    /**
-     * <code>float JMODEHNJBFB = 3;</code>
-     * @return The jMODEHNJBFB.
-     */
-    float getJMODEHNJBFB();
-
-    /**
      * <code>.JEOKDCIGCFP JDPJOCLIHMI = 4;</code>
      * @return The enum numeric value on the wire for jDPJOCLIHMI.
      */
@@ -48,10 +30,22 @@ public final class MDGFOMDDDEFOuterClass {
     emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getJDPJOCLIHMI();
 
     /**
+     * <code>float JMODEHNJBFB = 3;</code>
+     * @return The jMODEHNJBFB.
+     */
+    float getJMODEHNJBFB();
+
+    /**
      * <code>bool OCPEDDDLBLN = 5;</code>
      * @return The oCPEDDDLBLN.
      */
     boolean getOCPEDDDLBLN();
+
+    /**
+     * <code>bool FBAGAPBIFHA = 1;</code>
+     * @return The fBAGAPBIFHA.
+     */
+    boolean getFBAGAPBIFHA();
 
     /**
      * <code>.JEOKDCIGCFP LCBNCKEGALF = 6;</code>
@@ -63,8 +57,18 @@ public final class MDGFOMDDDEFOuterClass {
      * @return The lCBNCKEGALF.
      */
     emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP getLCBNCKEGALF();
+
+    /**
+     * <code>int32 ONIFLNLBNBL = 2;</code>
+     * @return The oNIFLNLBNBL.
+     */
+    int getONIFLNLBNBL();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MDGFOMDDDEF}
    */
   public static final class MDGFOMDDDEF extends
@@ -175,39 +179,6 @@ public final class MDGFOMDDDEFOuterClass {
               emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF.class, emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF.Builder.class);
     }
 
-    public static final int FBAGAPBIFHA_FIELD_NUMBER = 1;
-    private boolean fBAGAPBIFHA_;
-    /**
-     * <code>bool FBAGAPBIFHA = 1;</code>
-     * @return The fBAGAPBIFHA.
-     */
-    @java.lang.Override
-    public boolean getFBAGAPBIFHA() {
-      return fBAGAPBIFHA_;
-    }
-
-    public static final int ONIFLNLBNBL_FIELD_NUMBER = 2;
-    private int oNIFLNLBNBL_;
-    /**
-     * <code>int32 ONIFLNLBNBL = 2;</code>
-     * @return The oNIFLNLBNBL.
-     */
-    @java.lang.Override
-    public int getONIFLNLBNBL() {
-      return oNIFLNLBNBL_;
-    }
-
-    public static final int JMODEHNJBFB_FIELD_NUMBER = 3;
-    private float jMODEHNJBFB_;
-    /**
-     * <code>float JMODEHNJBFB = 3;</code>
-     * @return The jMODEHNJBFB.
-     */
-    @java.lang.Override
-    public float getJMODEHNJBFB() {
-      return jMODEHNJBFB_;
-    }
-
     public static final int JDPJOCLIHMI_FIELD_NUMBER = 4;
     private int jDPJOCLIHMI_;
     /**
@@ -227,6 +198,17 @@ public final class MDGFOMDDDEFOuterClass {
       return result == null ? emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.UNRECOGNIZED : result;
     }
 
+    public static final int JMODEHNJBFB_FIELD_NUMBER = 3;
+    private float jMODEHNJBFB_;
+    /**
+     * <code>float JMODEHNJBFB = 3;</code>
+     * @return The jMODEHNJBFB.
+     */
+    @java.lang.Override
+    public float getJMODEHNJBFB() {
+      return jMODEHNJBFB_;
+    }
+
     public static final int OCPEDDDLBLN_FIELD_NUMBER = 5;
     private boolean oCPEDDDLBLN_;
     /**
@@ -236,6 +218,17 @@ public final class MDGFOMDDDEFOuterClass {
     @java.lang.Override
     public boolean getOCPEDDDLBLN() {
       return oCPEDDDLBLN_;
+    }
+
+    public static final int FBAGAPBIFHA_FIELD_NUMBER = 1;
+    private boolean fBAGAPBIFHA_;
+    /**
+     * <code>bool FBAGAPBIFHA = 1;</code>
+     * @return The fBAGAPBIFHA.
+     */
+    @java.lang.Override
+    public boolean getFBAGAPBIFHA() {
+      return fBAGAPBIFHA_;
     }
 
     public static final int LCBNCKEGALF_FIELD_NUMBER = 6;
@@ -255,6 +248,17 @@ public final class MDGFOMDDDEFOuterClass {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP result = emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.valueOf(lCBNCKEGALF_);
       return result == null ? emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.JEOKDCIGCFP.UNRECOGNIZED : result;
+    }
+
+    public static final int ONIFLNLBNBL_FIELD_NUMBER = 2;
+    private int oNIFLNLBNBL_;
+    /**
+     * <code>int32 ONIFLNLBNBL = 2;</code>
+     * @return The oNIFLNLBNBL.
+     */
+    @java.lang.Override
+    public int getONIFLNLBNBL() {
+      return oNIFLNLBNBL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -337,17 +341,17 @@ public final class MDGFOMDDDEFOuterClass {
       }
       emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF other = (emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF) obj;
 
-      if (getFBAGAPBIFHA()
-          != other.getFBAGAPBIFHA()) return false;
-      if (getONIFLNLBNBL()
-          != other.getONIFLNLBNBL()) return false;
+      if (jDPJOCLIHMI_ != other.jDPJOCLIHMI_) return false;
       if (java.lang.Float.floatToIntBits(getJMODEHNJBFB())
           != java.lang.Float.floatToIntBits(
               other.getJMODEHNJBFB())) return false;
-      if (jDPJOCLIHMI_ != other.jDPJOCLIHMI_) return false;
       if (getOCPEDDDLBLN()
           != other.getOCPEDDDLBLN()) return false;
+      if (getFBAGAPBIFHA()
+          != other.getFBAGAPBIFHA()) return false;
       if (lCBNCKEGALF_ != other.lCBNCKEGALF_) return false;
+      if (getONIFLNLBNBL()
+          != other.getONIFLNLBNBL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -359,21 +363,21 @@ public final class MDGFOMDDDEFOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FBAGAPBIFHA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getFBAGAPBIFHA());
-      hash = (37 * hash) + ONIFLNLBNBL_FIELD_NUMBER;
-      hash = (53 * hash) + getONIFLNLBNBL();
+      hash = (37 * hash) + JDPJOCLIHMI_FIELD_NUMBER;
+      hash = (53 * hash) + jDPJOCLIHMI_;
       hash = (37 * hash) + JMODEHNJBFB_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getJMODEHNJBFB());
-      hash = (37 * hash) + JDPJOCLIHMI_FIELD_NUMBER;
-      hash = (53 * hash) + jDPJOCLIHMI_;
       hash = (37 * hash) + OCPEDDDLBLN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getOCPEDDDLBLN());
+      hash = (37 * hash) + FBAGAPBIFHA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getFBAGAPBIFHA());
       hash = (37 * hash) + LCBNCKEGALF_FIELD_NUMBER;
       hash = (53 * hash) + lCBNCKEGALF_;
+      hash = (37 * hash) + ONIFLNLBNBL_FIELD_NUMBER;
+      hash = (53 * hash) + getONIFLNLBNBL();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -470,6 +474,10 @@ public final class MDGFOMDDDEFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MDGFOMDDDEF}
      */
     public static final class Builder extends
@@ -507,17 +515,17 @@ public final class MDGFOMDDDEFOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        fBAGAPBIFHA_ = false;
-
-        oNIFLNLBNBL_ = 0;
+        jDPJOCLIHMI_ = 0;
 
         jMODEHNJBFB_ = 0F;
 
-        jDPJOCLIHMI_ = 0;
-
         oCPEDDDLBLN_ = false;
 
+        fBAGAPBIFHA_ = false;
+
         lCBNCKEGALF_ = 0;
+
+        oNIFLNLBNBL_ = 0;
 
         return this;
       }
@@ -545,12 +553,12 @@ public final class MDGFOMDDDEFOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF buildPartial() {
         emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF result = new emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF(this);
-        result.fBAGAPBIFHA_ = fBAGAPBIFHA_;
-        result.oNIFLNLBNBL_ = oNIFLNLBNBL_;
-        result.jMODEHNJBFB_ = jMODEHNJBFB_;
         result.jDPJOCLIHMI_ = jDPJOCLIHMI_;
+        result.jMODEHNJBFB_ = jMODEHNJBFB_;
         result.oCPEDDDLBLN_ = oCPEDDDLBLN_;
+        result.fBAGAPBIFHA_ = fBAGAPBIFHA_;
         result.lCBNCKEGALF_ = lCBNCKEGALF_;
+        result.oNIFLNLBNBL_ = oNIFLNLBNBL_;
         onBuilt();
         return result;
       }
@@ -599,23 +607,23 @@ public final class MDGFOMDDDEFOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF other) {
         if (other == emu.grasscutter.net.proto.MDGFOMDDDEFOuterClass.MDGFOMDDDEF.getDefaultInstance()) return this;
-        if (other.getFBAGAPBIFHA() != false) {
-          setFBAGAPBIFHA(other.getFBAGAPBIFHA());
-        }
-        if (other.getONIFLNLBNBL() != 0) {
-          setONIFLNLBNBL(other.getONIFLNLBNBL());
+        if (other.jDPJOCLIHMI_ != 0) {
+          setJDPJOCLIHMIValue(other.getJDPJOCLIHMIValue());
         }
         if (other.getJMODEHNJBFB() != 0F) {
           setJMODEHNJBFB(other.getJMODEHNJBFB());
         }
-        if (other.jDPJOCLIHMI_ != 0) {
-          setJDPJOCLIHMIValue(other.getJDPJOCLIHMIValue());
-        }
         if (other.getOCPEDDDLBLN() != false) {
           setOCPEDDDLBLN(other.getOCPEDDDLBLN());
         }
+        if (other.getFBAGAPBIFHA() != false) {
+          setFBAGAPBIFHA(other.getFBAGAPBIFHA());
+        }
         if (other.lCBNCKEGALF_ != 0) {
           setLCBNCKEGALFValue(other.getLCBNCKEGALFValue());
+        }
+        if (other.getONIFLNLBNBL() != 0) {
+          setONIFLNLBNBL(other.getONIFLNLBNBL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -643,99 +651,6 @@ public final class MDGFOMDDDEFOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private boolean fBAGAPBIFHA_ ;
-      /**
-       * <code>bool FBAGAPBIFHA = 1;</code>
-       * @return The fBAGAPBIFHA.
-       */
-      @java.lang.Override
-      public boolean getFBAGAPBIFHA() {
-        return fBAGAPBIFHA_;
-      }
-      /**
-       * <code>bool FBAGAPBIFHA = 1;</code>
-       * @param value The fBAGAPBIFHA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFBAGAPBIFHA(boolean value) {
-        
-        fBAGAPBIFHA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool FBAGAPBIFHA = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFBAGAPBIFHA() {
-        
-        fBAGAPBIFHA_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int oNIFLNLBNBL_ ;
-      /**
-       * <code>int32 ONIFLNLBNBL = 2;</code>
-       * @return The oNIFLNLBNBL.
-       */
-      @java.lang.Override
-      public int getONIFLNLBNBL() {
-        return oNIFLNLBNBL_;
-      }
-      /**
-       * <code>int32 ONIFLNLBNBL = 2;</code>
-       * @param value The oNIFLNLBNBL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setONIFLNLBNBL(int value) {
-        
-        oNIFLNLBNBL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 ONIFLNLBNBL = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearONIFLNLBNBL() {
-        
-        oNIFLNLBNBL_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float jMODEHNJBFB_ ;
-      /**
-       * <code>float JMODEHNJBFB = 3;</code>
-       * @return The jMODEHNJBFB.
-       */
-      @java.lang.Override
-      public float getJMODEHNJBFB() {
-        return jMODEHNJBFB_;
-      }
-      /**
-       * <code>float JMODEHNJBFB = 3;</code>
-       * @param value The jMODEHNJBFB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setJMODEHNJBFB(float value) {
-        
-        jMODEHNJBFB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float JMODEHNJBFB = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearJMODEHNJBFB() {
-        
-        jMODEHNJBFB_ = 0F;
-        onChanged();
         return this;
       }
 
@@ -793,6 +708,37 @@ public final class MDGFOMDDDEFOuterClass {
         return this;
       }
 
+      private float jMODEHNJBFB_ ;
+      /**
+       * <code>float JMODEHNJBFB = 3;</code>
+       * @return The jMODEHNJBFB.
+       */
+      @java.lang.Override
+      public float getJMODEHNJBFB() {
+        return jMODEHNJBFB_;
+      }
+      /**
+       * <code>float JMODEHNJBFB = 3;</code>
+       * @param value The jMODEHNJBFB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setJMODEHNJBFB(float value) {
+        
+        jMODEHNJBFB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float JMODEHNJBFB = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearJMODEHNJBFB() {
+        
+        jMODEHNJBFB_ = 0F;
+        onChanged();
+        return this;
+      }
+
       private boolean oCPEDDDLBLN_ ;
       /**
        * <code>bool OCPEDDDLBLN = 5;</code>
@@ -820,6 +766,37 @@ public final class MDGFOMDDDEFOuterClass {
       public Builder clearOCPEDDDLBLN() {
         
         oCPEDDDLBLN_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean fBAGAPBIFHA_ ;
+      /**
+       * <code>bool FBAGAPBIFHA = 1;</code>
+       * @return The fBAGAPBIFHA.
+       */
+      @java.lang.Override
+      public boolean getFBAGAPBIFHA() {
+        return fBAGAPBIFHA_;
+      }
+      /**
+       * <code>bool FBAGAPBIFHA = 1;</code>
+       * @param value The fBAGAPBIFHA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFBAGAPBIFHA(boolean value) {
+        
+        fBAGAPBIFHA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool FBAGAPBIFHA = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFBAGAPBIFHA() {
+        
+        fBAGAPBIFHA_ = false;
         onChanged();
         return this;
       }
@@ -874,6 +851,37 @@ public final class MDGFOMDDDEFOuterClass {
       public Builder clearLCBNCKEGALF() {
         
         lCBNCKEGALF_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int oNIFLNLBNBL_ ;
+      /**
+       * <code>int32 ONIFLNLBNBL = 2;</code>
+       * @return The oNIFLNLBNBL.
+       */
+      @java.lang.Override
+      public int getONIFLNLBNBL() {
+        return oNIFLNLBNBL_;
+      }
+      /**
+       * <code>int32 ONIFLNLBNBL = 2;</code>
+       * @param value The oNIFLNLBNBL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setONIFLNLBNBL(int value) {
+        
+        oNIFLNLBNBL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 ONIFLNLBNBL = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearONIFLNLBNBL() {
+        
+        oNIFLNLBNBL_ = 0;
         onChanged();
         return this;
       }
@@ -945,12 +953,12 @@ public final class MDGFOMDDDEFOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021MDGFOMDDDEF.proto\032\021JEOKDCIGCFP.proto\"\247" +
-      "\001\n\013MDGFOMDDDEF\022\023\n\013FBAGAPBIFHA\030\001 \001(\010\022\023\n\013O" +
-      "NIFLNLBNBL\030\002 \001(\005\022\023\n\013JMODEHNJBFB\030\003 \001(\002\022!\n" +
-      "\013JDPJOCLIHMI\030\004 \001(\0162\014.JEOKDCIGCFP\022\023\n\013OCPE" +
-      "DDDLBLN\030\005 \001(\010\022!\n\013LCBNCKEGALF\030\006 \001(\0162\014.JEO" +
-      "KDCIGCFPB2\n\031emu.grasscutter.net.protoB\025M" +
-      "DGFOMDDDEFOuterClassb\006proto3"
+      "\001\n\013MDGFOMDDDEF\022!\n\013JDPJOCLIHMI\030\004 \001(\0162\014.JE" +
+      "OKDCIGCFP\022\023\n\013JMODEHNJBFB\030\003 \001(\002\022\023\n\013OCPEDD" +
+      "DLBLN\030\005 \001(\010\022\023\n\013FBAGAPBIFHA\030\001 \001(\010\022!\n\013LCBN" +
+      "CKEGALF\030\006 \001(\0162\014.JEOKDCIGCFP\022\023\n\013ONIFLNLBN" +
+      "BL\030\002 \001(\005B\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -962,7 +970,7 @@ public final class MDGFOMDDDEFOuterClass {
     internal_static_MDGFOMDDDEF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MDGFOMDDDEF_descriptor,
-        new java.lang.String[] { "FBAGAPBIFHA", "ONIFLNLBNBL", "JMODEHNJBFB", "JDPJOCLIHMI", "OCPEDDDLBLN", "LCBNCKEGALF", });
+        new java.lang.String[] { "JDPJOCLIHMI", "JMODEHNJBFB", "OCPEDDDLBLN", "FBAGAPBIFHA", "LCBNCKEGALF", "ONIFLNLBNBL", });
     emu.grasscutter.net.proto.JEOKDCIGCFPOuterClass.getDescriptor();
   }
 

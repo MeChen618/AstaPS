@@ -19,18 +19,22 @@ public final class EAKIJIADNLHOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 CFGGICGANBF = 1;</code>
-     * @return The cFGGICGANBF.
-     */
-    int getCFGGICGANBF();
-
-    /**
      * <code>bool is_active = 2;</code>
      * @return The isActive.
      */
     boolean getIsActive();
+
+    /**
+     * <code>int32 CFGGICGANBF = 1;</code>
+     * @return The cFGGICGANBF.
+     */
+    int getCFGGICGANBF();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EAKIJIADNLH}
    */
   public static final class EAKIJIADNLH extends
@@ -117,17 +121,6 @@ public final class EAKIJIADNLHOuterClass {
               emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH.class, emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH.Builder.class);
     }
 
-    public static final int CFGGICGANBF_FIELD_NUMBER = 1;
-    private int cFGGICGANBF_;
-    /**
-     * <code>int32 CFGGICGANBF = 1;</code>
-     * @return The cFGGICGANBF.
-     */
-    @java.lang.Override
-    public int getCFGGICGANBF() {
-      return cFGGICGANBF_;
-    }
-
     public static final int IS_ACTIVE_FIELD_NUMBER = 2;
     private boolean isActive_;
     /**
@@ -137,6 +130,17 @@ public final class EAKIJIADNLHOuterClass {
     @java.lang.Override
     public boolean getIsActive() {
       return isActive_;
+    }
+
+    public static final int CFGGICGANBF_FIELD_NUMBER = 1;
+    private int cFGGICGANBF_;
+    /**
+     * <code>int32 CFGGICGANBF = 1;</code>
+     * @return The cFGGICGANBF.
+     */
+    @java.lang.Override
+    public int getCFGGICGANBF() {
+      return cFGGICGANBF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class EAKIJIADNLHOuterClass {
       }
       emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH other = (emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH) obj;
 
-      if (getCFGGICGANBF()
-          != other.getCFGGICGANBF()) return false;
       if (getIsActive()
           != other.getIsActive()) return false;
+      if (getCFGGICGANBF()
+          != other.getCFGGICGANBF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,11 +210,11 @@ public final class EAKIJIADNLHOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CFGGICGANBF_FIELD_NUMBER;
-      hash = (53 * hash) + getCFGGICGANBF();
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
+      hash = (37 * hash) + CFGGICGANBF_FIELD_NUMBER;
+      hash = (53 * hash) + getCFGGICGANBF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -307,6 +311,10 @@ public final class EAKIJIADNLHOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EAKIJIADNLH}
      */
     public static final class Builder extends
@@ -344,9 +352,9 @@ public final class EAKIJIADNLHOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cFGGICGANBF_ = 0;
-
         isActive_ = false;
+
+        cFGGICGANBF_ = 0;
 
         return this;
       }
@@ -374,8 +382,8 @@ public final class EAKIJIADNLHOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH buildPartial() {
         emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH result = new emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH(this);
-        result.cFGGICGANBF_ = cFGGICGANBF_;
         result.isActive_ = isActive_;
+        result.cFGGICGANBF_ = cFGGICGANBF_;
         onBuilt();
         return result;
       }
@@ -424,11 +432,11 @@ public final class EAKIJIADNLHOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH other) {
         if (other == emu.grasscutter.net.proto.EAKIJIADNLHOuterClass.EAKIJIADNLH.getDefaultInstance()) return this;
-        if (other.getCFGGICGANBF() != 0) {
-          setCFGGICGANBF(other.getCFGGICGANBF());
-        }
         if (other.getIsActive() != false) {
           setIsActive(other.getIsActive());
+        }
+        if (other.getCFGGICGANBF() != 0) {
+          setCFGGICGANBF(other.getCFGGICGANBF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -459,37 +467,6 @@ public final class EAKIJIADNLHOuterClass {
         return this;
       }
 
-      private int cFGGICGANBF_ ;
-      /**
-       * <code>int32 CFGGICGANBF = 1;</code>
-       * @return The cFGGICGANBF.
-       */
-      @java.lang.Override
-      public int getCFGGICGANBF() {
-        return cFGGICGANBF_;
-      }
-      /**
-       * <code>int32 CFGGICGANBF = 1;</code>
-       * @param value The cFGGICGANBF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCFGGICGANBF(int value) {
-        
-        cFGGICGANBF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 CFGGICGANBF = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCFGGICGANBF() {
-        
-        cFGGICGANBF_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isActive_ ;
       /**
        * <code>bool is_active = 2;</code>
@@ -517,6 +494,37 @@ public final class EAKIJIADNLHOuterClass {
       public Builder clearIsActive() {
         
         isActive_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int cFGGICGANBF_ ;
+      /**
+       * <code>int32 CFGGICGANBF = 1;</code>
+       * @return The cFGGICGANBF.
+       */
+      @java.lang.Override
+      public int getCFGGICGANBF() {
+        return cFGGICGANBF_;
+      }
+      /**
+       * <code>int32 CFGGICGANBF = 1;</code>
+       * @param value The cFGGICGANBF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCFGGICGANBF(int value) {
+        
+        cFGGICGANBF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 CFGGICGANBF = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCFGGICGANBF() {
+        
+        cFGGICGANBF_ = 0;
         onChanged();
         return this;
       }
@@ -587,10 +595,9 @@ public final class EAKIJIADNLHOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021EAKIJIADNLH.proto\"5\n\013EAKIJIADNLH\022\023\n\013CF" +
-      "GGICGANBF\030\001 \001(\005\022\021\n\tis_active\030\002 \001(\010B2\n\031em" +
-      "u.grasscutter.net.protoB\025EAKIJIADNLHOute" +
-      "rClassb\006proto3"
+      "\n\021EAKIJIADNLH.proto\"5\n\013EAKIJIADNLH\022\021\n\tis" +
+      "_active\030\002 \001(\010\022\023\n\013CFGGICGANBF\030\001 \001(\005B\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -601,7 +608,7 @@ public final class EAKIJIADNLHOuterClass {
     internal_static_EAKIJIADNLH_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EAKIJIADNLH_descriptor,
-        new java.lang.String[] { "CFGGICGANBF", "IsActive", });
+        new java.lang.String[] { "IsActive", "CFGGICGANBF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

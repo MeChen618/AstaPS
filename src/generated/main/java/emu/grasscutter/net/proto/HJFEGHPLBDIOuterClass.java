@@ -19,18 +19,22 @@ public final class HJFEGHPLBDIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool LFOMNLDGLGM = 3;</code>
+     * <code>bool LFOMNLDGLGM = 6;</code>
      * @return The lFOMNLDGLGM.
      */
     boolean getLFOMNLDGLGM();
 
     /**
-     * <code>bool EMGGNLEEBML = 9;</code>
+     * <code>bool EMGGNLEEBML = 13;</code>
      * @return The eMGGNLEEBML.
      */
     boolean getEMGGNLEEBML();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HJFEGHPLBDI}
    */
   public static final class HJFEGHPLBDI extends
@@ -75,12 +79,12 @@ public final class HJFEGHPLBDIOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 48: {
 
               lFOMNLDGLGM_ = input.readBool();
               break;
             }
-            case 72: {
+            case 104: {
 
               eMGGNLEEBML_ = input.readBool();
               break;
@@ -117,10 +121,10 @@ public final class HJFEGHPLBDIOuterClass {
               emu.grasscutter.net.proto.HJFEGHPLBDIOuterClass.HJFEGHPLBDI.class, emu.grasscutter.net.proto.HJFEGHPLBDIOuterClass.HJFEGHPLBDI.Builder.class);
     }
 
-    public static final int LFOMNLDGLGM_FIELD_NUMBER = 3;
+    public static final int LFOMNLDGLGM_FIELD_NUMBER = 6;
     private boolean lFOMNLDGLGM_;
     /**
-     * <code>bool LFOMNLDGLGM = 3;</code>
+     * <code>bool LFOMNLDGLGM = 6;</code>
      * @return The lFOMNLDGLGM.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class HJFEGHPLBDIOuterClass {
       return lFOMNLDGLGM_;
     }
 
-    public static final int EMGGNLEEBML_FIELD_NUMBER = 9;
+    public static final int EMGGNLEEBML_FIELD_NUMBER = 13;
     private boolean eMGGNLEEBML_;
     /**
-     * <code>bool EMGGNLEEBML = 9;</code>
+     * <code>bool EMGGNLEEBML = 13;</code>
      * @return The eMGGNLEEBML.
      */
     @java.lang.Override
@@ -154,10 +158,10 @@ public final class HJFEGHPLBDIOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (lFOMNLDGLGM_ != false) {
-        output.writeBool(3, lFOMNLDGLGM_);
+        output.writeBool(6, lFOMNLDGLGM_);
       }
       if (eMGGNLEEBML_ != false) {
-        output.writeBool(9, eMGGNLEEBML_);
+        output.writeBool(13, eMGGNLEEBML_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +174,11 @@ public final class HJFEGHPLBDIOuterClass {
       size = 0;
       if (lFOMNLDGLGM_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, lFOMNLDGLGM_);
+          .computeBoolSize(6, lFOMNLDGLGM_);
       }
       if (eMGGNLEEBML_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, eMGGNLEEBML_);
+          .computeBoolSize(13, eMGGNLEEBML_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -308,6 +312,10 @@ public final class HJFEGHPLBDIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HJFEGHPLBDI}
      */
     public static final class Builder extends
@@ -462,7 +470,7 @@ public final class HJFEGHPLBDIOuterClass {
 
       private boolean lFOMNLDGLGM_ ;
       /**
-       * <code>bool LFOMNLDGLGM = 3;</code>
+       * <code>bool LFOMNLDGLGM = 6;</code>
        * @return The lFOMNLDGLGM.
        */
       @java.lang.Override
@@ -470,7 +478,7 @@ public final class HJFEGHPLBDIOuterClass {
         return lFOMNLDGLGM_;
       }
       /**
-       * <code>bool LFOMNLDGLGM = 3;</code>
+       * <code>bool LFOMNLDGLGM = 6;</code>
        * @param value The lFOMNLDGLGM to set.
        * @return This builder for chaining.
        */
@@ -481,7 +489,7 @@ public final class HJFEGHPLBDIOuterClass {
         return this;
       }
       /**
-       * <code>bool LFOMNLDGLGM = 3;</code>
+       * <code>bool LFOMNLDGLGM = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearLFOMNLDGLGM() {
@@ -493,7 +501,7 @@ public final class HJFEGHPLBDIOuterClass {
 
       private boolean eMGGNLEEBML_ ;
       /**
-       * <code>bool EMGGNLEEBML = 9;</code>
+       * <code>bool EMGGNLEEBML = 13;</code>
        * @return The eMGGNLEEBML.
        */
       @java.lang.Override
@@ -501,7 +509,7 @@ public final class HJFEGHPLBDIOuterClass {
         return eMGGNLEEBML_;
       }
       /**
-       * <code>bool EMGGNLEEBML = 9;</code>
+       * <code>bool EMGGNLEEBML = 13;</code>
        * @param value The eMGGNLEEBML to set.
        * @return This builder for chaining.
        */
@@ -512,7 +520,7 @@ public final class HJFEGHPLBDIOuterClass {
         return this;
       }
       /**
-       * <code>bool EMGGNLEEBML = 9;</code>
+       * <code>bool EMGGNLEEBML = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEMGGNLEEBML() {
@@ -589,9 +597,8 @@ public final class HJFEGHPLBDIOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HJFEGHPLBDI.proto\"7\n\013HJFEGHPLBDI\022\023\n\013LF" +
-      "OMNLDGLGM\030\003 \001(\010\022\023\n\013EMGGNLEEBML\030\t \001(\010B2\n\031" +
-      "emu.grasscutter.net.protoB\025HJFEGHPLBDIOu" +
-      "terClassb\006proto3"
+      "OMNLDGLGM\030\006 \001(\010\022\023\n\013EMGGNLEEBML\030\r \001(\010B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

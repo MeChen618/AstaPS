@@ -19,30 +19,34 @@ public final class PANGJIGDLJHOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 5;</code>
-     * @return The levelId.
+     * <code>uint32 best_score = 14;</code>
+     * @return The bestScore.
      */
-    int getLevelId();
+    int getBestScore();
 
     /**
-     * <code>bool is_open = 7;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>bool is_finish = 8;</code>
+     * <code>bool is_finish = 5;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>uint32 best_score = 9;</code>
-     * @return The bestScore.
+     * <code>bool is_open = 6;</code>
+     * @return The isOpen.
      */
-    int getBestScore();
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PANGJIGDLJH}
    */
   public static final class PANGJIGDLJH extends
@@ -87,22 +91,22 @@ public final class PANGJIGDLJHOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 24: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 56: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 64: {
+            case 40: {
 
               isFinish_ = input.readBool();
               break;
             }
-            case 72: {
+            case 48: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 112: {
 
               bestScore_ = input.readUInt32();
               break;
@@ -139,32 +143,21 @@ public final class PANGJIGDLJHOuterClass {
               emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH.class, emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_;
+    public static final int BEST_SCORE_FIELD_NUMBER = 14;
+    private int bestScore_;
     /**
-     * <code>uint32 level_id = 5;</code>
-     * @return The levelId.
+     * <code>uint32 best_score = 14;</code>
+     * @return The bestScore.
      */
     @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
+    public int getBestScore() {
+      return bestScore_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 7;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 8;
+    public static final int IS_FINISH_FIELD_NUMBER = 5;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 8;</code>
+     * <code>bool is_finish = 5;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -172,15 +165,26 @@ public final class PANGJIGDLJHOuterClass {
       return isFinish_;
     }
 
-    public static final int BEST_SCORE_FIELD_NUMBER = 9;
-    private int bestScore_;
+    public static final int IS_OPEN_FIELD_NUMBER = 6;
+    private boolean isOpen_;
     /**
-     * <code>uint32 best_score = 9;</code>
-     * @return The bestScore.
+     * <code>bool is_open = 6;</code>
+     * @return The isOpen.
      */
     @java.lang.Override
-    public int getBestScore() {
-      return bestScore_;
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 3;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 3;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -198,16 +202,16 @@ public final class PANGJIGDLJHOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
-      }
-      if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
+        output.writeUInt32(3, levelId_);
       }
       if (isFinish_ != false) {
-        output.writeBool(8, isFinish_);
+        output.writeBool(5, isFinish_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(6, isOpen_);
       }
       if (bestScore_ != 0) {
-        output.writeUInt32(9, bestScore_);
+        output.writeUInt32(14, bestScore_);
       }
       unknownFields.writeTo(output);
     }
@@ -220,19 +224,19 @@ public final class PANGJIGDLJHOuterClass {
       size = 0;
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
+          .computeUInt32Size(3, levelId_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isFinish_);
+          .computeBoolSize(5, isFinish_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, isOpen_);
       }
       if (bestScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, bestScore_);
+          .computeUInt32Size(14, bestScore_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,14 +253,14 @@ public final class PANGJIGDLJHOuterClass {
       }
       emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH other = (emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (getBestScore()
           != other.getBestScore()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,16 +272,16 @@ public final class PANGJIGDLJHOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
+      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getBestScore();
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
-      hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getBestScore();
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class PANGJIGDLJHOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PANGJIGDLJH}
      */
     public static final class Builder extends
@@ -411,13 +419,13 @@ public final class PANGJIGDLJHOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
-        isOpen_ = false;
+        bestScore_ = 0;
 
         isFinish_ = false;
 
-        bestScore_ = 0;
+        isOpen_ = false;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -445,10 +453,10 @@ public final class PANGJIGDLJHOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH buildPartial() {
         emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH result = new emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH(this);
-        result.levelId_ = levelId_;
-        result.isOpen_ = isOpen_;
-        result.isFinish_ = isFinish_;
         result.bestScore_ = bestScore_;
+        result.isFinish_ = isFinish_;
+        result.isOpen_ = isOpen_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -497,17 +505,17 @@ public final class PANGJIGDLJHOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH other) {
         if (other == emu.grasscutter.net.proto.PANGJIGDLJHOuterClass.PANGJIGDLJH.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getBestScore() != 0) {
+          setBestScore(other.getBestScore());
         }
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
         }
-        if (other.getBestScore() != 0) {
-          setBestScore(other.getBestScore());
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -538,102 +546,9 @@ public final class PANGJIGDLJHOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 5;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 5;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 7;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 7;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 8;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 8;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
       private int bestScore_ ;
       /**
-       * <code>uint32 best_score = 9;</code>
+       * <code>uint32 best_score = 14;</code>
        * @return The bestScore.
        */
       @java.lang.Override
@@ -641,7 +556,7 @@ public final class PANGJIGDLJHOuterClass {
         return bestScore_;
       }
       /**
-       * <code>uint32 best_score = 9;</code>
+       * <code>uint32 best_score = 14;</code>
        * @param value The bestScore to set.
        * @return This builder for chaining.
        */
@@ -652,12 +567,105 @@ public final class PANGJIGDLJHOuterClass {
         return this;
       }
       /**
-       * <code>uint32 best_score = 9;</code>
+       * <code>uint32 best_score = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
         
         bestScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 5;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 5;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 6;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 6;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class PANGJIGDLJHOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021PANGJIGDLJH.proto\"W\n\013PANGJIGDLJH\022\020\n\010le" +
-      "vel_id\030\005 \001(\r\022\017\n\007is_open\030\007 \001(\010\022\021\n\tis_fini" +
-      "sh\030\010 \001(\010\022\022\n\nbest_score\030\t \001(\rB2\n\031emu.gras" +
-      "scutter.net.protoB\025PANGJIGDLJHOuterClass" +
-      "b\006proto3"
+      "\n\021PANGJIGDLJH.proto\"W\n\013PANGJIGDLJH\022\022\n\nbe" +
+      "st_score\030\016 \001(\r\022\021\n\tis_finish\030\005 \001(\010\022\017\n\007is_" +
+      "open\030\006 \001(\010\022\020\n\010level_id\030\003 \001(\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class PANGJIGDLJHOuterClass {
     internal_static_PANGJIGDLJH_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PANGJIGDLJH_descriptor,
-        new java.lang.String[] { "LevelId", "IsOpen", "IsFinish", "BestScore", });
+        new java.lang.String[] { "BestScore", "IsFinish", "IsOpen", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

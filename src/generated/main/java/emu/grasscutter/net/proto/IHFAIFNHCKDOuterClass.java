@@ -19,30 +19,34 @@ public final class IHFAIFNHCKDOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_finish = 9;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
-
-    /**
-     * <code>uint32 score = 11;</code>
-     * @return The score.
-     */
-    int getScore();
-
-    /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     int getStageId();
+
+    /**
+     * <code>bool is_finish = 8;</code>
+     * @return The isFinish.
+     */
+    boolean getIsFinish();
 
     /**
      * <code>bool is_open = 13;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
+
+    /**
+     * <code>uint32 score = 4;</code>
+     * @return The score.
+     */
+    int getScore();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IHFAIFNHCKD}
    */
   public static final class IHFAIFNHCKD extends
@@ -87,19 +91,19 @@ public final class IHFAIFNHCKDOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 88: {
+            case 32: {
 
               score_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 48: {
 
               stageId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isFinish_ = input.readBool();
               break;
             }
             case 104: {
@@ -139,37 +143,26 @@ public final class IHFAIFNHCKDOuterClass {
               emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD.class, emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD.Builder.class);
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 9;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 9;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 11;
-    private int score_;
-    /**
-     * <code>uint32 score = 11;</code>
-     * @return The score.
-     */
-    @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int STAGE_ID_FIELD_NUMBER = 12;
+    public static final int STAGE_ID_FIELD_NUMBER = 6;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
      */
     @java.lang.Override
     public int getStageId() {
       return stageId_;
+    }
+
+    public static final int IS_FINISH_FIELD_NUMBER = 8;
+    private boolean isFinish_;
+    /**
+     * <code>bool is_finish = 8;</code>
+     * @return The isFinish.
+     */
+    @java.lang.Override
+    public boolean getIsFinish() {
+      return isFinish_;
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 13;
@@ -181,6 +174,17 @@ public final class IHFAIFNHCKDOuterClass {
     @java.lang.Override
     public boolean getIsOpen() {
       return isOpen_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 4;
+    private int score_;
+    /**
+     * <code>uint32 score = 4;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -197,14 +201,14 @@ public final class IHFAIFNHCKDOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinish_ != false) {
-        output.writeBool(9, isFinish_);
-      }
       if (score_ != 0) {
-        output.writeUInt32(11, score_);
+        output.writeUInt32(4, score_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(12, stageId_);
+        output.writeUInt32(6, stageId_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(8, isFinish_);
       }
       if (isOpen_ != false) {
         output.writeBool(13, isOpen_);
@@ -218,17 +222,17 @@ public final class IHFAIFNHCKDOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isFinish_);
-      }
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, score_);
+          .computeUInt32Size(4, score_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, stageId_);
+          .computeUInt32Size(6, stageId_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isFinish_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -249,14 +253,14 @@ public final class IHFAIFNHCKDOuterClass {
       }
       emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD other = (emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD) obj;
 
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
-      if (getScore()
-          != other.getScore()) return false;
       if (getStageId()
           != other.getStageId()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getScore()
+          != other.getScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,16 +272,16 @@ public final class IHFAIFNHCKDOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class IHFAIFNHCKDOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IHFAIFNHCKD}
      */
     public static final class Builder extends
@@ -411,13 +419,13 @@ public final class IHFAIFNHCKDOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isFinish_ = false;
-
-        score_ = 0;
-
         stageId_ = 0;
 
+        isFinish_ = false;
+
         isOpen_ = false;
+
+        score_ = 0;
 
         return this;
       }
@@ -445,10 +453,10 @@ public final class IHFAIFNHCKDOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD buildPartial() {
         emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD result = new emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD(this);
-        result.isFinish_ = isFinish_;
-        result.score_ = score_;
         result.stageId_ = stageId_;
+        result.isFinish_ = isFinish_;
         result.isOpen_ = isOpen_;
+        result.score_ = score_;
         onBuilt();
         return result;
       }
@@ -497,17 +505,17 @@ public final class IHFAIFNHCKDOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD other) {
         if (other == emu.grasscutter.net.proto.IHFAIFNHCKDOuterClass.IHFAIFNHCKD.getDefaultInstance()) return this;
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
-        if (other.getScore() != 0) {
-          setScore(other.getScore());
-        }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
+        }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
+        }
+        if (other.getScore() != 0) {
+          setScore(other.getScore());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -538,71 +546,9 @@ public final class IHFAIFNHCKDOuterClass {
         return this;
       }
 
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 9;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 9;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int score_ ;
-      /**
-       * <code>uint32 score = 11;</code>
-       * @return The score.
-       */
-      @java.lang.Override
-      public int getScore() {
-        return score_;
-      }
-      /**
-       * <code>uint32 score = 11;</code>
-       * @param value The score to set.
-       * @return This builder for chaining.
-       */
-      public Builder setScore(int value) {
-        
-        score_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 score = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearScore() {
-        
-        score_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -610,7 +556,7 @@ public final class IHFAIFNHCKDOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -621,12 +567,43 @@ public final class IHFAIFNHCKDOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
         
         stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
         onChanged();
         return this;
       }
@@ -658,6 +635,37 @@ public final class IHFAIFNHCKDOuterClass {
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int score_ ;
+      /**
+       * <code>uint32 score = 4;</code>
+       * @return The score.
+       */
+      @java.lang.Override
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>uint32 score = 4;</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(int value) {
+        
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 score = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        
+        score_ = 0;
         onChanged();
         return this;
       }
@@ -728,11 +736,10 @@ public final class IHFAIFNHCKDOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021IHFAIFNHCKD.proto\"R\n\013IHFAIFNHCKD\022\021\n\tis" +
-      "_finish\030\t \001(\010\022\r\n\005score\030\013 \001(\r\022\020\n\010stage_id" +
-      "\030\014 \001(\r\022\017\n\007is_open\030\r \001(\010B2\n\031emu.grasscutt" +
-      "er.net.protoB\025IHFAIFNHCKDOuterClassb\006pro" +
-      "to3"
+      "\n\021IHFAIFNHCKD.proto\"R\n\013IHFAIFNHCKD\022\020\n\010st" +
+      "age_id\030\006 \001(\r\022\021\n\tis_finish\030\010 \001(\010\022\017\n\007is_op" +
+      "en\030\r \001(\010\022\r\n\005score\030\004 \001(\rB\033\n\031emu.grasscutt" +
+      "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class IHFAIFNHCKDOuterClass {
     internal_static_IHFAIFNHCKD_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IHFAIFNHCKD_descriptor,
-        new java.lang.String[] { "IsFinish", "Score", "StageId", "IsOpen", });
+        new java.lang.String[] { "StageId", "IsFinish", "IsOpen", "Score", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

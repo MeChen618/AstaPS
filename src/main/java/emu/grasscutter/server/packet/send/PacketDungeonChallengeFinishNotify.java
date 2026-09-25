@@ -20,8 +20,8 @@ public class PacketDungeonChallengeFinishNotify extends BasePacket {
                         .setCurrentValue(Math.max(0, challenge.getScore().get()))
                         .setFinishType(
                                 success
-                                        ? ChallengeFinishType.CHALLENGE_FINISH_TYPE_SUCC
-                                        : ChallengeFinishType.CHALLENGE_FINISH_TYPE_FAIL)
+                                        ? ChallengeFinishType.ChallengeFinishType_SUCC
+                                        : ChallengeFinishType.ChallengeFinishType_FAIL)
                         .build();
 
         this.setData(proto);

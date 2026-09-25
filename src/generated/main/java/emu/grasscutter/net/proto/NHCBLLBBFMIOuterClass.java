@@ -19,45 +19,49 @@ public final class NHCBLLBBFMIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+     * @return Whether the bFLGEJHJKKC field is set.
+     */
+    boolean hasBFLGEJHJKKC();
+    /**
+     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+     * @return The bFLGEJHJKKC.
+     */
+    emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG getBFLGEJHJKKC();
+    /**
+     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+     */
+    emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder getBFLGEJHJKKCOrBuilder();
+
+    /**
+     * <code>bool is_finish = 8;</code>
+     * @return The isFinish.
+     */
+    boolean getIsFinish();
+
+    /**
+     * <code>bool is_open = 7;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
      * <code>uint32 level_id = 1;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>bool is_finish = 5;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
-
-    /**
-     * <code>bool is_open = 8;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>uint32 score = 11;</code>
+     * <code>uint32 score = 15;</code>
      * @return The score.
      */
     int getScore();
-
-    /**
-     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-     * @return Whether the bFLGEJHJKKC field is set.
-     */
-    boolean hasBFLGEJHJKKC();
-    /**
-     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-     * @return The bFLGEJHJKKC.
-     */
-    emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG getBFLGEJHJKKC();
-    /**
-     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-     */
-    emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder getBFLGEJHJKKCOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NHCBLLBBFMI}
    */
   public static final class NHCBLLBBFMI extends
@@ -107,22 +111,7 @@ public final class NHCBLLBBFMIOuterClass {
               levelId_ = input.readUInt32();
               break;
             }
-            case 40: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 122: {
+            case 18: {
               emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder subBuilder = null;
               if (bFLGEJHJKKC_ != null) {
                 subBuilder = bFLGEJHJKKC_.toBuilder();
@@ -133,6 +122,21 @@ public final class NHCBLLBBFMIOuterClass {
                 bFLGEJHJKKC_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 56: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 64: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              score_ = input.readUInt32();
               break;
             }
             default: {
@@ -167,6 +171,54 @@ public final class NHCBLLBBFMIOuterClass {
               emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI.class, emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI.Builder.class);
     }
 
+    public static final int BFLGEJHJKKC_FIELD_NUMBER = 2;
+    private emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG bFLGEJHJKKC_;
+    /**
+     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+     * @return Whether the bFLGEJHJKKC field is set.
+     */
+    @java.lang.Override
+    public boolean hasBFLGEJHJKKC() {
+      return bFLGEJHJKKC_ != null;
+    }
+    /**
+     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+     * @return The bFLGEJHJKKC.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG getBFLGEJHJKKC() {
+      return bFLGEJHJKKC_ == null ? emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.getDefaultInstance() : bFLGEJHJKKC_;
+    }
+    /**
+     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder getBFLGEJHJKKCOrBuilder() {
+      return getBFLGEJHJKKC();
+    }
+
+    public static final int IS_FINISH_FIELD_NUMBER = 8;
+    private boolean isFinish_;
+    /**
+     * <code>bool is_finish = 8;</code>
+     * @return The isFinish.
+     */
+    @java.lang.Override
+    public boolean getIsFinish() {
+      return isFinish_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 7;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
     public static final int LEVEL_ID_FIELD_NUMBER = 1;
     private int levelId_;
     /**
@@ -178,63 +230,15 @@ public final class NHCBLLBBFMIOuterClass {
       return levelId_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 5;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 5;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 8;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 8;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int SCORE_FIELD_NUMBER = 11;
+    public static final int SCORE_FIELD_NUMBER = 15;
     private int score_;
     /**
-     * <code>uint32 score = 11;</code>
+     * <code>uint32 score = 15;</code>
      * @return The score.
      */
     @java.lang.Override
     public int getScore() {
       return score_;
-    }
-
-    public static final int BFLGEJHJKKC_FIELD_NUMBER = 15;
-    private emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG bFLGEJHJKKC_;
-    /**
-     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-     * @return Whether the bFLGEJHJKKC field is set.
-     */
-    @java.lang.Override
-    public boolean hasBFLGEJHJKKC() {
-      return bFLGEJHJKKC_ != null;
-    }
-    /**
-     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-     * @return The bFLGEJHJKKC.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG getBFLGEJHJKKC() {
-      return bFLGEJHJKKC_ == null ? emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.getDefaultInstance() : bFLGEJHJKKC_;
-    }
-    /**
-     * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder getBFLGEJHJKKCOrBuilder() {
-      return getBFLGEJHJKKC();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -254,17 +258,17 @@ public final class NHCBLLBBFMIOuterClass {
       if (levelId_ != 0) {
         output.writeUInt32(1, levelId_);
       }
-      if (isFinish_ != false) {
-        output.writeBool(5, isFinish_);
+      if (bFLGEJHJKKC_ != null) {
+        output.writeMessage(2, getBFLGEJHJKKC());
       }
       if (isOpen_ != false) {
-        output.writeBool(8, isOpen_);
+        output.writeBool(7, isOpen_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(8, isFinish_);
       }
       if (score_ != 0) {
-        output.writeUInt32(11, score_);
-      }
-      if (bFLGEJHJKKC_ != null) {
-        output.writeMessage(15, getBFLGEJHJKKC());
+        output.writeUInt32(15, score_);
       }
       unknownFields.writeTo(output);
     }
@@ -279,21 +283,21 @@ public final class NHCBLLBBFMIOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, levelId_);
       }
-      if (isFinish_ != false) {
+      if (bFLGEJHJKKC_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isFinish_);
+          .computeMessageSize(2, getBFLGEJHJKKC());
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isOpen_);
+          .computeBoolSize(7, isOpen_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isFinish_);
       }
       if (score_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, score_);
-      }
-      if (bFLGEJHJKKC_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getBFLGEJHJKKC());
+          .computeUInt32Size(15, score_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -310,19 +314,19 @@ public final class NHCBLLBBFMIOuterClass {
       }
       emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI other = (emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (getScore()
-          != other.getScore()) return false;
       if (hasBFLGEJHJKKC() != other.hasBFLGEJHJKKC()) return false;
       if (hasBFLGEJHJKKC()) {
         if (!getBFLGEJHJKKC()
             .equals(other.getBFLGEJHJKKC())) return false;
       }
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
+      if (getScore()
+          != other.getScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -334,20 +338,20 @@ public final class NHCBLLBBFMIOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
+      if (hasBFLGEJHJKKC()) {
+        hash = (37 * hash) + BFLGEJHJKKC_FIELD_NUMBER;
+        hash = (53 * hash) + getBFLGEJHJKKC().hashCode();
+      }
       hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinish());
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getScore();
-      if (hasBFLGEJHJKKC()) {
-        hash = (37 * hash) + BFLGEJHJKKC_FIELD_NUMBER;
-        hash = (53 * hash) + getBFLGEJHJKKC().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -444,6 +448,10 @@ public final class NHCBLLBBFMIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NHCBLLBBFMI}
      */
     public static final class Builder extends
@@ -481,20 +489,20 @@ public final class NHCBLLBBFMIOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
-        isFinish_ = false;
-
-        isOpen_ = false;
-
-        score_ = 0;
-
         if (bFLGEJHJKKCBuilder_ == null) {
           bFLGEJHJKKC_ = null;
         } else {
           bFLGEJHJKKC_ = null;
           bFLGEJHJKKCBuilder_ = null;
         }
+        isFinish_ = false;
+
+        isOpen_ = false;
+
+        levelId_ = 0;
+
+        score_ = 0;
+
         return this;
       }
 
@@ -521,15 +529,15 @@ public final class NHCBLLBBFMIOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI buildPartial() {
         emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI result = new emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI(this);
-        result.levelId_ = levelId_;
-        result.isFinish_ = isFinish_;
-        result.isOpen_ = isOpen_;
-        result.score_ = score_;
         if (bFLGEJHJKKCBuilder_ == null) {
           result.bFLGEJHJKKC_ = bFLGEJHJKKC_;
         } else {
           result.bFLGEJHJKKC_ = bFLGEJHJKKCBuilder_.build();
         }
+        result.isFinish_ = isFinish_;
+        result.isOpen_ = isOpen_;
+        result.levelId_ = levelId_;
+        result.score_ = score_;
         onBuilt();
         return result;
       }
@@ -578,8 +586,8 @@ public final class NHCBLLBBFMIOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI other) {
         if (other == emu.grasscutter.net.proto.NHCBLLBBFMIOuterClass.NHCBLLBBFMI.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
+        if (other.hasBFLGEJHJKKC()) {
+          mergeBFLGEJHJKKC(other.getBFLGEJHJKKC());
         }
         if (other.getIsFinish() != false) {
           setIsFinish(other.getIsFinish());
@@ -587,11 +595,11 @@ public final class NHCBLLBBFMIOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
+        }
         if (other.getScore() != 0) {
           setScore(other.getScore());
-        }
-        if (other.hasBFLGEJHJKKC()) {
-          mergeBFLGEJHJKKC(other.getBFLGEJHJKKC());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -619,6 +627,187 @@ public final class NHCBLLBBFMIOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG bFLGEJHJKKC_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder> bFLGEJHJKKCBuilder_;
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       * @return Whether the bFLGEJHJKKC field is set.
+       */
+      public boolean hasBFLGEJHJKKC() {
+        return bFLGEJHJKKCBuilder_ != null || bFLGEJHJKKC_ != null;
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       * @return The bFLGEJHJKKC.
+       */
+      public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG getBFLGEJHJKKC() {
+        if (bFLGEJHJKKCBuilder_ == null) {
+          return bFLGEJHJKKC_ == null ? emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.getDefaultInstance() : bFLGEJHJKKC_;
+        } else {
+          return bFLGEJHJKKCBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      public Builder setBFLGEJHJKKC(emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG value) {
+        if (bFLGEJHJKKCBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bFLGEJHJKKC_ = value;
+          onChanged();
+        } else {
+          bFLGEJHJKKCBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      public Builder setBFLGEJHJKKC(
+          emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder builderForValue) {
+        if (bFLGEJHJKKCBuilder_ == null) {
+          bFLGEJHJKKC_ = builderForValue.build();
+          onChanged();
+        } else {
+          bFLGEJHJKKCBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      public Builder mergeBFLGEJHJKKC(emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG value) {
+        if (bFLGEJHJKKCBuilder_ == null) {
+          if (bFLGEJHJKKC_ != null) {
+            bFLGEJHJKKC_ =
+              emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.newBuilder(bFLGEJHJKKC_).mergeFrom(value).buildPartial();
+          } else {
+            bFLGEJHJKKC_ = value;
+          }
+          onChanged();
+        } else {
+          bFLGEJHJKKCBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      public Builder clearBFLGEJHJKKC() {
+        if (bFLGEJHJKKCBuilder_ == null) {
+          bFLGEJHJKKC_ = null;
+          onChanged();
+        } else {
+          bFLGEJHJKKC_ = null;
+          bFLGEJHJKKCBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder getBFLGEJHJKKCBuilder() {
+        
+        onChanged();
+        return getBFLGEJHJKKCFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder getBFLGEJHJKKCOrBuilder() {
+        if (bFLGEJHJKKCBuilder_ != null) {
+          return bFLGEJHJKKCBuilder_.getMessageOrBuilder();
+        } else {
+          return bFLGEJHJKKC_ == null ?
+              emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.getDefaultInstance() : bFLGEJHJKKC_;
+        }
+      }
+      /**
+       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder> 
+          getBFLGEJHJKKCFieldBuilder() {
+        if (bFLGEJHJKKCBuilder_ == null) {
+          bFLGEJHJKKCBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder>(
+                  getBFLGEJHJKKC(),
+                  getParentForChildren(),
+                  isClean());
+          bFLGEJHJKKC_ = null;
+        }
+        return bFLGEJHJKKCBuilder_;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 7;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 7;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
         return this;
       }
 
@@ -653,71 +842,9 @@ public final class NHCBLLBBFMIOuterClass {
         return this;
       }
 
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 5;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 5;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 8;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 8;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private int score_ ;
       /**
-       * <code>uint32 score = 11;</code>
+       * <code>uint32 score = 15;</code>
        * @return The score.
        */
       @java.lang.Override
@@ -725,7 +852,7 @@ public final class NHCBLLBBFMIOuterClass {
         return score_;
       }
       /**
-       * <code>uint32 score = 11;</code>
+       * <code>uint32 score = 15;</code>
        * @param value The score to set.
        * @return This builder for chaining.
        */
@@ -736,7 +863,7 @@ public final class NHCBLLBBFMIOuterClass {
         return this;
       }
       /**
-       * <code>uint32 score = 11;</code>
+       * <code>uint32 score = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearScore() {
@@ -744,125 +871,6 @@ public final class NHCBLLBBFMIOuterClass {
         score_ = 0;
         onChanged();
         return this;
-      }
-
-      private emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG bFLGEJHJKKC_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder> bFLGEJHJKKCBuilder_;
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       * @return Whether the bFLGEJHJKKC field is set.
-       */
-      public boolean hasBFLGEJHJKKC() {
-        return bFLGEJHJKKCBuilder_ != null || bFLGEJHJKKC_ != null;
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       * @return The bFLGEJHJKKC.
-       */
-      public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG getBFLGEJHJKKC() {
-        if (bFLGEJHJKKCBuilder_ == null) {
-          return bFLGEJHJKKC_ == null ? emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.getDefaultInstance() : bFLGEJHJKKC_;
-        } else {
-          return bFLGEJHJKKCBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      public Builder setBFLGEJHJKKC(emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG value) {
-        if (bFLGEJHJKKCBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bFLGEJHJKKC_ = value;
-          onChanged();
-        } else {
-          bFLGEJHJKKCBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      public Builder setBFLGEJHJKKC(
-          emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder builderForValue) {
-        if (bFLGEJHJKKCBuilder_ == null) {
-          bFLGEJHJKKC_ = builderForValue.build();
-          onChanged();
-        } else {
-          bFLGEJHJKKCBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      public Builder mergeBFLGEJHJKKC(emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG value) {
-        if (bFLGEJHJKKCBuilder_ == null) {
-          if (bFLGEJHJKKC_ != null) {
-            bFLGEJHJKKC_ =
-              emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.newBuilder(bFLGEJHJKKC_).mergeFrom(value).buildPartial();
-          } else {
-            bFLGEJHJKKC_ = value;
-          }
-          onChanged();
-        } else {
-          bFLGEJHJKKCBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      public Builder clearBFLGEJHJKKC() {
-        if (bFLGEJHJKKCBuilder_ == null) {
-          bFLGEJHJKKC_ = null;
-          onChanged();
-        } else {
-          bFLGEJHJKKC_ = null;
-          bFLGEJHJKKCBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder getBFLGEJHJKKCBuilder() {
-        
-        onChanged();
-        return getBFLGEJHJKKCFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      public emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder getBFLGEJHJKKCOrBuilder() {
-        if (bFLGEJHJKKCBuilder_ != null) {
-          return bFLGEJHJKKCBuilder_.getMessageOrBuilder();
-        } else {
-          return bFLGEJHJKKC_ == null ?
-              emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.getDefaultInstance() : bFLGEJHJKKC_;
-        }
-      }
-      /**
-       * <code>.DBKDCMPAGEG BFLGEJHJKKC = 15;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder> 
-          getBFLGEJHJKKCFieldBuilder() {
-        if (bFLGEJHJKKCBuilder_ == null) {
-          bFLGEJHJKKCBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEG.Builder, emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.DBKDCMPAGEGOrBuilder>(
-                  getBFLGEJHJKKC(),
-                  getParentForChildren(),
-                  isClean());
-          bFLGEJHJKKC_ = null;
-        }
-        return bFLGEJHJKKCBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -932,11 +940,10 @@ public final class NHCBLLBBFMIOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021NHCBLLBBFMI.proto\032\021DBKDCMPAGEG.proto\"u" +
-      "\n\013NHCBLLBBFMI\022\020\n\010level_id\030\001 \001(\r\022\021\n\tis_fi" +
-      "nish\030\005 \001(\010\022\017\n\007is_open\030\010 \001(\010\022\r\n\005score\030\013 \001" +
-      "(\r\022!\n\013BFLGEJHJKKC\030\017 \001(\0132\014.DBKDCMPAGEGB2\n" +
-      "\031emu.grasscutter.net.protoB\025NHCBLLBBFMIO" +
-      "uterClassb\006proto3"
+      "\n\013NHCBLLBBFMI\022!\n\013BFLGEJHJKKC\030\002 \001(\0132\014.DBK" +
+      "DCMPAGEG\022\021\n\tis_finish\030\010 \001(\010\022\017\n\007is_open\030\007" +
+      " \001(\010\022\020\n\010level_id\030\001 \001(\r\022\r\n\005score\030\017 \001(\rB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -948,7 +955,7 @@ public final class NHCBLLBBFMIOuterClass {
     internal_static_NHCBLLBBFMI_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NHCBLLBBFMI_descriptor,
-        new java.lang.String[] { "LevelId", "IsFinish", "IsOpen", "Score", "BFLGEJHJKKC", });
+        new java.lang.String[] { "BFLGEJHJKKC", "IsFinish", "IsOpen", "LevelId", "Score", });
     emu.grasscutter.net.proto.DBKDCMPAGEGOuterClass.getDescriptor();
   }
 

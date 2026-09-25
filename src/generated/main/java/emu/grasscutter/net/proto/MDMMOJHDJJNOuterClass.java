@@ -19,35 +19,39 @@ public final class MDMMOJHDJJNOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 _chess_level_up_id = 2;</code>
-     * @return The chessLevelUpId.
-     */
-    int getChessLevelUpId();
-
-    /**
-     * <code>repeated uint32 equip_id_list = 8;</code>
+     * <code>repeated uint32 equip_id_list = 4;</code>
      * @return A list containing the equipIdList.
      */
     java.util.List<java.lang.Integer> getEquipIdListList();
     /**
-     * <code>repeated uint32 equip_id_list = 8;</code>
+     * <code>repeated uint32 equip_id_list = 4;</code>
      * @return The count of equipIdList.
      */
     int getEquipIdListCount();
     /**
-     * <code>repeated uint32 equip_id_list = 8;</code>
+     * <code>repeated uint32 equip_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The equipIdList at the given index.
      */
     int getEquipIdList(int index);
 
     /**
-     * <code>uint32 _auto_chess_chess_id = 9;</code>
+     * <code>uint32 _chess_level_up_id = 3;</code>
+     * @return The chessLevelUpId.
+     */
+    int getChessLevelUpId();
+
+    /**
+     * <code>uint32 _auto_chess_chess_id = 14;</code>
      * @return The autoChessChessId.
      */
     int getAutoChessChessId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MDMMOJHDJJN}
    */
   public static final class MDMMOJHDJJN extends
@@ -94,12 +98,12 @@ public final class MDMMOJHDJJNOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               ChessLevelUpId_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 equipIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -107,7 +111,7 @@ public final class MDMMOJHDJJNOuterClass {
               equipIdList_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -120,7 +124,7 @@ public final class MDMMOJHDJJNOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 72: {
+            case 112: {
 
               AutoChessChessId_ = input.readUInt32();
               break;
@@ -160,21 +164,10 @@ public final class MDMMOJHDJJNOuterClass {
               emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.class, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder.class);
     }
 
-    public static final int _CHESS_LEVEL_UP_ID_FIELD_NUMBER = 2;
-    private int ChessLevelUpId_;
-    /**
-     * <code>uint32 _chess_level_up_id = 2;</code>
-     * @return The chessLevelUpId.
-     */
-    @java.lang.Override
-    public int getChessLevelUpId() {
-      return ChessLevelUpId_;
-    }
-
-    public static final int EQUIP_ID_LIST_FIELD_NUMBER = 8;
+    public static final int EQUIP_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList equipIdList_;
     /**
-     * <code>repeated uint32 equip_id_list = 8;</code>
+     * <code>repeated uint32 equip_id_list = 4;</code>
      * @return A list containing the equipIdList.
      */
     @java.lang.Override
@@ -183,14 +176,14 @@ public final class MDMMOJHDJJNOuterClass {
       return equipIdList_;
     }
     /**
-     * <code>repeated uint32 equip_id_list = 8;</code>
+     * <code>repeated uint32 equip_id_list = 4;</code>
      * @return The count of equipIdList.
      */
     public int getEquipIdListCount() {
       return equipIdList_.size();
     }
     /**
-     * <code>repeated uint32 equip_id_list = 8;</code>
+     * <code>repeated uint32 equip_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The equipIdList at the given index.
      */
@@ -199,10 +192,21 @@ public final class MDMMOJHDJJNOuterClass {
     }
     private int equipIdListMemoizedSerializedSize = -1;
 
-    public static final int _AUTO_CHESS_CHESS_ID_FIELD_NUMBER = 9;
+    public static final int _CHESS_LEVEL_UP_ID_FIELD_NUMBER = 3;
+    private int ChessLevelUpId_;
+    /**
+     * <code>uint32 _chess_level_up_id = 3;</code>
+     * @return The chessLevelUpId.
+     */
+    @java.lang.Override
+    public int getChessLevelUpId() {
+      return ChessLevelUpId_;
+    }
+
+    public static final int _AUTO_CHESS_CHESS_ID_FIELD_NUMBER = 14;
     private int AutoChessChessId_;
     /**
-     * <code>uint32 _auto_chess_chess_id = 9;</code>
+     * <code>uint32 _auto_chess_chess_id = 14;</code>
      * @return The autoChessChessId.
      */
     @java.lang.Override
@@ -226,17 +230,17 @@ public final class MDMMOJHDJJNOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (ChessLevelUpId_ != 0) {
-        output.writeUInt32(2, ChessLevelUpId_);
+        output.writeUInt32(3, ChessLevelUpId_);
       }
       if (getEquipIdListList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(equipIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < equipIdList_.size(); i++) {
         output.writeUInt32NoTag(equipIdList_.getInt(i));
       }
       if (AutoChessChessId_ != 0) {
-        output.writeUInt32(9, AutoChessChessId_);
+        output.writeUInt32(14, AutoChessChessId_);
       }
       unknownFields.writeTo(output);
     }
@@ -249,7 +253,7 @@ public final class MDMMOJHDJJNOuterClass {
       size = 0;
       if (ChessLevelUpId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, ChessLevelUpId_);
+          .computeUInt32Size(3, ChessLevelUpId_);
       }
       {
         int dataSize = 0;
@@ -267,7 +271,7 @@ public final class MDMMOJHDJJNOuterClass {
       }
       if (AutoChessChessId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, AutoChessChessId_);
+          .computeUInt32Size(14, AutoChessChessId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -284,10 +288,10 @@ public final class MDMMOJHDJJNOuterClass {
       }
       emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN other = (emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN) obj;
 
-      if (getChessLevelUpId()
-          != other.getChessLevelUpId()) return false;
       if (!getEquipIdListList()
           .equals(other.getEquipIdListList())) return false;
+      if (getChessLevelUpId()
+          != other.getChessLevelUpId()) return false;
       if (getAutoChessChessId()
           != other.getAutoChessChessId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -301,12 +305,12 @@ public final class MDMMOJHDJJNOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + _CHESS_LEVEL_UP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getChessLevelUpId();
       if (getEquipIdListCount() > 0) {
         hash = (37 * hash) + EQUIP_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEquipIdListList().hashCode();
       }
+      hash = (37 * hash) + _CHESS_LEVEL_UP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChessLevelUpId();
       hash = (37 * hash) + _AUTO_CHESS_CHESS_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAutoChessChessId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -405,6 +409,10 @@ public final class MDMMOJHDJJNOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MDMMOJHDJJN}
      */
     public static final class Builder extends
@@ -442,10 +450,10 @@ public final class MDMMOJHDJJNOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        ChessLevelUpId_ = 0;
-
         equipIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        ChessLevelUpId_ = 0;
+
         AutoChessChessId_ = 0;
 
         return this;
@@ -475,12 +483,12 @@ public final class MDMMOJHDJJNOuterClass {
       public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN buildPartial() {
         emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN result = new emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN(this);
         int from_bitField0_ = bitField0_;
-        result.ChessLevelUpId_ = ChessLevelUpId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           equipIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.equipIdList_ = equipIdList_;
+        result.ChessLevelUpId_ = ChessLevelUpId_;
         result.AutoChessChessId_ = AutoChessChessId_;
         onBuilt();
         return result;
@@ -530,9 +538,6 @@ public final class MDMMOJHDJJNOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN other) {
         if (other == emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.getDefaultInstance()) return this;
-        if (other.getChessLevelUpId() != 0) {
-          setChessLevelUpId(other.getChessLevelUpId());
-        }
         if (!other.equipIdList_.isEmpty()) {
           if (equipIdList_.isEmpty()) {
             equipIdList_ = other.equipIdList_;
@@ -542,6 +547,9 @@ public final class MDMMOJHDJJNOuterClass {
             equipIdList_.addAll(other.equipIdList_);
           }
           onChanged();
+        }
+        if (other.getChessLevelUpId() != 0) {
+          setChessLevelUpId(other.getChessLevelUpId());
         }
         if (other.getAutoChessChessId() != 0) {
           setAutoChessChessId(other.getAutoChessChessId());
@@ -576,37 +584,6 @@ public final class MDMMOJHDJJNOuterClass {
       }
       private int bitField0_;
 
-      private int ChessLevelUpId_ ;
-      /**
-       * <code>uint32 _chess_level_up_id = 2;</code>
-       * @return The chessLevelUpId.
-       */
-      @java.lang.Override
-      public int getChessLevelUpId() {
-        return ChessLevelUpId_;
-      }
-      /**
-       * <code>uint32 _chess_level_up_id = 2;</code>
-       * @param value The chessLevelUpId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChessLevelUpId(int value) {
-        
-        ChessLevelUpId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 _chess_level_up_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChessLevelUpId() {
-        
-        ChessLevelUpId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList equipIdList_ = emptyIntList();
       private void ensureEquipIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -615,7 +592,7 @@ public final class MDMMOJHDJJNOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @return A list containing the equipIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -624,14 +601,14 @@ public final class MDMMOJHDJJNOuterClass {
                  java.util.Collections.unmodifiableList(equipIdList_) : equipIdList_;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @return The count of equipIdList.
        */
       public int getEquipIdListCount() {
         return equipIdList_.size();
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @param index The index of the element to return.
        * @return The equipIdList at the given index.
        */
@@ -639,7 +616,7 @@ public final class MDMMOJHDJJNOuterClass {
         return equipIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The equipIdList to set.
        * @return This builder for chaining.
@@ -652,7 +629,7 @@ public final class MDMMOJHDJJNOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @param value The equipIdList to add.
        * @return This builder for chaining.
        */
@@ -663,7 +640,7 @@ public final class MDMMOJHDJJNOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @param values The equipIdList to add.
        * @return This builder for chaining.
        */
@@ -676,7 +653,7 @@ public final class MDMMOJHDJJNOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 equip_id_list = 8;</code>
+       * <code>repeated uint32 equip_id_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearEquipIdList() {
@@ -686,9 +663,40 @@ public final class MDMMOJHDJJNOuterClass {
         return this;
       }
 
+      private int ChessLevelUpId_ ;
+      /**
+       * <code>uint32 _chess_level_up_id = 3;</code>
+       * @return The chessLevelUpId.
+       */
+      @java.lang.Override
+      public int getChessLevelUpId() {
+        return ChessLevelUpId_;
+      }
+      /**
+       * <code>uint32 _chess_level_up_id = 3;</code>
+       * @param value The chessLevelUpId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChessLevelUpId(int value) {
+        
+        ChessLevelUpId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 _chess_level_up_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChessLevelUpId() {
+        
+        ChessLevelUpId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int AutoChessChessId_ ;
       /**
-       * <code>uint32 _auto_chess_chess_id = 9;</code>
+       * <code>uint32 _auto_chess_chess_id = 14;</code>
        * @return The autoChessChessId.
        */
       @java.lang.Override
@@ -696,7 +704,7 @@ public final class MDMMOJHDJJNOuterClass {
         return AutoChessChessId_;
       }
       /**
-       * <code>uint32 _auto_chess_chess_id = 9;</code>
+       * <code>uint32 _auto_chess_chess_id = 14;</code>
        * @param value The autoChessChessId to set.
        * @return This builder for chaining.
        */
@@ -707,7 +715,7 @@ public final class MDMMOJHDJJNOuterClass {
         return this;
       }
       /**
-       * <code>uint32 _auto_chess_chess_id = 9;</code>
+       * <code>uint32 _auto_chess_chess_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAutoChessChessId() {
@@ -783,11 +791,10 @@ public final class MDMMOJHDJJNOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MDMMOJHDJJN.proto\"^\n\013MDMMOJHDJJN\022\032\n\022_c" +
-      "hess_level_up_id\030\002 \001(\r\022\025\n\requip_id_list\030" +
-      "\010 \003(\r\022\034\n\024_auto_chess_chess_id\030\t \001(\rB2\n\031e" +
-      "mu.grasscutter.net.protoB\025MDMMOJHDJJNOut" +
-      "erClassb\006proto3"
+      "\n\021MDMMOJHDJJN.proto\"^\n\013MDMMOJHDJJN\022\025\n\req" +
+      "uip_id_list\030\004 \003(\r\022\032\n\022_chess_level_up_id\030" +
+      "\003 \001(\r\022\034\n\024_auto_chess_chess_id\030\016 \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -798,7 +805,7 @@ public final class MDMMOJHDJJNOuterClass {
     internal_static_MDMMOJHDJJN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MDMMOJHDJJN_descriptor,
-        new java.lang.String[] { "ChessLevelUpId", "EquipIdList", "AutoChessChessId", });
+        new java.lang.String[] { "EquipIdList", "ChessLevelUpId", "AutoChessChessId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

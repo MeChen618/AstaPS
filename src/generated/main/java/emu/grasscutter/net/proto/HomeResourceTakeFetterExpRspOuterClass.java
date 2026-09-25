@@ -720,16 +720,16 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"HomeResourceTakeFetterExpRsp.proto\032\022Ho" +
-      "meResource.proto\"R\n\034HomeResourceTakeFett" +
-      "erExpRsp\022!\n\nfetter_exp\030\002 \001(\0132\r.HomeResou" +
-      "rce\022\017\n\007retcode\030\016 \001(\005BC\n\031emu.grasscutter." +
-      "net.protoB&HomeResourceTakeFetterExpRspO" +
-      "uterClassb\006proto3"
+      "meResource.proto\032\rRetcode.proto\"R\n\034HomeR" +
+      "esourceTakeFetterExpRsp\022!\n\nfetter_exp\030\002 " +
+      "\001(\0132\r.HomeResource\022\017\n\007retcode\030\016 \001(\005B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.HomeResourceOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_HomeResourceTakeFetterExpRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -738,6 +738,7 @@ public final class HomeResourceTakeFetterExpRspOuterClass {
         internal_static_HomeResourceTakeFetterExpRsp_descriptor,
         new java.lang.String[] { "FetterExp", "Retcode", });
     emu.grasscutter.net.proto.HomeResourceOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

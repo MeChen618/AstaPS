@@ -19,10 +19,10 @@ public final class GEGHKDDPOHCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 start_time = 1;</code>
-     * @return The startTime.
+     * <code>int32 cur_value = 4;</code>
+     * @return The curValue.
      */
-    int getStartTime();
+    int getCurValue();
 
     /**
      * <code>int32 end_time = 2;</code>
@@ -37,12 +37,16 @@ public final class GEGHKDDPOHCOuterClass {
     int getChallengeId();
 
     /**
-     * <code>int32 cur_value = 4;</code>
-     * @return The curValue.
+     * <code>int32 start_time = 1;</code>
+     * @return The startTime.
      */
-    int getCurValue();
+    int getStartTime();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GEGHKDDPOHC}
    */
   public static final class GEGHKDDPOHC extends
@@ -139,15 +143,15 @@ public final class GEGHKDDPOHCOuterClass {
               emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC.class, emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC.Builder.class);
     }
 
-    public static final int START_TIME_FIELD_NUMBER = 1;
-    private int startTime_;
+    public static final int CUR_VALUE_FIELD_NUMBER = 4;
+    private int curValue_;
     /**
-     * <code>int32 start_time = 1;</code>
-     * @return The startTime.
+     * <code>int32 cur_value = 4;</code>
+     * @return The curValue.
      */
     @java.lang.Override
-    public int getStartTime() {
-      return startTime_;
+    public int getCurValue() {
+      return curValue_;
     }
 
     public static final int END_TIME_FIELD_NUMBER = 2;
@@ -172,15 +176,15 @@ public final class GEGHKDDPOHCOuterClass {
       return challengeId_;
     }
 
-    public static final int CUR_VALUE_FIELD_NUMBER = 4;
-    private int curValue_;
+    public static final int START_TIME_FIELD_NUMBER = 1;
+    private int startTime_;
     /**
-     * <code>int32 cur_value = 4;</code>
-     * @return The curValue.
+     * <code>int32 start_time = 1;</code>
+     * @return The startTime.
      */
     @java.lang.Override
-    public int getCurValue() {
-      return curValue_;
+    public int getStartTime() {
+      return startTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -249,14 +253,14 @@ public final class GEGHKDDPOHCOuterClass {
       }
       emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC other = (emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC) obj;
 
-      if (getStartTime()
-          != other.getStartTime()) return false;
+      if (getCurValue()
+          != other.getCurValue()) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
       if (getChallengeId()
           != other.getChallengeId()) return false;
-      if (getCurValue()
-          != other.getCurValue()) return false;
+      if (getStartTime()
+          != other.getStartTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -268,14 +272,14 @@ public final class GEGHKDDPOHCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getStartTime();
+      hash = (37 * hash) + CUR_VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurValue();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
       hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeId();
-      hash = (37 * hash) + CUR_VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getCurValue();
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,6 +376,10 @@ public final class GEGHKDDPOHCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GEGHKDDPOHC}
      */
     public static final class Builder extends
@@ -409,13 +417,13 @@ public final class GEGHKDDPOHCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        startTime_ = 0;
+        curValue_ = 0;
 
         endTime_ = 0;
 
         challengeId_ = 0;
 
-        curValue_ = 0;
+        startTime_ = 0;
 
         return this;
       }
@@ -443,10 +451,10 @@ public final class GEGHKDDPOHCOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC buildPartial() {
         emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC result = new emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC(this);
-        result.startTime_ = startTime_;
+        result.curValue_ = curValue_;
         result.endTime_ = endTime_;
         result.challengeId_ = challengeId_;
-        result.curValue_ = curValue_;
+        result.startTime_ = startTime_;
         onBuilt();
         return result;
       }
@@ -495,8 +503,8 @@ public final class GEGHKDDPOHCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC other) {
         if (other == emu.grasscutter.net.proto.GEGHKDDPOHCOuterClass.GEGHKDDPOHC.getDefaultInstance()) return this;
-        if (other.getStartTime() != 0) {
-          setStartTime(other.getStartTime());
+        if (other.getCurValue() != 0) {
+          setCurValue(other.getCurValue());
         }
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
@@ -504,8 +512,8 @@ public final class GEGHKDDPOHCOuterClass {
         if (other.getChallengeId() != 0) {
           setChallengeId(other.getChallengeId());
         }
-        if (other.getCurValue() != 0) {
-          setCurValue(other.getCurValue());
+        if (other.getStartTime() != 0) {
+          setStartTime(other.getStartTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -536,33 +544,33 @@ public final class GEGHKDDPOHCOuterClass {
         return this;
       }
 
-      private int startTime_ ;
+      private int curValue_ ;
       /**
-       * <code>int32 start_time = 1;</code>
-       * @return The startTime.
+       * <code>int32 cur_value = 4;</code>
+       * @return The curValue.
        */
       @java.lang.Override
-      public int getStartTime() {
-        return startTime_;
+      public int getCurValue() {
+        return curValue_;
       }
       /**
-       * <code>int32 start_time = 1;</code>
-       * @param value The startTime to set.
+       * <code>int32 cur_value = 4;</code>
+       * @param value The curValue to set.
        * @return This builder for chaining.
        */
-      public Builder setStartTime(int value) {
+      public Builder setCurValue(int value) {
         
-        startTime_ = value;
+        curValue_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 start_time = 1;</code>
+       * <code>int32 cur_value = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearStartTime() {
+      public Builder clearCurValue() {
         
-        startTime_ = 0;
+        curValue_ = 0;
         onChanged();
         return this;
       }
@@ -629,33 +637,33 @@ public final class GEGHKDDPOHCOuterClass {
         return this;
       }
 
-      private int curValue_ ;
+      private int startTime_ ;
       /**
-       * <code>int32 cur_value = 4;</code>
-       * @return The curValue.
+       * <code>int32 start_time = 1;</code>
+       * @return The startTime.
        */
       @java.lang.Override
-      public int getCurValue() {
-        return curValue_;
+      public int getStartTime() {
+        return startTime_;
       }
       /**
-       * <code>int32 cur_value = 4;</code>
-       * @param value The curValue to set.
+       * <code>int32 start_time = 1;</code>
+       * @param value The startTime to set.
        * @return This builder for chaining.
        */
-      public Builder setCurValue(int value) {
+      public Builder setStartTime(int value) {
         
-        curValue_ = value;
+        startTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 cur_value = 4;</code>
+       * <code>int32 start_time = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearCurValue() {
+      public Builder clearStartTime() {
         
-        curValue_ = 0;
+        startTime_ = 0;
         onChanged();
         return this;
       }
@@ -726,11 +734,10 @@ public final class GEGHKDDPOHCOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021GEGHKDDPOHC.proto\"\\\n\013GEGHKDDPOHC\022\022\n\nst" +
-      "art_time\030\001 \001(\005\022\020\n\010end_time\030\002 \001(\005\022\024\n\014chal" +
-      "lenge_id\030\003 \001(\r\022\021\n\tcur_value\030\004 \001(\005B2\n\031emu" +
-      ".grasscutter.net.protoB\025GEGHKDDPOHCOuter" +
-      "Classb\006proto3"
+      "\n\021GEGHKDDPOHC.proto\"\\\n\013GEGHKDDPOHC\022\021\n\tcu" +
+      "r_value\030\004 \001(\005\022\020\n\010end_time\030\002 \001(\005\022\024\n\014chall" +
+      "enge_id\030\003 \001(\r\022\022\n\nstart_time\030\001 \001(\005B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -741,7 +748,7 @@ public final class GEGHKDDPOHCOuterClass {
     internal_static_GEGHKDDPOHC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GEGHKDDPOHC_descriptor,
-        new java.lang.String[] { "StartTime", "EndTime", "ChallengeId", "CurValue", });
+        new java.lang.String[] { "CurValue", "EndTime", "ChallengeId", "StartTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

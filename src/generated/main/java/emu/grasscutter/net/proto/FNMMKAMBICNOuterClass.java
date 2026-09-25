@@ -19,54 +19,58 @@ public final class FNMMKAMBICNOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL> 
-        getLCFBHOGGFHBList();
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL getLCFBHOGGFHB(int index);
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    int getLCFBHOGGFHBCount();
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder> 
-        getLCFBHOGGFHBOrBuilderList();
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder getLCFBHOGGFHBOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 slot_id = 2;</code>
-     * @return The slotId.
-     */
-    int getSlotId();
-
-    /**
-     * <code>string name = 9;</code>
+     * <code>string name = 4;</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 9;</code>
+     * <code>string name = 4;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>uint32 audit_state = 13;</code>
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry> 
+        getCardListList();
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry getCardList(int index);
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    int getCardListCount();
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder> 
+        getCardListOrBuilderList();
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder getCardListOrBuilder(
+        int index);
+
+    /**
+     * <code>uint32 audit_state = 2;</code>
      * @return The auditState.
      */
     int getAuditState();
+
+    /**
+     * <code>uint32 slot_id = 6;</code>
+     * @return The slotId.
+     */
+    int getSlotId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FNMMKAMBICN}
    */
   public static final class FNMMKAMBICN extends
@@ -79,8 +83,8 @@ public final class FNMMKAMBICNOuterClass {
       super(builder);
     }
     private FNMMKAMBICN() {
-      lCFBHOGGFHB_ = java.util.Collections.emptyList();
       name_ = "";
+      cardList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -114,29 +118,29 @@ public final class FNMMKAMBICNOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                lCFBHOGGFHB_ = new java.util.ArrayList<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              lCFBHOGGFHB_.add(
-                  input.readMessage(emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.parser(), extensionRegistry));
-              break;
-            }
             case 16: {
 
-              slotId_ = input.readUInt32();
+              auditState_ = input.readUInt32();
               break;
             }
-            case 74: {
+            case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 104: {
+            case 48: {
 
-              auditState_ = input.readUInt32();
+              slotId_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cardList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -155,7 +159,7 @@ public final class FNMMKAMBICNOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          lCFBHOGGFHB_ = java.util.Collections.unmodifiableList(lCFBHOGGFHB_);
+          cardList_ = java.util.Collections.unmodifiableList(cardList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -174,61 +178,10 @@ public final class FNMMKAMBICNOuterClass {
               emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.class, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder.class);
     }
 
-    public static final int LCFBHOGGFHB_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL> lCFBHOGGFHB_;
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL> getLCFBHOGGFHBList() {
-      return lCFBHOGGFHB_;
-    }
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder> 
-        getLCFBHOGGFHBOrBuilderList() {
-      return lCFBHOGGFHB_;
-    }
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    @java.lang.Override
-    public int getLCFBHOGGFHBCount() {
-      return lCFBHOGGFHB_.size();
-    }
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL getLCFBHOGGFHB(int index) {
-      return lCFBHOGGFHB_.get(index);
-    }
-    /**
-     * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder getLCFBHOGGFHBOrBuilder(
-        int index) {
-      return lCFBHOGGFHB_.get(index);
-    }
-
-    public static final int SLOT_ID_FIELD_NUMBER = 2;
-    private int slotId_;
-    /**
-     * <code>uint32 slot_id = 2;</code>
-     * @return The slotId.
-     */
-    @java.lang.Override
-    public int getSlotId() {
-      return slotId_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 9;
+    public static final int NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 9;</code>
+     * <code>string name = 4;</code>
      * @return The name.
      */
     @java.lang.Override
@@ -245,7 +198,7 @@ public final class FNMMKAMBICNOuterClass {
       }
     }
     /**
-     * <code>string name = 9;</code>
+     * <code>string name = 4;</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -263,15 +216,66 @@ public final class FNMMKAMBICNOuterClass {
       }
     }
 
-    public static final int AUDIT_STATE_FIELD_NUMBER = 13;
+    public static final int CARD_LIST_FIELD_NUMBER = 11;
+    private java.util.List<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry> cardList_;
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry> getCardListList() {
+      return cardList_;
+    }
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder> 
+        getCardListOrBuilderList() {
+      return cardList_;
+    }
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    @java.lang.Override
+    public int getCardListCount() {
+      return cardList_.size();
+    }
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry getCardList(int index) {
+      return cardList_.get(index);
+    }
+    /**
+     * <code>repeated .LanV5CardEntry card_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder getCardListOrBuilder(
+        int index) {
+      return cardList_.get(index);
+    }
+
+    public static final int AUDIT_STATE_FIELD_NUMBER = 2;
     private int auditState_;
     /**
-     * <code>uint32 audit_state = 13;</code>
+     * <code>uint32 audit_state = 2;</code>
      * @return The auditState.
      */
     @java.lang.Override
     public int getAuditState() {
       return auditState_;
+    }
+
+    public static final int SLOT_ID_FIELD_NUMBER = 6;
+    private int slotId_;
+    /**
+     * <code>uint32 slot_id = 6;</code>
+     * @return The slotId.
+     */
+    @java.lang.Override
+    public int getSlotId() {
+      return slotId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -288,17 +292,17 @@ public final class FNMMKAMBICNOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < lCFBHOGGFHB_.size(); i++) {
-        output.writeMessage(1, lCFBHOGGFHB_.get(i));
-      }
-      if (slotId_ != 0) {
-        output.writeUInt32(2, slotId_);
+      if (auditState_ != 0) {
+        output.writeUInt32(2, auditState_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
       }
-      if (auditState_ != 0) {
-        output.writeUInt32(13, auditState_);
+      if (slotId_ != 0) {
+        output.writeUInt32(6, slotId_);
+      }
+      for (int i = 0; i < cardList_.size(); i++) {
+        output.writeMessage(11, cardList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -309,20 +313,20 @@ public final class FNMMKAMBICNOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < lCFBHOGGFHB_.size(); i++) {
+      if (auditState_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, lCFBHOGGFHB_.get(i));
+          .computeUInt32Size(2, auditState_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
       }
       if (slotId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, slotId_);
+          .computeUInt32Size(6, slotId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, name_);
-      }
-      if (auditState_ != 0) {
+      for (int i = 0; i < cardList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, auditState_);
+          .computeMessageSize(11, cardList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -339,14 +343,14 @@ public final class FNMMKAMBICNOuterClass {
       }
       emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN other = (emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN) obj;
 
-      if (!getLCFBHOGGFHBList()
-          .equals(other.getLCFBHOGGFHBList())) return false;
-      if (getSlotId()
-          != other.getSlotId()) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getCardListList()
+          .equals(other.getCardListList())) return false;
       if (getAuditState()
           != other.getAuditState()) return false;
+      if (getSlotId()
+          != other.getSlotId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -358,16 +362,16 @@ public final class FNMMKAMBICNOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getLCFBHOGGFHBCount() > 0) {
-        hash = (37 * hash) + LCFBHOGGFHB_FIELD_NUMBER;
-        hash = (53 * hash) + getLCFBHOGGFHBList().hashCode();
-      }
-      hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSlotId();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      if (getCardListCount() > 0) {
+        hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCardListList().hashCode();
+      }
       hash = (37 * hash) + AUDIT_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getAuditState();
+      hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSlotId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -464,6 +468,10 @@ public final class FNMMKAMBICNOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FNMMKAMBICN}
      */
     public static final class Builder extends
@@ -496,23 +504,23 @@ public final class FNMMKAMBICNOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getLCFBHOGGFHBFieldBuilder();
+          getCardListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (lCFBHOGGFHBBuilder_ == null) {
-          lCFBHOGGFHB_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          lCFBHOGGFHBBuilder_.clear();
-        }
-        slotId_ = 0;
-
         name_ = "";
 
+        if (cardListBuilder_ == null) {
+          cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          cardListBuilder_.clear();
+        }
         auditState_ = 0;
+
+        slotId_ = 0;
 
         return this;
       }
@@ -541,18 +549,18 @@ public final class FNMMKAMBICNOuterClass {
       public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN buildPartial() {
         emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN result = new emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN(this);
         int from_bitField0_ = bitField0_;
-        if (lCFBHOGGFHBBuilder_ == null) {
+        result.name_ = name_;
+        if (cardListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            lCFBHOGGFHB_ = java.util.Collections.unmodifiableList(lCFBHOGGFHB_);
+            cardList_ = java.util.Collections.unmodifiableList(cardList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.lCFBHOGGFHB_ = lCFBHOGGFHB_;
+          result.cardList_ = cardList_;
         } else {
-          result.lCFBHOGGFHB_ = lCFBHOGGFHBBuilder_.build();
+          result.cardList_ = cardListBuilder_.build();
         }
-        result.slotId_ = slotId_;
-        result.name_ = name_;
         result.auditState_ = auditState_;
+        result.slotId_ = slotId_;
         onBuilt();
         return result;
       }
@@ -601,41 +609,41 @@ public final class FNMMKAMBICNOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN other) {
         if (other == emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.getDefaultInstance()) return this;
-        if (lCFBHOGGFHBBuilder_ == null) {
-          if (!other.lCFBHOGGFHB_.isEmpty()) {
-            if (lCFBHOGGFHB_.isEmpty()) {
-              lCFBHOGGFHB_ = other.lCFBHOGGFHB_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureLCFBHOGGFHBIsMutable();
-              lCFBHOGGFHB_.addAll(other.lCFBHOGGFHB_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.lCFBHOGGFHB_.isEmpty()) {
-            if (lCFBHOGGFHBBuilder_.isEmpty()) {
-              lCFBHOGGFHBBuilder_.dispose();
-              lCFBHOGGFHBBuilder_ = null;
-              lCFBHOGGFHB_ = other.lCFBHOGGFHB_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              lCFBHOGGFHBBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getLCFBHOGGFHBFieldBuilder() : null;
-            } else {
-              lCFBHOGGFHBBuilder_.addAllMessages(other.lCFBHOGGFHB_);
-            }
-          }
-        }
-        if (other.getSlotId() != 0) {
-          setSlotId(other.getSlotId());
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
         }
+        if (cardListBuilder_ == null) {
+          if (!other.cardList_.isEmpty()) {
+            if (cardList_.isEmpty()) {
+              cardList_ = other.cardList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCardListIsMutable();
+              cardList_.addAll(other.cardList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cardList_.isEmpty()) {
+            if (cardListBuilder_.isEmpty()) {
+              cardListBuilder_.dispose();
+              cardListBuilder_ = null;
+              cardList_ = other.cardList_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              cardListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCardListFieldBuilder() : null;
+            } else {
+              cardListBuilder_.addAllMessages(other.cardList_);
+            }
+          }
+        }
         if (other.getAuditState() != 0) {
           setAuditState(other.getAuditState());
+        }
+        if (other.getSlotId() != 0) {
+          setSlotId(other.getSlotId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -667,280 +675,9 @@ public final class FNMMKAMBICNOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL> lCFBHOGGFHB_ =
-        java.util.Collections.emptyList();
-      private void ensureLCFBHOGGFHBIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          lCFBHOGGFHB_ = new java.util.ArrayList<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL>(lCFBHOGGFHB_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder> lCFBHOGGFHBBuilder_;
-
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL> getLCFBHOGGFHBList() {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(lCFBHOGGFHB_);
-        } else {
-          return lCFBHOGGFHBBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public int getLCFBHOGGFHBCount() {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          return lCFBHOGGFHB_.size();
-        } else {
-          return lCFBHOGGFHBBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL getLCFBHOGGFHB(int index) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          return lCFBHOGGFHB_.get(index);
-        } else {
-          return lCFBHOGGFHBBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder setLCFBHOGGFHB(
-          int index, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL value) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.set(index, value);
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder setLCFBHOGGFHB(
-          int index, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder builderForValue) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder addLCFBHOGGFHB(emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL value) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.add(value);
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder addLCFBHOGGFHB(
-          int index, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL value) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.add(index, value);
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder addLCFBHOGGFHB(
-          emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder builderForValue) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.add(builderForValue.build());
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder addLCFBHOGGFHB(
-          int index, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder builderForValue) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder addAllLCFBHOGGFHB(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL> values) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          ensureLCFBHOGGFHBIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, lCFBHOGGFHB_);
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder clearLCFBHOGGFHB() {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          lCFBHOGGFHB_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public Builder removeLCFBHOGGFHB(int index) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          ensureLCFBHOGGFHBIsMutable();
-          lCFBHOGGFHB_.remove(index);
-          onChanged();
-        } else {
-          lCFBHOGGFHBBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder getLCFBHOGGFHBBuilder(
-          int index) {
-        return getLCFBHOGGFHBFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder getLCFBHOGGFHBOrBuilder(
-          int index) {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          return lCFBHOGGFHB_.get(index);  } else {
-          return lCFBHOGGFHBBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder> 
-           getLCFBHOGGFHBOrBuilderList() {
-        if (lCFBHOGGFHBBuilder_ != null) {
-          return lCFBHOGGFHBBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(lCFBHOGGFHB_);
-        }
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder addLCFBHOGGFHBBuilder() {
-        return getLCFBHOGGFHBFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder addLCFBHOGGFHBBuilder(
-          int index) {
-        return getLCFBHOGGFHBFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .IOIOBABMMLL LCFBHOGGFHB = 1;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder> 
-           getLCFBHOGGFHBBuilderList() {
-        return getLCFBHOGGFHBFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder> 
-          getLCFBHOGGFHBFieldBuilder() {
-        if (lCFBHOGGFHBBuilder_ == null) {
-          lCFBHOGGFHBBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLL.Builder, emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.IOIOBABMMLLOrBuilder>(
-                  lCFBHOGGFHB_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          lCFBHOGGFHB_ = null;
-        }
-        return lCFBHOGGFHBBuilder_;
-      }
-
-      private int slotId_ ;
-      /**
-       * <code>uint32 slot_id = 2;</code>
-       * @return The slotId.
-       */
-      @java.lang.Override
-      public int getSlotId() {
-        return slotId_;
-      }
-      /**
-       * <code>uint32 slot_id = 2;</code>
-       * @param value The slotId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlotId(int value) {
-        
-        slotId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 slot_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSlotId() {
-        
-        slotId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 9;</code>
+       * <code>string name = 4;</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -956,7 +693,7 @@ public final class FNMMKAMBICNOuterClass {
         }
       }
       /**
-       * <code>string name = 9;</code>
+       * <code>string name = 4;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -973,7 +710,7 @@ public final class FNMMKAMBICNOuterClass {
         }
       }
       /**
-       * <code>string name = 9;</code>
+       * <code>string name = 4;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -988,7 +725,7 @@ public final class FNMMKAMBICNOuterClass {
         return this;
       }
       /**
-       * <code>string name = 9;</code>
+       * <code>string name = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -998,7 +735,7 @@ public final class FNMMKAMBICNOuterClass {
         return this;
       }
       /**
-       * <code>string name = 9;</code>
+       * <code>string name = 4;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -1014,9 +751,249 @@ public final class FNMMKAMBICNOuterClass {
         return this;
       }
 
+      private java.util.List<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry> cardList_ =
+        java.util.Collections.emptyList();
+      private void ensureCardListIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          cardList_ = new java.util.ArrayList<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry>(cardList_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder> cardListBuilder_;
+
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry> getCardListList() {
+        if (cardListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cardList_);
+        } else {
+          return cardListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public int getCardListCount() {
+        if (cardListBuilder_ == null) {
+          return cardList_.size();
+        } else {
+          return cardListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry getCardList(int index) {
+        if (cardListBuilder_ == null) {
+          return cardList_.get(index);
+        } else {
+          return cardListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder setCardList(
+          int index, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry value) {
+        if (cardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardListIsMutable();
+          cardList_.set(index, value);
+          onChanged();
+        } else {
+          cardListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder setCardList(
+          int index, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder builderForValue) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder addCardList(emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry value) {
+        if (cardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardListIsMutable();
+          cardList_.add(value);
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder addCardList(
+          int index, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry value) {
+        if (cardListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardListIsMutable();
+          cardList_.add(index, value);
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder addCardList(
+          emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder builderForValue) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder addCardList(
+          int index, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder builderForValue) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder addAllCardList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry> values) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, cardList_);
+          onChanged();
+        } else {
+          cardListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder clearCardList() {
+        if (cardListBuilder_ == null) {
+          cardList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          cardListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public Builder removeCardList(int index) {
+        if (cardListBuilder_ == null) {
+          ensureCardListIsMutable();
+          cardList_.remove(index);
+          onChanged();
+        } else {
+          cardListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder getCardListBuilder(
+          int index) {
+        return getCardListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder getCardListOrBuilder(
+          int index) {
+        if (cardListBuilder_ == null) {
+          return cardList_.get(index);  } else {
+          return cardListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder> 
+           getCardListOrBuilderList() {
+        if (cardListBuilder_ != null) {
+          return cardListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cardList_);
+        }
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder addCardListBuilder() {
+        return getCardListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder addCardListBuilder(
+          int index) {
+        return getCardListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .LanV5CardEntry card_list = 11;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder> 
+           getCardListBuilderList() {
+        return getCardListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder> 
+          getCardListFieldBuilder() {
+        if (cardListBuilder_ == null) {
+          cardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntry.Builder, emu.grasscutter.net.proto.LanV5CardEntryOuterClass.LanV5CardEntryOrBuilder>(
+                  cardList_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          cardList_ = null;
+        }
+        return cardListBuilder_;
+      }
+
       private int auditState_ ;
       /**
-       * <code>uint32 audit_state = 13;</code>
+       * <code>uint32 audit_state = 2;</code>
        * @return The auditState.
        */
       @java.lang.Override
@@ -1024,7 +1001,7 @@ public final class FNMMKAMBICNOuterClass {
         return auditState_;
       }
       /**
-       * <code>uint32 audit_state = 13;</code>
+       * <code>uint32 audit_state = 2;</code>
        * @param value The auditState to set.
        * @return This builder for chaining.
        */
@@ -1035,12 +1012,43 @@ public final class FNMMKAMBICNOuterClass {
         return this;
       }
       /**
-       * <code>uint32 audit_state = 13;</code>
+       * <code>uint32 audit_state = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAuditState() {
         
         auditState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int slotId_ ;
+      /**
+       * <code>uint32 slot_id = 6;</code>
+       * @return The slotId.
+       */
+      @java.lang.Override
+      public int getSlotId() {
+        return slotId_;
+      }
+      /**
+       * <code>uint32 slot_id = 6;</code>
+       * @param value The slotId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlotId(int value) {
+        
+        slotId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 slot_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSlotId() {
+        
+        slotId_ = 0;
         onChanged();
         return this;
       }
@@ -1111,24 +1119,24 @@ public final class FNMMKAMBICNOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021FNMMKAMBICN.proto\032\021IOIOBABMMLL.proto\"d" +
-      "\n\013FNMMKAMBICN\022!\n\013LCFBHOGGFHB\030\001 \003(\0132\014.IOI" +
-      "OBABMMLL\022\017\n\007slot_id\030\002 \001(\r\022\014\n\004name\030\t \001(\t\022" +
-      "\023\n\013audit_state\030\r \001(\rB2\n\031emu.grasscutter." +
-      "net.protoB\025FNMMKAMBICNOuterClassb\006proto3"
+      "\n\021FNMMKAMBICN.proto\032\024LanV5CardEntry.prot" +
+      "o\"e\n\013FNMMKAMBICN\022\014\n\004name\030\004 \001(\t\022\"\n\tcard_l" +
+      "ist\030\013 \003(\0132\017.LanV5CardEntry\022\023\n\013audit_stat" +
+      "e\030\002 \001(\r\022\017\n\007slot_id\030\006 \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.LanV5CardEntryOuterClass.getDescriptor(),
         });
     internal_static_FNMMKAMBICN_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_FNMMKAMBICN_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FNMMKAMBICN_descriptor,
-        new java.lang.String[] { "LCFBHOGGFHB", "SlotId", "Name", "AuditState", });
-    emu.grasscutter.net.proto.IOIOBABMMLLOuterClass.getDescriptor();
+        new java.lang.String[] { "Name", "CardList", "AuditState", "SlotId", });
+    emu.grasscutter.net.proto.LanV5CardEntryOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

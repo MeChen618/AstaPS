@@ -19,18 +19,22 @@ public final class FeatureBlockInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 feature_type = 1;</code>
-     * @return The featureType.
-     */
-    int getFeatureType();
-
-    /**
      * <code>uint32 end_time = 2;</code>
      * @return The endTime.
      */
     int getEndTime();
+
+    /**
+     * <code>uint32 feature_type = 1;</code>
+     * @return The featureType.
+     */
+    int getFeatureType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FeatureBlockInfo}
    */
   public static final class FeatureBlockInfo extends
@@ -117,17 +121,6 @@ public final class FeatureBlockInfoOuterClass {
               emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo.class, emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo.Builder.class);
     }
 
-    public static final int FEATURE_TYPE_FIELD_NUMBER = 1;
-    private int featureType_;
-    /**
-     * <code>uint32 feature_type = 1;</code>
-     * @return The featureType.
-     */
-    @java.lang.Override
-    public int getFeatureType() {
-      return featureType_;
-    }
-
     public static final int END_TIME_FIELD_NUMBER = 2;
     private int endTime_;
     /**
@@ -137,6 +130,17 @@ public final class FeatureBlockInfoOuterClass {
     @java.lang.Override
     public int getEndTime() {
       return endTime_;
+    }
+
+    public static final int FEATURE_TYPE_FIELD_NUMBER = 1;
+    private int featureType_;
+    /**
+     * <code>uint32 feature_type = 1;</code>
+     * @return The featureType.
+     */
+    @java.lang.Override
+    public int getFeatureType() {
+      return featureType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class FeatureBlockInfoOuterClass {
       }
       emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo other = (emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo) obj;
 
-      if (getFeatureType()
-          != other.getFeatureType()) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
+      if (getFeatureType()
+          != other.getFeatureType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class FeatureBlockInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FEATURE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getFeatureType();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
+      hash = (37 * hash) + FEATURE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getFeatureType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class FeatureBlockInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FeatureBlockInfo}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class FeatureBlockInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        featureType_ = 0;
-
         endTime_ = 0;
+
+        featureType_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class FeatureBlockInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo buildPartial() {
         emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo result = new emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo(this);
-        result.featureType_ = featureType_;
         result.endTime_ = endTime_;
+        result.featureType_ = featureType_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class FeatureBlockInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo other) {
         if (other == emu.grasscutter.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo.getDefaultInstance()) return this;
-        if (other.getFeatureType() != 0) {
-          setFeatureType(other.getFeatureType());
-        }
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
+        }
+        if (other.getFeatureType() != 0) {
+          setFeatureType(other.getFeatureType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +466,6 @@ public final class FeatureBlockInfoOuterClass {
         return this;
       }
 
-      private int featureType_ ;
-      /**
-       * <code>uint32 feature_type = 1;</code>
-       * @return The featureType.
-       */
-      @java.lang.Override
-      public int getFeatureType() {
-        return featureType_;
-      }
-      /**
-       * <code>uint32 feature_type = 1;</code>
-       * @param value The featureType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFeatureType(int value) {
-        
-        featureType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 feature_type = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFeatureType() {
-        
-        featureType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int endTime_ ;
       /**
        * <code>uint32 end_time = 2;</code>
@@ -516,6 +493,37 @@ public final class FeatureBlockInfoOuterClass {
       public Builder clearEndTime() {
         
         endTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int featureType_ ;
+      /**
+       * <code>uint32 feature_type = 1;</code>
+       * @return The featureType.
+       */
+      @java.lang.Override
+      public int getFeatureType() {
+        return featureType_;
+      }
+      /**
+       * <code>uint32 feature_type = 1;</code>
+       * @param value The featureType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFeatureType(int value) {
+        
+        featureType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 feature_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFeatureType() {
+        
+        featureType_ = 0;
         onChanged();
         return this;
       }
@@ -587,9 +595,9 @@ public final class FeatureBlockInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026FeatureBlockInfo.proto\":\n\020FeatureBlock" +
-      "Info\022\024\n\014feature_type\030\001 \001(\r\022\020\n\010end_time\030\002" +
-      " \001(\rB7\n\031emu.grasscutter.net.protoB\032Featu" +
-      "reBlockInfoOuterClassb\006proto3"
+      "Info\022\020\n\010end_time\030\002 \001(\r\022\024\n\014feature_type\030\001" +
+      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +608,7 @@ public final class FeatureBlockInfoOuterClass {
     internal_static_FeatureBlockInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FeatureBlockInfo_descriptor,
-        new java.lang.String[] { "FeatureType", "EndTime", });
+        new java.lang.String[] { "EndTime", "FeatureType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

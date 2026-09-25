@@ -19,15 +19,14 @@ public final class HomeChangeModuleReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 target_module_id = 11;</code>
+     * <code>uint32 target_module_id = 14;</code>
      * @return The targetModuleId.
      */
     int getTargetModuleId();
   }
   /**
    * <pre>
-   * CmdId: 1750
-   * Obf: FKPCMCOEEAD
+   * CmdId: 9972
    * </pre>
    *
    * Protobuf type {@code HomeChangeModuleReq}
@@ -114,7 +113,7 @@ public final class HomeChangeModuleReqOuterClass {
     public static final int TARGET_MODULE_ID_FIELD_NUMBER = 14;
     private int targetModuleId_;
     /**
-     * <code>uint32 target_module_id = 11;</code>
+     * <code>uint32 target_module_id = 14;</code>
      * @return The targetModuleId.
      */
     @java.lang.Override
@@ -279,8 +278,7 @@ public final class HomeChangeModuleReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 1750
-     * Obf: FKPCMCOEEAD
+     * CmdId: 9972
      * </pre>
      *
      * Protobuf type {@code HomeChangeModuleReq}
@@ -431,7 +429,7 @@ public final class HomeChangeModuleReqOuterClass {
 
       private int targetModuleId_ ;
       /**
-       * <code>uint32 target_module_id = 11;</code>
+       * <code>uint32 target_module_id = 14;</code>
        * @return The targetModuleId.
        */
       @java.lang.Override
@@ -439,7 +437,7 @@ public final class HomeChangeModuleReqOuterClass {
         return targetModuleId_;
       }
       /**
-       * <code>uint32 target_module_id = 11;</code>
+       * <code>uint32 target_module_id = 14;</code>
        * @param value The targetModuleId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +448,7 @@ public final class HomeChangeModuleReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 target_module_id = 11;</code>
+       * <code>uint32 target_module_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTargetModuleId() {
@@ -527,7 +525,7 @@ public final class HomeChangeModuleReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031HomeChangeModuleReq.proto\"/\n\023HomeChang" +
-      "eModuleReq\022\030\n\020target_module_id\030\013 \001(\rB\033\n\031" +
+      "eModuleReq\022\030\n\020target_module_id\030\016 \001(\rB\033\n\031" +
       "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

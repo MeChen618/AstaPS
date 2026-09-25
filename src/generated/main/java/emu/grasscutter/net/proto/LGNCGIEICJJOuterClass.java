@@ -19,24 +19,28 @@ public final class LGNCGIEICJJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DNIBBKLBBJE = 1;</code>
-     * @return The dNIBBKLBBJE.
-     */
-    int getDNIBBKLBBJE();
-
-    /**
-     * <code>uint32 PPDNPDCLNPI = 6;</code>
+     * <code>uint32 PPDNPDCLNPI = 7;</code>
      * @return The pPDNPDCLNPI.
      */
     int getPPDNPDCLNPI();
 
     /**
-     * <code>uint32 LEPDJFGGDLO = 8;</code>
+     * <code>uint32 LEPDJFGGDLO = 14;</code>
      * @return The lEPDJFGGDLO.
      */
     int getLEPDJFGGDLO();
+
+    /**
+     * <code>uint32 DNIBBKLBBJE = 6;</code>
+     * @return The dNIBBKLBBJE.
+     */
+    int getDNIBBKLBBJE();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code LGNCGIEICJJ}
    */
   public static final class LGNCGIEICJJ extends
@@ -81,17 +85,17 @@ public final class LGNCGIEICJJOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 48: {
 
               dNIBBKLBBJE_ = input.readUInt32();
               break;
             }
-            case 48: {
+            case 56: {
 
               pPDNPDCLNPI_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 112: {
 
               lEPDJFGGDLO_ = input.readUInt32();
               break;
@@ -128,21 +132,10 @@ public final class LGNCGIEICJJOuterClass {
               emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ.class, emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ.Builder.class);
     }
 
-    public static final int DNIBBKLBBJE_FIELD_NUMBER = 1;
-    private int dNIBBKLBBJE_;
-    /**
-     * <code>uint32 DNIBBKLBBJE = 1;</code>
-     * @return The dNIBBKLBBJE.
-     */
-    @java.lang.Override
-    public int getDNIBBKLBBJE() {
-      return dNIBBKLBBJE_;
-    }
-
-    public static final int PPDNPDCLNPI_FIELD_NUMBER = 6;
+    public static final int PPDNPDCLNPI_FIELD_NUMBER = 7;
     private int pPDNPDCLNPI_;
     /**
-     * <code>uint32 PPDNPDCLNPI = 6;</code>
+     * <code>uint32 PPDNPDCLNPI = 7;</code>
      * @return The pPDNPDCLNPI.
      */
     @java.lang.Override
@@ -150,15 +143,26 @@ public final class LGNCGIEICJJOuterClass {
       return pPDNPDCLNPI_;
     }
 
-    public static final int LEPDJFGGDLO_FIELD_NUMBER = 8;
+    public static final int LEPDJFGGDLO_FIELD_NUMBER = 14;
     private int lEPDJFGGDLO_;
     /**
-     * <code>uint32 LEPDJFGGDLO = 8;</code>
+     * <code>uint32 LEPDJFGGDLO = 14;</code>
      * @return The lEPDJFGGDLO.
      */
     @java.lang.Override
     public int getLEPDJFGGDLO() {
       return lEPDJFGGDLO_;
+    }
+
+    public static final int DNIBBKLBBJE_FIELD_NUMBER = 6;
+    private int dNIBBKLBBJE_;
+    /**
+     * <code>uint32 DNIBBKLBBJE = 6;</code>
+     * @return The dNIBBKLBBJE.
+     */
+    @java.lang.Override
+    public int getDNIBBKLBBJE() {
+      return dNIBBKLBBJE_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,13 +180,13 @@ public final class LGNCGIEICJJOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (dNIBBKLBBJE_ != 0) {
-        output.writeUInt32(1, dNIBBKLBBJE_);
+        output.writeUInt32(6, dNIBBKLBBJE_);
       }
       if (pPDNPDCLNPI_ != 0) {
-        output.writeUInt32(6, pPDNPDCLNPI_);
+        output.writeUInt32(7, pPDNPDCLNPI_);
       }
       if (lEPDJFGGDLO_ != 0) {
-        output.writeUInt32(8, lEPDJFGGDLO_);
+        output.writeUInt32(14, lEPDJFGGDLO_);
       }
       unknownFields.writeTo(output);
     }
@@ -195,15 +199,15 @@ public final class LGNCGIEICJJOuterClass {
       size = 0;
       if (dNIBBKLBBJE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, dNIBBKLBBJE_);
+          .computeUInt32Size(6, dNIBBKLBBJE_);
       }
       if (pPDNPDCLNPI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, pPDNPDCLNPI_);
+          .computeUInt32Size(7, pPDNPDCLNPI_);
       }
       if (lEPDJFGGDLO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lEPDJFGGDLO_);
+          .computeUInt32Size(14, lEPDJFGGDLO_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,12 +224,12 @@ public final class LGNCGIEICJJOuterClass {
       }
       emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ other = (emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ) obj;
 
-      if (getDNIBBKLBBJE()
-          != other.getDNIBBKLBBJE()) return false;
       if (getPPDNPDCLNPI()
           != other.getPPDNPDCLNPI()) return false;
       if (getLEPDJFGGDLO()
           != other.getLEPDJFGGDLO()) return false;
+      if (getDNIBBKLBBJE()
+          != other.getDNIBBKLBBJE()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,12 +241,12 @@ public final class LGNCGIEICJJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DNIBBKLBBJE_FIELD_NUMBER;
-      hash = (53 * hash) + getDNIBBKLBBJE();
       hash = (37 * hash) + PPDNPDCLNPI_FIELD_NUMBER;
       hash = (53 * hash) + getPPDNPDCLNPI();
       hash = (37 * hash) + LEPDJFGGDLO_FIELD_NUMBER;
       hash = (53 * hash) + getLEPDJFGGDLO();
+      hash = (37 * hash) + DNIBBKLBBJE_FIELD_NUMBER;
+      hash = (53 * hash) + getDNIBBKLBBJE();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -339,6 +343,10 @@ public final class LGNCGIEICJJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code LGNCGIEICJJ}
      */
     public static final class Builder extends
@@ -376,11 +384,11 @@ public final class LGNCGIEICJJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dNIBBKLBBJE_ = 0;
-
         pPDNPDCLNPI_ = 0;
 
         lEPDJFGGDLO_ = 0;
+
+        dNIBBKLBBJE_ = 0;
 
         return this;
       }
@@ -408,9 +416,9 @@ public final class LGNCGIEICJJOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ buildPartial() {
         emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ result = new emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ(this);
-        result.dNIBBKLBBJE_ = dNIBBKLBBJE_;
         result.pPDNPDCLNPI_ = pPDNPDCLNPI_;
         result.lEPDJFGGDLO_ = lEPDJFGGDLO_;
+        result.dNIBBKLBBJE_ = dNIBBKLBBJE_;
         onBuilt();
         return result;
       }
@@ -459,14 +467,14 @@ public final class LGNCGIEICJJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ other) {
         if (other == emu.grasscutter.net.proto.LGNCGIEICJJOuterClass.LGNCGIEICJJ.getDefaultInstance()) return this;
-        if (other.getDNIBBKLBBJE() != 0) {
-          setDNIBBKLBBJE(other.getDNIBBKLBBJE());
-        }
         if (other.getPPDNPDCLNPI() != 0) {
           setPPDNPDCLNPI(other.getPPDNPDCLNPI());
         }
         if (other.getLEPDJFGGDLO() != 0) {
           setLEPDJFGGDLO(other.getLEPDJFGGDLO());
+        }
+        if (other.getDNIBBKLBBJE() != 0) {
+          setDNIBBKLBBJE(other.getDNIBBKLBBJE());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -497,40 +505,9 @@ public final class LGNCGIEICJJOuterClass {
         return this;
       }
 
-      private int dNIBBKLBBJE_ ;
-      /**
-       * <code>uint32 DNIBBKLBBJE = 1;</code>
-       * @return The dNIBBKLBBJE.
-       */
-      @java.lang.Override
-      public int getDNIBBKLBBJE() {
-        return dNIBBKLBBJE_;
-      }
-      /**
-       * <code>uint32 DNIBBKLBBJE = 1;</code>
-       * @param value The dNIBBKLBBJE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDNIBBKLBBJE(int value) {
-        
-        dNIBBKLBBJE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DNIBBKLBBJE = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDNIBBKLBBJE() {
-        
-        dNIBBKLBBJE_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pPDNPDCLNPI_ ;
       /**
-       * <code>uint32 PPDNPDCLNPI = 6;</code>
+       * <code>uint32 PPDNPDCLNPI = 7;</code>
        * @return The pPDNPDCLNPI.
        */
       @java.lang.Override
@@ -538,7 +515,7 @@ public final class LGNCGIEICJJOuterClass {
         return pPDNPDCLNPI_;
       }
       /**
-       * <code>uint32 PPDNPDCLNPI = 6;</code>
+       * <code>uint32 PPDNPDCLNPI = 7;</code>
        * @param value The pPDNPDCLNPI to set.
        * @return This builder for chaining.
        */
@@ -549,7 +526,7 @@ public final class LGNCGIEICJJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 PPDNPDCLNPI = 6;</code>
+       * <code>uint32 PPDNPDCLNPI = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearPPDNPDCLNPI() {
@@ -561,7 +538,7 @@ public final class LGNCGIEICJJOuterClass {
 
       private int lEPDJFGGDLO_ ;
       /**
-       * <code>uint32 LEPDJFGGDLO = 8;</code>
+       * <code>uint32 LEPDJFGGDLO = 14;</code>
        * @return The lEPDJFGGDLO.
        */
       @java.lang.Override
@@ -569,7 +546,7 @@ public final class LGNCGIEICJJOuterClass {
         return lEPDJFGGDLO_;
       }
       /**
-       * <code>uint32 LEPDJFGGDLO = 8;</code>
+       * <code>uint32 LEPDJFGGDLO = 14;</code>
        * @param value The lEPDJFGGDLO to set.
        * @return This builder for chaining.
        */
@@ -580,12 +557,43 @@ public final class LGNCGIEICJJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 LEPDJFGGDLO = 8;</code>
+       * <code>uint32 LEPDJFGGDLO = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearLEPDJFGGDLO() {
         
         lEPDJFGGDLO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int dNIBBKLBBJE_ ;
+      /**
+       * <code>uint32 DNIBBKLBBJE = 6;</code>
+       * @return The dNIBBKLBBJE.
+       */
+      @java.lang.Override
+      public int getDNIBBKLBBJE() {
+        return dNIBBKLBBJE_;
+      }
+      /**
+       * <code>uint32 DNIBBKLBBJE = 6;</code>
+       * @param value The dNIBBKLBBJE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDNIBBKLBBJE(int value) {
+        
+        dNIBBKLBBJE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 DNIBBKLBBJE = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDNIBBKLBBJE() {
+        
+        dNIBBKLBBJE_ = 0;
         onChanged();
         return this;
       }
@@ -656,10 +664,10 @@ public final class LGNCGIEICJJOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021LGNCGIEICJJ.proto\"L\n\013LGNCGIEICJJ\022\023\n\013DN" +
-      "IBBKLBBJE\030\001 \001(\r\022\023\n\013PPDNPDCLNPI\030\006 \001(\r\022\023\n\013" +
-      "LEPDJFGGDLO\030\010 \001(\rB2\n\031emu.grasscutter.net" +
-      ".protoB\025LGNCGIEICJJOuterClassb\006proto3"
+      "\n\021LGNCGIEICJJ.proto\"L\n\013LGNCGIEICJJ\022\023\n\013PP" +
+      "DNPDCLNPI\030\007 \001(\r\022\023\n\013LEPDJFGGDLO\030\016 \001(\r\022\023\n\013" +
+      "DNIBBKLBBJE\030\006 \001(\rB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -670,7 +678,7 @@ public final class LGNCGIEICJJOuterClass {
     internal_static_LGNCGIEICJJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LGNCGIEICJJ_descriptor,
-        new java.lang.String[] { "DNIBBKLBBJE", "PPDNPDCLNPI", "LEPDJFGGDLO", });
+        new java.lang.String[] { "PPDNPDCLNPI", "LEPDJFGGDLO", "DNIBBKLBBJE", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

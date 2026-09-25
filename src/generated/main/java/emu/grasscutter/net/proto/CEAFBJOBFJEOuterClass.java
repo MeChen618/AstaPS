@@ -19,6 +19,12 @@ public final class CEAFBJOBFJEOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 EMBJNKGJLFN = 2;</code>
+     * @return The eMBJNKGJLFN.
+     */
+    int getEMBJNKGJLFN();
+
+    /**
      * <code>.DEGDFAOEICK KKFBGJGDAJI = 1;</code>
      * @return The enum numeric value on the wire for kKFBGJGDAJI.
      */
@@ -28,14 +34,12 @@ public final class CEAFBJOBFJEOuterClass {
      * @return The kKFBGJGDAJI.
      */
     emu.grasscutter.net.proto.DEGDFAOEICKOuterClass.DEGDFAOEICK getKKFBGJGDAJI();
-
-    /**
-     * <code>uint32 EMBJNKGJLFN = 2;</code>
-     * @return The eMBJNKGJLFN.
-     */
-    int getEMBJNKGJLFN();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code CEAFBJOBFJE}
    */
   public static final class CEAFBJOBFJE extends
@@ -124,6 +128,17 @@ public final class CEAFBJOBFJEOuterClass {
               emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE.class, emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE.Builder.class);
     }
 
+    public static final int EMBJNKGJLFN_FIELD_NUMBER = 2;
+    private int eMBJNKGJLFN_;
+    /**
+     * <code>uint32 EMBJNKGJLFN = 2;</code>
+     * @return The eMBJNKGJLFN.
+     */
+    @java.lang.Override
+    public int getEMBJNKGJLFN() {
+      return eMBJNKGJLFN_;
+    }
+
     public static final int KKFBGJGDAJI_FIELD_NUMBER = 1;
     private int kKFBGJGDAJI_;
     /**
@@ -141,17 +156,6 @@ public final class CEAFBJOBFJEOuterClass {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.DEGDFAOEICKOuterClass.DEGDFAOEICK result = emu.grasscutter.net.proto.DEGDFAOEICKOuterClass.DEGDFAOEICK.valueOf(kKFBGJGDAJI_);
       return result == null ? emu.grasscutter.net.proto.DEGDFAOEICKOuterClass.DEGDFAOEICK.UNRECOGNIZED : result;
-    }
-
-    public static final int EMBJNKGJLFN_FIELD_NUMBER = 2;
-    private int eMBJNKGJLFN_;
-    /**
-     * <code>uint32 EMBJNKGJLFN = 2;</code>
-     * @return The eMBJNKGJLFN.
-     */
-    @java.lang.Override
-    public int getEMBJNKGJLFN() {
-      return eMBJNKGJLFN_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -206,9 +210,9 @@ public final class CEAFBJOBFJEOuterClass {
       }
       emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE other = (emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE) obj;
 
-      if (kKFBGJGDAJI_ != other.kKFBGJGDAJI_) return false;
       if (getEMBJNKGJLFN()
           != other.getEMBJNKGJLFN()) return false;
+      if (kKFBGJGDAJI_ != other.kKFBGJGDAJI_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -220,10 +224,10 @@ public final class CEAFBJOBFJEOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KKFBGJGDAJI_FIELD_NUMBER;
-      hash = (53 * hash) + kKFBGJGDAJI_;
       hash = (37 * hash) + EMBJNKGJLFN_FIELD_NUMBER;
       hash = (53 * hash) + getEMBJNKGJLFN();
+      hash = (37 * hash) + KKFBGJGDAJI_FIELD_NUMBER;
+      hash = (53 * hash) + kKFBGJGDAJI_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -320,6 +324,10 @@ public final class CEAFBJOBFJEOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code CEAFBJOBFJE}
      */
     public static final class Builder extends
@@ -357,9 +365,9 @@ public final class CEAFBJOBFJEOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        kKFBGJGDAJI_ = 0;
-
         eMBJNKGJLFN_ = 0;
+
+        kKFBGJGDAJI_ = 0;
 
         return this;
       }
@@ -387,8 +395,8 @@ public final class CEAFBJOBFJEOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE buildPartial() {
         emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE result = new emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE(this);
-        result.kKFBGJGDAJI_ = kKFBGJGDAJI_;
         result.eMBJNKGJLFN_ = eMBJNKGJLFN_;
+        result.kKFBGJGDAJI_ = kKFBGJGDAJI_;
         onBuilt();
         return result;
       }
@@ -437,11 +445,11 @@ public final class CEAFBJOBFJEOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE other) {
         if (other == emu.grasscutter.net.proto.CEAFBJOBFJEOuterClass.CEAFBJOBFJE.getDefaultInstance()) return this;
-        if (other.kKFBGJGDAJI_ != 0) {
-          setKKFBGJGDAJIValue(other.getKKFBGJGDAJIValue());
-        }
         if (other.getEMBJNKGJLFN() != 0) {
           setEMBJNKGJLFN(other.getEMBJNKGJLFN());
+        }
+        if (other.kKFBGJGDAJI_ != 0) {
+          setKKFBGJGDAJIValue(other.getKKFBGJGDAJIValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -469,6 +477,37 @@ public final class CEAFBJOBFJEOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int eMBJNKGJLFN_ ;
+      /**
+       * <code>uint32 EMBJNKGJLFN = 2;</code>
+       * @return The eMBJNKGJLFN.
+       */
+      @java.lang.Override
+      public int getEMBJNKGJLFN() {
+        return eMBJNKGJLFN_;
+      }
+      /**
+       * <code>uint32 EMBJNKGJLFN = 2;</code>
+       * @param value The eMBJNKGJLFN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEMBJNKGJLFN(int value) {
+        
+        eMBJNKGJLFN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 EMBJNKGJLFN = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEMBJNKGJLFN() {
+        
+        eMBJNKGJLFN_ = 0;
+        onChanged();
         return this;
       }
 
@@ -522,37 +561,6 @@ public final class CEAFBJOBFJEOuterClass {
       public Builder clearKKFBGJGDAJI() {
         
         kKFBGJGDAJI_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int eMBJNKGJLFN_ ;
-      /**
-       * <code>uint32 EMBJNKGJLFN = 2;</code>
-       * @return The eMBJNKGJLFN.
-       */
-      @java.lang.Override
-      public int getEMBJNKGJLFN() {
-        return eMBJNKGJLFN_;
-      }
-      /**
-       * <code>uint32 EMBJNKGJLFN = 2;</code>
-       * @param value The eMBJNKGJLFN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEMBJNKGJLFN(int value) {
-        
-        eMBJNKGJLFN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 EMBJNKGJLFN = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEMBJNKGJLFN() {
-        
-        eMBJNKGJLFN_ = 0;
         onChanged();
         return this;
       }
@@ -624,10 +632,9 @@ public final class CEAFBJOBFJEOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021CEAFBJOBFJE.proto\032\021DEGDFAOEICK.proto\"E" +
-      "\n\013CEAFBJOBFJE\022!\n\013KKFBGJGDAJI\030\001 \001(\0162\014.DEG" +
-      "DFAOEICK\022\023\n\013EMBJNKGJLFN\030\002 \001(\rB2\n\031emu.gra" +
-      "sscutter.net.protoB\025CEAFBJOBFJEOuterClas" +
-      "sb\006proto3"
+      "\n\013CEAFBJOBFJE\022\023\n\013EMBJNKGJLFN\030\002 \001(\r\022!\n\013KK" +
+      "FBGJGDAJI\030\001 \001(\0162\014.DEGDFAOEICKB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -639,7 +646,7 @@ public final class CEAFBJOBFJEOuterClass {
     internal_static_CEAFBJOBFJE_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CEAFBJOBFJE_descriptor,
-        new java.lang.String[] { "KKFBGJGDAJI", "EMBJNKGJLFN", });
+        new java.lang.String[] { "EMBJNKGJLFN", "KKFBGJGDAJI", });
     emu.grasscutter.net.proto.DEGDFAOEICKOuterClass.getDescriptor();
   }
 

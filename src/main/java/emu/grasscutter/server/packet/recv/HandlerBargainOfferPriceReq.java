@@ -25,11 +25,11 @@ public final class HandlerBargainOfferPriceReq extends PacketHandler {
         // Queue the quest content event.
         var questManager = player.getQuestManager();
         switch (result) {
-            case BARGAIN_COMPLETE_SUCC -> questManager.queueEvent(
+            case BargainResultType_BARGAIN_COMPLETE_SUCC -> questManager.queueEvent(
                     QuestContent.QUEST_CONTENT_BARGAIN_SUCC, bargainId, 0);
-            case BARGAIN_SINGLE_FAIL -> questManager.queueEvent(
+            case BargainResultType_BARGAIN_SINGLE_FAIL -> questManager.queueEvent(
                     QuestContent.QUEST_CONTENT_ITEM_LESS_THAN_BARGAIN, bargainId, 0);
-            case BARGAIN_COMPLETE_FAIL -> questManager.queueEvent(
+            case BargainResultType_BARGAIN_COMPLETE_FAIL -> questManager.queueEvent(
                     QuestContent.QUEST_CONTENT_BARGAIN_FAIL, bargainId, 0);
         }
 

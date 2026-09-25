@@ -94,8 +94,8 @@ public final class AvatarExtraLevelHelper {
         if (builder == null || avatar == null || avatar.getPromoteLevel() < 6) {
             return;
         }
-        builder.setDpeciabdbpg(AvatarExtraLevelHelper.getExtraLevelTier(avatar));
-        builder.setEigifnbdicm(AvatarExtraLevelHelper.getEffectiveMaxLevel(avatar));
+        builder.setJMFFNNBEHGG(AvatarExtraLevelHelper.getExtraLevelTier(avatar));
+        builder.setLDHKKNPGIMH(AvatarExtraLevelHelper.getEffectiveMaxLevel(avatar));
     }
 
     public static int getEffectiveMaxLevel(Avatar avatar) {

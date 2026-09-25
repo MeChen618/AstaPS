@@ -518,9 +518,8 @@ public final class HomeSceneJumpReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026HomeSceneJumpReq.proto\"/\n\020HomeSceneJum" +
-      "pReq\022\033\n\023is_enter_room_scene\030\013 \001(\010B7\n\031emu" +
-      ".grasscutter.net.protoB\032HomeSceneJumpReq" +
-      "OuterClassb\006proto3"
+      "pReq\022\033\n\023is_enter_room_scene\030\013 \001(\010B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

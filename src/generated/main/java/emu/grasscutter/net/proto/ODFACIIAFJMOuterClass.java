@@ -19,18 +19,22 @@ public final class ODFACIIAFJMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 slot_id = 1;</code>
-     * @return The slotId.
-     */
-    int getSlotId();
-
-    /**
      * <code>uint32 _keyword_id = 2;</code>
      * @return The keywordId.
      */
     int getKeywordId();
+
+    /**
+     * <code>uint32 slot_id = 1;</code>
+     * @return The slotId.
+     */
+    int getSlotId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ODFACIIAFJM}
    */
   public static final class ODFACIIAFJM extends
@@ -117,17 +121,6 @@ public final class ODFACIIAFJMOuterClass {
               emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM.class, emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM.Builder.class);
     }
 
-    public static final int SLOT_ID_FIELD_NUMBER = 1;
-    private int slotId_;
-    /**
-     * <code>uint32 slot_id = 1;</code>
-     * @return The slotId.
-     */
-    @java.lang.Override
-    public int getSlotId() {
-      return slotId_;
-    }
-
     public static final int _KEYWORD_ID_FIELD_NUMBER = 2;
     private int KeywordId_;
     /**
@@ -137,6 +130,17 @@ public final class ODFACIIAFJMOuterClass {
     @java.lang.Override
     public int getKeywordId() {
       return KeywordId_;
+    }
+
+    public static final int SLOT_ID_FIELD_NUMBER = 1;
+    private int slotId_;
+    /**
+     * <code>uint32 slot_id = 1;</code>
+     * @return The slotId.
+     */
+    @java.lang.Override
+    public int getSlotId() {
+      return slotId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class ODFACIIAFJMOuterClass {
       }
       emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM other = (emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM) obj;
 
-      if (getSlotId()
-          != other.getSlotId()) return false;
       if (getKeywordId()
           != other.getKeywordId()) return false;
+      if (getSlotId()
+          != other.getSlotId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class ODFACIIAFJMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSlotId();
       hash = (37 * hash) + _KEYWORD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getKeywordId();
+      hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSlotId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class ODFACIIAFJMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ODFACIIAFJM}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class ODFACIIAFJMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        slotId_ = 0;
-
         KeywordId_ = 0;
+
+        slotId_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class ODFACIIAFJMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM buildPartial() {
         emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM result = new emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM(this);
-        result.slotId_ = slotId_;
         result.KeywordId_ = KeywordId_;
+        result.slotId_ = slotId_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class ODFACIIAFJMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM other) {
         if (other == emu.grasscutter.net.proto.ODFACIIAFJMOuterClass.ODFACIIAFJM.getDefaultInstance()) return this;
-        if (other.getSlotId() != 0) {
-          setSlotId(other.getSlotId());
-        }
         if (other.getKeywordId() != 0) {
           setKeywordId(other.getKeywordId());
+        }
+        if (other.getSlotId() != 0) {
+          setSlotId(other.getSlotId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +466,6 @@ public final class ODFACIIAFJMOuterClass {
         return this;
       }
 
-      private int slotId_ ;
-      /**
-       * <code>uint32 slot_id = 1;</code>
-       * @return The slotId.
-       */
-      @java.lang.Override
-      public int getSlotId() {
-        return slotId_;
-      }
-      /**
-       * <code>uint32 slot_id = 1;</code>
-       * @param value The slotId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlotId(int value) {
-        
-        slotId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 slot_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSlotId() {
-        
-        slotId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int KeywordId_ ;
       /**
        * <code>uint32 _keyword_id = 2;</code>
@@ -516,6 +493,37 @@ public final class ODFACIIAFJMOuterClass {
       public Builder clearKeywordId() {
         
         KeywordId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int slotId_ ;
+      /**
+       * <code>uint32 slot_id = 1;</code>
+       * @return The slotId.
+       */
+      @java.lang.Override
+      public int getSlotId() {
+        return slotId_;
+      }
+      /**
+       * <code>uint32 slot_id = 1;</code>
+       * @param value The slotId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlotId(int value) {
+        
+        slotId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 slot_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSlotId() {
+        
+        slotId_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class ODFACIIAFJMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ODFACIIAFJM.proto\"3\n\013ODFACIIAFJM\022\017\n\007sl" +
-      "ot_id\030\001 \001(\r\022\023\n\013_keyword_id\030\002 \001(\rB2\n\031emu." +
-      "grasscutter.net.protoB\025ODFACIIAFJMOuterC" +
-      "lassb\006proto3"
+      "\n\021ODFACIIAFJM.proto\"3\n\013ODFACIIAFJM\022\023\n\013_k" +
+      "eyword_id\030\002 \001(\r\022\017\n\007slot_id\030\001 \001(\rB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class ODFACIIAFJMOuterClass {
     internal_static_ODFACIIAFJM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ODFACIIAFJM_descriptor,
-        new java.lang.String[] { "SlotId", "KeywordId", });
+        new java.lang.String[] { "KeywordId", "SlotId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

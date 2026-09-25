@@ -19,23 +19,27 @@ public final class LDFIMPJCMDIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.HEEENDPMDPA state = 12;</code>
+     * <code>uint32 target_id = 5;</code>
+     * @return The targetId.
+     */
+    int getTargetId();
+
+    /**
+     * <code>.HEEENDPMDPA state = 6;</code>
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
     /**
-     * <code>.HEEENDPMDPA state = 12;</code>
+     * <code>.HEEENDPMDPA state = 6;</code>
      * @return The state.
      */
     emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA getState();
-
-    /**
-     * <code>uint32 target_id = 13;</code>
-     * @return The targetId.
-     */
-    int getTargetId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code LDFIMPJCMDI}
    */
   public static final class LDFIMPJCMDI extends
@@ -81,15 +85,15 @@ public final class LDFIMPJCMDIOuterClass {
             case 0:
               done = true;
               break;
-            case 96: {
+            case 40: {
+
+              targetId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
               int rawValue = input.readEnum();
 
               state_ = rawValue;
-              break;
-            }
-            case 104: {
-
-              targetId_ = input.readUInt32();
               break;
             }
             default: {
@@ -124,34 +128,34 @@ public final class LDFIMPJCMDIOuterClass {
               emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI.class, emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI.Builder.class);
     }
 
-    public static final int STATE_FIELD_NUMBER = 12;
+    public static final int TARGET_ID_FIELD_NUMBER = 5;
+    private int targetId_;
+    /**
+     * <code>uint32 target_id = 5;</code>
+     * @return The targetId.
+     */
+    @java.lang.Override
+    public int getTargetId() {
+      return targetId_;
+    }
+
+    public static final int STATE_FIELD_NUMBER = 6;
     private int state_;
     /**
-     * <code>.HEEENDPMDPA state = 12;</code>
+     * <code>.HEEENDPMDPA state = 6;</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
       return state_;
     }
     /**
-     * <code>.HEEENDPMDPA state = 12;</code>
+     * <code>.HEEENDPMDPA state = 6;</code>
      * @return The state.
      */
     @java.lang.Override public emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA getState() {
       @SuppressWarnings("deprecation")
       emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA result = emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.valueOf(state_);
       return result == null ? emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.UNRECOGNIZED : result;
-    }
-
-    public static final int TARGET_ID_FIELD_NUMBER = 13;
-    private int targetId_;
-    /**
-     * <code>uint32 target_id = 13;</code>
-     * @return The targetId.
-     */
-    @java.lang.Override
-    public int getTargetId() {
-      return targetId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -168,11 +172,11 @@ public final class LDFIMPJCMDIOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (state_ != emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.HEEENDPMDPA_NONE.getNumber()) {
-        output.writeEnum(12, state_);
-      }
       if (targetId_ != 0) {
-        output.writeUInt32(13, targetId_);
+        output.writeUInt32(5, targetId_);
+      }
+      if (state_ != emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.HEEENDPMDPA_NONE.getNumber()) {
+        output.writeEnum(6, state_);
       }
       unknownFields.writeTo(output);
     }
@@ -183,13 +187,13 @@ public final class LDFIMPJCMDIOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (state_ != emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.HEEENDPMDPA_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, state_);
-      }
       if (targetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, targetId_);
+          .computeUInt32Size(5, targetId_);
+      }
+      if (state_ != emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.HEEENDPMDPA_NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -206,9 +210,9 @@ public final class LDFIMPJCMDIOuterClass {
       }
       emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI other = (emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI) obj;
 
-      if (state_ != other.state_) return false;
       if (getTargetId()
           != other.getTargetId()) return false;
+      if (state_ != other.state_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -220,10 +224,10 @@ public final class LDFIMPJCMDIOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
       hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetId();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -320,6 +324,10 @@ public final class LDFIMPJCMDIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code LDFIMPJCMDI}
      */
     public static final class Builder extends
@@ -357,9 +365,9 @@ public final class LDFIMPJCMDIOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        state_ = 0;
-
         targetId_ = 0;
+
+        state_ = 0;
 
         return this;
       }
@@ -387,8 +395,8 @@ public final class LDFIMPJCMDIOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI buildPartial() {
         emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI result = new emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI(this);
-        result.state_ = state_;
         result.targetId_ = targetId_;
+        result.state_ = state_;
         onBuilt();
         return result;
       }
@@ -437,11 +445,11 @@ public final class LDFIMPJCMDIOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI other) {
         if (other == emu.grasscutter.net.proto.LDFIMPJCMDIOuterClass.LDFIMPJCMDI.getDefaultInstance()) return this;
-        if (other.state_ != 0) {
-          setStateValue(other.getStateValue());
-        }
         if (other.getTargetId() != 0) {
           setTargetId(other.getTargetId());
+        }
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -472,16 +480,47 @@ public final class LDFIMPJCMDIOuterClass {
         return this;
       }
 
+      private int targetId_ ;
+      /**
+       * <code>uint32 target_id = 5;</code>
+       * @return The targetId.
+       */
+      @java.lang.Override
+      public int getTargetId() {
+        return targetId_;
+      }
+      /**
+       * <code>uint32 target_id = 5;</code>
+       * @param value The targetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetId(int value) {
+        
+        targetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 target_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetId() {
+        
+        targetId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int state_ = 0;
       /**
-       * <code>.HEEENDPMDPA state = 12;</code>
+       * <code>.HEEENDPMDPA state = 6;</code>
        * @return The enum numeric value on the wire for state.
        */
       @java.lang.Override public int getStateValue() {
         return state_;
       }
       /**
-       * <code>.HEEENDPMDPA state = 12;</code>
+       * <code>.HEEENDPMDPA state = 6;</code>
        * @param value The enum numeric value on the wire for state to set.
        * @return This builder for chaining.
        */
@@ -492,7 +531,7 @@ public final class LDFIMPJCMDIOuterClass {
         return this;
       }
       /**
-       * <code>.HEEENDPMDPA state = 12;</code>
+       * <code>.HEEENDPMDPA state = 6;</code>
        * @return The state.
        */
       @java.lang.Override
@@ -502,7 +541,7 @@ public final class LDFIMPJCMDIOuterClass {
         return result == null ? emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.HEEENDPMDPA.UNRECOGNIZED : result;
       }
       /**
-       * <code>.HEEENDPMDPA state = 12;</code>
+       * <code>.HEEENDPMDPA state = 6;</code>
        * @param value The state to set.
        * @return This builder for chaining.
        */
@@ -516,43 +555,12 @@ public final class LDFIMPJCMDIOuterClass {
         return this;
       }
       /**
-       * <code>.HEEENDPMDPA state = 12;</code>
+       * <code>.HEEENDPMDPA state = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearState() {
         
         state_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int targetId_ ;
-      /**
-       * <code>uint32 target_id = 13;</code>
-       * @return The targetId.
-       */
-      @java.lang.Override
-      public int getTargetId() {
-        return targetId_;
-      }
-      /**
-       * <code>uint32 target_id = 13;</code>
-       * @param value The targetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTargetId(int value) {
-        
-        targetId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 target_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetId() {
-        
-        targetId_ = 0;
         onChanged();
         return this;
       }
@@ -624,10 +632,9 @@ public final class LDFIMPJCMDIOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021LDFIMPJCMDI.proto\032\021HEEENDPMDPA.proto\"=" +
-      "\n\013LDFIMPJCMDI\022\033\n\005state\030\014 \001(\0162\014.HEEENDPMD" +
-      "PA\022\021\n\ttarget_id\030\r \001(\rB2\n\031emu.grasscutter" +
-      ".net.protoB\025LDFIMPJCMDIOuterClassb\006proto" +
-      "3"
+      "\n\013LDFIMPJCMDI\022\021\n\ttarget_id\030\005 \001(\r\022\033\n\005stat" +
+      "e\030\006 \001(\0162\014.HEEENDPMDPAB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -639,7 +646,7 @@ public final class LDFIMPJCMDIOuterClass {
     internal_static_LDFIMPJCMDI_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LDFIMPJCMDI_descriptor,
-        new java.lang.String[] { "State", "TargetId", });
+        new java.lang.String[] { "TargetId", "State", });
     emu.grasscutter.net.proto.HEEENDPMDPAOuterClass.getDescriptor();
   }
 

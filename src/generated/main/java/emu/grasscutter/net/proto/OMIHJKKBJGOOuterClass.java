@@ -19,59 +19,6 @@ public final class OMIHJKKBJGOOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string key = 1;</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>float GOHMGHDBJMC = 2;</code>
-     * @return The gOHMGHDBJMC.
-     */
-    float getGOHMGHDBJMC();
-
-    /**
-     * <code>uint64 KCMJPMNPCBA = 3;</code>
-     * @return The kCMJPMNPCBA.
-     */
-    long getKCMJPMNPCBA();
-
-    /**
-     * <code>uint64 LGGICGBDDFO = 4;</code>
-     * @return The lGGICGBDDFO.
-     */
-    long getLGGICGBDDFO();
-
-    /**
-     * <code>bool NKDMPKJGMFF = 5;</code>
-     * @return The nKDMPKJGMFF.
-     */
-    boolean getNKDMPKJGMFF();
-
-    /**
-     * <code>.FKPFJHCNOLD status = 6;</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-    /**
-     * <code>.FKPFJHCNOLD status = 6;</code>
-     * @return The status.
-     */
-    emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD getStatus();
-
-    /**
-     * <code>float AGJIJMBOBAN = 7;</code>
-     * @return The aGJIJMBOBAN.
-     */
-    float getAGJIJMBOBAN();
-
-    /**
      * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
      * @return Whether the pMHDJBEJGKN field is set.
      */
@@ -85,8 +32,65 @@ public final class OMIHJKKBJGOOuterClass {
      * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
      */
     emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBCOrBuilder getPMHDJBEJGKNOrBuilder();
+
+    /**
+     * <code>string key = 1;</code>
+     * @return The key.
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 1;</code>
+     * @return The bytes for key.
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <code>float AGJIJMBOBAN = 7;</code>
+     * @return The aGJIJMBOBAN.
+     */
+    float getAGJIJMBOBAN();
+
+    /**
+     * <code>.FKPFJHCNOLD status = 6;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    int getStatusValue();
+    /**
+     * <code>.FKPFJHCNOLD status = 6;</code>
+     * @return The status.
+     */
+    emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD getStatus();
+
+    /**
+     * <code>uint64 KCMJPMNPCBA = 3;</code>
+     * @return The kCMJPMNPCBA.
+     */
+    long getKCMJPMNPCBA();
+
+    /**
+     * <code>bool NKDMPKJGMFF = 5;</code>
+     * @return The nKDMPKJGMFF.
+     */
+    boolean getNKDMPKJGMFF();
+
+    /**
+     * <code>float GOHMGHDBJMC = 2;</code>
+     * @return The gOHMGHDBJMC.
+     */
+    float getGOHMGHDBJMC();
+
+    /**
+     * <code>uint64 LGGICGBDDFO = 4;</code>
+     * @return The lGGICGBDDFO.
+     */
+    long getLGGICGBDDFO();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OMIHJKKBJGO}
    */
   public static final class OMIHJKKBJGO extends
@@ -215,6 +219,32 @@ public final class OMIHJKKBJGOOuterClass {
               emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO.class, emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO.Builder.class);
     }
 
+    public static final int PMHDJBEJGKN_FIELD_NUMBER = 8;
+    private emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC pMHDJBEJGKN_;
+    /**
+     * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
+     * @return Whether the pMHDJBEJGKN field is set.
+     */
+    @java.lang.Override
+    public boolean hasPMHDJBEJGKN() {
+      return pMHDJBEJGKN_ != null;
+    }
+    /**
+     * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
+     * @return The pMHDJBEJGKN.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC getPMHDJBEJGKN() {
+      return pMHDJBEJGKN_ == null ? emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC.getDefaultInstance() : pMHDJBEJGKN_;
+    }
+    /**
+     * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBCOrBuilder getPMHDJBEJGKNOrBuilder() {
+      return getPMHDJBEJGKN();
+    }
+
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
@@ -253,48 +283,15 @@ public final class OMIHJKKBJGOOuterClass {
       }
     }
 
-    public static final int GOHMGHDBJMC_FIELD_NUMBER = 2;
-    private float gOHMGHDBJMC_;
+    public static final int AGJIJMBOBAN_FIELD_NUMBER = 7;
+    private float aGJIJMBOBAN_;
     /**
-     * <code>float GOHMGHDBJMC = 2;</code>
-     * @return The gOHMGHDBJMC.
+     * <code>float AGJIJMBOBAN = 7;</code>
+     * @return The aGJIJMBOBAN.
      */
     @java.lang.Override
-    public float getGOHMGHDBJMC() {
-      return gOHMGHDBJMC_;
-    }
-
-    public static final int KCMJPMNPCBA_FIELD_NUMBER = 3;
-    private long kCMJPMNPCBA_;
-    /**
-     * <code>uint64 KCMJPMNPCBA = 3;</code>
-     * @return The kCMJPMNPCBA.
-     */
-    @java.lang.Override
-    public long getKCMJPMNPCBA() {
-      return kCMJPMNPCBA_;
-    }
-
-    public static final int LGGICGBDDFO_FIELD_NUMBER = 4;
-    private long lGGICGBDDFO_;
-    /**
-     * <code>uint64 LGGICGBDDFO = 4;</code>
-     * @return The lGGICGBDDFO.
-     */
-    @java.lang.Override
-    public long getLGGICGBDDFO() {
-      return lGGICGBDDFO_;
-    }
-
-    public static final int NKDMPKJGMFF_FIELD_NUMBER = 5;
-    private boolean nKDMPKJGMFF_;
-    /**
-     * <code>bool NKDMPKJGMFF = 5;</code>
-     * @return The nKDMPKJGMFF.
-     */
-    @java.lang.Override
-    public boolean getNKDMPKJGMFF() {
-      return nKDMPKJGMFF_;
+    public float getAGJIJMBOBAN() {
+      return aGJIJMBOBAN_;
     }
 
     public static final int STATUS_FIELD_NUMBER = 6;
@@ -316,41 +313,48 @@ public final class OMIHJKKBJGOOuterClass {
       return result == null ? emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD.UNRECOGNIZED : result;
     }
 
-    public static final int AGJIJMBOBAN_FIELD_NUMBER = 7;
-    private float aGJIJMBOBAN_;
+    public static final int KCMJPMNPCBA_FIELD_NUMBER = 3;
+    private long kCMJPMNPCBA_;
     /**
-     * <code>float AGJIJMBOBAN = 7;</code>
-     * @return The aGJIJMBOBAN.
+     * <code>uint64 KCMJPMNPCBA = 3;</code>
+     * @return The kCMJPMNPCBA.
      */
     @java.lang.Override
-    public float getAGJIJMBOBAN() {
-      return aGJIJMBOBAN_;
+    public long getKCMJPMNPCBA() {
+      return kCMJPMNPCBA_;
     }
 
-    public static final int PMHDJBEJGKN_FIELD_NUMBER = 8;
-    private emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC pMHDJBEJGKN_;
+    public static final int NKDMPKJGMFF_FIELD_NUMBER = 5;
+    private boolean nKDMPKJGMFF_;
     /**
-     * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
-     * @return Whether the pMHDJBEJGKN field is set.
+     * <code>bool NKDMPKJGMFF = 5;</code>
+     * @return The nKDMPKJGMFF.
      */
     @java.lang.Override
-    public boolean hasPMHDJBEJGKN() {
-      return pMHDJBEJGKN_ != null;
+    public boolean getNKDMPKJGMFF() {
+      return nKDMPKJGMFF_;
     }
+
+    public static final int GOHMGHDBJMC_FIELD_NUMBER = 2;
+    private float gOHMGHDBJMC_;
     /**
-     * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
-     * @return The pMHDJBEJGKN.
+     * <code>float GOHMGHDBJMC = 2;</code>
+     * @return The gOHMGHDBJMC.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC getPMHDJBEJGKN() {
-      return pMHDJBEJGKN_ == null ? emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBC.getDefaultInstance() : pMHDJBEJGKN_;
+    public float getGOHMGHDBJMC() {
+      return gOHMGHDBJMC_;
     }
+
+    public static final int LGGICGBDDFO_FIELD_NUMBER = 4;
+    private long lGGICGBDDFO_;
     /**
-     * <code>.FJFKBKCECBC PMHDJBEJGKN = 8;</code>
+     * <code>uint64 LGGICGBDDFO = 4;</code>
+     * @return The lGGICGBDDFO.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.FJFKBKCECBCOrBuilder getPMHDJBEJGKNOrBuilder() {
-      return getPMHDJBEJGKN();
+    public long getLGGICGBDDFO() {
+      return lGGICGBDDFO_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -446,26 +450,26 @@ public final class OMIHJKKBJGOOuterClass {
       }
       emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO other = (emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO) obj;
 
-      if (!getKey()
-          .equals(other.getKey())) return false;
-      if (java.lang.Float.floatToIntBits(getGOHMGHDBJMC())
-          != java.lang.Float.floatToIntBits(
-              other.getGOHMGHDBJMC())) return false;
-      if (getKCMJPMNPCBA()
-          != other.getKCMJPMNPCBA()) return false;
-      if (getLGGICGBDDFO()
-          != other.getLGGICGBDDFO()) return false;
-      if (getNKDMPKJGMFF()
-          != other.getNKDMPKJGMFF()) return false;
-      if (status_ != other.status_) return false;
-      if (java.lang.Float.floatToIntBits(getAGJIJMBOBAN())
-          != java.lang.Float.floatToIntBits(
-              other.getAGJIJMBOBAN())) return false;
       if (hasPMHDJBEJGKN() != other.hasPMHDJBEJGKN()) return false;
       if (hasPMHDJBEJGKN()) {
         if (!getPMHDJBEJGKN()
             .equals(other.getPMHDJBEJGKN())) return false;
       }
+      if (!getKey()
+          .equals(other.getKey())) return false;
+      if (java.lang.Float.floatToIntBits(getAGJIJMBOBAN())
+          != java.lang.Float.floatToIntBits(
+              other.getAGJIJMBOBAN())) return false;
+      if (status_ != other.status_) return false;
+      if (getKCMJPMNPCBA()
+          != other.getKCMJPMNPCBA()) return false;
+      if (getNKDMPKJGMFF()
+          != other.getNKDMPKJGMFF()) return false;
+      if (java.lang.Float.floatToIntBits(getGOHMGHDBJMC())
+          != java.lang.Float.floatToIntBits(
+              other.getGOHMGHDBJMC())) return false;
+      if (getLGGICGBDDFO()
+          != other.getLGGICGBDDFO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -477,29 +481,29 @@ public final class OMIHJKKBJGOOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + GOHMGHDBJMC_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getGOHMGHDBJMC());
-      hash = (37 * hash) + KCMJPMNPCBA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getKCMJPMNPCBA());
-      hash = (37 * hash) + LGGICGBDDFO_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLGGICGBDDFO());
-      hash = (37 * hash) + NKDMPKJGMFF_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getNKDMPKJGMFF());
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
-      hash = (37 * hash) + AGJIJMBOBAN_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAGJIJMBOBAN());
       if (hasPMHDJBEJGKN()) {
         hash = (37 * hash) + PMHDJBEJGKN_FIELD_NUMBER;
         hash = (53 * hash) + getPMHDJBEJGKN().hashCode();
       }
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      hash = (37 * hash) + AGJIJMBOBAN_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getAGJIJMBOBAN());
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+      hash = (37 * hash) + KCMJPMNPCBA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getKCMJPMNPCBA());
+      hash = (37 * hash) + NKDMPKJGMFF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getNKDMPKJGMFF());
+      hash = (37 * hash) + GOHMGHDBJMC_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getGOHMGHDBJMC());
+      hash = (37 * hash) + LGGICGBDDFO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLGGICGBDDFO());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -596,6 +600,10 @@ public final class OMIHJKKBJGOOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OMIHJKKBJGO}
      */
     public static final class Builder extends
@@ -633,26 +641,26 @@ public final class OMIHJKKBJGOOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        key_ = "";
-
-        gOHMGHDBJMC_ = 0F;
-
-        kCMJPMNPCBA_ = 0L;
-
-        lGGICGBDDFO_ = 0L;
-
-        nKDMPKJGMFF_ = false;
-
-        status_ = 0;
-
-        aGJIJMBOBAN_ = 0F;
-
         if (pMHDJBEJGKNBuilder_ == null) {
           pMHDJBEJGKN_ = null;
         } else {
           pMHDJBEJGKN_ = null;
           pMHDJBEJGKNBuilder_ = null;
         }
+        key_ = "";
+
+        aGJIJMBOBAN_ = 0F;
+
+        status_ = 0;
+
+        kCMJPMNPCBA_ = 0L;
+
+        nKDMPKJGMFF_ = false;
+
+        gOHMGHDBJMC_ = 0F;
+
+        lGGICGBDDFO_ = 0L;
+
         return this;
       }
 
@@ -679,18 +687,18 @@ public final class OMIHJKKBJGOOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO buildPartial() {
         emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO result = new emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO(this);
-        result.key_ = key_;
-        result.gOHMGHDBJMC_ = gOHMGHDBJMC_;
-        result.kCMJPMNPCBA_ = kCMJPMNPCBA_;
-        result.lGGICGBDDFO_ = lGGICGBDDFO_;
-        result.nKDMPKJGMFF_ = nKDMPKJGMFF_;
-        result.status_ = status_;
-        result.aGJIJMBOBAN_ = aGJIJMBOBAN_;
         if (pMHDJBEJGKNBuilder_ == null) {
           result.pMHDJBEJGKN_ = pMHDJBEJGKN_;
         } else {
           result.pMHDJBEJGKN_ = pMHDJBEJGKNBuilder_.build();
         }
+        result.key_ = key_;
+        result.aGJIJMBOBAN_ = aGJIJMBOBAN_;
+        result.status_ = status_;
+        result.kCMJPMNPCBA_ = kCMJPMNPCBA_;
+        result.nKDMPKJGMFF_ = nKDMPKJGMFF_;
+        result.gOHMGHDBJMC_ = gOHMGHDBJMC_;
+        result.lGGICGBDDFO_ = lGGICGBDDFO_;
         onBuilt();
         return result;
       }
@@ -739,30 +747,30 @@ public final class OMIHJKKBJGOOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO other) {
         if (other == emu.grasscutter.net.proto.OMIHJKKBJGOOuterClass.OMIHJKKBJGO.getDefaultInstance()) return this;
+        if (other.hasPMHDJBEJGKN()) {
+          mergePMHDJBEJGKN(other.getPMHDJBEJGKN());
+        }
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
         }
-        if (other.getGOHMGHDBJMC() != 0F) {
-          setGOHMGHDBJMC(other.getGOHMGHDBJMC());
-        }
-        if (other.getKCMJPMNPCBA() != 0L) {
-          setKCMJPMNPCBA(other.getKCMJPMNPCBA());
-        }
-        if (other.getLGGICGBDDFO() != 0L) {
-          setLGGICGBDDFO(other.getLGGICGBDDFO());
-        }
-        if (other.getNKDMPKJGMFF() != false) {
-          setNKDMPKJGMFF(other.getNKDMPKJGMFF());
+        if (other.getAGJIJMBOBAN() != 0F) {
+          setAGJIJMBOBAN(other.getAGJIJMBOBAN());
         }
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
-        if (other.getAGJIJMBOBAN() != 0F) {
-          setAGJIJMBOBAN(other.getAGJIJMBOBAN());
+        if (other.getKCMJPMNPCBA() != 0L) {
+          setKCMJPMNPCBA(other.getKCMJPMNPCBA());
         }
-        if (other.hasPMHDJBEJGKN()) {
-          mergePMHDJBEJGKN(other.getPMHDJBEJGKN());
+        if (other.getNKDMPKJGMFF() != false) {
+          setNKDMPKJGMFF(other.getNKDMPKJGMFF());
+        }
+        if (other.getGOHMGHDBJMC() != 0F) {
+          setGOHMGHDBJMC(other.getGOHMGHDBJMC());
+        }
+        if (other.getLGGICGBDDFO() != 0L) {
+          setLGGICGBDDFO(other.getLGGICGBDDFO());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -790,291 +798,6 @@ public final class OMIHJKKBJGOOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object key_ = "";
-      /**
-       * <code>string key = 1;</code>
-       * @return The key.
-       */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          key_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @return The bytes for key.
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        
-        key_ = getDefaultInstance().getKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        key_ = value;
-        onChanged();
-        return this;
-      }
-
-      private float gOHMGHDBJMC_ ;
-      /**
-       * <code>float GOHMGHDBJMC = 2;</code>
-       * @return The gOHMGHDBJMC.
-       */
-      @java.lang.Override
-      public float getGOHMGHDBJMC() {
-        return gOHMGHDBJMC_;
-      }
-      /**
-       * <code>float GOHMGHDBJMC = 2;</code>
-       * @param value The gOHMGHDBJMC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGOHMGHDBJMC(float value) {
-        
-        gOHMGHDBJMC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float GOHMGHDBJMC = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGOHMGHDBJMC() {
-        
-        gOHMGHDBJMC_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private long kCMJPMNPCBA_ ;
-      /**
-       * <code>uint64 KCMJPMNPCBA = 3;</code>
-       * @return The kCMJPMNPCBA.
-       */
-      @java.lang.Override
-      public long getKCMJPMNPCBA() {
-        return kCMJPMNPCBA_;
-      }
-      /**
-       * <code>uint64 KCMJPMNPCBA = 3;</code>
-       * @param value The kCMJPMNPCBA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKCMJPMNPCBA(long value) {
-        
-        kCMJPMNPCBA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 KCMJPMNPCBA = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKCMJPMNPCBA() {
-        
-        kCMJPMNPCBA_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long lGGICGBDDFO_ ;
-      /**
-       * <code>uint64 LGGICGBDDFO = 4;</code>
-       * @return The lGGICGBDDFO.
-       */
-      @java.lang.Override
-      public long getLGGICGBDDFO() {
-        return lGGICGBDDFO_;
-      }
-      /**
-       * <code>uint64 LGGICGBDDFO = 4;</code>
-       * @param value The lGGICGBDDFO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLGGICGBDDFO(long value) {
-        
-        lGGICGBDDFO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 LGGICGBDDFO = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLGGICGBDDFO() {
-        
-        lGGICGBDDFO_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private boolean nKDMPKJGMFF_ ;
-      /**
-       * <code>bool NKDMPKJGMFF = 5;</code>
-       * @return The nKDMPKJGMFF.
-       */
-      @java.lang.Override
-      public boolean getNKDMPKJGMFF() {
-        return nKDMPKJGMFF_;
-      }
-      /**
-       * <code>bool NKDMPKJGMFF = 5;</code>
-       * @param value The nKDMPKJGMFF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNKDMPKJGMFF(boolean value) {
-        
-        nKDMPKJGMFF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool NKDMPKJGMFF = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNKDMPKJGMFF() {
-        
-        nKDMPKJGMFF_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <code>.FKPFJHCNOLD status = 6;</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <code>.FKPFJHCNOLD status = 6;</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
-        
-        status_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.FKPFJHCNOLD status = 6;</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD getStatus() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD result = emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD.valueOf(status_);
-        return result == null ? emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.FKPFJHCNOLD status = 6;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.FKPFJHCNOLD status = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        
-        status_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float aGJIJMBOBAN_ ;
-      /**
-       * <code>float AGJIJMBOBAN = 7;</code>
-       * @return The aGJIJMBOBAN.
-       */
-      @java.lang.Override
-      public float getAGJIJMBOBAN() {
-        return aGJIJMBOBAN_;
-      }
-      /**
-       * <code>float AGJIJMBOBAN = 7;</code>
-       * @param value The aGJIJMBOBAN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAGJIJMBOBAN(float value) {
-        
-        aGJIJMBOBAN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float AGJIJMBOBAN = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAGJIJMBOBAN() {
-        
-        aGJIJMBOBAN_ = 0F;
-        onChanged();
         return this;
       }
 
@@ -1196,6 +919,291 @@ public final class OMIHJKKBJGOOuterClass {
         }
         return pMHDJBEJGKNBuilder_;
       }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 1;</code>
+       * @return The key.
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       * @return The bytes for key.
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 1;</code>
+       * @param value The key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 1;</code>
+       * @param value The bytes for key to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float aGJIJMBOBAN_ ;
+      /**
+       * <code>float AGJIJMBOBAN = 7;</code>
+       * @return The aGJIJMBOBAN.
+       */
+      @java.lang.Override
+      public float getAGJIJMBOBAN() {
+        return aGJIJMBOBAN_;
+      }
+      /**
+       * <code>float AGJIJMBOBAN = 7;</code>
+       * @param value The aGJIJMBOBAN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAGJIJMBOBAN(float value) {
+        
+        aGJIJMBOBAN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float AGJIJMBOBAN = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAGJIJMBOBAN() {
+        
+        aGJIJMBOBAN_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int status_ = 0;
+      /**
+       * <code>.FKPFJHCNOLD status = 6;</code>
+       * @return The enum numeric value on the wire for status.
+       */
+      @java.lang.Override public int getStatusValue() {
+        return status_;
+      }
+      /**
+       * <code>.FKPFJHCNOLD status = 6;</code>
+       * @param value The enum numeric value on the wire for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusValue(int value) {
+        
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.FKPFJHCNOLD status = 6;</code>
+       * @return The status.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD getStatus() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD result = emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD.valueOf(status_);
+        return result == null ? emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.FKPFJHCNOLD status = 6;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.FKPFJHCNOLD value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        status_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.FKPFJHCNOLD status = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long kCMJPMNPCBA_ ;
+      /**
+       * <code>uint64 KCMJPMNPCBA = 3;</code>
+       * @return The kCMJPMNPCBA.
+       */
+      @java.lang.Override
+      public long getKCMJPMNPCBA() {
+        return kCMJPMNPCBA_;
+      }
+      /**
+       * <code>uint64 KCMJPMNPCBA = 3;</code>
+       * @param value The kCMJPMNPCBA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKCMJPMNPCBA(long value) {
+        
+        kCMJPMNPCBA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 KCMJPMNPCBA = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKCMJPMNPCBA() {
+        
+        kCMJPMNPCBA_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean nKDMPKJGMFF_ ;
+      /**
+       * <code>bool NKDMPKJGMFF = 5;</code>
+       * @return The nKDMPKJGMFF.
+       */
+      @java.lang.Override
+      public boolean getNKDMPKJGMFF() {
+        return nKDMPKJGMFF_;
+      }
+      /**
+       * <code>bool NKDMPKJGMFF = 5;</code>
+       * @param value The nKDMPKJGMFF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNKDMPKJGMFF(boolean value) {
+        
+        nKDMPKJGMFF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool NKDMPKJGMFF = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNKDMPKJGMFF() {
+        
+        nKDMPKJGMFF_ = false;
+        onChanged();
+        return this;
+      }
+
+      private float gOHMGHDBJMC_ ;
+      /**
+       * <code>float GOHMGHDBJMC = 2;</code>
+       * @return The gOHMGHDBJMC.
+       */
+      @java.lang.Override
+      public float getGOHMGHDBJMC() {
+        return gOHMGHDBJMC_;
+      }
+      /**
+       * <code>float GOHMGHDBJMC = 2;</code>
+       * @param value The gOHMGHDBJMC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGOHMGHDBJMC(float value) {
+        
+        gOHMGHDBJMC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float GOHMGHDBJMC = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGOHMGHDBJMC() {
+        
+        gOHMGHDBJMC_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private long lGGICGBDDFO_ ;
+      /**
+       * <code>uint64 LGGICGBDDFO = 4;</code>
+       * @return The lGGICGBDDFO.
+       */
+      @java.lang.Override
+      public long getLGGICGBDDFO() {
+        return lGGICGBDDFO_;
+      }
+      /**
+       * <code>uint64 LGGICGBDDFO = 4;</code>
+       * @param value The lGGICGBDDFO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLGGICGBDDFO(long value) {
+        
+        lGGICGBDDFO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 LGGICGBDDFO = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLGGICGBDDFO() {
+        
+        lGGICGBDDFO_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1264,13 +1272,13 @@ public final class OMIHJKKBJGOOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021OMIHJKKBJGO.proto\032\021FJFKBKCECBC.proto\032\021" +
-      "FKPFJHCNOLD.proto\"\304\001\n\013OMIHJKKBJGO\022\013\n\003key" +
-      "\030\001 \001(\t\022\023\n\013GOHMGHDBJMC\030\002 \001(\002\022\023\n\013KCMJPMNPC" +
-      "BA\030\003 \001(\004\022\023\n\013LGGICGBDDFO\030\004 \001(\004\022\023\n\013NKDMPKJ" +
-      "GMFF\030\005 \001(\010\022\034\n\006status\030\006 \001(\0162\014.FKPFJHCNOLD" +
-      "\022\023\n\013AGJIJMBOBAN\030\007 \001(\002\022!\n\013PMHDJBEJGKN\030\010 \001" +
-      "(\0132\014.FJFKBKCECBCB2\n\031emu.grasscutter.net." +
-      "protoB\025OMIHJKKBJGOOuterClassb\006proto3"
+      "FKPFJHCNOLD.proto\"\304\001\n\013OMIHJKKBJGO\022!\n\013PMH" +
+      "DJBEJGKN\030\010 \001(\0132\014.FJFKBKCECBC\022\013\n\003key\030\001 \001(" +
+      "\t\022\023\n\013AGJIJMBOBAN\030\007 \001(\002\022\034\n\006status\030\006 \001(\0162\014" +
+      ".FKPFJHCNOLD\022\023\n\013KCMJPMNPCBA\030\003 \001(\004\022\023\n\013NKD" +
+      "MPKJGMFF\030\005 \001(\010\022\023\n\013GOHMGHDBJMC\030\002 \001(\002\022\023\n\013L" +
+      "GGICGBDDFO\030\004 \001(\004B\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1283,7 +1291,7 @@ public final class OMIHJKKBJGOOuterClass {
     internal_static_OMIHJKKBJGO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OMIHJKKBJGO_descriptor,
-        new java.lang.String[] { "Key", "GOHMGHDBJMC", "KCMJPMNPCBA", "LGGICGBDDFO", "NKDMPKJGMFF", "Status", "AGJIJMBOBAN", "PMHDJBEJGKN", });
+        new java.lang.String[] { "PMHDJBEJGKN", "Key", "AGJIJMBOBAN", "Status", "KCMJPMNPCBA", "NKDMPKJGMFF", "GOHMGHDBJMC", "LGGICGBDDFO", });
     emu.grasscutter.net.proto.FJFKBKCECBCOuterClass.getDescriptor();
     emu.grasscutter.net.proto.FKPFJHCNOLDOuterClass.getDescriptor();
   }

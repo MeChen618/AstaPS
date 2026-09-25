@@ -12,7 +12,7 @@ import emu.grasscutter.game.managers.stamina.Consumption;
 import emu.grasscutter.game.managers.stamina.ConsumptionType;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.game.managers.stamina.StaminaManager;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;

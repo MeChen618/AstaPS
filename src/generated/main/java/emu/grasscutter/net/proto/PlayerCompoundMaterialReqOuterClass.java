@@ -19,18 +19,22 @@ public final class PlayerCompoundMaterialReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 compound_id = 1;</code>
+     * <code>uint32 compound_id = 15;</code>
      * @return The compoundId.
      */
     int getCompoundId();
 
     /**
-     * <code>uint32 count = 4;</code>
+     * <code>uint32 count = 10;</code>
      * @return The count.
      */
     int getCount();
   }
   /**
+   * <pre>
+   * CmdId: 20299
+   * </pre>
+   *
    * Protobuf type {@code PlayerCompoundMaterialReq}
    */
   public static final class PlayerCompoundMaterialReq extends
@@ -75,14 +79,14 @@ public final class PlayerCompoundMaterialReqOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              compoundId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
+            case 80: {
 
               count_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              compoundId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class PlayerCompoundMaterialReqOuterClass {
               emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq.class, emu.grasscutter.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq.Builder.class);
     }
 
-    public static final int COMPOUND_ID_FIELD_NUMBER = 1;
+    public static final int COMPOUND_ID_FIELD_NUMBER = 15;
     private int compoundId_;
     /**
-     * <code>uint32 compound_id = 1;</code>
+     * <code>uint32 compound_id = 15;</code>
      * @return The compoundId.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class PlayerCompoundMaterialReqOuterClass {
       return compoundId_;
     }
 
-    public static final int COUNT_FIELD_NUMBER = 4;
+    public static final int COUNT_FIELD_NUMBER = 10;
     private int count_;
     /**
-     * <code>uint32 count = 4;</code>
+     * <code>uint32 count = 10;</code>
      * @return The count.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class PlayerCompoundMaterialReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (compoundId_ != 0) {
-        output.writeUInt32(1, compoundId_);
-      }
       if (count_ != 0) {
-        output.writeUInt32(4, count_);
+        output.writeUInt32(10, count_);
+      }
+      if (compoundId_ != 0) {
+        output.writeUInt32(15, compoundId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class PlayerCompoundMaterialReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (compoundId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, compoundId_);
-      }
       if (count_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, count_);
+          .computeUInt32Size(10, count_);
+      }
+      if (compoundId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, compoundId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class PlayerCompoundMaterialReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 20299
+     * </pre>
+     *
      * Protobuf type {@code PlayerCompoundMaterialReq}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
 
       private int compoundId_ ;
       /**
-       * <code>uint32 compound_id = 1;</code>
+       * <code>uint32 compound_id = 15;</code>
        * @return The compoundId.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
         return compoundId_;
       }
       /**
-       * <code>uint32 compound_id = 1;</code>
+       * <code>uint32 compound_id = 15;</code>
        * @param value The compoundId to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 compound_id = 1;</code>
+       * <code>uint32 compound_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearCompoundId() {
@@ -491,7 +499,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
 
       private int count_ ;
       /**
-       * <code>uint32 count = 4;</code>
+       * <code>uint32 count = 10;</code>
        * @return The count.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
         return count_;
       }
       /**
-       * <code>uint32 count = 4;</code>
+       * <code>uint32 count = 10;</code>
        * @param value The count to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 count = 4;</code>
+       * <code>uint32 count = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCount() {
@@ -587,10 +595,9 @@ public final class PlayerCompoundMaterialReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037PlayerCompoundMaterialReq.proto\"?\n\031Pla" +
-      "yerCompoundMaterialReq\022\023\n\013compound_id\030\001 " +
-      "\001(\r\022\r\n\005count\030\004 \001(\rB@\n\031emu.grasscutter.ne" +
-      "t.protoB#PlayerCompoundMaterialReqOuterC" +
-      "lassb\006proto3"
+      "yerCompoundMaterialReq\022\023\n\013compound_id\030\017 " +
+      "\001(\r\022\r\n\005count\030\n \001(\rB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

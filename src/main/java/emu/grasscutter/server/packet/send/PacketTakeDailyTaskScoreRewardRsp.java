@@ -3,7 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
-import emu.grasscutter.net.proto._TakeDailyTaskScoreRewardRspOuterClass._TakeDailyTaskScoreRewardRsp;
+import emu.grasscutter.net.proto.TakeDailyTaskScoreRewardRsp._TakeDailyTaskScoreRewardRsp;
 import java.util.List;
 
 public class PacketTakeDailyTaskScoreRewardRsp extends BasePacket {

@@ -518,8 +518,8 @@ public final class DelBackupAvatarTeamReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034DelBackupAvatarTeamReq.proto\"7\n\026DelBac" +
       "kupAvatarTeamReq\022\035\n\025backup_avatar_team_i" +
-      "d\030\t \001(\rB=\n\031emu.grasscutter.net.protoB De" +
-      "lBackupAvatarTeamReqOuterClassb\006proto3"
+      "d\030\t \001(\rB\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

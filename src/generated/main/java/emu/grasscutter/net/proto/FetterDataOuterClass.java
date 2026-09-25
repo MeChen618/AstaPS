@@ -19,18 +19,6 @@ public final class FetterDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 fetter_id = 1;</code>
-     * @return The fetterId.
-     */
-    int getFetterId();
-
-    /**
-     * <code>uint32 fetter_state = 2;</code>
-     * @return The fetterState.
-     */
-    int getFetterState();
-
-    /**
      * <code>repeated uint32 cond_index_list = 3;</code>
      * @return A list containing the condIndexList.
      */
@@ -46,8 +34,24 @@ public final class FetterDataOuterClass {
      * @return The condIndexList at the given index.
      */
     int getCondIndexList(int index);
+
+    /**
+     * <code>uint32 fetter_id = 1;</code>
+     * @return The fetterId.
+     */
+    int getFetterId();
+
+    /**
+     * <code>uint32 fetter_state = 2;</code>
+     * @return The fetterState.
+     */
+    int getFetterState();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FetterData}
    */
   public static final class FetterData extends
@@ -160,28 +164,6 @@ public final class FetterDataOuterClass {
               emu.grasscutter.net.proto.FetterDataOuterClass.FetterData.class, emu.grasscutter.net.proto.FetterDataOuterClass.FetterData.Builder.class);
     }
 
-    public static final int FETTER_ID_FIELD_NUMBER = 1;
-    private int fetterId_;
-    /**
-     * <code>uint32 fetter_id = 1;</code>
-     * @return The fetterId.
-     */
-    @java.lang.Override
-    public int getFetterId() {
-      return fetterId_;
-    }
-
-    public static final int FETTER_STATE_FIELD_NUMBER = 2;
-    private int fetterState_;
-    /**
-     * <code>uint32 fetter_state = 2;</code>
-     * @return The fetterState.
-     */
-    @java.lang.Override
-    public int getFetterState() {
-      return fetterState_;
-    }
-
     public static final int COND_INDEX_LIST_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList condIndexList_;
     /**
@@ -209,6 +191,28 @@ public final class FetterDataOuterClass {
       return condIndexList_.getInt(index);
     }
     private int condIndexListMemoizedSerializedSize = -1;
+
+    public static final int FETTER_ID_FIELD_NUMBER = 1;
+    private int fetterId_;
+    /**
+     * <code>uint32 fetter_id = 1;</code>
+     * @return The fetterId.
+     */
+    @java.lang.Override
+    public int getFetterId() {
+      return fetterId_;
+    }
+
+    public static final int FETTER_STATE_FIELD_NUMBER = 2;
+    private int fetterState_;
+    /**
+     * <code>uint32 fetter_state = 2;</code>
+     * @return The fetterState.
+     */
+    @java.lang.Override
+    public int getFetterState() {
+      return fetterState_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -284,12 +288,12 @@ public final class FetterDataOuterClass {
       }
       emu.grasscutter.net.proto.FetterDataOuterClass.FetterData other = (emu.grasscutter.net.proto.FetterDataOuterClass.FetterData) obj;
 
+      if (!getCondIndexListList()
+          .equals(other.getCondIndexListList())) return false;
       if (getFetterId()
           != other.getFetterId()) return false;
       if (getFetterState()
           != other.getFetterState()) return false;
-      if (!getCondIndexListList()
-          .equals(other.getCondIndexListList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -301,14 +305,14 @@ public final class FetterDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FETTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getFetterId();
-      hash = (37 * hash) + FETTER_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + getFetterState();
       if (getCondIndexListCount() > 0) {
         hash = (37 * hash) + COND_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCondIndexListList().hashCode();
       }
+      hash = (37 * hash) + FETTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFetterId();
+      hash = (37 * hash) + FETTER_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getFetterState();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -405,6 +409,10 @@ public final class FetterDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FetterData}
      */
     public static final class Builder extends
@@ -442,12 +450,12 @@ public final class FetterDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        condIndexList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         fetterId_ = 0;
 
         fetterState_ = 0;
 
-        condIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -475,13 +483,13 @@ public final class FetterDataOuterClass {
       public emu.grasscutter.net.proto.FetterDataOuterClass.FetterData buildPartial() {
         emu.grasscutter.net.proto.FetterDataOuterClass.FetterData result = new emu.grasscutter.net.proto.FetterDataOuterClass.FetterData(this);
         int from_bitField0_ = bitField0_;
-        result.fetterId_ = fetterId_;
-        result.fetterState_ = fetterState_;
         if (((bitField0_ & 0x00000001) != 0)) {
           condIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.condIndexList_ = condIndexList_;
+        result.fetterId_ = fetterId_;
+        result.fetterState_ = fetterState_;
         onBuilt();
         return result;
       }
@@ -530,12 +538,6 @@ public final class FetterDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FetterDataOuterClass.FetterData other) {
         if (other == emu.grasscutter.net.proto.FetterDataOuterClass.FetterData.getDefaultInstance()) return this;
-        if (other.getFetterId() != 0) {
-          setFetterId(other.getFetterId());
-        }
-        if (other.getFetterState() != 0) {
-          setFetterState(other.getFetterState());
-        }
         if (!other.condIndexList_.isEmpty()) {
           if (condIndexList_.isEmpty()) {
             condIndexList_ = other.condIndexList_;
@@ -545,6 +547,12 @@ public final class FetterDataOuterClass {
             condIndexList_.addAll(other.condIndexList_);
           }
           onChanged();
+        }
+        if (other.getFetterId() != 0) {
+          setFetterId(other.getFetterId());
+        }
+        if (other.getFetterState() != 0) {
+          setFetterState(other.getFetterState());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -575,68 +583,6 @@ public final class FetterDataOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int fetterId_ ;
-      /**
-       * <code>uint32 fetter_id = 1;</code>
-       * @return The fetterId.
-       */
-      @java.lang.Override
-      public int getFetterId() {
-        return fetterId_;
-      }
-      /**
-       * <code>uint32 fetter_id = 1;</code>
-       * @param value The fetterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFetterId(int value) {
-        
-        fetterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 fetter_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFetterId() {
-        
-        fetterId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int fetterState_ ;
-      /**
-       * <code>uint32 fetter_state = 2;</code>
-       * @return The fetterState.
-       */
-      @java.lang.Override
-      public int getFetterState() {
-        return fetterState_;
-      }
-      /**
-       * <code>uint32 fetter_state = 2;</code>
-       * @param value The fetterState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFetterState(int value) {
-        
-        fetterState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 fetter_state = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFetterState() {
-        
-        fetterState_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList condIndexList_ = emptyIntList();
       private void ensureCondIndexListIsMutable() {
@@ -716,6 +662,68 @@ public final class FetterDataOuterClass {
         onChanged();
         return this;
       }
+
+      private int fetterId_ ;
+      /**
+       * <code>uint32 fetter_id = 1;</code>
+       * @return The fetterId.
+       */
+      @java.lang.Override
+      public int getFetterId() {
+        return fetterId_;
+      }
+      /**
+       * <code>uint32 fetter_id = 1;</code>
+       * @param value The fetterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFetterId(int value) {
+        
+        fetterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 fetter_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFetterId() {
+        
+        fetterId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fetterState_ ;
+      /**
+       * <code>uint32 fetter_state = 2;</code>
+       * @return The fetterState.
+       */
+      @java.lang.Override
+      public int getFetterState() {
+        return fetterState_;
+      }
+      /**
+       * <code>uint32 fetter_state = 2;</code>
+       * @param value The fetterState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFetterState(int value) {
+        
+        fetterState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 fetter_state = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFetterState() {
+        
+        fetterState_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -783,10 +791,10 @@ public final class FetterDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020FetterData.proto\"N\n\nFetterData\022\021\n\tfett" +
-      "er_id\030\001 \001(\r\022\024\n\014fetter_state\030\002 \001(\r\022\027\n\017con" +
-      "d_index_list\030\003 \003(\rB1\n\031emu.grasscutter.ne" +
-      "t.protoB\024FetterDataOuterClassb\006proto3"
+      "\n\020FetterData.proto\"N\n\nFetterData\022\027\n\017cond" +
+      "_index_list\030\003 \003(\r\022\021\n\tfetter_id\030\001 \001(\r\022\024\n\014" +
+      "fetter_state\030\002 \001(\rB\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -797,7 +805,7 @@ public final class FetterDataOuterClass {
     internal_static_FetterData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FetterData_descriptor,
-        new java.lang.String[] { "FetterId", "FetterState", "CondIndexList", });
+        new java.lang.String[] { "CondIndexList", "FetterId", "FetterState", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

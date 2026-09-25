@@ -51,7 +51,7 @@ public final class PlayerBuffManager extends BasePlayerManager {
                 .sendPacket(
                         new PacketServerBuffChangeNotify(
                                 getPlayer(),
-                                ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF,
+                                ServerBuffChangeType.ServerBuffChangeType_DEL_SERVER_BUFF,
                                 this.buffs.values()));
 
         // Clear
@@ -141,7 +141,7 @@ public final class PlayerBuffManager extends BasePlayerManager {
         getPlayer()
                 .sendPacket(
                         new PacketServerBuffChangeNotify(
-                                getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF, buff));
+                                getPlayer(), ServerBuffChangeType.ServerBuffChangeType_ADD_SERVER_BUFF, buff));
 
         // Dulin's Blood: ServerBuff alone is VFX-only; arm the smash GVs and ability for ice seals.
         try {
@@ -170,7 +170,7 @@ public final class PlayerBuffManager extends BasePlayerManager {
             getPlayer()
                     .sendPacket(
                             new PacketServerBuffChangeNotify(
-                                    getPlayer(), ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF, buff));
+                                    getPlayer(), ServerBuffChangeType.ServerBuffChangeType_DEL_SERVER_BUFF, buff));
             try {
                 if (buffGroupId
                         == emu.grasscutter.game.entity.gadget.ScarletQuartzCombatHelper.BUFF_GROUP_ID) {
@@ -206,7 +206,7 @@ public final class PlayerBuffManager extends BasePlayerManager {
                     .sendPacket(
                             new PacketServerBuffChangeNotify(
                                     getPlayer(),
-                                    ServerBuffChangeType.SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF,
+                                    ServerBuffChangeType.ServerBuffChangeType_DEL_SERVER_BUFF,
                                     this.pendingBuffs));
             this.pendingBuffs.clear();
         }

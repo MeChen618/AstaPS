@@ -31,18 +31,22 @@ public final class ICCPPEPMDEJOuterClass {
         getPAAJJAHNMJPBytes();
 
     /**
-     * <code>bool is_active = 2;</code>
-     * @return The isActive.
-     */
-    boolean getIsActive();
-
-    /**
      * <code>int32 IJJECLJEAHH = 3;</code>
      * @return The iJJECLJEAHH.
      */
     int getIJJECLJEAHH();
+
+    /**
+     * <code>bool is_active = 2;</code>
+     * @return The isActive.
+     */
+    boolean getIsActive();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ICCPPEPMDEJ}
    */
   public static final class ICCPPEPMDEJ extends
@@ -174,17 +178,6 @@ public final class ICCPPEPMDEJOuterClass {
       }
     }
 
-    public static final int IS_ACTIVE_FIELD_NUMBER = 2;
-    private boolean isActive_;
-    /**
-     * <code>bool is_active = 2;</code>
-     * @return The isActive.
-     */
-    @java.lang.Override
-    public boolean getIsActive() {
-      return isActive_;
-    }
-
     public static final int IJJECLJEAHH_FIELD_NUMBER = 3;
     private int iJJECLJEAHH_;
     /**
@@ -194,6 +187,17 @@ public final class ICCPPEPMDEJOuterClass {
     @java.lang.Override
     public int getIJJECLJEAHH() {
       return iJJECLJEAHH_;
+    }
+
+    public static final int IS_ACTIVE_FIELD_NUMBER = 2;
+    private boolean isActive_;
+    /**
+     * <code>bool is_active = 2;</code>
+     * @return The isActive.
+     */
+    @java.lang.Override
+    public boolean getIsActive() {
+      return isActive_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -256,10 +260,10 @@ public final class ICCPPEPMDEJOuterClass {
 
       if (!getPAAJJAHNMJP()
           .equals(other.getPAAJJAHNMJP())) return false;
-      if (getIsActive()
-          != other.getIsActive()) return false;
       if (getIJJECLJEAHH()
           != other.getIJJECLJEAHH()) return false;
+      if (getIsActive()
+          != other.getIsActive()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -273,11 +277,11 @@ public final class ICCPPEPMDEJOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PAAJJAHNMJP_FIELD_NUMBER;
       hash = (53 * hash) + getPAAJJAHNMJP().hashCode();
+      hash = (37 * hash) + IJJECLJEAHH_FIELD_NUMBER;
+      hash = (53 * hash) + getIJJECLJEAHH();
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
-      hash = (37 * hash) + IJJECLJEAHH_FIELD_NUMBER;
-      hash = (53 * hash) + getIJJECLJEAHH();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -374,6 +378,10 @@ public final class ICCPPEPMDEJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ICCPPEPMDEJ}
      */
     public static final class Builder extends
@@ -413,9 +421,9 @@ public final class ICCPPEPMDEJOuterClass {
         super.clear();
         pAAJJAHNMJP_ = "";
 
-        isActive_ = false;
-
         iJJECLJEAHH_ = 0;
+
+        isActive_ = false;
 
         return this;
       }
@@ -444,8 +452,8 @@ public final class ICCPPEPMDEJOuterClass {
       public emu.grasscutter.net.proto.ICCPPEPMDEJOuterClass.ICCPPEPMDEJ buildPartial() {
         emu.grasscutter.net.proto.ICCPPEPMDEJOuterClass.ICCPPEPMDEJ result = new emu.grasscutter.net.proto.ICCPPEPMDEJOuterClass.ICCPPEPMDEJ(this);
         result.pAAJJAHNMJP_ = pAAJJAHNMJP_;
-        result.isActive_ = isActive_;
         result.iJJECLJEAHH_ = iJJECLJEAHH_;
+        result.isActive_ = isActive_;
         onBuilt();
         return result;
       }
@@ -498,11 +506,11 @@ public final class ICCPPEPMDEJOuterClass {
           pAAJJAHNMJP_ = other.pAAJJAHNMJP_;
           onChanged();
         }
-        if (other.getIsActive() != false) {
-          setIsActive(other.getIsActive());
-        }
         if (other.getIJJECLJEAHH() != 0) {
           setIJJECLJEAHH(other.getIJJECLJEAHH());
+        }
+        if (other.getIsActive() != false) {
+          setIsActive(other.getIsActive());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -609,37 +617,6 @@ public final class ICCPPEPMDEJOuterClass {
         return this;
       }
 
-      private boolean isActive_ ;
-      /**
-       * <code>bool is_active = 2;</code>
-       * @return The isActive.
-       */
-      @java.lang.Override
-      public boolean getIsActive() {
-        return isActive_;
-      }
-      /**
-       * <code>bool is_active = 2;</code>
-       * @param value The isActive to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsActive(boolean value) {
-        
-        isActive_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_active = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsActive() {
-        
-        isActive_ = false;
-        onChanged();
-        return this;
-      }
-
       private int iJJECLJEAHH_ ;
       /**
        * <code>int32 IJJECLJEAHH = 3;</code>
@@ -667,6 +644,37 @@ public final class ICCPPEPMDEJOuterClass {
       public Builder clearIJJECLJEAHH() {
         
         iJJECLJEAHH_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isActive_ ;
+      /**
+       * <code>bool is_active = 2;</code>
+       * @return The isActive.
+       */
+      @java.lang.Override
+      public boolean getIsActive() {
+        return isActive_;
+      }
+      /**
+       * <code>bool is_active = 2;</code>
+       * @param value The isActive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsActive(boolean value) {
+        
+        isActive_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_active = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsActive() {
+        
+        isActive_ = false;
         onChanged();
         return this;
       }
@@ -738,9 +746,9 @@ public final class ICCPPEPMDEJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ICCPPEPMDEJ.proto\"J\n\013ICCPPEPMDEJ\022\023\n\013PA" +
-      "AJJAHNMJP\030\001 \001(\t\022\021\n\tis_active\030\002 \001(\010\022\023\n\013IJ" +
-      "JECLJEAHH\030\003 \001(\005B2\n\031emu.grasscutter.net.p" +
-      "rotoB\025ICCPPEPMDEJOuterClassb\006proto3"
+      "AJJAHNMJP\030\001 \001(\t\022\023\n\013IJJECLJEAHH\030\003 \001(\005\022\021\n\t" +
+      "is_active\030\002 \001(\010B\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -751,7 +759,7 @@ public final class ICCPPEPMDEJOuterClass {
     internal_static_ICCPPEPMDEJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ICCPPEPMDEJ_descriptor,
-        new java.lang.String[] { "PAAJJAHNMJP", "IsActive", "IJJECLJEAHH", });
+        new java.lang.String[] { "PAAJJAHNMJP", "IJJECLJEAHH", "IsActive", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

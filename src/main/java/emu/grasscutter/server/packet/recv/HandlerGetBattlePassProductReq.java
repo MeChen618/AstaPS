@@ -16,7 +16,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
 import emu.grasscutter.net.packet.PacketHandler;
-import emu.grasscutter.net.proto.GetBattlePassProductReq;
+import emu.grasscutter.net.proto.GetBattlePassProductReqOuterClass.GetBattlePassProductReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetBattlePassProductRsp;
 

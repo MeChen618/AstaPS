@@ -19,51 +19,55 @@ public final class QuestCreateEntityRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.CreateEntityInfo entity = 2;</code>
+     * <code>.CreateEntityInfo entity = 3;</code>
      * @return Whether the entity field is set.
      */
     boolean hasEntity();
     /**
-     * <code>.CreateEntityInfo entity = 2;</code>
+     * <code>.CreateEntityInfo entity = 3;</code>
      * @return The entity.
      */
     emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo getEntity();
     /**
-     * <code>.CreateEntityInfo entity = 2;</code>
+     * <code>.CreateEntityInfo entity = 3;</code>
      */
     emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder();
 
     /**
-     * <code>int32 retcode = 4;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
-     * <code>uint32 parent_quest_id = 7;</code>
-     * @return The parentQuestId.
-     */
-    int getParentQuestId();
-
-    /**
-     * <code>uint32 quest_id = 8;</code>
-     * @return The questId.
-     */
-    int getQuestId();
-
-    /**
-     * <code>uint32 entity_id = 10;</code>
+     * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>bool is_rewind = 12;</code>
+     * <code>bool is_rewind = 7;</code>
      * @return The isRewind.
      */
     boolean getIsRewind();
+
+    /**
+     * <code>uint32 quest_id = 12;</code>
+     * @return The questId.
+     */
+    int getQuestId();
+
+    /**
+     * <code>int32 retcode = 10;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
+
+    /**
+     * <code>uint32 parent_quest_id = 14;</code>
+     * @return The parentQuestId.
+     */
+    int getParentQuestId();
   }
   /**
+   * <pre>
+   * CmdId: 6602
+   * </pre>
+   *
    * Protobuf type {@code QuestCreateEntityRsp}
    */
   public static final class QuestCreateEntityRsp extends
@@ -108,7 +112,7 @@ public final class QuestCreateEntityRspOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 26: {
               emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder subBuilder = null;
               if (entity_ != null) {
                 subBuilder = entity_.toBuilder();
@@ -121,29 +125,29 @@ public final class QuestCreateEntityRspOuterClass {
 
               break;
             }
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              parentQuestId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 40: {
 
               entityId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 56: {
 
               isRewind_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              questId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              parentQuestId_ = input.readUInt32();
               break;
             }
             default: {
@@ -178,10 +182,10 @@ public final class QuestCreateEntityRspOuterClass {
               emu.grasscutter.net.proto.QuestCreateEntityRspOuterClass.QuestCreateEntityRsp.class, emu.grasscutter.net.proto.QuestCreateEntityRspOuterClass.QuestCreateEntityRsp.Builder.class);
     }
 
-    public static final int ENTITY_FIELD_NUMBER = 2;
+    public static final int ENTITY_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo entity_;
     /**
-     * <code>.CreateEntityInfo entity = 2;</code>
+     * <code>.CreateEntityInfo entity = 3;</code>
      * @return Whether the entity field is set.
      */
     @java.lang.Override
@@ -189,7 +193,7 @@ public final class QuestCreateEntityRspOuterClass {
       return entity_ != null;
     }
     /**
-     * <code>.CreateEntityInfo entity = 2;</code>
+     * <code>.CreateEntityInfo entity = 3;</code>
      * @return The entity.
      */
     @java.lang.Override
@@ -197,50 +201,17 @@ public final class QuestCreateEntityRspOuterClass {
       return entity_ == null ? emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance() : entity_;
     }
     /**
-     * <code>.CreateEntityInfo entity = 2;</code>
+     * <code>.CreateEntityInfo entity = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder() {
       return getEntity();
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 4;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
-    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 7;
-    private int parentQuestId_;
-    /**
-     * <code>uint32 parent_quest_id = 7;</code>
-     * @return The parentQuestId.
-     */
-    @java.lang.Override
-    public int getParentQuestId() {
-      return parentQuestId_;
-    }
-
-    public static final int QUEST_ID_FIELD_NUMBER = 8;
-    private int questId_;
-    /**
-     * <code>uint32 quest_id = 8;</code>
-     * @return The questId.
-     */
-    @java.lang.Override
-    public int getQuestId() {
-      return questId_;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
+    public static final int ENTITY_ID_FIELD_NUMBER = 5;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 10;</code>
+     * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -248,15 +219,48 @@ public final class QuestCreateEntityRspOuterClass {
       return entityId_;
     }
 
-    public static final int IS_REWIND_FIELD_NUMBER = 12;
+    public static final int IS_REWIND_FIELD_NUMBER = 7;
     private boolean isRewind_;
     /**
-     * <code>bool is_rewind = 12;</code>
+     * <code>bool is_rewind = 7;</code>
      * @return The isRewind.
      */
     @java.lang.Override
     public boolean getIsRewind() {
       return isRewind_;
+    }
+
+    public static final int QUEST_ID_FIELD_NUMBER = 12;
+    private int questId_;
+    /**
+     * <code>uint32 quest_id = 12;</code>
+     * @return The questId.
+     */
+    @java.lang.Override
+    public int getQuestId() {
+      return questId_;
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 10;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 10;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
+    }
+
+    public static final int PARENT_QUEST_ID_FIELD_NUMBER = 14;
+    private int parentQuestId_;
+    /**
+     * <code>uint32 parent_quest_id = 14;</code>
+     * @return The parentQuestId.
+     */
+    @java.lang.Override
+    public int getParentQuestId() {
+      return parentQuestId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -274,22 +278,22 @@ public final class QuestCreateEntityRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (entity_ != null) {
-        output.writeMessage(2, getEntity());
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(4, retcode_);
-      }
-      if (parentQuestId_ != 0) {
-        output.writeUInt32(7, parentQuestId_);
-      }
-      if (questId_ != 0) {
-        output.writeUInt32(8, questId_);
+        output.writeMessage(3, getEntity());
       }
       if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
+        output.writeUInt32(5, entityId_);
       }
       if (isRewind_ != false) {
-        output.writeBool(12, isRewind_);
+        output.writeBool(7, isRewind_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(10, retcode_);
+      }
+      if (questId_ != 0) {
+        output.writeUInt32(12, questId_);
+      }
+      if (parentQuestId_ != 0) {
+        output.writeUInt32(14, parentQuestId_);
       }
       unknownFields.writeTo(output);
     }
@@ -302,27 +306,27 @@ public final class QuestCreateEntityRspOuterClass {
       size = 0;
       if (entity_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getEntity());
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, retcode_);
-      }
-      if (parentQuestId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, parentQuestId_);
-      }
-      if (questId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, questId_);
+          .computeMessageSize(3, getEntity());
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
+          .computeUInt32Size(5, entityId_);
       }
       if (isRewind_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isRewind_);
+          .computeBoolSize(7, isRewind_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, retcode_);
+      }
+      if (questId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, questId_);
+      }
+      if (parentQuestId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, parentQuestId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -344,16 +348,16 @@ public final class QuestCreateEntityRspOuterClass {
         if (!getEntity()
             .equals(other.getEntity())) return false;
       }
-      if (getRetcode()
-          != other.getRetcode()) return false;
-      if (getParentQuestId()
-          != other.getParentQuestId()) return false;
-      if (getQuestId()
-          != other.getQuestId()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
       if (getIsRewind()
           != other.getIsRewind()) return false;
+      if (getQuestId()
+          != other.getQuestId()) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
+      if (getParentQuestId()
+          != other.getParentQuestId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -369,17 +373,17 @@ public final class QuestCreateEntityRspOuterClass {
         hash = (37 * hash) + ENTITY_FIELD_NUMBER;
         hash = (53 * hash) + getEntity().hashCode();
       }
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
-      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParentQuestId();
-      hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getQuestId();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + IS_REWIND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRewind());
+      hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestId();
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentQuestId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -476,6 +480,10 @@ public final class QuestCreateEntityRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 6602
+     * </pre>
+     *
      * Protobuf type {@code QuestCreateEntityRsp}
      */
     public static final class Builder extends
@@ -519,15 +527,15 @@ public final class QuestCreateEntityRspOuterClass {
           entity_ = null;
           entityBuilder_ = null;
         }
-        retcode_ = 0;
-
-        parentQuestId_ = 0;
-
-        questId_ = 0;
-
         entityId_ = 0;
 
         isRewind_ = false;
+
+        questId_ = 0;
+
+        retcode_ = 0;
+
+        parentQuestId_ = 0;
 
         return this;
       }
@@ -560,11 +568,11 @@ public final class QuestCreateEntityRspOuterClass {
         } else {
           result.entity_ = entityBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        result.parentQuestId_ = parentQuestId_;
-        result.questId_ = questId_;
         result.entityId_ = entityId_;
         result.isRewind_ = isRewind_;
+        result.questId_ = questId_;
+        result.retcode_ = retcode_;
+        result.parentQuestId_ = parentQuestId_;
         onBuilt();
         return result;
       }
@@ -616,20 +624,20 @@ public final class QuestCreateEntityRspOuterClass {
         if (other.hasEntity()) {
           mergeEntity(other.getEntity());
         }
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
-        if (other.getParentQuestId() != 0) {
-          setParentQuestId(other.getParentQuestId());
-        }
-        if (other.getQuestId() != 0) {
-          setQuestId(other.getQuestId());
-        }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
         if (other.getIsRewind() != false) {
           setIsRewind(other.getIsRewind());
+        }
+        if (other.getQuestId() != 0) {
+          setQuestId(other.getQuestId());
+        }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
+        if (other.getParentQuestId() != 0) {
+          setParentQuestId(other.getParentQuestId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -664,14 +672,14 @@ public final class QuestCreateEntityRspOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo, emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder, emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder> entityBuilder_;
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        * @return Whether the entity field is set.
        */
       public boolean hasEntity() {
         return entityBuilder_ != null || entity_ != null;
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        * @return The entity.
        */
       public emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo getEntity() {
@@ -682,7 +690,7 @@ public final class QuestCreateEntityRspOuterClass {
         }
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       public Builder setEntity(emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo value) {
         if (entityBuilder_ == null) {
@@ -698,7 +706,7 @@ public final class QuestCreateEntityRspOuterClass {
         return this;
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       public Builder setEntity(
           emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder builderForValue) {
@@ -712,7 +720,7 @@ public final class QuestCreateEntityRspOuterClass {
         return this;
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       public Builder mergeEntity(emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo value) {
         if (entityBuilder_ == null) {
@@ -730,7 +738,7 @@ public final class QuestCreateEntityRspOuterClass {
         return this;
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       public Builder clearEntity() {
         if (entityBuilder_ == null) {
@@ -744,7 +752,7 @@ public final class QuestCreateEntityRspOuterClass {
         return this;
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       public emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder getEntityBuilder() {
         
@@ -752,7 +760,7 @@ public final class QuestCreateEntityRspOuterClass {
         return getEntityFieldBuilder().getBuilder();
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       public emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder() {
         if (entityBuilder_ != null) {
@@ -763,7 +771,7 @@ public final class QuestCreateEntityRspOuterClass {
         }
       }
       /**
-       * <code>.CreateEntityInfo entity = 2;</code>
+       * <code>.CreateEntityInfo entity = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo, emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder, emu.grasscutter.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder> 
@@ -779,102 +787,9 @@ public final class QuestCreateEntityRspOuterClass {
         return entityBuilder_;
       }
 
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 4;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 4;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int parentQuestId_ ;
-      /**
-       * <code>uint32 parent_quest_id = 7;</code>
-       * @return The parentQuestId.
-       */
-      @java.lang.Override
-      public int getParentQuestId() {
-        return parentQuestId_;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 7;</code>
-       * @param value The parentQuestId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentQuestId(int value) {
-        
-        parentQuestId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 parent_quest_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParentQuestId() {
-        
-        parentQuestId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int questId_ ;
-      /**
-       * <code>uint32 quest_id = 8;</code>
-       * @return The questId.
-       */
-      @java.lang.Override
-      public int getQuestId() {
-        return questId_;
-      }
-      /**
-       * <code>uint32 quest_id = 8;</code>
-       * @param value The questId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setQuestId(int value) {
-        
-        questId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 quest_id = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearQuestId() {
-        
-        questId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 10;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -882,7 +797,7 @@ public final class QuestCreateEntityRspOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 10;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -893,7 +808,7 @@ public final class QuestCreateEntityRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 10;</code>
+       * <code>uint32 entity_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -905,7 +820,7 @@ public final class QuestCreateEntityRspOuterClass {
 
       private boolean isRewind_ ;
       /**
-       * <code>bool is_rewind = 12;</code>
+       * <code>bool is_rewind = 7;</code>
        * @return The isRewind.
        */
       @java.lang.Override
@@ -913,7 +828,7 @@ public final class QuestCreateEntityRspOuterClass {
         return isRewind_;
       }
       /**
-       * <code>bool is_rewind = 12;</code>
+       * <code>bool is_rewind = 7;</code>
        * @param value The isRewind to set.
        * @return This builder for chaining.
        */
@@ -924,12 +839,105 @@ public final class QuestCreateEntityRspOuterClass {
         return this;
       }
       /**
-       * <code>bool is_rewind = 12;</code>
+       * <code>bool is_rewind = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsRewind() {
         
         isRewind_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int questId_ ;
+      /**
+       * <code>uint32 quest_id = 12;</code>
+       * @return The questId.
+       */
+      @java.lang.Override
+      public int getQuestId() {
+        return questId_;
+      }
+      /**
+       * <code>uint32 quest_id = 12;</code>
+       * @param value The questId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuestId(int value) {
+        
+        questId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 quest_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuestId() {
+        
+        questId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int parentQuestId_ ;
+      /**
+       * <code>uint32 parent_quest_id = 14;</code>
+       * @return The parentQuestId.
+       */
+      @java.lang.Override
+      public int getParentQuestId() {
+        return parentQuestId_;
+      }
+      /**
+       * <code>uint32 parent_quest_id = 14;</code>
+       * @param value The parentQuestId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParentQuestId(int value) {
+        
+        parentQuestId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 parent_quest_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParentQuestId() {
+        
+        parentQuestId_ = 0;
         onChanged();
         return this;
       }
@@ -1002,11 +1010,11 @@ public final class QuestCreateEntityRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032QuestCreateEntityRsp.proto\032\026CreateEnti" +
       "tyInfo.proto\"\233\001\n\024QuestCreateEntityRsp\022!\n" +
-      "\006entity\030\002 \001(\0132\021.CreateEntityInfo\022\017\n\007retc" +
-      "ode\030\004 \001(\005\022\027\n\017parent_quest_id\030\007 \001(\r\022\020\n\010qu" +
-      "est_id\030\010 \001(\r\022\021\n\tentity_id\030\n \001(\r\022\021\n\tis_re" +
-      "wind\030\014 \001(\010B;\n\031emu.grasscutter.net.protoB" +
-      "\036QuestCreateEntityRspOuterClassb\006proto3"
+      "\006entity\030\003 \001(\0132\021.CreateEntityInfo\022\021\n\tenti" +
+      "ty_id\030\005 \001(\r\022\021\n\tis_rewind\030\007 \001(\010\022\020\n\010quest_" +
+      "id\030\014 \001(\r\022\017\n\007retcode\030\n \001(\005\022\027\n\017parent_ques" +
+      "t_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1018,7 +1026,7 @@ public final class QuestCreateEntityRspOuterClass {
     internal_static_QuestCreateEntityRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_QuestCreateEntityRsp_descriptor,
-        new java.lang.String[] { "Entity", "Retcode", "ParentQuestId", "QuestId", "EntityId", "IsRewind", });
+        new java.lang.String[] { "Entity", "EntityId", "IsRewind", "QuestId", "Retcode", "ParentQuestId", });
     emu.grasscutter.net.proto.CreateEntityInfoOuterClass.getDescriptor();
   }
 

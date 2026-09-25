@@ -19,18 +19,6 @@ public final class EMCDNJLCAEBOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
      * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
      * @return Whether the nGLCFKKJGFJ field is set.
      */
@@ -44,6 +32,18 @@ public final class EMCDNJLCAEBOuterClass {
      * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
      */
     emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKMOrBuilder getNGLCFKKJGFJOrBuilder();
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
 
     /**
      * <code>.HHEDHCFPEKM NNPNDCFIAMA = 3;</code>
@@ -61,6 +61,10 @@ public final class EMCDNJLCAEBOuterClass {
     emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKMOrBuilder getNNPNDCFIAMAOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EMCDNJLCAEB}
    */
   public static final class EMCDNJLCAEB extends
@@ -170,6 +174,32 @@ public final class EMCDNJLCAEBOuterClass {
               emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB.class, emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB.Builder.class);
     }
 
+    public static final int NGLCFKKJGFJ_FIELD_NUMBER = 2;
+    private emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM nGLCFKKJGFJ_;
+    /**
+     * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
+     * @return Whether the nGLCFKKJGFJ field is set.
+     */
+    @java.lang.Override
+    public boolean hasNGLCFKKJGFJ() {
+      return nGLCFKKJGFJ_ != null;
+    }
+    /**
+     * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
+     * @return The nGLCFKKJGFJ.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM getNGLCFKKJGFJ() {
+      return nGLCFKKJGFJ_ == null ? emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM.getDefaultInstance() : nGLCFKKJGFJ_;
+    }
+    /**
+     * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKMOrBuilder getNGLCFKKJGFJOrBuilder() {
+      return getNGLCFKKJGFJ();
+    }
+
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
@@ -206,32 +236,6 @@ public final class EMCDNJLCAEBOuterClass {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int NGLCFKKJGFJ_FIELD_NUMBER = 2;
-    private emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM nGLCFKKJGFJ_;
-    /**
-     * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
-     * @return Whether the nGLCFKKJGFJ field is set.
-     */
-    @java.lang.Override
-    public boolean hasNGLCFKKJGFJ() {
-      return nGLCFKKJGFJ_ != null;
-    }
-    /**
-     * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
-     * @return The nGLCFKKJGFJ.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM getNGLCFKKJGFJ() {
-      return nGLCFKKJGFJ_ == null ? emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM.getDefaultInstance() : nGLCFKKJGFJ_;
-    }
-    /**
-     * <code>.HHEDHCFPEKM NGLCFKKJGFJ = 2;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKMOrBuilder getNGLCFKKJGFJOrBuilder() {
-      return getNGLCFKKJGFJ();
     }
 
     public static final int NNPNDCFIAMA_FIELD_NUMBER = 3;
@@ -318,13 +322,13 @@ public final class EMCDNJLCAEBOuterClass {
       }
       emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB other = (emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
       if (hasNGLCFKKJGFJ() != other.hasNGLCFKKJGFJ()) return false;
       if (hasNGLCFKKJGFJ()) {
         if (!getNGLCFKKJGFJ()
             .equals(other.getNGLCFKKJGFJ())) return false;
       }
+      if (!getName()
+          .equals(other.getName())) return false;
       if (hasNNPNDCFIAMA() != other.hasNNPNDCFIAMA()) return false;
       if (hasNNPNDCFIAMA()) {
         if (!getNNPNDCFIAMA()
@@ -341,12 +345,12 @@ public final class EMCDNJLCAEBOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
       if (hasNGLCFKKJGFJ()) {
         hash = (37 * hash) + NGLCFKKJGFJ_FIELD_NUMBER;
         hash = (53 * hash) + getNGLCFKKJGFJ().hashCode();
       }
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       if (hasNNPNDCFIAMA()) {
         hash = (37 * hash) + NNPNDCFIAMA_FIELD_NUMBER;
         hash = (53 * hash) + getNNPNDCFIAMA().hashCode();
@@ -447,6 +451,10 @@ public final class EMCDNJLCAEBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EMCDNJLCAEB}
      */
     public static final class Builder extends
@@ -484,14 +492,14 @@ public final class EMCDNJLCAEBOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
-
         if (nGLCFKKJGFJBuilder_ == null) {
           nGLCFKKJGFJ_ = null;
         } else {
           nGLCFKKJGFJ_ = null;
           nGLCFKKJGFJBuilder_ = null;
         }
+        name_ = "";
+
         if (nNPNDCFIAMABuilder_ == null) {
           nNPNDCFIAMA_ = null;
         } else {
@@ -524,12 +532,12 @@ public final class EMCDNJLCAEBOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB buildPartial() {
         emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB result = new emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB(this);
-        result.name_ = name_;
         if (nGLCFKKJGFJBuilder_ == null) {
           result.nGLCFKKJGFJ_ = nGLCFKKJGFJ_;
         } else {
           result.nGLCFKKJGFJ_ = nGLCFKKJGFJBuilder_.build();
         }
+        result.name_ = name_;
         if (nNPNDCFIAMABuilder_ == null) {
           result.nNPNDCFIAMA_ = nNPNDCFIAMA_;
         } else {
@@ -583,12 +591,12 @@ public final class EMCDNJLCAEBOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB other) {
         if (other == emu.grasscutter.net.proto.EMCDNJLCAEBOuterClass.EMCDNJLCAEB.getDefaultInstance()) return this;
+        if (other.hasNGLCFKKJGFJ()) {
+          mergeNGLCFKKJGFJ(other.getNGLCFKKJGFJ());
+        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
-        }
-        if (other.hasNGLCFKKJGFJ()) {
-          mergeNGLCFKKJGFJ(other.getNGLCFKKJGFJ());
         }
         if (other.hasNNPNDCFIAMA()) {
           mergeNNPNDCFIAMA(other.getNNPNDCFIAMA());
@@ -619,82 +627,6 @@ public final class EMCDNJLCAEBOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 1;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
         return this;
       }
 
@@ -815,6 +747,82 @@ public final class EMCDNJLCAEBOuterClass {
           nGLCFKKJGFJ_ = null;
         }
         return nGLCFKKJGFJBuilder_;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
       }
 
       private emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM nNPNDCFIAMA_;
@@ -1003,10 +1011,10 @@ public final class EMCDNJLCAEBOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021EMCDNJLCAEB.proto\032\021HHEDHCFPEKM.proto\"a" +
-      "\n\013EMCDNJLCAEB\022\014\n\004name\030\001 \001(\t\022!\n\013NGLCFKKJG" +
-      "FJ\030\002 \001(\0132\014.HHEDHCFPEKM\022!\n\013NNPNDCFIAMA\030\003 " +
-      "\001(\0132\014.HHEDHCFPEKMB2\n\031emu.grasscutter.net" +
-      ".protoB\025EMCDNJLCAEBOuterClassb\006proto3"
+      "\n\013EMCDNJLCAEB\022!\n\013NGLCFKKJGFJ\030\002 \001(\0132\014.HHE" +
+      "DHCFPEKM\022\014\n\004name\030\001 \001(\t\022!\n\013NNPNDCFIAMA\030\003 " +
+      "\001(\0132\014.HHEDHCFPEKMB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1018,7 +1026,7 @@ public final class EMCDNJLCAEBOuterClass {
     internal_static_EMCDNJLCAEB_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EMCDNJLCAEB_descriptor,
-        new java.lang.String[] { "Name", "NGLCFKKJGFJ", "NNPNDCFIAMA", });
+        new java.lang.String[] { "NGLCFKKJGFJ", "Name", "NNPNDCFIAMA", });
     emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.getDescriptor();
   }
 

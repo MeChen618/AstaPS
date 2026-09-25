@@ -19,15 +19,14 @@ public final class SceneWeatherForcastReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 weather_area_id = 2;</code>
+     * <code>uint32 weather_area_id = 15;</code>
      * @return The weatherAreaId.
      */
     int getWeatherAreaId();
   }
   /**
    * <pre>
-   * CmdId: 27174
-   * Obf: DLNOGFFHMHA
+   * CmdId: 28371
    * </pre>
    *
    * Protobuf type {@code SceneWeatherForcastReq}
@@ -114,7 +113,7 @@ public final class SceneWeatherForcastReqOuterClass {
     public static final int WEATHER_AREA_ID_FIELD_NUMBER = 15;
     private int weatherAreaId_;
     /**
-     * <code>uint32 weather_area_id = 2;</code>
+     * <code>uint32 weather_area_id = 15;</code>
      * @return The weatherAreaId.
      */
     @java.lang.Override
@@ -279,8 +278,7 @@ public final class SceneWeatherForcastReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 27174
-     * Obf: DLNOGFFHMHA
+     * CmdId: 28371
      * </pre>
      *
      * Protobuf type {@code SceneWeatherForcastReq}
@@ -431,7 +429,7 @@ public final class SceneWeatherForcastReqOuterClass {
 
       private int weatherAreaId_ ;
       /**
-       * <code>uint32 weather_area_id = 2;</code>
+       * <code>uint32 weather_area_id = 15;</code>
        * @return The weatherAreaId.
        */
       @java.lang.Override
@@ -439,7 +437,7 @@ public final class SceneWeatherForcastReqOuterClass {
         return weatherAreaId_;
       }
       /**
-       * <code>uint32 weather_area_id = 2;</code>
+       * <code>uint32 weather_area_id = 15;</code>
        * @param value The weatherAreaId to set.
        * @return This builder for chaining.
        */
@@ -450,7 +448,7 @@ public final class SceneWeatherForcastReqOuterClass {
         return this;
       }
       /**
-       * <code>uint32 weather_area_id = 2;</code>
+       * <code>uint32 weather_area_id = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearWeatherAreaId() {
@@ -527,7 +525,7 @@ public final class SceneWeatherForcastReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034SceneWeatherForcastReq.proto\"1\n\026SceneW" +
-      "eatherForcastReq\022\027\n\017weather_area_id\030\002 \001(" +
+      "eatherForcastReq\022\027\n\017weather_area_id\030\017 \001(" +
       "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

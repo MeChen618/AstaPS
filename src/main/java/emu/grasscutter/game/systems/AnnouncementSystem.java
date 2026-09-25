@@ -99,7 +99,7 @@ public class AnnouncementSystem extends BaseGameSystem {
             // which is which is not recoverable from the proto dump, so all three carry the
             // content. Whichever one the client reads for this announce type, it finds the text.
             var text = content == null ? "" : content;
-            proto.setENGJGCGFMMM(text).setLHMGGPMCDCN(text).setKFAGDOEAIPP(text);
+            proto.setDungeonConfirmText(text).setCountDownText(text).setCenterSystemText(text);
 
             // The two remaining uint32 fields are unnamed in 7.0 as well, and were being fed
             // `frequency` on the assumption that they are the repeat intervals. A wrong value in

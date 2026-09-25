@@ -18,11 +18,23 @@ public final class CylinderRegionSizeOuterClass {
       // @@protoc_insertion_point(interface_extends:CylinderRegionSize)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>float height = 8;</code>
+     * @return The height.
+     */
     float getHeight();
 
+    /**
+     * <code>float radius = 9;</code>
+     * @return The radius.
+     */
     float getRadius();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code CylinderRegionSize}
    */
   public static final class CylinderRegionSize extends
@@ -67,14 +79,14 @@ public final class CylinderRegionSizeOuterClass {
             case 0:
               done = true;
               break;
-            case 125: {
-
-              radius_ = input.readFloat();
-              break;
-            }
-            case 61: {
+            case 69: {
 
               height_ = input.readFloat();
+              break;
+            }
+            case 77: {
+
+              radius_ = input.readFloat();
               break;
             }
             default: {
@@ -109,17 +121,23 @@ public final class CylinderRegionSizeOuterClass {
               emu.grasscutter.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.class, emu.grasscutter.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.Builder.class);
     }
 
-    public static final int HEIGHT_FIELD_NUMBER = 7;
+    public static final int HEIGHT_FIELD_NUMBER = 8;
     private float height_;
-
+    /**
+     * <code>float height = 8;</code>
+     * @return The height.
+     */
     @java.lang.Override
     public float getHeight() {
       return height_;
     }
 
-    public static final int RADIUS_FIELD_NUMBER = 15;
+    public static final int RADIUS_FIELD_NUMBER = 9;
     private float radius_;
-
+    /**
+     * <code>float radius = 9;</code>
+     * @return The radius.
+     */
     @java.lang.Override
     public float getRadius() {
       return radius_;
@@ -139,11 +157,11 @@ public final class CylinderRegionSizeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (radius_ != 0F) {
-        output.writeFloat(15, radius_);
-      }
       if (height_ != 0F) {
-        output.writeFloat(7, height_);
+        output.writeFloat(8, height_);
+      }
+      if (radius_ != 0F) {
+        output.writeFloat(9, radius_);
       }
       unknownFields.writeTo(output);
     }
@@ -154,13 +172,13 @@ public final class CylinderRegionSizeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (radius_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(15, radius_);
-      }
       if (height_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(7, height_);
+          .computeFloatSize(8, height_);
+      }
+      if (radius_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(9, radius_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -296,6 +314,10 @@ public final class CylinderRegionSizeOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code CylinderRegionSize}
      */
     public static final class Builder extends
@@ -449,42 +471,62 @@ public final class CylinderRegionSizeOuterClass {
       }
 
       private float height_ ;
-
+      /**
+       * <code>float height = 8;</code>
+       * @return The height.
+       */
       @java.lang.Override
       public float getHeight() {
         return height_;
       }
-
+      /**
+       * <code>float height = 8;</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
+       */
       public Builder setHeight(float value) {
-
+        
         height_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>float height = 8;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearHeight() {
-
+        
         height_ = 0F;
         onChanged();
         return this;
       }
 
       private float radius_ ;
-
+      /**
+       * <code>float radius = 9;</code>
+       * @return The radius.
+       */
       @java.lang.Override
       public float getRadius() {
         return radius_;
       }
-
+      /**
+       * <code>float radius = 9;</code>
+       * @param value The radius to set.
+       * @return This builder for chaining.
+       */
       public Builder setRadius(float value) {
-
+        
         radius_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>float radius = 9;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearRadius() {
-
+        
         radius_ = 0F;
         onChanged();
         return this;
@@ -500,6 +542,7 @@ public final class CylinderRegionSizeOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:CylinderRegionSize)
     }
@@ -543,7 +586,7 @@ public final class CylinderRegionSizeOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CylinderRegionSize_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CylinderRegionSize_fieldAccessorTable;
 
@@ -556,7 +599,7 @@ public final class CylinderRegionSizeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030CylinderRegionSize.proto\"4\n\022CylinderRe" +
-      "gionSize\022\016\n\006height\030\r \001(\002\022\016\n\006radius\030\003 \001(\002" +
+      "gionSize\022\016\n\006height\030\010 \001(\002\022\016\n\006radius\030\t \001(\002" +
       "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

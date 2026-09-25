@@ -34,6 +34,10 @@ public final class EntityClientExtraInfoOuterClass {
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getSkillAnchorPositionOrBuilder();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EntityClientExtraInfo}
    */
   public static final class EntityClientExtraInfo extends
@@ -310,6 +314,10 @@ public final class EntityClientExtraInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EntityClientExtraInfo}
      */
     public static final class Builder extends
@@ -651,9 +659,8 @@ public final class EntityClientExtraInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033EntityClientExtraInfo.proto\032\014Vector.pr" +
       "oto\"?\n\025EntityClientExtraInfo\022&\n\025skill_an" +
-      "chor_position\030\001 \001(\0132\007.VectorB<\n\031emu.gras" +
-      "scutter.net.protoB\037EntityClientExtraInfo" +
-      "OuterClassb\006proto3"
+      "chor_position\030\001 \001(\0132\007.VectorB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

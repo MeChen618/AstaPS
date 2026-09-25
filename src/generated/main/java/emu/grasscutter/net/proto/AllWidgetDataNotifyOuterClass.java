@@ -19,210 +19,179 @@ public final class AllWidgetDataNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-     * @return Whether the weatherWizardData field is set.
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
-    boolean hasWeatherWizardData();
+    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
+        getWidgetSettingListList();
     /**
-     * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-     * @return The weatherWizardData.
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
-    emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData();
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getWidgetSettingList(int index);
     /**
-     * <code>.WeatherWizardData weather_wizard_data = 1;</code>
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
-    emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder();
-
+    int getWidgetSettingListCount();
     /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
-    java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> 
-        getCoolDownGroupDataListList();
+    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getWidgetSettingListOrBuilderList();
     /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index);
-    /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
-     */
-    int getCoolDownGroupDataListCount();
-    /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getCoolDownGroupDataListOrBuilderList();
-    /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
-     */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getWidgetSettingListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> 
-        getSlotListList();
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int index);
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    int getSlotListCount();
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
-        getSlotListOrBuilderList();
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(
-        int index);
-
-    /**
-     * <code>.LunchBoxData lunch_box_data = 5;</code>
+     * <code>.LunchBoxData lunch_box_data = 12;</code>
      * @return Whether the lunchBoxData field is set.
      */
     boolean hasLunchBoxData();
     /**
-     * <code>.LunchBoxData lunch_box_data = 5;</code>
+     * <code>.LunchBoxData lunch_box_data = 12;</code>
      * @return The lunchBoxData.
      */
     emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData getLunchBoxData();
     /**
-     * <code>.LunchBoxData lunch_box_data = 5;</code>
+     * <code>.LunchBoxData lunch_box_data = 12;</code>
      */
     emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder();
 
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
+     * @return Whether the treasureKeyData field is set.
      */
-    java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> 
-        getNormalCoolDownDataListList();
+    boolean hasTreasureKeyData();
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
+     * @return The treasureKeyData.
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index);
+    emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData getTreasureKeyData();
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
      */
-    int getNormalCoolDownDataListCount();
+    emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyDataOrBuilder getTreasureKeyDataOrBuilder();
+
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getNormalCoolDownDataListOrBuilderList();
+    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
+        getAnchorPointMaterialNextUsableTimeListList();
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
      */
-    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getAnchorPointMaterialNextUsableTimeList(int index);
+    /**
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+     */
+    int getAnchorPointMaterialNextUsableTimeListCount();
+    /**
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getAnchorPointMaterialNextUsableTimeListOrBuilderList();
+    /**
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+     */
+    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getAnchorPointMaterialNextUsableTimeListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> 
-        getClientCollectorDataListList();
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getClientCollectorDataList(int index);
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    int getClientCollectorDataListCount();
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
-        getClientCollectorDataListOrBuilderList();
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(
-        int index);
-
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> 
-        getOneoffGatherPointDetectorDataListList();
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index);
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    int getOneoffGatherPointDetectorDataListCount();
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
-        getOneoffGatherPointDetectorDataListOrBuilderList();
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
-        int index);
-
-    /**
-     * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-     * @return Whether the sorushWidgetData field is set.
-     */
-    boolean hasSorushWidgetData();
-    /**
-     * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-     * @return The sorushWidgetData.
-     */
-    emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData getSorushWidgetData();
-    /**
-     * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-     */
-    emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetDataOrBuilder getSorushWidgetDataOrBuilder();
-
-    /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData> 
         getAnchorPointListList();
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index);
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     int getAnchorPointListCount();
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder> 
         getAnchorPointListOrBuilderList();
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(
         int index);
 
     /**
-     * <code>repeated uint32 background_active_widget_list = 14;</code>
+     * <code>repeated uint32 background_active_widget_list = 1;</code>
      * @return A list containing the backgroundActiveWidgetList.
      */
     java.util.List<java.lang.Integer> getBackgroundActiveWidgetListList();
     /**
-     * <code>repeated uint32 background_active_widget_list = 14;</code>
+     * <code>repeated uint32 background_active_widget_list = 1;</code>
      * @return The count of backgroundActiveWidgetList.
      */
     int getBackgroundActiveWidgetListCount();
     /**
-     * <code>repeated uint32 background_active_widget_list = 14;</code>
+     * <code>repeated uint32 background_active_widget_list = 1;</code>
      * @param index The index of the element to return.
      * @return The backgroundActiveWidgetList at the given index.
      */
     int getBackgroundActiveWidgetList(int index);
+
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> 
+        getSlotListList();
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int index);
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    int getSlotListCount();
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
+        getSlotListOrBuilderList();
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated uint32 _material_id_list = 1988;</code>
+     * @return A list containing the materialIdList.
+     */
+    java.util.List<java.lang.Integer> getMaterialIdListList();
+    /**
+     * <code>repeated uint32 _material_id_list = 1988;</code>
+     * @return The count of materialIdList.
+     */
+    int getMaterialIdListCount();
+    /**
+     * <code>repeated uint32 _material_id_list = 1988;</code>
+     * @param index The index of the element to return.
+     * @return The materialIdList at the given index.
+     */
+    int getMaterialIdList(int index);
+
+    /**
+     * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+     * @return Whether the sorushWidgetData field is set.
+     */
+    boolean hasSorushWidgetData();
+    /**
+     * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+     * @return The sorushWidgetData.
+     */
+    emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData getSorushWidgetData();
+    /**
+     * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+     */
+    emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetDataOrBuilder getSorushWidgetDataOrBuilder();
 
     /**
      * <code>.SkyCrystalDetectorData sky_crystal_detector_data = 15;</code>
@@ -240,107 +209,142 @@ public final class AllWidgetDataNotifyOuterClass {
     emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder();
 
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+     * @return Whether the weatherWizardData field is set.
      */
-    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
-        getAnchorPointMaterialNextUsableTimeListList();
+    boolean hasWeatherWizardData();
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+     * @return The weatherWizardData.
      */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getAnchorPointMaterialNextUsableTimeList(int index);
+    emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData();
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>.WeatherWizardData weather_wizard_data = 10;</code>
      */
-    int getAnchorPointMaterialNextUsableTimeListCount();
+    emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder();
+
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
      */
-    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getAnchorPointMaterialNextUsableTimeListOrBuilderList();
+    java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> 
+        getClientCollectorDataListList();
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
      */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getAnchorPointMaterialNextUsableTimeListOrBuilder(
+    emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getClientCollectorDataList(int index);
+    /**
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+     */
+    int getClientCollectorDataListCount();
+    /**
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
+        getClientCollectorDataListOrBuilderList();
+    /**
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+     */
+    emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(
         int index);
 
     /**
-     * <code>repeated uint32 _material_id_list = 950;</code>
-     * @return A list containing the materialIdList.
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
      */
-    java.util.List<java.lang.Integer> getMaterialIdListList();
+    java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> 
+        getNormalCoolDownDataListList();
     /**
-     * <code>repeated uint32 _material_id_list = 950;</code>
-     * @return The count of materialIdList.
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
      */
-    int getMaterialIdListCount();
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index);
     /**
-     * <code>repeated uint32 _material_id_list = 950;</code>
-     * @param index The index of the element to return.
-     * @return The materialIdList at the given index.
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
      */
-    int getMaterialIdList(int index);
+    int getNormalCoolDownDataListCount();
+    /**
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+        getNormalCoolDownDataListOrBuilderList();
+    /**
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
+     */
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
+        int index);
 
     /**
-     * <code>._WispCageData _wisp_cage_data = 1197;</code>
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> 
+        getCoolDownGroupDataListList();
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index);
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    int getCoolDownGroupDataListCount();
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+        getCoolDownGroupDataListOrBuilderList();
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> 
+        getOneoffGatherPointDetectorDataListList();
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index);
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    int getOneoffGatherPointDetectorDataListCount();
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
+        getOneoffGatherPointDetectorDataListOrBuilderList();
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
+        int index);
+
+    /**
+     * <code>._WispCageData _wisp_cage_data = 969;</code>
      * @return Whether the wispCageData field is set.
      */
     boolean hasWispCageData();
     /**
-     * <code>._WispCageData _wisp_cage_data = 1197;</code>
+     * <code>._WispCageData _wisp_cage_data = 969;</code>
      * @return The wispCageData.
      */
-    emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData getWispCageData();
+    emu.grasscutter.net.proto.WispCageData._WispCageData getWispCageData();
     /**
-     * <code>._WispCageData _wisp_cage_data = 1197;</code>
+     * <code>._WispCageData _wisp_cage_data = 969;</code>
      */
-    emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageDataOrBuilder getWispCageDataOrBuilder();
+    emu.grasscutter.net.proto.WispCageData._WispCageDataOrBuilder getWispCageDataOrBuilder();
 
     /**
-     * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-     * @return Whether the treasureKeyData field is set.
-     */
-    boolean hasTreasureKeyData();
-    /**
-     * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-     * @return The treasureKeyData.
-     */
-    emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData getTreasureKeyData();
-    /**
-     * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-     */
-    emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyDataOrBuilder getTreasureKeyDataOrBuilder();
-
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> 
-        getWidgetSettingListList();
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getWidgetSettingList(int index);
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    int getWidgetSettingListCount();
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getWidgetSettingListOrBuilderList();
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getWidgetSettingListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 _current_slot_num = 1775;</code>
+     * <code>uint32 _current_slot_num = 832;</code>
      * @return The currentSlotNum.
      */
     int getCurrentSlotNum();
   }
   /**
+   * <pre>
+   * CmdId: 599
+   * </pre>
+   *
    * Protobuf type {@code AllWidgetDataNotify}
    */
   public static final class AllWidgetDataNotify extends
@@ -353,16 +357,16 @@ public final class AllWidgetDataNotifyOuterClass {
       super(builder);
     }
     private AllWidgetDataNotify() {
-      coolDownGroupDataList_ = java.util.Collections.emptyList();
-      slotList_ = java.util.Collections.emptyList();
-      normalCoolDownDataList_ = java.util.Collections.emptyList();
-      clientCollectorDataList_ = java.util.Collections.emptyList();
-      oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
+      WidgetSettingList_ = java.util.Collections.emptyList();
+      AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.emptyList();
       anchorPointList_ = java.util.Collections.emptyList();
       backgroundActiveWidgetList_ = emptyIntList();
-      AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.emptyList();
+      slotList_ = java.util.Collections.emptyList();
       MaterialIdList_ = emptyIntList();
-      WidgetSettingList_ = java.util.Collections.emptyList();
+      clientCollectorDataList_ = java.util.Collections.emptyList();
+      normalCoolDownDataList_ = java.util.Collections.emptyList();
+      coolDownGroupDataList_ = java.util.Collections.emptyList();
+      oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -396,7 +400,77 @@ public final class AllWidgetDataNotifyOuterClass {
             case 0:
               done = true;
               break;
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                backgroundActiveWidgetList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              backgroundActiveWidgetList_.addInt(input.readUInt32());
+              break;
+            }
             case 10: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                backgroundActiveWidgetList_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                backgroundActiveWidgetList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                anchorPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              anchorPointList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.parser(), extensionRegistry));
+              break;
+            }
+            case 34: {
+              emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.Builder subBuilder = null;
+              if (SorushWidgetData_ != null) {
+                subBuilder = SorushWidgetData_.toBuilder();
+              }
+              SorushWidgetData_ = input.readMessage(emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(SorushWidgetData_);
+                SorushWidgetData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                clientCollectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              clientCollectorDataList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              slotList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                oneoffGatherPointDetectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              oneoffGatherPointDetectorDataList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.parser(), extensionRegistry));
+              break;
+            }
+            case 82: {
               emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder subBuilder = null;
               if (weatherWizardData_ != null) {
                 subBuilder = weatherWizardData_.toBuilder();
@@ -409,25 +483,16 @@ public final class AllWidgetDataNotifyOuterClass {
 
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 coolDownGroupDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000100;
               }
               coolDownGroupDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
               break;
             }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              slotList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
+            case 98: {
               emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder subBuilder = null;
               if (lunchBoxData_ != null) {
                 subBuilder = lunchBoxData_.toBuilder();
@@ -440,74 +505,13 @@ public final class AllWidgetDataNotifyOuterClass {
 
               break;
             }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
                 normalCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000080;
               }
               normalCoolDownDataList_.add(
                   input.readMessage(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                clientCollectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              clientCollectorDataList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                oneoffGatherPointDetectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              oneoffGatherPointDetectorDataList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder subBuilder = null;
-              if (SorushWidgetData_ != null) {
-                subBuilder = SorushWidgetData_.toBuilder();
-              }
-              SorushWidgetData_ = input.readMessage(emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(SorushWidgetData_);
-                SorushWidgetData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                anchorPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              anchorPointList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                backgroundActiveWidgetList_ = newIntList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              backgroundActiveWidgetList_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000040) != 0) && input.getBytesUntilLimit() > 0) {
-                backgroundActiveWidgetList_ = newIntList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                backgroundActiveWidgetList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
               break;
             }
             case 122: {
@@ -523,42 +527,35 @@ public final class AllWidgetDataNotifyOuterClass {
 
               break;
             }
-            case 6554: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+            case 1066: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                WidgetSettingList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              WidgetSettingList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              break;
+            }
+            case 6656: {
+
+              CurrentSlotNum_ = input.readUInt32();
+              break;
+            }
+            case 6770: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 AnchorPointMaterialNextUsableTimeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000002;
               }
               AnchorPointMaterialNextUsableTimeList_.add(
                   input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
               break;
             }
-            case 7600: {
-              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
-                MaterialIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              MaterialIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 7602: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000100) != 0) && input.getBytesUntilLimit() > 0) {
-                MaterialIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                MaterialIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 9578: {
-              emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.Builder subBuilder = null;
+            case 7754: {
+              emu.grasscutter.net.proto.WispCageData._WispCageData.Builder subBuilder = null;
               if (WispCageData_ != null) {
                 subBuilder = WispCageData_.toBuilder();
               }
-              WispCageData_ = input.readMessage(emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.parser(), extensionRegistry);
+              WispCageData_ = input.readMessage(emu.grasscutter.net.proto.WispCageData._WispCageData.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(WispCageData_);
                 WispCageData_ = subBuilder.buildPartial();
@@ -566,12 +563,12 @@ public final class AllWidgetDataNotifyOuterClass {
 
               break;
             }
-            case 12690: {
-              emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.Builder subBuilder = null;
+            case 15586: {
+              emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.Builder subBuilder = null;
               if (TreasureKeyData_ != null) {
                 subBuilder = TreasureKeyData_.toBuilder();
               }
-              TreasureKeyData_ = input.readMessage(emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.parser(), extensionRegistry);
+              TreasureKeyData_ = input.readMessage(emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(TreasureKeyData_);
                 TreasureKeyData_ = subBuilder.buildPartial();
@@ -579,18 +576,25 @@ public final class AllWidgetDataNotifyOuterClass {
 
               break;
             }
-            case 12786: {
-              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
-                WidgetSettingList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>();
-                mutable_bitField0_ |= 0x00000200;
+            case 15904: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                MaterialIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000020;
               }
-              WidgetSettingList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
+              MaterialIdList_.addInt(input.readUInt32());
               break;
             }
-            case 14200: {
-
-              CurrentSlotNum_ = input.readUInt32();
+            case 15906: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
+                MaterialIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                MaterialIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
               break;
             }
             default: {
@@ -608,35 +612,35 @@ public final class AllWidgetDataNotifyOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          coolDownGroupDataList_ = java.util.Collections.unmodifiableList(coolDownGroupDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          slotList_ = java.util.Collections.unmodifiableList(slotList_);
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          backgroundActiveWidgetList_.makeImmutable(); // C
         }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          clientCollectorDataList_ = java.util.Collections.unmodifiableList(clientCollectorDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          oneoffGatherPointDetectorDataList_ = java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           anchorPointList_ = java.util.Collections.unmodifiableList(anchorPointList_);
         }
         if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          backgroundActiveWidgetList_.makeImmutable(); // C
+          clientCollectorDataList_ = java.util.Collections.unmodifiableList(clientCollectorDataList_);
         }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
-        }
-        if (((mutable_bitField0_ & 0x00000100) != 0)) {
-          MaterialIdList_.makeImmutable(); // C
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          slotList_ = java.util.Collections.unmodifiableList(slotList_);
         }
         if (((mutable_bitField0_ & 0x00000200) != 0)) {
+          oneoffGatherPointDetectorDataList_ = java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          coolDownGroupDataList_ = java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           WidgetSettingList_ = java.util.Collections.unmodifiableList(WidgetSettingList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          MaterialIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -655,116 +659,50 @@ public final class AllWidgetDataNotifyOuterClass {
               emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify.class, emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify.Builder.class);
     }
 
-    public static final int WEATHER_WIZARD_DATA_FIELD_NUMBER = 1;
-    private emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
+    public static final int _WIDGET_SETTING_LIST_FIELD_NUMBER = 133;
+    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> WidgetSettingList_;
     /**
-     * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-     * @return Whether the weatherWizardData field is set.
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
     @java.lang.Override
-    public boolean hasWeatherWizardData() {
-      return weatherWizardData_ != null;
+    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getWidgetSettingListList() {
+      return WidgetSettingList_;
     }
     /**
-     * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-     * @return The weatherWizardData.
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
-      return weatherWizardData_ == null ? emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : weatherWizardData_;
+    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getWidgetSettingListOrBuilderList() {
+      return WidgetSettingList_;
     }
     /**
-     * <code>.WeatherWizardData weather_wizard_data = 1;</code>
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
-      return getWeatherWizardData();
-    }
-
-    public static final int COOL_DOWN_GROUP_DATA_LIST_FIELD_NUMBER = 2;
-    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_;
-    /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
-      return coolDownGroupDataList_;
+    public int getWidgetSettingListCount() {
+      return WidgetSettingList_.size();
     }
     /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getCoolDownGroupDataListOrBuilderList() {
-      return coolDownGroupDataList_;
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getWidgetSettingList(int index) {
+      return WidgetSettingList_.get(index);
     }
     /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+     * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
      */
     @java.lang.Override
-    public int getCoolDownGroupDataListCount() {
-      return coolDownGroupDataList_.size();
-    }
-    /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
-      return coolDownGroupDataList_.get(index);
-    }
-    /**
-     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getWidgetSettingListOrBuilder(
         int index) {
-      return coolDownGroupDataList_.get(index);
+      return WidgetSettingList_.get(index);
     }
 
-    public static final int SLOT_LIST_FIELD_NUMBER = 4;
-    private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_;
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList() {
-      return slotList_;
-    }
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
-        getSlotListOrBuilderList() {
-      return slotList_;
-    }
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    @java.lang.Override
-    public int getSlotListCount() {
-      return slotList_.size();
-    }
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int index) {
-      return slotList_.get(index);
-    }
-    /**
-     * <code>repeated .WidgetSlotData slot_list = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(
-        int index) {
-      return slotList_.get(index);
-    }
-
-    public static final int LUNCH_BOX_DATA_FIELD_NUMBER = 5;
+    public static final int LUNCH_BOX_DATA_FIELD_NUMBER = 12;
     private emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
     /**
-     * <code>.LunchBoxData lunch_box_data = 5;</code>
+     * <code>.LunchBoxData lunch_box_data = 12;</code>
      * @return Whether the lunchBoxData field is set.
      */
     @java.lang.Override
@@ -772,7 +710,7 @@ public final class AllWidgetDataNotifyOuterClass {
       return lunchBoxData_ != null;
     }
     /**
-     * <code>.LunchBoxData lunch_box_data = 5;</code>
+     * <code>.LunchBoxData lunch_box_data = 12;</code>
      * @return The lunchBoxData.
      */
     @java.lang.Override
@@ -780,170 +718,90 @@ public final class AllWidgetDataNotifyOuterClass {
       return lunchBoxData_ == null ? emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : lunchBoxData_;
     }
     /**
-     * <code>.LunchBoxData lunch_box_data = 5;</code>
+     * <code>.LunchBoxData lunch_box_data = 12;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
       return getLunchBoxData();
     }
 
-    public static final int NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
+    public static final int _TREASURE_KEY_DATA_FIELD_NUMBER = 1948;
+    private emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData TreasureKeyData_;
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
+     * @return Whether the treasureKeyData field is set.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
-      return normalCoolDownDataList_;
+    public boolean hasTreasureKeyData() {
+      return TreasureKeyData_ != null;
     }
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
+     * @return The treasureKeyData.
      */
     @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-        getNormalCoolDownDataListOrBuilderList() {
-      return normalCoolDownDataList_;
+    public emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData getTreasureKeyData() {
+      return TreasureKeyData_ == null ? emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.getDefaultInstance() : TreasureKeyData_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
      */
     @java.lang.Override
-    public int getNormalCoolDownDataListCount() {
-      return normalCoolDownDataList_.size();
+    public emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyDataOrBuilder getTreasureKeyDataOrBuilder() {
+      return getTreasureKeyData();
+    }
+
+    public static final int _ANCHOR_POINT_MATERIAL_NEXT_USABLE_TIME_LIST_FIELD_NUMBER = 846;
+    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> AnchorPointMaterialNextUsableTimeList_;
+    /**
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getAnchorPointMaterialNextUsableTimeListList() {
+      return AnchorPointMaterialNextUsableTimeList_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
-      return normalCoolDownDataList_.get(index);
+    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+        getAnchorPointMaterialNextUsableTimeListOrBuilderList() {
+      return AnchorPointMaterialNextUsableTimeList_;
     }
     /**
-     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
+    public int getAnchorPointMaterialNextUsableTimeListCount() {
+      return AnchorPointMaterialNextUsableTimeList_.size();
+    }
+    /**
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getAnchorPointMaterialNextUsableTimeList(int index) {
+      return AnchorPointMaterialNextUsableTimeList_.get(index);
+    }
+    /**
+     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getAnchorPointMaterialNextUsableTimeListOrBuilder(
         int index) {
-      return normalCoolDownDataList_.get(index);
+      return AnchorPointMaterialNextUsableTimeList_.get(index);
     }
 
-    public static final int CLIENT_COLLECTOR_DATA_LIST_FIELD_NUMBER = 9;
-    private java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_;
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> getClientCollectorDataListList() {
-      return clientCollectorDataList_;
-    }
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
-        getClientCollectorDataListOrBuilderList() {
-      return clientCollectorDataList_;
-    }
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    @java.lang.Override
-    public int getClientCollectorDataListCount() {
-      return clientCollectorDataList_.size();
-    }
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getClientCollectorDataList(int index) {
-      return clientCollectorDataList_.get(index);
-    }
-    /**
-     * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(
-        int index) {
-      return clientCollectorDataList_.get(index);
-    }
-
-    public static final int ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER = 10;
-    private java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_;
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
-      return oneoffGatherPointDetectorDataList_;
-    }
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
-        getOneoffGatherPointDetectorDataListOrBuilderList() {
-      return oneoffGatherPointDetectorDataList_;
-    }
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    @java.lang.Override
-    public int getOneoffGatherPointDetectorDataListCount() {
-      return oneoffGatherPointDetectorDataList_.size();
-    }
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
-      return oneoffGatherPointDetectorDataList_.get(index);
-    }
-    /**
-     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
-        int index) {
-      return oneoffGatherPointDetectorDataList_.get(index);
-    }
-
-    public static final int _SORUSH_WIDGET_DATA_FIELD_NUMBER = 11;
-    private emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData SorushWidgetData_;
-    /**
-     * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-     * @return Whether the sorushWidgetData field is set.
-     */
-    @java.lang.Override
-    public boolean hasSorushWidgetData() {
-      return SorushWidgetData_ != null;
-    }
-    /**
-     * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-     * @return The sorushWidgetData.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData getSorushWidgetData() {
-      return SorushWidgetData_ == null ? emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.getDefaultInstance() : SorushWidgetData_;
-    }
-    /**
-     * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetDataOrBuilder getSorushWidgetDataOrBuilder() {
-      return getSorushWidgetData();
-    }
-
-    public static final int ANCHOR_POINT_LIST_FIELD_NUMBER = 13;
+    public static final int ANCHOR_POINT_LIST_FIELD_NUMBER = 3;
     private java.util.List<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData> anchorPointList_;
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList() {
       return anchorPointList_;
     }
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder> 
@@ -951,21 +809,21 @@ public final class AllWidgetDataNotifyOuterClass {
       return anchorPointList_;
     }
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     @java.lang.Override
     public int getAnchorPointListCount() {
       return anchorPointList_.size();
     }
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index) {
       return anchorPointList_.get(index);
     }
     /**
-     * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+     * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(
@@ -973,10 +831,10 @@ public final class AllWidgetDataNotifyOuterClass {
       return anchorPointList_.get(index);
     }
 
-    public static final int BACKGROUND_ACTIVE_WIDGET_LIST_FIELD_NUMBER = 14;
+    public static final int BACKGROUND_ACTIVE_WIDGET_LIST_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList backgroundActiveWidgetList_;
     /**
-     * <code>repeated uint32 background_active_widget_list = 14;</code>
+     * <code>repeated uint32 background_active_widget_list = 1;</code>
      * @return A list containing the backgroundActiveWidgetList.
      */
     @java.lang.Override
@@ -985,14 +843,14 @@ public final class AllWidgetDataNotifyOuterClass {
       return backgroundActiveWidgetList_;
     }
     /**
-     * <code>repeated uint32 background_active_widget_list = 14;</code>
+     * <code>repeated uint32 background_active_widget_list = 1;</code>
      * @return The count of backgroundActiveWidgetList.
      */
     public int getBackgroundActiveWidgetListCount() {
       return backgroundActiveWidgetList_.size();
     }
     /**
-     * <code>repeated uint32 background_active_widget_list = 14;</code>
+     * <code>repeated uint32 background_active_widget_list = 1;</code>
      * @param index The index of the element to return.
      * @return The backgroundActiveWidgetList at the given index.
      */
@@ -1000,6 +858,100 @@ public final class AllWidgetDataNotifyOuterClass {
       return backgroundActiveWidgetList_.getInt(index);
     }
     private int backgroundActiveWidgetListMemoizedSerializedSize = -1;
+
+    public static final int SLOT_LIST_FIELD_NUMBER = 7;
+    private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_;
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList() {
+      return slotList_;
+    }
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
+        getSlotListOrBuilderList() {
+      return slotList_;
+    }
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    @java.lang.Override
+    public int getSlotListCount() {
+      return slotList_.size();
+    }
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int index) {
+      return slotList_.get(index);
+    }
+    /**
+     * <code>repeated .WidgetSlotData slot_list = 7;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(
+        int index) {
+      return slotList_.get(index);
+    }
+
+    public static final int _MATERIAL_ID_LIST_FIELD_NUMBER = 1988;
+    private com.google.protobuf.Internal.IntList MaterialIdList_;
+    /**
+     * <code>repeated uint32 _material_id_list = 1988;</code>
+     * @return A list containing the materialIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getMaterialIdListList() {
+      return MaterialIdList_;
+    }
+    /**
+     * <code>repeated uint32 _material_id_list = 1988;</code>
+     * @return The count of materialIdList.
+     */
+    public int getMaterialIdListCount() {
+      return MaterialIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 _material_id_list = 1988;</code>
+     * @param index The index of the element to return.
+     * @return The materialIdList at the given index.
+     */
+    public int getMaterialIdList(int index) {
+      return MaterialIdList_.getInt(index);
+    }
+    private int MaterialIdListMemoizedSerializedSize = -1;
+
+    public static final int _SORUSH_WIDGET_DATA_FIELD_NUMBER = 4;
+    private emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData SorushWidgetData_;
+    /**
+     * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+     * @return Whether the sorushWidgetData field is set.
+     */
+    @java.lang.Override
+    public boolean hasSorushWidgetData() {
+      return SorushWidgetData_ != null;
+    }
+    /**
+     * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+     * @return The sorushWidgetData.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData getSorushWidgetData() {
+      return SorushWidgetData_ == null ? emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.getDefaultInstance() : SorushWidgetData_;
+    }
+    /**
+     * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetDataOrBuilder getSorushWidgetDataOrBuilder() {
+      return getSorushWidgetData();
+    }
 
     public static final int SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER = 15;
     private emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData skyCrystalDetectorData_;
@@ -1027,78 +979,196 @@ public final class AllWidgetDataNotifyOuterClass {
       return getSkyCrystalDetectorData();
     }
 
-    public static final int _ANCHOR_POINT_MATERIAL_NEXT_USABLE_TIME_LIST_FIELD_NUMBER = 819;
-    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> AnchorPointMaterialNextUsableTimeList_;
+    public static final int WEATHER_WIZARD_DATA_FIELD_NUMBER = 10;
+    private emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+     * @return Whether the weatherWizardData field is set.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getAnchorPointMaterialNextUsableTimeListList() {
-      return AnchorPointMaterialNextUsableTimeList_;
+    public boolean hasWeatherWizardData() {
+      return weatherWizardData_ != null;
     }
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+     * @return The weatherWizardData.
      */
     @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getAnchorPointMaterialNextUsableTimeListOrBuilderList() {
-      return AnchorPointMaterialNextUsableTimeList_;
+    public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
+      return weatherWizardData_ == null ? emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : weatherWizardData_;
     }
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>.WeatherWizardData weather_wizard_data = 10;</code>
      */
     @java.lang.Override
-    public int getAnchorPointMaterialNextUsableTimeListCount() {
-      return AnchorPointMaterialNextUsableTimeList_.size();
+    public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
+      return getWeatherWizardData();
+    }
+
+    public static final int CLIENT_COLLECTOR_DATA_LIST_FIELD_NUMBER = 6;
+    private java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_;
+    /**
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> getClientCollectorDataListList() {
+      return clientCollectorDataList_;
     }
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getAnchorPointMaterialNextUsableTimeList(int index) {
-      return AnchorPointMaterialNextUsableTimeList_.get(index);
+    public java.util.List<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
+        getClientCollectorDataListOrBuilderList() {
+      return clientCollectorDataList_;
     }
     /**
-     * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getAnchorPointMaterialNextUsableTimeListOrBuilder(
+    public int getClientCollectorDataListCount() {
+      return clientCollectorDataList_.size();
+    }
+    /**
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getClientCollectorDataList(int index) {
+      return clientCollectorDataList_.get(index);
+    }
+    /**
+     * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(
         int index) {
-      return AnchorPointMaterialNextUsableTimeList_.get(index);
+      return clientCollectorDataList_.get(index);
     }
 
-    public static final int _MATERIAL_ID_LIST_FIELD_NUMBER = 950;
-    private com.google.protobuf.Internal.IntList MaterialIdList_;
+    public static final int NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 14;
+    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
     /**
-     * <code>repeated uint32 _material_id_list = 950;</code>
-     * @return A list containing the materialIdList.
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getMaterialIdListList() {
-      return MaterialIdList_;
+    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
+      return normalCoolDownDataList_;
     }
     /**
-     * <code>repeated uint32 _material_id_list = 950;</code>
-     * @return The count of materialIdList.
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
      */
-    public int getMaterialIdListCount() {
-      return MaterialIdList_.size();
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+        getNormalCoolDownDataListOrBuilderList() {
+      return normalCoolDownDataList_;
     }
     /**
-     * <code>repeated uint32 _material_id_list = 950;</code>
-     * @param index The index of the element to return.
-     * @return The materialIdList at the given index.
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
      */
-    public int getMaterialIdList(int index) {
-      return MaterialIdList_.getInt(index);
+    @java.lang.Override
+    public int getNormalCoolDownDataListCount() {
+      return normalCoolDownDataList_.size();
     }
-    private int MaterialIdListMemoizedSerializedSize = -1;
+    /**
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
+      return normalCoolDownDataList_.get(index);
+    }
+    /**
+     * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
+        int index) {
+      return normalCoolDownDataList_.get(index);
+    }
 
-    public static final int _WISP_CAGE_DATA_FIELD_NUMBER = 1197;
-    private emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData WispCageData_;
+    public static final int COOL_DOWN_GROUP_DATA_LIST_FIELD_NUMBER = 11;
+    private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_;
     /**
-     * <code>._WispCageData _wisp_cage_data = 1197;</code>
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
+      return coolDownGroupDataList_;
+    }
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+        getCoolDownGroupDataListOrBuilderList() {
+      return coolDownGroupDataList_;
+    }
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    @java.lang.Override
+    public int getCoolDownGroupDataListCount() {
+      return coolDownGroupDataList_.size();
+    }
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
+      return coolDownGroupDataList_.get(index);
+    }
+    /**
+     * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(
+        int index) {
+      return coolDownGroupDataList_.get(index);
+    }
+
+    public static final int ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER = 8;
+    private java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_;
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
+      return oneoffGatherPointDetectorDataList_;
+    }
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
+        getOneoffGatherPointDetectorDataListOrBuilderList() {
+      return oneoffGatherPointDetectorDataList_;
+    }
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    @java.lang.Override
+    public int getOneoffGatherPointDetectorDataListCount() {
+      return oneoffGatherPointDetectorDataList_.size();
+    }
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
+      return oneoffGatherPointDetectorDataList_.get(index);
+    }
+    /**
+     * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
+        int index) {
+      return oneoffGatherPointDetectorDataList_.get(index);
+    }
+
+    public static final int _WISP_CAGE_DATA_FIELD_NUMBER = 969;
+    private emu.grasscutter.net.proto.WispCageData._WispCageData WispCageData_;
+    /**
+     * <code>._WispCageData _wisp_cage_data = 969;</code>
      * @return Whether the wispCageData field is set.
      */
     @java.lang.Override
@@ -1106,91 +1176,25 @@ public final class AllWidgetDataNotifyOuterClass {
       return WispCageData_ != null;
     }
     /**
-     * <code>._WispCageData _wisp_cage_data = 1197;</code>
+     * <code>._WispCageData _wisp_cage_data = 969;</code>
      * @return The wispCageData.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData getWispCageData() {
-      return WispCageData_ == null ? emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.getDefaultInstance() : WispCageData_;
+    public emu.grasscutter.net.proto.WispCageData._WispCageData getWispCageData() {
+      return WispCageData_ == null ? emu.grasscutter.net.proto.WispCageData._WispCageData.getDefaultInstance() : WispCageData_;
     }
     /**
-     * <code>._WispCageData _wisp_cage_data = 1197;</code>
+     * <code>._WispCageData _wisp_cage_data = 969;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageDataOrBuilder getWispCageDataOrBuilder() {
+    public emu.grasscutter.net.proto.WispCageData._WispCageDataOrBuilder getWispCageDataOrBuilder() {
       return getWispCageData();
     }
 
-    public static final int _TREASURE_KEY_DATA_FIELD_NUMBER = 1586;
-    private emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData TreasureKeyData_;
-    /**
-     * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-     * @return Whether the treasureKeyData field is set.
-     */
-    @java.lang.Override
-    public boolean hasTreasureKeyData() {
-      return TreasureKeyData_ != null;
-    }
-    /**
-     * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-     * @return The treasureKeyData.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData getTreasureKeyData() {
-      return TreasureKeyData_ == null ? emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.getDefaultInstance() : TreasureKeyData_;
-    }
-    /**
-     * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyDataOrBuilder getTreasureKeyDataOrBuilder() {
-      return getTreasureKeyData();
-    }
-
-    public static final int _WIDGET_SETTING_LIST_FIELD_NUMBER = 1598;
-    private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> WidgetSettingList_;
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getWidgetSettingListList() {
-      return WidgetSettingList_;
-    }
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-        getWidgetSettingListOrBuilderList() {
-      return WidgetSettingList_;
-    }
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    @java.lang.Override
-    public int getWidgetSettingListCount() {
-      return WidgetSettingList_.size();
-    }
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getWidgetSettingList(int index) {
-      return WidgetSettingList_.get(index);
-    }
-    /**
-     * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getWidgetSettingListOrBuilder(
-        int index) {
-      return WidgetSettingList_.get(index);
-    }
-
-    public static final int _CURRENT_SLOT_NUM_FIELD_NUMBER = 1775;
+    public static final int _CURRENT_SLOT_NUM_FIELD_NUMBER = 832;
     private int CurrentSlotNum_;
     /**
-     * <code>uint32 _current_slot_num = 1775;</code>
+     * <code>uint32 _current_slot_num = 832;</code>
      * @return The currentSlotNum.
      */
     @java.lang.Override
@@ -1213,64 +1217,64 @@ public final class AllWidgetDataNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (weatherWizardData_ != null) {
-        output.writeMessage(1, getWeatherWizardData());
-      }
-      for (int i = 0; i < coolDownGroupDataList_.size(); i++) {
-        output.writeMessage(2, coolDownGroupDataList_.get(i));
-      }
-      for (int i = 0; i < slotList_.size(); i++) {
-        output.writeMessage(4, slotList_.get(i));
-      }
-      if (lunchBoxData_ != null) {
-        output.writeMessage(5, getLunchBoxData());
-      }
-      for (int i = 0; i < normalCoolDownDataList_.size(); i++) {
-        output.writeMessage(8, normalCoolDownDataList_.get(i));
-      }
-      for (int i = 0; i < clientCollectorDataList_.size(); i++) {
-        output.writeMessage(9, clientCollectorDataList_.get(i));
-      }
-      for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
-        output.writeMessage(10, oneoffGatherPointDetectorDataList_.get(i));
-      }
-      if (SorushWidgetData_ != null) {
-        output.writeMessage(11, getSorushWidgetData());
-      }
-      for (int i = 0; i < anchorPointList_.size(); i++) {
-        output.writeMessage(13, anchorPointList_.get(i));
-      }
       if (getBackgroundActiveWidgetListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(backgroundActiveWidgetListMemoizedSerializedSize);
       }
       for (int i = 0; i < backgroundActiveWidgetList_.size(); i++) {
         output.writeUInt32NoTag(backgroundActiveWidgetList_.getInt(i));
       }
+      for (int i = 0; i < anchorPointList_.size(); i++) {
+        output.writeMessage(3, anchorPointList_.get(i));
+      }
+      if (SorushWidgetData_ != null) {
+        output.writeMessage(4, getSorushWidgetData());
+      }
+      for (int i = 0; i < clientCollectorDataList_.size(); i++) {
+        output.writeMessage(6, clientCollectorDataList_.get(i));
+      }
+      for (int i = 0; i < slotList_.size(); i++) {
+        output.writeMessage(7, slotList_.get(i));
+      }
+      for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
+        output.writeMessage(8, oneoffGatherPointDetectorDataList_.get(i));
+      }
+      if (weatherWizardData_ != null) {
+        output.writeMessage(10, getWeatherWizardData());
+      }
+      for (int i = 0; i < coolDownGroupDataList_.size(); i++) {
+        output.writeMessage(11, coolDownGroupDataList_.get(i));
+      }
+      if (lunchBoxData_ != null) {
+        output.writeMessage(12, getLunchBoxData());
+      }
+      for (int i = 0; i < normalCoolDownDataList_.size(); i++) {
+        output.writeMessage(14, normalCoolDownDataList_.get(i));
+      }
       if (skyCrystalDetectorData_ != null) {
         output.writeMessage(15, getSkyCrystalDetectorData());
       }
+      for (int i = 0; i < WidgetSettingList_.size(); i++) {
+        output.writeMessage(133, WidgetSettingList_.get(i));
+      }
+      if (CurrentSlotNum_ != 0) {
+        output.writeUInt32(832, CurrentSlotNum_);
+      }
       for (int i = 0; i < AnchorPointMaterialNextUsableTimeList_.size(); i++) {
-        output.writeMessage(819, AnchorPointMaterialNextUsableTimeList_.get(i));
+        output.writeMessage(846, AnchorPointMaterialNextUsableTimeList_.get(i));
+      }
+      if (WispCageData_ != null) {
+        output.writeMessage(969, getWispCageData());
+      }
+      if (TreasureKeyData_ != null) {
+        output.writeMessage(1948, getTreasureKeyData());
       }
       if (getMaterialIdListList().size() > 0) {
-        output.writeUInt32NoTag(7602);
+        output.writeUInt32NoTag(15906);
         output.writeUInt32NoTag(MaterialIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < MaterialIdList_.size(); i++) {
         output.writeUInt32NoTag(MaterialIdList_.getInt(i));
-      }
-      if (WispCageData_ != null) {
-        output.writeMessage(1197, getWispCageData());
-      }
-      if (TreasureKeyData_ != null) {
-        output.writeMessage(1586, getTreasureKeyData());
-      }
-      for (int i = 0; i < WidgetSettingList_.size(); i++) {
-        output.writeMessage(1598, WidgetSettingList_.get(i));
-      }
-      if (CurrentSlotNum_ != 0) {
-        output.writeUInt32(1775, CurrentSlotNum_);
       }
       unknownFields.writeTo(output);
     }
@@ -1281,42 +1285,6 @@ public final class AllWidgetDataNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (weatherWizardData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getWeatherWizardData());
-      }
-      for (int i = 0; i < coolDownGroupDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, coolDownGroupDataList_.get(i));
-      }
-      for (int i = 0; i < slotList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, slotList_.get(i));
-      }
-      if (lunchBoxData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getLunchBoxData());
-      }
-      for (int i = 0; i < normalCoolDownDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, normalCoolDownDataList_.get(i));
-      }
-      for (int i = 0; i < clientCollectorDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, clientCollectorDataList_.get(i));
-      }
-      for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, oneoffGatherPointDetectorDataList_.get(i));
-      }
-      if (SorushWidgetData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getSorushWidgetData());
-      }
-      for (int i = 0; i < anchorPointList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, anchorPointList_.get(i));
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < backgroundActiveWidgetList_.size(); i++) {
@@ -1331,13 +1299,65 @@ public final class AllWidgetDataNotifyOuterClass {
         }
         backgroundActiveWidgetListMemoizedSerializedSize = dataSize;
       }
+      for (int i = 0; i < anchorPointList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, anchorPointList_.get(i));
+      }
+      if (SorushWidgetData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getSorushWidgetData());
+      }
+      for (int i = 0; i < clientCollectorDataList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, clientCollectorDataList_.get(i));
+      }
+      for (int i = 0; i < slotList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, slotList_.get(i));
+      }
+      for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, oneoffGatherPointDetectorDataList_.get(i));
+      }
+      if (weatherWizardData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getWeatherWizardData());
+      }
+      for (int i = 0; i < coolDownGroupDataList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, coolDownGroupDataList_.get(i));
+      }
+      if (lunchBoxData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, getLunchBoxData());
+      }
+      for (int i = 0; i < normalCoolDownDataList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, normalCoolDownDataList_.get(i));
+      }
       if (skyCrystalDetectorData_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getSkyCrystalDetectorData());
       }
+      for (int i = 0; i < WidgetSettingList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(133, WidgetSettingList_.get(i));
+      }
+      if (CurrentSlotNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(832, CurrentSlotNum_);
+      }
       for (int i = 0; i < AnchorPointMaterialNextUsableTimeList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(819, AnchorPointMaterialNextUsableTimeList_.get(i));
+          .computeMessageSize(846, AnchorPointMaterialNextUsableTimeList_.get(i));
+      }
+      if (WispCageData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(969, getWispCageData());
+      }
+      if (TreasureKeyData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1948, getTreasureKeyData());
       }
       {
         int dataSize = 0;
@@ -1352,22 +1372,6 @@ public final class AllWidgetDataNotifyOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         MaterialIdListMemoizedSerializedSize = dataSize;
-      }
-      if (WispCageData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1197, getWispCageData());
-      }
-      if (TreasureKeyData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1586, getTreasureKeyData());
-      }
-      for (int i = 0; i < WidgetSettingList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1598, WidgetSettingList_.get(i));
-      }
-      if (CurrentSlotNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1775, CurrentSlotNum_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1384,56 +1388,56 @@ public final class AllWidgetDataNotifyOuterClass {
       }
       emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify other = (emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify) obj;
 
-      if (hasWeatherWizardData() != other.hasWeatherWizardData()) return false;
-      if (hasWeatherWizardData()) {
-        if (!getWeatherWizardData()
-            .equals(other.getWeatherWizardData())) return false;
-      }
-      if (!getCoolDownGroupDataListList()
-          .equals(other.getCoolDownGroupDataListList())) return false;
-      if (!getSlotListList()
-          .equals(other.getSlotListList())) return false;
+      if (!getWidgetSettingListList()
+          .equals(other.getWidgetSettingListList())) return false;
       if (hasLunchBoxData() != other.hasLunchBoxData()) return false;
       if (hasLunchBoxData()) {
         if (!getLunchBoxData()
             .equals(other.getLunchBoxData())) return false;
-      }
-      if (!getNormalCoolDownDataListList()
-          .equals(other.getNormalCoolDownDataListList())) return false;
-      if (!getClientCollectorDataListList()
-          .equals(other.getClientCollectorDataListList())) return false;
-      if (!getOneoffGatherPointDetectorDataListList()
-          .equals(other.getOneoffGatherPointDetectorDataListList())) return false;
-      if (hasSorushWidgetData() != other.hasSorushWidgetData()) return false;
-      if (hasSorushWidgetData()) {
-        if (!getSorushWidgetData()
-            .equals(other.getSorushWidgetData())) return false;
-      }
-      if (!getAnchorPointListList()
-          .equals(other.getAnchorPointListList())) return false;
-      if (!getBackgroundActiveWidgetListList()
-          .equals(other.getBackgroundActiveWidgetListList())) return false;
-      if (hasSkyCrystalDetectorData() != other.hasSkyCrystalDetectorData()) return false;
-      if (hasSkyCrystalDetectorData()) {
-        if (!getSkyCrystalDetectorData()
-            .equals(other.getSkyCrystalDetectorData())) return false;
-      }
-      if (!getAnchorPointMaterialNextUsableTimeListList()
-          .equals(other.getAnchorPointMaterialNextUsableTimeListList())) return false;
-      if (!getMaterialIdListList()
-          .equals(other.getMaterialIdListList())) return false;
-      if (hasWispCageData() != other.hasWispCageData()) return false;
-      if (hasWispCageData()) {
-        if (!getWispCageData()
-            .equals(other.getWispCageData())) return false;
       }
       if (hasTreasureKeyData() != other.hasTreasureKeyData()) return false;
       if (hasTreasureKeyData()) {
         if (!getTreasureKeyData()
             .equals(other.getTreasureKeyData())) return false;
       }
-      if (!getWidgetSettingListList()
-          .equals(other.getWidgetSettingListList())) return false;
+      if (!getAnchorPointMaterialNextUsableTimeListList()
+          .equals(other.getAnchorPointMaterialNextUsableTimeListList())) return false;
+      if (!getAnchorPointListList()
+          .equals(other.getAnchorPointListList())) return false;
+      if (!getBackgroundActiveWidgetListList()
+          .equals(other.getBackgroundActiveWidgetListList())) return false;
+      if (!getSlotListList()
+          .equals(other.getSlotListList())) return false;
+      if (!getMaterialIdListList()
+          .equals(other.getMaterialIdListList())) return false;
+      if (hasSorushWidgetData() != other.hasSorushWidgetData()) return false;
+      if (hasSorushWidgetData()) {
+        if (!getSorushWidgetData()
+            .equals(other.getSorushWidgetData())) return false;
+      }
+      if (hasSkyCrystalDetectorData() != other.hasSkyCrystalDetectorData()) return false;
+      if (hasSkyCrystalDetectorData()) {
+        if (!getSkyCrystalDetectorData()
+            .equals(other.getSkyCrystalDetectorData())) return false;
+      }
+      if (hasWeatherWizardData() != other.hasWeatherWizardData()) return false;
+      if (hasWeatherWizardData()) {
+        if (!getWeatherWizardData()
+            .equals(other.getWeatherWizardData())) return false;
+      }
+      if (!getClientCollectorDataListList()
+          .equals(other.getClientCollectorDataListList())) return false;
+      if (!getNormalCoolDownDataListList()
+          .equals(other.getNormalCoolDownDataListList())) return false;
+      if (!getCoolDownGroupDataListList()
+          .equals(other.getCoolDownGroupDataListList())) return false;
+      if (!getOneoffGatherPointDetectorDataListList()
+          .equals(other.getOneoffGatherPointDetectorDataListList())) return false;
+      if (hasWispCageData() != other.hasWispCageData()) return false;
+      if (hasWispCageData()) {
+        if (!getWispCageData()
+            .equals(other.getWispCageData())) return false;
+      }
       if (getCurrentSlotNum()
           != other.getCurrentSlotNum()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1447,37 +1451,21 @@ public final class AllWidgetDataNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasWeatherWizardData()) {
-        hash = (37 * hash) + WEATHER_WIZARD_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getWeatherWizardData().hashCode();
-      }
-      if (getCoolDownGroupDataListCount() > 0) {
-        hash = (37 * hash) + COOL_DOWN_GROUP_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getCoolDownGroupDataListList().hashCode();
-      }
-      if (getSlotListCount() > 0) {
-        hash = (37 * hash) + SLOT_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getSlotListList().hashCode();
+      if (getWidgetSettingListCount() > 0) {
+        hash = (37 * hash) + _WIDGET_SETTING_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getWidgetSettingListList().hashCode();
       }
       if (hasLunchBoxData()) {
         hash = (37 * hash) + LUNCH_BOX_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getLunchBoxData().hashCode();
       }
-      if (getNormalCoolDownDataListCount() > 0) {
-        hash = (37 * hash) + NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getNormalCoolDownDataListList().hashCode();
+      if (hasTreasureKeyData()) {
+        hash = (37 * hash) + _TREASURE_KEY_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getTreasureKeyData().hashCode();
       }
-      if (getClientCollectorDataListCount() > 0) {
-        hash = (37 * hash) + CLIENT_COLLECTOR_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getClientCollectorDataListList().hashCode();
-      }
-      if (getOneoffGatherPointDetectorDataListCount() > 0) {
-        hash = (37 * hash) + ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getOneoffGatherPointDetectorDataListList().hashCode();
-      }
-      if (hasSorushWidgetData()) {
-        hash = (37 * hash) + _SORUSH_WIDGET_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getSorushWidgetData().hashCode();
+      if (getAnchorPointMaterialNextUsableTimeListCount() > 0) {
+        hash = (37 * hash) + _ANCHOR_POINT_MATERIAL_NEXT_USABLE_TIME_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAnchorPointMaterialNextUsableTimeListList().hashCode();
       }
       if (getAnchorPointListCount() > 0) {
         hash = (37 * hash) + ANCHOR_POINT_LIST_FIELD_NUMBER;
@@ -1487,29 +1475,45 @@ public final class AllWidgetDataNotifyOuterClass {
         hash = (37 * hash) + BACKGROUND_ACTIVE_WIDGET_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBackgroundActiveWidgetListList().hashCode();
       }
-      if (hasSkyCrystalDetectorData()) {
-        hash = (37 * hash) + SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getSkyCrystalDetectorData().hashCode();
-      }
-      if (getAnchorPointMaterialNextUsableTimeListCount() > 0) {
-        hash = (37 * hash) + _ANCHOR_POINT_MATERIAL_NEXT_USABLE_TIME_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getAnchorPointMaterialNextUsableTimeListList().hashCode();
+      if (getSlotListCount() > 0) {
+        hash = (37 * hash) + SLOT_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getSlotListList().hashCode();
       }
       if (getMaterialIdListCount() > 0) {
         hash = (37 * hash) + _MATERIAL_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMaterialIdListList().hashCode();
       }
+      if (hasSorushWidgetData()) {
+        hash = (37 * hash) + _SORUSH_WIDGET_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getSorushWidgetData().hashCode();
+      }
+      if (hasSkyCrystalDetectorData()) {
+        hash = (37 * hash) + SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getSkyCrystalDetectorData().hashCode();
+      }
+      if (hasWeatherWizardData()) {
+        hash = (37 * hash) + WEATHER_WIZARD_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getWeatherWizardData().hashCode();
+      }
+      if (getClientCollectorDataListCount() > 0) {
+        hash = (37 * hash) + CLIENT_COLLECTOR_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getClientCollectorDataListList().hashCode();
+      }
+      if (getNormalCoolDownDataListCount() > 0) {
+        hash = (37 * hash) + NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getNormalCoolDownDataListList().hashCode();
+      }
+      if (getCoolDownGroupDataListCount() > 0) {
+        hash = (37 * hash) + COOL_DOWN_GROUP_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCoolDownGroupDataListList().hashCode();
+      }
+      if (getOneoffGatherPointDetectorDataListCount() > 0) {
+        hash = (37 * hash) + ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getOneoffGatherPointDetectorDataListList().hashCode();
+      }
       if (hasWispCageData()) {
         hash = (37 * hash) + _WISP_CAGE_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getWispCageData().hashCode();
-      }
-      if (hasTreasureKeyData()) {
-        hash = (37 * hash) + _TREASURE_KEY_DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getTreasureKeyData().hashCode();
-      }
-      if (getWidgetSettingListCount() > 0) {
-        hash = (37 * hash) + _WIDGET_SETTING_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getWidgetSettingListList().hashCode();
       }
       hash = (37 * hash) + _CURRENT_SLOT_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentSlotNum();
@@ -1609,6 +1613,10 @@ public final class AllWidgetDataNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 599
+     * </pre>
+     *
      * Protobuf type {@code AllWidgetDataNotify}
      */
     public static final class Builder extends
@@ -1641,36 +1649,24 @@ public final class AllWidgetDataNotifyOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getCoolDownGroupDataListFieldBuilder();
-          getSlotListFieldBuilder();
-          getNormalCoolDownDataListFieldBuilder();
-          getClientCollectorDataListFieldBuilder();
-          getOneoffGatherPointDetectorDataListFieldBuilder();
-          getAnchorPointListFieldBuilder();
-          getAnchorPointMaterialNextUsableTimeListFieldBuilder();
           getWidgetSettingListFieldBuilder();
+          getAnchorPointMaterialNextUsableTimeListFieldBuilder();
+          getAnchorPointListFieldBuilder();
+          getSlotListFieldBuilder();
+          getClientCollectorDataListFieldBuilder();
+          getNormalCoolDownDataListFieldBuilder();
+          getCoolDownGroupDataListFieldBuilder();
+          getOneoffGatherPointDetectorDataListFieldBuilder();
         }
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (weatherWizardDataBuilder_ == null) {
-          weatherWizardData_ = null;
-        } else {
-          weatherWizardData_ = null;
-          weatherWizardDataBuilder_ = null;
-        }
-        if (coolDownGroupDataListBuilder_ == null) {
-          coolDownGroupDataList_ = java.util.Collections.emptyList();
+        if (WidgetSettingListBuilder_ == null) {
+          WidgetSettingList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          coolDownGroupDataListBuilder_.clear();
-        }
-        if (slotListBuilder_ == null) {
-          slotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          slotListBuilder_.clear();
+          WidgetSettingListBuilder_.clear();
         }
         if (lunchBoxDataBuilder_ == null) {
           lunchBoxData_ = null;
@@ -1678,69 +1674,81 @@ public final class AllWidgetDataNotifyOuterClass {
           lunchBoxData_ = null;
           lunchBoxDataBuilder_ = null;
         }
-        if (normalCoolDownDataListBuilder_ == null) {
-          normalCoolDownDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          normalCoolDownDataListBuilder_.clear();
-        }
-        if (clientCollectorDataListBuilder_ == null) {
-          clientCollectorDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          clientCollectorDataListBuilder_.clear();
-        }
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.clear();
-        }
-        if (SorushWidgetDataBuilder_ == null) {
-          SorushWidgetData_ = null;
-        } else {
-          SorushWidgetData_ = null;
-          SorushWidgetDataBuilder_ = null;
-        }
-        if (anchorPointListBuilder_ == null) {
-          anchorPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        } else {
-          anchorPointListBuilder_.clear();
-        }
-        backgroundActiveWidgetList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000040);
-        if (skyCrystalDetectorDataBuilder_ == null) {
-          skyCrystalDetectorData_ = null;
-        } else {
-          skyCrystalDetectorData_ = null;
-          skyCrystalDetectorDataBuilder_ = null;
-        }
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.clear();
-        }
-        MaterialIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000100);
-        if (WispCageDataBuilder_ == null) {
-          WispCageData_ = null;
-        } else {
-          WispCageData_ = null;
-          WispCageDataBuilder_ = null;
-        }
         if (TreasureKeyDataBuilder_ == null) {
           TreasureKeyData_ = null;
         } else {
           TreasureKeyData_ = null;
           TreasureKeyDataBuilder_ = null;
         }
-        if (WidgetSettingListBuilder_ == null) {
-          WidgetSettingList_ = java.util.Collections.emptyList();
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.clear();
+        }
+        if (anchorPointListBuilder_ == null) {
+          anchorPointList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          anchorPointListBuilder_.clear();
+        }
+        backgroundActiveWidgetList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (slotListBuilder_ == null) {
+          slotList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          slotListBuilder_.clear();
+        }
+        MaterialIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        if (SorushWidgetDataBuilder_ == null) {
+          SorushWidgetData_ = null;
+        } else {
+          SorushWidgetData_ = null;
+          SorushWidgetDataBuilder_ = null;
+        }
+        if (skyCrystalDetectorDataBuilder_ == null) {
+          skyCrystalDetectorData_ = null;
+        } else {
+          skyCrystalDetectorData_ = null;
+          skyCrystalDetectorDataBuilder_ = null;
+        }
+        if (weatherWizardDataBuilder_ == null) {
+          weatherWizardData_ = null;
+        } else {
+          weatherWizardData_ = null;
+          weatherWizardDataBuilder_ = null;
+        }
+        if (clientCollectorDataListBuilder_ == null) {
+          clientCollectorDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          clientCollectorDataListBuilder_.clear();
+        }
+        if (normalCoolDownDataListBuilder_ == null) {
+          normalCoolDownDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          normalCoolDownDataListBuilder_.clear();
+        }
+        if (coolDownGroupDataListBuilder_ == null) {
+          coolDownGroupDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          coolDownGroupDataListBuilder_.clear();
+        }
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000200);
         } else {
-          WidgetSettingListBuilder_.clear();
+          oneoffGatherPointDetectorDataListBuilder_.clear();
+        }
+        if (WispCageDataBuilder_ == null) {
+          WispCageData_ = null;
+        } else {
+          WispCageData_ = null;
+          WispCageDataBuilder_ = null;
         }
         CurrentSlotNum_ = 0;
 
@@ -1771,117 +1779,117 @@ public final class AllWidgetDataNotifyOuterClass {
       public emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify buildPartial() {
         emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify result = new emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify(this);
         int from_bitField0_ = bitField0_;
-        if (weatherWizardDataBuilder_ == null) {
-          result.weatherWizardData_ = weatherWizardData_;
-        } else {
-          result.weatherWizardData_ = weatherWizardDataBuilder_.build();
-        }
-        if (coolDownGroupDataListBuilder_ == null) {
+        if (WidgetSettingListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            coolDownGroupDataList_ = java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+            WidgetSettingList_ = java.util.Collections.unmodifiableList(WidgetSettingList_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.coolDownGroupDataList_ = coolDownGroupDataList_;
+          result.WidgetSettingList_ = WidgetSettingList_;
         } else {
-          result.coolDownGroupDataList_ = coolDownGroupDataListBuilder_.build();
-        }
-        if (slotListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            slotList_ = java.util.Collections.unmodifiableList(slotList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.slotList_ = slotList_;
-        } else {
-          result.slotList_ = slotListBuilder_.build();
+          result.WidgetSettingList_ = WidgetSettingListBuilder_.build();
         }
         if (lunchBoxDataBuilder_ == null) {
           result.lunchBoxData_ = lunchBoxData_;
         } else {
           result.lunchBoxData_ = lunchBoxDataBuilder_.build();
         }
-        if (normalCoolDownDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.normalCoolDownDataList_ = normalCoolDownDataList_;
-        } else {
-          result.normalCoolDownDataList_ = normalCoolDownDataListBuilder_.build();
-        }
-        if (clientCollectorDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
-            clientCollectorDataList_ = java.util.Collections.unmodifiableList(clientCollectorDataList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.clientCollectorDataList_ = clientCollectorDataList_;
-        } else {
-          result.clientCollectorDataList_ = clientCollectorDataListBuilder_.build();
-        }
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
-            oneoffGatherPointDetectorDataList_ = java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
-          }
-          result.oneoffGatherPointDetectorDataList_ = oneoffGatherPointDetectorDataList_;
-        } else {
-          result.oneoffGatherPointDetectorDataList_ = oneoffGatherPointDetectorDataListBuilder_.build();
-        }
-        if (SorushWidgetDataBuilder_ == null) {
-          result.SorushWidgetData_ = SorushWidgetData_;
-        } else {
-          result.SorushWidgetData_ = SorushWidgetDataBuilder_.build();
-        }
-        if (anchorPointListBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
-            anchorPointList_ = java.util.Collections.unmodifiableList(anchorPointList_);
-            bitField0_ = (bitField0_ & ~0x00000020);
-          }
-          result.anchorPointList_ = anchorPointList_;
-        } else {
-          result.anchorPointList_ = anchorPointListBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000040) != 0)) {
-          backgroundActiveWidgetList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.backgroundActiveWidgetList_ = backgroundActiveWidgetList_;
-        if (skyCrystalDetectorDataBuilder_ == null) {
-          result.skyCrystalDetectorData_ = skyCrystalDetectorData_;
-        } else {
-          result.skyCrystalDetectorData_ = skyCrystalDetectorDataBuilder_.build();
-        }
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) != 0)) {
-            AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
-            bitField0_ = (bitField0_ & ~0x00000080);
-          }
-          result.AnchorPointMaterialNextUsableTimeList_ = AnchorPointMaterialNextUsableTimeList_;
-        } else {
-          result.AnchorPointMaterialNextUsableTimeList_ = AnchorPointMaterialNextUsableTimeListBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000100) != 0)) {
-          MaterialIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000100);
-        }
-        result.MaterialIdList_ = MaterialIdList_;
-        if (WispCageDataBuilder_ == null) {
-          result.WispCageData_ = WispCageData_;
-        } else {
-          result.WispCageData_ = WispCageDataBuilder_.build();
-        }
         if (TreasureKeyDataBuilder_ == null) {
           result.TreasureKeyData_ = TreasureKeyData_;
         } else {
           result.TreasureKeyData_ = TreasureKeyDataBuilder_.build();
         }
-        if (WidgetSettingListBuilder_ == null) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.AnchorPointMaterialNextUsableTimeList_ = AnchorPointMaterialNextUsableTimeList_;
+        } else {
+          result.AnchorPointMaterialNextUsableTimeList_ = AnchorPointMaterialNextUsableTimeListBuilder_.build();
+        }
+        if (anchorPointListBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            anchorPointList_ = java.util.Collections.unmodifiableList(anchorPointList_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.anchorPointList_ = anchorPointList_;
+        } else {
+          result.anchorPointList_ = anchorPointListBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          backgroundActiveWidgetList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.backgroundActiveWidgetList_ = backgroundActiveWidgetList_;
+        if (slotListBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            slotList_ = java.util.Collections.unmodifiableList(slotList_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.slotList_ = slotList_;
+        } else {
+          result.slotList_ = slotListBuilder_.build();
+        }
+        if (((bitField0_ & 0x00000020) != 0)) {
+          MaterialIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.MaterialIdList_ = MaterialIdList_;
+        if (SorushWidgetDataBuilder_ == null) {
+          result.SorushWidgetData_ = SorushWidgetData_;
+        } else {
+          result.SorushWidgetData_ = SorushWidgetDataBuilder_.build();
+        }
+        if (skyCrystalDetectorDataBuilder_ == null) {
+          result.skyCrystalDetectorData_ = skyCrystalDetectorData_;
+        } else {
+          result.skyCrystalDetectorData_ = skyCrystalDetectorDataBuilder_.build();
+        }
+        if (weatherWizardDataBuilder_ == null) {
+          result.weatherWizardData_ = weatherWizardData_;
+        } else {
+          result.weatherWizardData_ = weatherWizardDataBuilder_.build();
+        }
+        if (clientCollectorDataListBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            clientCollectorDataList_ = java.util.Collections.unmodifiableList(clientCollectorDataList_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.clientCollectorDataList_ = clientCollectorDataList_;
+        } else {
+          result.clientCollectorDataList_ = clientCollectorDataListBuilder_.build();
+        }
+        if (normalCoolDownDataListBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.normalCoolDownDataList_ = normalCoolDownDataList_;
+        } else {
+          result.normalCoolDownDataList_ = normalCoolDownDataListBuilder_.build();
+        }
+        if (coolDownGroupDataListBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            coolDownGroupDataList_ = java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.coolDownGroupDataList_ = coolDownGroupDataList_;
+        } else {
+          result.coolDownGroupDataList_ = coolDownGroupDataListBuilder_.build();
+        }
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000200) != 0)) {
-            WidgetSettingList_ = java.util.Collections.unmodifiableList(WidgetSettingList_);
+            oneoffGatherPointDetectorDataList_ = java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
             bitField0_ = (bitField0_ & ~0x00000200);
           }
-          result.WidgetSettingList_ = WidgetSettingList_;
+          result.oneoffGatherPointDetectorDataList_ = oneoffGatherPointDetectorDataList_;
         } else {
-          result.WidgetSettingList_ = WidgetSettingListBuilder_.build();
+          result.oneoffGatherPointDetectorDataList_ = oneoffGatherPointDetectorDataListBuilder_.build();
+        }
+        if (WispCageDataBuilder_ == null) {
+          result.WispCageData_ = WispCageData_;
+        } else {
+          result.WispCageData_ = WispCageDataBuilder_.build();
         }
         result.CurrentSlotNum_ = CurrentSlotNum_;
         onBuilt();
@@ -1932,231 +1940,11 @@ public final class AllWidgetDataNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify other) {
         if (other == emu.grasscutter.net.proto.AllWidgetDataNotifyOuterClass.AllWidgetDataNotify.getDefaultInstance()) return this;
-        if (other.hasWeatherWizardData()) {
-          mergeWeatherWizardData(other.getWeatherWizardData());
-        }
-        if (coolDownGroupDataListBuilder_ == null) {
-          if (!other.coolDownGroupDataList_.isEmpty()) {
-            if (coolDownGroupDataList_.isEmpty()) {
-              coolDownGroupDataList_ = other.coolDownGroupDataList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureCoolDownGroupDataListIsMutable();
-              coolDownGroupDataList_.addAll(other.coolDownGroupDataList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.coolDownGroupDataList_.isEmpty()) {
-            if (coolDownGroupDataListBuilder_.isEmpty()) {
-              coolDownGroupDataListBuilder_.dispose();
-              coolDownGroupDataListBuilder_ = null;
-              coolDownGroupDataList_ = other.coolDownGroupDataList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              coolDownGroupDataListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCoolDownGroupDataListFieldBuilder() : null;
-            } else {
-              coolDownGroupDataListBuilder_.addAllMessages(other.coolDownGroupDataList_);
-            }
-          }
-        }
-        if (slotListBuilder_ == null) {
-          if (!other.slotList_.isEmpty()) {
-            if (slotList_.isEmpty()) {
-              slotList_ = other.slotList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureSlotListIsMutable();
-              slotList_.addAll(other.slotList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.slotList_.isEmpty()) {
-            if (slotListBuilder_.isEmpty()) {
-              slotListBuilder_.dispose();
-              slotListBuilder_ = null;
-              slotList_ = other.slotList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              slotListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSlotListFieldBuilder() : null;
-            } else {
-              slotListBuilder_.addAllMessages(other.slotList_);
-            }
-          }
-        }
-        if (other.hasLunchBoxData()) {
-          mergeLunchBoxData(other.getLunchBoxData());
-        }
-        if (normalCoolDownDataListBuilder_ == null) {
-          if (!other.normalCoolDownDataList_.isEmpty()) {
-            if (normalCoolDownDataList_.isEmpty()) {
-              normalCoolDownDataList_ = other.normalCoolDownDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureNormalCoolDownDataListIsMutable();
-              normalCoolDownDataList_.addAll(other.normalCoolDownDataList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.normalCoolDownDataList_.isEmpty()) {
-            if (normalCoolDownDataListBuilder_.isEmpty()) {
-              normalCoolDownDataListBuilder_.dispose();
-              normalCoolDownDataListBuilder_ = null;
-              normalCoolDownDataList_ = other.normalCoolDownDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              normalCoolDownDataListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getNormalCoolDownDataListFieldBuilder() : null;
-            } else {
-              normalCoolDownDataListBuilder_.addAllMessages(other.normalCoolDownDataList_);
-            }
-          }
-        }
-        if (clientCollectorDataListBuilder_ == null) {
-          if (!other.clientCollectorDataList_.isEmpty()) {
-            if (clientCollectorDataList_.isEmpty()) {
-              clientCollectorDataList_ = other.clientCollectorDataList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureClientCollectorDataListIsMutable();
-              clientCollectorDataList_.addAll(other.clientCollectorDataList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.clientCollectorDataList_.isEmpty()) {
-            if (clientCollectorDataListBuilder_.isEmpty()) {
-              clientCollectorDataListBuilder_.dispose();
-              clientCollectorDataListBuilder_ = null;
-              clientCollectorDataList_ = other.clientCollectorDataList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              clientCollectorDataListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getClientCollectorDataListFieldBuilder() : null;
-            } else {
-              clientCollectorDataListBuilder_.addAllMessages(other.clientCollectorDataList_);
-            }
-          }
-        }
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
-            if (oneoffGatherPointDetectorDataList_.isEmpty()) {
-              oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-            } else {
-              ensureOneoffGatherPointDetectorDataListIsMutable();
-              oneoffGatherPointDetectorDataList_.addAll(other.oneoffGatherPointDetectorDataList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
-            if (oneoffGatherPointDetectorDataListBuilder_.isEmpty()) {
-              oneoffGatherPointDetectorDataListBuilder_.dispose();
-              oneoffGatherPointDetectorDataListBuilder_ = null;
-              oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
-              oneoffGatherPointDetectorDataListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOneoffGatherPointDetectorDataListFieldBuilder() : null;
-            } else {
-              oneoffGatherPointDetectorDataListBuilder_.addAllMessages(other.oneoffGatherPointDetectorDataList_);
-            }
-          }
-        }
-        if (other.hasSorushWidgetData()) {
-          mergeSorushWidgetData(other.getSorushWidgetData());
-        }
-        if (anchorPointListBuilder_ == null) {
-          if (!other.anchorPointList_.isEmpty()) {
-            if (anchorPointList_.isEmpty()) {
-              anchorPointList_ = other.anchorPointList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-            } else {
-              ensureAnchorPointListIsMutable();
-              anchorPointList_.addAll(other.anchorPointList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.anchorPointList_.isEmpty()) {
-            if (anchorPointListBuilder_.isEmpty()) {
-              anchorPointListBuilder_.dispose();
-              anchorPointListBuilder_ = null;
-              anchorPointList_ = other.anchorPointList_;
-              bitField0_ = (bitField0_ & ~0x00000020);
-              anchorPointListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAnchorPointListFieldBuilder() : null;
-            } else {
-              anchorPointListBuilder_.addAllMessages(other.anchorPointList_);
-            }
-          }
-        }
-        if (!other.backgroundActiveWidgetList_.isEmpty()) {
-          if (backgroundActiveWidgetList_.isEmpty()) {
-            backgroundActiveWidgetList_ = other.backgroundActiveWidgetList_;
-            bitField0_ = (bitField0_ & ~0x00000040);
-          } else {
-            ensureBackgroundActiveWidgetListIsMutable();
-            backgroundActiveWidgetList_.addAll(other.backgroundActiveWidgetList_);
-          }
-          onChanged();
-        }
-        if (other.hasSkyCrystalDetectorData()) {
-          mergeSkyCrystalDetectorData(other.getSkyCrystalDetectorData());
-        }
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          if (!other.AnchorPointMaterialNextUsableTimeList_.isEmpty()) {
-            if (AnchorPointMaterialNextUsableTimeList_.isEmpty()) {
-              AnchorPointMaterialNextUsableTimeList_ = other.AnchorPointMaterialNextUsableTimeList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-            } else {
-              ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-              AnchorPointMaterialNextUsableTimeList_.addAll(other.AnchorPointMaterialNextUsableTimeList_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.AnchorPointMaterialNextUsableTimeList_.isEmpty()) {
-            if (AnchorPointMaterialNextUsableTimeListBuilder_.isEmpty()) {
-              AnchorPointMaterialNextUsableTimeListBuilder_.dispose();
-              AnchorPointMaterialNextUsableTimeListBuilder_ = null;
-              AnchorPointMaterialNextUsableTimeList_ = other.AnchorPointMaterialNextUsableTimeList_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-              AnchorPointMaterialNextUsableTimeListBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getAnchorPointMaterialNextUsableTimeListFieldBuilder() : null;
-            } else {
-              AnchorPointMaterialNextUsableTimeListBuilder_.addAllMessages(other.AnchorPointMaterialNextUsableTimeList_);
-            }
-          }
-        }
-        if (!other.MaterialIdList_.isEmpty()) {
-          if (MaterialIdList_.isEmpty()) {
-            MaterialIdList_ = other.MaterialIdList_;
-            bitField0_ = (bitField0_ & ~0x00000100);
-          } else {
-            ensureMaterialIdListIsMutable();
-            MaterialIdList_.addAll(other.MaterialIdList_);
-          }
-          onChanged();
-        }
-        if (other.hasWispCageData()) {
-          mergeWispCageData(other.getWispCageData());
-        }
-        if (other.hasTreasureKeyData()) {
-          mergeTreasureKeyData(other.getTreasureKeyData());
-        }
         if (WidgetSettingListBuilder_ == null) {
           if (!other.WidgetSettingList_.isEmpty()) {
             if (WidgetSettingList_.isEmpty()) {
               WidgetSettingList_ = other.WidgetSettingList_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureWidgetSettingListIsMutable();
               WidgetSettingList_.addAll(other.WidgetSettingList_);
@@ -2169,7 +1957,7 @@ public final class AllWidgetDataNotifyOuterClass {
               WidgetSettingListBuilder_.dispose();
               WidgetSettingListBuilder_ = null;
               WidgetSettingList_ = other.WidgetSettingList_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000001);
               WidgetSettingListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWidgetSettingListFieldBuilder() : null;
@@ -2177,6 +1965,226 @@ public final class AllWidgetDataNotifyOuterClass {
               WidgetSettingListBuilder_.addAllMessages(other.WidgetSettingList_);
             }
           }
+        }
+        if (other.hasLunchBoxData()) {
+          mergeLunchBoxData(other.getLunchBoxData());
+        }
+        if (other.hasTreasureKeyData()) {
+          mergeTreasureKeyData(other.getTreasureKeyData());
+        }
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          if (!other.AnchorPointMaterialNextUsableTimeList_.isEmpty()) {
+            if (AnchorPointMaterialNextUsableTimeList_.isEmpty()) {
+              AnchorPointMaterialNextUsableTimeList_ = other.AnchorPointMaterialNextUsableTimeList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+              AnchorPointMaterialNextUsableTimeList_.addAll(other.AnchorPointMaterialNextUsableTimeList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.AnchorPointMaterialNextUsableTimeList_.isEmpty()) {
+            if (AnchorPointMaterialNextUsableTimeListBuilder_.isEmpty()) {
+              AnchorPointMaterialNextUsableTimeListBuilder_.dispose();
+              AnchorPointMaterialNextUsableTimeListBuilder_ = null;
+              AnchorPointMaterialNextUsableTimeList_ = other.AnchorPointMaterialNextUsableTimeList_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              AnchorPointMaterialNextUsableTimeListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAnchorPointMaterialNextUsableTimeListFieldBuilder() : null;
+            } else {
+              AnchorPointMaterialNextUsableTimeListBuilder_.addAllMessages(other.AnchorPointMaterialNextUsableTimeList_);
+            }
+          }
+        }
+        if (anchorPointListBuilder_ == null) {
+          if (!other.anchorPointList_.isEmpty()) {
+            if (anchorPointList_.isEmpty()) {
+              anchorPointList_ = other.anchorPointList_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureAnchorPointListIsMutable();
+              anchorPointList_.addAll(other.anchorPointList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.anchorPointList_.isEmpty()) {
+            if (anchorPointListBuilder_.isEmpty()) {
+              anchorPointListBuilder_.dispose();
+              anchorPointListBuilder_ = null;
+              anchorPointList_ = other.anchorPointList_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              anchorPointListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAnchorPointListFieldBuilder() : null;
+            } else {
+              anchorPointListBuilder_.addAllMessages(other.anchorPointList_);
+            }
+          }
+        }
+        if (!other.backgroundActiveWidgetList_.isEmpty()) {
+          if (backgroundActiveWidgetList_.isEmpty()) {
+            backgroundActiveWidgetList_ = other.backgroundActiveWidgetList_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureBackgroundActiveWidgetListIsMutable();
+            backgroundActiveWidgetList_.addAll(other.backgroundActiveWidgetList_);
+          }
+          onChanged();
+        }
+        if (slotListBuilder_ == null) {
+          if (!other.slotList_.isEmpty()) {
+            if (slotList_.isEmpty()) {
+              slotList_ = other.slotList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureSlotListIsMutable();
+              slotList_.addAll(other.slotList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.slotList_.isEmpty()) {
+            if (slotListBuilder_.isEmpty()) {
+              slotListBuilder_.dispose();
+              slotListBuilder_ = null;
+              slotList_ = other.slotList_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              slotListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSlotListFieldBuilder() : null;
+            } else {
+              slotListBuilder_.addAllMessages(other.slotList_);
+            }
+          }
+        }
+        if (!other.MaterialIdList_.isEmpty()) {
+          if (MaterialIdList_.isEmpty()) {
+            MaterialIdList_ = other.MaterialIdList_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureMaterialIdListIsMutable();
+            MaterialIdList_.addAll(other.MaterialIdList_);
+          }
+          onChanged();
+        }
+        if (other.hasSorushWidgetData()) {
+          mergeSorushWidgetData(other.getSorushWidgetData());
+        }
+        if (other.hasSkyCrystalDetectorData()) {
+          mergeSkyCrystalDetectorData(other.getSkyCrystalDetectorData());
+        }
+        if (other.hasWeatherWizardData()) {
+          mergeWeatherWizardData(other.getWeatherWizardData());
+        }
+        if (clientCollectorDataListBuilder_ == null) {
+          if (!other.clientCollectorDataList_.isEmpty()) {
+            if (clientCollectorDataList_.isEmpty()) {
+              clientCollectorDataList_ = other.clientCollectorDataList_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureClientCollectorDataListIsMutable();
+              clientCollectorDataList_.addAll(other.clientCollectorDataList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.clientCollectorDataList_.isEmpty()) {
+            if (clientCollectorDataListBuilder_.isEmpty()) {
+              clientCollectorDataListBuilder_.dispose();
+              clientCollectorDataListBuilder_ = null;
+              clientCollectorDataList_ = other.clientCollectorDataList_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              clientCollectorDataListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getClientCollectorDataListFieldBuilder() : null;
+            } else {
+              clientCollectorDataListBuilder_.addAllMessages(other.clientCollectorDataList_);
+            }
+          }
+        }
+        if (normalCoolDownDataListBuilder_ == null) {
+          if (!other.normalCoolDownDataList_.isEmpty()) {
+            if (normalCoolDownDataList_.isEmpty()) {
+              normalCoolDownDataList_ = other.normalCoolDownDataList_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureNormalCoolDownDataListIsMutable();
+              normalCoolDownDataList_.addAll(other.normalCoolDownDataList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.normalCoolDownDataList_.isEmpty()) {
+            if (normalCoolDownDataListBuilder_.isEmpty()) {
+              normalCoolDownDataListBuilder_.dispose();
+              normalCoolDownDataListBuilder_ = null;
+              normalCoolDownDataList_ = other.normalCoolDownDataList_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              normalCoolDownDataListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getNormalCoolDownDataListFieldBuilder() : null;
+            } else {
+              normalCoolDownDataListBuilder_.addAllMessages(other.normalCoolDownDataList_);
+            }
+          }
+        }
+        if (coolDownGroupDataListBuilder_ == null) {
+          if (!other.coolDownGroupDataList_.isEmpty()) {
+            if (coolDownGroupDataList_.isEmpty()) {
+              coolDownGroupDataList_ = other.coolDownGroupDataList_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureCoolDownGroupDataListIsMutable();
+              coolDownGroupDataList_.addAll(other.coolDownGroupDataList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.coolDownGroupDataList_.isEmpty()) {
+            if (coolDownGroupDataListBuilder_.isEmpty()) {
+              coolDownGroupDataListBuilder_.dispose();
+              coolDownGroupDataListBuilder_ = null;
+              coolDownGroupDataList_ = other.coolDownGroupDataList_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              coolDownGroupDataListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCoolDownGroupDataListFieldBuilder() : null;
+            } else {
+              coolDownGroupDataListBuilder_.addAllMessages(other.coolDownGroupDataList_);
+            }
+          }
+        }
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
+            if (oneoffGatherPointDetectorDataList_.isEmpty()) {
+              oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureOneoffGatherPointDetectorDataListIsMutable();
+              oneoffGatherPointDetectorDataList_.addAll(other.oneoffGatherPointDetectorDataList_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.oneoffGatherPointDetectorDataList_.isEmpty()) {
+            if (oneoffGatherPointDetectorDataListBuilder_.isEmpty()) {
+              oneoffGatherPointDetectorDataListBuilder_.dispose();
+              oneoffGatherPointDetectorDataListBuilder_ = null;
+              oneoffGatherPointDetectorDataList_ = other.oneoffGatherPointDetectorDataList_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              oneoffGatherPointDetectorDataListBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOneoffGatherPointDetectorDataListFieldBuilder() : null;
+            } else {
+              oneoffGatherPointDetectorDataListBuilder_.addAllMessages(other.oneoffGatherPointDetectorDataList_);
+            }
+          }
+        }
+        if (other.hasWispCageData()) {
+          mergeWispCageData(other.getWispCageData());
         }
         if (other.getCurrentSlotNum() != 0) {
           setCurrentSlotNum(other.getCurrentSlotNum());
@@ -2211,617 +2219,258 @@ public final class AllWidgetDataNotifyOuterClass {
       }
       private int bitField0_;
 
-      private emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> weatherWizardDataBuilder_;
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       * @return Whether the weatherWizardData field is set.
-       */
-      public boolean hasWeatherWizardData() {
-        return weatherWizardDataBuilder_ != null || weatherWizardData_ != null;
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       * @return The weatherWizardData.
-       */
-      public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
-        if (weatherWizardDataBuilder_ == null) {
-          return weatherWizardData_ == null ? emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : weatherWizardData_;
-        } else {
-          return weatherWizardDataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      public Builder setWeatherWizardData(emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData value) {
-        if (weatherWizardDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          weatherWizardData_ = value;
-          onChanged();
-        } else {
-          weatherWizardDataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      public Builder setWeatherWizardData(
-          emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder builderForValue) {
-        if (weatherWizardDataBuilder_ == null) {
-          weatherWizardData_ = builderForValue.build();
-          onChanged();
-        } else {
-          weatherWizardDataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      public Builder mergeWeatherWizardData(emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData value) {
-        if (weatherWizardDataBuilder_ == null) {
-          if (weatherWizardData_ != null) {
-            weatherWizardData_ =
-              emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.newBuilder(weatherWizardData_).mergeFrom(value).buildPartial();
-          } else {
-            weatherWizardData_ = value;
-          }
-          onChanged();
-        } else {
-          weatherWizardDataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      public Builder clearWeatherWizardData() {
-        if (weatherWizardDataBuilder_ == null) {
-          weatherWizardData_ = null;
-          onChanged();
-        } else {
-          weatherWizardData_ = null;
-          weatherWizardDataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder getWeatherWizardDataBuilder() {
-        
-        onChanged();
-        return getWeatherWizardDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
-        if (weatherWizardDataBuilder_ != null) {
-          return weatherWizardDataBuilder_.getMessageOrBuilder();
-        } else {
-          return weatherWizardData_ == null ?
-              emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : weatherWizardData_;
-        }
-      }
-      /**
-       * <code>.WeatherWizardData weather_wizard_data = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> 
-          getWeatherWizardDataFieldBuilder() {
-        if (weatherWizardDataBuilder_ == null) {
-          weatherWizardDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder>(
-                  getWeatherWizardData(),
-                  getParentForChildren(),
-                  isClean());
-          weatherWizardData_ = null;
-        }
-        return weatherWizardDataBuilder_;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_ =
+      private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> WidgetSettingList_ =
         java.util.Collections.emptyList();
-      private void ensureCoolDownGroupDataListIsMutable() {
+      private void ensureWidgetSettingListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          coolDownGroupDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(coolDownGroupDataList_);
+          WidgetSettingList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(WidgetSettingList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> coolDownGroupDataListBuilder_;
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> WidgetSettingListBuilder_;
 
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
-        if (coolDownGroupDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getWidgetSettingListList() {
+        if (WidgetSettingListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(WidgetSettingList_);
         } else {
-          return coolDownGroupDataListBuilder_.getMessageList();
+          return WidgetSettingListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public int getCoolDownGroupDataListCount() {
-        if (coolDownGroupDataListBuilder_ == null) {
-          return coolDownGroupDataList_.size();
+      public int getWidgetSettingListCount() {
+        if (WidgetSettingListBuilder_ == null) {
+          return WidgetSettingList_.size();
         } else {
-          return coolDownGroupDataListBuilder_.getCount();
+          return WidgetSettingListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          return coolDownGroupDataList_.get(index);
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getWidgetSettingList(int index) {
+        if (WidgetSettingListBuilder_ == null) {
+          return WidgetSettingList_.get(index);
         } else {
-          return coolDownGroupDataListBuilder_.getMessage(index);
+          return WidgetSettingListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder setCoolDownGroupDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (coolDownGroupDataListBuilder_ == null) {
+      public Builder setWidgetSettingList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (WidgetSettingListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.set(index, value);
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.set(index, value);
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.setMessage(index, value);
+          WidgetSettingListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder setCoolDownGroupDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.set(index, builderForValue.build());
+      public Builder setWidgetSettingList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (WidgetSettingListBuilder_ == null) {
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.setMessage(index, builderForValue.build());
+          WidgetSettingListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder addCoolDownGroupDataList(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (coolDownGroupDataListBuilder_ == null) {
+      public Builder addWidgetSettingList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (WidgetSettingListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.add(value);
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.add(value);
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.addMessage(value);
+          WidgetSettingListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder addCoolDownGroupDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (coolDownGroupDataListBuilder_ == null) {
+      public Builder addWidgetSettingList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (WidgetSettingListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.add(index, value);
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.add(index, value);
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.addMessage(index, value);
+          WidgetSettingListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder addCoolDownGroupDataList(
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.add(builderForValue.build());
+      public Builder addWidgetSettingList(
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (WidgetSettingListBuilder_ == null) {
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.add(builderForValue.build());
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.addMessage(builderForValue.build());
+          WidgetSettingListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder addCoolDownGroupDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.add(index, builderForValue.build());
+      public Builder addWidgetSettingList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (WidgetSettingListBuilder_ == null) {
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.addMessage(index, builderForValue.build());
+          WidgetSettingListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder addAllCoolDownGroupDataList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          ensureCoolDownGroupDataListIsMutable();
+      public Builder addAllWidgetSettingList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
+        if (WidgetSettingListBuilder_ == null) {
+          ensureWidgetSettingListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, coolDownGroupDataList_);
+              values, WidgetSettingList_);
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.addAllMessages(values);
+          WidgetSettingListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder clearCoolDownGroupDataList() {
-        if (coolDownGroupDataListBuilder_ == null) {
-          coolDownGroupDataList_ = java.util.Collections.emptyList();
+      public Builder clearWidgetSettingList() {
+        if (WidgetSettingListBuilder_ == null) {
+          WidgetSettingList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.clear();
+          WidgetSettingListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public Builder removeCoolDownGroupDataList(int index) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          ensureCoolDownGroupDataListIsMutable();
-          coolDownGroupDataList_.remove(index);
+      public Builder removeWidgetSettingList(int index) {
+        if (WidgetSettingListBuilder_ == null) {
+          ensureWidgetSettingListIsMutable();
+          WidgetSettingList_.remove(index);
           onChanged();
         } else {
-          coolDownGroupDataListBuilder_.remove(index);
+          WidgetSettingListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getCoolDownGroupDataListBuilder(
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getWidgetSettingListBuilder(
           int index) {
-        return getCoolDownGroupDataListFieldBuilder().getBuilder(index);
+        return getWidgetSettingListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getWidgetSettingListOrBuilder(
           int index) {
-        if (coolDownGroupDataListBuilder_ == null) {
-          return coolDownGroupDataList_.get(index);  } else {
-          return coolDownGroupDataListBuilder_.getMessageOrBuilder(index);
+        if (WidgetSettingListBuilder_ == null) {
+          return WidgetSettingList_.get(index);  } else {
+          return WidgetSettingListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-           getCoolDownGroupDataListOrBuilderList() {
-        if (coolDownGroupDataListBuilder_ != null) {
-          return coolDownGroupDataListBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+           getWidgetSettingListOrBuilderList() {
+        if (WidgetSettingListBuilder_ != null) {
+          return WidgetSettingListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+          return java.util.Collections.unmodifiableList(WidgetSettingList_);
         }
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder() {
-        return getCoolDownGroupDataListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addWidgetSettingListBuilder() {
+        return getWidgetSettingListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder(
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addWidgetSettingListBuilder(
           int index) {
-        return getCoolDownGroupDataListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+        return getWidgetSettingListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
       }
       /**
-       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 2;</code>
+       * <code>repeated .Uint32Pair _widget_setting_list = 133;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> 
-           getCoolDownGroupDataListBuilderList() {
-        return getCoolDownGroupDataListFieldBuilder().getBuilderList();
+      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
+           getWidgetSettingListBuilderList() {
+        return getWidgetSettingListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-          getCoolDownGroupDataListFieldBuilder() {
-        if (coolDownGroupDataListBuilder_ == null) {
-          coolDownGroupDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder>(
-                  coolDownGroupDataList_,
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+          getWidgetSettingListFieldBuilder() {
+        if (WidgetSettingListBuilder_ == null) {
+          WidgetSettingListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
+                  WidgetSettingList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          coolDownGroupDataList_ = null;
+          WidgetSettingList_ = null;
         }
-        return coolDownGroupDataListBuilder_;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_ =
-        java.util.Collections.emptyList();
-      private void ensureSlotListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>(slotList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> slotListBuilder_;
-
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList() {
-        if (slotListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(slotList_);
-        } else {
-          return slotListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public int getSlotListCount() {
-        if (slotListBuilder_ == null) {
-          return slotList_.size();
-        } else {
-          return slotListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int index) {
-        if (slotListBuilder_ == null) {
-          return slotList_.get(index);
-        } else {
-          return slotListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder setSlotList(
-          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
-        if (slotListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSlotListIsMutable();
-          slotList_.set(index, value);
-          onChanged();
-        } else {
-          slotListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder setSlotList(
-          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
-        if (slotListBuilder_ == null) {
-          ensureSlotListIsMutable();
-          slotList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          slotListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder addSlotList(emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
-        if (slotListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSlotListIsMutable();
-          slotList_.add(value);
-          onChanged();
-        } else {
-          slotListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder addSlotList(
-          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
-        if (slotListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureSlotListIsMutable();
-          slotList_.add(index, value);
-          onChanged();
-        } else {
-          slotListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder addSlotList(
-          emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
-        if (slotListBuilder_ == null) {
-          ensureSlotListIsMutable();
-          slotList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          slotListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder addSlotList(
-          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
-        if (slotListBuilder_ == null) {
-          ensureSlotListIsMutable();
-          slotList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          slotListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder addAllSlotList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> values) {
-        if (slotListBuilder_ == null) {
-          ensureSlotListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, slotList_);
-          onChanged();
-        } else {
-          slotListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder clearSlotList() {
-        if (slotListBuilder_ == null) {
-          slotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          slotListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public Builder removeSlotList(int index) {
-        if (slotListBuilder_ == null) {
-          ensureSlotListIsMutable();
-          slotList_.remove(index);
-          onChanged();
-        } else {
-          slotListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder getSlotListBuilder(
-          int index) {
-        return getSlotListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(
-          int index) {
-        if (slotListBuilder_ == null) {
-          return slotList_.get(index);  } else {
-          return slotListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
-           getSlotListOrBuilderList() {
-        if (slotListBuilder_ != null) {
-          return slotListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(slotList_);
-        }
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder addSlotListBuilder() {
-        return getSlotListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder addSlotListBuilder(
-          int index) {
-        return getSlotListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .WidgetSlotData slot_list = 4;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder> 
-           getSlotListBuilderList() {
-        return getSlotListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
-          getSlotListFieldBuilder() {
-        if (slotListBuilder_ == null) {
-          slotListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder>(
-                  slotList_,
-                  ((bitField0_ & 0x00000002) != 0),
-                  getParentForChildren(),
-                  isClean());
-          slotList_ = null;
-        }
-        return slotListBuilder_;
+        return WidgetSettingListBuilder_;
       }
 
       private emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData, emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder, emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxDataOrBuilder> lunchBoxDataBuilder_;
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        * @return Whether the lunchBoxData field is set.
        */
       public boolean hasLunchBoxData() {
         return lunchBoxDataBuilder_ != null || lunchBoxData_ != null;
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        * @return The lunchBoxData.
        */
       public emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData getLunchBoxData() {
@@ -2832,7 +2481,7 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       public Builder setLunchBoxData(emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData value) {
         if (lunchBoxDataBuilder_ == null) {
@@ -2848,7 +2497,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       public Builder setLunchBoxData(
           emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder builderForValue) {
@@ -2862,7 +2511,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       public Builder mergeLunchBoxData(emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData value) {
         if (lunchBoxDataBuilder_ == null) {
@@ -2880,7 +2529,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       public Builder clearLunchBoxData() {
         if (lunchBoxDataBuilder_ == null) {
@@ -2894,7 +2543,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       public emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder getLunchBoxDataBuilder() {
         
@@ -2902,7 +2551,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return getLunchBoxDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       public emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
         if (lunchBoxDataBuilder_ != null) {
@@ -2913,7 +2562,7 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>.LunchBoxData lunch_box_data = 5;</code>
+       * <code>.LunchBoxData lunch_box_data = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData, emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder, emu.grasscutter.net.proto.LunchBoxDataOuterClass.LunchBoxDataOrBuilder> 
@@ -2929,851 +2578,371 @@ public final class AllWidgetDataNotifyOuterClass {
         return lunchBoxDataBuilder_;
       }
 
-      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_ =
-        java.util.Collections.emptyList();
-      private void ensureNormalCoolDownDataListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          normalCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(normalCoolDownDataList_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> normalCoolDownDataListBuilder_;
-
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
-        if (normalCoolDownDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(normalCoolDownDataList_);
-        } else {
-          return normalCoolDownDataListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public int getNormalCoolDownDataListCount() {
-        if (normalCoolDownDataListBuilder_ == null) {
-          return normalCoolDownDataList_.size();
-        } else {
-          return normalCoolDownDataListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          return normalCoolDownDataList_.get(index);
-        } else {
-          return normalCoolDownDataListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder setNormalCoolDownDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.set(index, value);
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder setNormalCoolDownDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder addNormalCoolDownDataList(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.add(value);
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder addNormalCoolDownDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.add(index, value);
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder addNormalCoolDownDataList(
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder addNormalCoolDownDataList(
-          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder addAllNormalCoolDownDataList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          ensureNormalCoolDownDataListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, normalCoolDownDataList_);
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder clearNormalCoolDownDataList() {
-        if (normalCoolDownDataListBuilder_ == null) {
-          normalCoolDownDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public Builder removeNormalCoolDownDataList(int index) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          ensureNormalCoolDownDataListIsMutable();
-          normalCoolDownDataList_.remove(index);
-          onChanged();
-        } else {
-          normalCoolDownDataListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getNormalCoolDownDataListBuilder(
-          int index) {
-        return getNormalCoolDownDataListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
-          int index) {
-        if (normalCoolDownDataListBuilder_ == null) {
-          return normalCoolDownDataList_.get(index);  } else {
-          return normalCoolDownDataListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-           getNormalCoolDownDataListOrBuilderList() {
-        if (normalCoolDownDataListBuilder_ != null) {
-          return normalCoolDownDataListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(normalCoolDownDataList_);
-        }
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder() {
-        return getNormalCoolDownDataListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder(
-          int index) {
-        return getNormalCoolDownDataListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 8;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> 
-           getNormalCoolDownDataListBuilderList() {
-        return getNormalCoolDownDataListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
-          getNormalCoolDownDataListFieldBuilder() {
-        if (normalCoolDownDataListBuilder_ == null) {
-          normalCoolDownDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder>(
-                  normalCoolDownDataList_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          normalCoolDownDataList_ = null;
-        }
-        return normalCoolDownDataListBuilder_;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_ =
-        java.util.Collections.emptyList();
-      private void ensureClientCollectorDataListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          clientCollectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData>(clientCollectorDataList_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> clientCollectorDataListBuilder_;
-
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> getClientCollectorDataListList() {
-        if (clientCollectorDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(clientCollectorDataList_);
-        } else {
-          return clientCollectorDataListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public int getClientCollectorDataListCount() {
-        if (clientCollectorDataListBuilder_ == null) {
-          return clientCollectorDataList_.size();
-        } else {
-          return clientCollectorDataListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getClientCollectorDataList(int index) {
-        if (clientCollectorDataListBuilder_ == null) {
-          return clientCollectorDataList_.get(index);
-        } else {
-          return clientCollectorDataListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder setClientCollectorDataList(
-          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData value) {
-        if (clientCollectorDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.set(index, value);
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder setClientCollectorDataList(
-          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder builderForValue) {
-        if (clientCollectorDataListBuilder_ == null) {
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder addClientCollectorDataList(emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData value) {
-        if (clientCollectorDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.add(value);
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder addClientCollectorDataList(
-          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData value) {
-        if (clientCollectorDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.add(index, value);
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder addClientCollectorDataList(
-          emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder builderForValue) {
-        if (clientCollectorDataListBuilder_ == null) {
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder addClientCollectorDataList(
-          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder builderForValue) {
-        if (clientCollectorDataListBuilder_ == null) {
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder addAllClientCollectorDataList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> values) {
-        if (clientCollectorDataListBuilder_ == null) {
-          ensureClientCollectorDataListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, clientCollectorDataList_);
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder clearClientCollectorDataList() {
-        if (clientCollectorDataListBuilder_ == null) {
-          clientCollectorDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public Builder removeClientCollectorDataList(int index) {
-        if (clientCollectorDataListBuilder_ == null) {
-          ensureClientCollectorDataListIsMutable();
-          clientCollectorDataList_.remove(index);
-          onChanged();
-        } else {
-          clientCollectorDataListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder getClientCollectorDataListBuilder(
-          int index) {
-        return getClientCollectorDataListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(
-          int index) {
-        if (clientCollectorDataListBuilder_ == null) {
-          return clientCollectorDataList_.get(index);  } else {
-          return clientCollectorDataListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
-           getClientCollectorDataListOrBuilderList() {
-        if (clientCollectorDataListBuilder_ != null) {
-          return clientCollectorDataListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(clientCollectorDataList_);
-        }
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder addClientCollectorDataListBuilder() {
-        return getClientCollectorDataListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder addClientCollectorDataListBuilder(
-          int index) {
-        return getClientCollectorDataListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .ClientCollectorData client_collector_data_list = 9;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder> 
-           getClientCollectorDataListBuilderList() {
-        return getClientCollectorDataListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
-          getClientCollectorDataListFieldBuilder() {
-        if (clientCollectorDataListBuilder_ == null) {
-          clientCollectorDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder>(
-                  clientCollectorDataList_,
-                  ((bitField0_ & 0x00000008) != 0),
-                  getParentForChildren(),
-                  isClean());
-          clientCollectorDataList_ = null;
-        }
-        return clientCollectorDataListBuilder_;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_ =
-        java.util.Collections.emptyList();
-      private void ensureOneoffGatherPointDetectorDataListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
-          oneoffGatherPointDetectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData>(oneoffGatherPointDetectorDataList_);
-          bitField0_ |= 0x00000010;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> oneoffGatherPointDetectorDataListBuilder_;
-
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
-        } else {
-          return oneoffGatherPointDetectorDataListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public int getOneoffGatherPointDetectorDataListCount() {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          return oneoffGatherPointDetectorDataList_.size();
-        } else {
-          return oneoffGatherPointDetectorDataListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          return oneoffGatherPointDetectorDataList_.get(index);
-        } else {
-          return oneoffGatherPointDetectorDataListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder setOneoffGatherPointDetectorDataList(
-          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.set(index, value);
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder setOneoffGatherPointDetectorDataList(
-          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder addOneoffGatherPointDetectorDataList(emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.add(value);
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder addOneoffGatherPointDetectorDataList(
-          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.add(index, value);
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder addOneoffGatherPointDetectorDataList(
-          emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder addOneoffGatherPointDetectorDataList(
-          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder addAllOneoffGatherPointDetectorDataList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> values) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, oneoffGatherPointDetectorDataList_);
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder clearOneoffGatherPointDetectorDataList() {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public Builder removeOneoffGatherPointDetectorDataList(int index) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          ensureOneoffGatherPointDetectorDataListIsMutable();
-          oneoffGatherPointDetectorDataList_.remove(index);
-          onChanged();
-        } else {
-          oneoffGatherPointDetectorDataListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder getOneoffGatherPointDetectorDataListBuilder(
-          int index) {
-        return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
-          int index) {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          return oneoffGatherPointDetectorDataList_.get(index);  } else {
-          return oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
-           getOneoffGatherPointDetectorDataListOrBuilderList() {
-        if (oneoffGatherPointDetectorDataListBuilder_ != null) {
-          return oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
-        }
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder() {
-        return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder(
-          int index) {
-        return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 10;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder> 
-           getOneoffGatherPointDetectorDataListBuilderList() {
-        return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
-          getOneoffGatherPointDetectorDataListFieldBuilder() {
-        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
-          oneoffGatherPointDetectorDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder>(
-                  oneoffGatherPointDetectorDataList_,
-                  ((bitField0_ & 0x00000010) != 0),
-                  getParentForChildren(),
-                  isClean());
-          oneoffGatherPointDetectorDataList_ = null;
-        }
-        return oneoffGatherPointDetectorDataListBuilder_;
-      }
-
-      private emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData SorushWidgetData_;
+      private emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData TreasureKeyData_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData, emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder, emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetDataOrBuilder> SorushWidgetDataBuilder_;
+          emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData, emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.Builder, emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyDataOrBuilder> TreasureKeyDataBuilder_;
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-       * @return Whether the sorushWidgetData field is set.
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
+       * @return Whether the treasureKeyData field is set.
        */
-      public boolean hasSorushWidgetData() {
-        return SorushWidgetDataBuilder_ != null || SorushWidgetData_ != null;
+      public boolean hasTreasureKeyData() {
+        return TreasureKeyDataBuilder_ != null || TreasureKeyData_ != null;
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
-       * @return The sorushWidgetData.
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
+       * @return The treasureKeyData.
        */
-      public emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData getSorushWidgetData() {
-        if (SorushWidgetDataBuilder_ == null) {
-          return SorushWidgetData_ == null ? emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.getDefaultInstance() : SorushWidgetData_;
+      public emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData getTreasureKeyData() {
+        if (TreasureKeyDataBuilder_ == null) {
+          return TreasureKeyData_ == null ? emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.getDefaultInstance() : TreasureKeyData_;
         } else {
-          return SorushWidgetDataBuilder_.getMessage();
+          return TreasureKeyDataBuilder_.getMessage();
         }
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
-      public Builder setSorushWidgetData(emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData value) {
-        if (SorushWidgetDataBuilder_ == null) {
+      public Builder setTreasureKeyData(emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData value) {
+        if (TreasureKeyDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          SorushWidgetData_ = value;
+          TreasureKeyData_ = value;
           onChanged();
         } else {
-          SorushWidgetDataBuilder_.setMessage(value);
+          TreasureKeyDataBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
-      public Builder setSorushWidgetData(
-          emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder builderForValue) {
-        if (SorushWidgetDataBuilder_ == null) {
-          SorushWidgetData_ = builderForValue.build();
+      public Builder setTreasureKeyData(
+          emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.Builder builderForValue) {
+        if (TreasureKeyDataBuilder_ == null) {
+          TreasureKeyData_ = builderForValue.build();
           onChanged();
         } else {
-          SorushWidgetDataBuilder_.setMessage(builderForValue.build());
+          TreasureKeyDataBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
-      public Builder mergeSorushWidgetData(emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData value) {
-        if (SorushWidgetDataBuilder_ == null) {
-          if (SorushWidgetData_ != null) {
-            SorushWidgetData_ =
-              emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.newBuilder(SorushWidgetData_).mergeFrom(value).buildPartial();
+      public Builder mergeTreasureKeyData(emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData value) {
+        if (TreasureKeyDataBuilder_ == null) {
+          if (TreasureKeyData_ != null) {
+            TreasureKeyData_ =
+              emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.newBuilder(TreasureKeyData_).mergeFrom(value).buildPartial();
           } else {
-            SorushWidgetData_ = value;
+            TreasureKeyData_ = value;
           }
           onChanged();
         } else {
-          SorushWidgetDataBuilder_.mergeFrom(value);
+          TreasureKeyDataBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
-      public Builder clearSorushWidgetData() {
-        if (SorushWidgetDataBuilder_ == null) {
-          SorushWidgetData_ = null;
+      public Builder clearTreasureKeyData() {
+        if (TreasureKeyDataBuilder_ == null) {
+          TreasureKeyData_ = null;
           onChanged();
         } else {
-          SorushWidgetData_ = null;
-          SorushWidgetDataBuilder_ = null;
+          TreasureKeyData_ = null;
+          TreasureKeyDataBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
-      public emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder getSorushWidgetDataBuilder() {
+      public emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.Builder getTreasureKeyDataBuilder() {
         
         onChanged();
-        return getSorushWidgetDataFieldBuilder().getBuilder();
+        return getTreasureKeyDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
-      public emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetDataOrBuilder getSorushWidgetDataOrBuilder() {
-        if (SorushWidgetDataBuilder_ != null) {
-          return SorushWidgetDataBuilder_.getMessageOrBuilder();
+      public emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyDataOrBuilder getTreasureKeyDataOrBuilder() {
+        if (TreasureKeyDataBuilder_ != null) {
+          return TreasureKeyDataBuilder_.getMessageOrBuilder();
         } else {
-          return SorushWidgetData_ == null ?
-              emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.getDefaultInstance() : SorushWidgetData_;
+          return TreasureKeyData_ == null ?
+              emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.getDefaultInstance() : TreasureKeyData_;
         }
       }
       /**
-       * <code>.SorushWidgetData _sorush_widget_data = 11;</code>
+       * <code>._TreasureKeyData _treasure_key_data = 1948;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData, emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder, emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetDataOrBuilder> 
-          getSorushWidgetDataFieldBuilder() {
-        if (SorushWidgetDataBuilder_ == null) {
-          SorushWidgetDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData, emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetData.Builder, emu.grasscutter.net.proto.SorushWidgetDataOuterClass.SorushWidgetDataOrBuilder>(
-                  getSorushWidgetData(),
+          emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData, emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.Builder, emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyDataOrBuilder> 
+          getTreasureKeyDataFieldBuilder() {
+        if (TreasureKeyDataBuilder_ == null) {
+          TreasureKeyDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData, emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyData.Builder, emu.grasscutter.net.proto.TreasureKeyData._TreasureKeyDataOrBuilder>(
+                  getTreasureKeyData(),
                   getParentForChildren(),
                   isClean());
-          SorushWidgetData_ = null;
+          TreasureKeyData_ = null;
         }
-        return SorushWidgetDataBuilder_;
+        return TreasureKeyDataBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> AnchorPointMaterialNextUsableTimeList_ =
+        java.util.Collections.emptyList();
+      private void ensureAnchorPointMaterialNextUsableTimeListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          AnchorPointMaterialNextUsableTimeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(AnchorPointMaterialNextUsableTimeList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> AnchorPointMaterialNextUsableTimeListBuilder_;
+
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getAnchorPointMaterialNextUsableTimeListList() {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
+        } else {
+          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public int getAnchorPointMaterialNextUsableTimeListCount() {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          return AnchorPointMaterialNextUsableTimeList_.size();
+        } else {
+          return AnchorPointMaterialNextUsableTimeListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getAnchorPointMaterialNextUsableTimeList(int index) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          return AnchorPointMaterialNextUsableTimeList_.get(index);
+        } else {
+          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder setAnchorPointMaterialNextUsableTimeList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.set(index, value);
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder setAnchorPointMaterialNextUsableTimeList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder addAnchorPointMaterialNextUsableTimeList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.add(value);
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder addAnchorPointMaterialNextUsableTimeList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.add(index, value);
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder addAnchorPointMaterialNextUsableTimeList(
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder addAnchorPointMaterialNextUsableTimeList(
+          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder addAllAnchorPointMaterialNextUsableTimeList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, AnchorPointMaterialNextUsableTimeList_);
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder clearAnchorPointMaterialNextUsableTimeList() {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public Builder removeAnchorPointMaterialNextUsableTimeList(int index) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+          AnchorPointMaterialNextUsableTimeList_.remove(index);
+          onChanged();
+        } else {
+          AnchorPointMaterialNextUsableTimeListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getAnchorPointMaterialNextUsableTimeListBuilder(
+          int index) {
+        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getAnchorPointMaterialNextUsableTimeListOrBuilder(
+          int index) {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          return AnchorPointMaterialNextUsableTimeList_.get(index);  } else {
+          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+           getAnchorPointMaterialNextUsableTimeListOrBuilderList() {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ != null) {
+          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
+        }
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addAnchorPointMaterialNextUsableTimeListBuilder() {
+        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addAnchorPointMaterialNextUsableTimeListBuilder(
+          int index) {
+        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 846;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
+           getAnchorPointMaterialNextUsableTimeListBuilderList() {
+        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
+          getAnchorPointMaterialNextUsableTimeListFieldBuilder() {
+        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+          AnchorPointMaterialNextUsableTimeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
+                  AnchorPointMaterialNextUsableTimeList_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          AnchorPointMaterialNextUsableTimeList_ = null;
+        }
+        return AnchorPointMaterialNextUsableTimeListBuilder_;
       }
 
       private java.util.List<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData> anchorPointList_ =
         java.util.Collections.emptyList();
       private void ensureAnchorPointListIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           anchorPointList_ = new java.util.ArrayList<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData>(anchorPointList_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -3781,7 +2950,7 @@ public final class AllWidgetDataNotifyOuterClass {
           emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder> anchorPointListBuilder_;
 
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData> getAnchorPointListList() {
         if (anchorPointListBuilder_ == null) {
@@ -3791,7 +2960,7 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public int getAnchorPointListCount() {
         if (anchorPointListBuilder_ == null) {
@@ -3801,7 +2970,7 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData getAnchorPointList(int index) {
         if (anchorPointListBuilder_ == null) {
@@ -3811,7 +2980,7 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder setAnchorPointList(
           int index, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData value) {
@@ -3828,7 +2997,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder setAnchorPointList(
           int index, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
@@ -3842,7 +3011,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder addAnchorPointList(emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData value) {
         if (anchorPointListBuilder_ == null) {
@@ -3858,7 +3027,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder addAnchorPointList(
           int index, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData value) {
@@ -3875,7 +3044,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder addAnchorPointList(
           emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
@@ -3889,7 +3058,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder addAnchorPointList(
           int index, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder builderForValue) {
@@ -3903,7 +3072,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder addAllAnchorPointList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData> values) {
@@ -3918,12 +3087,12 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder clearAnchorPointList() {
         if (anchorPointListBuilder_ == null) {
           anchorPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           anchorPointListBuilder_.clear();
@@ -3931,7 +3100,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public Builder removeAnchorPointList(int index) {
         if (anchorPointListBuilder_ == null) {
@@ -3944,14 +3113,14 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder getAnchorPointListBuilder(
           int index) {
         return getAnchorPointListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder getAnchorPointListOrBuilder(
           int index) {
@@ -3961,7 +3130,7 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder> 
            getAnchorPointListOrBuilderList() {
@@ -3972,14 +3141,14 @@ public final class AllWidgetDataNotifyOuterClass {
         }
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder addAnchorPointListBuilder() {
         return getAnchorPointListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.getDefaultInstance());
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder addAnchorPointListBuilder(
           int index) {
@@ -3987,7 +3156,7 @@ public final class AllWidgetDataNotifyOuterClass {
             index, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.getDefaultInstance());
       }
       /**
-       * <code>repeated .AnchorPointData anchor_point_list = 13;</code>
+       * <code>repeated .AnchorPointData anchor_point_list = 3;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder> 
            getAnchorPointListBuilderList() {
@@ -4000,7 +3169,7 @@ public final class AllWidgetDataNotifyOuterClass {
           anchorPointListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder, emu.grasscutter.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder>(
                   anchorPointList_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           anchorPointList_ = null;
@@ -4010,29 +3179,29 @@ public final class AllWidgetDataNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList backgroundActiveWidgetList_ = emptyIntList();
       private void ensureBackgroundActiveWidgetListIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           backgroundActiveWidgetList_ = mutableCopy(backgroundActiveWidgetList_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000008;
          }
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @return A list containing the backgroundActiveWidgetList.
        */
       public java.util.List<java.lang.Integer>
           getBackgroundActiveWidgetListList() {
-        return ((bitField0_ & 0x00000040) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(backgroundActiveWidgetList_) : backgroundActiveWidgetList_;
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @return The count of backgroundActiveWidgetList.
        */
       public int getBackgroundActiveWidgetListCount() {
         return backgroundActiveWidgetList_.size();
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @param index The index of the element to return.
        * @return The backgroundActiveWidgetList at the given index.
        */
@@ -4040,7 +3209,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return backgroundActiveWidgetList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @param index The index to set the value at.
        * @param value The backgroundActiveWidgetList to set.
        * @return This builder for chaining.
@@ -4053,7 +3222,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @param value The backgroundActiveWidgetList to add.
        * @return This builder for chaining.
        */
@@ -4064,7 +3233,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @param values The backgroundActiveWidgetList to add.
        * @return This builder for chaining.
        */
@@ -4077,14 +3246,452 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 background_active_widget_list = 14;</code>
+       * <code>repeated uint32 background_active_widget_list = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearBackgroundActiveWidgetList() {
         backgroundActiveWidgetList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> slotList_ =
+        java.util.Collections.emptyList();
+      private void ensureSlotListIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          slotList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>(slotList_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> slotListBuilder_;
+
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> getSlotListList() {
+        if (slotListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(slotList_);
+        } else {
+          return slotListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public int getSlotListCount() {
+        if (slotListBuilder_ == null) {
+          return slotList_.size();
+        } else {
+          return slotListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData getSlotList(int index) {
+        if (slotListBuilder_ == null) {
+          return slotList_.get(index);
+        } else {
+          return slotListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder setSlotList(
+          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
+        if (slotListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSlotListIsMutable();
+          slotList_.set(index, value);
+          onChanged();
+        } else {
+          slotListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder setSlotList(
+          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
+        if (slotListBuilder_ == null) {
+          ensureSlotListIsMutable();
+          slotList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          slotListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder addSlotList(emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
+        if (slotListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSlotListIsMutable();
+          slotList_.add(value);
+          onChanged();
+        } else {
+          slotListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder addSlotList(
+          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
+        if (slotListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSlotListIsMutable();
+          slotList_.add(index, value);
+          onChanged();
+        } else {
+          slotListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder addSlotList(
+          emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
+        if (slotListBuilder_ == null) {
+          ensureSlotListIsMutable();
+          slotList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          slotListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder addSlotList(
+          int index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
+        if (slotListBuilder_ == null) {
+          ensureSlotListIsMutable();
+          slotList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          slotListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder addAllSlotList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> values) {
+        if (slotListBuilder_ == null) {
+          ensureSlotListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, slotList_);
+          onChanged();
+        } else {
+          slotListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder clearSlotList() {
+        if (slotListBuilder_ == null) {
+          slotList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          slotListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public Builder removeSlotList(int index) {
+        if (slotListBuilder_ == null) {
+          ensureSlotListIsMutable();
+          slotList_.remove(index);
+          onChanged();
+        } else {
+          slotListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder getSlotListBuilder(
+          int index) {
+        return getSlotListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotListOrBuilder(
+          int index) {
+        if (slotListBuilder_ == null) {
+          return slotList_.get(index);  } else {
+          return slotListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
+           getSlotListOrBuilderList() {
+        if (slotListBuilder_ != null) {
+          return slotListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(slotList_);
+        }
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder addSlotListBuilder() {
+        return getSlotListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder addSlotListBuilder(
+          int index) {
+        return getSlotListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .WidgetSlotData slot_list = 7;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder> 
+           getSlotListBuilderList() {
+        return getSlotListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder> 
+          getSlotListFieldBuilder() {
+        if (slotListBuilder_ == null) {
+          slotListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder, emu.grasscutter.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder>(
+                  slotList_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          slotList_ = null;
+        }
+        return slotListBuilder_;
+      }
+
+      private com.google.protobuf.Internal.IntList MaterialIdList_ = emptyIntList();
+      private void ensureMaterialIdListIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          MaterialIdList_ = mutableCopy(MaterialIdList_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @return A list containing the materialIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getMaterialIdListList() {
+        return ((bitField0_ & 0x00000020) != 0) ?
+                 java.util.Collections.unmodifiableList(MaterialIdList_) : MaterialIdList_;
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @return The count of materialIdList.
+       */
+      public int getMaterialIdListCount() {
+        return MaterialIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @param index The index of the element to return.
+       * @return The materialIdList at the given index.
+       */
+      public int getMaterialIdList(int index) {
+        return MaterialIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @param index The index to set the value at.
+       * @param value The materialIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaterialIdList(
+          int index, int value) {
+        ensureMaterialIdListIsMutable();
+        MaterialIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @param value The materialIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMaterialIdList(int value) {
+        ensureMaterialIdListIsMutable();
+        MaterialIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @param values The materialIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMaterialIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureMaterialIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, MaterialIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 _material_id_list = 1988;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaterialIdList() {
+        MaterialIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      private emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData SorushWidgetData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData, emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.Builder, emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetDataOrBuilder> SorushWidgetDataBuilder_;
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       * @return Whether the sorushWidgetData field is set.
+       */
+      public boolean hasSorushWidgetData() {
+        return SorushWidgetDataBuilder_ != null || SorushWidgetData_ != null;
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       * @return The sorushWidgetData.
+       */
+      public emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData getSorushWidgetData() {
+        if (SorushWidgetDataBuilder_ == null) {
+          return SorushWidgetData_ == null ? emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.getDefaultInstance() : SorushWidgetData_;
+        } else {
+          return SorushWidgetDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      public Builder setSorushWidgetData(emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData value) {
+        if (SorushWidgetDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          SorushWidgetData_ = value;
+          onChanged();
+        } else {
+          SorushWidgetDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      public Builder setSorushWidgetData(
+          emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.Builder builderForValue) {
+        if (SorushWidgetDataBuilder_ == null) {
+          SorushWidgetData_ = builderForValue.build();
+          onChanged();
+        } else {
+          SorushWidgetDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      public Builder mergeSorushWidgetData(emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData value) {
+        if (SorushWidgetDataBuilder_ == null) {
+          if (SorushWidgetData_ != null) {
+            SorushWidgetData_ =
+              emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.newBuilder(SorushWidgetData_).mergeFrom(value).buildPartial();
+          } else {
+            SorushWidgetData_ = value;
+          }
+          onChanged();
+        } else {
+          SorushWidgetDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      public Builder clearSorushWidgetData() {
+        if (SorushWidgetDataBuilder_ == null) {
+          SorushWidgetData_ = null;
+          onChanged();
+        } else {
+          SorushWidgetData_ = null;
+          SorushWidgetDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      public emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.Builder getSorushWidgetDataBuilder() {
+        
+        onChanged();
+        return getSorushWidgetDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      public emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetDataOrBuilder getSorushWidgetDataOrBuilder() {
+        if (SorushWidgetDataBuilder_ != null) {
+          return SorushWidgetDataBuilder_.getMessageOrBuilder();
+        } else {
+          return SorushWidgetData_ == null ?
+              emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.getDefaultInstance() : SorushWidgetData_;
+        }
+      }
+      /**
+       * <code>._SorushWidgetData _sorush_widget_data = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData, emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.Builder, emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetDataOrBuilder> 
+          getSorushWidgetDataFieldBuilder() {
+        if (SorushWidgetDataBuilder_ == null) {
+          SorushWidgetDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData, emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetData.Builder, emu.grasscutter.net.proto.SorushWidgetData._SorushWidgetDataOrBuilder>(
+                  getSorushWidgetData(),
+                  getParentForChildren(),
+                  isClean());
+          SorushWidgetData_ = null;
+        }
+        return SorushWidgetDataBuilder_;
       }
 
       private emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData skyCrystalDetectorData_;
@@ -4206,350 +3813,1110 @@ public final class AllWidgetDataNotifyOuterClass {
         return skyCrystalDetectorDataBuilder_;
       }
 
-      private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> AnchorPointMaterialNextUsableTimeList_ =
+      private emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData weatherWizardData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> weatherWizardDataBuilder_;
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       * @return Whether the weatherWizardData field is set.
+       */
+      public boolean hasWeatherWizardData() {
+        return weatherWizardDataBuilder_ != null || weatherWizardData_ != null;
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       * @return The weatherWizardData.
+       */
+      public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData getWeatherWizardData() {
+        if (weatherWizardDataBuilder_ == null) {
+          return weatherWizardData_ == null ? emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : weatherWizardData_;
+        } else {
+          return weatherWizardDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      public Builder setWeatherWizardData(emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData value) {
+        if (weatherWizardDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          weatherWizardData_ = value;
+          onChanged();
+        } else {
+          weatherWizardDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      public Builder setWeatherWizardData(
+          emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder builderForValue) {
+        if (weatherWizardDataBuilder_ == null) {
+          weatherWizardData_ = builderForValue.build();
+          onChanged();
+        } else {
+          weatherWizardDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      public Builder mergeWeatherWizardData(emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData value) {
+        if (weatherWizardDataBuilder_ == null) {
+          if (weatherWizardData_ != null) {
+            weatherWizardData_ =
+              emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.newBuilder(weatherWizardData_).mergeFrom(value).buildPartial();
+          } else {
+            weatherWizardData_ = value;
+          }
+          onChanged();
+        } else {
+          weatherWizardDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      public Builder clearWeatherWizardData() {
+        if (weatherWizardDataBuilder_ == null) {
+          weatherWizardData_ = null;
+          onChanged();
+        } else {
+          weatherWizardData_ = null;
+          weatherWizardDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder getWeatherWizardDataBuilder() {
+        
+        onChanged();
+        return getWeatherWizardDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      public emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder getWeatherWizardDataOrBuilder() {
+        if (weatherWizardDataBuilder_ != null) {
+          return weatherWizardDataBuilder_.getMessageOrBuilder();
+        } else {
+          return weatherWizardData_ == null ?
+              emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.getDefaultInstance() : weatherWizardData_;
+        }
+      }
+      /**
+       * <code>.WeatherWizardData weather_wizard_data = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder> 
+          getWeatherWizardDataFieldBuilder() {
+        if (weatherWizardDataBuilder_ == null) {
+          weatherWizardDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardData.Builder, emu.grasscutter.net.proto.WeatherWizardDataOuterClass.WeatherWizardDataOrBuilder>(
+                  getWeatherWizardData(),
+                  getParentForChildren(),
+                  isClean());
+          weatherWizardData_ = null;
+        }
+        return weatherWizardDataBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> clientCollectorDataList_ =
         java.util.Collections.emptyList();
-      private void ensureAnchorPointMaterialNextUsableTimeListIsMutable() {
+      private void ensureClientCollectorDataListIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          clientCollectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData>(clientCollectorDataList_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> clientCollectorDataListBuilder_;
+
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> getClientCollectorDataListList() {
+        if (clientCollectorDataListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(clientCollectorDataList_);
+        } else {
+          return clientCollectorDataListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public int getClientCollectorDataListCount() {
+        if (clientCollectorDataListBuilder_ == null) {
+          return clientCollectorDataList_.size();
+        } else {
+          return clientCollectorDataListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData getClientCollectorDataList(int index) {
+        if (clientCollectorDataListBuilder_ == null) {
+          return clientCollectorDataList_.get(index);
+        } else {
+          return clientCollectorDataListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder setClientCollectorDataList(
+          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData value) {
+        if (clientCollectorDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.set(index, value);
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder setClientCollectorDataList(
+          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder builderForValue) {
+        if (clientCollectorDataListBuilder_ == null) {
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder addClientCollectorDataList(emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData value) {
+        if (clientCollectorDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.add(value);
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder addClientCollectorDataList(
+          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData value) {
+        if (clientCollectorDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.add(index, value);
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder addClientCollectorDataList(
+          emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder builderForValue) {
+        if (clientCollectorDataListBuilder_ == null) {
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder addClientCollectorDataList(
+          int index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder builderForValue) {
+        if (clientCollectorDataListBuilder_ == null) {
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder addAllClientCollectorDataList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData> values) {
+        if (clientCollectorDataListBuilder_ == null) {
+          ensureClientCollectorDataListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, clientCollectorDataList_);
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder clearClientCollectorDataList() {
+        if (clientCollectorDataListBuilder_ == null) {
+          clientCollectorDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public Builder removeClientCollectorDataList(int index) {
+        if (clientCollectorDataListBuilder_ == null) {
+          ensureClientCollectorDataListIsMutable();
+          clientCollectorDataList_.remove(index);
+          onChanged();
+        } else {
+          clientCollectorDataListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder getClientCollectorDataListBuilder(
+          int index) {
+        return getClientCollectorDataListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder getClientCollectorDataListOrBuilder(
+          int index) {
+        if (clientCollectorDataListBuilder_ == null) {
+          return clientCollectorDataList_.get(index);  } else {
+          return clientCollectorDataListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
+           getClientCollectorDataListOrBuilderList() {
+        if (clientCollectorDataListBuilder_ != null) {
+          return clientCollectorDataListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(clientCollectorDataList_);
+        }
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder addClientCollectorDataListBuilder() {
+        return getClientCollectorDataListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder addClientCollectorDataListBuilder(
+          int index) {
+        return getClientCollectorDataListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .ClientCollectorData client_collector_data_list = 6;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder> 
+           getClientCollectorDataListBuilderList() {
+        return getClientCollectorDataListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder> 
+          getClientCollectorDataListFieldBuilder() {
+        if (clientCollectorDataListBuilder_ == null) {
+          clientCollectorDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.Builder, emu.grasscutter.net.proto.ClientCollectorDataOuterClass.ClientCollectorDataOrBuilder>(
+                  clientCollectorDataList_,
+                  ((bitField0_ & 0x00000040) != 0),
+                  getParentForChildren(),
+                  isClean());
+          clientCollectorDataList_ = null;
+        }
+        return clientCollectorDataListBuilder_;
+      }
+
+      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_ =
+        java.util.Collections.emptyList();
+      private void ensureNormalCoolDownDataListIsMutable() {
         if (!((bitField0_ & 0x00000080) != 0)) {
-          AnchorPointMaterialNextUsableTimeList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(AnchorPointMaterialNextUsableTimeList_);
+          normalCoolDownDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(normalCoolDownDataList_);
           bitField0_ |= 0x00000080;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> AnchorPointMaterialNextUsableTimeListBuilder_;
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> normalCoolDownDataListBuilder_;
 
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getAnchorPointMaterialNextUsableTimeListList() {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
+      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getNormalCoolDownDataListList() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(normalCoolDownDataList_);
         } else {
-          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessageList();
+          return normalCoolDownDataListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public int getAnchorPointMaterialNextUsableTimeListCount() {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          return AnchorPointMaterialNextUsableTimeList_.size();
+      public int getNormalCoolDownDataListCount() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          return normalCoolDownDataList_.size();
         } else {
-          return AnchorPointMaterialNextUsableTimeListBuilder_.getCount();
+          return normalCoolDownDataListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getAnchorPointMaterialNextUsableTimeList(int index) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          return AnchorPointMaterialNextUsableTimeList_.get(index);
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getNormalCoolDownDataList(int index) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          return normalCoolDownDataList_.get(index);
         } else {
-          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessage(index);
+          return normalCoolDownDataListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder setAnchorPointMaterialNextUsableTimeList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+      public Builder setNormalCoolDownDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.set(index, value);
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.set(index, value);
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.setMessage(index, value);
+          normalCoolDownDataListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder setAnchorPointMaterialNextUsableTimeList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.set(index, builderForValue.build());
+      public Builder setNormalCoolDownDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.setMessage(index, builderForValue.build());
+          normalCoolDownDataListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder addAnchorPointMaterialNextUsableTimeList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+      public Builder addNormalCoolDownDataList(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.add(value);
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(value);
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(value);
+          normalCoolDownDataListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder addAnchorPointMaterialNextUsableTimeList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
+      public Builder addNormalCoolDownDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (normalCoolDownDataListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.add(index, value);
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(index, value);
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(index, value);
+          normalCoolDownDataListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder addAnchorPointMaterialNextUsableTimeList(
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.add(builderForValue.build());
+      public Builder addNormalCoolDownDataList(
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(builderForValue.build());
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(builderForValue.build());
+          normalCoolDownDataListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder addAnchorPointMaterialNextUsableTimeList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.add(index, builderForValue.build());
+      public Builder addNormalCoolDownDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.addMessage(index, builderForValue.build());
+          normalCoolDownDataListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder addAllAnchorPointMaterialNextUsableTimeList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
+      public Builder addAllNormalCoolDownDataList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, AnchorPointMaterialNextUsableTimeList_);
+              values, normalCoolDownDataList_);
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.addAllMessages(values);
+          normalCoolDownDataListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder clearAnchorPointMaterialNextUsableTimeList() {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          AnchorPointMaterialNextUsableTimeList_ = java.util.Collections.emptyList();
+      public Builder clearNormalCoolDownDataList() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          normalCoolDownDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.clear();
+          normalCoolDownDataListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public Builder removeAnchorPointMaterialNextUsableTimeList(int index) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          ensureAnchorPointMaterialNextUsableTimeListIsMutable();
-          AnchorPointMaterialNextUsableTimeList_.remove(index);
+      public Builder removeNormalCoolDownDataList(int index) {
+        if (normalCoolDownDataListBuilder_ == null) {
+          ensureNormalCoolDownDataListIsMutable();
+          normalCoolDownDataList_.remove(index);
           onChanged();
         } else {
-          AnchorPointMaterialNextUsableTimeListBuilder_.remove(index);
+          normalCoolDownDataListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getAnchorPointMaterialNextUsableTimeListBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getNormalCoolDownDataListBuilder(
           int index) {
-        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().getBuilder(index);
+        return getNormalCoolDownDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getAnchorPointMaterialNextUsableTimeListOrBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getNormalCoolDownDataListOrBuilder(
           int index) {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          return AnchorPointMaterialNextUsableTimeList_.get(index);  } else {
-          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessageOrBuilder(index);
+        if (normalCoolDownDataListBuilder_ == null) {
+          return normalCoolDownDataList_.get(index);  } else {
+          return normalCoolDownDataListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-           getAnchorPointMaterialNextUsableTimeListOrBuilderList() {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ != null) {
-          return AnchorPointMaterialNextUsableTimeListBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+           getNormalCoolDownDataListOrBuilderList() {
+        if (normalCoolDownDataListBuilder_ != null) {
+          return normalCoolDownDataListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(AnchorPointMaterialNextUsableTimeList_);
+          return java.util.Collections.unmodifiableList(normalCoolDownDataList_);
         }
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addAnchorPointMaterialNextUsableTimeListBuilder() {
-        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder() {
+        return getNormalCoolDownDataListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addAnchorPointMaterialNextUsableTimeListBuilder(
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addNormalCoolDownDataListBuilder(
           int index) {
-        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
+        return getNormalCoolDownDataListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
       }
       /**
-       * <code>repeated .Uint32Pair _anchor_point_material_next_usable_time_list = 819;</code>
+       * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 14;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
-           getAnchorPointMaterialNextUsableTimeListBuilderList() {
-        return getAnchorPointMaterialNextUsableTimeListFieldBuilder().getBuilderList();
+      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> 
+           getNormalCoolDownDataListBuilderList() {
+        return getNormalCoolDownDataListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-          getAnchorPointMaterialNextUsableTimeListFieldBuilder() {
-        if (AnchorPointMaterialNextUsableTimeListBuilder_ == null) {
-          AnchorPointMaterialNextUsableTimeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
-                  AnchorPointMaterialNextUsableTimeList_,
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+          getNormalCoolDownDataListFieldBuilder() {
+        if (normalCoolDownDataListBuilder_ == null) {
+          normalCoolDownDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder>(
+                  normalCoolDownDataList_,
                   ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
-          AnchorPointMaterialNextUsableTimeList_ = null;
+          normalCoolDownDataList_ = null;
         }
-        return AnchorPointMaterialNextUsableTimeListBuilder_;
+        return normalCoolDownDataListBuilder_;
       }
 
-      private com.google.protobuf.Internal.IntList MaterialIdList_ = emptyIntList();
-      private void ensureMaterialIdListIsMutable() {
+      private java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> coolDownGroupDataList_ =
+        java.util.Collections.emptyList();
+      private void ensureCoolDownGroupDataListIsMutable() {
         if (!((bitField0_ & 0x00000100) != 0)) {
-          MaterialIdList_ = mutableCopy(MaterialIdList_);
+          coolDownGroupDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>(coolDownGroupDataList_);
           bitField0_ |= 0x00000100;
          }
       }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> coolDownGroupDataListBuilder_;
+
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @return A list containing the materialIdList.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public java.util.List<java.lang.Integer>
-          getMaterialIdListList() {
-        return ((bitField0_ & 0x00000100) != 0) ?
-                 java.util.Collections.unmodifiableList(MaterialIdList_) : MaterialIdList_;
+      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> getCoolDownGroupDataListList() {
+        if (coolDownGroupDataListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+        } else {
+          return coolDownGroupDataListBuilder_.getMessageList();
+        }
       }
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @return The count of materialIdList.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public int getMaterialIdListCount() {
-        return MaterialIdList_.size();
+      public int getCoolDownGroupDataListCount() {
+        if (coolDownGroupDataListBuilder_ == null) {
+          return coolDownGroupDataList_.size();
+        } else {
+          return coolDownGroupDataListBuilder_.getCount();
+        }
       }
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @param index The index of the element to return.
-       * @return The materialIdList at the given index.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public int getMaterialIdList(int index) {
-        return MaterialIdList_.getInt(index);
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData getCoolDownGroupDataList(int index) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          return coolDownGroupDataList_.get(index);
+        } else {
+          return coolDownGroupDataListBuilder_.getMessage(index);
+        }
       }
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @param index The index to set the value at.
-       * @param value The materialIdList to set.
-       * @return This builder for chaining.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public Builder setMaterialIdList(
-          int index, int value) {
-        ensureMaterialIdListIsMutable();
-        MaterialIdList_.setInt(index, value);
-        onChanged();
+      public Builder setCoolDownGroupDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.set(index, value);
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.setMessage(index, value);
+        }
         return this;
       }
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @param value The materialIdList to add.
-       * @return This builder for chaining.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public Builder addMaterialIdList(int value) {
-        ensureMaterialIdListIsMutable();
-        MaterialIdList_.addInt(value);
-        onChanged();
+      public Builder setCoolDownGroupDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.setMessage(index, builderForValue.build());
+        }
         return this;
       }
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @param values The materialIdList to add.
-       * @return This builder for chaining.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public Builder addAllMaterialIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMaterialIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, MaterialIdList_);
-        onChanged();
+      public Builder addCoolDownGroupDataList(emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.add(value);
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.addMessage(value);
+        }
         return this;
       }
       /**
-       * <code>repeated uint32 _material_id_list = 950;</code>
-       * @return This builder for chaining.
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
        */
-      public Builder clearMaterialIdList() {
-        MaterialIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000100);
-        onChanged();
+      public Builder addCoolDownGroupDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData value) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.add(index, value);
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.addMessage(index, value);
+        }
         return this;
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public Builder addCoolDownGroupDataList(
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public Builder addCoolDownGroupDataList(
+          int index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder builderForValue) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public Builder addAllCoolDownGroupDataList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> values) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          ensureCoolDownGroupDataListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, coolDownGroupDataList_);
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public Builder clearCoolDownGroupDataList() {
+        if (coolDownGroupDataListBuilder_ == null) {
+          coolDownGroupDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public Builder removeCoolDownGroupDataList(int index) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          ensureCoolDownGroupDataListIsMutable();
+          coolDownGroupDataList_.remove(index);
+          onChanged();
+        } else {
+          coolDownGroupDataListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder getCoolDownGroupDataListBuilder(
+          int index) {
+        return getCoolDownGroupDataListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder getCoolDownGroupDataListOrBuilder(
+          int index) {
+        if (coolDownGroupDataListBuilder_ == null) {
+          return coolDownGroupDataList_.get(index);  } else {
+          return coolDownGroupDataListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+           getCoolDownGroupDataListOrBuilderList() {
+        if (coolDownGroupDataListBuilder_ != null) {
+          return coolDownGroupDataListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(coolDownGroupDataList_);
+        }
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder() {
+        return getCoolDownGroupDataListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder addCoolDownGroupDataListBuilder(
+          int index) {
+        return getCoolDownGroupDataListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .WidgetCoolDownData cool_down_group_data_list = 11;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder> 
+           getCoolDownGroupDataListBuilderList() {
+        return getCoolDownGroupDataListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder> 
+          getCoolDownGroupDataListFieldBuilder() {
+        if (coolDownGroupDataListBuilder_ == null) {
+          coolDownGroupDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.Builder, emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownDataOrBuilder>(
+                  coolDownGroupDataList_,
+                  ((bitField0_ & 0x00000100) != 0),
+                  getParentForChildren(),
+                  isClean());
+          coolDownGroupDataList_ = null;
+        }
+        return coolDownGroupDataListBuilder_;
       }
 
-      private emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData WispCageData_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData, emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.Builder, emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageDataOrBuilder> WispCageDataBuilder_;
+      private java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_ =
+        java.util.Collections.emptyList();
+      private void ensureOneoffGatherPointDetectorDataListIsMutable() {
+        if (!((bitField0_ & 0x00000200) != 0)) {
+          oneoffGatherPointDetectorDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData>(oneoffGatherPointDetectorDataList_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> oneoffGatherPointDetectorDataListBuilder_;
+
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> getOneoffGatherPointDetectorDataListList() {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
+        } else {
+          return oneoffGatherPointDetectorDataListBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public int getOneoffGatherPointDetectorDataListCount() {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          return oneoffGatherPointDetectorDataList_.size();
+        } else {
+          return oneoffGatherPointDetectorDataListBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData getOneoffGatherPointDetectorDataList(int index) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          return oneoffGatherPointDetectorDataList_.get(index);
+        } else {
+          return oneoffGatherPointDetectorDataListBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder setOneoffGatherPointDetectorDataList(
+          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.set(index, value);
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder setOneoffGatherPointDetectorDataList(
+          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder addOneoffGatherPointDetectorDataList(emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.add(value);
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder addOneoffGatherPointDetectorDataList(
+          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData value) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.add(index, value);
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder addOneoffGatherPointDetectorDataList(
+          emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.add(builderForValue.build());
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder addOneoffGatherPointDetectorDataList(
+          int index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder builderForValue) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder addAllOneoffGatherPointDetectorDataList(
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> values) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, oneoffGatherPointDetectorDataList_);
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder clearOneoffGatherPointDetectorDataList() {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public Builder removeOneoffGatherPointDetectorDataList(int index) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          ensureOneoffGatherPointDetectorDataListIsMutable();
+          oneoffGatherPointDetectorDataList_.remove(index);
+          onChanged();
+        } else {
+          oneoffGatherPointDetectorDataListBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder getOneoffGatherPointDetectorDataListBuilder(
+          int index) {
+        return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder getOneoffGatherPointDetectorDataListOrBuilder(
+          int index) {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          return oneoffGatherPointDetectorDataList_.get(index);  } else {
+          return oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
+           getOneoffGatherPointDetectorDataListOrBuilderList() {
+        if (oneoffGatherPointDetectorDataListBuilder_ != null) {
+          return oneoffGatherPointDetectorDataListBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
+        }
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder() {
+        return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(
+            emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder addOneoffGatherPointDetectorDataListBuilder(
+          int index) {
+        return getOneoffGatherPointDetectorDataListFieldBuilder().addBuilder(
+            index, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 8;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder> 
+           getOneoffGatherPointDetectorDataListBuilderList() {
+        return getOneoffGatherPointDetectorDataListFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder> 
+          getOneoffGatherPointDetectorDataListFieldBuilder() {
+        if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+          oneoffGatherPointDetectorDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.Builder, emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorDataOrBuilder>(
+                  oneoffGatherPointDetectorDataList_,
+                  ((bitField0_ & 0x00000200) != 0),
+                  getParentForChildren(),
+                  isClean());
+          oneoffGatherPointDetectorDataList_ = null;
+        }
+        return oneoffGatherPointDetectorDataListBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.WispCageData._WispCageData WispCageData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.WispCageData._WispCageData, emu.grasscutter.net.proto.WispCageData._WispCageData.Builder, emu.grasscutter.net.proto.WispCageData._WispCageDataOrBuilder> WispCageDataBuilder_;
+      /**
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        * @return Whether the wispCageData field is set.
        */
       public boolean hasWispCageData() {
         return WispCageDataBuilder_ != null || WispCageData_ != null;
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        * @return The wispCageData.
        */
-      public emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData getWispCageData() {
+      public emu.grasscutter.net.proto.WispCageData._WispCageData getWispCageData() {
         if (WispCageDataBuilder_ == null) {
-          return WispCageData_ == null ? emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.getDefaultInstance() : WispCageData_;
+          return WispCageData_ == null ? emu.grasscutter.net.proto.WispCageData._WispCageData.getDefaultInstance() : WispCageData_;
         } else {
           return WispCageDataBuilder_.getMessage();
         }
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
-      public Builder setWispCageData(emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData value) {
+      public Builder setWispCageData(emu.grasscutter.net.proto.WispCageData._WispCageData value) {
         if (WispCageDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4563,10 +4930,10 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
       public Builder setWispCageData(
-          emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.Builder builderForValue) {
+          emu.grasscutter.net.proto.WispCageData._WispCageData.Builder builderForValue) {
         if (WispCageDataBuilder_ == null) {
           WispCageData_ = builderForValue.build();
           onChanged();
@@ -4577,13 +4944,13 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
-      public Builder mergeWispCageData(emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData value) {
+      public Builder mergeWispCageData(emu.grasscutter.net.proto.WispCageData._WispCageData value) {
         if (WispCageDataBuilder_ == null) {
           if (WispCageData_ != null) {
             WispCageData_ =
-              emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.newBuilder(WispCageData_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.WispCageData._WispCageData.newBuilder(WispCageData_).mergeFrom(value).buildPartial();
           } else {
             WispCageData_ = value;
           }
@@ -4595,7 +4962,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
       public Builder clearWispCageData() {
         if (WispCageDataBuilder_ == null) {
@@ -4609,33 +4976,33 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
-      public emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.Builder getWispCageDataBuilder() {
+      public emu.grasscutter.net.proto.WispCageData._WispCageData.Builder getWispCageDataBuilder() {
         
         onChanged();
         return getWispCageDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
-      public emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageDataOrBuilder getWispCageDataOrBuilder() {
+      public emu.grasscutter.net.proto.WispCageData._WispCageDataOrBuilder getWispCageDataOrBuilder() {
         if (WispCageDataBuilder_ != null) {
           return WispCageDataBuilder_.getMessageOrBuilder();
         } else {
           return WispCageData_ == null ?
-              emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.getDefaultInstance() : WispCageData_;
+              emu.grasscutter.net.proto.WispCageData._WispCageData.getDefaultInstance() : WispCageData_;
         }
       }
       /**
-       * <code>._WispCageData _wisp_cage_data = 1197;</code>
+       * <code>._WispCageData _wisp_cage_data = 969;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData, emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.Builder, emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageDataOrBuilder> 
+          emu.grasscutter.net.proto.WispCageData._WispCageData, emu.grasscutter.net.proto.WispCageData._WispCageData.Builder, emu.grasscutter.net.proto.WispCageData._WispCageDataOrBuilder> 
           getWispCageDataFieldBuilder() {
         if (WispCageDataBuilder_ == null) {
           WispCageDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData, emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageData.Builder, emu.grasscutter.net.proto._WispCageDataOuterClass._WispCageDataOrBuilder>(
+              emu.grasscutter.net.proto.WispCageData._WispCageData, emu.grasscutter.net.proto.WispCageData._WispCageData.Builder, emu.grasscutter.net.proto.WispCageData._WispCageDataOrBuilder>(
                   getWispCageData(),
                   getParentForChildren(),
                   isClean());
@@ -4644,368 +5011,9 @@ public final class AllWidgetDataNotifyOuterClass {
         return WispCageDataBuilder_;
       }
 
-      private emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData TreasureKeyData_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData, emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.Builder, emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyDataOrBuilder> TreasureKeyDataBuilder_;
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       * @return Whether the treasureKeyData field is set.
-       */
-      public boolean hasTreasureKeyData() {
-        return TreasureKeyDataBuilder_ != null || TreasureKeyData_ != null;
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       * @return The treasureKeyData.
-       */
-      public emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData getTreasureKeyData() {
-        if (TreasureKeyDataBuilder_ == null) {
-          return TreasureKeyData_ == null ? emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.getDefaultInstance() : TreasureKeyData_;
-        } else {
-          return TreasureKeyDataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      public Builder setTreasureKeyData(emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData value) {
-        if (TreasureKeyDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          TreasureKeyData_ = value;
-          onChanged();
-        } else {
-          TreasureKeyDataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      public Builder setTreasureKeyData(
-          emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.Builder builderForValue) {
-        if (TreasureKeyDataBuilder_ == null) {
-          TreasureKeyData_ = builderForValue.build();
-          onChanged();
-        } else {
-          TreasureKeyDataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      public Builder mergeTreasureKeyData(emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData value) {
-        if (TreasureKeyDataBuilder_ == null) {
-          if (TreasureKeyData_ != null) {
-            TreasureKeyData_ =
-              emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.newBuilder(TreasureKeyData_).mergeFrom(value).buildPartial();
-          } else {
-            TreasureKeyData_ = value;
-          }
-          onChanged();
-        } else {
-          TreasureKeyDataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      public Builder clearTreasureKeyData() {
-        if (TreasureKeyDataBuilder_ == null) {
-          TreasureKeyData_ = null;
-          onChanged();
-        } else {
-          TreasureKeyData_ = null;
-          TreasureKeyDataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      public emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.Builder getTreasureKeyDataBuilder() {
-        
-        onChanged();
-        return getTreasureKeyDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      public emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyDataOrBuilder getTreasureKeyDataOrBuilder() {
-        if (TreasureKeyDataBuilder_ != null) {
-          return TreasureKeyDataBuilder_.getMessageOrBuilder();
-        } else {
-          return TreasureKeyData_ == null ?
-              emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.getDefaultInstance() : TreasureKeyData_;
-        }
-      }
-      /**
-       * <code>._TreasureKeyData _treasure_key_data = 1586;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData, emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.Builder, emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyDataOrBuilder> 
-          getTreasureKeyDataFieldBuilder() {
-        if (TreasureKeyDataBuilder_ == null) {
-          TreasureKeyDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData, emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyData.Builder, emu.grasscutter.net.proto._TreasureKeyDataOuterClass._TreasureKeyDataOrBuilder>(
-                  getTreasureKeyData(),
-                  getParentForChildren(),
-                  isClean());
-          TreasureKeyData_ = null;
-        }
-        return TreasureKeyDataBuilder_;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> WidgetSettingList_ =
-        java.util.Collections.emptyList();
-      private void ensureWidgetSettingListIsMutable() {
-        if (!((bitField0_ & 0x00000200) != 0)) {
-          WidgetSettingList_ = new java.util.ArrayList<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair>(WidgetSettingList_);
-          bitField0_ |= 0x00000200;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> WidgetSettingListBuilder_;
-
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> getWidgetSettingListList() {
-        if (WidgetSettingListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(WidgetSettingList_);
-        } else {
-          return WidgetSettingListBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public int getWidgetSettingListCount() {
-        if (WidgetSettingListBuilder_ == null) {
-          return WidgetSettingList_.size();
-        } else {
-          return WidgetSettingListBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair getWidgetSettingList(int index) {
-        if (WidgetSettingListBuilder_ == null) {
-          return WidgetSettingList_.get(index);
-        } else {
-          return WidgetSettingListBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder setWidgetSettingList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (WidgetSettingListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.set(index, value);
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder setWidgetSettingList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (WidgetSettingListBuilder_ == null) {
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder addWidgetSettingList(emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (WidgetSettingListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.add(value);
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder addWidgetSettingList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair value) {
-        if (WidgetSettingListBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.add(index, value);
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder addWidgetSettingList(
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (WidgetSettingListBuilder_ == null) {
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.add(builderForValue.build());
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder addWidgetSettingList(
-          int index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder builderForValue) {
-        if (WidgetSettingListBuilder_ == null) {
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder addAllWidgetSettingList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair> values) {
-        if (WidgetSettingListBuilder_ == null) {
-          ensureWidgetSettingListIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, WidgetSettingList_);
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder clearWidgetSettingList() {
-        if (WidgetSettingListBuilder_ == null) {
-          WidgetSettingList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public Builder removeWidgetSettingList(int index) {
-        if (WidgetSettingListBuilder_ == null) {
-          ensureWidgetSettingListIsMutable();
-          WidgetSettingList_.remove(index);
-          onChanged();
-        } else {
-          WidgetSettingListBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder getWidgetSettingListBuilder(
-          int index) {
-        return getWidgetSettingListFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder getWidgetSettingListOrBuilder(
-          int index) {
-        if (WidgetSettingListBuilder_ == null) {
-          return WidgetSettingList_.get(index);  } else {
-          return WidgetSettingListBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public java.util.List<? extends emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-           getWidgetSettingListOrBuilderList() {
-        if (WidgetSettingListBuilder_ != null) {
-          return WidgetSettingListBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(WidgetSettingList_);
-        }
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addWidgetSettingListBuilder() {
-        return getWidgetSettingListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder addWidgetSettingListBuilder(
-          int index) {
-        return getWidgetSettingListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .Uint32Pair _widget_setting_list = 1598;</code>
-       */
-      public java.util.List<emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder> 
-           getWidgetSettingListBuilderList() {
-        return getWidgetSettingListFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder> 
-          getWidgetSettingListFieldBuilder() {
-        if (WidgetSettingListBuilder_ == null) {
-          WidgetSettingListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.grasscutter.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
-                  WidgetSettingList_,
-                  ((bitField0_ & 0x00000200) != 0),
-                  getParentForChildren(),
-                  isClean());
-          WidgetSettingList_ = null;
-        }
-        return WidgetSettingListBuilder_;
-      }
-
       private int CurrentSlotNum_ ;
       /**
-       * <code>uint32 _current_slot_num = 1775;</code>
+       * <code>uint32 _current_slot_num = 832;</code>
        * @return The currentSlotNum.
        */
       @java.lang.Override
@@ -5013,7 +5021,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return CurrentSlotNum_;
       }
       /**
-       * <code>uint32 _current_slot_num = 1775;</code>
+       * <code>uint32 _current_slot_num = 832;</code>
        * @param value The currentSlotNum to set.
        * @return This builder for chaining.
        */
@@ -5024,7 +5032,7 @@ public final class AllWidgetDataNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 _current_slot_num = 1775;</code>
+       * <code>uint32 _current_slot_num = 832;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurrentSlotNum() {
@@ -5104,34 +5112,33 @@ public final class AllWidgetDataNotifyOuterClass {
       "Data.proto\032\031ClientCollectorData.proto\032\022L" +
       "unchBoxData.proto\032#OneoffGatherPointDete" +
       "ctorData.proto\032\034SkyCrystalDetectorData.p" +
-      "roto\032\026SorushWidgetData.proto\032\020Uint32Pair" +
-      ".proto\032\027WeatherWizardData.proto\032\030WidgetC" +
-      "oolDownData.proto\032\024WidgetSlotData.proto\032" +
-      "\026_TreasureKeyData.proto\032\023_WispCageData.p" +
-      "roto\"\316\006\n\023AllWidgetDataNotify\022/\n\023weather_" +
-      "wizard_data\030\001 \001(\0132\022.WeatherWizardData\0226\n" +
-      "\031cool_down_group_data_list\030\002 \003(\0132\023.Widge" +
-      "tCoolDownData\022\"\n\tslot_list\030\004 \003(\0132\017.Widge" +
-      "tSlotData\022%\n\016lunch_box_data\030\005 \001(\0132\r.Lunc" +
-      "hBoxData\0227\n\032normal_cool_down_data_list\030\010" +
-      " \003(\0132\023.WidgetCoolDownData\0228\n\032client_coll" +
-      "ector_data_list\030\t \003(\0132\024.ClientCollectorD" +
-      "ata\022N\n&oneoff_gather_point_detector_data" +
-      "_list\030\n \003(\0132\036.OneoffGatherPointDetectorD" +
-      "ata\022.\n\023_sorush_widget_data\030\013 \001(\0132\021.Sorus" +
-      "hWidgetData\022+\n\021anchor_point_list\030\r \003(\0132\020" +
-      ".AnchorPointData\022%\n\035background_active_wi" +
-      "dget_list\030\016 \003(\r\022:\n\031sky_crystal_detector_" +
-      "data\030\017 \001(\0132\027.SkyCrystalDetectorData\022B\n,_" +
-      "anchor_point_material_next_usable_time_l" +
-      "ist\030\263\006 \003(\0132\013.Uint32Pair\022\032\n\021_material_id_" +
-      "list\030\266\007 \003(\r\022(\n\017_wisp_cage_data\030\255\t \001(\0132\016." +
-      "_WispCageData\022.\n\022_treasure_key_data\030\262\014 \001" +
-      "(\0132\021._TreasureKeyData\022*\n\024_widget_setting" +
-      "_list\030\276\014 \003(\0132\013.Uint32Pair\022\032\n\021_current_sl" +
-      "ot_num\030\357\r \001(\rB:\n\031emu.grasscutter.net.pro" +
-      "toB\035AllWidgetDataNotifyOuterClassb\006proto" +
-      "3"
+      "roto\032\020Uint32Pair.proto\032\027WeatherWizardDat" +
+      "a.proto\032\030WidgetCoolDownData.proto\032\024Widge" +
+      "tSlotData.proto\032\027_SorushWidgetData.proto" +
+      "\032\026_TreasureKeyData.proto\032\023_WispCageData." +
+      "proto\"\317\006\n\023AllWidgetDataNotify\022*\n\024_widget" +
+      "_setting_list\030\205\001 \003(\0132\013.Uint32Pair\022%\n\016lun" +
+      "ch_box_data\030\014 \001(\0132\r.LunchBoxData\022.\n\022_tre" +
+      "asure_key_data\030\234\017 \001(\0132\021._TreasureKeyData" +
+      "\022B\n,_anchor_point_material_next_usable_t" +
+      "ime_list\030\316\006 \003(\0132\013.Uint32Pair\022+\n\021anchor_p" +
+      "oint_list\030\003 \003(\0132\020.AnchorPointData\022%\n\035bac" +
+      "kground_active_widget_list\030\001 \003(\r\022\"\n\tslot" +
+      "_list\030\007 \003(\0132\017.WidgetSlotData\022\032\n\021_materia" +
+      "l_id_list\030\304\017 \003(\r\022/\n\023_sorush_widget_data\030" +
+      "\004 \001(\0132\022._SorushWidgetData\022:\n\031sky_crystal" +
+      "_detector_data\030\017 \001(\0132\027.SkyCrystalDetecto" +
+      "rData\022/\n\023weather_wizard_data\030\n \001(\0132\022.Wea" +
+      "therWizardData\0228\n\032client_collector_data_" +
+      "list\030\006 \003(\0132\024.ClientCollectorData\0227\n\032norm" +
+      "al_cool_down_data_list\030\016 \003(\0132\023.WidgetCoo" +
+      "lDownData\0226\n\031cool_down_group_data_list\030\013" +
+      " \003(\0132\023.WidgetCoolDownData\022N\n&oneoff_gath" +
+      "er_point_detector_data_list\030\010 \003(\0132\036.Oneo" +
+      "ffGatherPointDetectorData\022(\n\017_wisp_cage_" +
+      "data\030\311\007 \001(\0132\016._WispCageData\022\032\n\021_current_" +
+      "slot_num\030\300\006 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5141,32 +5148,32 @@ public final class AllWidgetDataNotifyOuterClass {
           emu.grasscutter.net.proto.LunchBoxDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto.SorushWidgetDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.Uint32PairOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.WeatherWizardDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.getDescriptor(),
           emu.grasscutter.net.proto.WidgetSlotDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto._TreasureKeyDataOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto._WispCageDataOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.SorushWidgetData.getDescriptor(),
+          emu.grasscutter.net.proto.TreasureKeyData.getDescriptor(),
+          emu.grasscutter.net.proto.WispCageData.getDescriptor(),
         });
     internal_static_AllWidgetDataNotify_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_AllWidgetDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AllWidgetDataNotify_descriptor,
-        new java.lang.String[] { "WeatherWizardData", "CoolDownGroupDataList", "SlotList", "LunchBoxData", "NormalCoolDownDataList", "ClientCollectorDataList", "OneoffGatherPointDetectorDataList", "SorushWidgetData", "AnchorPointList", "BackgroundActiveWidgetList", "SkyCrystalDetectorData", "AnchorPointMaterialNextUsableTimeList", "MaterialIdList", "WispCageData", "TreasureKeyData", "WidgetSettingList", "CurrentSlotNum", });
+        new java.lang.String[] { "WidgetSettingList", "LunchBoxData", "TreasureKeyData", "AnchorPointMaterialNextUsableTimeList", "AnchorPointList", "BackgroundActiveWidgetList", "SlotList", "MaterialIdList", "SorushWidgetData", "SkyCrystalDetectorData", "WeatherWizardData", "ClientCollectorDataList", "NormalCoolDownDataList", "CoolDownGroupDataList", "OneoffGatherPointDetectorDataList", "WispCageData", "CurrentSlotNum", });
     emu.grasscutter.net.proto.AnchorPointDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ClientCollectorDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.LunchBoxDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.OneoffGatherPointDetectorDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.SkyCrystalDetectorDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto.SorushWidgetDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.Uint32PairOuterClass.getDescriptor();
     emu.grasscutter.net.proto.WeatherWizardDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.WidgetCoolDownDataOuterClass.getDescriptor();
     emu.grasscutter.net.proto.WidgetSlotDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto._TreasureKeyDataOuterClass.getDescriptor();
-    emu.grasscutter.net.proto._WispCageDataOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.SorushWidgetData.getDescriptor();
+    emu.grasscutter.net.proto.TreasureKeyData.getDescriptor();
+    emu.grasscutter.net.proto.WispCageData.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

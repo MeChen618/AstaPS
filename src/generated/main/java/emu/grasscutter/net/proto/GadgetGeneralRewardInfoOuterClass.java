@@ -19,35 +19,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 resin = 1;</code>
-     * @return The resin.
-     */
-    int getResin();
-
-    /**
-     * <code>uint32 dead_time = 2;</code>
-     * @return The deadTime.
-     */
-    int getDeadTime();
-
-    /**
-     * <code>repeated uint32 remain_uid_list = 3;</code>
-     * @return A list containing the remainUidList.
-     */
-    java.util.List<java.lang.Integer> getRemainUidListList();
-    /**
-     * <code>repeated uint32 remain_uid_list = 3;</code>
-     * @return The count of remainUidList.
-     */
-    int getRemainUidListCount();
-    /**
-     * <code>repeated uint32 remain_uid_list = 3;</code>
-     * @param index The index of the element to return.
-     * @return The remainUidList at the given index.
-     */
-    int getRemainUidList(int index);
-
-    /**
      * <code>repeated uint32 qualify_uid_list = 4;</code>
      * @return A list containing the qualifyUidList.
      */
@@ -78,8 +49,41 @@ public final class GadgetGeneralRewardInfoOuterClass {
      * <code>.ItemParam item_param = 5;</code>
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamOrBuilder();
+
+    /**
+     * <code>repeated uint32 remain_uid_list = 3;</code>
+     * @return A list containing the remainUidList.
+     */
+    java.util.List<java.lang.Integer> getRemainUidListList();
+    /**
+     * <code>repeated uint32 remain_uid_list = 3;</code>
+     * @return The count of remainUidList.
+     */
+    int getRemainUidListCount();
+    /**
+     * <code>repeated uint32 remain_uid_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The remainUidList at the given index.
+     */
+    int getRemainUidList(int index);
+
+    /**
+     * <code>uint32 resin = 1;</code>
+     * @return The resin.
+     */
+    int getResin();
+
+    /**
+     * <code>uint32 dead_time = 2;</code>
+     * @return The deadTime.
+     */
+    int getDeadTime();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GadgetGeneralRewardInfo}
    */
   public static final class GadgetGeneralRewardInfo extends
@@ -92,8 +96,8 @@ public final class GadgetGeneralRewardInfoOuterClass {
       super(builder);
     }
     private GadgetGeneralRewardInfo() {
-      remainUidList_ = emptyIntList();
       qualifyUidList_ = emptyIntList();
+      remainUidList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -138,9 +142,9 @@ public final class GadgetGeneralRewardInfoOuterClass {
               break;
             }
             case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 remainUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               remainUidList_.addInt(input.readUInt32());
               break;
@@ -148,9 +152,9 @@ public final class GadgetGeneralRewardInfoOuterClass {
             case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 remainUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 remainUidList_.addInt(input.readUInt32());
@@ -159,9 +163,9 @@ public final class GadgetGeneralRewardInfoOuterClass {
               break;
             }
             case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 qualifyUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               qualifyUidList_.addInt(input.readUInt32());
               break;
@@ -169,9 +173,9 @@ public final class GadgetGeneralRewardInfoOuterClass {
             case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 qualifyUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 qualifyUidList_.addInt(input.readUInt32());
@@ -207,10 +211,10 @@ public final class GadgetGeneralRewardInfoOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           remainUidList_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           qualifyUidList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -229,56 +233,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.class, emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder.class);
     }
-
-    public static final int RESIN_FIELD_NUMBER = 1;
-    private int resin_;
-    /**
-     * <code>uint32 resin = 1;</code>
-     * @return The resin.
-     */
-    @java.lang.Override
-    public int getResin() {
-      return resin_;
-    }
-
-    public static final int DEAD_TIME_FIELD_NUMBER = 2;
-    private int deadTime_;
-    /**
-     * <code>uint32 dead_time = 2;</code>
-     * @return The deadTime.
-     */
-    @java.lang.Override
-    public int getDeadTime() {
-      return deadTime_;
-    }
-
-    public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.IntList remainUidList_;
-    /**
-     * <code>repeated uint32 remain_uid_list = 3;</code>
-     * @return A list containing the remainUidList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getRemainUidListList() {
-      return remainUidList_;
-    }
-    /**
-     * <code>repeated uint32 remain_uid_list = 3;</code>
-     * @return The count of remainUidList.
-     */
-    public int getRemainUidListCount() {
-      return remainUidList_.size();
-    }
-    /**
-     * <code>repeated uint32 remain_uid_list = 3;</code>
-     * @param index The index of the element to return.
-     * @return The remainUidList at the given index.
-     */
-    public int getRemainUidList(int index) {
-      return remainUidList_.getInt(index);
-    }
-    private int remainUidListMemoizedSerializedSize = -1;
 
     public static final int QUALIFY_UID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList qualifyUidList_;
@@ -332,6 +286,56 @@ public final class GadgetGeneralRewardInfoOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemParamOrBuilder() {
       return getItemParam();
+    }
+
+    public static final int REMAIN_UID_LIST_FIELD_NUMBER = 3;
+    private com.google.protobuf.Internal.IntList remainUidList_;
+    /**
+     * <code>repeated uint32 remain_uid_list = 3;</code>
+     * @return A list containing the remainUidList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getRemainUidListList() {
+      return remainUidList_;
+    }
+    /**
+     * <code>repeated uint32 remain_uid_list = 3;</code>
+     * @return The count of remainUidList.
+     */
+    public int getRemainUidListCount() {
+      return remainUidList_.size();
+    }
+    /**
+     * <code>repeated uint32 remain_uid_list = 3;</code>
+     * @param index The index of the element to return.
+     * @return The remainUidList at the given index.
+     */
+    public int getRemainUidList(int index) {
+      return remainUidList_.getInt(index);
+    }
+    private int remainUidListMemoizedSerializedSize = -1;
+
+    public static final int RESIN_FIELD_NUMBER = 1;
+    private int resin_;
+    /**
+     * <code>uint32 resin = 1;</code>
+     * @return The resin.
+     */
+    @java.lang.Override
+    public int getResin() {
+      return resin_;
+    }
+
+    public static final int DEAD_TIME_FIELD_NUMBER = 2;
+    private int deadTime_;
+    /**
+     * <code>uint32 dead_time = 2;</code>
+     * @return The deadTime.
+     */
+    @java.lang.Override
+    public int getDeadTime() {
+      return deadTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -436,12 +440,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
       }
       emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo other = (emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo) obj;
 
-      if (getResin()
-          != other.getResin()) return false;
-      if (getDeadTime()
-          != other.getDeadTime()) return false;
-      if (!getRemainUidListList()
-          .equals(other.getRemainUidListList())) return false;
       if (!getQualifyUidListList()
           .equals(other.getQualifyUidListList())) return false;
       if (hasItemParam() != other.hasItemParam()) return false;
@@ -449,6 +447,12 @@ public final class GadgetGeneralRewardInfoOuterClass {
         if (!getItemParam()
             .equals(other.getItemParam())) return false;
       }
+      if (!getRemainUidListList()
+          .equals(other.getRemainUidListList())) return false;
+      if (getResin()
+          != other.getResin()) return false;
+      if (getDeadTime()
+          != other.getDeadTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -460,14 +464,6 @@ public final class GadgetGeneralRewardInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESIN_FIELD_NUMBER;
-      hash = (53 * hash) + getResin();
-      hash = (37 * hash) + DEAD_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getDeadTime();
-      if (getRemainUidListCount() > 0) {
-        hash = (37 * hash) + REMAIN_UID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getRemainUidListList().hashCode();
-      }
       if (getQualifyUidListCount() > 0) {
         hash = (37 * hash) + QUALIFY_UID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getQualifyUidListList().hashCode();
@@ -476,6 +472,14 @@ public final class GadgetGeneralRewardInfoOuterClass {
         hash = (37 * hash) + ITEM_PARAM_FIELD_NUMBER;
         hash = (53 * hash) + getItemParam().hashCode();
       }
+      if (getRemainUidListCount() > 0) {
+        hash = (37 * hash) + REMAIN_UID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getRemainUidListList().hashCode();
+      }
+      hash = (37 * hash) + RESIN_FIELD_NUMBER;
+      hash = (53 * hash) + getResin();
+      hash = (37 * hash) + DEAD_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDeadTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -572,6 +576,10 @@ public final class GadgetGeneralRewardInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GadgetGeneralRewardInfo}
      */
     public static final class Builder extends
@@ -609,20 +617,20 @@ public final class GadgetGeneralRewardInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        resin_ = 0;
-
-        deadTime_ = 0;
-
-        remainUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         qualifyUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (itemParamBuilder_ == null) {
           itemParam_ = null;
         } else {
           itemParam_ = null;
           itemParamBuilder_ = null;
         }
+        remainUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        resin_ = 0;
+
+        deadTime_ = 0;
+
         return this;
       }
 
@@ -650,16 +658,9 @@ public final class GadgetGeneralRewardInfoOuterClass {
       public emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo buildPartial() {
         emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo result = new emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo(this);
         int from_bitField0_ = bitField0_;
-        result.resin_ = resin_;
-        result.deadTime_ = deadTime_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          remainUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.remainUidList_ = remainUidList_;
-        if (((bitField0_ & 0x00000002) != 0)) {
           qualifyUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.qualifyUidList_ = qualifyUidList_;
         if (itemParamBuilder_ == null) {
@@ -667,6 +668,13 @@ public final class GadgetGeneralRewardInfoOuterClass {
         } else {
           result.itemParam_ = itemParamBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          remainUidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.remainUidList_ = remainUidList_;
+        result.resin_ = resin_;
+        result.deadTime_ = deadTime_;
         onBuilt();
         return result;
       }
@@ -715,26 +723,10 @@ public final class GadgetGeneralRewardInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo other) {
         if (other == emu.grasscutter.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.getDefaultInstance()) return this;
-        if (other.getResin() != 0) {
-          setResin(other.getResin());
-        }
-        if (other.getDeadTime() != 0) {
-          setDeadTime(other.getDeadTime());
-        }
-        if (!other.remainUidList_.isEmpty()) {
-          if (remainUidList_.isEmpty()) {
-            remainUidList_ = other.remainUidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureRemainUidListIsMutable();
-            remainUidList_.addAll(other.remainUidList_);
-          }
-          onChanged();
-        }
         if (!other.qualifyUidList_.isEmpty()) {
           if (qualifyUidList_.isEmpty()) {
             qualifyUidList_ = other.qualifyUidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
             ensureQualifyUidListIsMutable();
             qualifyUidList_.addAll(other.qualifyUidList_);
@@ -743,6 +735,22 @@ public final class GadgetGeneralRewardInfoOuterClass {
         }
         if (other.hasItemParam()) {
           mergeItemParam(other.getItemParam());
+        }
+        if (!other.remainUidList_.isEmpty()) {
+          if (remainUidList_.isEmpty()) {
+            remainUidList_ = other.remainUidList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRemainUidListIsMutable();
+            remainUidList_.addAll(other.remainUidList_);
+          }
+          onChanged();
+        }
+        if (other.getResin() != 0) {
+          setResin(other.getResin());
+        }
+        if (other.getDeadTime() != 0) {
+          setDeadTime(other.getDeadTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -774,152 +782,11 @@ public final class GadgetGeneralRewardInfoOuterClass {
       }
       private int bitField0_;
 
-      private int resin_ ;
-      /**
-       * <code>uint32 resin = 1;</code>
-       * @return The resin.
-       */
-      @java.lang.Override
-      public int getResin() {
-        return resin_;
-      }
-      /**
-       * <code>uint32 resin = 1;</code>
-       * @param value The resin to set.
-       * @return This builder for chaining.
-       */
-      public Builder setResin(int value) {
-        
-        resin_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 resin = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearResin() {
-        
-        resin_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int deadTime_ ;
-      /**
-       * <code>uint32 dead_time = 2;</code>
-       * @return The deadTime.
-       */
-      @java.lang.Override
-      public int getDeadTime() {
-        return deadTime_;
-      }
-      /**
-       * <code>uint32 dead_time = 2;</code>
-       * @param value The deadTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeadTime(int value) {
-        
-        deadTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 dead_time = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDeadTime() {
-        
-        deadTime_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList remainUidList_ = emptyIntList();
-      private void ensureRemainUidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          remainUidList_ = mutableCopy(remainUidList_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @return A list containing the remainUidList.
-       */
-      public java.util.List<java.lang.Integer>
-          getRemainUidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(remainUidList_) : remainUidList_;
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @return The count of remainUidList.
-       */
-      public int getRemainUidListCount() {
-        return remainUidList_.size();
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @param index The index of the element to return.
-       * @return The remainUidList at the given index.
-       */
-      public int getRemainUidList(int index) {
-        return remainUidList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The remainUidList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRemainUidList(
-          int index, int value) {
-        ensureRemainUidListIsMutable();
-        remainUidList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @param value The remainUidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addRemainUidList(int value) {
-        ensureRemainUidListIsMutable();
-        remainUidList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @param values The remainUidList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllRemainUidList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureRemainUidListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, remainUidList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 remain_uid_list = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRemainUidList() {
-        remainUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList qualifyUidList_ = emptyIntList();
       private void ensureQualifyUidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           qualifyUidList_ = mutableCopy(qualifyUidList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
       /**
@@ -928,7 +795,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getQualifyUidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(qualifyUidList_) : qualifyUidList_;
       }
       /**
@@ -989,7 +856,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
        */
       public Builder clearQualifyUidList() {
         qualifyUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1112,6 +979,147 @@ public final class GadgetGeneralRewardInfoOuterClass {
         }
         return itemParamBuilder_;
       }
+
+      private com.google.protobuf.Internal.IntList remainUidList_ = emptyIntList();
+      private void ensureRemainUidListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          remainUidList_ = mutableCopy(remainUidList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @return A list containing the remainUidList.
+       */
+      public java.util.List<java.lang.Integer>
+          getRemainUidListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(remainUidList_) : remainUidList_;
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @return The count of remainUidList.
+       */
+      public int getRemainUidListCount() {
+        return remainUidList_.size();
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @param index The index of the element to return.
+       * @return The remainUidList at the given index.
+       */
+      public int getRemainUidList(int index) {
+        return remainUidList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The remainUidList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRemainUidList(
+          int index, int value) {
+        ensureRemainUidListIsMutable();
+        remainUidList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @param value The remainUidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRemainUidList(int value) {
+        ensureRemainUidListIsMutable();
+        remainUidList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @param values The remainUidList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRemainUidList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureRemainUidListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, remainUidList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 remain_uid_list = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRemainUidList() {
+        remainUidList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private int resin_ ;
+      /**
+       * <code>uint32 resin = 1;</code>
+       * @return The resin.
+       */
+      @java.lang.Override
+      public int getResin() {
+        return resin_;
+      }
+      /**
+       * <code>uint32 resin = 1;</code>
+       * @param value The resin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResin(int value) {
+        
+        resin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 resin = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearResin() {
+        
+        resin_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int deadTime_ ;
+      /**
+       * <code>uint32 dead_time = 2;</code>
+       * @return The deadTime.
+       */
+      @java.lang.Override
+      public int getDeadTime() {
+        return deadTime_;
+      }
+      /**
+       * <code>uint32 dead_time = 2;</code>
+       * @param value The deadTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDeadTime(int value) {
+        
+        deadTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 dead_time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDeadTime() {
+        
+        deadTime_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1180,12 +1188,11 @@ public final class GadgetGeneralRewardInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035GadgetGeneralRewardInfo.proto\032\017ItemPar" +
-      "am.proto\"\216\001\n\027GadgetGeneralRewardInfo\022\r\n\005" +
-      "resin\030\001 \001(\r\022\021\n\tdead_time\030\002 \001(\r\022\027\n\017remain" +
-      "_uid_list\030\003 \003(\r\022\030\n\020qualify_uid_list\030\004 \003(" +
-      "\r\022\036\n\nitem_param\030\005 \001(\0132\n.ItemParamB>\n\031emu" +
-      ".grasscutter.net.protoB!GadgetGeneralRew" +
-      "ardInfoOuterClassb\006proto3"
+      "am.proto\"\216\001\n\027GadgetGeneralRewardInfo\022\030\n\020" +
+      "qualify_uid_list\030\004 \003(\r\022\036\n\nitem_param\030\005 \001" +
+      "(\0132\n.ItemParam\022\027\n\017remain_uid_list\030\003 \003(\r\022" +
+      "\r\n\005resin\030\001 \001(\r\022\021\n\tdead_time\030\002 \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1197,7 +1204,7 @@ public final class GadgetGeneralRewardInfoOuterClass {
     internal_static_GadgetGeneralRewardInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GadgetGeneralRewardInfo_descriptor,
-        new java.lang.String[] { "Resin", "DeadTime", "RemainUidList", "QualifyUidList", "ItemParam", });
+        new java.lang.String[] { "QualifyUidList", "ItemParam", "RemainUidList", "Resin", "DeadTime", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

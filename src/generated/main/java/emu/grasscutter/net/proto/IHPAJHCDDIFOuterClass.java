@@ -19,24 +19,6 @@ public final class IHPAJHCDDIFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 IJFIIPKODAF = 1;</code>
-     * @return The iJFIIPKODAF.
-     */
-    int getIJFIIPKODAF();
-
-    /**
-     * <code>int32 GBFLALGBMFD = 2;</code>
-     * @return The gBFLALGBMFD.
-     */
-    int getGBFLALGBMFD();
-
-    /**
-     * <code>uint32 KPLIBHECJBL = 3;</code>
-     * @return The kPLIBHECJBL.
-     */
-    int getKPLIBHECJBL();
-
-    /**
      * <code>repeated uint32 data_list = 4;</code>
      * @return A list containing the dataList.
      */
@@ -52,8 +34,30 @@ public final class IHPAJHCDDIFOuterClass {
      * @return The dataList at the given index.
      */
     int getDataList(int index);
+
+    /**
+     * <code>int32 GBFLALGBMFD = 2;</code>
+     * @return The gBFLALGBMFD.
+     */
+    int getGBFLALGBMFD();
+
+    /**
+     * <code>uint32 KPLIBHECJBL = 3;</code>
+     * @return The kPLIBHECJBL.
+     */
+    int getKPLIBHECJBL();
+
+    /**
+     * <code>int32 IJFIIPKODAF = 1;</code>
+     * @return The iJFIIPKODAF.
+     */
+    int getIJFIIPKODAF();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IHPAJHCDDIF}
    */
   public static final class IHPAJHCDDIF extends
@@ -171,39 +175,6 @@ public final class IHPAJHCDDIFOuterClass {
               emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF.class, emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF.Builder.class);
     }
 
-    public static final int IJFIIPKODAF_FIELD_NUMBER = 1;
-    private int iJFIIPKODAF_;
-    /**
-     * <code>int32 IJFIIPKODAF = 1;</code>
-     * @return The iJFIIPKODAF.
-     */
-    @java.lang.Override
-    public int getIJFIIPKODAF() {
-      return iJFIIPKODAF_;
-    }
-
-    public static final int GBFLALGBMFD_FIELD_NUMBER = 2;
-    private int gBFLALGBMFD_;
-    /**
-     * <code>int32 GBFLALGBMFD = 2;</code>
-     * @return The gBFLALGBMFD.
-     */
-    @java.lang.Override
-    public int getGBFLALGBMFD() {
-      return gBFLALGBMFD_;
-    }
-
-    public static final int KPLIBHECJBL_FIELD_NUMBER = 3;
-    private int kPLIBHECJBL_;
-    /**
-     * <code>uint32 KPLIBHECJBL = 3;</code>
-     * @return The kPLIBHECJBL.
-     */
-    @java.lang.Override
-    public int getKPLIBHECJBL() {
-      return kPLIBHECJBL_;
-    }
-
     public static final int DATA_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList dataList_;
     /**
@@ -231,6 +202,39 @@ public final class IHPAJHCDDIFOuterClass {
       return dataList_.getInt(index);
     }
     private int dataListMemoizedSerializedSize = -1;
+
+    public static final int GBFLALGBMFD_FIELD_NUMBER = 2;
+    private int gBFLALGBMFD_;
+    /**
+     * <code>int32 GBFLALGBMFD = 2;</code>
+     * @return The gBFLALGBMFD.
+     */
+    @java.lang.Override
+    public int getGBFLALGBMFD() {
+      return gBFLALGBMFD_;
+    }
+
+    public static final int KPLIBHECJBL_FIELD_NUMBER = 3;
+    private int kPLIBHECJBL_;
+    /**
+     * <code>uint32 KPLIBHECJBL = 3;</code>
+     * @return The kPLIBHECJBL.
+     */
+    @java.lang.Override
+    public int getKPLIBHECJBL() {
+      return kPLIBHECJBL_;
+    }
+
+    public static final int IJFIIPKODAF_FIELD_NUMBER = 1;
+    private int iJFIIPKODAF_;
+    /**
+     * <code>int32 IJFIIPKODAF = 1;</code>
+     * @return The iJFIIPKODAF.
+     */
+    @java.lang.Override
+    public int getIJFIIPKODAF() {
+      return iJFIIPKODAF_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -313,14 +317,14 @@ public final class IHPAJHCDDIFOuterClass {
       }
       emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF other = (emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF) obj;
 
-      if (getIJFIIPKODAF()
-          != other.getIJFIIPKODAF()) return false;
+      if (!getDataListList()
+          .equals(other.getDataListList())) return false;
       if (getGBFLALGBMFD()
           != other.getGBFLALGBMFD()) return false;
       if (getKPLIBHECJBL()
           != other.getKPLIBHECJBL()) return false;
-      if (!getDataListList()
-          .equals(other.getDataListList())) return false;
+      if (getIJFIIPKODAF()
+          != other.getIJFIIPKODAF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -332,16 +336,16 @@ public final class IHPAJHCDDIFOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IJFIIPKODAF_FIELD_NUMBER;
-      hash = (53 * hash) + getIJFIIPKODAF();
-      hash = (37 * hash) + GBFLALGBMFD_FIELD_NUMBER;
-      hash = (53 * hash) + getGBFLALGBMFD();
-      hash = (37 * hash) + KPLIBHECJBL_FIELD_NUMBER;
-      hash = (53 * hash) + getKPLIBHECJBL();
       if (getDataListCount() > 0) {
         hash = (37 * hash) + DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDataListList().hashCode();
       }
+      hash = (37 * hash) + GBFLALGBMFD_FIELD_NUMBER;
+      hash = (53 * hash) + getGBFLALGBMFD();
+      hash = (37 * hash) + KPLIBHECJBL_FIELD_NUMBER;
+      hash = (53 * hash) + getKPLIBHECJBL();
+      hash = (37 * hash) + IJFIIPKODAF_FIELD_NUMBER;
+      hash = (53 * hash) + getIJFIIPKODAF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +442,10 @@ public final class IHPAJHCDDIFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IHPAJHCDDIF}
      */
     public static final class Builder extends
@@ -475,14 +483,14 @@ public final class IHPAJHCDDIFOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iJFIIPKODAF_ = 0;
-
+        dataList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         gBFLALGBMFD_ = 0;
 
         kPLIBHECJBL_ = 0;
 
-        dataList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        iJFIIPKODAF_ = 0;
+
         return this;
       }
 
@@ -510,14 +518,14 @@ public final class IHPAJHCDDIFOuterClass {
       public emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF buildPartial() {
         emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF result = new emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF(this);
         int from_bitField0_ = bitField0_;
-        result.iJFIIPKODAF_ = iJFIIPKODAF_;
-        result.gBFLALGBMFD_ = gBFLALGBMFD_;
-        result.kPLIBHECJBL_ = kPLIBHECJBL_;
         if (((bitField0_ & 0x00000001) != 0)) {
           dataList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.dataList_ = dataList_;
+        result.gBFLALGBMFD_ = gBFLALGBMFD_;
+        result.kPLIBHECJBL_ = kPLIBHECJBL_;
+        result.iJFIIPKODAF_ = iJFIIPKODAF_;
         onBuilt();
         return result;
       }
@@ -566,15 +574,6 @@ public final class IHPAJHCDDIFOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF other) {
         if (other == emu.grasscutter.net.proto.IHPAJHCDDIFOuterClass.IHPAJHCDDIF.getDefaultInstance()) return this;
-        if (other.getIJFIIPKODAF() != 0) {
-          setIJFIIPKODAF(other.getIJFIIPKODAF());
-        }
-        if (other.getGBFLALGBMFD() != 0) {
-          setGBFLALGBMFD(other.getGBFLALGBMFD());
-        }
-        if (other.getKPLIBHECJBL() != 0) {
-          setKPLIBHECJBL(other.getKPLIBHECJBL());
-        }
         if (!other.dataList_.isEmpty()) {
           if (dataList_.isEmpty()) {
             dataList_ = other.dataList_;
@@ -584,6 +583,15 @@ public final class IHPAJHCDDIFOuterClass {
             dataList_.addAll(other.dataList_);
           }
           onChanged();
+        }
+        if (other.getGBFLALGBMFD() != 0) {
+          setGBFLALGBMFD(other.getGBFLALGBMFD());
+        }
+        if (other.getKPLIBHECJBL() != 0) {
+          setKPLIBHECJBL(other.getKPLIBHECJBL());
+        }
+        if (other.getIJFIIPKODAF() != 0) {
+          setIJFIIPKODAF(other.getIJFIIPKODAF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -614,99 +622,6 @@ public final class IHPAJHCDDIFOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int iJFIIPKODAF_ ;
-      /**
-       * <code>int32 IJFIIPKODAF = 1;</code>
-       * @return The iJFIIPKODAF.
-       */
-      @java.lang.Override
-      public int getIJFIIPKODAF() {
-        return iJFIIPKODAF_;
-      }
-      /**
-       * <code>int32 IJFIIPKODAF = 1;</code>
-       * @param value The iJFIIPKODAF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIJFIIPKODAF(int value) {
-        
-        iJFIIPKODAF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 IJFIIPKODAF = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIJFIIPKODAF() {
-        
-        iJFIIPKODAF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int gBFLALGBMFD_ ;
-      /**
-       * <code>int32 GBFLALGBMFD = 2;</code>
-       * @return The gBFLALGBMFD.
-       */
-      @java.lang.Override
-      public int getGBFLALGBMFD() {
-        return gBFLALGBMFD_;
-      }
-      /**
-       * <code>int32 GBFLALGBMFD = 2;</code>
-       * @param value The gBFLALGBMFD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGBFLALGBMFD(int value) {
-        
-        gBFLALGBMFD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 GBFLALGBMFD = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGBFLALGBMFD() {
-        
-        gBFLALGBMFD_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int kPLIBHECJBL_ ;
-      /**
-       * <code>uint32 KPLIBHECJBL = 3;</code>
-       * @return The kPLIBHECJBL.
-       */
-      @java.lang.Override
-      public int getKPLIBHECJBL() {
-        return kPLIBHECJBL_;
-      }
-      /**
-       * <code>uint32 KPLIBHECJBL = 3;</code>
-       * @param value The kPLIBHECJBL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKPLIBHECJBL(int value) {
-        
-        kPLIBHECJBL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KPLIBHECJBL = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKPLIBHECJBL() {
-        
-        kPLIBHECJBL_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList dataList_ = emptyIntList();
       private void ensureDataListIsMutable() {
@@ -786,6 +701,99 @@ public final class IHPAJHCDDIFOuterClass {
         onChanged();
         return this;
       }
+
+      private int gBFLALGBMFD_ ;
+      /**
+       * <code>int32 GBFLALGBMFD = 2;</code>
+       * @return The gBFLALGBMFD.
+       */
+      @java.lang.Override
+      public int getGBFLALGBMFD() {
+        return gBFLALGBMFD_;
+      }
+      /**
+       * <code>int32 GBFLALGBMFD = 2;</code>
+       * @param value The gBFLALGBMFD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGBFLALGBMFD(int value) {
+        
+        gBFLALGBMFD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 GBFLALGBMFD = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGBFLALGBMFD() {
+        
+        gBFLALGBMFD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kPLIBHECJBL_ ;
+      /**
+       * <code>uint32 KPLIBHECJBL = 3;</code>
+       * @return The kPLIBHECJBL.
+       */
+      @java.lang.Override
+      public int getKPLIBHECJBL() {
+        return kPLIBHECJBL_;
+      }
+      /**
+       * <code>uint32 KPLIBHECJBL = 3;</code>
+       * @param value The kPLIBHECJBL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKPLIBHECJBL(int value) {
+        
+        kPLIBHECJBL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KPLIBHECJBL = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKPLIBHECJBL() {
+        
+        kPLIBHECJBL_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iJFIIPKODAF_ ;
+      /**
+       * <code>int32 IJFIIPKODAF = 1;</code>
+       * @return The iJFIIPKODAF.
+       */
+      @java.lang.Override
+      public int getIJFIIPKODAF() {
+        return iJFIIPKODAF_;
+      }
+      /**
+       * <code>int32 IJFIIPKODAF = 1;</code>
+       * @param value The iJFIIPKODAF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIJFIIPKODAF(int value) {
+        
+        iJFIIPKODAF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 IJFIIPKODAF = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIJFIIPKODAF() {
+        
+        iJFIIPKODAF_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -853,11 +861,10 @@ public final class IHPAJHCDDIFOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021IHPAJHCDDIF.proto\"_\n\013IHPAJHCDDIF\022\023\n\013IJ" +
-      "FIIPKODAF\030\001 \001(\005\022\023\n\013GBFLALGBMFD\030\002 \001(\005\022\023\n\013" +
-      "KPLIBHECJBL\030\003 \001(\r\022\021\n\tdata_list\030\004 \003(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025IHPAJHCDDIFOu" +
-      "terClassb\006proto3"
+      "\n\021IHPAJHCDDIF.proto\"_\n\013IHPAJHCDDIF\022\021\n\tda" +
+      "ta_list\030\004 \003(\r\022\023\n\013GBFLALGBMFD\030\002 \001(\005\022\023\n\013KP" +
+      "LIBHECJBL\030\003 \001(\r\022\023\n\013IJFIIPKODAF\030\001 \001(\005B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -868,7 +875,7 @@ public final class IHPAJHCDDIFOuterClass {
     internal_static_IHPAJHCDDIF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IHPAJHCDDIF_descriptor,
-        new java.lang.String[] { "IJFIIPKODAF", "GBFLALGBMFD", "KPLIBHECJBL", "DataList", });
+        new java.lang.String[] { "DataList", "GBFLALGBMFD", "KPLIBHECJBL", "IJFIIPKODAF", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,55 +19,59 @@ public final class KKILGCLBMCJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>._ExamInfo exam_info = 9;</code>
-     * @return Whether the examInfo field is set.
-     */
-    boolean hasExamInfo();
-    /**
-     * <code>._ExamInfo exam_info = 9;</code>
-     * @return The examInfo.
-     */
-    emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo getExamInfo();
-    /**
-     * <code>._ExamInfo exam_info = 9;</code>
-     */
-    emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfoOrBuilder getExamInfoOrBuilder();
-
-    /**
-     * <code>._OrderInfo order_info = 12;</code>
-     * @return Whether the orderInfo field is set.
-     */
-    boolean hasOrderInfo();
-    /**
-     * <code>._OrderInfo order_info = 12;</code>
-     * @return The orderInfo.
-     */
-    emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo getOrderInfo();
-    /**
-     * <code>._OrderInfo order_info = 12;</code>
-     */
-    emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfoOrBuilder getOrderInfoOrBuilder();
-
-    /**
-     * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+     * <code>repeated uint32 BJPDBEKODPL = 11;</code>
      * @return A list containing the bJPDBEKODPL.
      */
     java.util.List<java.lang.Integer> getBJPDBEKODPLList();
     /**
-     * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+     * <code>repeated uint32 BJPDBEKODPL = 11;</code>
      * @return The count of bJPDBEKODPL.
      */
     int getBJPDBEKODPLCount();
     /**
-     * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+     * <code>repeated uint32 BJPDBEKODPL = 11;</code>
      * @param index The index of the element to return.
      * @return The bJPDBEKODPL at the given index.
      */
     int getBJPDBEKODPL(int index);
 
+    /**
+     * <code>._OrderInfo order_info = 9;</code>
+     * @return Whether the orderInfo field is set.
+     */
+    boolean hasOrderInfo();
+    /**
+     * <code>._OrderInfo order_info = 9;</code>
+     * @return The orderInfo.
+     */
+    emu.grasscutter.net.proto.OrderInfo._OrderInfo getOrderInfo();
+    /**
+     * <code>._OrderInfo order_info = 9;</code>
+     */
+    emu.grasscutter.net.proto.OrderInfo._OrderInfoOrBuilder getOrderInfoOrBuilder();
+
+    /**
+     * <code>._ExamInfo exam_info = 7;</code>
+     * @return Whether the examInfo field is set.
+     */
+    boolean hasExamInfo();
+    /**
+     * <code>._ExamInfo exam_info = 7;</code>
+     * @return The examInfo.
+     */
+    emu.grasscutter.net.proto.ExamInfo._ExamInfo getExamInfo();
+    /**
+     * <code>._ExamInfo exam_info = 7;</code>
+     */
+    emu.grasscutter.net.proto.ExamInfo._ExamInfoOrBuilder getExamInfoOrBuilder();
+
     public emu.grasscutter.net.proto.KKILGCLBMCJOuterClass.KKILGCLBMCJ.DetailCase getDetailCase();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KKILGCLBMCJ}
    */
   public static final class KKILGCLBMCJ extends
@@ -114,7 +118,35 @@ public final class KKILGCLBMCJOuterClass {
             case 0:
               done = true;
               break;
-            case 64: {
+            case 58: {
+              emu.grasscutter.net.proto.ExamInfo._ExamInfo.Builder subBuilder = null;
+              if (detailCase_ == 7) {
+                subBuilder = ((emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.ExamInfo._ExamInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 7;
+              break;
+            }
+            case 74: {
+              emu.grasscutter.net.proto.OrderInfo._OrderInfo.Builder subBuilder = null;
+              if (detailCase_ == 9) {
+                subBuilder = ((emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.OrderInfo._OrderInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 9;
+              break;
+            }
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bJPDBEKODPL_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -122,7 +154,7 @@ public final class KKILGCLBMCJOuterClass {
               bJPDBEKODPL_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -133,34 +165,6 @@ public final class KKILGCLBMCJOuterClass {
                 bJPDBEKODPL_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 74: {
-              emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.Builder subBuilder = null;
-              if (detailCase_ == 9) {
-                subBuilder = ((emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 9;
-              break;
-            }
-            case 98: {
-              emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.Builder subBuilder = null;
-              if (detailCase_ == 12) {
-                subBuilder = ((emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 12;
               break;
             }
             default: {
@@ -203,8 +207,8 @@ public final class KKILGCLBMCJOuterClass {
     public enum DetailCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      EXAM_INFO(9),
-      ORDER_INFO(12),
+      ORDER_INFO(9),
+      EXAM_INFO(7),
       DETAIL_NOT_SET(0);
       private final int value;
       private DetailCase(int value) {
@@ -222,8 +226,8 @@ public final class KKILGCLBMCJOuterClass {
 
       public static DetailCase forNumber(int value) {
         switch (value) {
-          case 9: return EXAM_INFO;
-          case 12: return ORDER_INFO;
+          case 9: return ORDER_INFO;
+          case 7: return EXAM_INFO;
           case 0: return DETAIL_NOT_SET;
           default: return null;
         }
@@ -239,72 +243,10 @@ public final class KKILGCLBMCJOuterClass {
           detailCase_);
     }
 
-    public static final int EXAM_INFO_FIELD_NUMBER = 9;
-    /**
-     * <code>._ExamInfo exam_info = 9;</code>
-     * @return Whether the examInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasExamInfo() {
-      return detailCase_ == 9;
-    }
-    /**
-     * <code>._ExamInfo exam_info = 9;</code>
-     * @return The examInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo getExamInfo() {
-      if (detailCase_ == 9) {
-         return (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_;
-      }
-      return emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance();
-    }
-    /**
-     * <code>._ExamInfo exam_info = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfoOrBuilder getExamInfoOrBuilder() {
-      if (detailCase_ == 9) {
-         return (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_;
-      }
-      return emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance();
-    }
-
-    public static final int ORDER_INFO_FIELD_NUMBER = 12;
-    /**
-     * <code>._OrderInfo order_info = 12;</code>
-     * @return Whether the orderInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasOrderInfo() {
-      return detailCase_ == 12;
-    }
-    /**
-     * <code>._OrderInfo order_info = 12;</code>
-     * @return The orderInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo getOrderInfo() {
-      if (detailCase_ == 12) {
-         return (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_;
-      }
-      return emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance();
-    }
-    /**
-     * <code>._OrderInfo order_info = 12;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfoOrBuilder getOrderInfoOrBuilder() {
-      if (detailCase_ == 12) {
-         return (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_;
-      }
-      return emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance();
-    }
-
-    public static final int BJPDBEKODPL_FIELD_NUMBER = 8;
+    public static final int BJPDBEKODPL_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList bJPDBEKODPL_;
     /**
-     * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+     * <code>repeated uint32 BJPDBEKODPL = 11;</code>
      * @return A list containing the bJPDBEKODPL.
      */
     @java.lang.Override
@@ -313,14 +255,14 @@ public final class KKILGCLBMCJOuterClass {
       return bJPDBEKODPL_;
     }
     /**
-     * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+     * <code>repeated uint32 BJPDBEKODPL = 11;</code>
      * @return The count of bJPDBEKODPL.
      */
     public int getBJPDBEKODPLCount() {
       return bJPDBEKODPL_.size();
     }
     /**
-     * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+     * <code>repeated uint32 BJPDBEKODPL = 11;</code>
      * @param index The index of the element to return.
      * @return The bJPDBEKODPL at the given index.
      */
@@ -328,6 +270,68 @@ public final class KKILGCLBMCJOuterClass {
       return bJPDBEKODPL_.getInt(index);
     }
     private int bJPDBEKODPLMemoizedSerializedSize = -1;
+
+    public static final int ORDER_INFO_FIELD_NUMBER = 9;
+    /**
+     * <code>._OrderInfo order_info = 9;</code>
+     * @return Whether the orderInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasOrderInfo() {
+      return detailCase_ == 9;
+    }
+    /**
+     * <code>._OrderInfo order_info = 9;</code>
+     * @return The orderInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OrderInfo._OrderInfo getOrderInfo() {
+      if (detailCase_ == 9) {
+         return (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_;
+      }
+      return emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance();
+    }
+    /**
+     * <code>._OrderInfo order_info = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OrderInfo._OrderInfoOrBuilder getOrderInfoOrBuilder() {
+      if (detailCase_ == 9) {
+         return (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_;
+      }
+      return emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance();
+    }
+
+    public static final int EXAM_INFO_FIELD_NUMBER = 7;
+    /**
+     * <code>._ExamInfo exam_info = 7;</code>
+     * @return Whether the examInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasExamInfo() {
+      return detailCase_ == 7;
+    }
+    /**
+     * <code>._ExamInfo exam_info = 7;</code>
+     * @return The examInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ExamInfo._ExamInfo getExamInfo() {
+      if (detailCase_ == 7) {
+         return (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_;
+      }
+      return emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance();
+    }
+    /**
+     * <code>._ExamInfo exam_info = 7;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ExamInfo._ExamInfoOrBuilder getExamInfoOrBuilder() {
+      if (detailCase_ == 7) {
+         return (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_;
+      }
+      return emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance();
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -344,18 +348,18 @@ public final class KKILGCLBMCJOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (detailCase_ == 7) {
+        output.writeMessage(7, (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_);
+      }
+      if (detailCase_ == 9) {
+        output.writeMessage(9, (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_);
+      }
       if (getBJPDBEKODPLList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(bJPDBEKODPLMemoizedSerializedSize);
       }
       for (int i = 0; i < bJPDBEKODPL_.size(); i++) {
         output.writeUInt32NoTag(bJPDBEKODPL_.getInt(i));
-      }
-      if (detailCase_ == 9) {
-        output.writeMessage(9, (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_);
-      }
-      if (detailCase_ == 12) {
-        output.writeMessage(12, (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_);
       }
       unknownFields.writeTo(output);
     }
@@ -366,6 +370,14 @@ public final class KKILGCLBMCJOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (detailCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_);
+      }
+      if (detailCase_ == 9) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < bJPDBEKODPL_.size(); i++) {
@@ -379,14 +391,6 @@ public final class KKILGCLBMCJOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         bJPDBEKODPLMemoizedSerializedSize = dataSize;
-      }
-      if (detailCase_ == 9) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_);
-      }
-      if (detailCase_ == 12) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -408,12 +412,12 @@ public final class KKILGCLBMCJOuterClass {
       if (!getDetailCase().equals(other.getDetailCase())) return false;
       switch (detailCase_) {
         case 9:
-          if (!getExamInfo()
-              .equals(other.getExamInfo())) return false;
-          break;
-        case 12:
           if (!getOrderInfo()
               .equals(other.getOrderInfo())) return false;
+          break;
+        case 7:
+          if (!getExamInfo()
+              .equals(other.getExamInfo())) return false;
           break;
         case 0:
         default:
@@ -435,12 +439,12 @@ public final class KKILGCLBMCJOuterClass {
       }
       switch (detailCase_) {
         case 9:
-          hash = (37 * hash) + EXAM_INFO_FIELD_NUMBER;
-          hash = (53 * hash) + getExamInfo().hashCode();
-          break;
-        case 12:
           hash = (37 * hash) + ORDER_INFO_FIELD_NUMBER;
           hash = (53 * hash) + getOrderInfo().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + EXAM_INFO_FIELD_NUMBER;
+          hash = (53 * hash) + getExamInfo().hashCode();
           break;
         case 0:
         default:
@@ -541,6 +545,10 @@ public final class KKILGCLBMCJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KKILGCLBMCJ}
      */
     public static final class Builder extends
@@ -609,25 +617,25 @@ public final class KKILGCLBMCJOuterClass {
       public emu.grasscutter.net.proto.KKILGCLBMCJOuterClass.KKILGCLBMCJ buildPartial() {
         emu.grasscutter.net.proto.KKILGCLBMCJOuterClass.KKILGCLBMCJ result = new emu.grasscutter.net.proto.KKILGCLBMCJOuterClass.KKILGCLBMCJ(this);
         int from_bitField0_ = bitField0_;
-        if (detailCase_ == 9) {
-          if (examInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = examInfoBuilder_.build();
-          }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          bJPDBEKODPL_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
-        if (detailCase_ == 12) {
+        result.bJPDBEKODPL_ = bJPDBEKODPL_;
+        if (detailCase_ == 9) {
           if (orderInfoBuilder_ == null) {
             result.detail_ = detail_;
           } else {
             result.detail_ = orderInfoBuilder_.build();
           }
         }
-        if (((bitField0_ & 0x00000001) != 0)) {
-          bJPDBEKODPL_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (detailCase_ == 7) {
+          if (examInfoBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = examInfoBuilder_.build();
+          }
         }
-        result.bJPDBEKODPL_ = bJPDBEKODPL_;
         result.detailCase_ = detailCase_;
         onBuilt();
         return result;
@@ -688,12 +696,12 @@ public final class KKILGCLBMCJOuterClass {
           onChanged();
         }
         switch (other.getDetailCase()) {
-          case EXAM_INFO: {
-            mergeExamInfo(other.getExamInfo());
-            break;
-          }
           case ORDER_INFO: {
             mergeOrderInfo(other.getOrderInfo());
+            break;
+          }
+          case EXAM_INFO: {
+            mergeExamInfo(other.getExamInfo());
             break;
           }
           case DETAIL_NOT_SET: {
@@ -745,288 +753,6 @@ public final class KKILGCLBMCJOuterClass {
 
       private int bitField0_;
 
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo, emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.Builder, emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfoOrBuilder> examInfoBuilder_;
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       * @return Whether the examInfo field is set.
-       */
-      @java.lang.Override
-      public boolean hasExamInfo() {
-        return detailCase_ == 9;
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       * @return The examInfo.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo getExamInfo() {
-        if (examInfoBuilder_ == null) {
-          if (detailCase_ == 9) {
-            return (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_;
-          }
-          return emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance();
-        } else {
-          if (detailCase_ == 9) {
-            return examInfoBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      public Builder setExamInfo(emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo value) {
-        if (examInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          examInfoBuilder_.setMessage(value);
-        }
-        detailCase_ = 9;
-        return this;
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      public Builder setExamInfo(
-          emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.Builder builderForValue) {
-        if (examInfoBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          examInfoBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 9;
-        return this;
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      public Builder mergeExamInfo(emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo value) {
-        if (examInfoBuilder_ == null) {
-          if (detailCase_ == 9 &&
-              detail_ != emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.newBuilder((emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 9) {
-            examInfoBuilder_.mergeFrom(value);
-          }
-          examInfoBuilder_.setMessage(value);
-        }
-        detailCase_ = 9;
-        return this;
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      public Builder clearExamInfo() {
-        if (examInfoBuilder_ == null) {
-          if (detailCase_ == 9) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 9) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          examInfoBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      public emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.Builder getExamInfoBuilder() {
-        return getExamInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfoOrBuilder getExamInfoOrBuilder() {
-        if ((detailCase_ == 9) && (examInfoBuilder_ != null)) {
-          return examInfoBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 9) {
-            return (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_;
-          }
-          return emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._ExamInfo exam_info = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo, emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.Builder, emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfoOrBuilder> 
-          getExamInfoFieldBuilder() {
-        if (examInfoBuilder_ == null) {
-          if (!(detailCase_ == 9)) {
-            detail_ = emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.getDefaultInstance();
-          }
-          examInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo, emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo.Builder, emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfoOrBuilder>(
-                  (emu.grasscutter.net.proto._ExamInfoOuterClass._ExamInfo) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 9;
-        onChanged();;
-        return examInfoBuilder_;
-      }
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo, emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.Builder, emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfoOrBuilder> orderInfoBuilder_;
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       * @return Whether the orderInfo field is set.
-       */
-      @java.lang.Override
-      public boolean hasOrderInfo() {
-        return detailCase_ == 12;
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       * @return The orderInfo.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo getOrderInfo() {
-        if (orderInfoBuilder_ == null) {
-          if (detailCase_ == 12) {
-            return (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_;
-          }
-          return emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance();
-        } else {
-          if (detailCase_ == 12) {
-            return orderInfoBuilder_.getMessage();
-          }
-          return emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      public Builder setOrderInfo(emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo value) {
-        if (orderInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          detail_ = value;
-          onChanged();
-        } else {
-          orderInfoBuilder_.setMessage(value);
-        }
-        detailCase_ = 12;
-        return this;
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      public Builder setOrderInfo(
-          emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.Builder builderForValue) {
-        if (orderInfoBuilder_ == null) {
-          detail_ = builderForValue.build();
-          onChanged();
-        } else {
-          orderInfoBuilder_.setMessage(builderForValue.build());
-        }
-        detailCase_ = 12;
-        return this;
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      public Builder mergeOrderInfo(emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo value) {
-        if (orderInfoBuilder_ == null) {
-          if (detailCase_ == 12 &&
-              detail_ != emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance()) {
-            detail_ = emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.newBuilder((emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_)
-                .mergeFrom(value).buildPartial();
-          } else {
-            detail_ = value;
-          }
-          onChanged();
-        } else {
-          if (detailCase_ == 12) {
-            orderInfoBuilder_.mergeFrom(value);
-          }
-          orderInfoBuilder_.setMessage(value);
-        }
-        detailCase_ = 12;
-        return this;
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      public Builder clearOrderInfo() {
-        if (orderInfoBuilder_ == null) {
-          if (detailCase_ == 12) {
-            detailCase_ = 0;
-            detail_ = null;
-            onChanged();
-          }
-        } else {
-          if (detailCase_ == 12) {
-            detailCase_ = 0;
-            detail_ = null;
-          }
-          orderInfoBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      public emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.Builder getOrderInfoBuilder() {
-        return getOrderInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfoOrBuilder getOrderInfoOrBuilder() {
-        if ((detailCase_ == 12) && (orderInfoBuilder_ != null)) {
-          return orderInfoBuilder_.getMessageOrBuilder();
-        } else {
-          if (detailCase_ == 12) {
-            return (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_;
-          }
-          return emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance();
-        }
-      }
-      /**
-       * <code>._OrderInfo order_info = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo, emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.Builder, emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfoOrBuilder> 
-          getOrderInfoFieldBuilder() {
-        if (orderInfoBuilder_ == null) {
-          if (!(detailCase_ == 12)) {
-            detail_ = emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.getDefaultInstance();
-          }
-          orderInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo, emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo.Builder, emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfoOrBuilder>(
-                  (emu.grasscutter.net.proto._OrderInfoOuterClass._OrderInfo) detail_,
-                  getParentForChildren(),
-                  isClean());
-          detail_ = null;
-        }
-        detailCase_ = 12;
-        onChanged();;
-        return orderInfoBuilder_;
-      }
-
       private com.google.protobuf.Internal.IntList bJPDBEKODPL_ = emptyIntList();
       private void ensureBJPDBEKODPLIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -1035,7 +761,7 @@ public final class KKILGCLBMCJOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @return A list containing the bJPDBEKODPL.
        */
       public java.util.List<java.lang.Integer>
@@ -1044,14 +770,14 @@ public final class KKILGCLBMCJOuterClass {
                  java.util.Collections.unmodifiableList(bJPDBEKODPL_) : bJPDBEKODPL_;
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @return The count of bJPDBEKODPL.
        */
       public int getBJPDBEKODPLCount() {
         return bJPDBEKODPL_.size();
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @param index The index of the element to return.
        * @return The bJPDBEKODPL at the given index.
        */
@@ -1059,7 +785,7 @@ public final class KKILGCLBMCJOuterClass {
         return bJPDBEKODPL_.getInt(index);
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @param index The index to set the value at.
        * @param value The bJPDBEKODPL to set.
        * @return This builder for chaining.
@@ -1072,7 +798,7 @@ public final class KKILGCLBMCJOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @param value The bJPDBEKODPL to add.
        * @return This builder for chaining.
        */
@@ -1083,7 +809,7 @@ public final class KKILGCLBMCJOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @param values The bJPDBEKODPL to add.
        * @return This builder for chaining.
        */
@@ -1096,7 +822,7 @@ public final class KKILGCLBMCJOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 BJPDBEKODPL = 8;</code>
+       * <code>repeated uint32 BJPDBEKODPL = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearBJPDBEKODPL() {
@@ -1104,6 +830,288 @@ public final class KKILGCLBMCJOuterClass {
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.OrderInfo._OrderInfo, emu.grasscutter.net.proto.OrderInfo._OrderInfo.Builder, emu.grasscutter.net.proto.OrderInfo._OrderInfoOrBuilder> orderInfoBuilder_;
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       * @return Whether the orderInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasOrderInfo() {
+        return detailCase_ == 9;
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       * @return The orderInfo.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OrderInfo._OrderInfo getOrderInfo() {
+        if (orderInfoBuilder_ == null) {
+          if (detailCase_ == 9) {
+            return (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_;
+          }
+          return emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance();
+        } else {
+          if (detailCase_ == 9) {
+            return orderInfoBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      public Builder setOrderInfo(emu.grasscutter.net.proto.OrderInfo._OrderInfo value) {
+        if (orderInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          orderInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      public Builder setOrderInfo(
+          emu.grasscutter.net.proto.OrderInfo._OrderInfo.Builder builderForValue) {
+        if (orderInfoBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          orderInfoBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      public Builder mergeOrderInfo(emu.grasscutter.net.proto.OrderInfo._OrderInfo value) {
+        if (orderInfoBuilder_ == null) {
+          if (detailCase_ == 9 &&
+              detail_ != emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.OrderInfo._OrderInfo.newBuilder((emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 9) {
+            orderInfoBuilder_.mergeFrom(value);
+          }
+          orderInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 9;
+        return this;
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      public Builder clearOrderInfo() {
+        if (orderInfoBuilder_ == null) {
+          if (detailCase_ == 9) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 9) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          orderInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      public emu.grasscutter.net.proto.OrderInfo._OrderInfo.Builder getOrderInfoBuilder() {
+        return getOrderInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OrderInfo._OrderInfoOrBuilder getOrderInfoOrBuilder() {
+        if ((detailCase_ == 9) && (orderInfoBuilder_ != null)) {
+          return orderInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 9) {
+            return (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_;
+          }
+          return emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._OrderInfo order_info = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.OrderInfo._OrderInfo, emu.grasscutter.net.proto.OrderInfo._OrderInfo.Builder, emu.grasscutter.net.proto.OrderInfo._OrderInfoOrBuilder> 
+          getOrderInfoFieldBuilder() {
+        if (orderInfoBuilder_ == null) {
+          if (!(detailCase_ == 9)) {
+            detail_ = emu.grasscutter.net.proto.OrderInfo._OrderInfo.getDefaultInstance();
+          }
+          orderInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.OrderInfo._OrderInfo, emu.grasscutter.net.proto.OrderInfo._OrderInfo.Builder, emu.grasscutter.net.proto.OrderInfo._OrderInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.OrderInfo._OrderInfo) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 9;
+        onChanged();;
+        return orderInfoBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ExamInfo._ExamInfo, emu.grasscutter.net.proto.ExamInfo._ExamInfo.Builder, emu.grasscutter.net.proto.ExamInfo._ExamInfoOrBuilder> examInfoBuilder_;
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       * @return Whether the examInfo field is set.
+       */
+      @java.lang.Override
+      public boolean hasExamInfo() {
+        return detailCase_ == 7;
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       * @return The examInfo.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ExamInfo._ExamInfo getExamInfo() {
+        if (examInfoBuilder_ == null) {
+          if (detailCase_ == 7) {
+            return (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_;
+          }
+          return emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance();
+        } else {
+          if (detailCase_ == 7) {
+            return examInfoBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      public Builder setExamInfo(emu.grasscutter.net.proto.ExamInfo._ExamInfo value) {
+        if (examInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          examInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      public Builder setExamInfo(
+          emu.grasscutter.net.proto.ExamInfo._ExamInfo.Builder builderForValue) {
+        if (examInfoBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          examInfoBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      public Builder mergeExamInfo(emu.grasscutter.net.proto.ExamInfo._ExamInfo value) {
+        if (examInfoBuilder_ == null) {
+          if (detailCase_ == 7 &&
+              detail_ != emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.ExamInfo._ExamInfo.newBuilder((emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 7) {
+            examInfoBuilder_.mergeFrom(value);
+          }
+          examInfoBuilder_.setMessage(value);
+        }
+        detailCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      public Builder clearExamInfo() {
+        if (examInfoBuilder_ == null) {
+          if (detailCase_ == 7) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 7) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          examInfoBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      public emu.grasscutter.net.proto.ExamInfo._ExamInfo.Builder getExamInfoBuilder() {
+        return getExamInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ExamInfo._ExamInfoOrBuilder getExamInfoOrBuilder() {
+        if ((detailCase_ == 7) && (examInfoBuilder_ != null)) {
+          return examInfoBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 7) {
+            return (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_;
+          }
+          return emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._ExamInfo exam_info = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ExamInfo._ExamInfo, emu.grasscutter.net.proto.ExamInfo._ExamInfo.Builder, emu.grasscutter.net.proto.ExamInfo._ExamInfoOrBuilder> 
+          getExamInfoFieldBuilder() {
+        if (examInfoBuilder_ == null) {
+          if (!(detailCase_ == 7)) {
+            detail_ = emu.grasscutter.net.proto.ExamInfo._ExamInfo.getDefaultInstance();
+          }
+          examInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ExamInfo._ExamInfo, emu.grasscutter.net.proto.ExamInfo._ExamInfo.Builder, emu.grasscutter.net.proto.ExamInfo._ExamInfoOrBuilder>(
+                  (emu.grasscutter.net.proto.ExamInfo._ExamInfo) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 7;
+        onChanged();;
+        return examInfoBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1173,26 +1181,26 @@ public final class KKILGCLBMCJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021KKILGCLBMCJ.proto\032\017_ExamInfo.proto\032\020_O" +
-      "rderInfo.proto\"p\n\013KKILGCLBMCJ\022\037\n\texam_in" +
-      "fo\030\t \001(\0132\n._ExamInfoH\000\022!\n\norder_info\030\014 \001" +
-      "(\0132\013._OrderInfoH\000\022\023\n\013BJPDBEKODPL\030\010 \003(\rB\010" +
-      "\n\006detailB2\n\031emu.grasscutter.net.protoB\025K" +
-      "KILGCLBMCJOuterClassb\006proto3"
+      "rderInfo.proto\"p\n\013KKILGCLBMCJ\022\023\n\013BJPDBEK" +
+      "ODPL\030\013 \003(\r\022!\n\norder_info\030\t \001(\0132\013._OrderI" +
+      "nfoH\000\022\037\n\texam_info\030\007 \001(\0132\n._ExamInfoH\000B\010" +
+      "\n\006detailB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto._ExamInfoOuterClass.getDescriptor(),
-          emu.grasscutter.net.proto._OrderInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ExamInfo.getDescriptor(),
+          emu.grasscutter.net.proto.OrderInfo.getDescriptor(),
         });
     internal_static_KKILGCLBMCJ_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_KKILGCLBMCJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KKILGCLBMCJ_descriptor,
-        new java.lang.String[] { "ExamInfo", "OrderInfo", "BJPDBEKODPL", "Detail", });
-    emu.grasscutter.net.proto._ExamInfoOuterClass.getDescriptor();
-    emu.grasscutter.net.proto._OrderInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "BJPDBEKODPL", "OrderInfo", "ExamInfo", "Detail", });
+    emu.grasscutter.net.proto.ExamInfo.getDescriptor();
+    emu.grasscutter.net.proto.OrderInfo.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,24 +19,28 @@ public final class OJMLCFIPPAMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 3;</code>
+     * <code>bool is_finish = 3;</code>
+     * @return The isFinish.
+     */
+    boolean getIsFinish();
+
+    /**
+     * <code>bool is_open = 15;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 level_id = 5;</code>
+     * <code>uint32 level_id = 2;</code>
      * @return The levelId.
      */
     int getLevelId();
-
-    /**
-     * <code>bool is_finish = 7;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OJMLCFIPPAM}
    */
   public static final class OJMLCFIPPAM extends
@@ -81,19 +85,19 @@ public final class OJMLCFIPPAMOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 40: {
+            case 16: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 24: {
 
               isFinish_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              isOpen_ = input.readBool();
               break;
             }
             default: {
@@ -128,10 +132,21 @@ public final class OJMLCFIPPAMOuterClass {
               emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM.class, emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 3;
+    public static final int IS_FINISH_FIELD_NUMBER = 3;
+    private boolean isFinish_;
+    /**
+     * <code>bool is_finish = 3;</code>
+     * @return The isFinish.
+     */
+    @java.lang.Override
+    public boolean getIsFinish() {
+      return isFinish_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 15;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 3;</code>
+     * <code>bool is_open = 15;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -139,26 +154,15 @@ public final class OJMLCFIPPAMOuterClass {
       return isOpen_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
+    public static final int LEVEL_ID_FIELD_NUMBER = 2;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 5;</code>
+     * <code>uint32 level_id = 2;</code>
      * @return The levelId.
      */
     @java.lang.Override
     public int getLevelId() {
       return levelId_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 7;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 7;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -175,14 +179,14 @@ public final class OJMLCFIPPAMOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isOpen_ != false) {
-        output.writeBool(3, isOpen_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
+        output.writeUInt32(2, levelId_);
       }
       if (isFinish_ != false) {
-        output.writeBool(7, isFinish_);
+        output.writeBool(3, isFinish_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(15, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -193,17 +197,17 @@ public final class OJMLCFIPPAMOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isOpen_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
+          .computeUInt32Size(2, levelId_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isFinish_);
+          .computeBoolSize(3, isFinish_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,12 +224,12 @@ public final class OJMLCFIPPAMOuterClass {
       }
       emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM other = (emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM) obj;
 
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,14 +241,14 @@ public final class OJMLCFIPPAMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -341,6 +345,10 @@ public final class OJMLCFIPPAMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OJMLCFIPPAM}
      */
     public static final class Builder extends
@@ -378,11 +386,11 @@ public final class OJMLCFIPPAMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        isFinish_ = false;
+
         isOpen_ = false;
 
         levelId_ = 0;
-
-        isFinish_ = false;
 
         return this;
       }
@@ -410,9 +418,9 @@ public final class OJMLCFIPPAMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM buildPartial() {
         emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM result = new emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM(this);
+        result.isFinish_ = isFinish_;
         result.isOpen_ = isOpen_;
         result.levelId_ = levelId_;
-        result.isFinish_ = isFinish_;
         onBuilt();
         return result;
       }
@@ -461,14 +469,14 @@ public final class OJMLCFIPPAMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM other) {
         if (other == emu.grasscutter.net.proto.OJMLCFIPPAMOuterClass.OJMLCFIPPAM.getDefaultInstance()) return this;
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
+        }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
-        }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -499,9 +507,40 @@ public final class OJMLCFIPPAMOuterClass {
         return this;
       }
 
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 3;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 3;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 3;</code>
+       * <code>bool is_open = 15;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -509,7 +548,7 @@ public final class OJMLCFIPPAMOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 3;</code>
+       * <code>bool is_open = 15;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -520,7 +559,7 @@ public final class OJMLCFIPPAMOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 3;</code>
+       * <code>bool is_open = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -532,7 +571,7 @@ public final class OJMLCFIPPAMOuterClass {
 
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 2;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -540,7 +579,7 @@ public final class OJMLCFIPPAMOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 2;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -551,43 +590,12 @@ public final class OJMLCFIPPAMOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
         
         levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 7;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 7;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
         onChanged();
         return this;
       }
@@ -658,10 +666,10 @@ public final class OJMLCFIPPAMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021OJMLCFIPPAM.proto\"C\n\013OJMLCFIPPAM\022\017\n\007is" +
-      "_open\030\003 \001(\010\022\020\n\010level_id\030\005 \001(\r\022\021\n\tis_fini" +
-      "sh\030\007 \001(\010B2\n\031emu.grasscutter.net.protoB\025O" +
-      "JMLCFIPPAMOuterClassb\006proto3"
+      "\n\021OJMLCFIPPAM.proto\"C\n\013OJMLCFIPPAM\022\021\n\tis" +
+      "_finish\030\003 \001(\010\022\017\n\007is_open\030\017 \001(\010\022\020\n\010level_" +
+      "id\030\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -672,7 +680,7 @@ public final class OJMLCFIPPAMOuterClass {
     internal_static_OJMLCFIPPAM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OJMLCFIPPAM_descriptor,
-        new java.lang.String[] { "IsOpen", "LevelId", "IsFinish", });
+        new java.lang.String[] { "IsFinish", "IsOpen", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

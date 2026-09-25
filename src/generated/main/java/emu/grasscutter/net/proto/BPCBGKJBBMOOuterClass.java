@@ -19,10 +19,10 @@ public final class BPCBGKJBBMOOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 difficulty = 1;</code>
-     * @return The difficulty.
+     * <code>bool is_open = 4;</code>
+     * @return The isOpen.
      */
-    int getDifficulty();
+    boolean getIsOpen();
 
     /**
      * <code>bool is_finished = 3;</code>
@@ -31,24 +31,28 @@ public final class BPCBGKJBBMOOuterClass {
     boolean getIsFinished();
 
     /**
-     * <code>uint32 stage_id = 5;</code>
-     * @return The stageId.
-     */
-    int getStageId();
-
-    /**
-     * <code>uint32 JBOONGMFCAO = 10;</code>
+     * <code>uint32 JBOONGMFCAO = 14;</code>
      * @return The jBOONGMFCAO.
      */
     int getJBOONGMFCAO();
 
     /**
-     * <code>bool is_open = 13;</code>
-     * @return The isOpen.
+     * <code>uint32 stage_id = 13;</code>
+     * @return The stageId.
      */
-    boolean getIsOpen();
+    int getStageId();
+
+    /**
+     * <code>uint32 difficulty = 2;</code>
+     * @return The difficulty.
+     */
+    int getDifficulty();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BPCBGKJBBMO}
    */
   public static final class BPCBGKJBBMO extends
@@ -93,7 +97,7 @@ public final class BPCBGKJBBMOOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
 
               difficulty_ = input.readUInt32();
               break;
@@ -103,19 +107,19 @@ public final class BPCBGKJBBMOOuterClass {
               isFinished_ = input.readBool();
               break;
             }
-            case 40: {
+            case 32: {
 
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              jBOONGMFCAO_ = input.readUInt32();
+              isOpen_ = input.readBool();
               break;
             }
             case 104: {
 
-              isOpen_ = input.readBool();
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              jBOONGMFCAO_ = input.readUInt32();
               break;
             }
             default: {
@@ -150,15 +154,15 @@ public final class BPCBGKJBBMOOuterClass {
               emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO.class, emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO.Builder.class);
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 1;
-    private int difficulty_;
+    public static final int IS_OPEN_FIELD_NUMBER = 4;
+    private boolean isOpen_;
     /**
-     * <code>uint32 difficulty = 1;</code>
-     * @return The difficulty.
+     * <code>bool is_open = 4;</code>
+     * @return The isOpen.
      */
     @java.lang.Override
-    public int getDifficulty() {
-      return difficulty_;
+    public boolean getIsOpen() {
+      return isOpen_;
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 3;
@@ -172,21 +176,10 @@ public final class BPCBGKJBBMOOuterClass {
       return isFinished_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 5;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 5;</code>
-     * @return The stageId.
-     */
-    @java.lang.Override
-    public int getStageId() {
-      return stageId_;
-    }
-
-    public static final int JBOONGMFCAO_FIELD_NUMBER = 10;
+    public static final int JBOONGMFCAO_FIELD_NUMBER = 14;
     private int jBOONGMFCAO_;
     /**
-     * <code>uint32 JBOONGMFCAO = 10;</code>
+     * <code>uint32 JBOONGMFCAO = 14;</code>
      * @return The jBOONGMFCAO.
      */
     @java.lang.Override
@@ -194,15 +187,26 @@ public final class BPCBGKJBBMOOuterClass {
       return jBOONGMFCAO_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
-    private boolean isOpen_;
+    public static final int STAGE_ID_FIELD_NUMBER = 13;
+    private int stageId_;
     /**
-     * <code>bool is_open = 13;</code>
-     * @return The isOpen.
+     * <code>uint32 stage_id = 13;</code>
+     * @return The stageId.
      */
     @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
+    public int getStageId() {
+      return stageId_;
+    }
+
+    public static final int DIFFICULTY_FIELD_NUMBER = 2;
+    private int difficulty_;
+    /**
+     * <code>uint32 difficulty = 2;</code>
+     * @return The difficulty.
+     */
+    @java.lang.Override
+    public int getDifficulty() {
+      return difficulty_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -220,19 +224,19 @@ public final class BPCBGKJBBMOOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (difficulty_ != 0) {
-        output.writeUInt32(1, difficulty_);
+        output.writeUInt32(2, difficulty_);
       }
       if (isFinished_ != false) {
         output.writeBool(3, isFinished_);
       }
+      if (isOpen_ != false) {
+        output.writeBool(4, isOpen_);
+      }
       if (stageId_ != 0) {
-        output.writeUInt32(5, stageId_);
+        output.writeUInt32(13, stageId_);
       }
       if (jBOONGMFCAO_ != 0) {
-        output.writeUInt32(10, jBOONGMFCAO_);
-      }
-      if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+        output.writeUInt32(14, jBOONGMFCAO_);
       }
       unknownFields.writeTo(output);
     }
@@ -245,23 +249,23 @@ public final class BPCBGKJBBMOOuterClass {
       size = 0;
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, difficulty_);
+          .computeUInt32Size(2, difficulty_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, isFinished_);
       }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, isOpen_);
+      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, stageId_);
+          .computeUInt32Size(13, stageId_);
       }
       if (jBOONGMFCAO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, jBOONGMFCAO_);
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeUInt32Size(14, jBOONGMFCAO_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,16 +282,16 @@ public final class BPCBGKJBBMOOuterClass {
       }
       emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO other = (emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO) obj;
 
-      if (getDifficulty()
-          != other.getDifficulty()) return false;
-      if (getIsFinished()
-          != other.getIsFinished()) return false;
-      if (getStageId()
-          != other.getStageId()) return false;
-      if (getJBOONGMFCAO()
-          != other.getJBOONGMFCAO()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getIsFinished()
+          != other.getIsFinished()) return false;
+      if (getJBOONGMFCAO()
+          != other.getJBOONGMFCAO()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
+      if (getDifficulty()
+          != other.getDifficulty()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -299,18 +303,18 @@ public final class BPCBGKJBBMOOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
-      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinished());
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + JBOONGMFCAO_FIELD_NUMBER;
-      hash = (53 * hash) + getJBOONGMFCAO();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinished());
+      hash = (37 * hash) + JBOONGMFCAO_FIELD_NUMBER;
+      hash = (53 * hash) + getJBOONGMFCAO();
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficulty();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -407,6 +411,10 @@ public final class BPCBGKJBBMOOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BPCBGKJBBMO}
      */
     public static final class Builder extends
@@ -444,15 +452,15 @@ public final class BPCBGKJBBMOOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        difficulty_ = 0;
+        isOpen_ = false;
 
         isFinished_ = false;
 
-        stageId_ = 0;
-
         jBOONGMFCAO_ = 0;
 
-        isOpen_ = false;
+        stageId_ = 0;
+
+        difficulty_ = 0;
 
         return this;
       }
@@ -480,11 +488,11 @@ public final class BPCBGKJBBMOOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO buildPartial() {
         emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO result = new emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO(this);
-        result.difficulty_ = difficulty_;
-        result.isFinished_ = isFinished_;
-        result.stageId_ = stageId_;
-        result.jBOONGMFCAO_ = jBOONGMFCAO_;
         result.isOpen_ = isOpen_;
+        result.isFinished_ = isFinished_;
+        result.jBOONGMFCAO_ = jBOONGMFCAO_;
+        result.stageId_ = stageId_;
+        result.difficulty_ = difficulty_;
         onBuilt();
         return result;
       }
@@ -533,20 +541,20 @@ public final class BPCBGKJBBMOOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO other) {
         if (other == emu.grasscutter.net.proto.BPCBGKJBBMOOuterClass.BPCBGKJBBMO.getDefaultInstance()) return this;
-        if (other.getDifficulty() != 0) {
-          setDifficulty(other.getDifficulty());
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         if (other.getIsFinished() != false) {
           setIsFinished(other.getIsFinished());
         }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
         if (other.getJBOONGMFCAO() != 0) {
           setJBOONGMFCAO(other.getJBOONGMFCAO());
         }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
+        }
+        if (other.getDifficulty() != 0) {
+          setDifficulty(other.getDifficulty());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -577,33 +585,33 @@ public final class BPCBGKJBBMOOuterClass {
         return this;
       }
 
-      private int difficulty_ ;
+      private boolean isOpen_ ;
       /**
-       * <code>uint32 difficulty = 1;</code>
-       * @return The difficulty.
+       * <code>bool is_open = 4;</code>
+       * @return The isOpen.
        */
       @java.lang.Override
-      public int getDifficulty() {
-        return difficulty_;
+      public boolean getIsOpen() {
+        return isOpen_;
       }
       /**
-       * <code>uint32 difficulty = 1;</code>
-       * @param value The difficulty to set.
+       * <code>bool is_open = 4;</code>
+       * @param value The isOpen to set.
        * @return This builder for chaining.
        */
-      public Builder setDifficulty(int value) {
+      public Builder setIsOpen(boolean value) {
         
-        difficulty_ = value;
+        isOpen_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 difficulty = 1;</code>
+       * <code>bool is_open = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDifficulty() {
+      public Builder clearIsOpen() {
         
-        difficulty_ = 0;
+        isOpen_ = false;
         onChanged();
         return this;
       }
@@ -639,40 +647,9 @@ public final class BPCBGKJBBMOOuterClass {
         return this;
       }
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 5;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 5;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int jBOONGMFCAO_ ;
       /**
-       * <code>uint32 JBOONGMFCAO = 10;</code>
+       * <code>uint32 JBOONGMFCAO = 14;</code>
        * @return The jBOONGMFCAO.
        */
       @java.lang.Override
@@ -680,7 +657,7 @@ public final class BPCBGKJBBMOOuterClass {
         return jBOONGMFCAO_;
       }
       /**
-       * <code>uint32 JBOONGMFCAO = 10;</code>
+       * <code>uint32 JBOONGMFCAO = 14;</code>
        * @param value The jBOONGMFCAO to set.
        * @return This builder for chaining.
        */
@@ -691,7 +668,7 @@ public final class BPCBGKJBBMOOuterClass {
         return this;
       }
       /**
-       * <code>uint32 JBOONGMFCAO = 10;</code>
+       * <code>uint32 JBOONGMFCAO = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearJBOONGMFCAO() {
@@ -701,33 +678,64 @@ public final class BPCBGKJBBMOOuterClass {
         return this;
       }
 
-      private boolean isOpen_ ;
+      private int stageId_ ;
       /**
-       * <code>bool is_open = 13;</code>
-       * @return The isOpen.
+       * <code>uint32 stage_id = 13;</code>
+       * @return The stageId.
        */
       @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
+      public int getStageId() {
+        return stageId_;
       }
       /**
-       * <code>bool is_open = 13;</code>
-       * @param value The isOpen to set.
+       * <code>uint32 stage_id = 13;</code>
+       * @param value The stageId to set.
        * @return This builder for chaining.
        */
-      public Builder setIsOpen(boolean value) {
+      public Builder setStageId(int value) {
         
-        isOpen_ = value;
+        stageId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>uint32 stage_id = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIsOpen() {
+      public Builder clearStageId() {
         
-        isOpen_ = false;
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int difficulty_ ;
+      /**
+       * <code>uint32 difficulty = 2;</code>
+       * @return The difficulty.
+       */
+      @java.lang.Override
+      public int getDifficulty() {
+        return difficulty_;
+      }
+      /**
+       * <code>uint32 difficulty = 2;</code>
+       * @param value The difficulty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDifficulty(int value) {
+        
+        difficulty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 difficulty = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDifficulty() {
+        
+        difficulty_ = 0;
         onChanged();
         return this;
       }
@@ -798,11 +806,11 @@ public final class BPCBGKJBBMOOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BPCBGKJBBMO.proto\"n\n\013BPCBGKJBBMO\022\022\n\ndi" +
-      "fficulty\030\001 \001(\r\022\023\n\013is_finished\030\003 \001(\010\022\020\n\010s" +
-      "tage_id\030\005 \001(\r\022\023\n\013JBOONGMFCAO\030\n \001(\r\022\017\n\007is" +
-      "_open\030\r \001(\010B2\n\031emu.grasscutter.net.proto" +
-      "B\025BPCBGKJBBMOOuterClassb\006proto3"
+      "\n\021BPCBGKJBBMO.proto\"n\n\013BPCBGKJBBMO\022\017\n\007is" +
+      "_open\030\004 \001(\010\022\023\n\013is_finished\030\003 \001(\010\022\023\n\013JBOO" +
+      "NGMFCAO\030\016 \001(\r\022\020\n\010stage_id\030\r \001(\r\022\022\n\ndiffi" +
+      "culty\030\002 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -813,7 +821,7 @@ public final class BPCBGKJBBMOOuterClass {
     internal_static_BPCBGKJBBMO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BPCBGKJBBMO_descriptor,
-        new java.lang.String[] { "Difficulty", "IsFinished", "StageId", "JBOONGMFCAO", "IsOpen", });
+        new java.lang.String[] { "IsOpen", "IsFinished", "JBOONGMFCAO", "StageId", "Difficulty", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

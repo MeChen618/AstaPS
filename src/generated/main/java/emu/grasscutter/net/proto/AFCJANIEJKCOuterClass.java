@@ -19,24 +19,28 @@ public final class AFCJANIEJKCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>uint32 param = 8;</code>
+     * @return The param.
+     */
+    int getParam();
+
+    /**
      * <code>uint32 avatar_type = 4;</code>
      * @return The avatarType.
      */
     int getAvatarType();
 
     /**
-     * <code>uint32 param = 5;</code>
-     * @return The param.
-     */
-    int getParam();
-
-    /**
-     * <code>uint32 LHBDPFNAFJO = 11;</code>
+     * <code>uint32 LHBDPFNAFJO = 14;</code>
      * @return The lHBDPFNAFJO.
      */
     int getLHBDPFNAFJO();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AFCJANIEJKC}
    */
   public static final class AFCJANIEJKC extends
@@ -86,12 +90,12 @@ public final class AFCJANIEJKCOuterClass {
               avatarType_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 64: {
 
               param_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 112: {
 
               lHBDPFNAFJO_ = input.readUInt32();
               break;
@@ -128,6 +132,17 @@ public final class AFCJANIEJKCOuterClass {
               emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.class, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder.class);
     }
 
+    public static final int PARAM_FIELD_NUMBER = 8;
+    private int param_;
+    /**
+     * <code>uint32 param = 8;</code>
+     * @return The param.
+     */
+    @java.lang.Override
+    public int getParam() {
+      return param_;
+    }
+
     public static final int AVATAR_TYPE_FIELD_NUMBER = 4;
     private int avatarType_;
     /**
@@ -139,21 +154,10 @@ public final class AFCJANIEJKCOuterClass {
       return avatarType_;
     }
 
-    public static final int PARAM_FIELD_NUMBER = 5;
-    private int param_;
-    /**
-     * <code>uint32 param = 5;</code>
-     * @return The param.
-     */
-    @java.lang.Override
-    public int getParam() {
-      return param_;
-    }
-
-    public static final int LHBDPFNAFJO_FIELD_NUMBER = 11;
+    public static final int LHBDPFNAFJO_FIELD_NUMBER = 14;
     private int lHBDPFNAFJO_;
     /**
-     * <code>uint32 LHBDPFNAFJO = 11;</code>
+     * <code>uint32 LHBDPFNAFJO = 14;</code>
      * @return The lHBDPFNAFJO.
      */
     @java.lang.Override
@@ -179,10 +183,10 @@ public final class AFCJANIEJKCOuterClass {
         output.writeUInt32(4, avatarType_);
       }
       if (param_ != 0) {
-        output.writeUInt32(5, param_);
+        output.writeUInt32(8, param_);
       }
       if (lHBDPFNAFJO_ != 0) {
-        output.writeUInt32(11, lHBDPFNAFJO_);
+        output.writeUInt32(14, lHBDPFNAFJO_);
       }
       unknownFields.writeTo(output);
     }
@@ -199,11 +203,11 @@ public final class AFCJANIEJKCOuterClass {
       }
       if (param_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, param_);
+          .computeUInt32Size(8, param_);
       }
       if (lHBDPFNAFJO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, lHBDPFNAFJO_);
+          .computeUInt32Size(14, lHBDPFNAFJO_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,10 +224,10 @@ public final class AFCJANIEJKCOuterClass {
       }
       emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC other = (emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC) obj;
 
-      if (getAvatarType()
-          != other.getAvatarType()) return false;
       if (getParam()
           != other.getParam()) return false;
+      if (getAvatarType()
+          != other.getAvatarType()) return false;
       if (getLHBDPFNAFJO()
           != other.getLHBDPFNAFJO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,10 +241,10 @@ public final class AFCJANIEJKCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AVATAR_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getAvatarType();
       hash = (37 * hash) + PARAM_FIELD_NUMBER;
       hash = (53 * hash) + getParam();
+      hash = (37 * hash) + AVATAR_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getAvatarType();
       hash = (37 * hash) + LHBDPFNAFJO_FIELD_NUMBER;
       hash = (53 * hash) + getLHBDPFNAFJO();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -339,6 +343,10 @@ public final class AFCJANIEJKCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AFCJANIEJKC}
      */
     public static final class Builder extends
@@ -376,9 +384,9 @@ public final class AFCJANIEJKCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        avatarType_ = 0;
-
         param_ = 0;
+
+        avatarType_ = 0;
 
         lHBDPFNAFJO_ = 0;
 
@@ -408,8 +416,8 @@ public final class AFCJANIEJKCOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC buildPartial() {
         emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC result = new emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC(this);
-        result.avatarType_ = avatarType_;
         result.param_ = param_;
+        result.avatarType_ = avatarType_;
         result.lHBDPFNAFJO_ = lHBDPFNAFJO_;
         onBuilt();
         return result;
@@ -459,11 +467,11 @@ public final class AFCJANIEJKCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC other) {
         if (other == emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance()) return this;
-        if (other.getAvatarType() != 0) {
-          setAvatarType(other.getAvatarType());
-        }
         if (other.getParam() != 0) {
           setParam(other.getParam());
+        }
+        if (other.getAvatarType() != 0) {
+          setAvatarType(other.getAvatarType());
         }
         if (other.getLHBDPFNAFJO() != 0) {
           setLHBDPFNAFJO(other.getLHBDPFNAFJO());
@@ -494,6 +502,37 @@ public final class AFCJANIEJKCOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int param_ ;
+      /**
+       * <code>uint32 param = 8;</code>
+       * @return The param.
+       */
+      @java.lang.Override
+      public int getParam() {
+        return param_;
+      }
+      /**
+       * <code>uint32 param = 8;</code>
+       * @param value The param to set.
+       * @return This builder for chaining.
+       */
+      public Builder setParam(int value) {
+        
+        param_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 param = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearParam() {
+        
+        param_ = 0;
+        onChanged();
         return this;
       }
 
@@ -528,40 +567,9 @@ public final class AFCJANIEJKCOuterClass {
         return this;
       }
 
-      private int param_ ;
-      /**
-       * <code>uint32 param = 5;</code>
-       * @return The param.
-       */
-      @java.lang.Override
-      public int getParam() {
-        return param_;
-      }
-      /**
-       * <code>uint32 param = 5;</code>
-       * @param value The param to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParam(int value) {
-        
-        param_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 param = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParam() {
-        
-        param_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int lHBDPFNAFJO_ ;
       /**
-       * <code>uint32 LHBDPFNAFJO = 11;</code>
+       * <code>uint32 LHBDPFNAFJO = 14;</code>
        * @return The lHBDPFNAFJO.
        */
       @java.lang.Override
@@ -569,7 +577,7 @@ public final class AFCJANIEJKCOuterClass {
         return lHBDPFNAFJO_;
       }
       /**
-       * <code>uint32 LHBDPFNAFJO = 11;</code>
+       * <code>uint32 LHBDPFNAFJO = 14;</code>
        * @param value The lHBDPFNAFJO to set.
        * @return This builder for chaining.
        */
@@ -580,7 +588,7 @@ public final class AFCJANIEJKCOuterClass {
         return this;
       }
       /**
-       * <code>uint32 LHBDPFNAFJO = 11;</code>
+       * <code>uint32 LHBDPFNAFJO = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearLHBDPFNAFJO() {
@@ -656,10 +664,10 @@ public final class AFCJANIEJKCOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021AFCJANIEJKC.proto\"F\n\013AFCJANIEJKC\022\023\n\013av" +
-      "atar_type\030\004 \001(\r\022\r\n\005param\030\005 \001(\r\022\023\n\013LHBDPF" +
-      "NAFJO\030\013 \001(\rB2\n\031emu.grasscutter.net.proto" +
-      "B\025AFCJANIEJKCOuterClassb\006proto3"
+      "\n\021AFCJANIEJKC.proto\"F\n\013AFCJANIEJKC\022\r\n\005pa" +
+      "ram\030\010 \001(\r\022\023\n\013avatar_type\030\004 \001(\r\022\023\n\013LHBDPF" +
+      "NAFJO\030\016 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -670,7 +678,7 @@ public final class AFCJANIEJKCOuterClass {
     internal_static_AFCJANIEJKC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AFCJANIEJKC_descriptor,
-        new java.lang.String[] { "AvatarType", "Param", "LHBDPFNAFJO", });
+        new java.lang.String[] { "Param", "AvatarType", "LHBDPFNAFJO", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

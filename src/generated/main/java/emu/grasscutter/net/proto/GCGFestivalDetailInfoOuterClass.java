@@ -19,12 +19,16 @@ public final class GCGFestivalDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_gcg_festival_mode_open = 14;</code>
+     * <code>bool is_gcg_festival_mode_open = 10;</code>
      * @return The isGcgFestivalModeOpen.
      */
     boolean getIsGcgFestivalModeOpen();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GCGFestivalDetailInfo}
    */
   public static final class GCGFestivalDetailInfo extends
@@ -69,7 +73,7 @@ public final class GCGFestivalDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 112: {
+            case 80: {
 
               isGcgFestivalModeOpen_ = input.readBool();
               break;
@@ -106,10 +110,10 @@ public final class GCGFestivalDetailInfoOuterClass {
               emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo.class, emu.grasscutter.net.proto.GCGFestivalDetailInfoOuterClass.GCGFestivalDetailInfo.Builder.class);
     }
 
-    public static final int IS_GCG_FESTIVAL_MODE_OPEN_FIELD_NUMBER = 14;
+    public static final int IS_GCG_FESTIVAL_MODE_OPEN_FIELD_NUMBER = 10;
     private boolean isGcgFestivalModeOpen_;
     /**
-     * <code>bool is_gcg_festival_mode_open = 14;</code>
+     * <code>bool is_gcg_festival_mode_open = 10;</code>
      * @return The isGcgFestivalModeOpen.
      */
     @java.lang.Override
@@ -132,7 +136,7 @@ public final class GCGFestivalDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isGcgFestivalModeOpen_ != false) {
-        output.writeBool(14, isGcgFestivalModeOpen_);
+        output.writeBool(10, isGcgFestivalModeOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +149,7 @@ public final class GCGFestivalDetailInfoOuterClass {
       size = 0;
       if (isGcgFestivalModeOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isGcgFestivalModeOpen_);
+          .computeBoolSize(10, isGcgFestivalModeOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -274,6 +278,10 @@ public final class GCGFestivalDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GCGFestivalDetailInfo}
      */
     public static final class Builder extends
@@ -422,7 +430,7 @@ public final class GCGFestivalDetailInfoOuterClass {
 
       private boolean isGcgFestivalModeOpen_ ;
       /**
-       * <code>bool is_gcg_festival_mode_open = 14;</code>
+       * <code>bool is_gcg_festival_mode_open = 10;</code>
        * @return The isGcgFestivalModeOpen.
        */
       @java.lang.Override
@@ -430,7 +438,7 @@ public final class GCGFestivalDetailInfoOuterClass {
         return isGcgFestivalModeOpen_;
       }
       /**
-       * <code>bool is_gcg_festival_mode_open = 14;</code>
+       * <code>bool is_gcg_festival_mode_open = 10;</code>
        * @param value The isGcgFestivalModeOpen to set.
        * @return This builder for chaining.
        */
@@ -441,7 +449,7 @@ public final class GCGFestivalDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_gcg_festival_mode_open = 14;</code>
+       * <code>bool is_gcg_festival_mode_open = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsGcgFestivalModeOpen() {
@@ -519,8 +527,8 @@ public final class GCGFestivalDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033GCGFestivalDetailInfo.proto\":\n\025GCGFest" +
       "ivalDetailInfo\022!\n\031is_gcg_festival_mode_o" +
-      "pen\030\016 \001(\010B<\n\031emu.grasscutter.net.protoB\037" +
-      "GCGFestivalDetailInfoOuterClassb\006proto3"
+      "pen\030\n \001(\010B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

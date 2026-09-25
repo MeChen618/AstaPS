@@ -43,6 +43,10 @@ public final class BNLFGDGHCJHOuterClass {
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BNLFGDGHCJH}
    */
   public static final class BNLFGDGHCJH extends
@@ -331,6 +335,10 @@ public final class BNLFGDGHCJHOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BNLFGDGHCJH}
      */
     public static final class Builder extends
@@ -823,8 +831,8 @@ public final class BNLFGDGHCJHOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021BNLFGDGHCJH.proto\032\021MMMHJIEENHA.proto\"0" +
       "\n\013BNLFGDGHCJH\022!\n\013BGAALOOHLKC\030\010 \003(\0132\014.MMM" +
-      "HJIEENHAB2\n\031emu.grasscutter.net.protoB\025B" +
-      "NLFGDGHCJHOuterClassb\006proto3"
+      "HJIEENHAB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

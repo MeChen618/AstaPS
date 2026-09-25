@@ -18,59 +18,103 @@ public final class PlayerOfferingDataOuterClass {
       // @@protoc_insertion_point(interface_extends:PlayerOfferingData)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>repeated uint32 taken_level_reward_list = 7;</code>
+     * @return A list containing the takenLevelRewardList.
+     */
     java.util.List<java.lang.Integer> getTakenLevelRewardListList();
-
+    /**
+     * <code>repeated uint32 taken_level_reward_list = 7;</code>
+     * @return The count of takenLevelRewardList.
+     */
     int getTakenLevelRewardListCount();
-
+    /**
+     * <code>repeated uint32 taken_level_reward_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The takenLevelRewardList at the given index.
+     */
     int getTakenLevelRewardList(int index);
 
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
-    int getBHKEFOHMJHMCount();
+    int getTakenRandomLevelRewardMapCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
-    boolean containsBHKEFOHMJHM(
+    boolean containsTakenRandomLevelRewardMap(
         int key);
     /**
-     * Use {@link #getBHKEFOHMJHMMap()} instead.
+     * Use {@link #getTakenRandomLevelRewardMapMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getBHKEFOHMJHM();
+    getTakenRandomLevelRewardMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
-    getBHKEFOHMJHMMap();
+    getTakenRandomLevelRewardMapMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
 
-    int getBHKEFOHMJHMOrDefault(
+    int getTakenRandomLevelRewardMapOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
 
-    int getBHKEFOHMJHMOrThrow(
+    int getTakenRandomLevelRewardMapOrThrow(
         int key);
 
-    int getOfferingId();
-
+    /**
+     * <code>uint32 level = 10;</code>
+     * @return The level.
+     */
     int getLevel();
 
+    /**
+     * <code>uint32 offering_id = 1;</code>
+     * @return The offeringId.
+     */
+    int getOfferingId();
+
+    /**
+     * <code>bool is_first_interact = 14;</code>
+     * @return The isFirstInteract.
+     */
     boolean getIsFirstInteract();
 
     /**
-     * <code>bool LPOPPMKEFJL = 601;</code>
-     * @return The lPOPPMKEFJL.
+     * <code>bool is_new_max_level = 8;</code>
+     * @return The isNewMaxLevel.
      */
-    boolean getLPOPPMKEFJL();
+    boolean getIsNewMaxLevel();
+
+    /**
+     * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+     * @return Whether the offeringPariDetailData field is set.
+     */
+    boolean hasOfferingPariDetailData();
+    /**
+     * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+     * @return The offeringPariDetailData.
+     */
+    emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData getOfferingPariDetailData();
+    /**
+     * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+     */
+    emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailDataOrBuilder getOfferingPariDetailDataOrBuilder();
+
+    public emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.DetailCase getDetailCase();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PlayerOfferingData}
    */
   public static final class PlayerOfferingData extends
@@ -117,22 +161,25 @@ public final class PlayerOfferingDataOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              level_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              isFirstInteract_ = input.readBool();
-              break;
-            }
-            case 16: {
+            case 8: {
 
               offeringId_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                takenRandomLevelRewardMap_ = com.google.protobuf.MapField.newMapField(
+                    TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+              takenRandomLevelRewardMap__ = input.readMessage(
+                  TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              takenRandomLevelRewardMap_.getMutableMap().put(
+                  takenRandomLevelRewardMap__.getKey(), takenRandomLevelRewardMap__.getValue());
+              break;
+            }
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 takenLevelRewardList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -140,7 +187,7 @@ public final class PlayerOfferingDataOuterClass {
               takenLevelRewardList_.addInt(input.readUInt32());
               break;
             }
-            case 42: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -153,22 +200,33 @@ public final class PlayerOfferingDataOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                bHKEFOHMJHM_ = com.google.protobuf.MapField.newMapField(
-                    BHKEFOHMJHMDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              bHKEFOHMJHM__ = input.readMessage(
-                  BHKEFOHMJHMDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              bHKEFOHMJHM_.getMutableMap().put(
-                  bHKEFOHMJHM__.getKey(), bHKEFOHMJHM__.getValue());
+            case 64: {
+
+              isNewMaxLevel_ = input.readBool();
               break;
             }
-            case 4808: {
+            case 80: {
 
-              lPOPPMKEFJL_ = input.readBool();
+              level_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isFirstInteract_ = input.readBool();
+              break;
+            }
+            case 11618: {
+              emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.Builder subBuilder = null;
+              if (detailCase_ == 1452) {
+                subBuilder = ((emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 1452;
               break;
             }
             default: {
@@ -203,8 +261,8 @@ public final class PlayerOfferingDataOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 14:
-          return internalGetBHKEFOHMJHM();
+        case 4:
+          return internalGetTakenRandomLevelRewardMap();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -218,138 +276,227 @@ public final class PlayerOfferingDataOuterClass {
               emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.class, emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder.class);
     }
 
-    public static final int TAKEN_LEVEL_REWARD_LIST_FIELD_NUMBER = 5;
-    private com.google.protobuf.Internal.IntList takenLevelRewardList_;
+    private int detailCase_ = 0;
+    private java.lang.Object detail_;
+    public enum DetailCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      OFFERING_PARI_DETAIL_DATA(1452),
+      DETAIL_NOT_SET(0);
+      private final int value;
+      private DetailCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DetailCase valueOf(int value) {
+        return forNumber(value);
+      }
 
+      public static DetailCase forNumber(int value) {
+        switch (value) {
+          case 1452: return OFFERING_PARI_DETAIL_DATA;
+          case 0: return DETAIL_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public DetailCase
+    getDetailCase() {
+      return DetailCase.forNumber(
+          detailCase_);
+    }
+
+    public static final int TAKEN_LEVEL_REWARD_LIST_FIELD_NUMBER = 7;
+    private com.google.protobuf.Internal.IntList takenLevelRewardList_;
+    /**
+     * <code>repeated uint32 taken_level_reward_list = 7;</code>
+     * @return A list containing the takenLevelRewardList.
+     */
     @java.lang.Override
     public java.util.List<java.lang.Integer>
         getTakenLevelRewardListList() {
       return takenLevelRewardList_;
     }
-
+    /**
+     * <code>repeated uint32 taken_level_reward_list = 7;</code>
+     * @return The count of takenLevelRewardList.
+     */
     public int getTakenLevelRewardListCount() {
       return takenLevelRewardList_.size();
     }
-
+    /**
+     * <code>repeated uint32 taken_level_reward_list = 7;</code>
+     * @param index The index of the element to return.
+     * @return The takenLevelRewardList at the given index.
+     */
     public int getTakenLevelRewardList(int index) {
       return takenLevelRewardList_.getInt(index);
     }
     private int takenLevelRewardListMemoizedSerializedSize = -1;
 
-    public static final int BHKEFOHMJHM_FIELD_NUMBER = 14;
-    private static final class BHKEFOHMJHMDefaultEntryHolder {
+    public static final int TAKEN_RANDOM_LEVEL_REWARD_MAP_FIELD_NUMBER = 4;
+    private static final class TakenRandomLevelRewardMapDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.Integer, java.lang.Integer>newDefaultInstance(
-                  emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.internal_static_PlayerOfferingData_BHKEFOHMJHMEntry_descriptor,
+                  emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.internal_static_PlayerOfferingData_TakenRandomLevelRewardMapEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0,
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
     private com.google.protobuf.MapField<
-        java.lang.Integer, java.lang.Integer> bHKEFOHMJHM_;
+        java.lang.Integer, java.lang.Integer> takenRandomLevelRewardMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-    internalGetBHKEFOHMJHM() {
-      if (bHKEFOHMJHM_ == null) {
+    internalGetTakenRandomLevelRewardMap() {
+      if (takenRandomLevelRewardMap_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            BHKEFOHMJHMDefaultEntryHolder.defaultEntry);
+            TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry);
       }
-      return bHKEFOHMJHM_;
+      return takenRandomLevelRewardMap_;
     }
 
-    public int getBHKEFOHMJHMCount() {
-      return internalGetBHKEFOHMJHM().getMap().size();
+    public int getTakenRandomLevelRewardMapCount() {
+      return internalGetTakenRandomLevelRewardMap().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
 
     @java.lang.Override
-    public boolean containsBHKEFOHMJHM(
+    public boolean containsTakenRandomLevelRewardMap(
         int key) {
-
-      return internalGetBHKEFOHMJHM().getMap().containsKey(key);
+      
+      return internalGetTakenRandomLevelRewardMap().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getBHKEFOHMJHMMap()} instead.
+     * Use {@link #getTakenRandomLevelRewardMapMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getBHKEFOHMJHM() {
-      return getBHKEFOHMJHMMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getTakenRandomLevelRewardMap() {
+      return getTakenRandomLevelRewardMapMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.Integer, java.lang.Integer> getBHKEFOHMJHMMap() {
-      return internalGetBHKEFOHMJHM().getMap();
+    public java.util.Map<java.lang.Integer, java.lang.Integer> getTakenRandomLevelRewardMapMap() {
+      return internalGetTakenRandomLevelRewardMap().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
     @java.lang.Override
 
-    public int getBHKEFOHMJHMOrDefault(
+    public int getTakenRandomLevelRewardMapOrDefault(
         int key,
         int defaultValue) {
-
+      
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetBHKEFOHMJHM().getMap();
+          internalGetTakenRandomLevelRewardMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+     * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
      */
     @java.lang.Override
 
-    public int getBHKEFOHMJHMOrThrow(
+    public int getTakenRandomLevelRewardMapOrThrow(
         int key) {
-
+      
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
-          internalGetBHKEFOHMJHM().getMap();
+          internalGetTakenRandomLevelRewardMap().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public static final int OFFERING_ID_FIELD_NUMBER = 2;
-    private int offeringId_;
-
-    @java.lang.Override
-    public int getOfferingId() {
-      return offeringId_;
-    }
-
-    public static final int LEVEL_FIELD_NUMBER = 3;
+    public static final int LEVEL_FIELD_NUMBER = 10;
     private int level_;
-
+    /**
+     * <code>uint32 level = 10;</code>
+     * @return The level.
+     */
     @java.lang.Override
     public int getLevel() {
       return level_;
     }
 
-    public static final int IS_FIRST_INTERACT_FIELD_NUMBER = 6;
-    private boolean isFirstInteract_;
+    public static final int OFFERING_ID_FIELD_NUMBER = 1;
+    private int offeringId_;
+    /**
+     * <code>uint32 offering_id = 1;</code>
+     * @return The offeringId.
+     */
+    @java.lang.Override
+    public int getOfferingId() {
+      return offeringId_;
+    }
 
+    public static final int IS_FIRST_INTERACT_FIELD_NUMBER = 14;
+    private boolean isFirstInteract_;
+    /**
+     * <code>bool is_first_interact = 14;</code>
+     * @return The isFirstInteract.
+     */
     @java.lang.Override
     public boolean getIsFirstInteract() {
       return isFirstInteract_;
     }
 
-    public static final int LPOPPMKEFJL_FIELD_NUMBER = 601;
-    private boolean lPOPPMKEFJL_;
+    public static final int IS_NEW_MAX_LEVEL_FIELD_NUMBER = 8;
+    private boolean isNewMaxLevel_;
     /**
-     * <code>bool LPOPPMKEFJL = 601;</code>
-     * @return The lPOPPMKEFJL.
+     * <code>bool is_new_max_level = 8;</code>
+     * @return The isNewMaxLevel.
      */
     @java.lang.Override
-    public boolean getLPOPPMKEFJL() {
-      return lPOPPMKEFJL_;
+    public boolean getIsNewMaxLevel() {
+      return isNewMaxLevel_;
+    }
+
+    public static final int OFFERING_PARI_DETAIL_DATA_FIELD_NUMBER = 1452;
+    /**
+     * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+     * @return Whether the offeringPariDetailData field is set.
+     */
+    @java.lang.Override
+    public boolean hasOfferingPariDetailData() {
+      return detailCase_ == 1452;
+    }
+    /**
+     * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+     * @return The offeringPariDetailData.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData getOfferingPariDetailData() {
+      if (detailCase_ == 1452) {
+         return (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_;
+      }
+      return emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance();
+    }
+    /**
+     * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailDataOrBuilder getOfferingPariDetailDataOrBuilder() {
+      if (detailCase_ == 1452) {
+         return (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_;
+      }
+      return emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -367,30 +514,33 @@ public final class PlayerOfferingDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (level_ != 0) {
-        output.writeUInt32(3, level_);
-      }
-      if (isFirstInteract_ != false) {
-        output.writeBool(6, isFirstInteract_);
-      }
       if (offeringId_ != 0) {
-        output.writeUInt32(2, offeringId_);
+        output.writeUInt32(1, offeringId_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeIntegerMapTo(
+          output,
+          internalGetTakenRandomLevelRewardMap(),
+          TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry,
+          4);
       if (getTakenLevelRewardListList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(takenLevelRewardListMemoizedSerializedSize);
       }
       for (int i = 0; i < takenLevelRewardList_.size(); i++) {
         output.writeUInt32NoTag(takenLevelRewardList_.getInt(i));
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeIntegerMapTo(
-          output,
-          internalGetBHKEFOHMJHM(),
-          BHKEFOHMJHMDefaultEntryHolder.defaultEntry,
-          14);
-      if (lPOPPMKEFJL_ != false) {
-        output.writeBool(601, lPOPPMKEFJL_);
+      if (isNewMaxLevel_ != false) {
+        output.writeBool(8, isNewMaxLevel_);
+      }
+      if (level_ != 0) {
+        output.writeUInt32(10, level_);
+      }
+      if (isFirstInteract_ != false) {
+        output.writeBool(14, isFirstInteract_);
+      }
+      if (detailCase_ == 1452) {
+        output.writeMessage(1452, (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_);
       }
       unknownFields.writeTo(output);
     }
@@ -401,17 +551,19 @@ public final class PlayerOfferingDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (level_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, level_);
-      }
-      if (isFirstInteract_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isFirstInteract_);
-      }
       if (offeringId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, offeringId_);
+          .computeUInt32Size(1, offeringId_);
+      }
+      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
+           : internalGetTakenRandomLevelRewardMap().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+        takenRandomLevelRewardMap__ = TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, takenRandomLevelRewardMap__);
       }
       {
         int dataSize = 0;
@@ -427,19 +579,21 @@ public final class PlayerOfferingDataOuterClass {
         }
         takenLevelRewardListMemoizedSerializedSize = dataSize;
       }
-      for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
-           : internalGetBHKEFOHMJHM().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-        bHKEFOHMJHM__ = BHKEFOHMJHMDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (isNewMaxLevel_ != false) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(14, bHKEFOHMJHM__);
+          .computeBoolSize(8, isNewMaxLevel_);
       }
-      if (lPOPPMKEFJL_ != false) {
+      if (level_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(601, lPOPPMKEFJL_);
+          .computeUInt32Size(10, level_);
+      }
+      if (isFirstInteract_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isFirstInteract_);
+      }
+      if (detailCase_ == 1452) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1452, (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -458,16 +612,25 @@ public final class PlayerOfferingDataOuterClass {
 
       if (!getTakenLevelRewardListList()
           .equals(other.getTakenLevelRewardListList())) return false;
-      if (!internalGetBHKEFOHMJHM().equals(
-          other.internalGetBHKEFOHMJHM())) return false;
-      if (getOfferingId()
-          != other.getOfferingId()) return false;
+      if (!internalGetTakenRandomLevelRewardMap().equals(
+          other.internalGetTakenRandomLevelRewardMap())) return false;
       if (getLevel()
           != other.getLevel()) return false;
+      if (getOfferingId()
+          != other.getOfferingId()) return false;
       if (getIsFirstInteract()
           != other.getIsFirstInteract()) return false;
-      if (getLPOPPMKEFJL()
-          != other.getLPOPPMKEFJL()) return false;
+      if (getIsNewMaxLevel()
+          != other.getIsNewMaxLevel()) return false;
+      if (!getDetailCase().equals(other.getDetailCase())) return false;
+      switch (detailCase_) {
+        case 1452:
+          if (!getOfferingPariDetailData()
+              .equals(other.getOfferingPariDetailData())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -483,20 +646,28 @@ public final class PlayerOfferingDataOuterClass {
         hash = (37 * hash) + TAKEN_LEVEL_REWARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTakenLevelRewardListList().hashCode();
       }
-      if (!internalGetBHKEFOHMJHM().getMap().isEmpty()) {
-        hash = (37 * hash) + BHKEFOHMJHM_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetBHKEFOHMJHM().hashCode();
+      if (!internalGetTakenRandomLevelRewardMap().getMap().isEmpty()) {
+        hash = (37 * hash) + TAKEN_RANDOM_LEVEL_REWARD_MAP_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetTakenRandomLevelRewardMap().hashCode();
       }
-      hash = (37 * hash) + OFFERING_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOfferingId();
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
+      hash = (37 * hash) + OFFERING_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOfferingId();
       hash = (37 * hash) + IS_FIRST_INTERACT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFirstInteract());
-      hash = (37 * hash) + LPOPPMKEFJL_FIELD_NUMBER;
+      hash = (37 * hash) + IS_NEW_MAX_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getLPOPPMKEFJL());
+          getIsNewMaxLevel());
+      switch (detailCase_) {
+        case 1452:
+          hash = (37 * hash) + OFFERING_PARI_DETAIL_DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getOfferingPariDetailData().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -593,6 +764,10 @@ public final class PlayerOfferingDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PlayerOfferingData}
      */
     public static final class Builder extends
@@ -608,8 +783,8 @@ public final class PlayerOfferingDataOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 14:
-            return internalGetBHKEFOHMJHM();
+          case 4:
+            return internalGetTakenRandomLevelRewardMap();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -619,8 +794,8 @@ public final class PlayerOfferingDataOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 14:
-            return internalGetMutableBHKEFOHMJHM();
+          case 4:
+            return internalGetMutableTakenRandomLevelRewardMap();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -654,15 +829,17 @@ public final class PlayerOfferingDataOuterClass {
         super.clear();
         takenLevelRewardList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableBHKEFOHMJHM().clear();
-        offeringId_ = 0;
-
+        internalGetMutableTakenRandomLevelRewardMap().clear();
         level_ = 0;
+
+        offeringId_ = 0;
 
         isFirstInteract_ = false;
 
-        lPOPPMKEFJL_ = false;
+        isNewMaxLevel_ = false;
 
+        detailCase_ = 0;
+        detail_ = null;
         return this;
       }
 
@@ -695,12 +872,20 @@ public final class PlayerOfferingDataOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.takenLevelRewardList_ = takenLevelRewardList_;
-        result.bHKEFOHMJHM_ = internalGetBHKEFOHMJHM();
-        result.bHKEFOHMJHM_.makeImmutable();
-        result.offeringId_ = offeringId_;
+        result.takenRandomLevelRewardMap_ = internalGetTakenRandomLevelRewardMap();
+        result.takenRandomLevelRewardMap_.makeImmutable();
         result.level_ = level_;
+        result.offeringId_ = offeringId_;
         result.isFirstInteract_ = isFirstInteract_;
-        result.lPOPPMKEFJL_ = lPOPPMKEFJL_;
+        result.isNewMaxLevel_ = isNewMaxLevel_;
+        if (detailCase_ == 1452) {
+          if (offeringPariDetailDataBuilder_ == null) {
+            result.detail_ = detail_;
+          } else {
+            result.detail_ = offeringPariDetailDataBuilder_.build();
+          }
+        }
+        result.detailCase_ = detailCase_;
         onBuilt();
         return result;
       }
@@ -759,19 +944,28 @@ public final class PlayerOfferingDataOuterClass {
           }
           onChanged();
         }
-        internalGetMutableBHKEFOHMJHM().mergeFrom(
-            other.internalGetBHKEFOHMJHM());
-        if (other.getOfferingId() != 0) {
-          setOfferingId(other.getOfferingId());
-        }
+        internalGetMutableTakenRandomLevelRewardMap().mergeFrom(
+            other.internalGetTakenRandomLevelRewardMap());
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
+        }
+        if (other.getOfferingId() != 0) {
+          setOfferingId(other.getOfferingId());
         }
         if (other.getIsFirstInteract() != false) {
           setIsFirstInteract(other.getIsFirstInteract());
         }
-        if (other.getLPOPPMKEFJL() != false) {
-          setLPOPPMKEFJL(other.getLPOPPMKEFJL());
+        if (other.getIsNewMaxLevel() != false) {
+          setIsNewMaxLevel(other.getIsNewMaxLevel());
+        }
+        switch (other.getDetailCase()) {
+          case OFFERING_PARI_DETAIL_DATA: {
+            mergeOfferingPariDetailData(other.getOfferingPariDetailData());
+            break;
+          }
+          case DETAIL_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -801,6 +995,21 @@ public final class PlayerOfferingDataOuterClass {
         }
         return this;
       }
+      private int detailCase_ = 0;
+      private java.lang.Object detail_;
+      public DetailCase
+          getDetailCase() {
+        return DetailCase.forNumber(
+            detailCase_);
+      }
+
+      public Builder clearDetail() {
+        detailCase_ = 0;
+        detail_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
       private com.google.protobuf.Internal.IntList takenLevelRewardList_ = emptyIntList();
@@ -810,21 +1019,36 @@ public final class PlayerOfferingDataOuterClass {
           bitField0_ |= 0x00000001;
          }
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @return A list containing the takenLevelRewardList.
+       */
       public java.util.List<java.lang.Integer>
           getTakenLevelRewardListList() {
         return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(takenLevelRewardList_) : takenLevelRewardList_;
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @return The count of takenLevelRewardList.
+       */
       public int getTakenLevelRewardListCount() {
         return takenLevelRewardList_.size();
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @param index The index of the element to return.
+       * @return The takenLevelRewardList at the given index.
+       */
       public int getTakenLevelRewardList(int index) {
         return takenLevelRewardList_.getInt(index);
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The takenLevelRewardList to set.
+       * @return This builder for chaining.
+       */
       public Builder setTakenLevelRewardList(
           int index, int value) {
         ensureTakenLevelRewardListIsMutable();
@@ -832,14 +1056,22 @@ public final class PlayerOfferingDataOuterClass {
         onChanged();
         return this;
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @param value The takenLevelRewardList to add.
+       * @return This builder for chaining.
+       */
       public Builder addTakenLevelRewardList(int value) {
         ensureTakenLevelRewardListIsMutable();
         takenLevelRewardList_.addInt(value);
         onChanged();
         return this;
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @param values The takenLevelRewardList to add.
+       * @return This builder for chaining.
+       */
       public Builder addAllTakenLevelRewardList(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureTakenLevelRewardListIsMutable();
@@ -848,7 +1080,10 @@ public final class PlayerOfferingDataOuterClass {
         onChanged();
         return this;
       }
-
+      /**
+       * <code>repeated uint32 taken_level_reward_list = 7;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearTakenLevelRewardList() {
         takenLevelRewardList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -857,99 +1092,99 @@ public final class PlayerOfferingDataOuterClass {
       }
 
       private com.google.protobuf.MapField<
-          java.lang.Integer, java.lang.Integer> bHKEFOHMJHM_;
+          java.lang.Integer, java.lang.Integer> takenRandomLevelRewardMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetBHKEFOHMJHM() {
-        if (bHKEFOHMJHM_ == null) {
+      internalGetTakenRandomLevelRewardMap() {
+        if (takenRandomLevelRewardMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              BHKEFOHMJHMDefaultEntryHolder.defaultEntry);
+              TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry);
         }
-        return bHKEFOHMJHM_;
+        return takenRandomLevelRewardMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableBHKEFOHMJHM() {
+      internalGetMutableTakenRandomLevelRewardMap() {
         onChanged();;
-        if (bHKEFOHMJHM_ == null) {
-          bHKEFOHMJHM_ = com.google.protobuf.MapField.newMapField(
-              BHKEFOHMJHMDefaultEntryHolder.defaultEntry);
+        if (takenRandomLevelRewardMap_ == null) {
+          takenRandomLevelRewardMap_ = com.google.protobuf.MapField.newMapField(
+              TakenRandomLevelRewardMapDefaultEntryHolder.defaultEntry);
         }
-        if (!bHKEFOHMJHM_.isMutable()) {
-          bHKEFOHMJHM_ = bHKEFOHMJHM_.copy();
+        if (!takenRandomLevelRewardMap_.isMutable()) {
+          takenRandomLevelRewardMap_ = takenRandomLevelRewardMap_.copy();
         }
-        return bHKEFOHMJHM_;
+        return takenRandomLevelRewardMap_;
       }
 
-      public int getBHKEFOHMJHMCount() {
-        return internalGetBHKEFOHMJHM().getMap().size();
+      public int getTakenRandomLevelRewardMapCount() {
+        return internalGetTakenRandomLevelRewardMap().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
 
       @java.lang.Override
-      public boolean containsBHKEFOHMJHM(
+      public boolean containsTakenRandomLevelRewardMap(
           int key) {
-
-        return internalGetBHKEFOHMJHM().getMap().containsKey(key);
+        
+        return internalGetTakenRandomLevelRewardMap().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getBHKEFOHMJHMMap()} instead.
+       * Use {@link #getTakenRandomLevelRewardMapMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getBHKEFOHMJHM() {
-        return getBHKEFOHMJHMMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getTakenRandomLevelRewardMap() {
+        return getTakenRandomLevelRewardMapMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
       @java.lang.Override
 
-      public java.util.Map<java.lang.Integer, java.lang.Integer> getBHKEFOHMJHMMap() {
-        return internalGetBHKEFOHMJHM().getMap();
+      public java.util.Map<java.lang.Integer, java.lang.Integer> getTakenRandomLevelRewardMapMap() {
+        return internalGetTakenRandomLevelRewardMap().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
       @java.lang.Override
 
-      public int getBHKEFOHMJHMOrDefault(
+      public int getTakenRandomLevelRewardMapOrDefault(
           int key,
           int defaultValue) {
-
+        
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetBHKEFOHMJHM().getMap();
+            internalGetTakenRandomLevelRewardMap().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
       @java.lang.Override
 
-      public int getBHKEFOHMJHMOrThrow(
+      public int getTakenRandomLevelRewardMapOrThrow(
           int key) {
-
+        
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
-            internalGetBHKEFOHMJHM().getMap();
+            internalGetTakenRandomLevelRewardMap().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearBHKEFOHMJHM() {
-        internalGetMutableBHKEFOHMJHM().getMutableMap()
+      public Builder clearTakenRandomLevelRewardMap() {
+        internalGetMutableTakenRandomLevelRewardMap().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
 
-      public Builder removeBHKEFOHMJHM(
+      public Builder removeTakenRandomLevelRewardMap(
           int key) {
-
-        internalGetMutableBHKEFOHMJHM().getMutableMap()
+        
+        internalGetMutableTakenRandomLevelRewardMap().getMutableMap()
             .remove(key);
         return this;
       }
@@ -958,123 +1193,295 @@ public final class PlayerOfferingDataOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableBHKEFOHMJHM() {
-        return internalGetMutableBHKEFOHMJHM().getMutableMap();
+      getMutableTakenRandomLevelRewardMap() {
+        return internalGetMutableTakenRandomLevelRewardMap().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
-      public Builder putBHKEFOHMJHM(
+      public Builder putTakenRandomLevelRewardMap(
           int key,
           int value) {
-
-        internalGetMutableBHKEFOHMJHM().getMutableMap()
+        
+        
+        internalGetMutableTakenRandomLevelRewardMap().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BHKEFOHMJHM = 14;</code>
+       * <code>map&lt;uint32, uint32&gt; taken_random_level_reward_map = 4;</code>
        */
 
-      public Builder putAllBHKEFOHMJHM(
+      public Builder putAllTakenRandomLevelRewardMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
-        internalGetMutableBHKEFOHMJHM().getMutableMap()
+        internalGetMutableTakenRandomLevelRewardMap().getMutableMap()
             .putAll(values);
         return this;
       }
 
-      private int offeringId_ ;
-
-      @java.lang.Override
-      public int getOfferingId() {
-        return offeringId_;
-      }
-
-      public Builder setOfferingId(int value) {
-
-        offeringId_ = value;
-        onChanged();
-        return this;
-      }
-
-      public Builder clearOfferingId() {
-
-        offeringId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int level_ ;
-
+      /**
+       * <code>uint32 level = 10;</code>
+       * @return The level.
+       */
       @java.lang.Override
       public int getLevel() {
         return level_;
       }
-
+      /**
+       * <code>uint32 level = 10;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
+       */
       public Builder setLevel(int value) {
-
+        
         level_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>uint32 level = 10;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearLevel() {
-
+        
         level_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean isFirstInteract_ ;
-
+      private int offeringId_ ;
+      /**
+       * <code>uint32 offering_id = 1;</code>
+       * @return The offeringId.
+       */
       @java.lang.Override
-      public boolean getIsFirstInteract() {
-        return isFirstInteract_;
+      public int getOfferingId() {
+        return offeringId_;
       }
-
-      public Builder setIsFirstInteract(boolean value) {
-
-        isFirstInteract_ = value;
+      /**
+       * <code>uint32 offering_id = 1;</code>
+       * @param value The offeringId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOfferingId(int value) {
+        
+        offeringId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 offering_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOfferingId() {
+        
+        offeringId_ = 0;
         onChanged();
         return this;
       }
 
+      private boolean isFirstInteract_ ;
+      /**
+       * <code>bool is_first_interact = 14;</code>
+       * @return The isFirstInteract.
+       */
+      @java.lang.Override
+      public boolean getIsFirstInteract() {
+        return isFirstInteract_;
+      }
+      /**
+       * <code>bool is_first_interact = 14;</code>
+       * @param value The isFirstInteract to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFirstInteract(boolean value) {
+        
+        isFirstInteract_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_first_interact = 14;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearIsFirstInteract() {
-
+        
         isFirstInteract_ = false;
         onChanged();
         return this;
       }
 
-      private boolean lPOPPMKEFJL_ ;
+      private boolean isNewMaxLevel_ ;
       /**
-       * <code>bool LPOPPMKEFJL = 601;</code>
-       * @return The lPOPPMKEFJL.
+       * <code>bool is_new_max_level = 8;</code>
+       * @return The isNewMaxLevel.
        */
       @java.lang.Override
-      public boolean getLPOPPMKEFJL() {
-        return lPOPPMKEFJL_;
+      public boolean getIsNewMaxLevel() {
+        return isNewMaxLevel_;
       }
       /**
-       * <code>bool LPOPPMKEFJL = 601;</code>
-       * @param value The lPOPPMKEFJL to set.
+       * <code>bool is_new_max_level = 8;</code>
+       * @param value The isNewMaxLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setLPOPPMKEFJL(boolean value) {
-
-        lPOPPMKEFJL_ = value;
+      public Builder setIsNewMaxLevel(boolean value) {
+        
+        isNewMaxLevel_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool LPOPPMKEFJL = 601;</code>
+       * <code>bool is_new_max_level = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLPOPPMKEFJL() {
-
-        lPOPPMKEFJL_ = false;
+      public Builder clearIsNewMaxLevel() {
+        
+        isNewMaxLevel_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData, emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.Builder, emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailDataOrBuilder> offeringPariDetailDataBuilder_;
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       * @return Whether the offeringPariDetailData field is set.
+       */
+      @java.lang.Override
+      public boolean hasOfferingPariDetailData() {
+        return detailCase_ == 1452;
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       * @return The offeringPariDetailData.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData getOfferingPariDetailData() {
+        if (offeringPariDetailDataBuilder_ == null) {
+          if (detailCase_ == 1452) {
+            return (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_;
+          }
+          return emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance();
+        } else {
+          if (detailCase_ == 1452) {
+            return offeringPariDetailDataBuilder_.getMessage();
+          }
+          return emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      public Builder setOfferingPariDetailData(emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData value) {
+        if (offeringPariDetailDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          detail_ = value;
+          onChanged();
+        } else {
+          offeringPariDetailDataBuilder_.setMessage(value);
+        }
+        detailCase_ = 1452;
+        return this;
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      public Builder setOfferingPariDetailData(
+          emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.Builder builderForValue) {
+        if (offeringPariDetailDataBuilder_ == null) {
+          detail_ = builderForValue.build();
+          onChanged();
+        } else {
+          offeringPariDetailDataBuilder_.setMessage(builderForValue.build());
+        }
+        detailCase_ = 1452;
+        return this;
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      public Builder mergeOfferingPariDetailData(emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData value) {
+        if (offeringPariDetailDataBuilder_ == null) {
+          if (detailCase_ == 1452 &&
+              detail_ != emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance()) {
+            detail_ = emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.newBuilder((emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            detail_ = value;
+          }
+          onChanged();
+        } else {
+          if (detailCase_ == 1452) {
+            offeringPariDetailDataBuilder_.mergeFrom(value);
+          }
+          offeringPariDetailDataBuilder_.setMessage(value);
+        }
+        detailCase_ = 1452;
+        return this;
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      public Builder clearOfferingPariDetailData() {
+        if (offeringPariDetailDataBuilder_ == null) {
+          if (detailCase_ == 1452) {
+            detailCase_ = 0;
+            detail_ = null;
+            onChanged();
+          }
+        } else {
+          if (detailCase_ == 1452) {
+            detailCase_ = 0;
+            detail_ = null;
+          }
+          offeringPariDetailDataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      public emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.Builder getOfferingPariDetailDataBuilder() {
+        return getOfferingPariDetailDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailDataOrBuilder getOfferingPariDetailDataOrBuilder() {
+        if ((detailCase_ == 1452) && (offeringPariDetailDataBuilder_ != null)) {
+          return offeringPariDetailDataBuilder_.getMessageOrBuilder();
+        } else {
+          if (detailCase_ == 1452) {
+            return (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_;
+          }
+          return emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>._OfferingPariDetailData offering_pari_detail_data = 1452;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData, emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.Builder, emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailDataOrBuilder> 
+          getOfferingPariDetailDataFieldBuilder() {
+        if (offeringPariDetailDataBuilder_ == null) {
+          if (!(detailCase_ == 1452)) {
+            detail_ = emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.getDefaultInstance();
+          }
+          offeringPariDetailDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData, emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData.Builder, emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailDataOrBuilder>(
+                  (emu.grasscutter.net.proto.OfferingPariDetailData._OfferingPariDetailData) detail_,
+                  getParentForChildren(),
+                  isClean());
+          detail_ = null;
+        }
+        detailCase_ = 1452;
+        onChanged();;
+        return offeringPariDetailDataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1087,6 +1494,7 @@ public final class PlayerOfferingDataOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:PlayerOfferingData)
     }
@@ -1130,14 +1538,14 @@ public final class PlayerOfferingDataOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PlayerOfferingData_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PlayerOfferingData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_PlayerOfferingData_BHKEFOHMJHMEntry_descriptor;
-  private static final
+    internal_static_PlayerOfferingData_TakenRandomLevelRewardMapEntry_descriptor;
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_PlayerOfferingData_BHKEFOHMJHMEntry_fieldAccessorTable;
+      internal_static_PlayerOfferingData_TakenRandomLevelRewardMapEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1147,31 +1555,37 @@ public final class PlayerOfferingDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030PlayerOfferingData.proto\"\371\001\n\022PlayerOff" +
-      "eringData\022\037\n\027taken_level_reward_list\030\013 \003" +
-      "(\r\0229\n\013BHKEFOHMJHM\030\016 \003(\0132$.PlayerOffering" +
-      "Data.BHKEFOHMJHMEntry\022\023\n\013offering_id\030\t \001" +
-      "(\r\022\r\n\005level\030\001 \001(\r\022\031\n\021is_first_interact\030\004" +
-      " \001(\010\022\024\n\013LPOPPMKEFJL\030\331\004 \001(\010\0322\n\020BHKEFOHMJH" +
-      "MEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033" +
-      "\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\030PlayerOfferingData.proto\032\035_OfferingPar" +
+      "iDetailData.proto\"\365\002\n\022PlayerOfferingData" +
+      "\022\037\n\027taken_level_reward_list\030\007 \003(\r\022Y\n\035tak" +
+      "en_random_level_reward_map\030\004 \003(\01322.Playe" +
+      "rOfferingData.TakenRandomLevelRewardMapE" +
+      "ntry\022\r\n\005level\030\n \001(\r\022\023\n\013offering_id\030\001 \001(\r" +
+      "\022\031\n\021is_first_interact\030\016 \001(\010\022\030\n\020is_new_ma" +
+      "x_level\030\010 \001(\010\022>\n\031offering_pari_detail_da" +
+      "ta\030\254\013 \001(\0132\030._OfferingPariDetailDataH\000\032@\n" +
+      "\036TakenRandomLevelRewardMapEntry\022\013\n\003key\030\001" +
+      " \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\010\n\006detailB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.OfferingPariDetailData.getDescriptor(),
         });
     internal_static_PlayerOfferingData_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PlayerOfferingData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PlayerOfferingData_descriptor,
-        new java.lang.String[] { "TakenLevelRewardList", "BHKEFOHMJHM", "OfferingId", "Level", "IsFirstInteract", "LPOPPMKEFJL", });
-    internal_static_PlayerOfferingData_BHKEFOHMJHMEntry_descriptor =
+        new java.lang.String[] { "TakenLevelRewardList", "TakenRandomLevelRewardMap", "Level", "OfferingId", "IsFirstInteract", "IsNewMaxLevel", "OfferingPariDetailData", "Detail", });
+    internal_static_PlayerOfferingData_TakenRandomLevelRewardMapEntry_descriptor =
       internal_static_PlayerOfferingData_descriptor.getNestedTypes().get(0);
-    internal_static_PlayerOfferingData_BHKEFOHMJHMEntry_fieldAccessorTable = new
+    internal_static_PlayerOfferingData_TakenRandomLevelRewardMapEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_PlayerOfferingData_BHKEFOHMJHMEntry_descriptor,
+        internal_static_PlayerOfferingData_TakenRandomLevelRewardMapEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    emu.grasscutter.net.proto.OfferingPariDetailData.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

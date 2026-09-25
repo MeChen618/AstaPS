@@ -32,7 +32,7 @@ import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.scripts.SceneIndexManager;
@@ -628,10 +628,10 @@ public class Scene {
         }
         var debtsReason =
                 newDebt <= 0f
-                        ? ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason
-                                .CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
-                        : ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason
-                                .CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY;
+                        ? ChangeHpDebtsReason._ChangeHpDebtsReason
+                                ._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
+                        : ChangeHpDebtsReason._ChangeHpDebtsReason
+                                ._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY;
         ArlecchinoBoLSync.pushBoL(arlecchino, newDebt, change, debtsReason);
     }
 

@@ -19,29 +19,6 @@ public final class PotionStageDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-     * @return A list containing the hLFNHDFMEEL.
-     */
-    java.util.List<java.lang.Integer> getHLFNHDFMEELList();
-    /**
-     * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-     * @return The count of hLFNHDFMEEL.
-     */
-    int getHLFNHDFMEELCount();
-    /**
-     * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-     * @param index The index of the element to return.
-     * @return The hLFNHDFMEEL at the given index.
-     */
-    int getHLFNHDFMEEL(int index);
-
-    /**
-     * <code>bool is_open = 8;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
      * <code>repeated .PotionLevelData level_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData> 
@@ -66,29 +43,56 @@ public final class PotionStageDataOuterClass {
         int index);
 
     /**
-     * <code>uint32 stage_id = 14;</code>
-     * @return The stageId.
+     * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+     * @return A list containing the hLFNHDFMEEL.
      */
-    int getStageId();
+    java.util.List<java.lang.Integer> getHLFNHDFMEELList();
+    /**
+     * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+     * @return The count of hLFNHDFMEEL.
+     */
+    int getHLFNHDFMEELCount();
+    /**
+     * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+     * @param index The index of the element to return.
+     * @return The hLFNHDFMEEL at the given index.
+     */
+    int getHLFNHDFMEEL(int index);
 
     /**
-     * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+     * <code>repeated uint32 MDEMNAHABEN = 7;</code>
      * @return A list containing the mDEMNAHABEN.
      */
     java.util.List<java.lang.Integer> getMDEMNAHABENList();
     /**
-     * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+     * <code>repeated uint32 MDEMNAHABEN = 7;</code>
      * @return The count of mDEMNAHABEN.
      */
     int getMDEMNAHABENCount();
     /**
-     * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+     * <code>repeated uint32 MDEMNAHABEN = 7;</code>
      * @param index The index of the element to return.
      * @return The mDEMNAHABEN at the given index.
      */
     int getMDEMNAHABEN(int index);
+
+    /**
+     * <code>bool is_open = 6;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 stage_id = 2;</code>
+     * @return The stageId.
+     */
+    int getStageId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PotionStageData}
    */
   public static final class PotionStageData extends
@@ -101,8 +105,8 @@ public final class PotionStageDataOuterClass {
       super(builder);
     }
     private PotionStageData() {
-      hLFNHDFMEEL_ = emptyIntList();
       levelList_ = java.util.Collections.emptyList();
+      hLFNHDFMEEL_ = emptyIntList();
       mDEMNAHABEN_ = emptyIntList();
     }
 
@@ -137,47 +141,17 @@ public final class PotionStageDataOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hLFNHDFMEEL_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              hLFNHDFMEEL_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                hLFNHDFMEEL_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                hLFNHDFMEEL_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 64: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                levelList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              levelList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
+            case 16: {
 
               stageId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 48: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 mDEMNAHABEN_ = newIntList();
                 mutable_bitField0_ |= 0x00000004;
@@ -185,7 +159,7 @@ public final class PotionStageDataOuterClass {
               mDEMNAHABEN_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
@@ -194,6 +168,36 @@ public final class PotionStageDataOuterClass {
               }
               while (input.getBytesUntilLimit() > 0) {
                 mDEMNAHABEN_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                levelList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              levelList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.parser(), extensionRegistry));
+              break;
+            }
+            case 120: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                hLFNHDFMEEL_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              hLFNHDFMEEL_.addInt(input.readUInt32());
+              break;
+            }
+            case 122: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                hLFNHDFMEEL_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                hLFNHDFMEEL_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -213,14 +217,14 @@ public final class PotionStageDataOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          hLFNHDFMEEL_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          levelList_ = java.util.Collections.unmodifiableList(levelList_);
-        }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           mDEMNAHABEN_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          levelList_ = java.util.Collections.unmodifiableList(levelList_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          hLFNHDFMEEL_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -237,45 +241,6 @@ public final class PotionStageDataOuterClass {
       return emu.grasscutter.net.proto.PotionStageDataOuterClass.internal_static_PotionStageData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.class, emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.Builder.class);
-    }
-
-    public static final int HLFNHDFMEEL_FIELD_NUMBER = 7;
-    private com.google.protobuf.Internal.IntList hLFNHDFMEEL_;
-    /**
-     * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-     * @return A list containing the hLFNHDFMEEL.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getHLFNHDFMEELList() {
-      return hLFNHDFMEEL_;
-    }
-    /**
-     * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-     * @return The count of hLFNHDFMEEL.
-     */
-    public int getHLFNHDFMEELCount() {
-      return hLFNHDFMEEL_.size();
-    }
-    /**
-     * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-     * @param index The index of the element to return.
-     * @return The hLFNHDFMEEL at the given index.
-     */
-    public int getHLFNHDFMEEL(int index) {
-      return hLFNHDFMEEL_.getInt(index);
-    }
-    private int hLFNHDFMEELMemoizedSerializedSize = -1;
-
-    public static final int IS_OPEN_FIELD_NUMBER = 8;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 8;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
     }
 
     public static final int LEVEL_LIST_FIELD_NUMBER = 10;
@@ -318,21 +283,38 @@ public final class PotionStageDataOuterClass {
       return levelList_.get(index);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 14;
-    private int stageId_;
+    public static final int HLFNHDFMEEL_FIELD_NUMBER = 15;
+    private com.google.protobuf.Internal.IntList hLFNHDFMEEL_;
     /**
-     * <code>uint32 stage_id = 14;</code>
-     * @return The stageId.
+     * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+     * @return A list containing the hLFNHDFMEEL.
      */
     @java.lang.Override
-    public int getStageId() {
-      return stageId_;
+    public java.util.List<java.lang.Integer>
+        getHLFNHDFMEELList() {
+      return hLFNHDFMEEL_;
     }
+    /**
+     * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+     * @return The count of hLFNHDFMEEL.
+     */
+    public int getHLFNHDFMEELCount() {
+      return hLFNHDFMEEL_.size();
+    }
+    /**
+     * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+     * @param index The index of the element to return.
+     * @return The hLFNHDFMEEL at the given index.
+     */
+    public int getHLFNHDFMEEL(int index) {
+      return hLFNHDFMEEL_.getInt(index);
+    }
+    private int hLFNHDFMEELMemoizedSerializedSize = -1;
 
-    public static final int MDEMNAHABEN_FIELD_NUMBER = 15;
+    public static final int MDEMNAHABEN_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList mDEMNAHABEN_;
     /**
-     * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+     * <code>repeated uint32 MDEMNAHABEN = 7;</code>
      * @return A list containing the mDEMNAHABEN.
      */
     @java.lang.Override
@@ -341,14 +323,14 @@ public final class PotionStageDataOuterClass {
       return mDEMNAHABEN_;
     }
     /**
-     * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+     * <code>repeated uint32 MDEMNAHABEN = 7;</code>
      * @return The count of mDEMNAHABEN.
      */
     public int getMDEMNAHABENCount() {
       return mDEMNAHABEN_.size();
     }
     /**
-     * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+     * <code>repeated uint32 MDEMNAHABEN = 7;</code>
      * @param index The index of the element to return.
      * @return The mDEMNAHABEN at the given index.
      */
@@ -356,6 +338,28 @@ public final class PotionStageDataOuterClass {
       return mDEMNAHABEN_.getInt(index);
     }
     private int mDEMNAHABENMemoizedSerializedSize = -1;
+
+    public static final int IS_OPEN_FIELD_NUMBER = 6;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 6;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 2;
+    private int stageId_;
+    /**
+     * <code>uint32 stage_id = 2;</code>
+     * @return The stageId.
+     */
+    @java.lang.Override
+    public int getStageId() {
+      return stageId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -372,28 +376,28 @@ public final class PotionStageDataOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getHLFNHDFMEELList().size() > 0) {
-        output.writeUInt32NoTag(58);
-        output.writeUInt32NoTag(hLFNHDFMEELMemoizedSerializedSize);
-      }
-      for (int i = 0; i < hLFNHDFMEEL_.size(); i++) {
-        output.writeUInt32NoTag(hLFNHDFMEEL_.getInt(i));
+      if (stageId_ != 0) {
+        output.writeUInt32(2, stageId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(8, isOpen_);
-      }
-      for (int i = 0; i < levelList_.size(); i++) {
-        output.writeMessage(10, levelList_.get(i));
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(14, stageId_);
+        output.writeBool(6, isOpen_);
       }
       if (getMDEMNAHABENList().size() > 0) {
-        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(mDEMNAHABENMemoizedSerializedSize);
       }
       for (int i = 0; i < mDEMNAHABEN_.size(); i++) {
         output.writeUInt32NoTag(mDEMNAHABEN_.getInt(i));
+      }
+      for (int i = 0; i < levelList_.size(); i++) {
+        output.writeMessage(10, levelList_.get(i));
+      }
+      if (getHLFNHDFMEELList().size() > 0) {
+        output.writeUInt32NoTag(122);
+        output.writeUInt32NoTag(hLFNHDFMEELMemoizedSerializedSize);
+      }
+      for (int i = 0; i < hLFNHDFMEEL_.size(); i++) {
+        output.writeUInt32NoTag(hLFNHDFMEEL_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -404,31 +408,13 @@ public final class PotionStageDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < hLFNHDFMEEL_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(hLFNHDFMEEL_.getInt(i));
-        }
-        size += dataSize;
-        if (!getHLFNHDFMEELList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        hLFNHDFMEELMemoizedSerializedSize = dataSize;
+      if (stageId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, stageId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isOpen_);
-      }
-      for (int i = 0; i < levelList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, levelList_.get(i));
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, stageId_);
+          .computeBoolSize(6, isOpen_);
       }
       {
         int dataSize = 0;
@@ -443,6 +429,24 @@ public final class PotionStageDataOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         mDEMNAHABENMemoizedSerializedSize = dataSize;
+      }
+      for (int i = 0; i < levelList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, levelList_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < hLFNHDFMEEL_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(hLFNHDFMEEL_.getInt(i));
+        }
+        size += dataSize;
+        if (!getHLFNHDFMEELList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        hLFNHDFMEELMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -459,16 +463,16 @@ public final class PotionStageDataOuterClass {
       }
       emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData other = (emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData) obj;
 
-      if (!getHLFNHDFMEELList()
-          .equals(other.getHLFNHDFMEELList())) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
       if (!getLevelListList()
           .equals(other.getLevelListList())) return false;
-      if (getStageId()
-          != other.getStageId()) return false;
+      if (!getHLFNHDFMEELList()
+          .equals(other.getHLFNHDFMEELList())) return false;
       if (!getMDEMNAHABENList()
           .equals(other.getMDEMNAHABENList())) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -480,23 +484,23 @@ public final class PotionStageDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getHLFNHDFMEELCount() > 0) {
-        hash = (37 * hash) + HLFNHDFMEEL_FIELD_NUMBER;
-        hash = (53 * hash) + getHLFNHDFMEELList().hashCode();
-      }
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
       if (getLevelListCount() > 0) {
         hash = (37 * hash) + LEVEL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelListList().hashCode();
       }
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
+      if (getHLFNHDFMEELCount() > 0) {
+        hash = (37 * hash) + HLFNHDFMEEL_FIELD_NUMBER;
+        hash = (53 * hash) + getHLFNHDFMEELList().hashCode();
+      }
       if (getMDEMNAHABENCount() > 0) {
         hash = (37 * hash) + MDEMNAHABEN_FIELD_NUMBER;
         hash = (53 * hash) + getMDEMNAHABENList().hashCode();
       }
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -593,6 +597,10 @@ public final class PotionStageDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PotionStageData}
      */
     public static final class Builder extends
@@ -631,20 +639,20 @@ public final class PotionStageDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hLFNHDFMEEL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        isOpen_ = false;
-
         if (levelListBuilder_ == null) {
           levelList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           levelListBuilder_.clear();
         }
-        stageId_ = 0;
-
+        hLFNHDFMEEL_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         mDEMNAHABEN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        isOpen_ = false;
+
+        stageId_ = 0;
+
         return this;
       }
 
@@ -672,27 +680,27 @@ public final class PotionStageDataOuterClass {
       public emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData buildPartial() {
         emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData result = new emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          hLFNHDFMEEL_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.hLFNHDFMEEL_ = hLFNHDFMEEL_;
-        result.isOpen_ = isOpen_;
         if (levelListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             levelList_ = java.util.Collections.unmodifiableList(levelList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.levelList_ = levelList_;
         } else {
           result.levelList_ = levelListBuilder_.build();
         }
-        result.stageId_ = stageId_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          hLFNHDFMEEL_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.hLFNHDFMEEL_ = hLFNHDFMEEL_;
         if (((bitField0_ & 0x00000004) != 0)) {
           mDEMNAHABEN_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.mDEMNAHABEN_ = mDEMNAHABEN_;
+        result.isOpen_ = isOpen_;
+        result.stageId_ = stageId_;
         onBuilt();
         return result;
       }
@@ -741,24 +749,11 @@ public final class PotionStageDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData other) {
         if (other == emu.grasscutter.net.proto.PotionStageDataOuterClass.PotionStageData.getDefaultInstance()) return this;
-        if (!other.hLFNHDFMEEL_.isEmpty()) {
-          if (hLFNHDFMEEL_.isEmpty()) {
-            hLFNHDFMEEL_ = other.hLFNHDFMEEL_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureHLFNHDFMEELIsMutable();
-            hLFNHDFMEEL_.addAll(other.hLFNHDFMEEL_);
-          }
-          onChanged();
-        }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
         if (levelListBuilder_ == null) {
           if (!other.levelList_.isEmpty()) {
             if (levelList_.isEmpty()) {
               levelList_ = other.levelList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureLevelListIsMutable();
               levelList_.addAll(other.levelList_);
@@ -771,7 +766,7 @@ public final class PotionStageDataOuterClass {
               levelListBuilder_.dispose();
               levelListBuilder_ = null;
               levelList_ = other.levelList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               levelListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLevelListFieldBuilder() : null;
@@ -780,8 +775,15 @@ public final class PotionStageDataOuterClass {
             }
           }
         }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
+        if (!other.hLFNHDFMEEL_.isEmpty()) {
+          if (hLFNHDFMEEL_.isEmpty()) {
+            hLFNHDFMEEL_ = other.hLFNHDFMEEL_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureHLFNHDFMEELIsMutable();
+            hLFNHDFMEEL_.addAll(other.hLFNHDFMEEL_);
+          }
+          onChanged();
         }
         if (!other.mDEMNAHABEN_.isEmpty()) {
           if (mDEMNAHABEN_.isEmpty()) {
@@ -792,6 +794,12 @@ public final class PotionStageDataOuterClass {
             mDEMNAHABEN_.addAll(other.mDEMNAHABEN_);
           }
           onChanged();
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -823,122 +831,12 @@ public final class PotionStageDataOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList hLFNHDFMEEL_ = emptyIntList();
-      private void ensureHLFNHDFMEELIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          hLFNHDFMEEL_ = mutableCopy(hLFNHDFMEEL_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @return A list containing the hLFNHDFMEEL.
-       */
-      public java.util.List<java.lang.Integer>
-          getHLFNHDFMEELList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(hLFNHDFMEEL_) : hLFNHDFMEEL_;
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @return The count of hLFNHDFMEEL.
-       */
-      public int getHLFNHDFMEELCount() {
-        return hLFNHDFMEEL_.size();
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @param index The index of the element to return.
-       * @return The hLFNHDFMEEL at the given index.
-       */
-      public int getHLFNHDFMEEL(int index) {
-        return hLFNHDFMEEL_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The hLFNHDFMEEL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHLFNHDFMEEL(
-          int index, int value) {
-        ensureHLFNHDFMEELIsMutable();
-        hLFNHDFMEEL_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @param value The hLFNHDFMEEL to add.
-       * @return This builder for chaining.
-       */
-      public Builder addHLFNHDFMEEL(int value) {
-        ensureHLFNHDFMEELIsMutable();
-        hLFNHDFMEEL_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @param values The hLFNHDFMEEL to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllHLFNHDFMEEL(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureHLFNHDFMEELIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, hLFNHDFMEEL_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 HLFNHDFMEEL = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHLFNHDFMEEL() {
-        hLFNHDFMEEL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 8;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 8;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData> levelList_ =
         java.util.Collections.emptyList();
       private void ensureLevelListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           levelList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData>(levelList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -1088,7 +986,7 @@ public final class PotionStageDataOuterClass {
       public Builder clearLevelList() {
         if (levelListBuilder_ == null) {
           levelList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           levelListBuilder_.clear();
@@ -1165,7 +1063,7 @@ public final class PotionStageDataOuterClass {
           levelListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData, emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelData.Builder, emu.grasscutter.net.proto.PotionLevelDataOuterClass.PotionLevelDataOrBuilder>(
                   levelList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           levelList_ = null;
@@ -1173,33 +1071,81 @@ public final class PotionStageDataOuterClass {
         return levelListBuilder_;
       }
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 14;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
+      private com.google.protobuf.Internal.IntList hLFNHDFMEEL_ = emptyIntList();
+      private void ensureHLFNHDFMEELIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          hLFNHDFMEEL_ = mutableCopy(hLFNHDFMEEL_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
-       * @param value The stageId to set.
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @return A list containing the hLFNHDFMEEL.
+       */
+      public java.util.List<java.lang.Integer>
+          getHLFNHDFMEELList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(hLFNHDFMEEL_) : hLFNHDFMEEL_;
+      }
+      /**
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @return The count of hLFNHDFMEEL.
+       */
+      public int getHLFNHDFMEELCount() {
+        return hLFNHDFMEEL_.size();
+      }
+      /**
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @param index The index of the element to return.
+       * @return The hLFNHDFMEEL at the given index.
+       */
+      public int getHLFNHDFMEEL(int index) {
+        return hLFNHDFMEEL_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @param index The index to set the value at.
+       * @param value The hLFNHDFMEEL to set.
        * @return This builder for chaining.
        */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
+      public Builder setHLFNHDFMEEL(
+          int index, int value) {
+        ensureHLFNHDFMEELIsMutable();
+        hLFNHDFMEEL_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 stage_id = 14;</code>
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @param value The hLFNHDFMEEL to add.
        * @return This builder for chaining.
        */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
+      public Builder addHLFNHDFMEEL(int value) {
+        ensureHLFNHDFMEELIsMutable();
+        hLFNHDFMEEL_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @param values The hLFNHDFMEEL to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllHLFNHDFMEEL(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureHLFNHDFMEELIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, hLFNHDFMEEL_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 HLFNHDFMEEL = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHLFNHDFMEEL() {
+        hLFNHDFMEEL_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1212,7 +1158,7 @@ public final class PotionStageDataOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @return A list containing the mDEMNAHABEN.
        */
       public java.util.List<java.lang.Integer>
@@ -1221,14 +1167,14 @@ public final class PotionStageDataOuterClass {
                  java.util.Collections.unmodifiableList(mDEMNAHABEN_) : mDEMNAHABEN_;
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @return The count of mDEMNAHABEN.
        */
       public int getMDEMNAHABENCount() {
         return mDEMNAHABEN_.size();
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @param index The index of the element to return.
        * @return The mDEMNAHABEN at the given index.
        */
@@ -1236,7 +1182,7 @@ public final class PotionStageDataOuterClass {
         return mDEMNAHABEN_.getInt(index);
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @param index The index to set the value at.
        * @param value The mDEMNAHABEN to set.
        * @return This builder for chaining.
@@ -1249,7 +1195,7 @@ public final class PotionStageDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @param value The mDEMNAHABEN to add.
        * @return This builder for chaining.
        */
@@ -1260,7 +1206,7 @@ public final class PotionStageDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @param values The mDEMNAHABEN to add.
        * @return This builder for chaining.
        */
@@ -1273,12 +1219,74 @@ public final class PotionStageDataOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 MDEMNAHABEN = 15;</code>
+       * <code>repeated uint32 MDEMNAHABEN = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMDEMNAHABEN() {
         mDEMNAHABEN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 6;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 6;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 2;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 2;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
         onChanged();
         return this;
       }
@@ -1350,12 +1358,11 @@ public final class PotionStageDataOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025PotionStageData.proto\032\025PotionLevelData" +
-      ".proto\"\204\001\n\017PotionStageData\022\023\n\013HLFNHDFMEE" +
-      "L\030\007 \003(\r\022\017\n\007is_open\030\010 \001(\010\022$\n\nlevel_list\030\n" +
-      " \003(\0132\020.PotionLevelData\022\020\n\010stage_id\030\016 \001(\r" +
-      "\022\023\n\013MDEMNAHABEN\030\017 \003(\rB6\n\031emu.grasscutter" +
-      ".net.protoB\031PotionStageDataOuterClassb\006p" +
-      "roto3"
+      ".proto\"\204\001\n\017PotionStageData\022$\n\nlevel_list" +
+      "\030\n \003(\0132\020.PotionLevelData\022\023\n\013HLFNHDFMEEL\030" +
+      "\017 \003(\r\022\023\n\013MDEMNAHABEN\030\007 \003(\r\022\017\n\007is_open\030\006 " +
+      "\001(\010\022\020\n\010stage_id\030\002 \001(\rB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1367,7 +1374,7 @@ public final class PotionStageDataOuterClass {
     internal_static_PotionStageData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PotionStageData_descriptor,
-        new java.lang.String[] { "HLFNHDFMEEL", "IsOpen", "LevelList", "StageId", "MDEMNAHABEN", });
+        new java.lang.String[] { "LevelList", "HLFNHDFMEEL", "MDEMNAHABEN", "IsOpen", "StageId", });
     emu.grasscutter.net.proto.PotionLevelDataOuterClass.getDescriptor();
   }
 

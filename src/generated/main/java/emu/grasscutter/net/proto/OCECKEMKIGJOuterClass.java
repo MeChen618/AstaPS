@@ -19,65 +19,69 @@ public final class OCECKEMKIGJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 2;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_played = 4;</code>
-     * @return The isPlayed.
-     */
-    boolean getIsPlayed();
-
-    /**
-     * <code>bool is_finished = 7;</code>
-     * @return The isFinished.
-     */
-    boolean getIsFinished();
-
-    /**
-     * <code>uint32 IFFKFLBCHHL = 8;</code>
-     * @return The iFFKFLBCHHL.
-     */
-    int getIFFKFLBCHHL();
-
-    /**
-     * <code>uint32 ALNHCONFHHO = 9;</code>
-     * @return The aLNHCONFHHO.
-     */
-    int getALNHCONFHHO();
-
-    /**
-     * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+     * <code>repeated uint32 EGCJHEIONKK = 3;</code>
      * @return A list containing the eGCJHEIONKK.
      */
     java.util.List<java.lang.Integer> getEGCJHEIONKKList();
     /**
-     * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+     * <code>repeated uint32 EGCJHEIONKK = 3;</code>
      * @return The count of eGCJHEIONKK.
      */
     int getEGCJHEIONKKCount();
     /**
-     * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+     * <code>repeated uint32 EGCJHEIONKK = 3;</code>
      * @param index The index of the element to return.
      * @return The eGCJHEIONKK at the given index.
      */
     int getEGCJHEIONKK(int index);
 
     /**
-     * <code>bool is_unlock = 13;</code>
+     * <code>bool is_played = 10;</code>
+     * @return The isPlayed.
+     */
+    boolean getIsPlayed();
+
+    /**
+     * <code>bool is_unlock = 9;</code>
      * @return The isUnlock.
      */
     boolean getIsUnlock();
 
     /**
-     * <code>uint32 JPBOIPOIGNH = 15;</code>
+     * <code>bool is_finished = 12;</code>
+     * @return The isFinished.
+     */
+    boolean getIsFinished();
+
+    /**
+     * <code>uint32 IFFKFLBCHHL = 4;</code>
+     * @return The iFFKFLBCHHL.
+     */
+    int getIFFKFLBCHHL();
+
+    /**
+     * <code>uint32 ALNHCONFHHO = 1;</code>
+     * @return The aLNHCONFHHO.
+     */
+    int getALNHCONFHHO();
+
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
+
+    /**
+     * <code>uint32 JPBOIPOIGNH = 14;</code>
      * @return The jPBOIPOIGNH.
      */
     int getJPBOIPOIGNH();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code OCECKEMKIGJ}
    */
   public static final class OCECKEMKIGJ extends
@@ -124,32 +128,12 @@ public final class OCECKEMKIGJOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isPlayed_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              iFFKFLBCHHL_ = input.readUInt32();
-              break;
-            }
-            case 72: {
+            case 8: {
 
               aLNHCONFHHO_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 24: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 eGCJHEIONKK_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -157,7 +141,7 @@ public final class OCECKEMKIGJOuterClass {
               eGCJHEIONKK_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -170,12 +154,32 @@ public final class OCECKEMKIGJOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
+            case 32: {
+
+              iFFKFLBCHHL_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
 
               isUnlock_ = input.readBool();
               break;
             }
-            case 120: {
+            case 80: {
+
+              isPlayed_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              isFinished_ = input.readBool();
+              break;
+            }
+            case 112: {
 
               jPBOIPOIGNH_ = input.readUInt32();
               break;
@@ -215,65 +219,10 @@ public final class OCECKEMKIGJOuterClass {
               emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ.class, emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 2;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 2;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_PLAYED_FIELD_NUMBER = 4;
-    private boolean isPlayed_;
-    /**
-     * <code>bool is_played = 4;</code>
-     * @return The isPlayed.
-     */
-    @java.lang.Override
-    public boolean getIsPlayed() {
-      return isPlayed_;
-    }
-
-    public static final int IS_FINISHED_FIELD_NUMBER = 7;
-    private boolean isFinished_;
-    /**
-     * <code>bool is_finished = 7;</code>
-     * @return The isFinished.
-     */
-    @java.lang.Override
-    public boolean getIsFinished() {
-      return isFinished_;
-    }
-
-    public static final int IFFKFLBCHHL_FIELD_NUMBER = 8;
-    private int iFFKFLBCHHL_;
-    /**
-     * <code>uint32 IFFKFLBCHHL = 8;</code>
-     * @return The iFFKFLBCHHL.
-     */
-    @java.lang.Override
-    public int getIFFKFLBCHHL() {
-      return iFFKFLBCHHL_;
-    }
-
-    public static final int ALNHCONFHHO_FIELD_NUMBER = 9;
-    private int aLNHCONFHHO_;
-    /**
-     * <code>uint32 ALNHCONFHHO = 9;</code>
-     * @return The aLNHCONFHHO.
-     */
-    @java.lang.Override
-    public int getALNHCONFHHO() {
-      return aLNHCONFHHO_;
-    }
-
-    public static final int EGCJHEIONKK_FIELD_NUMBER = 12;
+    public static final int EGCJHEIONKK_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList eGCJHEIONKK_;
     /**
-     * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+     * <code>repeated uint32 EGCJHEIONKK = 3;</code>
      * @return A list containing the eGCJHEIONKK.
      */
     @java.lang.Override
@@ -282,14 +231,14 @@ public final class OCECKEMKIGJOuterClass {
       return eGCJHEIONKK_;
     }
     /**
-     * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+     * <code>repeated uint32 EGCJHEIONKK = 3;</code>
      * @return The count of eGCJHEIONKK.
      */
     public int getEGCJHEIONKKCount() {
       return eGCJHEIONKK_.size();
     }
     /**
-     * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+     * <code>repeated uint32 EGCJHEIONKK = 3;</code>
      * @param index The index of the element to return.
      * @return The eGCJHEIONKK at the given index.
      */
@@ -298,10 +247,21 @@ public final class OCECKEMKIGJOuterClass {
     }
     private int eGCJHEIONKKMemoizedSerializedSize = -1;
 
-    public static final int IS_UNLOCK_FIELD_NUMBER = 13;
+    public static final int IS_PLAYED_FIELD_NUMBER = 10;
+    private boolean isPlayed_;
+    /**
+     * <code>bool is_played = 10;</code>
+     * @return The isPlayed.
+     */
+    @java.lang.Override
+    public boolean getIsPlayed() {
+      return isPlayed_;
+    }
+
+    public static final int IS_UNLOCK_FIELD_NUMBER = 9;
     private boolean isUnlock_;
     /**
-     * <code>bool is_unlock = 13;</code>
+     * <code>bool is_unlock = 9;</code>
      * @return The isUnlock.
      */
     @java.lang.Override
@@ -309,10 +269,54 @@ public final class OCECKEMKIGJOuterClass {
       return isUnlock_;
     }
 
-    public static final int JPBOIPOIGNH_FIELD_NUMBER = 15;
+    public static final int IS_FINISHED_FIELD_NUMBER = 12;
+    private boolean isFinished_;
+    /**
+     * <code>bool is_finished = 12;</code>
+     * @return The isFinished.
+     */
+    @java.lang.Override
+    public boolean getIsFinished() {
+      return isFinished_;
+    }
+
+    public static final int IFFKFLBCHHL_FIELD_NUMBER = 4;
+    private int iFFKFLBCHHL_;
+    /**
+     * <code>uint32 IFFKFLBCHHL = 4;</code>
+     * @return The iFFKFLBCHHL.
+     */
+    @java.lang.Override
+    public int getIFFKFLBCHHL() {
+      return iFFKFLBCHHL_;
+    }
+
+    public static final int ALNHCONFHHO_FIELD_NUMBER = 1;
+    private int aLNHCONFHHO_;
+    /**
+     * <code>uint32 ALNHCONFHHO = 1;</code>
+     * @return The aLNHCONFHHO.
+     */
+    @java.lang.Override
+    public int getALNHCONFHHO() {
+      return aLNHCONFHHO_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 6;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
+
+    public static final int JPBOIPOIGNH_FIELD_NUMBER = 14;
     private int jPBOIPOIGNH_;
     /**
-     * <code>uint32 JPBOIPOIGNH = 15;</code>
+     * <code>uint32 JPBOIPOIGNH = 14;</code>
      * @return The jPBOIPOIGNH.
      */
     @java.lang.Override
@@ -335,33 +339,33 @@ public final class OCECKEMKIGJOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (levelId_ != 0) {
-        output.writeUInt32(2, levelId_);
-      }
-      if (isPlayed_ != false) {
-        output.writeBool(4, isPlayed_);
-      }
-      if (isFinished_ != false) {
-        output.writeBool(7, isFinished_);
-      }
-      if (iFFKFLBCHHL_ != 0) {
-        output.writeUInt32(8, iFFKFLBCHHL_);
-      }
       if (aLNHCONFHHO_ != 0) {
-        output.writeUInt32(9, aLNHCONFHHO_);
+        output.writeUInt32(1, aLNHCONFHHO_);
       }
       if (getEGCJHEIONKKList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(eGCJHEIONKKMemoizedSerializedSize);
       }
       for (int i = 0; i < eGCJHEIONKK_.size(); i++) {
         output.writeUInt32NoTag(eGCJHEIONKK_.getInt(i));
       }
+      if (iFFKFLBCHHL_ != 0) {
+        output.writeUInt32(4, iFFKFLBCHHL_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(6, levelId_);
+      }
       if (isUnlock_ != false) {
-        output.writeBool(13, isUnlock_);
+        output.writeBool(9, isUnlock_);
+      }
+      if (isPlayed_ != false) {
+        output.writeBool(10, isPlayed_);
+      }
+      if (isFinished_ != false) {
+        output.writeBool(12, isFinished_);
       }
       if (jPBOIPOIGNH_ != 0) {
-        output.writeUInt32(15, jPBOIPOIGNH_);
+        output.writeUInt32(14, jPBOIPOIGNH_);
       }
       unknownFields.writeTo(output);
     }
@@ -372,25 +376,9 @@ public final class OCECKEMKIGJOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, levelId_);
-      }
-      if (isPlayed_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isPlayed_);
-      }
-      if (isFinished_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isFinished_);
-      }
-      if (iFFKFLBCHHL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, iFFKFLBCHHL_);
-      }
       if (aLNHCONFHHO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, aLNHCONFHHO_);
+          .computeUInt32Size(1, aLNHCONFHHO_);
       }
       {
         int dataSize = 0;
@@ -406,13 +394,29 @@ public final class OCECKEMKIGJOuterClass {
         }
         eGCJHEIONKKMemoizedSerializedSize = dataSize;
       }
+      if (iFFKFLBCHHL_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, iFFKFLBCHHL_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, levelId_);
+      }
       if (isUnlock_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isUnlock_);
+          .computeBoolSize(9, isUnlock_);
+      }
+      if (isPlayed_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isPlayed_);
+      }
+      if (isFinished_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isFinished_);
       }
       if (jPBOIPOIGNH_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, jPBOIPOIGNH_);
+          .computeUInt32Size(14, jPBOIPOIGNH_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -429,20 +433,20 @@ public final class OCECKEMKIGJOuterClass {
       }
       emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ other = (emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
+      if (!getEGCJHEIONKKList()
+          .equals(other.getEGCJHEIONKKList())) return false;
       if (getIsPlayed()
           != other.getIsPlayed()) return false;
+      if (getIsUnlock()
+          != other.getIsUnlock()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
       if (getIFFKFLBCHHL()
           != other.getIFFKFLBCHHL()) return false;
       if (getALNHCONFHHO()
           != other.getALNHCONFHHO()) return false;
-      if (!getEGCJHEIONKKList()
-          .equals(other.getEGCJHEIONKKList())) return false;
-      if (getIsUnlock()
-          != other.getIsUnlock()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (getJPBOIPOIGNH()
           != other.getJPBOIPOIGNH()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -456,11 +460,16 @@ public final class OCECKEMKIGJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
+      if (getEGCJHEIONKKCount() > 0) {
+        hash = (37 * hash) + EGCJHEIONKK_FIELD_NUMBER;
+        hash = (53 * hash) + getEGCJHEIONKKList().hashCode();
+      }
       hash = (37 * hash) + IS_PLAYED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsPlayed());
+      hash = (37 * hash) + IS_UNLOCK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsUnlock());
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
@@ -468,13 +477,8 @@ public final class OCECKEMKIGJOuterClass {
       hash = (53 * hash) + getIFFKFLBCHHL();
       hash = (37 * hash) + ALNHCONFHHO_FIELD_NUMBER;
       hash = (53 * hash) + getALNHCONFHHO();
-      if (getEGCJHEIONKKCount() > 0) {
-        hash = (37 * hash) + EGCJHEIONKK_FIELD_NUMBER;
-        hash = (53 * hash) + getEGCJHEIONKKList().hashCode();
-      }
-      hash = (37 * hash) + IS_UNLOCK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsUnlock());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + JPBOIPOIGNH_FIELD_NUMBER;
       hash = (53 * hash) + getJPBOIPOIGNH();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -573,6 +577,10 @@ public final class OCECKEMKIGJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code OCECKEMKIGJ}
      */
     public static final class Builder extends
@@ -610,9 +618,11 @@ public final class OCECKEMKIGJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
+        eGCJHEIONKK_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         isPlayed_ = false;
+
+        isUnlock_ = false;
 
         isFinished_ = false;
 
@@ -620,9 +630,7 @@ public final class OCECKEMKIGJOuterClass {
 
         aLNHCONFHHO_ = 0;
 
-        eGCJHEIONKK_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        isUnlock_ = false;
+        levelId_ = 0;
 
         jPBOIPOIGNH_ = 0;
 
@@ -653,17 +661,17 @@ public final class OCECKEMKIGJOuterClass {
       public emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ buildPartial() {
         emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ result = new emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ(this);
         int from_bitField0_ = bitField0_;
-        result.levelId_ = levelId_;
-        result.isPlayed_ = isPlayed_;
-        result.isFinished_ = isFinished_;
-        result.iFFKFLBCHHL_ = iFFKFLBCHHL_;
-        result.aLNHCONFHHO_ = aLNHCONFHHO_;
         if (((bitField0_ & 0x00000001) != 0)) {
           eGCJHEIONKK_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.eGCJHEIONKK_ = eGCJHEIONKK_;
+        result.isPlayed_ = isPlayed_;
         result.isUnlock_ = isUnlock_;
+        result.isFinished_ = isFinished_;
+        result.iFFKFLBCHHL_ = iFFKFLBCHHL_;
+        result.aLNHCONFHHO_ = aLNHCONFHHO_;
+        result.levelId_ = levelId_;
         result.jPBOIPOIGNH_ = jPBOIPOIGNH_;
         onBuilt();
         return result;
@@ -713,21 +721,6 @@ public final class OCECKEMKIGJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ other) {
         if (other == emu.grasscutter.net.proto.OCECKEMKIGJOuterClass.OCECKEMKIGJ.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getIsPlayed() != false) {
-          setIsPlayed(other.getIsPlayed());
-        }
-        if (other.getIsFinished() != false) {
-          setIsFinished(other.getIsFinished());
-        }
-        if (other.getIFFKFLBCHHL() != 0) {
-          setIFFKFLBCHHL(other.getIFFKFLBCHHL());
-        }
-        if (other.getALNHCONFHHO() != 0) {
-          setALNHCONFHHO(other.getALNHCONFHHO());
-        }
         if (!other.eGCJHEIONKK_.isEmpty()) {
           if (eGCJHEIONKK_.isEmpty()) {
             eGCJHEIONKK_ = other.eGCJHEIONKK_;
@@ -738,8 +731,23 @@ public final class OCECKEMKIGJOuterClass {
           }
           onChanged();
         }
+        if (other.getIsPlayed() != false) {
+          setIsPlayed(other.getIsPlayed());
+        }
         if (other.getIsUnlock() != false) {
           setIsUnlock(other.getIsUnlock());
+        }
+        if (other.getIsFinished() != false) {
+          setIsFinished(other.getIsFinished());
+        }
+        if (other.getIFFKFLBCHHL() != 0) {
+          setIFFKFLBCHHL(other.getIFFKFLBCHHL());
+        }
+        if (other.getALNHCONFHHO() != 0) {
+          setALNHCONFHHO(other.getALNHCONFHHO());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         if (other.getJPBOIPOIGNH() != 0) {
           setJPBOIPOIGNH(other.getJPBOIPOIGNH());
@@ -774,161 +782,6 @@ public final class OCECKEMKIGJOuterClass {
       }
       private int bitField0_;
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 2;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 2;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isPlayed_ ;
-      /**
-       * <code>bool is_played = 4;</code>
-       * @return The isPlayed.
-       */
-      @java.lang.Override
-      public boolean getIsPlayed() {
-        return isPlayed_;
-      }
-      /**
-       * <code>bool is_played = 4;</code>
-       * @param value The isPlayed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsPlayed(boolean value) {
-        
-        isPlayed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_played = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsPlayed() {
-        
-        isPlayed_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinished_ ;
-      /**
-       * <code>bool is_finished = 7;</code>
-       * @return The isFinished.
-       */
-      @java.lang.Override
-      public boolean getIsFinished() {
-        return isFinished_;
-      }
-      /**
-       * <code>bool is_finished = 7;</code>
-       * @param value The isFinished to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinished(boolean value) {
-        
-        isFinished_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finished = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinished() {
-        
-        isFinished_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int iFFKFLBCHHL_ ;
-      /**
-       * <code>uint32 IFFKFLBCHHL = 8;</code>
-       * @return The iFFKFLBCHHL.
-       */
-      @java.lang.Override
-      public int getIFFKFLBCHHL() {
-        return iFFKFLBCHHL_;
-      }
-      /**
-       * <code>uint32 IFFKFLBCHHL = 8;</code>
-       * @param value The iFFKFLBCHHL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIFFKFLBCHHL(int value) {
-        
-        iFFKFLBCHHL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 IFFKFLBCHHL = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIFFKFLBCHHL() {
-        
-        iFFKFLBCHHL_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int aLNHCONFHHO_ ;
-      /**
-       * <code>uint32 ALNHCONFHHO = 9;</code>
-       * @return The aLNHCONFHHO.
-       */
-      @java.lang.Override
-      public int getALNHCONFHHO() {
-        return aLNHCONFHHO_;
-      }
-      /**
-       * <code>uint32 ALNHCONFHHO = 9;</code>
-       * @param value The aLNHCONFHHO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setALNHCONFHHO(int value) {
-        
-        aLNHCONFHHO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 ALNHCONFHHO = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearALNHCONFHHO() {
-        
-        aLNHCONFHHO_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList eGCJHEIONKK_ = emptyIntList();
       private void ensureEGCJHEIONKKIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -937,7 +790,7 @@ public final class OCECKEMKIGJOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @return A list containing the eGCJHEIONKK.
        */
       public java.util.List<java.lang.Integer>
@@ -946,14 +799,14 @@ public final class OCECKEMKIGJOuterClass {
                  java.util.Collections.unmodifiableList(eGCJHEIONKK_) : eGCJHEIONKK_;
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @return The count of eGCJHEIONKK.
        */
       public int getEGCJHEIONKKCount() {
         return eGCJHEIONKK_.size();
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @param index The index of the element to return.
        * @return The eGCJHEIONKK at the given index.
        */
@@ -961,7 +814,7 @@ public final class OCECKEMKIGJOuterClass {
         return eGCJHEIONKK_.getInt(index);
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @param index The index to set the value at.
        * @param value The eGCJHEIONKK to set.
        * @return This builder for chaining.
@@ -974,7 +827,7 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @param value The eGCJHEIONKK to add.
        * @return This builder for chaining.
        */
@@ -985,7 +838,7 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @param values The eGCJHEIONKK to add.
        * @return This builder for chaining.
        */
@@ -998,7 +851,7 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EGCJHEIONKK = 12;</code>
+       * <code>repeated uint32 EGCJHEIONKK = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearEGCJHEIONKK() {
@@ -1008,9 +861,40 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
 
+      private boolean isPlayed_ ;
+      /**
+       * <code>bool is_played = 10;</code>
+       * @return The isPlayed.
+       */
+      @java.lang.Override
+      public boolean getIsPlayed() {
+        return isPlayed_;
+      }
+      /**
+       * <code>bool is_played = 10;</code>
+       * @param value The isPlayed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsPlayed(boolean value) {
+        
+        isPlayed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_played = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsPlayed() {
+        
+        isPlayed_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean isUnlock_ ;
       /**
-       * <code>bool is_unlock = 13;</code>
+       * <code>bool is_unlock = 9;</code>
        * @return The isUnlock.
        */
       @java.lang.Override
@@ -1018,7 +902,7 @@ public final class OCECKEMKIGJOuterClass {
         return isUnlock_;
       }
       /**
-       * <code>bool is_unlock = 13;</code>
+       * <code>bool is_unlock = 9;</code>
        * @param value The isUnlock to set.
        * @return This builder for chaining.
        */
@@ -1029,7 +913,7 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
       /**
-       * <code>bool is_unlock = 13;</code>
+       * <code>bool is_unlock = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsUnlock() {
@@ -1039,9 +923,133 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
 
+      private boolean isFinished_ ;
+      /**
+       * <code>bool is_finished = 12;</code>
+       * @return The isFinished.
+       */
+      @java.lang.Override
+      public boolean getIsFinished() {
+        return isFinished_;
+      }
+      /**
+       * <code>bool is_finished = 12;</code>
+       * @param value The isFinished to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinished(boolean value) {
+        
+        isFinished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finished = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinished() {
+        
+        isFinished_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int iFFKFLBCHHL_ ;
+      /**
+       * <code>uint32 IFFKFLBCHHL = 4;</code>
+       * @return The iFFKFLBCHHL.
+       */
+      @java.lang.Override
+      public int getIFFKFLBCHHL() {
+        return iFFKFLBCHHL_;
+      }
+      /**
+       * <code>uint32 IFFKFLBCHHL = 4;</code>
+       * @param value The iFFKFLBCHHL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIFFKFLBCHHL(int value) {
+        
+        iFFKFLBCHHL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IFFKFLBCHHL = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIFFKFLBCHHL() {
+        
+        iFFKFLBCHHL_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int aLNHCONFHHO_ ;
+      /**
+       * <code>uint32 ALNHCONFHHO = 1;</code>
+       * @return The aLNHCONFHHO.
+       */
+      @java.lang.Override
+      public int getALNHCONFHHO() {
+        return aLNHCONFHHO_;
+      }
+      /**
+       * <code>uint32 ALNHCONFHHO = 1;</code>
+       * @param value The aLNHCONFHHO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setALNHCONFHHO(int value) {
+        
+        aLNHCONFHHO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 ALNHCONFHHO = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearALNHCONFHHO() {
+        
+        aLNHCONFHHO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int jPBOIPOIGNH_ ;
       /**
-       * <code>uint32 JPBOIPOIGNH = 15;</code>
+       * <code>uint32 JPBOIPOIGNH = 14;</code>
        * @return The jPBOIPOIGNH.
        */
       @java.lang.Override
@@ -1049,7 +1057,7 @@ public final class OCECKEMKIGJOuterClass {
         return jPBOIPOIGNH_;
       }
       /**
-       * <code>uint32 JPBOIPOIGNH = 15;</code>
+       * <code>uint32 JPBOIPOIGNH = 14;</code>
        * @param value The jPBOIPOIGNH to set.
        * @return This builder for chaining.
        */
@@ -1060,7 +1068,7 @@ public final class OCECKEMKIGJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 JPBOIPOIGNH = 15;</code>
+       * <code>uint32 JPBOIPOIGNH = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearJPBOIPOIGNH() {
@@ -1136,13 +1144,12 @@ public final class OCECKEMKIGJOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021OCECKEMKIGJ.proto\"\256\001\n\013OCECKEMKIGJ\022\020\n\010l" +
-      "evel_id\030\002 \001(\r\022\021\n\tis_played\030\004 \001(\010\022\023\n\013is_f" +
-      "inished\030\007 \001(\010\022\023\n\013IFFKFLBCHHL\030\010 \001(\r\022\023\n\013AL" +
-      "NHCONFHHO\030\t \001(\r\022\023\n\013EGCJHEIONKK\030\014 \003(\r\022\021\n\t" +
-      "is_unlock\030\r \001(\010\022\023\n\013JPBOIPOIGNH\030\017 \001(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025OCECKEMKIGJOu" +
-      "terClassb\006proto3"
+      "\n\021OCECKEMKIGJ.proto\"\256\001\n\013OCECKEMKIGJ\022\023\n\013E" +
+      "GCJHEIONKK\030\003 \003(\r\022\021\n\tis_played\030\n \001(\010\022\021\n\ti" +
+      "s_unlock\030\t \001(\010\022\023\n\013is_finished\030\014 \001(\010\022\023\n\013I" +
+      "FFKFLBCHHL\030\004 \001(\r\022\023\n\013ALNHCONFHHO\030\001 \001(\r\022\020\n" +
+      "\010level_id\030\006 \001(\r\022\023\n\013JPBOIPOIGNH\030\016 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1153,7 +1160,7 @@ public final class OCECKEMKIGJOuterClass {
     internal_static_OCECKEMKIGJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_OCECKEMKIGJ_descriptor,
-        new java.lang.String[] { "LevelId", "IsPlayed", "IsFinished", "IFFKFLBCHHL", "ALNHCONFHHO", "EGCJHEIONKK", "IsUnlock", "JPBOIPOIGNH", });
+        new java.lang.String[] { "EGCJHEIONKK", "IsPlayed", "IsUnlock", "IsFinished", "IFFKFLBCHHL", "ALNHCONFHHO", "LevelId", "JPBOIPOIGNH", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
