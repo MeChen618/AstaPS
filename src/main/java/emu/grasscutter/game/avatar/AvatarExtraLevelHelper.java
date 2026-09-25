@@ -26,6 +26,7 @@
  */
 package emu.grasscutter.game.avatar;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
@@ -129,7 +130,7 @@ public final class AvatarExtraLevelHelper {
 
     public static boolean tryHandleKnownOpcodePacket(Player player, int n, byte[] byArray) {
         ParsedExtraLevelUpgradeReq parsedExtraLevelUpgradeReq;
-        if (n != 27289) {
+        if (n != PacketOpcodes.AvatarPromoteReq) {
             return false;
         }
         if (player == null || byArray == null || byArray.length == 0 || IGNORED_SNIFF_OPCODES.contains(n)) {
@@ -171,9 +172,9 @@ public final class AvatarExtraLevelHelper {
     }
 
     public static boolean onPromoteReq(Player player, long l) {
-        lastRequestOpcode = 27289;
-        AvatarExtraLevelOpcodes.noteDiscoveredRequest((int)27289);
-        AvatarExtraLevelHelper.logPromoteRequest(player, l, 27289);
+        lastRequestOpcode = PacketOpcodes.AvatarPromoteReq;
+        AvatarExtraLevelOpcodes.noteDiscoveredRequest((int)PacketOpcodes.AvatarPromoteReq);
+        AvatarExtraLevelHelper.logPromoteRequest(player, l, PacketOpcodes.AvatarPromoteReq);
         return AvatarExtraLevelHelper.upgradeByGuid(player, l);
     }
 
@@ -188,7 +189,7 @@ public final class AvatarExtraLevelHelper {
     public static boolean upgradeByGuid(Player player, long l) {
         Avatar avatar;
         if (lastRequestOpcode <= 0) {
-            lastRequestOpcode = 27289;
+            lastRequestOpcode = PacketOpcodes.AvatarPromoteReq;
         }
         AvatarExtraLevelHelper.ensureConfigsLoaded();
         Avatar avatar2 = avatar = player == null ? null : player.getAvatars().getAvatarByGuid(l);
@@ -290,7 +291,7 @@ public final class AvatarExtraLevelHelper {
         player.sendPacket((BasePacket)new PacketAvatarPropNotify(avatar));
         player.sendPacket((BasePacket)new PacketAvatarUpgradeRsp(avatar, n2, (Map)int2FloatArrayMap));
         player.sendPacket((BasePacket)new PacketAvatarDataNotify(player));
-        if (n == 27289) {
+        if (n == PacketOpcodes.AvatarPromoteReq) {
             player.sendPacket((BasePacket)new PacketAvatarPromoteRsp(avatar));
         } else if (n > 0) {
             AvatarExtraLevelHelper.sendSuccess(player, avatar, n2, n);

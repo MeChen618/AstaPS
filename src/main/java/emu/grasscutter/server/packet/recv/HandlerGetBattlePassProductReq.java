@@ -12,6 +12,7 @@
  */
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
@@ -20,7 +21,7 @@ import emu.grasscutter.net.proto.GetBattlePassProductReqOuterClass.GetBattlePass
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketGetBattlePassProductRsp;
 
-@Opcodes(value=5948)
+@Opcodes(PacketOpcodes.GetBattlePassProductReq)
 public class HandlerGetBattlePassProductReq
 extends PacketHandler {
     public void handle(GameSession gameSession, byte[] byArray, byte[] byArray2) throws Exception {

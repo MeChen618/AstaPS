@@ -46,13 +46,17 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public final class ReliquaryDustSystem {
     public static final int DUST_ITEM_ID = 105006;
-    public static final int OPCODE_DUST_REQ = 21870;
-    public static final int OPCODE_DUST_RSP = 21898;
-    public static final int OPCODE_DUST_COMPANION_REQ = 26587;
+    // These were 7.0 CmdIds, none of which 7.1 names. In 7.1 21870 is DungeonPlayerDieReq (its
+    // handler and the dust one both claimed it), 21898 GetAllActivatedBargainDataRsp and 2210
+    // _BeyondHallRoomCardChangeNotify, so the requests sit on placeholders that never match until
+    // the 7.1 ids are known. The 7.0 numbers are kept in the comments.
+    public static final int OPCODE_DUST_REQ = -1101; // 7.0: 21870
+    public static final int OPCODE_DUST_RSP = 0; // 7.0: 21898, GetAllActivatedBargainDataRsp in 7.1
+    public static final int OPCODE_DUST_COMPANION_REQ = -1102; // 7.0: 26587
     public static final int OPCODE_DUST_COMPANION_RSP = 26599;
-    public static final int OPCODE_DUST_SELECT_REQ = 7273;
-    public static final int OPCODE_DUST_CONFIRM_REQ_A = 2210;
-    public static final int OPCODE_DUST_CONFIRM_REQ_B = 21945;
+    public static final int OPCODE_DUST_SELECT_REQ = -1103; // 7.0: 7273
+    public static final int OPCODE_DUST_CONFIRM_REQ_A = -1104; // 7.0: 2210
+    public static final int OPCODE_DUST_CONFIRM_REQ_B = -1105; // 7.0: 21945
 
     /**
      * SelectRsp opcode probe (local debugging only). Keep false on production - wrong opcodes and

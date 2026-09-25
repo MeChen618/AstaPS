@@ -81,7 +81,7 @@ public class HandlerTakeBattlePassRewardReq extends PacketHandler {
         List<BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption> result = new ArrayList<>();
         try {
             UnknownFieldSet fields = UnknownFieldSet.parseFrom(payload);
-            for (int fieldNumber : new int[] {10, 11, 8, 1, 2, 5, 7, 9, 12, 13, 14, 15}) {
+            for (int fieldNumber : new int[] {TakeBattlePassRewardReq.TAKE_OPTION_LIST_FIELD_NUMBER, 10, 11, 8, 1, 2, 5, 7, 9, 12, 13, 14, 15}) {
                 UnknownFieldSet.Field field = fields.getField(fieldNumber);
                 if (field == null) continue;
                 for (ByteString bytes : field.getLengthDelimitedList()) {
@@ -99,8 +99,8 @@ public class HandlerTakeBattlePassRewardReq extends PacketHandler {
     private static BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption parseOneOption(byte[] payload) {
         try {
             UnknownFieldSet fields = UnknownFieldSet.parseFrom(payload);
-            int optionIdx = firstVarint(fields, 4, 12);
-            ByteString tagBytes = firstBytes(fields, 7, 5);
+            int optionIdx = firstVarint(fields, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.OPTION_IDX_FIELD_NUMBER);
+            ByteString tagBytes = firstBytes(fields, BattlePassRewardTakeOptionOuterClass.BattlePassRewardTakeOption.TAG_FIELD_NUMBER);
             if (tagBytes == null) return null;
             int rewardId = 0, level = 1, unlock = 0;
             try {

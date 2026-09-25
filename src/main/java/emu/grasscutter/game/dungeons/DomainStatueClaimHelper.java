@@ -25,13 +25,16 @@ public final class DomainStatueClaimHelper {
     private static final int COST_FRAGILE = 6;
     private static final int COST_HCOIN = 8;
 
-    /** Official 7.0 GadgetInteractReq field numbers that remote schema may not declare. */
-    private static final int WIRE_TIMES_OR_COST = 3;
+    /**
+     * GadgetInteractReq fields the claim reads by number (7.0: 3, 1, 4, 11, 15). The 7.1 class
+     * declares them, under their 7.0 tokens, so they are read from the declared fields first.
+     */
+    private static final int WIRE_TIMES_OR_COST = GadgetInteractReq.EBEELPIEKEL_FIELD_NUMBER;
 
-    private static final int WIRE_LEGACY_BOOL_A = 1;
-    private static final int WIRE_LEGACY_BOOL_B = 4;
-    private static final int WIRE_ALT_TIMES_A = 11;
-    private static final int WIRE_ALT_TIMES_B = 15;
+    private static final int WIRE_LEGACY_BOOL_A = GadgetInteractReq.AJDBEGMCGKD_FIELD_NUMBER;
+    private static final int WIRE_LEGACY_BOOL_B = GadgetInteractReq.HDJABIODGCI_FIELD_NUMBER;
+    private static final int WIRE_ALT_TIMES_A = GadgetInteractReq.CJIPKAIPCIB_FIELD_NUMBER;
+    private static final int WIRE_ALT_TIMES_B = GadgetInteractReq.ALLPOOBNNPH_FIELD_NUMBER;
 
     public enum ClaimMode {
         /** 20 original resin → 1× */
@@ -150,6 +153,12 @@ public final class DomainStatueClaimHelper {
 
     private static long unknownFirstVarint(GadgetInteractReq req, int fieldNumber) {
         try {
+            var declared = req.getDescriptorForType().findFieldByNumber(fieldNumber);
+            if (declared != null && !declared.isRepeated()) {
+                Object v = req.getField(declared);
+                if (v instanceof Boolean b) return b ? 1L : 0L;
+                if (v instanceof Number n) return n.longValue();
+            }
             UnknownFieldSet ufs = req.getUnknownFields();
             if (ufs == null || !ufs.hasField(fieldNumber)) {
                 return 0L;

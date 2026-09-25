@@ -577,8 +577,8 @@ public class ConfigContainer {
             /* Set to fade from "color" to this one across the text. Blank means a flat colour.
              * A gradient costs ~24 bytes per character, so it fits roughly 10 characters. */
             public String gradientTo = "#FF1493";
-            /* CmdId to send the wind seed notify under. 0 uses PacketOpcodes.WindSeedClientNotify,
-             * which the 7.0 dump gives as 226. Set to -1 to send nothing at all.
+            /* CmdId to send the wind seed notify under. 0 (recommended) uses
+             * PacketOpcodes.WindSeedType1Notify, 29056 in 7.1. Set to -1 to send nothing at all.
              *
              * If the client ever starts crashing a second or two after login, set this to -1 first:
              * this is the one packet whose payload the client EXECUTES as Lua, so a payload it does
@@ -586,7 +586,7 @@ public class ConfigContainer {
              * when area_notify was sent with its two uint32s left at zero. */
             public int cmdId = 0;
             /* Protobuf field number the Lua payload is written to, flat at the top level.
-             * 0 uses the built-in default (6, which is `payload` on 7.0's message). */
+             * 0 (recommended) uses `payload` on WindSeedType1Notify, 5 in 7.1 (7.0 had 6). */
             public int payloadField = 0;
             /* Try several candidates in one login instead of one per restart. Each entry is
              * "cmdId:payloadField"; the watermark is sent once under each. The client ignores a

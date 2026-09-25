@@ -1,6 +1,7 @@
 package emu.grasscutter.server.packet.recv;
 
 import com.google.protobuf.CodedInputStream;
+import emu.grasscutter.net.proto.DungeonQuickOpenReq;
 import emu.grasscutter.game.dungeons.DomainDungeonHelper;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.Opcodes;
@@ -9,8 +10,8 @@ import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.server.game.GameSession;
 
 /**
- * Handbook preparation "quick open" path. Proto dump has no named BuyResin-style message for 7.0;
- * parse field 1 (uint32 dungeon_entry_config_id) from the raw body.
+ * Handbook preparation "quick open" path. Read by hand so a malformed body still opens the
+ * handbook; the field number comes from the generated _DungeonQuickOpenReq (1 in 7.0, 7 in 7.1).
  */
 @Opcodes(PacketOpcodes.DungeonQuickOpenReq)
 public class HandlerDungeonQuickOpenReq extends PacketHandler {
@@ -23,7 +24,7 @@ public class HandlerDungeonQuickOpenReq extends PacketHandler {
                 while (!input.isAtEnd()) {
                     int tag = input.readTag();
                     int field = tag >>> 3;
-                    if (field == 1) {
+                    if (field == DungeonQuickOpenReq._DungeonQuickOpenReq.DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER) {
                         entryConfigId = input.readUInt32();
                         break;
                     }

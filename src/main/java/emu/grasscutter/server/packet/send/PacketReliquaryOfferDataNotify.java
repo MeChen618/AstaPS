@@ -40,6 +40,8 @@ public class PacketReliquaryOfferDataNotify extends BasePacket {
      */
     public PacketReliquaryOfferDataNotify(PlayerState state, boolean announceExtracted) {
         super(PacketOpcodes.ReliquaryOfferDataNotify);
+        // 7.1 field numbers, carried over from 7.0 (2/8/12/13{9,11}/15) by the structural match; the
+        // four uint32 fields share a type, so which is which follows the match, not a capture.
         if (state == null) {
             state = new PlayerState();
         }
@@ -48,13 +50,13 @@ public class PacketReliquaryOfferDataNotify extends BasePacket {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
         if (announceExtracted && state.extractedThisCycle > 0) {
-            ProtoWire.writeUint32Force(out, 2, state.extractedThisCycle);
+            ProtoWire.writeUint32Force(out, 5, state.extractedThisCycle);
         }
 
-        ProtoWire.writeUint32Force(out, 8, ArtifactTransmuterSystem.SCHEDULE_ID);
+        ProtoWire.writeUint32Force(out, 7, ArtifactTransmuterSystem.SCHEDULE_ID);
 
         if (state.progress > 0) {
-            ProtoWire.writeUint32Force(out, 12, state.progress);
+            ProtoWire.writeUint32Force(out, 11, state.progress);
         }
 
         // Sending the defined-set list makes the client decrement "remaining definable" per ConstValue,
@@ -65,13 +67,13 @@ public class PacketReliquaryOfferDataNotify extends BasePacket {
         if (syncDefinedSuites && state.definedSuites != null && !state.definedSuites.isEmpty()) {
             for (Map.Entry<Integer, Integer> e : state.definedSuites.entrySet()) {
                 ByteArrayOutputStream nest = new ByteArrayOutputStream();
-                ProtoWire.writeUint32Force(nest, 9, e.getKey());
-                ProtoWire.writeUint32Force(nest, 11, e.getValue());
+                ProtoWire.writeUint32Force(nest, 13, e.getKey());
+                ProtoWire.writeUint32Force(nest, 12, e.getValue());
                 ProtoWire.writeBytes(out, 13, nest.toByteArray());
             }
         }
 
-        ProtoWire.writeUint32Force(out, 15, ArtifactTransmuterSystem.cycleEndTime(state));
+        ProtoWire.writeUint32Force(out, 8, ArtifactTransmuterSystem.cycleEndTime(state));
         this.setData(out.toByteArray());
     }
 }

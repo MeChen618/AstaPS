@@ -1,5 +1,6 @@
 package emu.grasscutter.game.player;
 
+import emu.grasscutter.net.proto.PushTipsAllDataNotifyOuterClass;
 import com.google.protobuf.CodedOutputStream;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.net.packet.BasePacket;
@@ -31,7 +32,8 @@ public final class PushTipsSuppressHelper {
     private static final int STATE_FINISH = 3;
 
     /** Field number of {@code repeated PushTipsData push_tips_list} inside the notify. */
-    private static final int PUSH_TIPS_LIST_FIELD = 1;
+    private static final int PUSH_TIPS_LIST_FIELD =
+            PushTipsAllDataNotifyOuterClass.PushTipsAllDataNotify.PUSH_TIPS_LIST_FIELD_NUMBER;
 
     /** Relic define / Artifact Transmuter unlock tip. */
     private static final int TIP_RELIC_DEFINE = 7013;

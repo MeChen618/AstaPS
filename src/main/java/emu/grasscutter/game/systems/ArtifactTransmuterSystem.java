@@ -367,8 +367,8 @@ public final class ArtifactTransmuterSystem {
         PlayerState st = state(player);
         Map<Integer, List<Object>> fields = ProtoWire.parse(payload);
 
-        // Live 7.0 client uses fields 5/9/11/14 (not 1..5). Capture semantics in ascending order:
-        // groups, equipType, versionIdx, [schedule], mainIndex - schedule may be omitted.
+        // 7.1 client: groups 3, equipType 8, versionIdx 9, schedule 10, mainIndex 1 (the 7.0 capture's
+        // 5/9/11/13/14 carried over by the structural match). Schedule may be omitted.
         List<Integer> groups = new ArrayList<>();
         int equipType = 1;
         int versionIdx = 1;
@@ -380,18 +380,18 @@ public final class ArtifactTransmuterSystem {
         }
 
         // Prefer explicit live field map when present.
-        if (decoded.containsKey(5) || decoded.containsKey(9) || decoded.containsKey(11) || decoded.containsKey(14)) {
-            if (decoded.containsKey(5)) {
-                groups.addAll(filterGroupIds(decoded.get(5)));
+        if (decoded.containsKey(3) || decoded.containsKey(8) || decoded.containsKey(9) || decoded.containsKey(1)) {
+            if (decoded.containsKey(3)) {
+                groups.addAll(filterGroupIds(decoded.get(3)));
+            }
+            if (decoded.containsKey(8) && !decoded.get(8).isEmpty()) {
+                equipType = decoded.get(8).get(0);
             }
             if (decoded.containsKey(9) && !decoded.get(9).isEmpty()) {
-                equipType = decoded.get(9).get(0);
+                versionIdx = decoded.get(9).get(0);
             }
-            if (decoded.containsKey(11) && !decoded.get(11).isEmpty()) {
-                versionIdx = decoded.get(11).get(0);
-            }
-            if (decoded.containsKey(14) && !decoded.get(14).isEmpty()) {
-                mainIndex = decoded.get(14).get(0);
+            if (decoded.containsKey(1) && !decoded.get(1).isEmpty()) {
+                mainIndex = decoded.get(1).get(0);
             }
         } else {
             // Older capture layout: 1=groups 2=equip 3=version 4=schedule 5=main
@@ -421,7 +421,7 @@ public final class ArtifactTransmuterSystem {
         }
 
         // Fallback singles only when version field missing.
-        if (!decoded.containsKey(11) && !decoded.containsKey(3) && versionIdx <= 1) {
+        if (!decoded.containsKey(9) && versionIdx <= 1) {
             for (List<Integer> vals : decoded.values()) {
                 if (vals.size() == 1) {
                     int v = vals.get(0);

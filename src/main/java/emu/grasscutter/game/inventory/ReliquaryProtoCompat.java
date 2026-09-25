@@ -62,7 +62,7 @@ final class ReliquaryProtoCompat {
         if (definite == null || definite.isEmpty() || definiteOnBuilder) {
             return built;
         }
-        return appendPackedUInt32Field(built, 8, definite);
+        return appendPackedUInt32Field(built, Reliquary._DEFINITE_APPEND_PROP_ID_LIST_FIELD_NUMBER, definite);
     }
 
     private static Reliquary appendPackedUInt32Field(
