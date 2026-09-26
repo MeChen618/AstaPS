@@ -20,18 +20,20 @@ import lombok.*;
 
 public class TowerManager extends BasePlayerManager {
     /**
-     * Mid-half black screen via {@code ShowLoadingScreen} template 7 ({@code ENTER_TOWER}). Client
-     * LoadingTips text (seal etc.) is accepted as-is — tip wording is not fixed here.
+     * Mid-half transition cutscene: {@code Cs_TowerV2_Stands_Down_Convert}. It used to be 59, which
+     * is an Enkanomiya cutscene, together with a ShowLoadingScreen whose random LoadingTips text
+     * (including client test strings) showed up between the halves. The official mid-level notify
+     * that shows the proper text has no known 7.1 CmdId.
      */
-    private static final int MID_HALF_CUTSCENE_ID = 59;
-    /** {@code SITUATION_TYPE_ENTER_TOWER} — black dungeon loading screen. */
-    private static final int MID_HALF_LOADING_TEMPLATE = 7;
+    private static final int MID_HALF_CUTSCENE_ID = 150;
     /**
-     * Real-time seconds for the mid-half hold before swapping teams.
+     * Minimum real-time seconds before the team swap. The swap normally happens when the cutscene
+     * finishes; {@link #MID_HALF_FALLBACK_SECONDS} covers a cutscene that never reports back.
      * {@link emu.grasscutter.server.scheduler.ServerTaskScheduler} delays are in <b>seconds</b>
      * (one scheduler tick ≈ one wall-clock second), not {@code tickRateMs} game-loop ticks.
      */
-    private static final int MID_HALF_TRANSITION_SECONDS = 2;
+    private static final int MID_HALF_TRANSITION_SECONDS = 1;
+    private static final int MID_HALF_FALLBACK_SECONDS = 10;
 
     private static final List<DungeonSettleListener> towerDungeonSettleListener =
             List.of(new TowerDungeonSettleListener());
@@ -1157,13 +1159,13 @@ public class TowerManager extends BasePlayerManager {
                     .warn("Tower mid-half end upper challenge uid={}: {}", player.getUid(), t.toString());
         }
 
-        int delayTicks = secondsToSchedulerDelay(MID_HALF_TRANSITION_SECONDS);
+        int delayTicks = secondsToSchedulerDelay(MID_HALF_FALLBACK_SECONDS);
         Grasscutter.getLogger()
                 .info(
-                        "Tower mid-half uid={} teamId={} hold={}s (schedulerDelay={}) pos={}",
+                        "Tower mid-half uid={} teamId={} fallback={}s (schedulerDelay={}) pos={}",
                         player.getUid(),
                         teamId,
-                        MID_HALF_TRANSITION_SECONDS,
+                        MID_HALF_FALLBACK_SECONDS,
                         delayTicks,
                         bornPos);
 
@@ -1175,16 +1177,9 @@ public class TowerManager extends BasePlayerManager {
                                 getTowerData().currentFloorId, getCurrentLevel(), false, player));
 
         player.sendPacket(new PacketTowerMiddleLevelChangeTeamNotify());
-        player.sendPacket(
-                new PacketShowLoadingScreenNotify(
-                        MID_HALF_LOADING_TEMPLATE, MID_HALF_TRANSITION_SECONDS));
         player.sendPacket(new PacketCutsceneBeginNotify(MID_HALF_CUTSCENE_ID));
         Grasscutter.getLogger()
-                .info(
-                        "Tower mid-half tip packets uid={} loadingTpl={} cutscene={} (black ENTER_TOWER)",
-                        player.getUid(),
-                        MID_HALF_LOADING_TEMPLATE,
-                        MID_HALF_CUTSCENE_ID);
+                .info("Tower mid-half uid={} cutscene={}", player.getUid(), MID_HALF_CUTSCENE_ID);
 
         final int applyTeamId = teamId;
         player
@@ -1197,35 +1192,18 @@ public class TowerManager extends BasePlayerManager {
                             }
                             Grasscutter.getLogger()
                                     .info(
-                                            "Tower mid-half timed swap uid={} after {}s",
+                                            "Tower mid-half fallback swap uid={} after {}s",
                                             player.getUid(),
-                                            MID_HALF_TRANSITION_SECONDS);
+                                            MID_HALF_FALLBACK_SECONDS);
                             completeMidHalfSwap();
                         },
                         delayTicks);
     }
 
-    /** Cutscene 59 finished → swap when the hold window allows. */
+    /** The mid-half cutscene finished → swap once the minimum hold has passed. */
     public void onMidHalfCutsceneFinished(int cutsceneId) {
         if (cutsceneId != MID_HALF_CUTSCENE_ID) return;
         if (!midHalfCutscenePending) return;
-        long now = System.currentTimeMillis();
-        if (now < midHalfEarliestSwapMs) {
-            float remain = Math.max(0.3f, (midHalfEarliestSwapMs - now) / 1000f);
-            try {
-                player.sendPacket(new PacketTowerMiddleLevelChangeTeamNotify());
-                player.sendPacket(
-                        new PacketShowLoadingScreenNotify(MID_HALF_LOADING_TEMPLATE, remain));
-            } catch (Throwable ignored) {
-                // Best effort.
-            }
-            Grasscutter.getLogger()
-                    .info(
-                            "Tower mid-half early CutSceneFinish uid={} remain≈{}s",
-                            player.getUid(),
-                            String.format("%.1f", remain));
-            return;
-        }
         Grasscutter.getLogger()
                 .info("Tower mid-half CutSceneFinish uid={} → swap", player.getUid());
         completeMidHalfSwap();

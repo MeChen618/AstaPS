@@ -3,13 +3,15 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData;
 import emu.grasscutter.net.proto.PersonalLineAllDataRspOuterClass;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class PacketPersonalLineAllDataRsp extends BasePacket {
 
-    public PacketPersonalLineAllDataRsp(Collection<GameMainQuest> gameMainQuestList) {
+    public PacketPersonalLineAllDataRsp(
+            Collection<GameMainQuest> gameMainQuestList, Set<Integer> unlockedLines) {
         super(PacketOpcodes.PersonalLineAllDataRsp);
 
         var proto = PersonalLineAllDataRspOuterClass.PersonalLineAllDataRsp.newBuilder();
@@ -22,12 +24,19 @@ public class PacketPersonalLineAllDataRsp extends BasePacket {
                         .map(GameQuest::getSubQuestId)
                         .collect(Collectors.toSet());
 
-        // can_be_unlocked_personal_line_list is one of three unnamed `repeated uint32` fields in the
-        // 7.0 dump, and nothing distinguishes them, so the list is left empty rather than written to
-        // a field that may mean something else entirely.
+        // locked_personal_line_list and its fields are named by the 7.1 name translations. Lines
+        // not started and not unlocked with a key are listed as locked, as in the private repo.
         GameData.getPersonalLineDataMap().values().stream()
                 .filter(i -> !questList.contains(i.getStartQuestId()))
-                .forEach(i -> {});
+                .filter(i -> unlockedLines == null || !unlockedLines.contains(i.getId()))
+                .forEach(
+                        i ->
+                                proto.addLockedPersonalLineList(
+                                        LockedPersonallineData.newBuilder()
+                                                .setPersonalLineId(i.getId())
+                                                .setLockReason(
+                                                        LockedPersonallineData.LockReason.LockReason_QUEST)
+                                                .build()));
 
         this.setData(proto);
     }

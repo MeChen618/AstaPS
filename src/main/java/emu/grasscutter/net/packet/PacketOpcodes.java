@@ -50,7 +50,8 @@ public final class PacketOpcodes {
     public static final int SkipPlayerGameTimeReq = 0;
     public static final int TheaterLobbySceneJumpReq = 0;
     public static final int UiSettingInputTypeNotify = 0;
-    public static final int UnlockPersonalLineReq = 0;
+    public static final int UnlockPersonalLineReq = 5896; // 7.1: one of two {personal_line_id = 13} reqs, see HandlerUnlockPersonalLineReq
+    public static final int _UnlockPersonalLineReqAlt = 21679; // 7.1: the other one
     // ============================================
     // 以下是原有的 opcode 定义
     // ============================================
@@ -88,7 +89,7 @@ public final class PacketOpcodes {
     // public static final int AGILNBLNEKF = 4768;
     public static final int RogueSwitchAvatarRsp = 22673;
     // public static final int BMKBINFDPAK = 1769;
-    public static final int PersonalSceneJumpReq = 0; // 7.1 CmdId unknown (7.0: 259)
+    public static final int PersonalSceneJumpReq = 13; // from nameTranslations (7.1)
     public static final int AnchorPointDataNotify = 6733;
     public static final int BrickBreakerSetChangingReq = 7138;
     public static final int ChessPickCardRsp = 28802;
@@ -456,7 +457,7 @@ public final class PacketOpcodes {
     public static final int _UgcDungeonAddReq = 28570;
     // public static final int CAMJIKEODAF = 23474;
     public static final int GravenInnocencePhotoFinishReq = 29645;
-    public static final int TowerAllDataReq = 0; // 7.1 CmdId unknown (7.0: 2562)
+    public static final int TowerAllDataReq = 27826; // from nameTranslations (7.1)
     public static final int QuestCreateEntityReq = 29721;
     public static final int TakeBattlePassMissionPointReq = 0; // 7.1 CmdId unknown (7.0: 2572)
     public static final int GetBonusActivityRewardReq = 28092;
@@ -565,7 +566,7 @@ public final class PacketOpcodes {
     public static final int ReunionPrivilegeChangeNotify = 27305;
     public static final int ActivitySaleChangeNotify = 22176;
     public static final int RechargeRsp = 22306;
-    public static final int PersonalLineAllDataReq = 0; // 7.1 CmdId unknown (7.0: 3341)
+    public static final int PersonalLineAllDataReq = 3132; // from nameTranslations (7.1)
     // public static final int KMALBJAGLAL = 8789;
     public static final int _BeyondChatRsp = 638;
     public static final int ChannellerSlabLoopDungeonSelectConditionRsp = 2899;
@@ -1339,7 +1340,7 @@ public final class PacketOpcodes {
     // public static final int KKOAFKKJAJG = 22974;
     public static final int GCGSkillPreviewNotify = 22411;
     public static final int HomeRacingGallerySettleNotify = 25691;
-    public static final int GetQuestLackingResourceReq = 0; // 7.1 CmdId unknown (7.0: 8759)
+    public static final int GetQuestLackingResourceReq = 4816; // from nameTranslations (7.1)
     // public static final int IBGJNANGLIP = 3419;
     public static final int SceneRouteChangeNotify = 2838;
     public static final int LanternRiteDoFireworksReformReq = 22818;
@@ -1721,7 +1722,7 @@ public final class PacketOpcodes {
     public static final int MarkMapRsp = 0; // 7.1 CmdId unknown (7.0: 21638)
     public static final int GalleryBalloonScoreNotify = 27276;
     public static final int UpdatePlayerShowNameCardListReq = 29960;
-    // public static final int NALBKOPFIFD = 9787;
+    public static final int NALBKOPFIFD = 9787; // 7.1: {personal_line_id, retcode} rsp
     public static final int MonsterAIConfigHashNotify = 27134;
     public static final int AvatarGainCostumeNotify = 514;
     // public static final int PMNOEEAAEMO = 7280;
@@ -1809,7 +1810,7 @@ public final class PacketOpcodes {
     public static final int ActivityGiveFriendGiftReq = 26425;
     public static final int _LanV6CardNpcLikeReq = 8256;
     public static final int HomePlantSeedReq = 21646;
-    public static final int _QuestQuickLaunchUpdateNotify = 0; // 7.1 CmdId unknown (7.0: 22263)
+    public static final int _QuestQuickLaunchUpdateNotify = 22878; // from nameTranslations (7.1)
     public static final int GCGSettleNotify = 9975;
     public static final int DraftOwnerStartInviteReq = 1482;
     public static final int ItemRenameAvatarReq = 28101;
