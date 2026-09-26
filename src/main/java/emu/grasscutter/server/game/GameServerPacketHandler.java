@@ -15,7 +15,6 @@ public final class GameServerPacketHandler {
     private final Int2ObjectMap<PacketHandler> handlers;
 
     /** Opcodes already reported as unhandled, so each one is named once rather than per packet. */
-    private static final IntSet UNHANDLED_REPORTED = IntSets.synchronize(new IntOpenHashSet());
 
     public GameServerPacketHandler(Class<? extends PacketHandler> handlerClass) {
         this.handlers = new Int2ObjectOpenHashMap<>();
@@ -215,14 +214,10 @@ public final class GameServerPacketHandler {
                 }
                 hex = " hex=" + sb;
             }
-            // A client re-sends an unanswered packet for as long as it wants an answer, so
-            // one missing handler used to fill the console by itself - ReadPrivateChatReq
-            // alone accounted for 68 lines in a seven-minute run. The first one names the
-            // opcode, which is all an operator needs to go and write the handler; the rest
-            // of them say nothing new and go to debug.
-            var firstTime = UNHANDLED_REPORTED.add(opcode);
+            // Unhandled requests go to debug: a 7.1 client sends dozens this server has no
+            // handler for, and listing them at every login was noise.
             var logger = Grasscutter.getLogger();
-            if (firstTime || logger.isDebugEnabled()) {
+            if (logger.isDebugEnabled()) {
                 var line = "Unhandled packet opcode {} ({}) len={} from {}{}";
                 Object[] args = {
                     opcode,
@@ -231,11 +226,7 @@ public final class GameServerPacketHandler {
                     session.getAddress(),
                     hex
                 };
-                if (firstTime) {
-                    logger.warn(line, args);
-                } else {
-                    logger.debug(line, args);
-                }
+                logger.debug(line, args);
             }
             if (session.getPlayer() != null) {
                 emu.grasscutter.game.systems.ReliquaryDustSystem.noteRecvOpcode(

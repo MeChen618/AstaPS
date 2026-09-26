@@ -125,13 +125,12 @@ public class GameSession implements GameSessionManager.KcpChannel {
         }
 
         if (packet.getOpcode() <= 0) {
-            // A non-positive opcode is one of the negative sentinels in PacketOpcodes - a message
-            // 7.0 has no known CmdId for. Name it once per packet class instead of repeating an
-            // anonymous warning for every send, which drowned the console.
+            // A non-positive opcode is a message 7.1 has no known CmdId for. Named once per packet
+            // class, at debug: there are dozens of them and none is actionable in normal play.
             if (missingCmdIdReported.add(packet.getClass().getSimpleName())) {
                 Grasscutter.getLogger()
-                        .warn(
-                                "{} has no 7.0 CmdId, so it is not being sent.",
+                        .debug(
+                                "{} has no 7.1 CmdId, so it is not being sent.",
                                 packet.getClass().getSimpleName());
             }
             return;

@@ -173,7 +173,7 @@ public final class GachaInfoOuterClass {
     int getDisplayUp4ItemList(int index);
 
     /**
-     * <code>bool is_new_wish = 410;</code>
+     * <code>bool is_new_wish = 1937;</code>
      * @return The isNewWish.
      */
     boolean getIsNewWish();
@@ -415,11 +415,6 @@ public final class GachaInfoOuterClass {
               gachaPrefabPath_ = s;
               break;
             }
-            case 3280: {
-
-              isNewWish_ = input.readBool();
-              break;
-            }
             case 3402: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -522,6 +517,11 @@ public final class GachaInfoOuterClass {
               }
               gachaUpInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.GachaUpInfoOuterClass.GachaUpInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 15496: {
+
+              isNewWish_ = input.readBool();
               break;
             }
             case 16258: {
@@ -919,10 +919,10 @@ public final class GachaInfoOuterClass {
     }
     private int displayUp4ItemListMemoizedSerializedSize = -1;
 
-    public static final int IS_NEW_WISH_FIELD_NUMBER = 410;
+    public static final int IS_NEW_WISH_FIELD_NUMBER = 1937;
     private boolean isNewWish_;
     /**
-     * <code>bool is_new_wish = 410;</code>
+     * <code>bool is_new_wish = 1937;</code>
      * @return The isNewWish.
      */
     @java.lang.Override
@@ -1216,9 +1216,6 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaPrefabPath_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, gachaPrefabPath_);
       }
-      if (isNewWish_ != false) {
-        output.writeBool(410, isNewWish_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 425, gachaProbUrlOversea_);
       }
@@ -1260,6 +1257,9 @@ public final class GachaInfoOuterClass {
       }
       for (int i = 0; i < gachaUpInfoList_.size(); i++) {
         output.writeMessage(1931, gachaUpInfoList_.get(i));
+      }
+      if (isNewWish_ != false) {
+        output.writeBool(1937, isNewWish_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaRecordUrlOversea_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2032, gachaRecordUrlOversea_);
@@ -1332,10 +1332,6 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaPrefabPath_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, gachaPrefabPath_);
       }
-      if (isNewWish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(410, isNewWish_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425, gachaProbUrlOversea_);
       }
@@ -1403,6 +1399,10 @@ public final class GachaInfoOuterClass {
       for (int i = 0; i < gachaUpInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1931, gachaUpInfoList_.get(i));
+      }
+      if (isNewWish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1937, isNewWish_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaRecordUrlOversea_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2032, gachaRecordUrlOversea_);
@@ -2877,7 +2877,7 @@ public final class GachaInfoOuterClass {
 
       private boolean isNewWish_ ;
       /**
-       * <code>bool is_new_wish = 410;</code>
+       * <code>bool is_new_wish = 1937;</code>
        * @return The isNewWish.
        */
       @java.lang.Override
@@ -2885,7 +2885,7 @@ public final class GachaInfoOuterClass {
         return isNewWish_;
       }
       /**
-       * <code>bool is_new_wish = 410;</code>
+       * <code>bool is_new_wish = 1937;</code>
        * @param value The isNewWish to set.
        * @return This builder for chaining.
        */
@@ -2896,7 +2896,7 @@ public final class GachaInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_wish = 410;</code>
+       * <code>bool is_new_wish = 1937;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewWish() {
@@ -3656,7 +3656,7 @@ public final class GachaInfoOuterClass {
       "ha_sort_id\030\013 \001(\r\022&\n\035display_chronicle_5_" +
       "item_list\030\353\014 \003(\r\022\025\n\013HMOJLEMLHDK\030\333\206\003 \001(\010\022" +
       "\036\n\025display_up4_item_list\030\240\013 \003(\r\022\024\n\013is_ne" +
-      "w_wish\030\232\003 \001(\010\022\036\n\025display_up5_item_list\030\277" +
+      "w_wish\030\221\017 \001(\010\022\036\n\025display_up5_item_list\030\277" +
       "\n \003(\r\022!\n\030gacha_record_url_oversea\030\360\017 \001(\t" +
       "\022\037\n\026gacha_prob_url_oversea\030\251\003 \001(\t\022\025\n\rtit" +
       "le_textmap\030\007 \001(\t\022\032\n\021wish_max_progress\030\312\004" +
