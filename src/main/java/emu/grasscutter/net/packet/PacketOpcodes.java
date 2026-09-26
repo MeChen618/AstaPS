@@ -1407,7 +1407,7 @@ public final class PacketOpcodes {
     public static final int _TakeBeyondBattlePassRewardRsp = 24696;
     public static final int FurnitureMakeCancelReq = 8383;
     // public static final int ABNHBMOKNAB = 22577;
-    public static final int GetActivityShopSheetInfoReq = 0; // 7.1 CmdId unknown (7.0: 9306)
+    public static final int GetActivityShopSheetInfoReq = 23378; // from LunaGC_7.1.0
     public static final int ProjectorOptionReq = 9710;
     public static final int _AnecdoteMakeWishReq = 0; // 7.1 CmdId unknown (7.0: 9312)
     // public static final int LLLAPOHHOHK = 7237;
@@ -1456,7 +1456,7 @@ public final class PacketOpcodes {
     public static final int CrystalLinkDungeonInfoNotify = 2578;
     // public static final int IKIPJJICMEA = 20499;
     public static final int GetAllActivatedBargainDataReq = 0; // 7.1 CmdId unknown (7.0: 9710)
-    public static final int GetShopReq = 0; // 7.1 CmdId unknown (7.0: 9719)
+    public static final int GetShopReq = 7829; // from LunaGC_7.1.0
     public static final int PullPrivateChatRsp = 28347;
     public static final int IrodoriChessPlayerInfoNotify = 28735;
     public static final int HuntingOngoingNotify = 6634;
@@ -2160,7 +2160,7 @@ public final class PacketOpcodes {
     public static final int _MonsterChessV2BattleDataNotify = 1017;
     public static final int _PrismaticCrystalCountChangeNotify = 5425;
     // public static final int OKNEJIBIJFI = 3617;
-    public static final int GetShopmallDataReq = 0; // 7.1 CmdId unknown (7.0: 24626)
+    public static final int GetShopmallDataReq = 20461; // from LunaGC_7.1.0
     // public static final int FMEIIIKOKBM = 25448;
     // public static final int ECLCHOOFELN = 562;
     public static final int MistTrialDunegonFailNotify = 20451;
