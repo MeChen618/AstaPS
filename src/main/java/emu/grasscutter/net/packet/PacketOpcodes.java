@@ -50,7 +50,8 @@ public final class PacketOpcodes {
     public static final int SkipPlayerGameTimeReq = 0;
     public static final int TheaterLobbySceneJumpReq = 0;
     public static final int UiSettingInputTypeNotify = 0;
-    public static final int UnlockPersonalLineReq = 0;
+    public static final int UnlockPersonalLineReq = 5896; // 7.1: one of two {personal_line_id = 13} reqs, see HandlerUnlockPersonalLineReq
+    public static final int _UnlockPersonalLineReqAlt = 21679; // 7.1: the other one
     // ============================================
     // 以下是原有的 opcode 定义
     // ============================================
@@ -1721,7 +1722,7 @@ public final class PacketOpcodes {
     public static final int MarkMapRsp = 0; // 7.1 CmdId unknown (7.0: 21638)
     public static final int GalleryBalloonScoreNotify = 27276;
     public static final int UpdatePlayerShowNameCardListReq = 29960;
-    // public static final int NALBKOPFIFD = 9787;
+    public static final int NALBKOPFIFD = 9787; // 7.1: {personal_line_id, retcode} rsp
     public static final int MonsterAIConfigHashNotify = 27134;
     public static final int AvatarGainCostumeNotify = 514;
     // public static final int PMNOEEAAEMO = 7280;

@@ -12,7 +12,8 @@ public class HandlerPersonalLineAllDataReq extends PacketHandler {
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         session.send(
                 new PacketPersonalLineAllDataRsp(
-                        session.getPlayer().getQuestManager().getMainQuests().values()));
+                        session.getPlayer().getQuestManager().getMainQuests().values(),
+                        session.getPlayer().getPersonalLineList()));
         // TODO: this should maybe be at player login?
         session.send(new PacketCoopDataNotify());
     }
