@@ -66,25 +66,7 @@ public class ChatSystem implements ChatSystemHandler {
     }
 
     public void handlePullRecentChatReq(Player player) {
-        // If this user has no chat history yet, create it by sending the server welcome messages.
-        if (!this.history
-                .computeIfAbsent(player.getUid(), x -> new HashMap<>())
-                .containsKey(GameConstants.SERVER_CONSOLE_UID)) {
-            this.sendServerWelcomeMessages(player);
-        }
-
-        // For now, we send the list three messages from the server for the recent chat history.
-        // This matches the previous behavior, but ultimately, we should probably keep track of the last
-        // chat partner
-        // for every given player and return the last messages exchanged with that partner.
-        int historyLength =
-                this.history.get(player.getUid()).get(GameConstants.SERVER_CONSOLE_UID).size();
-        var messages =
-                this.history
-                        .get(player.getUid())
-                        .get(GameConstants.SERVER_CONSOLE_UID)
-                        .subList(Math.max(historyLength - 3, 0), historyLength);
-        player.sendPacket(new PacketPullRecentChatRsp(messages));
+        this.ensureServerConversation(player);
     }
 
     /********************
@@ -274,5 +256,27 @@ public class ChatSystem implements ChatSystemHandler {
         if (joinOptions.welcomeMessage != null && joinOptions.welcomeMessage.length() > 0) {
             this.sendPrivateMessageFromServer(player.getUid(), joinOptions.welcomeMessage);
         }
+    }
+
+    /**
+     * Sends the console conversation (welcome messages on first use) so the bot chat is there right
+     * after login, not only once the client pulls it after a teleport.
+     */
+    public void ensureServerConversation(Player player) {
+        var playerHistory = this.history.computeIfAbsent(player.getUid(), x -> new HashMap<>());
+        var serverHistory = playerHistory.get(GameConstants.SERVER_CONSOLE_UID);
+        if (serverHistory == null || serverHistory.isEmpty()) {
+            this.sendServerWelcomeMessages(player);
+            serverHistory = playerHistory.get(GameConstants.SERVER_CONSOLE_UID);
+        }
+
+        if (serverHistory == null || serverHistory.isEmpty()) {
+            return;
+        }
+
+        int historyLength = serverHistory.size();
+        var recentMessages = serverHistory.subList(Math.max(historyLength - 3, 0), historyLength);
+        player.sendPacket(new PacketPullRecentChatRsp(recentMessages));
+        player.sendPacket(new PacketPullPrivateChatRsp(serverHistory));
     }
 }

@@ -7,6 +7,7 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.PostEnterSceneReqOuterClass.PostEnterSceneReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketCutsceneBeginNotify;
+import emu.grasscutter.server.packet.send.PacketGetPlayerFriendListRsp;
 import emu.grasscutter.server.packet.send.PacketPostEnterSceneRsp;
 
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
@@ -42,6 +43,10 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         // stale CannotCreateFood does not linger.
         EscoffierSkillCookHelper.syncToClient(player);
         EntryNotice.sendOnce(player);
+        // The client only asks for friends and chat again after a teleport, so push both here or the
+        // console and DPS bots are missing until then.
+        session.send(new PacketGetPlayerFriendListRsp(player));
+        session.getServer().getChatManager().ensureServerConversation(player);
 
         this.playOpeningCutscene(player);
     }

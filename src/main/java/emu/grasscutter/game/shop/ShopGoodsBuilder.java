@@ -25,7 +25,9 @@ public final class ShopGoodsBuilder {
             disableType = DISABLE_TYPE_SOLD_OUT;
         }
 
-        // 7.0 ShopGoods: buy_limit -> OCFMGIPGLDK (13), disable_type -> ELPGDNACFOA (8).
+        // buy_limit (OCFMGIPGLDK), disable_type (ELPGDNACFOA), scoin, mcoin, the level range and
+        // single_limit are unplaced in 7.1 and sit on unused numbers (LunaGC_7.1.0's ShopGoods), so
+        // setting them is harmless; the price reaches the client through cost_item_list below.
         ShopGoods.Builder goods =
                 ShopGoods.newBuilder()
                         .setGoodsId(info.getGoodsId())
@@ -37,14 +39,14 @@ public final class ShopGoodsBuilder {
                         .setScoin(info.getScoin())
                         .setHcoin(info.getHcoin())
                         .setMcoin(info.getMcoin())
-                        .setBuyLimit(buyLimit)
+                        .setOCFMGIPGLDK(buyLimit)
                         // Caps the purchase slider; monthly remaining uses buy_limit - bought_num.
                         .setSingleLimit(buyLimit > 0 ? Math.max(1, buyLimit - bought) : 0)
                         .setBeginTime(info.getBeginTime())
                         .setEndTime(info.getEndTime())
                         .setMinLevel(info.getMinLevel())
                         .setMaxLevel(info.getMaxLevel())
-                        .setDisableType(disableType)
+                        .setELPGDNACFOA(disableType)
                         .setBoughtNum(bought)
                         .setNextRefreshTime(nextRefreshTime);
 
@@ -60,11 +62,21 @@ public final class ShopGoodsBuilder {
                             .collect(Collectors.toList()));
         }
 
-        // pre_goods_id_list is unnamed (MEODDILKAAD) in the 7.0 ShopGoods proto.
+        // Mora, Primogems and Genesis Crystals as cost items: the currency fields are not placed in
+        // 7.1, cost_item_list is (idea from LunaGC_7.1.0).
+        addCurrencyCost(goods, 202, info.getScoin());
+        addCurrencyCost(goods, 201, info.getHcoin());
+        addCurrencyCost(goods, 203, info.getMcoin());
+        // pre_goods_id_list is unnamed (MEODDILKAAD) and unplaced in 7.1.
         if (info.getPreGoodsIdList() != null && !info.getPreGoodsIdList().isEmpty()) {
             goods.addAllMEODDILKAAD(info.getPreGoodsIdList());
         }
 
         return goods;
+    }
+
+    private static void addCurrencyCost(ShopGoods.Builder goods, int itemId, int count) {
+        if (count <= 0) return;
+        goods.addCostItemList(ItemParam.newBuilder().setItemId(itemId).setCount(count).build());
     }
 }
