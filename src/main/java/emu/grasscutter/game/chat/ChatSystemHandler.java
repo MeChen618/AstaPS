@@ -26,4 +26,6 @@ public interface ChatSystemHandler {
     void clearHistoryOnLogout(Player player);
 
     void handlePullRecentChatReq(Player player);
+
+    void ensureServerConversation(Player player);
 }
