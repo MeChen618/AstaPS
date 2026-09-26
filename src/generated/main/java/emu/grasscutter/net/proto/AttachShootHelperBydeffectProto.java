@@ -3,8 +3,8 @@
 
 package emu.grasscutter.net.proto;
 
-public final class AttachShootHelperBydeffect {
-  private AttachShootHelperBydeffect() {}
+public final class AttachShootHelperBydeffectProto {
+  private AttachShootHelperBydeffectProto() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -245,15 +245,15 @@ public final class AttachShootHelperBydeffect {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return emu.grasscutter.net.proto.AttachShootHelperBydeffect.internal_static__AttachShootHelperBydeffect_descriptor;
+      return emu.grasscutter.net.proto.AttachShootHelperBydeffectProto.internal_static__AttachShootHelperBydeffect_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return emu.grasscutter.net.proto.AttachShootHelperBydeffect.internal_static__AttachShootHelperBydeffect_fieldAccessorTable
+      return emu.grasscutter.net.proto.AttachShootHelperBydeffectProto.internal_static__AttachShootHelperBydeffect_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.class, emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.Builder.class);
+              emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.class, emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.Builder.class);
     }
 
     public static final int EHOGLGOAMGJ_FIELD_NUMBER = 8;
@@ -504,10 +504,10 @@ public final class AttachShootHelperBydeffect {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect)) {
+      if (!(obj instanceof emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect)) {
         return super.equals(obj);
       }
-      emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect other = (emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect) obj;
+      emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect other = (emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect) obj;
 
       if (hasEHOGLGOAMGJ() != other.hasEHOGLGOAMGJ()) return false;
       if (hasEHOGLGOAMGJ()) {
@@ -582,69 +582,69 @@ public final class AttachShootHelperBydeffect {
       return hash;
     }
 
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(byte[] data)
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseDelimitedFrom(java.io.InputStream input)
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseDelimitedFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parseFrom(
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -657,7 +657,7 @@ public final class AttachShootHelperBydeffect {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect prototype) {
+    public static Builder newBuilder(emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -682,21 +682,21 @@ public final class AttachShootHelperBydeffect {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:_AttachShootHelperBydeffect)
-        emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffectOrBuilder {
+        emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffectOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.AttachShootHelperBydeffect.internal_static__AttachShootHelperBydeffect_descriptor;
+        return emu.grasscutter.net.proto.AttachShootHelperBydeffectProto.internal_static__AttachShootHelperBydeffect_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.AttachShootHelperBydeffect.internal_static__AttachShootHelperBydeffect_fieldAccessorTable
+        return emu.grasscutter.net.proto.AttachShootHelperBydeffectProto.internal_static__AttachShootHelperBydeffect_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.class, emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.Builder.class);
+                emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.class, emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.Builder.class);
       }
 
-      // Construct using emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.newBuilder()
+      // Construct using emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -750,17 +750,17 @@ public final class AttachShootHelperBydeffect {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return emu.grasscutter.net.proto.AttachShootHelperBydeffect.internal_static__AttachShootHelperBydeffect_descriptor;
+        return emu.grasscutter.net.proto.AttachShootHelperBydeffectProto.internal_static__AttachShootHelperBydeffect_descriptor;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect getDefaultInstanceForType() {
-        return emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.getDefaultInstance();
+      public emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect getDefaultInstanceForType() {
+        return emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.getDefaultInstance();
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect build() {
-        emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect result = buildPartial();
+      public emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect build() {
+        emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -768,8 +768,8 @@ public final class AttachShootHelperBydeffect {
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect buildPartial() {
-        emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect result = new emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect(this);
+      public emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect buildPartial() {
+        emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect result = new emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect(this);
         if (eHOGLGOAMGJBuilder_ == null) {
           result.eHOGLGOAMGJ_ = eHOGLGOAMGJ_;
         } else {
@@ -829,16 +829,16 @@ public final class AttachShootHelperBydeffect {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect) {
-          return mergeFrom((emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect)other);
+        if (other instanceof emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect) {
+          return mergeFrom((emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect other) {
-        if (other == emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect.getDefaultInstance()) return this;
+      public Builder mergeFrom(emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect other) {
+        if (other == emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect.getDefaultInstance()) return this;
         if (other.hasEHOGLGOAMGJ()) {
           mergeEHOGLGOAMGJ(other.getEHOGLGOAMGJ());
         }
@@ -881,11 +881,11 @@ public final class AttachShootHelperBydeffect {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect parsedMessage = null;
+        emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect) e.getUnfinishedMessage();
+          parsedMessage = (emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1477,12 +1477,12 @@ public final class AttachShootHelperBydeffect {
     }
 
     // @@protoc_insertion_point(class_scope:_AttachShootHelperBydeffect)
-    private static final emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect DEFAULT_INSTANCE;
+    private static final emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect();
+      DEFAULT_INSTANCE = new emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect();
     }
 
-    public static emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect getDefaultInstance() {
+    public static emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1507,7 +1507,7 @@ public final class AttachShootHelperBydeffect {
     }
 
     @java.lang.Override
-    public emu.grasscutter.net.proto.AttachShootHelperBydeffect._AttachShootHelperBydeffect getDefaultInstanceForType() {
+    public emu.grasscutter.net.proto.AttachShootHelperBydeffectProto._AttachShootHelperBydeffect getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
