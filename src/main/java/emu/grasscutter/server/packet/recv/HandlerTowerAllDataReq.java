@@ -20,16 +20,18 @@ public class HandlerTowerAllDataReq extends PacketHandler {
 
         // Sent once, when the abyss screen is opened. Which floors the client will let you into is
         // decided entirely from this reply, so a floor showing locked is either missing its record
-        // here or missing the entrance flag; logged so a wrong star display can be traced.
-        var stars = new TreeMap<Integer, Integer>();
-        towerManager
-                .getRecordMap()
-                .forEach((floorId, record) -> stars.put(floorId, record.getStarCount()));
-        Grasscutter.getLogger()
-                .info(
-                        "Tower all-data: entrance cleared={}, floor stars={}",
-                        towerManager.canEnterScheduleFloor(),
-                        stars);
+        // here or missing the entrance flag - turn this up to see which.
+        if (Grasscutter.getLogger().isDebugEnabled()) {
+            var stars = new TreeMap<Integer, Integer>();
+            towerManager
+                    .getRecordMap()
+                    .forEach((floorId, record) -> stars.put(floorId, record.getStarCount()));
+            Grasscutter.getLogger()
+                    .debug(
+                            "Tower all-data: entrance cleared={}, floor stars={}",
+                            towerManager.canEnterScheduleFloor(),
+                            stars);
+        }
 
         // Outside an active chamber challenge, clear the stale floor/chamber and "continue challenge?" state
         // so claiming rewards works
