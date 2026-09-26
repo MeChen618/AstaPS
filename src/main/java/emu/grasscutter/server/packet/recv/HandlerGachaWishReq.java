@@ -32,8 +32,10 @@ public class HandlerGachaWishReq extends PacketHandler {
             return;
         }
 
-        // Only a featured 5-star of this banner can be chosen for the Epitomized Path.
-        if (Arrays.stream(banner.getRateUpItems5()).noneMatch(id -> id == req.getItemId())) {
+        // Item 0 cancels the Epitomized Path; otherwise only a featured 5-star of this banner can
+        // be chosen.
+        if (req.getItemId() != 0
+                && Arrays.stream(banner.getRateUpItems5()).noneMatch(id -> id == req.getItemId())) {
             Grasscutter.getLogger()
                     .info(
                             "GachaWishReq rejected: item {} is not a featured 5-star of schedule {} {}",
