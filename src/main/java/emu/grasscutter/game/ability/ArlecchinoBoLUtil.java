@@ -35,6 +35,10 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotif
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketEvtBeingHealedNotify;
 import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
+import it.unimi.dsi.fastutil.ints.Int2FloatMaps;
+import it.unimi.dsi.fastutil.ints.Int2FloatMap;
 import it.unimi.dsi.fastutil.ints.Int2FloatOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
@@ -86,11 +90,11 @@ public final class ArlecchinoBoLUtil {
     public static final long WEAPON_BOL_CD_MS = 14000L;
     public static final int ARLECCHINO_A1_TALENT_ID = 961;
     public static final int ARLECCHINO_C2_TALENT_ID = 962;
-    private static final Int2LongOpenHashMap LAST_NA_REDUCE_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap LAST_C4_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_NA_REDUCE_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap LAST_C4_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     private static final ConcurrentHashMap<Integer, Long> MARK_RECYCLE_UNTIL = new ConcurrentHashMap();
     private static final ConcurrentHashMap<Integer, Long> E_GRANT_UNTIL = new ConcurrentHashMap();
-    private static final Int2FloatOpenHashMap E_GRANT_ACCUM = new Int2FloatOpenHashMap();
+    private static final Int2FloatMap E_GRANT_ACCUM = Int2FloatMaps.synchronize(new Int2FloatOpenHashMap());
     private static final ConcurrentHashMap<Integer, Long> LAST_E_SKILL_MS = new ConcurrentHashMap();
     private static final ConcurrentHashMap<Integer, Long> LAST_CA_SKILL_MS = new ConcurrentHashMap();
     private static final ConcurrentHashMap<Integer, Long> LAST_SERVER_RECYCLE_MS = new ConcurrentHashMap();
@@ -107,13 +111,13 @@ public final class ArlecchinoBoLUtil {
     private static final ConcurrentHashMap<Integer, Long> BURST_POST_CLEAR_UNTIL = new ConcurrentHashMap();
     private static final long BURST_POST_CLEAR_MS = 2500L;
     private static final ConcurrentHashMap<Integer, Boolean> BURST_DONE = new ConcurrentHashMap();
-    private static final Int2FloatOpenHashMap LAST_BURST_SNAP = new Int2FloatOpenHashMap();
-    private static final Int2FloatOpenHashMap BURST_PENDING_SNAP = new Int2FloatOpenHashMap();
+    private static final Int2FloatMap LAST_BURST_SNAP = Int2FloatMaps.synchronize(new Int2FloatOpenHashMap());
+    private static final Int2FloatMap BURST_PENDING_SNAP = Int2FloatMaps.synchronize(new Int2FloatOpenHashMap());
     private static final ConcurrentHashMap<Integer, EntityAvatar> BURST_PENDING_AVATAR = new ConcurrentHashMap();
-    private static final Int2FloatOpenHashMap AUTHORITATIVE_BOL = new Int2FloatOpenHashMap();
+    private static final Int2FloatMap AUTHORITATIVE_BOL = Int2FloatMaps.synchronize(new Int2FloatOpenHashMap());
     private static final ThreadLocal<Boolean> ALLOW_BOL_MUTATE = ThreadLocal.withInitial(() -> false);
     private static final ThreadLocal<Boolean> TRUST_BOL_INCREASE = ThreadLocal.withInitial(() -> false);
-    private static final Int2LongOpenHashMap LAST_DRAIN_RESYNC_LOG_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_DRAIN_RESYNC_LOG_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     private static final long NA_SETTLE_MS = 800L;
     private static final ConcurrentHashMap<Integer, Long> NA_SETTLE_UNTIL = new ConcurrentHashMap();
     private static final long CA_NO_CONSUME_MS = 600L;
@@ -127,8 +131,8 @@ public final class ArlecchinoBoLUtil {
     public static final String EXTRA_ATTACK_ADD_HP_DEBTS_2 = "UNIQUE_Avatar_Arlecchino_ExtraAttack_AddHpDebts_2";
     private static final ConcurrentHashMap<Integer, Integer> BOL_KEEPALIVE_TASK = new ConcurrentHashMap();
     private static final ConcurrentHashMap<Integer, EntityAvatar> BOL_KEEPALIVE_AVATAR = new ConcurrentHashMap();
-    private static final Int2LongOpenHashMap LAST_FORCE_PUSH_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap LAST_CLORINDE_HIT_LOG_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_FORCE_PUSH_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap LAST_CLORINDE_HIT_LOG_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     private static final String[] OFFICIAL_NA_ANIM_EVENTS = new String[]{"ATK01_Plus", "ATK02_Plus", "ATK03_Plus", "ATK04_Plus", "ATK04_1_Plus", "ATK04_2_Plus", "ATK05_Plus", "ATK06_Plus", "Arlecchino_Attack01_Plus", "Arlecchino_Attack02_Plus", "Arlecchino_Attack03_Plus", "Arlecchino_Attack04_Plus", "Arlecchino_Attack05_Plus", "Arlecchino_Attack06_Plus"};
     private static final String[] OFFICIAL_CA_ANIM_EVENTS = new String[]{"ExtraAttack", "ExtraAttack_Plus", "Arlecchino_ExtraAttack", "Arlecchino_ExtraAttack_Plus"};
 
@@ -767,7 +771,11 @@ public final class ArlecchinoBoLUtil {
     private static void tickBoLKeepalive(int n) {
         float f = AUTHORITATIVE_BOL.getOrDefault(n, 0.0f);
         EntityAvatar entityAvatar = BOL_KEEPALIVE_AVATAR.get(n);
-        if (f <= 0.5f || entityAvatar == null || entityAvatar.getAvatar() == null) {
+        if (f <= 0.5f
+                || entityAvatar == null
+                || entityAvatar.getAvatar() == null
+                || entityAvatar.getPlayer() == null
+                || !entityAvatar.getPlayer().isOnline()) {
             ArlecchinoBoLUtil.cancelBoLKeepalive(n);
             return;
         }

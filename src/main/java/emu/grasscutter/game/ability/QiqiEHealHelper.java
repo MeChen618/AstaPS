@@ -10,6 +10,8 @@ import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEvtBeingHealedNotify;
+import it.unimi.dsi.fastutil.ints.Int2IntMaps;
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -32,7 +34,7 @@ public final class QiqiEHealHelper {
     private static final int DEFAULT_DURATION_SEC = 15;
     private static final int TICK_SEC = 1;
 
-    private static final Int2IntOpenHashMap TASK_IDS = new Int2IntOpenHashMap();
+    private static final Int2IntMap TASK_IDS = Int2IntMaps.synchronize(new Int2IntOpenHashMap());
 
     static {
         TASK_IDS.defaultReturnValue(-1);

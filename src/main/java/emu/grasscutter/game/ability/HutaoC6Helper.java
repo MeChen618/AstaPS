@@ -9,6 +9,8 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -42,7 +44,7 @@ public final class HutaoC6Helper {
         FightProperty.FIGHT_PROP_ROCK_SUB_HURT
     };
 
-    private static final Int2LongOpenHashMap CD_UNTIL_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap CD_UNTIL_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     private static final ConcurrentHashMap<Integer, Integer> BUFF_TASK_IDS = new ConcurrentHashMap<>();
 
     static {

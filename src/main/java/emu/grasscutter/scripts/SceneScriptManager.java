@@ -64,7 +64,8 @@ public class SceneScriptManager {
     /** blockid - loaded groupSet */
     private final Map<Integer, Set<SceneGroup>> loadedGroupSetPerBlock;
 
-    private static final Int2ObjectMap<List<Grid>> groupGridsCache = new Int2ObjectOpenHashMap<>();
+    private static final Int2ObjectMap<List<Grid>> groupGridsCache =
+            Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>()); // scenes init on their own threads
     public static final ExecutorService eventExecutor;
 
     static {
@@ -1399,7 +1400,12 @@ public class SceneScriptManager {
             timeAxis.stop();
             return;
         }
-        this.timeAxis.put(timeAxis.getIdentifier(), timeAxis);
+        // Each time axis owns a Timer thread; one replaced without being stopped keeps firing
+        // (and keeps its thread) until the server stops.
+        var previous = this.timeAxis.put(timeAxis.getIdentifier(), timeAxis);
+        if (previous != null && previous != timeAxis) {
+            previous.stop();
+        }
     }
 
     /**
@@ -1408,7 +1414,7 @@ public class SceneScriptManager {
      * @param identifier The identifier of the time axis.
      */
     public void stopTimeAxis(String identifier) {
-        var timeAxis = this.timeAxis.get(identifier);
+        var timeAxis = this.timeAxis.remove(identifier);
         if (timeAxis != null) {
             timeAxis.stop();
         }

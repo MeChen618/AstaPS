@@ -15,6 +15,8 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEvtBeingHealedNotify;
 import emu.grasscutter.server.scheduler.ServerTaskScheduler;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +32,7 @@ public final class EscoffierHealUtil {
     private static final int INSTANT_DELAY_SEC = 1;
     private static final int HOT_INTERVAL_SEC = 1;
     private static final long INSTANT_ICD_MS = 8000L;
-    private static final Int2LongOpenHashMap LAST_INSTANT_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_INSTANT_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
 
     private EscoffierHealUtil() {
     }

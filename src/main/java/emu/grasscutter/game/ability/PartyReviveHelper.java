@@ -11,6 +11,8 @@ import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketAvatarLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 
 /**
@@ -38,8 +40,8 @@ public final class PartyReviveHelper {
     public static final float BARBARA_REVIVE_RATIO = 1.0f;
     public static final long CD_MS = 15L * 60L * 1000L;
 
-    private static final Int2LongOpenHashMap QIQI_CD_UNTIL = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap BARBARA_CD_UNTIL = new Int2LongOpenHashMap();
+    private static final Int2LongMap QIQI_CD_UNTIL = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap BARBARA_CD_UNTIL = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
 
     static {
         QIQI_CD_UNTIL.defaultReturnValue(0L);
@@ -163,7 +165,7 @@ public final class PartyReviveHelper {
     }
 
     private static int reviveFallen(
-            Player player, float ratio, Int2LongOpenHashMap cdMap, String tag) {
+            Player player, float ratio, Int2LongMap cdMap, String tag) {
         int uid = player.getUid();
         long now = System.currentTimeMillis();
         if (cdMap != null && now < cdMap.get(uid)) {

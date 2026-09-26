@@ -12,6 +12,12 @@ import emu.grasscutter.game.entity.EntityClientGadget;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.ActionReason;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
+import it.unimi.dsi.fastutil.ints.Int2IntMaps;
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
+import it.unimi.dsi.fastutil.ints.Int2BooleanMaps;
+import it.unimi.dsi.fastutil.ints.Int2BooleanMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
@@ -77,13 +83,13 @@ public final class EscoffierSkillCookHelper {
             new ConcurrentHashMap<>();
     private static volatile Path storePath;
     private static volatile boolean storeLoaded;
-    private static final Int2LongOpenHashMap LAST_GRANT_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap LAST_UNLOCK_NOTIFY_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_GRANT_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap LAST_UNLOCK_NOTIFY_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     /** One cooking session per uid, so SkillCookReq and the destruction fallback cannot both pay out. */
-    private static final Int2LongOpenHashMap COOK_SESSION = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap GRANTED_SESSION = new Int2LongOpenHashMap();
-    private static final Int2BooleanOpenHashMap COOK_PENDING = new Int2BooleanOpenHashMap();
-    private static final Int2IntOpenHashMap ACTIVE_COOK_GADGET = new Int2IntOpenHashMap();
+    private static final Int2LongMap COOK_SESSION = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap GRANTED_SESSION = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2BooleanMap COOK_PENDING = Int2BooleanMaps.synchronize(new Int2BooleanOpenHashMap());
+    private static final Int2IntMap ACTIVE_COOK_GADGET = Int2IntMaps.synchronize(new Int2IntOpenHashMap());
     private static long nextCookSession = 1L;
 
     private EscoffierSkillCookHelper() {}

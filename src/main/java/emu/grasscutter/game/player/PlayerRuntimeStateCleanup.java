@@ -7,6 +7,8 @@ import emu.grasscutter.game.ability.BurstInvulnHelper;
 import emu.grasscutter.game.ability.ClorindeBoLUtil;
 import emu.grasscutter.game.ability.EscoffierHealUtil;
 import emu.grasscutter.game.ability.HutaoC6Helper;
+import emu.grasscutter.game.ability.LaumaC1HealHelper;
+import emu.grasscutter.game.ability.ShareCDHelper;
 import emu.grasscutter.game.ability.MavuikaSpiritHelper;
 import emu.grasscutter.game.ability.PartyReviveHelper;
 import emu.grasscutter.game.ability.QiqiEHealHelper;
@@ -57,6 +59,11 @@ public final class PlayerRuntimeStateCleanup {
         run("BattlePass", () -> BattlePassCompatHelper.clearPlayerState(uid));
         run("Domain continue", () -> DomainContinueSpawnHelper.clearPlayerState(uid));
         run("Tower", () -> TowerAbyssFix.clearEntry(player));
+        run("LaumaC1", () -> LaumaC1HealHelper.clearPlayerState(player));
+        run("ShareCD", () -> ShareCDHelper.clearPlayer(uid));
+        run("Dive", () -> DiveAbilityHelper.clearPlayer(uid));
+        // The statue auto-heal timer is a thread of its own and keeps the player alive otherwise.
+        run("Statue", () -> player.getSotsManager().handleExitTransPointRegionNotify());
     }
 
     private static void run(String name, Runnable cleanup) {

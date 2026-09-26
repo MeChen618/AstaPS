@@ -52,6 +52,8 @@ import emu.grasscutter.scripts.data.SceneConfig;
 import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.game.GameServerPacketHandler;
 import emu.grasscutter.server.game.GameSession;
+import it.unimi.dsi.fastutil.ints.Int2IntMaps;
+import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.lang.reflect.Field;
@@ -63,7 +65,7 @@ public final class DomainDungeonHelper {
     private static final int DOMAIN_WEATHER_ID = 1;
     private static final float DEFAULT_ENTRY_RADIUS = 45.0f;
     private static final long ENTER_DEBOUNCE_MS = 1500L;
-    private static final Int2IntOpenHashMap CLIENT_SCENE_CACHE = new Int2IntOpenHashMap();
+    private static final Int2IntMap CLIENT_SCENE_CACHE = Int2IntMaps.synchronize(new Int2IntOpenHashMap());
     private static final ConcurrentHashMap<Integer, Long> LAST_ENTER_MS = new ConcurrentHashMap();
 
     private DomainDungeonHelper() {

@@ -163,10 +163,12 @@ public class Player implements PlayerHook, FieldFetch {
 
     @Transient private long nextGuid = 0;
     @Transient @Getter @Setter private int peerId;
-    @Transient private World world;
+    // volatile rather than guarded by the player lock: Scene and World set these while holding
+    // their own locks, and Player.onTick holds the player lock while it reaches into the scene.
+    @Transient private volatile World world;
     @Transient @Getter @Setter private HomeWorld curHomeWorld;
     @Transient @Getter @Setter private boolean hasSentInitPacketInHome;
-    @Transient private Scene scene;
+    @Transient private volatile Scene scene;
     @Transient @Getter private int weatherId = 0;
     @Transient @Getter private ClimateType climate = ClimateType.CLIMATE_SUNNY;
     @Transient @Getter private int areaId = 0;
@@ -435,19 +437,19 @@ public class Player implements PlayerHook, FieldFetch {
         return this.getSession().getServer();
     }
 
-    public synchronized World getWorld() {
+    public World getWorld() {
         return this.world;
     }
 
-    public synchronized void setWorld(World world) {
+    public void setWorld(World world) {
         this.world = world;
     }
 
-    public synchronized Scene getScene() {
+    public Scene getScene() {
         return scene;
     }
 
-    public synchronized void setScene(Scene scene) {
+    public void setScene(Scene scene) {
         this.scene = scene;
     }
 
@@ -1536,6 +1538,10 @@ public class Player implements PlayerHook, FieldFetch {
             this.getServer().getChatSystem().clearHistoryOnLogout(this);
 
             getStaminaManager().stopSustainedStaminaHandler();
+
+            // Static per-player combat state (and the repeating tasks some of it drives) would
+            // otherwise keep this player and their world reachable after they leave.
+            PlayerRuntimeStateCleanup.clear(this);
 
             this.getServer().getDungeonSystem().exitDungeon(this);
 
