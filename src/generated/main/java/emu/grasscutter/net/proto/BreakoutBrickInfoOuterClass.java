@@ -19,10 +19,10 @@ public final class BreakoutBrickInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 hp = 1;</code>
-     * @return The hp.
+     * <code>uint32 FPLEGEIOHBI = 3;</code>
+     * @return The fPLEGEIOHBI.
      */
-    int getHp();
+    int getFPLEGEIOHBI();
 
     /**
      * <code>uint32 element_type = 2;</code>
@@ -31,12 +31,16 @@ public final class BreakoutBrickInfoOuterClass {
     int getElementType();
 
     /**
-     * <code>uint32 fibgiiohemh = 3;</code>
-     * @return The fibgiiohemh.
+     * <code>uint32 hp = 1;</code>
+     * @return The hp.
      */
-    int getFibgiiohemh();
+    int getHp();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BreakoutBrickInfo}
    */
   public static final class BreakoutBrickInfo extends
@@ -93,7 +97,7 @@ public final class BreakoutBrickInfoOuterClass {
             }
             case 24: {
 
-              fibgiiohemh_ = input.readUInt32();
+              fPLEGEIOHBI_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,15 +132,15 @@ public final class BreakoutBrickInfoOuterClass {
               emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo.class, emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo.Builder.class);
     }
 
-    public static final int HP_FIELD_NUMBER = 1;
-    private int hp_;
+    public static final int FPLEGEIOHBI_FIELD_NUMBER = 3;
+    private int fPLEGEIOHBI_;
     /**
-     * <code>uint32 hp = 1;</code>
-     * @return The hp.
+     * <code>uint32 FPLEGEIOHBI = 3;</code>
+     * @return The fPLEGEIOHBI.
      */
     @java.lang.Override
-    public int getHp() {
-      return hp_;
+    public int getFPLEGEIOHBI() {
+      return fPLEGEIOHBI_;
     }
 
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 2;
@@ -150,15 +154,15 @@ public final class BreakoutBrickInfoOuterClass {
       return elementType_;
     }
 
-    public static final int FIBGIIOHEMH_FIELD_NUMBER = 3;
-    private int fibgiiohemh_;
+    public static final int HP_FIELD_NUMBER = 1;
+    private int hp_;
     /**
-     * <code>uint32 fibgiiohemh = 3;</code>
-     * @return The fibgiiohemh.
+     * <code>uint32 hp = 1;</code>
+     * @return The hp.
      */
     @java.lang.Override
-    public int getFibgiiohemh() {
-      return fibgiiohemh_;
+    public int getHp() {
+      return hp_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -181,8 +185,8 @@ public final class BreakoutBrickInfoOuterClass {
       if (elementType_ != 0) {
         output.writeUInt32(2, elementType_);
       }
-      if (fibgiiohemh_ != 0) {
-        output.writeUInt32(3, fibgiiohemh_);
+      if (fPLEGEIOHBI_ != 0) {
+        output.writeUInt32(3, fPLEGEIOHBI_);
       }
       unknownFields.writeTo(output);
     }
@@ -201,9 +205,9 @@ public final class BreakoutBrickInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, elementType_);
       }
-      if (fibgiiohemh_ != 0) {
+      if (fPLEGEIOHBI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, fibgiiohemh_);
+          .computeUInt32Size(3, fPLEGEIOHBI_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,12 +224,12 @@ public final class BreakoutBrickInfoOuterClass {
       }
       emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo other = (emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo) obj;
 
-      if (getHp()
-          != other.getHp()) return false;
+      if (getFPLEGEIOHBI()
+          != other.getFPLEGEIOHBI()) return false;
       if (getElementType()
           != other.getElementType()) return false;
-      if (getFibgiiohemh()
-          != other.getFibgiiohemh()) return false;
+      if (getHp()
+          != other.getHp()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -237,12 +241,12 @@ public final class BreakoutBrickInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HP_FIELD_NUMBER;
-      hash = (53 * hash) + getHp();
+      hash = (37 * hash) + FPLEGEIOHBI_FIELD_NUMBER;
+      hash = (53 * hash) + getFPLEGEIOHBI();
       hash = (37 * hash) + ELEMENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getElementType();
-      hash = (37 * hash) + FIBGIIOHEMH_FIELD_NUMBER;
-      hash = (53 * hash) + getFibgiiohemh();
+      hash = (37 * hash) + HP_FIELD_NUMBER;
+      hash = (53 * hash) + getHp();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -339,6 +343,10 @@ public final class BreakoutBrickInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BreakoutBrickInfo}
      */
     public static final class Builder extends
@@ -376,11 +384,11 @@ public final class BreakoutBrickInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hp_ = 0;
+        fPLEGEIOHBI_ = 0;
 
         elementType_ = 0;
 
-        fibgiiohemh_ = 0;
+        hp_ = 0;
 
         return this;
       }
@@ -408,9 +416,9 @@ public final class BreakoutBrickInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo buildPartial() {
         emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo result = new emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo(this);
-        result.hp_ = hp_;
+        result.fPLEGEIOHBI_ = fPLEGEIOHBI_;
         result.elementType_ = elementType_;
-        result.fibgiiohemh_ = fibgiiohemh_;
+        result.hp_ = hp_;
         onBuilt();
         return result;
       }
@@ -459,14 +467,14 @@ public final class BreakoutBrickInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo other) {
         if (other == emu.grasscutter.net.proto.BreakoutBrickInfoOuterClass.BreakoutBrickInfo.getDefaultInstance()) return this;
-        if (other.getHp() != 0) {
-          setHp(other.getHp());
+        if (other.getFPLEGEIOHBI() != 0) {
+          setFPLEGEIOHBI(other.getFPLEGEIOHBI());
         }
         if (other.getElementType() != 0) {
           setElementType(other.getElementType());
         }
-        if (other.getFibgiiohemh() != 0) {
-          setFibgiiohemh(other.getFibgiiohemh());
+        if (other.getHp() != 0) {
+          setHp(other.getHp());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -497,33 +505,33 @@ public final class BreakoutBrickInfoOuterClass {
         return this;
       }
 
-      private int hp_ ;
+      private int fPLEGEIOHBI_ ;
       /**
-       * <code>uint32 hp = 1;</code>
-       * @return The hp.
+       * <code>uint32 FPLEGEIOHBI = 3;</code>
+       * @return The fPLEGEIOHBI.
        */
       @java.lang.Override
-      public int getHp() {
-        return hp_;
+      public int getFPLEGEIOHBI() {
+        return fPLEGEIOHBI_;
       }
       /**
-       * <code>uint32 hp = 1;</code>
-       * @param value The hp to set.
+       * <code>uint32 FPLEGEIOHBI = 3;</code>
+       * @param value The fPLEGEIOHBI to set.
        * @return This builder for chaining.
        */
-      public Builder setHp(int value) {
+      public Builder setFPLEGEIOHBI(int value) {
         
-        hp_ = value;
+        fPLEGEIOHBI_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 hp = 1;</code>
+       * <code>uint32 FPLEGEIOHBI = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHp() {
+      public Builder clearFPLEGEIOHBI() {
         
-        hp_ = 0;
+        fPLEGEIOHBI_ = 0;
         onChanged();
         return this;
       }
@@ -559,33 +567,33 @@ public final class BreakoutBrickInfoOuterClass {
         return this;
       }
 
-      private int fibgiiohemh_ ;
+      private int hp_ ;
       /**
-       * <code>uint32 fibgiiohemh = 3;</code>
-       * @return The fibgiiohemh.
+       * <code>uint32 hp = 1;</code>
+       * @return The hp.
        */
       @java.lang.Override
-      public int getFibgiiohemh() {
-        return fibgiiohemh_;
+      public int getHp() {
+        return hp_;
       }
       /**
-       * <code>uint32 fibgiiohemh = 3;</code>
-       * @param value The fibgiiohemh to set.
+       * <code>uint32 hp = 1;</code>
+       * @param value The hp to set.
        * @return This builder for chaining.
        */
-      public Builder setFibgiiohemh(int value) {
+      public Builder setHp(int value) {
         
-        fibgiiohemh_ = value;
+        hp_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 fibgiiohemh = 3;</code>
+       * <code>uint32 hp = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearFibgiiohemh() {
+      public Builder clearHp() {
         
-        fibgiiohemh_ = 0;
+        hp_ = 0;
         onChanged();
         return this;
       }
@@ -657,10 +665,9 @@ public final class BreakoutBrickInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027BreakoutBrickInfo.proto\"J\n\021BreakoutBri" +
-      "ckInfo\022\n\n\002hp\030\001 \001(\r\022\024\n\014element_type\030\002 \001(\r" +
-      "\022\023\n\013fibgiiohemh\030\003 \001(\rB8\n\031emu.grasscutter" +
-      ".net.protoB\033BreakoutBrickInfoOuterClassb" +
-      "\006proto3"
+      "ckInfo\022\023\n\013FPLEGEIOHBI\030\003 \001(\r\022\024\n\014element_t" +
+      "ype\030\002 \001(\r\022\n\n\002hp\030\001 \001(\rB\033\n\031emu.grasscutter" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -671,7 +678,7 @@ public final class BreakoutBrickInfoOuterClass {
     internal_static_BreakoutBrickInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BreakoutBrickInfo_descriptor,
-        new java.lang.String[] { "Hp", "ElementType", "Fibgiiohemh", });
+        new java.lang.String[] { "FPLEGEIOHBI", "ElementType", "Hp", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

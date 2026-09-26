@@ -19,17 +19,6 @@ public final class AABLEDJBAKKOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-     * @return The enum numeric value on the wire for iMBIHDBGJHK.
-     */
-    int getIMBIHDBGJHKValue();
-    /**
-     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-     * @return The iMBIHDBGJHK.
-     */
-    emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD getIMBIHDBGJHK();
-
-    /**
      * <code>.JMBPOAGEPCL CDKNGAEHLMM = 2;</code>
      * @return Whether the cDKNGAEHLMM field is set.
      */
@@ -43,8 +32,23 @@ public final class AABLEDJBAKKOuterClass {
      * <code>.JMBPOAGEPCL CDKNGAEHLMM = 2;</code>
      */
     emu.grasscutter.net.proto.JMBPOAGEPCLOuterClass.JMBPOAGEPCLOrBuilder getCDKNGAEHLMMOrBuilder();
+
+    /**
+     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+     * @return The enum numeric value on the wire for iMBIHDBGJHK.
+     */
+    int getIMBIHDBGJHKValue();
+    /**
+     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+     * @return The iMBIHDBGJHK.
+     */
+    emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD getIMBIHDBGJHK();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AABLEDJBAKK}
    */
   public static final class AABLEDJBAKK extends
@@ -141,25 +145,6 @@ public final class AABLEDJBAKKOuterClass {
               emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK.class, emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK.Builder.class);
     }
 
-    public static final int IMBIHDBGJHK_FIELD_NUMBER = 1;
-    private int iMBIHDBGJHK_;
-    /**
-     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-     * @return The enum numeric value on the wire for iMBIHDBGJHK.
-     */
-    @java.lang.Override public int getIMBIHDBGJHKValue() {
-      return iMBIHDBGJHK_;
-    }
-    /**
-     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-     * @return The iMBIHDBGJHK.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD getIMBIHDBGJHK() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD result = emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.valueOf(iMBIHDBGJHK_);
-      return result == null ? emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.UNRECOGNIZED : result;
-    }
-
     public static final int CDKNGAEHLMM_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.JMBPOAGEPCLOuterClass.JMBPOAGEPCL cDKNGAEHLMM_;
     /**
@@ -184,6 +169,25 @@ public final class AABLEDJBAKKOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.JMBPOAGEPCLOuterClass.JMBPOAGEPCLOrBuilder getCDKNGAEHLMMOrBuilder() {
       return getCDKNGAEHLMM();
+    }
+
+    public static final int IMBIHDBGJHK_FIELD_NUMBER = 1;
+    private int iMBIHDBGJHK_;
+    /**
+     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+     * @return The enum numeric value on the wire for iMBIHDBGJHK.
+     */
+    @java.lang.Override public int getIMBIHDBGJHKValue() {
+      return iMBIHDBGJHK_;
+    }
+    /**
+     * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+     * @return The iMBIHDBGJHK.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD getIMBIHDBGJHK() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD result = emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.valueOf(iMBIHDBGJHK_);
+      return result == null ? emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -238,12 +242,12 @@ public final class AABLEDJBAKKOuterClass {
       }
       emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK other = (emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK) obj;
 
-      if (iMBIHDBGJHK_ != other.iMBIHDBGJHK_) return false;
       if (hasCDKNGAEHLMM() != other.hasCDKNGAEHLMM()) return false;
       if (hasCDKNGAEHLMM()) {
         if (!getCDKNGAEHLMM()
             .equals(other.getCDKNGAEHLMM())) return false;
       }
+      if (iMBIHDBGJHK_ != other.iMBIHDBGJHK_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -255,12 +259,12 @@ public final class AABLEDJBAKKOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IMBIHDBGJHK_FIELD_NUMBER;
-      hash = (53 * hash) + iMBIHDBGJHK_;
       if (hasCDKNGAEHLMM()) {
         hash = (37 * hash) + CDKNGAEHLMM_FIELD_NUMBER;
         hash = (53 * hash) + getCDKNGAEHLMM().hashCode();
       }
+      hash = (37 * hash) + IMBIHDBGJHK_FIELD_NUMBER;
+      hash = (53 * hash) + iMBIHDBGJHK_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -357,6 +361,10 @@ public final class AABLEDJBAKKOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AABLEDJBAKK}
      */
     public static final class Builder extends
@@ -394,14 +402,14 @@ public final class AABLEDJBAKKOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iMBIHDBGJHK_ = 0;
-
         if (cDKNGAEHLMMBuilder_ == null) {
           cDKNGAEHLMM_ = null;
         } else {
           cDKNGAEHLMM_ = null;
           cDKNGAEHLMMBuilder_ = null;
         }
+        iMBIHDBGJHK_ = 0;
+
         return this;
       }
 
@@ -428,12 +436,12 @@ public final class AABLEDJBAKKOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK buildPartial() {
         emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK result = new emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK(this);
-        result.iMBIHDBGJHK_ = iMBIHDBGJHK_;
         if (cDKNGAEHLMMBuilder_ == null) {
           result.cDKNGAEHLMM_ = cDKNGAEHLMM_;
         } else {
           result.cDKNGAEHLMM_ = cDKNGAEHLMMBuilder_.build();
         }
+        result.iMBIHDBGJHK_ = iMBIHDBGJHK_;
         onBuilt();
         return result;
       }
@@ -482,11 +490,11 @@ public final class AABLEDJBAKKOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK other) {
         if (other == emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK.getDefaultInstance()) return this;
-        if (other.iMBIHDBGJHK_ != 0) {
-          setIMBIHDBGJHKValue(other.getIMBIHDBGJHKValue());
-        }
         if (other.hasCDKNGAEHLMM()) {
           mergeCDKNGAEHLMM(other.getCDKNGAEHLMM());
+        }
+        if (other.iMBIHDBGJHK_ != 0) {
+          setIMBIHDBGJHKValue(other.getIMBIHDBGJHKValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -514,60 +522,6 @@ public final class AABLEDJBAKKOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int iMBIHDBGJHK_ = 0;
-      /**
-       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-       * @return The enum numeric value on the wire for iMBIHDBGJHK.
-       */
-      @java.lang.Override public int getIMBIHDBGJHKValue() {
-        return iMBIHDBGJHK_;
-      }
-      /**
-       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-       * @param value The enum numeric value on the wire for iMBIHDBGJHK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIMBIHDBGJHKValue(int value) {
-        
-        iMBIHDBGJHK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-       * @return The iMBIHDBGJHK.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD getIMBIHDBGJHK() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD result = emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.valueOf(iMBIHDBGJHK_);
-        return result == null ? emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-       * @param value The iMBIHDBGJHK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIMBIHDBGJHK(emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        iMBIHDBGJHK_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIMBIHDBGJHK() {
-        
-        iMBIHDBGJHK_ = 0;
-        onChanged();
         return this;
       }
 
@@ -689,6 +643,60 @@ public final class AABLEDJBAKKOuterClass {
         }
         return cDKNGAEHLMMBuilder_;
       }
+
+      private int iMBIHDBGJHK_ = 0;
+      /**
+       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+       * @return The enum numeric value on the wire for iMBIHDBGJHK.
+       */
+      @java.lang.Override public int getIMBIHDBGJHKValue() {
+        return iMBIHDBGJHK_;
+      }
+      /**
+       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+       * @param value The enum numeric value on the wire for iMBIHDBGJHK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIMBIHDBGJHKValue(int value) {
+        
+        iMBIHDBGJHK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+       * @return The iMBIHDBGJHK.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD getIMBIHDBGJHK() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD result = emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.valueOf(iMBIHDBGJHK_);
+        return result == null ? emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+       * @param value The iMBIHDBGJHK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIMBIHDBGJHK(emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.APIBGNMPLHD value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        iMBIHDBGJHK_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.APIBGNMPLHD IMBIHDBGJHK = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIMBIHDBGJHK() {
+        
+        iMBIHDBGJHK_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -757,11 +765,10 @@ public final class AABLEDJBAKKOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021AABLEDJBAKK.proto\032\021APIBGNMPLHD.proto\032\021" +
-      "JMBPOAGEPCL.proto\"S\n\013AABLEDJBAKK\022!\n\013IMBI" +
-      "HDBGJHK\030\001 \001(\0162\014.APIBGNMPLHD\022!\n\013CDKNGAEHL" +
-      "MM\030\002 \001(\0132\014.JMBPOAGEPCLB2\n\031emu.grasscutte" +
-      "r.net.protoB\025AABLEDJBAKKOuterClassb\006prot" +
-      "o3"
+      "JMBPOAGEPCL.proto\"S\n\013AABLEDJBAKK\022!\n\013CDKN" +
+      "GAEHLMM\030\002 \001(\0132\014.JMBPOAGEPCL\022!\n\013IMBIHDBGJ" +
+      "HK\030\001 \001(\0162\014.APIBGNMPLHDB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -774,7 +781,7 @@ public final class AABLEDJBAKKOuterClass {
     internal_static_AABLEDJBAKK_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AABLEDJBAKK_descriptor,
-        new java.lang.String[] { "IMBIHDBGJHK", "CDKNGAEHLMM", });
+        new java.lang.String[] { "CDKNGAEHLMM", "IMBIHDBGJHK", });
     emu.grasscutter.net.proto.APIBGNMPLHDOuterClass.getDescriptor();
     emu.grasscutter.net.proto.JMBPOAGEPCLOuterClass.getDescriptor();
   }

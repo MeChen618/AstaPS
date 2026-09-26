@@ -19,50 +19,49 @@ public final class ExpeditionStartRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 DDCIILLJCLH = 11;</code>
-     * @return The dDCIILLJCLH.
-     */
-    int getDDCIILLJCLH();
-
-    /**
-     * <code>uint32 path_id = 3;</code>
-     * @return The pathId.
-     */
-    int getPathId();
-
-    /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 14;</code>
      * @return A list containing the avatarIdList.
      */
     java.util.List<java.lang.Integer> getAvatarIdListList();
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 14;</code>
      * @return The count of avatarIdList.
      */
     int getAvatarIdListCount();
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
     int getAvatarIdList(int index);
 
     /**
-     * <code>uint32 EPLFCNHCJOD = 10;</code>
-     * @return The ePLFCNHCJOD.
+     * <code>uint32 LGBBIHMBIOM = 6;</code>
+     * @return The lGBBIHMBIOM.
      */
-    int getEPLFCNHCJOD();
+    int getLGBBIHMBIOM();
 
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     int getRetcode();
+
+    /**
+     * <code>uint32 IOOGDKCHEAM = 9;</code>
+     * @return The iOOGDKCHEAM.
+     */
+    int getIOOGDKCHEAM();
+
+    /**
+     * <code>uint32 path_id = 2;</code>
+     * @return The pathId.
+     */
+    int getPathId();
   }
   /**
    * <pre>
-   * CmdId: 23532
-   * Obf: PBOFMNJLMLI
+   * CmdId: 25488
    * </pre>
    *
    * Protobuf type {@code ExpeditionStartRsp}
@@ -111,12 +110,27 @@ public final class ExpeditionStartRspOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
               pathId_ = input.readUInt32();
               break;
             }
-            case 8: {
+            case 48: {
+
+              lGBBIHMBIOM_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              iOOGDKCHEAM_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 112: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -124,7 +138,7 @@ public final class ExpeditionStartRspOuterClass {
               avatarIdList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 114: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -135,21 +149,6 @@ public final class ExpeditionStartRspOuterClass {
                 avatarIdList_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 128000: {
-
-              ePLFCNHCJOD_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              dDCIILLJCLH_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -187,32 +186,10 @@ public final class ExpeditionStartRspOuterClass {
               emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp.class, emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp.Builder.class);
     }
 
-    public static final int DDCIILLJCLH_FIELD_NUMBER = 11;
-    private int dDCIILLJCLH_;
-    /**
-     * <code>uint32 DDCIILLJCLH = 11;</code>
-     * @return The dDCIILLJCLH.
-     */
-    @java.lang.Override
-    public int getDDCIILLJCLH() {
-      return dDCIILLJCLH_;
-    }
-
-    public static final int PATH_ID_FIELD_NUMBER = 3;
-    private int pathId_;
-    /**
-     * <code>uint32 path_id = 3;</code>
-     * @return The pathId.
-     */
-    @java.lang.Override
-    public int getPathId() {
-      return pathId_;
-    }
-
-    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 1;
+    public static final int AVATAR_ID_LIST_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList avatarIdList_;
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 14;</code>
      * @return A list containing the avatarIdList.
      */
     @java.lang.Override
@@ -221,14 +198,14 @@ public final class ExpeditionStartRspOuterClass {
       return avatarIdList_;
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 14;</code>
      * @return The count of avatarIdList.
      */
     public int getAvatarIdListCount() {
       return avatarIdList_.size();
     }
     /**
-     * <code>repeated uint32 avatar_id_list = 6;</code>
+     * <code>repeated uint32 avatar_id_list = 14;</code>
      * @param index The index of the element to return.
      * @return The avatarIdList at the given index.
      */
@@ -237,26 +214,48 @@ public final class ExpeditionStartRspOuterClass {
     }
     private int avatarIdListMemoizedSerializedSize = -1;
 
-    public static final int EPLFCNHCJOD_FIELD_NUMBER = 16000;
-    private int ePLFCNHCJOD_;
+    public static final int LGBBIHMBIOM_FIELD_NUMBER = 6;
+    private int lGBBIHMBIOM_;
     /**
-     * <code>uint32 EPLFCNHCJOD = 10;</code>
-     * @return The ePLFCNHCJOD.
+     * <code>uint32 LGBBIHMBIOM = 6;</code>
+     * @return The lGBBIHMBIOM.
      */
     @java.lang.Override
-    public int getEPLFCNHCJOD() {
-      return ePLFCNHCJOD_;
+    public int getLGBBIHMBIOM() {
+      return lGBBIHMBIOM_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 10;
+    public static final int RETCODE_FIELD_NUMBER = 11;
     private int retcode_;
     /**
-     * <code>int32 retcode = 13;</code>
+     * <code>int32 retcode = 11;</code>
      * @return The retcode.
      */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
+    }
+
+    public static final int IOOGDKCHEAM_FIELD_NUMBER = 9;
+    private int iOOGDKCHEAM_;
+    /**
+     * <code>uint32 IOOGDKCHEAM = 9;</code>
+     * @return The iOOGDKCHEAM.
+     */
+    @java.lang.Override
+    public int getIOOGDKCHEAM() {
+      return iOOGDKCHEAM_;
+    }
+
+    public static final int PATH_ID_FIELD_NUMBER = 2;
+    private int pathId_;
+    /**
+     * <code>uint32 path_id = 2;</code>
+     * @return The pathId.
+     */
+    @java.lang.Override
+    public int getPathId() {
+      return pathId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -275,23 +274,23 @@ public final class ExpeditionStartRspOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (pathId_ != 0) {
-        output.writeUInt32(3, pathId_);
+        output.writeUInt32(2, pathId_);
+      }
+      if (lGBBIHMBIOM_ != 0) {
+        output.writeUInt32(6, lGBBIHMBIOM_);
+      }
+      if (iOOGDKCHEAM_ != 0) {
+        output.writeUInt32(9, iOOGDKCHEAM_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(11, retcode_);
       }
       if (getAvatarIdListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(avatarIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarIdList_.size(); i++) {
         output.writeUInt32NoTag(avatarIdList_.getInt(i));
-      }
-      if (ePLFCNHCJOD_ != 0) {
-        output.writeUInt32(16000, ePLFCNHCJOD_);
-      }
-      if (dDCIILLJCLH_ != 0) {
-        output.writeUInt32(11, dDCIILLJCLH_);
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(10, retcode_);
       }
       unknownFields.writeTo(output);
     }
@@ -304,7 +303,19 @@ public final class ExpeditionStartRspOuterClass {
       size = 0;
       if (pathId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, pathId_);
+          .computeUInt32Size(2, pathId_);
+      }
+      if (lGBBIHMBIOM_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, lGBBIHMBIOM_);
+      }
+      if (iOOGDKCHEAM_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, iOOGDKCHEAM_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, retcode_);
       }
       {
         int dataSize = 0;
@@ -319,18 +330,6 @@ public final class ExpeditionStartRspOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         avatarIdListMemoizedSerializedSize = dataSize;
-      }
-      if (ePLFCNHCJOD_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(16000, ePLFCNHCJOD_);
-      }
-      if (dDCIILLJCLH_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, dDCIILLJCLH_);
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, retcode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -347,16 +346,16 @@ public final class ExpeditionStartRspOuterClass {
       }
       emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp other = (emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp) obj;
 
-      if (getDDCIILLJCLH()
-          != other.getDDCIILLJCLH()) return false;
-      if (getPathId()
-          != other.getPathId()) return false;
       if (!getAvatarIdListList()
           .equals(other.getAvatarIdListList())) return false;
-      if (getEPLFCNHCJOD()
-          != other.getEPLFCNHCJOD()) return false;
+      if (getLGBBIHMBIOM()
+          != other.getLGBBIHMBIOM()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
+      if (getIOOGDKCHEAM()
+          != other.getIOOGDKCHEAM()) return false;
+      if (getPathId()
+          != other.getPathId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -368,18 +367,18 @@ public final class ExpeditionStartRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DDCIILLJCLH_FIELD_NUMBER;
-      hash = (53 * hash) + getDDCIILLJCLH();
-      hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getPathId();
       if (getAvatarIdListCount() > 0) {
         hash = (37 * hash) + AVATAR_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarIdListList().hashCode();
       }
-      hash = (37 * hash) + EPLFCNHCJOD_FIELD_NUMBER;
-      hash = (53 * hash) + getEPLFCNHCJOD();
+      hash = (37 * hash) + LGBBIHMBIOM_FIELD_NUMBER;
+      hash = (53 * hash) + getLGBBIHMBIOM();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
+      hash = (37 * hash) + IOOGDKCHEAM_FIELD_NUMBER;
+      hash = (53 * hash) + getIOOGDKCHEAM();
+      hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getPathId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,8 +476,7 @@ public final class ExpeditionStartRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 23532
-     * Obf: PBOFMNJLMLI
+     * CmdId: 25488
      * </pre>
      *
      * Protobuf type {@code ExpeditionStartRsp}
@@ -518,15 +516,15 @@ public final class ExpeditionStartRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        dDCIILLJCLH_ = 0;
-
-        pathId_ = 0;
-
         avatarIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        ePLFCNHCJOD_ = 0;
+        lGBBIHMBIOM_ = 0;
 
         retcode_ = 0;
+
+        iOOGDKCHEAM_ = 0;
+
+        pathId_ = 0;
 
         return this;
       }
@@ -555,15 +553,15 @@ public final class ExpeditionStartRspOuterClass {
       public emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp buildPartial() {
         emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp result = new emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp(this);
         int from_bitField0_ = bitField0_;
-        result.dDCIILLJCLH_ = dDCIILLJCLH_;
-        result.pathId_ = pathId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           avatarIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarIdList_ = avatarIdList_;
-        result.ePLFCNHCJOD_ = ePLFCNHCJOD_;
+        result.lGBBIHMBIOM_ = lGBBIHMBIOM_;
         result.retcode_ = retcode_;
+        result.iOOGDKCHEAM_ = iOOGDKCHEAM_;
+        result.pathId_ = pathId_;
         onBuilt();
         return result;
       }
@@ -612,12 +610,6 @@ public final class ExpeditionStartRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp other) {
         if (other == emu.grasscutter.net.proto.ExpeditionStartRspOuterClass.ExpeditionStartRsp.getDefaultInstance()) return this;
-        if (other.getDDCIILLJCLH() != 0) {
-          setDDCIILLJCLH(other.getDDCIILLJCLH());
-        }
-        if (other.getPathId() != 0) {
-          setPathId(other.getPathId());
-        }
         if (!other.avatarIdList_.isEmpty()) {
           if (avatarIdList_.isEmpty()) {
             avatarIdList_ = other.avatarIdList_;
@@ -628,11 +620,17 @@ public final class ExpeditionStartRspOuterClass {
           }
           onChanged();
         }
-        if (other.getEPLFCNHCJOD() != 0) {
-          setEPLFCNHCJOD(other.getEPLFCNHCJOD());
+        if (other.getLGBBIHMBIOM() != 0) {
+          setLGBBIHMBIOM(other.getLGBBIHMBIOM());
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
+        }
+        if (other.getIOOGDKCHEAM() != 0) {
+          setIOOGDKCHEAM(other.getIOOGDKCHEAM());
+        }
+        if (other.getPathId() != 0) {
+          setPathId(other.getPathId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -664,68 +662,6 @@ public final class ExpeditionStartRspOuterClass {
       }
       private int bitField0_;
 
-      private int dDCIILLJCLH_ ;
-      /**
-       * <code>uint32 DDCIILLJCLH = 11;</code>
-       * @return The dDCIILLJCLH.
-       */
-      @java.lang.Override
-      public int getDDCIILLJCLH() {
-        return dDCIILLJCLH_;
-      }
-      /**
-       * <code>uint32 DDCIILLJCLH = 11;</code>
-       * @param value The dDCIILLJCLH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDDCIILLJCLH(int value) {
-        
-        dDCIILLJCLH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 DDCIILLJCLH = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDDCIILLJCLH() {
-        
-        dDCIILLJCLH_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int pathId_ ;
-      /**
-       * <code>uint32 path_id = 3;</code>
-       * @return The pathId.
-       */
-      @java.lang.Override
-      public int getPathId() {
-        return pathId_;
-      }
-      /**
-       * <code>uint32 path_id = 3;</code>
-       * @param value The pathId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPathId(int value) {
-        
-        pathId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 path_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPathId() {
-        
-        pathId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList avatarIdList_ = emptyIntList();
       private void ensureAvatarIdListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -734,7 +670,7 @@ public final class ExpeditionStartRspOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @return A list containing the avatarIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -743,14 +679,14 @@ public final class ExpeditionStartRspOuterClass {
                  java.util.Collections.unmodifiableList(avatarIdList_) : avatarIdList_;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @return The count of avatarIdList.
        */
       public int getAvatarIdListCount() {
         return avatarIdList_.size();
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @param index The index of the element to return.
        * @return The avatarIdList at the given index.
        */
@@ -758,7 +694,7 @@ public final class ExpeditionStartRspOuterClass {
         return avatarIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The avatarIdList to set.
        * @return This builder for chaining.
@@ -771,7 +707,7 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @param value The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -782,7 +718,7 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @param values The avatarIdList to add.
        * @return This builder for chaining.
        */
@@ -795,7 +731,7 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 avatar_id_list = 6;</code>
+       * <code>repeated uint32 avatar_id_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarIdList() {
@@ -805,40 +741,40 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
 
-      private int ePLFCNHCJOD_ ;
+      private int lGBBIHMBIOM_ ;
       /**
-       * <code>uint32 EPLFCNHCJOD = 10;</code>
-       * @return The ePLFCNHCJOD.
+       * <code>uint32 LGBBIHMBIOM = 6;</code>
+       * @return The lGBBIHMBIOM.
        */
       @java.lang.Override
-      public int getEPLFCNHCJOD() {
-        return ePLFCNHCJOD_;
+      public int getLGBBIHMBIOM() {
+        return lGBBIHMBIOM_;
       }
       /**
-       * <code>uint32 EPLFCNHCJOD = 10;</code>
-       * @param value The ePLFCNHCJOD to set.
+       * <code>uint32 LGBBIHMBIOM = 6;</code>
+       * @param value The lGBBIHMBIOM to set.
        * @return This builder for chaining.
        */
-      public Builder setEPLFCNHCJOD(int value) {
+      public Builder setLGBBIHMBIOM(int value) {
         
-        ePLFCNHCJOD_ = value;
+        lGBBIHMBIOM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 EPLFCNHCJOD = 10;</code>
+       * <code>uint32 LGBBIHMBIOM = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEPLFCNHCJOD() {
+      public Builder clearLGBBIHMBIOM() {
         
-        ePLFCNHCJOD_ = 0;
+        lGBBIHMBIOM_ = 0;
         onChanged();
         return this;
       }
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 11;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -846,7 +782,7 @@ public final class ExpeditionStartRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 11;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -857,12 +793,74 @@ public final class ExpeditionStartRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 13;</code>
+       * <code>int32 retcode = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
         
         retcode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iOOGDKCHEAM_ ;
+      /**
+       * <code>uint32 IOOGDKCHEAM = 9;</code>
+       * @return The iOOGDKCHEAM.
+       */
+      @java.lang.Override
+      public int getIOOGDKCHEAM() {
+        return iOOGDKCHEAM_;
+      }
+      /**
+       * <code>uint32 IOOGDKCHEAM = 9;</code>
+       * @param value The iOOGDKCHEAM to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIOOGDKCHEAM(int value) {
+        
+        iOOGDKCHEAM_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IOOGDKCHEAM = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIOOGDKCHEAM() {
+        
+        iOOGDKCHEAM_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pathId_ ;
+      /**
+       * <code>uint32 path_id = 2;</code>
+       * @return The pathId.
+       */
+      @java.lang.Override
+      public int getPathId() {
+        return pathId_;
+      }
+      /**
+       * <code>uint32 path_id = 2;</code>
+       * @param value The pathId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathId(int value) {
+        
+        pathId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 path_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPathId() {
+        
+        pathId_ = 0;
         onChanged();
         return this;
       }
@@ -934,9 +932,9 @@ public final class ExpeditionStartRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ExpeditionStartRsp.proto\"x\n\022Expedition" +
-      "StartRsp\022\023\n\013DDCIILLJCLH\030\013 \001(\r\022\017\n\007path_id" +
-      "\030\003 \001(\r\022\026\n\016avatar_id_list\030\006 \003(\r\022\023\n\013EPLFCN" +
-      "HCJOD\030\n \001(\r\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.gras" +
+      "StartRsp\022\026\n\016avatar_id_list\030\016 \003(\r\022\023\n\013LGBB" +
+      "IHMBIOM\030\006 \001(\r\022\017\n\007retcode\030\013 \001(\005\022\023\n\013IOOGDK" +
+      "CHEAM\030\t \001(\r\022\017\n\007path_id\030\002 \001(\rB\033\n\031emu.gras" +
       "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -948,7 +946,7 @@ public final class ExpeditionStartRspOuterClass {
     internal_static_ExpeditionStartRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ExpeditionStartRsp_descriptor,
-        new java.lang.String[] { "DDCIILLJCLH", "PathId", "AvatarIdList", "EPLFCNHCJOD", "Retcode", });
+        new java.lang.String[] { "AvatarIdList", "LGBBIHMBIOM", "Retcode", "IOOGDKCHEAM", "PathId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

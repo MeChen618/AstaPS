@@ -9,6 +9,7 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.PlayerCreationEvent;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.game.GameSession.SessionState;
+import emu.grasscutter.net.proto.GetPlayerTokenReqOuterClass.GetPlayerTokenReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.PacketGetPlayerTokenRsp;
 import emu.grasscutter.utils.*;
@@ -31,15 +32,14 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
     private static final int IP_BAN_END_TIME = Integer.MAX_VALUE;
 
 
-    // A 7.0 client renumbered this message, so the generated class cannot read it - it declares
-    // field 3 a string where 7.0 sends a varint, and parseFrom throws on that rather than handing
-    // back the fields that do still line up. These four numbers are what a real 7.0.0 client put on
-    // the wire on 2026-08-12, identified by the shape of their values: one 344-character base64 RSA
-    // blob, one 64-hex token, the account id, and the key slot. 6.7 numbers in the comments.
-    private static final int F_ACCOUNT_UID = 2; // 6.7: 2
-    private static final int F_ACCOUNT_TOKEN = 6; // 6.7: 3
-    private static final int F_KEY_ID = 588; // 6.7: 41
-    private static final int F_CLIENT_RAND_KEY = 932; // 6.7: 1475
+    // Read with ProtoRead rather than parseFrom: a mismatched field type makes parseFrom throw
+    // instead of returning the fields that still line up. The numbers come from the generated
+    // class so they follow the protocol; they used to be pinned to a 7.0 capture (2, 6, 588, 932),
+    // which a 7.1 client does not use, so every token check failed and the session was closed.
+    private static final int F_ACCOUNT_UID = GetPlayerTokenReq.ACCOUNT_UID_FIELD_NUMBER;
+    private static final int F_ACCOUNT_TOKEN = GetPlayerTokenReq.ACCOUNT_TOKEN_FIELD_NUMBER;
+    private static final int F_KEY_ID = GetPlayerTokenReq.KEY_ID_FIELD_NUMBER;
+    private static final int F_CLIENT_RAND_KEY = GetPlayerTokenReq.CLIENT_RAND_KEY_FIELD_NUMBER;
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
@@ -51,6 +51,11 @@ public class HandlerGetPlayerTokenReq extends PacketHandler {
         var account = DispatchUtils.authenticate(accountId, accountToken);
 
         if (account == null && !DebugConstants.ACCEPT_CLIENT_TOKEN) {
+            Grasscutter.getLogger()
+                    .warn(
+                            "Token check failed for account '{}' from {} - closing the session.",
+                            accountId,
+                            session.getAddress());
             session.close();
             return;
         } else if (account == null && DebugConstants.ACCEPT_CLIENT_TOKEN) {

@@ -1,13 +1,15 @@
 package emu.grasscutter.game.ability;
 
-/** Protocol ids for Escoffier's hold-E improvised cooking. */
+import emu.grasscutter.net.packet.PacketOpcodes;
+
+/** Protocol ids for Escoffier's hold-E improvised cooking, from the 7.1 opcode table. */
 public final class EscoffierSkillCookOpcodes {
-    /** Client asks for the dish once charging completes; empty payload. */
-    public static final int COOK_REQ = 26785;
+    /** Client asks for the dish once charging completes; empty payload. 7.1 CmdId unknown (0). */
+    public static final int COOK_REQ = PacketOpcodes._AvatarEscoffierSkillCookReq;
     /** Dish result response. */
-    public static final int COOK_RSP = 8444;
-    /** Weekly remaining/cap sync; sending too many fields poisons the charge bar. */
-    public static final int COOK_DATA_NOTIFY = 21842;
+    public static final int COOK_RSP = PacketOpcodes._AvatarEscoffierSkillCookRsp;
+    /** Weekly count sync; sending too many fields poisons the charge bar. */
+    public static final int COOK_DATA_NOTIFY = PacketOpcodes._AvatarEscoffierSkillCookDataNotify;
 
     private EscoffierSkillCookOpcodes() {}
 }

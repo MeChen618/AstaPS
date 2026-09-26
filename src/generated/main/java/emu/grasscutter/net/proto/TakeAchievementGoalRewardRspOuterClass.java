@@ -19,12 +19,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
-     */
-    int getRetcode();
-
-    /**
      * <code>repeated uint32 id_list = 6;</code>
      * @return A list containing the idList.
      */
@@ -64,6 +58,12 @@ public final class TakeAchievementGoalRewardRspOuterClass {
      */
     emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index);
+
+    /**
+     * <code>int32 retcode = 3;</code>
+     * @return The retcode.
+     */
+    int getRetcode();
   }
   /**
    * Protobuf type {@code TakeAchievementGoalRewardRsp}
@@ -186,17 +186,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
               emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp.class, emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
-    /**
-     * <code>int32 retcode = 3;</code>
-     * @return The retcode.
-     */
-    @java.lang.Override
-    public int getRetcode() {
-      return retcode_;
-    }
-
     public static final int ID_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList idList_;
     /**
@@ -263,6 +252,17 @@ public final class TakeAchievementGoalRewardRspOuterClass {
     public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
         int index) {
       return itemList_.get(index);
+    }
+
+    public static final int RETCODE_FIELD_NUMBER = 3;
+    private int retcode_;
+    /**
+     * <code>int32 retcode = 3;</code>
+     * @return The retcode.
+     */
+    @java.lang.Override
+    public int getRetcode() {
+      return retcode_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -339,12 +339,12 @@ public final class TakeAchievementGoalRewardRspOuterClass {
       }
       emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp other = (emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp) obj;
 
-      if (getRetcode()
-          != other.getRetcode()) return false;
       if (!getIdListList()
           .equals(other.getIdListList())) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
+      if (getRetcode()
+          != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -356,8 +356,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getRetcode();
       if (getIdListCount() > 0) {
         hash = (37 * hash) + ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getIdListList().hashCode();
@@ -366,6 +364,8 @@ public final class TakeAchievementGoalRewardRspOuterClass {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
       }
+      hash = (37 * hash) + RETCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getRetcode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -500,8 +500,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        retcode_ = 0;
-
         idList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         if (itemListBuilder_ == null) {
@@ -510,6 +508,8 @@ public final class TakeAchievementGoalRewardRspOuterClass {
         } else {
           itemListBuilder_.clear();
         }
+        retcode_ = 0;
+
         return this;
       }
 
@@ -537,7 +537,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
       public emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp buildPartial() {
         emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp result = new emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp(this);
         int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
         if (((bitField0_ & 0x00000001) != 0)) {
           idList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -552,6 +551,7 @@ public final class TakeAchievementGoalRewardRspOuterClass {
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
+        result.retcode_ = retcode_;
         onBuilt();
         return result;
       }
@@ -600,9 +600,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp other) {
         if (other == emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp.getDefaultInstance()) return this;
-        if (other.getRetcode() != 0) {
-          setRetcode(other.getRetcode());
-        }
         if (!other.idList_.isEmpty()) {
           if (idList_.isEmpty()) {
             idList_ = other.idList_;
@@ -639,6 +636,9 @@ public final class TakeAchievementGoalRewardRspOuterClass {
             }
           }
         }
+        if (other.getRetcode() != 0) {
+          setRetcode(other.getRetcode());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -668,37 +668,6 @@ public final class TakeAchievementGoalRewardRspOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int retcode_ ;
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @return The retcode.
-       */
-      @java.lang.Override
-      public int getRetcode() {
-        return retcode_;
-      }
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @param value The retcode to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRetcode(int value) {
-        
-        retcode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 retcode = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRetcode() {
-        
-        retcode_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList idList_ = emptyIntList();
       private void ensureIdListIsMutable() {
@@ -1018,6 +987,37 @@ public final class TakeAchievementGoalRewardRspOuterClass {
         }
         return itemListBuilder_;
       }
+
+      private int retcode_ ;
+      /**
+       * <code>int32 retcode = 3;</code>
+       * @return The retcode.
+       */
+      @java.lang.Override
+      public int getRetcode() {
+        return retcode_;
+      }
+      /**
+       * <code>int32 retcode = 3;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetcode(int value) {
+        
+        retcode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 retcode = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRetcode() {
+        
+        retcode_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1086,24 +1086,26 @@ public final class TakeAchievementGoalRewardRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\"TakeAchievementGoalRewardRsp.proto\032\017It" +
-      "emParam.proto\"_\n\034TakeAchievementGoalRewa" +
-      "rdRsp\022\017\n\007retcode\030\003 \001(\005\022\017\n\007id_list\030\006 \003(\r\022" +
-      "\035\n\titem_list\030\014 \003(\0132\n.ItemParamBC\n\031emu.gr" +
-      "asscutter.net.protoB&TakeAchievementGoal" +
-      "RewardRspOuterClassb\006proto3"
+      "emParam.proto\032\rRetcode.proto\"_\n\034TakeAchi" +
+      "evementGoalRewardRsp\022\017\n\007id_list\030\006 \003(\r\022\035\n" +
+      "\titem_list\030\014 \003(\0132\n.ItemParam\022\017\n\007retcode\030" +
+      "\003 \001(\005B\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_TakeAchievementGoalRewardRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_TakeAchievementGoalRewardRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeAchievementGoalRewardRsp_descriptor,
-        new java.lang.String[] { "Retcode", "IdList", "ItemList", });
+        new java.lang.String[] { "IdList", "ItemList", "Retcode", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

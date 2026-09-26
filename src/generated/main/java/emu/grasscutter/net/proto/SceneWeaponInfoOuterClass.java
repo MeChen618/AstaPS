@@ -19,42 +19,6 @@ public final class SceneWeaponInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
-     * <code>uint32 gadget_id = 2;</code>
-     * @return The gadgetId.
-     */
-    int getGadgetId();
-
-    /**
-     * <code>uint32 item_id = 3;</code>
-     * @return The itemId.
-     */
-    int getItemId();
-
-    /**
-     * <code>uint64 guid = 4;</code>
-     * @return The guid.
-     */
-    long getGuid();
-
-    /**
-     * <code>uint32 level = 5;</code>
-     * @return The level.
-     */
-    int getLevel();
-
-    /**
-     * <code>uint32 promote_level = 6;</code>
-     * @return The promoteLevel.
-     */
-    int getPromoteLevel();
-
-    /**
      * <code>.AbilitySyncStateInfo ability_info = 7;</code>
      * @return Whether the abilityInfo field is set.
      */
@@ -119,18 +83,6 @@ public final class SceneWeaponInfoOuterClass {
     emu.grasscutter.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder getRendererChangedInfoOrBuilder();
 
     /**
-     * <code>bool hhgdiooebmj = 10;</code>
-     * @return The hhgdiooebmj.
-     */
-    boolean getHhgdiooebmj();
-
-    /**
-     * <code>uint32 _weapon_skin_id = 11;</code>
-     * @return The weaponSkinId.
-     */
-    int getWeaponSkinId();
-
-    /**
      * <code>repeated .IMPFHAGJHCE KCLFBBACHLP = 12;</code>
      */
     java.util.List<emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE> 
@@ -153,8 +105,60 @@ public final class SceneWeaponInfoOuterClass {
      */
     emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCEOrBuilder getKCLFBBACHLPOrBuilder(
         int index);
+
+    /**
+     * <code>bool OGKCBEGGBHF = 10;</code>
+     * @return The oGKCBEGGBHF.
+     */
+    boolean getOGKCBEGGBHF();
+
+    /**
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
+     */
+    int getEntityId();
+
+    /**
+     * <code>uint32 _weapon_skin_id = 11;</code>
+     * @return The weaponSkinId.
+     */
+    int getWeaponSkinId();
+
+    /**
+     * <code>uint32 gadget_id = 2;</code>
+     * @return The gadgetId.
+     */
+    int getGadgetId();
+
+    /**
+     * <code>uint32 promote_level = 6;</code>
+     * @return The promoteLevel.
+     */
+    int getPromoteLevel();
+
+    /**
+     * <code>uint32 item_id = 3;</code>
+     * @return The itemId.
+     */
+    int getItemId();
+
+    /**
+     * <code>uint32 level = 5;</code>
+     * @return The level.
+     */
+    int getLevel();
+
+    /**
+     * <code>uint64 guid = 4;</code>
+     * @return The guid.
+     */
+    long getGuid();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code SceneWeaponInfo}
    */
   public static final class SceneWeaponInfo extends
@@ -272,7 +276,7 @@ public final class SceneWeaponInfoOuterClass {
             }
             case 80: {
 
-              hhgdiooebmj_ = input.readBool();
+              oGKCBEGGBHF_ = input.readBool();
               break;
             }
             case 88: {
@@ -334,72 +338,6 @@ public final class SceneWeaponInfoOuterClass {
       return emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.internal_static_SceneWeaponInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.class, emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.Builder.class);
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int GADGET_ID_FIELD_NUMBER = 2;
-    private int gadgetId_;
-    /**
-     * <code>uint32 gadget_id = 2;</code>
-     * @return The gadgetId.
-     */
-    @java.lang.Override
-    public int getGadgetId() {
-      return gadgetId_;
-    }
-
-    public static final int ITEM_ID_FIELD_NUMBER = 3;
-    private int itemId_;
-    /**
-     * <code>uint32 item_id = 3;</code>
-     * @return The itemId.
-     */
-    @java.lang.Override
-    public int getItemId() {
-      return itemId_;
-    }
-
-    public static final int GUID_FIELD_NUMBER = 4;
-    private long guid_;
-    /**
-     * <code>uint64 guid = 4;</code>
-     * @return The guid.
-     */
-    @java.lang.Override
-    public long getGuid() {
-      return guid_;
-    }
-
-    public static final int LEVEL_FIELD_NUMBER = 5;
-    private int level_;
-    /**
-     * <code>uint32 level = 5;</code>
-     * @return The level.
-     */
-    @java.lang.Override
-    public int getLevel() {
-      return level_;
-    }
-
-    public static final int PROMOTE_LEVEL_FIELD_NUMBER = 6;
-    private int promoteLevel_;
-    /**
-     * <code>uint32 promote_level = 6;</code>
-     * @return The promoteLevel.
-     */
-    @java.lang.Override
-    public int getPromoteLevel() {
-      return promoteLevel_;
     }
 
     public static final int ABILITY_INFO_FIELD_NUMBER = 7;
@@ -535,28 +473,6 @@ public final class SceneWeaponInfoOuterClass {
       return getRendererChangedInfo();
     }
 
-    public static final int HHGDIOOEBMJ_FIELD_NUMBER = 10;
-    private boolean hhgdiooebmj_;
-    /**
-     * <code>bool hhgdiooebmj = 10;</code>
-     * @return The hhgdiooebmj.
-     */
-    @java.lang.Override
-    public boolean getHhgdiooebmj() {
-      return hhgdiooebmj_;
-    }
-
-    public static final int _WEAPON_SKIN_ID_FIELD_NUMBER = 11;
-    private int WeaponSkinId_;
-    /**
-     * <code>uint32 _weapon_skin_id = 11;</code>
-     * @return The weaponSkinId.
-     */
-    @java.lang.Override
-    public int getWeaponSkinId() {
-      return WeaponSkinId_;
-    }
-
     public static final int KCLFBBACHLP_FIELD_NUMBER = 12;
     private java.util.List<emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE> kCLFBBACHLP_;
     /**
@@ -595,6 +511,94 @@ public final class SceneWeaponInfoOuterClass {
     public emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCEOrBuilder getKCLFBBACHLPOrBuilder(
         int index) {
       return kCLFBBACHLP_.get(index);
+    }
+
+    public static final int OGKCBEGGBHF_FIELD_NUMBER = 10;
+    private boolean oGKCBEGGBHF_;
+    /**
+     * <code>bool OGKCBEGGBHF = 10;</code>
+     * @return The oGKCBEGGBHF.
+     */
+    @java.lang.Override
+    public boolean getOGKCBEGGBHF() {
+      return oGKCBEGGBHF_;
+    }
+
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int _WEAPON_SKIN_ID_FIELD_NUMBER = 11;
+    private int WeaponSkinId_;
+    /**
+     * <code>uint32 _weapon_skin_id = 11;</code>
+     * @return The weaponSkinId.
+     */
+    @java.lang.Override
+    public int getWeaponSkinId() {
+      return WeaponSkinId_;
+    }
+
+    public static final int GADGET_ID_FIELD_NUMBER = 2;
+    private int gadgetId_;
+    /**
+     * <code>uint32 gadget_id = 2;</code>
+     * @return The gadgetId.
+     */
+    @java.lang.Override
+    public int getGadgetId() {
+      return gadgetId_;
+    }
+
+    public static final int PROMOTE_LEVEL_FIELD_NUMBER = 6;
+    private int promoteLevel_;
+    /**
+     * <code>uint32 promote_level = 6;</code>
+     * @return The promoteLevel.
+     */
+    @java.lang.Override
+    public int getPromoteLevel() {
+      return promoteLevel_;
+    }
+
+    public static final int ITEM_ID_FIELD_NUMBER = 3;
+    private int itemId_;
+    /**
+     * <code>uint32 item_id = 3;</code>
+     * @return The itemId.
+     */
+    @java.lang.Override
+    public int getItemId() {
+      return itemId_;
+    }
+
+    public static final int LEVEL_FIELD_NUMBER = 5;
+    private int level_;
+    /**
+     * <code>uint32 level = 5;</code>
+     * @return The level.
+     */
+    @java.lang.Override
+    public int getLevel() {
+      return level_;
+    }
+
+    public static final int GUID_FIELD_NUMBER = 4;
+    private long guid_;
+    /**
+     * <code>uint64 guid = 4;</code>
+     * @return The guid.
+     */
+    @java.lang.Override
+    public long getGuid() {
+      return guid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -641,8 +645,8 @@ public final class SceneWeaponInfoOuterClass {
       if (rendererChangedInfo_ != null) {
         output.writeMessage(9, getRendererChangedInfo());
       }
-      if (hhgdiooebmj_ != false) {
-        output.writeBool(10, hhgdiooebmj_);
+      if (oGKCBEGGBHF_ != false) {
+        output.writeBool(10, oGKCBEGGBHF_);
       }
       if (WeaponSkinId_ != 0) {
         output.writeUInt32(11, WeaponSkinId_);
@@ -701,9 +705,9 @@ public final class SceneWeaponInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getRendererChangedInfo());
       }
-      if (hhgdiooebmj_ != false) {
+      if (oGKCBEGGBHF_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, hhgdiooebmj_);
+          .computeBoolSize(10, oGKCBEGGBHF_);
       }
       if (WeaponSkinId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -728,18 +732,6 @@ public final class SceneWeaponInfoOuterClass {
       }
       emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo other = (emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
-      if (getGadgetId()
-          != other.getGadgetId()) return false;
-      if (getItemId()
-          != other.getItemId()) return false;
-      if (getGuid()
-          != other.getGuid()) return false;
-      if (getLevel()
-          != other.getLevel()) return false;
-      if (getPromoteLevel()
-          != other.getPromoteLevel()) return false;
       if (hasAbilityInfo() != other.hasAbilityInfo()) return false;
       if (hasAbilityInfo()) {
         if (!getAbilityInfo()
@@ -752,12 +744,24 @@ public final class SceneWeaponInfoOuterClass {
         if (!getRendererChangedInfo()
             .equals(other.getRendererChangedInfo())) return false;
       }
-      if (getHhgdiooebmj()
-          != other.getHhgdiooebmj()) return false;
-      if (getWeaponSkinId()
-          != other.getWeaponSkinId()) return false;
       if (!getKCLFBBACHLPList()
           .equals(other.getKCLFBBACHLPList())) return false;
+      if (getOGKCBEGGBHF()
+          != other.getOGKCBEGGBHF()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
+      if (getWeaponSkinId()
+          != other.getWeaponSkinId()) return false;
+      if (getGadgetId()
+          != other.getGadgetId()) return false;
+      if (getPromoteLevel()
+          != other.getPromoteLevel()) return false;
+      if (getItemId()
+          != other.getItemId()) return false;
+      if (getLevel()
+          != other.getLevel()) return false;
+      if (getGuid()
+          != other.getGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -769,19 +773,6 @@ public final class SceneWeaponInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
-      hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGadgetId();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getItemId();
-      hash = (37 * hash) + GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGuid());
-      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getLevel();
-      hash = (37 * hash) + PROMOTE_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getPromoteLevel();
       if (hasAbilityInfo()) {
         hash = (37 * hash) + ABILITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityInfo().hashCode();
@@ -794,15 +785,28 @@ public final class SceneWeaponInfoOuterClass {
         hash = (37 * hash) + RENDERER_CHANGED_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getRendererChangedInfo().hashCode();
       }
-      hash = (37 * hash) + HHGDIOOEBMJ_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getHhgdiooebmj());
-      hash = (37 * hash) + _WEAPON_SKIN_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getWeaponSkinId();
       if (getKCLFBBACHLPCount() > 0) {
         hash = (37 * hash) + KCLFBBACHLP_FIELD_NUMBER;
         hash = (53 * hash) + getKCLFBBACHLPList().hashCode();
       }
+      hash = (37 * hash) + OGKCBEGGBHF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getOGKCBEGGBHF());
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + _WEAPON_SKIN_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getWeaponSkinId();
+      hash = (37 * hash) + GADGET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGadgetId();
+      hash = (37 * hash) + PROMOTE_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getPromoteLevel();
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getItemId();
+      hash = (37 * hash) + LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLevel();
+      hash = (37 * hash) + GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGuid());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -899,6 +903,10 @@ public final class SceneWeaponInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code SceneWeaponInfo}
      */
     public static final class Builder extends
@@ -959,18 +967,6 @@ public final class SceneWeaponInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
-        gadgetId_ = 0;
-
-        itemId_ = 0;
-
-        guid_ = 0L;
-
-        level_ = 0;
-
-        promoteLevel_ = 0;
-
         if (abilityInfoBuilder_ == null) {
           abilityInfo_ = null;
         } else {
@@ -984,16 +980,28 @@ public final class SceneWeaponInfoOuterClass {
           rendererChangedInfo_ = null;
           rendererChangedInfoBuilder_ = null;
         }
-        hhgdiooebmj_ = false;
-
-        WeaponSkinId_ = 0;
-
         if (kCLFBBACHLPBuilder_ == null) {
           kCLFBBACHLP_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           kCLFBBACHLPBuilder_.clear();
         }
+        oGKCBEGGBHF_ = false;
+
+        entityId_ = 0;
+
+        WeaponSkinId_ = 0;
+
+        gadgetId_ = 0;
+
+        promoteLevel_ = 0;
+
+        itemId_ = 0;
+
+        level_ = 0;
+
+        guid_ = 0L;
+
         return this;
       }
 
@@ -1021,12 +1029,6 @@ public final class SceneWeaponInfoOuterClass {
       public emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo buildPartial() {
         emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo result = new emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo(this);
         int from_bitField0_ = bitField0_;
-        result.entityId_ = entityId_;
-        result.gadgetId_ = gadgetId_;
-        result.itemId_ = itemId_;
-        result.guid_ = guid_;
-        result.level_ = level_;
-        result.promoteLevel_ = promoteLevel_;
         if (abilityInfoBuilder_ == null) {
           result.abilityInfo_ = abilityInfo_;
         } else {
@@ -1039,8 +1041,6 @@ public final class SceneWeaponInfoOuterClass {
         } else {
           result.rendererChangedInfo_ = rendererChangedInfoBuilder_.build();
         }
-        result.hhgdiooebmj_ = hhgdiooebmj_;
-        result.WeaponSkinId_ = WeaponSkinId_;
         if (kCLFBBACHLPBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             kCLFBBACHLP_ = java.util.Collections.unmodifiableList(kCLFBBACHLP_);
@@ -1050,6 +1050,14 @@ public final class SceneWeaponInfoOuterClass {
         } else {
           result.kCLFBBACHLP_ = kCLFBBACHLPBuilder_.build();
         }
+        result.oGKCBEGGBHF_ = oGKCBEGGBHF_;
+        result.entityId_ = entityId_;
+        result.WeaponSkinId_ = WeaponSkinId_;
+        result.gadgetId_ = gadgetId_;
+        result.promoteLevel_ = promoteLevel_;
+        result.itemId_ = itemId_;
+        result.level_ = level_;
+        result.guid_ = guid_;
         onBuilt();
         return result;
       }
@@ -1098,24 +1106,6 @@ public final class SceneWeaponInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo other) {
         if (other == emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
-        if (other.getGadgetId() != 0) {
-          setGadgetId(other.getGadgetId());
-        }
-        if (other.getItemId() != 0) {
-          setItemId(other.getItemId());
-        }
-        if (other.getGuid() != 0L) {
-          setGuid(other.getGuid());
-        }
-        if (other.getLevel() != 0) {
-          setLevel(other.getLevel());
-        }
-        if (other.getPromoteLevel() != 0) {
-          setPromoteLevel(other.getPromoteLevel());
-        }
         if (other.hasAbilityInfo()) {
           mergeAbilityInfo(other.getAbilityInfo());
         }
@@ -1123,12 +1113,6 @@ public final class SceneWeaponInfoOuterClass {
             other.internalGetAffixMap());
         if (other.hasRendererChangedInfo()) {
           mergeRendererChangedInfo(other.getRendererChangedInfo());
-        }
-        if (other.getHhgdiooebmj() != false) {
-          setHhgdiooebmj(other.getHhgdiooebmj());
-        }
-        if (other.getWeaponSkinId() != 0) {
-          setWeaponSkinId(other.getWeaponSkinId());
         }
         if (kCLFBBACHLPBuilder_ == null) {
           if (!other.kCLFBBACHLP_.isEmpty()) {
@@ -1155,6 +1139,30 @@ public final class SceneWeaponInfoOuterClass {
               kCLFBBACHLPBuilder_.addAllMessages(other.kCLFBBACHLP_);
             }
           }
+        }
+        if (other.getOGKCBEGGBHF() != false) {
+          setOGKCBEGGBHF(other.getOGKCBEGGBHF());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
+        }
+        if (other.getWeaponSkinId() != 0) {
+          setWeaponSkinId(other.getWeaponSkinId());
+        }
+        if (other.getGadgetId() != 0) {
+          setGadgetId(other.getGadgetId());
+        }
+        if (other.getPromoteLevel() != 0) {
+          setPromoteLevel(other.getPromoteLevel());
+        }
+        if (other.getItemId() != 0) {
+          setItemId(other.getItemId());
+        }
+        if (other.getLevel() != 0) {
+          setLevel(other.getLevel());
+        }
+        if (other.getGuid() != 0L) {
+          setGuid(other.getGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1185,192 +1193,6 @@ public final class SceneWeaponInfoOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int gadgetId_ ;
-      /**
-       * <code>uint32 gadget_id = 2;</code>
-       * @return The gadgetId.
-       */
-      @java.lang.Override
-      public int getGadgetId() {
-        return gadgetId_;
-      }
-      /**
-       * <code>uint32 gadget_id = 2;</code>
-       * @param value The gadgetId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGadgetId(int value) {
-        
-        gadgetId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 gadget_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGadgetId() {
-        
-        gadgetId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int itemId_ ;
-      /**
-       * <code>uint32 item_id = 3;</code>
-       * @return The itemId.
-       */
-      @java.lang.Override
-      public int getItemId() {
-        return itemId_;
-      }
-      /**
-       * <code>uint32 item_id = 3;</code>
-       * @param value The itemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemId(int value) {
-        
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 item_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long guid_ ;
-      /**
-       * <code>uint64 guid = 4;</code>
-       * @return The guid.
-       */
-      @java.lang.Override
-      public long getGuid() {
-        return guid_;
-      }
-      /**
-       * <code>uint64 guid = 4;</code>
-       * @param value The guid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGuid(long value) {
-        
-        guid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 guid = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGuid() {
-        
-        guid_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int level_ ;
-      /**
-       * <code>uint32 level = 5;</code>
-       * @return The level.
-       */
-      @java.lang.Override
-      public int getLevel() {
-        return level_;
-      }
-      /**
-       * <code>uint32 level = 5;</code>
-       * @param value The level to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevel(int value) {
-        
-        level_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevel() {
-        
-        level_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int promoteLevel_ ;
-      /**
-       * <code>uint32 promote_level = 6;</code>
-       * @return The promoteLevel.
-       */
-      @java.lang.Override
-      public int getPromoteLevel() {
-        return promoteLevel_;
-      }
-      /**
-       * <code>uint32 promote_level = 6;</code>
-       * @param value The promoteLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPromoteLevel(int value) {
-        
-        promoteLevel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 promote_level = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPromoteLevel() {
-        
-        promoteLevel_ = 0;
-        onChanged();
-        return this;
-      }
 
       private emu.grasscutter.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo abilityInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1738,68 +1560,6 @@ public final class SceneWeaponInfoOuterClass {
         return rendererChangedInfoBuilder_;
       }
 
-      private boolean hhgdiooebmj_ ;
-      /**
-       * <code>bool hhgdiooebmj = 10;</code>
-       * @return The hhgdiooebmj.
-       */
-      @java.lang.Override
-      public boolean getHhgdiooebmj() {
-        return hhgdiooebmj_;
-      }
-      /**
-       * <code>bool hhgdiooebmj = 10;</code>
-       * @param value The hhgdiooebmj to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHhgdiooebmj(boolean value) {
-        
-        hhgdiooebmj_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool hhgdiooebmj = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHhgdiooebmj() {
-        
-        hhgdiooebmj_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int WeaponSkinId_ ;
-      /**
-       * <code>uint32 _weapon_skin_id = 11;</code>
-       * @return The weaponSkinId.
-       */
-      @java.lang.Override
-      public int getWeaponSkinId() {
-        return WeaponSkinId_;
-      }
-      /**
-       * <code>uint32 _weapon_skin_id = 11;</code>
-       * @param value The weaponSkinId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWeaponSkinId(int value) {
-        
-        WeaponSkinId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 _weapon_skin_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWeaponSkinId() {
-        
-        WeaponSkinId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.IMPFHAGJHCEOuterClass.IMPFHAGJHCE> kCLFBBACHLP_ =
         java.util.Collections.emptyList();
       private void ensureKCLFBBACHLPIsMutable() {
@@ -2039,6 +1799,254 @@ public final class SceneWeaponInfoOuterClass {
         }
         return kCLFBBACHLPBuilder_;
       }
+
+      private boolean oGKCBEGGBHF_ ;
+      /**
+       * <code>bool OGKCBEGGBHF = 10;</code>
+       * @return The oGKCBEGGBHF.
+       */
+      @java.lang.Override
+      public boolean getOGKCBEGGBHF() {
+        return oGKCBEGGBHF_;
+      }
+      /**
+       * <code>bool OGKCBEGGBHF = 10;</code>
+       * @param value The oGKCBEGGBHF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOGKCBEGGBHF(boolean value) {
+        
+        oGKCBEGGBHF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool OGKCBEGGBHF = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOGKCBEGGBHF() {
+        
+        oGKCBEGGBHF_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int WeaponSkinId_ ;
+      /**
+       * <code>uint32 _weapon_skin_id = 11;</code>
+       * @return The weaponSkinId.
+       */
+      @java.lang.Override
+      public int getWeaponSkinId() {
+        return WeaponSkinId_;
+      }
+      /**
+       * <code>uint32 _weapon_skin_id = 11;</code>
+       * @param value The weaponSkinId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWeaponSkinId(int value) {
+        
+        WeaponSkinId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 _weapon_skin_id = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWeaponSkinId() {
+        
+        WeaponSkinId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int gadgetId_ ;
+      /**
+       * <code>uint32 gadget_id = 2;</code>
+       * @return The gadgetId.
+       */
+      @java.lang.Override
+      public int getGadgetId() {
+        return gadgetId_;
+      }
+      /**
+       * <code>uint32 gadget_id = 2;</code>
+       * @param value The gadgetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGadgetId(int value) {
+        
+        gadgetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 gadget_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGadgetId() {
+        
+        gadgetId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int promoteLevel_ ;
+      /**
+       * <code>uint32 promote_level = 6;</code>
+       * @return The promoteLevel.
+       */
+      @java.lang.Override
+      public int getPromoteLevel() {
+        return promoteLevel_;
+      }
+      /**
+       * <code>uint32 promote_level = 6;</code>
+       * @param value The promoteLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPromoteLevel(int value) {
+        
+        promoteLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 promote_level = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPromoteLevel() {
+        
+        promoteLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int itemId_ ;
+      /**
+       * <code>uint32 item_id = 3;</code>
+       * @return The itemId.
+       */
+      @java.lang.Override
+      public int getItemId() {
+        return itemId_;
+      }
+      /**
+       * <code>uint32 item_id = 3;</code>
+       * @param value The itemId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemId(int value) {
+        
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 item_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemId() {
+        
+        itemId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int level_ ;
+      /**
+       * <code>uint32 level = 5;</code>
+       * @return The level.
+       */
+      @java.lang.Override
+      public int getLevel() {
+        return level_;
+      }
+      /**
+       * <code>uint32 level = 5;</code>
+       * @param value The level to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevel(int value) {
+        
+        level_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevel() {
+        
+        level_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long guid_ ;
+      /**
+       * <code>uint64 guid = 4;</code>
+       * @return The guid.
+       */
+      @java.lang.Override
+      public long getGuid() {
+        return guid_;
+      }
+      /**
+       * <code>uint64 guid = 4;</code>
+       * @param value The guid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGuid(long value) {
+        
+        guid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 guid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGuid() {
+        
+        guid_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2114,18 +2122,17 @@ public final class SceneWeaponInfoOuterClass {
       "\n\025SceneWeaponInfo.proto\032\032AbilitySyncStat" +
       "eInfo.proto\032\037EntityRendererChangedInfo.p" +
       "roto\032\021IMPFHAGJHCE.proto\"\231\003\n\017SceneWeaponI" +
-      "nfo\022\021\n\tentity_id\030\001 \001(\r\022\021\n\tgadget_id\030\002 \001(" +
-      "\r\022\017\n\007item_id\030\003 \001(\r\022\014\n\004guid\030\004 \001(\004\022\r\n\005leve" +
-      "l\030\005 \001(\r\022\025\n\rpromote_level\030\006 \001(\r\022+\n\014abilit" +
-      "y_info\030\007 \001(\0132\025.AbilitySyncStateInfo\0221\n\ta" +
-      "ffix_map\030\010 \003(\0132\036.SceneWeaponInfo.AffixMa" +
-      "pEntry\0229\n\025renderer_changed_info\030\t \001(\0132\032." +
-      "EntityRendererChangedInfo\022\023\n\013hhgdiooebmj" +
-      "\030\n \001(\010\022\027\n\017_weapon_skin_id\030\013 \001(\r\022!\n\013KCLFB" +
-      "BACHLP\030\014 \003(\0132\014.IMPFHAGJHCE\032/\n\rAffixMapEn" +
-      "try\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B6\n\031e" +
-      "mu.grasscutter.net.protoB\031SceneWeaponInf" +
-      "oOuterClassb\006proto3"
+      "nfo\022+\n\014ability_info\030\007 \001(\0132\025.AbilitySyncS" +
+      "tateInfo\0221\n\taffix_map\030\010 \003(\0132\036.SceneWeapo" +
+      "nInfo.AffixMapEntry\0229\n\025renderer_changed_" +
+      "info\030\t \001(\0132\032.EntityRendererChangedInfo\022!" +
+      "\n\013KCLFBBACHLP\030\014 \003(\0132\014.IMPFHAGJHCE\022\023\n\013OGK" +
+      "CBEGGBHF\030\n \001(\010\022\021\n\tentity_id\030\001 \001(\r\022\027\n\017_we" +
+      "apon_skin_id\030\013 \001(\r\022\021\n\tgadget_id\030\002 \001(\r\022\025\n" +
+      "\rpromote_level\030\006 \001(\r\022\017\n\007item_id\030\003 \001(\r\022\r\n" +
+      "\005level\030\005 \001(\r\022\014\n\004guid\030\004 \001(\004\032/\n\rAffixMapEn" +
+      "try\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2139,7 +2146,7 @@ public final class SceneWeaponInfoOuterClass {
     internal_static_SceneWeaponInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SceneWeaponInfo_descriptor,
-        new java.lang.String[] { "EntityId", "GadgetId", "ItemId", "Guid", "Level", "PromoteLevel", "AbilityInfo", "AffixMap", "RendererChangedInfo", "Hhgdiooebmj", "WeaponSkinId", "KCLFBBACHLP", });
+        new java.lang.String[] { "AbilityInfo", "AffixMap", "RendererChangedInfo", "KCLFBBACHLP", "OGKCBEGGBHF", "EntityId", "WeaponSkinId", "GadgetId", "PromoteLevel", "ItemId", "Level", "Guid", });
     internal_static_SceneWeaponInfo_AffixMapEntry_descriptor =
       internal_static_SceneWeaponInfo_descriptor.getNestedTypes().get(0);
     internal_static_SceneWeaponInfo_AffixMapEntry_fieldAccessorTable = new

@@ -518,8 +518,8 @@ public final class GetDailyDungeonEntryInfoReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!GetDailyDungeonEntryInfoReq.proto\"/\n\033G" +
       "etDailyDungeonEntryInfoReq\022\020\n\010scene_id\030\n" +
-      " \001(\rBB\n\031emu.grasscutter.net.protoB%GetDa" +
-      "ilyDungeonEntryInfoReqOuterClassb\006proto3"
+      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

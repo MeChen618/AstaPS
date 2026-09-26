@@ -19,18 +19,6 @@ public final class KFMCDDAIOMLOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 POEOIINLNEC = 1;</code>
-     * @return The pOEOIINLNEC.
-     */
-    long getPOEOIINLNEC();
-
-    /**
-     * <code>uint32 FDIFPEHDKFD = 2;</code>
-     * @return The fDIFPEHDKFD.
-     */
-    int getFDIFPEHDKFD();
-
-    /**
      * <code>repeated uint32 GANPDAFPBLF = 3;</code>
      * @return A list containing the gANPDAFPBLF.
      */
@@ -48,12 +36,28 @@ public final class KFMCDDAIOMLOuterClass {
     int getGANPDAFPBLF(int index);
 
     /**
+     * <code>uint64 POEOIINLNEC = 1;</code>
+     * @return The pOEOIINLNEC.
+     */
+    long getPOEOIINLNEC();
+
+    /**
+     * <code>uint32 FDIFPEHDKFD = 2;</code>
+     * @return The fDIFPEHDKFD.
+     */
+    int getFDIFPEHDKFD();
+
+    /**
      * <code>bool NAJODBMGBLO = 4;</code>
      * @return The nAJODBMGBLO.
      */
     boolean getNAJODBMGBLO();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KFMCDDAIOML}
    */
   public static final class KFMCDDAIOML extends
@@ -171,28 +175,6 @@ public final class KFMCDDAIOMLOuterClass {
               emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML.class, emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML.Builder.class);
     }
 
-    public static final int POEOIINLNEC_FIELD_NUMBER = 1;
-    private long pOEOIINLNEC_;
-    /**
-     * <code>uint64 POEOIINLNEC = 1;</code>
-     * @return The pOEOIINLNEC.
-     */
-    @java.lang.Override
-    public long getPOEOIINLNEC() {
-      return pOEOIINLNEC_;
-    }
-
-    public static final int FDIFPEHDKFD_FIELD_NUMBER = 2;
-    private int fDIFPEHDKFD_;
-    /**
-     * <code>uint32 FDIFPEHDKFD = 2;</code>
-     * @return The fDIFPEHDKFD.
-     */
-    @java.lang.Override
-    public int getFDIFPEHDKFD() {
-      return fDIFPEHDKFD_;
-    }
-
     public static final int GANPDAFPBLF_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList gANPDAFPBLF_;
     /**
@@ -220,6 +202,28 @@ public final class KFMCDDAIOMLOuterClass {
       return gANPDAFPBLF_.getInt(index);
     }
     private int gANPDAFPBLFMemoizedSerializedSize = -1;
+
+    public static final int POEOIINLNEC_FIELD_NUMBER = 1;
+    private long pOEOIINLNEC_;
+    /**
+     * <code>uint64 POEOIINLNEC = 1;</code>
+     * @return The pOEOIINLNEC.
+     */
+    @java.lang.Override
+    public long getPOEOIINLNEC() {
+      return pOEOIINLNEC_;
+    }
+
+    public static final int FDIFPEHDKFD_FIELD_NUMBER = 2;
+    private int fDIFPEHDKFD_;
+    /**
+     * <code>uint32 FDIFPEHDKFD = 2;</code>
+     * @return The fDIFPEHDKFD.
+     */
+    @java.lang.Override
+    public int getFDIFPEHDKFD() {
+      return fDIFPEHDKFD_;
+    }
 
     public static final int NAJODBMGBLO_FIELD_NUMBER = 4;
     private boolean nAJODBMGBLO_;
@@ -313,12 +317,12 @@ public final class KFMCDDAIOMLOuterClass {
       }
       emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML other = (emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML) obj;
 
+      if (!getGANPDAFPBLFList()
+          .equals(other.getGANPDAFPBLFList())) return false;
       if (getPOEOIINLNEC()
           != other.getPOEOIINLNEC()) return false;
       if (getFDIFPEHDKFD()
           != other.getFDIFPEHDKFD()) return false;
-      if (!getGANPDAFPBLFList()
-          .equals(other.getGANPDAFPBLFList())) return false;
       if (getNAJODBMGBLO()
           != other.getNAJODBMGBLO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -332,15 +336,15 @@ public final class KFMCDDAIOMLOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getGANPDAFPBLFCount() > 0) {
+        hash = (37 * hash) + GANPDAFPBLF_FIELD_NUMBER;
+        hash = (53 * hash) + getGANPDAFPBLFList().hashCode();
+      }
       hash = (37 * hash) + POEOIINLNEC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPOEOIINLNEC());
       hash = (37 * hash) + FDIFPEHDKFD_FIELD_NUMBER;
       hash = (53 * hash) + getFDIFPEHDKFD();
-      if (getGANPDAFPBLFCount() > 0) {
-        hash = (37 * hash) + GANPDAFPBLF_FIELD_NUMBER;
-        hash = (53 * hash) + getGANPDAFPBLFList().hashCode();
-      }
       hash = (37 * hash) + NAJODBMGBLO_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNAJODBMGBLO());
@@ -440,6 +444,10 @@ public final class KFMCDDAIOMLOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KFMCDDAIOML}
      */
     public static final class Builder extends
@@ -477,12 +485,12 @@ public final class KFMCDDAIOMLOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        gANPDAFPBLF_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         pOEOIINLNEC_ = 0L;
 
         fDIFPEHDKFD_ = 0;
 
-        gANPDAFPBLF_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         nAJODBMGBLO_ = false;
 
         return this;
@@ -512,13 +520,13 @@ public final class KFMCDDAIOMLOuterClass {
       public emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML buildPartial() {
         emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML result = new emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML(this);
         int from_bitField0_ = bitField0_;
-        result.pOEOIINLNEC_ = pOEOIINLNEC_;
-        result.fDIFPEHDKFD_ = fDIFPEHDKFD_;
         if (((bitField0_ & 0x00000001) != 0)) {
           gANPDAFPBLF_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.gANPDAFPBLF_ = gANPDAFPBLF_;
+        result.pOEOIINLNEC_ = pOEOIINLNEC_;
+        result.fDIFPEHDKFD_ = fDIFPEHDKFD_;
         result.nAJODBMGBLO_ = nAJODBMGBLO_;
         onBuilt();
         return result;
@@ -568,12 +576,6 @@ public final class KFMCDDAIOMLOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML other) {
         if (other == emu.grasscutter.net.proto.KFMCDDAIOMLOuterClass.KFMCDDAIOML.getDefaultInstance()) return this;
-        if (other.getPOEOIINLNEC() != 0L) {
-          setPOEOIINLNEC(other.getPOEOIINLNEC());
-        }
-        if (other.getFDIFPEHDKFD() != 0) {
-          setFDIFPEHDKFD(other.getFDIFPEHDKFD());
-        }
         if (!other.gANPDAFPBLF_.isEmpty()) {
           if (gANPDAFPBLF_.isEmpty()) {
             gANPDAFPBLF_ = other.gANPDAFPBLF_;
@@ -583,6 +585,12 @@ public final class KFMCDDAIOMLOuterClass {
             gANPDAFPBLF_.addAll(other.gANPDAFPBLF_);
           }
           onChanged();
+        }
+        if (other.getPOEOIINLNEC() != 0L) {
+          setPOEOIINLNEC(other.getPOEOIINLNEC());
+        }
+        if (other.getFDIFPEHDKFD() != 0) {
+          setFDIFPEHDKFD(other.getFDIFPEHDKFD());
         }
         if (other.getNAJODBMGBLO() != false) {
           setNAJODBMGBLO(other.getNAJODBMGBLO());
@@ -616,68 +624,6 @@ public final class KFMCDDAIOMLOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private long pOEOIINLNEC_ ;
-      /**
-       * <code>uint64 POEOIINLNEC = 1;</code>
-       * @return The pOEOIINLNEC.
-       */
-      @java.lang.Override
-      public long getPOEOIINLNEC() {
-        return pOEOIINLNEC_;
-      }
-      /**
-       * <code>uint64 POEOIINLNEC = 1;</code>
-       * @param value The pOEOIINLNEC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPOEOIINLNEC(long value) {
-        
-        pOEOIINLNEC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 POEOIINLNEC = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPOEOIINLNEC() {
-        
-        pOEOIINLNEC_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int fDIFPEHDKFD_ ;
-      /**
-       * <code>uint32 FDIFPEHDKFD = 2;</code>
-       * @return The fDIFPEHDKFD.
-       */
-      @java.lang.Override
-      public int getFDIFPEHDKFD() {
-        return fDIFPEHDKFD_;
-      }
-      /**
-       * <code>uint32 FDIFPEHDKFD = 2;</code>
-       * @param value The fDIFPEHDKFD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFDIFPEHDKFD(int value) {
-        
-        fDIFPEHDKFD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FDIFPEHDKFD = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFDIFPEHDKFD() {
-        
-        fDIFPEHDKFD_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.IntList gANPDAFPBLF_ = emptyIntList();
       private void ensureGANPDAFPBLFIsMutable() {
@@ -754,6 +700,68 @@ public final class KFMCDDAIOMLOuterClass {
       public Builder clearGANPDAFPBLF() {
         gANPDAFPBLF_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private long pOEOIINLNEC_ ;
+      /**
+       * <code>uint64 POEOIINLNEC = 1;</code>
+       * @return The pOEOIINLNEC.
+       */
+      @java.lang.Override
+      public long getPOEOIINLNEC() {
+        return pOEOIINLNEC_;
+      }
+      /**
+       * <code>uint64 POEOIINLNEC = 1;</code>
+       * @param value The pOEOIINLNEC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPOEOIINLNEC(long value) {
+        
+        pOEOIINLNEC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 POEOIINLNEC = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPOEOIINLNEC() {
+        
+        pOEOIINLNEC_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int fDIFPEHDKFD_ ;
+      /**
+       * <code>uint32 FDIFPEHDKFD = 2;</code>
+       * @return The fDIFPEHDKFD.
+       */
+      @java.lang.Override
+      public int getFDIFPEHDKFD() {
+        return fDIFPEHDKFD_;
+      }
+      /**
+       * <code>uint32 FDIFPEHDKFD = 2;</code>
+       * @param value The fDIFPEHDKFD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFDIFPEHDKFD(int value) {
+        
+        fDIFPEHDKFD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FDIFPEHDKFD = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFDIFPEHDKFD() {
+        
+        fDIFPEHDKFD_ = 0;
         onChanged();
         return this;
       }
@@ -855,11 +863,10 @@ public final class KFMCDDAIOMLOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021KFMCDDAIOML.proto\"a\n\013KFMCDDAIOML\022\023\n\013PO" +
-      "EOIINLNEC\030\001 \001(\004\022\023\n\013FDIFPEHDKFD\030\002 \001(\r\022\023\n\013" +
-      "GANPDAFPBLF\030\003 \003(\r\022\023\n\013NAJODBMGBLO\030\004 \001(\010B2" +
-      "\n\031emu.grasscutter.net.protoB\025KFMCDDAIOML" +
-      "OuterClassb\006proto3"
+      "\n\021KFMCDDAIOML.proto\"a\n\013KFMCDDAIOML\022\023\n\013GA" +
+      "NPDAFPBLF\030\003 \003(\r\022\023\n\013POEOIINLNEC\030\001 \001(\004\022\023\n\013" +
+      "FDIFPEHDKFD\030\002 \001(\r\022\023\n\013NAJODBMGBLO\030\004 \001(\010B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -870,7 +877,7 @@ public final class KFMCDDAIOMLOuterClass {
     internal_static_KFMCDDAIOML_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_KFMCDDAIOML_descriptor,
-        new java.lang.String[] { "POEOIINLNEC", "FDIFPEHDKFD", "GANPDAFPBLF", "NAJODBMGBLO", });
+        new java.lang.String[] { "GANPDAFPBLF", "POEOIINLNEC", "FDIFPEHDKFD", "NAJODBMGBLO", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

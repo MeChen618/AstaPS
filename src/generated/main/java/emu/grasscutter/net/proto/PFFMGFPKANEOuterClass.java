@@ -19,34 +19,16 @@ public final class PFFMGFPKANEOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string _xbox_gamertag = 6;</code>
+     * <code>string _xbox_gamertag = 15;</code>
      * @return The xboxGamertag.
      */
     java.lang.String getXboxGamertag();
     /**
-     * <code>string _xbox_gamertag = 6;</code>
+     * <code>string _xbox_gamertag = 15;</code>
      * @return The bytes for xboxGamertag.
      */
     com.google.protobuf.ByteString
         getXboxGamertagBytes();
-
-    /**
-     * <code>string online_id = 9;</code>
-     * @return The onlineId.
-     */
-    java.lang.String getOnlineId();
-    /**
-     * <code>string online_id = 9;</code>
-     * @return The bytes for onlineId.
-     */
-    com.google.protobuf.ByteString
-        getOnlineIdBytes();
-
-    /**
-     * <code>uint32 HLDCINAFEAJ = 10;</code>
-     * @return The hLDCINAFEAJ.
-     */
-    int getHLDCINAFEAJ();
 
     /**
      * <code>.ProfilePicture profile_picture = 11;</code>
@@ -64,30 +46,52 @@ public final class PFFMGFPKANEOuterClass {
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
 
     /**
-     * <code>bool NDJCMBBPOKH = 12;</code>
-     * @return The nDJCMBBPOKH.
-     */
-    boolean getNDJCMBBPOKH();
-
-    /**
-     * <code>string nickname = 13;</code>
+     * <code>string nickname = 12;</code>
      * @return The nickname.
      */
     java.lang.String getNickname();
     /**
-     * <code>string nickname = 13;</code>
+     * <code>string nickname = 12;</code>
      * @return The bytes for nickname.
      */
     com.google.protobuf.ByteString
         getNicknameBytes();
 
     /**
-     * <code>uint32 uid = 14;</code>
+     * <code>string online_id = 9;</code>
+     * @return The onlineId.
+     */
+    java.lang.String getOnlineId();
+    /**
+     * <code>string online_id = 9;</code>
+     * @return The bytes for onlineId.
+     */
+    com.google.protobuf.ByteString
+        getOnlineIdBytes();
+
+    /**
+     * <code>uint32 HLDCINAFEAJ = 5;</code>
+     * @return The hLDCINAFEAJ.
+     */
+    int getHLDCINAFEAJ();
+
+    /**
+     * <code>bool NDJCMBBPOKH = 1;</code>
+     * @return The nDJCMBBPOKH.
+     */
+    boolean getNDJCMBBPOKH();
+
+    /**
+     * <code>uint32 uid = 6;</code>
      * @return The uid.
      */
     int getUid();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PFFMGFPKANE}
    */
   public static final class PFFMGFPKANE extends
@@ -101,8 +105,8 @@ public final class PFFMGFPKANEOuterClass {
     }
     private PFFMGFPKANE() {
       XboxGamertag_ = "";
-      onlineId_ = "";
       nickname_ = "";
+      onlineId_ = "";
     }
 
     @java.lang.Override
@@ -135,21 +139,25 @@ public final class PFFMGFPKANEOuterClass {
             case 0:
               done = true;
               break;
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 8: {
 
-              XboxGamertag_ = s;
+              nDJCMBBPOKH_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              hLDCINAFEAJ_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+
+              uid_ = input.readUInt32();
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               onlineId_ = s;
-              break;
-            }
-            case 80: {
-
-              hLDCINAFEAJ_ = input.readUInt32();
               break;
             }
             case 90: {
@@ -165,20 +173,16 @@ public final class PFFMGFPKANEOuterClass {
 
               break;
             }
-            case 96: {
-
-              nDJCMBBPOKH_ = input.readBool();
-              break;
-            }
-            case 106: {
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
               nickname_ = s;
               break;
             }
-            case 112: {
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              uid_ = input.readUInt32();
+              XboxGamertag_ = s;
               break;
             }
             default: {
@@ -213,10 +217,10 @@ public final class PFFMGFPKANEOuterClass {
               emu.grasscutter.net.proto.PFFMGFPKANEOuterClass.PFFMGFPKANE.class, emu.grasscutter.net.proto.PFFMGFPKANEOuterClass.PFFMGFPKANE.Builder.class);
     }
 
-    public static final int _XBOX_GAMERTAG_FIELD_NUMBER = 6;
+    public static final int _XBOX_GAMERTAG_FIELD_NUMBER = 15;
     private volatile java.lang.Object XboxGamertag_;
     /**
-     * <code>string _xbox_gamertag = 6;</code>
+     * <code>string _xbox_gamertag = 15;</code>
      * @return The xboxGamertag.
      */
     @java.lang.Override
@@ -233,7 +237,7 @@ public final class PFFMGFPKANEOuterClass {
       }
     }
     /**
-     * <code>string _xbox_gamertag = 6;</code>
+     * <code>string _xbox_gamertag = 15;</code>
      * @return The bytes for xboxGamertag.
      */
     @java.lang.Override
@@ -245,6 +249,70 @@ public final class PFFMGFPKANEOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         XboxGamertag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROFILE_PICTURE_FIELD_NUMBER = 11;
+    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     * @return Whether the profilePicture field is set.
+     */
+    @java.lang.Override
+    public boolean hasProfilePicture() {
+      return profilePicture_ != null;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     * @return The profilePicture.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
+      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
+    }
+    /**
+     * <code>.ProfilePicture profile_picture = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
+      return getProfilePicture();
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 12;
+    private volatile java.lang.Object nickname_;
+    /**
+     * <code>string nickname = 12;</code>
+     * @return The nickname.
+     */
+    @java.lang.Override
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nickname_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string nickname = 12;</code>
+     * @return The bytes for nickname.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -289,10 +357,10 @@ public final class PFFMGFPKANEOuterClass {
       }
     }
 
-    public static final int HLDCINAFEAJ_FIELD_NUMBER = 10;
+    public static final int HLDCINAFEAJ_FIELD_NUMBER = 5;
     private int hLDCINAFEAJ_;
     /**
-     * <code>uint32 HLDCINAFEAJ = 10;</code>
+     * <code>uint32 HLDCINAFEAJ = 5;</code>
      * @return The hLDCINAFEAJ.
      */
     @java.lang.Override
@@ -300,36 +368,10 @@ public final class PFFMGFPKANEOuterClass {
       return hLDCINAFEAJ_;
     }
 
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 11;
-    private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
-    /**
-     * <code>.ProfilePicture profile_picture = 11;</code>
-     * @return Whether the profilePicture field is set.
-     */
-    @java.lang.Override
-    public boolean hasProfilePicture() {
-      return profilePicture_ != null;
-    }
-    /**
-     * <code>.ProfilePicture profile_picture = 11;</code>
-     * @return The profilePicture.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
-      return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
-    }
-    /**
-     * <code>.ProfilePicture profile_picture = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
-    }
-
-    public static final int NDJCMBBPOKH_FIELD_NUMBER = 12;
+    public static final int NDJCMBBPOKH_FIELD_NUMBER = 1;
     private boolean nDJCMBBPOKH_;
     /**
-     * <code>bool NDJCMBBPOKH = 12;</code>
+     * <code>bool NDJCMBBPOKH = 1;</code>
      * @return The nDJCMBBPOKH.
      */
     @java.lang.Override
@@ -337,48 +379,10 @@ public final class PFFMGFPKANEOuterClass {
       return nDJCMBBPOKH_;
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 13;
-    private volatile java.lang.Object nickname_;
-    /**
-     * <code>string nickname = 13;</code>
-     * @return The nickname.
-     */
-    @java.lang.Override
-    public java.lang.String getNickname() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nickname_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string nickname = 13;</code>
-     * @return The bytes for nickname.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNicknameBytes() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nickname_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UID_FIELD_NUMBER = 14;
+    public static final int UID_FIELD_NUMBER = 6;
     private int uid_;
     /**
-     * <code>uint32 uid = 14;</code>
+     * <code>uint32 uid = 6;</code>
      * @return The uid.
      */
     @java.lang.Override
@@ -400,26 +404,26 @@ public final class PFFMGFPKANEOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(XboxGamertag_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, XboxGamertag_);
+      if (nDJCMBBPOKH_ != false) {
+        output.writeBool(1, nDJCMBBPOKH_);
+      }
+      if (hLDCINAFEAJ_ != 0) {
+        output.writeUInt32(5, hLDCINAFEAJ_);
+      }
+      if (uid_ != 0) {
+        output.writeUInt32(6, uid_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, onlineId_);
       }
-      if (hLDCINAFEAJ_ != 0) {
-        output.writeUInt32(10, hLDCINAFEAJ_);
-      }
       if (profilePicture_ != null) {
         output.writeMessage(11, getProfilePicture());
       }
-      if (nDJCMBBPOKH_ != false) {
-        output.writeBool(12, nDJCMBBPOKH_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, nickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, nickname_);
       }
-      if (uid_ != 0) {
-        output.writeUInt32(14, uid_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(XboxGamertag_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, XboxGamertag_);
       }
       unknownFields.writeTo(output);
     }
@@ -430,30 +434,30 @@ public final class PFFMGFPKANEOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(XboxGamertag_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, XboxGamertag_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, onlineId_);
+      if (nDJCMBBPOKH_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, nDJCMBBPOKH_);
       }
       if (hLDCINAFEAJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, hLDCINAFEAJ_);
+          .computeUInt32Size(5, hLDCINAFEAJ_);
+      }
+      if (uid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, uid_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, onlineId_);
       }
       if (profilePicture_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getProfilePicture());
       }
-      if (nDJCMBBPOKH_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, nDJCMBBPOKH_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nickname_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, nickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, nickname_);
       }
-      if (uid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, uid_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(XboxGamertag_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, XboxGamertag_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -472,19 +476,19 @@ public final class PFFMGFPKANEOuterClass {
 
       if (!getXboxGamertag()
           .equals(other.getXboxGamertag())) return false;
-      if (!getOnlineId()
-          .equals(other.getOnlineId())) return false;
-      if (getHLDCINAFEAJ()
-          != other.getHLDCINAFEAJ()) return false;
       if (hasProfilePicture() != other.hasProfilePicture()) return false;
       if (hasProfilePicture()) {
         if (!getProfilePicture()
             .equals(other.getProfilePicture())) return false;
       }
-      if (getNDJCMBBPOKH()
-          != other.getNDJCMBBPOKH()) return false;
       if (!getNickname()
           .equals(other.getNickname())) return false;
+      if (!getOnlineId()
+          .equals(other.getOnlineId())) return false;
+      if (getHLDCINAFEAJ()
+          != other.getHLDCINAFEAJ()) return false;
+      if (getNDJCMBBPOKH()
+          != other.getNDJCMBBPOKH()) return false;
       if (getUid()
           != other.getUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -500,19 +504,19 @@ public final class PFFMGFPKANEOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + _XBOX_GAMERTAG_FIELD_NUMBER;
       hash = (53 * hash) + getXboxGamertag().hashCode();
-      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOnlineId().hashCode();
-      hash = (37 * hash) + HLDCINAFEAJ_FIELD_NUMBER;
-      hash = (53 * hash) + getHLDCINAFEAJ();
       if (hasProfilePicture()) {
         hash = (37 * hash) + PROFILE_PICTURE_FIELD_NUMBER;
         hash = (53 * hash) + getProfilePicture().hashCode();
       }
+      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getNickname().hashCode();
+      hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOnlineId().hashCode();
+      hash = (37 * hash) + HLDCINAFEAJ_FIELD_NUMBER;
+      hash = (53 * hash) + getHLDCINAFEAJ();
       hash = (37 * hash) + NDJCMBBPOKH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNDJCMBBPOKH());
-      hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getNickname().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -611,6 +615,10 @@ public final class PFFMGFPKANEOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PFFMGFPKANE}
      */
     public static final class Builder extends
@@ -650,19 +658,19 @@ public final class PFFMGFPKANEOuterClass {
         super.clear();
         XboxGamertag_ = "";
 
-        onlineId_ = "";
-
-        hLDCINAFEAJ_ = 0;
-
         if (profilePictureBuilder_ == null) {
           profilePicture_ = null;
         } else {
           profilePicture_ = null;
           profilePictureBuilder_ = null;
         }
-        nDJCMBBPOKH_ = false;
-
         nickname_ = "";
+
+        onlineId_ = "";
+
+        hLDCINAFEAJ_ = 0;
+
+        nDJCMBBPOKH_ = false;
 
         uid_ = 0;
 
@@ -693,15 +701,15 @@ public final class PFFMGFPKANEOuterClass {
       public emu.grasscutter.net.proto.PFFMGFPKANEOuterClass.PFFMGFPKANE buildPartial() {
         emu.grasscutter.net.proto.PFFMGFPKANEOuterClass.PFFMGFPKANE result = new emu.grasscutter.net.proto.PFFMGFPKANEOuterClass.PFFMGFPKANE(this);
         result.XboxGamertag_ = XboxGamertag_;
-        result.onlineId_ = onlineId_;
-        result.hLDCINAFEAJ_ = hLDCINAFEAJ_;
         if (profilePictureBuilder_ == null) {
           result.profilePicture_ = profilePicture_;
         } else {
           result.profilePicture_ = profilePictureBuilder_.build();
         }
-        result.nDJCMBBPOKH_ = nDJCMBBPOKH_;
         result.nickname_ = nickname_;
+        result.onlineId_ = onlineId_;
+        result.hLDCINAFEAJ_ = hLDCINAFEAJ_;
+        result.nDJCMBBPOKH_ = nDJCMBBPOKH_;
         result.uid_ = uid_;
         onBuilt();
         return result;
@@ -755,6 +763,13 @@ public final class PFFMGFPKANEOuterClass {
           XboxGamertag_ = other.XboxGamertag_;
           onChanged();
         }
+        if (other.hasProfilePicture()) {
+          mergeProfilePicture(other.getProfilePicture());
+        }
+        if (!other.getNickname().isEmpty()) {
+          nickname_ = other.nickname_;
+          onChanged();
+        }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
           onChanged();
@@ -762,15 +777,8 @@ public final class PFFMGFPKANEOuterClass {
         if (other.getHLDCINAFEAJ() != 0) {
           setHLDCINAFEAJ(other.getHLDCINAFEAJ());
         }
-        if (other.hasProfilePicture()) {
-          mergeProfilePicture(other.getProfilePicture());
-        }
         if (other.getNDJCMBBPOKH() != false) {
           setNDJCMBBPOKH(other.getNDJCMBBPOKH());
-        }
-        if (!other.getNickname().isEmpty()) {
-          nickname_ = other.nickname_;
-          onChanged();
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
@@ -806,7 +814,7 @@ public final class PFFMGFPKANEOuterClass {
 
       private java.lang.Object XboxGamertag_ = "";
       /**
-       * <code>string _xbox_gamertag = 6;</code>
+       * <code>string _xbox_gamertag = 15;</code>
        * @return The xboxGamertag.
        */
       public java.lang.String getXboxGamertag() {
@@ -822,7 +830,7 @@ public final class PFFMGFPKANEOuterClass {
         }
       }
       /**
-       * <code>string _xbox_gamertag = 6;</code>
+       * <code>string _xbox_gamertag = 15;</code>
        * @return The bytes for xboxGamertag.
        */
       public com.google.protobuf.ByteString
@@ -839,7 +847,7 @@ public final class PFFMGFPKANEOuterClass {
         }
       }
       /**
-       * <code>string _xbox_gamertag = 6;</code>
+       * <code>string _xbox_gamertag = 15;</code>
        * @param value The xboxGamertag to set.
        * @return This builder for chaining.
        */
@@ -854,7 +862,7 @@ public final class PFFMGFPKANEOuterClass {
         return this;
       }
       /**
-       * <code>string _xbox_gamertag = 6;</code>
+       * <code>string _xbox_gamertag = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearXboxGamertag() {
@@ -864,7 +872,7 @@ public final class PFFMGFPKANEOuterClass {
         return this;
       }
       /**
-       * <code>string _xbox_gamertag = 6;</code>
+       * <code>string _xbox_gamertag = 15;</code>
        * @param value The bytes for xboxGamertag to set.
        * @return This builder for chaining.
        */
@@ -876,113 +884,6 @@ public final class PFFMGFPKANEOuterClass {
   checkByteStringIsUtf8(value);
         
         XboxGamertag_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object onlineId_ = "";
-      /**
-       * <code>string online_id = 9;</code>
-       * @return The onlineId.
-       */
-      public java.lang.String getOnlineId() {
-        java.lang.Object ref = onlineId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          onlineId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 9;</code>
-       * @return The bytes for onlineId.
-       */
-      public com.google.protobuf.ByteString
-          getOnlineIdBytes() {
-        java.lang.Object ref = onlineId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          onlineId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string online_id = 9;</code>
-       * @param value The onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        onlineId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOnlineId() {
-        
-        onlineId_ = getDefaultInstance().getOnlineId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string online_id = 9;</code>
-       * @param value The bytes for onlineId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOnlineIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        onlineId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int hLDCINAFEAJ_ ;
-      /**
-       * <code>uint32 HLDCINAFEAJ = 10;</code>
-       * @return The hLDCINAFEAJ.
-       */
-      @java.lang.Override
-      public int getHLDCINAFEAJ() {
-        return hLDCINAFEAJ_;
-      }
-      /**
-       * <code>uint32 HLDCINAFEAJ = 10;</code>
-       * @param value The hLDCINAFEAJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHLDCINAFEAJ(int value) {
-        
-        hLDCINAFEAJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HLDCINAFEAJ = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHLDCINAFEAJ() {
-        
-        hLDCINAFEAJ_ = 0;
         onChanged();
         return this;
       }
@@ -1106,40 +1007,9 @@ public final class PFFMGFPKANEOuterClass {
         return profilePictureBuilder_;
       }
 
-      private boolean nDJCMBBPOKH_ ;
-      /**
-       * <code>bool NDJCMBBPOKH = 12;</code>
-       * @return The nDJCMBBPOKH.
-       */
-      @java.lang.Override
-      public boolean getNDJCMBBPOKH() {
-        return nDJCMBBPOKH_;
-      }
-      /**
-       * <code>bool NDJCMBBPOKH = 12;</code>
-       * @param value The nDJCMBBPOKH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNDJCMBBPOKH(boolean value) {
-        
-        nDJCMBBPOKH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool NDJCMBBPOKH = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNDJCMBBPOKH() {
-        
-        nDJCMBBPOKH_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object nickname_ = "";
       /**
-       * <code>string nickname = 13;</code>
+       * <code>string nickname = 12;</code>
        * @return The nickname.
        */
       public java.lang.String getNickname() {
@@ -1155,7 +1025,7 @@ public final class PFFMGFPKANEOuterClass {
         }
       }
       /**
-       * <code>string nickname = 13;</code>
+       * <code>string nickname = 12;</code>
        * @return The bytes for nickname.
        */
       public com.google.protobuf.ByteString
@@ -1172,7 +1042,7 @@ public final class PFFMGFPKANEOuterClass {
         }
       }
       /**
-       * <code>string nickname = 13;</code>
+       * <code>string nickname = 12;</code>
        * @param value The nickname to set.
        * @return This builder for chaining.
        */
@@ -1187,7 +1057,7 @@ public final class PFFMGFPKANEOuterClass {
         return this;
       }
       /**
-       * <code>string nickname = 13;</code>
+       * <code>string nickname = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
@@ -1197,7 +1067,7 @@ public final class PFFMGFPKANEOuterClass {
         return this;
       }
       /**
-       * <code>string nickname = 13;</code>
+       * <code>string nickname = 12;</code>
        * @param value The bytes for nickname to set.
        * @return This builder for chaining.
        */
@@ -1213,9 +1083,147 @@ public final class PFFMGFPKANEOuterClass {
         return this;
       }
 
+      private java.lang.Object onlineId_ = "";
+      /**
+       * <code>string online_id = 9;</code>
+       * @return The onlineId.
+       */
+      public java.lang.String getOnlineId() {
+        java.lang.Object ref = onlineId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          onlineId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 9;</code>
+       * @return The bytes for onlineId.
+       */
+      public com.google.protobuf.ByteString
+          getOnlineIdBytes() {
+        java.lang.Object ref = onlineId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          onlineId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string online_id = 9;</code>
+       * @param value The onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOnlineId() {
+        
+        onlineId_ = getDefaultInstance().getOnlineId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string online_id = 9;</code>
+       * @param value The bytes for onlineId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOnlineIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        onlineId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int hLDCINAFEAJ_ ;
+      /**
+       * <code>uint32 HLDCINAFEAJ = 5;</code>
+       * @return The hLDCINAFEAJ.
+       */
+      @java.lang.Override
+      public int getHLDCINAFEAJ() {
+        return hLDCINAFEAJ_;
+      }
+      /**
+       * <code>uint32 HLDCINAFEAJ = 5;</code>
+       * @param value The hLDCINAFEAJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHLDCINAFEAJ(int value) {
+        
+        hLDCINAFEAJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HLDCINAFEAJ = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHLDCINAFEAJ() {
+        
+        hLDCINAFEAJ_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean nDJCMBBPOKH_ ;
+      /**
+       * <code>bool NDJCMBBPOKH = 1;</code>
+       * @return The nDJCMBBPOKH.
+       */
+      @java.lang.Override
+      public boolean getNDJCMBBPOKH() {
+        return nDJCMBBPOKH_;
+      }
+      /**
+       * <code>bool NDJCMBBPOKH = 1;</code>
+       * @param value The nDJCMBBPOKH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNDJCMBBPOKH(boolean value) {
+        
+        nDJCMBBPOKH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool NDJCMBBPOKH = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNDJCMBBPOKH() {
+        
+        nDJCMBBPOKH_ = false;
+        onChanged();
+        return this;
+      }
+
       private int uid_ ;
       /**
-       * <code>uint32 uid = 14;</code>
+       * <code>uint32 uid = 6;</code>
        * @return The uid.
        */
       @java.lang.Override
@@ -1223,7 +1231,7 @@ public final class PFFMGFPKANEOuterClass {
         return uid_;
       }
       /**
-       * <code>uint32 uid = 14;</code>
+       * <code>uint32 uid = 6;</code>
        * @param value The uid to set.
        * @return This builder for chaining.
        */
@@ -1234,7 +1242,7 @@ public final class PFFMGFPKANEOuterClass {
         return this;
       }
       /**
-       * <code>uint32 uid = 14;</code>
+       * <code>uint32 uid = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearUid() {
@@ -1311,12 +1319,12 @@ public final class PFFMGFPKANEOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021PFFMGFPKANE.proto\032\024ProfilePicture.prot" +
-      "o\"\253\001\n\013PFFMGFPKANE\022\026\n\016_xbox_gamertag\030\006 \001(" +
-      "\t\022\021\n\tonline_id\030\t \001(\t\022\023\n\013HLDCINAFEAJ\030\n \001(" +
-      "\r\022(\n\017profile_picture\030\013 \001(\0132\017.ProfilePict" +
-      "ure\022\023\n\013NDJCMBBPOKH\030\014 \001(\010\022\020\n\010nickname\030\r \001" +
-      "(\t\022\013\n\003uid\030\016 \001(\rB2\n\031emu.grasscutter.net.p" +
-      "rotoB\025PFFMGFPKANEOuterClassb\006proto3"
+      "o\"\253\001\n\013PFFMGFPKANE\022\026\n\016_xbox_gamertag\030\017 \001(" +
+      "\t\022(\n\017profile_picture\030\013 \001(\0132\017.ProfilePict" +
+      "ure\022\020\n\010nickname\030\014 \001(\t\022\021\n\tonline_id\030\t \001(\t" +
+      "\022\023\n\013HLDCINAFEAJ\030\005 \001(\r\022\023\n\013NDJCMBBPOKH\030\001 \001" +
+      "(\010\022\013\n\003uid\030\006 \001(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1328,7 +1336,7 @@ public final class PFFMGFPKANEOuterClass {
     internal_static_PFFMGFPKANE_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PFFMGFPKANE_descriptor,
-        new java.lang.String[] { "XboxGamertag", "OnlineId", "HLDCINAFEAJ", "ProfilePicture", "NDJCMBBPOKH", "Nickname", "Uid", });
+        new java.lang.String[] { "XboxGamertag", "ProfilePicture", "Nickname", "OnlineId", "HLDCINAFEAJ", "NDJCMBBPOKH", "Uid", });
     emu.grasscutter.net.proto.ProfilePictureOuterClass.getDescriptor();
   }
 

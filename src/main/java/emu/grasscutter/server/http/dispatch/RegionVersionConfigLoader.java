@@ -305,7 +305,8 @@ final class RegionVersionConfigLoader {
                 builder.setNextResVersionConfig(nextResVersionConfig.toProto());
             }
             setString(gameBiz, builder::setGameBiz);
-            setString(gateserverIpv6Ip, builder::setGateserverIpv6Ip);
+            // gateserver_ipv6_ip is field 37 in 7.1 as in 7.0, still unnamed there.
+            setString(gateserverIpv6Ip, builder::setPNMHGJPJPPF);
             setString(lmipnfimjna, builder::setLMIPNFIMJNA);
             setString(pepknnpodeb, builder::setPEPKNNPODEB);
             setString(gplmekcgbil, builder::setGPLMEKCGBIL);

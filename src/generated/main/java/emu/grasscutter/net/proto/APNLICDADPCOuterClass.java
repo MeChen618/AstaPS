@@ -19,12 +19,6 @@ public final class APNLICDADPCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 key_hash = 1;</code>
-     * @return The keyHash.
-     */
-    int getKeyHash();
-
-    /**
      * <code>repeated float ENLJFAGNPDG = 2;</code>
      * @return A list containing the eNLJFAGNPDG.
      */
@@ -40,8 +34,18 @@ public final class APNLICDADPCOuterClass {
      * @return The eNLJFAGNPDG at the given index.
      */
     float getENLJFAGNPDG(int index);
+
+    /**
+     * <code>int32 key_hash = 1;</code>
+     * @return The keyHash.
+     */
+    int getKeyHash();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code APNLICDADPC}
    */
   public static final class APNLICDADPC extends
@@ -149,17 +153,6 @@ public final class APNLICDADPCOuterClass {
               emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC.class, emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC.Builder.class);
     }
 
-    public static final int KEY_HASH_FIELD_NUMBER = 1;
-    private int keyHash_;
-    /**
-     * <code>int32 key_hash = 1;</code>
-     * @return The keyHash.
-     */
-    @java.lang.Override
-    public int getKeyHash() {
-      return keyHash_;
-    }
-
     public static final int ENLJFAGNPDG_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.FloatList eNLJFAGNPDG_;
     /**
@@ -187,6 +180,17 @@ public final class APNLICDADPCOuterClass {
       return eNLJFAGNPDG_.getFloat(index);
     }
     private int eNLJFAGNPDGMemoizedSerializedSize = -1;
+
+    public static final int KEY_HASH_FIELD_NUMBER = 1;
+    private int keyHash_;
+    /**
+     * <code>int32 key_hash = 1;</code>
+     * @return The keyHash.
+     */
+    @java.lang.Override
+    public int getKeyHash() {
+      return keyHash_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -252,10 +256,10 @@ public final class APNLICDADPCOuterClass {
       }
       emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC other = (emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC) obj;
 
-      if (getKeyHash()
-          != other.getKeyHash()) return false;
       if (!getENLJFAGNPDGList()
           .equals(other.getENLJFAGNPDGList())) return false;
+      if (getKeyHash()
+          != other.getKeyHash()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -267,12 +271,12 @@ public final class APNLICDADPCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getKeyHash();
       if (getENLJFAGNPDGCount() > 0) {
         hash = (37 * hash) + ENLJFAGNPDG_FIELD_NUMBER;
         hash = (53 * hash) + getENLJFAGNPDGList().hashCode();
       }
+      hash = (37 * hash) + KEY_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getKeyHash();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -369,6 +373,10 @@ public final class APNLICDADPCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code APNLICDADPC}
      */
     public static final class Builder extends
@@ -406,10 +414,10 @@ public final class APNLICDADPCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        keyHash_ = 0;
-
         eNLJFAGNPDG_ = emptyFloatList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        keyHash_ = 0;
+
         return this;
       }
 
@@ -437,12 +445,12 @@ public final class APNLICDADPCOuterClass {
       public emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC buildPartial() {
         emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC result = new emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC(this);
         int from_bitField0_ = bitField0_;
-        result.keyHash_ = keyHash_;
         if (((bitField0_ & 0x00000001) != 0)) {
           eNLJFAGNPDG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.eNLJFAGNPDG_ = eNLJFAGNPDG_;
+        result.keyHash_ = keyHash_;
         onBuilt();
         return result;
       }
@@ -491,9 +499,6 @@ public final class APNLICDADPCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC other) {
         if (other == emu.grasscutter.net.proto.APNLICDADPCOuterClass.APNLICDADPC.getDefaultInstance()) return this;
-        if (other.getKeyHash() != 0) {
-          setKeyHash(other.getKeyHash());
-        }
         if (!other.eNLJFAGNPDG_.isEmpty()) {
           if (eNLJFAGNPDG_.isEmpty()) {
             eNLJFAGNPDG_ = other.eNLJFAGNPDG_;
@@ -503,6 +508,9 @@ public final class APNLICDADPCOuterClass {
             eNLJFAGNPDG_.addAll(other.eNLJFAGNPDG_);
           }
           onChanged();
+        }
+        if (other.getKeyHash() != 0) {
+          setKeyHash(other.getKeyHash());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -533,37 +541,6 @@ public final class APNLICDADPCOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int keyHash_ ;
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @return The keyHash.
-       */
-      @java.lang.Override
-      public int getKeyHash() {
-        return keyHash_;
-      }
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @param value The keyHash to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyHash(int value) {
-        
-        keyHash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 key_hash = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKeyHash() {
-        
-        keyHash_ = 0;
-        onChanged();
-        return this;
-      }
 
       private com.google.protobuf.Internal.FloatList eNLJFAGNPDG_ = emptyFloatList();
       private void ensureENLJFAGNPDGIsMutable() {
@@ -643,6 +620,37 @@ public final class APNLICDADPCOuterClass {
         onChanged();
         return this;
       }
+
+      private int keyHash_ ;
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @return The keyHash.
+       */
+      @java.lang.Override
+      public int getKeyHash() {
+        return keyHash_;
+      }
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @param value The keyHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKeyHash(int value) {
+        
+        keyHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 key_hash = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKeyHash() {
+        
+        keyHash_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -710,10 +718,9 @@ public final class APNLICDADPCOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021APNLICDADPC.proto\"4\n\013APNLICDADPC\022\020\n\010ke" +
-      "y_hash\030\001 \001(\005\022\023\n\013ENLJFAGNPDG\030\002 \003(\002B2\n\031emu" +
-      ".grasscutter.net.protoB\025APNLICDADPCOuter" +
-      "Classb\006proto3"
+      "\n\021APNLICDADPC.proto\"4\n\013APNLICDADPC\022\023\n\013EN" +
+      "LJFAGNPDG\030\002 \003(\002\022\020\n\010key_hash\030\001 \001(\005B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -724,7 +731,7 @@ public final class APNLICDADPCOuterClass {
     internal_static_APNLICDADPC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_APNLICDADPC_descriptor,
-        new java.lang.String[] { "KeyHash", "ENLJFAGNPDG", });
+        new java.lang.String[] { "ENLJFAGNPDG", "KeyHash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,54 +19,58 @@ public final class NDPGIKHKOHFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 stage_id = 7;</code>
-     * @return The stageId.
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
      */
-    int getStageId();
+    java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> 
+        getAvatarInfoListList();
+    /**
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM getAvatarInfoList(int index);
+    /**
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
+     */
+    int getAvatarInfoListCount();
+    /**
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder> 
+        getAvatarInfoListOrBuilderList();
+    /**
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
+     */
+    emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder getAvatarInfoListOrBuilder(
+        int index);
 
     /**
-     * <code>uint32 NHEFNKONPEI = 11;</code>
-     * @return The nHEFNKONPEI.
-     */
-    int getNHEFNKONPEI();
-
-    /**
-     * <code>uint32 MCBOJPBIBID = 13;</code>
-     * @return The mCBOJPBIBID.
-     */
-    int getMCBOJPBIBID();
-
-    /**
-     * <code>bool is_open = 14;</code>
+     * <code>bool is_open = 2;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>uint32 MCBOJPBIBID = 7;</code>
+     * @return The mCBOJPBIBID.
      */
-    java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> 
-        getAvatarInfoListList();
+    int getMCBOJPBIBID();
+
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>uint32 stage_id = 6;</code>
+     * @return The stageId.
      */
-    emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM getAvatarInfoList(int index);
+    int getStageId();
+
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>uint32 best_cost_time = 9;</code>
+     * @return The bestCostTime.
      */
-    int getAvatarInfoListCount();
-    /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder> 
-        getAvatarInfoListOrBuilderList();
-    /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
-     */
-    emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder getAvatarInfoListOrBuilder(
-        int index);
+    int getBestCostTime();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NDPGIKHKOHF}
    */
   public static final class NDPGIKHKOHF extends
@@ -113,33 +117,33 @@ public final class NDPGIKHKOHFOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              nHEFNKONPEI_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              mCBOJPBIBID_ = input.readUInt32();
-              break;
-            }
-            case 112: {
+            case 16: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 122: {
+            case 48: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 56: {
+
+              mCBOJPBIBID_ = input.readUInt32();
+              break;
+            }
+            case 66: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM>();
                 mutable_bitField0_ |= 0x00000001;
               }
               avatarInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.parser(), extensionRegistry));
+              break;
+            }
+            case 72: {
+
+              bestCostTime_ = input.readUInt32();
               break;
             }
             default: {
@@ -177,61 +181,17 @@ public final class NDPGIKHKOHFOuterClass {
               emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF.class, emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF.Builder.class);
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 7;
-    private int stageId_;
-    /**
-     * <code>uint32 stage_id = 7;</code>
-     * @return The stageId.
-     */
-    @java.lang.Override
-    public int getStageId() {
-      return stageId_;
-    }
-
-    public static final int NHEFNKONPEI_FIELD_NUMBER = 11;
-    private int nHEFNKONPEI_;
-    /**
-     * <code>uint32 NHEFNKONPEI = 11;</code>
-     * @return The nHEFNKONPEI.
-     */
-    @java.lang.Override
-    public int getNHEFNKONPEI() {
-      return nHEFNKONPEI_;
-    }
-
-    public static final int MCBOJPBIBID_FIELD_NUMBER = 13;
-    private int mCBOJPBIBID_;
-    /**
-     * <code>uint32 MCBOJPBIBID = 13;</code>
-     * @return The mCBOJPBIBID.
-     */
-    @java.lang.Override
-    public int getMCBOJPBIBID() {
-      return mCBOJPBIBID_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 14;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 14;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 15;
+    public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 8;
     private java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> avatarInfoList_;
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> getAvatarInfoListList() {
       return avatarInfoList_;
     }
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder> 
@@ -239,26 +199,70 @@ public final class NDPGIKHKOHFOuterClass {
       return avatarInfoList_;
     }
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
      */
     @java.lang.Override
     public int getAvatarInfoListCount() {
       return avatarInfoList_.size();
     }
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM getAvatarInfoList(int index) {
       return avatarInfoList_.get(index);
     }
     /**
-     * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+     * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder getAvatarInfoListOrBuilder(
         int index) {
       return avatarInfoList_.get(index);
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 2;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 2;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int MCBOJPBIBID_FIELD_NUMBER = 7;
+    private int mCBOJPBIBID_;
+    /**
+     * <code>uint32 MCBOJPBIBID = 7;</code>
+     * @return The mCBOJPBIBID.
+     */
+    @java.lang.Override
+    public int getMCBOJPBIBID() {
+      return mCBOJPBIBID_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 6;
+    private int stageId_;
+    /**
+     * <code>uint32 stage_id = 6;</code>
+     * @return The stageId.
+     */
+    @java.lang.Override
+    public int getStageId() {
+      return stageId_;
+    }
+
+    public static final int BEST_COST_TIME_FIELD_NUMBER = 9;
+    private int bestCostTime_;
+    /**
+     * <code>uint32 best_cost_time = 9;</code>
+     * @return The bestCostTime.
+     */
+    @java.lang.Override
+    public int getBestCostTime() {
+      return bestCostTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -275,20 +279,20 @@ public final class NDPGIKHKOHFOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (stageId_ != 0) {
-        output.writeUInt32(7, stageId_);
+      if (isOpen_ != false) {
+        output.writeBool(2, isOpen_);
       }
-      if (nHEFNKONPEI_ != 0) {
-        output.writeUInt32(11, nHEFNKONPEI_);
+      if (stageId_ != 0) {
+        output.writeUInt32(6, stageId_);
       }
       if (mCBOJPBIBID_ != 0) {
-        output.writeUInt32(13, mCBOJPBIBID_);
-      }
-      if (isOpen_ != false) {
-        output.writeBool(14, isOpen_);
+        output.writeUInt32(7, mCBOJPBIBID_);
       }
       for (int i = 0; i < avatarInfoList_.size(); i++) {
-        output.writeMessage(15, avatarInfoList_.get(i));
+        output.writeMessage(8, avatarInfoList_.get(i));
+      }
+      if (bestCostTime_ != 0) {
+        output.writeUInt32(9, bestCostTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -299,25 +303,25 @@ public final class NDPGIKHKOHFOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isOpen_);
+      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, stageId_);
-      }
-      if (nHEFNKONPEI_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, nHEFNKONPEI_);
+          .computeUInt32Size(6, stageId_);
       }
       if (mCBOJPBIBID_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, mCBOJPBIBID_);
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, isOpen_);
+          .computeUInt32Size(7, mCBOJPBIBID_);
       }
       for (int i = 0; i < avatarInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, avatarInfoList_.get(i));
+          .computeMessageSize(8, avatarInfoList_.get(i));
+      }
+      if (bestCostTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, bestCostTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -334,16 +338,16 @@ public final class NDPGIKHKOHFOuterClass {
       }
       emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF other = (emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF) obj;
 
-      if (getStageId()
-          != other.getStageId()) return false;
-      if (getNHEFNKONPEI()
-          != other.getNHEFNKONPEI()) return false;
-      if (getMCBOJPBIBID()
-          != other.getMCBOJPBIBID()) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
       if (!getAvatarInfoListList()
           .equals(other.getAvatarInfoListList())) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getMCBOJPBIBID()
+          != other.getMCBOJPBIBID()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
+      if (getBestCostTime()
+          != other.getBestCostTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -355,19 +359,19 @@ public final class NDPGIKHKOHFOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + NHEFNKONPEI_FIELD_NUMBER;
-      hash = (53 * hash) + getNHEFNKONPEI();
-      hash = (37 * hash) + MCBOJPBIBID_FIELD_NUMBER;
-      hash = (53 * hash) + getMCBOJPBIBID();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
       if (getAvatarInfoListCount() > 0) {
         hash = (37 * hash) + AVATAR_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarInfoListList().hashCode();
       }
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
+      hash = (37 * hash) + MCBOJPBIBID_FIELD_NUMBER;
+      hash = (53 * hash) + getMCBOJPBIBID();
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + BEST_COST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getBestCostTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -464,6 +468,10 @@ public final class NDPGIKHKOHFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NDPGIKHKOHF}
      */
     public static final class Builder extends
@@ -502,20 +510,20 @@ public final class NDPGIKHKOHFOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        stageId_ = 0;
-
-        nHEFNKONPEI_ = 0;
-
-        mCBOJPBIBID_ = 0;
-
-        isOpen_ = false;
-
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           avatarInfoListBuilder_.clear();
         }
+        isOpen_ = false;
+
+        mCBOJPBIBID_ = 0;
+
+        stageId_ = 0;
+
+        bestCostTime_ = 0;
+
         return this;
       }
 
@@ -543,10 +551,6 @@ public final class NDPGIKHKOHFOuterClass {
       public emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF buildPartial() {
         emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF result = new emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF(this);
         int from_bitField0_ = bitField0_;
-        result.stageId_ = stageId_;
-        result.nHEFNKONPEI_ = nHEFNKONPEI_;
-        result.mCBOJPBIBID_ = mCBOJPBIBID_;
-        result.isOpen_ = isOpen_;
         if (avatarInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
@@ -556,6 +560,10 @@ public final class NDPGIKHKOHFOuterClass {
         } else {
           result.avatarInfoList_ = avatarInfoListBuilder_.build();
         }
+        result.isOpen_ = isOpen_;
+        result.mCBOJPBIBID_ = mCBOJPBIBID_;
+        result.stageId_ = stageId_;
+        result.bestCostTime_ = bestCostTime_;
         onBuilt();
         return result;
       }
@@ -604,18 +612,6 @@ public final class NDPGIKHKOHFOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF other) {
         if (other == emu.grasscutter.net.proto.NDPGIKHKOHFOuterClass.NDPGIKHKOHF.getDefaultInstance()) return this;
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
-        if (other.getNHEFNKONPEI() != 0) {
-          setNHEFNKONPEI(other.getNHEFNKONPEI());
-        }
-        if (other.getMCBOJPBIBID() != 0) {
-          setMCBOJPBIBID(other.getMCBOJPBIBID());
-        }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
         if (avatarInfoListBuilder_ == null) {
           if (!other.avatarInfoList_.isEmpty()) {
             if (avatarInfoList_.isEmpty()) {
@@ -641,6 +637,18 @@ public final class NDPGIKHKOHFOuterClass {
               avatarInfoListBuilder_.addAllMessages(other.avatarInfoList_);
             }
           }
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getMCBOJPBIBID() != 0) {
+          setMCBOJPBIBID(other.getMCBOJPBIBID());
+        }
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
+        }
+        if (other.getBestCostTime() != 0) {
+          setBestCostTime(other.getBestCostTime());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -672,130 +680,6 @@ public final class NDPGIKHKOHFOuterClass {
       }
       private int bitField0_;
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 7;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 7;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int nHEFNKONPEI_ ;
-      /**
-       * <code>uint32 NHEFNKONPEI = 11;</code>
-       * @return The nHEFNKONPEI.
-       */
-      @java.lang.Override
-      public int getNHEFNKONPEI() {
-        return nHEFNKONPEI_;
-      }
-      /**
-       * <code>uint32 NHEFNKONPEI = 11;</code>
-       * @param value The nHEFNKONPEI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNHEFNKONPEI(int value) {
-        
-        nHEFNKONPEI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 NHEFNKONPEI = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNHEFNKONPEI() {
-        
-        nHEFNKONPEI_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int mCBOJPBIBID_ ;
-      /**
-       * <code>uint32 MCBOJPBIBID = 13;</code>
-       * @return The mCBOJPBIBID.
-       */
-      @java.lang.Override
-      public int getMCBOJPBIBID() {
-        return mCBOJPBIBID_;
-      }
-      /**
-       * <code>uint32 MCBOJPBIBID = 13;</code>
-       * @param value The mCBOJPBIBID to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMCBOJPBIBID(int value) {
-        
-        mCBOJPBIBID_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MCBOJPBIBID = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMCBOJPBIBID() {
-        
-        mCBOJPBIBID_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 14;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 14;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> avatarInfoList_ =
         java.util.Collections.emptyList();
       private void ensureAvatarInfoListIsMutable() {
@@ -809,7 +693,7 @@ public final class NDPGIKHKOHFOuterClass {
           emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder> avatarInfoListBuilder_;
 
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> getAvatarInfoListList() {
         if (avatarInfoListBuilder_ == null) {
@@ -819,7 +703,7 @@ public final class NDPGIKHKOHFOuterClass {
         }
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public int getAvatarInfoListCount() {
         if (avatarInfoListBuilder_ == null) {
@@ -829,7 +713,7 @@ public final class NDPGIKHKOHFOuterClass {
         }
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM getAvatarInfoList(int index) {
         if (avatarInfoListBuilder_ == null) {
@@ -839,7 +723,7 @@ public final class NDPGIKHKOHFOuterClass {
         }
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder setAvatarInfoList(
           int index, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM value) {
@@ -856,7 +740,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder setAvatarInfoList(
           int index, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder builderForValue) {
@@ -870,7 +754,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder addAvatarInfoList(emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM value) {
         if (avatarInfoListBuilder_ == null) {
@@ -886,7 +770,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder addAvatarInfoList(
           int index, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM value) {
@@ -903,7 +787,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder addAvatarInfoList(
           emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder builderForValue) {
@@ -917,7 +801,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder addAvatarInfoList(
           int index, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder builderForValue) {
@@ -931,7 +815,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder addAllAvatarInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM> values) {
@@ -946,7 +830,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder clearAvatarInfoList() {
         if (avatarInfoListBuilder_ == null) {
@@ -959,7 +843,7 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public Builder removeAvatarInfoList(int index) {
         if (avatarInfoListBuilder_ == null) {
@@ -972,14 +856,14 @@ public final class NDPGIKHKOHFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder getAvatarInfoListBuilder(
           int index) {
         return getAvatarInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder getAvatarInfoListOrBuilder(
           int index) {
@@ -989,7 +873,7 @@ public final class NDPGIKHKOHFOuterClass {
         }
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMMOrBuilder> 
            getAvatarInfoListOrBuilderList() {
@@ -1000,14 +884,14 @@ public final class NDPGIKHKOHFOuterClass {
         }
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder addAvatarInfoListBuilder() {
         return getAvatarInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.getDefaultInstance());
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder addAvatarInfoListBuilder(
           int index) {
@@ -1015,7 +899,7 @@ public final class NDPGIKHKOHFOuterClass {
             index, emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.getDefaultInstance());
       }
       /**
-       * <code>repeated .PFPIOBPBJMM avatar_info_list = 15;</code>
+       * <code>repeated .PFPIOBPBJMM avatar_info_list = 8;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.PFPIOBPBJMM.Builder> 
            getAvatarInfoListBuilderList() {
@@ -1034,6 +918,130 @@ public final class NDPGIKHKOHFOuterClass {
           avatarInfoList_ = null;
         }
         return avatarInfoListBuilder_;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 2;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 2;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int mCBOJPBIBID_ ;
+      /**
+       * <code>uint32 MCBOJPBIBID = 7;</code>
+       * @return The mCBOJPBIBID.
+       */
+      @java.lang.Override
+      public int getMCBOJPBIBID() {
+        return mCBOJPBIBID_;
+      }
+      /**
+       * <code>uint32 MCBOJPBIBID = 7;</code>
+       * @param value The mCBOJPBIBID to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMCBOJPBIBID(int value) {
+        
+        mCBOJPBIBID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MCBOJPBIBID = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMCBOJPBIBID() {
+        
+        mCBOJPBIBID_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 6;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 6;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bestCostTime_ ;
+      /**
+       * <code>uint32 best_cost_time = 9;</code>
+       * @return The bestCostTime.
+       */
+      @java.lang.Override
+      public int getBestCostTime() {
+        return bestCostTime_;
+      }
+      /**
+       * <code>uint32 best_cost_time = 9;</code>
+       * @param value The bestCostTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBestCostTime(int value) {
+        
+        bestCostTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 best_cost_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBestCostTime() {
+        
+        bestCostTime_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1102,12 +1110,12 @@ public final class NDPGIKHKOHFOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021NDPGIKHKOHF.proto\032\021PFPIOBPBJMM.proto\"\202" +
-      "\001\n\013NDPGIKHKOHF\022\020\n\010stage_id\030\007 \001(\r\022\023\n\013NHEF" +
-      "NKONPEI\030\013 \001(\r\022\023\n\013MCBOJPBIBID\030\r \001(\r\022\017\n\007is" +
-      "_open\030\016 \001(\010\022&\n\020avatar_info_list\030\017 \003(\0132\014." +
-      "PFPIOBPBJMMB2\n\031emu.grasscutter.net.proto" +
-      "B\025NDPGIKHKOHFOuterClassb\006proto3"
+      "\n\021NDPGIKHKOHF.proto\032\021PFPIOBPBJMM.proto\"\205" +
+      "\001\n\013NDPGIKHKOHF\022&\n\020avatar_info_list\030\010 \003(\013" +
+      "2\014.PFPIOBPBJMM\022\017\n\007is_open\030\002 \001(\010\022\023\n\013MCBOJ" +
+      "PBIBID\030\007 \001(\r\022\020\n\010stage_id\030\006 \001(\r\022\026\n\016best_c" +
+      "ost_time\030\t \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1119,7 +1127,7 @@ public final class NDPGIKHKOHFOuterClass {
     internal_static_NDPGIKHKOHF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NDPGIKHKOHF_descriptor,
-        new java.lang.String[] { "StageId", "NHEFNKONPEI", "MCBOJPBIBID", "IsOpen", "AvatarInfoList", });
+        new java.lang.String[] { "AvatarInfoList", "IsOpen", "MCBOJPBIBID", "StageId", "BestCostTime", });
     emu.grasscutter.net.proto.PFPIOBPBJMMOuterClass.getDescriptor();
   }
 

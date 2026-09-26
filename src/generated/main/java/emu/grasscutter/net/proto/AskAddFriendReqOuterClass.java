@@ -18,11 +18,21 @@ public final class AskAddFriendReqOuterClass {
       // @@protoc_insertion_point(interface_extends:AskAddFriendReq)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>uint32 target_uid = 12;</code>
+     * @return The targetUid.
+     */
     int getTargetUid();
+
+    /**
+     * <code>uint32 source_id = 9;</code>
+     * @return The sourceId.
+     */
+    int getSourceId();
   }
   /**
    * <pre>
-   * CmdId: 25573
+   * CmdId: 3092
    * </pre>
    *
    * Protobuf type {@code AskAddFriendReq}
@@ -71,6 +81,11 @@ public final class AskAddFriendReqOuterClass {
               break;
             case 72: {
 
+              sourceId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+
               targetUid_ = input.readUInt32();
               break;
             }
@@ -106,12 +121,26 @@ public final class AskAddFriendReqOuterClass {
               emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.class, emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq.Builder.class);
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 9;
+    public static final int TARGET_UID_FIELD_NUMBER = 12;
     private int targetUid_;
-
+    /**
+     * <code>uint32 target_uid = 12;</code>
+     * @return The targetUid.
+     */
     @java.lang.Override
     public int getTargetUid() {
       return targetUid_;
+    }
+
+    public static final int SOURCE_ID_FIELD_NUMBER = 9;
+    private int sourceId_;
+    /**
+     * <code>uint32 source_id = 9;</code>
+     * @return The sourceId.
+     */
+    @java.lang.Override
+    public int getSourceId() {
+      return sourceId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -128,8 +157,11 @@ public final class AskAddFriendReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (sourceId_ != 0) {
+        output.writeUInt32(9, sourceId_);
+      }
       if (targetUid_ != 0) {
-        output.writeUInt32(9, targetUid_);
+        output.writeUInt32(12, targetUid_);
       }
       unknownFields.writeTo(output);
     }
@@ -140,9 +172,13 @@ public final class AskAddFriendReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (sourceId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, sourceId_);
+      }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, targetUid_);
+          .computeUInt32Size(12, targetUid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -161,6 +197,8 @@ public final class AskAddFriendReqOuterClass {
 
       if (getTargetUid()
           != other.getTargetUid()) return false;
+      if (getSourceId()
+          != other.getSourceId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -174,6 +212,8 @@ public final class AskAddFriendReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
+      hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -271,7 +311,7 @@ public final class AskAddFriendReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 25573
+     * CmdId: 3092
      * </pre>
      *
      * Protobuf type {@code AskAddFriendReq}
@@ -313,6 +353,8 @@ public final class AskAddFriendReqOuterClass {
         super.clear();
         targetUid_ = 0;
 
+        sourceId_ = 0;
+
         return this;
       }
 
@@ -340,6 +382,7 @@ public final class AskAddFriendReqOuterClass {
       public emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq buildPartial() {
         emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq result = new emu.grasscutter.net.proto.AskAddFriendReqOuterClass.AskAddFriendReq(this);
         result.targetUid_ = targetUid_;
+        result.sourceId_ = sourceId_;
         onBuilt();
         return result;
       }
@@ -391,6 +434,9 @@ public final class AskAddFriendReqOuterClass {
         if (other.getTargetUid() != 0) {
           setTargetUid(other.getTargetUid());
         }
+        if (other.getSourceId() != 0) {
+          setSourceId(other.getSourceId());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -421,22 +467,63 @@ public final class AskAddFriendReqOuterClass {
       }
 
       private int targetUid_ ;
-
+      /**
+       * <code>uint32 target_uid = 12;</code>
+       * @return The targetUid.
+       */
       @java.lang.Override
       public int getTargetUid() {
         return targetUid_;
       }
-
+      /**
+       * <code>uint32 target_uid = 12;</code>
+       * @param value The targetUid to set.
+       * @return This builder for chaining.
+       */
       public Builder setTargetUid(int value) {
-
+        
         targetUid_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>uint32 target_uid = 12;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearTargetUid() {
-
+        
         targetUid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int sourceId_ ;
+      /**
+       * <code>uint32 source_id = 9;</code>
+       * @return The sourceId.
+       */
+      @java.lang.Override
+      public int getSourceId() {
+        return sourceId_;
+      }
+      /**
+       * <code>uint32 source_id = 9;</code>
+       * @param value The sourceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourceId(int value) {
+        
+        sourceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 source_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSourceId() {
+        
+        sourceId_ = 0;
         onChanged();
         return this;
       }
@@ -451,6 +538,7 @@ public final class AskAddFriendReqOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:AskAddFriendReq)
     }
@@ -494,7 +582,7 @@ public final class AskAddFriendReqOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_AskAddFriendReq_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_AskAddFriendReq_fieldAccessorTable;
 
@@ -506,9 +594,9 @@ public final class AskAddFriendReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025AskAddFriendReq.proto\"%\n\017AskAddFriendR" +
-      "eq\022\022\n\ntarget_uid\030\016 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "\n\025AskAddFriendReq.proto\"8\n\017AskAddFriendR" +
+      "eq\022\022\n\ntarget_uid\030\014 \001(\r\022\021\n\tsource_id\030\t \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -519,7 +607,7 @@ public final class AskAddFriendReqOuterClass {
     internal_static_AskAddFriendReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AskAddFriendReq_descriptor,
-        new java.lang.String[] { "TargetUid", });
+        new java.lang.String[] { "TargetUid", "SourceId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

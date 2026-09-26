@@ -19,30 +19,34 @@ public final class GHEKEDLIEDPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     java.util.List<emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL> 
         getLevelInfoListList();
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL getLevelInfoList(int index);
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     int getLevelInfoListCount();
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder> 
         getLevelInfoListOrBuilderList();
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder getLevelInfoListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GHEKEDLIEDP}
    */
   public static final class GHEKEDLIEDP extends
@@ -89,7 +93,7 @@ public final class GHEKEDLIEDPOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 114: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class GHEKEDLIEDPOuterClass {
               emu.grasscutter.net.proto.GHEKEDLIEDPOuterClass.GHEKEDLIEDP.class, emu.grasscutter.net.proto.GHEKEDLIEDPOuterClass.GHEKEDLIEDP.Builder.class);
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 4;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 14;
     private java.util.List<emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL> levelInfoList_;
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder> 
@@ -151,21 +155,21 @@ public final class GHEKEDLIEDPOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+     * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder getLevelInfoListOrBuilder(
@@ -188,7 +192,7 @@ public final class GHEKEDLIEDPOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(4, levelInfoList_.get(i));
+        output.writeMessage(14, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class GHEKEDLIEDPOuterClass {
       size = 0;
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, levelInfoList_.get(i));
+          .computeMessageSize(14, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class GHEKEDLIEDPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GHEKEDLIEDP}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class GHEKEDLIEDPOuterClass {
           emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class GHEKEDLIEDPOuterClass {
         }
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class GHEKEDLIEDPOuterClass {
         }
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class GHEKEDLIEDPOuterClass {
         }
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL value) {
@@ -575,7 +583,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL value) {
         if (levelInfoListBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL value) {
@@ -622,7 +630,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL> values) {
@@ -665,7 +673,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class GHEKEDLIEDPOuterClass {
         return this;
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class GHEKEDLIEDPOuterClass {
         }
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGLOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -719,14 +727,14 @@ public final class GHEKEDLIEDPOuterClass {
         }
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.getDefaultInstance());
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder addLevelInfoListBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class GHEKEDLIEDPOuterClass {
             index, emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.getDefaultInstance());
       }
       /**
-       * <code>repeated .CEBBKEOIFGL level_info_list = 4;</code>
+       * <code>repeated .CEBBKEOIFGL level_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.CEBBKEOIFGLOuterClass.CEBBKEOIFGL.Builder> 
            getLevelInfoListBuilderList() {
@@ -822,9 +830,9 @@ public final class GHEKEDLIEDPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021GHEKEDLIEDP.proto\032\021CEBBKEOIFGL.proto\"4" +
-      "\n\013GHEKEDLIEDP\022%\n\017level_info_list\030\004 \003(\0132\014" +
-      ".CEBBKEOIFGLB2\n\031emu.grasscutter.net.prot" +
-      "oB\025GHEKEDLIEDPOuterClassb\006proto3"
+      "\n\013GHEKEDLIEDP\022%\n\017level_info_list\030\016 \003(\0132\014" +
+      ".CEBBKEOIFGLB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

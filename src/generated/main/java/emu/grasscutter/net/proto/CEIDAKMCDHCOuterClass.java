@@ -19,18 +19,22 @@ public final class CEIDAKMCDHCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 furniture_type = 4;</code>
-     * @return The furnitureType.
-     */
-    int getFurnitureType();
-
-    /**
      * <code>uint32 avatar_id = 9;</code>
      * @return The avatarId.
      */
     int getAvatarId();
+
+    /**
+     * <code>uint32 furniture_type = 5;</code>
+     * @return The furnitureType.
+     */
+    int getFurnitureType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code CEIDAKMCDHC}
    */
   public static final class CEIDAKMCDHC extends
@@ -75,7 +79,7 @@ public final class CEIDAKMCDHCOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 40: {
 
               furnitureType_ = input.readUInt32();
               break;
@@ -117,17 +121,6 @@ public final class CEIDAKMCDHCOuterClass {
               emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC.class, emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC.Builder.class);
     }
 
-    public static final int FURNITURE_TYPE_FIELD_NUMBER = 4;
-    private int furnitureType_;
-    /**
-     * <code>uint32 furniture_type = 4;</code>
-     * @return The furnitureType.
-     */
-    @java.lang.Override
-    public int getFurnitureType() {
-      return furnitureType_;
-    }
-
     public static final int AVATAR_ID_FIELD_NUMBER = 9;
     private int avatarId_;
     /**
@@ -137,6 +130,17 @@ public final class CEIDAKMCDHCOuterClass {
     @java.lang.Override
     public int getAvatarId() {
       return avatarId_;
+    }
+
+    public static final int FURNITURE_TYPE_FIELD_NUMBER = 5;
+    private int furnitureType_;
+    /**
+     * <code>uint32 furniture_type = 5;</code>
+     * @return The furnitureType.
+     */
+    @java.lang.Override
+    public int getFurnitureType() {
+      return furnitureType_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -154,7 +158,7 @@ public final class CEIDAKMCDHCOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (furnitureType_ != 0) {
-        output.writeUInt32(4, furnitureType_);
+        output.writeUInt32(5, furnitureType_);
       }
       if (avatarId_ != 0) {
         output.writeUInt32(9, avatarId_);
@@ -170,7 +174,7 @@ public final class CEIDAKMCDHCOuterClass {
       size = 0;
       if (furnitureType_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, furnitureType_);
+          .computeUInt32Size(5, furnitureType_);
       }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -191,10 +195,10 @@ public final class CEIDAKMCDHCOuterClass {
       }
       emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC other = (emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC) obj;
 
-      if (getFurnitureType()
-          != other.getFurnitureType()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
+      if (getFurnitureType()
+          != other.getFurnitureType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class CEIDAKMCDHCOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FURNITURE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getFurnitureType();
       hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
+      hash = (37 * hash) + FURNITURE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getFurnitureType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class CEIDAKMCDHCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code CEIDAKMCDHC}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class CEIDAKMCDHCOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        furnitureType_ = 0;
-
         avatarId_ = 0;
+
+        furnitureType_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class CEIDAKMCDHCOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC buildPartial() {
         emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC result = new emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC(this);
-        result.furnitureType_ = furnitureType_;
         result.avatarId_ = avatarId_;
+        result.furnitureType_ = furnitureType_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class CEIDAKMCDHCOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC other) {
         if (other == emu.grasscutter.net.proto.CEIDAKMCDHCOuterClass.CEIDAKMCDHC.getDefaultInstance()) return this;
-        if (other.getFurnitureType() != 0) {
-          setFurnitureType(other.getFurnitureType());
-        }
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
+        }
+        if (other.getFurnitureType() != 0) {
+          setFurnitureType(other.getFurnitureType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +466,6 @@ public final class CEIDAKMCDHCOuterClass {
         return this;
       }
 
-      private int furnitureType_ ;
-      /**
-       * <code>uint32 furniture_type = 4;</code>
-       * @return The furnitureType.
-       */
-      @java.lang.Override
-      public int getFurnitureType() {
-        return furnitureType_;
-      }
-      /**
-       * <code>uint32 furniture_type = 4;</code>
-       * @param value The furnitureType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFurnitureType(int value) {
-        
-        furnitureType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 furniture_type = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFurnitureType() {
-        
-        furnitureType_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int avatarId_ ;
       /**
        * <code>uint32 avatar_id = 9;</code>
@@ -516,6 +493,37 @@ public final class CEIDAKMCDHCOuterClass {
       public Builder clearAvatarId() {
         
         avatarId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int furnitureType_ ;
+      /**
+       * <code>uint32 furniture_type = 5;</code>
+       * @return The furnitureType.
+       */
+      @java.lang.Override
+      public int getFurnitureType() {
+        return furnitureType_;
+      }
+      /**
+       * <code>uint32 furniture_type = 5;</code>
+       * @param value The furnitureType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFurnitureType(int value) {
+        
+        furnitureType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 furniture_type = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFurnitureType() {
+        
+        furnitureType_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class CEIDAKMCDHCOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021CEIDAKMCDHC.proto\"8\n\013CEIDAKMCDHC\022\026\n\016fu" +
-      "rniture_type\030\004 \001(\r\022\021\n\tavatar_id\030\t \001(\rB2\n" +
-      "\031emu.grasscutter.net.protoB\025CEIDAKMCDHCO" +
-      "uterClassb\006proto3"
+      "\n\021CEIDAKMCDHC.proto\"8\n\013CEIDAKMCDHC\022\021\n\tav" +
+      "atar_id\030\t \001(\r\022\026\n\016furniture_type\030\005 \001(\rB\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class CEIDAKMCDHCOuterClass {
     internal_static_CEIDAKMCDHC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CEIDAKMCDHC_descriptor,
-        new java.lang.String[] { "FurnitureType", "AvatarId", });
+        new java.lang.String[] { "AvatarId", "FurnitureType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

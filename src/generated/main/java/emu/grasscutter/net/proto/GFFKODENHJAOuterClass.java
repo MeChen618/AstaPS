@@ -19,33 +19,37 @@ public final class GFFKODENHJAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 9;</code>
+     * <code>.Vector ref_pos = 4;</code>
+     * @return Whether the refPos field is set.
+     */
+    boolean hasRefPos();
+    /**
+     * <code>.Vector ref_pos = 4;</code>
+     * @return The refPos.
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.Vector getRefPos();
+    /**
+     * <code>.Vector ref_pos = 4;</code>
+     */
+    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder();
+
+    /**
+     * <code>uint32 entity_id = 6;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>.Vector ref_pos = 11;</code>
-     * @return Whether the refPos field is set.
-     */
-    boolean hasRefPos();
-    /**
-     * <code>.Vector ref_pos = 11;</code>
-     * @return The refPos.
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.Vector getRefPos();
-    /**
-     * <code>.Vector ref_pos = 11;</code>
-     */
-    emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder();
-
-    /**
-     * <code>uint32 ref_id = 15;</code>
+     * <code>uint32 ref_id = 12;</code>
      * @return The refId.
      */
     int getRefId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GFFKODENHJA}
    */
   public static final class GFFKODENHJA extends
@@ -90,12 +94,7 @@ public final class GFFKODENHJAOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 90: {
+            case 34: {
               emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
               if (refPos_ != null) {
                 subBuilder = refPos_.toBuilder();
@@ -108,7 +107,12 @@ public final class GFFKODENHJAOuterClass {
 
               break;
             }
-            case 120: {
+            case 48: {
+
+              entityId_ = input.readUInt32();
+              break;
+            }
+            case 96: {
 
               refId_ = input.readUInt32();
               break;
@@ -145,21 +149,10 @@ public final class GFFKODENHJAOuterClass {
               emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA.class, emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 9;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 9;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
-    public static final int REF_POS_FIELD_NUMBER = 11;
+    public static final int REF_POS_FIELD_NUMBER = 4;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector refPos_;
     /**
-     * <code>.Vector ref_pos = 11;</code>
+     * <code>.Vector ref_pos = 4;</code>
      * @return Whether the refPos field is set.
      */
     @java.lang.Override
@@ -167,7 +160,7 @@ public final class GFFKODENHJAOuterClass {
       return refPos_ != null;
     }
     /**
-     * <code>.Vector ref_pos = 11;</code>
+     * <code>.Vector ref_pos = 4;</code>
      * @return The refPos.
      */
     @java.lang.Override
@@ -175,17 +168,28 @@ public final class GFFKODENHJAOuterClass {
       return refPos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : refPos_;
     }
     /**
-     * <code>.Vector ref_pos = 11;</code>
+     * <code>.Vector ref_pos = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder() {
       return getRefPos();
     }
 
-    public static final int REF_ID_FIELD_NUMBER = 15;
+    public static final int ENTITY_ID_FIELD_NUMBER = 6;
+    private int entityId_;
+    /**
+     * <code>uint32 entity_id = 6;</code>
+     * @return The entityId.
+     */
+    @java.lang.Override
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int REF_ID_FIELD_NUMBER = 12;
     private int refId_;
     /**
-     * <code>uint32 ref_id = 15;</code>
+     * <code>uint32 ref_id = 12;</code>
      * @return The refId.
      */
     @java.lang.Override
@@ -207,14 +211,14 @@ public final class GFFKODENHJAOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (entityId_ != 0) {
-        output.writeUInt32(9, entityId_);
-      }
       if (refPos_ != null) {
-        output.writeMessage(11, getRefPos());
+        output.writeMessage(4, getRefPos());
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(6, entityId_);
       }
       if (refId_ != 0) {
-        output.writeUInt32(15, refId_);
+        output.writeUInt32(12, refId_);
       }
       unknownFields.writeTo(output);
     }
@@ -225,17 +229,17 @@ public final class GFFKODENHJAOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, entityId_);
-      }
       if (refPos_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getRefPos());
+          .computeMessageSize(4, getRefPos());
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, entityId_);
       }
       if (refId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, refId_);
+          .computeUInt32Size(12, refId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -252,13 +256,13 @@ public final class GFFKODENHJAOuterClass {
       }
       emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA other = (emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (hasRefPos() != other.hasRefPos()) return false;
       if (hasRefPos()) {
         if (!getRefPos()
             .equals(other.getRefPos())) return false;
       }
+      if (getEntityId()
+          != other.getEntityId()) return false;
       if (getRefId()
           != other.getRefId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -272,12 +276,12 @@ public final class GFFKODENHJAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       if (hasRefPos()) {
         hash = (37 * hash) + REF_POS_FIELD_NUMBER;
         hash = (53 * hash) + getRefPos().hashCode();
       }
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + REF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRefId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -376,6 +380,10 @@ public final class GFFKODENHJAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GFFKODENHJA}
      */
     public static final class Builder extends
@@ -413,14 +421,14 @@ public final class GFFKODENHJAOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         if (refPosBuilder_ == null) {
           refPos_ = null;
         } else {
           refPos_ = null;
           refPosBuilder_ = null;
         }
+        entityId_ = 0;
+
         refId_ = 0;
 
         return this;
@@ -449,12 +457,12 @@ public final class GFFKODENHJAOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA buildPartial() {
         emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA result = new emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA(this);
-        result.entityId_ = entityId_;
         if (refPosBuilder_ == null) {
           result.refPos_ = refPos_;
         } else {
           result.refPos_ = refPosBuilder_.build();
         }
+        result.entityId_ = entityId_;
         result.refId_ = refId_;
         onBuilt();
         return result;
@@ -504,11 +512,11 @@ public final class GFFKODENHJAOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA other) {
         if (other == emu.grasscutter.net.proto.GFFKODENHJAOuterClass.GFFKODENHJA.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.hasRefPos()) {
           mergeRefPos(other.getRefPos());
+        }
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
         }
         if (other.getRefId() != 0) {
           setRefId(other.getRefId());
@@ -542,49 +550,18 @@ public final class GFFKODENHJAOuterClass {
         return this;
       }
 
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 9;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 9;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.VectorOuterClass.Vector refPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> refPosBuilder_;
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        * @return Whether the refPos field is set.
        */
       public boolean hasRefPos() {
         return refPosBuilder_ != null || refPos_ != null;
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        * @return The refPos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getRefPos() {
@@ -595,7 +572,7 @@ public final class GFFKODENHJAOuterClass {
         }
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       public Builder setRefPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (refPosBuilder_ == null) {
@@ -611,7 +588,7 @@ public final class GFFKODENHJAOuterClass {
         return this;
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       public Builder setRefPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -625,7 +602,7 @@ public final class GFFKODENHJAOuterClass {
         return this;
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       public Builder mergeRefPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (refPosBuilder_ == null) {
@@ -643,7 +620,7 @@ public final class GFFKODENHJAOuterClass {
         return this;
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       public Builder clearRefPos() {
         if (refPosBuilder_ == null) {
@@ -657,7 +634,7 @@ public final class GFFKODENHJAOuterClass {
         return this;
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getRefPosBuilder() {
         
@@ -665,7 +642,7 @@ public final class GFFKODENHJAOuterClass {
         return getRefPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder() {
         if (refPosBuilder_ != null) {
@@ -676,7 +653,7 @@ public final class GFFKODENHJAOuterClass {
         }
       }
       /**
-       * <code>.Vector ref_pos = 11;</code>
+       * <code>.Vector ref_pos = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -692,9 +669,40 @@ public final class GFFKODENHJAOuterClass {
         return refPosBuilder_;
       }
 
+      private int entityId_ ;
+      /**
+       * <code>uint32 entity_id = 6;</code>
+       * @return The entityId.
+       */
+      @java.lang.Override
+      public int getEntityId() {
+        return entityId_;
+      }
+      /**
+       * <code>uint32 entity_id = 6;</code>
+       * @param value The entityId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEntityId(int value) {
+        
+        entityId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 entity_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEntityId() {
+        
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int refId_ ;
       /**
-       * <code>uint32 ref_id = 15;</code>
+       * <code>uint32 ref_id = 12;</code>
        * @return The refId.
        */
       @java.lang.Override
@@ -702,7 +710,7 @@ public final class GFFKODENHJAOuterClass {
         return refId_;
       }
       /**
-       * <code>uint32 ref_id = 15;</code>
+       * <code>uint32 ref_id = 12;</code>
        * @param value The refId to set.
        * @return This builder for chaining.
        */
@@ -713,7 +721,7 @@ public final class GFFKODENHJAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 ref_id = 15;</code>
+       * <code>uint32 ref_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearRefId() {
@@ -790,10 +798,9 @@ public final class GFFKODENHJAOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021GFFKODENHJA.proto\032\014Vector.proto\"J\n\013GFF" +
-      "KODENHJA\022\021\n\tentity_id\030\t \001(\r\022\030\n\007ref_pos\030\013" +
-      " \001(\0132\007.Vector\022\016\n\006ref_id\030\017 \001(\rB2\n\031emu.gra" +
-      "sscutter.net.protoB\025GFFKODENHJAOuterClas" +
-      "sb\006proto3"
+      "KODENHJA\022\030\n\007ref_pos\030\004 \001(\0132\007.Vector\022\021\n\ten" +
+      "tity_id\030\006 \001(\r\022\016\n\006ref_id\030\014 \001(\rB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -805,7 +812,7 @@ public final class GFFKODENHJAOuterClass {
     internal_static_GFFKODENHJA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GFFKODENHJA_descriptor,
-        new java.lang.String[] { "EntityId", "RefPos", "RefId", });
+        new java.lang.String[] { "RefPos", "EntityId", "RefId", });
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();
   }
 

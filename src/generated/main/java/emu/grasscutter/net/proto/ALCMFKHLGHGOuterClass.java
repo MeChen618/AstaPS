@@ -19,35 +19,39 @@ public final class ALCMFKHLGHGOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
+     * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
+     * @return A list containing the pMAGDGDGAJO.
      */
-    int getLevelId();
+    java.util.List<java.lang.Integer> getPMAGDGDGAJOList();
+    /**
+     * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
+     * @return The count of pMAGDGDGAJO.
+     */
+    int getPMAGDGDGAJOCount();
+    /**
+     * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
+     * @param index The index of the element to return.
+     * @return The pMAGDGDGAJO at the given index.
+     */
+    int getPMAGDGDGAJO(int index);
 
     /**
-     * <code>bool is_open = 11;</code>
+     * <code>bool is_open = 7;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
-     * @return A list containing the pMAGDGDGAJO.
+     * <code>uint32 level_id = 12;</code>
+     * @return The levelId.
      */
-    java.util.List<java.lang.Integer> getPMAGDGDGAJOList();
-    /**
-     * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
-     * @return The count of pMAGDGDGAJO.
-     */
-    int getPMAGDGDGAJOCount();
-    /**
-     * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
-     * @param index The index of the element to return.
-     * @return The pMAGDGDGAJO at the given index.
-     */
-    int getPMAGDGDGAJO(int index);
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ALCMFKHLGHG}
    */
   public static final class ALCMFKHLGHG extends
@@ -94,17 +98,12 @@ public final class ALCMFKHLGHGOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 56: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 96: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 pMAGDGDGAJO_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -112,7 +111,7 @@ public final class ALCMFKHLGHGOuterClass {
               pMAGDGDGAJO_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -123,6 +122,11 @@ public final class ALCMFKHLGHGOuterClass {
                 pMAGDGDGAJO_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 96: {
+
+              levelId_ = input.readUInt32();
               break;
             }
             default: {
@@ -160,32 +164,10 @@ public final class ALCMFKHLGHGOuterClass {
               emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG.class, emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 9;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 11;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 11;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int PMAGDGDGAJO_FIELD_NUMBER = 12;
+    public static final int PMAGDGDGAJO_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList pMAGDGDGAJO_;
     /**
-     * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+     * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
      * @return A list containing the pMAGDGDGAJO.
      */
     @java.lang.Override
@@ -194,14 +176,14 @@ public final class ALCMFKHLGHGOuterClass {
       return pMAGDGDGAJO_;
     }
     /**
-     * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+     * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
      * @return The count of pMAGDGDGAJO.
      */
     public int getPMAGDGDGAJOCount() {
       return pMAGDGDGAJO_.size();
     }
     /**
-     * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+     * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
      * @param index The index of the element to return.
      * @return The pMAGDGDGAJO at the given index.
      */
@@ -209,6 +191,28 @@ public final class ALCMFKHLGHGOuterClass {
       return pMAGDGDGAJO_.getInt(index);
     }
     private int pMAGDGDGAJOMemoizedSerializedSize = -1;
+
+    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 7;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 12;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 12;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -225,18 +229,18 @@ public final class ALCMFKHLGHGOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (levelId_ != 0) {
-        output.writeUInt32(9, levelId_);
-      }
       if (isOpen_ != false) {
-        output.writeBool(11, isOpen_);
+        output.writeBool(7, isOpen_);
       }
       if (getPMAGDGDGAJOList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(pMAGDGDGAJOMemoizedSerializedSize);
       }
       for (int i = 0; i < pMAGDGDGAJO_.size(); i++) {
         output.writeUInt32NoTag(pMAGDGDGAJO_.getInt(i));
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(12, levelId_);
       }
       unknownFields.writeTo(output);
     }
@@ -247,13 +251,9 @@ public final class ALCMFKHLGHGOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, levelId_);
-      }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isOpen_);
+          .computeBoolSize(7, isOpen_);
       }
       {
         int dataSize = 0;
@@ -268,6 +268,10 @@ public final class ALCMFKHLGHGOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         pMAGDGDGAJOMemoizedSerializedSize = dataSize;
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, levelId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -284,12 +288,12 @@ public final class ALCMFKHLGHGOuterClass {
       }
       emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG other = (emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
       if (!getPMAGDGDGAJOList()
           .equals(other.getPMAGDGDGAJOList())) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -301,15 +305,15 @@ public final class ALCMFKHLGHGOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
       if (getPMAGDGDGAJOCount() > 0) {
         hash = (37 * hash) + PMAGDGDGAJO_FIELD_NUMBER;
         hash = (53 * hash) + getPMAGDGDGAJOList().hashCode();
       }
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -406,6 +410,10 @@ public final class ALCMFKHLGHGOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ALCMFKHLGHG}
      */
     public static final class Builder extends
@@ -443,12 +451,12 @@ public final class ALCMFKHLGHGOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
-        isOpen_ = false;
-
         pMAGDGDGAJO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        isOpen_ = false;
+
+        levelId_ = 0;
+
         return this;
       }
 
@@ -476,13 +484,13 @@ public final class ALCMFKHLGHGOuterClass {
       public emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG buildPartial() {
         emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG result = new emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG(this);
         int from_bitField0_ = bitField0_;
-        result.levelId_ = levelId_;
-        result.isOpen_ = isOpen_;
         if (((bitField0_ & 0x00000001) != 0)) {
           pMAGDGDGAJO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.pMAGDGDGAJO_ = pMAGDGDGAJO_;
+        result.isOpen_ = isOpen_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -531,12 +539,6 @@ public final class ALCMFKHLGHGOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG other) {
         if (other == emu.grasscutter.net.proto.ALCMFKHLGHGOuterClass.ALCMFKHLGHG.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
         if (!other.pMAGDGDGAJO_.isEmpty()) {
           if (pMAGDGDGAJO_.isEmpty()) {
             pMAGDGDGAJO_ = other.pMAGDGDGAJO_;
@@ -546,6 +548,12 @@ public final class ALCMFKHLGHGOuterClass {
             pMAGDGDGAJO_.addAll(other.pMAGDGDGAJO_);
           }
           onChanged();
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -577,68 +585,6 @@ public final class ALCMFKHLGHGOuterClass {
       }
       private int bitField0_;
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 11;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 11;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList pMAGDGDGAJO_ = emptyIntList();
       private void ensurePMAGDGDGAJOIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -647,7 +593,7 @@ public final class ALCMFKHLGHGOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @return A list containing the pMAGDGDGAJO.
        */
       public java.util.List<java.lang.Integer>
@@ -656,14 +602,14 @@ public final class ALCMFKHLGHGOuterClass {
                  java.util.Collections.unmodifiableList(pMAGDGDGAJO_) : pMAGDGDGAJO_;
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @return The count of pMAGDGDGAJO.
        */
       public int getPMAGDGDGAJOCount() {
         return pMAGDGDGAJO_.size();
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @param index The index of the element to return.
        * @return The pMAGDGDGAJO at the given index.
        */
@@ -671,7 +617,7 @@ public final class ALCMFKHLGHGOuterClass {
         return pMAGDGDGAJO_.getInt(index);
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @param index The index to set the value at.
        * @param value The pMAGDGDGAJO to set.
        * @return This builder for chaining.
@@ -684,7 +630,7 @@ public final class ALCMFKHLGHGOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @param value The pMAGDGDGAJO to add.
        * @return This builder for chaining.
        */
@@ -695,7 +641,7 @@ public final class ALCMFKHLGHGOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @param values The pMAGDGDGAJO to add.
        * @return This builder for chaining.
        */
@@ -708,12 +654,74 @@ public final class ALCMFKHLGHGOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 PMAGDGDGAJO = 12;</code>
+       * <code>repeated uint32 PMAGDGDGAJO = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearPMAGDGDGAJO() {
         pMAGDGDGAJO_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 7;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 7;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 12;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 12;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -784,10 +792,10 @@ public final class ALCMFKHLGHGOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ALCMFKHLGHG.proto\"E\n\013ALCMFKHLGHG\022\020\n\010le" +
-      "vel_id\030\t \001(\r\022\017\n\007is_open\030\013 \001(\010\022\023\n\013PMAGDGD" +
-      "GAJO\030\014 \003(\rB2\n\031emu.grasscutter.net.protoB" +
-      "\025ALCMFKHLGHGOuterClassb\006proto3"
+      "\n\021ALCMFKHLGHG.proto\"E\n\013ALCMFKHLGHG\022\023\n\013PM" +
+      "AGDGDGAJO\030\013 \003(\r\022\017\n\007is_open\030\007 \001(\010\022\020\n\010leve" +
+      "l_id\030\014 \001(\rB\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -798,7 +806,7 @@ public final class ALCMFKHLGHGOuterClass {
     internal_static_ALCMFKHLGHG_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ALCMFKHLGHG_descriptor,
-        new java.lang.String[] { "LevelId", "IsOpen", "PMAGDGDGAJO", });
+        new java.lang.String[] { "PMAGDGDGAJO", "IsOpen", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

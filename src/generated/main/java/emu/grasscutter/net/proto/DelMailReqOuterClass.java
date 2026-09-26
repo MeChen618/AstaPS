@@ -644,8 +644,8 @@ public final class DelMailReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020DelMailReq.proto\"\"\n\nDelMailReq\022\024\n\014mail" +
-      "_id_list\030\004 \003(\rB1\n\031emu.grasscutter.net.pr" +
-      "otoB\024DelMailReqOuterClassb\006proto3"
+      "_id_list\030\004 \003(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

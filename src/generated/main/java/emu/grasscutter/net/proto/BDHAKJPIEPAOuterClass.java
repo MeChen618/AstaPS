@@ -19,41 +19,45 @@ public final class BDHAKJPIEPAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 level_id = 1;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+     * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
      * @return A list containing the nBPIEMDDNDB.
      */
     java.util.List<java.lang.Integer> getNBPIEMDDNDBList();
     /**
-     * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+     * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
      * @return The count of nBPIEMDDNDB.
      */
     int getNBPIEMDDNDBCount();
     /**
-     * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+     * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
      * @param index The index of the element to return.
      * @return The nBPIEMDDNDB at the given index.
      */
     int getNBPIEMDDNDB(int index);
 
     /**
-     * <code>bool is_open = 13;</code>
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
+
+    /**
+     * <code>bool is_open = 1;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>bool is_finish = 15;</code>
+     * <code>bool is_finish = 14;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BDHAKJPIEPA}
    */
   public static final class BDHAKJPIEPA extends
@@ -102,10 +106,10 @@ public final class BDHAKJPIEPAOuterClass {
               break;
             case 8: {
 
-              levelId_ = input.readUInt32();
+              isOpen_ = input.readBool();
               break;
             }
-            case 48: {
+            case 16: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 nBPIEMDDNDB_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -113,7 +117,7 @@ public final class BDHAKJPIEPAOuterClass {
               nBPIEMDDNDB_.addInt(input.readUInt32());
               break;
             }
-            case 50: {
+            case 18: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -126,12 +130,12 @@ public final class BDHAKJPIEPAOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
+            case 48: {
 
-              isOpen_ = input.readBool();
+              levelId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 112: {
 
               isFinish_ = input.readBool();
               break;
@@ -171,21 +175,10 @@ public final class BDHAKJPIEPAOuterClass {
               emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA.class, emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA.Builder.class);
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 1;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 1;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int NBPIEMDDNDB_FIELD_NUMBER = 6;
+    public static final int NBPIEMDDNDB_FIELD_NUMBER = 2;
     private com.google.protobuf.Internal.IntList nBPIEMDDNDB_;
     /**
-     * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+     * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
      * @return A list containing the nBPIEMDDNDB.
      */
     @java.lang.Override
@@ -194,14 +187,14 @@ public final class BDHAKJPIEPAOuterClass {
       return nBPIEMDDNDB_;
     }
     /**
-     * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+     * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
      * @return The count of nBPIEMDDNDB.
      */
     public int getNBPIEMDDNDBCount() {
       return nBPIEMDDNDB_.size();
     }
     /**
-     * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+     * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
      * @param index The index of the element to return.
      * @return The nBPIEMDDNDB at the given index.
      */
@@ -210,10 +203,21 @@ public final class BDHAKJPIEPAOuterClass {
     }
     private int nBPIEMDDNDBMemoizedSerializedSize = -1;
 
-    public static final int IS_OPEN_FIELD_NUMBER = 13;
+    public static final int LEVEL_ID_FIELD_NUMBER = 6;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 1;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 13;</code>
+     * <code>bool is_open = 1;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -221,10 +225,10 @@ public final class BDHAKJPIEPAOuterClass {
       return isOpen_;
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 15;
+    public static final int IS_FINISH_FIELD_NUMBER = 14;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 15;</code>
+     * <code>bool is_finish = 14;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -247,21 +251,21 @@ public final class BDHAKJPIEPAOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (levelId_ != 0) {
-        output.writeUInt32(1, levelId_);
+      if (isOpen_ != false) {
+        output.writeBool(1, isOpen_);
       }
       if (getNBPIEMDDNDBList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(18);
         output.writeUInt32NoTag(nBPIEMDDNDBMemoizedSerializedSize);
       }
       for (int i = 0; i < nBPIEMDDNDB_.size(); i++) {
         output.writeUInt32NoTag(nBPIEMDDNDB_.getInt(i));
       }
-      if (isOpen_ != false) {
-        output.writeBool(13, isOpen_);
+      if (levelId_ != 0) {
+        output.writeUInt32(6, levelId_);
       }
       if (isFinish_ != false) {
-        output.writeBool(15, isFinish_);
+        output.writeBool(14, isFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -272,9 +276,9 @@ public final class BDHAKJPIEPAOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (levelId_ != 0) {
+      if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, levelId_);
+          .computeBoolSize(1, isOpen_);
       }
       {
         int dataSize = 0;
@@ -290,13 +294,13 @@ public final class BDHAKJPIEPAOuterClass {
         }
         nBPIEMDDNDBMemoizedSerializedSize = dataSize;
       }
-      if (isOpen_ != false) {
+      if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, isOpen_);
+          .computeUInt32Size(6, levelId_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isFinish_);
+          .computeBoolSize(14, isFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -313,10 +317,10 @@ public final class BDHAKJPIEPAOuterClass {
       }
       emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA other = (emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA) obj;
 
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (!getNBPIEMDDNDBList()
           .equals(other.getNBPIEMDDNDBList())) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
       if (getIsFinish()
@@ -332,12 +336,12 @@ public final class BDHAKJPIEPAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       if (getNBPIEMDDNDBCount() > 0) {
         hash = (37 * hash) + NBPIEMDDNDB_FIELD_NUMBER;
         hash = (53 * hash) + getNBPIEMDDNDBList().hashCode();
       }
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
@@ -440,6 +444,10 @@ public final class BDHAKJPIEPAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BDHAKJPIEPA}
      */
     public static final class Builder extends
@@ -477,10 +485,10 @@ public final class BDHAKJPIEPAOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        levelId_ = 0;
-
         nBPIEMDDNDB_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        levelId_ = 0;
+
         isOpen_ = false;
 
         isFinish_ = false;
@@ -512,12 +520,12 @@ public final class BDHAKJPIEPAOuterClass {
       public emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA buildPartial() {
         emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA result = new emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA(this);
         int from_bitField0_ = bitField0_;
-        result.levelId_ = levelId_;
         if (((bitField0_ & 0x00000001) != 0)) {
           nBPIEMDDNDB_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.nBPIEMDDNDB_ = nBPIEMDDNDB_;
+        result.levelId_ = levelId_;
         result.isOpen_ = isOpen_;
         result.isFinish_ = isFinish_;
         onBuilt();
@@ -568,9 +576,6 @@ public final class BDHAKJPIEPAOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA other) {
         if (other == emu.grasscutter.net.proto.BDHAKJPIEPAOuterClass.BDHAKJPIEPA.getDefaultInstance()) return this;
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (!other.nBPIEMDDNDB_.isEmpty()) {
           if (nBPIEMDDNDB_.isEmpty()) {
             nBPIEMDDNDB_ = other.nBPIEMDDNDB_;
@@ -580,6 +585,9 @@ public final class BDHAKJPIEPAOuterClass {
             nBPIEMDDNDB_.addAll(other.nBPIEMDDNDB_);
           }
           onChanged();
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
@@ -617,37 +625,6 @@ public final class BDHAKJPIEPAOuterClass {
       }
       private int bitField0_;
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 1;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 1;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList nBPIEMDDNDB_ = emptyIntList();
       private void ensureNBPIEMDDNDBIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -656,7 +633,7 @@ public final class BDHAKJPIEPAOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @return A list containing the nBPIEMDDNDB.
        */
       public java.util.List<java.lang.Integer>
@@ -665,14 +642,14 @@ public final class BDHAKJPIEPAOuterClass {
                  java.util.Collections.unmodifiableList(nBPIEMDDNDB_) : nBPIEMDDNDB_;
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @return The count of nBPIEMDDNDB.
        */
       public int getNBPIEMDDNDBCount() {
         return nBPIEMDDNDB_.size();
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @param index The index of the element to return.
        * @return The nBPIEMDDNDB at the given index.
        */
@@ -680,7 +657,7 @@ public final class BDHAKJPIEPAOuterClass {
         return nBPIEMDDNDB_.getInt(index);
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @param index The index to set the value at.
        * @param value The nBPIEMDDNDB to set.
        * @return This builder for chaining.
@@ -693,7 +670,7 @@ public final class BDHAKJPIEPAOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @param value The nBPIEMDDNDB to add.
        * @return This builder for chaining.
        */
@@ -704,7 +681,7 @@ public final class BDHAKJPIEPAOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @param values The nBPIEMDDNDB to add.
        * @return This builder for chaining.
        */
@@ -717,7 +694,7 @@ public final class BDHAKJPIEPAOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 NBPIEMDDNDB = 6;</code>
+       * <code>repeated uint32 NBPIEMDDNDB = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearNBPIEMDDNDB() {
@@ -727,9 +704,40 @@ public final class BDHAKJPIEPAOuterClass {
         return this;
       }
 
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 1;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -737,7 +745,7 @@ public final class BDHAKJPIEPAOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 1;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -748,7 +756,7 @@ public final class BDHAKJPIEPAOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 13;</code>
+       * <code>bool is_open = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -760,7 +768,7 @@ public final class BDHAKJPIEPAOuterClass {
 
       private boolean isFinish_ ;
       /**
-       * <code>bool is_finish = 15;</code>
+       * <code>bool is_finish = 14;</code>
        * @return The isFinish.
        */
       @java.lang.Override
@@ -768,7 +776,7 @@ public final class BDHAKJPIEPAOuterClass {
         return isFinish_;
       }
       /**
-       * <code>bool is_finish = 15;</code>
+       * <code>bool is_finish = 14;</code>
        * @param value The isFinish to set.
        * @return This builder for chaining.
        */
@@ -779,7 +787,7 @@ public final class BDHAKJPIEPAOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finish = 15;</code>
+       * <code>bool is_finish = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
@@ -855,11 +863,10 @@ public final class BDHAKJPIEPAOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BDHAKJPIEPA.proto\"X\n\013BDHAKJPIEPA\022\020\n\010le" +
-      "vel_id\030\001 \001(\r\022\023\n\013NBPIEMDDNDB\030\006 \003(\r\022\017\n\007is_" +
-      "open\030\r \001(\010\022\021\n\tis_finish\030\017 \001(\010B2\n\031emu.gra" +
-      "sscutter.net.protoB\025BDHAKJPIEPAOuterClas" +
-      "sb\006proto3"
+      "\n\021BDHAKJPIEPA.proto\"X\n\013BDHAKJPIEPA\022\023\n\013NB" +
+      "PIEMDDNDB\030\002 \003(\r\022\020\n\010level_id\030\006 \001(\r\022\017\n\007is_" +
+      "open\030\001 \001(\010\022\021\n\tis_finish\030\016 \001(\010B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -870,7 +877,7 @@ public final class BDHAKJPIEPAOuterClass {
     internal_static_BDHAKJPIEPA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BDHAKJPIEPA_descriptor,
-        new java.lang.String[] { "LevelId", "NBPIEMDDNDB", "IsOpen", "IsFinish", });
+        new java.lang.String[] { "NBPIEMDDNDB", "LevelId", "IsOpen", "IsFinish", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

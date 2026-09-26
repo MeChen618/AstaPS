@@ -94,7 +94,7 @@ public class GameQuest {
                     .sendPacket(
                             new PacketChapterStateNotify(
                                     ChapterData.getBeginQuestChapterMap().get(subQuestId).getId(),
-                                    ChapterStateOuterClass.ChapterState.CHAPTER_STATE_BEGIN));
+                                    ChapterStateOuterClass.ChapterState.ChapterState_BEGIN));
         }
 
         // Some subQuests and talks become active when some other subQuests are unfinished (even from
@@ -260,7 +260,7 @@ public class GameQuest {
                     .sendPacket(
                             new PacketChapterStateNotify(
                                     ChapterData.getEndQuestChapterMap().get(subQuestId).getId(),
-                                    ChapterStateOuterClass.ChapterState.CHAPTER_STATE_END));
+                                    ChapterStateOuterClass.ChapterState.ChapterState_END));
         }
 
         // Give items for completing the quest.

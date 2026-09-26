@@ -19,70 +19,74 @@ public final class BBCHHKCMIOJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
-     * @return The enum numeric value on the wire for pLNEHJMGOGH.
-     */
-    int getPLNEHJMGOGHValue();
-    /**
-     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
-     * @return The pLNEHJMGOGH.
-     */
-    emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ getPLNEHJMGOGH();
-
-    /**
-     * <code>bool INGBIKNBFEH = 6;</code>
-     * @return The iNGBIKNBFEH.
-     */
-    boolean getINGBIKNBFEH();
-
-    /**
-     * <code>uint32 GKIFJKOFKMD = 7;</code>
-     * @return The gKIFJKOFKMD.
-     */
-    int getGKIFJKOFKMD();
-
-    /**
-     * <code>uint32 LDIIGMAACGI = 8;</code>
-     * @return The lDIIGMAACGI.
-     */
-    int getLDIIGMAACGI();
-
-    /**
-     * <code>uint32 IOBMOJHECOE = 11;</code>
-     * @return The iOBMOJHECOE.
-     */
-    int getIOBMOJHECOE();
-
-    /**
-     * <code>uint32 OKLJCACJAPL = 12;</code>
-     * @return The oKLJCACJAPL.
-     */
-    int getOKLJCACJAPL();
-
-    /**
-     * <code>repeated uint32 ODNNOLLINHB = 13;</code>
+     * <code>repeated uint32 ODNNOLLINHB = 11;</code>
      * @return A list containing the oDNNOLLINHB.
      */
     java.util.List<java.lang.Integer> getODNNOLLINHBList();
     /**
-     * <code>repeated uint32 ODNNOLLINHB = 13;</code>
+     * <code>repeated uint32 ODNNOLLINHB = 11;</code>
      * @return The count of oDNNOLLINHB.
      */
     int getODNNOLLINHBCount();
     /**
-     * <code>repeated uint32 ODNNOLLINHB = 13;</code>
+     * <code>repeated uint32 ODNNOLLINHB = 11;</code>
      * @param index The index of the element to return.
      * @return The oDNNOLLINHB at the given index.
      */
     int getODNNOLLINHB(int index);
 
     /**
-     * <code>uint32 NIHKLACPEAC = 14;</code>
+     * <code>bool INGBIKNBFEH = 8;</code>
+     * @return The iNGBIKNBFEH.
+     */
+    boolean getINGBIKNBFEH();
+
+    /**
+     * <code>uint32 NIHKLACPEAC = 9;</code>
      * @return The nIHKLACPEAC.
      */
     int getNIHKLACPEAC();
+
+    /**
+     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
+     * @return The enum numeric value on the wire for pLNEHJMGOGH.
+     */
+    int getPLNEHJMGOGHValue();
+    /**
+     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
+     * @return The pLNEHJMGOGH.
+     */
+    emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ getPLNEHJMGOGH();
+
+    /**
+     * <code>uint32 IOBMOJHECOE = 15;</code>
+     * @return The iOBMOJHECOE.
+     */
+    int getIOBMOJHECOE();
+
+    /**
+     * <code>uint32 OKLJCACJAPL = 14;</code>
+     * @return The oKLJCACJAPL.
+     */
+    int getOKLJCACJAPL();
+
+    /**
+     * <code>uint32 LDIIGMAACGI = 5;</code>
+     * @return The lDIIGMAACGI.
+     */
+    int getLDIIGMAACGI();
+
+    /**
+     * <code>uint32 GKIFJKOFKMD = 13;</code>
+     * @return The gKIFJKOFKMD.
+     */
+    int getGKIFJKOFKMD();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BBCHHKCMIOJ}
    */
   public static final class BBCHHKCMIOJ extends
@@ -95,8 +99,8 @@ public final class BBCHHKCMIOJOuterClass {
       super(builder);
     }
     private BBCHHKCMIOJ() {
-      pLNEHJMGOGH_ = 0;
       oDNNOLLINHB_ = emptyIntList();
+      pLNEHJMGOGH_ = 0;
     }
 
     @java.lang.Override
@@ -130,38 +134,28 @@ public final class BBCHHKCMIOJOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
+
+              lDIIGMAACGI_ = input.readUInt32();
+              break;
+            }
+            case 48: {
               int rawValue = input.readEnum();
 
               pLNEHJMGOGH_ = rawValue;
               break;
             }
-            case 48: {
+            case 64: {
 
               iNGBIKNBFEH_ = input.readBool();
               break;
             }
-            case 56: {
+            case 72: {
 
-              gKIFJKOFKMD_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              lDIIGMAACGI_ = input.readUInt32();
+              nIHKLACPEAC_ = input.readUInt32();
               break;
             }
             case 88: {
-
-              iOBMOJHECOE_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              oKLJCACJAPL_ = input.readUInt32();
-              break;
-            }
-            case 104: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 oDNNOLLINHB_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -169,7 +163,7 @@ public final class BBCHHKCMIOJOuterClass {
               oDNNOLLINHB_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -182,9 +176,19 @@ public final class BBCHHKCMIOJOuterClass {
               input.popLimit(limit);
               break;
             }
+            case 104: {
+
+              gKIFJKOFKMD_ = input.readUInt32();
+              break;
+            }
             case 112: {
 
-              nIHKLACPEAC_ = input.readUInt32();
+              oKLJCACJAPL_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              iOBMOJHECOE_ = input.readUInt32();
               break;
             }
             default: {
@@ -222,84 +226,10 @@ public final class BBCHHKCMIOJOuterClass {
               emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ.class, emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ.Builder.class);
     }
 
-    public static final int PLNEHJMGOGH_FIELD_NUMBER = 1;
-    private int pLNEHJMGOGH_;
-    /**
-     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
-     * @return The enum numeric value on the wire for pLNEHJMGOGH.
-     */
-    @java.lang.Override public int getPLNEHJMGOGHValue() {
-      return pLNEHJMGOGH_;
-    }
-    /**
-     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
-     * @return The pLNEHJMGOGH.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ getPLNEHJMGOGH() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ result = emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.valueOf(pLNEHJMGOGH_);
-      return result == null ? emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.UNRECOGNIZED : result;
-    }
-
-    public static final int INGBIKNBFEH_FIELD_NUMBER = 6;
-    private boolean iNGBIKNBFEH_;
-    /**
-     * <code>bool INGBIKNBFEH = 6;</code>
-     * @return The iNGBIKNBFEH.
-     */
-    @java.lang.Override
-    public boolean getINGBIKNBFEH() {
-      return iNGBIKNBFEH_;
-    }
-
-    public static final int GKIFJKOFKMD_FIELD_NUMBER = 7;
-    private int gKIFJKOFKMD_;
-    /**
-     * <code>uint32 GKIFJKOFKMD = 7;</code>
-     * @return The gKIFJKOFKMD.
-     */
-    @java.lang.Override
-    public int getGKIFJKOFKMD() {
-      return gKIFJKOFKMD_;
-    }
-
-    public static final int LDIIGMAACGI_FIELD_NUMBER = 8;
-    private int lDIIGMAACGI_;
-    /**
-     * <code>uint32 LDIIGMAACGI = 8;</code>
-     * @return The lDIIGMAACGI.
-     */
-    @java.lang.Override
-    public int getLDIIGMAACGI() {
-      return lDIIGMAACGI_;
-    }
-
-    public static final int IOBMOJHECOE_FIELD_NUMBER = 11;
-    private int iOBMOJHECOE_;
-    /**
-     * <code>uint32 IOBMOJHECOE = 11;</code>
-     * @return The iOBMOJHECOE.
-     */
-    @java.lang.Override
-    public int getIOBMOJHECOE() {
-      return iOBMOJHECOE_;
-    }
-
-    public static final int OKLJCACJAPL_FIELD_NUMBER = 12;
-    private int oKLJCACJAPL_;
-    /**
-     * <code>uint32 OKLJCACJAPL = 12;</code>
-     * @return The oKLJCACJAPL.
-     */
-    @java.lang.Override
-    public int getOKLJCACJAPL() {
-      return oKLJCACJAPL_;
-    }
-
-    public static final int ODNNOLLINHB_FIELD_NUMBER = 13;
+    public static final int ODNNOLLINHB_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList oDNNOLLINHB_;
     /**
-     * <code>repeated uint32 ODNNOLLINHB = 13;</code>
+     * <code>repeated uint32 ODNNOLLINHB = 11;</code>
      * @return A list containing the oDNNOLLINHB.
      */
     @java.lang.Override
@@ -308,14 +238,14 @@ public final class BBCHHKCMIOJOuterClass {
       return oDNNOLLINHB_;
     }
     /**
-     * <code>repeated uint32 ODNNOLLINHB = 13;</code>
+     * <code>repeated uint32 ODNNOLLINHB = 11;</code>
      * @return The count of oDNNOLLINHB.
      */
     public int getODNNOLLINHBCount() {
       return oDNNOLLINHB_.size();
     }
     /**
-     * <code>repeated uint32 ODNNOLLINHB = 13;</code>
+     * <code>repeated uint32 ODNNOLLINHB = 11;</code>
      * @param index The index of the element to return.
      * @return The oDNNOLLINHB at the given index.
      */
@@ -324,15 +254,89 @@ public final class BBCHHKCMIOJOuterClass {
     }
     private int oDNNOLLINHBMemoizedSerializedSize = -1;
 
-    public static final int NIHKLACPEAC_FIELD_NUMBER = 14;
+    public static final int INGBIKNBFEH_FIELD_NUMBER = 8;
+    private boolean iNGBIKNBFEH_;
+    /**
+     * <code>bool INGBIKNBFEH = 8;</code>
+     * @return The iNGBIKNBFEH.
+     */
+    @java.lang.Override
+    public boolean getINGBIKNBFEH() {
+      return iNGBIKNBFEH_;
+    }
+
+    public static final int NIHKLACPEAC_FIELD_NUMBER = 9;
     private int nIHKLACPEAC_;
     /**
-     * <code>uint32 NIHKLACPEAC = 14;</code>
+     * <code>uint32 NIHKLACPEAC = 9;</code>
      * @return The nIHKLACPEAC.
      */
     @java.lang.Override
     public int getNIHKLACPEAC() {
       return nIHKLACPEAC_;
+    }
+
+    public static final int PLNEHJMGOGH_FIELD_NUMBER = 6;
+    private int pLNEHJMGOGH_;
+    /**
+     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
+     * @return The enum numeric value on the wire for pLNEHJMGOGH.
+     */
+    @java.lang.Override public int getPLNEHJMGOGHValue() {
+      return pLNEHJMGOGH_;
+    }
+    /**
+     * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
+     * @return The pLNEHJMGOGH.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ getPLNEHJMGOGH() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ result = emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.valueOf(pLNEHJMGOGH_);
+      return result == null ? emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.UNRECOGNIZED : result;
+    }
+
+    public static final int IOBMOJHECOE_FIELD_NUMBER = 15;
+    private int iOBMOJHECOE_;
+    /**
+     * <code>uint32 IOBMOJHECOE = 15;</code>
+     * @return The iOBMOJHECOE.
+     */
+    @java.lang.Override
+    public int getIOBMOJHECOE() {
+      return iOBMOJHECOE_;
+    }
+
+    public static final int OKLJCACJAPL_FIELD_NUMBER = 14;
+    private int oKLJCACJAPL_;
+    /**
+     * <code>uint32 OKLJCACJAPL = 14;</code>
+     * @return The oKLJCACJAPL.
+     */
+    @java.lang.Override
+    public int getOKLJCACJAPL() {
+      return oKLJCACJAPL_;
+    }
+
+    public static final int LDIIGMAACGI_FIELD_NUMBER = 5;
+    private int lDIIGMAACGI_;
+    /**
+     * <code>uint32 LDIIGMAACGI = 5;</code>
+     * @return The lDIIGMAACGI.
+     */
+    @java.lang.Override
+    public int getLDIIGMAACGI() {
+      return lDIIGMAACGI_;
+    }
+
+    public static final int GKIFJKOFKMD_FIELD_NUMBER = 13;
+    private int gKIFJKOFKMD_;
+    /**
+     * <code>uint32 GKIFJKOFKMD = 13;</code>
+     * @return The gKIFJKOFKMD.
+     */
+    @java.lang.Override
+    public int getGKIFJKOFKMD() {
+      return gKIFJKOFKMD_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -350,33 +354,33 @@ public final class BBCHHKCMIOJOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (lDIIGMAACGI_ != 0) {
+        output.writeUInt32(5, lDIIGMAACGI_);
+      }
       if (pLNEHJMGOGH_ != emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.IKMNGJDGMEJ_NONE.getNumber()) {
-        output.writeEnum(1, pLNEHJMGOGH_);
+        output.writeEnum(6, pLNEHJMGOGH_);
       }
       if (iNGBIKNBFEH_ != false) {
-        output.writeBool(6, iNGBIKNBFEH_);
+        output.writeBool(8, iNGBIKNBFEH_);
       }
-      if (gKIFJKOFKMD_ != 0) {
-        output.writeUInt32(7, gKIFJKOFKMD_);
-      }
-      if (lDIIGMAACGI_ != 0) {
-        output.writeUInt32(8, lDIIGMAACGI_);
-      }
-      if (iOBMOJHECOE_ != 0) {
-        output.writeUInt32(11, iOBMOJHECOE_);
-      }
-      if (oKLJCACJAPL_ != 0) {
-        output.writeUInt32(12, oKLJCACJAPL_);
+      if (nIHKLACPEAC_ != 0) {
+        output.writeUInt32(9, nIHKLACPEAC_);
       }
       if (getODNNOLLINHBList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(oDNNOLLINHBMemoizedSerializedSize);
       }
       for (int i = 0; i < oDNNOLLINHB_.size(); i++) {
         output.writeUInt32NoTag(oDNNOLLINHB_.getInt(i));
       }
-      if (nIHKLACPEAC_ != 0) {
-        output.writeUInt32(14, nIHKLACPEAC_);
+      if (gKIFJKOFKMD_ != 0) {
+        output.writeUInt32(13, gKIFJKOFKMD_);
+      }
+      if (oKLJCACJAPL_ != 0) {
+        output.writeUInt32(14, oKLJCACJAPL_);
+      }
+      if (iOBMOJHECOE_ != 0) {
+        output.writeUInt32(15, iOBMOJHECOE_);
       }
       unknownFields.writeTo(output);
     }
@@ -387,29 +391,21 @@ public final class BBCHHKCMIOJOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (lDIIGMAACGI_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, lDIIGMAACGI_);
+      }
       if (pLNEHJMGOGH_ != emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.IKMNGJDGMEJ_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, pLNEHJMGOGH_);
+          .computeEnumSize(6, pLNEHJMGOGH_);
       }
       if (iNGBIKNBFEH_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, iNGBIKNBFEH_);
+          .computeBoolSize(8, iNGBIKNBFEH_);
       }
-      if (gKIFJKOFKMD_ != 0) {
+      if (nIHKLACPEAC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, gKIFJKOFKMD_);
-      }
-      if (lDIIGMAACGI_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lDIIGMAACGI_);
-      }
-      if (iOBMOJHECOE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, iOBMOJHECOE_);
-      }
-      if (oKLJCACJAPL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, oKLJCACJAPL_);
+          .computeUInt32Size(9, nIHKLACPEAC_);
       }
       {
         int dataSize = 0;
@@ -425,9 +421,17 @@ public final class BBCHHKCMIOJOuterClass {
         }
         oDNNOLLINHBMemoizedSerializedSize = dataSize;
       }
-      if (nIHKLACPEAC_ != 0) {
+      if (gKIFJKOFKMD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, nIHKLACPEAC_);
+          .computeUInt32Size(13, gKIFJKOFKMD_);
+      }
+      if (oKLJCACJAPL_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, oKLJCACJAPL_);
+      }
+      if (iOBMOJHECOE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, iOBMOJHECOE_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -444,21 +448,21 @@ public final class BBCHHKCMIOJOuterClass {
       }
       emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ other = (emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ) obj;
 
-      if (pLNEHJMGOGH_ != other.pLNEHJMGOGH_) return false;
+      if (!getODNNOLLINHBList()
+          .equals(other.getODNNOLLINHBList())) return false;
       if (getINGBIKNBFEH()
           != other.getINGBIKNBFEH()) return false;
-      if (getGKIFJKOFKMD()
-          != other.getGKIFJKOFKMD()) return false;
-      if (getLDIIGMAACGI()
-          != other.getLDIIGMAACGI()) return false;
+      if (getNIHKLACPEAC()
+          != other.getNIHKLACPEAC()) return false;
+      if (pLNEHJMGOGH_ != other.pLNEHJMGOGH_) return false;
       if (getIOBMOJHECOE()
           != other.getIOBMOJHECOE()) return false;
       if (getOKLJCACJAPL()
           != other.getOKLJCACJAPL()) return false;
-      if (!getODNNOLLINHBList()
-          .equals(other.getODNNOLLINHBList())) return false;
-      if (getNIHKLACPEAC()
-          != other.getNIHKLACPEAC()) return false;
+      if (getLDIIGMAACGI()
+          != other.getLDIIGMAACGI()) return false;
+      if (getGKIFJKOFKMD()
+          != other.getGKIFJKOFKMD()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -470,25 +474,25 @@ public final class BBCHHKCMIOJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PLNEHJMGOGH_FIELD_NUMBER;
-      hash = (53 * hash) + pLNEHJMGOGH_;
-      hash = (37 * hash) + INGBIKNBFEH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getINGBIKNBFEH());
-      hash = (37 * hash) + GKIFJKOFKMD_FIELD_NUMBER;
-      hash = (53 * hash) + getGKIFJKOFKMD();
-      hash = (37 * hash) + LDIIGMAACGI_FIELD_NUMBER;
-      hash = (53 * hash) + getLDIIGMAACGI();
-      hash = (37 * hash) + IOBMOJHECOE_FIELD_NUMBER;
-      hash = (53 * hash) + getIOBMOJHECOE();
-      hash = (37 * hash) + OKLJCACJAPL_FIELD_NUMBER;
-      hash = (53 * hash) + getOKLJCACJAPL();
       if (getODNNOLLINHBCount() > 0) {
         hash = (37 * hash) + ODNNOLLINHB_FIELD_NUMBER;
         hash = (53 * hash) + getODNNOLLINHBList().hashCode();
       }
+      hash = (37 * hash) + INGBIKNBFEH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getINGBIKNBFEH());
       hash = (37 * hash) + NIHKLACPEAC_FIELD_NUMBER;
       hash = (53 * hash) + getNIHKLACPEAC();
+      hash = (37 * hash) + PLNEHJMGOGH_FIELD_NUMBER;
+      hash = (53 * hash) + pLNEHJMGOGH_;
+      hash = (37 * hash) + IOBMOJHECOE_FIELD_NUMBER;
+      hash = (53 * hash) + getIOBMOJHECOE();
+      hash = (37 * hash) + OKLJCACJAPL_FIELD_NUMBER;
+      hash = (53 * hash) + getOKLJCACJAPL();
+      hash = (37 * hash) + LDIIGMAACGI_FIELD_NUMBER;
+      hash = (53 * hash) + getLDIIGMAACGI();
+      hash = (37 * hash) + GKIFJKOFKMD_FIELD_NUMBER;
+      hash = (53 * hash) + getGKIFJKOFKMD();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -585,6 +589,10 @@ public final class BBCHHKCMIOJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BBCHHKCMIOJ}
      */
     public static final class Builder extends
@@ -622,21 +630,21 @@ public final class BBCHHKCMIOJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pLNEHJMGOGH_ = 0;
-
+        oDNNOLLINHB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
         iNGBIKNBFEH_ = false;
 
-        gKIFJKOFKMD_ = 0;
+        nIHKLACPEAC_ = 0;
 
-        lDIIGMAACGI_ = 0;
+        pLNEHJMGOGH_ = 0;
 
         iOBMOJHECOE_ = 0;
 
         oKLJCACJAPL_ = 0;
 
-        oDNNOLLINHB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        nIHKLACPEAC_ = 0;
+        lDIIGMAACGI_ = 0;
+
+        gKIFJKOFKMD_ = 0;
 
         return this;
       }
@@ -665,18 +673,18 @@ public final class BBCHHKCMIOJOuterClass {
       public emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ buildPartial() {
         emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ result = new emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ(this);
         int from_bitField0_ = bitField0_;
-        result.pLNEHJMGOGH_ = pLNEHJMGOGH_;
-        result.iNGBIKNBFEH_ = iNGBIKNBFEH_;
-        result.gKIFJKOFKMD_ = gKIFJKOFKMD_;
-        result.lDIIGMAACGI_ = lDIIGMAACGI_;
-        result.iOBMOJHECOE_ = iOBMOJHECOE_;
-        result.oKLJCACJAPL_ = oKLJCACJAPL_;
         if (((bitField0_ & 0x00000001) != 0)) {
           oDNNOLLINHB_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.oDNNOLLINHB_ = oDNNOLLINHB_;
+        result.iNGBIKNBFEH_ = iNGBIKNBFEH_;
         result.nIHKLACPEAC_ = nIHKLACPEAC_;
+        result.pLNEHJMGOGH_ = pLNEHJMGOGH_;
+        result.iOBMOJHECOE_ = iOBMOJHECOE_;
+        result.oKLJCACJAPL_ = oKLJCACJAPL_;
+        result.lDIIGMAACGI_ = lDIIGMAACGI_;
+        result.gKIFJKOFKMD_ = gKIFJKOFKMD_;
         onBuilt();
         return result;
       }
@@ -725,24 +733,6 @@ public final class BBCHHKCMIOJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ other) {
         if (other == emu.grasscutter.net.proto.BBCHHKCMIOJOuterClass.BBCHHKCMIOJ.getDefaultInstance()) return this;
-        if (other.pLNEHJMGOGH_ != 0) {
-          setPLNEHJMGOGHValue(other.getPLNEHJMGOGHValue());
-        }
-        if (other.getINGBIKNBFEH() != false) {
-          setINGBIKNBFEH(other.getINGBIKNBFEH());
-        }
-        if (other.getGKIFJKOFKMD() != 0) {
-          setGKIFJKOFKMD(other.getGKIFJKOFKMD());
-        }
-        if (other.getLDIIGMAACGI() != 0) {
-          setLDIIGMAACGI(other.getLDIIGMAACGI());
-        }
-        if (other.getIOBMOJHECOE() != 0) {
-          setIOBMOJHECOE(other.getIOBMOJHECOE());
-        }
-        if (other.getOKLJCACJAPL() != 0) {
-          setOKLJCACJAPL(other.getOKLJCACJAPL());
-        }
         if (!other.oDNNOLLINHB_.isEmpty()) {
           if (oDNNOLLINHB_.isEmpty()) {
             oDNNOLLINHB_ = other.oDNNOLLINHB_;
@@ -753,8 +743,26 @@ public final class BBCHHKCMIOJOuterClass {
           }
           onChanged();
         }
+        if (other.getINGBIKNBFEH() != false) {
+          setINGBIKNBFEH(other.getINGBIKNBFEH());
+        }
         if (other.getNIHKLACPEAC() != 0) {
           setNIHKLACPEAC(other.getNIHKLACPEAC());
+        }
+        if (other.pLNEHJMGOGH_ != 0) {
+          setPLNEHJMGOGHValue(other.getPLNEHJMGOGHValue());
+        }
+        if (other.getIOBMOJHECOE() != 0) {
+          setIOBMOJHECOE(other.getIOBMOJHECOE());
+        }
+        if (other.getOKLJCACJAPL() != 0) {
+          setOKLJCACJAPL(other.getOKLJCACJAPL());
+        }
+        if (other.getLDIIGMAACGI() != 0) {
+          setLDIIGMAACGI(other.getLDIIGMAACGI());
+        }
+        if (other.getGKIFJKOFKMD() != 0) {
+          setGKIFJKOFKMD(other.getGKIFJKOFKMD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -786,16 +794,157 @@ public final class BBCHHKCMIOJOuterClass {
       }
       private int bitField0_;
 
+      private com.google.protobuf.Internal.IntList oDNNOLLINHB_ = emptyIntList();
+      private void ensureODNNOLLINHBIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          oDNNOLLINHB_ = mutableCopy(oDNNOLLINHB_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @return A list containing the oDNNOLLINHB.
+       */
+      public java.util.List<java.lang.Integer>
+          getODNNOLLINHBList() {
+        return ((bitField0_ & 0x00000001) != 0) ?
+                 java.util.Collections.unmodifiableList(oDNNOLLINHB_) : oDNNOLLINHB_;
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @return The count of oDNNOLLINHB.
+       */
+      public int getODNNOLLINHBCount() {
+        return oDNNOLLINHB_.size();
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @param index The index of the element to return.
+       * @return The oDNNOLLINHB at the given index.
+       */
+      public int getODNNOLLINHB(int index) {
+        return oDNNOLLINHB_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @param index The index to set the value at.
+       * @param value The oDNNOLLINHB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setODNNOLLINHB(
+          int index, int value) {
+        ensureODNNOLLINHBIsMutable();
+        oDNNOLLINHB_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @param value The oDNNOLLINHB to add.
+       * @return This builder for chaining.
+       */
+      public Builder addODNNOLLINHB(int value) {
+        ensureODNNOLLINHBIsMutable();
+        oDNNOLLINHB_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @param values The oDNNOLLINHB to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllODNNOLLINHB(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureODNNOLLINHBIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, oDNNOLLINHB_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 ODNNOLLINHB = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearODNNOLLINHB() {
+        oDNNOLLINHB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private boolean iNGBIKNBFEH_ ;
+      /**
+       * <code>bool INGBIKNBFEH = 8;</code>
+       * @return The iNGBIKNBFEH.
+       */
+      @java.lang.Override
+      public boolean getINGBIKNBFEH() {
+        return iNGBIKNBFEH_;
+      }
+      /**
+       * <code>bool INGBIKNBFEH = 8;</code>
+       * @param value The iNGBIKNBFEH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setINGBIKNBFEH(boolean value) {
+        
+        iNGBIKNBFEH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool INGBIKNBFEH = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearINGBIKNBFEH() {
+        
+        iNGBIKNBFEH_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int nIHKLACPEAC_ ;
+      /**
+       * <code>uint32 NIHKLACPEAC = 9;</code>
+       * @return The nIHKLACPEAC.
+       */
+      @java.lang.Override
+      public int getNIHKLACPEAC() {
+        return nIHKLACPEAC_;
+      }
+      /**
+       * <code>uint32 NIHKLACPEAC = 9;</code>
+       * @param value The nIHKLACPEAC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNIHKLACPEAC(int value) {
+        
+        nIHKLACPEAC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NIHKLACPEAC = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNIHKLACPEAC() {
+        
+        nIHKLACPEAC_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int pLNEHJMGOGH_ = 0;
       /**
-       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
+       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
        * @return The enum numeric value on the wire for pLNEHJMGOGH.
        */
       @java.lang.Override public int getPLNEHJMGOGHValue() {
         return pLNEHJMGOGH_;
       }
       /**
-       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
+       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
        * @param value The enum numeric value on the wire for pLNEHJMGOGH to set.
        * @return This builder for chaining.
        */
@@ -806,7 +955,7 @@ public final class BBCHHKCMIOJOuterClass {
         return this;
       }
       /**
-       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
+       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
        * @return The pLNEHJMGOGH.
        */
       @java.lang.Override
@@ -816,7 +965,7 @@ public final class BBCHHKCMIOJOuterClass {
         return result == null ? emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.IKMNGJDGMEJ.UNRECOGNIZED : result;
       }
       /**
-       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
+       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
        * @param value The pLNEHJMGOGH to set.
        * @return This builder for chaining.
        */
@@ -830,7 +979,7 @@ public final class BBCHHKCMIOJOuterClass {
         return this;
       }
       /**
-       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 1;</code>
+       * <code>.IKMNGJDGMEJ PLNEHJMGOGH = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPLNEHJMGOGH() {
@@ -840,102 +989,9 @@ public final class BBCHHKCMIOJOuterClass {
         return this;
       }
 
-      private boolean iNGBIKNBFEH_ ;
-      /**
-       * <code>bool INGBIKNBFEH = 6;</code>
-       * @return The iNGBIKNBFEH.
-       */
-      @java.lang.Override
-      public boolean getINGBIKNBFEH() {
-        return iNGBIKNBFEH_;
-      }
-      /**
-       * <code>bool INGBIKNBFEH = 6;</code>
-       * @param value The iNGBIKNBFEH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setINGBIKNBFEH(boolean value) {
-        
-        iNGBIKNBFEH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool INGBIKNBFEH = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearINGBIKNBFEH() {
-        
-        iNGBIKNBFEH_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int gKIFJKOFKMD_ ;
-      /**
-       * <code>uint32 GKIFJKOFKMD = 7;</code>
-       * @return The gKIFJKOFKMD.
-       */
-      @java.lang.Override
-      public int getGKIFJKOFKMD() {
-        return gKIFJKOFKMD_;
-      }
-      /**
-       * <code>uint32 GKIFJKOFKMD = 7;</code>
-       * @param value The gKIFJKOFKMD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGKIFJKOFKMD(int value) {
-        
-        gKIFJKOFKMD_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GKIFJKOFKMD = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGKIFJKOFKMD() {
-        
-        gKIFJKOFKMD_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lDIIGMAACGI_ ;
-      /**
-       * <code>uint32 LDIIGMAACGI = 8;</code>
-       * @return The lDIIGMAACGI.
-       */
-      @java.lang.Override
-      public int getLDIIGMAACGI() {
-        return lDIIGMAACGI_;
-      }
-      /**
-       * <code>uint32 LDIIGMAACGI = 8;</code>
-       * @param value The lDIIGMAACGI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLDIIGMAACGI(int value) {
-        
-        lDIIGMAACGI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LDIIGMAACGI = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLDIIGMAACGI() {
-        
-        lDIIGMAACGI_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int iOBMOJHECOE_ ;
       /**
-       * <code>uint32 IOBMOJHECOE = 11;</code>
+       * <code>uint32 IOBMOJHECOE = 15;</code>
        * @return The iOBMOJHECOE.
        */
       @java.lang.Override
@@ -943,7 +999,7 @@ public final class BBCHHKCMIOJOuterClass {
         return iOBMOJHECOE_;
       }
       /**
-       * <code>uint32 IOBMOJHECOE = 11;</code>
+       * <code>uint32 IOBMOJHECOE = 15;</code>
        * @param value The iOBMOJHECOE to set.
        * @return This builder for chaining.
        */
@@ -954,7 +1010,7 @@ public final class BBCHHKCMIOJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 IOBMOJHECOE = 11;</code>
+       * <code>uint32 IOBMOJHECOE = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearIOBMOJHECOE() {
@@ -966,7 +1022,7 @@ public final class BBCHHKCMIOJOuterClass {
 
       private int oKLJCACJAPL_ ;
       /**
-       * <code>uint32 OKLJCACJAPL = 12;</code>
+       * <code>uint32 OKLJCACJAPL = 14;</code>
        * @return The oKLJCACJAPL.
        */
       @java.lang.Override
@@ -974,7 +1030,7 @@ public final class BBCHHKCMIOJOuterClass {
         return oKLJCACJAPL_;
       }
       /**
-       * <code>uint32 OKLJCACJAPL = 12;</code>
+       * <code>uint32 OKLJCACJAPL = 14;</code>
        * @param value The oKLJCACJAPL to set.
        * @return This builder for chaining.
        */
@@ -985,7 +1041,7 @@ public final class BBCHHKCMIOJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 OKLJCACJAPL = 12;</code>
+       * <code>uint32 OKLJCACJAPL = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearOKLJCACJAPL() {
@@ -995,112 +1051,64 @@ public final class BBCHHKCMIOJOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList oDNNOLLINHB_ = emptyIntList();
-      private void ensureODNNOLLINHBIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          oDNNOLLINHB_ = mutableCopy(oDNNOLLINHB_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private int lDIIGMAACGI_ ;
       /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @return A list containing the oDNNOLLINHB.
+       * <code>uint32 LDIIGMAACGI = 5;</code>
+       * @return The lDIIGMAACGI.
        */
-      public java.util.List<java.lang.Integer>
-          getODNNOLLINHBList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(oDNNOLLINHB_) : oDNNOLLINHB_;
+      @java.lang.Override
+      public int getLDIIGMAACGI() {
+        return lDIIGMAACGI_;
       }
       /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @return The count of oDNNOLLINHB.
-       */
-      public int getODNNOLLINHBCount() {
-        return oDNNOLLINHB_.size();
-      }
-      /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @param index The index of the element to return.
-       * @return The oDNNOLLINHB at the given index.
-       */
-      public int getODNNOLLINHB(int index) {
-        return oDNNOLLINHB_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @param index The index to set the value at.
-       * @param value The oDNNOLLINHB to set.
+       * <code>uint32 LDIIGMAACGI = 5;</code>
+       * @param value The lDIIGMAACGI to set.
        * @return This builder for chaining.
        */
-      public Builder setODNNOLLINHB(
-          int index, int value) {
-        ensureODNNOLLINHBIsMutable();
-        oDNNOLLINHB_.setInt(index, value);
+      public Builder setLDIIGMAACGI(int value) {
+        
+        lDIIGMAACGI_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @param value The oDNNOLLINHB to add.
+       * <code>uint32 LDIIGMAACGI = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder addODNNOLLINHB(int value) {
-        ensureODNNOLLINHBIsMutable();
-        oDNNOLLINHB_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @param values The oDNNOLLINHB to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllODNNOLLINHB(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureODNNOLLINHBIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, oDNNOLLINHB_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 ODNNOLLINHB = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearODNNOLLINHB() {
-        oDNNOLLINHB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearLDIIGMAACGI() {
+        
+        lDIIGMAACGI_ = 0;
         onChanged();
         return this;
       }
 
-      private int nIHKLACPEAC_ ;
+      private int gKIFJKOFKMD_ ;
       /**
-       * <code>uint32 NIHKLACPEAC = 14;</code>
-       * @return The nIHKLACPEAC.
+       * <code>uint32 GKIFJKOFKMD = 13;</code>
+       * @return The gKIFJKOFKMD.
        */
       @java.lang.Override
-      public int getNIHKLACPEAC() {
-        return nIHKLACPEAC_;
+      public int getGKIFJKOFKMD() {
+        return gKIFJKOFKMD_;
       }
       /**
-       * <code>uint32 NIHKLACPEAC = 14;</code>
-       * @param value The nIHKLACPEAC to set.
+       * <code>uint32 GKIFJKOFKMD = 13;</code>
+       * @param value The gKIFJKOFKMD to set.
        * @return This builder for chaining.
        */
-      public Builder setNIHKLACPEAC(int value) {
+      public Builder setGKIFJKOFKMD(int value) {
         
-        nIHKLACPEAC_ = value;
+        gKIFJKOFKMD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NIHKLACPEAC = 14;</code>
+       * <code>uint32 GKIFJKOFKMD = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNIHKLACPEAC() {
+      public Builder clearGKIFJKOFKMD() {
         
-        nIHKLACPEAC_ = 0;
+        gKIFJKOFKMD_ = 0;
         onChanged();
         return this;
       }
@@ -1172,13 +1180,12 @@ public final class BBCHHKCMIOJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BBCHHKCMIOJ.proto\032\021IKMNGJDGMEJ.proto\"\303" +
-      "\001\n\013BBCHHKCMIOJ\022!\n\013PLNEHJMGOGH\030\001 \001(\0162\014.IK" +
-      "MNGJDGMEJ\022\023\n\013INGBIKNBFEH\030\006 \001(\010\022\023\n\013GKIFJK" +
-      "OFKMD\030\007 \001(\r\022\023\n\013LDIIGMAACGI\030\010 \001(\r\022\023\n\013IOBM" +
-      "OJHECOE\030\013 \001(\r\022\023\n\013OKLJCACJAPL\030\014 \001(\r\022\023\n\013OD" +
-      "NNOLLINHB\030\r \003(\r\022\023\n\013NIHKLACPEAC\030\016 \001(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025BBCHHKCMIOJOu" +
-      "terClassb\006proto3"
+      "\001\n\013BBCHHKCMIOJ\022\023\n\013ODNNOLLINHB\030\013 \003(\r\022\023\n\013I" +
+      "NGBIKNBFEH\030\010 \001(\010\022\023\n\013NIHKLACPEAC\030\t \001(\r\022!\n" +
+      "\013PLNEHJMGOGH\030\006 \001(\0162\014.IKMNGJDGMEJ\022\023\n\013IOBM" +
+      "OJHECOE\030\017 \001(\r\022\023\n\013OKLJCACJAPL\030\016 \001(\r\022\023\n\013LD" +
+      "IIGMAACGI\030\005 \001(\r\022\023\n\013GKIFJKOFKMD\030\r \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1190,7 +1197,7 @@ public final class BBCHHKCMIOJOuterClass {
     internal_static_BBCHHKCMIOJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BBCHHKCMIOJ_descriptor,
-        new java.lang.String[] { "PLNEHJMGOGH", "INGBIKNBFEH", "GKIFJKOFKMD", "LDIIGMAACGI", "IOBMOJHECOE", "OKLJCACJAPL", "ODNNOLLINHB", "NIHKLACPEAC", });
+        new java.lang.String[] { "ODNNOLLINHB", "INGBIKNBFEH", "NIHKLACPEAC", "PLNEHJMGOGH", "IOBMOJHECOE", "OKLJCACJAPL", "LDIIGMAACGI", "GKIFJKOFKMD", });
     emu.grasscutter.net.proto.IKMNGJDGMEJOuterClass.getDescriptor();
   }
 

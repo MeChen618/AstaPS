@@ -1,5 +1,10 @@
 package emu.grasscutter.game.entity.gadget;
 
+import emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify;
+import emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData;
+import emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp;
+import emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq;
+import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.player.Player;
@@ -288,29 +293,23 @@ public final class OfferingHelper {
     }
 
     /**
-     * Field numbers taken from the live 7.0 protocol (sniffed all.proto). The generated OuterClass numbers
-     * are wrong here, so the wire format has to be written by hand.
-     *
-     * <pre>
-     * PlayerOfferingData:
-     *   map DIKKGPENNJB = 2; taken_level_reward_list = 12; is_new_max_level = 9;
-     *   is_first_interact = 13; offering_id = 14; level = 15;
-     * PlayerOfferingRsp: offering_data = 13; item_list = 10; retcode = 14;
-     * PlayerOfferingDataNotify: offering_data_list = 13;
-     * </pre>
+     * The offering packets are still assembled field by field (so retcode 0 is always on the wire),
+     * but every field number comes from the generated 7.1 classes; they used to be pinned to a 7.0
+     * capture, which a 7.1 client reads as different fields.
      */
     private static byte[] wireOfferingData(Player player, int offeringId, boolean isNewMaxLevel) {
         ensureProgressLoaded(player);
         int level = getLevel(player, offeringId);
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ProtoWire.writeBool(out, 9, isNewMaxLevel);
         List<Integer> taken = new ArrayList<>(getTakenSet(player, offeringId));
         taken.sort(Integer::compareTo);
-        ProtoWire.writePackedUint32(out, 12, taken);
-        ProtoWire.writeBool(out, 13, level <= 0);
-        ProtoWire.writeUint32(out, 14, offeringId);
-        ProtoWire.writeUint32(out, 15, level);
-        return out.toByteArray();
+        return PlayerOfferingData.newBuilder()
+                .setIsNewMaxLevel(isNewMaxLevel)
+                .addAllTakenLevelRewardList(taken)
+                .setIsFirstInteract(level <= 0)
+                .setOfferingId(offeringId)
+                .setLevel(level)
+                .build()
+                .toByteArray();
     }
 
     private static byte[] wireItemParam(int itemId, int count) {
@@ -534,16 +533,18 @@ public final class OfferingHelper {
             byte[] requestHeader) {
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            // TakeOfferingLevelRewardRsp: offering_id=3, take_level=5, retcode=8, item_list=14
-            ProtoWire.writeUint32(out, 3, offeringId);
-            ProtoWire.writeUint32(out, 5, takeLevel);
-            ProtoWire.writeUint32Force(out, 8, retcode);
+            ProtoWire.writeUint32(out, TakeOfferingLevelRewardRsp.OFFERING_ID_FIELD_NUMBER, offeringId);
+            ProtoWire.writeUint32(out, TakeOfferingLevelRewardRsp.TAKE_LEVEL_FIELD_NUMBER, takeLevel);
+            ProtoWire.writeUint32Force(out, TakeOfferingLevelRewardRsp.RETCODE_FIELD_NUMBER, retcode);
             if (items != null) {
                 for (var it : items) {
                     if (it == null || it.getId() <= 0 || it.getCount() <= 0) {
                         continue;
                     }
-                    ProtoWire.writeBytes(out, 14, wireItemParam(it.getId(), it.getCount()));
+                    ProtoWire.writeBytes(
+                            out,
+                            TakeOfferingLevelRewardRsp.ITEM_LIST_FIELD_NUMBER,
+                            wireItemParam(it.getId(), it.getCount()));
                 }
             }
             sendRaw(player, PacketOpcodes.TakeOfferingLevelRewardRsp, out.toByteArray(), requestHeader);
@@ -580,9 +581,9 @@ public final class OfferingHelper {
                             continue;
                         }
                         int v = in.readUInt32();
-                        if (field == 1) {
+                        if (field == TakeOfferingLevelRewardReq.OFFERING_ID_FIELD_NUMBER) {
                             offeringId = v;
-                        } else if (field == 10) {
+                        } else if (field == TakeOfferingLevelRewardReq.LEVEL_FIELD_NUMBER) {
                             takeLevel = v;
                         }
                     }
@@ -626,7 +627,7 @@ public final class OfferingHelper {
         return GADGET_TO_OFFERING.containsValue(id) || id == OFFERING_ORAIONOKAMI;
     }
 
-    /** Full sync of offering progress, using the 7.0 all.proto field numbers. */
+    /** Full sync of offering progress. */
     public static void syncOfferingNotify(Player player) {
         if (player == null || player.getSession() == null) {
             return;
@@ -641,10 +642,16 @@ public final class OfferingHelper {
                 if (offeringId == OFFERING_ORAIONOKAMI) {
                     hasSakura = true;
                 }
-                ProtoWire.writeBytes(out, 13, wireOfferingData(player, offeringId, false));
+                ProtoWire.writeBytes(
+                        out,
+                        PlayerOfferingDataNotify.OFFERING_DATA_LIST_FIELD_NUMBER,
+                        wireOfferingData(player, offeringId, false));
             }
             if (!hasSakura) {
-                ProtoWire.writeBytes(out, 13, wireOfferingData(player, OFFERING_ORAIONOKAMI, false));
+                ProtoWire.writeBytes(
+                        out,
+                        PlayerOfferingDataNotify.OFFERING_DATA_LIST_FIELD_NUMBER,
+                        wireOfferingData(player, OFFERING_ORAIONOKAMI, false));
             }
             sendRaw(player, PacketOpcodes.PlayerOfferingDataNotify, out.toByteArray(), null);
         } catch (Throwable t) {
@@ -679,19 +686,23 @@ public final class OfferingHelper {
             boolean isNewMaxLevel) {
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
-            // item_list = 10
             if (items != null) {
                 for (var it : items) {
                     if (it == null || it.getId() <= 0 || it.getCount() <= 0) {
                         continue;
                     }
-                    ProtoWire.writeBytes(out, 10, wireItemParam(it.getId(), it.getCount()));
+                    ProtoWire.writeBytes(
+                            out,
+                            PlayerOfferingRsp.ITEM_LIST_FIELD_NUMBER,
+                            wireItemParam(it.getId(), it.getCount()));
                 }
             }
-            // offering_data = 13
-            ProtoWire.writeBytes(out, 13, wireOfferingData(player, offeringId, isNewMaxLevel));
-            // retcode = 14, always written out including 0
-            ProtoWire.writeUint32Force(out, 14, retcode);
+            ProtoWire.writeBytes(
+                    out,
+                    PlayerOfferingRsp.OFFERING_DATA_FIELD_NUMBER,
+                    wireOfferingData(player, offeringId, isNewMaxLevel));
+            // retcode is always written out, including 0
+            ProtoWire.writeUint32Force(out, PlayerOfferingRsp.RETCODE_FIELD_NUMBER, retcode);
             sendRaw(player, PacketOpcodes.PlayerOfferingRsp, out.toByteArray(), requestHeader);
             Grasscutter.getLogger()
                     .debug(

@@ -19,17 +19,11 @@ public final class PKLACFGBAFAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 HAPFBMBBCBK = 6;</code>
-     * @return The hAPFBMBBCBK.
-     */
-    int getHAPFBMBBCBK();
-
-    /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
     int getLHCKKICIDIPCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
     boolean containsLHCKKICIDIP(
         int key);
@@ -40,37 +34,47 @@ public final class PKLACFGBAFAOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getLHCKKICIDIP();
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getLHCKKICIDIPMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
 
     int getLHCKKICIDIPOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
 
     int getLHCKKICIDIPOrThrow(
         int key);
 
     /**
-     * <code>bool is_open = 8;</code>
+     * <code>bool is_open = 5;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
 
     /**
-     * <code>uint32 PIHNDCEGCNO = 14;</code>
+     * <code>uint32 HAPFBMBBCBK = 11;</code>
+     * @return The hAPFBMBBCBK.
+     */
+    int getHAPFBMBBCBK();
+
+    /**
+     * <code>uint32 PIHNDCEGCNO = 13;</code>
      * @return The pIHNDCEGCNO.
      */
     int getPIHNDCEGCNO();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PKLACFGBAFA}
    */
   public static final class PKLACFGBAFA extends
@@ -116,12 +120,7 @@ public final class PKLACFGBAFAOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              hAPFBMBBCBK_ = input.readUInt32();
-              break;
-            }
-            case 58: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 lHCKKICIDIP_ = com.google.protobuf.MapField.newMapField(
                     LHCKKICIDIPDefaultEntryHolder.defaultEntry);
@@ -134,12 +133,17 @@ public final class PKLACFGBAFAOuterClass {
                   lHCKKICIDIP__.getKey(), lHCKKICIDIP__.getValue());
               break;
             }
-            case 64: {
+            case 40: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 112: {
+            case 88: {
+
+              hAPFBMBBCBK_ = input.readUInt32();
+              break;
+            }
+            case 104: {
 
               pIHNDCEGCNO_ = input.readUInt32();
               break;
@@ -173,7 +177,7 @@ public final class PKLACFGBAFAOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
+        case 2:
           return internalGetLHCKKICIDIP();
         default:
           throw new RuntimeException(
@@ -188,18 +192,7 @@ public final class PKLACFGBAFAOuterClass {
               emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA.class, emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA.Builder.class);
     }
 
-    public static final int HAPFBMBBCBK_FIELD_NUMBER = 6;
-    private int hAPFBMBBCBK_;
-    /**
-     * <code>uint32 HAPFBMBBCBK = 6;</code>
-     * @return The hAPFBMBBCBK.
-     */
-    @java.lang.Override
-    public int getHAPFBMBBCBK() {
-      return hAPFBMBBCBK_;
-    }
-
-    public static final int LHCKKICIDIP_FIELD_NUMBER = 7;
+    public static final int LHCKKICIDIP_FIELD_NUMBER = 2;
     private static final class LHCKKICIDIPDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -226,7 +219,7 @@ public final class PKLACFGBAFAOuterClass {
       return internalGetLHCKKICIDIP().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
 
     @java.lang.Override
@@ -244,7 +237,7 @@ public final class PKLACFGBAFAOuterClass {
       return getLHCKKICIDIPMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
     @java.lang.Override
 
@@ -252,7 +245,7 @@ public final class PKLACFGBAFAOuterClass {
       return internalGetLHCKKICIDIP().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
     @java.lang.Override
 
@@ -265,7 +258,7 @@ public final class PKLACFGBAFAOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+     * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
      */
     @java.lang.Override
 
@@ -280,10 +273,10 @@ public final class PKLACFGBAFAOuterClass {
       return map.get(key);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 8;
+    public static final int IS_OPEN_FIELD_NUMBER = 5;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 8;</code>
+     * <code>bool is_open = 5;</code>
      * @return The isOpen.
      */
     @java.lang.Override
@@ -291,10 +284,21 @@ public final class PKLACFGBAFAOuterClass {
       return isOpen_;
     }
 
-    public static final int PIHNDCEGCNO_FIELD_NUMBER = 14;
+    public static final int HAPFBMBBCBK_FIELD_NUMBER = 11;
+    private int hAPFBMBBCBK_;
+    /**
+     * <code>uint32 HAPFBMBBCBK = 11;</code>
+     * @return The hAPFBMBBCBK.
+     */
+    @java.lang.Override
+    public int getHAPFBMBBCBK() {
+      return hAPFBMBBCBK_;
+    }
+
+    public static final int PIHNDCEGCNO_FIELD_NUMBER = 13;
     private int pIHNDCEGCNO_;
     /**
-     * <code>uint32 PIHNDCEGCNO = 14;</code>
+     * <code>uint32 PIHNDCEGCNO = 13;</code>
      * @return The pIHNDCEGCNO.
      */
     @java.lang.Override
@@ -316,20 +320,20 @@ public final class PKLACFGBAFAOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (hAPFBMBBCBK_ != 0) {
-        output.writeUInt32(6, hAPFBMBBCBK_);
-      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetLHCKKICIDIP(),
           LHCKKICIDIPDefaultEntryHolder.defaultEntry,
-          7);
+          2);
       if (isOpen_ != false) {
-        output.writeBool(8, isOpen_);
+        output.writeBool(5, isOpen_);
+      }
+      if (hAPFBMBBCBK_ != 0) {
+        output.writeUInt32(11, hAPFBMBBCBK_);
       }
       if (pIHNDCEGCNO_ != 0) {
-        output.writeUInt32(14, pIHNDCEGCNO_);
+        output.writeUInt32(13, pIHNDCEGCNO_);
       }
       unknownFields.writeTo(output);
     }
@@ -340,10 +344,6 @@ public final class PKLACFGBAFAOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (hAPFBMBBCBK_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, hAPFBMBBCBK_);
-      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetLHCKKICIDIP().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -352,15 +352,19 @@ public final class PKLACFGBAFAOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, lHCKKICIDIP__);
+            .computeMessageSize(2, lHCKKICIDIP__);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isOpen_);
+          .computeBoolSize(5, isOpen_);
+      }
+      if (hAPFBMBBCBK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, hAPFBMBBCBK_);
       }
       if (pIHNDCEGCNO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, pIHNDCEGCNO_);
+          .computeUInt32Size(13, pIHNDCEGCNO_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -377,12 +381,12 @@ public final class PKLACFGBAFAOuterClass {
       }
       emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA other = (emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA) obj;
 
-      if (getHAPFBMBBCBK()
-          != other.getHAPFBMBBCBK()) return false;
       if (!internalGetLHCKKICIDIP().equals(
           other.internalGetLHCKKICIDIP())) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getHAPFBMBBCBK()
+          != other.getHAPFBMBBCBK()) return false;
       if (getPIHNDCEGCNO()
           != other.getPIHNDCEGCNO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -396,8 +400,6 @@ public final class PKLACFGBAFAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + HAPFBMBBCBK_FIELD_NUMBER;
-      hash = (53 * hash) + getHAPFBMBBCBK();
       if (!internalGetLHCKKICIDIP().getMap().isEmpty()) {
         hash = (37 * hash) + LHCKKICIDIP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetLHCKKICIDIP().hashCode();
@@ -405,6 +407,8 @@ public final class PKLACFGBAFAOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + HAPFBMBBCBK_FIELD_NUMBER;
+      hash = (53 * hash) + getHAPFBMBBCBK();
       hash = (37 * hash) + PIHNDCEGCNO_FIELD_NUMBER;
       hash = (53 * hash) + getPIHNDCEGCNO();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -503,6 +507,10 @@ public final class PKLACFGBAFAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PKLACFGBAFA}
      */
     public static final class Builder extends
@@ -518,7 +526,7 @@ public final class PKLACFGBAFAOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 2:
             return internalGetLHCKKICIDIP();
           default:
             throw new RuntimeException(
@@ -529,7 +537,7 @@ public final class PKLACFGBAFAOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 7:
+          case 2:
             return internalGetMutableLHCKKICIDIP();
           default:
             throw new RuntimeException(
@@ -562,10 +570,10 @@ public final class PKLACFGBAFAOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        hAPFBMBBCBK_ = 0;
-
         internalGetMutableLHCKKICIDIP().clear();
         isOpen_ = false;
+
+        hAPFBMBBCBK_ = 0;
 
         pIHNDCEGCNO_ = 0;
 
@@ -596,10 +604,10 @@ public final class PKLACFGBAFAOuterClass {
       public emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA buildPartial() {
         emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA result = new emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA(this);
         int from_bitField0_ = bitField0_;
-        result.hAPFBMBBCBK_ = hAPFBMBBCBK_;
         result.lHCKKICIDIP_ = internalGetLHCKKICIDIP();
         result.lHCKKICIDIP_.makeImmutable();
         result.isOpen_ = isOpen_;
+        result.hAPFBMBBCBK_ = hAPFBMBBCBK_;
         result.pIHNDCEGCNO_ = pIHNDCEGCNO_;
         onBuilt();
         return result;
@@ -649,13 +657,13 @@ public final class PKLACFGBAFAOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA other) {
         if (other == emu.grasscutter.net.proto.PKLACFGBAFAOuterClass.PKLACFGBAFA.getDefaultInstance()) return this;
-        if (other.getHAPFBMBBCBK() != 0) {
-          setHAPFBMBBCBK(other.getHAPFBMBBCBK());
-        }
         internalGetMutableLHCKKICIDIP().mergeFrom(
             other.internalGetLHCKKICIDIP());
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
+        }
+        if (other.getHAPFBMBBCBK() != 0) {
+          setHAPFBMBBCBK(other.getHAPFBMBBCBK());
         }
         if (other.getPIHNDCEGCNO() != 0) {
           setPIHNDCEGCNO(other.getPIHNDCEGCNO());
@@ -690,37 +698,6 @@ public final class PKLACFGBAFAOuterClass {
       }
       private int bitField0_;
 
-      private int hAPFBMBBCBK_ ;
-      /**
-       * <code>uint32 HAPFBMBBCBK = 6;</code>
-       * @return The hAPFBMBBCBK.
-       */
-      @java.lang.Override
-      public int getHAPFBMBBCBK() {
-        return hAPFBMBBCBK_;
-      }
-      /**
-       * <code>uint32 HAPFBMBBCBK = 6;</code>
-       * @param value The hAPFBMBBCBK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHAPFBMBBCBK(int value) {
-        
-        hAPFBMBBCBK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HAPFBMBBCBK = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHAPFBMBBCBK() {
-        
-        hAPFBMBBCBK_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> lHCKKICIDIP_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -748,7 +725,7 @@ public final class PKLACFGBAFAOuterClass {
         return internalGetLHCKKICIDIP().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
 
       @java.lang.Override
@@ -766,7 +743,7 @@ public final class PKLACFGBAFAOuterClass {
         return getLHCKKICIDIPMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
       @java.lang.Override
 
@@ -774,7 +751,7 @@ public final class PKLACFGBAFAOuterClass {
         return internalGetLHCKKICIDIP().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
       @java.lang.Override
 
@@ -787,7 +764,7 @@ public final class PKLACFGBAFAOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
       @java.lang.Override
 
@@ -808,7 +785,7 @@ public final class PKLACFGBAFAOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
 
       public Builder removeLHCKKICIDIP(
@@ -827,7 +804,7 @@ public final class PKLACFGBAFAOuterClass {
         return internalGetMutableLHCKKICIDIP().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
       public Builder putLHCKKICIDIP(
           int key,
@@ -839,7 +816,7 @@ public final class PKLACFGBAFAOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 7;</code>
+       * <code>map&lt;uint32, uint32&gt; LHCKKICIDIP = 2;</code>
        */
 
       public Builder putAllLHCKKICIDIP(
@@ -851,7 +828,7 @@ public final class PKLACFGBAFAOuterClass {
 
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 8;</code>
+       * <code>bool is_open = 5;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -859,7 +836,7 @@ public final class PKLACFGBAFAOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 8;</code>
+       * <code>bool is_open = 5;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -870,7 +847,7 @@ public final class PKLACFGBAFAOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 8;</code>
+       * <code>bool is_open = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
@@ -880,9 +857,40 @@ public final class PKLACFGBAFAOuterClass {
         return this;
       }
 
+      private int hAPFBMBBCBK_ ;
+      /**
+       * <code>uint32 HAPFBMBBCBK = 11;</code>
+       * @return The hAPFBMBBCBK.
+       */
+      @java.lang.Override
+      public int getHAPFBMBBCBK() {
+        return hAPFBMBBCBK_;
+      }
+      /**
+       * <code>uint32 HAPFBMBBCBK = 11;</code>
+       * @param value The hAPFBMBBCBK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHAPFBMBBCBK(int value) {
+        
+        hAPFBMBBCBK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HAPFBMBBCBK = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHAPFBMBBCBK() {
+        
+        hAPFBMBBCBK_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int pIHNDCEGCNO_ ;
       /**
-       * <code>uint32 PIHNDCEGCNO = 14;</code>
+       * <code>uint32 PIHNDCEGCNO = 13;</code>
        * @return The pIHNDCEGCNO.
        */
       @java.lang.Override
@@ -890,7 +898,7 @@ public final class PKLACFGBAFAOuterClass {
         return pIHNDCEGCNO_;
       }
       /**
-       * <code>uint32 PIHNDCEGCNO = 14;</code>
+       * <code>uint32 PIHNDCEGCNO = 13;</code>
        * @param value The pIHNDCEGCNO to set.
        * @return This builder for chaining.
        */
@@ -901,7 +909,7 @@ public final class PKLACFGBAFAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 PIHNDCEGCNO = 14;</code>
+       * <code>uint32 PIHNDCEGCNO = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPIHNDCEGCNO() {
@@ -982,13 +990,12 @@ public final class PKLACFGBAFAOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021PKLACFGBAFA.proto\"\260\001\n\013PKLACFGBAFA\022\023\n\013H" +
-      "APFBMBBCBK\030\006 \001(\r\0222\n\013LHCKKICIDIP\030\007 \003(\0132\035." +
-      "PKLACFGBAFA.LHCKKICIDIPEntry\022\017\n\007is_open\030" +
-      "\010 \001(\010\022\023\n\013PIHNDCEGCNO\030\016 \001(\r\0322\n\020LHCKKICIDI" +
-      "PEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B2" +
-      "\n\031emu.grasscutter.net.protoB\025PKLACFGBAFA" +
-      "OuterClassb\006proto3"
+      "\n\021PKLACFGBAFA.proto\"\260\001\n\013PKLACFGBAFA\0222\n\013L" +
+      "HCKKICIDIP\030\002 \003(\0132\035.PKLACFGBAFA.LHCKKICID" +
+      "IPEntry\022\017\n\007is_open\030\005 \001(\010\022\023\n\013HAPFBMBBCBK\030" +
+      "\013 \001(\r\022\023\n\013PIHNDCEGCNO\030\r \001(\r\0322\n\020LHCKKICIDI" +
+      "PEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -999,7 +1006,7 @@ public final class PKLACFGBAFAOuterClass {
     internal_static_PKLACFGBAFA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PKLACFGBAFA_descriptor,
-        new java.lang.String[] { "HAPFBMBBCBK", "LHCKKICIDIP", "IsOpen", "PIHNDCEGCNO", });
+        new java.lang.String[] { "LHCKKICIDIP", "IsOpen", "HAPFBMBBCBK", "PIHNDCEGCNO", });
     internal_static_PKLACFGBAFA_LHCKKICIDIPEntry_descriptor =
       internal_static_PKLACFGBAFA_descriptor.getNestedTypes().get(0);
     internal_static_PKLACFGBAFA_LHCKKICIDIPEntry_fieldAccessorTable = new

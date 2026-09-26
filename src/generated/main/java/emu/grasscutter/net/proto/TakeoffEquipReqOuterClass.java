@@ -25,12 +25,16 @@ public final class TakeoffEquipReqOuterClass {
     int getSlot();
 
     /**
-     * <code>uint64 avatar_guid = 14;</code>
+     * <code>uint64 avatar_guid = 3;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
   }
   /**
+   * <pre>
+   * CmdId: 378
+   * </pre>
+   *
    * Protobuf type {@code TakeoffEquipReq}
    */
   public static final class TakeoffEquipReq extends
@@ -75,14 +79,14 @@ public final class TakeoffEquipReqOuterClass {
             case 0:
               done = true;
               break;
+            case 24: {
+
+              avatarGuid_ = input.readUInt64();
+              break;
+            }
             case 72: {
 
               slot_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              avatarGuid_ = input.readUInt64();
               break;
             }
             default: {
@@ -128,10 +132,10 @@ public final class TakeoffEquipReqOuterClass {
       return slot_;
     }
 
-    public static final int AVATAR_GUID_FIELD_NUMBER = 14;
+    public static final int AVATAR_GUID_FIELD_NUMBER = 3;
     private long avatarGuid_;
     /**
-     * <code>uint64 avatar_guid = 14;</code>
+     * <code>uint64 avatar_guid = 3;</code>
      * @return The avatarGuid.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class TakeoffEquipReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (avatarGuid_ != 0L) {
+        output.writeUInt64(3, avatarGuid_);
+      }
       if (slot_ != 0) {
         output.writeUInt32(9, slot_);
-      }
-      if (avatarGuid_ != 0L) {
-        output.writeUInt64(14, avatarGuid_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class TakeoffEquipReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (avatarGuid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, avatarGuid_);
+      }
       if (slot_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, slot_);
-      }
-      if (avatarGuid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(14, avatarGuid_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,6 +311,10 @@ public final class TakeoffEquipReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 378
+     * </pre>
+     *
      * Protobuf type {@code TakeoffEquipReq}
      */
     public static final class Builder extends
@@ -492,7 +500,7 @@ public final class TakeoffEquipReqOuterClass {
 
       private long avatarGuid_ ;
       /**
-       * <code>uint64 avatar_guid = 14;</code>
+       * <code>uint64 avatar_guid = 3;</code>
        * @return The avatarGuid.
        */
       @java.lang.Override
@@ -500,7 +508,7 @@ public final class TakeoffEquipReqOuterClass {
         return avatarGuid_;
       }
       /**
-       * <code>uint64 avatar_guid = 14;</code>
+       * <code>uint64 avatar_guid = 3;</code>
        * @param value The avatarGuid to set.
        * @return This builder for chaining.
        */
@@ -511,7 +519,7 @@ public final class TakeoffEquipReqOuterClass {
         return this;
       }
       /**
-       * <code>uint64 avatar_guid = 14;</code>
+       * <code>uint64 avatar_guid = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
@@ -588,9 +596,8 @@ public final class TakeoffEquipReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025TakeoffEquipReq.proto\"4\n\017TakeoffEquipR" +
-      "eq\022\014\n\004slot\030\t \001(\r\022\023\n\013avatar_guid\030\016 \001(\004B6\n" +
-      "\031emu.grasscutter.net.protoB\031TakeoffEquip" +
-      "ReqOuterClassb\006proto3"
+      "eq\022\014\n\004slot\030\t \001(\r\022\023\n\013avatar_guid\030\003 \001(\004B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,12 +80,12 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               watcherId_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 120: {
 
               activityId_ = input.readUInt32();
               break;
@@ -122,7 +122,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
               emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.class, emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq.Builder.class);
     }
 
-    public static final int ACTIVITY_ID_FIELD_NUMBER = 13;
+    public static final int ACTIVITY_ID_FIELD_NUMBER = 15;
     private int activityId_;
     /**
      * <code>uint32 activity_id = 15;</code>
@@ -133,7 +133,7 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       return activityId_;
     }
 
-    public static final int WATCHER_ID_FIELD_NUMBER = 2;
+    public static final int WATCHER_ID_FIELD_NUMBER = 3;
     private int watcherId_;
     /**
      * <code>uint32 watcher_id = 3;</code>
@@ -159,10 +159,10 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (watcherId_ != 0) {
-        output.writeUInt32(2, watcherId_);
+        output.writeUInt32(3, watcherId_);
       }
       if (activityId_ != 0) {
-        output.writeUInt32(13, activityId_);
+        output.writeUInt32(15, activityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -175,11 +175,11 @@ public final class ActivityTakeWatcherRewardReqOuterClass {
       size = 0;
       if (watcherId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, watcherId_);
+          .computeUInt32Size(3, watcherId_);
       }
       if (activityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, activityId_);
+          .computeUInt32Size(15, activityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;

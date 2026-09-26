@@ -236,10 +236,17 @@ public final class ResourceLoader {
 
     private static void loadGlobalCombatConfig() {
         try {
-            GameData.setConfigGlobalCombat(
-                    JsonUtils.loadToClass(
-                            getResourcePath("BinOutput/Common/ConfigGlobalCombat.json"),
-                            ConfigGlobalCombat.class));
+            var path = getResourcePath("BinOutput/Common/ConfigGlobalCombat.json");
+            var config = JsonUtils.loadToClass(path, ConfigGlobalCombat.class);
+            GameData.setConfigGlobalCombat(config);
+            if (config.isDefaultAbilitiesMissing()) {
+                // A resource dump with re-obfuscated keys: say which keys it has, so the new
+                // name can be added as an alternate.
+                var keys = com.google.gson.JsonParser.parseString(java.nio.file.Files.readString(path))
+                        .getAsJsonObject().keySet();
+                Grasscutter.getLogger()
+                        .error("ConfigGlobalCombat.json has no defaultAbilities; default abilities are empty. Top-level keys: " + keys);
+            }
         } catch (IOException e) {
             Grasscutter.getLogger()
                     .error("Cannot load ConfigGlobalCombat.json, this error is important, fix it!");
@@ -420,7 +427,7 @@ public final class ResourceLoader {
 
     private static void loadAbilityModifiers(Path path) {
         try {
-            JsonUtils.loadToList(path, AbilityConfigData.class)
+            JsonUtils.loadToListLenient(path, AbilityConfigData.class)
                     .forEach(data -> {
                         if (data.Default != null) {
                             data.Default.isDynamicAbility = data.Default.isDynamicAbility || data.isDynamicAbility;

@@ -56,7 +56,7 @@ public class EntityNPC extends GameEntity {
                                 EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
                                 SceneEntityAiInfoOuterClass.SceneEntityAiInfo.newBuilder()
-                                        .setIsAiOpen(true))
+                                        .setIsEnteredCombat(true))
                         .setBornPos(getPosition().toProto())
                         .build();
 

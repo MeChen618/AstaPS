@@ -18,8 +18,9 @@ public class PacketReliquaryOfferDefineRsp extends BasePacket {
     public PacketReliquaryOfferDefineRsp(int versionIdx) {
         super(PacketOpcodes.ReliquaryOfferDefineRsp);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
-        ProtoWire.writeUint32Force(out, 5, versionIdx);
-        ProtoWire.writeUint32Force(out, 15, ArtifactTransmuterSystem.SCHEDULE_ID);
+        // 7.1 numbers (7.0: 5 and 15)
+        ProtoWire.writeUint32Force(out, 1, versionIdx);
+        ProtoWire.writeUint32Force(out, 3, ArtifactTransmuterSystem.SCHEDULE_ID);
         // retcode 0 omitted (proto3 default)
         this.setData(out.toByteArray());
     }

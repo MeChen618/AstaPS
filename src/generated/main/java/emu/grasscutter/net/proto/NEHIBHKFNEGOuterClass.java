@@ -19,36 +19,40 @@ public final class NEHIBHKFNEGOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 3;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>bool is_finish = 8;</code>
-     * @return The isFinish.
-     */
-    boolean getIsFinish();
-
-    /**
-     * <code>uint32 PAGGBIOEHOO = 9;</code>
+     * <code>uint32 PAGGBIOEHOO = 13;</code>
      * @return The pAGGBIOEHOO.
      */
     int getPAGGBIOEHOO();
 
     /**
-     * <code>float CJFPPKKJLMK = 11;</code>
+     * <code>uint32 level_id = 2;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
+
+    /**
+     * <code>float CJFPPKKJLMK = 15;</code>
      * @return The cJFPPKKJLMK.
      */
     float getCJFPPKKJLMK();
 
     /**
-     * <code>uint32 level_id = 12;</code>
-     * @return The levelId.
+     * <code>bool is_finish = 12;</code>
+     * @return The isFinish.
      */
-    int getLevelId();
+    boolean getIsFinish();
+
+    /**
+     * <code>bool is_open = 14;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NEHIBHKFNEG}
    */
   public static final class NEHIBHKFNEG extends
@@ -93,29 +97,29 @@ public final class NEHIBHKFNEGOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 16: {
 
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              pAGGBIOEHOO_ = input.readUInt32();
-              break;
-            }
-            case 93: {
-
-              cJFPPKKJLMK_ = input.readFloat();
+              levelId_ = input.readUInt32();
               break;
             }
             case 96: {
 
-              levelId_ = input.readUInt32();
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 104: {
+
+              pAGGBIOEHOO_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 125: {
+
+              cJFPPKKJLMK_ = input.readFloat();
               break;
             }
             default: {
@@ -150,32 +154,10 @@ public final class NEHIBHKFNEGOuterClass {
               emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG.class, emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 3;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 3;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int IS_FINISH_FIELD_NUMBER = 8;
-    private boolean isFinish_;
-    /**
-     * <code>bool is_finish = 8;</code>
-     * @return The isFinish.
-     */
-    @java.lang.Override
-    public boolean getIsFinish() {
-      return isFinish_;
-    }
-
-    public static final int PAGGBIOEHOO_FIELD_NUMBER = 9;
+    public static final int PAGGBIOEHOO_FIELD_NUMBER = 13;
     private int pAGGBIOEHOO_;
     /**
-     * <code>uint32 PAGGBIOEHOO = 9;</code>
+     * <code>uint32 PAGGBIOEHOO = 13;</code>
      * @return The pAGGBIOEHOO.
      */
     @java.lang.Override
@@ -183,10 +165,21 @@ public final class NEHIBHKFNEGOuterClass {
       return pAGGBIOEHOO_;
     }
 
-    public static final int CJFPPKKJLMK_FIELD_NUMBER = 11;
+    public static final int LEVEL_ID_FIELD_NUMBER = 2;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 2;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
+    }
+
+    public static final int CJFPPKKJLMK_FIELD_NUMBER = 15;
     private float cJFPPKKJLMK_;
     /**
-     * <code>float CJFPPKKJLMK = 11;</code>
+     * <code>float CJFPPKKJLMK = 15;</code>
      * @return The cJFPPKKJLMK.
      */
     @java.lang.Override
@@ -194,15 +187,26 @@ public final class NEHIBHKFNEGOuterClass {
       return cJFPPKKJLMK_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 12;
-    private int levelId_;
+    public static final int IS_FINISH_FIELD_NUMBER = 12;
+    private boolean isFinish_;
     /**
-     * <code>uint32 level_id = 12;</code>
-     * @return The levelId.
+     * <code>bool is_finish = 12;</code>
+     * @return The isFinish.
      */
     @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
+    public boolean getIsFinish() {
+      return isFinish_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 14;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 14;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -219,20 +223,20 @@ public final class NEHIBHKFNEGOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isOpen_ != false) {
-        output.writeBool(3, isOpen_);
+      if (levelId_ != 0) {
+        output.writeUInt32(2, levelId_);
       }
       if (isFinish_ != false) {
-        output.writeBool(8, isFinish_);
+        output.writeBool(12, isFinish_);
       }
       if (pAGGBIOEHOO_ != 0) {
-        output.writeUInt32(9, pAGGBIOEHOO_);
+        output.writeUInt32(13, pAGGBIOEHOO_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(14, isOpen_);
       }
       if (cJFPPKKJLMK_ != 0F) {
-        output.writeFloat(11, cJFPPKKJLMK_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(12, levelId_);
+        output.writeFloat(15, cJFPPKKJLMK_);
       }
       unknownFields.writeTo(output);
     }
@@ -243,25 +247,25 @@ public final class NEHIBHKFNEGOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
+      if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isOpen_);
+          .computeUInt32Size(2, levelId_);
       }
       if (isFinish_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isFinish_);
+          .computeBoolSize(12, isFinish_);
       }
       if (pAGGBIOEHOO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, pAGGBIOEHOO_);
+          .computeUInt32Size(13, pAGGBIOEHOO_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isOpen_);
       }
       if (cJFPPKKJLMK_ != 0F) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(11, cJFPPKKJLMK_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, levelId_);
+          .computeFloatSize(15, cJFPPKKJLMK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,17 +282,17 @@ public final class NEHIBHKFNEGOuterClass {
       }
       emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG other = (emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG) obj;
 
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (getPAGGBIOEHOO()
           != other.getPAGGBIOEHOO()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (java.lang.Float.floatToIntBits(getCJFPPKKJLMK())
           != java.lang.Float.floatToIntBits(
               other.getCJFPPKKJLMK())) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -300,19 +304,19 @@ public final class NEHIBHKFNEGOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
       hash = (37 * hash) + PAGGBIOEHOO_FIELD_NUMBER;
       hash = (53 * hash) + getPAGGBIOEHOO();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + CJFPPKKJLMK_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getCJFPPKKJLMK());
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,6 +413,10 @@ public final class NEHIBHKFNEGOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NEHIBHKFNEG}
      */
     public static final class Builder extends
@@ -446,15 +454,15 @@ public final class NEHIBHKFNEGOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isOpen_ = false;
-
-        isFinish_ = false;
-
         pAGGBIOEHOO_ = 0;
+
+        levelId_ = 0;
 
         cJFPPKKJLMK_ = 0F;
 
-        levelId_ = 0;
+        isFinish_ = false;
+
+        isOpen_ = false;
 
         return this;
       }
@@ -482,11 +490,11 @@ public final class NEHIBHKFNEGOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG buildPartial() {
         emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG result = new emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG(this);
-        result.isOpen_ = isOpen_;
-        result.isFinish_ = isFinish_;
         result.pAGGBIOEHOO_ = pAGGBIOEHOO_;
-        result.cJFPPKKJLMK_ = cJFPPKKJLMK_;
         result.levelId_ = levelId_;
+        result.cJFPPKKJLMK_ = cJFPPKKJLMK_;
+        result.isFinish_ = isFinish_;
+        result.isOpen_ = isOpen_;
         onBuilt();
         return result;
       }
@@ -535,20 +543,20 @@ public final class NEHIBHKFNEGOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG other) {
         if (other == emu.grasscutter.net.proto.NEHIBHKFNEGOuterClass.NEHIBHKFNEG.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
         if (other.getPAGGBIOEHOO() != 0) {
           setPAGGBIOEHOO(other.getPAGGBIOEHOO());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         if (other.getCJFPPKKJLMK() != 0F) {
           setCJFPPKKJLMK(other.getCJFPPKKJLMK());
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -579,71 +587,9 @@ public final class NEHIBHKFNEGOuterClass {
         return this;
       }
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 3;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 3;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 8;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 8;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
       private int pAGGBIOEHOO_ ;
       /**
-       * <code>uint32 PAGGBIOEHOO = 9;</code>
+       * <code>uint32 PAGGBIOEHOO = 13;</code>
        * @return The pAGGBIOEHOO.
        */
       @java.lang.Override
@@ -651,7 +597,7 @@ public final class NEHIBHKFNEGOuterClass {
         return pAGGBIOEHOO_;
       }
       /**
-       * <code>uint32 PAGGBIOEHOO = 9;</code>
+       * <code>uint32 PAGGBIOEHOO = 13;</code>
        * @param value The pAGGBIOEHOO to set.
        * @return This builder for chaining.
        */
@@ -662,7 +608,7 @@ public final class NEHIBHKFNEGOuterClass {
         return this;
       }
       /**
-       * <code>uint32 PAGGBIOEHOO = 9;</code>
+       * <code>uint32 PAGGBIOEHOO = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPAGGBIOEHOO() {
@@ -672,40 +618,9 @@ public final class NEHIBHKFNEGOuterClass {
         return this;
       }
 
-      private float cJFPPKKJLMK_ ;
-      /**
-       * <code>float CJFPPKKJLMK = 11;</code>
-       * @return The cJFPPKKJLMK.
-       */
-      @java.lang.Override
-      public float getCJFPPKKJLMK() {
-        return cJFPPKKJLMK_;
-      }
-      /**
-       * <code>float CJFPPKKJLMK = 11;</code>
-       * @param value The cJFPPKKJLMK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCJFPPKKJLMK(float value) {
-        
-        cJFPPKKJLMK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float CJFPPKKJLMK = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCJFPPKKJLMK() {
-        
-        cJFPPKKJLMK_ = 0F;
-        onChanged();
-        return this;
-      }
-
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 12;</code>
+       * <code>uint32 level_id = 2;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -713,7 +628,7 @@ public final class NEHIBHKFNEGOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 12;</code>
+       * <code>uint32 level_id = 2;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -724,12 +639,105 @@ public final class NEHIBHKFNEGOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 12;</code>
+       * <code>uint32 level_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
         
         levelId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private float cJFPPKKJLMK_ ;
+      /**
+       * <code>float CJFPPKKJLMK = 15;</code>
+       * @return The cJFPPKKJLMK.
+       */
+      @java.lang.Override
+      public float getCJFPPKKJLMK() {
+        return cJFPPKKJLMK_;
+      }
+      /**
+       * <code>float CJFPPKKJLMK = 15;</code>
+       * @param value The cJFPPKKJLMK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCJFPPKKJLMK(float value) {
+        
+        cJFPPKKJLMK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float CJFPPKKJLMK = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCJFPPKKJLMK() {
+        
+        cJFPPKKJLMK_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean isFinish_ ;
+      /**
+       * <code>bool is_finish = 12;</code>
+       * @return The isFinish.
+       */
+      @java.lang.Override
+      public boolean getIsFinish() {
+        return isFinish_;
+      }
+      /**
+       * <code>bool is_finish = 12;</code>
+       * @param value The isFinish to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinish(boolean value) {
+        
+        isFinish_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finish = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinish() {
+        
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 14;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 14;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
         onChanged();
         return this;
       }
@@ -800,11 +808,11 @@ public final class NEHIBHKFNEGOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021NEHIBHKFNEG.proto\"m\n\013NEHIBHKFNEG\022\017\n\007is" +
-      "_open\030\003 \001(\010\022\021\n\tis_finish\030\010 \001(\010\022\023\n\013PAGGBI" +
-      "OEHOO\030\t \001(\r\022\023\n\013CJFPPKKJLMK\030\013 \001(\002\022\020\n\010leve" +
-      "l_id\030\014 \001(\rB2\n\031emu.grasscutter.net.protoB" +
-      "\025NEHIBHKFNEGOuterClassb\006proto3"
+      "\n\021NEHIBHKFNEG.proto\"m\n\013NEHIBHKFNEG\022\023\n\013PA" +
+      "GGBIOEHOO\030\r \001(\r\022\020\n\010level_id\030\002 \001(\r\022\023\n\013CJF" +
+      "PPKKJLMK\030\017 \001(\002\022\021\n\tis_finish\030\014 \001(\010\022\017\n\007is_" +
+      "open\030\016 \001(\010B\033\n\031emu.grasscutter.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -815,7 +823,7 @@ public final class NEHIBHKFNEGOuterClass {
     internal_static_NEHIBHKFNEG_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NEHIBHKFNEG_descriptor,
-        new java.lang.String[] { "IsOpen", "IsFinish", "PAGGBIOEHOO", "CJFPPKKJLMK", "LevelId", });
+        new java.lang.String[] { "PAGGBIOEHOO", "LevelId", "CJFPPKKJLMK", "IsFinish", "IsOpen", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

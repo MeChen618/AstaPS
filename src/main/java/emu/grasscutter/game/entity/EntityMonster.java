@@ -183,9 +183,10 @@ public class EntityMonster extends GameEntity {
         if (optionalGroup.isPresent()) {
             var group = optionalGroup.get();
             var monster = group.monsters.get(getConfigId());
-            if (monster != null && monster.isElite) {
-                this.addConfigAbility(
-                        GameData.getConfigGlobalCombat().getDefaultAbilities().getMonterEliteAbilityName());
+            var eliteAbility =
+                    GameData.getConfigGlobalCombat().getDefaultAbilities().getMonterEliteAbilityName();
+            if (monster != null && monster.isElite && eliteAbility != null) {
+                this.addConfigAbility(eliteAbility);
             }
         }
 
@@ -487,7 +488,7 @@ public class EntityMonster extends GameEntity {
         var data = this.getMonsterData();
 
         var aiInfo =
-                SceneEntityAiInfo.newBuilder().setIsAiOpen(true);
+                SceneEntityAiInfo.newBuilder().setIsEnteredCombat(true);
         if (ownerEntityId != 0) {
             aiInfo.setServantInfo(ServantInfo.newBuilder().setMasterEntityId(ownerEntityId));
         }

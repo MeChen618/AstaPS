@@ -37,6 +37,10 @@ public final class VectorOuterClass {
     float getZ();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code Vector}
    */
   public static final class Vector extends
@@ -345,6 +349,10 @@ public final class VectorOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code Vector}
      */
     public static final class Builder extends
@@ -663,8 +671,8 @@ public final class VectorOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\014Vector.proto\")\n\006Vector\022\t\n\001x\030\001 \001(\002\022\t\n\001y" +
-      "\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B-\n\031emu.grasscutter.net" +
-      ".protoB\020VectorOuterClassb\006proto3"
+      "\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

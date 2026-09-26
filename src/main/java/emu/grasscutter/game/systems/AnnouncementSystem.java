@@ -57,6 +57,20 @@ public class AnnouncementSystem extends BaseGameSystem {
         getOnlinePlayers().forEach(i -> i.sendPacket(new PacketServerAnnounceNotify(list)));
     }
 
+    /** Sends the announcements that are currently live to one player, e.g. right after login. */
+    public void sendActive(Player player) {
+        var now = new java.util.Date();
+        var list =
+                announceConfigItemMap.values().stream()
+                        .filter(AnnounceConfigItem::isTick)
+                        .filter(i -> i.getBeginTime() == null || now.after(i.getBeginTime()))
+                        .filter(i -> i.getEndTime() == null || now.before(i.getEndTime()))
+                        .map(AnnounceConfigItem::toProto)
+                        .map(AnnounceDataOuterClass.AnnounceData.Builder::build)
+                        .toList();
+        if (player != null && !list.isEmpty()) player.sendPacket(new PacketServerAnnounceNotify(list));
+    }
+
     public int refresh() {
         return loadConfig();
     }
@@ -99,13 +113,15 @@ public class AnnouncementSystem extends BaseGameSystem {
             // which is which is not recoverable from the proto dump, so all three carry the
             // content. Whichever one the client reads for this announce type, it finds the text.
             var text = content == null ? "" : content;
-            proto.setENGJGCGFMMM(text).setLHMGGPMCDCN(text).setKFAGDOEAIPP(text);
+            proto.setDungeonConfirmText(text).setCountDownText(text).setCenterSystemText(text);
 
-            // The two remaining uint32 fields are unnamed in 7.0 as well, and were being fed
-            // `frequency` on the assumption that they are the repeat intervals. A wrong value in
-            // an unidentified field is a far better explanation for a client crash than an empty
-            // string, and the server does not need them: AnnouncementTask already re-broadcasts
-            // on the config's own `interval`.
+            // The original code set the frequency for the announce type, and an announcement with no
+            // frequency is the likely reason none appeared. 7.1 leaves both unnamed, but they are the only
+            // two uint32 fields not accounted for (fields 2 and 11), so both get the frequency and
+            // whichever one is the centre-screen one takes effect. AnnouncementTask still does the
+            // re-broadcasting on the config's own `interval`.
+            int times = Math.max(1, frequency);
+            proto.setCenterSystemFrequency(times).setCountDownFrequency(times);
 
             return proto;
         }

@@ -19,36 +19,40 @@ public final class PhotoActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_content_closed = 9;</code>
-     * @return The isContentClosed.
-     */
-    boolean getIsContentClosed();
-
-    /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     java.util.List<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData> 
         getPhotoPosDataListList();
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData getPhotoPosDataList(int index);
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     int getPhotoPosDataListCount();
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder> 
         getPhotoPosDataListOrBuilderList();
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder getPhotoPosDataListOrBuilder(
         int index);
+
+    /**
+     * <code>bool is_content_closed = 1;</code>
+     * @return The isContentClosed.
+     */
+    boolean getIsContentClosed();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PhotoActivityDetailInfo}
    */
   public static final class PhotoActivityDetailInfo extends
@@ -95,12 +99,12 @@ public final class PhotoActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 72: {
+            case 8: {
 
               isContentClosed_ = input.readBool();
               break;
             }
-            case 98: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 photoPosDataList_ = new java.util.ArrayList<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData>();
                 mutable_bitField0_ |= 0x00000001;
@@ -144,28 +148,17 @@ public final class PhotoActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo.class, emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo.Builder.class);
     }
 
-    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 9;
-    private boolean isContentClosed_;
-    /**
-     * <code>bool is_content_closed = 9;</code>
-     * @return The isContentClosed.
-     */
-    @java.lang.Override
-    public boolean getIsContentClosed() {
-      return isContentClosed_;
-    }
-
-    public static final int PHOTO_POS_DATA_LIST_FIELD_NUMBER = 12;
+    public static final int PHOTO_POS_DATA_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData> photoPosDataList_;
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData> getPhotoPosDataListList() {
       return photoPosDataList_;
     }
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder> 
@@ -173,26 +166,37 @@ public final class PhotoActivityDetailInfoOuterClass {
       return photoPosDataList_;
     }
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     @java.lang.Override
     public int getPhotoPosDataListCount() {
       return photoPosDataList_.size();
     }
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData getPhotoPosDataList(int index) {
       return photoPosDataList_.get(index);
     }
     /**
-     * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+     * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder getPhotoPosDataListOrBuilder(
         int index) {
       return photoPosDataList_.get(index);
+    }
+
+    public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
+    private boolean isContentClosed_;
+    /**
+     * <code>bool is_content_closed = 1;</code>
+     * @return The isContentClosed.
+     */
+    @java.lang.Override
+    public boolean getIsContentClosed() {
+      return isContentClosed_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -210,10 +214,10 @@ public final class PhotoActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isContentClosed_ != false) {
-        output.writeBool(9, isContentClosed_);
+        output.writeBool(1, isContentClosed_);
       }
       for (int i = 0; i < photoPosDataList_.size(); i++) {
-        output.writeMessage(12, photoPosDataList_.get(i));
+        output.writeMessage(15, photoPosDataList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -226,11 +230,11 @@ public final class PhotoActivityDetailInfoOuterClass {
       size = 0;
       if (isContentClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isContentClosed_);
+          .computeBoolSize(1, isContentClosed_);
       }
       for (int i = 0; i < photoPosDataList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, photoPosDataList_.get(i));
+          .computeMessageSize(15, photoPosDataList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -247,10 +251,10 @@ public final class PhotoActivityDetailInfoOuterClass {
       }
       emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo other = (emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo) obj;
 
-      if (getIsContentClosed()
-          != other.getIsContentClosed()) return false;
       if (!getPhotoPosDataListList()
           .equals(other.getPhotoPosDataListList())) return false;
+      if (getIsContentClosed()
+          != other.getIsContentClosed()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -262,13 +266,13 @@ public final class PhotoActivityDetailInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsContentClosed());
       if (getPhotoPosDataListCount() > 0) {
         hash = (37 * hash) + PHOTO_POS_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPhotoPosDataListList().hashCode();
       }
+      hash = (37 * hash) + IS_CONTENT_CLOSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsContentClosed());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -365,6 +369,10 @@ public final class PhotoActivityDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PhotoActivityDetailInfo}
      */
     public static final class Builder extends
@@ -403,14 +411,14 @@ public final class PhotoActivityDetailInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isContentClosed_ = false;
-
         if (photoPosDataListBuilder_ == null) {
           photoPosDataList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           photoPosDataListBuilder_.clear();
         }
+        isContentClosed_ = false;
+
         return this;
       }
 
@@ -438,7 +446,6 @@ public final class PhotoActivityDetailInfoOuterClass {
       public emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo buildPartial() {
         emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo result = new emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo(this);
         int from_bitField0_ = bitField0_;
-        result.isContentClosed_ = isContentClosed_;
         if (photoPosDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             photoPosDataList_ = java.util.Collections.unmodifiableList(photoPosDataList_);
@@ -448,6 +455,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         } else {
           result.photoPosDataList_ = photoPosDataListBuilder_.build();
         }
+        result.isContentClosed_ = isContentClosed_;
         onBuilt();
         return result;
       }
@@ -496,9 +504,6 @@ public final class PhotoActivityDetailInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo other) {
         if (other == emu.grasscutter.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo.getDefaultInstance()) return this;
-        if (other.getIsContentClosed() != false) {
-          setIsContentClosed(other.getIsContentClosed());
-        }
         if (photoPosDataListBuilder_ == null) {
           if (!other.photoPosDataList_.isEmpty()) {
             if (photoPosDataList_.isEmpty()) {
@@ -524,6 +529,9 @@ public final class PhotoActivityDetailInfoOuterClass {
               photoPosDataListBuilder_.addAllMessages(other.photoPosDataList_);
             }
           }
+        }
+        if (other.getIsContentClosed() != false) {
+          setIsContentClosed(other.getIsContentClosed());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -555,37 +563,6 @@ public final class PhotoActivityDetailInfoOuterClass {
       }
       private int bitField0_;
 
-      private boolean isContentClosed_ ;
-      /**
-       * <code>bool is_content_closed = 9;</code>
-       * @return The isContentClosed.
-       */
-      @java.lang.Override
-      public boolean getIsContentClosed() {
-        return isContentClosed_;
-      }
-      /**
-       * <code>bool is_content_closed = 9;</code>
-       * @param value The isContentClosed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsContentClosed(boolean value) {
-        
-        isContentClosed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_content_closed = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsContentClosed() {
-        
-        isContentClosed_ = false;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData> photoPosDataList_ =
         java.util.Collections.emptyList();
       private void ensurePhotoPosDataListIsMutable() {
@@ -599,7 +576,7 @@ public final class PhotoActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder> photoPosDataListBuilder_;
 
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData> getPhotoPosDataListList() {
         if (photoPosDataListBuilder_ == null) {
@@ -609,7 +586,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public int getPhotoPosDataListCount() {
         if (photoPosDataListBuilder_ == null) {
@@ -619,7 +596,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData getPhotoPosDataList(int index) {
         if (photoPosDataListBuilder_ == null) {
@@ -629,7 +606,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder setPhotoPosDataList(
           int index, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData value) {
@@ -646,7 +623,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder setPhotoPosDataList(
           int index, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder builderForValue) {
@@ -660,7 +637,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder addPhotoPosDataList(emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData value) {
         if (photoPosDataListBuilder_ == null) {
@@ -676,7 +653,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder addPhotoPosDataList(
           int index, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData value) {
@@ -693,7 +670,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder addPhotoPosDataList(
           emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder builderForValue) {
@@ -707,7 +684,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder addPhotoPosDataList(
           int index, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder builderForValue) {
@@ -721,7 +698,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder addAllPhotoPosDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData> values) {
@@ -736,7 +713,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder clearPhotoPosDataList() {
         if (photoPosDataListBuilder_ == null) {
@@ -749,7 +726,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public Builder removePhotoPosDataList(int index) {
         if (photoPosDataListBuilder_ == null) {
@@ -762,14 +739,14 @@ public final class PhotoActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder getPhotoPosDataListBuilder(
           int index) {
         return getPhotoPosDataListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder getPhotoPosDataListOrBuilder(
           int index) {
@@ -779,7 +756,7 @@ public final class PhotoActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosDataOrBuilder> 
            getPhotoPosDataListOrBuilderList() {
@@ -790,14 +767,14 @@ public final class PhotoActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder addPhotoPosDataListBuilder() {
         return getPhotoPosDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.getDefaultInstance());
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder addPhotoPosDataListBuilder(
           int index) {
@@ -805,7 +782,7 @@ public final class PhotoActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.getDefaultInstance());
       }
       /**
-       * <code>repeated .PhotoPosData photo_pos_data_list = 12;</code>
+       * <code>repeated .PhotoPosData photo_pos_data_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.PhotoPosDataOuterClass.PhotoPosData.Builder> 
            getPhotoPosDataListBuilderList() {
@@ -824,6 +801,37 @@ public final class PhotoActivityDetailInfoOuterClass {
           photoPosDataList_ = null;
         }
         return photoPosDataListBuilder_;
+      }
+
+      private boolean isContentClosed_ ;
+      /**
+       * <code>bool is_content_closed = 1;</code>
+       * @return The isContentClosed.
+       */
+      @java.lang.Override
+      public boolean getIsContentClosed() {
+        return isContentClosed_;
+      }
+      /**
+       * <code>bool is_content_closed = 1;</code>
+       * @param value The isContentClosed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsContentClosed(boolean value) {
+        
+        isContentClosed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_content_closed = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsContentClosed() {
+        
+        isContentClosed_ = false;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -893,11 +901,10 @@ public final class PhotoActivityDetailInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035PhotoActivityDetailInfo.proto\032\022PhotoPo" +
-      "sData.proto\"`\n\027PhotoActivityDetailInfo\022\031" +
-      "\n\021is_content_closed\030\t \001(\010\022*\n\023photo_pos_d" +
-      "ata_list\030\014 \003(\0132\r.PhotoPosDataB>\n\031emu.gra" +
-      "sscutter.net.protoB!PhotoActivityDetailI" +
-      "nfoOuterClassb\006proto3"
+      "sData.proto\"`\n\027PhotoActivityDetailInfo\022*" +
+      "\n\023photo_pos_data_list\030\017 \003(\0132\r.PhotoPosDa" +
+      "ta\022\031\n\021is_content_closed\030\001 \001(\010B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -909,7 +916,7 @@ public final class PhotoActivityDetailInfoOuterClass {
     internal_static_PhotoActivityDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PhotoActivityDetailInfo_descriptor,
-        new java.lang.String[] { "IsContentClosed", "PhotoPosDataList", });
+        new java.lang.String[] { "PhotoPosDataList", "IsContentClosed", });
     emu.grasscutter.net.proto.PhotoPosDataOuterClass.getDescriptor();
   }
 

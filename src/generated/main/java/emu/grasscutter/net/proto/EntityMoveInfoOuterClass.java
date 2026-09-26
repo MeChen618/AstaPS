@@ -19,12 +19,6 @@ public final class EntityMoveInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
-     */
-    int getEntityId();
-
-    /**
      * <code>.MotionInfo motion_info = 2;</code>
      * @return Whether the motionInfo field is set.
      */
@@ -46,10 +40,10 @@ public final class EntityMoveInfoOuterClass {
     int getSceneTime();
 
     /**
-     * <code>uint32 reliable_seq = 4;</code>
-     * @return The reliableSeq.
+     * <code>bool BOJGGCAHNCD = 100;</code>
+     * @return The bOJGGCAHNCD.
      */
-    int getReliableSeq();
+    boolean getBOJGGCAHNCD();
 
     /**
      * <code>bool is_reliable = 5;</code>
@@ -58,12 +52,22 @@ public final class EntityMoveInfoOuterClass {
     boolean getIsReliable();
 
     /**
-     * <code>bool BOJGGCAHNCD = 100;</code>
-     * @return The bOJGGCAHNCD.
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
      */
-    boolean getBOJGGCAHNCD();
+    int getEntityId();
+
+    /**
+     * <code>uint32 reliable_seq = 4;</code>
+     * @return The reliableSeq.
+     */
+    int getReliableSeq();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EntityMoveInfo}
    */
   public static final class EntityMoveInfo extends
@@ -178,17 +182,6 @@ public final class EntityMoveInfoOuterClass {
               emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.class, emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.Builder.class);
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
-    /**
-     * <code>uint32 entity_id = 1;</code>
-     * @return The entityId.
-     */
-    @java.lang.Override
-    public int getEntityId() {
-      return entityId_;
-    }
-
     public static final int MOTION_INFO_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.MotionInfoOuterClass.MotionInfo motionInfo_;
     /**
@@ -226,15 +219,15 @@ public final class EntityMoveInfoOuterClass {
       return sceneTime_;
     }
 
-    public static final int RELIABLE_SEQ_FIELD_NUMBER = 4;
-    private int reliableSeq_;
+    public static final int BOJGGCAHNCD_FIELD_NUMBER = 100;
+    private boolean bOJGGCAHNCD_;
     /**
-     * <code>uint32 reliable_seq = 4;</code>
-     * @return The reliableSeq.
+     * <code>bool BOJGGCAHNCD = 100;</code>
+     * @return The bOJGGCAHNCD.
      */
     @java.lang.Override
-    public int getReliableSeq() {
-      return reliableSeq_;
+    public boolean getBOJGGCAHNCD() {
+      return bOJGGCAHNCD_;
     }
 
     public static final int IS_RELIABLE_FIELD_NUMBER = 5;
@@ -248,15 +241,26 @@ public final class EntityMoveInfoOuterClass {
       return isReliable_;
     }
 
-    public static final int BOJGGCAHNCD_FIELD_NUMBER = 100;
-    private boolean bOJGGCAHNCD_;
+    public static final int ENTITY_ID_FIELD_NUMBER = 1;
+    private int entityId_;
     /**
-     * <code>bool BOJGGCAHNCD = 100;</code>
-     * @return The bOJGGCAHNCD.
+     * <code>uint32 entity_id = 1;</code>
+     * @return The entityId.
      */
     @java.lang.Override
-    public boolean getBOJGGCAHNCD() {
-      return bOJGGCAHNCD_;
+    public int getEntityId() {
+      return entityId_;
+    }
+
+    public static final int RELIABLE_SEQ_FIELD_NUMBER = 4;
+    private int reliableSeq_;
+    /**
+     * <code>uint32 reliable_seq = 4;</code>
+     * @return The reliableSeq.
+     */
+    @java.lang.Override
+    public int getReliableSeq() {
+      return reliableSeq_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -339,8 +343,6 @@ public final class EntityMoveInfoOuterClass {
       }
       emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo other = (emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo) obj;
 
-      if (getEntityId()
-          != other.getEntityId()) return false;
       if (hasMotionInfo() != other.hasMotionInfo()) return false;
       if (hasMotionInfo()) {
         if (!getMotionInfo()
@@ -348,12 +350,14 @@ public final class EntityMoveInfoOuterClass {
       }
       if (getSceneTime()
           != other.getSceneTime()) return false;
-      if (getReliableSeq()
-          != other.getReliableSeq()) return false;
-      if (getIsReliable()
-          != other.getIsReliable()) return false;
       if (getBOJGGCAHNCD()
           != other.getBOJGGCAHNCD()) return false;
+      if (getIsReliable()
+          != other.getIsReliable()) return false;
+      if (getEntityId()
+          != other.getEntityId()) return false;
+      if (getReliableSeq()
+          != other.getReliableSeq()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -365,22 +369,22 @@ public final class EntityMoveInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       if (hasMotionInfo()) {
         hash = (37 * hash) + MOTION_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getMotionInfo().hashCode();
       }
       hash = (37 * hash) + SCENE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getSceneTime();
-      hash = (37 * hash) + RELIABLE_SEQ_FIELD_NUMBER;
-      hash = (53 * hash) + getReliableSeq();
-      hash = (37 * hash) + IS_RELIABLE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsReliable());
       hash = (37 * hash) + BOJGGCAHNCD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getBOJGGCAHNCD());
+      hash = (37 * hash) + IS_RELIABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsReliable());
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
+      hash = (37 * hash) + RELIABLE_SEQ_FIELD_NUMBER;
+      hash = (53 * hash) + getReliableSeq();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -477,6 +481,10 @@ public final class EntityMoveInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EntityMoveInfo}
      */
     public static final class Builder extends
@@ -514,8 +522,6 @@ public final class EntityMoveInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        entityId_ = 0;
-
         if (motionInfoBuilder_ == null) {
           motionInfo_ = null;
         } else {
@@ -524,11 +530,13 @@ public final class EntityMoveInfoOuterClass {
         }
         sceneTime_ = 0;
 
-        reliableSeq_ = 0;
+        bOJGGCAHNCD_ = false;
 
         isReliable_ = false;
 
-        bOJGGCAHNCD_ = false;
+        entityId_ = 0;
+
+        reliableSeq_ = 0;
 
         return this;
       }
@@ -556,16 +564,16 @@ public final class EntityMoveInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo buildPartial() {
         emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo result = new emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo(this);
-        result.entityId_ = entityId_;
         if (motionInfoBuilder_ == null) {
           result.motionInfo_ = motionInfo_;
         } else {
           result.motionInfo_ = motionInfoBuilder_.build();
         }
         result.sceneTime_ = sceneTime_;
-        result.reliableSeq_ = reliableSeq_;
-        result.isReliable_ = isReliable_;
         result.bOJGGCAHNCD_ = bOJGGCAHNCD_;
+        result.isReliable_ = isReliable_;
+        result.entityId_ = entityId_;
+        result.reliableSeq_ = reliableSeq_;
         onBuilt();
         return result;
       }
@@ -614,23 +622,23 @@ public final class EntityMoveInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo other) {
         if (other == emu.grasscutter.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.getDefaultInstance()) return this;
-        if (other.getEntityId() != 0) {
-          setEntityId(other.getEntityId());
-        }
         if (other.hasMotionInfo()) {
           mergeMotionInfo(other.getMotionInfo());
         }
         if (other.getSceneTime() != 0) {
           setSceneTime(other.getSceneTime());
         }
-        if (other.getReliableSeq() != 0) {
-          setReliableSeq(other.getReliableSeq());
+        if (other.getBOJGGCAHNCD() != false) {
+          setBOJGGCAHNCD(other.getBOJGGCAHNCD());
         }
         if (other.getIsReliable() != false) {
           setIsReliable(other.getIsReliable());
         }
-        if (other.getBOJGGCAHNCD() != false) {
-          setBOJGGCAHNCD(other.getBOJGGCAHNCD());
+        if (other.getEntityId() != 0) {
+          setEntityId(other.getEntityId());
+        }
+        if (other.getReliableSeq() != 0) {
+          setReliableSeq(other.getReliableSeq());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -658,37 +666,6 @@ public final class EntityMoveInfoOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int entityId_ ;
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @return The entityId.
-       */
-      @java.lang.Override
-      public int getEntityId() {
-        return entityId_;
-      }
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @param value The entityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEntityId(int value) {
-        
-        entityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 entity_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEntityId() {
-        
-        entityId_ = 0;
-        onChanged();
         return this;
       }
 
@@ -842,33 +819,33 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
 
-      private int reliableSeq_ ;
+      private boolean bOJGGCAHNCD_ ;
       /**
-       * <code>uint32 reliable_seq = 4;</code>
-       * @return The reliableSeq.
+       * <code>bool BOJGGCAHNCD = 100;</code>
+       * @return The bOJGGCAHNCD.
        */
       @java.lang.Override
-      public int getReliableSeq() {
-        return reliableSeq_;
+      public boolean getBOJGGCAHNCD() {
+        return bOJGGCAHNCD_;
       }
       /**
-       * <code>uint32 reliable_seq = 4;</code>
-       * @param value The reliableSeq to set.
+       * <code>bool BOJGGCAHNCD = 100;</code>
+       * @param value The bOJGGCAHNCD to set.
        * @return This builder for chaining.
        */
-      public Builder setReliableSeq(int value) {
+      public Builder setBOJGGCAHNCD(boolean value) {
         
-        reliableSeq_ = value;
+        bOJGGCAHNCD_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 reliable_seq = 4;</code>
+       * <code>bool BOJGGCAHNCD = 100;</code>
        * @return This builder for chaining.
        */
-      public Builder clearReliableSeq() {
+      public Builder clearBOJGGCAHNCD() {
         
-        reliableSeq_ = 0;
+        bOJGGCAHNCD_ = false;
         onChanged();
         return this;
       }
@@ -904,33 +881,64 @@ public final class EntityMoveInfoOuterClass {
         return this;
       }
 
-      private boolean bOJGGCAHNCD_ ;
+      private int entityId_ ;
       /**
-       * <code>bool BOJGGCAHNCD = 100;</code>
-       * @return The bOJGGCAHNCD.
+       * <code>uint32 entity_id = 1;</code>
+       * @return The entityId.
        */
       @java.lang.Override
-      public boolean getBOJGGCAHNCD() {
-        return bOJGGCAHNCD_;
+      public int getEntityId() {
+        return entityId_;
       }
       /**
-       * <code>bool BOJGGCAHNCD = 100;</code>
-       * @param value The bOJGGCAHNCD to set.
+       * <code>uint32 entity_id = 1;</code>
+       * @param value The entityId to set.
        * @return This builder for chaining.
        */
-      public Builder setBOJGGCAHNCD(boolean value) {
+      public Builder setEntityId(int value) {
         
-        bOJGGCAHNCD_ = value;
+        entityId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool BOJGGCAHNCD = 100;</code>
+       * <code>uint32 entity_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBOJGGCAHNCD() {
+      public Builder clearEntityId() {
         
-        bOJGGCAHNCD_ = false;
+        entityId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int reliableSeq_ ;
+      /**
+       * <code>uint32 reliable_seq = 4;</code>
+       * @return The reliableSeq.
+       */
+      @java.lang.Override
+      public int getReliableSeq() {
+        return reliableSeq_;
+      }
+      /**
+       * <code>uint32 reliable_seq = 4;</code>
+       * @param value The reliableSeq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReliableSeq(int value) {
+        
+        reliableSeq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reliable_seq = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReliableSeq() {
+        
+        reliableSeq_ = 0;
         onChanged();
         return this;
       }
@@ -1002,12 +1010,11 @@ public final class EntityMoveInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024EntityMoveInfo.proto\032\020MotionInfo.proto" +
-      "\"\231\001\n\016EntityMoveInfo\022\021\n\tentity_id\030\001 \001(\r\022 " +
-      "\n\013motion_info\030\002 \001(\0132\013.MotionInfo\022\022\n\nscen" +
-      "e_time\030\003 \001(\r\022\024\n\014reliable_seq\030\004 \001(\r\022\023\n\013is" +
-      "_reliable\030\005 \001(\010\022\023\n\013BOJGGCAHNCD\030d \001(\010B5\n\031" +
-      "emu.grasscutter.net.protoB\030EntityMoveInf" +
-      "oOuterClassb\006proto3"
+      "\"\231\001\n\016EntityMoveInfo\022 \n\013motion_info\030\002 \001(\013" +
+      "2\013.MotionInfo\022\022\n\nscene_time\030\003 \001(\r\022\023\n\013BOJ" +
+      "GGCAHNCD\030d \001(\010\022\023\n\013is_reliable\030\005 \001(\010\022\021\n\te" +
+      "ntity_id\030\001 \001(\r\022\024\n\014reliable_seq\030\004 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1019,7 +1026,7 @@ public final class EntityMoveInfoOuterClass {
     internal_static_EntityMoveInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EntityMoveInfo_descriptor,
-        new java.lang.String[] { "EntityId", "MotionInfo", "SceneTime", "ReliableSeq", "IsReliable", "BOJGGCAHNCD", });
+        new java.lang.String[] { "MotionInfo", "SceneTime", "BOJGGCAHNCD", "IsReliable", "EntityId", "ReliableSeq", });
     emu.grasscutter.net.proto.MotionInfoOuterClass.getDescriptor();
   }
 

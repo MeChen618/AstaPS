@@ -10,7 +10,7 @@ import emu.grasscutter.game.ability.ClorindeBoLUtil;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 
 /**
@@ -101,8 +101,8 @@ public final class ActionReduceHPDebts extends AbilityActionHandler {
                 newDebt,
                 changeDebt,
                 newDebt <= 0f
-                        ? ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
-                        : ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY);
+                        ? _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
+                        : _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY);
         return true;
     }
 }

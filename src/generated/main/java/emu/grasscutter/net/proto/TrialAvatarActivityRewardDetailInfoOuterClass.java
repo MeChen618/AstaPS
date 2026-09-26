@@ -19,82 +19,86 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 _passed_training_step_list = 1;</code>
+     * <code>repeated uint32 _passed_training_step_list = 6;</code>
      * @return A list containing the passedTrainingStepList.
      */
     java.util.List<java.lang.Integer> getPassedTrainingStepListList();
     /**
-     * <code>repeated uint32 _passed_training_step_list = 1;</code>
+     * <code>repeated uint32 _passed_training_step_list = 6;</code>
      * @return The count of passedTrainingStepList.
      */
     int getPassedTrainingStepListCount();
     /**
-     * <code>repeated uint32 _passed_training_step_list = 1;</code>
+     * <code>repeated uint32 _passed_training_step_list = 6;</code>
      * @param index The index of the element to return.
      * @return The passedTrainingStepList at the given index.
      */
     int getPassedTrainingStepList(int index);
 
     /**
-     * <code>bool _is_avatar_owned = 3;</code>
-     * @return The isAvatarOwned.
-     */
-    boolean getIsAvatarOwned();
-
-    /**
-     * <code>uint32 reward_id = 4;</code>
-     * @return The rewardId.
-     */
-    int getRewardId();
-
-    /**
-     * <code>bool passed_dungeon = 5;</code>
-     * @return The passedDungeon.
-     */
-    boolean getPassedDungeon();
-
-    /**
-     * <code>bool received_reward = 9;</code>
-     * @return The receivedReward.
-     */
-    boolean getReceivedReward();
-
-    /**
-     * <code>bool is_can_take_reward = 10;</code>
-     * @return The isCanTakeReward.
-     */
-    boolean getIsCanTakeReward();
-
-    /**
-     * <code>repeated uint32 _available_training_step_list = 12;</code>
+     * <code>repeated uint32 _available_training_step_list = 7;</code>
      * @return A list containing the availableTrainingStepList.
      */
     java.util.List<java.lang.Integer> getAvailableTrainingStepListList();
     /**
-     * <code>repeated uint32 _available_training_step_list = 12;</code>
+     * <code>repeated uint32 _available_training_step_list = 7;</code>
      * @return The count of availableTrainingStepList.
      */
     int getAvailableTrainingStepListCount();
     /**
-     * <code>repeated uint32 _available_training_step_list = 12;</code>
+     * <code>repeated uint32 _available_training_step_list = 7;</code>
      * @param index The index of the element to return.
      * @return The availableTrainingStepList at the given index.
      */
     int getAvailableTrainingStepList(int index);
 
     /**
-     * <code>uint32 trial_avatar_index_id = 13;</code>
+     * <code>uint32 trial_avatar_index_id = 14;</code>
      * @return The trialAvatarIndexId.
      */
     int getTrialAvatarIndexId();
 
     /**
-     * <code>bool _is_skip_training = 14;</code>
+     * <code>uint32 reward_id = 2;</code>
+     * @return The rewardId.
+     */
+    int getRewardId();
+
+    /**
+     * <code>bool is_can_take_reward = 8;</code>
+     * @return The isCanTakeReward.
+     */
+    boolean getIsCanTakeReward();
+
+    /**
+     * <code>bool _is_avatar_owned = 15;</code>
+     * @return The isAvatarOwned.
+     */
+    boolean getIsAvatarOwned();
+
+    /**
+     * <code>bool passed_dungeon = 3;</code>
+     * @return The passedDungeon.
+     */
+    boolean getPassedDungeon();
+
+    /**
+     * <code>bool _is_skip_training = 9;</code>
      * @return The isSkipTraining.
      */
     boolean getIsSkipTraining();
+
+    /**
+     * <code>bool received_reward = 10;</code>
+     * @return The receivedReward.
+     */
+    boolean getReceivedReward();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code TrialAvatarActivityRewardDetailInfo}
    */
   public static final class TrialAvatarActivityRewardDetailInfo extends
@@ -142,7 +146,17 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 16: {
+
+              rewardId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              passedDungeon_ = input.readBool();
+              break;
+            }
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 PassedTrainingStepList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -150,7 +164,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
               PassedTrainingStepList_.addInt(input.readUInt32());
               break;
             }
-            case 10: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -163,32 +177,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 24: {
-
-              IsAvatarOwned_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              rewardId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              passedDungeon_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              receivedReward_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              isCanTakeReward_ = input.readBool();
-              break;
-            }
-            case 96: {
+            case 56: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 AvailableTrainingStepList_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -196,7 +185,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
               AvailableTrainingStepList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 58: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -209,14 +198,29 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
+            case 64: {
 
-              trialAvatarIndexId_ = input.readUInt32();
+              isCanTakeReward_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              IsSkipTraining_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              receivedReward_ = input.readBool();
               break;
             }
             case 112: {
 
-              IsSkipTraining_ = input.readBool();
+              trialAvatarIndexId_ = input.readUInt32();
+              break;
+            }
+            case 120: {
+
+              IsAvatarOwned_ = input.readBool();
               break;
             }
             default: {
@@ -257,10 +261,10 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
               emu.grasscutter.net.proto.TrialAvatarActivityRewardDetailInfoOuterClass.TrialAvatarActivityRewardDetailInfo.class, emu.grasscutter.net.proto.TrialAvatarActivityRewardDetailInfoOuterClass.TrialAvatarActivityRewardDetailInfo.Builder.class);
     }
 
-    public static final int _PASSED_TRAINING_STEP_LIST_FIELD_NUMBER = 1;
+    public static final int _PASSED_TRAINING_STEP_LIST_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList PassedTrainingStepList_;
     /**
-     * <code>repeated uint32 _passed_training_step_list = 1;</code>
+     * <code>repeated uint32 _passed_training_step_list = 6;</code>
      * @return A list containing the passedTrainingStepList.
      */
     @java.lang.Override
@@ -269,14 +273,14 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
       return PassedTrainingStepList_;
     }
     /**
-     * <code>repeated uint32 _passed_training_step_list = 1;</code>
+     * <code>repeated uint32 _passed_training_step_list = 6;</code>
      * @return The count of passedTrainingStepList.
      */
     public int getPassedTrainingStepListCount() {
       return PassedTrainingStepList_.size();
     }
     /**
-     * <code>repeated uint32 _passed_training_step_list = 1;</code>
+     * <code>repeated uint32 _passed_training_step_list = 6;</code>
      * @param index The index of the element to return.
      * @return The passedTrainingStepList at the given index.
      */
@@ -285,65 +289,10 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
     }
     private int PassedTrainingStepListMemoizedSerializedSize = -1;
 
-    public static final int _IS_AVATAR_OWNED_FIELD_NUMBER = 3;
-    private boolean IsAvatarOwned_;
-    /**
-     * <code>bool _is_avatar_owned = 3;</code>
-     * @return The isAvatarOwned.
-     */
-    @java.lang.Override
-    public boolean getIsAvatarOwned() {
-      return IsAvatarOwned_;
-    }
-
-    public static final int REWARD_ID_FIELD_NUMBER = 4;
-    private int rewardId_;
-    /**
-     * <code>uint32 reward_id = 4;</code>
-     * @return The rewardId.
-     */
-    @java.lang.Override
-    public int getRewardId() {
-      return rewardId_;
-    }
-
-    public static final int PASSED_DUNGEON_FIELD_NUMBER = 5;
-    private boolean passedDungeon_;
-    /**
-     * <code>bool passed_dungeon = 5;</code>
-     * @return The passedDungeon.
-     */
-    @java.lang.Override
-    public boolean getPassedDungeon() {
-      return passedDungeon_;
-    }
-
-    public static final int RECEIVED_REWARD_FIELD_NUMBER = 9;
-    private boolean receivedReward_;
-    /**
-     * <code>bool received_reward = 9;</code>
-     * @return The receivedReward.
-     */
-    @java.lang.Override
-    public boolean getReceivedReward() {
-      return receivedReward_;
-    }
-
-    public static final int IS_CAN_TAKE_REWARD_FIELD_NUMBER = 10;
-    private boolean isCanTakeReward_;
-    /**
-     * <code>bool is_can_take_reward = 10;</code>
-     * @return The isCanTakeReward.
-     */
-    @java.lang.Override
-    public boolean getIsCanTakeReward() {
-      return isCanTakeReward_;
-    }
-
-    public static final int _AVAILABLE_TRAINING_STEP_LIST_FIELD_NUMBER = 12;
+    public static final int _AVAILABLE_TRAINING_STEP_LIST_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList AvailableTrainingStepList_;
     /**
-     * <code>repeated uint32 _available_training_step_list = 12;</code>
+     * <code>repeated uint32 _available_training_step_list = 7;</code>
      * @return A list containing the availableTrainingStepList.
      */
     @java.lang.Override
@@ -352,14 +301,14 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
       return AvailableTrainingStepList_;
     }
     /**
-     * <code>repeated uint32 _available_training_step_list = 12;</code>
+     * <code>repeated uint32 _available_training_step_list = 7;</code>
      * @return The count of availableTrainingStepList.
      */
     public int getAvailableTrainingStepListCount() {
       return AvailableTrainingStepList_.size();
     }
     /**
-     * <code>repeated uint32 _available_training_step_list = 12;</code>
+     * <code>repeated uint32 _available_training_step_list = 7;</code>
      * @param index The index of the element to return.
      * @return The availableTrainingStepList at the given index.
      */
@@ -368,10 +317,10 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
     }
     private int AvailableTrainingStepListMemoizedSerializedSize = -1;
 
-    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 13;
+    public static final int TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER = 14;
     private int trialAvatarIndexId_;
     /**
-     * <code>uint32 trial_avatar_index_id = 13;</code>
+     * <code>uint32 trial_avatar_index_id = 14;</code>
      * @return The trialAvatarIndexId.
      */
     @java.lang.Override
@@ -379,15 +328,70 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
       return trialAvatarIndexId_;
     }
 
-    public static final int _IS_SKIP_TRAINING_FIELD_NUMBER = 14;
+    public static final int REWARD_ID_FIELD_NUMBER = 2;
+    private int rewardId_;
+    /**
+     * <code>uint32 reward_id = 2;</code>
+     * @return The rewardId.
+     */
+    @java.lang.Override
+    public int getRewardId() {
+      return rewardId_;
+    }
+
+    public static final int IS_CAN_TAKE_REWARD_FIELD_NUMBER = 8;
+    private boolean isCanTakeReward_;
+    /**
+     * <code>bool is_can_take_reward = 8;</code>
+     * @return The isCanTakeReward.
+     */
+    @java.lang.Override
+    public boolean getIsCanTakeReward() {
+      return isCanTakeReward_;
+    }
+
+    public static final int _IS_AVATAR_OWNED_FIELD_NUMBER = 15;
+    private boolean IsAvatarOwned_;
+    /**
+     * <code>bool _is_avatar_owned = 15;</code>
+     * @return The isAvatarOwned.
+     */
+    @java.lang.Override
+    public boolean getIsAvatarOwned() {
+      return IsAvatarOwned_;
+    }
+
+    public static final int PASSED_DUNGEON_FIELD_NUMBER = 3;
+    private boolean passedDungeon_;
+    /**
+     * <code>bool passed_dungeon = 3;</code>
+     * @return The passedDungeon.
+     */
+    @java.lang.Override
+    public boolean getPassedDungeon() {
+      return passedDungeon_;
+    }
+
+    public static final int _IS_SKIP_TRAINING_FIELD_NUMBER = 9;
     private boolean IsSkipTraining_;
     /**
-     * <code>bool _is_skip_training = 14;</code>
+     * <code>bool _is_skip_training = 9;</code>
      * @return The isSkipTraining.
      */
     @java.lang.Override
     public boolean getIsSkipTraining() {
       return IsSkipTraining_;
+    }
+
+    public static final int RECEIVED_REWARD_FIELD_NUMBER = 10;
+    private boolean receivedReward_;
+    /**
+     * <code>bool received_reward = 10;</code>
+     * @return The receivedReward.
+     */
+    @java.lang.Override
+    public boolean getReceivedReward() {
+      return receivedReward_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -405,40 +409,40 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (rewardId_ != 0) {
+        output.writeUInt32(2, rewardId_);
+      }
+      if (passedDungeon_ != false) {
+        output.writeBool(3, passedDungeon_);
+      }
       if (getPassedTrainingStepListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(PassedTrainingStepListMemoizedSerializedSize);
       }
       for (int i = 0; i < PassedTrainingStepList_.size(); i++) {
         output.writeUInt32NoTag(PassedTrainingStepList_.getInt(i));
       }
-      if (IsAvatarOwned_ != false) {
-        output.writeBool(3, IsAvatarOwned_);
-      }
-      if (rewardId_ != 0) {
-        output.writeUInt32(4, rewardId_);
-      }
-      if (passedDungeon_ != false) {
-        output.writeBool(5, passedDungeon_);
-      }
-      if (receivedReward_ != false) {
-        output.writeBool(9, receivedReward_);
-      }
-      if (isCanTakeReward_ != false) {
-        output.writeBool(10, isCanTakeReward_);
-      }
       if (getAvailableTrainingStepListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(AvailableTrainingStepListMemoizedSerializedSize);
       }
       for (int i = 0; i < AvailableTrainingStepList_.size(); i++) {
         output.writeUInt32NoTag(AvailableTrainingStepList_.getInt(i));
       }
-      if (trialAvatarIndexId_ != 0) {
-        output.writeUInt32(13, trialAvatarIndexId_);
+      if (isCanTakeReward_ != false) {
+        output.writeBool(8, isCanTakeReward_);
       }
       if (IsSkipTraining_ != false) {
-        output.writeBool(14, IsSkipTraining_);
+        output.writeBool(9, IsSkipTraining_);
+      }
+      if (receivedReward_ != false) {
+        output.writeBool(10, receivedReward_);
+      }
+      if (trialAvatarIndexId_ != 0) {
+        output.writeUInt32(14, trialAvatarIndexId_);
+      }
+      if (IsAvatarOwned_ != false) {
+        output.writeBool(15, IsAvatarOwned_);
       }
       unknownFields.writeTo(output);
     }
@@ -449,6 +453,14 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (rewardId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, rewardId_);
+      }
+      if (passedDungeon_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, passedDungeon_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < PassedTrainingStepList_.size(); i++) {
@@ -462,26 +474,6 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         PassedTrainingStepListMemoizedSerializedSize = dataSize;
-      }
-      if (IsAvatarOwned_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, IsAvatarOwned_);
-      }
-      if (rewardId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, rewardId_);
-      }
-      if (passedDungeon_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, passedDungeon_);
-      }
-      if (receivedReward_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, receivedReward_);
-      }
-      if (isCanTakeReward_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isCanTakeReward_);
       }
       {
         int dataSize = 0;
@@ -497,13 +489,25 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         }
         AvailableTrainingStepListMemoizedSerializedSize = dataSize;
       }
-      if (trialAvatarIndexId_ != 0) {
+      if (isCanTakeReward_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, trialAvatarIndexId_);
+          .computeBoolSize(8, isCanTakeReward_);
       }
       if (IsSkipTraining_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, IsSkipTraining_);
+          .computeBoolSize(9, IsSkipTraining_);
+      }
+      if (receivedReward_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, receivedReward_);
+      }
+      if (trialAvatarIndexId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, trialAvatarIndexId_);
+      }
+      if (IsAvatarOwned_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, IsAvatarOwned_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -522,22 +526,22 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
 
       if (!getPassedTrainingStepListList()
           .equals(other.getPassedTrainingStepListList())) return false;
-      if (getIsAvatarOwned()
-          != other.getIsAvatarOwned()) return false;
-      if (getRewardId()
-          != other.getRewardId()) return false;
-      if (getPassedDungeon()
-          != other.getPassedDungeon()) return false;
-      if (getReceivedReward()
-          != other.getReceivedReward()) return false;
-      if (getIsCanTakeReward()
-          != other.getIsCanTakeReward()) return false;
       if (!getAvailableTrainingStepListList()
           .equals(other.getAvailableTrainingStepListList())) return false;
       if (getTrialAvatarIndexId()
           != other.getTrialAvatarIndexId()) return false;
+      if (getRewardId()
+          != other.getRewardId()) return false;
+      if (getIsCanTakeReward()
+          != other.getIsCanTakeReward()) return false;
+      if (getIsAvatarOwned()
+          != other.getIsAvatarOwned()) return false;
+      if (getPassedDungeon()
+          != other.getPassedDungeon()) return false;
       if (getIsSkipTraining()
           != other.getIsSkipTraining()) return false;
+      if (getReceivedReward()
+          != other.getReceivedReward()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -553,29 +557,29 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         hash = (37 * hash) + _PASSED_TRAINING_STEP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPassedTrainingStepListList().hashCode();
       }
-      hash = (37 * hash) + _IS_AVATAR_OWNED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsAvatarOwned());
-      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getRewardId();
-      hash = (37 * hash) + PASSED_DUNGEON_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPassedDungeon());
-      hash = (37 * hash) + RECEIVED_REWARD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getReceivedReward());
-      hash = (37 * hash) + IS_CAN_TAKE_REWARD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsCanTakeReward());
       if (getAvailableTrainingStepListCount() > 0) {
         hash = (37 * hash) + _AVAILABLE_TRAINING_STEP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvailableTrainingStepListList().hashCode();
       }
       hash = (37 * hash) + TRIAL_AVATAR_INDEX_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTrialAvatarIndexId();
+      hash = (37 * hash) + REWARD_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRewardId();
+      hash = (37 * hash) + IS_CAN_TAKE_REWARD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsCanTakeReward());
+      hash = (37 * hash) + _IS_AVATAR_OWNED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAvatarOwned());
+      hash = (37 * hash) + PASSED_DUNGEON_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPassedDungeon());
       hash = (37 * hash) + _IS_SKIP_TRAINING_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSkipTraining());
+      hash = (37 * hash) + RECEIVED_REWARD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getReceivedReward());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -672,6 +676,10 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code TrialAvatarActivityRewardDetailInfo}
      */
     public static final class Builder extends
@@ -711,21 +719,21 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         super.clear();
         PassedTrainingStepList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        IsAvatarOwned_ = false;
-
-        rewardId_ = 0;
-
-        passedDungeon_ = false;
-
-        receivedReward_ = false;
-
-        isCanTakeReward_ = false;
-
         AvailableTrainingStepList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
         trialAvatarIndexId_ = 0;
 
+        rewardId_ = 0;
+
+        isCanTakeReward_ = false;
+
+        IsAvatarOwned_ = false;
+
+        passedDungeon_ = false;
+
         IsSkipTraining_ = false;
+
+        receivedReward_ = false;
 
         return this;
       }
@@ -759,18 +767,18 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.PassedTrainingStepList_ = PassedTrainingStepList_;
-        result.IsAvatarOwned_ = IsAvatarOwned_;
-        result.rewardId_ = rewardId_;
-        result.passedDungeon_ = passedDungeon_;
-        result.receivedReward_ = receivedReward_;
-        result.isCanTakeReward_ = isCanTakeReward_;
         if (((bitField0_ & 0x00000002) != 0)) {
           AvailableTrainingStepList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.AvailableTrainingStepList_ = AvailableTrainingStepList_;
         result.trialAvatarIndexId_ = trialAvatarIndexId_;
+        result.rewardId_ = rewardId_;
+        result.isCanTakeReward_ = isCanTakeReward_;
+        result.IsAvatarOwned_ = IsAvatarOwned_;
+        result.passedDungeon_ = passedDungeon_;
         result.IsSkipTraining_ = IsSkipTraining_;
+        result.receivedReward_ = receivedReward_;
         onBuilt();
         return result;
       }
@@ -829,21 +837,6 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
           }
           onChanged();
         }
-        if (other.getIsAvatarOwned() != false) {
-          setIsAvatarOwned(other.getIsAvatarOwned());
-        }
-        if (other.getRewardId() != 0) {
-          setRewardId(other.getRewardId());
-        }
-        if (other.getPassedDungeon() != false) {
-          setPassedDungeon(other.getPassedDungeon());
-        }
-        if (other.getReceivedReward() != false) {
-          setReceivedReward(other.getReceivedReward());
-        }
-        if (other.getIsCanTakeReward() != false) {
-          setIsCanTakeReward(other.getIsCanTakeReward());
-        }
         if (!other.AvailableTrainingStepList_.isEmpty()) {
           if (AvailableTrainingStepList_.isEmpty()) {
             AvailableTrainingStepList_ = other.AvailableTrainingStepList_;
@@ -857,8 +850,23 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         if (other.getTrialAvatarIndexId() != 0) {
           setTrialAvatarIndexId(other.getTrialAvatarIndexId());
         }
+        if (other.getRewardId() != 0) {
+          setRewardId(other.getRewardId());
+        }
+        if (other.getIsCanTakeReward() != false) {
+          setIsCanTakeReward(other.getIsCanTakeReward());
+        }
+        if (other.getIsAvatarOwned() != false) {
+          setIsAvatarOwned(other.getIsAvatarOwned());
+        }
+        if (other.getPassedDungeon() != false) {
+          setPassedDungeon(other.getPassedDungeon());
+        }
         if (other.getIsSkipTraining() != false) {
           setIsSkipTraining(other.getIsSkipTraining());
+        }
+        if (other.getReceivedReward() != false) {
+          setReceivedReward(other.getReceivedReward());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -898,7 +906,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @return A list containing the passedTrainingStepList.
        */
       public java.util.List<java.lang.Integer>
@@ -907,14 +915,14 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
                  java.util.Collections.unmodifiableList(PassedTrainingStepList_) : PassedTrainingStepList_;
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @return The count of passedTrainingStepList.
        */
       public int getPassedTrainingStepListCount() {
         return PassedTrainingStepList_.size();
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @param index The index of the element to return.
        * @return The passedTrainingStepList at the given index.
        */
@@ -922,7 +930,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return PassedTrainingStepList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @param index The index to set the value at.
        * @param value The passedTrainingStepList to set.
        * @return This builder for chaining.
@@ -935,7 +943,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @param value The passedTrainingStepList to add.
        * @return This builder for chaining.
        */
@@ -946,7 +954,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @param values The passedTrainingStepList to add.
        * @return This builder for chaining.
        */
@@ -959,167 +967,12 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 _passed_training_step_list = 1;</code>
+       * <code>repeated uint32 _passed_training_step_list = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPassedTrainingStepList() {
         PassedTrainingStepList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private boolean IsAvatarOwned_ ;
-      /**
-       * <code>bool _is_avatar_owned = 3;</code>
-       * @return The isAvatarOwned.
-       */
-      @java.lang.Override
-      public boolean getIsAvatarOwned() {
-        return IsAvatarOwned_;
-      }
-      /**
-       * <code>bool _is_avatar_owned = 3;</code>
-       * @param value The isAvatarOwned to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsAvatarOwned(boolean value) {
-        
-        IsAvatarOwned_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool _is_avatar_owned = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsAvatarOwned() {
-        
-        IsAvatarOwned_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int rewardId_ ;
-      /**
-       * <code>uint32 reward_id = 4;</code>
-       * @return The rewardId.
-       */
-      @java.lang.Override
-      public int getRewardId() {
-        return rewardId_;
-      }
-      /**
-       * <code>uint32 reward_id = 4;</code>
-       * @param value The rewardId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRewardId(int value) {
-        
-        rewardId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 reward_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRewardId() {
-        
-        rewardId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean passedDungeon_ ;
-      /**
-       * <code>bool passed_dungeon = 5;</code>
-       * @return The passedDungeon.
-       */
-      @java.lang.Override
-      public boolean getPassedDungeon() {
-        return passedDungeon_;
-      }
-      /**
-       * <code>bool passed_dungeon = 5;</code>
-       * @param value The passedDungeon to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassedDungeon(boolean value) {
-        
-        passedDungeon_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool passed_dungeon = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassedDungeon() {
-        
-        passedDungeon_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean receivedReward_ ;
-      /**
-       * <code>bool received_reward = 9;</code>
-       * @return The receivedReward.
-       */
-      @java.lang.Override
-      public boolean getReceivedReward() {
-        return receivedReward_;
-      }
-      /**
-       * <code>bool received_reward = 9;</code>
-       * @param value The receivedReward to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReceivedReward(boolean value) {
-        
-        receivedReward_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool received_reward = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReceivedReward() {
-        
-        receivedReward_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isCanTakeReward_ ;
-      /**
-       * <code>bool is_can_take_reward = 10;</code>
-       * @return The isCanTakeReward.
-       */
-      @java.lang.Override
-      public boolean getIsCanTakeReward() {
-        return isCanTakeReward_;
-      }
-      /**
-       * <code>bool is_can_take_reward = 10;</code>
-       * @param value The isCanTakeReward to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsCanTakeReward(boolean value) {
-        
-        isCanTakeReward_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_can_take_reward = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsCanTakeReward() {
-        
-        isCanTakeReward_ = false;
         onChanged();
         return this;
       }
@@ -1132,7 +985,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @return A list containing the availableTrainingStepList.
        */
       public java.util.List<java.lang.Integer>
@@ -1141,14 +994,14 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
                  java.util.Collections.unmodifiableList(AvailableTrainingStepList_) : AvailableTrainingStepList_;
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @return The count of availableTrainingStepList.
        */
       public int getAvailableTrainingStepListCount() {
         return AvailableTrainingStepList_.size();
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @param index The index of the element to return.
        * @return The availableTrainingStepList at the given index.
        */
@@ -1156,7 +1009,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return AvailableTrainingStepList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @param index The index to set the value at.
        * @param value The availableTrainingStepList to set.
        * @return This builder for chaining.
@@ -1169,7 +1022,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @param value The availableTrainingStepList to add.
        * @return This builder for chaining.
        */
@@ -1180,7 +1033,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @param values The availableTrainingStepList to add.
        * @return This builder for chaining.
        */
@@ -1193,7 +1046,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 _available_training_step_list = 12;</code>
+       * <code>repeated uint32 _available_training_step_list = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvailableTrainingStepList() {
@@ -1205,7 +1058,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
 
       private int trialAvatarIndexId_ ;
       /**
-       * <code>uint32 trial_avatar_index_id = 13;</code>
+       * <code>uint32 trial_avatar_index_id = 14;</code>
        * @return The trialAvatarIndexId.
        */
       @java.lang.Override
@@ -1213,7 +1066,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return trialAvatarIndexId_;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 13;</code>
+       * <code>uint32 trial_avatar_index_id = 14;</code>
        * @param value The trialAvatarIndexId to set.
        * @return This builder for chaining.
        */
@@ -1224,7 +1077,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 trial_avatar_index_id = 13;</code>
+       * <code>uint32 trial_avatar_index_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearTrialAvatarIndexId() {
@@ -1234,9 +1087,133 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
 
+      private int rewardId_ ;
+      /**
+       * <code>uint32 reward_id = 2;</code>
+       * @return The rewardId.
+       */
+      @java.lang.Override
+      public int getRewardId() {
+        return rewardId_;
+      }
+      /**
+       * <code>uint32 reward_id = 2;</code>
+       * @param value The rewardId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRewardId(int value) {
+        
+        rewardId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 reward_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRewardId() {
+        
+        rewardId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isCanTakeReward_ ;
+      /**
+       * <code>bool is_can_take_reward = 8;</code>
+       * @return The isCanTakeReward.
+       */
+      @java.lang.Override
+      public boolean getIsCanTakeReward() {
+        return isCanTakeReward_;
+      }
+      /**
+       * <code>bool is_can_take_reward = 8;</code>
+       * @param value The isCanTakeReward to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsCanTakeReward(boolean value) {
+        
+        isCanTakeReward_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_can_take_reward = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsCanTakeReward() {
+        
+        isCanTakeReward_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean IsAvatarOwned_ ;
+      /**
+       * <code>bool _is_avatar_owned = 15;</code>
+       * @return The isAvatarOwned.
+       */
+      @java.lang.Override
+      public boolean getIsAvatarOwned() {
+        return IsAvatarOwned_;
+      }
+      /**
+       * <code>bool _is_avatar_owned = 15;</code>
+       * @param value The isAvatarOwned to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsAvatarOwned(boolean value) {
+        
+        IsAvatarOwned_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool _is_avatar_owned = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsAvatarOwned() {
+        
+        IsAvatarOwned_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean passedDungeon_ ;
+      /**
+       * <code>bool passed_dungeon = 3;</code>
+       * @return The passedDungeon.
+       */
+      @java.lang.Override
+      public boolean getPassedDungeon() {
+        return passedDungeon_;
+      }
+      /**
+       * <code>bool passed_dungeon = 3;</code>
+       * @param value The passedDungeon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassedDungeon(boolean value) {
+        
+        passedDungeon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool passed_dungeon = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassedDungeon() {
+        
+        passedDungeon_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean IsSkipTraining_ ;
       /**
-       * <code>bool _is_skip_training = 14;</code>
+       * <code>bool _is_skip_training = 9;</code>
        * @return The isSkipTraining.
        */
       @java.lang.Override
@@ -1244,7 +1221,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return IsSkipTraining_;
       }
       /**
-       * <code>bool _is_skip_training = 14;</code>
+       * <code>bool _is_skip_training = 9;</code>
        * @param value The isSkipTraining to set.
        * @return This builder for chaining.
        */
@@ -1255,12 +1232,43 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool _is_skip_training = 14;</code>
+       * <code>bool _is_skip_training = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsSkipTraining() {
         
         IsSkipTraining_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean receivedReward_ ;
+      /**
+       * <code>bool received_reward = 10;</code>
+       * @return The receivedReward.
+       */
+      @java.lang.Override
+      public boolean getReceivedReward() {
+        return receivedReward_;
+      }
+      /**
+       * <code>bool received_reward = 10;</code>
+       * @param value The receivedReward to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReceivedReward(boolean value) {
+        
+        receivedReward_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool received_reward = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReceivedReward() {
+        
+        receivedReward_ = false;
         onChanged();
         return this;
       }
@@ -1333,15 +1341,14 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n)TrialAvatarActivityRewardDetailInfo.pr" +
       "oto\"\244\002\n#TrialAvatarActivityRewardDetailI" +
-      "nfo\022\"\n\032_passed_training_step_list\030\001 \003(\r\022" +
-      "\030\n\020_is_avatar_owned\030\003 \001(\010\022\021\n\treward_id\030\004" +
-      " \001(\r\022\026\n\016passed_dungeon\030\005 \001(\010\022\027\n\017received" +
-      "_reward\030\t \001(\010\022\032\n\022is_can_take_reward\030\n \001(" +
-      "\010\022%\n\035_available_training_step_list\030\014 \003(\r" +
-      "\022\035\n\025trial_avatar_index_id\030\r \001(\r\022\031\n\021_is_s" +
-      "kip_training\030\016 \001(\010BJ\n\031emu.grasscutter.ne" +
-      "t.protoB-TrialAvatarActivityRewardDetail" +
-      "InfoOuterClassb\006proto3"
+      "nfo\022\"\n\032_passed_training_step_list\030\006 \003(\r\022" +
+      "%\n\035_available_training_step_list\030\007 \003(\r\022\035" +
+      "\n\025trial_avatar_index_id\030\016 \001(\r\022\021\n\treward_" +
+      "id\030\002 \001(\r\022\032\n\022is_can_take_reward\030\010 \001(\010\022\030\n\020" +
+      "_is_avatar_owned\030\017 \001(\010\022\026\n\016passed_dungeon" +
+      "\030\003 \001(\010\022\031\n\021_is_skip_training\030\t \001(\010\022\027\n\017rec" +
+      "eived_reward\030\n \001(\010B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1352,7 +1359,7 @@ public final class TrialAvatarActivityRewardDetailInfoOuterClass {
     internal_static_TrialAvatarActivityRewardDetailInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrialAvatarActivityRewardDetailInfo_descriptor,
-        new java.lang.String[] { "PassedTrainingStepList", "IsAvatarOwned", "RewardId", "PassedDungeon", "ReceivedReward", "IsCanTakeReward", "AvailableTrainingStepList", "TrialAvatarIndexId", "IsSkipTraining", });
+        new java.lang.String[] { "PassedTrainingStepList", "AvailableTrainingStepList", "TrialAvatarIndexId", "RewardId", "IsCanTakeReward", "IsAvatarOwned", "PassedDungeon", "IsSkipTraining", "ReceivedReward", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

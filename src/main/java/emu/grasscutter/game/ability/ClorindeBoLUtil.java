@@ -17,7 +17,7 @@ import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMeta
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
 import emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
 import emu.grasscutter.net.proto.ForwardTypeOuterClass.ForwardType;
 import emu.grasscutter.net.proto.ModifierActionOuterClass.ModifierAction;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
@@ -255,7 +255,7 @@ public final class ClorindeBoLUtil {
         try {
             AbilityMetaModifierChange meta =
                     AbilityMetaModifierChange.parseFrom(entry.getAbilityData());
-            if (meta == null || meta.getAction() != ModifierAction.MODIFIER_ACTION_ADDED) {
+            if (meta == null || meta.getAction() != ModifierAction.ModifierAction_ADDED) {
                 return;
             }
             String abilityName = resolveAbilityString(meta.getParentAbilityName());
@@ -421,7 +421,7 @@ public final class ClorindeBoLUtil {
                 pushBoL(
                         avatar,
                         next,
-                        ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+                        _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
                 Grasscutter.getLogger()
                         .info(
                                 "[BoL][Clorinde] heal->BoL amount="
@@ -499,8 +499,8 @@ public final class ClorindeBoLUtil {
                 avatar,
                 bolAfter,
                 bolAfter <= 0.5f
-                        ? ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
-                        : ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY,
+                        ? _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
+                        : _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY,
                 castTier);
 
         Grasscutter.getLogger()
@@ -712,7 +712,7 @@ public final class ClorindeBoLUtil {
         pushBoL(
                 avatar,
                 saved,
-                ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+                _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
     }
 
     public static float burstBondRatio(Avatar avatar) {
@@ -741,7 +741,7 @@ public final class ClorindeBoLUtil {
         if (gained <= 0.01f) {
             return;
         }
-        pushBoL(avatar, next, ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+        pushBoL(avatar, next, _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
         Grasscutter.getLogger()
                 .info(
                         "[BoL][Clorinde] grant "
@@ -762,7 +762,7 @@ public final class ClorindeBoLUtil {
      * Does not use Arlecchino's Cur_HPDebts/_HPDebts, and does not send AvatarFightPropNotify - that strips
      * HP_DEBTS and the bar only reappears after switching characters.
      */
-    public static void pushBoL(EntityAvatar avatar, float debts, ChangeHpDebtsReason reason) {
+    public static void pushBoL(EntityAvatar avatar, float debts, _ChangeHpDebtsReason reason) {
         pushBoL(avatar, debts, reason, Float.NaN);
     }
 
@@ -771,7 +771,7 @@ public final class ClorindeBoLUtil {
      *     the BoL down, while animations and VFX are still reading DodgeEnhanced
      */
     public static void pushBoL(
-            EntityAvatar avatar, float debts, ChangeHpDebtsReason reason, float keepTier) {
+            EntityAvatar avatar, float debts, _ChangeHpDebtsReason reason, float keepTier) {
         if (avatar == null) {
             return;
         }

@@ -40,6 +40,10 @@ public final class ShapeSphereOuterClass {
     float getRadius();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ShapeSphere}
    */
   public static final class ShapeSphere extends
@@ -345,6 +349,10 @@ public final class ShapeSphereOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ShapeSphere}
      */
     public static final class Builder extends
@@ -723,8 +731,8 @@ public final class ShapeSphereOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021ShapeSphere.proto\032\014Vector.proto\"6\n\013Sha" +
       "peSphere\022\027\n\006center\030\001 \001(\0132\007.Vector\022\016\n\006rad" +
-      "ius\030\002 \001(\002B2\n\031emu.grasscutter.net.protoB\025" +
-      "ShapeSphereOuterClassb\006proto3"
+      "ius\030\002 \001(\002B\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

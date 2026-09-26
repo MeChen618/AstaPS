@@ -19,18 +19,22 @@ public final class TrialAvatarGrantRecordOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 grant_reason = 1;</code>
-     * @return The grantReason.
-     */
-    int getGrantReason();
-
-    /**
      * <code>uint32 from_parent_quest_id = 2;</code>
      * @return The fromParentQuestId.
      */
     int getFromParentQuestId();
+
+    /**
+     * <code>uint32 grant_reason = 1;</code>
+     * @return The grantReason.
+     */
+    int getGrantReason();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code TrialAvatarGrantRecord}
    */
   public static final class TrialAvatarGrantRecord extends
@@ -117,17 +121,6 @@ public final class TrialAvatarGrantRecordOuterClass {
               emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.class, emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.Builder.class);
     }
 
-    public static final int GRANT_REASON_FIELD_NUMBER = 1;
-    private int grantReason_;
-    /**
-     * <code>uint32 grant_reason = 1;</code>
-     * @return The grantReason.
-     */
-    @java.lang.Override
-    public int getGrantReason() {
-      return grantReason_;
-    }
-
     public static final int FROM_PARENT_QUEST_ID_FIELD_NUMBER = 2;
     private int fromParentQuestId_;
     /**
@@ -137,6 +130,17 @@ public final class TrialAvatarGrantRecordOuterClass {
     @java.lang.Override
     public int getFromParentQuestId() {
       return fromParentQuestId_;
+    }
+
+    public static final int GRANT_REASON_FIELD_NUMBER = 1;
+    private int grantReason_;
+    /**
+     * <code>uint32 grant_reason = 1;</code>
+     * @return The grantReason.
+     */
+    @java.lang.Override
+    public int getGrantReason() {
+      return grantReason_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class TrialAvatarGrantRecordOuterClass {
       }
       emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord other = (emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord) obj;
 
-      if (getGrantReason()
-          != other.getGrantReason()) return false;
       if (getFromParentQuestId()
           != other.getFromParentQuestId()) return false;
+      if (getGrantReason()
+          != other.getGrantReason()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class TrialAvatarGrantRecordOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + GRANT_REASON_FIELD_NUMBER;
-      hash = (53 * hash) + getGrantReason();
       hash = (37 * hash) + FROM_PARENT_QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFromParentQuestId();
+      hash = (37 * hash) + GRANT_REASON_FIELD_NUMBER;
+      hash = (53 * hash) + getGrantReason();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class TrialAvatarGrantRecordOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code TrialAvatarGrantRecord}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class TrialAvatarGrantRecordOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        grantReason_ = 0;
-
         fromParentQuestId_ = 0;
+
+        grantReason_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class TrialAvatarGrantRecordOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord buildPartial() {
         emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord result = new emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord(this);
-        result.grantReason_ = grantReason_;
         result.fromParentQuestId_ = fromParentQuestId_;
+        result.grantReason_ = grantReason_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class TrialAvatarGrantRecordOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord other) {
         if (other == emu.grasscutter.net.proto.TrialAvatarGrantRecordOuterClass.TrialAvatarGrantRecord.getDefaultInstance()) return this;
-        if (other.getGrantReason() != 0) {
-          setGrantReason(other.getGrantReason());
-        }
         if (other.getFromParentQuestId() != 0) {
           setFromParentQuestId(other.getFromParentQuestId());
+        }
+        if (other.getGrantReason() != 0) {
+          setGrantReason(other.getGrantReason());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,37 +466,6 @@ public final class TrialAvatarGrantRecordOuterClass {
         return this;
       }
 
-      private int grantReason_ ;
-      /**
-       * <code>uint32 grant_reason = 1;</code>
-       * @return The grantReason.
-       */
-      @java.lang.Override
-      public int getGrantReason() {
-        return grantReason_;
-      }
-      /**
-       * <code>uint32 grant_reason = 1;</code>
-       * @param value The grantReason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGrantReason(int value) {
-        
-        grantReason_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 grant_reason = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGrantReason() {
-        
-        grantReason_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int fromParentQuestId_ ;
       /**
        * <code>uint32 from_parent_quest_id = 2;</code>
@@ -516,6 +493,37 @@ public final class TrialAvatarGrantRecordOuterClass {
       public Builder clearFromParentQuestId() {
         
         fromParentQuestId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int grantReason_ ;
+      /**
+       * <code>uint32 grant_reason = 1;</code>
+       * @return The grantReason.
+       */
+      @java.lang.Override
+      public int getGrantReason() {
+        return grantReason_;
+      }
+      /**
+       * <code>uint32 grant_reason = 1;</code>
+       * @param value The grantReason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGrantReason(int value) {
+        
+        grantReason_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 grant_reason = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGrantReason() {
+        
+        grantReason_ = 0;
         onChanged();
         return this;
       }
@@ -587,10 +595,9 @@ public final class TrialAvatarGrantRecordOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034TrialAvatarGrantRecord.proto\"L\n\026TrialA" +
-      "vatarGrantRecord\022\024\n\014grant_reason\030\001 \001(\r\022\034" +
-      "\n\024from_parent_quest_id\030\002 \001(\rB=\n\031emu.gras" +
-      "scutter.net.protoB TrialAvatarGrantRecor" +
-      "dOuterClassb\006proto3"
+      "vatarGrantRecord\022\034\n\024from_parent_quest_id" +
+      "\030\002 \001(\r\022\024\n\014grant_reason\030\001 \001(\rB\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -601,7 +608,7 @@ public final class TrialAvatarGrantRecordOuterClass {
     internal_static_TrialAvatarGrantRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TrialAvatarGrantRecord_descriptor,
-        new java.lang.String[] { "GrantReason", "FromParentQuestId", });
+        new java.lang.String[] { "FromParentQuestId", "GrantReason", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,18 +19,22 @@ public final class WearEquipReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 equip_guid = 7;</code>
-     * @return The equipGuid.
-     */
-    long getEquipGuid();
-
-    /**
      * <code>uint64 avatar_guid = 9;</code>
      * @return The avatarGuid.
      */
     long getAvatarGuid();
+
+    /**
+     * <code>uint64 equip_guid = 2;</code>
+     * @return The equipGuid.
+     */
+    long getEquipGuid();
   }
   /**
+   * <pre>
+   * CmdId: 26671
+   * </pre>
+   *
    * Protobuf type {@code WearEquipReq}
    */
   public static final class WearEquipReq extends
@@ -75,7 +79,7 @@ public final class WearEquipReqOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 16: {
 
               equipGuid_ = input.readUInt64();
               break;
@@ -117,17 +121,6 @@ public final class WearEquipReqOuterClass {
               emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq.class, emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq.Builder.class);
     }
 
-    public static final int EQUIP_GUID_FIELD_NUMBER = 7;
-    private long equipGuid_;
-    /**
-     * <code>uint64 equip_guid = 7;</code>
-     * @return The equipGuid.
-     */
-    @java.lang.Override
-    public long getEquipGuid() {
-      return equipGuid_;
-    }
-
     public static final int AVATAR_GUID_FIELD_NUMBER = 9;
     private long avatarGuid_;
     /**
@@ -137,6 +130,17 @@ public final class WearEquipReqOuterClass {
     @java.lang.Override
     public long getAvatarGuid() {
       return avatarGuid_;
+    }
+
+    public static final int EQUIP_GUID_FIELD_NUMBER = 2;
+    private long equipGuid_;
+    /**
+     * <code>uint64 equip_guid = 2;</code>
+     * @return The equipGuid.
+     */
+    @java.lang.Override
+    public long getEquipGuid() {
+      return equipGuid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -154,7 +158,7 @@ public final class WearEquipReqOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (equipGuid_ != 0L) {
-        output.writeUInt64(7, equipGuid_);
+        output.writeUInt64(2, equipGuid_);
       }
       if (avatarGuid_ != 0L) {
         output.writeUInt64(9, avatarGuid_);
@@ -170,7 +174,7 @@ public final class WearEquipReqOuterClass {
       size = 0;
       if (equipGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(7, equipGuid_);
+          .computeUInt64Size(2, equipGuid_);
       }
       if (avatarGuid_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -191,10 +195,10 @@ public final class WearEquipReqOuterClass {
       }
       emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq other = (emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq) obj;
 
-      if (getEquipGuid()
-          != other.getEquipGuid()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
+      if (getEquipGuid()
+          != other.getEquipGuid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,12 +210,12 @@ public final class WearEquipReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + EQUIP_GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getEquipGuid());
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
+      hash = (37 * hash) + EQUIP_GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getEquipGuid());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -308,6 +312,10 @@ public final class WearEquipReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 26671
+     * </pre>
+     *
      * Protobuf type {@code WearEquipReq}
      */
     public static final class Builder extends
@@ -345,9 +353,9 @@ public final class WearEquipReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        equipGuid_ = 0L;
-
         avatarGuid_ = 0L;
+
+        equipGuid_ = 0L;
 
         return this;
       }
@@ -375,8 +383,8 @@ public final class WearEquipReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq buildPartial() {
         emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq result = new emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq(this);
-        result.equipGuid_ = equipGuid_;
         result.avatarGuid_ = avatarGuid_;
+        result.equipGuid_ = equipGuid_;
         onBuilt();
         return result;
       }
@@ -425,11 +433,11 @@ public final class WearEquipReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq other) {
         if (other == emu.grasscutter.net.proto.WearEquipReqOuterClass.WearEquipReq.getDefaultInstance()) return this;
-        if (other.getEquipGuid() != 0L) {
-          setEquipGuid(other.getEquipGuid());
-        }
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
+        }
+        if (other.getEquipGuid() != 0L) {
+          setEquipGuid(other.getEquipGuid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -460,37 +468,6 @@ public final class WearEquipReqOuterClass {
         return this;
       }
 
-      private long equipGuid_ ;
-      /**
-       * <code>uint64 equip_guid = 7;</code>
-       * @return The equipGuid.
-       */
-      @java.lang.Override
-      public long getEquipGuid() {
-        return equipGuid_;
-      }
-      /**
-       * <code>uint64 equip_guid = 7;</code>
-       * @param value The equipGuid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEquipGuid(long value) {
-        
-        equipGuid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 equip_guid = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEquipGuid() {
-        
-        equipGuid_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private long avatarGuid_ ;
       /**
        * <code>uint64 avatar_guid = 9;</code>
@@ -518,6 +495,37 @@ public final class WearEquipReqOuterClass {
       public Builder clearAvatarGuid() {
         
         avatarGuid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long equipGuid_ ;
+      /**
+       * <code>uint64 equip_guid = 2;</code>
+       * @return The equipGuid.
+       */
+      @java.lang.Override
+      public long getEquipGuid() {
+        return equipGuid_;
+      }
+      /**
+       * <code>uint64 equip_guid = 2;</code>
+       * @param value The equipGuid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEquipGuid(long value) {
+        
+        equipGuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 equip_guid = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEquipGuid() {
+        
+        equipGuid_ = 0L;
         onChanged();
         return this;
       }
@@ -588,10 +596,9 @@ public final class WearEquipReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022WearEquipReq.proto\"7\n\014WearEquipReq\022\022\n\n" +
-      "equip_guid\030\007 \001(\004\022\023\n\013avatar_guid\030\t \001(\004B3\n" +
-      "\031emu.grasscutter.net.protoB\026WearEquipReq" +
-      "OuterClassb\006proto3"
+      "\n\022WearEquipReq.proto\"7\n\014WearEquipReq\022\023\n\013" +
+      "avatar_guid\030\t \001(\004\022\022\n\nequip_guid\030\002 \001(\004B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -602,7 +609,7 @@ public final class WearEquipReqOuterClass {
     internal_static_WearEquipReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_WearEquipReq_descriptor,
-        new java.lang.String[] { "EquipGuid", "AvatarGuid", });
+        new java.lang.String[] { "AvatarGuid", "EquipGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

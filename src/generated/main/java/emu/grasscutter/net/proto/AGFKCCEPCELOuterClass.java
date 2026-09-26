@@ -19,21 +19,38 @@ public final class AGFKCCEPCELOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+     * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
      * @return A list containing the dKEHHBCDOFM.
      */
     java.util.List<java.lang.Integer> getDKEHHBCDOFMList();
     /**
-     * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+     * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
      * @return The count of dKEHHBCDOFM.
      */
     int getDKEHHBCDOFMCount();
     /**
-     * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+     * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
      * @param index The index of the element to return.
      * @return The dKEHHBCDOFM at the given index.
      */
     int getDKEHHBCDOFM(int index);
+
+    /**
+     * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+     * @return A list containing the oEEJKPILPFI.
+     */
+    java.util.List<java.lang.Integer> getOEEJKPILPFIList();
+    /**
+     * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+     * @return The count of oEEJKPILPFI.
+     */
+    int getOEEJKPILPFICount();
+    /**
+     * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+     * @param index The index of the element to return.
+     * @return The oEEJKPILPFI at the given index.
+     */
+    int getOEEJKPILPFI(int index);
 
     /**
      * <code>uint32 level_id = 4;</code>
@@ -42,29 +59,16 @@ public final class AGFKCCEPCELOuterClass {
     int getLevelId();
 
     /**
-     * <code>uint32 IGDLJCFLAMD = 9;</code>
+     * <code>uint32 IGDLJCFLAMD = 6;</code>
      * @return The iGDLJCFLAMD.
      */
     int getIGDLJCFLAMD();
-
-    /**
-     * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-     * @return A list containing the oEEJKPILPFI.
-     */
-    java.util.List<java.lang.Integer> getOEEJKPILPFIList();
-    /**
-     * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-     * @return The count of oEEJKPILPFI.
-     */
-    int getOEEJKPILPFICount();
-    /**
-     * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-     * @param index The index of the element to return.
-     * @return The oEEJKPILPFI at the given index.
-     */
-    int getOEEJKPILPFI(int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AGFKCCEPCEL}
    */
   public static final class AGFKCCEPCEL extends
@@ -112,38 +116,17 @@ public final class AGFKCCEPCELOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dKEHHBCDOFM_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dKEHHBCDOFM_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                dKEHHBCDOFM_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                dKEHHBCDOFM_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
             case 32: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 48: {
 
               iGDLJCFLAMD_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 80: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 oEEJKPILPFI_ = newIntList();
                 mutable_bitField0_ |= 0x00000002;
@@ -151,7 +134,7 @@ public final class AGFKCCEPCELOuterClass {
               oEEJKPILPFI_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 82: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
@@ -160,6 +143,27 @@ public final class AGFKCCEPCELOuterClass {
               }
               while (input.getBytesUntilLimit() > 0) {
                 oEEJKPILPFI_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                dKEHHBCDOFM_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dKEHHBCDOFM_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+                dKEHHBCDOFM_ = newIntList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dKEHHBCDOFM_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
               break;
@@ -179,11 +183,11 @@ public final class AGFKCCEPCELOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          dKEHHBCDOFM_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000002) != 0)) {
           oEEJKPILPFI_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          dKEHHBCDOFM_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -202,10 +206,10 @@ public final class AGFKCCEPCELOuterClass {
               emu.grasscutter.net.proto.AGFKCCEPCELOuterClass.AGFKCCEPCEL.class, emu.grasscutter.net.proto.AGFKCCEPCELOuterClass.AGFKCCEPCEL.Builder.class);
     }
 
-    public static final int DKEHHBCDOFM_FIELD_NUMBER = 2;
+    public static final int DKEHHBCDOFM_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList dKEHHBCDOFM_;
     /**
-     * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+     * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
      * @return A list containing the dKEHHBCDOFM.
      */
     @java.lang.Override
@@ -214,14 +218,14 @@ public final class AGFKCCEPCELOuterClass {
       return dKEHHBCDOFM_;
     }
     /**
-     * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+     * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
      * @return The count of dKEHHBCDOFM.
      */
     public int getDKEHHBCDOFMCount() {
       return dKEHHBCDOFM_.size();
     }
     /**
-     * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+     * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
      * @param index The index of the element to return.
      * @return The dKEHHBCDOFM at the given index.
      */
@@ -229,6 +233,34 @@ public final class AGFKCCEPCELOuterClass {
       return dKEHHBCDOFM_.getInt(index);
     }
     private int dKEHHBCDOFMMemoizedSerializedSize = -1;
+
+    public static final int OEEJKPILPFI_FIELD_NUMBER = 10;
+    private com.google.protobuf.Internal.IntList oEEJKPILPFI_;
+    /**
+     * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+     * @return A list containing the oEEJKPILPFI.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getOEEJKPILPFIList() {
+      return oEEJKPILPFI_;
+    }
+    /**
+     * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+     * @return The count of oEEJKPILPFI.
+     */
+    public int getOEEJKPILPFICount() {
+      return oEEJKPILPFI_.size();
+    }
+    /**
+     * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+     * @param index The index of the element to return.
+     * @return The oEEJKPILPFI at the given index.
+     */
+    public int getOEEJKPILPFI(int index) {
+      return oEEJKPILPFI_.getInt(index);
+    }
+    private int oEEJKPILPFIMemoizedSerializedSize = -1;
 
     public static final int LEVEL_ID_FIELD_NUMBER = 4;
     private int levelId_;
@@ -241,44 +273,16 @@ public final class AGFKCCEPCELOuterClass {
       return levelId_;
     }
 
-    public static final int IGDLJCFLAMD_FIELD_NUMBER = 9;
+    public static final int IGDLJCFLAMD_FIELD_NUMBER = 6;
     private int iGDLJCFLAMD_;
     /**
-     * <code>uint32 IGDLJCFLAMD = 9;</code>
+     * <code>uint32 IGDLJCFLAMD = 6;</code>
      * @return The iGDLJCFLAMD.
      */
     @java.lang.Override
     public int getIGDLJCFLAMD() {
       return iGDLJCFLAMD_;
     }
-
-    public static final int OEEJKPILPFI_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.IntList oEEJKPILPFI_;
-    /**
-     * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-     * @return A list containing the oEEJKPILPFI.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getOEEJKPILPFIList() {
-      return oEEJKPILPFI_;
-    }
-    /**
-     * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-     * @return The count of oEEJKPILPFI.
-     */
-    public int getOEEJKPILPFICount() {
-      return oEEJKPILPFI_.size();
-    }
-    /**
-     * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-     * @param index The index of the element to return.
-     * @return The oEEJKPILPFI at the given index.
-     */
-    public int getOEEJKPILPFI(int index) {
-      return oEEJKPILPFI_.getInt(index);
-    }
-    private int oEEJKPILPFIMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -295,25 +299,25 @@ public final class AGFKCCEPCELOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getDKEHHBCDOFMList().size() > 0) {
-        output.writeUInt32NoTag(18);
-        output.writeUInt32NoTag(dKEHHBCDOFMMemoizedSerializedSize);
-      }
-      for (int i = 0; i < dKEHHBCDOFM_.size(); i++) {
-        output.writeUInt32NoTag(dKEHHBCDOFM_.getInt(i));
-      }
       if (levelId_ != 0) {
         output.writeUInt32(4, levelId_);
       }
       if (iGDLJCFLAMD_ != 0) {
-        output.writeUInt32(9, iGDLJCFLAMD_);
+        output.writeUInt32(6, iGDLJCFLAMD_);
       }
       if (getOEEJKPILPFIList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(82);
         output.writeUInt32NoTag(oEEJKPILPFIMemoizedSerializedSize);
       }
       for (int i = 0; i < oEEJKPILPFI_.size(); i++) {
         output.writeUInt32NoTag(oEEJKPILPFI_.getInt(i));
+      }
+      if (getDKEHHBCDOFMList().size() > 0) {
+        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(dKEHHBCDOFMMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dKEHHBCDOFM_.size(); i++) {
+        output.writeUInt32NoTag(dKEHHBCDOFM_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -324,27 +328,13 @@ public final class AGFKCCEPCELOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < dKEHHBCDOFM_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dKEHHBCDOFM_.getInt(i));
-        }
-        size += dataSize;
-        if (!getDKEHHBCDOFMList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        dKEHHBCDOFMMemoizedSerializedSize = dataSize;
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, levelId_);
       }
       if (iGDLJCFLAMD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, iGDLJCFLAMD_);
+          .computeUInt32Size(6, iGDLJCFLAMD_);
       }
       {
         int dataSize = 0;
@@ -359,6 +349,20 @@ public final class AGFKCCEPCELOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         oEEJKPILPFIMemoizedSerializedSize = dataSize;
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dKEHHBCDOFM_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dKEHHBCDOFM_.getInt(i));
+        }
+        size += dataSize;
+        if (!getDKEHHBCDOFMList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dKEHHBCDOFMMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -377,12 +381,12 @@ public final class AGFKCCEPCELOuterClass {
 
       if (!getDKEHHBCDOFMList()
           .equals(other.getDKEHHBCDOFMList())) return false;
+      if (!getOEEJKPILPFIList()
+          .equals(other.getOEEJKPILPFIList())) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
       if (getIGDLJCFLAMD()
           != other.getIGDLJCFLAMD()) return false;
-      if (!getOEEJKPILPFIList()
-          .equals(other.getOEEJKPILPFIList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -398,14 +402,14 @@ public final class AGFKCCEPCELOuterClass {
         hash = (37 * hash) + DKEHHBCDOFM_FIELD_NUMBER;
         hash = (53 * hash) + getDKEHHBCDOFMList().hashCode();
       }
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IGDLJCFLAMD_FIELD_NUMBER;
-      hash = (53 * hash) + getIGDLJCFLAMD();
       if (getOEEJKPILPFICount() > 0) {
         hash = (37 * hash) + OEEJKPILPFI_FIELD_NUMBER;
         hash = (53 * hash) + getOEEJKPILPFIList().hashCode();
       }
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + IGDLJCFLAMD_FIELD_NUMBER;
+      hash = (53 * hash) + getIGDLJCFLAMD();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -502,6 +506,10 @@ public final class AGFKCCEPCELOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AGFKCCEPCEL}
      */
     public static final class Builder extends
@@ -541,12 +549,12 @@ public final class AGFKCCEPCELOuterClass {
         super.clear();
         dKEHHBCDOFM_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        oEEJKPILPFI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelId_ = 0;
 
         iGDLJCFLAMD_ = 0;
 
-        oEEJKPILPFI_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -579,13 +587,13 @@ public final class AGFKCCEPCELOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.dKEHHBCDOFM_ = dKEHHBCDOFM_;
-        result.levelId_ = levelId_;
-        result.iGDLJCFLAMD_ = iGDLJCFLAMD_;
         if (((bitField0_ & 0x00000002) != 0)) {
           oEEJKPILPFI_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.oEEJKPILPFI_ = oEEJKPILPFI_;
+        result.levelId_ = levelId_;
+        result.iGDLJCFLAMD_ = iGDLJCFLAMD_;
         onBuilt();
         return result;
       }
@@ -644,12 +652,6 @@ public final class AGFKCCEPCELOuterClass {
           }
           onChanged();
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getIGDLJCFLAMD() != 0) {
-          setIGDLJCFLAMD(other.getIGDLJCFLAMD());
-        }
         if (!other.oEEJKPILPFI_.isEmpty()) {
           if (oEEJKPILPFI_.isEmpty()) {
             oEEJKPILPFI_ = other.oEEJKPILPFI_;
@@ -659,6 +661,12 @@ public final class AGFKCCEPCELOuterClass {
             oEEJKPILPFI_.addAll(other.oEEJKPILPFI_);
           }
           onChanged();
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
+        }
+        if (other.getIGDLJCFLAMD() != 0) {
+          setIGDLJCFLAMD(other.getIGDLJCFLAMD());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -698,7 +706,7 @@ public final class AGFKCCEPCELOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @return A list containing the dKEHHBCDOFM.
        */
       public java.util.List<java.lang.Integer>
@@ -707,14 +715,14 @@ public final class AGFKCCEPCELOuterClass {
                  java.util.Collections.unmodifiableList(dKEHHBCDOFM_) : dKEHHBCDOFM_;
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @return The count of dKEHHBCDOFM.
        */
       public int getDKEHHBCDOFMCount() {
         return dKEHHBCDOFM_.size();
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @param index The index of the element to return.
        * @return The dKEHHBCDOFM at the given index.
        */
@@ -722,7 +730,7 @@ public final class AGFKCCEPCELOuterClass {
         return dKEHHBCDOFM_.getInt(index);
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @param index The index to set the value at.
        * @param value The dKEHHBCDOFM to set.
        * @return This builder for chaining.
@@ -735,7 +743,7 @@ public final class AGFKCCEPCELOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @param value The dKEHHBCDOFM to add.
        * @return This builder for chaining.
        */
@@ -746,7 +754,7 @@ public final class AGFKCCEPCELOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @param values The dKEHHBCDOFM to add.
        * @return This builder for chaining.
        */
@@ -759,12 +767,91 @@ public final class AGFKCCEPCELOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DKEHHBCDOFM = 2;</code>
+       * <code>repeated uint32 DKEHHBCDOFM = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearDKEHHBCDOFM() {
         dKEHHBCDOFM_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList oEEJKPILPFI_ = emptyIntList();
+      private void ensureOEEJKPILPFIIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          oEEJKPILPFI_ = mutableCopy(oEEJKPILPFI_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @return A list containing the oEEJKPILPFI.
+       */
+      public java.util.List<java.lang.Integer>
+          getOEEJKPILPFIList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(oEEJKPILPFI_) : oEEJKPILPFI_;
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @return The count of oEEJKPILPFI.
+       */
+      public int getOEEJKPILPFICount() {
+        return oEEJKPILPFI_.size();
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @param index The index of the element to return.
+       * @return The oEEJKPILPFI at the given index.
+       */
+      public int getOEEJKPILPFI(int index) {
+        return oEEJKPILPFI_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @param index The index to set the value at.
+       * @param value The oEEJKPILPFI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOEEJKPILPFI(
+          int index, int value) {
+        ensureOEEJKPILPFIIsMutable();
+        oEEJKPILPFI_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @param value The oEEJKPILPFI to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOEEJKPILPFI(int value) {
+        ensureOEEJKPILPFIIsMutable();
+        oEEJKPILPFI_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @param values The oEEJKPILPFI to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllOEEJKPILPFI(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureOEEJKPILPFIIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, oEEJKPILPFI_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 OEEJKPILPFI = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOEEJKPILPFI() {
+        oEEJKPILPFI_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -802,7 +889,7 @@ public final class AGFKCCEPCELOuterClass {
 
       private int iGDLJCFLAMD_ ;
       /**
-       * <code>uint32 IGDLJCFLAMD = 9;</code>
+       * <code>uint32 IGDLJCFLAMD = 6;</code>
        * @return The iGDLJCFLAMD.
        */
       @java.lang.Override
@@ -810,7 +897,7 @@ public final class AGFKCCEPCELOuterClass {
         return iGDLJCFLAMD_;
       }
       /**
-       * <code>uint32 IGDLJCFLAMD = 9;</code>
+       * <code>uint32 IGDLJCFLAMD = 6;</code>
        * @param value The iGDLJCFLAMD to set.
        * @return This builder for chaining.
        */
@@ -821,91 +908,12 @@ public final class AGFKCCEPCELOuterClass {
         return this;
       }
       /**
-       * <code>uint32 IGDLJCFLAMD = 9;</code>
+       * <code>uint32 IGDLJCFLAMD = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearIGDLJCFLAMD() {
         
         iGDLJCFLAMD_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList oEEJKPILPFI_ = emptyIntList();
-      private void ensureOEEJKPILPFIIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          oEEJKPILPFI_ = mutableCopy(oEEJKPILPFI_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @return A list containing the oEEJKPILPFI.
-       */
-      public java.util.List<java.lang.Integer>
-          getOEEJKPILPFIList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(oEEJKPILPFI_) : oEEJKPILPFI_;
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @return The count of oEEJKPILPFI.
-       */
-      public int getOEEJKPILPFICount() {
-        return oEEJKPILPFI_.size();
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @param index The index of the element to return.
-       * @return The oEEJKPILPFI at the given index.
-       */
-      public int getOEEJKPILPFI(int index) {
-        return oEEJKPILPFI_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @param index The index to set the value at.
-       * @param value The oEEJKPILPFI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOEEJKPILPFI(
-          int index, int value) {
-        ensureOEEJKPILPFIIsMutable();
-        oEEJKPILPFI_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @param value The oEEJKPILPFI to add.
-       * @return This builder for chaining.
-       */
-      public Builder addOEEJKPILPFI(int value) {
-        ensureOEEJKPILPFIIsMutable();
-        oEEJKPILPFI_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @param values The oEEJKPILPFI to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllOEEJKPILPFI(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureOEEJKPILPFIIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, oEEJKPILPFI_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 OEEJKPILPFI = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOEEJKPILPFI() {
-        oEEJKPILPFI_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -977,10 +985,9 @@ public final class AGFKCCEPCELOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021AGFKCCEPCEL.proto\"^\n\013AGFKCCEPCEL\022\023\n\013DK" +
-      "EHHBCDOFM\030\002 \003(\r\022\020\n\010level_id\030\004 \001(\r\022\023\n\013IGD" +
-      "LJCFLAMD\030\t \001(\r\022\023\n\013OEEJKPILPFI\030\014 \003(\rB2\n\031e" +
-      "mu.grasscutter.net.protoB\025AGFKCCEPCELOut" +
-      "erClassb\006proto3"
+      "EHHBCDOFM\030\013 \003(\r\022\023\n\013OEEJKPILPFI\030\n \003(\r\022\020\n\010" +
+      "level_id\030\004 \001(\r\022\023\n\013IGDLJCFLAMD\030\006 \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -991,7 +998,7 @@ public final class AGFKCCEPCELOuterClass {
     internal_static_AGFKCCEPCEL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AGFKCCEPCEL_descriptor,
-        new java.lang.String[] { "DKEHHBCDOFM", "LevelId", "IGDLJCFLAMD", "OEEJKPILPFI", });
+        new java.lang.String[] { "DKEHHBCDOFM", "OEEJKPILPFI", "LevelId", "IGDLJCFLAMD", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

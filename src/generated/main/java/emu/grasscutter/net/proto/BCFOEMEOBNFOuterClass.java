@@ -19,23 +19,27 @@ public final class BCFOEMEOBNFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+     * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
      * @return A list containing the eJEKEJMIJKM.
      */
     java.util.List<java.lang.Integer> getEJEKEJMIJKMList();
     /**
-     * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+     * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
      * @return The count of eJEKEJMIJKM.
      */
     int getEJEKEJMIJKMCount();
     /**
-     * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+     * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
      * @param index The index of the element to return.
      * @return The eJEKEJMIJKM at the given index.
      */
     int getEJEKEJMIJKM(int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BCFOEMEOBNF}
    */
   public static final class BCFOEMEOBNF extends
@@ -82,7 +86,7 @@ public final class BCFOEMEOBNFOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 48: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 eJEKEJMIJKM_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +94,7 @@ public final class BCFOEMEOBNFOuterClass {
               eJEKEJMIJKM_.addInt(input.readUInt32());
               break;
             }
-            case 106: {
+            case 50: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +142,10 @@ public final class BCFOEMEOBNFOuterClass {
               emu.grasscutter.net.proto.BCFOEMEOBNFOuterClass.BCFOEMEOBNF.class, emu.grasscutter.net.proto.BCFOEMEOBNFOuterClass.BCFOEMEOBNF.Builder.class);
     }
 
-    public static final int EJEKEJMIJKM_FIELD_NUMBER = 13;
+    public static final int EJEKEJMIJKM_FIELD_NUMBER = 6;
     private com.google.protobuf.Internal.IntList eJEKEJMIJKM_;
     /**
-     * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+     * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
      * @return A list containing the eJEKEJMIJKM.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class BCFOEMEOBNFOuterClass {
       return eJEKEJMIJKM_;
     }
     /**
-     * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+     * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
      * @return The count of eJEKEJMIJKM.
      */
     public int getEJEKEJMIJKMCount() {
       return eJEKEJMIJKM_.size();
     }
     /**
-     * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+     * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
      * @param index The index of the element to return.
      * @return The eJEKEJMIJKM at the given index.
      */
@@ -182,7 +186,7 @@ public final class BCFOEMEOBNFOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getEJEKEJMIJKMList().size() > 0) {
-        output.writeUInt32NoTag(106);
+        output.writeUInt32NoTag(50);
         output.writeUInt32NoTag(eJEKEJMIJKMMemoizedSerializedSize);
       }
       for (int i = 0; i < eJEKEJMIJKM_.size(); i++) {
@@ -339,6 +343,10 @@ public final class BCFOEMEOBNFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BCFOEMEOBNF}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class BCFOEMEOBNFOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @return A list containing the eJEKEJMIJKM.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class BCFOEMEOBNFOuterClass {
                  java.util.Collections.unmodifiableList(eJEKEJMIJKM_) : eJEKEJMIJKM_;
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @return The count of eJEKEJMIJKM.
        */
       public int getEJEKEJMIJKMCount() {
         return eJEKEJMIJKM_.size();
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @param index The index of the element to return.
        * @return The eJEKEJMIJKM at the given index.
        */
@@ -530,7 +538,7 @@ public final class BCFOEMEOBNFOuterClass {
         return eJEKEJMIJKM_.getInt(index);
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @param index The index to set the value at.
        * @param value The eJEKEJMIJKM to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class BCFOEMEOBNFOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @param value The eJEKEJMIJKM to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class BCFOEMEOBNFOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @param values The eJEKEJMIJKM to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class BCFOEMEOBNFOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 EJEKEJMIJKM = 13;</code>
+       * <code>repeated uint32 EJEKEJMIJKM = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearEJEKEJMIJKM() {
@@ -644,8 +652,8 @@ public final class BCFOEMEOBNFOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BCFOEMEOBNF.proto\"\"\n\013BCFOEMEOBNF\022\023\n\013EJ" +
-      "EKEJMIJKM\030\r \003(\rB2\n\031emu.grasscutter.net.p" +
-      "rotoB\025BCFOEMEOBNFOuterClassb\006proto3"
+      "EKEJMIJKM\030\006 \003(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

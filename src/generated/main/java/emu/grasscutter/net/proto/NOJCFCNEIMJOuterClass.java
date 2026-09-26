@@ -19,48 +19,52 @@ public final class NOJCFCNEIMJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 difficulty = 6;</code>
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> 
+        getAvatarInfoListList();
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo getAvatarInfoList(int index);
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    int getAvatarInfoListCount();
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
+        getAvatarInfoListOrBuilderList();
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>uint32 difficulty = 13;</code>
      * @return The difficulty.
      */
     int getDifficulty();
 
     /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> 
-        getAvatarInfoListList();
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo getAvatarInfoList(int index);
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    int getAvatarInfoListCount();
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
-        getAvatarInfoListOrBuilderList();
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 BOAKDOGPPPG = 12;</code>
+     * <code>uint32 BOAKDOGPPPG = 15;</code>
      * @return The bOAKDOGPPPG.
      */
     int getBOAKDOGPPPG();
 
     /**
-     * <code>bool IMEPIKDEFHA = 14;</code>
+     * <code>bool IMEPIKDEFHA = 4;</code>
      * @return The iMEPIKDEFHA.
      */
     boolean getIMEPIKDEFHA();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NOJCFCNEIMJ}
    */
   public static final class NOJCFCNEIMJ extends
@@ -107,28 +111,28 @@ public final class NOJCFCNEIMJOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                avatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              avatarInfoList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 32: {
+
+              iMEPIKDEFHA_ = input.readBool();
+              break;
+            }
+            case 104: {
 
               difficulty_ = input.readUInt32();
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              avatarInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
+            case 120: {
 
               bOAKDOGPPPG_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              iMEPIKDEFHA_ = input.readBool();
               break;
             }
             default: {
@@ -166,10 +170,50 @@ public final class NOJCFCNEIMJOuterClass {
               emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ.class, emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ.Builder.class);
     }
 
-    public static final int DIFFICULTY_FIELD_NUMBER = 6;
+    public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 2;
+    private java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> avatarInfoList_;
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> getAvatarInfoListList() {
+      return avatarInfoList_;
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
+        getAvatarInfoListOrBuilderList() {
+      return avatarInfoList_;
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    @java.lang.Override
+    public int getAvatarInfoListCount() {
+      return avatarInfoList_.size();
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo getAvatarInfoList(int index) {
+      return avatarInfoList_.get(index);
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
+        int index) {
+      return avatarInfoList_.get(index);
+    }
+
+    public static final int DIFFICULTY_FIELD_NUMBER = 13;
     private int difficulty_;
     /**
-     * <code>uint32 difficulty = 6;</code>
+     * <code>uint32 difficulty = 13;</code>
      * @return The difficulty.
      */
     @java.lang.Override
@@ -177,50 +221,10 @@ public final class NOJCFCNEIMJOuterClass {
       return difficulty_;
     }
 
-    public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 9;
-    private java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> avatarInfoList_;
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> getAvatarInfoListList() {
-      return avatarInfoList_;
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
-        getAvatarInfoListOrBuilderList() {
-      return avatarInfoList_;
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    @java.lang.Override
-    public int getAvatarInfoListCount() {
-      return avatarInfoList_.size();
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo getAvatarInfoList(int index) {
-      return avatarInfoList_.get(index);
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
-        int index) {
-      return avatarInfoList_.get(index);
-    }
-
-    public static final int BOAKDOGPPPG_FIELD_NUMBER = 12;
+    public static final int BOAKDOGPPPG_FIELD_NUMBER = 15;
     private int bOAKDOGPPPG_;
     /**
-     * <code>uint32 BOAKDOGPPPG = 12;</code>
+     * <code>uint32 BOAKDOGPPPG = 15;</code>
      * @return The bOAKDOGPPPG.
      */
     @java.lang.Override
@@ -228,10 +232,10 @@ public final class NOJCFCNEIMJOuterClass {
       return bOAKDOGPPPG_;
     }
 
-    public static final int IMEPIKDEFHA_FIELD_NUMBER = 14;
+    public static final int IMEPIKDEFHA_FIELD_NUMBER = 4;
     private boolean iMEPIKDEFHA_;
     /**
-     * <code>bool IMEPIKDEFHA = 14;</code>
+     * <code>bool IMEPIKDEFHA = 4;</code>
      * @return The iMEPIKDEFHA.
      */
     @java.lang.Override
@@ -253,17 +257,17 @@ public final class NOJCFCNEIMJOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (difficulty_ != 0) {
-        output.writeUInt32(6, difficulty_);
-      }
       for (int i = 0; i < avatarInfoList_.size(); i++) {
-        output.writeMessage(9, avatarInfoList_.get(i));
-      }
-      if (bOAKDOGPPPG_ != 0) {
-        output.writeUInt32(12, bOAKDOGPPPG_);
+        output.writeMessage(2, avatarInfoList_.get(i));
       }
       if (iMEPIKDEFHA_ != false) {
-        output.writeBool(14, iMEPIKDEFHA_);
+        output.writeBool(4, iMEPIKDEFHA_);
+      }
+      if (difficulty_ != 0) {
+        output.writeUInt32(13, difficulty_);
+      }
+      if (bOAKDOGPPPG_ != 0) {
+        output.writeUInt32(15, bOAKDOGPPPG_);
       }
       unknownFields.writeTo(output);
     }
@@ -274,21 +278,21 @@ public final class NOJCFCNEIMJOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (difficulty_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, difficulty_);
-      }
       for (int i = 0; i < avatarInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, avatarInfoList_.get(i));
-      }
-      if (bOAKDOGPPPG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, bOAKDOGPPPG_);
+          .computeMessageSize(2, avatarInfoList_.get(i));
       }
       if (iMEPIKDEFHA_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, iMEPIKDEFHA_);
+          .computeBoolSize(4, iMEPIKDEFHA_);
+      }
+      if (difficulty_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, difficulty_);
+      }
+      if (bOAKDOGPPPG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, bOAKDOGPPPG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -305,10 +309,10 @@ public final class NOJCFCNEIMJOuterClass {
       }
       emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ other = (emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ) obj;
 
-      if (getDifficulty()
-          != other.getDifficulty()) return false;
       if (!getAvatarInfoListList()
           .equals(other.getAvatarInfoListList())) return false;
+      if (getDifficulty()
+          != other.getDifficulty()) return false;
       if (getBOAKDOGPPPG()
           != other.getBOAKDOGPPPG()) return false;
       if (getIMEPIKDEFHA()
@@ -324,12 +328,12 @@ public final class NOJCFCNEIMJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
       if (getAvatarInfoListCount() > 0) {
         hash = (37 * hash) + AVATAR_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarInfoListList().hashCode();
       }
+      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficulty();
       hash = (37 * hash) + BOAKDOGPPPG_FIELD_NUMBER;
       hash = (53 * hash) + getBOAKDOGPPPG();
       hash = (37 * hash) + IMEPIKDEFHA_FIELD_NUMBER;
@@ -431,6 +435,10 @@ public final class NOJCFCNEIMJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NOJCFCNEIMJ}
      */
     public static final class Builder extends
@@ -469,14 +477,14 @@ public final class NOJCFCNEIMJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        difficulty_ = 0;
-
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           avatarInfoListBuilder_.clear();
         }
+        difficulty_ = 0;
+
         bOAKDOGPPPG_ = 0;
 
         iMEPIKDEFHA_ = false;
@@ -508,7 +516,6 @@ public final class NOJCFCNEIMJOuterClass {
       public emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ buildPartial() {
         emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ result = new emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ(this);
         int from_bitField0_ = bitField0_;
-        result.difficulty_ = difficulty_;
         if (avatarInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
@@ -518,6 +525,7 @@ public final class NOJCFCNEIMJOuterClass {
         } else {
           result.avatarInfoList_ = avatarInfoListBuilder_.build();
         }
+        result.difficulty_ = difficulty_;
         result.bOAKDOGPPPG_ = bOAKDOGPPPG_;
         result.iMEPIKDEFHA_ = iMEPIKDEFHA_;
         onBuilt();
@@ -568,9 +576,6 @@ public final class NOJCFCNEIMJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ other) {
         if (other == emu.grasscutter.net.proto.NOJCFCNEIMJOuterClass.NOJCFCNEIMJ.getDefaultInstance()) return this;
-        if (other.getDifficulty() != 0) {
-          setDifficulty(other.getDifficulty());
-        }
         if (avatarInfoListBuilder_ == null) {
           if (!other.avatarInfoList_.isEmpty()) {
             if (avatarInfoList_.isEmpty()) {
@@ -596,6 +601,9 @@ public final class NOJCFCNEIMJOuterClass {
               avatarInfoListBuilder_.addAllMessages(other.avatarInfoList_);
             }
           }
+        }
+        if (other.getDifficulty() != 0) {
+          setDifficulty(other.getDifficulty());
         }
         if (other.getBOAKDOGPPPG() != 0) {
           setBOAKDOGPPPG(other.getBOAKDOGPPPG());
@@ -633,53 +641,22 @@ public final class NOJCFCNEIMJOuterClass {
       }
       private int bitField0_;
 
-      private int difficulty_ ;
-      /**
-       * <code>uint32 difficulty = 6;</code>
-       * @return The difficulty.
-       */
-      @java.lang.Override
-      public int getDifficulty() {
-        return difficulty_;
-      }
-      /**
-       * <code>uint32 difficulty = 6;</code>
-       * @param value The difficulty to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDifficulty(int value) {
-        
-        difficulty_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 difficulty = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDifficulty() {
-        
-        difficulty_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> avatarInfoList_ =
+      private java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> avatarInfoList_ =
         java.util.Collections.emptyList();
       private void ensureAvatarInfoListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          avatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo>(avatarInfoList_);
+          avatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo>(avatarInfoList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> avatarInfoListBuilder_;
+          emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> avatarInfoListBuilder_;
 
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> getAvatarInfoListList() {
+      public java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> getAvatarInfoListList() {
         if (avatarInfoListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(avatarInfoList_);
         } else {
@@ -687,7 +664,7 @@ public final class NOJCFCNEIMJOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public int getAvatarInfoListCount() {
         if (avatarInfoListBuilder_ == null) {
@@ -697,9 +674,9 @@ public final class NOJCFCNEIMJOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo getAvatarInfoList(int index) {
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo getAvatarInfoList(int index) {
         if (avatarInfoListBuilder_ == null) {
           return avatarInfoList_.get(index);
         } else {
@@ -707,10 +684,10 @@ public final class NOJCFCNEIMJOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder setAvatarInfoList(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo value) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo value) {
         if (avatarInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -724,10 +701,10 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder setAvatarInfoList(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder builderForValue) {
         if (avatarInfoListBuilder_ == null) {
           ensureAvatarInfoListIsMutable();
           avatarInfoList_.set(index, builderForValue.build());
@@ -738,9 +715,9 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public Builder addAvatarInfoList(emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo value) {
+      public Builder addAvatarInfoList(emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo value) {
         if (avatarInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -754,10 +731,10 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder addAvatarInfoList(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo value) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo value) {
         if (avatarInfoListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -771,10 +748,10 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder addAvatarInfoList(
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder builderForValue) {
+          emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder builderForValue) {
         if (avatarInfoListBuilder_ == null) {
           ensureAvatarInfoListIsMutable();
           avatarInfoList_.add(builderForValue.build());
@@ -785,10 +762,10 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder addAvatarInfoList(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder builderForValue) {
         if (avatarInfoListBuilder_ == null) {
           ensureAvatarInfoListIsMutable();
           avatarInfoList_.add(index, builderForValue.build());
@@ -799,10 +776,10 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder addAllAvatarInfoList(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> values) {
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> values) {
         if (avatarInfoListBuilder_ == null) {
           ensureAvatarInfoListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -814,7 +791,7 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder clearAvatarInfoList() {
         if (avatarInfoListBuilder_ == null) {
@@ -827,7 +804,7 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
       public Builder removeAvatarInfoList(int index) {
         if (avatarInfoListBuilder_ == null) {
@@ -840,16 +817,16 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder getAvatarInfoListBuilder(
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder getAvatarInfoListBuilder(
           int index) {
         return getAvatarInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
           int index) {
         if (avatarInfoListBuilder_ == null) {
           return avatarInfoList_.get(index);  } else {
@@ -857,9 +834,9 @@ public final class NOJCFCNEIMJOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public java.util.List<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
+      public java.util.List<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
            getAvatarInfoListOrBuilderList() {
         if (avatarInfoListBuilder_ != null) {
           return avatarInfoListBuilder_.getMessageOrBuilderList();
@@ -868,33 +845,33 @@ public final class NOJCFCNEIMJOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder addAvatarInfoListBuilder() {
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder addAvatarInfoListBuilder() {
         return getAvatarInfoListFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.getDefaultInstance());
+            emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder addAvatarInfoListBuilder(
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder addAvatarInfoListBuilder(
           int index) {
         return getAvatarInfoListFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.getDefaultInstance());
+            index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 9;</code>
+       * <code>repeated ._ActivityAvatarInfo avatar_info_list = 2;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder> 
+      public java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder> 
            getAvatarInfoListBuilderList() {
         return getAvatarInfoListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
+          emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
           getAvatarInfoListFieldBuilder() {
         if (avatarInfoListBuilder_ == null) {
           avatarInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder>(
+              emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder>(
                   avatarInfoList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -904,9 +881,40 @@ public final class NOJCFCNEIMJOuterClass {
         return avatarInfoListBuilder_;
       }
 
+      private int difficulty_ ;
+      /**
+       * <code>uint32 difficulty = 13;</code>
+       * @return The difficulty.
+       */
+      @java.lang.Override
+      public int getDifficulty() {
+        return difficulty_;
+      }
+      /**
+       * <code>uint32 difficulty = 13;</code>
+       * @param value The difficulty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDifficulty(int value) {
+        
+        difficulty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 difficulty = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDifficulty() {
+        
+        difficulty_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int bOAKDOGPPPG_ ;
       /**
-       * <code>uint32 BOAKDOGPPPG = 12;</code>
+       * <code>uint32 BOAKDOGPPPG = 15;</code>
        * @return The bOAKDOGPPPG.
        */
       @java.lang.Override
@@ -914,7 +922,7 @@ public final class NOJCFCNEIMJOuterClass {
         return bOAKDOGPPPG_;
       }
       /**
-       * <code>uint32 BOAKDOGPPPG = 12;</code>
+       * <code>uint32 BOAKDOGPPPG = 15;</code>
        * @param value The bOAKDOGPPPG to set.
        * @return This builder for chaining.
        */
@@ -925,7 +933,7 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 BOAKDOGPPPG = 12;</code>
+       * <code>uint32 BOAKDOGPPPG = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearBOAKDOGPPPG() {
@@ -937,7 +945,7 @@ public final class NOJCFCNEIMJOuterClass {
 
       private boolean iMEPIKDEFHA_ ;
       /**
-       * <code>bool IMEPIKDEFHA = 14;</code>
+       * <code>bool IMEPIKDEFHA = 4;</code>
        * @return The iMEPIKDEFHA.
        */
       @java.lang.Override
@@ -945,7 +953,7 @@ public final class NOJCFCNEIMJOuterClass {
         return iMEPIKDEFHA_;
       }
       /**
-       * <code>bool IMEPIKDEFHA = 14;</code>
+       * <code>bool IMEPIKDEFHA = 4;</code>
        * @param value The iMEPIKDEFHA to set.
        * @return This builder for chaining.
        */
@@ -956,7 +964,7 @@ public final class NOJCFCNEIMJOuterClass {
         return this;
       }
       /**
-       * <code>bool IMEPIKDEFHA = 14;</code>
+       * <code>bool IMEPIKDEFHA = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIMEPIKDEFHA() {
@@ -1033,24 +1041,24 @@ public final class NOJCFCNEIMJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021NOJCFCNEIMJ.proto\032\031_ActivityAvatarInfo" +
-      ".proto\"{\n\013NOJCFCNEIMJ\022\022\n\ndifficulty\030\006 \001(" +
-      "\r\022.\n\020avatar_info_list\030\t \003(\0132\024._ActivityA" +
-      "vatarInfo\022\023\n\013BOAKDOGPPPG\030\014 \001(\r\022\023\n\013IMEPIK" +
-      "DEFHA\030\016 \001(\010B2\n\031emu.grasscutter.net.proto" +
-      "B\025NOJCFCNEIMJOuterClassb\006proto3"
+      ".proto\"{\n\013NOJCFCNEIMJ\022.\n\020avatar_info_lis" +
+      "t\030\002 \003(\0132\024._ActivityAvatarInfo\022\022\n\ndifficu" +
+      "lty\030\r \001(\r\022\023\n\013BOAKDOGPPPG\030\017 \001(\r\022\023\n\013IMEPIK" +
+      "DEFHA\030\004 \001(\010B\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ActivityAvatarInfo.getDescriptor(),
         });
     internal_static_NOJCFCNEIMJ_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_NOJCFCNEIMJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NOJCFCNEIMJ_descriptor,
-        new java.lang.String[] { "Difficulty", "AvatarInfoList", "BOAKDOGPPPG", "IMEPIKDEFHA", });
-    emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "AvatarInfoList", "Difficulty", "BOAKDOGPPPG", "IMEPIKDEFHA", });
+    emu.grasscutter.net.proto.ActivityAvatarInfo.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

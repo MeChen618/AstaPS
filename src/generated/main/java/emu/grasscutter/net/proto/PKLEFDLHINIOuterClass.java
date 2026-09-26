@@ -19,30 +19,34 @@ public final class PKLEFDLHINIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL> 
         getLevelInfoListList();
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL getLevelInfoList(int index);
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     int getLevelInfoListCount();
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder> 
         getLevelInfoListOrBuilderList();
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder getLevelInfoListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PKLEFDLHINI}
    */
   public static final class PKLEFDLHINI extends
@@ -89,7 +93,7 @@ public final class PKLEFDLHINIOuterClass {
             case 0:
               done = true;
               break;
-            case 66: {
+            case 18: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class PKLEFDLHINIOuterClass {
               emu.grasscutter.net.proto.PKLEFDLHINIOuterClass.PKLEFDLHINI.class, emu.grasscutter.net.proto.PKLEFDLHINIOuterClass.PKLEFDLHINI.Builder.class);
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 8;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL> levelInfoList_;
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder> 
@@ -151,21 +155,21 @@ public final class PKLEFDLHINIOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+     * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder getLevelInfoListOrBuilder(
@@ -188,7 +192,7 @@ public final class PKLEFDLHINIOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(8, levelInfoList_.get(i));
+        output.writeMessage(2, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class PKLEFDLHINIOuterClass {
       size = 0;
       for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, levelInfoList_.get(i));
+          .computeMessageSize(2, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class PKLEFDLHINIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PKLEFDLHINI}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class PKLEFDLHINIOuterClass {
           emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class PKLEFDLHINIOuterClass {
         }
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class PKLEFDLHINIOuterClass {
         }
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class PKLEFDLHINIOuterClass {
         }
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL value) {
@@ -575,7 +583,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL value) {
         if (levelInfoListBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL value) {
@@ -622,7 +630,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL> values) {
@@ -665,7 +673,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class PKLEFDLHINIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class PKLEFDLHINIOuterClass {
         }
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOLOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -719,14 +727,14 @@ public final class PKLEFDLHINIOuterClass {
         }
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.getDefaultInstance());
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder addLevelInfoListBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class PKLEFDLHINIOuterClass {
             index, emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.getDefaultInstance());
       }
       /**
-       * <code>repeated .MKLDDPJAEOL level_info_list = 8;</code>
+       * <code>repeated .MKLDDPJAEOL level_info_list = 2;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MKLDDPJAEOLOuterClass.MKLDDPJAEOL.Builder> 
            getLevelInfoListBuilderList() {
@@ -822,9 +830,9 @@ public final class PKLEFDLHINIOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021PKLEFDLHINI.proto\032\021MKLDDPJAEOL.proto\"4" +
-      "\n\013PKLEFDLHINI\022%\n\017level_info_list\030\010 \003(\0132\014" +
-      ".MKLDDPJAEOLB2\n\031emu.grasscutter.net.prot" +
-      "oB\025PKLEFDLHINIOuterClassb\006proto3"
+      "\n\013PKLEFDLHINI\022%\n\017level_info_list\030\002 \003(\0132\014" +
+      ".MKLDDPJAEOLB\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

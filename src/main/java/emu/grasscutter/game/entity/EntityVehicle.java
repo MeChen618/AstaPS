@@ -103,7 +103,7 @@ public class EntityVehicle extends EntityBaseGadget {
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
                                 SceneEntityAiInfo.newBuilder()
-                                        .setIsAiOpen(true))
+                                        .setIsEnteredCombat(true))
                         .setBornPos(getPosition().toProto())
                         .build();
 

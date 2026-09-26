@@ -19,12 +19,6 @@ public final class PropPairOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 type = 1;</code>
-     * @return The type.
-     */
-    int getType();
-
-    /**
      * <code>.PropValue prop_value = 2;</code>
      * @return Whether the propValue field is set.
      */
@@ -38,8 +32,18 @@ public final class PropPairOuterClass {
      * <code>.PropValue prop_value = 2;</code>
      */
     emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder getPropValueOrBuilder();
+
+    /**
+     * <code>uint32 type = 1;</code>
+     * @return The type.
+     */
+    int getType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PropPair}
    */
   public static final class PropPair extends
@@ -134,17 +138,6 @@ public final class PropPairOuterClass {
               emu.grasscutter.net.proto.PropPairOuterClass.PropPair.class, emu.grasscutter.net.proto.PropPairOuterClass.PropPair.Builder.class);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
-    /**
-     * <code>uint32 type = 1;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public int getType() {
-      return type_;
-    }
-
     public static final int PROP_VALUE_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.PropValueOuterClass.PropValue propValue_;
     /**
@@ -169,6 +162,17 @@ public final class PropPairOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.PropValueOuterClass.PropValueOrBuilder getPropValueOrBuilder() {
       return getPropValue();
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_;
+    /**
+     * <code>uint32 type = 1;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public int getType() {
+      return type_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,13 +227,13 @@ public final class PropPairOuterClass {
       }
       emu.grasscutter.net.proto.PropPairOuterClass.PropPair other = (emu.grasscutter.net.proto.PropPairOuterClass.PropPair) obj;
 
-      if (getType()
-          != other.getType()) return false;
       if (hasPropValue() != other.hasPropValue()) return false;
       if (hasPropValue()) {
         if (!getPropValue()
             .equals(other.getPropValue())) return false;
       }
+      if (getType()
+          != other.getType()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +245,12 @@ public final class PropPairOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
       if (hasPropValue()) {
         hash = (37 * hash) + PROP_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getPropValue().hashCode();
       }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,6 +347,10 @@ public final class PropPairOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PropPair}
      */
     public static final class Builder extends
@@ -380,14 +388,14 @@ public final class PropPairOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        type_ = 0;
-
         if (propValueBuilder_ == null) {
           propValue_ = null;
         } else {
           propValue_ = null;
           propValueBuilder_ = null;
         }
+        type_ = 0;
+
         return this;
       }
 
@@ -414,12 +422,12 @@ public final class PropPairOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PropPairOuterClass.PropPair buildPartial() {
         emu.grasscutter.net.proto.PropPairOuterClass.PropPair result = new emu.grasscutter.net.proto.PropPairOuterClass.PropPair(this);
-        result.type_ = type_;
         if (propValueBuilder_ == null) {
           result.propValue_ = propValue_;
         } else {
           result.propValue_ = propValueBuilder_.build();
         }
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -468,11 +476,11 @@ public final class PropPairOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PropPairOuterClass.PropPair other) {
         if (other == emu.grasscutter.net.proto.PropPairOuterClass.PropPair.getDefaultInstance()) return this;
-        if (other.getType() != 0) {
-          setType(other.getType());
-        }
         if (other.hasPropValue()) {
           mergePropValue(other.getPropValue());
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -500,37 +508,6 @@ public final class PropPairOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int type_ ;
-      /**
-       * <code>uint32 type = 1;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public int getType() {
-        return type_;
-      }
-      /**
-       * <code>uint32 type = 1;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(int value) {
-        
-        type_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 type = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        
-        type_ = 0;
-        onChanged();
         return this;
       }
 
@@ -652,6 +629,37 @@ public final class PropPairOuterClass {
         }
         return propValueBuilder_;
       }
+
+      private int type_ ;
+      /**
+       * <code>uint32 type = 1;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>uint32 type = 1;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -720,9 +728,9 @@ public final class PropPairOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016PropPair.proto\032\017PropValue.proto\"8\n\010Pro" +
-      "pPair\022\014\n\004type\030\001 \001(\r\022\036\n\nprop_value\030\002 \001(\0132" +
-      "\n.PropValueB/\n\031emu.grasscutter.net.proto" +
-      "B\022PropPairOuterClassb\006proto3"
+      "pPair\022\036\n\nprop_value\030\002 \001(\0132\n.PropValue\022\014\n" +
+      "\004type\030\001 \001(\rB\033\n\031emu.grasscutter.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -734,7 +742,7 @@ public final class PropPairOuterClass {
     internal_static_PropPair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PropPair_descriptor,
-        new java.lang.String[] { "Type", "PropValue", });
+        new java.lang.String[] { "PropValue", "Type", });
     emu.grasscutter.net.proto.PropValueOuterClass.getDescriptor();
   }
 

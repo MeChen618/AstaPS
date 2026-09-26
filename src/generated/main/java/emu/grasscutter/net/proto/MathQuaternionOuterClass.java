@@ -19,6 +19,12 @@ public final class MathQuaternionOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>float w = 4;</code>
+     * @return The w.
+     */
+    float getW();
+
+    /**
      * <code>float x = 1;</code>
      * @return The x.
      */
@@ -35,14 +41,12 @@ public final class MathQuaternionOuterClass {
      * @return The z.
      */
     float getZ();
-
-    /**
-     * <code>float w = 4;</code>
-     * @return The w.
-     */
-    float getW();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MathQuaternion}
    */
   public static final class MathQuaternion extends
@@ -139,6 +143,17 @@ public final class MathQuaternionOuterClass {
               emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.class, emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder.class);
     }
 
+    public static final int W_FIELD_NUMBER = 4;
+    private float w_;
+    /**
+     * <code>float w = 4;</code>
+     * @return The w.
+     */
+    @java.lang.Override
+    public float getW() {
+      return w_;
+    }
+
     public static final int X_FIELD_NUMBER = 1;
     private float x_;
     /**
@@ -170,17 +185,6 @@ public final class MathQuaternionOuterClass {
     @java.lang.Override
     public float getZ() {
       return z_;
-    }
-
-    public static final int W_FIELD_NUMBER = 4;
-    private float w_;
-    /**
-     * <code>float w = 4;</code>
-     * @return The w.
-     */
-    @java.lang.Override
-    public float getW() {
-      return w_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -249,6 +253,9 @@ public final class MathQuaternionOuterClass {
       }
       emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion other = (emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion) obj;
 
+      if (java.lang.Float.floatToIntBits(getW())
+          != java.lang.Float.floatToIntBits(
+              other.getW())) return false;
       if (java.lang.Float.floatToIntBits(getX())
           != java.lang.Float.floatToIntBits(
               other.getX())) return false;
@@ -258,9 +265,6 @@ public final class MathQuaternionOuterClass {
       if (java.lang.Float.floatToIntBits(getZ())
           != java.lang.Float.floatToIntBits(
               other.getZ())) return false;
-      if (java.lang.Float.floatToIntBits(getW())
-          != java.lang.Float.floatToIntBits(
-              other.getW())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,6 +276,9 @@ public final class MathQuaternionOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + W_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getW());
       hash = (37 * hash) + X_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getX());
@@ -281,9 +288,6 @@ public final class MathQuaternionOuterClass {
       hash = (37 * hash) + Z_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getZ());
-      hash = (37 * hash) + W_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getW());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -380,6 +384,10 @@ public final class MathQuaternionOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MathQuaternion}
      */
     public static final class Builder extends
@@ -417,13 +425,13 @@ public final class MathQuaternionOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        w_ = 0F;
+
         x_ = 0F;
 
         y_ = 0F;
 
         z_ = 0F;
-
-        w_ = 0F;
 
         return this;
       }
@@ -451,10 +459,10 @@ public final class MathQuaternionOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion buildPartial() {
         emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion result = new emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion(this);
+        result.w_ = w_;
         result.x_ = x_;
         result.y_ = y_;
         result.z_ = z_;
-        result.w_ = w_;
         onBuilt();
         return result;
       }
@@ -503,6 +511,9 @@ public final class MathQuaternionOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion other) {
         if (other == emu.grasscutter.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance()) return this;
+        if (other.getW() != 0F) {
+          setW(other.getW());
+        }
         if (other.getX() != 0F) {
           setX(other.getX());
         }
@@ -511,9 +522,6 @@ public final class MathQuaternionOuterClass {
         }
         if (other.getZ() != 0F) {
           setZ(other.getZ());
-        }
-        if (other.getW() != 0F) {
-          setW(other.getW());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -541,6 +549,37 @@ public final class MathQuaternionOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private float w_ ;
+      /**
+       * <code>float w = 4;</code>
+       * @return The w.
+       */
+      @java.lang.Override
+      public float getW() {
+        return w_;
+      }
+      /**
+       * <code>float w = 4;</code>
+       * @param value The w to set.
+       * @return This builder for chaining.
+       */
+      public Builder setW(float value) {
+        
+        w_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float w = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearW() {
+        
+        w_ = 0F;
+        onChanged();
         return this;
       }
 
@@ -636,37 +675,6 @@ public final class MathQuaternionOuterClass {
         onChanged();
         return this;
       }
-
-      private float w_ ;
-      /**
-       * <code>float w = 4;</code>
-       * @return The w.
-       */
-      @java.lang.Override
-      public float getW() {
-        return w_;
-      }
-      /**
-       * <code>float w = 4;</code>
-       * @param value The w to set.
-       * @return This builder for chaining.
-       */
-      public Builder setW(float value) {
-        
-        w_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float w = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearW() {
-        
-        w_ = 0F;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -735,9 +743,9 @@ public final class MathQuaternionOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024MathQuaternion.proto\"<\n\016MathQuaternion" +
-      "\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002\022\t\n\001w\030\004" +
-      " \001(\002B5\n\031emu.grasscutter.net.protoB\030MathQ" +
-      "uaternionOuterClassb\006proto3"
+      "\022\t\n\001w\030\004 \001(\002\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003" +
+      " \001(\002B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -748,7 +756,7 @@ public final class MathQuaternionOuterClass {
     internal_static_MathQuaternion_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MathQuaternion_descriptor,
-        new java.lang.String[] { "X", "Y", "Z", "W", });
+        new java.lang.String[] { "W", "X", "Y", "Z", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

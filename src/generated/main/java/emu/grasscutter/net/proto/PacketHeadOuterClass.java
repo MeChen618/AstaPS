@@ -19,28 +19,16 @@ public final class PacketHeadOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 client_sequence_id = 3;</code>
-     * @return The clientSequenceId.
-     */
-    int getClientSequenceId();
-
-    /**
-     * <code>uint64 sent_ms = 6;</code>
-     * @return The sentMs.
-     */
-    long getSentMs();
-
-    /**
      * <code>uint32 NAOICAHMEBA = 7;</code>
      * @return The nAOICAHMEBA.
      */
     int getNAOICAHMEBA();
 
     /**
-     * <code>uint32 NHBKNKEIPAB = 8;</code>
-     * @return The nHBKNKEIPAB.
+     * <code>uint64 sent_ms = 6;</code>
+     * @return The sentMs.
      */
-    int getNHBKNKEIPAB();
+    long getSentMs();
 
     /**
      * <code>uint32 KIBNBAGOICF = 9;</code>
@@ -53,8 +41,24 @@ public final class PacketHeadOuterClass {
      * @return The iJAEGLBPOBJ.
      */
     int getIJAEGLBPOBJ();
+
+    /**
+     * <code>uint32 client_sequence_id = 3;</code>
+     * @return The clientSequenceId.
+     */
+    int getClientSequenceId();
+
+    /**
+     * <code>uint32 NHBKNKEIPAB = 8;</code>
+     * @return The nHBKNKEIPAB.
+     */
+    int getNHBKNKEIPAB();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PacketHead}
    */
   public static final class PacketHead extends
@@ -161,28 +165,6 @@ public final class PacketHeadOuterClass {
               emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.class, emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.Builder.class);
     }
 
-    public static final int CLIENT_SEQUENCE_ID_FIELD_NUMBER = 3;
-    private int clientSequenceId_;
-    /**
-     * <code>uint32 client_sequence_id = 3;</code>
-     * @return The clientSequenceId.
-     */
-    @java.lang.Override
-    public int getClientSequenceId() {
-      return clientSequenceId_;
-    }
-
-    public static final int SENT_MS_FIELD_NUMBER = 6;
-    private long sentMs_;
-    /**
-     * <code>uint64 sent_ms = 6;</code>
-     * @return The sentMs.
-     */
-    @java.lang.Override
-    public long getSentMs() {
-      return sentMs_;
-    }
-
     public static final int NAOICAHMEBA_FIELD_NUMBER = 7;
     private int nAOICAHMEBA_;
     /**
@@ -194,15 +176,15 @@ public final class PacketHeadOuterClass {
       return nAOICAHMEBA_;
     }
 
-    public static final int NHBKNKEIPAB_FIELD_NUMBER = 8;
-    private int nHBKNKEIPAB_;
+    public static final int SENT_MS_FIELD_NUMBER = 6;
+    private long sentMs_;
     /**
-     * <code>uint32 NHBKNKEIPAB = 8;</code>
-     * @return The nHBKNKEIPAB.
+     * <code>uint64 sent_ms = 6;</code>
+     * @return The sentMs.
      */
     @java.lang.Override
-    public int getNHBKNKEIPAB() {
-      return nHBKNKEIPAB_;
+    public long getSentMs() {
+      return sentMs_;
     }
 
     public static final int KIBNBAGOICF_FIELD_NUMBER = 9;
@@ -225,6 +207,28 @@ public final class PacketHeadOuterClass {
     @java.lang.Override
     public int getIJAEGLBPOBJ() {
       return iJAEGLBPOBJ_;
+    }
+
+    public static final int CLIENT_SEQUENCE_ID_FIELD_NUMBER = 3;
+    private int clientSequenceId_;
+    /**
+     * <code>uint32 client_sequence_id = 3;</code>
+     * @return The clientSequenceId.
+     */
+    @java.lang.Override
+    public int getClientSequenceId() {
+      return clientSequenceId_;
+    }
+
+    public static final int NHBKNKEIPAB_FIELD_NUMBER = 8;
+    private int nHBKNKEIPAB_;
+    /**
+     * <code>uint32 NHBKNKEIPAB = 8;</code>
+     * @return The nHBKNKEIPAB.
+     */
+    @java.lang.Override
+    public int getNHBKNKEIPAB() {
+      return nHBKNKEIPAB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -307,18 +311,18 @@ public final class PacketHeadOuterClass {
       }
       emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead other = (emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead) obj;
 
-      if (getClientSequenceId()
-          != other.getClientSequenceId()) return false;
-      if (getSentMs()
-          != other.getSentMs()) return false;
       if (getNAOICAHMEBA()
           != other.getNAOICAHMEBA()) return false;
-      if (getNHBKNKEIPAB()
-          != other.getNHBKNKEIPAB()) return false;
+      if (getSentMs()
+          != other.getSentMs()) return false;
       if (getKIBNBAGOICF()
           != other.getKIBNBAGOICF()) return false;
       if (getIJAEGLBPOBJ()
           != other.getIJAEGLBPOBJ()) return false;
+      if (getClientSequenceId()
+          != other.getClientSequenceId()) return false;
+      if (getNHBKNKEIPAB()
+          != other.getNHBKNKEIPAB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -330,19 +334,19 @@ public final class PacketHeadOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CLIENT_SEQUENCE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getClientSequenceId();
+      hash = (37 * hash) + NAOICAHMEBA_FIELD_NUMBER;
+      hash = (53 * hash) + getNAOICAHMEBA();
       hash = (37 * hash) + SENT_MS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSentMs());
-      hash = (37 * hash) + NAOICAHMEBA_FIELD_NUMBER;
-      hash = (53 * hash) + getNAOICAHMEBA();
-      hash = (37 * hash) + NHBKNKEIPAB_FIELD_NUMBER;
-      hash = (53 * hash) + getNHBKNKEIPAB();
       hash = (37 * hash) + KIBNBAGOICF_FIELD_NUMBER;
       hash = (53 * hash) + getKIBNBAGOICF();
       hash = (37 * hash) + IJAEGLBPOBJ_FIELD_NUMBER;
       hash = (53 * hash) + getIJAEGLBPOBJ();
+      hash = (37 * hash) + CLIENT_SEQUENCE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientSequenceId();
+      hash = (37 * hash) + NHBKNKEIPAB_FIELD_NUMBER;
+      hash = (53 * hash) + getNHBKNKEIPAB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -439,6 +443,10 @@ public final class PacketHeadOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PacketHead}
      */
     public static final class Builder extends
@@ -476,17 +484,17 @@ public final class PacketHeadOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        clientSequenceId_ = 0;
-
-        sentMs_ = 0L;
-
         nAOICAHMEBA_ = 0;
 
-        nHBKNKEIPAB_ = 0;
+        sentMs_ = 0L;
 
         kIBNBAGOICF_ = 0;
 
         iJAEGLBPOBJ_ = 0;
+
+        clientSequenceId_ = 0;
+
+        nHBKNKEIPAB_ = 0;
 
         return this;
       }
@@ -514,12 +522,12 @@ public final class PacketHeadOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead buildPartial() {
         emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead result = new emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead(this);
-        result.clientSequenceId_ = clientSequenceId_;
-        result.sentMs_ = sentMs_;
         result.nAOICAHMEBA_ = nAOICAHMEBA_;
-        result.nHBKNKEIPAB_ = nHBKNKEIPAB_;
+        result.sentMs_ = sentMs_;
         result.kIBNBAGOICF_ = kIBNBAGOICF_;
         result.iJAEGLBPOBJ_ = iJAEGLBPOBJ_;
+        result.clientSequenceId_ = clientSequenceId_;
+        result.nHBKNKEIPAB_ = nHBKNKEIPAB_;
         onBuilt();
         return result;
       }
@@ -568,23 +576,23 @@ public final class PacketHeadOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead other) {
         if (other == emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead.getDefaultInstance()) return this;
-        if (other.getClientSequenceId() != 0) {
-          setClientSequenceId(other.getClientSequenceId());
-        }
-        if (other.getSentMs() != 0L) {
-          setSentMs(other.getSentMs());
-        }
         if (other.getNAOICAHMEBA() != 0) {
           setNAOICAHMEBA(other.getNAOICAHMEBA());
         }
-        if (other.getNHBKNKEIPAB() != 0) {
-          setNHBKNKEIPAB(other.getNHBKNKEIPAB());
+        if (other.getSentMs() != 0L) {
+          setSentMs(other.getSentMs());
         }
         if (other.getKIBNBAGOICF() != 0) {
           setKIBNBAGOICF(other.getKIBNBAGOICF());
         }
         if (other.getIJAEGLBPOBJ() != 0) {
           setIJAEGLBPOBJ(other.getIJAEGLBPOBJ());
+        }
+        if (other.getClientSequenceId() != 0) {
+          setClientSequenceId(other.getClientSequenceId());
+        }
+        if (other.getNHBKNKEIPAB() != 0) {
+          setNHBKNKEIPAB(other.getNHBKNKEIPAB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -612,68 +620,6 @@ public final class PacketHeadOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int clientSequenceId_ ;
-      /**
-       * <code>uint32 client_sequence_id = 3;</code>
-       * @return The clientSequenceId.
-       */
-      @java.lang.Override
-      public int getClientSequenceId() {
-        return clientSequenceId_;
-      }
-      /**
-       * <code>uint32 client_sequence_id = 3;</code>
-       * @param value The clientSequenceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setClientSequenceId(int value) {
-        
-        clientSequenceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 client_sequence_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearClientSequenceId() {
-        
-        clientSequenceId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long sentMs_ ;
-      /**
-       * <code>uint64 sent_ms = 6;</code>
-       * @return The sentMs.
-       */
-      @java.lang.Override
-      public long getSentMs() {
-        return sentMs_;
-      }
-      /**
-       * <code>uint64 sent_ms = 6;</code>
-       * @param value The sentMs to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSentMs(long value) {
-        
-        sentMs_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 sent_ms = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSentMs() {
-        
-        sentMs_ = 0L;
-        onChanged();
         return this;
       }
 
@@ -708,33 +654,33 @@ public final class PacketHeadOuterClass {
         return this;
       }
 
-      private int nHBKNKEIPAB_ ;
+      private long sentMs_ ;
       /**
-       * <code>uint32 NHBKNKEIPAB = 8;</code>
-       * @return The nHBKNKEIPAB.
+       * <code>uint64 sent_ms = 6;</code>
+       * @return The sentMs.
        */
       @java.lang.Override
-      public int getNHBKNKEIPAB() {
-        return nHBKNKEIPAB_;
+      public long getSentMs() {
+        return sentMs_;
       }
       /**
-       * <code>uint32 NHBKNKEIPAB = 8;</code>
-       * @param value The nHBKNKEIPAB to set.
+       * <code>uint64 sent_ms = 6;</code>
+       * @param value The sentMs to set.
        * @return This builder for chaining.
        */
-      public Builder setNHBKNKEIPAB(int value) {
+      public Builder setSentMs(long value) {
         
-        nHBKNKEIPAB_ = value;
+        sentMs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 NHBKNKEIPAB = 8;</code>
+       * <code>uint64 sent_ms = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNHBKNKEIPAB() {
+      public Builder clearSentMs() {
         
-        nHBKNKEIPAB_ = 0;
+        sentMs_ = 0L;
         onChanged();
         return this;
       }
@@ -797,6 +743,68 @@ public final class PacketHeadOuterClass {
       public Builder clearIJAEGLBPOBJ() {
         
         iJAEGLBPOBJ_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int clientSequenceId_ ;
+      /**
+       * <code>uint32 client_sequence_id = 3;</code>
+       * @return The clientSequenceId.
+       */
+      @java.lang.Override
+      public int getClientSequenceId() {
+        return clientSequenceId_;
+      }
+      /**
+       * <code>uint32 client_sequence_id = 3;</code>
+       * @param value The clientSequenceId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientSequenceId(int value) {
+        
+        clientSequenceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 client_sequence_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientSequenceId() {
+        
+        clientSequenceId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int nHBKNKEIPAB_ ;
+      /**
+       * <code>uint32 NHBKNKEIPAB = 8;</code>
+       * @return The nHBKNKEIPAB.
+       */
+      @java.lang.Override
+      public int getNHBKNKEIPAB() {
+        return nHBKNKEIPAB_;
+      }
+      /**
+       * <code>uint32 NHBKNKEIPAB = 8;</code>
+       * @param value The nHBKNKEIPAB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNHBKNKEIPAB(int value) {
+        
+        nHBKNKEIPAB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 NHBKNKEIPAB = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNHBKNKEIPAB() {
+        
+        nHBKNKEIPAB_ = 0;
         onChanged();
         return this;
       }
@@ -867,12 +875,11 @@ public final class PacketHeadOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020PacketHead.proto\"\215\001\n\nPacketHead\022\032\n\022cli" +
-      "ent_sequence_id\030\003 \001(\r\022\017\n\007sent_ms\030\006 \001(\004\022\023" +
-      "\n\013NAOICAHMEBA\030\007 \001(\r\022\023\n\013NHBKNKEIPAB\030\010 \001(\r" +
-      "\022\023\n\013KIBNBAGOICF\030\t \001(\r\022\023\n\013IJAEGLBPOBJ\030\n \001" +
-      "(\rB1\n\031emu.grasscutter.net.protoB\024PacketH" +
-      "eadOuterClassb\006proto3"
+      "\n\020PacketHead.proto\"\215\001\n\nPacketHead\022\023\n\013NAO" +
+      "ICAHMEBA\030\007 \001(\r\022\017\n\007sent_ms\030\006 \001(\004\022\023\n\013KIBNB" +
+      "AGOICF\030\t \001(\r\022\023\n\013IJAEGLBPOBJ\030\n \001(\r\022\032\n\022cli" +
+      "ent_sequence_id\030\003 \001(\r\022\023\n\013NHBKNKEIPAB\030\010 \001" +
+      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -883,7 +890,7 @@ public final class PacketHeadOuterClass {
     internal_static_PacketHead_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PacketHead_descriptor,
-        new java.lang.String[] { "ClientSequenceId", "SentMs", "NAOICAHMEBA", "NHBKNKEIPAB", "KIBNBAGOICF", "IJAEGLBPOBJ", });
+        new java.lang.String[] { "NAOICAHMEBA", "SentMs", "KIBNBAGOICF", "IJAEGLBPOBJ", "ClientSequenceId", "NHBKNKEIPAB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

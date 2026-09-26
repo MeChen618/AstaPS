@@ -644,9 +644,8 @@ public final class GetMailItemReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GetMailItemReq.proto\"&\n\016GetMailItemReq" +
-      "\022\024\n\014mail_id_list\030\017 \003(\rB5\n\031emu.grasscutte" +
-      "r.net.protoB\030GetMailItemReqOuterClassb\006p" +
-      "roto3"
+      "\022\024\n\014mail_id_list\030\017 \003(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

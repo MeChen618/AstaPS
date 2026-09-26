@@ -516,14 +516,14 @@ public final class TowerTeamSelectRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030TowerTeamSelectRsp.proto\"%\n\022TowerTeamS" +
-      "electRsp\022\017\n\007retcode\030\003 \001(\005B9\n\031emu.grasscu" +
-      "tter.net.protoB\034TowerTeamSelectRspOuterC" +
-      "lassb\006proto3"
+      "\n\030TowerTeamSelectRsp.proto\032\rRetcode.prot" +
+      "o\"%\n\022TowerTeamSelectRsp\022\017\n\007retcode\030\003 \001(\005" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_TowerTeamSelectRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -531,6 +531,7 @@ public final class TowerTeamSelectRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerTeamSelectRsp_descriptor,
         new java.lang.String[] { "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

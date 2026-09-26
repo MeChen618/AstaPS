@@ -1,142 +1,110 @@
-/*
- * Decompiled with CFR 0.152.
- */
 package emu.grasscutter.game.battlepass;
 
-import com.google.protobuf.CodedOutputStream;
 import emu.grasscutter.data.excels.BattlePassMissionData;
-import emu.grasscutter.game.battlepass.BattlePassCompatHelper;
-import emu.grasscutter.game.battlepass.BattlePassManager;
-import emu.grasscutter.game.battlepass.BattlePassMission;
 import emu.grasscutter.game.props.BattlePassMissionStatus;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import emu.grasscutter.net.proto.BeyondBattlePassAllDataNotify._BeyondBattlePassAllDataNotify;
+import emu.grasscutter.net.proto.BeyondBattlePassCurScheduleUpdateNotify._BeyondBattlePassCurScheduleUpdateNotify;
+import emu.grasscutter.net.proto.BeyondBattlePassMission._BeyondBattlePassMission;
+import emu.grasscutter.net.proto.BeyondBattlePassMissionUpdateNotify._BeyondBattlePassMissionUpdateNotify;
+import emu.grasscutter.net.proto.BeyondBattlePassProduct._BeyondBattlePassProduct;
+import emu.grasscutter.net.proto.BeyondBattlePassSchedule._BeyondBattlePassSchedule;
 import java.util.Collection;
 
+/**
+ * Builds the Miliastra (Beyond) battle pass packets. These used to be hand-encoded with field
+ * numbers from an older client; 7.1 names every field, so the generated classes are used.
+ */
 public final class BeyondBattlePassWireEncoder {
     public static final int FIXED_BEGIN = 1785528000;
     public static final int FIXED_END = 1795982399;
-    private BeyondBattlePassWireEncoder() {
-    }
+    private static final int SCHEDULE_ID = 6700;
+
+    private BeyondBattlePassWireEncoder() {}
 
     public static byte[] encodeAllDataNotify(BattlePassManager battlePassManager) {
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-            codedOutputStream.writeByteArray(4, BeyondBattlePassWireEncoder.encodeProduct());
-            codedOutputStream.writeByteArray(5, BeyondBattlePassWireEncoder.encodeSchedule(battlePassManager));
-            codedOutputStream.writeBool(10, true);
-            codedOutputStream.writeUInt32(15, 6700);
-            codedOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
-        }
-        catch (IOException iOException) {
-            throw new IllegalStateException("encode _BeyondBattlePassAllDataNotify failed", iOException);
-        }
+        return _BeyondBattlePassAllDataNotify.newBuilder()
+                .setProductInfo(product())
+                .setCurSchedule(schedule(battlePassManager))
+                .setHaveCurBeyondSchedule(true)
+                .setGOKJFDPPOHF(SCHEDULE_ID)
+                .build()
+                .toByteArray();
     }
 
     public static byte[] encodeCurScheduleUpdateNotify(BattlePassManager battlePassManager) {
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-            codedOutputStream.writeBool(2, true);
-            codedOutputStream.writeByteArray(3, BeyondBattlePassWireEncoder.encodeSchedule(battlePassManager));
-            codedOutputStream.writeUInt32(5, 6700);
-            codedOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
-        }
-        catch (IOException iOException) {
-            throw new IllegalStateException("encode _BeyondBattlePassCurScheduleUpdateNotify failed", iOException);
-        }
+        return _BeyondBattlePassCurScheduleUpdateNotify.newBuilder()
+                .setHaveCurBeyondSchedule(true)
+                .setCurSchedule(schedule(battlePassManager))
+                .setGOKJFDPPOHF(SCHEDULE_ID)
+                .build()
+                .toByteArray();
     }
 
     public static byte[] encodeMissionUpdateNotify(BattlePassMission battlePassMission) {
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-            BattlePassMissionData battlePassMissionData = battlePassMission != null ? battlePassMission.getData() : null;
-            codedOutputStream.writeByteArray(6, BeyondBattlePassWireEncoder.encodeMission(battlePassMission, battlePassMissionData));
-            codedOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
-        }
-        catch (IOException iOException) {
-            throw new IllegalStateException("encode _BeyondBattlePassMissionUpdateNotify failed", iOException);
-        }
+        BattlePassMissionData data = battlePassMission != null ? battlePassMission.getData() : null;
+        return _BeyondBattlePassMissionUpdateNotify.newBuilder()
+                .addMissionList(mission(battlePassMission, data))
+                .build()
+                .toByteArray();
     }
 
     public static byte[] encodeMissionUpdateNotify(Collection<BattlePassMission> collection) {
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-            if (collection != null) {
-                for (BattlePassMission battlePassMission : collection) {
-                    if (battlePassMission == null) continue;
-                    codedOutputStream.writeByteArray(6, BeyondBattlePassWireEncoder.encodeMission(battlePassMission, battlePassMission.getData()));
-                }
+        var notify = _BeyondBattlePassMissionUpdateNotify.newBuilder();
+        if (collection != null) {
+            for (BattlePassMission battlePassMission : collection) {
+                if (battlePassMission == null) continue;
+                notify.addMissionList(mission(battlePassMission, battlePassMission.getData()));
             }
-            codedOutputStream.flush();
-            return byteArrayOutputStream.toByteArray();
         }
-        catch (IOException iOException) {
-            throw new IllegalStateException("encode _BeyondBattlePassMissionUpdateNotify failed", iOException);
-        }
+        return notify.build().toByteArray();
     }
 
-    private static byte[] encodeSchedule(BattlePassManager battlePassManager) throws IOException {
-        int n = battlePassManager != null ? battlePassManager.getLevel() : 0;
-        int n2 = battlePassManager != null ? battlePassManager.getPoint() : 0;
-        int n3 = BattlePassCompatHelper.beginTime();
-        int n4 = BattlePassCompatHelper.endTime();
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-        boolean bl = battlePassManager != null && battlePassManager.isPaid();
-        int n5 = bl ? 2 : 1;
-        codedOutputStream.writeUInt32(1, n2);
-        codedOutputStream.writeBool(2, true);
-        codedOutputStream.writeBool(3, false);
-        codedOutputStream.writeEnum(4, n5);
-        codedOutputStream.writeUInt32(5, 6700);
-        codedOutputStream.writeUInt32(6, n);
-        codedOutputStream.writeUInt32(7, n4);
-        codedOutputStream.writeUInt32(8, 0);
-        codedOutputStream.writeUInt32(9, n);
-        codedOutputStream.writeUInt32(12, 6700);
-        codedOutputStream.writeByteArray(13, BeyondBattlePassWireEncoder.encodeProduct());
-        codedOutputStream.flush();
-        return byteArrayOutputStream.toByteArray();
+    private static _BeyondBattlePassSchedule schedule(BattlePassManager battlePassManager) {
+        int level = battlePassManager != null ? battlePassManager.getLevel() : 0;
+        int point = battlePassManager != null ? battlePassManager.getPoint() : 0;
+        boolean paid = battlePassManager != null && battlePassManager.isPaid();
+        return _BeyondBattlePassSchedule.newBuilder()
+                .setPoint(point)
+                .setOEGGIOOLJKJ(true)
+                .setIsExtraPaidRewardTaken(false)
+                .setUnlockStatusValue(paid ? 2 : 1)
+                .setGOKJFDPPOHF(SCHEDULE_ID)
+                .setLevel(level)
+                .setBeginTime(BattlePassCompatHelper.beginTime())
+                .setEndTime(BattlePassCompatHelper.endTime())
+                .setScheduleId(SCHEDULE_ID)
+                .setProductInfo(product())
+                .build();
     }
 
-    private static byte[] encodeProduct() throws IOException {
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-        codedOutputStream.writeString(1, "10201");
-        codedOutputStream.writeString(11, "10203");
-        codedOutputStream.writeString(14, "10201");
-        codedOutputStream.flush();
-        return byteArrayOutputStream.toByteArray();
+    private static _BeyondBattlePassProduct product() {
+        return _BeyondBattlePassProduct.newBuilder()
+                .setNBPELODCADF("10201")
+                .setNormalProductId("10201")
+                .setUpgradeProductId("10203")
+                .build();
     }
 
-    private static byte[] encodeMission(BattlePassMission battlePassMission, BattlePassMissionData battlePassMissionData) throws IOException {
-        int n = battlePassMission != null ? battlePassMission.getId() : (battlePassMissionData != null ? battlePassMissionData.getId() : 0);
-        int n2 = battlePassMissionData != null ? Math.max(1, battlePassMissionData.getProgress()) : 1;
-        int n3 = battlePassMission != null ? battlePassMission.getProgress() : 0;
-        int n4 = battlePassMissionData != null ? battlePassMissionData.getAddPoint() : 0;
-        int n5 = 0;
-        if (battlePassMissionData != null && battlePassMissionData.getRefreshType() != null) {
-            n5 = battlePassMissionData.getRefreshType().getValue();
-        }
-        int n6 = BeyondBattlePassWireEncoder.toBeyondStatusValue(battlePassMission != null ? battlePassMission.getStatus() : null);
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        CodedOutputStream codedOutputStream = CodedOutputStream.newInstance((OutputStream) byteArrayOutputStream);
-        codedOutputStream.writeUInt32(1, n2);
-        codedOutputStream.writeUInt32(2, Math.min(Math.max(0, n3), n2));
-        codedOutputStream.writeUInt32(3, n4);
-        codedOutputStream.writeEnum(7, n6);
-        codedOutputStream.writeUInt32(13, n5);
-        codedOutputStream.writeUInt32(14, n);
-        codedOutputStream.flush();
-        return byteArrayOutputStream.toByteArray();
+    private static _BeyondBattlePassMission mission(
+            BattlePassMission battlePassMission, BattlePassMissionData data) {
+        int id =
+                battlePassMission != null
+                        ? battlePassMission.getId()
+                        : (data != null ? data.getId() : 0);
+        int total = data != null ? Math.max(1, data.getProgress()) : 1;
+        int progress = battlePassMission != null ? battlePassMission.getProgress() : 0;
+        int point = data != null ? data.getAddPoint() : 0;
+        int refreshType =
+                data != null && data.getRefreshType() != null ? data.getRefreshType().getValue() : 0;
+        return _BeyondBattlePassMission.newBuilder()
+                .setMissionId(id)
+                .setTotalProgress(total)
+                .setCurProgress(Math.min(Math.max(0, progress), total))
+                .setRewardBattlePassPoint(point)
+                .setMissionType(refreshType)
+                .setMissionStatusValue(
+                        toBeyondStatusValue(battlePassMission != null ? battlePassMission.getStatus() : null))
+                .build();
     }
 
     private static int toBeyondStatusValue(BattlePassMissionStatus battlePassMissionStatus) {

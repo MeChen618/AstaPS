@@ -19,53 +19,57 @@ public final class ChapterStateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
+     * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
+     * @return Whether the mLBMNAKEEOM field is set.
+     */
+    boolean hasMLBMNAKEEOM();
+    /**
+     * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
+     * @return The mLBMNAKEEOM.
+     */
+    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD getMLBMNAKEEOM();
+    /**
+     * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
+     */
+    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder getMLBMNAKEEOMOrBuilder();
+
+    /**
+     * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
      * @return Whether the eHKKFCAGELK field is set.
      */
     boolean hasEHKKFCAGELK();
     /**
-     * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
+     * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
      * @return The eHKKFCAGELK.
      */
-    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP getEHKKFCAGELK();
+    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH getEHKKFCAGELK();
     /**
-     * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
+     * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
      */
-    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder getEHKKFCAGELKOrBuilder();
+    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder getEHKKFCAGELKOrBuilder();
 
     /**
-     * <code>uint32 chapter_id = 6;</code>
-     * @return The chapterId.
-     */
-    int getChapterId();
-
-    /**
-     * <code>.ChapterState chapter_state = 10;</code>
+     * <code>.ChapterState chapter_state = 4;</code>
      * @return The enum numeric value on the wire for chapterState.
      */
     int getChapterStateValue();
     /**
-     * <code>.ChapterState chapter_state = 10;</code>
+     * <code>.ChapterState chapter_state = 4;</code>
      * @return The chapterState.
      */
     emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState getChapterState();
 
     /**
-     * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
-     * @return Whether the mLBMNAKEEOM field is set.
+     * <code>uint32 chapter_id = 9;</code>
+     * @return The chapterId.
      */
-    boolean hasMLBMNAKEEOM();
-    /**
-     * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
-     * @return The mLBMNAKEEOM.
-     */
-    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA getMLBMNAKEEOM();
-    /**
-     * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
-     */
-    emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder getMLBMNAKEEOMOrBuilder();
+    int getChapterId();
   }
   /**
+   * <pre>
+   * CmdId: 9598
+   * </pre>
+   *
    * Protobuf type {@code ChapterStateNotify}
    */
   public static final class ChapterStateNotify extends
@@ -111,39 +115,39 @@ public final class ChapterStateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder subBuilder = null;
-              if (eHKKFCAGELK_ != null) {
-                subBuilder = eHKKFCAGELK_.toBuilder();
+            case 18: {
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder subBuilder = null;
+              if (mLBMNAKEEOM_ != null) {
+                subBuilder = mLBMNAKEEOM_.toBuilder();
               }
-              eHKKFCAGELK_ = input.readMessage(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.parser(), extensionRegistry);
+              mLBMNAKEEOM_ = input.readMessage(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(eHKKFCAGELK_);
-                eHKKFCAGELK_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(mLBMNAKEEOM_);
+                mLBMNAKEEOM_ = subBuilder.buildPartial();
               }
 
               break;
             }
-            case 48: {
-
-              chapterId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
+            case 32: {
               int rawValue = input.readEnum();
 
               chapterState_ = rawValue;
               break;
             }
-            case 90: {
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder subBuilder = null;
-              if (mLBMNAKEEOM_ != null) {
-                subBuilder = mLBMNAKEEOM_.toBuilder();
+            case 72: {
+
+              chapterId_ = input.readUInt32();
+              break;
+            }
+            case 98: {
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder subBuilder = null;
+              if (eHKKFCAGELK_ != null) {
+                subBuilder = eHKKFCAGELK_.toBuilder();
               }
-              mLBMNAKEEOM_ = input.readMessage(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.parser(), extensionRegistry);
+              eHKKFCAGELK_ = input.readMessage(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(mLBMNAKEEOM_);
-                mLBMNAKEEOM_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(eHKKFCAGELK_);
+                eHKKFCAGELK_ = subBuilder.buildPartial();
               }
 
               break;
@@ -180,42 +184,46 @@ public final class ChapterStateNotifyOuterClass {
               emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.Builder.class);
     }
 
-    public interface MDKJMILIFBAOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:ChapterStateNotify.MDKJMILIFBA)
+    public interface HFLGKINJOGDOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:ChapterStateNotify.HFLGKINJOGD)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 ACHHOKJICHO = 9;</code>
-       * @return The aCHHOKJICHO.
+       * <code>bool is_limit = 14;</code>
+       * @return The isLimit.
        */
-      int getACHHOKJICHO();
+      boolean getIsLimit();
 
       /**
-       * <code>bool LAJGHCIGKIN = 10;</code>
-       * @return The lAJGHCIGKIN.
+       * <code>uint32 BFCBJEKKPFC = 4;</code>
+       * @return The bFCBJEKKPFC.
        */
-      boolean getLAJGHCIGKIN();
+      int getBFCBJEKKPFC();
     }
     /**
-     * Protobuf type {@code ChapterStateNotify.MDKJMILIFBA}
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
+     * Protobuf type {@code ChapterStateNotify.HFLGKINJOGD}
      */
-    public static final class MDKJMILIFBA extends
+    public static final class HFLGKINJOGD extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:ChapterStateNotify.MDKJMILIFBA)
-        MDKJMILIFBAOrBuilder {
+        // @@protoc_insertion_point(message_implements:ChapterStateNotify.HFLGKINJOGD)
+        HFLGKINJOGDOrBuilder {
     private static final long serialVersionUID = 0L;
-      // Use MDKJMILIFBA.newBuilder() to construct.
-      private MDKJMILIFBA(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // Use HFLGKINJOGD.newBuilder() to construct.
+      private HFLGKINJOGD(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private MDKJMILIFBA() {
+      private HFLGKINJOGD() {
       }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
       protected java.lang.Object newInstance(
           UnusedPrivateParameter unused) {
-        return new MDKJMILIFBA();
+        return new HFLGKINJOGD();
       }
 
       @java.lang.Override
@@ -223,7 +231,7 @@ public final class ChapterStateNotifyOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private MDKJMILIFBA(
+      private HFLGKINJOGD(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -241,573 +249,14 @@ public final class ChapterStateNotifyOuterClass {
               case 0:
                 done = true;
                 break;
-              case 72: {
+              case 32: {
 
-                aCHHOKJICHO_ = input.readUInt32();
-                break;
-              }
-              case 80: {
-
-                lAJGHCIGKIN_ = input.readBool();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_MDKJMILIFBA_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_MDKJMILIFBA_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder.class);
-      }
-
-      public static final int ACHHOKJICHO_FIELD_NUMBER = 9;
-      private int aCHHOKJICHO_;
-      /**
-       * <code>uint32 ACHHOKJICHO = 9;</code>
-       * @return The aCHHOKJICHO.
-       */
-      @java.lang.Override
-      public int getACHHOKJICHO() {
-        return aCHHOKJICHO_;
-      }
-
-      public static final int LAJGHCIGKIN_FIELD_NUMBER = 10;
-      private boolean lAJGHCIGKIN_;
-      /**
-       * <code>bool LAJGHCIGKIN = 10;</code>
-       * @return The lAJGHCIGKIN.
-       */
-      @java.lang.Override
-      public boolean getLAJGHCIGKIN() {
-        return lAJGHCIGKIN_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @java.lang.Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (aCHHOKJICHO_ != 0) {
-          output.writeUInt32(9, aCHHOKJICHO_);
-        }
-        if (lAJGHCIGKIN_ != false) {
-          output.writeBool(10, lAJGHCIGKIN_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @java.lang.Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (aCHHOKJICHO_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(9, aCHHOKJICHO_);
-        }
-        if (lAJGHCIGKIN_ != false) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(10, lAJGHCIGKIN_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA)) {
-          return super.equals(obj);
-        }
-        emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA) obj;
-
-        if (getACHHOKJICHO()
-            != other.getACHHOKJICHO()) return false;
-        if (getLAJGHCIGKIN()
-            != other.getLAJGHCIGKIN()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + ACHHOKJICHO_FIELD_NUMBER;
-        hash = (53 * hash) + getACHHOKJICHO();
-        hash = (37 * hash) + LAJGHCIGKIN_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getLAJGHCIGKIN());
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @java.lang.Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code ChapterStateNotify.MDKJMILIFBA}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:ChapterStateNotify.MDKJMILIFBA)
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_MDKJMILIFBA_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_MDKJMILIFBA_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder.class);
-        }
-
-        // Construct using emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @java.lang.Override
-        public Builder clear() {
-          super.clear();
-          aCHHOKJICHO_ = 0;
-
-          lAJGHCIGKIN_ = false;
-
-          return this;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_MDKJMILIFBA_descriptor;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA getDefaultInstanceForType() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.getDefaultInstance();
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA build() {
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @java.lang.Override
-        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA buildPartial() {
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA(this);
-          result.aCHHOKJICHO_ = aCHHOKJICHO_;
-          result.lAJGHCIGKIN_ = lAJGHCIGKIN_;
-          onBuilt();
-          return result;
-        }
-
-        @java.lang.Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @java.lang.Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.setField(field, value);
-        }
-        @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @java.lang.Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @java.lang.Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @java.lang.Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA) {
-            return mergeFrom((emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA other) {
-          if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.getDefaultInstance()) return this;
-          if (other.getACHHOKJICHO() != 0) {
-            setACHHOKJICHO(other.getACHHOKJICHO());
-          }
-          if (other.getLAJGHCIGKIN() != false) {
-            setLAJGHCIGKIN(other.getLAJGHCIGKIN());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @java.lang.Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private int aCHHOKJICHO_ ;
-        /**
-         * <code>uint32 ACHHOKJICHO = 9;</code>
-         * @return The aCHHOKJICHO.
-         */
-        @java.lang.Override
-        public int getACHHOKJICHO() {
-          return aCHHOKJICHO_;
-        }
-        /**
-         * <code>uint32 ACHHOKJICHO = 9;</code>
-         * @param value The aCHHOKJICHO to set.
-         * @return This builder for chaining.
-         */
-        public Builder setACHHOKJICHO(int value) {
-          
-          aCHHOKJICHO_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>uint32 ACHHOKJICHO = 9;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearACHHOKJICHO() {
-          
-          aCHHOKJICHO_ = 0;
-          onChanged();
-          return this;
-        }
-
-        private boolean lAJGHCIGKIN_ ;
-        /**
-         * <code>bool LAJGHCIGKIN = 10;</code>
-         * @return The lAJGHCIGKIN.
-         */
-        @java.lang.Override
-        public boolean getLAJGHCIGKIN() {
-          return lAJGHCIGKIN_;
-        }
-        /**
-         * <code>bool LAJGHCIGKIN = 10;</code>
-         * @param value The lAJGHCIGKIN to set.
-         * @return This builder for chaining.
-         */
-        public Builder setLAJGHCIGKIN(boolean value) {
-          
-          lAJGHCIGKIN_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>bool LAJGHCIGKIN = 10;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearLAJGHCIGKIN() {
-          
-          lAJGHCIGKIN_ = false;
-          onChanged();
-          return this;
-        }
-        @java.lang.Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @java.lang.Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:ChapterStateNotify.MDKJMILIFBA)
-      }
-
-      // @@protoc_insertion_point(class_scope:ChapterStateNotify.MDKJMILIFBA)
-      private static final emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA();
-      }
-
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<MDKJMILIFBA>
-          PARSER = new com.google.protobuf.AbstractParser<MDKJMILIFBA>() {
-        @java.lang.Override
-        public MDKJMILIFBA parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MDKJMILIFBA(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<MDKJMILIFBA> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<MDKJMILIFBA> getParserForType() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public interface EFFIIMIDMPPOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:ChapterStateNotify.EFFIIMIDMPP)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>bool LAJGHCIGKIN = 3;</code>
-       * @return The lAJGHCIGKIN.
-       */
-      boolean getLAJGHCIGKIN();
-
-      /**
-       * <code>uint32 AGMLNDOMFNC = 14;</code>
-       * @return The aGMLNDOMFNC.
-       */
-      int getAGMLNDOMFNC();
-    }
-    /**
-     * Protobuf type {@code ChapterStateNotify.EFFIIMIDMPP}
-     */
-    public static final class EFFIIMIDMPP extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:ChapterStateNotify.EFFIIMIDMPP)
-        EFFIIMIDMPPOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use EFFIIMIDMPP.newBuilder() to construct.
-      private EFFIIMIDMPP(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private EFFIIMIDMPP() {
-      }
-
-      @java.lang.Override
-      @SuppressWarnings({"unused"})
-      protected java.lang.Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new EFFIIMIDMPP();
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private EFFIIMIDMPP(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 24: {
-
-                lAJGHCIGKIN_ = input.readBool();
+                bFCBJEKKPFC_ = input.readUInt32();
                 break;
               }
               case 112: {
 
-                aGMLNDOMFNC_ = input.readUInt32();
+                isLimit_ = input.readBool();
                 break;
               }
               default: {
@@ -831,37 +280,37 @@ public final class ChapterStateNotifyOuterClass {
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_EFFIIMIDMPP_descriptor;
+        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_HFLGKINJOGD_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_EFFIIMIDMPP_fieldAccessorTable
+        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_HFLGKINJOGD_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder.class);
+                emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder.class);
       }
 
-      public static final int LAJGHCIGKIN_FIELD_NUMBER = 3;
-      private boolean lAJGHCIGKIN_;
+      public static final int IS_LIMIT_FIELD_NUMBER = 14;
+      private boolean isLimit_;
       /**
-       * <code>bool LAJGHCIGKIN = 3;</code>
-       * @return The lAJGHCIGKIN.
+       * <code>bool is_limit = 14;</code>
+       * @return The isLimit.
        */
       @java.lang.Override
-      public boolean getLAJGHCIGKIN() {
-        return lAJGHCIGKIN_;
+      public boolean getIsLimit() {
+        return isLimit_;
       }
 
-      public static final int AGMLNDOMFNC_FIELD_NUMBER = 14;
-      private int aGMLNDOMFNC_;
+      public static final int BFCBJEKKPFC_FIELD_NUMBER = 4;
+      private int bFCBJEKKPFC_;
       /**
-       * <code>uint32 AGMLNDOMFNC = 14;</code>
-       * @return The aGMLNDOMFNC.
+       * <code>uint32 BFCBJEKKPFC = 4;</code>
+       * @return The bFCBJEKKPFC.
        */
       @java.lang.Override
-      public int getAGMLNDOMFNC() {
-        return aGMLNDOMFNC_;
+      public int getBFCBJEKKPFC() {
+        return bFCBJEKKPFC_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -878,11 +327,11 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        if (lAJGHCIGKIN_ != false) {
-          output.writeBool(3, lAJGHCIGKIN_);
+        if (bFCBJEKKPFC_ != 0) {
+          output.writeUInt32(4, bFCBJEKKPFC_);
         }
-        if (aGMLNDOMFNC_ != 0) {
-          output.writeUInt32(14, aGMLNDOMFNC_);
+        if (isLimit_ != false) {
+          output.writeBool(14, isLimit_);
         }
         unknownFields.writeTo(output);
       }
@@ -893,13 +342,13 @@ public final class ChapterStateNotifyOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        if (lAJGHCIGKIN_ != false) {
+        if (bFCBJEKKPFC_ != 0) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBoolSize(3, lAJGHCIGKIN_);
+            .computeUInt32Size(4, bFCBJEKKPFC_);
         }
-        if (aGMLNDOMFNC_ != 0) {
+        if (isLimit_ != false) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(14, aGMLNDOMFNC_);
+            .computeBoolSize(14, isLimit_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -911,15 +360,15 @@ public final class ChapterStateNotifyOuterClass {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP)) {
+        if (!(obj instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD)) {
           return super.equals(obj);
         }
-        emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP) obj;
+        emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD) obj;
 
-        if (getLAJGHCIGKIN()
-            != other.getLAJGHCIGKIN()) return false;
-        if (getAGMLNDOMFNC()
-            != other.getAGMLNDOMFNC()) return false;
+        if (getIsLimit()
+            != other.getIsLimit()) return false;
+        if (getBFCBJEKKPFC()
+            != other.getBFCBJEKKPFC()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -931,79 +380,79 @@ public final class ChapterStateNotifyOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + LAJGHCIGKIN_FIELD_NUMBER;
+        hash = (37 * hash) + IS_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getLAJGHCIGKIN());
-        hash = (37 * hash) + AGMLNDOMFNC_FIELD_NUMBER;
-        hash = (53 * hash) + getAGMLNDOMFNC();
+            getIsLimit());
+        hash = (37 * hash) + BFCBJEKKPFC_FIELD_NUMBER;
+        hash = (53 * hash) + getBFCBJEKKPFC();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(byte[] data)
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(java.io.InputStream input)
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseDelimitedFrom(java.io.InputStream input)
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseDelimitedFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parseFrom(
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1016,7 +465,7 @@ public final class ChapterStateNotifyOuterClass {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP prototype) {
+      public static Builder newBuilder(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       @java.lang.Override
@@ -1032,26 +481,30 @@ public final class ChapterStateNotifyOuterClass {
         return builder;
       }
       /**
-       * Protobuf type {@code ChapterStateNotify.EFFIIMIDMPP}
+       * <pre>
+       * CmdId: -
+       * </pre>
+       *
+       * Protobuf type {@code ChapterStateNotify.HFLGKINJOGD}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:ChapterStateNotify.EFFIIMIDMPP)
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder {
+          // @@protoc_insertion_point(builder_implements:ChapterStateNotify.HFLGKINJOGD)
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_EFFIIMIDMPP_descriptor;
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_HFLGKINJOGD_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_EFFIIMIDMPP_fieldAccessorTable
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_HFLGKINJOGD_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder.class);
+                  emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder.class);
         }
 
-        // Construct using emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.newBuilder()
+        // Construct using emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -1069,9 +522,9 @@ public final class ChapterStateNotifyOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          lAJGHCIGKIN_ = false;
+          isLimit_ = false;
 
-          aGMLNDOMFNC_ = 0;
+          bFCBJEKKPFC_ = 0;
 
           return this;
         }
@@ -1079,17 +532,17 @@ public final class ChapterStateNotifyOuterClass {
         @java.lang.Override
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_EFFIIMIDMPP_descriptor;
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_HFLGKINJOGD_descriptor;
         }
 
         @java.lang.Override
-        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP getDefaultInstanceForType() {
-          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.getDefaultInstance();
+        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD getDefaultInstanceForType() {
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.getDefaultInstance();
         }
 
         @java.lang.Override
-        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP build() {
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP result = buildPartial();
+        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD build() {
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -1097,10 +550,10 @@ public final class ChapterStateNotifyOuterClass {
         }
 
         @java.lang.Override
-        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP buildPartial() {
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP(this);
-          result.lAJGHCIGKIN_ = lAJGHCIGKIN_;
-          result.aGMLNDOMFNC_ = aGMLNDOMFNC_;
+        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD buildPartial() {
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD(this);
+          result.isLimit_ = isLimit_;
+          result.bFCBJEKKPFC_ = bFCBJEKKPFC_;
           onBuilt();
           return result;
         }
@@ -1139,21 +592,21 @@ public final class ChapterStateNotifyOuterClass {
         }
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP) {
-            return mergeFrom((emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP)other);
+          if (other instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD) {
+            return mergeFrom((emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP other) {
-          if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.getDefaultInstance()) return this;
-          if (other.getLAJGHCIGKIN() != false) {
-            setLAJGHCIGKIN(other.getLAJGHCIGKIN());
+        public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD other) {
+          if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.getDefaultInstance()) return this;
+          if (other.getIsLimit() != false) {
+            setIsLimit(other.getIsLimit());
           }
-          if (other.getAGMLNDOMFNC() != 0) {
-            setAGMLNDOMFNC(other.getAGMLNDOMFNC());
+          if (other.getBFCBJEKKPFC() != 0) {
+            setBFCBJEKKPFC(other.getBFCBJEKKPFC());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -1170,11 +623,11 @@ public final class ChapterStateNotifyOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP parsedMessage = null;
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP) e.getUnfinishedMessage();
+            parsedMessage = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -1184,64 +637,64 @@ public final class ChapterStateNotifyOuterClass {
           return this;
         }
 
-        private boolean lAJGHCIGKIN_ ;
+        private boolean isLimit_ ;
         /**
-         * <code>bool LAJGHCIGKIN = 3;</code>
-         * @return The lAJGHCIGKIN.
+         * <code>bool is_limit = 14;</code>
+         * @return The isLimit.
          */
         @java.lang.Override
-        public boolean getLAJGHCIGKIN() {
-          return lAJGHCIGKIN_;
+        public boolean getIsLimit() {
+          return isLimit_;
         }
         /**
-         * <code>bool LAJGHCIGKIN = 3;</code>
-         * @param value The lAJGHCIGKIN to set.
+         * <code>bool is_limit = 14;</code>
+         * @param value The isLimit to set.
          * @return This builder for chaining.
          */
-        public Builder setLAJGHCIGKIN(boolean value) {
+        public Builder setIsLimit(boolean value) {
           
-          lAJGHCIGKIN_ = value;
+          isLimit_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>bool LAJGHCIGKIN = 3;</code>
+         * <code>bool is_limit = 14;</code>
          * @return This builder for chaining.
          */
-        public Builder clearLAJGHCIGKIN() {
+        public Builder clearIsLimit() {
           
-          lAJGHCIGKIN_ = false;
+          isLimit_ = false;
           onChanged();
           return this;
         }
 
-        private int aGMLNDOMFNC_ ;
+        private int bFCBJEKKPFC_ ;
         /**
-         * <code>uint32 AGMLNDOMFNC = 14;</code>
-         * @return The aGMLNDOMFNC.
+         * <code>uint32 BFCBJEKKPFC = 4;</code>
+         * @return The bFCBJEKKPFC.
          */
         @java.lang.Override
-        public int getAGMLNDOMFNC() {
-          return aGMLNDOMFNC_;
+        public int getBFCBJEKKPFC() {
+          return bFCBJEKKPFC_;
         }
         /**
-         * <code>uint32 AGMLNDOMFNC = 14;</code>
-         * @param value The aGMLNDOMFNC to set.
+         * <code>uint32 BFCBJEKKPFC = 4;</code>
+         * @param value The bFCBJEKKPFC to set.
          * @return This builder for chaining.
          */
-        public Builder setAGMLNDOMFNC(int value) {
+        public Builder setBFCBJEKKPFC(int value) {
           
-          aGMLNDOMFNC_ = value;
+          bFCBJEKKPFC_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>uint32 AGMLNDOMFNC = 14;</code>
+         * <code>uint32 BFCBJEKKPFC = 4;</code>
          * @return This builder for chaining.
          */
-        public Builder clearAGMLNDOMFNC() {
+        public Builder clearBFCBJEKKPFC() {
           
-          aGMLNDOMFNC_ = 0;
+          bFCBJEKKPFC_ = 0;
           onChanged();
           return this;
         }
@@ -1258,50 +711,643 @@ public final class ChapterStateNotifyOuterClass {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:ChapterStateNotify.EFFIIMIDMPP)
+        // @@protoc_insertion_point(builder_scope:ChapterStateNotify.HFLGKINJOGD)
       }
 
-      // @@protoc_insertion_point(class_scope:ChapterStateNotify.EFFIIMIDMPP)
-      private static final emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:ChapterStateNotify.HFLGKINJOGD)
+      private static final emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP();
+        DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD();
       }
 
-      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP getDefaultInstance() {
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<EFFIIMIDMPP>
-          PARSER = new com.google.protobuf.AbstractParser<EFFIIMIDMPP>() {
+      private static final com.google.protobuf.Parser<HFLGKINJOGD>
+          PARSER = new com.google.protobuf.AbstractParser<HFLGKINJOGD>() {
         @java.lang.Override
-        public EFFIIMIDMPP parsePartialFrom(
+        public HFLGKINJOGD parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EFFIIMIDMPP(input, extensionRegistry);
+          return new HFLGKINJOGD(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<EFFIIMIDMPP> parser() {
+      public static com.google.protobuf.Parser<HFLGKINJOGD> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<EFFIIMIDMPP> getParserForType() {
+      public com.google.protobuf.Parser<HFLGKINJOGD> getParserForType() {
         return PARSER;
       }
 
       @java.lang.Override
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP getDefaultInstanceForType() {
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
     }
 
-    public static final int EHKKFCAGELK_FIELD_NUMBER = 4;
-    private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP eHKKFCAGELK_;
+    public interface BLGJCHOIHMHOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:ChapterStateNotify.BLGJCHOIHMH)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>bool is_limit = 1;</code>
+       * @return The isLimit.
+       */
+      boolean getIsLimit();
+
+      /**
+       * <code>uint32 KNBEAIBAMLB = 4;</code>
+       * @return The kNBEAIBAMLB.
+       */
+      int getKNBEAIBAMLB();
+    }
     /**
-     * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
+     * Protobuf type {@code ChapterStateNotify.BLGJCHOIHMH}
+     */
+    public static final class BLGJCHOIHMH extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:ChapterStateNotify.BLGJCHOIHMH)
+        BLGJCHOIHMHOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use BLGJCHOIHMH.newBuilder() to construct.
+      private BLGJCHOIHMH(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private BLGJCHOIHMH() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new BLGJCHOIHMH();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private BLGJCHOIHMH(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+
+                isLimit_ = input.readBool();
+                break;
+              }
+              case 32: {
+
+                kNBEAIBAMLB_ = input.readUInt32();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_BLGJCHOIHMH_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_BLGJCHOIHMH_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder.class);
+      }
+
+      public static final int IS_LIMIT_FIELD_NUMBER = 1;
+      private boolean isLimit_;
+      /**
+       * <code>bool is_limit = 1;</code>
+       * @return The isLimit.
+       */
+      @java.lang.Override
+      public boolean getIsLimit() {
+        return isLimit_;
+      }
+
+      public static final int KNBEAIBAMLB_FIELD_NUMBER = 4;
+      private int kNBEAIBAMLB_;
+      /**
+       * <code>uint32 KNBEAIBAMLB = 4;</code>
+       * @return The kNBEAIBAMLB.
+       */
+      @java.lang.Override
+      public int getKNBEAIBAMLB() {
+        return kNBEAIBAMLB_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (isLimit_ != false) {
+          output.writeBool(1, isLimit_);
+        }
+        if (kNBEAIBAMLB_ != 0) {
+          output.writeUInt32(4, kNBEAIBAMLB_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (isLimit_ != false) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBoolSize(1, isLimit_);
+        }
+        if (kNBEAIBAMLB_ != 0) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(4, kNBEAIBAMLB_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH)) {
+          return super.equals(obj);
+        }
+        emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH) obj;
+
+        if (getIsLimit()
+            != other.getIsLimit()) return false;
+        if (getKNBEAIBAMLB()
+            != other.getKNBEAIBAMLB()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + IS_LIMIT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsLimit());
+        hash = (37 * hash) + KNBEAIBAMLB_FIELD_NUMBER;
+        hash = (53 * hash) + getKNBEAIBAMLB();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * CmdId: -
+       * </pre>
+       *
+       * Protobuf type {@code ChapterStateNotify.BLGJCHOIHMH}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:ChapterStateNotify.BLGJCHOIHMH)
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_BLGJCHOIHMH_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_BLGJCHOIHMH_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.class, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder.class);
+        }
+
+        // Construct using emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          isLimit_ = false;
+
+          kNBEAIBAMLB_ = 0;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.internal_static_ChapterStateNotify_BLGJCHOIHMH_descriptor;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH getDefaultInstanceForType() {
+          return emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH build() {
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH buildPartial() {
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH(this);
+          result.isLimit_ = isLimit_;
+          result.kNBEAIBAMLB_ = kNBEAIBAMLB_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH) {
+            return mergeFrom((emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH other) {
+          if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.getDefaultInstance()) return this;
+          if (other.getIsLimit() != false) {
+            setIsLimit(other.getIsLimit());
+          }
+          if (other.getKNBEAIBAMLB() != 0) {
+            setKNBEAIBAMLB(other.getKNBEAIBAMLB());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private boolean isLimit_ ;
+        /**
+         * <code>bool is_limit = 1;</code>
+         * @return The isLimit.
+         */
+        @java.lang.Override
+        public boolean getIsLimit() {
+          return isLimit_;
+        }
+        /**
+         * <code>bool is_limit = 1;</code>
+         * @param value The isLimit to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIsLimit(boolean value) {
+          
+          isLimit_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>bool is_limit = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIsLimit() {
+          
+          isLimit_ = false;
+          onChanged();
+          return this;
+        }
+
+        private int kNBEAIBAMLB_ ;
+        /**
+         * <code>uint32 KNBEAIBAMLB = 4;</code>
+         * @return The kNBEAIBAMLB.
+         */
+        @java.lang.Override
+        public int getKNBEAIBAMLB() {
+          return kNBEAIBAMLB_;
+        }
+        /**
+         * <code>uint32 KNBEAIBAMLB = 4;</code>
+         * @param value The kNBEAIBAMLB to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKNBEAIBAMLB(int value) {
+          
+          kNBEAIBAMLB_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 KNBEAIBAMLB = 4;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearKNBEAIBAMLB() {
+          
+          kNBEAIBAMLB_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:ChapterStateNotify.BLGJCHOIHMH)
+      }
+
+      // @@protoc_insertion_point(class_scope:ChapterStateNotify.BLGJCHOIHMH)
+      private static final emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH();
+      }
+
+      public static emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BLGJCHOIHMH>
+          PARSER = new com.google.protobuf.AbstractParser<BLGJCHOIHMH>() {
+        @java.lang.Override
+        public BLGJCHOIHMH parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BLGJCHOIHMH(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<BLGJCHOIHMH> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BLGJCHOIHMH> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int MLBMNAKEEOM_FIELD_NUMBER = 2;
+    private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD mLBMNAKEEOM_;
+    /**
+     * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
+     * @return Whether the mLBMNAKEEOM field is set.
+     */
+    @java.lang.Override
+    public boolean hasMLBMNAKEEOM() {
+      return mLBMNAKEEOM_ != null;
+    }
+    /**
+     * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
+     * @return The mLBMNAKEEOM.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD getMLBMNAKEEOM() {
+      return mLBMNAKEEOM_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.getDefaultInstance() : mLBMNAKEEOM_;
+    }
+    /**
+     * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder getMLBMNAKEEOMOrBuilder() {
+      return getMLBMNAKEEOM();
+    }
+
+    public static final int EHKKFCAGELK_FIELD_NUMBER = 12;
+    private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH eHKKFCAGELK_;
+    /**
+     * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
      * @return Whether the eHKKFCAGELK field is set.
      */
     @java.lang.Override
@@ -1309,43 +1355,32 @@ public final class ChapterStateNotifyOuterClass {
       return eHKKFCAGELK_ != null;
     }
     /**
-     * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
+     * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
      * @return The eHKKFCAGELK.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP getEHKKFCAGELK() {
-      return eHKKFCAGELK_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.getDefaultInstance() : eHKKFCAGELK_;
+    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH getEHKKFCAGELK() {
+      return eHKKFCAGELK_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.getDefaultInstance() : eHKKFCAGELK_;
     }
     /**
-     * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
+     * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder getEHKKFCAGELKOrBuilder() {
+    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder getEHKKFCAGELKOrBuilder() {
       return getEHKKFCAGELK();
     }
 
-    public static final int CHAPTER_ID_FIELD_NUMBER = 6;
-    private int chapterId_;
-    /**
-     * <code>uint32 chapter_id = 6;</code>
-     * @return The chapterId.
-     */
-    @java.lang.Override
-    public int getChapterId() {
-      return chapterId_;
-    }
-
-    public static final int CHAPTER_STATE_FIELD_NUMBER = 10;
+    public static final int CHAPTER_STATE_FIELD_NUMBER = 4;
     private int chapterState_;
     /**
-     * <code>.ChapterState chapter_state = 10;</code>
+     * <code>.ChapterState chapter_state = 4;</code>
      * @return The enum numeric value on the wire for chapterState.
      */
     @java.lang.Override public int getChapterStateValue() {
       return chapterState_;
     }
     /**
-     * <code>.ChapterState chapter_state = 10;</code>
+     * <code>.ChapterState chapter_state = 4;</code>
      * @return The chapterState.
      */
     @java.lang.Override public emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState getChapterState() {
@@ -1354,30 +1389,15 @@ public final class ChapterStateNotifyOuterClass {
       return result == null ? emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.UNRECOGNIZED : result;
     }
 
-    public static final int MLBMNAKEEOM_FIELD_NUMBER = 11;
-    private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA mLBMNAKEEOM_;
+    public static final int CHAPTER_ID_FIELD_NUMBER = 9;
+    private int chapterId_;
     /**
-     * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
-     * @return Whether the mLBMNAKEEOM field is set.
+     * <code>uint32 chapter_id = 9;</code>
+     * @return The chapterId.
      */
     @java.lang.Override
-    public boolean hasMLBMNAKEEOM() {
-      return mLBMNAKEEOM_ != null;
-    }
-    /**
-     * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
-     * @return The mLBMNAKEEOM.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA getMLBMNAKEEOM() {
-      return mLBMNAKEEOM_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.getDefaultInstance() : mLBMNAKEEOM_;
-    }
-    /**
-     * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder getMLBMNAKEEOMOrBuilder() {
-      return getMLBMNAKEEOM();
+    public int getChapterId() {
+      return chapterId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1394,17 +1414,17 @@ public final class ChapterStateNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (eHKKFCAGELK_ != null) {
-        output.writeMessage(4, getEHKKFCAGELK());
+      if (mLBMNAKEEOM_ != null) {
+        output.writeMessage(2, getMLBMNAKEEOM());
+      }
+      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.ChapterState_INVALID.getNumber()) {
+        output.writeEnum(4, chapterState_);
       }
       if (chapterId_ != 0) {
-        output.writeUInt32(6, chapterId_);
+        output.writeUInt32(9, chapterId_);
       }
-      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.CHAPTER_STATE_INVALID.getNumber()) {
-        output.writeEnum(10, chapterState_);
-      }
-      if (mLBMNAKEEOM_ != null) {
-        output.writeMessage(11, getMLBMNAKEEOM());
+      if (eHKKFCAGELK_ != null) {
+        output.writeMessage(12, getEHKKFCAGELK());
       }
       unknownFields.writeTo(output);
     }
@@ -1415,21 +1435,21 @@ public final class ChapterStateNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (eHKKFCAGELK_ != null) {
+      if (mLBMNAKEEOM_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getEHKKFCAGELK());
+          .computeMessageSize(2, getMLBMNAKEEOM());
+      }
+      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.ChapterState_INVALID.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, chapterState_);
       }
       if (chapterId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, chapterId_);
+          .computeUInt32Size(9, chapterId_);
       }
-      if (chapterState_ != emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.CHAPTER_STATE_INVALID.getNumber()) {
+      if (eHKKFCAGELK_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(10, chapterState_);
-      }
-      if (mLBMNAKEEOM_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getMLBMNAKEEOM());
+          .computeMessageSize(12, getEHKKFCAGELK());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1446,19 +1466,19 @@ public final class ChapterStateNotifyOuterClass {
       }
       emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify other = (emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify) obj;
 
-      if (hasEHKKFCAGELK() != other.hasEHKKFCAGELK()) return false;
-      if (hasEHKKFCAGELK()) {
-        if (!getEHKKFCAGELK()
-            .equals(other.getEHKKFCAGELK())) return false;
-      }
-      if (getChapterId()
-          != other.getChapterId()) return false;
-      if (chapterState_ != other.chapterState_) return false;
       if (hasMLBMNAKEEOM() != other.hasMLBMNAKEEOM()) return false;
       if (hasMLBMNAKEEOM()) {
         if (!getMLBMNAKEEOM()
             .equals(other.getMLBMNAKEEOM())) return false;
       }
+      if (hasEHKKFCAGELK() != other.hasEHKKFCAGELK()) return false;
+      if (hasEHKKFCAGELK()) {
+        if (!getEHKKFCAGELK()
+            .equals(other.getEHKKFCAGELK())) return false;
+      }
+      if (chapterState_ != other.chapterState_) return false;
+      if (getChapterId()
+          != other.getChapterId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1470,18 +1490,18 @@ public final class ChapterStateNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasEHKKFCAGELK()) {
-        hash = (37 * hash) + EHKKFCAGELK_FIELD_NUMBER;
-        hash = (53 * hash) + getEHKKFCAGELK().hashCode();
-      }
-      hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getChapterId();
-      hash = (37 * hash) + CHAPTER_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + chapterState_;
       if (hasMLBMNAKEEOM()) {
         hash = (37 * hash) + MLBMNAKEEOM_FIELD_NUMBER;
         hash = (53 * hash) + getMLBMNAKEEOM().hashCode();
       }
+      if (hasEHKKFCAGELK()) {
+        hash = (37 * hash) + EHKKFCAGELK_FIELD_NUMBER;
+        hash = (53 * hash) + getEHKKFCAGELK().hashCode();
+      }
+      hash = (37 * hash) + CHAPTER_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + chapterState_;
+      hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChapterId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1578,6 +1598,10 @@ public final class ChapterStateNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 9598
+     * </pre>
+     *
      * Protobuf type {@code ChapterStateNotify}
      */
     public static final class Builder extends
@@ -1615,22 +1639,22 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (eHKKFCAGELKBuilder_ == null) {
-          eHKKFCAGELK_ = null;
-        } else {
-          eHKKFCAGELK_ = null;
-          eHKKFCAGELKBuilder_ = null;
-        }
-        chapterId_ = 0;
-
-        chapterState_ = 0;
-
         if (mLBMNAKEEOMBuilder_ == null) {
           mLBMNAKEEOM_ = null;
         } else {
           mLBMNAKEEOM_ = null;
           mLBMNAKEEOMBuilder_ = null;
         }
+        if (eHKKFCAGELKBuilder_ == null) {
+          eHKKFCAGELK_ = null;
+        } else {
+          eHKKFCAGELK_ = null;
+          eHKKFCAGELKBuilder_ = null;
+        }
+        chapterState_ = 0;
+
+        chapterId_ = 0;
+
         return this;
       }
 
@@ -1657,18 +1681,18 @@ public final class ChapterStateNotifyOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify buildPartial() {
         emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify result = new emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify(this);
-        if (eHKKFCAGELKBuilder_ == null) {
-          result.eHKKFCAGELK_ = eHKKFCAGELK_;
-        } else {
-          result.eHKKFCAGELK_ = eHKKFCAGELKBuilder_.build();
-        }
-        result.chapterId_ = chapterId_;
-        result.chapterState_ = chapterState_;
         if (mLBMNAKEEOMBuilder_ == null) {
           result.mLBMNAKEEOM_ = mLBMNAKEEOM_;
         } else {
           result.mLBMNAKEEOM_ = mLBMNAKEEOMBuilder_.build();
         }
+        if (eHKKFCAGELKBuilder_ == null) {
+          result.eHKKFCAGELK_ = eHKKFCAGELK_;
+        } else {
+          result.eHKKFCAGELK_ = eHKKFCAGELKBuilder_.build();
+        }
+        result.chapterState_ = chapterState_;
+        result.chapterId_ = chapterId_;
         onBuilt();
         return result;
       }
@@ -1717,17 +1741,17 @@ public final class ChapterStateNotifyOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify other) {
         if (other == emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.getDefaultInstance()) return this;
+        if (other.hasMLBMNAKEEOM()) {
+          mergeMLBMNAKEEOM(other.getMLBMNAKEEOM());
+        }
         if (other.hasEHKKFCAGELK()) {
           mergeEHKKFCAGELK(other.getEHKKFCAGELK());
-        }
-        if (other.getChapterId() != 0) {
-          setChapterId(other.getChapterId());
         }
         if (other.chapterState_ != 0) {
           setChapterStateValue(other.getChapterStateValue());
         }
-        if (other.hasMLBMNAKEEOM()) {
-          mergeMLBMNAKEEOM(other.getMLBMNAKEEOM());
+        if (other.getChapterId() != 0) {
+          setChapterId(other.getChapterId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1758,235 +1782,31 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
 
-      private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP eHKKFCAGELK_;
+      private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD mLBMNAKEEOM_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder> eHKKFCAGELKBuilder_;
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder> mLBMNAKEEOMBuilder_;
       /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       * @return Whether the eHKKFCAGELK field is set.
-       */
-      public boolean hasEHKKFCAGELK() {
-        return eHKKFCAGELKBuilder_ != null || eHKKFCAGELK_ != null;
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       * @return The eHKKFCAGELK.
-       */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP getEHKKFCAGELK() {
-        if (eHKKFCAGELKBuilder_ == null) {
-          return eHKKFCAGELK_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.getDefaultInstance() : eHKKFCAGELK_;
-        } else {
-          return eHKKFCAGELKBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      public Builder setEHKKFCAGELK(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP value) {
-        if (eHKKFCAGELKBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          eHKKFCAGELK_ = value;
-          onChanged();
-        } else {
-          eHKKFCAGELKBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      public Builder setEHKKFCAGELK(
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder builderForValue) {
-        if (eHKKFCAGELKBuilder_ == null) {
-          eHKKFCAGELK_ = builderForValue.build();
-          onChanged();
-        } else {
-          eHKKFCAGELKBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      public Builder mergeEHKKFCAGELK(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP value) {
-        if (eHKKFCAGELKBuilder_ == null) {
-          if (eHKKFCAGELK_ != null) {
-            eHKKFCAGELK_ =
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.newBuilder(eHKKFCAGELK_).mergeFrom(value).buildPartial();
-          } else {
-            eHKKFCAGELK_ = value;
-          }
-          onChanged();
-        } else {
-          eHKKFCAGELKBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      public Builder clearEHKKFCAGELK() {
-        if (eHKKFCAGELKBuilder_ == null) {
-          eHKKFCAGELK_ = null;
-          onChanged();
-        } else {
-          eHKKFCAGELK_ = null;
-          eHKKFCAGELKBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder getEHKKFCAGELKBuilder() {
-        
-        onChanged();
-        return getEHKKFCAGELKFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder getEHKKFCAGELKOrBuilder() {
-        if (eHKKFCAGELKBuilder_ != null) {
-          return eHKKFCAGELKBuilder_.getMessageOrBuilder();
-        } else {
-          return eHKKFCAGELK_ == null ?
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.getDefaultInstance() : eHKKFCAGELK_;
-        }
-      }
-      /**
-       * <code>.ChapterStateNotify.EFFIIMIDMPP EHKKFCAGELK = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder> 
-          getEHKKFCAGELKFieldBuilder() {
-        if (eHKKFCAGELKBuilder_ == null) {
-          eHKKFCAGELKBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPP.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.EFFIIMIDMPPOrBuilder>(
-                  getEHKKFCAGELK(),
-                  getParentForChildren(),
-                  isClean());
-          eHKKFCAGELK_ = null;
-        }
-        return eHKKFCAGELKBuilder_;
-      }
-
-      private int chapterId_ ;
-      /**
-       * <code>uint32 chapter_id = 6;</code>
-       * @return The chapterId.
-       */
-      @java.lang.Override
-      public int getChapterId() {
-        return chapterId_;
-      }
-      /**
-       * <code>uint32 chapter_id = 6;</code>
-       * @param value The chapterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChapterId(int value) {
-        
-        chapterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 chapter_id = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChapterId() {
-        
-        chapterId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int chapterState_ = 0;
-      /**
-       * <code>.ChapterState chapter_state = 10;</code>
-       * @return The enum numeric value on the wire for chapterState.
-       */
-      @java.lang.Override public int getChapterStateValue() {
-        return chapterState_;
-      }
-      /**
-       * <code>.ChapterState chapter_state = 10;</code>
-       * @param value The enum numeric value on the wire for chapterState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChapterStateValue(int value) {
-        
-        chapterState_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ChapterState chapter_state = 10;</code>
-       * @return The chapterState.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState getChapterState() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState result = emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.valueOf(chapterState_);
-        return result == null ? emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.ChapterState chapter_state = 10;</code>
-       * @param value The chapterState to set.
-       * @return This builder for chaining.
-       */
-      public Builder setChapterState(emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        chapterState_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.ChapterState chapter_state = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearChapterState() {
-        
-        chapterState_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA mLBMNAKEEOM_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder> mLBMNAKEEOMBuilder_;
-      /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        * @return Whether the mLBMNAKEEOM field is set.
        */
       public boolean hasMLBMNAKEEOM() {
         return mLBMNAKEEOMBuilder_ != null || mLBMNAKEEOM_ != null;
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        * @return The mLBMNAKEEOM.
        */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA getMLBMNAKEEOM() {
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD getMLBMNAKEEOM() {
         if (mLBMNAKEEOMBuilder_ == null) {
-          return mLBMNAKEEOM_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.getDefaultInstance() : mLBMNAKEEOM_;
+          return mLBMNAKEEOM_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.getDefaultInstance() : mLBMNAKEEOM_;
         } else {
           return mLBMNAKEEOMBuilder_.getMessage();
         }
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
-      public Builder setMLBMNAKEEOM(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA value) {
+      public Builder setMLBMNAKEEOM(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD value) {
         if (mLBMNAKEEOMBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2000,10 +1820,10 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
       public Builder setMLBMNAKEEOM(
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder builderForValue) {
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder builderForValue) {
         if (mLBMNAKEEOMBuilder_ == null) {
           mLBMNAKEEOM_ = builderForValue.build();
           onChanged();
@@ -2014,13 +1834,13 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
-      public Builder mergeMLBMNAKEEOM(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA value) {
+      public Builder mergeMLBMNAKEEOM(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD value) {
         if (mLBMNAKEEOMBuilder_ == null) {
           if (mLBMNAKEEOM_ != null) {
             mLBMNAKEEOM_ =
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.newBuilder(mLBMNAKEEOM_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.newBuilder(mLBMNAKEEOM_).mergeFrom(value).buildPartial();
           } else {
             mLBMNAKEEOM_ = value;
           }
@@ -2032,7 +1852,7 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
       public Builder clearMLBMNAKEEOM() {
         if (mLBMNAKEEOMBuilder_ == null) {
@@ -2046,39 +1866,243 @@ public final class ChapterStateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder getMLBMNAKEEOMBuilder() {
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder getMLBMNAKEEOMBuilder() {
         
         onChanged();
         return getMLBMNAKEEOMFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
-      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder getMLBMNAKEEOMOrBuilder() {
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder getMLBMNAKEEOMOrBuilder() {
         if (mLBMNAKEEOMBuilder_ != null) {
           return mLBMNAKEEOMBuilder_.getMessageOrBuilder();
         } else {
           return mLBMNAKEEOM_ == null ?
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.getDefaultInstance() : mLBMNAKEEOM_;
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.getDefaultInstance() : mLBMNAKEEOM_;
         }
       }
       /**
-       * <code>.ChapterStateNotify.MDKJMILIFBA MLBMNAKEEOM = 11;</code>
+       * <code>.ChapterStateNotify.HFLGKINJOGD MLBMNAKEEOM = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder> 
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder> 
           getMLBMNAKEEOMFieldBuilder() {
         if (mLBMNAKEEOMBuilder_ == null) {
           mLBMNAKEEOMBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBA.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.MDKJMILIFBAOrBuilder>(
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGD.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.HFLGKINJOGDOrBuilder>(
                   getMLBMNAKEEOM(),
                   getParentForChildren(),
                   isClean());
           mLBMNAKEEOM_ = null;
         }
         return mLBMNAKEEOMBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH eHKKFCAGELK_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder> eHKKFCAGELKBuilder_;
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       * @return Whether the eHKKFCAGELK field is set.
+       */
+      public boolean hasEHKKFCAGELK() {
+        return eHKKFCAGELKBuilder_ != null || eHKKFCAGELK_ != null;
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       * @return The eHKKFCAGELK.
+       */
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH getEHKKFCAGELK() {
+        if (eHKKFCAGELKBuilder_ == null) {
+          return eHKKFCAGELK_ == null ? emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.getDefaultInstance() : eHKKFCAGELK_;
+        } else {
+          return eHKKFCAGELKBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      public Builder setEHKKFCAGELK(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH value) {
+        if (eHKKFCAGELKBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          eHKKFCAGELK_ = value;
+          onChanged();
+        } else {
+          eHKKFCAGELKBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      public Builder setEHKKFCAGELK(
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder builderForValue) {
+        if (eHKKFCAGELKBuilder_ == null) {
+          eHKKFCAGELK_ = builderForValue.build();
+          onChanged();
+        } else {
+          eHKKFCAGELKBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      public Builder mergeEHKKFCAGELK(emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH value) {
+        if (eHKKFCAGELKBuilder_ == null) {
+          if (eHKKFCAGELK_ != null) {
+            eHKKFCAGELK_ =
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.newBuilder(eHKKFCAGELK_).mergeFrom(value).buildPartial();
+          } else {
+            eHKKFCAGELK_ = value;
+          }
+          onChanged();
+        } else {
+          eHKKFCAGELKBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      public Builder clearEHKKFCAGELK() {
+        if (eHKKFCAGELKBuilder_ == null) {
+          eHKKFCAGELK_ = null;
+          onChanged();
+        } else {
+          eHKKFCAGELK_ = null;
+          eHKKFCAGELKBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder getEHKKFCAGELKBuilder() {
+        
+        onChanged();
+        return getEHKKFCAGELKFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      public emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder getEHKKFCAGELKOrBuilder() {
+        if (eHKKFCAGELKBuilder_ != null) {
+          return eHKKFCAGELKBuilder_.getMessageOrBuilder();
+        } else {
+          return eHKKFCAGELK_ == null ?
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.getDefaultInstance() : eHKKFCAGELK_;
+        }
+      }
+      /**
+       * <code>.ChapterStateNotify.BLGJCHOIHMH EHKKFCAGELK = 12;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder> 
+          getEHKKFCAGELKFieldBuilder() {
+        if (eHKKFCAGELKBuilder_ == null) {
+          eHKKFCAGELKBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMH.Builder, emu.grasscutter.net.proto.ChapterStateNotifyOuterClass.ChapterStateNotify.BLGJCHOIHMHOrBuilder>(
+                  getEHKKFCAGELK(),
+                  getParentForChildren(),
+                  isClean());
+          eHKKFCAGELK_ = null;
+        }
+        return eHKKFCAGELKBuilder_;
+      }
+
+      private int chapterState_ = 0;
+      /**
+       * <code>.ChapterState chapter_state = 4;</code>
+       * @return The enum numeric value on the wire for chapterState.
+       */
+      @java.lang.Override public int getChapterStateValue() {
+        return chapterState_;
+      }
+      /**
+       * <code>.ChapterState chapter_state = 4;</code>
+       * @param value The enum numeric value on the wire for chapterState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChapterStateValue(int value) {
+        
+        chapterState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ChapterState chapter_state = 4;</code>
+       * @return The chapterState.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState getChapterState() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState result = emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.valueOf(chapterState_);
+        return result == null ? emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.ChapterState chapter_state = 4;</code>
+       * @param value The chapterState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChapterState(emu.grasscutter.net.proto.ChapterStateOuterClass.ChapterState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        chapterState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.ChapterState chapter_state = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChapterState() {
+        
+        chapterState_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int chapterId_ ;
+      /**
+       * <code>uint32 chapter_id = 9;</code>
+       * @return The chapterId.
+       */
+      @java.lang.Override
+      public int getChapterId() {
+        return chapterId_;
+      }
+      /**
+       * <code>uint32 chapter_id = 9;</code>
+       * @param value The chapterId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChapterId(int value) {
+        
+        chapterId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 chapter_id = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChapterId() {
+        
+        chapterId_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -2139,15 +2163,15 @@ public final class ChapterStateNotifyOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ChapterStateNotify_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ChapterStateNotify_MDKJMILIFBA_descriptor;
+    internal_static_ChapterStateNotify_HFLGKINJOGD_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ChapterStateNotify_MDKJMILIFBA_fieldAccessorTable;
+      internal_static_ChapterStateNotify_HFLGKINJOGD_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ChapterStateNotify_EFFIIMIDMPP_descriptor;
+    internal_static_ChapterStateNotify_BLGJCHOIHMH_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ChapterStateNotify_EFFIIMIDMPP_fieldAccessorTable;
+      internal_static_ChapterStateNotify_BLGJCHOIHMH_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2158,16 +2182,15 @@ public final class ChapterStateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ChapterStateNotify.proto\032\022ChapterState" +
-      ".proto\"\254\002\n\022ChapterStateNotify\0224\n\013EHKKFCA" +
-      "GELK\030\004 \001(\0132\037.ChapterStateNotify.EFFIIMID" +
-      "MPP\022\022\n\nchapter_id\030\006 \001(\r\022$\n\rchapter_state" +
-      "\030\n \001(\0162\r.ChapterState\0224\n\013MLBMNAKEEOM\030\013 \001" +
-      "(\0132\037.ChapterStateNotify.MDKJMILIFBA\0327\n\013M" +
-      "DKJMILIFBA\022\023\n\013ACHHOKJICHO\030\t \001(\r\022\023\n\013LAJGH" +
-      "CIGKIN\030\n \001(\010\0327\n\013EFFIIMIDMPP\022\023\n\013LAJGHCIGK" +
-      "IN\030\003 \001(\010\022\023\n\013AGMLNDOMFNC\030\016 \001(\rB9\n\031emu.gra" +
-      "sscutter.net.protoB\034ChapterStateNotifyOu" +
-      "terClassb\006proto3"
+      ".proto\"\246\002\n\022ChapterStateNotify\0224\n\013MLBMNAK" +
+      "EEOM\030\002 \001(\0132\037.ChapterStateNotify.HFLGKINJ" +
+      "OGD\0224\n\013EHKKFCAGELK\030\014 \001(\0132\037.ChapterStateN" +
+      "otify.BLGJCHOIHMH\022$\n\rchapter_state\030\004 \001(\016" +
+      "2\r.ChapterState\022\022\n\nchapter_id\030\t \001(\r\0324\n\013H" +
+      "FLGKINJOGD\022\020\n\010is_limit\030\016 \001(\010\022\023\n\013BFCBJEKK" +
+      "PFC\030\004 \001(\r\0324\n\013BLGJCHOIHMH\022\020\n\010is_limit\030\001 \001" +
+      "(\010\022\023\n\013KNBEAIBAMLB\030\004 \001(\rB\033\n\031emu.grasscutt" +
+      "er.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2179,19 +2202,19 @@ public final class ChapterStateNotifyOuterClass {
     internal_static_ChapterStateNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ChapterStateNotify_descriptor,
-        new java.lang.String[] { "EHKKFCAGELK", "ChapterId", "ChapterState", "MLBMNAKEEOM", });
-    internal_static_ChapterStateNotify_MDKJMILIFBA_descriptor =
+        new java.lang.String[] { "MLBMNAKEEOM", "EHKKFCAGELK", "ChapterState", "ChapterId", });
+    internal_static_ChapterStateNotify_HFLGKINJOGD_descriptor =
       internal_static_ChapterStateNotify_descriptor.getNestedTypes().get(0);
-    internal_static_ChapterStateNotify_MDKJMILIFBA_fieldAccessorTable = new
+    internal_static_ChapterStateNotify_HFLGKINJOGD_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ChapterStateNotify_MDKJMILIFBA_descriptor,
-        new java.lang.String[] { "ACHHOKJICHO", "LAJGHCIGKIN", });
-    internal_static_ChapterStateNotify_EFFIIMIDMPP_descriptor =
+        internal_static_ChapterStateNotify_HFLGKINJOGD_descriptor,
+        new java.lang.String[] { "IsLimit", "BFCBJEKKPFC", });
+    internal_static_ChapterStateNotify_BLGJCHOIHMH_descriptor =
       internal_static_ChapterStateNotify_descriptor.getNestedTypes().get(1);
-    internal_static_ChapterStateNotify_EFFIIMIDMPP_fieldAccessorTable = new
+    internal_static_ChapterStateNotify_BLGJCHOIHMH_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ChapterStateNotify_EFFIIMIDMPP_descriptor,
-        new java.lang.String[] { "LAJGHCIGKIN", "AGMLNDOMFNC", });
+        internal_static_ChapterStateNotify_BLGJCHOIHMH_descriptor,
+        new java.lang.String[] { "IsLimit", "KNBEAIBAMLB", });
     emu.grasscutter.net.proto.ChapterStateOuterClass.getDescriptor();
   }
 

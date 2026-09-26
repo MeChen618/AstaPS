@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.Configuration;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.WindSeedType1NotifyOuterClass.WindSeedType1Notify;
 import emu.grasscutter.utils.FileUtils;
 
 import java.io.ByteArrayOutputStream;
@@ -14,12 +15,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PacketWindSeedClientNotify extends BasePacket {
-    public static final int CMD = 27286;
-    public static final int FIELD = 6;
+    public static final int CMD = PacketOpcodes.WindSeedType1Notify;
+    public static final int FIELD = WindSeedType1Notify.PAYLOAD_FIELD_NUMBER;
     /**
-     * The message is `WindSeedType1Notify`, which is this project's name for what 7.0 calls
-     * `_PlayerNormalLuaShellNotify` - CmdId 27286, shaped `{uint32 config_id = 4, bytes payload = 6}`
-     * and matching 6.7's `{uint32 config_id, bytes payload}` field-for-field by name.
+     * The message is `WindSeedType1Notify` - in 7.1 CmdId 29056, `{bytes payload = 5, uint32
+     * config_id = 10}` (7.0 called it `_PlayerNormalLuaShellNotify`, CmdId 27286, payload 6).
      *
      * <p>It is NOT `WindSeedClientNotify`. That is a different message (a oneof carrying
      * area/refresh/wind-bullet arms), and pointing this at it is what crashed the client: its
@@ -31,8 +31,8 @@ public class PacketWindSeedClientNotify extends BasePacket {
         return configured > 0 ? configured : PacketOpcodes.WindSeedType1Notify;
     }
 
-    /** `payload` on 7.0's _PlayerNormalLuaShellNotify. 6.7 had it at 11, 6.6 at 8. */
-    private static final int DEFAULT_PAYLOAD_FIELD = 6;
+    /** `payload` on WindSeedType1Notify: 5 in 7.1 (7.0 had it at 6, 6.7 at 11, 6.6 at 8). */
+    private static final int DEFAULT_PAYLOAD_FIELD = WindSeedType1Notify.PAYLOAD_FIELD_NUMBER;
 
     /**
      * True when the wind seed notify is switched off entirely - the safe setting if a CmdId hangs

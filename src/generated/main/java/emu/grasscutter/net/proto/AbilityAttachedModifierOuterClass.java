@@ -19,16 +19,16 @@ public final class AbilityAttachedModifierOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>int32 attach_name_hash = 5;</code>
+     * @return The attachNameHash.
+     */
+    int getAttachNameHash();
+
+    /**
      * <code>bool is_invalid = 1;</code>
      * @return The isInvalid.
      */
     boolean getIsInvalid();
-
-    /**
-     * <code>uint32 owner_entity_id = 2;</code>
-     * @return The ownerEntityId.
-     */
-    int getOwnerEntityId();
 
     /**
      * <code>uint32 instanced_modifier_id = 3;</code>
@@ -37,10 +37,10 @@ public final class AbilityAttachedModifierOuterClass {
     int getInstancedModifierId();
 
     /**
-     * <code>int32 attach_name_hash = 5;</code>
-     * @return The attachNameHash.
+     * <code>uint32 owner_entity_id = 2;</code>
+     * @return The ownerEntityId.
      */
-    int getAttachNameHash();
+    int getOwnerEntityId();
 
     /**
      * <code>.LJGEHMILKEM FPDAONBEBHK = 6;</code>
@@ -54,6 +54,10 @@ public final class AbilityAttachedModifierOuterClass {
     emu.grasscutter.net.proto.LJGEHMILKEMOuterClass.LJGEHMILKEM getFPDAONBEBHK();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AbilityAttachedModifier}
    */
   public static final class AbilityAttachedModifier extends
@@ -157,6 +161,17 @@ public final class AbilityAttachedModifierOuterClass {
               emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.class, emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder.class);
     }
 
+    public static final int ATTACH_NAME_HASH_FIELD_NUMBER = 5;
+    private int attachNameHash_;
+    /**
+     * <code>int32 attach_name_hash = 5;</code>
+     * @return The attachNameHash.
+     */
+    @java.lang.Override
+    public int getAttachNameHash() {
+      return attachNameHash_;
+    }
+
     public static final int IS_INVALID_FIELD_NUMBER = 1;
     private boolean isInvalid_;
     /**
@@ -166,17 +181,6 @@ public final class AbilityAttachedModifierOuterClass {
     @java.lang.Override
     public boolean getIsInvalid() {
       return isInvalid_;
-    }
-
-    public static final int OWNER_ENTITY_ID_FIELD_NUMBER = 2;
-    private int ownerEntityId_;
-    /**
-     * <code>uint32 owner_entity_id = 2;</code>
-     * @return The ownerEntityId.
-     */
-    @java.lang.Override
-    public int getOwnerEntityId() {
-      return ownerEntityId_;
     }
 
     public static final int INSTANCED_MODIFIER_ID_FIELD_NUMBER = 3;
@@ -190,15 +194,15 @@ public final class AbilityAttachedModifierOuterClass {
       return instancedModifierId_;
     }
 
-    public static final int ATTACH_NAME_HASH_FIELD_NUMBER = 5;
-    private int attachNameHash_;
+    public static final int OWNER_ENTITY_ID_FIELD_NUMBER = 2;
+    private int ownerEntityId_;
     /**
-     * <code>int32 attach_name_hash = 5;</code>
-     * @return The attachNameHash.
+     * <code>uint32 owner_entity_id = 2;</code>
+     * @return The ownerEntityId.
      */
     @java.lang.Override
-    public int getAttachNameHash() {
-      return attachNameHash_;
+    public int getOwnerEntityId() {
+      return ownerEntityId_;
     }
 
     public static final int FPDAONBEBHK_FIELD_NUMBER = 6;
@@ -293,14 +297,14 @@ public final class AbilityAttachedModifierOuterClass {
       }
       emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier other = (emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier) obj;
 
-      if (getIsInvalid()
-          != other.getIsInvalid()) return false;
-      if (getOwnerEntityId()
-          != other.getOwnerEntityId()) return false;
-      if (getInstancedModifierId()
-          != other.getInstancedModifierId()) return false;
       if (getAttachNameHash()
           != other.getAttachNameHash()) return false;
+      if (getIsInvalid()
+          != other.getIsInvalid()) return false;
+      if (getInstancedModifierId()
+          != other.getInstancedModifierId()) return false;
+      if (getOwnerEntityId()
+          != other.getOwnerEntityId()) return false;
       if (fPDAONBEBHK_ != other.fPDAONBEBHK_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
@@ -313,15 +317,15 @@ public final class AbilityAttachedModifierOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ATTACH_NAME_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getAttachNameHash();
       hash = (37 * hash) + IS_INVALID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInvalid());
-      hash = (37 * hash) + OWNER_ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOwnerEntityId();
       hash = (37 * hash) + INSTANCED_MODIFIER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getInstancedModifierId();
-      hash = (37 * hash) + ATTACH_NAME_HASH_FIELD_NUMBER;
-      hash = (53 * hash) + getAttachNameHash();
+      hash = (37 * hash) + OWNER_ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerEntityId();
       hash = (37 * hash) + FPDAONBEBHK_FIELD_NUMBER;
       hash = (53 * hash) + fPDAONBEBHK_;
       hash = (29 * hash) + unknownFields.hashCode();
@@ -420,6 +424,10 @@ public final class AbilityAttachedModifierOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AbilityAttachedModifier}
      */
     public static final class Builder extends
@@ -457,13 +465,13 @@ public final class AbilityAttachedModifierOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isInvalid_ = false;
+        attachNameHash_ = 0;
 
-        ownerEntityId_ = 0;
+        isInvalid_ = false;
 
         instancedModifierId_ = 0;
 
-        attachNameHash_ = 0;
+        ownerEntityId_ = 0;
 
         fPDAONBEBHK_ = 0;
 
@@ -493,10 +501,10 @@ public final class AbilityAttachedModifierOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier buildPartial() {
         emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier result = new emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier(this);
-        result.isInvalid_ = isInvalid_;
-        result.ownerEntityId_ = ownerEntityId_;
-        result.instancedModifierId_ = instancedModifierId_;
         result.attachNameHash_ = attachNameHash_;
+        result.isInvalid_ = isInvalid_;
+        result.instancedModifierId_ = instancedModifierId_;
+        result.ownerEntityId_ = ownerEntityId_;
         result.fPDAONBEBHK_ = fPDAONBEBHK_;
         onBuilt();
         return result;
@@ -546,17 +554,17 @@ public final class AbilityAttachedModifierOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier other) {
         if (other == emu.grasscutter.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.getDefaultInstance()) return this;
+        if (other.getAttachNameHash() != 0) {
+          setAttachNameHash(other.getAttachNameHash());
+        }
         if (other.getIsInvalid() != false) {
           setIsInvalid(other.getIsInvalid());
-        }
-        if (other.getOwnerEntityId() != 0) {
-          setOwnerEntityId(other.getOwnerEntityId());
         }
         if (other.getInstancedModifierId() != 0) {
           setInstancedModifierId(other.getInstancedModifierId());
         }
-        if (other.getAttachNameHash() != 0) {
-          setAttachNameHash(other.getAttachNameHash());
+        if (other.getOwnerEntityId() != 0) {
+          setOwnerEntityId(other.getOwnerEntityId());
         }
         if (other.fPDAONBEBHK_ != 0) {
           setFPDAONBEBHKValue(other.getFPDAONBEBHKValue());
@@ -590,6 +598,37 @@ public final class AbilityAttachedModifierOuterClass {
         return this;
       }
 
+      private int attachNameHash_ ;
+      /**
+       * <code>int32 attach_name_hash = 5;</code>
+       * @return The attachNameHash.
+       */
+      @java.lang.Override
+      public int getAttachNameHash() {
+        return attachNameHash_;
+      }
+      /**
+       * <code>int32 attach_name_hash = 5;</code>
+       * @param value The attachNameHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAttachNameHash(int value) {
+        
+        attachNameHash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 attach_name_hash = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAttachNameHash() {
+        
+        attachNameHash_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean isInvalid_ ;
       /**
        * <code>bool is_invalid = 1;</code>
@@ -617,37 +656,6 @@ public final class AbilityAttachedModifierOuterClass {
       public Builder clearIsInvalid() {
         
         isInvalid_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int ownerEntityId_ ;
-      /**
-       * <code>uint32 owner_entity_id = 2;</code>
-       * @return The ownerEntityId.
-       */
-      @java.lang.Override
-      public int getOwnerEntityId() {
-        return ownerEntityId_;
-      }
-      /**
-       * <code>uint32 owner_entity_id = 2;</code>
-       * @param value The ownerEntityId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOwnerEntityId(int value) {
-        
-        ownerEntityId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 owner_entity_id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOwnerEntityId() {
-        
-        ownerEntityId_ = 0;
         onChanged();
         return this;
       }
@@ -683,33 +691,33 @@ public final class AbilityAttachedModifierOuterClass {
         return this;
       }
 
-      private int attachNameHash_ ;
+      private int ownerEntityId_ ;
       /**
-       * <code>int32 attach_name_hash = 5;</code>
-       * @return The attachNameHash.
+       * <code>uint32 owner_entity_id = 2;</code>
+       * @return The ownerEntityId.
        */
       @java.lang.Override
-      public int getAttachNameHash() {
-        return attachNameHash_;
+      public int getOwnerEntityId() {
+        return ownerEntityId_;
       }
       /**
-       * <code>int32 attach_name_hash = 5;</code>
-       * @param value The attachNameHash to set.
+       * <code>uint32 owner_entity_id = 2;</code>
+       * @param value The ownerEntityId to set.
        * @return This builder for chaining.
        */
-      public Builder setAttachNameHash(int value) {
+      public Builder setOwnerEntityId(int value) {
         
-        attachNameHash_ = value;
+        ownerEntityId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 attach_name_hash = 5;</code>
+       * <code>uint32 owner_entity_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAttachNameHash() {
+      public Builder clearOwnerEntityId() {
         
-        attachNameHash_ = 0;
+        ownerEntityId_ = 0;
         onChanged();
         return this;
       }
@@ -835,13 +843,12 @@ public final class AbilityAttachedModifierOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035AbilityAttachedModifier.proto\032\021LJGEHMI" +
-      "LKEM.proto\"\242\001\n\027AbilityAttachedModifier\022\022" +
-      "\n\nis_invalid\030\001 \001(\010\022\027\n\017owner_entity_id\030\002 " +
-      "\001(\r\022\035\n\025instanced_modifier_id\030\003 \001(\r\022\030\n\020at" +
-      "tach_name_hash\030\005 \001(\005\022!\n\013FPDAONBEBHK\030\006 \001(" +
-      "\0162\014.LJGEHMILKEMB>\n\031emu.grasscutter.net.p" +
-      "rotoB!AbilityAttachedModifierOuterClassb" +
-      "\006proto3"
+      "LKEM.proto\"\242\001\n\027AbilityAttachedModifier\022\030" +
+      "\n\020attach_name_hash\030\005 \001(\005\022\022\n\nis_invalid\030\001" +
+      " \001(\010\022\035\n\025instanced_modifier_id\030\003 \001(\r\022\027\n\017o" +
+      "wner_entity_id\030\002 \001(\r\022!\n\013FPDAONBEBHK\030\006 \001(" +
+      "\0162\014.LJGEHMILKEMB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -853,7 +860,7 @@ public final class AbilityAttachedModifierOuterClass {
     internal_static_AbilityAttachedModifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityAttachedModifier_descriptor,
-        new java.lang.String[] { "IsInvalid", "OwnerEntityId", "InstancedModifierId", "AttachNameHash", "FPDAONBEBHK", });
+        new java.lang.String[] { "AttachNameHash", "IsInvalid", "InstancedModifierId", "OwnerEntityId", "FPDAONBEBHK", });
     emu.grasscutter.net.proto.LJGEHMILKEMOuterClass.getDescriptor();
   }
 

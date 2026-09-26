@@ -31,6 +31,10 @@ public final class EGHMHMPPMLLOuterClass {
      * <code>EGHMHMPPMLL_COSTUME_SUIT = 2;</code>
      */
     EGHMHMPPMLL_COSTUME_SUIT(2),
+    /**
+     * <code>EGHMHMPPMLL_ALREADY_BOUGHT = 3;</code>
+     */
+    EGHMHMPPMLL_ALREADY_BOUGHT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -46,6 +50,10 @@ public final class EGHMHMPPMLLOuterClass {
      * <code>EGHMHMPPMLL_COSTUME_SUIT = 2;</code>
      */
     public static final int EGHMHMPPMLL_COSTUME_SUIT_VALUE = 2;
+    /**
+     * <code>EGHMHMPPMLL_ALREADY_BOUGHT = 3;</code>
+     */
+    public static final int EGHMHMPPMLL_ALREADY_BOUGHT_VALUE = 3;
 
 
     public final int getNumber() {
@@ -75,6 +83,7 @@ public final class EGHMHMPPMLLOuterClass {
         case 0: return EGHMHMPPMLL_NONE;
         case 1: return EGHMHMPPMLL_BUNDLE_GOODS;
         case 2: return EGHMHMPPMLL_COSTUME_SUIT;
+        case 3: return EGHMHMPPMLL_ALREADY_BOUGHT;
         default: return null;
       }
     }
@@ -140,11 +149,11 @@ public final class EGHMHMPPMLLOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021EGHMHMPPMLL.proto*_\n\013EGHMHMPPMLL\022\024\n\020EG" +
+      "\n\021EGHMHMPPMLL.proto*\177\n\013EGHMHMPPMLL\022\024\n\020EG" +
       "HMHMPPMLL_NONE\020\000\022\034\n\030EGHMHMPPMLL_BUNDLE_G" +
-      "OODS\020\001\022\034\n\030EGHMHMPPMLL_COSTUME_SUIT\020\002B2\n\031" +
-      "emu.grasscutter.net.protoB\025EGHMHMPPMLLOu" +
-      "terClassb\006proto3"
+      "OODS\020\001\022\034\n\030EGHMHMPPMLL_COSTUME_SUIT\020\002\022\036\n\032" +
+      "EGHMHMPPMLL_ALREADY_BOUGHT\020\003B\033\n\031emu.gras" +
+      "scutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -4,8 +4,9 @@ import emu.grasscutter.game.entity.gadget.OfferingHelper;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.game.GameSession;
 import com.google.protobuf.CodedInputStream;
+import emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq;
 
-/** Claim from the offering reward page; 7.0 uses offering_id=1, level=10. */
+/** Claim from the offering reward page; field numbers from the generated TakeOfferingLevelRewardReq. */
 @Opcodes(PacketOpcodes.TakeOfferingLevelRewardReq)
 public class HandlerTakeOfferingLevelRewardReq extends PacketHandler {
     @Override
@@ -27,9 +28,9 @@ public class HandlerTakeOfferingLevelRewardReq extends PacketHandler {
                     continue;
                 }
                 int v = in.readUInt32();
-                if (field == 1) {
+                if (field == TakeOfferingLevelRewardReq.OFFERING_ID_FIELD_NUMBER) {
                     offeringId = v;
-                } else if (field == 10) {
+                } else if (field == TakeOfferingLevelRewardReq.LEVEL_FIELD_NUMBER) {
                     takeLevel = v;
                 }
             }

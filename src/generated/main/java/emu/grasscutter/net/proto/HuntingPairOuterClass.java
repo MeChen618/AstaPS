@@ -18,15 +18,23 @@ public final class HuntingPairOuterClass {
       // @@protoc_insertion_point(interface_extends:HuntingPair)
       com.google.protobuf.MessageOrBuilder {
 
+    /**
+     * <code>uint32 monster_config_id = 11;</code>
+     * @return The monsterConfigId.
+     */
     int getMonsterConfigId();
 
     /**
-     * <code>uint32 APNHIONPPGB = 10;</code>
-     * @return The aPNHIONPPGB.
+     * <code>uint32 refresh_id = 8;</code>
+     * @return The refreshId.
      */
-    int getAPNHIONPPGB();
+    int getRefreshId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HuntingPair}
    */
   public static final class HuntingPair extends
@@ -71,12 +79,12 @@ public final class HuntingPairOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 64: {
 
-              aPNHIONPPGB_ = input.readUInt32();
+              refreshId_ = input.readUInt32();
               break;
             }
-            case 96: {
+            case 88: {
 
               monsterConfigId_ = input.readUInt32();
               break;
@@ -113,23 +121,26 @@ public final class HuntingPairOuterClass {
               emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.class, emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair.Builder.class);
     }
 
-    public static final int MONSTER_CONFIG_ID_FIELD_NUMBER = 12;
+    public static final int MONSTER_CONFIG_ID_FIELD_NUMBER = 11;
     private int monsterConfigId_;
-
+    /**
+     * <code>uint32 monster_config_id = 11;</code>
+     * @return The monsterConfigId.
+     */
     @java.lang.Override
     public int getMonsterConfigId() {
       return monsterConfigId_;
     }
 
-    public static final int APNHIONPPGB_FIELD_NUMBER = 10;
-    private int aPNHIONPPGB_;
+    public static final int REFRESH_ID_FIELD_NUMBER = 8;
+    private int refreshId_;
     /**
-     * <code>uint32 APNHIONPPGB = 10;</code>
-     * @return The aPNHIONPPGB.
+     * <code>uint32 refresh_id = 8;</code>
+     * @return The refreshId.
      */
     @java.lang.Override
-    public int getAPNHIONPPGB() {
-      return aPNHIONPPGB_;
+    public int getRefreshId() {
+      return refreshId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -146,11 +157,11 @@ public final class HuntingPairOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (aPNHIONPPGB_ != 0) {
-        output.writeUInt32(10, aPNHIONPPGB_);
+      if (refreshId_ != 0) {
+        output.writeUInt32(8, refreshId_);
       }
       if (monsterConfigId_ != 0) {
-        output.writeUInt32(12, monsterConfigId_);
+        output.writeUInt32(11, monsterConfigId_);
       }
       unknownFields.writeTo(output);
     }
@@ -161,13 +172,13 @@ public final class HuntingPairOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (aPNHIONPPGB_ != 0) {
+      if (refreshId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, aPNHIONPPGB_);
+          .computeUInt32Size(8, refreshId_);
       }
       if (monsterConfigId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, monsterConfigId_);
+          .computeUInt32Size(11, monsterConfigId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -186,8 +197,8 @@ public final class HuntingPairOuterClass {
 
       if (getMonsterConfigId()
           != other.getMonsterConfigId()) return false;
-      if (getAPNHIONPPGB()
-          != other.getAPNHIONPPGB()) return false;
+      if (getRefreshId()
+          != other.getRefreshId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -201,8 +212,8 @@ public final class HuntingPairOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MONSTER_CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMonsterConfigId();
-      hash = (37 * hash) + APNHIONPPGB_FIELD_NUMBER;
-      hash = (53 * hash) + getAPNHIONPPGB();
+      hash = (37 * hash) + REFRESH_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getRefreshId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -299,6 +310,10 @@ public final class HuntingPairOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HuntingPair}
      */
     public static final class Builder extends
@@ -338,7 +353,7 @@ public final class HuntingPairOuterClass {
         super.clear();
         monsterConfigId_ = 0;
 
-        aPNHIONPPGB_ = 0;
+        refreshId_ = 0;
 
         return this;
       }
@@ -367,7 +382,7 @@ public final class HuntingPairOuterClass {
       public emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair buildPartial() {
         emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair result = new emu.grasscutter.net.proto.HuntingPairOuterClass.HuntingPair(this);
         result.monsterConfigId_ = monsterConfigId_;
-        result.aPNHIONPPGB_ = aPNHIONPPGB_;
+        result.refreshId_ = refreshId_;
         onBuilt();
         return result;
       }
@@ -419,8 +434,8 @@ public final class HuntingPairOuterClass {
         if (other.getMonsterConfigId() != 0) {
           setMonsterConfigId(other.getMonsterConfigId());
         }
-        if (other.getAPNHIONPPGB() != 0) {
-          setAPNHIONPPGB(other.getAPNHIONPPGB());
+        if (other.getRefreshId() != 0) {
+          setRefreshId(other.getRefreshId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -452,53 +467,63 @@ public final class HuntingPairOuterClass {
       }
 
       private int monsterConfigId_ ;
-
+      /**
+       * <code>uint32 monster_config_id = 11;</code>
+       * @return The monsterConfigId.
+       */
       @java.lang.Override
       public int getMonsterConfigId() {
         return monsterConfigId_;
       }
-
+      /**
+       * <code>uint32 monster_config_id = 11;</code>
+       * @param value The monsterConfigId to set.
+       * @return This builder for chaining.
+       */
       public Builder setMonsterConfigId(int value) {
-
+        
         monsterConfigId_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>uint32 monster_config_id = 11;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearMonsterConfigId() {
-
+        
         monsterConfigId_ = 0;
         onChanged();
         return this;
       }
 
-      private int aPNHIONPPGB_ ;
+      private int refreshId_ ;
       /**
-       * <code>uint32 APNHIONPPGB = 10;</code>
-       * @return The aPNHIONPPGB.
+       * <code>uint32 refresh_id = 8;</code>
+       * @return The refreshId.
        */
       @java.lang.Override
-      public int getAPNHIONPPGB() {
-        return aPNHIONPPGB_;
+      public int getRefreshId() {
+        return refreshId_;
       }
       /**
-       * <code>uint32 APNHIONPPGB = 10;</code>
-       * @param value The aPNHIONPPGB to set.
+       * <code>uint32 refresh_id = 8;</code>
+       * @param value The refreshId to set.
        * @return This builder for chaining.
        */
-      public Builder setAPNHIONPPGB(int value) {
-
-        aPNHIONPPGB_ = value;
+      public Builder setRefreshId(int value) {
+        
+        refreshId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 APNHIONPPGB = 10;</code>
+       * <code>uint32 refresh_id = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAPNHIONPPGB() {
-
-        aPNHIONPPGB_ = 0;
+      public Builder clearRefreshId() {
+        
+        refreshId_ = 0;
         onChanged();
         return this;
       }
@@ -513,6 +538,7 @@ public final class HuntingPairOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:HuntingPair)
     }
@@ -556,7 +582,7 @@ public final class HuntingPairOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_HuntingPair_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_HuntingPair_fieldAccessorTable;
 
@@ -568,9 +594,9 @@ public final class HuntingPairOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021HuntingPair.proto\"=\n\013HuntingPair\022\031\n\021mo" +
-      "nster_config_id\030\017 \001(\r\022\023\n\013APNHIONPPGB\030\n \001" +
-      "(\rB\033\n\031emu.grasscutter.net.protob\006proto3"
+      "\n\021HuntingPair.proto\"<\n\013HuntingPair\022\031\n\021mo" +
+      "nster_config_id\030\013 \001(\r\022\022\n\nrefresh_id\030\010 \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -581,7 +607,7 @@ public final class HuntingPairOuterClass {
     internal_static_HuntingPair_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HuntingPair_descriptor,
-        new java.lang.String[] { "MonsterConfigId", "APNHIONPPGB", });
+        new java.lang.String[] { "MonsterConfigId", "RefreshId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,18 +19,22 @@ public final class EEBOJGGAGGAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 LIGGJOPGIHJ = 3;</code>
+     * <code>uint32 LIGGJOPGIHJ = 9;</code>
      * @return The lIGGJOPGIHJ.
      */
     int getLIGGJOPGIHJ();
 
     /**
-     * <code>bool CPBOLCNDBBF = 4;</code>
+     * <code>bool CPBOLCNDBBF = 10;</code>
      * @return The cPBOLCNDBBF.
      */
     boolean getCPBOLCNDBBF();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EEBOJGGAGGA}
    */
   public static final class EEBOJGGAGGA extends
@@ -75,12 +79,12 @@ public final class EEBOJGGAGGAOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 72: {
 
               lIGGJOPGIHJ_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 80: {
 
               cPBOLCNDBBF_ = input.readBool();
               break;
@@ -117,10 +121,10 @@ public final class EEBOJGGAGGAOuterClass {
               emu.grasscutter.net.proto.EEBOJGGAGGAOuterClass.EEBOJGGAGGA.class, emu.grasscutter.net.proto.EEBOJGGAGGAOuterClass.EEBOJGGAGGA.Builder.class);
     }
 
-    public static final int LIGGJOPGIHJ_FIELD_NUMBER = 3;
+    public static final int LIGGJOPGIHJ_FIELD_NUMBER = 9;
     private int lIGGJOPGIHJ_;
     /**
-     * <code>uint32 LIGGJOPGIHJ = 3;</code>
+     * <code>uint32 LIGGJOPGIHJ = 9;</code>
      * @return The lIGGJOPGIHJ.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class EEBOJGGAGGAOuterClass {
       return lIGGJOPGIHJ_;
     }
 
-    public static final int CPBOLCNDBBF_FIELD_NUMBER = 4;
+    public static final int CPBOLCNDBBF_FIELD_NUMBER = 10;
     private boolean cPBOLCNDBBF_;
     /**
-     * <code>bool CPBOLCNDBBF = 4;</code>
+     * <code>bool CPBOLCNDBBF = 10;</code>
      * @return The cPBOLCNDBBF.
      */
     @java.lang.Override
@@ -154,10 +158,10 @@ public final class EEBOJGGAGGAOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (lIGGJOPGIHJ_ != 0) {
-        output.writeUInt32(3, lIGGJOPGIHJ_);
+        output.writeUInt32(9, lIGGJOPGIHJ_);
       }
       if (cPBOLCNDBBF_ != false) {
-        output.writeBool(4, cPBOLCNDBBF_);
+        output.writeBool(10, cPBOLCNDBBF_);
       }
       unknownFields.writeTo(output);
     }
@@ -170,11 +174,11 @@ public final class EEBOJGGAGGAOuterClass {
       size = 0;
       if (lIGGJOPGIHJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, lIGGJOPGIHJ_);
+          .computeUInt32Size(9, lIGGJOPGIHJ_);
       }
       if (cPBOLCNDBBF_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, cPBOLCNDBBF_);
+          .computeBoolSize(10, cPBOLCNDBBF_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,6 +311,10 @@ public final class EEBOJGGAGGAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EEBOJGGAGGA}
      */
     public static final class Builder extends
@@ -461,7 +469,7 @@ public final class EEBOJGGAGGAOuterClass {
 
       private int lIGGJOPGIHJ_ ;
       /**
-       * <code>uint32 LIGGJOPGIHJ = 3;</code>
+       * <code>uint32 LIGGJOPGIHJ = 9;</code>
        * @return The lIGGJOPGIHJ.
        */
       @java.lang.Override
@@ -469,7 +477,7 @@ public final class EEBOJGGAGGAOuterClass {
         return lIGGJOPGIHJ_;
       }
       /**
-       * <code>uint32 LIGGJOPGIHJ = 3;</code>
+       * <code>uint32 LIGGJOPGIHJ = 9;</code>
        * @param value The lIGGJOPGIHJ to set.
        * @return This builder for chaining.
        */
@@ -480,7 +488,7 @@ public final class EEBOJGGAGGAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 LIGGJOPGIHJ = 3;</code>
+       * <code>uint32 LIGGJOPGIHJ = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearLIGGJOPGIHJ() {
@@ -492,7 +500,7 @@ public final class EEBOJGGAGGAOuterClass {
 
       private boolean cPBOLCNDBBF_ ;
       /**
-       * <code>bool CPBOLCNDBBF = 4;</code>
+       * <code>bool CPBOLCNDBBF = 10;</code>
        * @return The cPBOLCNDBBF.
        */
       @java.lang.Override
@@ -500,7 +508,7 @@ public final class EEBOJGGAGGAOuterClass {
         return cPBOLCNDBBF_;
       }
       /**
-       * <code>bool CPBOLCNDBBF = 4;</code>
+       * <code>bool CPBOLCNDBBF = 10;</code>
        * @param value The cPBOLCNDBBF to set.
        * @return This builder for chaining.
        */
@@ -511,7 +519,7 @@ public final class EEBOJGGAGGAOuterClass {
         return this;
       }
       /**
-       * <code>bool CPBOLCNDBBF = 4;</code>
+       * <code>bool CPBOLCNDBBF = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearCPBOLCNDBBF() {
@@ -588,9 +596,8 @@ public final class EEBOJGGAGGAOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021EEBOJGGAGGA.proto\"7\n\013EEBOJGGAGGA\022\023\n\013LI" +
-      "GGJOPGIHJ\030\003 \001(\r\022\023\n\013CPBOLCNDBBF\030\004 \001(\010B2\n\031" +
-      "emu.grasscutter.net.protoB\025EEBOJGGAGGAOu" +
-      "terClassb\006proto3"
+      "GGJOPGIHJ\030\t \001(\r\022\023\n\013CPBOLCNDBBF\030\n \001(\010B\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

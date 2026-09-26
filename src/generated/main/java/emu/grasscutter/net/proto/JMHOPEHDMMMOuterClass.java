@@ -40,6 +40,10 @@ public final class JMHOPEHDMMMOuterClass {
     boolean getIsPause();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JMHOPEHDMMM}
    */
   public static final class JMHOPEHDMMM extends
@@ -344,6 +348,10 @@ public final class JMHOPEHDMMMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JMHOPEHDMMM}
      */
     public static final class Builder extends
@@ -722,9 +730,8 @@ public final class JMHOPEHDMMMOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021JMHOPEHDMMM.proto\032\021IOJHNKOGKGC.proto\"B" +
       "\n\013JMHOPEHDMMM\022!\n\013EMDCOGONMJF\030\001 \001(\0132\014.IOJ" +
-      "HNKOGKGC\022\020\n\010is_pause\030\002 \001(\010B2\n\031emu.grassc" +
-      "utter.net.protoB\025JMHOPEHDMMMOuterClassb\006" +
-      "proto3"
+      "HNKOGKGC\022\020\n\010is_pause\030\002 \001(\010B\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

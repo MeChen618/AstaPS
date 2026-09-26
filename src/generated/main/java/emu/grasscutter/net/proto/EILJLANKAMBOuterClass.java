@@ -40,6 +40,10 @@ public final class EILJLANKAMBOuterClass {
     boolean getIsPause();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EILJLANKAMB}
    */
   public static final class EILJLANKAMB extends
@@ -344,6 +348,10 @@ public final class EILJLANKAMBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EILJLANKAMB}
      */
     public static final class Builder extends
@@ -722,9 +730,8 @@ public final class EILJLANKAMBOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021EILJLANKAMB.proto\032\021OKJOINFCNLJ.proto\"B" +
       "\n\013EILJLANKAMB\022!\n\013CJKAEPPKOHC\030\001 \001(\0132\014.OKJ" +
-      "OINFCNLJ\022\020\n\010is_pause\030\002 \001(\010B2\n\031emu.grassc" +
-      "utter.net.protoB\025EILJLANKAMBOuterClassb\006" +
-      "proto3"
+      "OINFCNLJ\022\020\n\010is_pause\030\002 \001(\010B\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -3,6 +3,7 @@
  */
 package emu.grasscutter.game.avatar;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.avatar.AvatarExtraLevelHelper;
@@ -16,8 +17,8 @@ import java.util.Set;
 
 public final class ExtraLevelUiBridge {
     private static final int MAX_PAYLOAD = 256;
-    private static final int UNION_CMD_NOTIFY = 7516;
-    private static final int PROMOTE_REQ_70 = 27289;
+    private static final int UNION_CMD_NOTIFY = PacketOpcodes.UnionCmdNotify;
+    private static final int PROMOTE_REQ_70 = PacketOpcodes.AvatarPromoteReq;
     private static final Set<Integer> IGNORE = Set.of(Integer.valueOf(1211), Integer.valueOf(119), Integer.valueOf(24997), Integer.valueOf(27433), Integer.valueOf(28092), Integer.valueOf(23961), Integer.valueOf(1185), Integer.valueOf(7886), Integer.valueOf(4646));
 
     private ExtraLevelUiBridge() {
@@ -27,7 +28,7 @@ public final class ExtraLevelUiBridge {
         if (player == null || byArray == null || byArray.length == 0) {
             return false;
         }
-        if (IGNORE.contains(n) || n == 7516) {
+        if (IGNORE.contains(n) || n == UNION_CMD_NOTIFY) {
             return false;
         }
         return ExtraLevelUiBridge.tryHandleOne(player, n, byArray);
@@ -52,7 +53,7 @@ public final class ExtraLevelUiBridge {
             }
             return false;
         }
-        if (n == 27289 || n == 6091) {
+        if ((n == PROMOTE_REQ_70 && n != 0) || n == 6091) {
             if (byArray.length > 256) {
                 return false;
             }

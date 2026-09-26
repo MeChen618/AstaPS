@@ -19,57 +19,76 @@ public final class PrivateChatReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
-     * @return Whether the beyondCostumeShareCode field is set.
+     * <code>uint32 target_uid = 13;</code>
+     * @return The targetUid.
      */
-    boolean hasBeyondCostumeShareCode();
-    /**
-     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
-     * @return The beyondCostumeShareCode.
-     */
-    emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode getBeyondCostumeShareCode();
-    /**
-     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
-     */
-    emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder getBeyondCostumeShareCodeOrBuilder();
+    int getTargetUid();
 
     /**
-     * <code>uint32 icon = 8;</code>
-     * @return Whether the icon field is set.
-     */
-    boolean hasIcon();
-    /**
-     * <code>uint32 icon = 8;</code>
-     * @return The icon.
-     */
-    int getIcon();
-
-    /**
-     * <code>string text = 14;</code>
+     * <code>string text = 4;</code>
      * @return Whether the text field is set.
      */
     boolean hasText();
     /**
-     * <code>string text = 14;</code>
+     * <code>string text = 4;</code>
      * @return The text.
      */
     java.lang.String getText();
     /**
-     * <code>string text = 14;</code>
+     * <code>string text = 4;</code>
      * @return The bytes for text.
      */
     com.google.protobuf.ByteString
         getTextBytes();
 
     /**
-     * <code>uint32 target_uid = 10;</code>
-     * @return The targetUid.
+     * <code>uint32 icon = 11;</code>
+     * @return Whether the icon field is set.
      */
-    int getTargetUid();
+    boolean hasIcon();
+    /**
+     * <code>uint32 icon = 11;</code>
+     * @return The icon.
+     */
+    int getIcon();
+
+    /**
+     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
+     * @return Whether the beyondCostumeShareCode field is set.
+     */
+    boolean hasBeyondCostumeShareCode();
+    /**
+     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
+     * @return The beyondCostumeShareCode.
+     */
+    emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode getBeyondCostumeShareCode();
+    /**
+     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
+     */
+    emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder getBeyondCostumeShareCodeOrBuilder();
+
+    /**
+     * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+     * @return Whether the beyondLevelShare field is set.
+     */
+    boolean hasBeyondLevelShare();
+    /**
+     * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+     * @return The beyondLevelShare.
+     */
+    emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM getBeyondLevelShare();
+    /**
+     * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+     */
+    emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder getBeyondLevelShareOrBuilder();
 
     public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.ContentCase getContentCase();
   }
   /**
+   * <pre>
+   * CmdId: 4032
+   * </pre>
+   *
    * Protobuf type {@code PrivateChatReq}
    */
   public static final class PrivateChatReq extends
@@ -114,9 +133,39 @@ public final class PrivateChatReqOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              contentCase_ = 4;
+              content_ = s;
+              break;
+            }
+            case 58: {
+              emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder subBuilder = null;
+              if (contentCase_ == 7) {
+                subBuilder = ((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_).toBuilder();
+              }
+              content_ =
+                  input.readMessage(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_);
+                content_ = subBuilder.buildPartial();
+              }
+              contentCase_ = 7;
+              break;
+            }
+            case 88: {
+              contentCase_ = 11;
+              content_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              targetUid_ = input.readUInt32();
+              break;
+            }
+            case 114: {
               emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.Builder subBuilder = null;
-              if (contentCase_ == 1) {
+              if (contentCase_ == 14) {
                 subBuilder = ((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_).toBuilder();
               }
               content_ =
@@ -125,23 +174,7 @@ public final class PrivateChatReqOuterClass {
                 subBuilder.mergeFrom((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_);
                 content_ = subBuilder.buildPartial();
               }
-              contentCase_ = 1;
-              break;
-            }
-            case 64: {
-              contentCase_ = 8;
-              content_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
               contentCase_ = 14;
-              content_ = s;
               break;
             }
             default: {
@@ -181,12 +214,16 @@ public final class PrivateChatReqOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>bytes FEPAFANMNLK = 7;</code>
+       * <code>bytes FEPAFANMNLK = 1;</code>
        * @return The fEPAFANMNLK.
        */
       com.google.protobuf.ByteString getFEPAFANMNLK();
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PrivateChatReq._BeyondCostumeShareCode}
      */
     public static final class _BeyondCostumeShareCode extends
@@ -232,7 +269,7 @@ public final class PrivateChatReqOuterClass {
               case 0:
                 done = true;
                 break;
-              case 58: {
+              case 10: {
 
                 fEPAFANMNLK_ = input.readBytes();
                 break;
@@ -269,10 +306,10 @@ public final class PrivateChatReqOuterClass {
                 emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.class, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.Builder.class);
       }
 
-      public static final int FEPAFANMNLK_FIELD_NUMBER = 7;
+      public static final int FEPAFANMNLK_FIELD_NUMBER = 1;
       private com.google.protobuf.ByteString fEPAFANMNLK_;
       /**
-       * <code>bytes FEPAFANMNLK = 7;</code>
+       * <code>bytes FEPAFANMNLK = 1;</code>
        * @return The fEPAFANMNLK.
        */
       @java.lang.Override
@@ -295,7 +332,7 @@ public final class PrivateChatReqOuterClass {
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         if (!fEPAFANMNLK_.isEmpty()) {
-          output.writeBytes(7, fEPAFANMNLK_);
+          output.writeBytes(1, fEPAFANMNLK_);
         }
         unknownFields.writeTo(output);
       }
@@ -308,7 +345,7 @@ public final class PrivateChatReqOuterClass {
         size = 0;
         if (!fEPAFANMNLK_.isEmpty()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(7, fEPAFANMNLK_);
+            .computeBytesSize(1, fEPAFANMNLK_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -436,6 +473,10 @@ public final class PrivateChatReqOuterClass {
         return builder;
       }
       /**
+       * <pre>
+       * CmdId: -
+       * </pre>
+       *
        * Protobuf type {@code PrivateChatReq._BeyondCostumeShareCode}
        */
       public static final class Builder extends
@@ -584,7 +625,7 @@ public final class PrivateChatReqOuterClass {
 
         private com.google.protobuf.ByteString fEPAFANMNLK_ = com.google.protobuf.ByteString.EMPTY;
         /**
-         * <code>bytes FEPAFANMNLK = 7;</code>
+         * <code>bytes FEPAFANMNLK = 1;</code>
          * @return The fEPAFANMNLK.
          */
         @java.lang.Override
@@ -592,7 +633,7 @@ public final class PrivateChatReqOuterClass {
           return fEPAFANMNLK_;
         }
         /**
-         * <code>bytes FEPAFANMNLK = 7;</code>
+         * <code>bytes FEPAFANMNLK = 1;</code>
          * @param value The fEPAFANMNLK to set.
          * @return This builder for chaining.
          */
@@ -606,7 +647,7 @@ public final class PrivateChatReqOuterClass {
           return this;
         }
         /**
-         * <code>bytes FEPAFANMNLK = 7;</code>
+         * <code>bytes FEPAFANMNLK = 1;</code>
          * @return This builder for chaining.
          */
         public Builder clearFEPAFANMNLK() {
@@ -668,14 +709,662 @@ public final class PrivateChatReqOuterClass {
 
     }
 
+    public interface PMDDDIGLEHMOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:PrivateChatReq.PMDDDIGLEHM)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string IENEGFFPHHO = 7;</code>
+       * @return The iENEGFFPHHO.
+       */
+      java.lang.String getIENEGFFPHHO();
+      /**
+       * <code>string IENEGFFPHHO = 7;</code>
+       * @return The bytes for iENEGFFPHHO.
+       */
+      com.google.protobuf.ByteString
+          getIENEGFFPHHOBytes();
+
+      /**
+       * <code>uint64 dungeon_guid = 10;</code>
+       * @return The dungeonGuid.
+       */
+      long getDungeonGuid();
+    }
+    /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
+     * Protobuf type {@code PrivateChatReq.PMDDDIGLEHM}
+     */
+    public static final class PMDDDIGLEHM extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:PrivateChatReq.PMDDDIGLEHM)
+        PMDDDIGLEHMOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use PMDDDIGLEHM.newBuilder() to construct.
+      private PMDDDIGLEHM(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private PMDDDIGLEHM() {
+        iENEGFFPHHO_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new PMDDDIGLEHM();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private PMDDDIGLEHM(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                iENEGFFPHHO_ = s;
+                break;
+              }
+              case 80: {
+
+                dungeonGuid_ = input.readUInt64();
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return emu.grasscutter.net.proto.PrivateChatReqOuterClass.internal_static_PrivateChatReq_PMDDDIGLEHM_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return emu.grasscutter.net.proto.PrivateChatReqOuterClass.internal_static_PrivateChatReq_PMDDDIGLEHM_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.class, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder.class);
+      }
+
+      public static final int IENEGFFPHHO_FIELD_NUMBER = 7;
+      private volatile java.lang.Object iENEGFFPHHO_;
+      /**
+       * <code>string IENEGFFPHHO = 7;</code>
+       * @return The iENEGFFPHHO.
+       */
+      @java.lang.Override
+      public java.lang.String getIENEGFFPHHO() {
+        java.lang.Object ref = iENEGFFPHHO_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          iENEGFFPHHO_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string IENEGFFPHHO = 7;</code>
+       * @return The bytes for iENEGFFPHHO.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getIENEGFFPHHOBytes() {
+        java.lang.Object ref = iENEGFFPHHO_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          iENEGFFPHHO_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DUNGEON_GUID_FIELD_NUMBER = 10;
+      private long dungeonGuid_;
+      /**
+       * <code>uint64 dungeon_guid = 10;</code>
+       * @return The dungeonGuid.
+       */
+      @java.lang.Override
+      public long getDungeonGuid() {
+        return dungeonGuid_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iENEGFFPHHO_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 7, iENEGFFPHHO_);
+        }
+        if (dungeonGuid_ != 0L) {
+          output.writeUInt64(10, dungeonGuid_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(iENEGFFPHHO_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, iENEGFFPHHO_);
+        }
+        if (dungeonGuid_ != 0L) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(10, dungeonGuid_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM)) {
+          return super.equals(obj);
+        }
+        emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM other = (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) obj;
+
+        if (!getIENEGFFPHHO()
+            .equals(other.getIENEGFFPHHO())) return false;
+        if (getDungeonGuid()
+            != other.getDungeonGuid()) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + IENEGFFPHHO_FIELD_NUMBER;
+        hash = (53 * hash) + getIENEGFFPHHO().hashCode();
+        hash = (37 * hash) + DUNGEON_GUID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getDungeonGuid());
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * CmdId: -
+       * </pre>
+       *
+       * Protobuf type {@code PrivateChatReq.PMDDDIGLEHM}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:PrivateChatReq.PMDDDIGLEHM)
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.internal_static_PrivateChatReq_PMDDDIGLEHM_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.internal_static_PrivateChatReq_PMDDDIGLEHM_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.class, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder.class);
+        }
+
+        // Construct using emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          iENEGFFPHHO_ = "";
+
+          dungeonGuid_ = 0L;
+
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.internal_static_PrivateChatReq_PMDDDIGLEHM_descriptor;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM getDefaultInstanceForType() {
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM build() {
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM buildPartial() {
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM result = new emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM(this);
+          result.iENEGFFPHHO_ = iENEGFFPHHO_;
+          result.dungeonGuid_ = dungeonGuid_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) {
+            return mergeFrom((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM other) {
+          if (other == emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance()) return this;
+          if (!other.getIENEGFFPHHO().isEmpty()) {
+            iENEGFFPHHO_ = other.iENEGFFPHHO_;
+            onChanged();
+          }
+          if (other.getDungeonGuid() != 0L) {
+            setDungeonGuid(other.getDungeonGuid());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object iENEGFFPHHO_ = "";
+        /**
+         * <code>string IENEGFFPHHO = 7;</code>
+         * @return The iENEGFFPHHO.
+         */
+        public java.lang.String getIENEGFFPHHO() {
+          java.lang.Object ref = iENEGFFPHHO_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            iENEGFFPHHO_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string IENEGFFPHHO = 7;</code>
+         * @return The bytes for iENEGFFPHHO.
+         */
+        public com.google.protobuf.ByteString
+            getIENEGFFPHHOBytes() {
+          java.lang.Object ref = iENEGFFPHHO_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            iENEGFFPHHO_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string IENEGFFPHHO = 7;</code>
+         * @param value The iENEGFFPHHO to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIENEGFFPHHO(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          iENEGFFPHHO_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string IENEGFFPHHO = 7;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIENEGFFPHHO() {
+          
+          iENEGFFPHHO_ = getDefaultInstance().getIENEGFFPHHO();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string IENEGFFPHHO = 7;</code>
+         * @param value The bytes for iENEGFFPHHO to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIENEGFFPHHOBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          iENEGFFPHHO_ = value;
+          onChanged();
+          return this;
+        }
+
+        private long dungeonGuid_ ;
+        /**
+         * <code>uint64 dungeon_guid = 10;</code>
+         * @return The dungeonGuid.
+         */
+        @java.lang.Override
+        public long getDungeonGuid() {
+          return dungeonGuid_;
+        }
+        /**
+         * <code>uint64 dungeon_guid = 10;</code>
+         * @param value The dungeonGuid to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDungeonGuid(long value) {
+          
+          dungeonGuid_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint64 dungeon_guid = 10;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearDungeonGuid() {
+          
+          dungeonGuid_ = 0L;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:PrivateChatReq.PMDDDIGLEHM)
+      }
+
+      // @@protoc_insertion_point(class_scope:PrivateChatReq.PMDDDIGLEHM)
+      private static final emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM();
+      }
+
+      public static emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PMDDDIGLEHM>
+          PARSER = new com.google.protobuf.AbstractParser<PMDDDIGLEHM>() {
+        @java.lang.Override
+        public PMDDDIGLEHM parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PMDDDIGLEHM(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<PMDDDIGLEHM> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PMDDDIGLEHM> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int contentCase_ = 0;
     private java.lang.Object content_;
     public enum ContentCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      BEYOND_COSTUME_SHARE_CODE(1),
-      ICON(8),
-      TEXT(14),
+      TEXT(4),
+      ICON(11),
+      BEYOND_COSTUME_SHARE_CODE(14),
+      BEYOND_LEVEL_SHARE(7),
       CONTENT_NOT_SET(0);
       private final int value;
       private ContentCase(int value) {
@@ -693,9 +1382,10 @@ public final class PrivateChatReqOuterClass {
 
       public static ContentCase forNumber(int value) {
         switch (value) {
-          case 1: return BEYOND_COSTUME_SHARE_CODE;
-          case 8: return ICON;
-          case 14: return TEXT;
+          case 4: return TEXT;
+          case 11: return ICON;
+          case 14: return BEYOND_COSTUME_SHARE_CODE;
+          case 7: return BEYOND_LEVEL_SHARE;
           case 0: return CONTENT_NOT_SET;
           default: return null;
         }
@@ -711,73 +1401,32 @@ public final class PrivateChatReqOuterClass {
           contentCase_);
     }
 
-    public static final int BEYOND_COSTUME_SHARE_CODE_FIELD_NUMBER = 1;
+    public static final int TARGET_UID_FIELD_NUMBER = 13;
+    private int targetUid_;
     /**
-     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
-     * @return Whether the beyondCostumeShareCode field is set.
+     * <code>uint32 target_uid = 13;</code>
+     * @return The targetUid.
      */
     @java.lang.Override
-    public boolean hasBeyondCostumeShareCode() {
-      return contentCase_ == 1;
-    }
-    /**
-     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
-     * @return The beyondCostumeShareCode.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode getBeyondCostumeShareCode() {
-      if (contentCase_ == 1) {
-         return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_;
-      }
-      return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
-    }
-    /**
-     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder getBeyondCostumeShareCodeOrBuilder() {
-      if (contentCase_ == 1) {
-         return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_;
-      }
-      return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
+    public int getTargetUid() {
+      return targetUid_;
     }
 
-    public static final int ICON_FIELD_NUMBER = 8;
+    public static final int TEXT_FIELD_NUMBER = 4;
     /**
-     * <code>uint32 icon = 8;</code>
-     * @return Whether the icon field is set.
-     */
-    @java.lang.Override
-    public boolean hasIcon() {
-      return contentCase_ == 8;
-    }
-    /**
-     * <code>uint32 icon = 8;</code>
-     * @return The icon.
-     */
-    @java.lang.Override
-    public int getIcon() {
-      if (contentCase_ == 8) {
-        return (java.lang.Integer) content_;
-      }
-      return 0;
-    }
-
-    public static final int TEXT_FIELD_NUMBER = 14;
-    /**
-     * <code>string text = 14;</code>
+     * <code>string text = 4;</code>
      * @return Whether the text field is set.
      */
     public boolean hasText() {
-      return contentCase_ == 14;
+      return contentCase_ == 4;
     }
     /**
-     * <code>string text = 14;</code>
+     * <code>string text = 4;</code>
      * @return The text.
      */
     public java.lang.String getText() {
       java.lang.Object ref = "";
-      if (contentCase_ == 14) {
+      if (contentCase_ == 4) {
         ref = content_;
       }
       if (ref instanceof java.lang.String) {
@@ -786,27 +1435,27 @@ public final class PrivateChatReqOuterClass {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        if (contentCase_ == 14) {
+        if (contentCase_ == 4) {
           content_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>string text = 14;</code>
+     * <code>string text = 4;</code>
      * @return The bytes for text.
      */
     public com.google.protobuf.ByteString
         getTextBytes() {
       java.lang.Object ref = "";
-      if (contentCase_ == 14) {
+      if (contentCase_ == 4) {
         ref = content_;
       }
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        if (contentCase_ == 14) {
+        if (contentCase_ == 4) {
           content_ = b;
         }
         return b;
@@ -815,15 +1464,87 @@ public final class PrivateChatReqOuterClass {
       }
     }
 
-    public static final int TARGET_UID_FIELD_NUMBER = 10;
-    private int targetUid_;
+    public static final int ICON_FIELD_NUMBER = 11;
     /**
-     * <code>uint32 target_uid = 10;</code>
-     * @return The targetUid.
+     * <code>uint32 icon = 11;</code>
+     * @return Whether the icon field is set.
      */
     @java.lang.Override
-    public int getTargetUid() {
-      return targetUid_;
+    public boolean hasIcon() {
+      return contentCase_ == 11;
+    }
+    /**
+     * <code>uint32 icon = 11;</code>
+     * @return The icon.
+     */
+    @java.lang.Override
+    public int getIcon() {
+      if (contentCase_ == 11) {
+        return (java.lang.Integer) content_;
+      }
+      return 0;
+    }
+
+    public static final int BEYOND_COSTUME_SHARE_CODE_FIELD_NUMBER = 14;
+    /**
+     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
+     * @return Whether the beyondCostumeShareCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasBeyondCostumeShareCode() {
+      return contentCase_ == 14;
+    }
+    /**
+     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
+     * @return The beyondCostumeShareCode.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode getBeyondCostumeShareCode() {
+      if (contentCase_ == 14) {
+         return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_;
+      }
+      return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
+    }
+    /**
+     * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder getBeyondCostumeShareCodeOrBuilder() {
+      if (contentCase_ == 14) {
+         return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_;
+      }
+      return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
+    }
+
+    public static final int BEYOND_LEVEL_SHARE_FIELD_NUMBER = 7;
+    /**
+     * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+     * @return Whether the beyondLevelShare field is set.
+     */
+    @java.lang.Override
+    public boolean hasBeyondLevelShare() {
+      return contentCase_ == 7;
+    }
+    /**
+     * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+     * @return The beyondLevelShare.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM getBeyondLevelShare() {
+      if (contentCase_ == 7) {
+         return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_;
+      }
+      return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
+    }
+    /**
+     * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder getBeyondLevelShareOrBuilder() {
+      if (contentCase_ == 7) {
+         return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_;
+      }
+      return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -840,18 +1561,21 @@ public final class PrivateChatReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (contentCase_ == 1) {
-        output.writeMessage(1, (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_);
+      if (contentCase_ == 4) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, content_);
       }
-      if (contentCase_ == 8) {
+      if (contentCase_ == 7) {
+        output.writeMessage(7, (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_);
+      }
+      if (contentCase_ == 11) {
         output.writeUInt32(
-            8, (int)((java.lang.Integer) content_));
+            11, (int)((java.lang.Integer) content_));
       }
       if (targetUid_ != 0) {
-        output.writeUInt32(10, targetUid_);
+        output.writeUInt32(13, targetUid_);
       }
       if (contentCase_ == 14) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, content_);
+        output.writeMessage(14, (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_);
       }
       unknownFields.writeTo(output);
     }
@@ -862,21 +1586,25 @@ public final class PrivateChatReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (contentCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_);
+      if (contentCase_ == 4) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, content_);
       }
-      if (contentCase_ == 8) {
+      if (contentCase_ == 7) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_);
+      }
+      if (contentCase_ == 11) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(
-              8, (int)((java.lang.Integer) content_));
+              11, (int)((java.lang.Integer) content_));
       }
       if (targetUid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, targetUid_);
+          .computeUInt32Size(13, targetUid_);
       }
       if (contentCase_ == 14) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, content_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -897,17 +1625,21 @@ public final class PrivateChatReqOuterClass {
           != other.getTargetUid()) return false;
       if (!getContentCase().equals(other.getContentCase())) return false;
       switch (contentCase_) {
-        case 1:
-          if (!getBeyondCostumeShareCode()
-              .equals(other.getBeyondCostumeShareCode())) return false;
+        case 4:
+          if (!getText()
+              .equals(other.getText())) return false;
           break;
-        case 8:
+        case 11:
           if (getIcon()
               != other.getIcon()) return false;
           break;
         case 14:
-          if (!getText()
-              .equals(other.getText())) return false;
+          if (!getBeyondCostumeShareCode()
+              .equals(other.getBeyondCostumeShareCode())) return false;
+          break;
+        case 7:
+          if (!getBeyondLevelShare()
+              .equals(other.getBeyondLevelShare())) return false;
           break;
         case 0:
         default:
@@ -926,17 +1658,21 @@ public final class PrivateChatReqOuterClass {
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
       switch (contentCase_) {
-        case 1:
-          hash = (37 * hash) + BEYOND_COSTUME_SHARE_CODE_FIELD_NUMBER;
-          hash = (53 * hash) + getBeyondCostumeShareCode().hashCode();
+        case 4:
+          hash = (37 * hash) + TEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getText().hashCode();
           break;
-        case 8:
+        case 11:
           hash = (37 * hash) + ICON_FIELD_NUMBER;
           hash = (53 * hash) + getIcon();
           break;
         case 14:
-          hash = (37 * hash) + TEXT_FIELD_NUMBER;
-          hash = (53 * hash) + getText().hashCode();
+          hash = (37 * hash) + BEYOND_COSTUME_SHARE_CODE_FIELD_NUMBER;
+          hash = (53 * hash) + getBeyondCostumeShareCode().hashCode();
+          break;
+        case 7:
+          hash = (37 * hash) + BEYOND_LEVEL_SHARE_FIELD_NUMBER;
+          hash = (53 * hash) + getBeyondLevelShare().hashCode();
           break;
         case 0:
         default:
@@ -1037,6 +1773,10 @@ public final class PrivateChatReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 4032
+     * </pre>
+     *
      * Protobuf type {@code PrivateChatReq}
      */
     public static final class Builder extends
@@ -1104,20 +1844,27 @@ public final class PrivateChatReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq buildPartial() {
         emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq result = new emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq(this);
-        if (contentCase_ == 1) {
+        result.targetUid_ = targetUid_;
+        if (contentCase_ == 4) {
+          result.content_ = content_;
+        }
+        if (contentCase_ == 11) {
+          result.content_ = content_;
+        }
+        if (contentCase_ == 14) {
           if (beyondCostumeShareCodeBuilder_ == null) {
             result.content_ = content_;
           } else {
             result.content_ = beyondCostumeShareCodeBuilder_.build();
           }
         }
-        if (contentCase_ == 8) {
-          result.content_ = content_;
+        if (contentCase_ == 7) {
+          if (beyondLevelShareBuilder_ == null) {
+            result.content_ = content_;
+          } else {
+            result.content_ = beyondLevelShareBuilder_.build();
+          }
         }
-        if (contentCase_ == 14) {
-          result.content_ = content_;
-        }
-        result.targetUid_ = targetUid_;
         result.contentCase_ = contentCase_;
         onBuilt();
         return result;
@@ -1171,18 +1918,22 @@ public final class PrivateChatReqOuterClass {
           setTargetUid(other.getTargetUid());
         }
         switch (other.getContentCase()) {
-          case BEYOND_COSTUME_SHARE_CODE: {
-            mergeBeyondCostumeShareCode(other.getBeyondCostumeShareCode());
+          case TEXT: {
+            contentCase_ = 4;
+            content_ = other.content_;
+            onChanged();
             break;
           }
           case ICON: {
             setIcon(other.getIcon());
             break;
           }
-          case TEXT: {
-            contentCase_ = 14;
-            content_ = other.content_;
-            onChanged();
+          case BEYOND_COSTUME_SHARE_CODE: {
+            mergeBeyondCostumeShareCode(other.getBeyondCostumeShareCode());
+            break;
+          }
+          case BEYOND_LEVEL_SHARE: {
+            mergeBeyondLevelShare(other.getBeyondLevelShare());
             break;
           }
           case CONTENT_NOT_SET: {
@@ -1233,36 +1984,205 @@ public final class PrivateChatReqOuterClass {
       }
 
 
+      private int targetUid_ ;
+      /**
+       * <code>uint32 target_uid = 13;</code>
+       * @return The targetUid.
+       */
+      @java.lang.Override
+      public int getTargetUid() {
+        return targetUid_;
+      }
+      /**
+       * <code>uint32 target_uid = 13;</code>
+       * @param value The targetUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTargetUid(int value) {
+        
+        targetUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 target_uid = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTargetUid() {
+        
+        targetUid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string text = 4;</code>
+       * @return Whether the text field is set.
+       */
+      @java.lang.Override
+      public boolean hasText() {
+        return contentCase_ == 4;
+      }
+      /**
+       * <code>string text = 4;</code>
+       * @return The text.
+       */
+      @java.lang.Override
+      public java.lang.String getText() {
+        java.lang.Object ref = "";
+        if (contentCase_ == 4) {
+          ref = content_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (contentCase_ == 4) {
+            content_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string text = 4;</code>
+       * @return The bytes for text.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = "";
+        if (contentCase_ == 4) {
+          ref = content_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (contentCase_ == 4) {
+            content_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string text = 4;</code>
+       * @param value The text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  contentCase_ = 4;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearText() {
+        if (contentCase_ == 4) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>string text = 4;</code>
+       * @param value The bytes for text to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        contentCase_ = 4;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>uint32 icon = 11;</code>
+       * @return Whether the icon field is set.
+       */
+      public boolean hasIcon() {
+        return contentCase_ == 11;
+      }
+      /**
+       * <code>uint32 icon = 11;</code>
+       * @return The icon.
+       */
+      public int getIcon() {
+        if (contentCase_ == 11) {
+          return (java.lang.Integer) content_;
+        }
+        return 0;
+      }
+      /**
+       * <code>uint32 icon = 11;</code>
+       * @param value The icon to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIcon(int value) {
+        contentCase_ = 11;
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 icon = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIcon() {
+        if (contentCase_ == 11) {
+          contentCase_ = 0;
+          content_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.Builder, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder> beyondCostumeShareCodeBuilder_;
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        * @return Whether the beyondCostumeShareCode field is set.
        */
       @java.lang.Override
       public boolean hasBeyondCostumeShareCode() {
-        return contentCase_ == 1;
+        return contentCase_ == 14;
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        * @return The beyondCostumeShareCode.
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode getBeyondCostumeShareCode() {
         if (beyondCostumeShareCodeBuilder_ == null) {
-          if (contentCase_ == 1) {
+          if (contentCase_ == 14) {
             return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_;
           }
           return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
         } else {
-          if (contentCase_ == 1) {
+          if (contentCase_ == 14) {
             return beyondCostumeShareCodeBuilder_.getMessage();
           }
           return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
         }
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       public Builder setBeyondCostumeShareCode(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode value) {
         if (beyondCostumeShareCodeBuilder_ == null) {
@@ -1274,11 +2194,11 @@ public final class PrivateChatReqOuterClass {
         } else {
           beyondCostumeShareCodeBuilder_.setMessage(value);
         }
-        contentCase_ = 1;
+        contentCase_ = 14;
         return this;
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       public Builder setBeyondCostumeShareCode(
           emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.Builder builderForValue) {
@@ -1288,15 +2208,15 @@ public final class PrivateChatReqOuterClass {
         } else {
           beyondCostumeShareCodeBuilder_.setMessage(builderForValue.build());
         }
-        contentCase_ = 1;
+        contentCase_ = 14;
         return this;
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       public Builder mergeBeyondCostumeShareCode(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode value) {
         if (beyondCostumeShareCodeBuilder_ == null) {
-          if (contentCase_ == 1 &&
+          if (contentCase_ == 14 &&
               content_ != emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance()) {
             content_ = emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.newBuilder((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_)
                 .mergeFrom(value).buildPartial();
@@ -1305,26 +2225,26 @@ public final class PrivateChatReqOuterClass {
           }
           onChanged();
         } else {
-          if (contentCase_ == 1) {
+          if (contentCase_ == 14) {
             beyondCostumeShareCodeBuilder_.mergeFrom(value);
           }
           beyondCostumeShareCodeBuilder_.setMessage(value);
         }
-        contentCase_ = 1;
+        contentCase_ = 14;
         return this;
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       public Builder clearBeyondCostumeShareCode() {
         if (beyondCostumeShareCodeBuilder_ == null) {
-          if (contentCase_ == 1) {
+          if (contentCase_ == 14) {
             contentCase_ = 0;
             content_ = null;
             onChanged();
           }
         } else {
-          if (contentCase_ == 1) {
+          if (contentCase_ == 14) {
             contentCase_ = 0;
             content_ = null;
           }
@@ -1333,33 +2253,33 @@ public final class PrivateChatReqOuterClass {
         return this;
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.Builder getBeyondCostumeShareCodeBuilder() {
         return getBeyondCostumeShareCodeFieldBuilder().getBuilder();
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       @java.lang.Override
       public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder getBeyondCostumeShareCodeOrBuilder() {
-        if ((contentCase_ == 1) && (beyondCostumeShareCodeBuilder_ != null)) {
+        if ((contentCase_ == 14) && (beyondCostumeShareCodeBuilder_ != null)) {
           return beyondCostumeShareCodeBuilder_.getMessageOrBuilder();
         } else {
-          if (contentCase_ == 1) {
+          if (contentCase_ == 14) {
             return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode) content_;
           }
           return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
         }
       }
       /**
-       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 1;</code>
+       * <code>.PrivateChatReq._BeyondCostumeShareCode beyond_costume_share_code = 14;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.Builder, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCodeOrBuilder> 
           getBeyondCostumeShareCodeFieldBuilder() {
         if (beyondCostumeShareCodeBuilder_ == null) {
-          if (!(contentCase_ == 1)) {
+          if (!(contentCase_ == 14)) {
             content_ = emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq._BeyondCostumeShareCode.getDefaultInstance();
           }
           beyondCostumeShareCodeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -1369,178 +2289,150 @@ public final class PrivateChatReqOuterClass {
                   isClean());
           content_ = null;
         }
-        contentCase_ = 1;
+        contentCase_ = 14;
         onChanged();;
         return beyondCostumeShareCodeBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder> beyondLevelShareBuilder_;
       /**
-       * <code>uint32 icon = 8;</code>
-       * @return Whether the icon field is set.
-       */
-      public boolean hasIcon() {
-        return contentCase_ == 8;
-      }
-      /**
-       * <code>uint32 icon = 8;</code>
-       * @return The icon.
-       */
-      public int getIcon() {
-        if (contentCase_ == 8) {
-          return (java.lang.Integer) content_;
-        }
-        return 0;
-      }
-      /**
-       * <code>uint32 icon = 8;</code>
-       * @param value The icon to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIcon(int value) {
-        contentCase_ = 8;
-        content_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 icon = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIcon() {
-        if (contentCase_ == 8) {
-          contentCase_ = 0;
-          content_ = null;
-          onChanged();
-        }
-        return this;
-      }
-
-      /**
-       * <code>string text = 14;</code>
-       * @return Whether the text field is set.
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+       * @return Whether the beyondLevelShare field is set.
        */
       @java.lang.Override
-      public boolean hasText() {
-        return contentCase_ == 14;
+      public boolean hasBeyondLevelShare() {
+        return contentCase_ == 7;
       }
       /**
-       * <code>string text = 14;</code>
-       * @return The text.
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+       * @return The beyondLevelShare.
        */
       @java.lang.Override
-      public java.lang.String getText() {
-        java.lang.Object ref = "";
-        if (contentCase_ == 14) {
-          ref = content_;
-        }
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (contentCase_ == 14) {
-            content_ = s;
+      public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM getBeyondLevelShare() {
+        if (beyondLevelShareBuilder_ == null) {
+          if (contentCase_ == 7) {
+            return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_;
           }
-          return s;
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
         } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string text = 14;</code>
-       * @return The bytes for text.
-       */
-      @java.lang.Override
-      public com.google.protobuf.ByteString
-          getTextBytes() {
-        java.lang.Object ref = "";
-        if (contentCase_ == 14) {
-          ref = content_;
-        }
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          if (contentCase_ == 14) {
-            content_ = b;
+          if (contentCase_ == 7) {
+            return beyondLevelShareBuilder_.getMessage();
           }
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
         }
       }
       /**
-       * <code>string text = 14;</code>
-       * @param value The text to set.
-       * @return This builder for chaining.
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
        */
-      public Builder setText(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  contentCase_ = 14;
-        content_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string text = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearText() {
-        if (contentCase_ == 14) {
-          contentCase_ = 0;
-          content_ = null;
+      public Builder setBeyondLevelShare(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM value) {
+        if (beyondLevelShareBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          content_ = value;
           onChanged();
+        } else {
+          beyondLevelShareBuilder_.setMessage(value);
+        }
+        contentCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+       */
+      public Builder setBeyondLevelShare(
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder builderForValue) {
+        if (beyondLevelShareBuilder_ == null) {
+          content_ = builderForValue.build();
+          onChanged();
+        } else {
+          beyondLevelShareBuilder_.setMessage(builderForValue.build());
+        }
+        contentCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+       */
+      public Builder mergeBeyondLevelShare(emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM value) {
+        if (beyondLevelShareBuilder_ == null) {
+          if (contentCase_ == 7 &&
+              content_ != emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance()) {
+            content_ = emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.newBuilder((emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            content_ = value;
+          }
+          onChanged();
+        } else {
+          if (contentCase_ == 7) {
+            beyondLevelShareBuilder_.mergeFrom(value);
+          }
+          beyondLevelShareBuilder_.setMessage(value);
+        }
+        contentCase_ = 7;
+        return this;
+      }
+      /**
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
+       */
+      public Builder clearBeyondLevelShare() {
+        if (beyondLevelShareBuilder_ == null) {
+          if (contentCase_ == 7) {
+            contentCase_ = 0;
+            content_ = null;
+            onChanged();
+          }
+        } else {
+          if (contentCase_ == 7) {
+            contentCase_ = 0;
+            content_ = null;
+          }
+          beyondLevelShareBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>string text = 14;</code>
-       * @param value The bytes for text to set.
-       * @return This builder for chaining.
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
        */
-      public Builder setTextBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        contentCase_ = 14;
-        content_ = value;
-        onChanged();
-        return this;
+      public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder getBeyondLevelShareBuilder() {
+        return getBeyondLevelShareFieldBuilder().getBuilder();
       }
-
-      private int targetUid_ ;
       /**
-       * <code>uint32 target_uid = 10;</code>
-       * @return The targetUid.
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
        */
       @java.lang.Override
-      public int getTargetUid() {
-        return targetUid_;
+      public emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder getBeyondLevelShareOrBuilder() {
+        if ((contentCase_ == 7) && (beyondLevelShareBuilder_ != null)) {
+          return beyondLevelShareBuilder_.getMessageOrBuilder();
+        } else {
+          if (contentCase_ == 7) {
+            return (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_;
+          }
+          return emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
+        }
       }
       /**
-       * <code>uint32 target_uid = 10;</code>
-       * @param value The targetUid to set.
-       * @return This builder for chaining.
+       * <code>.PrivateChatReq.PMDDDIGLEHM beyond_level_share = 7;</code>
        */
-      public Builder setTargetUid(int value) {
-        
-        targetUid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 target_uid = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTargetUid() {
-        
-        targetUid_ = 0;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder> 
+          getBeyondLevelShareFieldBuilder() {
+        if (beyondLevelShareBuilder_ == null) {
+          if (!(contentCase_ == 7)) {
+            content_ = emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.getDefaultInstance();
+          }
+          beyondLevelShareBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM.Builder, emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHMOrBuilder>(
+                  (emu.grasscutter.net.proto.PrivateChatReqOuterClass.PrivateChatReq.PMDDDIGLEHM) content_,
+                  getParentForChildren(),
+                  isClean());
+          content_ = null;
+        }
+        contentCase_ = 7;
+        onChanged();;
+        return beyondLevelShareBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1605,6 +2497,11 @@ public final class PrivateChatReqOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PrivateChatReq__BeyondCostumeShareCode_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PrivateChatReq_PMDDDIGLEHM_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PrivateChatReq_PMDDDIGLEHM_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1614,14 +2511,16 @@ public final class PrivateChatReqOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024PrivateChatReq.proto\"\315\001\n\016PrivateChatRe" +
-      "q\022L\n\031beyond_costume_share_code\030\001 \001(\0132\'.P" +
-      "rivateChatReq._BeyondCostumeShareCodeH\000\022" +
-      "\016\n\004icon\030\010 \001(\rH\000\022\016\n\004text\030\016 \001(\tH\000\022\022\n\ntarge" +
-      "t_uid\030\n \001(\r\032.\n\027_BeyondCostumeShareCode\022\023" +
-      "\n\013FEPAFANMNLK\030\007 \001(\014B\t\n\007contentB5\n\031emu.gr" +
-      "asscutter.net.protoB\030PrivateChatReqOuter" +
-      "Classb\006proto3"
+      "\n\024PrivateChatReq.proto\"\302\002\n\016PrivateChatRe" +
+      "q\022\022\n\ntarget_uid\030\r \001(\r\022\016\n\004text\030\004 \001(\tH\000\022\016\n" +
+      "\004icon\030\013 \001(\rH\000\022L\n\031beyond_costume_share_co" +
+      "de\030\016 \001(\0132\'.PrivateChatReq._BeyondCostume" +
+      "ShareCodeH\000\0229\n\022beyond_level_share\030\007 \001(\0132" +
+      "\033.PrivateChatReq.PMDDDIGLEHMH\000\032.\n\027_Beyon" +
+      "dCostumeShareCode\022\023\n\013FEPAFANMNLK\030\001 \001(\014\0328" +
+      "\n\013PMDDDIGLEHM\022\023\n\013IENEGFFPHHO\030\007 \001(\t\022\024\n\014du" +
+      "ngeon_guid\030\n \001(\004B\t\n\007contentB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1632,13 +2531,19 @@ public final class PrivateChatReqOuterClass {
     internal_static_PrivateChatReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PrivateChatReq_descriptor,
-        new java.lang.String[] { "BeyondCostumeShareCode", "Icon", "Text", "TargetUid", "Content", });
+        new java.lang.String[] { "TargetUid", "Text", "Icon", "BeyondCostumeShareCode", "BeyondLevelShare", "Content", });
     internal_static_PrivateChatReq__BeyondCostumeShareCode_descriptor =
       internal_static_PrivateChatReq_descriptor.getNestedTypes().get(0);
     internal_static_PrivateChatReq__BeyondCostumeShareCode_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PrivateChatReq__BeyondCostumeShareCode_descriptor,
         new java.lang.String[] { "FEPAFANMNLK", });
+    internal_static_PrivateChatReq_PMDDDIGLEHM_descriptor =
+      internal_static_PrivateChatReq_descriptor.getNestedTypes().get(1);
+    internal_static_PrivateChatReq_PMDDDIGLEHM_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PrivateChatReq_PMDDDIGLEHM_descriptor,
+        new java.lang.String[] { "IENEGFFPHHO", "DungeonGuid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

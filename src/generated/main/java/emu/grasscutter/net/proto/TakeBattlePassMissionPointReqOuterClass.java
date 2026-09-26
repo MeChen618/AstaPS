@@ -645,9 +645,8 @@ public final class TakeBattlePassMissionPointReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n#TakeBattlePassMissionPointReq.proto\"8\n" +
       "\035TakeBattlePassMissionPointReq\022\027\n\017missio" +
-      "n_id_list\030\t \003(\rBD\n\031emu.grasscutter.net.p" +
-      "rotoB\'TakeBattlePassMissionPointReqOuter" +
-      "Classb\006proto3"
+      "n_id_list\030\t \003(\rB\033\n\031emu.grasscutter.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

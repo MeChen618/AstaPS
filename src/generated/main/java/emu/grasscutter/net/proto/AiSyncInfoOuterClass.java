@@ -19,24 +19,28 @@ public final class AiSyncInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool COFJBBPPANA = 7;</code>
-     * @return The cOFJBBPPANA.
-     */
-    boolean getCOFJBBPPANA();
-
-    /**
-     * <code>uint32 entity_id = 10;</code>
+     * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>bool MBNNMNHEDAB = 14;</code>
+     * <code>bool COFJBBPPANA = 8;</code>
+     * @return The cOFJBBPPANA.
+     */
+    boolean getCOFJBBPPANA();
+
+    /**
+     * <code>bool MBNNMNHEDAB = 2;</code>
      * @return The mBNNMNHEDAB.
      */
     boolean getMBNNMNHEDAB();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AiSyncInfo}
    */
   public static final class AiSyncInfo extends
@@ -81,19 +85,19 @@ public final class AiSyncInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
+            case 16: {
+
+              mBNNMNHEDAB_ = input.readBool();
+              break;
+            }
+            case 64: {
 
               cOFJBBPPANA_ = input.readBool();
               break;
             }
-            case 80: {
+            case 104: {
 
               entityId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              mBNNMNHEDAB_ = input.readBool();
               break;
             }
             default: {
@@ -128,21 +132,10 @@ public final class AiSyncInfoOuterClass {
               emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo.class, emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo.Builder.class);
     }
 
-    public static final int COFJBBPPANA_FIELD_NUMBER = 7;
-    private boolean cOFJBBPPANA_;
-    /**
-     * <code>bool COFJBBPPANA = 7;</code>
-     * @return The cOFJBBPPANA.
-     */
-    @java.lang.Override
-    public boolean getCOFJBBPPANA() {
-      return cOFJBBPPANA_;
-    }
-
-    public static final int ENTITY_ID_FIELD_NUMBER = 10;
+    public static final int ENTITY_ID_FIELD_NUMBER = 13;
     private int entityId_;
     /**
-     * <code>uint32 entity_id = 10;</code>
+     * <code>uint32 entity_id = 13;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -150,10 +143,21 @@ public final class AiSyncInfoOuterClass {
       return entityId_;
     }
 
-    public static final int MBNNMNHEDAB_FIELD_NUMBER = 14;
+    public static final int COFJBBPPANA_FIELD_NUMBER = 8;
+    private boolean cOFJBBPPANA_;
+    /**
+     * <code>bool COFJBBPPANA = 8;</code>
+     * @return The cOFJBBPPANA.
+     */
+    @java.lang.Override
+    public boolean getCOFJBBPPANA() {
+      return cOFJBBPPANA_;
+    }
+
+    public static final int MBNNMNHEDAB_FIELD_NUMBER = 2;
     private boolean mBNNMNHEDAB_;
     /**
-     * <code>bool MBNNMNHEDAB = 14;</code>
+     * <code>bool MBNNMNHEDAB = 2;</code>
      * @return The mBNNMNHEDAB.
      */
     @java.lang.Override
@@ -175,14 +179,14 @@ public final class AiSyncInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (mBNNMNHEDAB_ != false) {
+        output.writeBool(2, mBNNMNHEDAB_);
+      }
       if (cOFJBBPPANA_ != false) {
-        output.writeBool(7, cOFJBBPPANA_);
+        output.writeBool(8, cOFJBBPPANA_);
       }
       if (entityId_ != 0) {
-        output.writeUInt32(10, entityId_);
-      }
-      if (mBNNMNHEDAB_ != false) {
-        output.writeBool(14, mBNNMNHEDAB_);
+        output.writeUInt32(13, entityId_);
       }
       unknownFields.writeTo(output);
     }
@@ -193,17 +197,17 @@ public final class AiSyncInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (mBNNMNHEDAB_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, mBNNMNHEDAB_);
+      }
       if (cOFJBBPPANA_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, cOFJBBPPANA_);
+          .computeBoolSize(8, cOFJBBPPANA_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, entityId_);
-      }
-      if (mBNNMNHEDAB_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, mBNNMNHEDAB_);
+          .computeUInt32Size(13, entityId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,10 +224,10 @@ public final class AiSyncInfoOuterClass {
       }
       emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo other = (emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo) obj;
 
-      if (getCOFJBBPPANA()
-          != other.getCOFJBBPPANA()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
+      if (getCOFJBBPPANA()
+          != other.getCOFJBBPPANA()) return false;
       if (getMBNNMNHEDAB()
           != other.getMBNNMNHEDAB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,11 +241,11 @@ public final class AiSyncInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + COFJBBPPANA_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getCOFJBBPPANA());
-      hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + MBNNMNHEDAB_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getMBNNMNHEDAB());
@@ -341,6 +345,10 @@ public final class AiSyncInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AiSyncInfo}
      */
     public static final class Builder extends
@@ -378,9 +386,9 @@ public final class AiSyncInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cOFJBBPPANA_ = false;
-
         entityId_ = 0;
+
+        cOFJBBPPANA_ = false;
 
         mBNNMNHEDAB_ = false;
 
@@ -410,8 +418,8 @@ public final class AiSyncInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo buildPartial() {
         emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo result = new emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo(this);
-        result.cOFJBBPPANA_ = cOFJBBPPANA_;
         result.entityId_ = entityId_;
+        result.cOFJBBPPANA_ = cOFJBBPPANA_;
         result.mBNNMNHEDAB_ = mBNNMNHEDAB_;
         onBuilt();
         return result;
@@ -461,11 +469,11 @@ public final class AiSyncInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo other) {
         if (other == emu.grasscutter.net.proto.AiSyncInfoOuterClass.AiSyncInfo.getDefaultInstance()) return this;
-        if (other.getCOFJBBPPANA() != false) {
-          setCOFJBBPPANA(other.getCOFJBBPPANA());
-        }
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
+        }
+        if (other.getCOFJBBPPANA() != false) {
+          setCOFJBBPPANA(other.getCOFJBBPPANA());
         }
         if (other.getMBNNMNHEDAB() != false) {
           setMBNNMNHEDAB(other.getMBNNMNHEDAB());
@@ -499,40 +507,9 @@ public final class AiSyncInfoOuterClass {
         return this;
       }
 
-      private boolean cOFJBBPPANA_ ;
-      /**
-       * <code>bool COFJBBPPANA = 7;</code>
-       * @return The cOFJBBPPANA.
-       */
-      @java.lang.Override
-      public boolean getCOFJBBPPANA() {
-        return cOFJBBPPANA_;
-      }
-      /**
-       * <code>bool COFJBBPPANA = 7;</code>
-       * @param value The cOFJBBPPANA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCOFJBBPPANA(boolean value) {
-        
-        cOFJBBPPANA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool COFJBBPPANA = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCOFJBBPPANA() {
-        
-        cOFJBBPPANA_ = false;
-        onChanged();
-        return this;
-      }
-
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 10;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -540,7 +517,7 @@ public final class AiSyncInfoOuterClass {
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 10;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -551,7 +528,7 @@ public final class AiSyncInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 entity_id = 10;</code>
+       * <code>uint32 entity_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -561,9 +538,40 @@ public final class AiSyncInfoOuterClass {
         return this;
       }
 
+      private boolean cOFJBBPPANA_ ;
+      /**
+       * <code>bool COFJBBPPANA = 8;</code>
+       * @return The cOFJBBPPANA.
+       */
+      @java.lang.Override
+      public boolean getCOFJBBPPANA() {
+        return cOFJBBPPANA_;
+      }
+      /**
+       * <code>bool COFJBBPPANA = 8;</code>
+       * @param value The cOFJBBPPANA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCOFJBBPPANA(boolean value) {
+        
+        cOFJBBPPANA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool COFJBBPPANA = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCOFJBBPPANA() {
+        
+        cOFJBBPPANA_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean mBNNMNHEDAB_ ;
       /**
-       * <code>bool MBNNMNHEDAB = 14;</code>
+       * <code>bool MBNNMNHEDAB = 2;</code>
        * @return The mBNNMNHEDAB.
        */
       @java.lang.Override
@@ -571,7 +579,7 @@ public final class AiSyncInfoOuterClass {
         return mBNNMNHEDAB_;
       }
       /**
-       * <code>bool MBNNMNHEDAB = 14;</code>
+       * <code>bool MBNNMNHEDAB = 2;</code>
        * @param value The mBNNMNHEDAB to set.
        * @return This builder for chaining.
        */
@@ -582,7 +590,7 @@ public final class AiSyncInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool MBNNMNHEDAB = 14;</code>
+       * <code>bool MBNNMNHEDAB = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMBNNMNHEDAB() {
@@ -658,10 +666,10 @@ public final class AiSyncInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020AiSyncInfo.proto\"I\n\nAiSyncInfo\022\023\n\013COFJ" +
-      "BBPPANA\030\007 \001(\010\022\021\n\tentity_id\030\n \001(\r\022\023\n\013MBNN" +
-      "MNHEDAB\030\016 \001(\010B1\n\031emu.grasscutter.net.pro" +
-      "toB\024AiSyncInfoOuterClassb\006proto3"
+      "\n\020AiSyncInfo.proto\"I\n\nAiSyncInfo\022\021\n\tenti" +
+      "ty_id\030\r \001(\r\022\023\n\013COFJBBPPANA\030\010 \001(\010\022\023\n\013MBNN" +
+      "MNHEDAB\030\002 \001(\010B\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -672,7 +680,7 @@ public final class AiSyncInfoOuterClass {
     internal_static_AiSyncInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AiSyncInfo_descriptor,
-        new java.lang.String[] { "COFJBBPPANA", "EntityId", "MBNNMNHEDAB", });
+        new java.lang.String[] { "EntityId", "COFJBBPPANA", "MBNNMNHEDAB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -7,8 +7,8 @@ import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.*;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
-import emu.grasscutter.net.proto.ChangeHpReasonOuterClass.ChangeHpReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangHpReasonOuterClass.ChangHpReason;
 import emu.grasscutter.net.proto.FightPropPairOuterClass.FightPropPair;
 import emu.grasscutter.net.proto.AbilityStringOuterClass.AbilityString;
 import emu.grasscutter.net.proto.GadgetInteractReqOuterClass.GadgetInteractReq;
@@ -18,7 +18,7 @@ import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
 import emu.grasscutter.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo;
 import emu.grasscutter.net.proto.VectorOuterClass.Vector;
 import emu.grasscutter.scripts.data.controller.EntityController;
-import emu.grasscutter.net.proto.DetailAbilityInfoOuterClass.DetailAbilityInfo;
+import emu.grasscutter.net.proto.DetailAbilityInfo._DetailAbilityInfo;
 import emu.grasscutter.net.proto.PropChangeDetailInfoOuterClass.PropChangeDetailInfo;
 import emu.grasscutter.server.event.entity.*;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropUpdateNotify;
@@ -48,7 +48,7 @@ public abstract class GameEntity {
     @Getter @Setter public int id;
     @Getter @Setter private SpawnDataEntry spawnEntry;
     @Setter private PropChangeDetailInfo propChangeDetailInfo;
-    @Getter @Setter private DetailAbilityInfo detailAbilityInfo;
+    @Getter @Setter private _DetailAbilityInfo detailAbilityInfo;
 
     @Getter @Setter private int campId;
     @Getter @Setter private int campType;
@@ -390,7 +390,7 @@ public abstract class GameEntity {
                                                                 ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
                                                                 : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
 
-                                                        ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY
+                                                        _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY
                 ));
             } else {
                 this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, toRepay,
@@ -398,7 +398,7 @@ public abstract class GameEntity {
                                                                 ? PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
                                                                 : PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
 
-                                                        ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
+                                                        _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
                                                        ));
             }
         }
@@ -440,14 +440,14 @@ public abstract class GameEntity {
     }
 
     public void damage(float amount, int killerId, ElementType attackType) {
-        this.damage(amount, killerId, attackType, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE, ChangeHpReason.ChangeHpReason_CHANGE_HP_NONE);
+        this.damage(amount, killerId, attackType, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE, ChangHpReason.ChangHpReason_CHANGE_HP_NONE);
     }
 
-    public void damage(float amount, PropChangeReason propChangeReason, ChangeHpReason changeHpReason) {
+    public void damage(float amount, PropChangeReason propChangeReason, ChangHpReason changeHpReason) {
         this.damage(amount, 0, ElementType.None, propChangeReason, changeHpReason);
     }
 
-    public void damage(float amount, int killerId, ElementType attackType, PropChangeReason propChangeReason, ChangeHpReason changeHpReason) {
+    public void damage(float amount, int killerId, ElementType attackType, PropChangeReason propChangeReason, ChangHpReason changeHpReason) {
 
         if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
             return;
@@ -514,13 +514,13 @@ public abstract class GameEntity {
 
         if (effectiveDamage > 0) {
             GameEntity attacker = this.getScene().getEntityById(killerId);
-            ChangeHpReason dmgHpReason;
+            ChangHpReason dmgHpReason;
             if (attacker instanceof EntityAvatar) {
-                dmgHpReason = ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_AVATAR;
+                dmgHpReason = ChangHpReason.ChangHpReason_CHANGE_HP_SUB_AVATAR;
             } else if (attacker instanceof EntityMonster) {
-                dmgHpReason = ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_MONSTER;
+                dmgHpReason = ChangHpReason.ChangHpReason_CHANGE_HP_SUB_MONSTER;
             } else {
-                dmgHpReason = ChangeHpReason.ChangeHpReason_CHANGE_HP_SUB_ABILITY;
+                dmgHpReason = ChangHpReason.ChangHpReason_CHANGE_HP_SUB_ABILITY;
             }
             this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(
                 this, FightProperty.FIGHT_PROP_CUR_HP, -effectiveDamage,
@@ -558,7 +558,7 @@ public abstract class GameEntity {
             if (debt >= 0) {
                 this.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f);
                 this.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
-                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -debt, PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_CLEAR));
+                this.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(this, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, -debt, PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_CLEAR));
             }
             this.isDead = true;
         }

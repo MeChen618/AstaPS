@@ -19,36 +19,40 @@ public final class JNMJNFCENKBOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 FOHNJKCKKPC = 1;</code>
-     * @return The fOHNJKCKKPC.
-     */
-    int getFOHNJKCKKPC();
-
-    /**
-     * <code>uint32 FEKGLGPBOAC = 2;</code>
-     * @return The fEKGLGPBOAC.
-     */
-    int getFEKGLGPBOAC();
-
-    /**
-     * <code>uint32 MJHEECGMMHI = 7;</code>
+     * <code>uint32 MJHEECGMMHI = 10;</code>
      * @return The mJHEECGMMHI.
      */
     int getMJHEECGMMHI();
-
-    /**
-     * <code>int32 LICONHNCIPB = 10;</code>
-     * @return The lICONHNCIPB.
-     */
-    int getLICONHNCIPB();
 
     /**
      * <code>uint32 OADOGGFPLAJ = 15;</code>
      * @return The oADOGGFPLAJ.
      */
     int getOADOGGFPLAJ();
+
+    /**
+     * <code>uint32 FOHNJKCKKPC = 13;</code>
+     * @return The fOHNJKCKKPC.
+     */
+    int getFOHNJKCKKPC();
+
+    /**
+     * <code>uint32 FEKGLGPBOAC = 11;</code>
+     * @return The fEKGLGPBOAC.
+     */
+    int getFEKGLGPBOAC();
+
+    /**
+     * <code>int32 LICONHNCIPB = 5;</code>
+     * @return The lICONHNCIPB.
+     */
+    int getLICONHNCIPB();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JNMJNFCENKB}
    */
   public static final class JNMJNFCENKB extends
@@ -93,24 +97,24 @@ public final class JNMJNFCENKBOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 40: {
 
-              fOHNJKCKKPC_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              fEKGLGPBOAC_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              mJHEECGMMHI_ = input.readUInt32();
+              lICONHNCIPB_ = input.readInt32();
               break;
             }
             case 80: {
 
-              lICONHNCIPB_ = input.readInt32();
+              mJHEECGMMHI_ = input.readUInt32();
+              break;
+            }
+            case 88: {
+
+              fEKGLGPBOAC_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              fOHNJKCKKPC_ = input.readUInt32();
               break;
             }
             case 120: {
@@ -150,48 +154,15 @@ public final class JNMJNFCENKBOuterClass {
               emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB.class, emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB.Builder.class);
     }
 
-    public static final int FOHNJKCKKPC_FIELD_NUMBER = 1;
-    private int fOHNJKCKKPC_;
-    /**
-     * <code>uint32 FOHNJKCKKPC = 1;</code>
-     * @return The fOHNJKCKKPC.
-     */
-    @java.lang.Override
-    public int getFOHNJKCKKPC() {
-      return fOHNJKCKKPC_;
-    }
-
-    public static final int FEKGLGPBOAC_FIELD_NUMBER = 2;
-    private int fEKGLGPBOAC_;
-    /**
-     * <code>uint32 FEKGLGPBOAC = 2;</code>
-     * @return The fEKGLGPBOAC.
-     */
-    @java.lang.Override
-    public int getFEKGLGPBOAC() {
-      return fEKGLGPBOAC_;
-    }
-
-    public static final int MJHEECGMMHI_FIELD_NUMBER = 7;
+    public static final int MJHEECGMMHI_FIELD_NUMBER = 10;
     private int mJHEECGMMHI_;
     /**
-     * <code>uint32 MJHEECGMMHI = 7;</code>
+     * <code>uint32 MJHEECGMMHI = 10;</code>
      * @return The mJHEECGMMHI.
      */
     @java.lang.Override
     public int getMJHEECGMMHI() {
       return mJHEECGMMHI_;
-    }
-
-    public static final int LICONHNCIPB_FIELD_NUMBER = 10;
-    private int lICONHNCIPB_;
-    /**
-     * <code>int32 LICONHNCIPB = 10;</code>
-     * @return The lICONHNCIPB.
-     */
-    @java.lang.Override
-    public int getLICONHNCIPB() {
-      return lICONHNCIPB_;
     }
 
     public static final int OADOGGFPLAJ_FIELD_NUMBER = 15;
@@ -203,6 +174,39 @@ public final class JNMJNFCENKBOuterClass {
     @java.lang.Override
     public int getOADOGGFPLAJ() {
       return oADOGGFPLAJ_;
+    }
+
+    public static final int FOHNJKCKKPC_FIELD_NUMBER = 13;
+    private int fOHNJKCKKPC_;
+    /**
+     * <code>uint32 FOHNJKCKKPC = 13;</code>
+     * @return The fOHNJKCKKPC.
+     */
+    @java.lang.Override
+    public int getFOHNJKCKKPC() {
+      return fOHNJKCKKPC_;
+    }
+
+    public static final int FEKGLGPBOAC_FIELD_NUMBER = 11;
+    private int fEKGLGPBOAC_;
+    /**
+     * <code>uint32 FEKGLGPBOAC = 11;</code>
+     * @return The fEKGLGPBOAC.
+     */
+    @java.lang.Override
+    public int getFEKGLGPBOAC() {
+      return fEKGLGPBOAC_;
+    }
+
+    public static final int LICONHNCIPB_FIELD_NUMBER = 5;
+    private int lICONHNCIPB_;
+    /**
+     * <code>int32 LICONHNCIPB = 5;</code>
+     * @return The lICONHNCIPB.
+     */
+    @java.lang.Override
+    public int getLICONHNCIPB() {
+      return lICONHNCIPB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -219,17 +223,17 @@ public final class JNMJNFCENKBOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (fOHNJKCKKPC_ != 0) {
-        output.writeUInt32(1, fOHNJKCKKPC_);
-      }
-      if (fEKGLGPBOAC_ != 0) {
-        output.writeUInt32(2, fEKGLGPBOAC_);
+      if (lICONHNCIPB_ != 0) {
+        output.writeInt32(5, lICONHNCIPB_);
       }
       if (mJHEECGMMHI_ != 0) {
-        output.writeUInt32(7, mJHEECGMMHI_);
+        output.writeUInt32(10, mJHEECGMMHI_);
       }
-      if (lICONHNCIPB_ != 0) {
-        output.writeInt32(10, lICONHNCIPB_);
+      if (fEKGLGPBOAC_ != 0) {
+        output.writeUInt32(11, fEKGLGPBOAC_);
+      }
+      if (fOHNJKCKKPC_ != 0) {
+        output.writeUInt32(13, fOHNJKCKKPC_);
       }
       if (oADOGGFPLAJ_ != 0) {
         output.writeUInt32(15, oADOGGFPLAJ_);
@@ -243,21 +247,21 @@ public final class JNMJNFCENKBOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (fOHNJKCKKPC_ != 0) {
+      if (lICONHNCIPB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, fOHNJKCKKPC_);
-      }
-      if (fEKGLGPBOAC_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, fEKGLGPBOAC_);
+          .computeInt32Size(5, lICONHNCIPB_);
       }
       if (mJHEECGMMHI_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, mJHEECGMMHI_);
+          .computeUInt32Size(10, mJHEECGMMHI_);
       }
-      if (lICONHNCIPB_ != 0) {
+      if (fEKGLGPBOAC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, lICONHNCIPB_);
+          .computeUInt32Size(11, fEKGLGPBOAC_);
+      }
+      if (fOHNJKCKKPC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, fOHNJKCKKPC_);
       }
       if (oADOGGFPLAJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -278,16 +282,16 @@ public final class JNMJNFCENKBOuterClass {
       }
       emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB other = (emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB) obj;
 
+      if (getMJHEECGMMHI()
+          != other.getMJHEECGMMHI()) return false;
+      if (getOADOGGFPLAJ()
+          != other.getOADOGGFPLAJ()) return false;
       if (getFOHNJKCKKPC()
           != other.getFOHNJKCKKPC()) return false;
       if (getFEKGLGPBOAC()
           != other.getFEKGLGPBOAC()) return false;
-      if (getMJHEECGMMHI()
-          != other.getMJHEECGMMHI()) return false;
       if (getLICONHNCIPB()
           != other.getLICONHNCIPB()) return false;
-      if (getOADOGGFPLAJ()
-          != other.getOADOGGFPLAJ()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -299,16 +303,16 @@ public final class JNMJNFCENKBOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MJHEECGMMHI_FIELD_NUMBER;
+      hash = (53 * hash) + getMJHEECGMMHI();
+      hash = (37 * hash) + OADOGGFPLAJ_FIELD_NUMBER;
+      hash = (53 * hash) + getOADOGGFPLAJ();
       hash = (37 * hash) + FOHNJKCKKPC_FIELD_NUMBER;
       hash = (53 * hash) + getFOHNJKCKKPC();
       hash = (37 * hash) + FEKGLGPBOAC_FIELD_NUMBER;
       hash = (53 * hash) + getFEKGLGPBOAC();
-      hash = (37 * hash) + MJHEECGMMHI_FIELD_NUMBER;
-      hash = (53 * hash) + getMJHEECGMMHI();
       hash = (37 * hash) + LICONHNCIPB_FIELD_NUMBER;
       hash = (53 * hash) + getLICONHNCIPB();
-      hash = (37 * hash) + OADOGGFPLAJ_FIELD_NUMBER;
-      hash = (53 * hash) + getOADOGGFPLAJ();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -405,6 +409,10 @@ public final class JNMJNFCENKBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JNMJNFCENKB}
      */
     public static final class Builder extends
@@ -442,15 +450,15 @@ public final class JNMJNFCENKBOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        mJHEECGMMHI_ = 0;
+
+        oADOGGFPLAJ_ = 0;
+
         fOHNJKCKKPC_ = 0;
 
         fEKGLGPBOAC_ = 0;
 
-        mJHEECGMMHI_ = 0;
-
         lICONHNCIPB_ = 0;
-
-        oADOGGFPLAJ_ = 0;
 
         return this;
       }
@@ -478,11 +486,11 @@ public final class JNMJNFCENKBOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB buildPartial() {
         emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB result = new emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB(this);
+        result.mJHEECGMMHI_ = mJHEECGMMHI_;
+        result.oADOGGFPLAJ_ = oADOGGFPLAJ_;
         result.fOHNJKCKKPC_ = fOHNJKCKKPC_;
         result.fEKGLGPBOAC_ = fEKGLGPBOAC_;
-        result.mJHEECGMMHI_ = mJHEECGMMHI_;
         result.lICONHNCIPB_ = lICONHNCIPB_;
-        result.oADOGGFPLAJ_ = oADOGGFPLAJ_;
         onBuilt();
         return result;
       }
@@ -531,20 +539,20 @@ public final class JNMJNFCENKBOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB other) {
         if (other == emu.grasscutter.net.proto.JNMJNFCENKBOuterClass.JNMJNFCENKB.getDefaultInstance()) return this;
+        if (other.getMJHEECGMMHI() != 0) {
+          setMJHEECGMMHI(other.getMJHEECGMMHI());
+        }
+        if (other.getOADOGGFPLAJ() != 0) {
+          setOADOGGFPLAJ(other.getOADOGGFPLAJ());
+        }
         if (other.getFOHNJKCKKPC() != 0) {
           setFOHNJKCKKPC(other.getFOHNJKCKKPC());
         }
         if (other.getFEKGLGPBOAC() != 0) {
           setFEKGLGPBOAC(other.getFEKGLGPBOAC());
         }
-        if (other.getMJHEECGMMHI() != 0) {
-          setMJHEECGMMHI(other.getMJHEECGMMHI());
-        }
         if (other.getLICONHNCIPB() != 0) {
           setLICONHNCIPB(other.getLICONHNCIPB());
-        }
-        if (other.getOADOGGFPLAJ() != 0) {
-          setOADOGGFPLAJ(other.getOADOGGFPLAJ());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -575,71 +583,9 @@ public final class JNMJNFCENKBOuterClass {
         return this;
       }
 
-      private int fOHNJKCKKPC_ ;
-      /**
-       * <code>uint32 FOHNJKCKKPC = 1;</code>
-       * @return The fOHNJKCKKPC.
-       */
-      @java.lang.Override
-      public int getFOHNJKCKKPC() {
-        return fOHNJKCKKPC_;
-      }
-      /**
-       * <code>uint32 FOHNJKCKKPC = 1;</code>
-       * @param value The fOHNJKCKKPC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFOHNJKCKKPC(int value) {
-        
-        fOHNJKCKKPC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FOHNJKCKKPC = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFOHNJKCKKPC() {
-        
-        fOHNJKCKKPC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int fEKGLGPBOAC_ ;
-      /**
-       * <code>uint32 FEKGLGPBOAC = 2;</code>
-       * @return The fEKGLGPBOAC.
-       */
-      @java.lang.Override
-      public int getFEKGLGPBOAC() {
-        return fEKGLGPBOAC_;
-      }
-      /**
-       * <code>uint32 FEKGLGPBOAC = 2;</code>
-       * @param value The fEKGLGPBOAC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFEKGLGPBOAC(int value) {
-        
-        fEKGLGPBOAC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FEKGLGPBOAC = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFEKGLGPBOAC() {
-        
-        fEKGLGPBOAC_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int mJHEECGMMHI_ ;
       /**
-       * <code>uint32 MJHEECGMMHI = 7;</code>
+       * <code>uint32 MJHEECGMMHI = 10;</code>
        * @return The mJHEECGMMHI.
        */
       @java.lang.Override
@@ -647,7 +593,7 @@ public final class JNMJNFCENKBOuterClass {
         return mJHEECGMMHI_;
       }
       /**
-       * <code>uint32 MJHEECGMMHI = 7;</code>
+       * <code>uint32 MJHEECGMMHI = 10;</code>
        * @param value The mJHEECGMMHI to set.
        * @return This builder for chaining.
        */
@@ -658,43 +604,12 @@ public final class JNMJNFCENKBOuterClass {
         return this;
       }
       /**
-       * <code>uint32 MJHEECGMMHI = 7;</code>
+       * <code>uint32 MJHEECGMMHI = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearMJHEECGMMHI() {
         
         mJHEECGMMHI_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lICONHNCIPB_ ;
-      /**
-       * <code>int32 LICONHNCIPB = 10;</code>
-       * @return The lICONHNCIPB.
-       */
-      @java.lang.Override
-      public int getLICONHNCIPB() {
-        return lICONHNCIPB_;
-      }
-      /**
-       * <code>int32 LICONHNCIPB = 10;</code>
-       * @param value The lICONHNCIPB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLICONHNCIPB(int value) {
-        
-        lICONHNCIPB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 LICONHNCIPB = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLICONHNCIPB() {
-        
-        lICONHNCIPB_ = 0;
         onChanged();
         return this;
       }
@@ -726,6 +641,99 @@ public final class JNMJNFCENKBOuterClass {
       public Builder clearOADOGGFPLAJ() {
         
         oADOGGFPLAJ_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fOHNJKCKKPC_ ;
+      /**
+       * <code>uint32 FOHNJKCKKPC = 13;</code>
+       * @return The fOHNJKCKKPC.
+       */
+      @java.lang.Override
+      public int getFOHNJKCKKPC() {
+        return fOHNJKCKKPC_;
+      }
+      /**
+       * <code>uint32 FOHNJKCKKPC = 13;</code>
+       * @param value The fOHNJKCKKPC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFOHNJKCKKPC(int value) {
+        
+        fOHNJKCKKPC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FOHNJKCKKPC = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFOHNJKCKKPC() {
+        
+        fOHNJKCKKPC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int fEKGLGPBOAC_ ;
+      /**
+       * <code>uint32 FEKGLGPBOAC = 11;</code>
+       * @return The fEKGLGPBOAC.
+       */
+      @java.lang.Override
+      public int getFEKGLGPBOAC() {
+        return fEKGLGPBOAC_;
+      }
+      /**
+       * <code>uint32 FEKGLGPBOAC = 11;</code>
+       * @param value The fEKGLGPBOAC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFEKGLGPBOAC(int value) {
+        
+        fEKGLGPBOAC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FEKGLGPBOAC = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFEKGLGPBOAC() {
+        
+        fEKGLGPBOAC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lICONHNCIPB_ ;
+      /**
+       * <code>int32 LICONHNCIPB = 5;</code>
+       * @return The lICONHNCIPB.
+       */
+      @java.lang.Override
+      public int getLICONHNCIPB() {
+        return lICONHNCIPB_;
+      }
+      /**
+       * <code>int32 LICONHNCIPB = 5;</code>
+       * @param value The lICONHNCIPB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLICONHNCIPB(int value) {
+        
+        lICONHNCIPB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 LICONHNCIPB = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLICONHNCIPB() {
+        
+        lICONHNCIPB_ = 0;
         onChanged();
         return this;
       }
@@ -796,11 +804,11 @@ public final class JNMJNFCENKBOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021JNMJNFCENKB.proto\"v\n\013JNMJNFCENKB\022\023\n\013FO" +
-      "HNJKCKKPC\030\001 \001(\r\022\023\n\013FEKGLGPBOAC\030\002 \001(\r\022\023\n\013" +
-      "MJHEECGMMHI\030\007 \001(\r\022\023\n\013LICONHNCIPB\030\n \001(\005\022\023" +
-      "\n\013OADOGGFPLAJ\030\017 \001(\rB2\n\031emu.grasscutter.n" +
-      "et.protoB\025JNMJNFCENKBOuterClassb\006proto3"
+      "\n\021JNMJNFCENKB.proto\"v\n\013JNMJNFCENKB\022\023\n\013MJ" +
+      "HEECGMMHI\030\n \001(\r\022\023\n\013OADOGGFPLAJ\030\017 \001(\r\022\023\n\013" +
+      "FOHNJKCKKPC\030\r \001(\r\022\023\n\013FEKGLGPBOAC\030\013 \001(\r\022\023" +
+      "\n\013LICONHNCIPB\030\005 \001(\005B\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -811,7 +819,7 @@ public final class JNMJNFCENKBOuterClass {
     internal_static_JNMJNFCENKB_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JNMJNFCENKB_descriptor,
-        new java.lang.String[] { "FOHNJKCKKPC", "FEKGLGPBOAC", "MJHEECGMMHI", "LICONHNCIPB", "OADOGGFPLAJ", });
+        new java.lang.String[] { "MJHEECGMMHI", "OADOGGFPLAJ", "FOHNJKCKKPC", "FEKGLGPBOAC", "LICONHNCIPB", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

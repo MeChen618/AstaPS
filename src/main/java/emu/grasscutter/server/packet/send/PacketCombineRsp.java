@@ -42,8 +42,8 @@ public class PacketCombineRsp extends BasePacket {
                         .setCombineCount(combineReq.getCombineCount())
                         .setAvatarGuid(combineReq.getAvatarGuid())
                         .addAllCostItemList(costItemList)
-                        .addAllResultItemList(resultItemList)
-                        .addAllTotalExtraItemList(totalExtraItemList)
+                        .addAllGFDAOGHDHCI(resultItemList)
+                        .addAllFJOLFDOBCIL(totalExtraItemList)
                         // totalRandomItemList and totalReturnItemList are deliberately not sent.
                         // 7.0 leaves three `repeated ItemParam` fields here obfuscated (2, 3 and 4)
                         // and 6.7 has exactly three to match them to - these two plus uk10 - with

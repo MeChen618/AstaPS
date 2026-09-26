@@ -19,54 +19,58 @@ public final class LPGFAFGCFKOOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 3;</code>
-     * @return The isOpen.
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
      */
-    boolean getIsOpen();
+    java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> 
+        getGPMEFKHPBFKList();
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo getGPMEFKHPBFK(int index);
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    int getGPMEFKHPBFKCount();
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
+        getGPMEFKHPBFKOrBuilderList();
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder getGPMEFKHPBFKOrBuilder(
+        int index);
 
     /**
-     * <code>bool is_finish = 4;</code>
+     * <code>bool is_finish = 12;</code>
      * @return The isFinish.
      */
     boolean getIsFinish();
 
     /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+     * <code>bool is_open = 1;</code>
+     * @return The isOpen.
      */
-    java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> 
-        getGPMEFKHPBFKList();
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo getGPMEFKHPBFK(int index);
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    int getGPMEFKHPBFKCount();
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
-        getGPMEFKHPBFKOrBuilderList();
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder getGPMEFKHPBFKOrBuilder(
-        int index);
+    boolean getIsOpen();
 
     /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>uint32 best_score = 14;</code>
+     * <code>uint32 best_score = 5;</code>
      * @return The bestScore.
      */
     int getBestScore();
+
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code LPGFAFGCFKO}
    */
   public static final class LPGFAFGCFKO extends
@@ -113,33 +117,33 @@ public final class LPGFAFGCFKOOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
+            case 8: {
 
               isOpen_ = input.readBool();
               break;
             }
-            case 32: {
+            case 40: {
 
-              isFinish_ = input.readBool();
+              bestScore_ = input.readUInt32();
               break;
             }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                gPMEFKHPBFK_ = new java.util.ArrayList<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              gPMEFKHPBFK_.add(
-                  input.readMessage(emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
+            case 48: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 112: {
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                gPMEFKHPBFK_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              gPMEFKHPBFK_.add(
+                  input.readMessage(emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 96: {
 
-              bestScore_ = input.readUInt32();
+              isFinish_ = input.readBool();
               break;
             }
             default: {
@@ -177,21 +181,50 @@ public final class LPGFAFGCFKOOuterClass {
               emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO.class, emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 3;
-    private boolean isOpen_;
+    public static final int GPMEFKHPBFK_FIELD_NUMBER = 9;
+    private java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> gPMEFKHPBFK_;
     /**
-     * <code>bool is_open = 3;</code>
-     * @return The isOpen.
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
      */
     @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
+    public java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> getGPMEFKHPBFKList() {
+      return gPMEFKHPBFK_;
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
+        getGPMEFKHPBFKOrBuilderList() {
+      return gPMEFKHPBFK_;
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    @java.lang.Override
+    public int getGPMEFKHPBFKCount() {
+      return gPMEFKHPBFK_.size();
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo getGPMEFKHPBFK(int index) {
+      return gPMEFKHPBFK_.get(index);
+    }
+    /**
+     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder getGPMEFKHPBFKOrBuilder(
+        int index) {
+      return gPMEFKHPBFK_.get(index);
     }
 
-    public static final int IS_FINISH_FIELD_NUMBER = 4;
+    public static final int IS_FINISH_FIELD_NUMBER = 12;
     private boolean isFinish_;
     /**
-     * <code>bool is_finish = 4;</code>
+     * <code>bool is_finish = 12;</code>
      * @return The isFinish.
      */
     @java.lang.Override
@@ -199,66 +232,37 @@ public final class LPGFAFGCFKOOuterClass {
       return isFinish_;
     }
 
-    public static final int GPMEFKHPBFK_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> gPMEFKHPBFK_;
+    public static final int IS_OPEN_FIELD_NUMBER = 1;
+    private boolean isOpen_;
     /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+     * <code>bool is_open = 1;</code>
+     * @return The isOpen.
      */
     @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> getGPMEFKHPBFKList() {
-      return gPMEFKHPBFK_;
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
-        getGPMEFKHPBFKOrBuilderList() {
-      return gPMEFKHPBFK_;
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    @java.lang.Override
-    public int getGPMEFKHPBFKCount() {
-      return gPMEFKHPBFK_.size();
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo getGPMEFKHPBFK(int index) {
-      return gPMEFKHPBFK_.get(index);
-    }
-    /**
-     * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder getGPMEFKHPBFKOrBuilder(
-        int index) {
-      return gPMEFKHPBFK_.get(index);
+    public boolean getIsOpen() {
+      return isOpen_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 9;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 9;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int BEST_SCORE_FIELD_NUMBER = 14;
+    public static final int BEST_SCORE_FIELD_NUMBER = 5;
     private int bestScore_;
     /**
-     * <code>uint32 best_score = 14;</code>
+     * <code>uint32 best_score = 5;</code>
      * @return The bestScore.
      */
     @java.lang.Override
     public int getBestScore() {
       return bestScore_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 6;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -276,19 +280,19 @@ public final class LPGFAFGCFKOOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (isOpen_ != false) {
-        output.writeBool(3, isOpen_);
-      }
-      if (isFinish_ != false) {
-        output.writeBool(4, isFinish_);
-      }
-      for (int i = 0; i < gPMEFKHPBFK_.size(); i++) {
-        output.writeMessage(8, gPMEFKHPBFK_.get(i));
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(9, levelId_);
+        output.writeBool(1, isOpen_);
       }
       if (bestScore_ != 0) {
-        output.writeUInt32(14, bestScore_);
+        output.writeUInt32(5, bestScore_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(6, levelId_);
+      }
+      for (int i = 0; i < gPMEFKHPBFK_.size(); i++) {
+        output.writeMessage(9, gPMEFKHPBFK_.get(i));
+      }
+      if (isFinish_ != false) {
+        output.writeBool(12, isFinish_);
       }
       unknownFields.writeTo(output);
     }
@@ -301,23 +305,23 @@ public final class LPGFAFGCFKOOuterClass {
       size = 0;
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, isOpen_);
-      }
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isFinish_);
-      }
-      for (int i = 0; i < gPMEFKHPBFK_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, gPMEFKHPBFK_.get(i));
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, levelId_);
+          .computeBoolSize(1, isOpen_);
       }
       if (bestScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, bestScore_);
+          .computeUInt32Size(5, bestScore_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, levelId_);
+      }
+      for (int i = 0; i < gPMEFKHPBFK_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, gPMEFKHPBFK_.get(i));
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isFinish_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -334,16 +338,16 @@ public final class LPGFAFGCFKOOuterClass {
       }
       emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO other = (emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO) obj;
 
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
       if (!getGPMEFKHPBFKList()
           .equals(other.getGPMEFKHPBFKList())) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
       if (getBestScore()
           != other.getBestScore()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -355,20 +359,20 @@ public final class LPGFAFGCFKOOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
       if (getGPMEFKHPBFKCount() > 0) {
         hash = (37 * hash) + GPMEFKHPBFK_FIELD_NUMBER;
         hash = (53 * hash) + getGPMEFKHPBFKList().hashCode();
       }
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
       hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getBestScore();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -465,6 +469,10 @@ public final class LPGFAFGCFKOOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code LPGFAFGCFKO}
      */
     public static final class Builder extends
@@ -503,19 +511,19 @@ public final class LPGFAFGCFKOOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isOpen_ = false;
-
-        isFinish_ = false;
-
         if (gPMEFKHPBFKBuilder_ == null) {
           gPMEFKHPBFK_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           gPMEFKHPBFKBuilder_.clear();
         }
-        levelId_ = 0;
+        isFinish_ = false;
+
+        isOpen_ = false;
 
         bestScore_ = 0;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -544,8 +552,6 @@ public final class LPGFAFGCFKOOuterClass {
       public emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO buildPartial() {
         emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO result = new emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO(this);
         int from_bitField0_ = bitField0_;
-        result.isOpen_ = isOpen_;
-        result.isFinish_ = isFinish_;
         if (gPMEFKHPBFKBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             gPMEFKHPBFK_ = java.util.Collections.unmodifiableList(gPMEFKHPBFK_);
@@ -555,8 +561,10 @@ public final class LPGFAFGCFKOOuterClass {
         } else {
           result.gPMEFKHPBFK_ = gPMEFKHPBFKBuilder_.build();
         }
-        result.levelId_ = levelId_;
+        result.isFinish_ = isFinish_;
+        result.isOpen_ = isOpen_;
         result.bestScore_ = bestScore_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -605,12 +613,6 @@ public final class LPGFAFGCFKOOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO other) {
         if (other == emu.grasscutter.net.proto.LPGFAFGCFKOOuterClass.LPGFAFGCFKO.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
         if (gPMEFKHPBFKBuilder_ == null) {
           if (!other.gPMEFKHPBFK_.isEmpty()) {
             if (gPMEFKHPBFK_.isEmpty()) {
@@ -637,11 +639,17 @@ public final class LPGFAFGCFKOOuterClass {
             }
           }
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         if (other.getBestScore() != 0) {
           setBestScore(other.getBestScore());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -673,84 +681,22 @@ public final class LPGFAFGCFKOOuterClass {
       }
       private int bitField0_;
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 3;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 3;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isFinish_ ;
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @return The isFinish.
-       */
-      @java.lang.Override
-      public boolean getIsFinish() {
-        return isFinish_;
-      }
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @param value The isFinish to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinish(boolean value) {
-        
-        isFinish_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finish = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinish() {
-        
-        isFinish_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> gPMEFKHPBFK_ =
+      private java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> gPMEFKHPBFK_ =
         java.util.Collections.emptyList();
       private void ensureGPMEFKHPBFKIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          gPMEFKHPBFK_ = new java.util.ArrayList<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo>(gPMEFKHPBFK_);
+          gPMEFKHPBFK_ = new java.util.ArrayList<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo>(gPMEFKHPBFK_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> gPMEFKHPBFKBuilder_;
+          emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> gPMEFKHPBFKBuilder_;
 
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> getGPMEFKHPBFKList() {
+      public java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> getGPMEFKHPBFKList() {
         if (gPMEFKHPBFKBuilder_ == null) {
           return java.util.Collections.unmodifiableList(gPMEFKHPBFK_);
         } else {
@@ -758,7 +704,7 @@ public final class LPGFAFGCFKOOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public int getGPMEFKHPBFKCount() {
         if (gPMEFKHPBFKBuilder_ == null) {
@@ -768,9 +714,9 @@ public final class LPGFAFGCFKOOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo getGPMEFKHPBFK(int index) {
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo getGPMEFKHPBFK(int index) {
         if (gPMEFKHPBFKBuilder_ == null) {
           return gPMEFKHPBFK_.get(index);
         } else {
@@ -778,10 +724,10 @@ public final class LPGFAFGCFKOOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder setGPMEFKHPBFK(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo value) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo value) {
         if (gPMEFKHPBFKBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -795,10 +741,10 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder setGPMEFKHPBFK(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder builderForValue) {
         if (gPMEFKHPBFKBuilder_ == null) {
           ensureGPMEFKHPBFKIsMutable();
           gPMEFKHPBFK_.set(index, builderForValue.build());
@@ -809,9 +755,9 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public Builder addGPMEFKHPBFK(emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo value) {
+      public Builder addGPMEFKHPBFK(emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo value) {
         if (gPMEFKHPBFKBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -825,10 +771,10 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder addGPMEFKHPBFK(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo value) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo value) {
         if (gPMEFKHPBFKBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -842,10 +788,10 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder addGPMEFKHPBFK(
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder builderForValue) {
+          emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder builderForValue) {
         if (gPMEFKHPBFKBuilder_ == null) {
           ensureGPMEFKHPBFKIsMutable();
           gPMEFKHPBFK_.add(builderForValue.build());
@@ -856,10 +802,10 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder addGPMEFKHPBFK(
-          int index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder builderForValue) {
+          int index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder builderForValue) {
         if (gPMEFKHPBFKBuilder_ == null) {
           ensureGPMEFKHPBFKIsMutable();
           gPMEFKHPBFK_.add(index, builderForValue.build());
@@ -870,10 +816,10 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder addAllGPMEFKHPBFK(
-          java.lang.Iterable<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo> values) {
+          java.lang.Iterable<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo> values) {
         if (gPMEFKHPBFKBuilder_ == null) {
           ensureGPMEFKHPBFKIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -885,7 +831,7 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder clearGPMEFKHPBFK() {
         if (gPMEFKHPBFKBuilder_ == null) {
@@ -898,7 +844,7 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
       public Builder removeGPMEFKHPBFK(int index) {
         if (gPMEFKHPBFKBuilder_ == null) {
@@ -911,16 +857,16 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder getGPMEFKHPBFKBuilder(
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder getGPMEFKHPBFKBuilder(
           int index) {
         return getGPMEFKHPBFKFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder getGPMEFKHPBFKOrBuilder(
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder getGPMEFKHPBFKOrBuilder(
           int index) {
         if (gPMEFKHPBFKBuilder_ == null) {
           return gPMEFKHPBFK_.get(index);  } else {
@@ -928,9 +874,9 @@ public final class LPGFAFGCFKOOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public java.util.List<? extends emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
+      public java.util.List<? extends emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
            getGPMEFKHPBFKOrBuilderList() {
         if (gPMEFKHPBFKBuilder_ != null) {
           return gPMEFKHPBFKBuilder_.getMessageOrBuilderList();
@@ -939,33 +885,33 @@ public final class LPGFAFGCFKOOuterClass {
         }
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder addGPMEFKHPBFKBuilder() {
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder addGPMEFKHPBFKBuilder() {
         return getGPMEFKHPBFKFieldBuilder().addBuilder(
-            emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.getDefaultInstance());
+            emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder addGPMEFKHPBFKBuilder(
+      public emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder addGPMEFKHPBFKBuilder(
           int index) {
         return getGPMEFKHPBFKFieldBuilder().addBuilder(
-            index, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.getDefaultInstance());
+            index, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 8;</code>
+       * <code>repeated ._ActivityAvatarInfo GPMEFKHPBFK = 9;</code>
        */
-      public java.util.List<emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder> 
+      public java.util.List<emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder> 
            getGPMEFKHPBFKBuilderList() {
         return getGPMEFKHPBFKFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder> 
+          emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder> 
           getGPMEFKHPBFKFieldBuilder() {
         if (gPMEFKHPBFKBuilder_ == null) {
           gPMEFKHPBFKBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass._ActivityAvatarInfoOrBuilder>(
+              emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfo.Builder, emu.grasscutter.net.proto.ActivityAvatarInfo._ActivityAvatarInfoOrBuilder>(
                   gPMEFKHPBFK_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -975,40 +921,71 @@ public final class LPGFAFGCFKOOuterClass {
         return gPMEFKHPBFKBuilder_;
       }
 
-      private int levelId_ ;
+      private boolean isFinish_ ;
       /**
-       * <code>uint32 level_id = 9;</code>
-       * @return The levelId.
+       * <code>bool is_finish = 12;</code>
+       * @return The isFinish.
        */
       @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
+      public boolean getIsFinish() {
+        return isFinish_;
       }
       /**
-       * <code>uint32 level_id = 9;</code>
-       * @param value The levelId to set.
+       * <code>bool is_finish = 12;</code>
+       * @param value The isFinish to set.
        * @return This builder for chaining.
        */
-      public Builder setLevelId(int value) {
+      public Builder setIsFinish(boolean value) {
         
-        levelId_ = value;
+        isFinish_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 level_id = 9;</code>
+       * <code>bool is_finish = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLevelId() {
+      public Builder clearIsFinish() {
         
-        levelId_ = 0;
+        isFinish_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 1;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 1;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
         onChanged();
         return this;
       }
 
       private int bestScore_ ;
       /**
-       * <code>uint32 best_score = 14;</code>
+       * <code>uint32 best_score = 5;</code>
        * @return The bestScore.
        */
       @java.lang.Override
@@ -1016,7 +993,7 @@ public final class LPGFAFGCFKOOuterClass {
         return bestScore_;
       }
       /**
-       * <code>uint32 best_score = 14;</code>
+       * <code>uint32 best_score = 5;</code>
        * @param value The bestScore to set.
        * @return This builder for chaining.
        */
@@ -1027,12 +1004,43 @@ public final class LPGFAFGCFKOOuterClass {
         return this;
       }
       /**
-       * <code>uint32 best_score = 14;</code>
+       * <code>uint32 best_score = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
         
         bestScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -1104,24 +1112,24 @@ public final class LPGFAFGCFKOOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021LPGFAFGCFKO.proto\032\031_ActivityAvatarInfo" +
-      ".proto\"\202\001\n\013LPGFAFGCFKO\022\017\n\007is_open\030\003 \001(\010\022" +
-      "\021\n\tis_finish\030\004 \001(\010\022)\n\013GPMEFKHPBFK\030\010 \003(\0132" +
-      "\024._ActivityAvatarInfo\022\020\n\010level_id\030\t \001(\r\022" +
-      "\022\n\nbest_score\030\016 \001(\rB2\n\031emu.grasscutter.n" +
-      "et.protoB\025LPGFAFGCFKOOuterClassb\006proto3"
+      ".proto\"\202\001\n\013LPGFAFGCFKO\022)\n\013GPMEFKHPBFK\030\t " +
+      "\003(\0132\024._ActivityAvatarInfo\022\021\n\tis_finish\030\014" +
+      " \001(\010\022\017\n\007is_open\030\001 \001(\010\022\022\n\nbest_score\030\005 \001(" +
+      "\r\022\020\n\010level_id\030\006 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.ActivityAvatarInfo.getDescriptor(),
         });
     internal_static_LPGFAFGCFKO_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_LPGFAFGCFKO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LPGFAFGCFKO_descriptor,
-        new java.lang.String[] { "IsOpen", "IsFinish", "GPMEFKHPBFK", "LevelId", "BestScore", });
-    emu.grasscutter.net.proto._ActivityAvatarInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "GPMEFKHPBFK", "IsFinish", "IsOpen", "BestScore", "LevelId", });
+    emu.grasscutter.net.proto.ActivityAvatarInfo.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

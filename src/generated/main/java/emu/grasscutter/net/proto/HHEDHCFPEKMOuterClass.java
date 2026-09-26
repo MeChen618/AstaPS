@@ -25,18 +25,22 @@ public final class HHEDHCFPEKMOuterClass {
     float getX();
 
     /**
-     * <code>float y = 2;</code>
-     * @return The y.
-     */
-    float getY();
-
-    /**
      * <code>float z = 3;</code>
      * @return The z.
      */
     float getZ();
+
+    /**
+     * <code>float y = 2;</code>
+     * @return The y.
+     */
+    float getY();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HHEDHCFPEKM}
    */
   public static final class HHEDHCFPEKM extends
@@ -139,17 +143,6 @@ public final class HHEDHCFPEKMOuterClass {
       return x_;
     }
 
-    public static final int Y_FIELD_NUMBER = 2;
-    private float y_;
-    /**
-     * <code>float y = 2;</code>
-     * @return The y.
-     */
-    @java.lang.Override
-    public float getY() {
-      return y_;
-    }
-
     public static final int Z_FIELD_NUMBER = 3;
     private float z_;
     /**
@@ -159,6 +152,17 @@ public final class HHEDHCFPEKMOuterClass {
     @java.lang.Override
     public float getZ() {
       return z_;
+    }
+
+    public static final int Y_FIELD_NUMBER = 2;
+    private float y_;
+    /**
+     * <code>float y = 2;</code>
+     * @return The y.
+     */
+    @java.lang.Override
+    public float getY() {
+      return y_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,12 +227,12 @@ public final class HHEDHCFPEKMOuterClass {
       if (java.lang.Float.floatToIntBits(getX())
           != java.lang.Float.floatToIntBits(
               other.getX())) return false;
-      if (java.lang.Float.floatToIntBits(getY())
-          != java.lang.Float.floatToIntBits(
-              other.getY())) return false;
       if (java.lang.Float.floatToIntBits(getZ())
           != java.lang.Float.floatToIntBits(
               other.getZ())) return false;
+      if (java.lang.Float.floatToIntBits(getY())
+          != java.lang.Float.floatToIntBits(
+              other.getY())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -243,12 +247,12 @@ public final class HHEDHCFPEKMOuterClass {
       hash = (37 * hash) + X_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getX());
-      hash = (37 * hash) + Y_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getY());
       hash = (37 * hash) + Z_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getZ());
+      hash = (37 * hash) + Y_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getY());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,6 +349,10 @@ public final class HHEDHCFPEKMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HHEDHCFPEKM}
      */
     public static final class Builder extends
@@ -384,9 +392,9 @@ public final class HHEDHCFPEKMOuterClass {
         super.clear();
         x_ = 0F;
 
-        y_ = 0F;
-
         z_ = 0F;
+
+        y_ = 0F;
 
         return this;
       }
@@ -415,8 +423,8 @@ public final class HHEDHCFPEKMOuterClass {
       public emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM buildPartial() {
         emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM result = new emu.grasscutter.net.proto.HHEDHCFPEKMOuterClass.HHEDHCFPEKM(this);
         result.x_ = x_;
-        result.y_ = y_;
         result.z_ = z_;
+        result.y_ = y_;
         onBuilt();
         return result;
       }
@@ -468,11 +476,11 @@ public final class HHEDHCFPEKMOuterClass {
         if (other.getX() != 0F) {
           setX(other.getX());
         }
-        if (other.getY() != 0F) {
-          setY(other.getY());
-        }
         if (other.getZ() != 0F) {
           setZ(other.getZ());
+        }
+        if (other.getY() != 0F) {
+          setY(other.getY());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -534,37 +542,6 @@ public final class HHEDHCFPEKMOuterClass {
         return this;
       }
 
-      private float y_ ;
-      /**
-       * <code>float y = 2;</code>
-       * @return The y.
-       */
-      @java.lang.Override
-      public float getY() {
-        return y_;
-      }
-      /**
-       * <code>float y = 2;</code>
-       * @param value The y to set.
-       * @return This builder for chaining.
-       */
-      public Builder setY(float value) {
-        
-        y_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float y = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearY() {
-        
-        y_ = 0F;
-        onChanged();
-        return this;
-      }
-
       private float z_ ;
       /**
        * <code>float z = 3;</code>
@@ -592,6 +569,37 @@ public final class HHEDHCFPEKMOuterClass {
       public Builder clearZ() {
         
         z_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float y_ ;
+      /**
+       * <code>float y = 2;</code>
+       * @return The y.
+       */
+      @java.lang.Override
+      public float getY() {
+        return y_;
+      }
+      /**
+       * <code>float y = 2;</code>
+       * @param value The y to set.
+       * @return This builder for chaining.
+       */
+      public Builder setY(float value) {
+        
+        y_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float y = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearY() {
+        
+        y_ = 0F;
         onChanged();
         return this;
       }
@@ -663,9 +671,8 @@ public final class HHEDHCFPEKMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HHEDHCFPEKM.proto\".\n\013HHEDHCFPEKM\022\t\n\001x\030" +
-      "\001 \001(\002\022\t\n\001y\030\002 \001(\002\022\t\n\001z\030\003 \001(\002B2\n\031emu.grass" +
-      "cutter.net.protoB\025HHEDHCFPEKMOuterClassb" +
-      "\006proto3"
+      "\001 \001(\002\022\t\n\001z\030\003 \001(\002\022\t\n\001y\030\002 \001(\002B\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -676,7 +683,7 @@ public final class HHEDHCFPEKMOuterClass {
     internal_static_HHEDHCFPEKM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HHEDHCFPEKM_descriptor,
-        new java.lang.String[] { "X", "Y", "Z", });
+        new java.lang.String[] { "X", "Z", "Y", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

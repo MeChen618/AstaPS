@@ -19,53 +19,57 @@ public final class IKFFPHHDHJJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 PAFKENILOMD = 3;</code>
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> 
+        getLevelInfoListList();
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ getLevelInfoList(int index);
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    int getLevelInfoListCount();
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder> 
+        getLevelInfoListOrBuilderList();
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder getLevelInfoListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated uint32 PAFKENILOMD = 1;</code>
      * @return A list containing the pAFKENILOMD.
      */
     java.util.List<java.lang.Integer> getPAFKENILOMDList();
     /**
-     * <code>repeated uint32 PAFKENILOMD = 3;</code>
+     * <code>repeated uint32 PAFKENILOMD = 1;</code>
      * @return The count of pAFKENILOMD.
      */
     int getPAFKENILOMDCount();
     /**
-     * <code>repeated uint32 PAFKENILOMD = 3;</code>
+     * <code>repeated uint32 PAFKENILOMD = 1;</code>
      * @param index The index of the element to return.
      * @return The pAFKENILOMD at the given index.
      */
     int getPAFKENILOMD(int index);
 
     /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> 
-        getLevelInfoListList();
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ getLevelInfoList(int index);
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    int getLevelInfoListCount();
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder> 
-        getLevelInfoListOrBuilderList();
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder getLevelInfoListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 difficulty = 14;</code>
+     * <code>uint32 difficulty = 13;</code>
      * @return The difficulty.
      */
     int getDifficulty();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IKFFPHHDHJJ}
    */
   public static final class IKFFPHHDHJJ extends
@@ -78,8 +82,8 @@ public final class IKFFPHHDHJJOuterClass {
       super(builder);
     }
     private IKFFPHHDHJJ() {
-      pAFKENILOMD_ = emptyIntList();
       levelInfoList_ = java.util.Collections.emptyList();
+      pAFKENILOMD_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -113,20 +117,20 @@ public final class IKFFPHHDHJJOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 pAFKENILOMD_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               pAFKENILOMD_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 pAFKENILOMD_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 pAFKENILOMD_.addInt(input.readUInt32());
@@ -134,18 +138,18 @@ public final class IKFFPHHDHJJOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 104: {
+
+              difficulty_ = input.readUInt32();
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               levelInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              difficulty_ = input.readUInt32();
               break;
             }
             default: {
@@ -163,10 +167,10 @@ public final class IKFFPHHDHJJOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           pAFKENILOMD_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           levelInfoList_ = java.util.Collections.unmodifiableList(levelInfoList_);
         }
         this.unknownFields = unknownFields.build();
@@ -186,10 +190,50 @@ public final class IKFFPHHDHJJOuterClass {
               emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ.class, emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ.Builder.class);
     }
 
-    public static final int PAFKENILOMD_FIELD_NUMBER = 3;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 14;
+    private java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> levelInfoList_;
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> getLevelInfoListList() {
+      return levelInfoList_;
+    }
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder> 
+        getLevelInfoListOrBuilderList() {
+      return levelInfoList_;
+    }
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    @java.lang.Override
+    public int getLevelInfoListCount() {
+      return levelInfoList_.size();
+    }
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ getLevelInfoList(int index) {
+      return levelInfoList_.get(index);
+    }
+    /**
+     * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder getLevelInfoListOrBuilder(
+        int index) {
+      return levelInfoList_.get(index);
+    }
+
+    public static final int PAFKENILOMD_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.IntList pAFKENILOMD_;
     /**
-     * <code>repeated uint32 PAFKENILOMD = 3;</code>
+     * <code>repeated uint32 PAFKENILOMD = 1;</code>
      * @return A list containing the pAFKENILOMD.
      */
     @java.lang.Override
@@ -198,14 +242,14 @@ public final class IKFFPHHDHJJOuterClass {
       return pAFKENILOMD_;
     }
     /**
-     * <code>repeated uint32 PAFKENILOMD = 3;</code>
+     * <code>repeated uint32 PAFKENILOMD = 1;</code>
      * @return The count of pAFKENILOMD.
      */
     public int getPAFKENILOMDCount() {
       return pAFKENILOMD_.size();
     }
     /**
-     * <code>repeated uint32 PAFKENILOMD = 3;</code>
+     * <code>repeated uint32 PAFKENILOMD = 1;</code>
      * @param index The index of the element to return.
      * @return The pAFKENILOMD at the given index.
      */
@@ -214,50 +258,10 @@ public final class IKFFPHHDHJJOuterClass {
     }
     private int pAFKENILOMDMemoizedSerializedSize = -1;
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 7;
-    private java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> levelInfoList_;
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> getLevelInfoListList() {
-      return levelInfoList_;
-    }
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder> 
-        getLevelInfoListOrBuilderList() {
-      return levelInfoList_;
-    }
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    @java.lang.Override
-    public int getLevelInfoListCount() {
-      return levelInfoList_.size();
-    }
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ getLevelInfoList(int index) {
-      return levelInfoList_.get(index);
-    }
-    /**
-     * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder getLevelInfoListOrBuilder(
-        int index) {
-      return levelInfoList_.get(index);
-    }
-
-    public static final int DIFFICULTY_FIELD_NUMBER = 14;
+    public static final int DIFFICULTY_FIELD_NUMBER = 13;
     private int difficulty_;
     /**
-     * <code>uint32 difficulty = 14;</code>
+     * <code>uint32 difficulty = 13;</code>
      * @return The difficulty.
      */
     @java.lang.Override
@@ -281,17 +285,17 @@ public final class IKFFPHHDHJJOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getPAFKENILOMDList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(pAFKENILOMDMemoizedSerializedSize);
       }
       for (int i = 0; i < pAFKENILOMD_.size(); i++) {
         output.writeUInt32NoTag(pAFKENILOMD_.getInt(i));
       }
-      for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(7, levelInfoList_.get(i));
-      }
       if (difficulty_ != 0) {
-        output.writeUInt32(14, difficulty_);
+        output.writeUInt32(13, difficulty_);
+      }
+      for (int i = 0; i < levelInfoList_.size(); i++) {
+        output.writeMessage(14, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -316,13 +320,13 @@ public final class IKFFPHHDHJJOuterClass {
         }
         pAFKENILOMDMemoizedSerializedSize = dataSize;
       }
-      for (int i = 0; i < levelInfoList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, levelInfoList_.get(i));
-      }
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, difficulty_);
+          .computeUInt32Size(13, difficulty_);
+      }
+      for (int i = 0; i < levelInfoList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -339,10 +343,10 @@ public final class IKFFPHHDHJJOuterClass {
       }
       emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ other = (emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ) obj;
 
-      if (!getPAFKENILOMDList()
-          .equals(other.getPAFKENILOMDList())) return false;
       if (!getLevelInfoListList()
           .equals(other.getLevelInfoListList())) return false;
+      if (!getPAFKENILOMDList()
+          .equals(other.getPAFKENILOMDList())) return false;
       if (getDifficulty()
           != other.getDifficulty()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -356,13 +360,13 @@ public final class IKFFPHHDHJJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getPAFKENILOMDCount() > 0) {
-        hash = (37 * hash) + PAFKENILOMD_FIELD_NUMBER;
-        hash = (53 * hash) + getPAFKENILOMDList().hashCode();
-      }
       if (getLevelInfoListCount() > 0) {
         hash = (37 * hash) + LEVEL_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelInfoListList().hashCode();
+      }
+      if (getPAFKENILOMDCount() > 0) {
+        hash = (37 * hash) + PAFKENILOMD_FIELD_NUMBER;
+        hash = (53 * hash) + getPAFKENILOMDList().hashCode();
       }
       hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
       hash = (53 * hash) + getDifficulty();
@@ -462,6 +466,10 @@ public final class IKFFPHHDHJJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IKFFPHHDHJJ}
      */
     public static final class Builder extends
@@ -500,14 +508,14 @@ public final class IKFFPHHDHJJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pAFKENILOMD_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (levelInfoListBuilder_ == null) {
           levelInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           levelInfoListBuilder_.clear();
         }
+        pAFKENILOMD_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         difficulty_ = 0;
 
         return this;
@@ -537,20 +545,20 @@ public final class IKFFPHHDHJJOuterClass {
       public emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ buildPartial() {
         emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ result = new emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          pAFKENILOMD_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.pAFKENILOMD_ = pAFKENILOMD_;
         if (levelInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             levelInfoList_ = java.util.Collections.unmodifiableList(levelInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.levelInfoList_ = levelInfoList_;
         } else {
           result.levelInfoList_ = levelInfoListBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          pAFKENILOMD_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.pAFKENILOMD_ = pAFKENILOMD_;
         result.difficulty_ = difficulty_;
         onBuilt();
         return result;
@@ -600,21 +608,11 @@ public final class IKFFPHHDHJJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ other) {
         if (other == emu.grasscutter.net.proto.IKFFPHHDHJJOuterClass.IKFFPHHDHJJ.getDefaultInstance()) return this;
-        if (!other.pAFKENILOMD_.isEmpty()) {
-          if (pAFKENILOMD_.isEmpty()) {
-            pAFKENILOMD_ = other.pAFKENILOMD_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensurePAFKENILOMDIsMutable();
-            pAFKENILOMD_.addAll(other.pAFKENILOMD_);
-          }
-          onChanged();
-        }
         if (levelInfoListBuilder_ == null) {
           if (!other.levelInfoList_.isEmpty()) {
             if (levelInfoList_.isEmpty()) {
               levelInfoList_ = other.levelInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureLevelInfoListIsMutable();
               levelInfoList_.addAll(other.levelInfoList_);
@@ -627,7 +625,7 @@ public final class IKFFPHHDHJJOuterClass {
               levelInfoListBuilder_.dispose();
               levelInfoListBuilder_ = null;
               levelInfoList_ = other.levelInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               levelInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLevelInfoListFieldBuilder() : null;
@@ -635,6 +633,16 @@ public final class IKFFPHHDHJJOuterClass {
               levelInfoListBuilder_.addAllMessages(other.levelInfoList_);
             }
           }
+        }
+        if (!other.pAFKENILOMD_.isEmpty()) {
+          if (pAFKENILOMD_.isEmpty()) {
+            pAFKENILOMD_ = other.pAFKENILOMD_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensurePAFKENILOMDIsMutable();
+            pAFKENILOMD_.addAll(other.pAFKENILOMD_);
+          }
+          onChanged();
         }
         if (other.getDifficulty() != 0) {
           setDifficulty(other.getDifficulty());
@@ -669,91 +677,12 @@ public final class IKFFPHHDHJJOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList pAFKENILOMD_ = emptyIntList();
-      private void ensurePAFKENILOMDIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          pAFKENILOMD_ = mutableCopy(pAFKENILOMD_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @return A list containing the pAFKENILOMD.
-       */
-      public java.util.List<java.lang.Integer>
-          getPAFKENILOMDList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(pAFKENILOMD_) : pAFKENILOMD_;
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @return The count of pAFKENILOMD.
-       */
-      public int getPAFKENILOMDCount() {
-        return pAFKENILOMD_.size();
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @param index The index of the element to return.
-       * @return The pAFKENILOMD at the given index.
-       */
-      public int getPAFKENILOMD(int index) {
-        return pAFKENILOMD_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The pAFKENILOMD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPAFKENILOMD(
-          int index, int value) {
-        ensurePAFKENILOMDIsMutable();
-        pAFKENILOMD_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @param value The pAFKENILOMD to add.
-       * @return This builder for chaining.
-       */
-      public Builder addPAFKENILOMD(int value) {
-        ensurePAFKENILOMDIsMutable();
-        pAFKENILOMD_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @param values The pAFKENILOMD to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllPAFKENILOMD(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensurePAFKENILOMDIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, pAFKENILOMD_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 PAFKENILOMD = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPAFKENILOMD() {
-        pAFKENILOMD_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> levelInfoList_ =
         java.util.Collections.emptyList();
       private void ensureLevelInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ>(levelInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -761,7 +690,7 @@ public final class IKFFPHHDHJJOuterClass {
           emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -771,7 +700,7 @@ public final class IKFFPHHDHJJOuterClass {
         }
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -781,7 +710,7 @@ public final class IKFFPHHDHJJOuterClass {
         }
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -791,7 +720,7 @@ public final class IKFFPHHDHJJOuterClass {
         }
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ value) {
@@ -808,7 +737,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder builderForValue) {
@@ -822,7 +751,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ value) {
         if (levelInfoListBuilder_ == null) {
@@ -838,7 +767,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ value) {
@@ -855,7 +784,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder builderForValue) {
@@ -869,7 +798,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder builderForValue) {
@@ -883,7 +812,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ> values) {
@@ -898,12 +827,12 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
           levelInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           levelInfoListBuilder_.clear();
@@ -911,7 +840,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -924,14 +853,14 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -941,7 +870,7 @@ public final class IKFFPHHDHJJOuterClass {
         }
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -952,14 +881,14 @@ public final class IKFFPHHDHJJOuterClass {
         }
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.getDefaultInstance());
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder addLevelInfoListBuilder(
           int index) {
@@ -967,7 +896,7 @@ public final class IKFFPHHDHJJOuterClass {
             index, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.getDefaultInstance());
       }
       /**
-       * <code>repeated .IEDPGJDEMAJ level_info_list = 7;</code>
+       * <code>repeated .IEDPGJDEMAJ level_info_list = 14;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder> 
            getLevelInfoListBuilderList() {
@@ -980,7 +909,7 @@ public final class IKFFPHHDHJJOuterClass {
           levelInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJ.Builder, emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.IEDPGJDEMAJOrBuilder>(
                   levelInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           levelInfoList_ = null;
@@ -988,9 +917,88 @@ public final class IKFFPHHDHJJOuterClass {
         return levelInfoListBuilder_;
       }
 
+      private com.google.protobuf.Internal.IntList pAFKENILOMD_ = emptyIntList();
+      private void ensurePAFKENILOMDIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          pAFKENILOMD_ = mutableCopy(pAFKENILOMD_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @return A list containing the pAFKENILOMD.
+       */
+      public java.util.List<java.lang.Integer>
+          getPAFKENILOMDList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(pAFKENILOMD_) : pAFKENILOMD_;
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @return The count of pAFKENILOMD.
+       */
+      public int getPAFKENILOMDCount() {
+        return pAFKENILOMD_.size();
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @param index The index of the element to return.
+       * @return The pAFKENILOMD at the given index.
+       */
+      public int getPAFKENILOMD(int index) {
+        return pAFKENILOMD_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The pAFKENILOMD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPAFKENILOMD(
+          int index, int value) {
+        ensurePAFKENILOMDIsMutable();
+        pAFKENILOMD_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @param value The pAFKENILOMD to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPAFKENILOMD(int value) {
+        ensurePAFKENILOMDIsMutable();
+        pAFKENILOMD_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @param values The pAFKENILOMD to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPAFKENILOMD(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensurePAFKENILOMDIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, pAFKENILOMD_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 PAFKENILOMD = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPAFKENILOMD() {
+        pAFKENILOMD_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
       private int difficulty_ ;
       /**
-       * <code>uint32 difficulty = 14;</code>
+       * <code>uint32 difficulty = 13;</code>
        * @return The difficulty.
        */
       @java.lang.Override
@@ -998,7 +1006,7 @@ public final class IKFFPHHDHJJOuterClass {
         return difficulty_;
       }
       /**
-       * <code>uint32 difficulty = 14;</code>
+       * <code>uint32 difficulty = 13;</code>
        * @param value The difficulty to set.
        * @return This builder for chaining.
        */
@@ -1009,7 +1017,7 @@ public final class IKFFPHHDHJJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 difficulty = 14;</code>
+       * <code>uint32 difficulty = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
@@ -1086,10 +1094,10 @@ public final class IKFFPHHDHJJOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021IKFFPHHDHJJ.proto\032\021IEDPGJDEMAJ.proto\"]" +
-      "\n\013IKFFPHHDHJJ\022\023\n\013PAFKENILOMD\030\003 \003(\r\022%\n\017le" +
-      "vel_info_list\030\007 \003(\0132\014.IEDPGJDEMAJ\022\022\n\ndif" +
-      "ficulty\030\016 \001(\rB2\n\031emu.grasscutter.net.pro" +
-      "toB\025IKFFPHHDHJJOuterClassb\006proto3"
+      "\n\013IKFFPHHDHJJ\022%\n\017level_info_list\030\016 \003(\0132\014" +
+      ".IEDPGJDEMAJ\022\023\n\013PAFKENILOMD\030\001 \003(\r\022\022\n\ndif" +
+      "ficulty\030\r \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1101,7 +1109,7 @@ public final class IKFFPHHDHJJOuterClass {
     internal_static_IKFFPHHDHJJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IKFFPHHDHJJ_descriptor,
-        new java.lang.String[] { "PAFKENILOMD", "LevelInfoList", "Difficulty", });
+        new java.lang.String[] { "LevelInfoList", "PAFKENILOMD", "Difficulty", });
     emu.grasscutter.net.proto.IEDPGJDEMAJOuterClass.getDescriptor();
   }
 

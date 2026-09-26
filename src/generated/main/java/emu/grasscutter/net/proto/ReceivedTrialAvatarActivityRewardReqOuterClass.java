@@ -518,9 +518,8 @@ public final class ReceivedTrialAvatarActivityRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n*ReceivedTrialAvatarActivityRewardReq.p" +
       "roto\"E\n$ReceivedTrialAvatarActivityRewar" +
-      "dReq\022\035\n\025trial_avatar_index_id\030\004 \001(\rBK\n\031e" +
-      "mu.grasscutter.net.protoB.ReceivedTrialA" +
-      "vatarActivityRewardReqOuterClassb\006proto3"
+      "dReq\022\035\n\025trial_avatar_index_id\030\004 \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

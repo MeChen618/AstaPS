@@ -25,12 +25,16 @@ public final class ILMONMILAFCOuterClass {
     int getAvatarId();
 
     /**
-     * <code>bool is_trial_avatar = 15;</code>
+     * <code>bool is_trial_avatar = 13;</code>
      * @return The isTrialAvatar.
      */
     boolean getIsTrialAvatar();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ILMONMILAFC}
    */
   public static final class ILMONMILAFC extends
@@ -80,7 +84,7 @@ public final class ILMONMILAFCOuterClass {
               avatarId_ = input.readUInt32();
               break;
             }
-            case 120: {
+            case 104: {
 
               isTrialAvatar_ = input.readBool();
               break;
@@ -128,10 +132,10 @@ public final class ILMONMILAFCOuterClass {
       return avatarId_;
     }
 
-    public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 15;
+    public static final int IS_TRIAL_AVATAR_FIELD_NUMBER = 13;
     private boolean isTrialAvatar_;
     /**
-     * <code>bool is_trial_avatar = 15;</code>
+     * <code>bool is_trial_avatar = 13;</code>
      * @return The isTrialAvatar.
      */
     @java.lang.Override
@@ -157,7 +161,7 @@ public final class ILMONMILAFCOuterClass {
         output.writeUInt32(2, avatarId_);
       }
       if (isTrialAvatar_ != false) {
-        output.writeBool(15, isTrialAvatar_);
+        output.writeBool(13, isTrialAvatar_);
       }
       unknownFields.writeTo(output);
     }
@@ -174,7 +178,7 @@ public final class ILMONMILAFCOuterClass {
       }
       if (isTrialAvatar_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, isTrialAvatar_);
+          .computeBoolSize(13, isTrialAvatar_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,6 +311,10 @@ public final class ILMONMILAFCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ILMONMILAFC}
      */
     public static final class Builder extends
@@ -492,7 +500,7 @@ public final class ILMONMILAFCOuterClass {
 
       private boolean isTrialAvatar_ ;
       /**
-       * <code>bool is_trial_avatar = 15;</code>
+       * <code>bool is_trial_avatar = 13;</code>
        * @return The isTrialAvatar.
        */
       @java.lang.Override
@@ -500,7 +508,7 @@ public final class ILMONMILAFCOuterClass {
         return isTrialAvatar_;
       }
       /**
-       * <code>bool is_trial_avatar = 15;</code>
+       * <code>bool is_trial_avatar = 13;</code>
        * @param value The isTrialAvatar to set.
        * @return This builder for chaining.
        */
@@ -511,7 +519,7 @@ public final class ILMONMILAFCOuterClass {
         return this;
       }
       /**
-       * <code>bool is_trial_avatar = 15;</code>
+       * <code>bool is_trial_avatar = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrialAvatar() {
@@ -588,9 +596,8 @@ public final class ILMONMILAFCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021ILMONMILAFC.proto\"9\n\013ILMONMILAFC\022\021\n\tav" +
-      "atar_id\030\002 \001(\r\022\027\n\017is_trial_avatar\030\017 \001(\010B2" +
-      "\n\031emu.grasscutter.net.protoB\025ILMONMILAFC" +
-      "OuterClassb\006proto3"
+      "atar_id\030\002 \001(\r\022\027\n\017is_trial_avatar\030\r \001(\010B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

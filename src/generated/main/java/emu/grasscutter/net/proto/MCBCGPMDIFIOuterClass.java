@@ -19,152 +19,156 @@ public final class MCBCGPMDIFIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     java.util.List<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL> 
         getLevelInfoListList();
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL getLevelInfoList(int index);
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     int getLevelInfoListCount();
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder> 
         getLevelInfoListOrBuilderList();
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder getLevelInfoListOrBuilder(
         int index);
 
     /**
-     * <code>bool GFMDMENKALA = 2;</code>
-     * @return The gFMDMENKALA.
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
      */
-    boolean getGFMDMENKALA();
+    java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> 
+        getFECECFDPFBPList();
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN getFECECFDPFBP(int index);
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    int getFECECFDPFBPCount();
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder> 
+        getFECECFDPFBPOrBuilderList();
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder getFECECFDPFBPOrBuilder(
+        int index);
 
     /**
-     * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
+     * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
      * @return A list containing the nGNKDNFOPDB.
      */
     java.util.List<java.lang.Integer> getNGNKDNFOPDBList();
     /**
-     * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
+     * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
      * @return The count of nGNKDNFOPDB.
      */
     int getNGNKDNFOPDBCount();
     /**
-     * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
+     * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
      * @param index The index of the element to return.
      * @return The nGNKDNFOPDB at the given index.
      */
     int getNGNKDNFOPDB(int index);
 
     /**
-     * <code>repeated uint32 MFKFEOAALPN = 5;</code>
+     * <code>repeated uint32 MFKFEOAALPN = 11;</code>
      * @return A list containing the mFKFEOAALPN.
      */
     java.util.List<java.lang.Integer> getMFKFEOAALPNList();
     /**
-     * <code>repeated uint32 MFKFEOAALPN = 5;</code>
+     * <code>repeated uint32 MFKFEOAALPN = 11;</code>
      * @return The count of mFKFEOAALPN.
      */
     int getMFKFEOAALPNCount();
     /**
-     * <code>repeated uint32 MFKFEOAALPN = 5;</code>
+     * <code>repeated uint32 MFKFEOAALPN = 11;</code>
      * @param index The index of the element to return.
      * @return The mFKFEOAALPN at the given index.
      */
     int getMFKFEOAALPN(int index);
 
     /**
-     * <code>bool EIFNKICAKCO = 6;</code>
-     * @return The eIFNKICAKCO.
-     */
-    boolean getEIFNKICAKCO();
-
-    /**
-     * <code>uint32 IKBLLCLNBLH = 7;</code>
-     * @return The iKBLLCLNBLH.
-     */
-    int getIKBLLCLNBLH();
-
-    /**
-     * <code>repeated uint32 EMPMBEDABCD = 8;</code>
+     * <code>repeated uint32 EMPMBEDABCD = 12;</code>
      * @return A list containing the eMPMBEDABCD.
      */
     java.util.List<java.lang.Integer> getEMPMBEDABCDList();
     /**
-     * <code>repeated uint32 EMPMBEDABCD = 8;</code>
+     * <code>repeated uint32 EMPMBEDABCD = 12;</code>
      * @return The count of eMPMBEDABCD.
      */
     int getEMPMBEDABCDCount();
     /**
-     * <code>repeated uint32 EMPMBEDABCD = 8;</code>
+     * <code>repeated uint32 EMPMBEDABCD = 12;</code>
      * @param index The index of the element to return.
      * @return The eMPMBEDABCD at the given index.
      */
     int getEMPMBEDABCD(int index);
 
     /**
-     * <code>uint32 IBNKIJCDIKK = 10;</code>
-     * @return The iBNKIJCDIKK.
+     * <code>repeated uint32 OODMCABNGPE = 5;</code>
+     * @return A list containing the oODMCABNGPE.
      */
-    int getIBNKIJCDIKK();
+    java.util.List<java.lang.Integer> getOODMCABNGPEList();
+    /**
+     * <code>repeated uint32 OODMCABNGPE = 5;</code>
+     * @return The count of oODMCABNGPE.
+     */
+    int getOODMCABNGPECount();
+    /**
+     * <code>repeated uint32 OODMCABNGPE = 5;</code>
+     * @param index The index of the element to return.
+     * @return The oODMCABNGPE at the given index.
+     */
+    int getOODMCABNGPE(int index);
 
     /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+     * <code>bool GFMDMENKALA = 4;</code>
+     * @return The gFMDMENKALA.
      */
-    java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> 
-        getFECECFDPFBPList();
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN getFECECFDPFBP(int index);
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    int getFECECFDPFBPCount();
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder> 
-        getFECECFDPFBPOrBuilderList();
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder getFECECFDPFBPOrBuilder(
-        int index);
+    boolean getGFMDMENKALA();
 
     /**
-     * <code>bool EFIHHNEAFAK = 14;</code>
+     * <code>bool EFIHHNEAFAK = 1;</code>
      * @return The eFIHHNEAFAK.
      */
     boolean getEFIHHNEAFAK();
 
     /**
-     * <code>repeated uint32 OODMCABNGPE = 15;</code>
-     * @return A list containing the oODMCABNGPE.
+     * <code>bool EIFNKICAKCO = 10;</code>
+     * @return The eIFNKICAKCO.
      */
-    java.util.List<java.lang.Integer> getOODMCABNGPEList();
+    boolean getEIFNKICAKCO();
+
     /**
-     * <code>repeated uint32 OODMCABNGPE = 15;</code>
-     * @return The count of oODMCABNGPE.
+     * <code>uint32 IKBLLCLNBLH = 2;</code>
+     * @return The iKBLLCLNBLH.
      */
-    int getOODMCABNGPECount();
+    int getIKBLLCLNBLH();
+
     /**
-     * <code>repeated uint32 OODMCABNGPE = 15;</code>
-     * @param index The index of the element to return.
-     * @return The oODMCABNGPE at the given index.
+     * <code>uint32 IBNKIJCDIKK = 3;</code>
+     * @return The iBNKIJCDIKK.
      */
-    int getOODMCABNGPE(int index);
+    int getIBNKIJCDIKK();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MCBCGPMDIFI}
    */
   public static final class MCBCGPMDIFI extends
@@ -178,10 +182,10 @@ public final class MCBCGPMDIFIOuterClass {
     }
     private MCBCGPMDIFI() {
       levelInfoList_ = java.util.Collections.emptyList();
+      fECECFDPFBP_ = java.util.Collections.emptyList();
       nGNKDNFOPDB_ = emptyIntList();
       mFKFEOAALPN_ = emptyIntList();
       eMPMBEDABCD_ = emptyIntList();
-      fECECFDPFBP_ = java.util.Collections.emptyList();
       oODMCABNGPE_ = emptyIntList();
     }
 
@@ -216,113 +220,27 @@ public final class MCBCGPMDIFIOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              levelInfoList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.parser(), extensionRegistry));
-              break;
-            }
-            case 16: {
-
-              gFMDMENKALA_ = input.readBool();
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                nGNKDNFOPDB_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              nGNKDNFOPDB_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                nGNKDNFOPDB_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                nGNKDNFOPDB_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                mFKFEOAALPN_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              mFKFEOAALPN_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                mFKFEOAALPN_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                mFKFEOAALPN_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              eIFNKICAKCO_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              iKBLLCLNBLH_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                eMPMBEDABCD_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              eMPMBEDABCD_.addInt(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                eMPMBEDABCD_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                eMPMBEDABCD_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-
-              iBNKIJCDIKK_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                fECECFDPFBP_ = new java.util.ArrayList<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              fECECFDPFBP_.add(
-                  input.readMessage(emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
+            case 8: {
 
               eFIHHNEAFAK_ = input.readBool();
               break;
             }
-            case 120: {
+            case 16: {
+
+              iKBLLCLNBLH_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+
+              iBNKIJCDIKK_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+
+              gFMDMENKALA_ = input.readBool();
+              break;
+            }
+            case 40: {
               if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 oODMCABNGPE_ = newIntList();
                 mutable_bitField0_ |= 0x00000020;
@@ -330,7 +248,7 @@ public final class MCBCGPMDIFIOuterClass {
               oODMCABNGPE_.addInt(input.readUInt32());
               break;
             }
-            case 122: {
+            case 42: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000020) != 0) && input.getBytesUntilLimit() > 0) {
@@ -341,6 +259,92 @@ public final class MCBCGPMDIFIOuterClass {
                 oODMCABNGPE_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 56: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                nGNKDNFOPDB_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              nGNKDNFOPDB_.addInt(input.readUInt32());
+              break;
+            }
+            case 58: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
+                nGNKDNFOPDB_ = newIntList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                nGNKDNFOPDB_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                fECECFDPFBP_ = new java.util.ArrayList<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              fECECFDPFBP_.add(
+                  input.readMessage(emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.parser(), extensionRegistry));
+              break;
+            }
+            case 80: {
+
+              eIFNKICAKCO_ = input.readBool();
+              break;
+            }
+            case 88: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                mFKFEOAALPN_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              mFKFEOAALPN_.addInt(input.readUInt32());
+              break;
+            }
+            case 90: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
+                mFKFEOAALPN_ = newIntList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                mFKFEOAALPN_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                eMPMBEDABCD_ = newIntList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              eMPMBEDABCD_.addInt(input.readUInt32());
+              break;
+            }
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000010) != 0) && input.getBytesUntilLimit() > 0) {
+                eMPMBEDABCD_ = newIntList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                eMPMBEDABCD_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 122: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                levelInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              levelInfoList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.parser(), extensionRegistry));
               break;
             }
             default: {
@@ -358,23 +362,23 @@ public final class MCBCGPMDIFIOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          levelInfoList_ = java.util.Collections.unmodifiableList(levelInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          nGNKDNFOPDB_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          mFKFEOAALPN_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          eMPMBEDABCD_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          fECECFDPFBP_ = java.util.Collections.unmodifiableList(fECECFDPFBP_);
-        }
         if (((mutable_bitField0_ & 0x00000020) != 0)) {
           oODMCABNGPE_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          nGNKDNFOPDB_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          fECECFDPFBP_ = java.util.Collections.unmodifiableList(fECECFDPFBP_);
+        }
+        if (((mutable_bitField0_ & 0x00000008) != 0)) {
+          mFKFEOAALPN_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          eMPMBEDABCD_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          levelInfoList_ = java.util.Collections.unmodifiableList(levelInfoList_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -393,17 +397,17 @@ public final class MCBCGPMDIFIOuterClass {
               emu.grasscutter.net.proto.MCBCGPMDIFIOuterClass.MCBCGPMDIFI.class, emu.grasscutter.net.proto.MCBCGPMDIFIOuterClass.MCBCGPMDIFI.Builder.class);
     }
 
-    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 1;
+    public static final int LEVEL_INFO_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL> levelInfoList_;
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL> getLevelInfoListList() {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder> 
@@ -411,21 +415,21 @@ public final class MCBCGPMDIFIOuterClass {
       return levelInfoList_;
     }
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     @java.lang.Override
     public int getLevelInfoListCount() {
       return levelInfoList_.size();
     }
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL getLevelInfoList(int index) {
       return levelInfoList_.get(index);
     }
     /**
-     * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+     * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder getLevelInfoListOrBuilder(
@@ -433,21 +437,50 @@ public final class MCBCGPMDIFIOuterClass {
       return levelInfoList_.get(index);
     }
 
-    public static final int GFMDMENKALA_FIELD_NUMBER = 2;
-    private boolean gFMDMENKALA_;
+    public static final int FECECFDPFBP_FIELD_NUMBER = 9;
+    private java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> fECECFDPFBP_;
     /**
-     * <code>bool GFMDMENKALA = 2;</code>
-     * @return The gFMDMENKALA.
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
      */
     @java.lang.Override
-    public boolean getGFMDMENKALA() {
-      return gFMDMENKALA_;
+    public java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> getFECECFDPFBPList() {
+      return fECECFDPFBP_;
+    }
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder> 
+        getFECECFDPFBPOrBuilderList() {
+      return fECECFDPFBP_;
+    }
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    @java.lang.Override
+    public int getFECECFDPFBPCount() {
+      return fECECFDPFBP_.size();
+    }
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN getFECECFDPFBP(int index) {
+      return fECECFDPFBP_.get(index);
+    }
+    /**
+     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder getFECECFDPFBPOrBuilder(
+        int index) {
+      return fECECFDPFBP_.get(index);
     }
 
-    public static final int NGNKDNFOPDB_FIELD_NUMBER = 3;
+    public static final int NGNKDNFOPDB_FIELD_NUMBER = 7;
     private com.google.protobuf.Internal.IntList nGNKDNFOPDB_;
     /**
-     * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
+     * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
      * @return A list containing the nGNKDNFOPDB.
      */
     @java.lang.Override
@@ -456,14 +489,14 @@ public final class MCBCGPMDIFIOuterClass {
       return nGNKDNFOPDB_;
     }
     /**
-     * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
+     * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
      * @return The count of nGNKDNFOPDB.
      */
     public int getNGNKDNFOPDBCount() {
       return nGNKDNFOPDB_.size();
     }
     /**
-     * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
+     * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
      * @param index The index of the element to return.
      * @return The nGNKDNFOPDB at the given index.
      */
@@ -472,10 +505,10 @@ public final class MCBCGPMDIFIOuterClass {
     }
     private int nGNKDNFOPDBMemoizedSerializedSize = -1;
 
-    public static final int MFKFEOAALPN_FIELD_NUMBER = 5;
+    public static final int MFKFEOAALPN_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList mFKFEOAALPN_;
     /**
-     * <code>repeated uint32 MFKFEOAALPN = 5;</code>
+     * <code>repeated uint32 MFKFEOAALPN = 11;</code>
      * @return A list containing the mFKFEOAALPN.
      */
     @java.lang.Override
@@ -484,14 +517,14 @@ public final class MCBCGPMDIFIOuterClass {
       return mFKFEOAALPN_;
     }
     /**
-     * <code>repeated uint32 MFKFEOAALPN = 5;</code>
+     * <code>repeated uint32 MFKFEOAALPN = 11;</code>
      * @return The count of mFKFEOAALPN.
      */
     public int getMFKFEOAALPNCount() {
       return mFKFEOAALPN_.size();
     }
     /**
-     * <code>repeated uint32 MFKFEOAALPN = 5;</code>
+     * <code>repeated uint32 MFKFEOAALPN = 11;</code>
      * @param index The index of the element to return.
      * @return The mFKFEOAALPN at the given index.
      */
@@ -500,32 +533,10 @@ public final class MCBCGPMDIFIOuterClass {
     }
     private int mFKFEOAALPNMemoizedSerializedSize = -1;
 
-    public static final int EIFNKICAKCO_FIELD_NUMBER = 6;
-    private boolean eIFNKICAKCO_;
-    /**
-     * <code>bool EIFNKICAKCO = 6;</code>
-     * @return The eIFNKICAKCO.
-     */
-    @java.lang.Override
-    public boolean getEIFNKICAKCO() {
-      return eIFNKICAKCO_;
-    }
-
-    public static final int IKBLLCLNBLH_FIELD_NUMBER = 7;
-    private int iKBLLCLNBLH_;
-    /**
-     * <code>uint32 IKBLLCLNBLH = 7;</code>
-     * @return The iKBLLCLNBLH.
-     */
-    @java.lang.Override
-    public int getIKBLLCLNBLH() {
-      return iKBLLCLNBLH_;
-    }
-
-    public static final int EMPMBEDABCD_FIELD_NUMBER = 8;
+    public static final int EMPMBEDABCD_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList eMPMBEDABCD_;
     /**
-     * <code>repeated uint32 EMPMBEDABCD = 8;</code>
+     * <code>repeated uint32 EMPMBEDABCD = 12;</code>
      * @return A list containing the eMPMBEDABCD.
      */
     @java.lang.Override
@@ -534,14 +545,14 @@ public final class MCBCGPMDIFIOuterClass {
       return eMPMBEDABCD_;
     }
     /**
-     * <code>repeated uint32 EMPMBEDABCD = 8;</code>
+     * <code>repeated uint32 EMPMBEDABCD = 12;</code>
      * @return The count of eMPMBEDABCD.
      */
     public int getEMPMBEDABCDCount() {
       return eMPMBEDABCD_.size();
     }
     /**
-     * <code>repeated uint32 EMPMBEDABCD = 8;</code>
+     * <code>repeated uint32 EMPMBEDABCD = 12;</code>
      * @param index The index of the element to return.
      * @return The eMPMBEDABCD at the given index.
      */
@@ -550,72 +561,10 @@ public final class MCBCGPMDIFIOuterClass {
     }
     private int eMPMBEDABCDMemoizedSerializedSize = -1;
 
-    public static final int IBNKIJCDIKK_FIELD_NUMBER = 10;
-    private int iBNKIJCDIKK_;
-    /**
-     * <code>uint32 IBNKIJCDIKK = 10;</code>
-     * @return The iBNKIJCDIKK.
-     */
-    @java.lang.Override
-    public int getIBNKIJCDIKK() {
-      return iBNKIJCDIKK_;
-    }
-
-    public static final int FECECFDPFBP_FIELD_NUMBER = 11;
-    private java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> fECECFDPFBP_;
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> getFECECFDPFBPList() {
-      return fECECFDPFBP_;
-    }
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder> 
-        getFECECFDPFBPOrBuilderList() {
-      return fECECFDPFBP_;
-    }
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    @java.lang.Override
-    public int getFECECFDPFBPCount() {
-      return fECECFDPFBP_.size();
-    }
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN getFECECFDPFBP(int index) {
-      return fECECFDPFBP_.get(index);
-    }
-    /**
-     * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder getFECECFDPFBPOrBuilder(
-        int index) {
-      return fECECFDPFBP_.get(index);
-    }
-
-    public static final int EFIHHNEAFAK_FIELD_NUMBER = 14;
-    private boolean eFIHHNEAFAK_;
-    /**
-     * <code>bool EFIHHNEAFAK = 14;</code>
-     * @return The eFIHHNEAFAK.
-     */
-    @java.lang.Override
-    public boolean getEFIHHNEAFAK() {
-      return eFIHHNEAFAK_;
-    }
-
-    public static final int OODMCABNGPE_FIELD_NUMBER = 15;
+    public static final int OODMCABNGPE_FIELD_NUMBER = 5;
     private com.google.protobuf.Internal.IntList oODMCABNGPE_;
     /**
-     * <code>repeated uint32 OODMCABNGPE = 15;</code>
+     * <code>repeated uint32 OODMCABNGPE = 5;</code>
      * @return A list containing the oODMCABNGPE.
      */
     @java.lang.Override
@@ -624,14 +573,14 @@ public final class MCBCGPMDIFIOuterClass {
       return oODMCABNGPE_;
     }
     /**
-     * <code>repeated uint32 OODMCABNGPE = 15;</code>
+     * <code>repeated uint32 OODMCABNGPE = 5;</code>
      * @return The count of oODMCABNGPE.
      */
     public int getOODMCABNGPECount() {
       return oODMCABNGPE_.size();
     }
     /**
-     * <code>repeated uint32 OODMCABNGPE = 15;</code>
+     * <code>repeated uint32 OODMCABNGPE = 5;</code>
      * @param index The index of the element to return.
      * @return The oODMCABNGPE at the given index.
      */
@@ -639,6 +588,61 @@ public final class MCBCGPMDIFIOuterClass {
       return oODMCABNGPE_.getInt(index);
     }
     private int oODMCABNGPEMemoizedSerializedSize = -1;
+
+    public static final int GFMDMENKALA_FIELD_NUMBER = 4;
+    private boolean gFMDMENKALA_;
+    /**
+     * <code>bool GFMDMENKALA = 4;</code>
+     * @return The gFMDMENKALA.
+     */
+    @java.lang.Override
+    public boolean getGFMDMENKALA() {
+      return gFMDMENKALA_;
+    }
+
+    public static final int EFIHHNEAFAK_FIELD_NUMBER = 1;
+    private boolean eFIHHNEAFAK_;
+    /**
+     * <code>bool EFIHHNEAFAK = 1;</code>
+     * @return The eFIHHNEAFAK.
+     */
+    @java.lang.Override
+    public boolean getEFIHHNEAFAK() {
+      return eFIHHNEAFAK_;
+    }
+
+    public static final int EIFNKICAKCO_FIELD_NUMBER = 10;
+    private boolean eIFNKICAKCO_;
+    /**
+     * <code>bool EIFNKICAKCO = 10;</code>
+     * @return The eIFNKICAKCO.
+     */
+    @java.lang.Override
+    public boolean getEIFNKICAKCO() {
+      return eIFNKICAKCO_;
+    }
+
+    public static final int IKBLLCLNBLH_FIELD_NUMBER = 2;
+    private int iKBLLCLNBLH_;
+    /**
+     * <code>uint32 IKBLLCLNBLH = 2;</code>
+     * @return The iKBLLCLNBLH.
+     */
+    @java.lang.Override
+    public int getIKBLLCLNBLH() {
+      return iKBLLCLNBLH_;
+    }
+
+    public static final int IBNKIJCDIKK_FIELD_NUMBER = 3;
+    private int iBNKIJCDIKK_;
+    /**
+     * <code>uint32 IBNKIJCDIKK = 3;</code>
+     * @return The iBNKIJCDIKK.
+     */
+    @java.lang.Override
+    public int getIBNKIJCDIKK() {
+      return iBNKIJCDIKK_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -655,54 +659,54 @@ public final class MCBCGPMDIFIOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < levelInfoList_.size(); i++) {
-        output.writeMessage(1, levelInfoList_.get(i));
+      if (eFIHHNEAFAK_ != false) {
+        output.writeBool(1, eFIHHNEAFAK_);
+      }
+      if (iKBLLCLNBLH_ != 0) {
+        output.writeUInt32(2, iKBLLCLNBLH_);
+      }
+      if (iBNKIJCDIKK_ != 0) {
+        output.writeUInt32(3, iBNKIJCDIKK_);
       }
       if (gFMDMENKALA_ != false) {
-        output.writeBool(2, gFMDMENKALA_);
+        output.writeBool(4, gFMDMENKALA_);
+      }
+      if (getOODMCABNGPEList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(oODMCABNGPEMemoizedSerializedSize);
+      }
+      for (int i = 0; i < oODMCABNGPE_.size(); i++) {
+        output.writeUInt32NoTag(oODMCABNGPE_.getInt(i));
       }
       if (getNGNKDNFOPDBList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(58);
         output.writeUInt32NoTag(nGNKDNFOPDBMemoizedSerializedSize);
       }
       for (int i = 0; i < nGNKDNFOPDB_.size(); i++) {
         output.writeUInt32NoTag(nGNKDNFOPDB_.getInt(i));
       }
+      for (int i = 0; i < fECECFDPFBP_.size(); i++) {
+        output.writeMessage(9, fECECFDPFBP_.get(i));
+      }
+      if (eIFNKICAKCO_ != false) {
+        output.writeBool(10, eIFNKICAKCO_);
+      }
       if (getMFKFEOAALPNList().size() > 0) {
-        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(mFKFEOAALPNMemoizedSerializedSize);
       }
       for (int i = 0; i < mFKFEOAALPN_.size(); i++) {
         output.writeUInt32NoTag(mFKFEOAALPN_.getInt(i));
       }
-      if (eIFNKICAKCO_ != false) {
-        output.writeBool(6, eIFNKICAKCO_);
-      }
-      if (iKBLLCLNBLH_ != 0) {
-        output.writeUInt32(7, iKBLLCLNBLH_);
-      }
       if (getEMPMBEDABCDList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(eMPMBEDABCDMemoizedSerializedSize);
       }
       for (int i = 0; i < eMPMBEDABCD_.size(); i++) {
         output.writeUInt32NoTag(eMPMBEDABCD_.getInt(i));
       }
-      if (iBNKIJCDIKK_ != 0) {
-        output.writeUInt32(10, iBNKIJCDIKK_);
-      }
-      for (int i = 0; i < fECECFDPFBP_.size(); i++) {
-        output.writeMessage(11, fECECFDPFBP_.get(i));
-      }
-      if (eFIHHNEAFAK_ != false) {
-        output.writeBool(14, eFIHHNEAFAK_);
-      }
-      if (getOODMCABNGPEList().size() > 0) {
-        output.writeUInt32NoTag(122);
-        output.writeUInt32NoTag(oODMCABNGPEMemoizedSerializedSize);
-      }
-      for (int i = 0; i < oODMCABNGPE_.size(); i++) {
-        output.writeUInt32NoTag(oODMCABNGPE_.getInt(i));
+      for (int i = 0; i < levelInfoList_.size(); i++) {
+        output.writeMessage(15, levelInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -713,13 +717,35 @@ public final class MCBCGPMDIFIOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < levelInfoList_.size(); i++) {
+      if (eFIHHNEAFAK_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, levelInfoList_.get(i));
+          .computeBoolSize(1, eFIHHNEAFAK_);
+      }
+      if (iKBLLCLNBLH_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, iKBLLCLNBLH_);
+      }
+      if (iBNKIJCDIKK_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, iBNKIJCDIKK_);
       }
       if (gFMDMENKALA_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, gFMDMENKALA_);
+          .computeBoolSize(4, gFMDMENKALA_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < oODMCABNGPE_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(oODMCABNGPE_.getInt(i));
+        }
+        size += dataSize;
+        if (!getOODMCABNGPEList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        oODMCABNGPEMemoizedSerializedSize = dataSize;
       }
       {
         int dataSize = 0;
@@ -735,6 +761,14 @@ public final class MCBCGPMDIFIOuterClass {
         }
         nGNKDNFOPDBMemoizedSerializedSize = dataSize;
       }
+      for (int i = 0; i < fECECFDPFBP_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, fECECFDPFBP_.get(i));
+      }
+      if (eIFNKICAKCO_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, eIFNKICAKCO_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < mFKFEOAALPN_.size(); i++) {
@@ -748,14 +782,6 @@ public final class MCBCGPMDIFIOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         mFKFEOAALPNMemoizedSerializedSize = dataSize;
-      }
-      if (eIFNKICAKCO_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, eIFNKICAKCO_);
-      }
-      if (iKBLLCLNBLH_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, iKBLLCLNBLH_);
       }
       {
         int dataSize = 0;
@@ -771,31 +797,9 @@ public final class MCBCGPMDIFIOuterClass {
         }
         eMPMBEDABCDMemoizedSerializedSize = dataSize;
       }
-      if (iBNKIJCDIKK_ != 0) {
+      for (int i = 0; i < levelInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, iBNKIJCDIKK_);
-      }
-      for (int i = 0; i < fECECFDPFBP_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, fECECFDPFBP_.get(i));
-      }
-      if (eFIHHNEAFAK_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, eFIHHNEAFAK_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < oODMCABNGPE_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(oODMCABNGPE_.getInt(i));
-        }
-        size += dataSize;
-        if (!getOODMCABNGPEList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        oODMCABNGPEMemoizedSerializedSize = dataSize;
+          .computeMessageSize(15, levelInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -814,26 +818,26 @@ public final class MCBCGPMDIFIOuterClass {
 
       if (!getLevelInfoListList()
           .equals(other.getLevelInfoListList())) return false;
-      if (getGFMDMENKALA()
-          != other.getGFMDMENKALA()) return false;
+      if (!getFECECFDPFBPList()
+          .equals(other.getFECECFDPFBPList())) return false;
       if (!getNGNKDNFOPDBList()
           .equals(other.getNGNKDNFOPDBList())) return false;
       if (!getMFKFEOAALPNList()
           .equals(other.getMFKFEOAALPNList())) return false;
+      if (!getEMPMBEDABCDList()
+          .equals(other.getEMPMBEDABCDList())) return false;
+      if (!getOODMCABNGPEList()
+          .equals(other.getOODMCABNGPEList())) return false;
+      if (getGFMDMENKALA()
+          != other.getGFMDMENKALA()) return false;
+      if (getEFIHHNEAFAK()
+          != other.getEFIHHNEAFAK()) return false;
       if (getEIFNKICAKCO()
           != other.getEIFNKICAKCO()) return false;
       if (getIKBLLCLNBLH()
           != other.getIKBLLCLNBLH()) return false;
-      if (!getEMPMBEDABCDList()
-          .equals(other.getEMPMBEDABCDList())) return false;
       if (getIBNKIJCDIKK()
           != other.getIBNKIJCDIKK()) return false;
-      if (!getFECECFDPFBPList()
-          .equals(other.getFECECFDPFBPList())) return false;
-      if (getEFIHHNEAFAK()
-          != other.getEFIHHNEAFAK()) return false;
-      if (!getOODMCABNGPEList()
-          .equals(other.getOODMCABNGPEList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -849,9 +853,10 @@ public final class MCBCGPMDIFIOuterClass {
         hash = (37 * hash) + LEVEL_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelInfoListList().hashCode();
       }
-      hash = (37 * hash) + GFMDMENKALA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getGFMDMENKALA());
+      if (getFECECFDPFBPCount() > 0) {
+        hash = (37 * hash) + FECECFDPFBP_FIELD_NUMBER;
+        hash = (53 * hash) + getFECECFDPFBPList().hashCode();
+      }
       if (getNGNKDNFOPDBCount() > 0) {
         hash = (37 * hash) + NGNKDNFOPDB_FIELD_NUMBER;
         hash = (53 * hash) + getNGNKDNFOPDBList().hashCode();
@@ -860,28 +865,27 @@ public final class MCBCGPMDIFIOuterClass {
         hash = (37 * hash) + MFKFEOAALPN_FIELD_NUMBER;
         hash = (53 * hash) + getMFKFEOAALPNList().hashCode();
       }
+      if (getEMPMBEDABCDCount() > 0) {
+        hash = (37 * hash) + EMPMBEDABCD_FIELD_NUMBER;
+        hash = (53 * hash) + getEMPMBEDABCDList().hashCode();
+      }
+      if (getOODMCABNGPECount() > 0) {
+        hash = (37 * hash) + OODMCABNGPE_FIELD_NUMBER;
+        hash = (53 * hash) + getOODMCABNGPEList().hashCode();
+      }
+      hash = (37 * hash) + GFMDMENKALA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getGFMDMENKALA());
+      hash = (37 * hash) + EFIHHNEAFAK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEFIHHNEAFAK());
       hash = (37 * hash) + EIFNKICAKCO_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getEIFNKICAKCO());
       hash = (37 * hash) + IKBLLCLNBLH_FIELD_NUMBER;
       hash = (53 * hash) + getIKBLLCLNBLH();
-      if (getEMPMBEDABCDCount() > 0) {
-        hash = (37 * hash) + EMPMBEDABCD_FIELD_NUMBER;
-        hash = (53 * hash) + getEMPMBEDABCDList().hashCode();
-      }
       hash = (37 * hash) + IBNKIJCDIKK_FIELD_NUMBER;
       hash = (53 * hash) + getIBNKIJCDIKK();
-      if (getFECECFDPFBPCount() > 0) {
-        hash = (37 * hash) + FECECFDPFBP_FIELD_NUMBER;
-        hash = (53 * hash) + getFECECFDPFBPList().hashCode();
-      }
-      hash = (37 * hash) + EFIHHNEAFAK_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getEFIHHNEAFAK());
-      if (getOODMCABNGPECount() > 0) {
-        hash = (37 * hash) + OODMCABNGPE_FIELD_NUMBER;
-        hash = (53 * hash) + getOODMCABNGPEList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -978,6 +982,10 @@ public final class MCBCGPMDIFIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MCBCGPMDIFI}
      */
     public static final class Builder extends
@@ -1023,30 +1031,30 @@ public final class MCBCGPMDIFIOuterClass {
         } else {
           levelInfoListBuilder_.clear();
         }
+        if (fECECFDPFBPBuilder_ == null) {
+          fECECFDPFBP_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          fECECFDPFBPBuilder_.clear();
+        }
+        nGNKDNFOPDB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        mFKFEOAALPN_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        eMPMBEDABCD_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        oODMCABNGPE_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000020);
         gFMDMENKALA_ = false;
 
-        nGNKDNFOPDB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        mFKFEOAALPN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        eFIHHNEAFAK_ = false;
+
         eIFNKICAKCO_ = false;
 
         iKBLLCLNBLH_ = 0;
 
-        eMPMBEDABCD_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         iBNKIJCDIKK_ = 0;
 
-        if (fECECFDPFBPBuilder_ == null) {
-          fECECFDPFBP_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        } else {
-          fECECFDPFBPBuilder_.clear();
-        }
-        eFIHHNEAFAK_ = false;
-
-        oODMCABNGPE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -1083,40 +1091,40 @@ public final class MCBCGPMDIFIOuterClass {
         } else {
           result.levelInfoList_ = levelInfoListBuilder_.build();
         }
-        result.gFMDMENKALA_ = gFMDMENKALA_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          nGNKDNFOPDB_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.nGNKDNFOPDB_ = nGNKDNFOPDB_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          mFKFEOAALPN_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.mFKFEOAALPN_ = mFKFEOAALPN_;
-        result.eIFNKICAKCO_ = eIFNKICAKCO_;
-        result.iKBLLCLNBLH_ = iKBLLCLNBLH_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          eMPMBEDABCD_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.eMPMBEDABCD_ = eMPMBEDABCD_;
-        result.iBNKIJCDIKK_ = iBNKIJCDIKK_;
         if (fECECFDPFBPBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             fECECFDPFBP_ = java.util.Collections.unmodifiableList(fECECFDPFBP_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.fECECFDPFBP_ = fECECFDPFBP_;
         } else {
           result.fECECFDPFBP_ = fECECFDPFBPBuilder_.build();
         }
-        result.eFIHHNEAFAK_ = eFIHHNEAFAK_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          nGNKDNFOPDB_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.nGNKDNFOPDB_ = nGNKDNFOPDB_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          mFKFEOAALPN_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.mFKFEOAALPN_ = mFKFEOAALPN_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          eMPMBEDABCD_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.eMPMBEDABCD_ = eMPMBEDABCD_;
         if (((bitField0_ & 0x00000020) != 0)) {
           oODMCABNGPE_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.oODMCABNGPE_ = oODMCABNGPE_;
+        result.gFMDMENKALA_ = gFMDMENKALA_;
+        result.eFIHHNEAFAK_ = eFIHHNEAFAK_;
+        result.eIFNKICAKCO_ = eIFNKICAKCO_;
+        result.iKBLLCLNBLH_ = iKBLLCLNBLH_;
+        result.iBNKIJCDIKK_ = iBNKIJCDIKK_;
         onBuilt();
         return result;
       }
@@ -1191,53 +1199,11 @@ public final class MCBCGPMDIFIOuterClass {
             }
           }
         }
-        if (other.getGFMDMENKALA() != false) {
-          setGFMDMENKALA(other.getGFMDMENKALA());
-        }
-        if (!other.nGNKDNFOPDB_.isEmpty()) {
-          if (nGNKDNFOPDB_.isEmpty()) {
-            nGNKDNFOPDB_ = other.nGNKDNFOPDB_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureNGNKDNFOPDBIsMutable();
-            nGNKDNFOPDB_.addAll(other.nGNKDNFOPDB_);
-          }
-          onChanged();
-        }
-        if (!other.mFKFEOAALPN_.isEmpty()) {
-          if (mFKFEOAALPN_.isEmpty()) {
-            mFKFEOAALPN_ = other.mFKFEOAALPN_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureMFKFEOAALPNIsMutable();
-            mFKFEOAALPN_.addAll(other.mFKFEOAALPN_);
-          }
-          onChanged();
-        }
-        if (other.getEIFNKICAKCO() != false) {
-          setEIFNKICAKCO(other.getEIFNKICAKCO());
-        }
-        if (other.getIKBLLCLNBLH() != 0) {
-          setIKBLLCLNBLH(other.getIKBLLCLNBLH());
-        }
-        if (!other.eMPMBEDABCD_.isEmpty()) {
-          if (eMPMBEDABCD_.isEmpty()) {
-            eMPMBEDABCD_ = other.eMPMBEDABCD_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureEMPMBEDABCDIsMutable();
-            eMPMBEDABCD_.addAll(other.eMPMBEDABCD_);
-          }
-          onChanged();
-        }
-        if (other.getIBNKIJCDIKK() != 0) {
-          setIBNKIJCDIKK(other.getIBNKIJCDIKK());
-        }
         if (fECECFDPFBPBuilder_ == null) {
           if (!other.fECECFDPFBP_.isEmpty()) {
             if (fECECFDPFBP_.isEmpty()) {
               fECECFDPFBP_ = other.fECECFDPFBP_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureFECECFDPFBPIsMutable();
               fECECFDPFBP_.addAll(other.fECECFDPFBP_);
@@ -1250,7 +1216,7 @@ public final class MCBCGPMDIFIOuterClass {
               fECECFDPFBPBuilder_.dispose();
               fECECFDPFBPBuilder_ = null;
               fECECFDPFBP_ = other.fECECFDPFBP_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000002);
               fECECFDPFBPBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFECECFDPFBPFieldBuilder() : null;
@@ -1259,8 +1225,35 @@ public final class MCBCGPMDIFIOuterClass {
             }
           }
         }
-        if (other.getEFIHHNEAFAK() != false) {
-          setEFIHHNEAFAK(other.getEFIHHNEAFAK());
+        if (!other.nGNKDNFOPDB_.isEmpty()) {
+          if (nGNKDNFOPDB_.isEmpty()) {
+            nGNKDNFOPDB_ = other.nGNKDNFOPDB_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureNGNKDNFOPDBIsMutable();
+            nGNKDNFOPDB_.addAll(other.nGNKDNFOPDB_);
+          }
+          onChanged();
+        }
+        if (!other.mFKFEOAALPN_.isEmpty()) {
+          if (mFKFEOAALPN_.isEmpty()) {
+            mFKFEOAALPN_ = other.mFKFEOAALPN_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureMFKFEOAALPNIsMutable();
+            mFKFEOAALPN_.addAll(other.mFKFEOAALPN_);
+          }
+          onChanged();
+        }
+        if (!other.eMPMBEDABCD_.isEmpty()) {
+          if (eMPMBEDABCD_.isEmpty()) {
+            eMPMBEDABCD_ = other.eMPMBEDABCD_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureEMPMBEDABCDIsMutable();
+            eMPMBEDABCD_.addAll(other.eMPMBEDABCD_);
+          }
+          onChanged();
         }
         if (!other.oODMCABNGPE_.isEmpty()) {
           if (oODMCABNGPE_.isEmpty()) {
@@ -1271,6 +1264,21 @@ public final class MCBCGPMDIFIOuterClass {
             oODMCABNGPE_.addAll(other.oODMCABNGPE_);
           }
           onChanged();
+        }
+        if (other.getGFMDMENKALA() != false) {
+          setGFMDMENKALA(other.getGFMDMENKALA());
+        }
+        if (other.getEFIHHNEAFAK() != false) {
+          setEFIHHNEAFAK(other.getEFIHHNEAFAK());
+        }
+        if (other.getEIFNKICAKCO() != false) {
+          setEIFNKICAKCO(other.getEIFNKICAKCO());
+        }
+        if (other.getIKBLLCLNBLH() != 0) {
+          setIKBLLCLNBLH(other.getIKBLLCLNBLH());
+        }
+        if (other.getIBNKIJCDIKK() != 0) {
+          setIBNKIJCDIKK(other.getIBNKIJCDIKK());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1315,7 +1323,7 @@ public final class MCBCGPMDIFIOuterClass {
           emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder> levelInfoListBuilder_;
 
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL> getLevelInfoListList() {
         if (levelInfoListBuilder_ == null) {
@@ -1325,7 +1333,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public int getLevelInfoListCount() {
         if (levelInfoListBuilder_ == null) {
@@ -1335,7 +1343,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL getLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -1345,7 +1353,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL value) {
@@ -1362,7 +1370,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder setLevelInfoList(
           int index, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder builderForValue) {
@@ -1376,7 +1384,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder addLevelInfoList(emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL value) {
         if (levelInfoListBuilder_ == null) {
@@ -1392,7 +1400,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL value) {
@@ -1409,7 +1417,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder addLevelInfoList(
           emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder builderForValue) {
@@ -1423,7 +1431,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder addLevelInfoList(
           int index, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder builderForValue) {
@@ -1437,7 +1445,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder addAllLevelInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL> values) {
@@ -1452,7 +1460,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder clearLevelInfoList() {
         if (levelInfoListBuilder_ == null) {
@@ -1465,7 +1473,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public Builder removeLevelInfoList(int index) {
         if (levelInfoListBuilder_ == null) {
@@ -1478,14 +1486,14 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder getLevelInfoListBuilder(
           int index) {
         return getLevelInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder getLevelInfoListOrBuilder(
           int index) {
@@ -1495,7 +1503,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOLOrBuilder> 
            getLevelInfoListOrBuilderList() {
@@ -1506,14 +1514,14 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder addLevelInfoListBuilder() {
         return getLevelInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.getDefaultInstance());
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder addLevelInfoListBuilder(
           int index) {
@@ -1521,7 +1529,7 @@ public final class MCBCGPMDIFIOuterClass {
             index, emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.getDefaultInstance());
       }
       /**
-       * <code>repeated .JPGDPIOHKOL level_info_list = 1;</code>
+       * <code>repeated .JPGDPIOHKOL level_info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.JPGDPIOHKOL.Builder> 
            getLevelInfoListBuilderList() {
@@ -1542,373 +1550,12 @@ public final class MCBCGPMDIFIOuterClass {
         return levelInfoListBuilder_;
       }
 
-      private boolean gFMDMENKALA_ ;
-      /**
-       * <code>bool GFMDMENKALA = 2;</code>
-       * @return The gFMDMENKALA.
-       */
-      @java.lang.Override
-      public boolean getGFMDMENKALA() {
-        return gFMDMENKALA_;
-      }
-      /**
-       * <code>bool GFMDMENKALA = 2;</code>
-       * @param value The gFMDMENKALA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGFMDMENKALA(boolean value) {
-        
-        gFMDMENKALA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool GFMDMENKALA = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGFMDMENKALA() {
-        
-        gFMDMENKALA_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList nGNKDNFOPDB_ = emptyIntList();
-      private void ensureNGNKDNFOPDBIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          nGNKDNFOPDB_ = mutableCopy(nGNKDNFOPDB_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @return A list containing the nGNKDNFOPDB.
-       */
-      public java.util.List<java.lang.Integer>
-          getNGNKDNFOPDBList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(nGNKDNFOPDB_) : nGNKDNFOPDB_;
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @return The count of nGNKDNFOPDB.
-       */
-      public int getNGNKDNFOPDBCount() {
-        return nGNKDNFOPDB_.size();
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @param index The index of the element to return.
-       * @return The nGNKDNFOPDB at the given index.
-       */
-      public int getNGNKDNFOPDB(int index) {
-        return nGNKDNFOPDB_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @param index The index to set the value at.
-       * @param value The nGNKDNFOPDB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNGNKDNFOPDB(
-          int index, int value) {
-        ensureNGNKDNFOPDBIsMutable();
-        nGNKDNFOPDB_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @param value The nGNKDNFOPDB to add.
-       * @return This builder for chaining.
-       */
-      public Builder addNGNKDNFOPDB(int value) {
-        ensureNGNKDNFOPDBIsMutable();
-        nGNKDNFOPDB_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @param values The nGNKDNFOPDB to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllNGNKDNFOPDB(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureNGNKDNFOPDBIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, nGNKDNFOPDB_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 NGNKDNFOPDB = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNGNKDNFOPDB() {
-        nGNKDNFOPDB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList mFKFEOAALPN_ = emptyIntList();
-      private void ensureMFKFEOAALPNIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          mFKFEOAALPN_ = mutableCopy(mFKFEOAALPN_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @return A list containing the mFKFEOAALPN.
-       */
-      public java.util.List<java.lang.Integer>
-          getMFKFEOAALPNList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
-                 java.util.Collections.unmodifiableList(mFKFEOAALPN_) : mFKFEOAALPN_;
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @return The count of mFKFEOAALPN.
-       */
-      public int getMFKFEOAALPNCount() {
-        return mFKFEOAALPN_.size();
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @param index The index of the element to return.
-       * @return The mFKFEOAALPN at the given index.
-       */
-      public int getMFKFEOAALPN(int index) {
-        return mFKFEOAALPN_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The mFKFEOAALPN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMFKFEOAALPN(
-          int index, int value) {
-        ensureMFKFEOAALPNIsMutable();
-        mFKFEOAALPN_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @param value The mFKFEOAALPN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMFKFEOAALPN(int value) {
-        ensureMFKFEOAALPNIsMutable();
-        mFKFEOAALPN_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @param values The mFKFEOAALPN to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMFKFEOAALPN(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMFKFEOAALPNIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, mFKFEOAALPN_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 MFKFEOAALPN = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMFKFEOAALPN() {
-        mFKFEOAALPN_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-
-      private boolean eIFNKICAKCO_ ;
-      /**
-       * <code>bool EIFNKICAKCO = 6;</code>
-       * @return The eIFNKICAKCO.
-       */
-      @java.lang.Override
-      public boolean getEIFNKICAKCO() {
-        return eIFNKICAKCO_;
-      }
-      /**
-       * <code>bool EIFNKICAKCO = 6;</code>
-       * @param value The eIFNKICAKCO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEIFNKICAKCO(boolean value) {
-        
-        eIFNKICAKCO_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool EIFNKICAKCO = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEIFNKICAKCO() {
-        
-        eIFNKICAKCO_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int iKBLLCLNBLH_ ;
-      /**
-       * <code>uint32 IKBLLCLNBLH = 7;</code>
-       * @return The iKBLLCLNBLH.
-       */
-      @java.lang.Override
-      public int getIKBLLCLNBLH() {
-        return iKBLLCLNBLH_;
-      }
-      /**
-       * <code>uint32 IKBLLCLNBLH = 7;</code>
-       * @param value The iKBLLCLNBLH to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIKBLLCLNBLH(int value) {
-        
-        iKBLLCLNBLH_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 IKBLLCLNBLH = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIKBLLCLNBLH() {
-        
-        iKBLLCLNBLH_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList eMPMBEDABCD_ = emptyIntList();
-      private void ensureEMPMBEDABCDIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
-          eMPMBEDABCD_ = mutableCopy(eMPMBEDABCD_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @return A list containing the eMPMBEDABCD.
-       */
-      public java.util.List<java.lang.Integer>
-          getEMPMBEDABCDList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
-                 java.util.Collections.unmodifiableList(eMPMBEDABCD_) : eMPMBEDABCD_;
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @return The count of eMPMBEDABCD.
-       */
-      public int getEMPMBEDABCDCount() {
-        return eMPMBEDABCD_.size();
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @param index The index of the element to return.
-       * @return The eMPMBEDABCD at the given index.
-       */
-      public int getEMPMBEDABCD(int index) {
-        return eMPMBEDABCD_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The eMPMBEDABCD to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEMPMBEDABCD(
-          int index, int value) {
-        ensureEMPMBEDABCDIsMutable();
-        eMPMBEDABCD_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @param value The eMPMBEDABCD to add.
-       * @return This builder for chaining.
-       */
-      public Builder addEMPMBEDABCD(int value) {
-        ensureEMPMBEDABCDIsMutable();
-        eMPMBEDABCD_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @param values The eMPMBEDABCD to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllEMPMBEDABCD(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureEMPMBEDABCDIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, eMPMBEDABCD_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 EMPMBEDABCD = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEMPMBEDABCD() {
-        eMPMBEDABCD_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-
-      private int iBNKIJCDIKK_ ;
-      /**
-       * <code>uint32 IBNKIJCDIKK = 10;</code>
-       * @return The iBNKIJCDIKK.
-       */
-      @java.lang.Override
-      public int getIBNKIJCDIKK() {
-        return iBNKIJCDIKK_;
-      }
-      /**
-       * <code>uint32 IBNKIJCDIKK = 10;</code>
-       * @param value The iBNKIJCDIKK to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIBNKIJCDIKK(int value) {
-        
-        iBNKIJCDIKK_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 IBNKIJCDIKK = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIBNKIJCDIKK() {
-        
-        iBNKIJCDIKK_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> fECECFDPFBP_ =
         java.util.Collections.emptyList();
       private void ensureFECECFDPFBPIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           fECECFDPFBP_ = new java.util.ArrayList<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN>(fECECFDPFBP_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1916,7 +1563,7 @@ public final class MCBCGPMDIFIOuterClass {
           emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder> fECECFDPFBPBuilder_;
 
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> getFECECFDPFBPList() {
         if (fECECFDPFBPBuilder_ == null) {
@@ -1926,7 +1573,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public int getFECECFDPFBPCount() {
         if (fECECFDPFBPBuilder_ == null) {
@@ -1936,7 +1583,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN getFECECFDPFBP(int index) {
         if (fECECFDPFBPBuilder_ == null) {
@@ -1946,7 +1593,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder setFECECFDPFBP(
           int index, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN value) {
@@ -1963,7 +1610,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder setFECECFDPFBP(
           int index, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder builderForValue) {
@@ -1977,7 +1624,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder addFECECFDPFBP(emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN value) {
         if (fECECFDPFBPBuilder_ == null) {
@@ -1993,7 +1640,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder addFECECFDPFBP(
           int index, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN value) {
@@ -2010,7 +1657,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder addFECECFDPFBP(
           emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder builderForValue) {
@@ -2024,7 +1671,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder addFECECFDPFBP(
           int index, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder builderForValue) {
@@ -2038,7 +1685,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder addAllFECECFDPFBP(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN> values) {
@@ -2053,12 +1700,12 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder clearFECECFDPFBP() {
         if (fECECFDPFBPBuilder_ == null) {
           fECECFDPFBP_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           fECECFDPFBPBuilder_.clear();
@@ -2066,7 +1713,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public Builder removeFECECFDPFBP(int index) {
         if (fECECFDPFBPBuilder_ == null) {
@@ -2079,14 +1726,14 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder getFECECFDPFBPBuilder(
           int index) {
         return getFECECFDPFBPFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder getFECECFDPFBPOrBuilder(
           int index) {
@@ -2096,7 +1743,7 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder> 
            getFECECFDPFBPOrBuilderList() {
@@ -2107,14 +1754,14 @@ public final class MCBCGPMDIFIOuterClass {
         }
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder addFECECFDPFBPBuilder() {
         return getFECECFDPFBPFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.getDefaultInstance());
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder addFECECFDPFBPBuilder(
           int index) {
@@ -2122,7 +1769,7 @@ public final class MCBCGPMDIFIOuterClass {
             index, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.getDefaultInstance());
       }
       /**
-       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 11;</code>
+       * <code>repeated .FNMMKAMBICN FECECFDPFBP = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder> 
            getFECECFDPFBPBuilderList() {
@@ -2135,7 +1782,7 @@ public final class MCBCGPMDIFIOuterClass {
           fECECFDPFBPBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICN.Builder, emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.FNMMKAMBICNOrBuilder>(
                   fECECFDPFBP_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           fECECFDPFBP_ = null;
@@ -2143,33 +1790,239 @@ public final class MCBCGPMDIFIOuterClass {
         return fECECFDPFBPBuilder_;
       }
 
-      private boolean eFIHHNEAFAK_ ;
-      /**
-       * <code>bool EFIHHNEAFAK = 14;</code>
-       * @return The eFIHHNEAFAK.
-       */
-      @java.lang.Override
-      public boolean getEFIHHNEAFAK() {
-        return eFIHHNEAFAK_;
+      private com.google.protobuf.Internal.IntList nGNKDNFOPDB_ = emptyIntList();
+      private void ensureNGNKDNFOPDBIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          nGNKDNFOPDB_ = mutableCopy(nGNKDNFOPDB_);
+          bitField0_ |= 0x00000004;
+         }
       }
       /**
-       * <code>bool EFIHHNEAFAK = 14;</code>
-       * @param value The eFIHHNEAFAK to set.
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @return A list containing the nGNKDNFOPDB.
+       */
+      public java.util.List<java.lang.Integer>
+          getNGNKDNFOPDBList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(nGNKDNFOPDB_) : nGNKDNFOPDB_;
+      }
+      /**
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @return The count of nGNKDNFOPDB.
+       */
+      public int getNGNKDNFOPDBCount() {
+        return nGNKDNFOPDB_.size();
+      }
+      /**
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @param index The index of the element to return.
+       * @return The nGNKDNFOPDB at the given index.
+       */
+      public int getNGNKDNFOPDB(int index) {
+        return nGNKDNFOPDB_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @param index The index to set the value at.
+       * @param value The nGNKDNFOPDB to set.
        * @return This builder for chaining.
        */
-      public Builder setEFIHHNEAFAK(boolean value) {
-        
-        eFIHHNEAFAK_ = value;
+      public Builder setNGNKDNFOPDB(
+          int index, int value) {
+        ensureNGNKDNFOPDBIsMutable();
+        nGNKDNFOPDB_.setInt(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>bool EFIHHNEAFAK = 14;</code>
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @param value The nGNKDNFOPDB to add.
        * @return This builder for chaining.
        */
-      public Builder clearEFIHHNEAFAK() {
-        
-        eFIHHNEAFAK_ = false;
+      public Builder addNGNKDNFOPDB(int value) {
+        ensureNGNKDNFOPDBIsMutable();
+        nGNKDNFOPDB_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @param values The nGNKDNFOPDB to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllNGNKDNFOPDB(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureNGNKDNFOPDBIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, nGNKDNFOPDB_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 NGNKDNFOPDB = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNGNKDNFOPDB() {
+        nGNKDNFOPDB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList mFKFEOAALPN_ = emptyIntList();
+      private void ensureMFKFEOAALPNIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          mFKFEOAALPN_ = mutableCopy(mFKFEOAALPN_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @return A list containing the mFKFEOAALPN.
+       */
+      public java.util.List<java.lang.Integer>
+          getMFKFEOAALPNList() {
+        return ((bitField0_ & 0x00000008) != 0) ?
+                 java.util.Collections.unmodifiableList(mFKFEOAALPN_) : mFKFEOAALPN_;
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @return The count of mFKFEOAALPN.
+       */
+      public int getMFKFEOAALPNCount() {
+        return mFKFEOAALPN_.size();
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @param index The index of the element to return.
+       * @return The mFKFEOAALPN at the given index.
+       */
+      public int getMFKFEOAALPN(int index) {
+        return mFKFEOAALPN_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @param index The index to set the value at.
+       * @param value The mFKFEOAALPN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMFKFEOAALPN(
+          int index, int value) {
+        ensureMFKFEOAALPNIsMutable();
+        mFKFEOAALPN_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @param value The mFKFEOAALPN to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMFKFEOAALPN(int value) {
+        ensureMFKFEOAALPNIsMutable();
+        mFKFEOAALPN_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @param values The mFKFEOAALPN to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMFKFEOAALPN(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureMFKFEOAALPNIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, mFKFEOAALPN_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 MFKFEOAALPN = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMFKFEOAALPN() {
+        mFKFEOAALPN_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList eMPMBEDABCD_ = emptyIntList();
+      private void ensureEMPMBEDABCDIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          eMPMBEDABCD_ = mutableCopy(eMPMBEDABCD_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @return A list containing the eMPMBEDABCD.
+       */
+      public java.util.List<java.lang.Integer>
+          getEMPMBEDABCDList() {
+        return ((bitField0_ & 0x00000010) != 0) ?
+                 java.util.Collections.unmodifiableList(eMPMBEDABCD_) : eMPMBEDABCD_;
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @return The count of eMPMBEDABCD.
+       */
+      public int getEMPMBEDABCDCount() {
+        return eMPMBEDABCD_.size();
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @param index The index of the element to return.
+       * @return The eMPMBEDABCD at the given index.
+       */
+      public int getEMPMBEDABCD(int index) {
+        return eMPMBEDABCD_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @param index The index to set the value at.
+       * @param value The eMPMBEDABCD to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEMPMBEDABCD(
+          int index, int value) {
+        ensureEMPMBEDABCDIsMutable();
+        eMPMBEDABCD_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @param value The eMPMBEDABCD to add.
+       * @return This builder for chaining.
+       */
+      public Builder addEMPMBEDABCD(int value) {
+        ensureEMPMBEDABCDIsMutable();
+        eMPMBEDABCD_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @param values The eMPMBEDABCD to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllEMPMBEDABCD(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureEMPMBEDABCDIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, eMPMBEDABCD_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 EMPMBEDABCD = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEMPMBEDABCD() {
+        eMPMBEDABCD_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2182,7 +2035,7 @@ public final class MCBCGPMDIFIOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @return A list containing the oODMCABNGPE.
        */
       public java.util.List<java.lang.Integer>
@@ -2191,14 +2044,14 @@ public final class MCBCGPMDIFIOuterClass {
                  java.util.Collections.unmodifiableList(oODMCABNGPE_) : oODMCABNGPE_;
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @return The count of oODMCABNGPE.
        */
       public int getOODMCABNGPECount() {
         return oODMCABNGPE_.size();
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @param index The index of the element to return.
        * @return The oODMCABNGPE at the given index.
        */
@@ -2206,7 +2059,7 @@ public final class MCBCGPMDIFIOuterClass {
         return oODMCABNGPE_.getInt(index);
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @param index The index to set the value at.
        * @param value The oODMCABNGPE to set.
        * @return This builder for chaining.
@@ -2219,7 +2072,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @param value The oODMCABNGPE to add.
        * @return This builder for chaining.
        */
@@ -2230,7 +2083,7 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @param values The oODMCABNGPE to add.
        * @return This builder for chaining.
        */
@@ -2243,12 +2096,167 @@ public final class MCBCGPMDIFIOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 OODMCABNGPE = 15;</code>
+       * <code>repeated uint32 OODMCABNGPE = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearOODMCABNGPE() {
         oODMCABNGPE_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      private boolean gFMDMENKALA_ ;
+      /**
+       * <code>bool GFMDMENKALA = 4;</code>
+       * @return The gFMDMENKALA.
+       */
+      @java.lang.Override
+      public boolean getGFMDMENKALA() {
+        return gFMDMENKALA_;
+      }
+      /**
+       * <code>bool GFMDMENKALA = 4;</code>
+       * @param value The gFMDMENKALA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGFMDMENKALA(boolean value) {
+        
+        gFMDMENKALA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool GFMDMENKALA = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGFMDMENKALA() {
+        
+        gFMDMENKALA_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean eFIHHNEAFAK_ ;
+      /**
+       * <code>bool EFIHHNEAFAK = 1;</code>
+       * @return The eFIHHNEAFAK.
+       */
+      @java.lang.Override
+      public boolean getEFIHHNEAFAK() {
+        return eFIHHNEAFAK_;
+      }
+      /**
+       * <code>bool EFIHHNEAFAK = 1;</code>
+       * @param value The eFIHHNEAFAK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEFIHHNEAFAK(boolean value) {
+        
+        eFIHHNEAFAK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool EFIHHNEAFAK = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEFIHHNEAFAK() {
+        
+        eFIHHNEAFAK_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean eIFNKICAKCO_ ;
+      /**
+       * <code>bool EIFNKICAKCO = 10;</code>
+       * @return The eIFNKICAKCO.
+       */
+      @java.lang.Override
+      public boolean getEIFNKICAKCO() {
+        return eIFNKICAKCO_;
+      }
+      /**
+       * <code>bool EIFNKICAKCO = 10;</code>
+       * @param value The eIFNKICAKCO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEIFNKICAKCO(boolean value) {
+        
+        eIFNKICAKCO_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool EIFNKICAKCO = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEIFNKICAKCO() {
+        
+        eIFNKICAKCO_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int iKBLLCLNBLH_ ;
+      /**
+       * <code>uint32 IKBLLCLNBLH = 2;</code>
+       * @return The iKBLLCLNBLH.
+       */
+      @java.lang.Override
+      public int getIKBLLCLNBLH() {
+        return iKBLLCLNBLH_;
+      }
+      /**
+       * <code>uint32 IKBLLCLNBLH = 2;</code>
+       * @param value The iKBLLCLNBLH to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIKBLLCLNBLH(int value) {
+        
+        iKBLLCLNBLH_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IKBLLCLNBLH = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIKBLLCLNBLH() {
+        
+        iKBLLCLNBLH_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iBNKIJCDIKK_ ;
+      /**
+       * <code>uint32 IBNKIJCDIKK = 3;</code>
+       * @return The iBNKIJCDIKK.
+       */
+      @java.lang.Override
+      public int getIBNKIJCDIKK() {
+        return iBNKIJCDIKK_;
+      }
+      /**
+       * <code>uint32 IBNKIJCDIKK = 3;</code>
+       * @param value The iBNKIJCDIKK to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIBNKIJCDIKK(int value) {
+        
+        iBNKIJCDIKK_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 IBNKIJCDIKK = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIBNKIJCDIKK() {
+        
+        iBNKIJCDIKK_ = 0;
         onChanged();
         return this;
       }
@@ -2321,14 +2329,14 @@ public final class MCBCGPMDIFIOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021MCBCGPMDIFI.proto\032\021FNMMKAMBICN.proto\032\021" +
       "JPGDPIOHKOL.proto\"\224\002\n\013MCBCGPMDIFI\022%\n\017lev" +
-      "el_info_list\030\001 \003(\0132\014.JPGDPIOHKOL\022\023\n\013GFMD" +
-      "MENKALA\030\002 \001(\010\022\023\n\013NGNKDNFOPDB\030\003 \003(\r\022\023\n\013MF" +
-      "KFEOAALPN\030\005 \003(\r\022\023\n\013EIFNKICAKCO\030\006 \001(\010\022\023\n\013" +
-      "IKBLLCLNBLH\030\007 \001(\r\022\023\n\013EMPMBEDABCD\030\010 \003(\r\022\023" +
-      "\n\013IBNKIJCDIKK\030\n \001(\r\022!\n\013FECECFDPFBP\030\013 \003(\013" +
-      "2\014.FNMMKAMBICN\022\023\n\013EFIHHNEAFAK\030\016 \001(\010\022\023\n\013O" +
-      "ODMCABNGPE\030\017 \003(\rB2\n\031emu.grasscutter.net." +
-      "protoB\025MCBCGPMDIFIOuterClassb\006proto3"
+      "el_info_list\030\017 \003(\0132\014.JPGDPIOHKOL\022!\n\013FECE" +
+      "CFDPFBP\030\t \003(\0132\014.FNMMKAMBICN\022\023\n\013NGNKDNFOP" +
+      "DB\030\007 \003(\r\022\023\n\013MFKFEOAALPN\030\013 \003(\r\022\023\n\013EMPMBED" +
+      "ABCD\030\014 \003(\r\022\023\n\013OODMCABNGPE\030\005 \003(\r\022\023\n\013GFMDM" +
+      "ENKALA\030\004 \001(\010\022\023\n\013EFIHHNEAFAK\030\001 \001(\010\022\023\n\013EIF" +
+      "NKICAKCO\030\n \001(\010\022\023\n\013IKBLLCLNBLH\030\002 \001(\r\022\023\n\013I" +
+      "BNKIJCDIKK\030\003 \001(\rB\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2341,7 +2349,7 @@ public final class MCBCGPMDIFIOuterClass {
     internal_static_MCBCGPMDIFI_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MCBCGPMDIFI_descriptor,
-        new java.lang.String[] { "LevelInfoList", "GFMDMENKALA", "NGNKDNFOPDB", "MFKFEOAALPN", "EIFNKICAKCO", "IKBLLCLNBLH", "EMPMBEDABCD", "IBNKIJCDIKK", "FECECFDPFBP", "EFIHHNEAFAK", "OODMCABNGPE", });
+        new java.lang.String[] { "LevelInfoList", "FECECFDPFBP", "NGNKDNFOPDB", "MFKFEOAALPN", "EMPMBEDABCD", "OODMCABNGPE", "GFMDMENKALA", "EFIHHNEAFAK", "EIFNKICAKCO", "IKBLLCLNBLH", "IBNKIJCDIKK", });
     emu.grasscutter.net.proto.FNMMKAMBICNOuterClass.getDescriptor();
     emu.grasscutter.net.proto.JPGDPIOHKOLOuterClass.getDescriptor();
   }

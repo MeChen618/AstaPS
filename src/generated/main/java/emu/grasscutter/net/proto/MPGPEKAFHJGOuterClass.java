@@ -19,12 +19,6 @@ public final class MPGPEKAFHJGOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 ICIOGPBPCJM = 1;</code>
-     * @return The iCIOGPBPCJM.
-     */
-    long getICIOGPBPCJM();
-
-    /**
      * <code>bytes IFAKNOBICLA = 2;</code>
      * @return The iFAKNOBICLA.
      */
@@ -43,16 +37,10 @@ public final class MPGPEKAFHJGOuterClass {
     int getIPKFMNCHANM();
 
     /**
-     * <code>uint32 data_version = 5;</code>
-     * @return The dataVersion.
+     * <code>uint64 ICIOGPBPCJM = 1;</code>
+     * @return The iCIOGPBPCJM.
      */
-    int getDataVersion();
-
-    /**
-     * <code>bool DEJLAEJOEEP = 6;</code>
-     * @return The dEJLAEJOEEP.
-     */
-    boolean getDEJLAEJOEEP();
+    long getICIOGPBPCJM();
 
     /**
      * <code>bool JLGJPDGAIGG = 21;</code>
@@ -65,8 +53,24 @@ public final class MPGPEKAFHJGOuterClass {
      * @return The isDirty.
      */
     boolean getIsDirty();
+
+    /**
+     * <code>bool DEJLAEJOEEP = 6;</code>
+     * @return The dEJLAEJOEEP.
+     */
+    boolean getDEJLAEJOEEP();
+
+    /**
+     * <code>uint32 data_version = 5;</code>
+     * @return The dataVersion.
+     */
+    int getDataVersion();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MPGPEKAFHJG}
    */
   public static final class MPGPEKAFHJG extends
@@ -185,17 +189,6 @@ public final class MPGPEKAFHJGOuterClass {
               emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG.class, emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG.Builder.class);
     }
 
-    public static final int ICIOGPBPCJM_FIELD_NUMBER = 1;
-    private long iCIOGPBPCJM_;
-    /**
-     * <code>uint64 ICIOGPBPCJM = 1;</code>
-     * @return The iCIOGPBPCJM.
-     */
-    @java.lang.Override
-    public long getICIOGPBPCJM() {
-      return iCIOGPBPCJM_;
-    }
-
     public static final int IFAKNOBICLA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString iFAKNOBICLA_;
     /**
@@ -229,26 +222,15 @@ public final class MPGPEKAFHJGOuterClass {
       return iPKFMNCHANM_;
     }
 
-    public static final int DATA_VERSION_FIELD_NUMBER = 5;
-    private int dataVersion_;
+    public static final int ICIOGPBPCJM_FIELD_NUMBER = 1;
+    private long iCIOGPBPCJM_;
     /**
-     * <code>uint32 data_version = 5;</code>
-     * @return The dataVersion.
+     * <code>uint64 ICIOGPBPCJM = 1;</code>
+     * @return The iCIOGPBPCJM.
      */
     @java.lang.Override
-    public int getDataVersion() {
-      return dataVersion_;
-    }
-
-    public static final int DEJLAEJOEEP_FIELD_NUMBER = 6;
-    private boolean dEJLAEJOEEP_;
-    /**
-     * <code>bool DEJLAEJOEEP = 6;</code>
-     * @return The dEJLAEJOEEP.
-     */
-    @java.lang.Override
-    public boolean getDEJLAEJOEEP() {
-      return dEJLAEJOEEP_;
+    public long getICIOGPBPCJM() {
+      return iCIOGPBPCJM_;
     }
 
     public static final int JLGJPDGAIGG_FIELD_NUMBER = 21;
@@ -271,6 +253,28 @@ public final class MPGPEKAFHJGOuterClass {
     @java.lang.Override
     public boolean getIsDirty() {
       return isDirty_;
+    }
+
+    public static final int DEJLAEJOEEP_FIELD_NUMBER = 6;
+    private boolean dEJLAEJOEEP_;
+    /**
+     * <code>bool DEJLAEJOEEP = 6;</code>
+     * @return The dEJLAEJOEEP.
+     */
+    @java.lang.Override
+    public boolean getDEJLAEJOEEP() {
+      return dEJLAEJOEEP_;
+    }
+
+    public static final int DATA_VERSION_FIELD_NUMBER = 5;
+    private int dataVersion_;
+    /**
+     * <code>uint32 data_version = 5;</code>
+     * @return The dataVersion.
+     */
+    @java.lang.Override
+    public int getDataVersion() {
+      return dataVersion_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -367,22 +371,22 @@ public final class MPGPEKAFHJGOuterClass {
       }
       emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG other = (emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG) obj;
 
-      if (getICIOGPBPCJM()
-          != other.getICIOGPBPCJM()) return false;
       if (!getIFAKNOBICLA()
           .equals(other.getIFAKNOBICLA())) return false;
       if (!getAOJHPEKFBEE()
           .equals(other.getAOJHPEKFBEE())) return false;
       if (getIPKFMNCHANM()
           != other.getIPKFMNCHANM()) return false;
-      if (getDataVersion()
-          != other.getDataVersion()) return false;
-      if (getDEJLAEJOEEP()
-          != other.getDEJLAEJOEEP()) return false;
+      if (getICIOGPBPCJM()
+          != other.getICIOGPBPCJM()) return false;
       if (getJLGJPDGAIGG()
           != other.getJLGJPDGAIGG()) return false;
       if (getIsDirty()
           != other.getIsDirty()) return false;
+      if (getDEJLAEJOEEP()
+          != other.getDEJLAEJOEEP()) return false;
+      if (getDataVersion()
+          != other.getDataVersion()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -394,26 +398,26 @@ public final class MPGPEKAFHJGOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ICIOGPBPCJM_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getICIOGPBPCJM());
       hash = (37 * hash) + IFAKNOBICLA_FIELD_NUMBER;
       hash = (53 * hash) + getIFAKNOBICLA().hashCode();
       hash = (37 * hash) + AOJHPEKFBEE_FIELD_NUMBER;
       hash = (53 * hash) + getAOJHPEKFBEE().hashCode();
       hash = (37 * hash) + IPKFMNCHANM_FIELD_NUMBER;
       hash = (53 * hash) + getIPKFMNCHANM();
-      hash = (37 * hash) + DATA_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + getDataVersion();
-      hash = (37 * hash) + DEJLAEJOEEP_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDEJLAEJOEEP());
+      hash = (37 * hash) + ICIOGPBPCJM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getICIOGPBPCJM());
       hash = (37 * hash) + JLGJPDGAIGG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getJLGJPDGAIGG());
       hash = (37 * hash) + IS_DIRTY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDirty());
+      hash = (37 * hash) + DEJLAEJOEEP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDEJLAEJOEEP());
+      hash = (37 * hash) + DATA_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getDataVersion();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -510,6 +514,10 @@ public final class MPGPEKAFHJGOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MPGPEKAFHJG}
      */
     public static final class Builder extends
@@ -547,21 +555,21 @@ public final class MPGPEKAFHJGOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        iCIOGPBPCJM_ = 0L;
-
         iFAKNOBICLA_ = com.google.protobuf.ByteString.EMPTY;
 
         aOJHPEKFBEE_ = com.google.protobuf.ByteString.EMPTY;
 
         iPKFMNCHANM_ = 0;
 
-        dataVersion_ = 0;
-
-        dEJLAEJOEEP_ = false;
+        iCIOGPBPCJM_ = 0L;
 
         jLGJPDGAIGG_ = false;
 
         isDirty_ = false;
+
+        dEJLAEJOEEP_ = false;
+
+        dataVersion_ = 0;
 
         return this;
       }
@@ -589,14 +597,14 @@ public final class MPGPEKAFHJGOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG buildPartial() {
         emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG result = new emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG(this);
-        result.iCIOGPBPCJM_ = iCIOGPBPCJM_;
         result.iFAKNOBICLA_ = iFAKNOBICLA_;
         result.aOJHPEKFBEE_ = aOJHPEKFBEE_;
         result.iPKFMNCHANM_ = iPKFMNCHANM_;
-        result.dataVersion_ = dataVersion_;
-        result.dEJLAEJOEEP_ = dEJLAEJOEEP_;
+        result.iCIOGPBPCJM_ = iCIOGPBPCJM_;
         result.jLGJPDGAIGG_ = jLGJPDGAIGG_;
         result.isDirty_ = isDirty_;
+        result.dEJLAEJOEEP_ = dEJLAEJOEEP_;
+        result.dataVersion_ = dataVersion_;
         onBuilt();
         return result;
       }
@@ -645,9 +653,6 @@ public final class MPGPEKAFHJGOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG other) {
         if (other == emu.grasscutter.net.proto.MPGPEKAFHJGOuterClass.MPGPEKAFHJG.getDefaultInstance()) return this;
-        if (other.getICIOGPBPCJM() != 0L) {
-          setICIOGPBPCJM(other.getICIOGPBPCJM());
-        }
         if (other.getIFAKNOBICLA() != com.google.protobuf.ByteString.EMPTY) {
           setIFAKNOBICLA(other.getIFAKNOBICLA());
         }
@@ -657,17 +662,20 @@ public final class MPGPEKAFHJGOuterClass {
         if (other.getIPKFMNCHANM() != 0) {
           setIPKFMNCHANM(other.getIPKFMNCHANM());
         }
-        if (other.getDataVersion() != 0) {
-          setDataVersion(other.getDataVersion());
-        }
-        if (other.getDEJLAEJOEEP() != false) {
-          setDEJLAEJOEEP(other.getDEJLAEJOEEP());
+        if (other.getICIOGPBPCJM() != 0L) {
+          setICIOGPBPCJM(other.getICIOGPBPCJM());
         }
         if (other.getJLGJPDGAIGG() != false) {
           setJLGJPDGAIGG(other.getJLGJPDGAIGG());
         }
         if (other.getIsDirty() != false) {
           setIsDirty(other.getIsDirty());
+        }
+        if (other.getDEJLAEJOEEP() != false) {
+          setDEJLAEJOEEP(other.getDEJLAEJOEEP());
+        }
+        if (other.getDataVersion() != 0) {
+          setDataVersion(other.getDataVersion());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -695,37 +703,6 @@ public final class MPGPEKAFHJGOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private long iCIOGPBPCJM_ ;
-      /**
-       * <code>uint64 ICIOGPBPCJM = 1;</code>
-       * @return The iCIOGPBPCJM.
-       */
-      @java.lang.Override
-      public long getICIOGPBPCJM() {
-        return iCIOGPBPCJM_;
-      }
-      /**
-       * <code>uint64 ICIOGPBPCJM = 1;</code>
-       * @param value The iCIOGPBPCJM to set.
-       * @return This builder for chaining.
-       */
-      public Builder setICIOGPBPCJM(long value) {
-        
-        iCIOGPBPCJM_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 ICIOGPBPCJM = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearICIOGPBPCJM() {
-        
-        iCIOGPBPCJM_ = 0L;
-        onChanged();
         return this;
       }
 
@@ -828,64 +805,33 @@ public final class MPGPEKAFHJGOuterClass {
         return this;
       }
 
-      private int dataVersion_ ;
+      private long iCIOGPBPCJM_ ;
       /**
-       * <code>uint32 data_version = 5;</code>
-       * @return The dataVersion.
+       * <code>uint64 ICIOGPBPCJM = 1;</code>
+       * @return The iCIOGPBPCJM.
        */
       @java.lang.Override
-      public int getDataVersion() {
-        return dataVersion_;
+      public long getICIOGPBPCJM() {
+        return iCIOGPBPCJM_;
       }
       /**
-       * <code>uint32 data_version = 5;</code>
-       * @param value The dataVersion to set.
+       * <code>uint64 ICIOGPBPCJM = 1;</code>
+       * @param value The iCIOGPBPCJM to set.
        * @return This builder for chaining.
        */
-      public Builder setDataVersion(int value) {
+      public Builder setICIOGPBPCJM(long value) {
         
-        dataVersion_ = value;
+        iCIOGPBPCJM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 data_version = 5;</code>
+       * <code>uint64 ICIOGPBPCJM = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDataVersion() {
+      public Builder clearICIOGPBPCJM() {
         
-        dataVersion_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean dEJLAEJOEEP_ ;
-      /**
-       * <code>bool DEJLAEJOEEP = 6;</code>
-       * @return The dEJLAEJOEEP.
-       */
-      @java.lang.Override
-      public boolean getDEJLAEJOEEP() {
-        return dEJLAEJOEEP_;
-      }
-      /**
-       * <code>bool DEJLAEJOEEP = 6;</code>
-       * @param value The dEJLAEJOEEP to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDEJLAEJOEEP(boolean value) {
-        
-        dEJLAEJOEEP_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool DEJLAEJOEEP = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDEJLAEJOEEP() {
-        
-        dEJLAEJOEEP_ = false;
+        iCIOGPBPCJM_ = 0L;
         onChanged();
         return this;
       }
@@ -948,6 +894,68 @@ public final class MPGPEKAFHJGOuterClass {
       public Builder clearIsDirty() {
         
         isDirty_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean dEJLAEJOEEP_ ;
+      /**
+       * <code>bool DEJLAEJOEEP = 6;</code>
+       * @return The dEJLAEJOEEP.
+       */
+      @java.lang.Override
+      public boolean getDEJLAEJOEEP() {
+        return dEJLAEJOEEP_;
+      }
+      /**
+       * <code>bool DEJLAEJOEEP = 6;</code>
+       * @param value The dEJLAEJOEEP to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDEJLAEJOEEP(boolean value) {
+        
+        dEJLAEJOEEP_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool DEJLAEJOEEP = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDEJLAEJOEEP() {
+        
+        dEJLAEJOEEP_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int dataVersion_ ;
+      /**
+       * <code>uint32 data_version = 5;</code>
+       * @return The dataVersion.
+       */
+      @java.lang.Override
+      public int getDataVersion() {
+        return dataVersion_;
+      }
+      /**
+       * <code>uint32 data_version = 5;</code>
+       * @param value The dataVersion to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataVersion(int value) {
+        
+        dataVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 data_version = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDataVersion() {
+        
+        dataVersion_ = 0;
         onChanged();
         return this;
       }
@@ -1019,12 +1027,11 @@ public final class MPGPEKAFHJGOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021MPGPEKAFHJG.proto\"\263\001\n\013MPGPEKAFHJG\022\023\n\013I" +
-      "CIOGPBPCJM\030\001 \001(\004\022\023\n\013IFAKNOBICLA\030\002 \001(\014\022\023\n" +
-      "\013AOJHPEKFBEE\030\003 \001(\014\022\023\n\013IPKFMNCHANM\030\004 \001(\r\022" +
-      "\024\n\014data_version\030\005 \001(\r\022\023\n\013DEJLAEJOEEP\030\006 \001" +
-      "(\010\022\023\n\013JLGJPDGAIGG\030\025 \001(\010\022\020\n\010is_dirty\030\026 \001(" +
-      "\010B2\n\031emu.grasscutter.net.protoB\025MPGPEKAF" +
-      "HJGOuterClassb\006proto3"
+      "FAKNOBICLA\030\002 \001(\014\022\023\n\013AOJHPEKFBEE\030\003 \001(\014\022\023\n" +
+      "\013IPKFMNCHANM\030\004 \001(\r\022\023\n\013ICIOGPBPCJM\030\001 \001(\004\022" +
+      "\023\n\013JLGJPDGAIGG\030\025 \001(\010\022\020\n\010is_dirty\030\026 \001(\010\022\023" +
+      "\n\013DEJLAEJOEEP\030\006 \001(\010\022\024\n\014data_version\030\005 \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1035,7 +1042,7 @@ public final class MPGPEKAFHJGOuterClass {
     internal_static_MPGPEKAFHJG_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MPGPEKAFHJG_descriptor,
-        new java.lang.String[] { "ICIOGPBPCJM", "IFAKNOBICLA", "AOJHPEKFBEE", "IPKFMNCHANM", "DataVersion", "DEJLAEJOEEP", "JLGJPDGAIGG", "IsDirty", });
+        new java.lang.String[] { "IFAKNOBICLA", "AOJHPEKFBEE", "IPKFMNCHANM", "ICIOGPBPCJM", "JLGJPDGAIGG", "IsDirty", "DEJLAEJOEEP", "DataVersion", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

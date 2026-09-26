@@ -19,29 +19,33 @@ public final class AHKBALPHAABOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 count = 1;</code>
-     * @return The count.
-     */
-    int getCount();
-
-    /**
-     * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+     * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
      * @return A list containing the fEFKMIBCKAN.
      */
     java.util.List<java.lang.Integer> getFEFKMIBCKANList();
     /**
-     * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+     * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
      * @return The count of fEFKMIBCKAN.
      */
     int getFEFKMIBCKANCount();
     /**
-     * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+     * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
      * @param index The index of the element to return.
      * @return The fEFKMIBCKAN at the given index.
      */
     int getFEFKMIBCKAN(int index);
+
+    /**
+     * <code>uint32 count = 8;</code>
+     * @return The count.
+     */
+    int getCount();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code AHKBALPHAAB}
    */
   public static final class AHKBALPHAAB extends
@@ -88,12 +92,12 @@ public final class AHKBALPHAABOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 64: {
 
               count_ = input.readUInt32();
               break;
             }
-            case 24: {
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 fEFKMIBCKAN_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -101,7 +105,7 @@ public final class AHKBALPHAABOuterClass {
               fEFKMIBCKAN_.addInt(input.readUInt32());
               break;
             }
-            case 26: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -149,21 +153,10 @@ public final class AHKBALPHAABOuterClass {
               emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB.class, emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB.Builder.class);
     }
 
-    public static final int COUNT_FIELD_NUMBER = 1;
-    private int count_;
-    /**
-     * <code>uint32 count = 1;</code>
-     * @return The count.
-     */
-    @java.lang.Override
-    public int getCount() {
-      return count_;
-    }
-
-    public static final int FEFKMIBCKAN_FIELD_NUMBER = 3;
+    public static final int FEFKMIBCKAN_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList fEFKMIBCKAN_;
     /**
-     * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+     * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
      * @return A list containing the fEFKMIBCKAN.
      */
     @java.lang.Override
@@ -172,14 +165,14 @@ public final class AHKBALPHAABOuterClass {
       return fEFKMIBCKAN_;
     }
     /**
-     * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+     * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
      * @return The count of fEFKMIBCKAN.
      */
     public int getFEFKMIBCKANCount() {
       return fEFKMIBCKAN_.size();
     }
     /**
-     * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+     * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
      * @param index The index of the element to return.
      * @return The fEFKMIBCKAN at the given index.
      */
@@ -187,6 +180,17 @@ public final class AHKBALPHAABOuterClass {
       return fEFKMIBCKAN_.getInt(index);
     }
     private int fEFKMIBCKANMemoizedSerializedSize = -1;
+
+    public static final int COUNT_FIELD_NUMBER = 8;
+    private int count_;
+    /**
+     * <code>uint32 count = 8;</code>
+     * @return The count.
+     */
+    @java.lang.Override
+    public int getCount() {
+      return count_;
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -204,10 +208,10 @@ public final class AHKBALPHAABOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (count_ != 0) {
-        output.writeUInt32(1, count_);
+        output.writeUInt32(8, count_);
       }
       if (getFEFKMIBCKANList().size() > 0) {
-        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(fEFKMIBCKANMemoizedSerializedSize);
       }
       for (int i = 0; i < fEFKMIBCKAN_.size(); i++) {
@@ -224,7 +228,7 @@ public final class AHKBALPHAABOuterClass {
       size = 0;
       if (count_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, count_);
+          .computeUInt32Size(8, count_);
       }
       {
         int dataSize = 0;
@@ -255,10 +259,10 @@ public final class AHKBALPHAABOuterClass {
       }
       emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB other = (emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB) obj;
 
-      if (getCount()
-          != other.getCount()) return false;
       if (!getFEFKMIBCKANList()
           .equals(other.getFEFKMIBCKANList())) return false;
+      if (getCount()
+          != other.getCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -270,12 +274,12 @@ public final class AHKBALPHAABOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getCount();
       if (getFEFKMIBCKANCount() > 0) {
         hash = (37 * hash) + FEFKMIBCKAN_FIELD_NUMBER;
         hash = (53 * hash) + getFEFKMIBCKANList().hashCode();
       }
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,6 +376,10 @@ public final class AHKBALPHAABOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code AHKBALPHAAB}
      */
     public static final class Builder extends
@@ -409,10 +417,10 @@ public final class AHKBALPHAABOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        count_ = 0;
-
         fEFKMIBCKAN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        count_ = 0;
+
         return this;
       }
 
@@ -440,12 +448,12 @@ public final class AHKBALPHAABOuterClass {
       public emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB buildPartial() {
         emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB result = new emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB(this);
         int from_bitField0_ = bitField0_;
-        result.count_ = count_;
         if (((bitField0_ & 0x00000001) != 0)) {
           fEFKMIBCKAN_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fEFKMIBCKAN_ = fEFKMIBCKAN_;
+        result.count_ = count_;
         onBuilt();
         return result;
       }
@@ -494,9 +502,6 @@ public final class AHKBALPHAABOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB other) {
         if (other == emu.grasscutter.net.proto.AHKBALPHAABOuterClass.AHKBALPHAAB.getDefaultInstance()) return this;
-        if (other.getCount() != 0) {
-          setCount(other.getCount());
-        }
         if (!other.fEFKMIBCKAN_.isEmpty()) {
           if (fEFKMIBCKAN_.isEmpty()) {
             fEFKMIBCKAN_ = other.fEFKMIBCKAN_;
@@ -506,6 +511,9 @@ public final class AHKBALPHAABOuterClass {
             fEFKMIBCKAN_.addAll(other.fEFKMIBCKAN_);
           }
           onChanged();
+        }
+        if (other.getCount() != 0) {
+          setCount(other.getCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -537,37 +545,6 @@ public final class AHKBALPHAABOuterClass {
       }
       private int bitField0_;
 
-      private int count_ ;
-      /**
-       * <code>uint32 count = 1;</code>
-       * @return The count.
-       */
-      @java.lang.Override
-      public int getCount() {
-        return count_;
-      }
-      /**
-       * <code>uint32 count = 1;</code>
-       * @param value The count to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCount(int value) {
-        
-        count_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 count = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCount() {
-        
-        count_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList fEFKMIBCKAN_ = emptyIntList();
       private void ensureFEFKMIBCKANIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -576,7 +553,7 @@ public final class AHKBALPHAABOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @return A list containing the fEFKMIBCKAN.
        */
       public java.util.List<java.lang.Integer>
@@ -585,14 +562,14 @@ public final class AHKBALPHAABOuterClass {
                  java.util.Collections.unmodifiableList(fEFKMIBCKAN_) : fEFKMIBCKAN_;
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @return The count of fEFKMIBCKAN.
        */
       public int getFEFKMIBCKANCount() {
         return fEFKMIBCKAN_.size();
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @param index The index of the element to return.
        * @return The fEFKMIBCKAN at the given index.
        */
@@ -600,7 +577,7 @@ public final class AHKBALPHAABOuterClass {
         return fEFKMIBCKAN_.getInt(index);
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @param index The index to set the value at.
        * @param value The fEFKMIBCKAN to set.
        * @return This builder for chaining.
@@ -613,7 +590,7 @@ public final class AHKBALPHAABOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @param value The fEFKMIBCKAN to add.
        * @return This builder for chaining.
        */
@@ -624,7 +601,7 @@ public final class AHKBALPHAABOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @param values The fEFKMIBCKAN to add.
        * @return This builder for chaining.
        */
@@ -637,12 +614,43 @@ public final class AHKBALPHAABOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 FEFKMIBCKAN = 3;</code>
+       * <code>repeated uint32 FEFKMIBCKAN = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearFEFKMIBCKAN() {
         fEFKMIBCKAN_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private int count_ ;
+      /**
+       * <code>uint32 count = 8;</code>
+       * @return The count.
+       */
+      @java.lang.Override
+      public int getCount() {
+        return count_;
+      }
+      /**
+       * <code>uint32 count = 8;</code>
+       * @param value The count to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCount(int value) {
+        
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 count = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCount() {
+        
+        count_ = 0;
         onChanged();
         return this;
       }
@@ -713,10 +721,9 @@ public final class AHKBALPHAABOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021AHKBALPHAAB.proto\"1\n\013AHKBALPHAAB\022\r\n\005co" +
-      "unt\030\001 \001(\r\022\023\n\013FEFKMIBCKAN\030\003 \003(\rB2\n\031emu.gr" +
-      "asscutter.net.protoB\025AHKBALPHAABOuterCla" +
-      "ssb\006proto3"
+      "\n\021AHKBALPHAAB.proto\"1\n\013AHKBALPHAAB\022\023\n\013FE" +
+      "FKMIBCKAN\030\013 \003(\r\022\r\n\005count\030\010 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -727,7 +734,7 @@ public final class AHKBALPHAABOuterClass {
     internal_static_AHKBALPHAAB_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AHKBALPHAAB_descriptor,
-        new java.lang.String[] { "Count", "FEFKMIBCKAN", });
+        new java.lang.String[] { "FEFKMIBCKAN", "Count", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

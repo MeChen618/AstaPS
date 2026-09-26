@@ -3,13 +3,14 @@
  */
 package emu.grasscutter.server.packet.send;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.packet.BasePacket;
-import emu.grasscutter.net.proto.GetBattlePassProductRsp;
+import emu.grasscutter.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp;
 
 public class PacketGetBattlePassProductRsp
 extends BasePacket {
     public PacketGetBattlePassProductRsp(String string, String string2, int n, int n2) {
-        super(27358);
+        super(PacketOpcodes.GetBattlePassProductRsp);
         this.setData(
                 GetBattlePassProductRsp.newBuilder()
                         .setProductId(string != null ? string : "10201")

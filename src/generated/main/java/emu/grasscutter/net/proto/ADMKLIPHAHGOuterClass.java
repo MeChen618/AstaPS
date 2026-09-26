@@ -19,36 +19,40 @@ public final class ADMKLIPHAHGOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 HFMJFHBOGDB = 4;</code>
-     * @return The hFMJFHBOGDB.
-     */
-    int getHFMJFHBOGDB();
-
-    /**
-     * <code>uint32 config_id = 8;</code>
-     * @return The configId.
-     */
-    int getConfigId();
-
-    /**
-     * <code>uint32 DOAOCNIJGNK = 10;</code>
-     * @return The dOAOCNIJGNK.
-     */
-    int getDOAOCNIJGNK();
-
-    /**
-     * <code>uint32 FJDBPKDKOEF = 11;</code>
+     * <code>uint32 FJDBPKDKOEF = 13;</code>
      * @return The fJDBPKDKOEF.
      */
     int getFJDBPKDKOEF();
 
     /**
-     * <code>uint32 group_id = 13;</code>
+     * <code>uint32 HFMJFHBOGDB = 6;</code>
+     * @return The hFMJFHBOGDB.
+     */
+    int getHFMJFHBOGDB();
+
+    /**
+     * <code>uint32 group_id = 14;</code>
      * @return The groupId.
      */
     int getGroupId();
+
+    /**
+     * <code>uint32 config_id = 10;</code>
+     * @return The configId.
+     */
+    int getConfigId();
+
+    /**
+     * <code>uint32 DOAOCNIJGNK = 12;</code>
+     * @return The dOAOCNIJGNK.
+     */
+    int getDOAOCNIJGNK();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ADMKLIPHAHG}
    */
   public static final class ADMKLIPHAHG extends
@@ -93,27 +97,27 @@ public final class ADMKLIPHAHGOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 48: {
 
               hFMJFHBOGDB_ = input.readUInt32();
               break;
             }
-            case 64: {
+            case 80: {
 
               configId_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 96: {
 
               dOAOCNIJGNK_ = input.readUInt32();
               break;
             }
-            case 88: {
+            case 104: {
 
               fJDBPKDKOEF_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 112: {
 
               groupId_ = input.readUInt32();
               break;
@@ -150,43 +154,10 @@ public final class ADMKLIPHAHGOuterClass {
               emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG.class, emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG.Builder.class);
     }
 
-    public static final int HFMJFHBOGDB_FIELD_NUMBER = 4;
-    private int hFMJFHBOGDB_;
-    /**
-     * <code>uint32 HFMJFHBOGDB = 4;</code>
-     * @return The hFMJFHBOGDB.
-     */
-    @java.lang.Override
-    public int getHFMJFHBOGDB() {
-      return hFMJFHBOGDB_;
-    }
-
-    public static final int CONFIG_ID_FIELD_NUMBER = 8;
-    private int configId_;
-    /**
-     * <code>uint32 config_id = 8;</code>
-     * @return The configId.
-     */
-    @java.lang.Override
-    public int getConfigId() {
-      return configId_;
-    }
-
-    public static final int DOAOCNIJGNK_FIELD_NUMBER = 10;
-    private int dOAOCNIJGNK_;
-    /**
-     * <code>uint32 DOAOCNIJGNK = 10;</code>
-     * @return The dOAOCNIJGNK.
-     */
-    @java.lang.Override
-    public int getDOAOCNIJGNK() {
-      return dOAOCNIJGNK_;
-    }
-
-    public static final int FJDBPKDKOEF_FIELD_NUMBER = 11;
+    public static final int FJDBPKDKOEF_FIELD_NUMBER = 13;
     private int fJDBPKDKOEF_;
     /**
-     * <code>uint32 FJDBPKDKOEF = 11;</code>
+     * <code>uint32 FJDBPKDKOEF = 13;</code>
      * @return The fJDBPKDKOEF.
      */
     @java.lang.Override
@@ -194,15 +165,48 @@ public final class ADMKLIPHAHGOuterClass {
       return fJDBPKDKOEF_;
     }
 
-    public static final int GROUP_ID_FIELD_NUMBER = 13;
+    public static final int HFMJFHBOGDB_FIELD_NUMBER = 6;
+    private int hFMJFHBOGDB_;
+    /**
+     * <code>uint32 HFMJFHBOGDB = 6;</code>
+     * @return The hFMJFHBOGDB.
+     */
+    @java.lang.Override
+    public int getHFMJFHBOGDB() {
+      return hFMJFHBOGDB_;
+    }
+
+    public static final int GROUP_ID_FIELD_NUMBER = 14;
     private int groupId_;
     /**
-     * <code>uint32 group_id = 13;</code>
+     * <code>uint32 group_id = 14;</code>
      * @return The groupId.
      */
     @java.lang.Override
     public int getGroupId() {
       return groupId_;
+    }
+
+    public static final int CONFIG_ID_FIELD_NUMBER = 10;
+    private int configId_;
+    /**
+     * <code>uint32 config_id = 10;</code>
+     * @return The configId.
+     */
+    @java.lang.Override
+    public int getConfigId() {
+      return configId_;
+    }
+
+    public static final int DOAOCNIJGNK_FIELD_NUMBER = 12;
+    private int dOAOCNIJGNK_;
+    /**
+     * <code>uint32 DOAOCNIJGNK = 12;</code>
+     * @return The dOAOCNIJGNK.
+     */
+    @java.lang.Override
+    public int getDOAOCNIJGNK() {
+      return dOAOCNIJGNK_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -220,19 +224,19 @@ public final class ADMKLIPHAHGOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (hFMJFHBOGDB_ != 0) {
-        output.writeUInt32(4, hFMJFHBOGDB_);
+        output.writeUInt32(6, hFMJFHBOGDB_);
       }
       if (configId_ != 0) {
-        output.writeUInt32(8, configId_);
+        output.writeUInt32(10, configId_);
       }
       if (dOAOCNIJGNK_ != 0) {
-        output.writeUInt32(10, dOAOCNIJGNK_);
+        output.writeUInt32(12, dOAOCNIJGNK_);
       }
       if (fJDBPKDKOEF_ != 0) {
-        output.writeUInt32(11, fJDBPKDKOEF_);
+        output.writeUInt32(13, fJDBPKDKOEF_);
       }
       if (groupId_ != 0) {
-        output.writeUInt32(13, groupId_);
+        output.writeUInt32(14, groupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -245,23 +249,23 @@ public final class ADMKLIPHAHGOuterClass {
       size = 0;
       if (hFMJFHBOGDB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, hFMJFHBOGDB_);
+          .computeUInt32Size(6, hFMJFHBOGDB_);
       }
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, configId_);
+          .computeUInt32Size(10, configId_);
       }
       if (dOAOCNIJGNK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, dOAOCNIJGNK_);
+          .computeUInt32Size(12, dOAOCNIJGNK_);
       }
       if (fJDBPKDKOEF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, fJDBPKDKOEF_);
+          .computeUInt32Size(13, fJDBPKDKOEF_);
       }
       if (groupId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, groupId_);
+          .computeUInt32Size(14, groupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -278,16 +282,16 @@ public final class ADMKLIPHAHGOuterClass {
       }
       emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG other = (emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG) obj;
 
+      if (getFJDBPKDKOEF()
+          != other.getFJDBPKDKOEF()) return false;
       if (getHFMJFHBOGDB()
           != other.getHFMJFHBOGDB()) return false;
+      if (getGroupId()
+          != other.getGroupId()) return false;
       if (getConfigId()
           != other.getConfigId()) return false;
       if (getDOAOCNIJGNK()
           != other.getDOAOCNIJGNK()) return false;
-      if (getFJDBPKDKOEF()
-          != other.getFJDBPKDKOEF()) return false;
-      if (getGroupId()
-          != other.getGroupId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -299,16 +303,16 @@ public final class ADMKLIPHAHGOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FJDBPKDKOEF_FIELD_NUMBER;
+      hash = (53 * hash) + getFJDBPKDKOEF();
       hash = (37 * hash) + HFMJFHBOGDB_FIELD_NUMBER;
       hash = (53 * hash) + getHFMJFHBOGDB();
+      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + DOAOCNIJGNK_FIELD_NUMBER;
       hash = (53 * hash) + getDOAOCNIJGNK();
-      hash = (37 * hash) + FJDBPKDKOEF_FIELD_NUMBER;
-      hash = (53 * hash) + getFJDBPKDKOEF();
-      hash = (37 * hash) + GROUP_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getGroupId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -405,6 +409,10 @@ public final class ADMKLIPHAHGOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ADMKLIPHAHG}
      */
     public static final class Builder extends
@@ -442,15 +450,15 @@ public final class ADMKLIPHAHGOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        fJDBPKDKOEF_ = 0;
+
         hFMJFHBOGDB_ = 0;
+
+        groupId_ = 0;
 
         configId_ = 0;
 
         dOAOCNIJGNK_ = 0;
-
-        fJDBPKDKOEF_ = 0;
-
-        groupId_ = 0;
 
         return this;
       }
@@ -478,11 +486,11 @@ public final class ADMKLIPHAHGOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG buildPartial() {
         emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG result = new emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG(this);
+        result.fJDBPKDKOEF_ = fJDBPKDKOEF_;
         result.hFMJFHBOGDB_ = hFMJFHBOGDB_;
+        result.groupId_ = groupId_;
         result.configId_ = configId_;
         result.dOAOCNIJGNK_ = dOAOCNIJGNK_;
-        result.fJDBPKDKOEF_ = fJDBPKDKOEF_;
-        result.groupId_ = groupId_;
         onBuilt();
         return result;
       }
@@ -531,20 +539,20 @@ public final class ADMKLIPHAHGOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG other) {
         if (other == emu.grasscutter.net.proto.ADMKLIPHAHGOuterClass.ADMKLIPHAHG.getDefaultInstance()) return this;
+        if (other.getFJDBPKDKOEF() != 0) {
+          setFJDBPKDKOEF(other.getFJDBPKDKOEF());
+        }
         if (other.getHFMJFHBOGDB() != 0) {
           setHFMJFHBOGDB(other.getHFMJFHBOGDB());
+        }
+        if (other.getGroupId() != 0) {
+          setGroupId(other.getGroupId());
         }
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
         if (other.getDOAOCNIJGNK() != 0) {
           setDOAOCNIJGNK(other.getDOAOCNIJGNK());
-        }
-        if (other.getFJDBPKDKOEF() != 0) {
-          setFJDBPKDKOEF(other.getFJDBPKDKOEF());
-        }
-        if (other.getGroupId() != 0) {
-          setGroupId(other.getGroupId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -575,9 +583,40 @@ public final class ADMKLIPHAHGOuterClass {
         return this;
       }
 
+      private int fJDBPKDKOEF_ ;
+      /**
+       * <code>uint32 FJDBPKDKOEF = 13;</code>
+       * @return The fJDBPKDKOEF.
+       */
+      @java.lang.Override
+      public int getFJDBPKDKOEF() {
+        return fJDBPKDKOEF_;
+      }
+      /**
+       * <code>uint32 FJDBPKDKOEF = 13;</code>
+       * @param value The fJDBPKDKOEF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFJDBPKDKOEF(int value) {
+        
+        fJDBPKDKOEF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 FJDBPKDKOEF = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFJDBPKDKOEF() {
+        
+        fJDBPKDKOEF_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int hFMJFHBOGDB_ ;
       /**
-       * <code>uint32 HFMJFHBOGDB = 4;</code>
+       * <code>uint32 HFMJFHBOGDB = 6;</code>
        * @return The hFMJFHBOGDB.
        */
       @java.lang.Override
@@ -585,7 +624,7 @@ public final class ADMKLIPHAHGOuterClass {
         return hFMJFHBOGDB_;
       }
       /**
-       * <code>uint32 HFMJFHBOGDB = 4;</code>
+       * <code>uint32 HFMJFHBOGDB = 6;</code>
        * @param value The hFMJFHBOGDB to set.
        * @return This builder for chaining.
        */
@@ -596,7 +635,7 @@ public final class ADMKLIPHAHGOuterClass {
         return this;
       }
       /**
-       * <code>uint32 HFMJFHBOGDB = 4;</code>
+       * <code>uint32 HFMJFHBOGDB = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearHFMJFHBOGDB() {
@@ -606,9 +645,40 @@ public final class ADMKLIPHAHGOuterClass {
         return this;
       }
 
+      private int groupId_ ;
+      /**
+       * <code>uint32 group_id = 14;</code>
+       * @return The groupId.
+       */
+      @java.lang.Override
+      public int getGroupId() {
+        return groupId_;
+      }
+      /**
+       * <code>uint32 group_id = 14;</code>
+       * @param value The groupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGroupId(int value) {
+        
+        groupId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 group_id = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGroupId() {
+        
+        groupId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int configId_ ;
       /**
-       * <code>uint32 config_id = 8;</code>
+       * <code>uint32 config_id = 10;</code>
        * @return The configId.
        */
       @java.lang.Override
@@ -616,7 +686,7 @@ public final class ADMKLIPHAHGOuterClass {
         return configId_;
       }
       /**
-       * <code>uint32 config_id = 8;</code>
+       * <code>uint32 config_id = 10;</code>
        * @param value The configId to set.
        * @return This builder for chaining.
        */
@@ -627,7 +697,7 @@ public final class ADMKLIPHAHGOuterClass {
         return this;
       }
       /**
-       * <code>uint32 config_id = 8;</code>
+       * <code>uint32 config_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
@@ -639,7 +709,7 @@ public final class ADMKLIPHAHGOuterClass {
 
       private int dOAOCNIJGNK_ ;
       /**
-       * <code>uint32 DOAOCNIJGNK = 10;</code>
+       * <code>uint32 DOAOCNIJGNK = 12;</code>
        * @return The dOAOCNIJGNK.
        */
       @java.lang.Override
@@ -647,7 +717,7 @@ public final class ADMKLIPHAHGOuterClass {
         return dOAOCNIJGNK_;
       }
       /**
-       * <code>uint32 DOAOCNIJGNK = 10;</code>
+       * <code>uint32 DOAOCNIJGNK = 12;</code>
        * @param value The dOAOCNIJGNK to set.
        * @return This builder for chaining.
        */
@@ -658,74 +728,12 @@ public final class ADMKLIPHAHGOuterClass {
         return this;
       }
       /**
-       * <code>uint32 DOAOCNIJGNK = 10;</code>
+       * <code>uint32 DOAOCNIJGNK = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearDOAOCNIJGNK() {
         
         dOAOCNIJGNK_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int fJDBPKDKOEF_ ;
-      /**
-       * <code>uint32 FJDBPKDKOEF = 11;</code>
-       * @return The fJDBPKDKOEF.
-       */
-      @java.lang.Override
-      public int getFJDBPKDKOEF() {
-        return fJDBPKDKOEF_;
-      }
-      /**
-       * <code>uint32 FJDBPKDKOEF = 11;</code>
-       * @param value The fJDBPKDKOEF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setFJDBPKDKOEF(int value) {
-        
-        fJDBPKDKOEF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 FJDBPKDKOEF = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearFJDBPKDKOEF() {
-        
-        fJDBPKDKOEF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int groupId_ ;
-      /**
-       * <code>uint32 group_id = 13;</code>
-       * @return The groupId.
-       */
-      @java.lang.Override
-      public int getGroupId() {
-        return groupId_;
-      }
-      /**
-       * <code>uint32 group_id = 13;</code>
-       * @param value The groupId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGroupId(int value) {
-        
-        groupId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 group_id = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGroupId() {
-        
-        groupId_ = 0;
         onChanged();
         return this;
       }
@@ -796,11 +804,11 @@ public final class ADMKLIPHAHGOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ADMKLIPHAHG.proto\"q\n\013ADMKLIPHAHG\022\023\n\013HF" +
-      "MJFHBOGDB\030\004 \001(\r\022\021\n\tconfig_id\030\010 \001(\r\022\023\n\013DO" +
-      "AOCNIJGNK\030\n \001(\r\022\023\n\013FJDBPKDKOEF\030\013 \001(\r\022\020\n\010" +
-      "group_id\030\r \001(\rB2\n\031emu.grasscutter.net.pr" +
-      "otoB\025ADMKLIPHAHGOuterClassb\006proto3"
+      "\n\021ADMKLIPHAHG.proto\"q\n\013ADMKLIPHAHG\022\023\n\013FJ" +
+      "DBPKDKOEF\030\r \001(\r\022\023\n\013HFMJFHBOGDB\030\006 \001(\r\022\020\n\010" +
+      "group_id\030\016 \001(\r\022\021\n\tconfig_id\030\n \001(\r\022\023\n\013DOA" +
+      "OCNIJGNK\030\014 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -811,7 +819,7 @@ public final class ADMKLIPHAHGOuterClass {
     internal_static_ADMKLIPHAHG_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ADMKLIPHAHG_descriptor,
-        new java.lang.String[] { "HFMJFHBOGDB", "ConfigId", "DOAOCNIJGNK", "FJDBPKDKOEF", "GroupId", });
+        new java.lang.String[] { "FJDBPKDKOEF", "HFMJFHBOGDB", "GroupId", "ConfigId", "DOAOCNIJGNK", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

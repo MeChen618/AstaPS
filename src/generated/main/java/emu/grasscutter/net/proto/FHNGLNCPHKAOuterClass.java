@@ -19,11 +19,11 @@ public final class FHNGLNCPHKAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
     int getBMPLOGFCMLGCount();
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
     boolean containsBMPLOGFCMLG(
         int key);
@@ -34,67 +34,71 @@ public final class FHNGLNCPHKAOuterClass {
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getBMPLOGFCMLG();
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
     java.util.Map<java.lang.Integer, java.lang.Integer>
     getBMPLOGFCMLGMap();
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
 
     int getBMPLOGFCMLGOrDefault(
         int key,
         int defaultValue);
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
 
     int getBMPLOGFCMLGOrThrow(
         int key);
 
     /**
-     * <code>uint32 BOJCAOCOAJB = 3;</code>
-     * @return The bOJCAOCOAJB.
-     */
-    int getBOJCAOCOAJB();
-
-    /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD> 
         getAEIFJINONJFList();
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD getAEIFJINONJF(int index);
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     int getAEIFJINONJFCount();
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder> 
         getAEIFJINONJFOrBuilderList();
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder getAEIFJINONJFOrBuilder(
         int index);
 
     /**
-     * <code>uint32 FMMKKONOKML = 11;</code>
+     * <code>uint32 FMMKKONOKML = 9;</code>
      * @return The fMMKKONOKML.
      */
     int getFMMKKONOKML();
 
     /**
-     * <code>uint32 NEPACBNDBOI = 14;</code>
+     * <code>uint32 BOJCAOCOAJB = 7;</code>
+     * @return The bOJCAOCOAJB.
+     */
+    int getBOJCAOCOAJB();
+
+    /**
+     * <code>uint32 NEPACBNDBOI = 3;</code>
      * @return The nEPACBNDBOI.
      */
     int getNEPACBNDBOI();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FHNGLNCPHKA}
    */
   public static final class FHNGLNCPHKA extends
@@ -141,7 +145,12 @@ public final class FHNGLNCPHKAOuterClass {
             case 0:
               done = true;
               break;
-            case 18: {
+            case 24: {
+
+              nEPACBNDBOI_ = input.readUInt32();
+              break;
+            }
+            case 42: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bMPLOGFCMLG_ = com.google.protobuf.MapField.newMapField(
                     BMPLOGFCMLGDefaultEntryHolder.defaultEntry);
@@ -154,28 +163,23 @@ public final class FHNGLNCPHKAOuterClass {
                   bMPLOGFCMLG__.getKey(), bMPLOGFCMLG__.getValue());
               break;
             }
-            case 24: {
+            case 56: {
 
               bOJCAOCOAJB_ = input.readUInt32();
               break;
             }
-            case 42: {
+            case 72: {
+
+              fMMKKONOKML_ = input.readUInt32();
+              break;
+            }
+            case 82: {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 aEIFJINONJF_ = new java.util.ArrayList<emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD>();
                 mutable_bitField0_ |= 0x00000002;
               }
               aEIFJINONJF_.add(
                   input.readMessage(emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              fMMKKONOKML_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              nEPACBNDBOI_ = input.readUInt32();
               break;
             }
             default: {
@@ -210,7 +214,7 @@ public final class FHNGLNCPHKAOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 2:
+        case 5:
           return internalGetBMPLOGFCMLG();
         default:
           throw new RuntimeException(
@@ -225,7 +229,7 @@ public final class FHNGLNCPHKAOuterClass {
               emu.grasscutter.net.proto.FHNGLNCPHKAOuterClass.FHNGLNCPHKA.class, emu.grasscutter.net.proto.FHNGLNCPHKAOuterClass.FHNGLNCPHKA.Builder.class);
     }
 
-    public static final int BMPLOGFCMLG_FIELD_NUMBER = 2;
+    public static final int BMPLOGFCMLG_FIELD_NUMBER = 5;
     private static final class BMPLOGFCMLGDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.Integer, java.lang.Integer> defaultEntry =
@@ -252,7 +256,7 @@ public final class FHNGLNCPHKAOuterClass {
       return internalGetBMPLOGFCMLG().getMap().size();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
 
     @java.lang.Override
@@ -270,7 +274,7 @@ public final class FHNGLNCPHKAOuterClass {
       return getBMPLOGFCMLGMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
     @java.lang.Override
 
@@ -278,7 +282,7 @@ public final class FHNGLNCPHKAOuterClass {
       return internalGetBMPLOGFCMLG().getMap();
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
     @java.lang.Override
 
@@ -291,7 +295,7 @@ public final class FHNGLNCPHKAOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+     * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
      */
     @java.lang.Override
 
@@ -306,28 +310,17 @@ public final class FHNGLNCPHKAOuterClass {
       return map.get(key);
     }
 
-    public static final int BOJCAOCOAJB_FIELD_NUMBER = 3;
-    private int bOJCAOCOAJB_;
-    /**
-     * <code>uint32 BOJCAOCOAJB = 3;</code>
-     * @return The bOJCAOCOAJB.
-     */
-    @java.lang.Override
-    public int getBOJCAOCOAJB() {
-      return bOJCAOCOAJB_;
-    }
-
-    public static final int AEIFJINONJF_FIELD_NUMBER = 5;
+    public static final int AEIFJINONJF_FIELD_NUMBER = 10;
     private java.util.List<emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD> aEIFJINONJF_;
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD> getAEIFJINONJFList() {
       return aEIFJINONJF_;
     }
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder> 
@@ -335,21 +328,21 @@ public final class FHNGLNCPHKAOuterClass {
       return aEIFJINONJF_;
     }
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     @java.lang.Override
     public int getAEIFJINONJFCount() {
       return aEIFJINONJF_.size();
     }
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD getAEIFJINONJF(int index) {
       return aEIFJINONJF_.get(index);
     }
     /**
-     * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+     * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder getAEIFJINONJFOrBuilder(
@@ -357,10 +350,10 @@ public final class FHNGLNCPHKAOuterClass {
       return aEIFJINONJF_.get(index);
     }
 
-    public static final int FMMKKONOKML_FIELD_NUMBER = 11;
+    public static final int FMMKKONOKML_FIELD_NUMBER = 9;
     private int fMMKKONOKML_;
     /**
-     * <code>uint32 FMMKKONOKML = 11;</code>
+     * <code>uint32 FMMKKONOKML = 9;</code>
      * @return The fMMKKONOKML.
      */
     @java.lang.Override
@@ -368,10 +361,21 @@ public final class FHNGLNCPHKAOuterClass {
       return fMMKKONOKML_;
     }
 
-    public static final int NEPACBNDBOI_FIELD_NUMBER = 14;
+    public static final int BOJCAOCOAJB_FIELD_NUMBER = 7;
+    private int bOJCAOCOAJB_;
+    /**
+     * <code>uint32 BOJCAOCOAJB = 7;</code>
+     * @return The bOJCAOCOAJB.
+     */
+    @java.lang.Override
+    public int getBOJCAOCOAJB() {
+      return bOJCAOCOAJB_;
+    }
+
+    public static final int NEPACBNDBOI_FIELD_NUMBER = 3;
     private int nEPACBNDBOI_;
     /**
-     * <code>uint32 NEPACBNDBOI = 14;</code>
+     * <code>uint32 NEPACBNDBOI = 3;</code>
      * @return The nEPACBNDBOI.
      */
     @java.lang.Override
@@ -393,23 +397,23 @@ public final class FHNGLNCPHKAOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (nEPACBNDBOI_ != 0) {
+        output.writeUInt32(3, nEPACBNDBOI_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeIntegerMapTo(
           output,
           internalGetBMPLOGFCMLG(),
           BMPLOGFCMLGDefaultEntryHolder.defaultEntry,
-          2);
+          5);
       if (bOJCAOCOAJB_ != 0) {
-        output.writeUInt32(3, bOJCAOCOAJB_);
-      }
-      for (int i = 0; i < aEIFJINONJF_.size(); i++) {
-        output.writeMessage(5, aEIFJINONJF_.get(i));
+        output.writeUInt32(7, bOJCAOCOAJB_);
       }
       if (fMMKKONOKML_ != 0) {
-        output.writeUInt32(11, fMMKKONOKML_);
+        output.writeUInt32(9, fMMKKONOKML_);
       }
-      if (nEPACBNDBOI_ != 0) {
-        output.writeUInt32(14, nEPACBNDBOI_);
+      for (int i = 0; i < aEIFJINONJF_.size(); i++) {
+        output.writeMessage(10, aEIFJINONJF_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -420,6 +424,10 @@ public final class FHNGLNCPHKAOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (nEPACBNDBOI_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, nEPACBNDBOI_);
+      }
       for (java.util.Map.Entry<java.lang.Integer, java.lang.Integer> entry
            : internalGetBMPLOGFCMLG().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
@@ -428,23 +436,19 @@ public final class FHNGLNCPHKAOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, bMPLOGFCMLG__);
+            .computeMessageSize(5, bMPLOGFCMLG__);
       }
       if (bOJCAOCOAJB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, bOJCAOCOAJB_);
-      }
-      for (int i = 0; i < aEIFJINONJF_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, aEIFJINONJF_.get(i));
+          .computeUInt32Size(7, bOJCAOCOAJB_);
       }
       if (fMMKKONOKML_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, fMMKKONOKML_);
+          .computeUInt32Size(9, fMMKKONOKML_);
       }
-      if (nEPACBNDBOI_ != 0) {
+      for (int i = 0; i < aEIFJINONJF_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, nEPACBNDBOI_);
+          .computeMessageSize(10, aEIFJINONJF_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -463,12 +467,12 @@ public final class FHNGLNCPHKAOuterClass {
 
       if (!internalGetBMPLOGFCMLG().equals(
           other.internalGetBMPLOGFCMLG())) return false;
-      if (getBOJCAOCOAJB()
-          != other.getBOJCAOCOAJB()) return false;
       if (!getAEIFJINONJFList()
           .equals(other.getAEIFJINONJFList())) return false;
       if (getFMMKKONOKML()
           != other.getFMMKKONOKML()) return false;
+      if (getBOJCAOCOAJB()
+          != other.getBOJCAOCOAJB()) return false;
       if (getNEPACBNDBOI()
           != other.getNEPACBNDBOI()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -486,14 +490,14 @@ public final class FHNGLNCPHKAOuterClass {
         hash = (37 * hash) + BMPLOGFCMLG_FIELD_NUMBER;
         hash = (53 * hash) + internalGetBMPLOGFCMLG().hashCode();
       }
-      hash = (37 * hash) + BOJCAOCOAJB_FIELD_NUMBER;
-      hash = (53 * hash) + getBOJCAOCOAJB();
       if (getAEIFJINONJFCount() > 0) {
         hash = (37 * hash) + AEIFJINONJF_FIELD_NUMBER;
         hash = (53 * hash) + getAEIFJINONJFList().hashCode();
       }
       hash = (37 * hash) + FMMKKONOKML_FIELD_NUMBER;
       hash = (53 * hash) + getFMMKKONOKML();
+      hash = (37 * hash) + BOJCAOCOAJB_FIELD_NUMBER;
+      hash = (53 * hash) + getBOJCAOCOAJB();
       hash = (37 * hash) + NEPACBNDBOI_FIELD_NUMBER;
       hash = (53 * hash) + getNEPACBNDBOI();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -592,6 +596,10 @@ public final class FHNGLNCPHKAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FHNGLNCPHKA}
      */
     public static final class Builder extends
@@ -607,7 +615,7 @@ public final class FHNGLNCPHKAOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 2:
+          case 5:
             return internalGetBMPLOGFCMLG();
           default:
             throw new RuntimeException(
@@ -618,7 +626,7 @@ public final class FHNGLNCPHKAOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 2:
+          case 5:
             return internalGetMutableBMPLOGFCMLG();
           default:
             throw new RuntimeException(
@@ -653,8 +661,6 @@ public final class FHNGLNCPHKAOuterClass {
       public Builder clear() {
         super.clear();
         internalGetMutableBMPLOGFCMLG().clear();
-        bOJCAOCOAJB_ = 0;
-
         if (aEIFJINONJFBuilder_ == null) {
           aEIFJINONJF_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
@@ -662,6 +668,8 @@ public final class FHNGLNCPHKAOuterClass {
           aEIFJINONJFBuilder_.clear();
         }
         fMMKKONOKML_ = 0;
+
+        bOJCAOCOAJB_ = 0;
 
         nEPACBNDBOI_ = 0;
 
@@ -694,7 +702,6 @@ public final class FHNGLNCPHKAOuterClass {
         int from_bitField0_ = bitField0_;
         result.bMPLOGFCMLG_ = internalGetBMPLOGFCMLG();
         result.bMPLOGFCMLG_.makeImmutable();
-        result.bOJCAOCOAJB_ = bOJCAOCOAJB_;
         if (aEIFJINONJFBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
             aEIFJINONJF_ = java.util.Collections.unmodifiableList(aEIFJINONJF_);
@@ -705,6 +712,7 @@ public final class FHNGLNCPHKAOuterClass {
           result.aEIFJINONJF_ = aEIFJINONJFBuilder_.build();
         }
         result.fMMKKONOKML_ = fMMKKONOKML_;
+        result.bOJCAOCOAJB_ = bOJCAOCOAJB_;
         result.nEPACBNDBOI_ = nEPACBNDBOI_;
         onBuilt();
         return result;
@@ -756,9 +764,6 @@ public final class FHNGLNCPHKAOuterClass {
         if (other == emu.grasscutter.net.proto.FHNGLNCPHKAOuterClass.FHNGLNCPHKA.getDefaultInstance()) return this;
         internalGetMutableBMPLOGFCMLG().mergeFrom(
             other.internalGetBMPLOGFCMLG());
-        if (other.getBOJCAOCOAJB() != 0) {
-          setBOJCAOCOAJB(other.getBOJCAOCOAJB());
-        }
         if (aEIFJINONJFBuilder_ == null) {
           if (!other.aEIFJINONJF_.isEmpty()) {
             if (aEIFJINONJF_.isEmpty()) {
@@ -787,6 +792,9 @@ public final class FHNGLNCPHKAOuterClass {
         }
         if (other.getFMMKKONOKML() != 0) {
           setFMMKKONOKML(other.getFMMKKONOKML());
+        }
+        if (other.getBOJCAOCOAJB() != 0) {
+          setBOJCAOCOAJB(other.getBOJCAOCOAJB());
         }
         if (other.getNEPACBNDBOI() != 0) {
           setNEPACBNDBOI(other.getNEPACBNDBOI());
@@ -848,7 +856,7 @@ public final class FHNGLNCPHKAOuterClass {
         return internalGetBMPLOGFCMLG().getMap().size();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
 
       @java.lang.Override
@@ -866,7 +874,7 @@ public final class FHNGLNCPHKAOuterClass {
         return getBMPLOGFCMLGMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
       @java.lang.Override
 
@@ -874,7 +882,7 @@ public final class FHNGLNCPHKAOuterClass {
         return internalGetBMPLOGFCMLG().getMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
       @java.lang.Override
 
@@ -887,7 +895,7 @@ public final class FHNGLNCPHKAOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
       @java.lang.Override
 
@@ -908,7 +916,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
 
       public Builder removeBMPLOGFCMLG(
@@ -927,7 +935,7 @@ public final class FHNGLNCPHKAOuterClass {
         return internalGetMutableBMPLOGFCMLG().getMutableMap();
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
       public Builder putBMPLOGFCMLG(
           int key,
@@ -939,44 +947,13 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 2;</code>
+       * <code>map&lt;uint32, uint32&gt; BMPLOGFCMLG = 5;</code>
        */
 
       public Builder putAllBMPLOGFCMLG(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableBMPLOGFCMLG().getMutableMap()
             .putAll(values);
-        return this;
-      }
-
-      private int bOJCAOCOAJB_ ;
-      /**
-       * <code>uint32 BOJCAOCOAJB = 3;</code>
-       * @return The bOJCAOCOAJB.
-       */
-      @java.lang.Override
-      public int getBOJCAOCOAJB() {
-        return bOJCAOCOAJB_;
-      }
-      /**
-       * <code>uint32 BOJCAOCOAJB = 3;</code>
-       * @param value The bOJCAOCOAJB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBOJCAOCOAJB(int value) {
-        
-        bOJCAOCOAJB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BOJCAOCOAJB = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBOJCAOCOAJB() {
-        
-        bOJCAOCOAJB_ = 0;
-        onChanged();
         return this;
       }
 
@@ -993,7 +970,7 @@ public final class FHNGLNCPHKAOuterClass {
           emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder> aEIFJINONJFBuilder_;
 
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD> getAEIFJINONJFList() {
         if (aEIFJINONJFBuilder_ == null) {
@@ -1003,7 +980,7 @@ public final class FHNGLNCPHKAOuterClass {
         }
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public int getAEIFJINONJFCount() {
         if (aEIFJINONJFBuilder_ == null) {
@@ -1013,7 +990,7 @@ public final class FHNGLNCPHKAOuterClass {
         }
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD getAEIFJINONJF(int index) {
         if (aEIFJINONJFBuilder_ == null) {
@@ -1023,7 +1000,7 @@ public final class FHNGLNCPHKAOuterClass {
         }
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder setAEIFJINONJF(
           int index, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD value) {
@@ -1040,7 +1017,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder setAEIFJINONJF(
           int index, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder builderForValue) {
@@ -1054,7 +1031,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder addAEIFJINONJF(emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD value) {
         if (aEIFJINONJFBuilder_ == null) {
@@ -1070,7 +1047,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder addAEIFJINONJF(
           int index, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD value) {
@@ -1087,7 +1064,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder addAEIFJINONJF(
           emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder builderForValue) {
@@ -1101,7 +1078,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder addAEIFJINONJF(
           int index, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder builderForValue) {
@@ -1115,7 +1092,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder addAllAEIFJINONJF(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD> values) {
@@ -1130,7 +1107,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder clearAEIFJINONJF() {
         if (aEIFJINONJFBuilder_ == null) {
@@ -1143,7 +1120,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public Builder removeAEIFJINONJF(int index) {
         if (aEIFJINONJFBuilder_ == null) {
@@ -1156,14 +1133,14 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder getAEIFJINONJFBuilder(
           int index) {
         return getAEIFJINONJFFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder getAEIFJINONJFOrBuilder(
           int index) {
@@ -1173,7 +1150,7 @@ public final class FHNGLNCPHKAOuterClass {
         }
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGDOrBuilder> 
            getAEIFJINONJFOrBuilderList() {
@@ -1184,14 +1161,14 @@ public final class FHNGLNCPHKAOuterClass {
         }
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder addAEIFJINONJFBuilder() {
         return getAEIFJINONJFFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.getDefaultInstance());
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder addAEIFJINONJFBuilder(
           int index) {
@@ -1199,7 +1176,7 @@ public final class FHNGLNCPHKAOuterClass {
             index, emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.getDefaultInstance());
       }
       /**
-       * <code>repeated .INJNJCALJGD AEIFJINONJF = 5;</code>
+       * <code>repeated .INJNJCALJGD AEIFJINONJF = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.INJNJCALJGDOuterClass.INJNJCALJGD.Builder> 
            getAEIFJINONJFBuilderList() {
@@ -1222,7 +1199,7 @@ public final class FHNGLNCPHKAOuterClass {
 
       private int fMMKKONOKML_ ;
       /**
-       * <code>uint32 FMMKKONOKML = 11;</code>
+       * <code>uint32 FMMKKONOKML = 9;</code>
        * @return The fMMKKONOKML.
        */
       @java.lang.Override
@@ -1230,7 +1207,7 @@ public final class FHNGLNCPHKAOuterClass {
         return fMMKKONOKML_;
       }
       /**
-       * <code>uint32 FMMKKONOKML = 11;</code>
+       * <code>uint32 FMMKKONOKML = 9;</code>
        * @param value The fMMKKONOKML to set.
        * @return This builder for chaining.
        */
@@ -1241,7 +1218,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 FMMKKONOKML = 11;</code>
+       * <code>uint32 FMMKKONOKML = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearFMMKKONOKML() {
@@ -1251,9 +1228,40 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
 
+      private int bOJCAOCOAJB_ ;
+      /**
+       * <code>uint32 BOJCAOCOAJB = 7;</code>
+       * @return The bOJCAOCOAJB.
+       */
+      @java.lang.Override
+      public int getBOJCAOCOAJB() {
+        return bOJCAOCOAJB_;
+      }
+      /**
+       * <code>uint32 BOJCAOCOAJB = 7;</code>
+       * @param value The bOJCAOCOAJB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBOJCAOCOAJB(int value) {
+        
+        bOJCAOCOAJB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BOJCAOCOAJB = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBOJCAOCOAJB() {
+        
+        bOJCAOCOAJB_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int nEPACBNDBOI_ ;
       /**
-       * <code>uint32 NEPACBNDBOI = 14;</code>
+       * <code>uint32 NEPACBNDBOI = 3;</code>
        * @return The nEPACBNDBOI.
        */
       @java.lang.Override
@@ -1261,7 +1269,7 @@ public final class FHNGLNCPHKAOuterClass {
         return nEPACBNDBOI_;
       }
       /**
-       * <code>uint32 NEPACBNDBOI = 14;</code>
+       * <code>uint32 NEPACBNDBOI = 3;</code>
        * @param value The nEPACBNDBOI to set.
        * @return This builder for chaining.
        */
@@ -1272,7 +1280,7 @@ public final class FHNGLNCPHKAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 NEPACBNDBOI = 14;</code>
+       * <code>uint32 NEPACBNDBOI = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearNEPACBNDBOI() {
@@ -1354,13 +1362,13 @@ public final class FHNGLNCPHKAOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021FHNGLNCPHKA.proto\032\021INJNJCALJGD.proto\"\327" +
-      "\001\n\013FHNGLNCPHKA\0222\n\013BMPLOGFCMLG\030\002 \003(\0132\035.FH" +
-      "NGLNCPHKA.BMPLOGFCMLGEntry\022\023\n\013BOJCAOCOAJ" +
-      "B\030\003 \001(\r\022!\n\013AEIFJINONJF\030\005 \003(\0132\014.INJNJCALJ" +
-      "GD\022\023\n\013FMMKKONOKML\030\013 \001(\r\022\023\n\013NEPACBNDBOI\030\016" +
+      "\001\n\013FHNGLNCPHKA\0222\n\013BMPLOGFCMLG\030\005 \003(\0132\035.FH" +
+      "NGLNCPHKA.BMPLOGFCMLGEntry\022!\n\013AEIFJINONJ" +
+      "F\030\n \003(\0132\014.INJNJCALJGD\022\023\n\013FMMKKONOKML\030\t \001" +
+      "(\r\022\023\n\013BOJCAOCOAJB\030\007 \001(\r\022\023\n\013NEPACBNDBOI\030\003" +
       " \001(\r\0322\n\020BMPLOGFCMLGEntry\022\013\n\003key\030\001 \001(\r\022\r\n" +
-      "\005value\030\002 \001(\r:\0028\001B2\n\031emu.grasscutter.net." +
-      "protoB\025FHNGLNCPHKAOuterClassb\006proto3"
+      "\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscutter.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1372,7 +1380,7 @@ public final class FHNGLNCPHKAOuterClass {
     internal_static_FHNGLNCPHKA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FHNGLNCPHKA_descriptor,
-        new java.lang.String[] { "BMPLOGFCMLG", "BOJCAOCOAJB", "AEIFJINONJF", "FMMKKONOKML", "NEPACBNDBOI", });
+        new java.lang.String[] { "BMPLOGFCMLG", "AEIFJINONJF", "FMMKKONOKML", "BOJCAOCOAJB", "NEPACBNDBOI", });
     internal_static_FHNGLNCPHKA_BMPLOGFCMLGEntry_descriptor =
       internal_static_FHNGLNCPHKA_descriptor.getNestedTypes().get(0);
     internal_static_FHNGLNCPHKA_BMPLOGFCMLGEntry_fieldAccessorTable = new

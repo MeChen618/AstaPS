@@ -19,53 +19,57 @@ public final class TakeCompoundOutputRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated int32 ANAMNOCEICO = 7;</code>
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
+        getItemListList();
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    int getItemListCount();
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getItemListOrBuilderList();
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated int32 ANAMNOCEICO = 3;</code>
      * @return A list containing the aNAMNOCEICO.
      */
     java.util.List<java.lang.Integer> getANAMNOCEICOList();
     /**
-     * <code>repeated int32 ANAMNOCEICO = 7;</code>
+     * <code>repeated int32 ANAMNOCEICO = 3;</code>
      * @return The count of aNAMNOCEICO.
      */
     int getANAMNOCEICOCount();
     /**
-     * <code>repeated int32 ANAMNOCEICO = 7;</code>
+     * <code>repeated int32 ANAMNOCEICO = 3;</code>
      * @param index The index of the element to return.
      * @return The aNAMNOCEICO at the given index.
      */
     int getANAMNOCEICO(int index);
 
     /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> 
-        getItemListList();
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index);
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    int getItemListCount();
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getItemListOrBuilderList();
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
-        int index);
-
-    /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     int getRetcode();
   }
   /**
+   * <pre>
+   * CmdId: 22444
+   * </pre>
+   *
    * Protobuf type {@code TakeCompoundOutputRsp}
    */
   public static final class TakeCompoundOutputRsp extends
@@ -78,8 +82,8 @@ public final class TakeCompoundOutputRspOuterClass {
       super(builder);
     }
     private TakeCompoundOutputRsp() {
-      aNAMNOCEICO_ = emptyIntList();
       itemList_ = java.util.Collections.emptyList();
+      aNAMNOCEICO_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -113,20 +117,25 @@ public final class TakeCompoundOutputRspOuterClass {
             case 0:
               done = true;
               break;
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 16: {
+
+              retcode_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 aNAMNOCEICO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               aNAMNOCEICO_.addInt(input.readInt32());
               break;
             }
-            case 58: {
+            case 26: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 aNAMNOCEICO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 aNAMNOCEICO_.addInt(input.readInt32());
@@ -134,18 +143,13 @@ public final class TakeCompoundOutputRspOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               itemList_.add(
                   input.readMessage(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
               break;
             }
             default: {
@@ -163,10 +167,10 @@ public final class TakeCompoundOutputRspOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           aNAMNOCEICO_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           itemList_ = java.util.Collections.unmodifiableList(itemList_);
         }
         this.unknownFields = unknownFields.build();
@@ -186,10 +190,50 @@ public final class TakeCompoundOutputRspOuterClass {
               emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp.class, emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp.Builder.class);
     }
 
-    public static final int ANAMNOCEICO_FIELD_NUMBER = 7;
+    public static final int ITEM_LIST_FIELD_NUMBER = 11;
+    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
+      return itemList_;
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
+        getItemListOrBuilderList() {
+      return itemList_;
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    @java.lang.Override
+    public int getItemListCount() {
+      return itemList_.size();
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
+      return itemList_.get(index);
+    }
+    /**
+     * <code>repeated .ItemParam item_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
+        int index) {
+      return itemList_.get(index);
+    }
+
+    public static final int ANAMNOCEICO_FIELD_NUMBER = 3;
     private com.google.protobuf.Internal.IntList aNAMNOCEICO_;
     /**
-     * <code>repeated int32 ANAMNOCEICO = 7;</code>
+     * <code>repeated int32 ANAMNOCEICO = 3;</code>
      * @return A list containing the aNAMNOCEICO.
      */
     @java.lang.Override
@@ -198,14 +242,14 @@ public final class TakeCompoundOutputRspOuterClass {
       return aNAMNOCEICO_;
     }
     /**
-     * <code>repeated int32 ANAMNOCEICO = 7;</code>
+     * <code>repeated int32 ANAMNOCEICO = 3;</code>
      * @return The count of aNAMNOCEICO.
      */
     public int getANAMNOCEICOCount() {
       return aNAMNOCEICO_.size();
     }
     /**
-     * <code>repeated int32 ANAMNOCEICO = 7;</code>
+     * <code>repeated int32 ANAMNOCEICO = 3;</code>
      * @param index The index of the element to return.
      * @return The aNAMNOCEICO at the given index.
      */
@@ -214,50 +258,10 @@ public final class TakeCompoundOutputRspOuterClass {
     }
     private int aNAMNOCEICOMemoizedSerializedSize = -1;
 
-    public static final int ITEM_LIST_FIELD_NUMBER = 8;
-    private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_;
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
-      return itemList_;
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
-        getItemListOrBuilderList() {
-      return itemList_;
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    @java.lang.Override
-    public int getItemListCount() {
-      return itemList_.size();
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
-      return itemList_.get(index);
-    }
-    /**
-     * <code>repeated .ItemParam item_list = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
-        int index) {
-      return itemList_.get(index);
-    }
-
-    public static final int RETCODE_FIELD_NUMBER = 15;
+    public static final int RETCODE_FIELD_NUMBER = 2;
     private int retcode_;
     /**
-     * <code>int32 retcode = 15;</code>
+     * <code>int32 retcode = 2;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -280,18 +284,18 @@ public final class TakeCompoundOutputRspOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (retcode_ != 0) {
+        output.writeInt32(2, retcode_);
+      }
       if (getANAMNOCEICOList().size() > 0) {
-        output.writeUInt32NoTag(58);
+        output.writeUInt32NoTag(26);
         output.writeUInt32NoTag(aNAMNOCEICOMemoizedSerializedSize);
       }
       for (int i = 0; i < aNAMNOCEICO_.size(); i++) {
         output.writeInt32NoTag(aNAMNOCEICO_.getInt(i));
       }
       for (int i = 0; i < itemList_.size(); i++) {
-        output.writeMessage(8, itemList_.get(i));
-      }
-      if (retcode_ != 0) {
-        output.writeInt32(15, retcode_);
+        output.writeMessage(11, itemList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -302,6 +306,10 @@ public final class TakeCompoundOutputRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, retcode_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < aNAMNOCEICO_.size(); i++) {
@@ -318,11 +326,7 @@ public final class TakeCompoundOutputRspOuterClass {
       }
       for (int i = 0; i < itemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, itemList_.get(i));
-      }
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, retcode_);
+          .computeMessageSize(11, itemList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -339,10 +343,10 @@ public final class TakeCompoundOutputRspOuterClass {
       }
       emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp other = (emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp) obj;
 
-      if (!getANAMNOCEICOList()
-          .equals(other.getANAMNOCEICOList())) return false;
       if (!getItemListList()
           .equals(other.getItemListList())) return false;
+      if (!getANAMNOCEICOList()
+          .equals(other.getANAMNOCEICOList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -356,13 +360,13 @@ public final class TakeCompoundOutputRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getANAMNOCEICOCount() > 0) {
-        hash = (37 * hash) + ANAMNOCEICO_FIELD_NUMBER;
-        hash = (53 * hash) + getANAMNOCEICOList().hashCode();
-      }
       if (getItemListCount() > 0) {
         hash = (37 * hash) + ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getItemListList().hashCode();
+      }
+      if (getANAMNOCEICOCount() > 0) {
+        hash = (37 * hash) + ANAMNOCEICO_FIELD_NUMBER;
+        hash = (53 * hash) + getANAMNOCEICOList().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -462,6 +466,10 @@ public final class TakeCompoundOutputRspOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 22444
+     * </pre>
+     *
      * Protobuf type {@code TakeCompoundOutputRsp}
      */
     public static final class Builder extends
@@ -500,14 +508,14 @@ public final class TakeCompoundOutputRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        aNAMNOCEICO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           itemListBuilder_.clear();
         }
+        aNAMNOCEICO_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
 
         return this;
@@ -537,20 +545,20 @@ public final class TakeCompoundOutputRspOuterClass {
       public emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp buildPartial() {
         emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp result = new emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          aNAMNOCEICO_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.aNAMNOCEICO_ = aNAMNOCEICO_;
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000001);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          aNAMNOCEICO_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.aNAMNOCEICO_ = aNAMNOCEICO_;
         result.retcode_ = retcode_;
         onBuilt();
         return result;
@@ -600,21 +608,11 @@ public final class TakeCompoundOutputRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp other) {
         if (other == emu.grasscutter.net.proto.TakeCompoundOutputRspOuterClass.TakeCompoundOutputRsp.getDefaultInstance()) return this;
-        if (!other.aNAMNOCEICO_.isEmpty()) {
-          if (aNAMNOCEICO_.isEmpty()) {
-            aNAMNOCEICO_ = other.aNAMNOCEICO_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureANAMNOCEICOIsMutable();
-            aNAMNOCEICO_.addAll(other.aNAMNOCEICO_);
-          }
-          onChanged();
-        }
         if (itemListBuilder_ == null) {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -627,7 +625,7 @@ public final class TakeCompoundOutputRspOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000001);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -635,6 +633,16 @@ public final class TakeCompoundOutputRspOuterClass {
               itemListBuilder_.addAllMessages(other.itemList_);
             }
           }
+        }
+        if (!other.aNAMNOCEICO_.isEmpty()) {
+          if (aNAMNOCEICO_.isEmpty()) {
+            aNAMNOCEICO_ = other.aNAMNOCEICO_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureANAMNOCEICOIsMutable();
+            aNAMNOCEICO_.addAll(other.aNAMNOCEICO_);
+          }
+          onChanged();
         }
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
@@ -669,91 +677,12 @@ public final class TakeCompoundOutputRspOuterClass {
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.IntList aNAMNOCEICO_ = emptyIntList();
-      private void ensureANAMNOCEICOIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          aNAMNOCEICO_ = mutableCopy(aNAMNOCEICO_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @return A list containing the aNAMNOCEICO.
-       */
-      public java.util.List<java.lang.Integer>
-          getANAMNOCEICOList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(aNAMNOCEICO_) : aNAMNOCEICO_;
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @return The count of aNAMNOCEICO.
-       */
-      public int getANAMNOCEICOCount() {
-        return aNAMNOCEICO_.size();
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @param index The index of the element to return.
-       * @return The aNAMNOCEICO at the given index.
-       */
-      public int getANAMNOCEICO(int index) {
-        return aNAMNOCEICO_.getInt(index);
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @param index The index to set the value at.
-       * @param value The aNAMNOCEICO to set.
-       * @return This builder for chaining.
-       */
-      public Builder setANAMNOCEICO(
-          int index, int value) {
-        ensureANAMNOCEICOIsMutable();
-        aNAMNOCEICO_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @param value The aNAMNOCEICO to add.
-       * @return This builder for chaining.
-       */
-      public Builder addANAMNOCEICO(int value) {
-        ensureANAMNOCEICOIsMutable();
-        aNAMNOCEICO_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @param values The aNAMNOCEICO to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllANAMNOCEICO(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureANAMNOCEICOIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, aNAMNOCEICO_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated int32 ANAMNOCEICO = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearANAMNOCEICO() {
-        aNAMNOCEICO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000001) != 0)) {
           itemList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000001;
          }
       }
 
@@ -761,7 +690,7 @@ public final class TakeCompoundOutputRspOuterClass {
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> itemListBuilder_;
 
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> getItemListList() {
         if (itemListBuilder_ == null) {
@@ -771,7 +700,7 @@ public final class TakeCompoundOutputRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public int getItemListCount() {
         if (itemListBuilder_ == null) {
@@ -781,7 +710,7 @@ public final class TakeCompoundOutputRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam getItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -791,7 +720,7 @@ public final class TakeCompoundOutputRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -808,7 +737,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder setItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -822,7 +751,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder addItemList(emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
         if (itemListBuilder_ == null) {
@@ -838,7 +767,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam value) {
@@ -855,7 +784,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder addItemList(
           emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -869,7 +798,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder addItemList(
           int index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder builderForValue) {
@@ -883,7 +812,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder addAllItemList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam> values) {
@@ -898,12 +827,12 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -911,7 +840,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public Builder removeItemList(int index) {
         if (itemListBuilder_ == null) {
@@ -924,14 +853,14 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder getItemListBuilder(
           int index) {
         return getItemListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder getItemListOrBuilder(
           int index) {
@@ -941,7 +870,7 @@ public final class TakeCompoundOutputRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder> 
            getItemListOrBuilderList() {
@@ -952,14 +881,14 @@ public final class TakeCompoundOutputRspOuterClass {
         }
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder() {
         return getItemListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder addItemListBuilder(
           int index) {
@@ -967,7 +896,7 @@ public final class TakeCompoundOutputRspOuterClass {
             index, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.getDefaultInstance());
       }
       /**
-       * <code>repeated .ItemParam item_list = 8;</code>
+       * <code>repeated .ItemParam item_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder> 
            getItemListBuilderList() {
@@ -980,7 +909,7 @@ public final class TakeCompoundOutputRspOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.grasscutter.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -988,9 +917,88 @@ public final class TakeCompoundOutputRspOuterClass {
         return itemListBuilder_;
       }
 
+      private com.google.protobuf.Internal.IntList aNAMNOCEICO_ = emptyIntList();
+      private void ensureANAMNOCEICOIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          aNAMNOCEICO_ = mutableCopy(aNAMNOCEICO_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @return A list containing the aNAMNOCEICO.
+       */
+      public java.util.List<java.lang.Integer>
+          getANAMNOCEICOList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(aNAMNOCEICO_) : aNAMNOCEICO_;
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @return The count of aNAMNOCEICO.
+       */
+      public int getANAMNOCEICOCount() {
+        return aNAMNOCEICO_.size();
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @param index The index of the element to return.
+       * @return The aNAMNOCEICO at the given index.
+       */
+      public int getANAMNOCEICO(int index) {
+        return aNAMNOCEICO_.getInt(index);
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @param index The index to set the value at.
+       * @param value The aNAMNOCEICO to set.
+       * @return This builder for chaining.
+       */
+      public Builder setANAMNOCEICO(
+          int index, int value) {
+        ensureANAMNOCEICOIsMutable();
+        aNAMNOCEICO_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @param value The aNAMNOCEICO to add.
+       * @return This builder for chaining.
+       */
+      public Builder addANAMNOCEICO(int value) {
+        ensureANAMNOCEICOIsMutable();
+        aNAMNOCEICO_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @param values The aNAMNOCEICO to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllANAMNOCEICO(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureANAMNOCEICOIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, aNAMNOCEICO_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated int32 ANAMNOCEICO = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearANAMNOCEICO() {
+        aNAMNOCEICO_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 2;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -998,7 +1006,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 2;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -1009,7 +1017,7 @@ public final class TakeCompoundOutputRspOuterClass {
         return this;
       }
       /**
-       * <code>int32 retcode = 15;</code>
+       * <code>int32 retcode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -1086,11 +1094,10 @@ public final class TakeCompoundOutputRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033TakeCompoundOutputRsp.proto\032\017ItemParam" +
-      ".proto\"\\\n\025TakeCompoundOutputRsp\022\023\n\013ANAMN" +
-      "OCEICO\030\007 \003(\005\022\035\n\titem_list\030\010 \003(\0132\n.ItemPa" +
-      "ram\022\017\n\007retcode\030\017 \001(\005B<\n\031emu.grasscutter." +
-      "net.protoB\037TakeCompoundOutputRspOuterCla" +
-      "ssb\006proto3"
+      ".proto\"\\\n\025TakeCompoundOutputRsp\022\035\n\titem_" +
+      "list\030\013 \003(\0132\n.ItemParam\022\023\n\013ANAMNOCEICO\030\003 " +
+      "\003(\005\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.grasscutter." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1102,7 +1109,7 @@ public final class TakeCompoundOutputRspOuterClass {
     internal_static_TakeCompoundOutputRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TakeCompoundOutputRsp_descriptor,
-        new java.lang.String[] { "ANAMNOCEICO", "ItemList", "Retcode", });
+        new java.lang.String[] { "ItemList", "ANAMNOCEICO", "Retcode", });
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();
   }
 

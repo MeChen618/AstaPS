@@ -19,12 +19,6 @@ public final class INKBFLJAEJPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 1;</code>
-     * @return The uid.
-     */
-    int getUid();
-
-    /**
      * <code>._Vector2Int pos = 2;</code>
      * @return Whether the pos field is set.
      */
@@ -33,65 +27,17 @@ public final class INKBFLJAEJPOuterClass {
      * <code>._Vector2Int pos = 2;</code>
      * @return The pos.
      */
-    emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int getPos();
+    emu.grasscutter.net.proto.Vector2Int._Vector2Int getPos();
     /**
      * <code>._Vector2Int pos = 2;</code>
      */
-    emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2IntOrBuilder getPosOrBuilder();
+    emu.grasscutter.net.proto.Vector2Int._Vector2IntOrBuilder getPosOrBuilder();
 
     /**
-     * <code>uint32 score = 3;</code>
-     * @return The score.
+     * <code>uint32 uid = 1;</code>
+     * @return The uid.
      */
-    int getScore();
-
-    /**
-     * <code>uint32 index = 4;</code>
-     * @return The index.
-     */
-    int getIndex();
-
-    /**
-     * <code>uint32 KFEHIPLFNMI = 5;</code>
-     * @return The kFEHIPLFNMI.
-     */
-    int getKFEHIPLFNMI();
-
-    /**
-     * <code>uint32 LOKEFCNECID = 6;</code>
-     * @return The lOKEFCNECID.
-     */
-    int getLOKEFCNECID();
-
-    /**
-     * <code>int32 rot = 8;</code>
-     * @return The rot.
-     */
-    int getRot();
-
-    /**
-     * <code>uint32 CFCKHNGAPKE = 9;</code>
-     * @return The cFCKHNGAPKE.
-     */
-    int getCFCKHNGAPKE();
-
-    /**
-     * <code>uint32 AEKEMNLLBAF = 10;</code>
-     * @return The aEKEMNLLBAF.
-     */
-    int getAEKEMNLLBAF();
-
-    /**
-     * <code>uint32 HDACLIOHBJC = 11;</code>
-     * @return The hDACLIOHBJC.
-     */
-    int getHDACLIOHBJC();
-
-    /**
-     * <code>uint32 HGFLCHNCDLN = 12;</code>
-     * @return The hGFLCHNCDLN.
-     */
-    int getHGFLCHNCDLN();
+    int getUid();
 
     /**
      * <code>uint32 JJFKBJHENLI = 13;</code>
@@ -100,10 +46,58 @@ public final class INKBFLJAEJPOuterClass {
     int getJJFKBJHENLI();
 
     /**
+     * <code>int32 rot = 8;</code>
+     * @return The rot.
+     */
+    int getRot();
+
+    /**
+     * <code>uint32 HDACLIOHBJC = 11;</code>
+     * @return The hDACLIOHBJC.
+     */
+    int getHDACLIOHBJC();
+
+    /**
+     * <code>uint32 PBIOFMENBEA = 16;</code>
+     * @return The pBIOFMENBEA.
+     */
+    int getPBIOFMENBEA();
+
+    /**
      * <code>uint32 NINOCKACDKO = 14;</code>
      * @return The nINOCKACDKO.
      */
     int getNINOCKACDKO();
+
+    /**
+     * <code>uint32 score = 3;</code>
+     * @return The score.
+     */
+    int getScore();
+
+    /**
+     * <code>uint32 LOKEFCNECID = 6;</code>
+     * @return The lOKEFCNECID.
+     */
+    int getLOKEFCNECID();
+
+    /**
+     * <code>uint32 HGFLCHNCDLN = 12;</code>
+     * @return The hGFLCHNCDLN.
+     */
+    int getHGFLCHNCDLN();
+
+    /**
+     * <code>uint32 KFEHIPLFNMI = 5;</code>
+     * @return The kFEHIPLFNMI.
+     */
+    int getKFEHIPLFNMI();
+
+    /**
+     * <code>uint32 CFCKHNGAPKE = 9;</code>
+     * @return The cFCKHNGAPKE.
+     */
+    int getCFCKHNGAPKE();
 
     /**
      * <code>uint32 AKAPJEMAJHN = 15;</code>
@@ -112,12 +106,22 @@ public final class INKBFLJAEJPOuterClass {
     int getAKAPJEMAJHN();
 
     /**
-     * <code>uint32 PBIOFMENBEA = 16;</code>
-     * @return The pBIOFMENBEA.
+     * <code>uint32 index = 4;</code>
+     * @return The index.
      */
-    int getPBIOFMENBEA();
+    int getIndex();
+
+    /**
+     * <code>uint32 AEKEMNLLBAF = 10;</code>
+     * @return The aEKEMNLLBAF.
+     */
+    int getAEKEMNLLBAF();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code INKBFLJAEJP}
    */
   public static final class INKBFLJAEJP extends
@@ -168,11 +172,11 @@ public final class INKBFLJAEJPOuterClass {
               break;
             }
             case 18: {
-              emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.Builder subBuilder = null;
+              emu.grasscutter.net.proto.Vector2Int._Vector2Int.Builder subBuilder = null;
               if (pos_ != null) {
                 subBuilder = pos_.toBuilder();
               }
-              pos_ = input.readMessage(emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.parser(), extensionRegistry);
+              pos_ = input.readMessage(emu.grasscutter.net.proto.Vector2Int._Vector2Int.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pos_);
                 pos_ = subBuilder.buildPartial();
@@ -277,19 +281,8 @@ public final class INKBFLJAEJPOuterClass {
               emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP.class, emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 1;
-    private int uid_;
-    /**
-     * <code>uint32 uid = 1;</code>
-     * @return The uid.
-     */
-    @java.lang.Override
-    public int getUid() {
-      return uid_;
-    }
-
     public static final int POS_FIELD_NUMBER = 2;
-    private emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int pos_;
+    private emu.grasscutter.net.proto.Vector2Int._Vector2Int pos_;
     /**
      * <code>._Vector2Int pos = 2;</code>
      * @return Whether the pos field is set.
@@ -303,114 +296,26 @@ public final class INKBFLJAEJPOuterClass {
      * @return The pos.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int getPos() {
-      return pos_ == null ? emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.getDefaultInstance() : pos_;
+    public emu.grasscutter.net.proto.Vector2Int._Vector2Int getPos() {
+      return pos_ == null ? emu.grasscutter.net.proto.Vector2Int._Vector2Int.getDefaultInstance() : pos_;
     }
     /**
      * <code>._Vector2Int pos = 2;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2IntOrBuilder getPosOrBuilder() {
+    public emu.grasscutter.net.proto.Vector2Int._Vector2IntOrBuilder getPosOrBuilder() {
       return getPos();
     }
 
-    public static final int SCORE_FIELD_NUMBER = 3;
-    private int score_;
+    public static final int UID_FIELD_NUMBER = 1;
+    private int uid_;
     /**
-     * <code>uint32 score = 3;</code>
-     * @return The score.
+     * <code>uint32 uid = 1;</code>
+     * @return The uid.
      */
     @java.lang.Override
-    public int getScore() {
-      return score_;
-    }
-
-    public static final int INDEX_FIELD_NUMBER = 4;
-    private int index_;
-    /**
-     * <code>uint32 index = 4;</code>
-     * @return The index.
-     */
-    @java.lang.Override
-    public int getIndex() {
-      return index_;
-    }
-
-    public static final int KFEHIPLFNMI_FIELD_NUMBER = 5;
-    private int kFEHIPLFNMI_;
-    /**
-     * <code>uint32 KFEHIPLFNMI = 5;</code>
-     * @return The kFEHIPLFNMI.
-     */
-    @java.lang.Override
-    public int getKFEHIPLFNMI() {
-      return kFEHIPLFNMI_;
-    }
-
-    public static final int LOKEFCNECID_FIELD_NUMBER = 6;
-    private int lOKEFCNECID_;
-    /**
-     * <code>uint32 LOKEFCNECID = 6;</code>
-     * @return The lOKEFCNECID.
-     */
-    @java.lang.Override
-    public int getLOKEFCNECID() {
-      return lOKEFCNECID_;
-    }
-
-    public static final int ROT_FIELD_NUMBER = 8;
-    private int rot_;
-    /**
-     * <code>int32 rot = 8;</code>
-     * @return The rot.
-     */
-    @java.lang.Override
-    public int getRot() {
-      return rot_;
-    }
-
-    public static final int CFCKHNGAPKE_FIELD_NUMBER = 9;
-    private int cFCKHNGAPKE_;
-    /**
-     * <code>uint32 CFCKHNGAPKE = 9;</code>
-     * @return The cFCKHNGAPKE.
-     */
-    @java.lang.Override
-    public int getCFCKHNGAPKE() {
-      return cFCKHNGAPKE_;
-    }
-
-    public static final int AEKEMNLLBAF_FIELD_NUMBER = 10;
-    private int aEKEMNLLBAF_;
-    /**
-     * <code>uint32 AEKEMNLLBAF = 10;</code>
-     * @return The aEKEMNLLBAF.
-     */
-    @java.lang.Override
-    public int getAEKEMNLLBAF() {
-      return aEKEMNLLBAF_;
-    }
-
-    public static final int HDACLIOHBJC_FIELD_NUMBER = 11;
-    private int hDACLIOHBJC_;
-    /**
-     * <code>uint32 HDACLIOHBJC = 11;</code>
-     * @return The hDACLIOHBJC.
-     */
-    @java.lang.Override
-    public int getHDACLIOHBJC() {
-      return hDACLIOHBJC_;
-    }
-
-    public static final int HGFLCHNCDLN_FIELD_NUMBER = 12;
-    private int hGFLCHNCDLN_;
-    /**
-     * <code>uint32 HGFLCHNCDLN = 12;</code>
-     * @return The hGFLCHNCDLN.
-     */
-    @java.lang.Override
-    public int getHGFLCHNCDLN() {
-      return hGFLCHNCDLN_;
+    public int getUid() {
+      return uid_;
     }
 
     public static final int JJFKBJHENLI_FIELD_NUMBER = 13;
@@ -424,6 +329,39 @@ public final class INKBFLJAEJPOuterClass {
       return jJFKBJHENLI_;
     }
 
+    public static final int ROT_FIELD_NUMBER = 8;
+    private int rot_;
+    /**
+     * <code>int32 rot = 8;</code>
+     * @return The rot.
+     */
+    @java.lang.Override
+    public int getRot() {
+      return rot_;
+    }
+
+    public static final int HDACLIOHBJC_FIELD_NUMBER = 11;
+    private int hDACLIOHBJC_;
+    /**
+     * <code>uint32 HDACLIOHBJC = 11;</code>
+     * @return The hDACLIOHBJC.
+     */
+    @java.lang.Override
+    public int getHDACLIOHBJC() {
+      return hDACLIOHBJC_;
+    }
+
+    public static final int PBIOFMENBEA_FIELD_NUMBER = 16;
+    private int pBIOFMENBEA_;
+    /**
+     * <code>uint32 PBIOFMENBEA = 16;</code>
+     * @return The pBIOFMENBEA.
+     */
+    @java.lang.Override
+    public int getPBIOFMENBEA() {
+      return pBIOFMENBEA_;
+    }
+
     public static final int NINOCKACDKO_FIELD_NUMBER = 14;
     private int nINOCKACDKO_;
     /**
@@ -433,6 +371,61 @@ public final class INKBFLJAEJPOuterClass {
     @java.lang.Override
     public int getNINOCKACDKO() {
       return nINOCKACDKO_;
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 3;
+    private int score_;
+    /**
+     * <code>uint32 score = 3;</code>
+     * @return The score.
+     */
+    @java.lang.Override
+    public int getScore() {
+      return score_;
+    }
+
+    public static final int LOKEFCNECID_FIELD_NUMBER = 6;
+    private int lOKEFCNECID_;
+    /**
+     * <code>uint32 LOKEFCNECID = 6;</code>
+     * @return The lOKEFCNECID.
+     */
+    @java.lang.Override
+    public int getLOKEFCNECID() {
+      return lOKEFCNECID_;
+    }
+
+    public static final int HGFLCHNCDLN_FIELD_NUMBER = 12;
+    private int hGFLCHNCDLN_;
+    /**
+     * <code>uint32 HGFLCHNCDLN = 12;</code>
+     * @return The hGFLCHNCDLN.
+     */
+    @java.lang.Override
+    public int getHGFLCHNCDLN() {
+      return hGFLCHNCDLN_;
+    }
+
+    public static final int KFEHIPLFNMI_FIELD_NUMBER = 5;
+    private int kFEHIPLFNMI_;
+    /**
+     * <code>uint32 KFEHIPLFNMI = 5;</code>
+     * @return The kFEHIPLFNMI.
+     */
+    @java.lang.Override
+    public int getKFEHIPLFNMI() {
+      return kFEHIPLFNMI_;
+    }
+
+    public static final int CFCKHNGAPKE_FIELD_NUMBER = 9;
+    private int cFCKHNGAPKE_;
+    /**
+     * <code>uint32 CFCKHNGAPKE = 9;</code>
+     * @return The cFCKHNGAPKE.
+     */
+    @java.lang.Override
+    public int getCFCKHNGAPKE() {
+      return cFCKHNGAPKE_;
     }
 
     public static final int AKAPJEMAJHN_FIELD_NUMBER = 15;
@@ -446,15 +439,26 @@ public final class INKBFLJAEJPOuterClass {
       return aKAPJEMAJHN_;
     }
 
-    public static final int PBIOFMENBEA_FIELD_NUMBER = 16;
-    private int pBIOFMENBEA_;
+    public static final int INDEX_FIELD_NUMBER = 4;
+    private int index_;
     /**
-     * <code>uint32 PBIOFMENBEA = 16;</code>
-     * @return The pBIOFMENBEA.
+     * <code>uint32 index = 4;</code>
+     * @return The index.
      */
     @java.lang.Override
-    public int getPBIOFMENBEA() {
-      return pBIOFMENBEA_;
+    public int getIndex() {
+      return index_;
+    }
+
+    public static final int AEKEMNLLBAF_FIELD_NUMBER = 10;
+    private int aEKEMNLLBAF_;
+    /**
+     * <code>uint32 AEKEMNLLBAF = 10;</code>
+     * @return The aEKEMNLLBAF.
+     */
+    @java.lang.Override
+    public int getAEKEMNLLBAF() {
+      return aEKEMNLLBAF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -600,39 +604,39 @@ public final class INKBFLJAEJPOuterClass {
       }
       emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP other = (emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP) obj;
 
-      if (getUid()
-          != other.getUid()) return false;
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
-      if (getScore()
-          != other.getScore()) return false;
-      if (getIndex()
-          != other.getIndex()) return false;
-      if (getKFEHIPLFNMI()
-          != other.getKFEHIPLFNMI()) return false;
-      if (getLOKEFCNECID()
-          != other.getLOKEFCNECID()) return false;
-      if (getRot()
-          != other.getRot()) return false;
-      if (getCFCKHNGAPKE()
-          != other.getCFCKHNGAPKE()) return false;
-      if (getAEKEMNLLBAF()
-          != other.getAEKEMNLLBAF()) return false;
-      if (getHDACLIOHBJC()
-          != other.getHDACLIOHBJC()) return false;
-      if (getHGFLCHNCDLN()
-          != other.getHGFLCHNCDLN()) return false;
+      if (getUid()
+          != other.getUid()) return false;
       if (getJJFKBJHENLI()
           != other.getJJFKBJHENLI()) return false;
-      if (getNINOCKACDKO()
-          != other.getNINOCKACDKO()) return false;
-      if (getAKAPJEMAJHN()
-          != other.getAKAPJEMAJHN()) return false;
+      if (getRot()
+          != other.getRot()) return false;
+      if (getHDACLIOHBJC()
+          != other.getHDACLIOHBJC()) return false;
       if (getPBIOFMENBEA()
           != other.getPBIOFMENBEA()) return false;
+      if (getNINOCKACDKO()
+          != other.getNINOCKACDKO()) return false;
+      if (getScore()
+          != other.getScore()) return false;
+      if (getLOKEFCNECID()
+          != other.getLOKEFCNECID()) return false;
+      if (getHGFLCHNCDLN()
+          != other.getHGFLCHNCDLN()) return false;
+      if (getKFEHIPLFNMI()
+          != other.getKFEHIPLFNMI()) return false;
+      if (getCFCKHNGAPKE()
+          != other.getCFCKHNGAPKE()) return false;
+      if (getAKAPJEMAJHN()
+          != other.getAKAPJEMAJHN()) return false;
+      if (getIndex()
+          != other.getIndex()) return false;
+      if (getAEKEMNLLBAF()
+          != other.getAEKEMNLLBAF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -644,38 +648,38 @@ public final class INKBFLJAEJPOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getScore();
-      hash = (37 * hash) + INDEX_FIELD_NUMBER;
-      hash = (53 * hash) + getIndex();
-      hash = (37 * hash) + KFEHIPLFNMI_FIELD_NUMBER;
-      hash = (53 * hash) + getKFEHIPLFNMI();
-      hash = (37 * hash) + LOKEFCNECID_FIELD_NUMBER;
-      hash = (53 * hash) + getLOKEFCNECID();
-      hash = (37 * hash) + ROT_FIELD_NUMBER;
-      hash = (53 * hash) + getRot();
-      hash = (37 * hash) + CFCKHNGAPKE_FIELD_NUMBER;
-      hash = (53 * hash) + getCFCKHNGAPKE();
-      hash = (37 * hash) + AEKEMNLLBAF_FIELD_NUMBER;
-      hash = (53 * hash) + getAEKEMNLLBAF();
-      hash = (37 * hash) + HDACLIOHBJC_FIELD_NUMBER;
-      hash = (53 * hash) + getHDACLIOHBJC();
-      hash = (37 * hash) + HGFLCHNCDLN_FIELD_NUMBER;
-      hash = (53 * hash) + getHGFLCHNCDLN();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
       hash = (37 * hash) + JJFKBJHENLI_FIELD_NUMBER;
       hash = (53 * hash) + getJJFKBJHENLI();
-      hash = (37 * hash) + NINOCKACDKO_FIELD_NUMBER;
-      hash = (53 * hash) + getNINOCKACDKO();
-      hash = (37 * hash) + AKAPJEMAJHN_FIELD_NUMBER;
-      hash = (53 * hash) + getAKAPJEMAJHN();
+      hash = (37 * hash) + ROT_FIELD_NUMBER;
+      hash = (53 * hash) + getRot();
+      hash = (37 * hash) + HDACLIOHBJC_FIELD_NUMBER;
+      hash = (53 * hash) + getHDACLIOHBJC();
       hash = (37 * hash) + PBIOFMENBEA_FIELD_NUMBER;
       hash = (53 * hash) + getPBIOFMENBEA();
+      hash = (37 * hash) + NINOCKACDKO_FIELD_NUMBER;
+      hash = (53 * hash) + getNINOCKACDKO();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getScore();
+      hash = (37 * hash) + LOKEFCNECID_FIELD_NUMBER;
+      hash = (53 * hash) + getLOKEFCNECID();
+      hash = (37 * hash) + HGFLCHNCDLN_FIELD_NUMBER;
+      hash = (53 * hash) + getHGFLCHNCDLN();
+      hash = (37 * hash) + KFEHIPLFNMI_FIELD_NUMBER;
+      hash = (53 * hash) + getKFEHIPLFNMI();
+      hash = (37 * hash) + CFCKHNGAPKE_FIELD_NUMBER;
+      hash = (53 * hash) + getCFCKHNGAPKE();
+      hash = (37 * hash) + AKAPJEMAJHN_FIELD_NUMBER;
+      hash = (53 * hash) + getAKAPJEMAJHN();
+      hash = (37 * hash) + INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getIndex();
+      hash = (37 * hash) + AEKEMNLLBAF_FIELD_NUMBER;
+      hash = (53 * hash) + getAEKEMNLLBAF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -772,6 +776,10 @@ public final class INKBFLJAEJPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code INKBFLJAEJP}
      */
     public static final class Builder extends
@@ -809,39 +817,39 @@ public final class INKBFLJAEJPOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uid_ = 0;
-
         if (posBuilder_ == null) {
           pos_ = null;
         } else {
           pos_ = null;
           posBuilder_ = null;
         }
-        score_ = 0;
-
-        index_ = 0;
-
-        kFEHIPLFNMI_ = 0;
-
-        lOKEFCNECID_ = 0;
-
-        rot_ = 0;
-
-        cFCKHNGAPKE_ = 0;
-
-        aEKEMNLLBAF_ = 0;
-
-        hDACLIOHBJC_ = 0;
-
-        hGFLCHNCDLN_ = 0;
+        uid_ = 0;
 
         jJFKBJHENLI_ = 0;
 
+        rot_ = 0;
+
+        hDACLIOHBJC_ = 0;
+
+        pBIOFMENBEA_ = 0;
+
         nINOCKACDKO_ = 0;
+
+        score_ = 0;
+
+        lOKEFCNECID_ = 0;
+
+        hGFLCHNCDLN_ = 0;
+
+        kFEHIPLFNMI_ = 0;
+
+        cFCKHNGAPKE_ = 0;
 
         aKAPJEMAJHN_ = 0;
 
-        pBIOFMENBEA_ = 0;
+        index_ = 0;
+
+        aEKEMNLLBAF_ = 0;
 
         return this;
       }
@@ -869,25 +877,25 @@ public final class INKBFLJAEJPOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP buildPartial() {
         emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP result = new emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP(this);
-        result.uid_ = uid_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
-        result.score_ = score_;
-        result.index_ = index_;
-        result.kFEHIPLFNMI_ = kFEHIPLFNMI_;
-        result.lOKEFCNECID_ = lOKEFCNECID_;
-        result.rot_ = rot_;
-        result.cFCKHNGAPKE_ = cFCKHNGAPKE_;
-        result.aEKEMNLLBAF_ = aEKEMNLLBAF_;
-        result.hDACLIOHBJC_ = hDACLIOHBJC_;
-        result.hGFLCHNCDLN_ = hGFLCHNCDLN_;
+        result.uid_ = uid_;
         result.jJFKBJHENLI_ = jJFKBJHENLI_;
-        result.nINOCKACDKO_ = nINOCKACDKO_;
-        result.aKAPJEMAJHN_ = aKAPJEMAJHN_;
+        result.rot_ = rot_;
+        result.hDACLIOHBJC_ = hDACLIOHBJC_;
         result.pBIOFMENBEA_ = pBIOFMENBEA_;
+        result.nINOCKACDKO_ = nINOCKACDKO_;
+        result.score_ = score_;
+        result.lOKEFCNECID_ = lOKEFCNECID_;
+        result.hGFLCHNCDLN_ = hGFLCHNCDLN_;
+        result.kFEHIPLFNMI_ = kFEHIPLFNMI_;
+        result.cFCKHNGAPKE_ = cFCKHNGAPKE_;
+        result.aKAPJEMAJHN_ = aKAPJEMAJHN_;
+        result.index_ = index_;
+        result.aEKEMNLLBAF_ = aEKEMNLLBAF_;
         onBuilt();
         return result;
       }
@@ -936,50 +944,50 @@ public final class INKBFLJAEJPOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP other) {
         if (other == emu.grasscutter.net.proto.INKBFLJAEJPOuterClass.INKBFLJAEJP.getDefaultInstance()) return this;
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
-        }
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        if (other.getScore() != 0) {
-          setScore(other.getScore());
-        }
-        if (other.getIndex() != 0) {
-          setIndex(other.getIndex());
-        }
-        if (other.getKFEHIPLFNMI() != 0) {
-          setKFEHIPLFNMI(other.getKFEHIPLFNMI());
-        }
-        if (other.getLOKEFCNECID() != 0) {
-          setLOKEFCNECID(other.getLOKEFCNECID());
-        }
-        if (other.getRot() != 0) {
-          setRot(other.getRot());
-        }
-        if (other.getCFCKHNGAPKE() != 0) {
-          setCFCKHNGAPKE(other.getCFCKHNGAPKE());
-        }
-        if (other.getAEKEMNLLBAF() != 0) {
-          setAEKEMNLLBAF(other.getAEKEMNLLBAF());
-        }
-        if (other.getHDACLIOHBJC() != 0) {
-          setHDACLIOHBJC(other.getHDACLIOHBJC());
-        }
-        if (other.getHGFLCHNCDLN() != 0) {
-          setHGFLCHNCDLN(other.getHGFLCHNCDLN());
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
         if (other.getJJFKBJHENLI() != 0) {
           setJJFKBJHENLI(other.getJJFKBJHENLI());
         }
+        if (other.getRot() != 0) {
+          setRot(other.getRot());
+        }
+        if (other.getHDACLIOHBJC() != 0) {
+          setHDACLIOHBJC(other.getHDACLIOHBJC());
+        }
+        if (other.getPBIOFMENBEA() != 0) {
+          setPBIOFMENBEA(other.getPBIOFMENBEA());
+        }
         if (other.getNINOCKACDKO() != 0) {
           setNINOCKACDKO(other.getNINOCKACDKO());
+        }
+        if (other.getScore() != 0) {
+          setScore(other.getScore());
+        }
+        if (other.getLOKEFCNECID() != 0) {
+          setLOKEFCNECID(other.getLOKEFCNECID());
+        }
+        if (other.getHGFLCHNCDLN() != 0) {
+          setHGFLCHNCDLN(other.getHGFLCHNCDLN());
+        }
+        if (other.getKFEHIPLFNMI() != 0) {
+          setKFEHIPLFNMI(other.getKFEHIPLFNMI());
+        }
+        if (other.getCFCKHNGAPKE() != 0) {
+          setCFCKHNGAPKE(other.getCFCKHNGAPKE());
         }
         if (other.getAKAPJEMAJHN() != 0) {
           setAKAPJEMAJHN(other.getAKAPJEMAJHN());
         }
-        if (other.getPBIOFMENBEA() != 0) {
-          setPBIOFMENBEA(other.getPBIOFMENBEA());
+        if (other.getIndex() != 0) {
+          setIndex(other.getIndex());
+        }
+        if (other.getAEKEMNLLBAF() != 0) {
+          setAEKEMNLLBAF(other.getAEKEMNLLBAF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1010,40 +1018,9 @@ public final class INKBFLJAEJPOuterClass {
         return this;
       }
 
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 1;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 1;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int pos_;
+      private emu.grasscutter.net.proto.Vector2Int._Vector2Int pos_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int, emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.Builder, emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2IntOrBuilder> posBuilder_;
+          emu.grasscutter.net.proto.Vector2Int._Vector2Int, emu.grasscutter.net.proto.Vector2Int._Vector2Int.Builder, emu.grasscutter.net.proto.Vector2Int._Vector2IntOrBuilder> posBuilder_;
       /**
        * <code>._Vector2Int pos = 2;</code>
        * @return Whether the pos field is set.
@@ -1055,9 +1032,9 @@ public final class INKBFLJAEJPOuterClass {
        * <code>._Vector2Int pos = 2;</code>
        * @return The pos.
        */
-      public emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int getPos() {
+      public emu.grasscutter.net.proto.Vector2Int._Vector2Int getPos() {
         if (posBuilder_ == null) {
-          return pos_ == null ? emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.getDefaultInstance() : pos_;
+          return pos_ == null ? emu.grasscutter.net.proto.Vector2Int._Vector2Int.getDefaultInstance() : pos_;
         } else {
           return posBuilder_.getMessage();
         }
@@ -1065,7 +1042,7 @@ public final class INKBFLJAEJPOuterClass {
       /**
        * <code>._Vector2Int pos = 2;</code>
        */
-      public Builder setPos(emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int value) {
+      public Builder setPos(emu.grasscutter.net.proto.Vector2Int._Vector2Int value) {
         if (posBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1082,7 +1059,7 @@ public final class INKBFLJAEJPOuterClass {
        * <code>._Vector2Int pos = 2;</code>
        */
       public Builder setPos(
-          emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.Builder builderForValue) {
+          emu.grasscutter.net.proto.Vector2Int._Vector2Int.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
           onChanged();
@@ -1095,11 +1072,11 @@ public final class INKBFLJAEJPOuterClass {
       /**
        * <code>._Vector2Int pos = 2;</code>
        */
-      public Builder mergePos(emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int value) {
+      public Builder mergePos(emu.grasscutter.net.proto.Vector2Int._Vector2Int value) {
         if (posBuilder_ == null) {
           if (pos_ != null) {
             pos_ =
-              emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.newBuilder(pos_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.Vector2Int._Vector2Int.newBuilder(pos_).mergeFrom(value).buildPartial();
           } else {
             pos_ = value;
           }
@@ -1127,7 +1104,7 @@ public final class INKBFLJAEJPOuterClass {
       /**
        * <code>._Vector2Int pos = 2;</code>
        */
-      public emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.Builder getPosBuilder() {
+      public emu.grasscutter.net.proto.Vector2Int._Vector2Int.Builder getPosBuilder() {
         
         onChanged();
         return getPosFieldBuilder().getBuilder();
@@ -1135,23 +1112,23 @@ public final class INKBFLJAEJPOuterClass {
       /**
        * <code>._Vector2Int pos = 2;</code>
        */
-      public emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2IntOrBuilder getPosOrBuilder() {
+      public emu.grasscutter.net.proto.Vector2Int._Vector2IntOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
           return posBuilder_.getMessageOrBuilder();
         } else {
           return pos_ == null ?
-              emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.getDefaultInstance() : pos_;
+              emu.grasscutter.net.proto.Vector2Int._Vector2Int.getDefaultInstance() : pos_;
         }
       }
       /**
        * <code>._Vector2Int pos = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int, emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.Builder, emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2IntOrBuilder> 
+          emu.grasscutter.net.proto.Vector2Int._Vector2Int, emu.grasscutter.net.proto.Vector2Int._Vector2Int.Builder, emu.grasscutter.net.proto.Vector2Int._Vector2IntOrBuilder> 
           getPosFieldBuilder() {
         if (posBuilder_ == null) {
           posBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int, emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2Int.Builder, emu.grasscutter.net.proto._Vector2IntOuterClass._Vector2IntOrBuilder>(
+              emu.grasscutter.net.proto.Vector2Int._Vector2Int, emu.grasscutter.net.proto.Vector2Int._Vector2Int.Builder, emu.grasscutter.net.proto.Vector2Int._Vector2IntOrBuilder>(
                   getPos(),
                   getParentForChildren(),
                   isClean());
@@ -1160,281 +1137,33 @@ public final class INKBFLJAEJPOuterClass {
         return posBuilder_;
       }
 
-      private int score_ ;
+      private int uid_ ;
       /**
-       * <code>uint32 score = 3;</code>
-       * @return The score.
+       * <code>uint32 uid = 1;</code>
+       * @return The uid.
        */
       @java.lang.Override
-      public int getScore() {
-        return score_;
+      public int getUid() {
+        return uid_;
       }
       /**
-       * <code>uint32 score = 3;</code>
-       * @param value The score to set.
+       * <code>uint32 uid = 1;</code>
+       * @param value The uid to set.
        * @return This builder for chaining.
        */
-      public Builder setScore(int value) {
+      public Builder setUid(int value) {
         
-        score_ = value;
+        uid_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 score = 3;</code>
+       * <code>uint32 uid = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearScore() {
+      public Builder clearUid() {
         
-        score_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int index_ ;
-      /**
-       * <code>uint32 index = 4;</code>
-       * @return The index.
-       */
-      @java.lang.Override
-      public int getIndex() {
-        return index_;
-      }
-      /**
-       * <code>uint32 index = 4;</code>
-       * @param value The index to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIndex(int value) {
-        
-        index_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 index = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIndex() {
-        
-        index_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int kFEHIPLFNMI_ ;
-      /**
-       * <code>uint32 KFEHIPLFNMI = 5;</code>
-       * @return The kFEHIPLFNMI.
-       */
-      @java.lang.Override
-      public int getKFEHIPLFNMI() {
-        return kFEHIPLFNMI_;
-      }
-      /**
-       * <code>uint32 KFEHIPLFNMI = 5;</code>
-       * @param value The kFEHIPLFNMI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKFEHIPLFNMI(int value) {
-        
-        kFEHIPLFNMI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KFEHIPLFNMI = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKFEHIPLFNMI() {
-        
-        kFEHIPLFNMI_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lOKEFCNECID_ ;
-      /**
-       * <code>uint32 LOKEFCNECID = 6;</code>
-       * @return The lOKEFCNECID.
-       */
-      @java.lang.Override
-      public int getLOKEFCNECID() {
-        return lOKEFCNECID_;
-      }
-      /**
-       * <code>uint32 LOKEFCNECID = 6;</code>
-       * @param value The lOKEFCNECID to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLOKEFCNECID(int value) {
-        
-        lOKEFCNECID_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LOKEFCNECID = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLOKEFCNECID() {
-        
-        lOKEFCNECID_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int rot_ ;
-      /**
-       * <code>int32 rot = 8;</code>
-       * @return The rot.
-       */
-      @java.lang.Override
-      public int getRot() {
-        return rot_;
-      }
-      /**
-       * <code>int32 rot = 8;</code>
-       * @param value The rot to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRot(int value) {
-        
-        rot_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 rot = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRot() {
-        
-        rot_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int cFCKHNGAPKE_ ;
-      /**
-       * <code>uint32 CFCKHNGAPKE = 9;</code>
-       * @return The cFCKHNGAPKE.
-       */
-      @java.lang.Override
-      public int getCFCKHNGAPKE() {
-        return cFCKHNGAPKE_;
-      }
-      /**
-       * <code>uint32 CFCKHNGAPKE = 9;</code>
-       * @param value The cFCKHNGAPKE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCFCKHNGAPKE(int value) {
-        
-        cFCKHNGAPKE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 CFCKHNGAPKE = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCFCKHNGAPKE() {
-        
-        cFCKHNGAPKE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int aEKEMNLLBAF_ ;
-      /**
-       * <code>uint32 AEKEMNLLBAF = 10;</code>
-       * @return The aEKEMNLLBAF.
-       */
-      @java.lang.Override
-      public int getAEKEMNLLBAF() {
-        return aEKEMNLLBAF_;
-      }
-      /**
-       * <code>uint32 AEKEMNLLBAF = 10;</code>
-       * @param value The aEKEMNLLBAF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAEKEMNLLBAF(int value) {
-        
-        aEKEMNLLBAF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 AEKEMNLLBAF = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAEKEMNLLBAF() {
-        
-        aEKEMNLLBAF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int hDACLIOHBJC_ ;
-      /**
-       * <code>uint32 HDACLIOHBJC = 11;</code>
-       * @return The hDACLIOHBJC.
-       */
-      @java.lang.Override
-      public int getHDACLIOHBJC() {
-        return hDACLIOHBJC_;
-      }
-      /**
-       * <code>uint32 HDACLIOHBJC = 11;</code>
-       * @param value The hDACLIOHBJC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHDACLIOHBJC(int value) {
-        
-        hDACLIOHBJC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HDACLIOHBJC = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHDACLIOHBJC() {
-        
-        hDACLIOHBJC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int hGFLCHNCDLN_ ;
-      /**
-       * <code>uint32 HGFLCHNCDLN = 12;</code>
-       * @return The hGFLCHNCDLN.
-       */
-      @java.lang.Override
-      public int getHGFLCHNCDLN() {
-        return hGFLCHNCDLN_;
-      }
-      /**
-       * <code>uint32 HGFLCHNCDLN = 12;</code>
-       * @param value The hGFLCHNCDLN to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHGFLCHNCDLN(int value) {
-        
-        hGFLCHNCDLN_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HGFLCHNCDLN = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHGFLCHNCDLN() {
-        
-        hGFLCHNCDLN_ = 0;
+        uid_ = 0;
         onChanged();
         return this;
       }
@@ -1470,6 +1199,99 @@ public final class INKBFLJAEJPOuterClass {
         return this;
       }
 
+      private int rot_ ;
+      /**
+       * <code>int32 rot = 8;</code>
+       * @return The rot.
+       */
+      @java.lang.Override
+      public int getRot() {
+        return rot_;
+      }
+      /**
+       * <code>int32 rot = 8;</code>
+       * @param value The rot to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRot(int value) {
+        
+        rot_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 rot = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRot() {
+        
+        rot_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hDACLIOHBJC_ ;
+      /**
+       * <code>uint32 HDACLIOHBJC = 11;</code>
+       * @return The hDACLIOHBJC.
+       */
+      @java.lang.Override
+      public int getHDACLIOHBJC() {
+        return hDACLIOHBJC_;
+      }
+      /**
+       * <code>uint32 HDACLIOHBJC = 11;</code>
+       * @param value The hDACLIOHBJC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHDACLIOHBJC(int value) {
+        
+        hDACLIOHBJC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HDACLIOHBJC = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHDACLIOHBJC() {
+        
+        hDACLIOHBJC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pBIOFMENBEA_ ;
+      /**
+       * <code>uint32 PBIOFMENBEA = 16;</code>
+       * @return The pBIOFMENBEA.
+       */
+      @java.lang.Override
+      public int getPBIOFMENBEA() {
+        return pBIOFMENBEA_;
+      }
+      /**
+       * <code>uint32 PBIOFMENBEA = 16;</code>
+       * @param value The pBIOFMENBEA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPBIOFMENBEA(int value) {
+        
+        pBIOFMENBEA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PBIOFMENBEA = 16;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPBIOFMENBEA() {
+        
+        pBIOFMENBEA_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int nINOCKACDKO_ ;
       /**
        * <code>uint32 NINOCKACDKO = 14;</code>
@@ -1497,6 +1319,161 @@ public final class INKBFLJAEJPOuterClass {
       public Builder clearNINOCKACDKO() {
         
         nINOCKACDKO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int score_ ;
+      /**
+       * <code>uint32 score = 3;</code>
+       * @return The score.
+       */
+      @java.lang.Override
+      public int getScore() {
+        return score_;
+      }
+      /**
+       * <code>uint32 score = 3;</code>
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(int value) {
+        
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 score = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+        
+        score_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lOKEFCNECID_ ;
+      /**
+       * <code>uint32 LOKEFCNECID = 6;</code>
+       * @return The lOKEFCNECID.
+       */
+      @java.lang.Override
+      public int getLOKEFCNECID() {
+        return lOKEFCNECID_;
+      }
+      /**
+       * <code>uint32 LOKEFCNECID = 6;</code>
+       * @param value The lOKEFCNECID to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLOKEFCNECID(int value) {
+        
+        lOKEFCNECID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LOKEFCNECID = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLOKEFCNECID() {
+        
+        lOKEFCNECID_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hGFLCHNCDLN_ ;
+      /**
+       * <code>uint32 HGFLCHNCDLN = 12;</code>
+       * @return The hGFLCHNCDLN.
+       */
+      @java.lang.Override
+      public int getHGFLCHNCDLN() {
+        return hGFLCHNCDLN_;
+      }
+      /**
+       * <code>uint32 HGFLCHNCDLN = 12;</code>
+       * @param value The hGFLCHNCDLN to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHGFLCHNCDLN(int value) {
+        
+        hGFLCHNCDLN_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HGFLCHNCDLN = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHGFLCHNCDLN() {
+        
+        hGFLCHNCDLN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kFEHIPLFNMI_ ;
+      /**
+       * <code>uint32 KFEHIPLFNMI = 5;</code>
+       * @return The kFEHIPLFNMI.
+       */
+      @java.lang.Override
+      public int getKFEHIPLFNMI() {
+        return kFEHIPLFNMI_;
+      }
+      /**
+       * <code>uint32 KFEHIPLFNMI = 5;</code>
+       * @param value The kFEHIPLFNMI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKFEHIPLFNMI(int value) {
+        
+        kFEHIPLFNMI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KFEHIPLFNMI = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKFEHIPLFNMI() {
+        
+        kFEHIPLFNMI_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cFCKHNGAPKE_ ;
+      /**
+       * <code>uint32 CFCKHNGAPKE = 9;</code>
+       * @return The cFCKHNGAPKE.
+       */
+      @java.lang.Override
+      public int getCFCKHNGAPKE() {
+        return cFCKHNGAPKE_;
+      }
+      /**
+       * <code>uint32 CFCKHNGAPKE = 9;</code>
+       * @param value The cFCKHNGAPKE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCFCKHNGAPKE(int value) {
+        
+        cFCKHNGAPKE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 CFCKHNGAPKE = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCFCKHNGAPKE() {
+        
+        cFCKHNGAPKE_ = 0;
         onChanged();
         return this;
       }
@@ -1532,33 +1509,64 @@ public final class INKBFLJAEJPOuterClass {
         return this;
       }
 
-      private int pBIOFMENBEA_ ;
+      private int index_ ;
       /**
-       * <code>uint32 PBIOFMENBEA = 16;</code>
-       * @return The pBIOFMENBEA.
+       * <code>uint32 index = 4;</code>
+       * @return The index.
        */
       @java.lang.Override
-      public int getPBIOFMENBEA() {
-        return pBIOFMENBEA_;
+      public int getIndex() {
+        return index_;
       }
       /**
-       * <code>uint32 PBIOFMENBEA = 16;</code>
-       * @param value The pBIOFMENBEA to set.
+       * <code>uint32 index = 4;</code>
+       * @param value The index to set.
        * @return This builder for chaining.
        */
-      public Builder setPBIOFMENBEA(int value) {
+      public Builder setIndex(int value) {
         
-        pBIOFMENBEA_ = value;
+        index_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 PBIOFMENBEA = 16;</code>
+       * <code>uint32 index = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPBIOFMENBEA() {
+      public Builder clearIndex() {
         
-        pBIOFMENBEA_ = 0;
+        index_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int aEKEMNLLBAF_ ;
+      /**
+       * <code>uint32 AEKEMNLLBAF = 10;</code>
+       * @return The aEKEMNLLBAF.
+       */
+      @java.lang.Override
+      public int getAEKEMNLLBAF() {
+        return aEKEMNLLBAF_;
+      }
+      /**
+       * <code>uint32 AEKEMNLLBAF = 10;</code>
+       * @param value The aEKEMNLLBAF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAEKEMNLLBAF(int value) {
+        
+        aEKEMNLLBAF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 AEKEMNLLBAF = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAEKEMNLLBAF() {
+        
+        aEKEMNLLBAF_ = 0;
         onChanged();
         return this;
       }
@@ -1630,29 +1638,28 @@ public final class INKBFLJAEJPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021INKBFLJAEJP.proto\032\021_Vector2Int.proto\"\262" +
-      "\002\n\013INKBFLJAEJP\022\013\n\003uid\030\001 \001(\r\022\031\n\003pos\030\002 \001(\013" +
-      "2\014._Vector2Int\022\r\n\005score\030\003 \001(\r\022\r\n\005index\030\004" +
-      " \001(\r\022\023\n\013KFEHIPLFNMI\030\005 \001(\r\022\023\n\013LOKEFCNECID" +
-      "\030\006 \001(\r\022\013\n\003rot\030\010 \001(\005\022\023\n\013CFCKHNGAPKE\030\t \001(\r" +
-      "\022\023\n\013AEKEMNLLBAF\030\n \001(\r\022\023\n\013HDACLIOHBJC\030\013 \001" +
-      "(\r\022\023\n\013HGFLCHNCDLN\030\014 \001(\r\022\023\n\013JJFKBJHENLI\030\r" +
-      " \001(\r\022\023\n\013NINOCKACDKO\030\016 \001(\r\022\023\n\013AKAPJEMAJHN" +
-      "\030\017 \001(\r\022\023\n\013PBIOFMENBEA\030\020 \001(\rB2\n\031emu.grass" +
-      "cutter.net.protoB\025INKBFLJAEJPOuterClassb" +
-      "\006proto3"
+      "\002\n\013INKBFLJAEJP\022\031\n\003pos\030\002 \001(\0132\014._Vector2In" +
+      "t\022\013\n\003uid\030\001 \001(\r\022\023\n\013JJFKBJHENLI\030\r \001(\r\022\013\n\003r" +
+      "ot\030\010 \001(\005\022\023\n\013HDACLIOHBJC\030\013 \001(\r\022\023\n\013PBIOFME" +
+      "NBEA\030\020 \001(\r\022\023\n\013NINOCKACDKO\030\016 \001(\r\022\r\n\005score" +
+      "\030\003 \001(\r\022\023\n\013LOKEFCNECID\030\006 \001(\r\022\023\n\013HGFLCHNCD" +
+      "LN\030\014 \001(\r\022\023\n\013KFEHIPLFNMI\030\005 \001(\r\022\023\n\013CFCKHNG" +
+      "APKE\030\t \001(\r\022\023\n\013AKAPJEMAJHN\030\017 \001(\r\022\r\n\005index" +
+      "\030\004 \001(\r\022\023\n\013AEKEMNLLBAF\030\n \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto._Vector2IntOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.Vector2Int.getDescriptor(),
         });
     internal_static_INKBFLJAEJP_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_INKBFLJAEJP_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_INKBFLJAEJP_descriptor,
-        new java.lang.String[] { "Uid", "Pos", "Score", "Index", "KFEHIPLFNMI", "LOKEFCNECID", "Rot", "CFCKHNGAPKE", "AEKEMNLLBAF", "HDACLIOHBJC", "HGFLCHNCDLN", "JJFKBJHENLI", "NINOCKACDKO", "AKAPJEMAJHN", "PBIOFMENBEA", });
-    emu.grasscutter.net.proto._Vector2IntOuterClass.getDescriptor();
+        new java.lang.String[] { "Pos", "Uid", "JJFKBJHENLI", "Rot", "HDACLIOHBJC", "PBIOFMENBEA", "NINOCKACDKO", "Score", "LOKEFCNECID", "HGFLCHNCDLN", "KFEHIPLFNMI", "CFCKHNGAPKE", "AKAPJEMAJHN", "Index", "AEKEMNLLBAF", });
+    emu.grasscutter.net.proto.Vector2Int.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

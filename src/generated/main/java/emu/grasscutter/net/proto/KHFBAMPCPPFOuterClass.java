@@ -19,30 +19,34 @@ public final class KHFBAMPCPPFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN> 
         getOIKCJFGIJGAList();
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN getOIKCJFGIJGA(int index);
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     int getOIKCJFGIJGACount();
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder> 
         getOIKCJFGIJGAOrBuilderList();
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder getOIKCJFGIJGAOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code KHFBAMPCPPF}
    */
   public static final class KHFBAMPCPPF extends
@@ -89,7 +93,7 @@ public final class KHFBAMPCPPFOuterClass {
             case 0:
               done = true;
               break;
-            case 82: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 oIKCJFGIJGA_ = new java.util.ArrayList<emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class KHFBAMPCPPFOuterClass {
               emu.grasscutter.net.proto.KHFBAMPCPPFOuterClass.KHFBAMPCPPF.class, emu.grasscutter.net.proto.KHFBAMPCPPFOuterClass.KHFBAMPCPPF.Builder.class);
     }
 
-    public static final int OIKCJFGIJGA_FIELD_NUMBER = 10;
+    public static final int OIKCJFGIJGA_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN> oIKCJFGIJGA_;
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN> getOIKCJFGIJGAList() {
       return oIKCJFGIJGA_;
     }
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder> 
@@ -151,21 +155,21 @@ public final class KHFBAMPCPPFOuterClass {
       return oIKCJFGIJGA_;
     }
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     @java.lang.Override
     public int getOIKCJFGIJGACount() {
       return oIKCJFGIJGA_.size();
     }
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN getOIKCJFGIJGA(int index) {
       return oIKCJFGIJGA_.get(index);
     }
     /**
-     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+     * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder getOIKCJFGIJGAOrBuilder(
@@ -188,7 +192,7 @@ public final class KHFBAMPCPPFOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < oIKCJFGIJGA_.size(); i++) {
-        output.writeMessage(10, oIKCJFGIJGA_.get(i));
+        output.writeMessage(4, oIKCJFGIJGA_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class KHFBAMPCPPFOuterClass {
       size = 0;
       for (int i = 0; i < oIKCJFGIJGA_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, oIKCJFGIJGA_.get(i));
+          .computeMessageSize(4, oIKCJFGIJGA_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class KHFBAMPCPPFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code KHFBAMPCPPF}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class KHFBAMPCPPFOuterClass {
           emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder> oIKCJFGIJGABuilder_;
 
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN> getOIKCJFGIJGAList() {
         if (oIKCJFGIJGABuilder_ == null) {
@@ -538,7 +546,7 @@ public final class KHFBAMPCPPFOuterClass {
         }
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public int getOIKCJFGIJGACount() {
         if (oIKCJFGIJGABuilder_ == null) {
@@ -548,7 +556,7 @@ public final class KHFBAMPCPPFOuterClass {
         }
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN getOIKCJFGIJGA(int index) {
         if (oIKCJFGIJGABuilder_ == null) {
@@ -558,7 +566,7 @@ public final class KHFBAMPCPPFOuterClass {
         }
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder setOIKCJFGIJGA(
           int index, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN value) {
@@ -575,7 +583,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder setOIKCJFGIJGA(
           int index, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder addOIKCJFGIJGA(emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN value) {
         if (oIKCJFGIJGABuilder_ == null) {
@@ -605,7 +613,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder addOIKCJFGIJGA(
           int index, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN value) {
@@ -622,7 +630,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder addOIKCJFGIJGA(
           emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder addOIKCJFGIJGA(
           int index, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder addAllOIKCJFGIJGA(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN> values) {
@@ -665,7 +673,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder clearOIKCJFGIJGA() {
         if (oIKCJFGIJGABuilder_ == null) {
@@ -678,7 +686,7 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public Builder removeOIKCJFGIJGA(int index) {
         if (oIKCJFGIJGABuilder_ == null) {
@@ -691,14 +699,14 @@ public final class KHFBAMPCPPFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder getOIKCJFGIJGABuilder(
           int index) {
         return getOIKCJFGIJGAFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder getOIKCJFGIJGAOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class KHFBAMPCPPFOuterClass {
         }
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJNOrBuilder> 
            getOIKCJFGIJGAOrBuilderList() {
@@ -719,14 +727,14 @@ public final class KHFBAMPCPPFOuterClass {
         }
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder addOIKCJFGIJGABuilder() {
         return getOIKCJFGIJGAFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.getDefaultInstance());
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder addOIKCJFGIJGABuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class KHFBAMPCPPFOuterClass {
             index, emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.getDefaultInstance());
       }
       /**
-       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 10;</code>
+       * <code>repeated .MDMMOJHDJJN OIKCJFGIJGA = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.MDMMOJHDJJNOuterClass.MDMMOJHDJJN.Builder> 
            getOIKCJFGIJGABuilderList() {
@@ -822,9 +830,9 @@ public final class KHFBAMPCPPFOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021KHFBAMPCPPF.proto\032\021MDMMOJHDJJN.proto\"0" +
-      "\n\013KHFBAMPCPPF\022!\n\013OIKCJFGIJGA\030\n \003(\0132\014.MDM" +
-      "MOJHDJJNB2\n\031emu.grasscutter.net.protoB\025K" +
-      "HFBAMPCPPFOuterClassb\006proto3"
+      "\n\013KHFBAMPCPPF\022!\n\013OIKCJFGIJGA\030\004 \003(\0132\014.MDM" +
+      "MOJHDJJNB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

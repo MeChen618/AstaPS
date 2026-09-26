@@ -586,15 +586,15 @@ public final class DelBackupAvatarTeamRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034DelBackupAvatarTeamRsp.proto\"H\n\026DelBac" +
-      "kupAvatarTeamRsp\022\035\n\025backup_avatar_team_i" +
-      "d\030\005 \001(\r\022\017\n\007retcode\030\t \001(\005B=\n\031emu.grasscut" +
-      "ter.net.protoB DelBackupAvatarTeamRspOut" +
-      "erClassb\006proto3"
+      "\n\034DelBackupAvatarTeamRsp.proto\032\rRetcode." +
+      "proto\"H\n\026DelBackupAvatarTeamRsp\022\035\n\025backu" +
+      "p_avatar_team_id\030\005 \001(\r\022\017\n\007retcode\030\t \001(\005B" +
+      "\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_DelBackupAvatarTeamRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -602,6 +602,7 @@ public final class DelBackupAvatarTeamRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DelBackupAvatarTeamRsp_descriptor,
         new java.lang.String[] { "BackupAvatarTeamId", "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -18,22 +18,33 @@ public final class ViewCodexReqOuterClass {
       // @@protoc_insertion_point(interface_extends:ViewCodexReq)
       com.google.protobuf.MessageOrBuilder {
 
-    java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData>
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> 
         getTypeDataListList();
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index);
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     int getTypeDataListCount();
-
-    java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
         getTypeDataListOrBuilderList();
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder getTypeDataListOrBuilder(
         int index);
   }
   /**
    * <pre>
-   * CmdId: 25634
+   * CmdId: 1108
    * </pre>
    *
    * Protobuf type {@code ViewCodexReq}
@@ -128,28 +139,38 @@ public final class ViewCodexReqOuterClass {
 
     public static final int TYPE_DATA_LIST_FIELD_NUMBER = 1;
     private java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> typeDataList_;
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> getTypeDataListList() {
       return typeDataList_;
     }
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+    public java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
         getTypeDataListOrBuilderList() {
       return typeDataList_;
     }
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     @java.lang.Override
     public int getTypeDataListCount() {
       return typeDataList_.size();
     }
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     @java.lang.Override
     public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index) {
       return typeDataList_.get(index);
     }
-
+    /**
+     * <code>repeated .CodexTypeData type_data_list = 1;</code>
+     */
     @java.lang.Override
     public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder getTypeDataListOrBuilder(
         int index) {
@@ -315,7 +336,7 @@ public final class ViewCodexReqOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 25634
+     * CmdId: 1108
      * </pre>
      *
      * Protobuf type {@code ViewCodexReq}
@@ -464,7 +485,7 @@ public final class ViewCodexReqOuterClass {
               typeDataListBuilder_ = null;
               typeDataList_ = other.typeDataList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              typeDataListBuilder_ =
+              typeDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTypeDataListFieldBuilder() : null;
             } else {
@@ -514,6 +535,9 @@ public final class ViewCodexReqOuterClass {
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> typeDataListBuilder_;
 
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> getTypeDataListList() {
         if (typeDataListBuilder_ == null) {
           return java.util.Collections.unmodifiableList(typeDataList_);
@@ -521,7 +545,9 @@ public final class ViewCodexReqOuterClass {
           return typeDataListBuilder_.getMessageList();
         }
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public int getTypeDataListCount() {
         if (typeDataListBuilder_ == null) {
           return typeDataList_.size();
@@ -529,7 +555,9 @@ public final class ViewCodexReqOuterClass {
           return typeDataListBuilder_.getCount();
         }
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData getTypeDataList(int index) {
         if (typeDataListBuilder_ == null) {
           return typeDataList_.get(index);
@@ -537,7 +565,9 @@ public final class ViewCodexReqOuterClass {
           return typeDataListBuilder_.getMessage(index);
         }
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder setTypeDataList(
           int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
         if (typeDataListBuilder_ == null) {
@@ -552,7 +582,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder setTypeDataList(
           int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
         if (typeDataListBuilder_ == null) {
@@ -564,7 +596,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder addTypeDataList(emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
         if (typeDataListBuilder_ == null) {
           if (value == null) {
@@ -578,7 +612,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder addTypeDataList(
           int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData value) {
         if (typeDataListBuilder_ == null) {
@@ -593,7 +629,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder addTypeDataList(
           emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
         if (typeDataListBuilder_ == null) {
@@ -605,7 +643,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder addTypeDataList(
           int index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder builderForValue) {
         if (typeDataListBuilder_ == null) {
@@ -617,7 +657,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder addAllTypeDataList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData> values) {
         if (typeDataListBuilder_ == null) {
@@ -630,7 +672,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder clearTypeDataList() {
         if (typeDataListBuilder_ == null) {
           typeDataList_ = java.util.Collections.emptyList();
@@ -641,7 +685,9 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public Builder removeTypeDataList(int index) {
         if (typeDataListBuilder_ == null) {
           ensureTypeDataListIsMutable();
@@ -652,12 +698,16 @@ public final class ViewCodexReqOuterClass {
         }
         return this;
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder getTypeDataListBuilder(
           int index) {
         return getTypeDataListFieldBuilder().getBuilder(index);
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder getTypeDataListOrBuilder(
           int index) {
         if (typeDataListBuilder_ == null) {
@@ -665,8 +715,10 @@ public final class ViewCodexReqOuterClass {
           return typeDataListBuilder_.getMessageOrBuilder(index);
         }
       }
-
-      public java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
+      public java.util.List<? extends emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
            getTypeDataListOrBuilderList() {
         if (typeDataListBuilder_ != null) {
           return typeDataListBuilder_.getMessageOrBuilderList();
@@ -674,24 +726,30 @@ public final class ViewCodexReqOuterClass {
           return java.util.Collections.unmodifiableList(typeDataList_);
         }
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder addTypeDataListBuilder() {
         return getTypeDataListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.getDefaultInstance());
       }
-
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
       public emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder addTypeDataListBuilder(
           int index) {
         return getTypeDataListFieldBuilder().addBuilder(
             index, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.getDefaultInstance());
       }
-
-      public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder>
+      /**
+       * <code>repeated .CodexTypeData type_data_list = 1;</code>
+       */
+      public java.util.List<emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder> 
            getTypeDataListBuilderList() {
         return getTypeDataListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder>
+          emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeData.Builder, emu.grasscutter.net.proto.CodexTypeDataOuterClass.CodexTypeDataOrBuilder> 
           getTypeDataListFieldBuilder() {
         if (typeDataListBuilder_ == null) {
           typeDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -715,6 +773,7 @@ public final class ViewCodexReqOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:ViewCodexReq)
     }
@@ -758,7 +817,7 @@ public final class ViewCodexReqOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ViewCodexReq_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ViewCodexReq_fieldAccessorTable;
 

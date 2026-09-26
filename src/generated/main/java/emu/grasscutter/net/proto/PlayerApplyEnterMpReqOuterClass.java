@@ -517,9 +517,8 @@ public final class PlayerApplyEnterMpReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033PlayerApplyEnterMpReq.proto\"+\n\025PlayerA" +
-      "pplyEnterMpReq\022\022\n\ntarget_uid\030\010 \001(\rB<\n\031em" +
-      "u.grasscutter.net.protoB\037PlayerApplyEnte" +
-      "rMpReqOuterClassb\006proto3"
+      "pplyEnterMpReq\022\022\n\ntarget_uid\030\010 \001(\rB\033\n\031em" +
+      "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

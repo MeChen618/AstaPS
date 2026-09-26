@@ -31,6 +31,10 @@ public final class JAGCAMGLGDPOuterClass {
     int getCFABJABOFPE();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JAGCAMGLGDP}
    */
   public static final class JAGCAMGLGDP extends
@@ -306,6 +310,10 @@ public final class JAGCAMGLGDPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JAGCAMGLGDP}
      */
     public static final class Builder extends
@@ -587,9 +595,8 @@ public final class JAGCAMGLGDPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021JAGCAMGLGDP.proto\".\n\013JAGCAMGLGDP\022\n\n\002id" +
-      "\030\001 \001(\r\022\023\n\013CFABJABOFPE\030\002 \001(\rB2\n\031emu.grass" +
-      "cutter.net.protoB\025JAGCAMGLGDPOuterClassb" +
-      "\006proto3"
+      "\030\001 \001(\r\022\023\n\013CFABJABOFPE\030\002 \001(\rB\033\n\031emu.grass" +
+      "cutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,12 +19,6 @@ public final class MaterialOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 count = 1;</code>
-     * @return The count.
-     */
-    int getCount();
-
-    /**
      * <code>.MaterialDeleteInfo delete_info = 2;</code>
      * @return Whether the deleteInfo field is set.
      */
@@ -38,8 +32,18 @@ public final class MaterialOuterClass {
      * <code>.MaterialDeleteInfo delete_info = 2;</code>
      */
     emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfoOrBuilder getDeleteInfoOrBuilder();
+
+    /**
+     * <code>uint32 count = 1;</code>
+     * @return The count.
+     */
+    int getCount();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code Material}
    */
   public static final class Material extends
@@ -134,17 +138,6 @@ public final class MaterialOuterClass {
               emu.grasscutter.net.proto.MaterialOuterClass.Material.class, emu.grasscutter.net.proto.MaterialOuterClass.Material.Builder.class);
     }
 
-    public static final int COUNT_FIELD_NUMBER = 1;
-    private int count_;
-    /**
-     * <code>uint32 count = 1;</code>
-     * @return The count.
-     */
-    @java.lang.Override
-    public int getCount() {
-      return count_;
-    }
-
     public static final int DELETE_INFO_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfo deleteInfo_;
     /**
@@ -169,6 +162,17 @@ public final class MaterialOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.MaterialDeleteInfoOrBuilder getDeleteInfoOrBuilder() {
       return getDeleteInfo();
+    }
+
+    public static final int COUNT_FIELD_NUMBER = 1;
+    private int count_;
+    /**
+     * <code>uint32 count = 1;</code>
+     * @return The count.
+     */
+    @java.lang.Override
+    public int getCount() {
+      return count_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,13 +227,13 @@ public final class MaterialOuterClass {
       }
       emu.grasscutter.net.proto.MaterialOuterClass.Material other = (emu.grasscutter.net.proto.MaterialOuterClass.Material) obj;
 
-      if (getCount()
-          != other.getCount()) return false;
       if (hasDeleteInfo() != other.hasDeleteInfo()) return false;
       if (hasDeleteInfo()) {
         if (!getDeleteInfo()
             .equals(other.getDeleteInfo())) return false;
       }
+      if (getCount()
+          != other.getCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -241,12 +245,12 @@ public final class MaterialOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getCount();
       if (hasDeleteInfo()) {
         hash = (37 * hash) + DELETE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getDeleteInfo().hashCode();
       }
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -343,6 +347,10 @@ public final class MaterialOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code Material}
      */
     public static final class Builder extends
@@ -380,14 +388,14 @@ public final class MaterialOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        count_ = 0;
-
         if (deleteInfoBuilder_ == null) {
           deleteInfo_ = null;
         } else {
           deleteInfo_ = null;
           deleteInfoBuilder_ = null;
         }
+        count_ = 0;
+
         return this;
       }
 
@@ -414,12 +422,12 @@ public final class MaterialOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MaterialOuterClass.Material buildPartial() {
         emu.grasscutter.net.proto.MaterialOuterClass.Material result = new emu.grasscutter.net.proto.MaterialOuterClass.Material(this);
-        result.count_ = count_;
         if (deleteInfoBuilder_ == null) {
           result.deleteInfo_ = deleteInfo_;
         } else {
           result.deleteInfo_ = deleteInfoBuilder_.build();
         }
+        result.count_ = count_;
         onBuilt();
         return result;
       }
@@ -468,11 +476,11 @@ public final class MaterialOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MaterialOuterClass.Material other) {
         if (other == emu.grasscutter.net.proto.MaterialOuterClass.Material.getDefaultInstance()) return this;
-        if (other.getCount() != 0) {
-          setCount(other.getCount());
-        }
         if (other.hasDeleteInfo()) {
           mergeDeleteInfo(other.getDeleteInfo());
+        }
+        if (other.getCount() != 0) {
+          setCount(other.getCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -500,37 +508,6 @@ public final class MaterialOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int count_ ;
-      /**
-       * <code>uint32 count = 1;</code>
-       * @return The count.
-       */
-      @java.lang.Override
-      public int getCount() {
-        return count_;
-      }
-      /**
-       * <code>uint32 count = 1;</code>
-       * @param value The count to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCount(int value) {
-        
-        count_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 count = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCount() {
-        
-        count_ = 0;
-        onChanged();
         return this;
       }
 
@@ -652,6 +629,37 @@ public final class MaterialOuterClass {
         }
         return deleteInfoBuilder_;
       }
+
+      private int count_ ;
+      /**
+       * <code>uint32 count = 1;</code>
+       * @return The count.
+       */
+      @java.lang.Override
+      public int getCount() {
+        return count_;
+      }
+      /**
+       * <code>uint32 count = 1;</code>
+       * @param value The count to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCount(int value) {
+        
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 count = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCount() {
+        
+        count_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -720,10 +728,9 @@ public final class MaterialOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016Material.proto\032\030MaterialDeleteInfo.pro" +
-      "to\"C\n\010Material\022\r\n\005count\030\001 \001(\r\022(\n\013delete_" +
-      "info\030\002 \001(\0132\023.MaterialDeleteInfoB/\n\031emu.g" +
-      "rasscutter.net.protoB\022MaterialOuterClass" +
-      "b\006proto3"
+      "to\"C\n\010Material\022(\n\013delete_info\030\002 \001(\0132\023.Ma" +
+      "terialDeleteInfo\022\r\n\005count\030\001 \001(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -735,7 +742,7 @@ public final class MaterialOuterClass {
     internal_static_Material_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Material_descriptor,
-        new java.lang.String[] { "Count", "DeleteInfo", });
+        new java.lang.String[] { "DeleteInfo", "Count", });
     emu.grasscutter.net.proto.MaterialDeleteInfoOuterClass.getDescriptor();
   }
 

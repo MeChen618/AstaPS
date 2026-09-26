@@ -27,8 +27,7 @@ public class PacketStoreWeightLimitNotify extends BasePacket {
                         .setStoreType(StoreType.StoreType_STORE_PACK)
                         .setReliquaryCountLimit(relics) // wire 4
                         .setWeightLimit(all) // wire 9
-                        .setFurnitureCountLimit(furniture) // wire 14
-                        .setELBMPCBENEO(materials) // wire 16
+                        .setCDHAIJGOKFC(furniture) // wire 14
                         .build();
 
         this.setData(p);

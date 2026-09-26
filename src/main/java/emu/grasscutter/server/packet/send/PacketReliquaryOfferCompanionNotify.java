@@ -49,19 +49,20 @@ public class PacketReliquaryOfferCompanionNotify extends BasePacket {
             if (chosen == null || chosen.isEmpty()) {
                 chosen = pending.chosenFightPropIds;
             }
-            // field2 = chosen lines (UI highlight); field3 = new append list (right panel).
-            ProtoWire.writePackedUint32(nest, 2, chosen);
+            // 7.1 numbers (7.0: chosen 2, append 3, guid 9, entry 10, cur_progress 7).
+            // chosen lines (UI highlight); append_prop_id_list (right panel).
+            ProtoWire.writePackedUint32(nest, 10, chosen);
             ProtoWire.writePackedUint32(nest, 3, pending.newAppend);
-            ProtoWire.writeUint64Force(nest, 9, pending.guid);
-            ProtoWire.writeBytes(out, 10, nest.toByteArray());
+            ProtoWire.writeUint64Force(nest, 2, pending.guid);
+            ProtoWire.writeBytes(out, 3, nest.toByteArray());
             // Keep cur_progress so reshape page treats this as Dust state, not empty Offer ping.
             if (dustState.progress > 0) {
-                ProtoWire.writeUint32Force(out, 7, dustState.progress);
+                ProtoWire.writeUint32Force(out, 12, dustState.progress);
             } else {
-                ProtoWire.writeUint32Force(out, 7, 1);
+                ProtoWire.writeUint32Force(out, 12, 1);
             }
         } else if (dustState.progress > 0) {
-            ProtoWire.writeUint32Force(out, 7, dustState.progress);
+            ProtoWire.writeUint32Force(out, 12, dustState.progress);
         }
         return out.toByteArray();
     }
@@ -69,11 +70,11 @@ public class PacketReliquaryOfferCompanionNotify extends BasePacket {
     private static byte[] buildClear(PlayerDustState dustState) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         ByteArrayOutputStream nest = new ByteArrayOutputStream();
-        ProtoWire.writeUint64Force(nest, 9, 0L);
-        ProtoWire.writeBytes(out, 10, nest.toByteArray());
+        ProtoWire.writeUint64Force(nest, 2, 0L);
+        ProtoWire.writeBytes(out, 3, nest.toByteArray());
         // Same cur_progress rule as build(): the page must still read this as Dust state.
         int progress = dustState != null && dustState.progress > 0 ? dustState.progress : 1;
-        ProtoWire.writeUint32Force(out, 7, progress);
+        ProtoWire.writeUint32Force(out, 12, progress);
         return out.toByteArray();
     }
 }

@@ -19,45 +19,49 @@ public final class DBEJCJGBLLEOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 BJNOEGFAPNE = 2;</code>
-     * @return The bJNOEGFAPNE.
-     */
-    int getBJNOEGFAPNE();
-
-    /**
-     * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+     * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
      * @return Whether the nNADFEPJILG field is set.
      */
     boolean hasNNADFEPJILG();
     /**
-     * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+     * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
      * @return The nNADFEPJILG.
      */
-    emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo getNNADFEPJILG();
+    emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo getNNADFEPJILG();
     /**
-     * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+     * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
      */
-    emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfoOrBuilder getNNADFEPJILGOrBuilder();
-
-    /**
-     * <code>uint32 HJIAHCGONMF = 5;</code>
-     * @return The hJIAHCGONMF.
-     */
-    int getHJIAHCGONMF();
-
-    /**
-     * <code>uint32 AJFHLGLOBLG = 12;</code>
-     * @return The aJFHLGLOBLG.
-     */
-    int getAJFHLGLOBLG();
+    emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfoOrBuilder getNNADFEPJILGOrBuilder();
 
     /**
      * <code>uint32 cost = 15;</code>
      * @return The cost.
      */
     int getCost();
+
+    /**
+     * <code>uint32 HJIAHCGONMF = 9;</code>
+     * @return The hJIAHCGONMF.
+     */
+    int getHJIAHCGONMF();
+
+    /**
+     * <code>uint32 AJFHLGLOBLG = 4;</code>
+     * @return The aJFHLGLOBLG.
+     */
+    int getAJFHLGLOBLG();
+
+    /**
+     * <code>uint32 BJNOEGFAPNE = 3;</code>
+     * @return The bJNOEGFAPNE.
+     */
+    int getBJNOEGFAPNE();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code DBEJCJGBLLE}
    */
   public static final class DBEJCJGBLLE extends
@@ -102,17 +106,22 @@ public final class DBEJCJGBLLEOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 24: {
 
               bJNOEGFAPNE_ = input.readUInt32();
               break;
             }
-            case 26: {
-              emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.Builder subBuilder = null;
+            case 32: {
+
+              aJFHLGLOBLG_ = input.readUInt32();
+              break;
+            }
+            case 58: {
+              emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.Builder subBuilder = null;
               if (nNADFEPJILG_ != null) {
                 subBuilder = nNADFEPJILG_.toBuilder();
               }
-              nNADFEPJILG_ = input.readMessage(emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.parser(), extensionRegistry);
+              nNADFEPJILG_ = input.readMessage(emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(nNADFEPJILG_);
                 nNADFEPJILG_ = subBuilder.buildPartial();
@@ -120,14 +129,9 @@ public final class DBEJCJGBLLEOuterClass {
 
               break;
             }
-            case 40: {
+            case 72: {
 
               hJIAHCGONMF_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              aJFHLGLOBLG_ = input.readUInt32();
               break;
             }
             case 120: {
@@ -167,21 +171,10 @@ public final class DBEJCJGBLLEOuterClass {
               emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE.class, emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE.Builder.class);
     }
 
-    public static final int BJNOEGFAPNE_FIELD_NUMBER = 2;
-    private int bJNOEGFAPNE_;
+    public static final int NNADFEPJILG_FIELD_NUMBER = 7;
+    private emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo nNADFEPJILG_;
     /**
-     * <code>uint32 BJNOEGFAPNE = 2;</code>
-     * @return The bJNOEGFAPNE.
-     */
-    @java.lang.Override
-    public int getBJNOEGFAPNE() {
-      return bJNOEGFAPNE_;
-    }
-
-    public static final int NNADFEPJILG_FIELD_NUMBER = 3;
-    private emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo nNADFEPJILG_;
-    /**
-     * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+     * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
      * @return Whether the nNADFEPJILG field is set.
      */
     @java.lang.Override
@@ -189,41 +182,19 @@ public final class DBEJCJGBLLEOuterClass {
       return nNADFEPJILG_ != null;
     }
     /**
-     * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+     * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
      * @return The nNADFEPJILG.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo getNNADFEPJILG() {
-      return nNADFEPJILG_ == null ? emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.getDefaultInstance() : nNADFEPJILG_;
+    public emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo getNNADFEPJILG() {
+      return nNADFEPJILG_ == null ? emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.getDefaultInstance() : nNADFEPJILG_;
     }
     /**
-     * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+     * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfoOrBuilder getNNADFEPJILGOrBuilder() {
+    public emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfoOrBuilder getNNADFEPJILGOrBuilder() {
       return getNNADFEPJILG();
-    }
-
-    public static final int HJIAHCGONMF_FIELD_NUMBER = 5;
-    private int hJIAHCGONMF_;
-    /**
-     * <code>uint32 HJIAHCGONMF = 5;</code>
-     * @return The hJIAHCGONMF.
-     */
-    @java.lang.Override
-    public int getHJIAHCGONMF() {
-      return hJIAHCGONMF_;
-    }
-
-    public static final int AJFHLGLOBLG_FIELD_NUMBER = 12;
-    private int aJFHLGLOBLG_;
-    /**
-     * <code>uint32 AJFHLGLOBLG = 12;</code>
-     * @return The aJFHLGLOBLG.
-     */
-    @java.lang.Override
-    public int getAJFHLGLOBLG() {
-      return aJFHLGLOBLG_;
     }
 
     public static final int COST_FIELD_NUMBER = 15;
@@ -235,6 +206,39 @@ public final class DBEJCJGBLLEOuterClass {
     @java.lang.Override
     public int getCost() {
       return cost_;
+    }
+
+    public static final int HJIAHCGONMF_FIELD_NUMBER = 9;
+    private int hJIAHCGONMF_;
+    /**
+     * <code>uint32 HJIAHCGONMF = 9;</code>
+     * @return The hJIAHCGONMF.
+     */
+    @java.lang.Override
+    public int getHJIAHCGONMF() {
+      return hJIAHCGONMF_;
+    }
+
+    public static final int AJFHLGLOBLG_FIELD_NUMBER = 4;
+    private int aJFHLGLOBLG_;
+    /**
+     * <code>uint32 AJFHLGLOBLG = 4;</code>
+     * @return The aJFHLGLOBLG.
+     */
+    @java.lang.Override
+    public int getAJFHLGLOBLG() {
+      return aJFHLGLOBLG_;
+    }
+
+    public static final int BJNOEGFAPNE_FIELD_NUMBER = 3;
+    private int bJNOEGFAPNE_;
+    /**
+     * <code>uint32 BJNOEGFAPNE = 3;</code>
+     * @return The bJNOEGFAPNE.
+     */
+    @java.lang.Override
+    public int getBJNOEGFAPNE() {
+      return bJNOEGFAPNE_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -252,16 +256,16 @@ public final class DBEJCJGBLLEOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bJNOEGFAPNE_ != 0) {
-        output.writeUInt32(2, bJNOEGFAPNE_);
-      }
-      if (nNADFEPJILG_ != null) {
-        output.writeMessage(3, getNNADFEPJILG());
-      }
-      if (hJIAHCGONMF_ != 0) {
-        output.writeUInt32(5, hJIAHCGONMF_);
+        output.writeUInt32(3, bJNOEGFAPNE_);
       }
       if (aJFHLGLOBLG_ != 0) {
-        output.writeUInt32(12, aJFHLGLOBLG_);
+        output.writeUInt32(4, aJFHLGLOBLG_);
+      }
+      if (nNADFEPJILG_ != null) {
+        output.writeMessage(7, getNNADFEPJILG());
+      }
+      if (hJIAHCGONMF_ != 0) {
+        output.writeUInt32(9, hJIAHCGONMF_);
       }
       if (cost_ != 0) {
         output.writeUInt32(15, cost_);
@@ -277,19 +281,19 @@ public final class DBEJCJGBLLEOuterClass {
       size = 0;
       if (bJNOEGFAPNE_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, bJNOEGFAPNE_);
-      }
-      if (nNADFEPJILG_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getNNADFEPJILG());
-      }
-      if (hJIAHCGONMF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, hJIAHCGONMF_);
+          .computeUInt32Size(3, bJNOEGFAPNE_);
       }
       if (aJFHLGLOBLG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, aJFHLGLOBLG_);
+          .computeUInt32Size(4, aJFHLGLOBLG_);
+      }
+      if (nNADFEPJILG_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getNNADFEPJILG());
+      }
+      if (hJIAHCGONMF_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, hJIAHCGONMF_);
       }
       if (cost_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -310,19 +314,19 @@ public final class DBEJCJGBLLEOuterClass {
       }
       emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE other = (emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE) obj;
 
-      if (getBJNOEGFAPNE()
-          != other.getBJNOEGFAPNE()) return false;
       if (hasNNADFEPJILG() != other.hasNNADFEPJILG()) return false;
       if (hasNNADFEPJILG()) {
         if (!getNNADFEPJILG()
             .equals(other.getNNADFEPJILG())) return false;
       }
+      if (getCost()
+          != other.getCost()) return false;
       if (getHJIAHCGONMF()
           != other.getHJIAHCGONMF()) return false;
       if (getAJFHLGLOBLG()
           != other.getAJFHLGLOBLG()) return false;
-      if (getCost()
-          != other.getCost()) return false;
+      if (getBJNOEGFAPNE()
+          != other.getBJNOEGFAPNE()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -334,18 +338,18 @@ public final class DBEJCJGBLLEOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BJNOEGFAPNE_FIELD_NUMBER;
-      hash = (53 * hash) + getBJNOEGFAPNE();
       if (hasNNADFEPJILG()) {
         hash = (37 * hash) + NNADFEPJILG_FIELD_NUMBER;
         hash = (53 * hash) + getNNADFEPJILG().hashCode();
       }
+      hash = (37 * hash) + COST_FIELD_NUMBER;
+      hash = (53 * hash) + getCost();
       hash = (37 * hash) + HJIAHCGONMF_FIELD_NUMBER;
       hash = (53 * hash) + getHJIAHCGONMF();
       hash = (37 * hash) + AJFHLGLOBLG_FIELD_NUMBER;
       hash = (53 * hash) + getAJFHLGLOBLG();
-      hash = (37 * hash) + COST_FIELD_NUMBER;
-      hash = (53 * hash) + getCost();
+      hash = (37 * hash) + BJNOEGFAPNE_FIELD_NUMBER;
+      hash = (53 * hash) + getBJNOEGFAPNE();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -442,6 +446,10 @@ public final class DBEJCJGBLLEOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code DBEJCJGBLLE}
      */
     public static final class Builder extends
@@ -479,19 +487,19 @@ public final class DBEJCJGBLLEOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bJNOEGFAPNE_ = 0;
-
         if (nNADFEPJILGBuilder_ == null) {
           nNADFEPJILG_ = null;
         } else {
           nNADFEPJILG_ = null;
           nNADFEPJILGBuilder_ = null;
         }
+        cost_ = 0;
+
         hJIAHCGONMF_ = 0;
 
         aJFHLGLOBLG_ = 0;
 
-        cost_ = 0;
+        bJNOEGFAPNE_ = 0;
 
         return this;
       }
@@ -519,15 +527,15 @@ public final class DBEJCJGBLLEOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE buildPartial() {
         emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE result = new emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE(this);
-        result.bJNOEGFAPNE_ = bJNOEGFAPNE_;
         if (nNADFEPJILGBuilder_ == null) {
           result.nNADFEPJILG_ = nNADFEPJILG_;
         } else {
           result.nNADFEPJILG_ = nNADFEPJILGBuilder_.build();
         }
+        result.cost_ = cost_;
         result.hJIAHCGONMF_ = hJIAHCGONMF_;
         result.aJFHLGLOBLG_ = aJFHLGLOBLG_;
-        result.cost_ = cost_;
+        result.bJNOEGFAPNE_ = bJNOEGFAPNE_;
         onBuilt();
         return result;
       }
@@ -576,11 +584,11 @@ public final class DBEJCJGBLLEOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE other) {
         if (other == emu.grasscutter.net.proto.DBEJCJGBLLEOuterClass.DBEJCJGBLLE.getDefaultInstance()) return this;
-        if (other.getBJNOEGFAPNE() != 0) {
-          setBJNOEGFAPNE(other.getBJNOEGFAPNE());
-        }
         if (other.hasNNADFEPJILG()) {
           mergeNNADFEPJILG(other.getNNADFEPJILG());
+        }
+        if (other.getCost() != 0) {
+          setCost(other.getCost());
         }
         if (other.getHJIAHCGONMF() != 0) {
           setHJIAHCGONMF(other.getHJIAHCGONMF());
@@ -588,8 +596,8 @@ public final class DBEJCJGBLLEOuterClass {
         if (other.getAJFHLGLOBLG() != 0) {
           setAJFHLGLOBLG(other.getAJFHLGLOBLG());
         }
-        if (other.getCost() != 0) {
-          setCost(other.getCost());
+        if (other.getBJNOEGFAPNE() != 0) {
+          setBJNOEGFAPNE(other.getBJNOEGFAPNE());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -620,62 +628,31 @@ public final class DBEJCJGBLLEOuterClass {
         return this;
       }
 
-      private int bJNOEGFAPNE_ ;
-      /**
-       * <code>uint32 BJNOEGFAPNE = 2;</code>
-       * @return The bJNOEGFAPNE.
-       */
-      @java.lang.Override
-      public int getBJNOEGFAPNE() {
-        return bJNOEGFAPNE_;
-      }
-      /**
-       * <code>uint32 BJNOEGFAPNE = 2;</code>
-       * @param value The bJNOEGFAPNE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBJNOEGFAPNE(int value) {
-        
-        bJNOEGFAPNE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 BJNOEGFAPNE = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBJNOEGFAPNE() {
-        
-        bJNOEGFAPNE_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo nNADFEPJILG_;
+      private emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo nNADFEPJILG_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo, emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.Builder, emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfoOrBuilder> nNADFEPJILGBuilder_;
+          emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo, emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.Builder, emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfoOrBuilder> nNADFEPJILGBuilder_;
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        * @return Whether the nNADFEPJILG field is set.
        */
       public boolean hasNNADFEPJILG() {
         return nNADFEPJILGBuilder_ != null || nNADFEPJILG_ != null;
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        * @return The nNADFEPJILG.
        */
-      public emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo getNNADFEPJILG() {
+      public emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo getNNADFEPJILG() {
         if (nNADFEPJILGBuilder_ == null) {
-          return nNADFEPJILG_ == null ? emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.getDefaultInstance() : nNADFEPJILG_;
+          return nNADFEPJILG_ == null ? emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.getDefaultInstance() : nNADFEPJILG_;
         } else {
           return nNADFEPJILGBuilder_.getMessage();
         }
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
-      public Builder setNNADFEPJILG(emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo value) {
+      public Builder setNNADFEPJILG(emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo value) {
         if (nNADFEPJILGBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -689,10 +666,10 @@ public final class DBEJCJGBLLEOuterClass {
         return this;
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
       public Builder setNNADFEPJILG(
-          emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.Builder builderForValue) {
+          emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.Builder builderForValue) {
         if (nNADFEPJILGBuilder_ == null) {
           nNADFEPJILG_ = builderForValue.build();
           onChanged();
@@ -703,13 +680,13 @@ public final class DBEJCJGBLLEOuterClass {
         return this;
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
-      public Builder mergeNNADFEPJILG(emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo value) {
+      public Builder mergeNNADFEPJILG(emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo value) {
         if (nNADFEPJILGBuilder_ == null) {
           if (nNADFEPJILG_ != null) {
             nNADFEPJILG_ =
-              emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.newBuilder(nNADFEPJILG_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.newBuilder(nNADFEPJILG_).mergeFrom(value).buildPartial();
           } else {
             nNADFEPJILG_ = value;
           }
@@ -721,7 +698,7 @@ public final class DBEJCJGBLLEOuterClass {
         return this;
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
       public Builder clearNNADFEPJILG() {
         if (nNADFEPJILGBuilder_ == null) {
@@ -735,101 +712,39 @@ public final class DBEJCJGBLLEOuterClass {
         return this;
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
-      public emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.Builder getNNADFEPJILGBuilder() {
+      public emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.Builder getNNADFEPJILGBuilder() {
         
         onChanged();
         return getNNADFEPJILGFieldBuilder().getBuilder();
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
-      public emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfoOrBuilder getNNADFEPJILGOrBuilder() {
+      public emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfoOrBuilder getNNADFEPJILGOrBuilder() {
         if (nNADFEPJILGBuilder_ != null) {
           return nNADFEPJILGBuilder_.getMessageOrBuilder();
         } else {
           return nNADFEPJILG_ == null ?
-              emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.getDefaultInstance() : nNADFEPJILG_;
+              emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.getDefaultInstance() : nNADFEPJILG_;
         }
       }
       /**
-       * <code>._TemplatePotionInfo NNADFEPJILG = 3;</code>
+       * <code>._TemplatePotionInfo NNADFEPJILG = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo, emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.Builder, emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfoOrBuilder> 
+          emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo, emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.Builder, emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfoOrBuilder> 
           getNNADFEPJILGFieldBuilder() {
         if (nNADFEPJILGBuilder_ == null) {
           nNADFEPJILGBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo, emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfo.Builder, emu.grasscutter.net.proto._TemplatePotionInfoOuterClass._TemplatePotionInfoOrBuilder>(
+              emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo, emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfo.Builder, emu.grasscutter.net.proto.TemplatePotionInfo._TemplatePotionInfoOrBuilder>(
                   getNNADFEPJILG(),
                   getParentForChildren(),
                   isClean());
           nNADFEPJILG_ = null;
         }
         return nNADFEPJILGBuilder_;
-      }
-
-      private int hJIAHCGONMF_ ;
-      /**
-       * <code>uint32 HJIAHCGONMF = 5;</code>
-       * @return The hJIAHCGONMF.
-       */
-      @java.lang.Override
-      public int getHJIAHCGONMF() {
-        return hJIAHCGONMF_;
-      }
-      /**
-       * <code>uint32 HJIAHCGONMF = 5;</code>
-       * @param value The hJIAHCGONMF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHJIAHCGONMF(int value) {
-        
-        hJIAHCGONMF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 HJIAHCGONMF = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHJIAHCGONMF() {
-        
-        hJIAHCGONMF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int aJFHLGLOBLG_ ;
-      /**
-       * <code>uint32 AJFHLGLOBLG = 12;</code>
-       * @return The aJFHLGLOBLG.
-       */
-      @java.lang.Override
-      public int getAJFHLGLOBLG() {
-        return aJFHLGLOBLG_;
-      }
-      /**
-       * <code>uint32 AJFHLGLOBLG = 12;</code>
-       * @param value The aJFHLGLOBLG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAJFHLGLOBLG(int value) {
-        
-        aJFHLGLOBLG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 AJFHLGLOBLG = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAJFHLGLOBLG() {
-        
-        aJFHLGLOBLG_ = 0;
-        onChanged();
-        return this;
       }
 
       private int cost_ ;
@@ -859,6 +774,99 @@ public final class DBEJCJGBLLEOuterClass {
       public Builder clearCost() {
         
         cost_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int hJIAHCGONMF_ ;
+      /**
+       * <code>uint32 HJIAHCGONMF = 9;</code>
+       * @return The hJIAHCGONMF.
+       */
+      @java.lang.Override
+      public int getHJIAHCGONMF() {
+        return hJIAHCGONMF_;
+      }
+      /**
+       * <code>uint32 HJIAHCGONMF = 9;</code>
+       * @param value The hJIAHCGONMF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHJIAHCGONMF(int value) {
+        
+        hJIAHCGONMF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 HJIAHCGONMF = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHJIAHCGONMF() {
+        
+        hJIAHCGONMF_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int aJFHLGLOBLG_ ;
+      /**
+       * <code>uint32 AJFHLGLOBLG = 4;</code>
+       * @return The aJFHLGLOBLG.
+       */
+      @java.lang.Override
+      public int getAJFHLGLOBLG() {
+        return aJFHLGLOBLG_;
+      }
+      /**
+       * <code>uint32 AJFHLGLOBLG = 4;</code>
+       * @param value The aJFHLGLOBLG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAJFHLGLOBLG(int value) {
+        
+        aJFHLGLOBLG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 AJFHLGLOBLG = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAJFHLGLOBLG() {
+        
+        aJFHLGLOBLG_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int bJNOEGFAPNE_ ;
+      /**
+       * <code>uint32 BJNOEGFAPNE = 3;</code>
+       * @return The bJNOEGFAPNE.
+       */
+      @java.lang.Override
+      public int getBJNOEGFAPNE() {
+        return bJNOEGFAPNE_;
+      }
+      /**
+       * <code>uint32 BJNOEGFAPNE = 3;</code>
+       * @param value The bJNOEGFAPNE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBJNOEGFAPNE(int value) {
+        
+        bJNOEGFAPNE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 BJNOEGFAPNE = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBJNOEGFAPNE() {
+        
+        bJNOEGFAPNE_ = 0;
         onChanged();
         return this;
       }
@@ -930,25 +938,24 @@ public final class DBEJCJGBLLEOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021DBEJCJGBLLE.proto\032\031_TemplatePotionInfo" +
-      ".proto\"\205\001\n\013DBEJCJGBLLE\022\023\n\013BJNOEGFAPNE\030\002 " +
-      "\001(\r\022)\n\013NNADFEPJILG\030\003 \001(\0132\024._TemplatePoti" +
-      "onInfo\022\023\n\013HJIAHCGONMF\030\005 \001(\r\022\023\n\013AJFHLGLOB" +
-      "LG\030\014 \001(\r\022\014\n\004cost\030\017 \001(\rB2\n\031emu.grasscutte" +
-      "r.net.protoB\025DBEJCJGBLLEOuterClassb\006prot" +
-      "o3"
+      ".proto\"\205\001\n\013DBEJCJGBLLE\022)\n\013NNADFEPJILG\030\007 " +
+      "\001(\0132\024._TemplatePotionInfo\022\014\n\004cost\030\017 \001(\r\022" +
+      "\023\n\013HJIAHCGONMF\030\t \001(\r\022\023\n\013AJFHLGLOBLG\030\004 \001(" +
+      "\r\022\023\n\013BJNOEGFAPNE\030\003 \001(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto._TemplatePotionInfoOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.TemplatePotionInfo.getDescriptor(),
         });
     internal_static_DBEJCJGBLLE_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_DBEJCJGBLLE_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DBEJCJGBLLE_descriptor,
-        new java.lang.String[] { "BJNOEGFAPNE", "NNADFEPJILG", "HJIAHCGONMF", "AJFHLGLOBLG", "Cost", });
-    emu.grasscutter.net.proto._TemplatePotionInfoOuterClass.getDescriptor();
+        new java.lang.String[] { "NNADFEPJILG", "Cost", "HJIAHCGONMF", "AJFHLGLOBLG", "BJNOEGFAPNE", });
+    emu.grasscutter.net.proto.TemplatePotionInfo.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

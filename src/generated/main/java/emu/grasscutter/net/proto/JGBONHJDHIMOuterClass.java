@@ -19,18 +19,22 @@ public final class JGBONHJDHIMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
-    int getId();
-
-    /**
      * <code>bool is_active = 2;</code>
      * @return The isActive.
      */
     boolean getIsActive();
+
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    int getId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JGBONHJDHIM}
    */
   public static final class JGBONHJDHIM extends
@@ -117,17 +121,6 @@ public final class JGBONHJDHIMOuterClass {
               emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM.class, emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
-    /**
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public int getId() {
-      return id_;
-    }
-
     public static final int IS_ACTIVE_FIELD_NUMBER = 2;
     private boolean isActive_;
     /**
@@ -137,6 +130,17 @@ public final class JGBONHJDHIMOuterClass {
     @java.lang.Override
     public boolean getIsActive() {
       return isActive_;
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>int32 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public int getId() {
+      return id_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,10 +195,10 @@ public final class JGBONHJDHIMOuterClass {
       }
       emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM other = (emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM) obj;
 
-      if (getId()
-          != other.getId()) return false;
       if (getIsActive()
           != other.getIsActive()) return false;
+      if (getId()
+          != other.getId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,11 +210,11 @@ public final class JGBONHJDHIMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
       hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActive());
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -307,6 +311,10 @@ public final class JGBONHJDHIMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JGBONHJDHIM}
      */
     public static final class Builder extends
@@ -344,9 +352,9 @@ public final class JGBONHJDHIMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
-
         isActive_ = false;
+
+        id_ = 0;
 
         return this;
       }
@@ -374,8 +382,8 @@ public final class JGBONHJDHIMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM buildPartial() {
         emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM result = new emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM(this);
-        result.id_ = id_;
         result.isActive_ = isActive_;
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -424,11 +432,11 @@ public final class JGBONHJDHIMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM other) {
         if (other == emu.grasscutter.net.proto.JGBONHJDHIMOuterClass.JGBONHJDHIM.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
         if (other.getIsActive() != false) {
           setIsActive(other.getIsActive());
+        }
+        if (other.getId() != 0) {
+          setId(other.getId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -459,37 +467,6 @@ public final class JGBONHJDHIMOuterClass {
         return this;
       }
 
-      private int id_ ;
-      /**
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
-      @java.lang.Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isActive_ ;
       /**
        * <code>bool is_active = 2;</code>
@@ -517,6 +494,37 @@ public final class JGBONHJDHIMOuterClass {
       public Builder clearIsActive() {
         
         isActive_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>int32 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(int value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0;
         onChanged();
         return this;
       }
@@ -587,10 +595,9 @@ public final class JGBONHJDHIMOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021JGBONHJDHIM.proto\",\n\013JGBONHJDHIM\022\n\n\002id" +
-      "\030\001 \001(\005\022\021\n\tis_active\030\002 \001(\010B2\n\031emu.grasscu" +
-      "tter.net.protoB\025JGBONHJDHIMOuterClassb\006p" +
-      "roto3"
+      "\n\021JGBONHJDHIM.proto\",\n\013JGBONHJDHIM\022\021\n\tis" +
+      "_active\030\002 \001(\010\022\n\n\002id\030\001 \001(\005B\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -601,7 +608,7 @@ public final class JGBONHJDHIMOuterClass {
     internal_static_JGBONHJDHIM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JGBONHJDHIM_descriptor,
-        new java.lang.String[] { "Id", "IsActive", });
+        new java.lang.String[] { "IsActive", "Id", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

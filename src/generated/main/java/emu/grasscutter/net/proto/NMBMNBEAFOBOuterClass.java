@@ -19,18 +19,22 @@ public final class NMBMNBEAFOBOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 LOGADODHKOG = 3;</code>
-     * @return The lOGADODHKOG.
-     */
-    int getLOGADODHKOG();
-
-    /**
-     * <code>uint32 JAECPMNDFGP = 12;</code>
+     * <code>uint32 JAECPMNDFGP = 10;</code>
      * @return The jAECPMNDFGP.
      */
     int getJAECPMNDFGP();
+
+    /**
+     * <code>uint32 LOGADODHKOG = 13;</code>
+     * @return The lOGADODHKOG.
+     */
+    int getLOGADODHKOG();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code NMBMNBEAFOB}
    */
   public static final class NMBMNBEAFOB extends
@@ -75,14 +79,14 @@ public final class NMBMNBEAFOBOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              lOGADODHKOG_ = input.readUInt32();
-              break;
-            }
-            case 96: {
+            case 80: {
 
               jAECPMNDFGP_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              lOGADODHKOG_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +121,26 @@ public final class NMBMNBEAFOBOuterClass {
               emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB.class, emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB.Builder.class);
     }
 
-    public static final int LOGADODHKOG_FIELD_NUMBER = 3;
-    private int lOGADODHKOG_;
-    /**
-     * <code>uint32 LOGADODHKOG = 3;</code>
-     * @return The lOGADODHKOG.
-     */
-    @java.lang.Override
-    public int getLOGADODHKOG() {
-      return lOGADODHKOG_;
-    }
-
-    public static final int JAECPMNDFGP_FIELD_NUMBER = 12;
+    public static final int JAECPMNDFGP_FIELD_NUMBER = 10;
     private int jAECPMNDFGP_;
     /**
-     * <code>uint32 JAECPMNDFGP = 12;</code>
+     * <code>uint32 JAECPMNDFGP = 10;</code>
      * @return The jAECPMNDFGP.
      */
     @java.lang.Override
     public int getJAECPMNDFGP() {
       return jAECPMNDFGP_;
+    }
+
+    public static final int LOGADODHKOG_FIELD_NUMBER = 13;
+    private int lOGADODHKOG_;
+    /**
+     * <code>uint32 LOGADODHKOG = 13;</code>
+     * @return The lOGADODHKOG.
+     */
+    @java.lang.Override
+    public int getLOGADODHKOG() {
+      return lOGADODHKOG_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +157,11 @@ public final class NMBMNBEAFOBOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (lOGADODHKOG_ != 0) {
-        output.writeUInt32(3, lOGADODHKOG_);
-      }
       if (jAECPMNDFGP_ != 0) {
-        output.writeUInt32(12, jAECPMNDFGP_);
+        output.writeUInt32(10, jAECPMNDFGP_);
+      }
+      if (lOGADODHKOG_ != 0) {
+        output.writeUInt32(13, lOGADODHKOG_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class NMBMNBEAFOBOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (lOGADODHKOG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, lOGADODHKOG_);
-      }
       if (jAECPMNDFGP_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, jAECPMNDFGP_);
+          .computeUInt32Size(10, jAECPMNDFGP_);
+      }
+      if (lOGADODHKOG_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, lOGADODHKOG_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +195,10 @@ public final class NMBMNBEAFOBOuterClass {
       }
       emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB other = (emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB) obj;
 
-      if (getLOGADODHKOG()
-          != other.getLOGADODHKOG()) return false;
       if (getJAECPMNDFGP()
           != other.getJAECPMNDFGP()) return false;
+      if (getLOGADODHKOG()
+          != other.getLOGADODHKOG()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class NMBMNBEAFOBOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LOGADODHKOG_FIELD_NUMBER;
-      hash = (53 * hash) + getLOGADODHKOG();
       hash = (37 * hash) + JAECPMNDFGP_FIELD_NUMBER;
       hash = (53 * hash) + getJAECPMNDFGP();
+      hash = (37 * hash) + LOGADODHKOG_FIELD_NUMBER;
+      hash = (53 * hash) + getLOGADODHKOG();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class NMBMNBEAFOBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code NMBMNBEAFOB}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class NMBMNBEAFOBOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        lOGADODHKOG_ = 0;
-
         jAECPMNDFGP_ = 0;
+
+        lOGADODHKOG_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class NMBMNBEAFOBOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB buildPartial() {
         emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB result = new emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB(this);
-        result.lOGADODHKOG_ = lOGADODHKOG_;
         result.jAECPMNDFGP_ = jAECPMNDFGP_;
+        result.lOGADODHKOG_ = lOGADODHKOG_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class NMBMNBEAFOBOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB other) {
         if (other == emu.grasscutter.net.proto.NMBMNBEAFOBOuterClass.NMBMNBEAFOB.getDefaultInstance()) return this;
-        if (other.getLOGADODHKOG() != 0) {
-          setLOGADODHKOG(other.getLOGADODHKOG());
-        }
         if (other.getJAECPMNDFGP() != 0) {
           setJAECPMNDFGP(other.getJAECPMNDFGP());
+        }
+        if (other.getLOGADODHKOG() != 0) {
+          setLOGADODHKOG(other.getLOGADODHKOG());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,40 +466,9 @@ public final class NMBMNBEAFOBOuterClass {
         return this;
       }
 
-      private int lOGADODHKOG_ ;
-      /**
-       * <code>uint32 LOGADODHKOG = 3;</code>
-       * @return The lOGADODHKOG.
-       */
-      @java.lang.Override
-      public int getLOGADODHKOG() {
-        return lOGADODHKOG_;
-      }
-      /**
-       * <code>uint32 LOGADODHKOG = 3;</code>
-       * @param value The lOGADODHKOG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLOGADODHKOG(int value) {
-        
-        lOGADODHKOG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LOGADODHKOG = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLOGADODHKOG() {
-        
-        lOGADODHKOG_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int jAECPMNDFGP_ ;
       /**
-       * <code>uint32 JAECPMNDFGP = 12;</code>
+       * <code>uint32 JAECPMNDFGP = 10;</code>
        * @return The jAECPMNDFGP.
        */
       @java.lang.Override
@@ -499,7 +476,7 @@ public final class NMBMNBEAFOBOuterClass {
         return jAECPMNDFGP_;
       }
       /**
-       * <code>uint32 JAECPMNDFGP = 12;</code>
+       * <code>uint32 JAECPMNDFGP = 10;</code>
        * @param value The jAECPMNDFGP to set.
        * @return This builder for chaining.
        */
@@ -510,12 +487,43 @@ public final class NMBMNBEAFOBOuterClass {
         return this;
       }
       /**
-       * <code>uint32 JAECPMNDFGP = 12;</code>
+       * <code>uint32 JAECPMNDFGP = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearJAECPMNDFGP() {
         
         jAECPMNDFGP_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lOGADODHKOG_ ;
+      /**
+       * <code>uint32 LOGADODHKOG = 13;</code>
+       * @return The lOGADODHKOG.
+       */
+      @java.lang.Override
+      public int getLOGADODHKOG() {
+        return lOGADODHKOG_;
+      }
+      /**
+       * <code>uint32 LOGADODHKOG = 13;</code>
+       * @param value The lOGADODHKOG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLOGADODHKOG(int value) {
+        
+        lOGADODHKOG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LOGADODHKOG = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLOGADODHKOG() {
+        
+        lOGADODHKOG_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class NMBMNBEAFOBOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021NMBMNBEAFOB.proto\"7\n\013NMBMNBEAFOB\022\023\n\013LO" +
-      "GADODHKOG\030\003 \001(\r\022\023\n\013JAECPMNDFGP\030\014 \001(\rB2\n\031" +
-      "emu.grasscutter.net.protoB\025NMBMNBEAFOBOu" +
-      "terClassb\006proto3"
+      "\n\021NMBMNBEAFOB.proto\"7\n\013NMBMNBEAFOB\022\023\n\013JA" +
+      "ECPMNDFGP\030\n \001(\r\022\023\n\013LOGADODHKOG\030\r \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class NMBMNBEAFOBOuterClass {
     internal_static_NMBMNBEAFOB_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_NMBMNBEAFOB_descriptor,
-        new java.lang.String[] { "LOGADODHKOG", "JAECPMNDFGP", });
+        new java.lang.String[] { "JAECPMNDFGP", "LOGADODHKOG", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

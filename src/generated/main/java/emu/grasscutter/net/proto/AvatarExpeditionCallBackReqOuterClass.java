@@ -36,6 +36,10 @@ public final class AvatarExpeditionCallBackReqOuterClass {
     long getAvatarGuid(int index);
   }
   /**
+   * <pre>
+   * CmdId: 4859
+   * </pre>
+   *
    * Protobuf type {@code AvatarExpeditionCallBackReq}
    */
   public static final class AvatarExpeditionCallBackReq extends
@@ -339,6 +343,10 @@ public final class AvatarExpeditionCallBackReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 4859
+     * </pre>
+     *
      * Protobuf type {@code AvatarExpeditionCallBackReq}
      */
     public static final class Builder extends
@@ -645,9 +653,8 @@ public final class AvatarExpeditionCallBackReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!AvatarExpeditionCallBackReq.proto\"2\n\033A" +
       "vatarExpeditionCallBackReq\022\023\n\013avatar_gui" +
-      "d\030\016 \003(\004BB\n\031emu.grasscutter.net.protoB%Av" +
-      "atarExpeditionCallBackReqOuterClassb\006pro" +
-      "to3"
+      "d\030\016 \003(\004B\033\n\031emu.grasscutter.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

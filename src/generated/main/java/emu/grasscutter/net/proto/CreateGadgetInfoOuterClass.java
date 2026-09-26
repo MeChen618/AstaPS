@@ -19,17 +19,6 @@ public final class CreateGadgetInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.GadgetBornType born_type = 1;</code>
-     * @return The enum numeric value on the wire for bornType.
-     */
-    int getBornTypeValue();
-    /**
-     * <code>.GadgetBornType born_type = 1;</code>
-     * @return The bornType.
-     */
-    emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType();
-
-    /**
      * <code>.CreateGadgetInfo.Chest chest = 2;</code>
      * @return Whether the chest field is set.
      */
@@ -43,8 +32,23 @@ public final class CreateGadgetInfoOuterClass {
      * <code>.CreateGadgetInfo.Chest chest = 2;</code>
      */
     emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.ChestOrBuilder getChestOrBuilder();
+
+    /**
+     * <code>.GadgetBornType born_type = 1;</code>
+     * @return The enum numeric value on the wire for bornType.
+     */
+    int getBornTypeValue();
+    /**
+     * <code>.GadgetBornType born_type = 1;</code>
+     * @return The bornType.
+     */
+    emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code CreateGadgetInfo}
    */
   public static final class CreateGadgetInfo extends
@@ -146,18 +150,22 @@ public final class CreateGadgetInfoOuterClass {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 chest_drop_id = 1;</code>
-       * @return The chestDropId.
-       */
-      int getChestDropId();
-
-      /**
        * <code>bool is_show_cutscene = 2;</code>
        * @return The isShowCutscene.
        */
       boolean getIsShowCutscene();
+
+      /**
+       * <code>uint32 chest_drop_id = 1;</code>
+       * @return The chestDropId.
+       */
+      int getChestDropId();
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code CreateGadgetInfo.Chest}
      */
     public static final class Chest extends
@@ -244,17 +252,6 @@ public final class CreateGadgetInfoOuterClass {
                 emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.class, emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.Builder.class);
       }
 
-      public static final int CHEST_DROP_ID_FIELD_NUMBER = 1;
-      private int chestDropId_;
-      /**
-       * <code>uint32 chest_drop_id = 1;</code>
-       * @return The chestDropId.
-       */
-      @java.lang.Override
-      public int getChestDropId() {
-        return chestDropId_;
-      }
-
       public static final int IS_SHOW_CUTSCENE_FIELD_NUMBER = 2;
       private boolean isShowCutscene_;
       /**
@@ -264,6 +261,17 @@ public final class CreateGadgetInfoOuterClass {
       @java.lang.Override
       public boolean getIsShowCutscene() {
         return isShowCutscene_;
+      }
+
+      public static final int CHEST_DROP_ID_FIELD_NUMBER = 1;
+      private int chestDropId_;
+      /**
+       * <code>uint32 chest_drop_id = 1;</code>
+       * @return The chestDropId.
+       */
+      @java.lang.Override
+      public int getChestDropId() {
+        return chestDropId_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -318,10 +326,10 @@ public final class CreateGadgetInfoOuterClass {
         }
         emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest other = (emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest) obj;
 
-        if (getChestDropId()
-            != other.getChestDropId()) return false;
         if (getIsShowCutscene()
             != other.getIsShowCutscene()) return false;
+        if (getChestDropId()
+            != other.getChestDropId()) return false;
         if (!unknownFields.equals(other.unknownFields)) return false;
         return true;
       }
@@ -333,11 +341,11 @@ public final class CreateGadgetInfoOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + CHEST_DROP_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getChestDropId();
         hash = (37 * hash) + IS_SHOW_CUTSCENE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getIsShowCutscene());
+        hash = (37 * hash) + CHEST_DROP_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getChestDropId();
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -434,6 +442,10 @@ public final class CreateGadgetInfoOuterClass {
         return builder;
       }
       /**
+       * <pre>
+       * CmdId: -
+       * </pre>
+       *
        * Protobuf type {@code CreateGadgetInfo.Chest}
        */
       public static final class Builder extends
@@ -471,9 +483,9 @@ public final class CreateGadgetInfoOuterClass {
         @java.lang.Override
         public Builder clear() {
           super.clear();
-          chestDropId_ = 0;
-
           isShowCutscene_ = false;
+
+          chestDropId_ = 0;
 
           return this;
         }
@@ -501,8 +513,8 @@ public final class CreateGadgetInfoOuterClass {
         @java.lang.Override
         public emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest buildPartial() {
           emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest result = new emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest(this);
-          result.chestDropId_ = chestDropId_;
           result.isShowCutscene_ = isShowCutscene_;
+          result.chestDropId_ = chestDropId_;
           onBuilt();
           return result;
         }
@@ -551,11 +563,11 @@ public final class CreateGadgetInfoOuterClass {
 
         public Builder mergeFrom(emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest other) {
           if (other == emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest.getDefaultInstance()) return this;
-          if (other.getChestDropId() != 0) {
-            setChestDropId(other.getChestDropId());
-          }
           if (other.getIsShowCutscene() != false) {
             setIsShowCutscene(other.getIsShowCutscene());
+          }
+          if (other.getChestDropId() != 0) {
+            setChestDropId(other.getChestDropId());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -586,37 +598,6 @@ public final class CreateGadgetInfoOuterClass {
           return this;
         }
 
-        private int chestDropId_ ;
-        /**
-         * <code>uint32 chest_drop_id = 1;</code>
-         * @return The chestDropId.
-         */
-        @java.lang.Override
-        public int getChestDropId() {
-          return chestDropId_;
-        }
-        /**
-         * <code>uint32 chest_drop_id = 1;</code>
-         * @param value The chestDropId to set.
-         * @return This builder for chaining.
-         */
-        public Builder setChestDropId(int value) {
-          
-          chestDropId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>uint32 chest_drop_id = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearChestDropId() {
-          
-          chestDropId_ = 0;
-          onChanged();
-          return this;
-        }
-
         private boolean isShowCutscene_ ;
         /**
          * <code>bool is_show_cutscene = 2;</code>
@@ -644,6 +625,37 @@ public final class CreateGadgetInfoOuterClass {
         public Builder clearIsShowCutscene() {
           
           isShowCutscene_ = false;
+          onChanged();
+          return this;
+        }
+
+        private int chestDropId_ ;
+        /**
+         * <code>uint32 chest_drop_id = 1;</code>
+         * @return The chestDropId.
+         */
+        @java.lang.Override
+        public int getChestDropId() {
+          return chestDropId_;
+        }
+        /**
+         * <code>uint32 chest_drop_id = 1;</code>
+         * @param value The chestDropId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setChestDropId(int value) {
+          
+          chestDropId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>uint32 chest_drop_id = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearChestDropId() {
+          
+          chestDropId_ = 0;
           onChanged();
           return this;
         }
@@ -700,25 +712,6 @@ public final class CreateGadgetInfoOuterClass {
 
     }
 
-    public static final int BORN_TYPE_FIELD_NUMBER = 1;
-    private int bornType_;
-    /**
-     * <code>.GadgetBornType born_type = 1;</code>
-     * @return The enum numeric value on the wire for bornType.
-     */
-    @java.lang.Override public int getBornTypeValue() {
-      return bornType_;
-    }
-    /**
-     * <code>.GadgetBornType born_type = 1;</code>
-     * @return The bornType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
-      return result == null ? emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
-    }
-
     public static final int CHEST_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.Chest chest_;
     /**
@@ -743,6 +736,25 @@ public final class CreateGadgetInfoOuterClass {
     @java.lang.Override
     public emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.ChestOrBuilder getChestOrBuilder() {
       return getChest();
+    }
+
+    public static final int BORN_TYPE_FIELD_NUMBER = 1;
+    private int bornType_;
+    /**
+     * <code>.GadgetBornType born_type = 1;</code>
+     * @return The enum numeric value on the wire for bornType.
+     */
+    @java.lang.Override public int getBornTypeValue() {
+      return bornType_;
+    }
+    /**
+     * <code>.GadgetBornType born_type = 1;</code>
+     * @return The bornType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
+      return result == null ? emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -797,12 +809,12 @@ public final class CreateGadgetInfoOuterClass {
       }
       emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo other = (emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo) obj;
 
-      if (bornType_ != other.bornType_) return false;
       if (hasChest() != other.hasChest()) return false;
       if (hasChest()) {
         if (!getChest()
             .equals(other.getChest())) return false;
       }
+      if (bornType_ != other.bornType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -814,12 +826,12 @@ public final class CreateGadgetInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BORN_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + bornType_;
       if (hasChest()) {
         hash = (37 * hash) + CHEST_FIELD_NUMBER;
         hash = (53 * hash) + getChest().hashCode();
       }
+      hash = (37 * hash) + BORN_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + bornType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -916,6 +928,10 @@ public final class CreateGadgetInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code CreateGadgetInfo}
      */
     public static final class Builder extends
@@ -953,14 +969,14 @@ public final class CreateGadgetInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        bornType_ = 0;
-
         if (chestBuilder_ == null) {
           chest_ = null;
         } else {
           chest_ = null;
           chestBuilder_ = null;
         }
+        bornType_ = 0;
+
         return this;
       }
 
@@ -987,12 +1003,12 @@ public final class CreateGadgetInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo buildPartial() {
         emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo result = new emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo(this);
-        result.bornType_ = bornType_;
         if (chestBuilder_ == null) {
           result.chest_ = chest_;
         } else {
           result.chest_ = chestBuilder_.build();
         }
+        result.bornType_ = bornType_;
         onBuilt();
         return result;
       }
@@ -1041,11 +1057,11 @@ public final class CreateGadgetInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo other) {
         if (other == emu.grasscutter.net.proto.CreateGadgetInfoOuterClass.CreateGadgetInfo.getDefaultInstance()) return this;
-        if (other.bornType_ != 0) {
-          setBornTypeValue(other.getBornTypeValue());
-        }
         if (other.hasChest()) {
           mergeChest(other.getChest());
+        }
+        if (other.bornType_ != 0) {
+          setBornTypeValue(other.getBornTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1073,60 +1089,6 @@ public final class CreateGadgetInfoOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int bornType_ = 0;
-      /**
-       * <code>.GadgetBornType born_type = 1;</code>
-       * @return The enum numeric value on the wire for bornType.
-       */
-      @java.lang.Override public int getBornTypeValue() {
-        return bornType_;
-      }
-      /**
-       * <code>.GadgetBornType born_type = 1;</code>
-       * @param value The enum numeric value on the wire for bornType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBornTypeValue(int value) {
-        
-        bornType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.GadgetBornType born_type = 1;</code>
-       * @return The bornType.
-       */
-      @java.lang.Override
-      public emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
-        return result == null ? emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.GadgetBornType born_type = 1;</code>
-       * @param value The bornType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setBornType(emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        bornType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.GadgetBornType born_type = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearBornType() {
-        
-        bornType_ = 0;
-        onChanged();
         return this;
       }
 
@@ -1248,6 +1210,60 @@ public final class CreateGadgetInfoOuterClass {
         }
         return chestBuilder_;
       }
+
+      private int bornType_ = 0;
+      /**
+       * <code>.GadgetBornType born_type = 1;</code>
+       * @return The enum numeric value on the wire for bornType.
+       */
+      @java.lang.Override public int getBornTypeValue() {
+        return bornType_;
+      }
+      /**
+       * <code>.GadgetBornType born_type = 1;</code>
+       * @param value The enum numeric value on the wire for bornType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBornTypeValue(int value) {
+        
+        bornType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GadgetBornType born_type = 1;</code>
+       * @return The bornType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType getBornType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType result = emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.valueOf(bornType_);
+        return result == null ? emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.GadgetBornType born_type = 1;</code>
+       * @param value The bornType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBornType(emu.grasscutter.net.proto.GadgetBornTypeOuterClass.GadgetBornType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        bornType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.GadgetBornType born_type = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBornType() {
+        
+        bornType_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1321,12 +1337,11 @@ public final class CreateGadgetInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026CreateGadgetInfo.proto\032\024GadgetBornType" +
-      ".proto\"\230\001\n\020CreateGadgetInfo\022\"\n\tborn_type" +
-      "\030\001 \001(\0162\017.GadgetBornType\022&\n\005chest\030\002 \001(\0132\027" +
-      ".CreateGadgetInfo.Chest\0328\n\005Chest\022\025\n\rches" +
-      "t_drop_id\030\001 \001(\r\022\030\n\020is_show_cutscene\030\002 \001(" +
-      "\010B7\n\031emu.grasscutter.net.protoB\032CreateGa" +
-      "dgetInfoOuterClassb\006proto3"
+      ".proto\"\230\001\n\020CreateGadgetInfo\022&\n\005chest\030\002 \001" +
+      "(\0132\027.CreateGadgetInfo.Chest\022\"\n\tborn_type" +
+      "\030\001 \001(\0162\017.GadgetBornType\0328\n\005Chest\022\030\n\020is_s" +
+      "how_cutscene\030\002 \001(\010\022\025\n\rchest_drop_id\030\001 \001(" +
+      "\rB\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1338,13 +1353,13 @@ public final class CreateGadgetInfoOuterClass {
     internal_static_CreateGadgetInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateGadgetInfo_descriptor,
-        new java.lang.String[] { "BornType", "Chest", });
+        new java.lang.String[] { "Chest", "BornType", });
     internal_static_CreateGadgetInfo_Chest_descriptor =
       internal_static_CreateGadgetInfo_descriptor.getNestedTypes().get(0);
     internal_static_CreateGadgetInfo_Chest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CreateGadgetInfo_Chest_descriptor,
-        new java.lang.String[] { "ChestDropId", "IsShowCutscene", });
+        new java.lang.String[] { "IsShowCutscene", "ChestDropId", });
     emu.grasscutter.net.proto.GadgetBornTypeOuterClass.getDescriptor();
   }
 

@@ -518,9 +518,8 @@ public final class DungeonWayPointActivateReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n DungeonWayPointActivateReq.proto\"2\n\032Du" +
       "ngeonWayPointActivateReq\022\024\n\014way_point_id" +
-      "\030\016 \001(\rBA\n\031emu.grasscutter.net.protoB$Dun" +
-      "geonWayPointActivateReqOuterClassb\006proto" +
-      "3"
+      "\030\016 \001(\rB\033\n\031emu.grasscutter.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -518,9 +518,8 @@ public final class AvatarPromoteReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026AvatarPromoteReq.proto\" \n\020AvatarPromot" +
-      "eReq\022\014\n\004guid\030\014 \001(\004B7\n\031emu.grasscutter.ne" +
-      "t.protoB\032AvatarPromoteReqOuterClassb\006pro" +
-      "to3"
+      "eReq\022\014\n\004guid\030\014 \001(\004B\033\n\031emu.grasscutter.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

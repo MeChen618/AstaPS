@@ -3,7 +3,7 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.MapLayerInfoOuterClass;
+import emu.grasscutter.net.proto.MapLayerInfo;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass.PlayerWorldSceneInfoListNotify;
 import emu.grasscutter.net.proto.PlayerWorldSceneInfoOuterClass.PlayerWorldSceneInfo;
 import java.util.Map;
@@ -44,10 +44,10 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
             // Map layer information (Big world)
             if (scene == 3) {
                 worldInfoBuilder.setMapLayerInfo(
-                        MapLayerInfoOuterClass.MapLayerInfo.newBuilder()
+                        MapLayerInfo._MapLayerInfo.newBuilder()
                                 .addAllUnlockMapLayerList(
                                         GameData.getMapLayerDataMap().keySet()) // MapLayer Ids
-                                // the floor list is the one unnamed repeated field of 7.0's MapLayerInfo
+                                // the floor list is the one unnamed repeated field of 7.0's _MapLayerInfo
                                 .addAllUnlockMapLayerGroupList(
                                         GameData.getMapLayerGroupDataMap()
                                                 .keySet()) // will show MapLayer options when hovered over
@@ -64,7 +64,7 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
         // The ids are the small parent-area numbers (WorldAreaConfigData.areaID1, 1..1000), the same
         // space scene points use. NOT WorldAreaData.getId(), which is a Grasscutter-internal
         // composite of (areaID2 << 16) + areaID1 and runs past 2^32, so it cannot be a wire value.
-        proto.addAllUnlockedAreaIdList(emu.grasscutter.game.world.WorldRegions.allAreaIds());
+        proto.addAllIIFJABJJJBF(emu.grasscutter.game.world.WorldRegions.allAreaIds());
 
         this.setData(proto);
     }

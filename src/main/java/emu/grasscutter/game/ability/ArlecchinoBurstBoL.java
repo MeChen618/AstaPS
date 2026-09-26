@@ -6,7 +6,7 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.net.proto.AttackResultOuterClass.AttackResult;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ConcurrentHashMap;
@@ -90,7 +90,7 @@ public final class ArlecchinoBurstBoL {
                     caster,
                     curDebt,
                     Math.max(0.01f, curDebt * 0.0001f),
-                    ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+                    _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
         }
     }
 
@@ -186,7 +186,7 @@ public final class ArlecchinoBurstBoL {
                 avatar,
                 debt,
                 0f,
-                ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+                _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
     }
 
     public static boolean isPending(int entityId) {
@@ -483,13 +483,13 @@ public final class ArlecchinoBurstBoL {
                             avatar,
                             curDebt,
                             0f,
-                            ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+                            _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
                 } else {
                     ArlecchinoBoLSync.pushBoL(
                             avatar,
                             0f,
                             0f,
-                            ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH);
+                            _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH);
                 }
                 flushDeferredHeal(avatar);
                 return;
@@ -501,8 +501,8 @@ public final class ArlecchinoBurstBoL {
                     newDebt,
                     -toClear,
                     newDebt <= 0f
-                            ? ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH
-                            : ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY);
+                            ? _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
+                            : _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY);
             Grasscutter.getLogger()
                     .info(
                             "[BoL] Arlecchino burst: cleared {} BoL → remain {} (snap={} reason={})",

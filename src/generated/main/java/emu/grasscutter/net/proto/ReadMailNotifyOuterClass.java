@@ -644,9 +644,8 @@ public final class ReadMailNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024ReadMailNotify.proto\"&\n\016ReadMailNotify" +
-      "\022\024\n\014mail_id_list\030\010 \003(\rB5\n\031emu.grasscutte" +
-      "r.net.protoB\030ReadMailNotifyOuterClassb\006p" +
-      "roto3"
+      "\022\024\n\014mail_id_list\030\010 \003(\rB\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

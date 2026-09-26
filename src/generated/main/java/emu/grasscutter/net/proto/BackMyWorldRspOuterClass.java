@@ -516,13 +516,14 @@ public final class BackMyWorldRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024BackMyWorldRsp.proto\"!\n\016BackMyWorldRsp" +
-      "\022\017\n\007retcode\030\007 \001(\005B5\n\031emu.grasscutter.net" +
-      ".protoB\030BackMyWorldRspOuterClassb\006proto3"
+      "\n\024BackMyWorldRsp.proto\032\rRetcode.proto\"!\n" +
+      "\016BackMyWorldRsp\022\017\n\007retcode\030\007 \001(\005B\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_BackMyWorldRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -530,6 +531,7 @@ public final class BackMyWorldRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BackMyWorldRsp_descriptor,
         new java.lang.String[] { "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

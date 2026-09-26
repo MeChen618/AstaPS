@@ -19,24 +19,28 @@ public final class MNKIILLGHDCOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 min_finish_time = 2;</code>
+     * <code>uint32 min_finish_time = 1;</code>
      * @return The minFinishTime.
      */
     int getMinFinishTime();
 
     /**
-     * <code>uint32 level_id = 4;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 8;</code>
      * @return The isOpen.
      */
     boolean getIsOpen();
+
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MNKIILLGHDC}
    */
   public static final class MNKIILLGHDC extends
@@ -81,17 +85,17 @@ public final class MNKIILLGHDCOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
+            case 8: {
 
               minFinishTime_ = input.readUInt32();
               break;
             }
-            case 32: {
+            case 48: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 56: {
+            case 64: {
 
               isOpen_ = input.readBool();
               break;
@@ -128,10 +132,10 @@ public final class MNKIILLGHDCOuterClass {
               emu.grasscutter.net.proto.MNKIILLGHDCOuterClass.MNKIILLGHDC.class, emu.grasscutter.net.proto.MNKIILLGHDCOuterClass.MNKIILLGHDC.Builder.class);
     }
 
-    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 2;
+    public static final int MIN_FINISH_TIME_FIELD_NUMBER = 1;
     private int minFinishTime_;
     /**
-     * <code>uint32 min_finish_time = 2;</code>
+     * <code>uint32 min_finish_time = 1;</code>
      * @return The minFinishTime.
      */
     @java.lang.Override
@@ -139,26 +143,26 @@ public final class MNKIILLGHDCOuterClass {
       return minFinishTime_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 4;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 4;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 7;
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
     private boolean isOpen_;
     /**
-     * <code>bool is_open = 7;</code>
+     * <code>bool is_open = 8;</code>
      * @return The isOpen.
      */
     @java.lang.Override
     public boolean getIsOpen() {
       return isOpen_;
+    }
+
+    public static final int LEVEL_ID_FIELD_NUMBER = 6;
+    private int levelId_;
+    /**
+     * <code>uint32 level_id = 6;</code>
+     * @return The levelId.
+     */
+    @java.lang.Override
+    public int getLevelId() {
+      return levelId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,13 +180,13 @@ public final class MNKIILLGHDCOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (minFinishTime_ != 0) {
-        output.writeUInt32(2, minFinishTime_);
+        output.writeUInt32(1, minFinishTime_);
       }
       if (levelId_ != 0) {
-        output.writeUInt32(4, levelId_);
+        output.writeUInt32(6, levelId_);
       }
       if (isOpen_ != false) {
-        output.writeBool(7, isOpen_);
+        output.writeBool(8, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -195,15 +199,15 @@ public final class MNKIILLGHDCOuterClass {
       size = 0;
       if (minFinishTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(2, minFinishTime_);
+          .computeUInt32Size(1, minFinishTime_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, levelId_);
+          .computeUInt32Size(6, levelId_);
       }
       if (isOpen_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isOpen_);
+          .computeBoolSize(8, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -222,10 +226,10 @@ public final class MNKIILLGHDCOuterClass {
 
       if (getMinFinishTime()
           != other.getMinFinishTime()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -239,11 +243,11 @@ public final class MNKIILLGHDCOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MIN_FINISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMinFinishTime();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -340,6 +344,10 @@ public final class MNKIILLGHDCOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MNKIILLGHDC}
      */
     public static final class Builder extends
@@ -379,9 +387,9 @@ public final class MNKIILLGHDCOuterClass {
         super.clear();
         minFinishTime_ = 0;
 
-        levelId_ = 0;
-
         isOpen_ = false;
+
+        levelId_ = 0;
 
         return this;
       }
@@ -410,8 +418,8 @@ public final class MNKIILLGHDCOuterClass {
       public emu.grasscutter.net.proto.MNKIILLGHDCOuterClass.MNKIILLGHDC buildPartial() {
         emu.grasscutter.net.proto.MNKIILLGHDCOuterClass.MNKIILLGHDC result = new emu.grasscutter.net.proto.MNKIILLGHDCOuterClass.MNKIILLGHDC(this);
         result.minFinishTime_ = minFinishTime_;
-        result.levelId_ = levelId_;
         result.isOpen_ = isOpen_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -463,11 +471,11 @@ public final class MNKIILLGHDCOuterClass {
         if (other.getMinFinishTime() != 0) {
           setMinFinishTime(other.getMinFinishTime());
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -500,7 +508,7 @@ public final class MNKIILLGHDCOuterClass {
 
       private int minFinishTime_ ;
       /**
-       * <code>uint32 min_finish_time = 2;</code>
+       * <code>uint32 min_finish_time = 1;</code>
        * @return The minFinishTime.
        */
       @java.lang.Override
@@ -508,7 +516,7 @@ public final class MNKIILLGHDCOuterClass {
         return minFinishTime_;
       }
       /**
-       * <code>uint32 min_finish_time = 2;</code>
+       * <code>uint32 min_finish_time = 1;</code>
        * @param value The minFinishTime to set.
        * @return This builder for chaining.
        */
@@ -519,7 +527,7 @@ public final class MNKIILLGHDCOuterClass {
         return this;
       }
       /**
-       * <code>uint32 min_finish_time = 2;</code>
+       * <code>uint32 min_finish_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMinFinishTime() {
@@ -529,40 +537,9 @@ public final class MNKIILLGHDCOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 4;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 4;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isOpen_ ;
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 8;</code>
        * @return The isOpen.
        */
       @java.lang.Override
@@ -570,7 +547,7 @@ public final class MNKIILLGHDCOuterClass {
         return isOpen_;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 8;</code>
        * @param value The isOpen to set.
        * @return This builder for chaining.
        */
@@ -581,12 +558,43 @@ public final class MNKIILLGHDCOuterClass {
         return this;
       }
       /**
-       * <code>bool is_open = 7;</code>
+       * <code>bool is_open = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
         
         isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int levelId_ ;
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return The levelId.
+       */
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @param value The levelId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 level_id = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -658,9 +666,9 @@ public final class MNKIILLGHDCOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021MNKIILLGHDC.proto\"I\n\013MNKIILLGHDC\022\027\n\017mi" +
-      "n_finish_time\030\002 \001(\r\022\020\n\010level_id\030\004 \001(\r\022\017\n" +
-      "\007is_open\030\007 \001(\010B2\n\031emu.grasscutter.net.pr" +
-      "otoB\025MNKIILLGHDCOuterClassb\006proto3"
+      "n_finish_time\030\001 \001(\r\022\017\n\007is_open\030\010 \001(\010\022\020\n\010" +
+      "level_id\030\006 \001(\rB\033\n\031emu.grasscutter.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -671,7 +679,7 @@ public final class MNKIILLGHDCOuterClass {
     internal_static_MNKIILLGHDC_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MNKIILLGHDC_descriptor,
-        new java.lang.String[] { "MinFinishTime", "LevelId", "IsOpen", });
+        new java.lang.String[] { "MinFinishTime", "IsOpen", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

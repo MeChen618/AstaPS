@@ -720,16 +720,16 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!HomeResourceTakeHomeCoinRsp.proto\032\022Hom" +
-      "eResource.proto\"P\n\033HomeResourceTakeHomeC" +
-      "oinRsp\022 \n\thome_coin\030\007 \001(\0132\r.HomeResource" +
-      "\022\017\n\007retcode\030\013 \001(\005BB\n\031emu.grasscutter.net" +
-      ".protoB%HomeResourceTakeHomeCoinRspOuter" +
-      "Classb\006proto3"
+      "eResource.proto\032\rRetcode.proto\"P\n\033HomeRe" +
+      "sourceTakeHomeCoinRsp\022 \n\thome_coin\030\007 \001(\013" +
+      "2\r.HomeResource\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.HomeResourceOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_HomeResourceTakeHomeCoinRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -738,6 +738,7 @@ public final class HomeResourceTakeHomeCoinRspOuterClass {
         internal_static_HomeResourceTakeHomeCoinRsp_descriptor,
         new java.lang.String[] { "HomeCoin", "Retcode", });
     emu.grasscutter.net.proto.HomeResourceOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

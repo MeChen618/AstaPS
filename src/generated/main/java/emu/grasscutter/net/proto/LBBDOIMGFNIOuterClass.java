@@ -19,18 +19,22 @@ public final class LBBDOIMGFNIOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 cur_value = 6;</code>
+     * <code>uint32 cur_value = 5;</code>
      * @return The curValue.
      */
     int getCurValue();
 
     /**
-     * <code>uint32 max_value = 7;</code>
+     * <code>uint32 max_value = 1;</code>
      * @return The maxValue.
      */
     int getMaxValue();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code LBBDOIMGFNI}
    */
   public static final class LBBDOIMGFNI extends
@@ -75,14 +79,14 @@ public final class LBBDOIMGFNIOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              curValue_ = input.readUInt32();
-              break;
-            }
-            case 56: {
+            case 8: {
 
               maxValue_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+
+              curValue_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,10 +121,10 @@ public final class LBBDOIMGFNIOuterClass {
               emu.grasscutter.net.proto.LBBDOIMGFNIOuterClass.LBBDOIMGFNI.class, emu.grasscutter.net.proto.LBBDOIMGFNIOuterClass.LBBDOIMGFNI.Builder.class);
     }
 
-    public static final int CUR_VALUE_FIELD_NUMBER = 6;
+    public static final int CUR_VALUE_FIELD_NUMBER = 5;
     private int curValue_;
     /**
-     * <code>uint32 cur_value = 6;</code>
+     * <code>uint32 cur_value = 5;</code>
      * @return The curValue.
      */
     @java.lang.Override
@@ -128,10 +132,10 @@ public final class LBBDOIMGFNIOuterClass {
       return curValue_;
     }
 
-    public static final int MAX_VALUE_FIELD_NUMBER = 7;
+    public static final int MAX_VALUE_FIELD_NUMBER = 1;
     private int maxValue_;
     /**
-     * <code>uint32 max_value = 7;</code>
+     * <code>uint32 max_value = 1;</code>
      * @return The maxValue.
      */
     @java.lang.Override
@@ -153,11 +157,11 @@ public final class LBBDOIMGFNIOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (curValue_ != 0) {
-        output.writeUInt32(6, curValue_);
-      }
       if (maxValue_ != 0) {
-        output.writeUInt32(7, maxValue_);
+        output.writeUInt32(1, maxValue_);
+      }
+      if (curValue_ != 0) {
+        output.writeUInt32(5, curValue_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class LBBDOIMGFNIOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (curValue_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(6, curValue_);
-      }
       if (maxValue_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, maxValue_);
+          .computeUInt32Size(1, maxValue_);
+      }
+      if (curValue_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, curValue_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -306,6 +310,10 @@ public final class LBBDOIMGFNIOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code LBBDOIMGFNI}
      */
     public static final class Builder extends
@@ -460,7 +468,7 @@ public final class LBBDOIMGFNIOuterClass {
 
       private int curValue_ ;
       /**
-       * <code>uint32 cur_value = 6;</code>
+       * <code>uint32 cur_value = 5;</code>
        * @return The curValue.
        */
       @java.lang.Override
@@ -468,7 +476,7 @@ public final class LBBDOIMGFNIOuterClass {
         return curValue_;
       }
       /**
-       * <code>uint32 cur_value = 6;</code>
+       * <code>uint32 cur_value = 5;</code>
        * @param value The curValue to set.
        * @return This builder for chaining.
        */
@@ -479,7 +487,7 @@ public final class LBBDOIMGFNIOuterClass {
         return this;
       }
       /**
-       * <code>uint32 cur_value = 6;</code>
+       * <code>uint32 cur_value = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearCurValue() {
@@ -491,7 +499,7 @@ public final class LBBDOIMGFNIOuterClass {
 
       private int maxValue_ ;
       /**
-       * <code>uint32 max_value = 7;</code>
+       * <code>uint32 max_value = 1;</code>
        * @return The maxValue.
        */
       @java.lang.Override
@@ -499,7 +507,7 @@ public final class LBBDOIMGFNIOuterClass {
         return maxValue_;
       }
       /**
-       * <code>uint32 max_value = 7;</code>
+       * <code>uint32 max_value = 1;</code>
        * @param value The maxValue to set.
        * @return This builder for chaining.
        */
@@ -510,7 +518,7 @@ public final class LBBDOIMGFNIOuterClass {
         return this;
       }
       /**
-       * <code>uint32 max_value = 7;</code>
+       * <code>uint32 max_value = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxValue() {
@@ -587,9 +595,8 @@ public final class LBBDOIMGFNIOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021LBBDOIMGFNI.proto\"3\n\013LBBDOIMGFNI\022\021\n\tcu" +
-      "r_value\030\006 \001(\r\022\021\n\tmax_value\030\007 \001(\rB2\n\031emu." +
-      "grasscutter.net.protoB\025LBBDOIMGFNIOuterC" +
-      "lassb\006proto3"
+      "r_value\030\005 \001(\r\022\021\n\tmax_value\030\001 \001(\rB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

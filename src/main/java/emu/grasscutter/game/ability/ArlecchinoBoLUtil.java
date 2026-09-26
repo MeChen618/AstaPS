@@ -24,8 +24,8 @@ import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass;
 import emu.grasscutter.net.proto.AbilityMetaModifierChangeOuterClass;
 import emu.grasscutter.net.proto.AbilityStringOuterClass;
 import emu.grasscutter.net.proto.AttackResultOuterClass;
-import emu.grasscutter.net.proto.ChangeHpDebtsReasonOuterClass;
-import emu.grasscutter.net.proto.ChangeHpReasonOuterClass;
+import emu.grasscutter.net.proto.ChangeHpDebtsReason;
+import emu.grasscutter.net.proto.ChangHpReasonOuterClass;
 import emu.grasscutter.net.proto.ModifierActionOuterClass;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass;
 import emu.grasscutter.server.packet.send.PacketAbilityChangeNotify;
@@ -356,7 +356,7 @@ public final class ArlecchinoBoLUtil {
             ArlecchinoBoLUtil.grantMarkBoLResolved(player, entityAvatar, n2, false);
         }
         float f = ArlecchinoBoLUtil.getAuthBoL(entityAvatar);
-        ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY, true);
+        ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY, true);
         ArlecchinoBoLUtil.ensureBoLKeepalive(entityAvatar);
         ArlecchinoBoLUtil.pinBoLToClientUi(entityAvatar, f);
     }
@@ -454,7 +454,7 @@ public final class ArlecchinoBoLUtil {
                 if (!bl) {
                     return;
                 }
-                if (abilityMetaModifierChange.getAction() != ModifierActionOuterClass.ModifierAction.MODIFIER_ACTION_ADDED) {
+                if (abilityMetaModifierChange.getAction() != ModifierActionOuterClass.ModifierAction.ModifierAction_ADDED) {
                     return;
                 }
                 String string4 = string;
@@ -547,7 +547,7 @@ public final class ArlecchinoBoLUtil {
             return;
         }
         WEAPON_BOL_CD_UNTIL.put(n, l + 14000L);
-        ArlecchinoBoLUtil.applyBoLChange(entityAvatar, f4, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+        ArlecchinoBoLUtil.applyBoLChange(entityAvatar, f4, ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
         Grasscutter.getLogger().info("[BoL] BloodMoon weapon +25% MaxHP=" + (f4 - f3) + " (outside 145% cap)");
     }
 
@@ -777,7 +777,7 @@ public final class ArlecchinoBoLUtil {
         }
         ALLOW_BOL_MUTATE.set(true);
         try {
-            ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY, true);
+            ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY, true);
         }
         finally {
             ALLOW_BOL_MUTATE.set(false);
@@ -861,7 +861,7 @@ public final class ArlecchinoBoLUtil {
                 ArlecchinoBoLUtil.openMarkRecycleWindow(player);
                 ArlecchinoBoLUtil.recycleAllDirectivesNow(player, entityAvatar, "AddHpDebts-UI");
             } else {
-                ArlecchinoBoLUtil.forcePushBoL(entityAvatar, ArlecchinoBoLUtil.getAuthBoL(entityAvatar), ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY, true);
+                ArlecchinoBoLUtil.forcePushBoL(entityAvatar, ArlecchinoBoLUtil.getAuthBoL(entityAvatar), ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY, true);
                 try {
                     player.sendPacket(new PacketAbilityChangeNotify(entityAvatar));
                     player.sendPacket(new PacketAvatarFightPropNotify(entityAvatar.getAvatar()));
@@ -976,7 +976,7 @@ public final class ArlecchinoBoLUtil {
         for (int i = 1; i <= 3; ++i) {
             if (!(Math.abs((f4 *= 0.925f) - f2) <= f3)) continue;
             LAST_NA_REDUCE_MS.put(n, l);
-            ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason changeHpDebtsReason = f4 <= 0.5f ? ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH : ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY;
+            ChangeHpDebtsReason._ChangeHpDebtsReason changeHpDebtsReason = f4 <= 0.5f ? ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH : ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY;
             ArlecchinoBoLUtil.applyBoLChange(entityAvatar, Math.max(0.0f, f4), changeHpDebtsReason);
             Grasscutter.getLogger().info("[BoL] NA consume " + f + " -> " + f4 + " (client-adopt " + i + "\u00d77.5%)");
             return true;
@@ -984,11 +984,11 @@ public final class ArlecchinoBoLUtil {
         return false;
     }
 
-    private static void forcePushBoL(EntityAvatar entityAvatar, float f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason changeHpDebtsReason) {
+    private static void forcePushBoL(EntityAvatar entityAvatar, float f, ChangeHpDebtsReason._ChangeHpDebtsReason changeHpDebtsReason) {
         ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, changeHpDebtsReason, false);
     }
 
-    private static void forcePushBoL(EntityAvatar entityAvatar, float f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason changeHpDebtsReason, boolean bl) {
+    private static void forcePushBoL(EntityAvatar entityAvatar, float f, ChangeHpDebtsReason._ChangeHpDebtsReason changeHpDebtsReason, boolean bl) {
         if (entityAvatar == null) {
             return;
         }
@@ -1098,7 +1098,7 @@ public final class ArlecchinoBoLUtil {
         if (entityAvatar == null) {
             return;
         }
-        ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY, true);
+        ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY, true);
     }
 
     private static void broadcastBoLUpdate(EntityAvatar entityAvatar) {
@@ -1106,7 +1106,7 @@ public final class ArlecchinoBoLUtil {
             return;
         }
         float f = entityAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-        ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+        ArlecchinoBoLUtil.forcePushBoL(entityAvatar, f, ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
     }
 
     public static boolean isBurstPending(int n) {
@@ -1192,7 +1192,7 @@ public final class ArlecchinoBoLUtil {
         return f > 0.0f && f2 >= f * 0.3f;
     }
 
-    public static void applyBoLChange(EntityAvatar entityAvatar, float f, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason changeHpDebtsReason) {
+    public static void applyBoLChange(EntityAvatar entityAvatar, float f, ChangeHpDebtsReason._ChangeHpDebtsReason changeHpDebtsReason) {
         float f2;
         if (entityAvatar == null) {
             return;
@@ -1255,12 +1255,12 @@ public final class ArlecchinoBoLUtil {
             entityAvatar.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, f2 + f4);
             if (entityAvatar.getScene() != null) {
                 entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP));
-                entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(f4), PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpReasonOuterClass.ChangeHpReason.ChangeHpReason_CHANGE_HP_ADD_ABILITY));
+                entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(f4), PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangHpReasonOuterClass.ChangHpReason.ChangHpReason_CHANGE_HP_ADD_ABILITY));
                 entityAvatar.getScene().broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, f4, f));
             } else if (entityAvatar.getWorld() != null) {
                 World world = entityAvatar.getWorld();
                 world.broadcastPacket(new PacketEntityFightPropUpdateNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP));
-                world.broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(f4), PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangeHpReasonOuterClass.ChangeHpReason.ChangeHpReason_CHANGE_HP_ADD_ABILITY));
+                world.broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(f4), PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangHpReasonOuterClass.ChangHpReason.ChangHpReason_CHANGE_HP_ADD_ABILITY));
                 world.broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, f4, f));
             }
             Grasscutter.getLogger().info("[BoL] burst HP " + f2 + "/" + f3 + " -> " + (f2 + f4) + " (+" + f4 + ")");
@@ -1315,7 +1315,7 @@ public final class ArlecchinoBoLUtil {
         }
         float f3 = Math.max(0.0f, f - f2);
         LAST_NA_REDUCE_MS.put(n, l);
-        ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason changeHpDebtsReason = f3 <= 0.5f ? ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY_FINISH : ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_PAY;
+        ChangeHpDebtsReason._ChangeHpDebtsReason changeHpDebtsReason = f3 <= 0.5f ? ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH : ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY;
         ArlecchinoBoLUtil.applyBoLChange(entityAvatar, f3, changeHpDebtsReason);
         Grasscutter.getLogger().info("[BoL] NA consume " + f + " -> " + f3 + (bl ? " (official hit 7.5%)" : " (FireAttack 7.5%)"));
         return true;
@@ -1565,7 +1565,7 @@ public final class ArlecchinoBoLUtil {
         }
         TRUST_BOL_INCREASE.set(true);
         try {
-            ArlecchinoBoLUtil.applyBoLChange(entityAvatar, f2, ChangeHpDebtsReasonOuterClass.ChangeHpDebtsReason.CHANGE_HP_DEBTS_REASON_CHANGE_HP_DEBTS_ADD_ABILITY);
+            ArlecchinoBoLUtil.applyBoLChange(entityAvatar, f2, ChangeHpDebtsReason._ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_ADD_ABILITY);
         }
         finally {
             TRUST_BOL_INCREASE.set(false);

@@ -19,12 +19,16 @@ public final class BCMGBIKCCFBOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 config_id = 13;</code>
+     * <code>uint32 config_id = 14;</code>
      * @return The configId.
      */
     int getConfigId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BCMGBIKCCFB}
    */
   public static final class BCMGBIKCCFB extends
@@ -69,7 +73,7 @@ public final class BCMGBIKCCFBOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 112: {
 
               configId_ = input.readUInt32();
               break;
@@ -106,10 +110,10 @@ public final class BCMGBIKCCFBOuterClass {
               emu.grasscutter.net.proto.BCMGBIKCCFBOuterClass.BCMGBIKCCFB.class, emu.grasscutter.net.proto.BCMGBIKCCFBOuterClass.BCMGBIKCCFB.Builder.class);
     }
 
-    public static final int CONFIG_ID_FIELD_NUMBER = 13;
+    public static final int CONFIG_ID_FIELD_NUMBER = 14;
     private int configId_;
     /**
-     * <code>uint32 config_id = 13;</code>
+     * <code>uint32 config_id = 14;</code>
      * @return The configId.
      */
     @java.lang.Override
@@ -132,7 +136,7 @@ public final class BCMGBIKCCFBOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (configId_ != 0) {
-        output.writeUInt32(13, configId_);
+        output.writeUInt32(14, configId_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +149,7 @@ public final class BCMGBIKCCFBOuterClass {
       size = 0;
       if (configId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, configId_);
+          .computeUInt32Size(14, configId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -273,6 +277,10 @@ public final class BCMGBIKCCFBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BCMGBIKCCFB}
      */
     public static final class Builder extends
@@ -421,7 +429,7 @@ public final class BCMGBIKCCFBOuterClass {
 
       private int configId_ ;
       /**
-       * <code>uint32 config_id = 13;</code>
+       * <code>uint32 config_id = 14;</code>
        * @return The configId.
        */
       @java.lang.Override
@@ -429,7 +437,7 @@ public final class BCMGBIKCCFBOuterClass {
         return configId_;
       }
       /**
-       * <code>uint32 config_id = 13;</code>
+       * <code>uint32 config_id = 14;</code>
        * @param value The configId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +448,7 @@ public final class BCMGBIKCCFBOuterClass {
         return this;
       }
       /**
-       * <code>uint32 config_id = 13;</code>
+       * <code>uint32 config_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
@@ -517,8 +525,8 @@ public final class BCMGBIKCCFBOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BCMGBIKCCFB.proto\" \n\013BCMGBIKCCFB\022\021\n\tco" +
-      "nfig_id\030\r \001(\rB2\n\031emu.grasscutter.net.pro" +
-      "toB\025BCMGBIKCCFBOuterClassb\006proto3"
+      "nfig_id\030\016 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

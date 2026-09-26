@@ -19,12 +19,6 @@ public final class BACMNHCJNEMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 KGOALNNNBDB = 1;</code>
-     * @return The kGOALNNNBDB.
-     */
-    int getKGOALNNNBDB();
-
-    /**
      * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
      * @return Whether the aOAFABJAIAP field is set.
      */
@@ -33,23 +27,11 @@ public final class BACMNHCJNEMOuterClass {
      * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
      * @return The aOAFABJAIAP.
      */
-    emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase getAOAFABJAIAP();
+    emu.grasscutter.net.proto.CurrentPhase._CurrentPhase getAOAFABJAIAP();
     /**
      * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
      */
-    emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhaseOrBuilder getAOAFABJAIAPOrBuilder();
-
-    /**
-     * <code>int32 slot_id = 3;</code>
-     * @return The slotId.
-     */
-    int getSlotId();
-
-    /**
-     * <code>uint32 pass_cd_time = 4;</code>
-     * @return The passCdTime.
-     */
-    int getPassCdTime();
+    emu.grasscutter.net.proto.CurrentPhase._CurrentPhaseOrBuilder getAOAFABJAIAPOrBuilder();
 
     /**
      * <code>repeated uint32 full_cd_time_list = 5;</code>
@@ -69,18 +51,40 @@ public final class BACMNHCJNEMOuterClass {
     int getFullCdTimeList(int index);
 
     /**
-     * <code>int32 ILHKIHFDJLB = 6;</code>
-     * @return The iLHKIHFDJLB.
-     */
-    int getILHKIHFDJLB();
-
-    /**
      * <code>uint32 DNJADJFIJKO = 7;</code>
      * @return The dNJADJFIJKO.
      */
     int getDNJADJFIJKO();
+
+    /**
+     * <code>uint32 pass_cd_time = 4;</code>
+     * @return The passCdTime.
+     */
+    int getPassCdTime();
+
+    /**
+     * <code>int32 KGOALNNNBDB = 1;</code>
+     * @return The kGOALNNNBDB.
+     */
+    int getKGOALNNNBDB();
+
+    /**
+     * <code>int32 slot_id = 3;</code>
+     * @return The slotId.
+     */
+    int getSlotId();
+
+    /**
+     * <code>int32 ILHKIHFDJLB = 6;</code>
+     * @return The iLHKIHFDJLB.
+     */
+    int getILHKIHFDJLB();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code BACMNHCJNEM}
    */
   public static final class BACMNHCJNEM extends
@@ -133,11 +137,11 @@ public final class BACMNHCJNEMOuterClass {
               break;
             }
             case 18: {
-              emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.Builder subBuilder = null;
+              emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.Builder subBuilder = null;
               if (aOAFABJAIAP_ != null) {
                 subBuilder = aOAFABJAIAP_.toBuilder();
               }
-              aOAFABJAIAP_ = input.readMessage(emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.parser(), extensionRegistry);
+              aOAFABJAIAP_ = input.readMessage(emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(aOAFABJAIAP_);
                 aOAFABJAIAP_ = subBuilder.buildPartial();
@@ -221,19 +225,8 @@ public final class BACMNHCJNEMOuterClass {
               emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM.class, emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM.Builder.class);
     }
 
-    public static final int KGOALNNNBDB_FIELD_NUMBER = 1;
-    private int kGOALNNNBDB_;
-    /**
-     * <code>int32 KGOALNNNBDB = 1;</code>
-     * @return The kGOALNNNBDB.
-     */
-    @java.lang.Override
-    public int getKGOALNNNBDB() {
-      return kGOALNNNBDB_;
-    }
-
     public static final int AOAFABJAIAP_FIELD_NUMBER = 2;
-    private emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase aOAFABJAIAP_;
+    private emu.grasscutter.net.proto.CurrentPhase._CurrentPhase aOAFABJAIAP_;
     /**
      * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
      * @return Whether the aOAFABJAIAP field is set.
@@ -247,37 +240,15 @@ public final class BACMNHCJNEMOuterClass {
      * @return The aOAFABJAIAP.
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase getAOAFABJAIAP() {
-      return aOAFABJAIAP_ == null ? emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.getDefaultInstance() : aOAFABJAIAP_;
+    public emu.grasscutter.net.proto.CurrentPhase._CurrentPhase getAOAFABJAIAP() {
+      return aOAFABJAIAP_ == null ? emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.getDefaultInstance() : aOAFABJAIAP_;
     }
     /**
      * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
      */
     @java.lang.Override
-    public emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhaseOrBuilder getAOAFABJAIAPOrBuilder() {
+    public emu.grasscutter.net.proto.CurrentPhase._CurrentPhaseOrBuilder getAOAFABJAIAPOrBuilder() {
       return getAOAFABJAIAP();
-    }
-
-    public static final int SLOT_ID_FIELD_NUMBER = 3;
-    private int slotId_;
-    /**
-     * <code>int32 slot_id = 3;</code>
-     * @return The slotId.
-     */
-    @java.lang.Override
-    public int getSlotId() {
-      return slotId_;
-    }
-
-    public static final int PASS_CD_TIME_FIELD_NUMBER = 4;
-    private int passCdTime_;
-    /**
-     * <code>uint32 pass_cd_time = 4;</code>
-     * @return The passCdTime.
-     */
-    @java.lang.Override
-    public int getPassCdTime() {
-      return passCdTime_;
     }
 
     public static final int FULL_CD_TIME_LIST_FIELD_NUMBER = 5;
@@ -308,17 +279,6 @@ public final class BACMNHCJNEMOuterClass {
     }
     private int fullCdTimeListMemoizedSerializedSize = -1;
 
-    public static final int ILHKIHFDJLB_FIELD_NUMBER = 6;
-    private int iLHKIHFDJLB_;
-    /**
-     * <code>int32 ILHKIHFDJLB = 6;</code>
-     * @return The iLHKIHFDJLB.
-     */
-    @java.lang.Override
-    public int getILHKIHFDJLB() {
-      return iLHKIHFDJLB_;
-    }
-
     public static final int DNJADJFIJKO_FIELD_NUMBER = 7;
     private int dNJADJFIJKO_;
     /**
@@ -328,6 +288,50 @@ public final class BACMNHCJNEMOuterClass {
     @java.lang.Override
     public int getDNJADJFIJKO() {
       return dNJADJFIJKO_;
+    }
+
+    public static final int PASS_CD_TIME_FIELD_NUMBER = 4;
+    private int passCdTime_;
+    /**
+     * <code>uint32 pass_cd_time = 4;</code>
+     * @return The passCdTime.
+     */
+    @java.lang.Override
+    public int getPassCdTime() {
+      return passCdTime_;
+    }
+
+    public static final int KGOALNNNBDB_FIELD_NUMBER = 1;
+    private int kGOALNNNBDB_;
+    /**
+     * <code>int32 KGOALNNNBDB = 1;</code>
+     * @return The kGOALNNNBDB.
+     */
+    @java.lang.Override
+    public int getKGOALNNNBDB() {
+      return kGOALNNNBDB_;
+    }
+
+    public static final int SLOT_ID_FIELD_NUMBER = 3;
+    private int slotId_;
+    /**
+     * <code>int32 slot_id = 3;</code>
+     * @return The slotId.
+     */
+    @java.lang.Override
+    public int getSlotId() {
+      return slotId_;
+    }
+
+    public static final int ILHKIHFDJLB_FIELD_NUMBER = 6;
+    private int iLHKIHFDJLB_;
+    /**
+     * <code>int32 ILHKIHFDJLB = 6;</code>
+     * @return The iLHKIHFDJLB.
+     */
+    @java.lang.Override
+    public int getILHKIHFDJLB() {
+      return iLHKIHFDJLB_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -432,23 +436,23 @@ public final class BACMNHCJNEMOuterClass {
       }
       emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM other = (emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM) obj;
 
-      if (getKGOALNNNBDB()
-          != other.getKGOALNNNBDB()) return false;
       if (hasAOAFABJAIAP() != other.hasAOAFABJAIAP()) return false;
       if (hasAOAFABJAIAP()) {
         if (!getAOAFABJAIAP()
             .equals(other.getAOAFABJAIAP())) return false;
       }
-      if (getSlotId()
-          != other.getSlotId()) return false;
-      if (getPassCdTime()
-          != other.getPassCdTime()) return false;
       if (!getFullCdTimeListList()
           .equals(other.getFullCdTimeListList())) return false;
-      if (getILHKIHFDJLB()
-          != other.getILHKIHFDJLB()) return false;
       if (getDNJADJFIJKO()
           != other.getDNJADJFIJKO()) return false;
+      if (getPassCdTime()
+          != other.getPassCdTime()) return false;
+      if (getKGOALNNNBDB()
+          != other.getKGOALNNNBDB()) return false;
+      if (getSlotId()
+          != other.getSlotId()) return false;
+      if (getILHKIHFDJLB()
+          != other.getILHKIHFDJLB()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -460,24 +464,24 @@ public final class BACMNHCJNEMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KGOALNNNBDB_FIELD_NUMBER;
-      hash = (53 * hash) + getKGOALNNNBDB();
       if (hasAOAFABJAIAP()) {
         hash = (37 * hash) + AOAFABJAIAP_FIELD_NUMBER;
         hash = (53 * hash) + getAOAFABJAIAP().hashCode();
       }
-      hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSlotId();
-      hash = (37 * hash) + PASS_CD_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getPassCdTime();
       if (getFullCdTimeListCount() > 0) {
         hash = (37 * hash) + FULL_CD_TIME_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFullCdTimeListList().hashCode();
       }
-      hash = (37 * hash) + ILHKIHFDJLB_FIELD_NUMBER;
-      hash = (53 * hash) + getILHKIHFDJLB();
       hash = (37 * hash) + DNJADJFIJKO_FIELD_NUMBER;
       hash = (53 * hash) + getDNJADJFIJKO();
+      hash = (37 * hash) + PASS_CD_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getPassCdTime();
+      hash = (37 * hash) + KGOALNNNBDB_FIELD_NUMBER;
+      hash = (53 * hash) + getKGOALNNNBDB();
+      hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSlotId();
+      hash = (37 * hash) + ILHKIHFDJLB_FIELD_NUMBER;
+      hash = (53 * hash) + getILHKIHFDJLB();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -574,6 +578,10 @@ public final class BACMNHCJNEMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code BACMNHCJNEM}
      */
     public static final class Builder extends
@@ -611,23 +619,23 @@ public final class BACMNHCJNEMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        kGOALNNNBDB_ = 0;
-
         if (aOAFABJAIAPBuilder_ == null) {
           aOAFABJAIAP_ = null;
         } else {
           aOAFABJAIAP_ = null;
           aOAFABJAIAPBuilder_ = null;
         }
-        slotId_ = 0;
+        fullCdTimeList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dNJADJFIJKO_ = 0;
 
         passCdTime_ = 0;
 
-        fullCdTimeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        iLHKIHFDJLB_ = 0;
+        kGOALNNNBDB_ = 0;
 
-        dNJADJFIJKO_ = 0;
+        slotId_ = 0;
+
+        iLHKIHFDJLB_ = 0;
 
         return this;
       }
@@ -656,21 +664,21 @@ public final class BACMNHCJNEMOuterClass {
       public emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM buildPartial() {
         emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM result = new emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM(this);
         int from_bitField0_ = bitField0_;
-        result.kGOALNNNBDB_ = kGOALNNNBDB_;
         if (aOAFABJAIAPBuilder_ == null) {
           result.aOAFABJAIAP_ = aOAFABJAIAP_;
         } else {
           result.aOAFABJAIAP_ = aOAFABJAIAPBuilder_.build();
         }
-        result.slotId_ = slotId_;
-        result.passCdTime_ = passCdTime_;
         if (((bitField0_ & 0x00000001) != 0)) {
           fullCdTimeList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fullCdTimeList_ = fullCdTimeList_;
-        result.iLHKIHFDJLB_ = iLHKIHFDJLB_;
         result.dNJADJFIJKO_ = dNJADJFIJKO_;
+        result.passCdTime_ = passCdTime_;
+        result.kGOALNNNBDB_ = kGOALNNNBDB_;
+        result.slotId_ = slotId_;
+        result.iLHKIHFDJLB_ = iLHKIHFDJLB_;
         onBuilt();
         return result;
       }
@@ -719,17 +727,8 @@ public final class BACMNHCJNEMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM other) {
         if (other == emu.grasscutter.net.proto.BACMNHCJNEMOuterClass.BACMNHCJNEM.getDefaultInstance()) return this;
-        if (other.getKGOALNNNBDB() != 0) {
-          setKGOALNNNBDB(other.getKGOALNNNBDB());
-        }
         if (other.hasAOAFABJAIAP()) {
           mergeAOAFABJAIAP(other.getAOAFABJAIAP());
-        }
-        if (other.getSlotId() != 0) {
-          setSlotId(other.getSlotId());
-        }
-        if (other.getPassCdTime() != 0) {
-          setPassCdTime(other.getPassCdTime());
         }
         if (!other.fullCdTimeList_.isEmpty()) {
           if (fullCdTimeList_.isEmpty()) {
@@ -741,11 +740,20 @@ public final class BACMNHCJNEMOuterClass {
           }
           onChanged();
         }
-        if (other.getILHKIHFDJLB() != 0) {
-          setILHKIHFDJLB(other.getILHKIHFDJLB());
-        }
         if (other.getDNJADJFIJKO() != 0) {
           setDNJADJFIJKO(other.getDNJADJFIJKO());
+        }
+        if (other.getPassCdTime() != 0) {
+          setPassCdTime(other.getPassCdTime());
+        }
+        if (other.getKGOALNNNBDB() != 0) {
+          setKGOALNNNBDB(other.getKGOALNNNBDB());
+        }
+        if (other.getSlotId() != 0) {
+          setSlotId(other.getSlotId());
+        }
+        if (other.getILHKIHFDJLB() != 0) {
+          setILHKIHFDJLB(other.getILHKIHFDJLB());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -777,40 +785,9 @@ public final class BACMNHCJNEMOuterClass {
       }
       private int bitField0_;
 
-      private int kGOALNNNBDB_ ;
-      /**
-       * <code>int32 KGOALNNNBDB = 1;</code>
-       * @return The kGOALNNNBDB.
-       */
-      @java.lang.Override
-      public int getKGOALNNNBDB() {
-        return kGOALNNNBDB_;
-      }
-      /**
-       * <code>int32 KGOALNNNBDB = 1;</code>
-       * @param value The kGOALNNNBDB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKGOALNNNBDB(int value) {
-        
-        kGOALNNNBDB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 KGOALNNNBDB = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKGOALNNNBDB() {
-        
-        kGOALNNNBDB_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase aOAFABJAIAP_;
+      private emu.grasscutter.net.proto.CurrentPhase._CurrentPhase aOAFABJAIAP_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase, emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.Builder, emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhaseOrBuilder> aOAFABJAIAPBuilder_;
+          emu.grasscutter.net.proto.CurrentPhase._CurrentPhase, emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.Builder, emu.grasscutter.net.proto.CurrentPhase._CurrentPhaseOrBuilder> aOAFABJAIAPBuilder_;
       /**
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        * @return Whether the aOAFABJAIAP field is set.
@@ -822,9 +799,9 @@ public final class BACMNHCJNEMOuterClass {
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        * @return The aOAFABJAIAP.
        */
-      public emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase getAOAFABJAIAP() {
+      public emu.grasscutter.net.proto.CurrentPhase._CurrentPhase getAOAFABJAIAP() {
         if (aOAFABJAIAPBuilder_ == null) {
-          return aOAFABJAIAP_ == null ? emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.getDefaultInstance() : aOAFABJAIAP_;
+          return aOAFABJAIAP_ == null ? emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.getDefaultInstance() : aOAFABJAIAP_;
         } else {
           return aOAFABJAIAPBuilder_.getMessage();
         }
@@ -832,7 +809,7 @@ public final class BACMNHCJNEMOuterClass {
       /**
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        */
-      public Builder setAOAFABJAIAP(emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase value) {
+      public Builder setAOAFABJAIAP(emu.grasscutter.net.proto.CurrentPhase._CurrentPhase value) {
         if (aOAFABJAIAPBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -849,7 +826,7 @@ public final class BACMNHCJNEMOuterClass {
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        */
       public Builder setAOAFABJAIAP(
-          emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.Builder builderForValue) {
+          emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.Builder builderForValue) {
         if (aOAFABJAIAPBuilder_ == null) {
           aOAFABJAIAP_ = builderForValue.build();
           onChanged();
@@ -862,11 +839,11 @@ public final class BACMNHCJNEMOuterClass {
       /**
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        */
-      public Builder mergeAOAFABJAIAP(emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase value) {
+      public Builder mergeAOAFABJAIAP(emu.grasscutter.net.proto.CurrentPhase._CurrentPhase value) {
         if (aOAFABJAIAPBuilder_ == null) {
           if (aOAFABJAIAP_ != null) {
             aOAFABJAIAP_ =
-              emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.newBuilder(aOAFABJAIAP_).mergeFrom(value).buildPartial();
+              emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.newBuilder(aOAFABJAIAP_).mergeFrom(value).buildPartial();
           } else {
             aOAFABJAIAP_ = value;
           }
@@ -894,7 +871,7 @@ public final class BACMNHCJNEMOuterClass {
       /**
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        */
-      public emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.Builder getAOAFABJAIAPBuilder() {
+      public emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.Builder getAOAFABJAIAPBuilder() {
         
         onChanged();
         return getAOAFABJAIAPFieldBuilder().getBuilder();
@@ -902,91 +879,29 @@ public final class BACMNHCJNEMOuterClass {
       /**
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        */
-      public emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhaseOrBuilder getAOAFABJAIAPOrBuilder() {
+      public emu.grasscutter.net.proto.CurrentPhase._CurrentPhaseOrBuilder getAOAFABJAIAPOrBuilder() {
         if (aOAFABJAIAPBuilder_ != null) {
           return aOAFABJAIAPBuilder_.getMessageOrBuilder();
         } else {
           return aOAFABJAIAP_ == null ?
-              emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.getDefaultInstance() : aOAFABJAIAP_;
+              emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.getDefaultInstance() : aOAFABJAIAP_;
         }
       }
       /**
        * <code>._CurrentPhase AOAFABJAIAP = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase, emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.Builder, emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhaseOrBuilder> 
+          emu.grasscutter.net.proto.CurrentPhase._CurrentPhase, emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.Builder, emu.grasscutter.net.proto.CurrentPhase._CurrentPhaseOrBuilder> 
           getAOAFABJAIAPFieldBuilder() {
         if (aOAFABJAIAPBuilder_ == null) {
           aOAFABJAIAPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase, emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhase.Builder, emu.grasscutter.net.proto._CurrentPhaseOuterClass._CurrentPhaseOrBuilder>(
+              emu.grasscutter.net.proto.CurrentPhase._CurrentPhase, emu.grasscutter.net.proto.CurrentPhase._CurrentPhase.Builder, emu.grasscutter.net.proto.CurrentPhase._CurrentPhaseOrBuilder>(
                   getAOAFABJAIAP(),
                   getParentForChildren(),
                   isClean());
           aOAFABJAIAP_ = null;
         }
         return aOAFABJAIAPBuilder_;
-      }
-
-      private int slotId_ ;
-      /**
-       * <code>int32 slot_id = 3;</code>
-       * @return The slotId.
-       */
-      @java.lang.Override
-      public int getSlotId() {
-        return slotId_;
-      }
-      /**
-       * <code>int32 slot_id = 3;</code>
-       * @param value The slotId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSlotId(int value) {
-        
-        slotId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 slot_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSlotId() {
-        
-        slotId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int passCdTime_ ;
-      /**
-       * <code>uint32 pass_cd_time = 4;</code>
-       * @return The passCdTime.
-       */
-      @java.lang.Override
-      public int getPassCdTime() {
-        return passCdTime_;
-      }
-      /**
-       * <code>uint32 pass_cd_time = 4;</code>
-       * @param value The passCdTime to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPassCdTime(int value) {
-        
-        passCdTime_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 pass_cd_time = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPassCdTime() {
-        
-        passCdTime_ = 0;
-        onChanged();
-        return this;
       }
 
       private com.google.protobuf.Internal.IntList fullCdTimeList_ = emptyIntList();
@@ -1068,37 +983,6 @@ public final class BACMNHCJNEMOuterClass {
         return this;
       }
 
-      private int iLHKIHFDJLB_ ;
-      /**
-       * <code>int32 ILHKIHFDJLB = 6;</code>
-       * @return The iLHKIHFDJLB.
-       */
-      @java.lang.Override
-      public int getILHKIHFDJLB() {
-        return iLHKIHFDJLB_;
-      }
-      /**
-       * <code>int32 ILHKIHFDJLB = 6;</code>
-       * @param value The iLHKIHFDJLB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setILHKIHFDJLB(int value) {
-        
-        iLHKIHFDJLB_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 ILHKIHFDJLB = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearILHKIHFDJLB() {
-        
-        iLHKIHFDJLB_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int dNJADJFIJKO_ ;
       /**
        * <code>uint32 DNJADJFIJKO = 7;</code>
@@ -1126,6 +1010,130 @@ public final class BACMNHCJNEMOuterClass {
       public Builder clearDNJADJFIJKO() {
         
         dNJADJFIJKO_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int passCdTime_ ;
+      /**
+       * <code>uint32 pass_cd_time = 4;</code>
+       * @return The passCdTime.
+       */
+      @java.lang.Override
+      public int getPassCdTime() {
+        return passCdTime_;
+      }
+      /**
+       * <code>uint32 pass_cd_time = 4;</code>
+       * @param value The passCdTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassCdTime(int value) {
+        
+        passCdTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 pass_cd_time = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassCdTime() {
+        
+        passCdTime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int kGOALNNNBDB_ ;
+      /**
+       * <code>int32 KGOALNNNBDB = 1;</code>
+       * @return The kGOALNNNBDB.
+       */
+      @java.lang.Override
+      public int getKGOALNNNBDB() {
+        return kGOALNNNBDB_;
+      }
+      /**
+       * <code>int32 KGOALNNNBDB = 1;</code>
+       * @param value The kGOALNNNBDB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKGOALNNNBDB(int value) {
+        
+        kGOALNNNBDB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 KGOALNNNBDB = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKGOALNNNBDB() {
+        
+        kGOALNNNBDB_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int slotId_ ;
+      /**
+       * <code>int32 slot_id = 3;</code>
+       * @return The slotId.
+       */
+      @java.lang.Override
+      public int getSlotId() {
+        return slotId_;
+      }
+      /**
+       * <code>int32 slot_id = 3;</code>
+       * @param value The slotId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSlotId(int value) {
+        
+        slotId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 slot_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSlotId() {
+        
+        slotId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int iLHKIHFDJLB_ ;
+      /**
+       * <code>int32 ILHKIHFDJLB = 6;</code>
+       * @return The iLHKIHFDJLB.
+       */
+      @java.lang.Override
+      public int getILHKIHFDJLB() {
+        return iLHKIHFDJLB_;
+      }
+      /**
+       * <code>int32 ILHKIHFDJLB = 6;</code>
+       * @param value The iLHKIHFDJLB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setILHKIHFDJLB(int value) {
+        
+        iLHKIHFDJLB_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 ILHKIHFDJLB = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearILHKIHFDJLB() {
+        
+        iLHKIHFDJLB_ = 0;
         onChanged();
         return this;
       }
@@ -1197,26 +1205,25 @@ public final class BACMNHCJNEMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BACMNHCJNEM.proto\032\023_CurrentPhase.proto" +
-      "\"\263\001\n\013BACMNHCJNEM\022\023\n\013KGOALNNNBDB\030\001 \001(\005\022#\n" +
-      "\013AOAFABJAIAP\030\002 \001(\0132\016._CurrentPhase\022\017\n\007sl" +
-      "ot_id\030\003 \001(\005\022\024\n\014pass_cd_time\030\004 \001(\r\022\031\n\021ful" +
-      "l_cd_time_list\030\005 \003(\r\022\023\n\013ILHKIHFDJLB\030\006 \001(" +
-      "\005\022\023\n\013DNJADJFIJKO\030\007 \001(\rB2\n\031emu.grasscutte" +
-      "r.net.protoB\025BACMNHCJNEMOuterClassb\006prot" +
-      "o3"
+      "\"\263\001\n\013BACMNHCJNEM\022#\n\013AOAFABJAIAP\030\002 \001(\0132\016." +
+      "_CurrentPhase\022\031\n\021full_cd_time_list\030\005 \003(\r" +
+      "\022\023\n\013DNJADJFIJKO\030\007 \001(\r\022\024\n\014pass_cd_time\030\004 " +
+      "\001(\r\022\023\n\013KGOALNNNBDB\030\001 \001(\005\022\017\n\007slot_id\030\003 \001(" +
+      "\005\022\023\n\013ILHKIHFDJLB\030\006 \001(\005B\033\n\031emu.grasscutte" +
+      "r.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          emu.grasscutter.net.proto._CurrentPhaseOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.CurrentPhase.getDescriptor(),
         });
     internal_static_BACMNHCJNEM_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_BACMNHCJNEM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_BACMNHCJNEM_descriptor,
-        new java.lang.String[] { "KGOALNNNBDB", "AOAFABJAIAP", "SlotId", "PassCdTime", "FullCdTimeList", "ILHKIHFDJLB", "DNJADJFIJKO", });
-    emu.grasscutter.net.proto._CurrentPhaseOuterClass.getDescriptor();
+        new java.lang.String[] { "AOAFABJAIAP", "FullCdTimeList", "DNJADJFIJKO", "PassCdTime", "KGOALNNNBDB", "SlotId", "ILHKIHFDJLB", });
+    emu.grasscutter.net.proto.CurrentPhase.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

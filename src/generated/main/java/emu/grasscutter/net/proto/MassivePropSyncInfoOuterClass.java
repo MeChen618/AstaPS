@@ -19,12 +19,6 @@ public final class MassivePropSyncInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
-     */
-    long getId();
-
-    /**
      * <code>repeated .MassivePropParam prop_list = 2;</code>
      */
     java.util.List<emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam> 
@@ -47,8 +41,18 @@ public final class MassivePropSyncInfoOuterClass {
      */
     emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder getPropListOrBuilder(
         int index);
+
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    long getId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MassivePropSyncInfo}
    */
   public static final class MassivePropSyncInfo extends
@@ -144,17 +148,6 @@ public final class MassivePropSyncInfoOuterClass {
               emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.class, emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
-    /**
-     * <code>int64 id = 1;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public long getId() {
-      return id_;
-    }
-
     public static final int PROP_LIST_FIELD_NUMBER = 2;
     private java.util.List<emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam> propList_;
     /**
@@ -193,6 +186,17 @@ public final class MassivePropSyncInfoOuterClass {
     public emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder getPropListOrBuilder(
         int index) {
       return propList_.get(index);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private long id_;
+    /**
+     * <code>int64 id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public long getId() {
+      return id_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -247,10 +251,10 @@ public final class MassivePropSyncInfoOuterClass {
       }
       emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo other = (emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo) obj;
 
-      if (getId()
-          != other.getId()) return false;
       if (!getPropListList()
           .equals(other.getPropListList())) return false;
+      if (getId()
+          != other.getId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -262,13 +266,13 @@ public final class MassivePropSyncInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
       if (getPropListCount() > 0) {
         hash = (37 * hash) + PROP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPropListList().hashCode();
       }
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -365,6 +369,10 @@ public final class MassivePropSyncInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MassivePropSyncInfo}
      */
     public static final class Builder extends
@@ -403,14 +411,14 @@ public final class MassivePropSyncInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = 0L;
-
         if (propListBuilder_ == null) {
           propList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           propListBuilder_.clear();
         }
+        id_ = 0L;
+
         return this;
       }
 
@@ -438,7 +446,6 @@ public final class MassivePropSyncInfoOuterClass {
       public emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo buildPartial() {
         emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo result = new emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo(this);
         int from_bitField0_ = bitField0_;
-        result.id_ = id_;
         if (propListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             propList_ = java.util.Collections.unmodifiableList(propList_);
@@ -448,6 +455,7 @@ public final class MassivePropSyncInfoOuterClass {
         } else {
           result.propList_ = propListBuilder_.build();
         }
+        result.id_ = id_;
         onBuilt();
         return result;
       }
@@ -496,9 +504,6 @@ public final class MassivePropSyncInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo other) {
         if (other == emu.grasscutter.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.getDefaultInstance()) return this;
-        if (other.getId() != 0L) {
-          setId(other.getId());
-        }
         if (propListBuilder_ == null) {
           if (!other.propList_.isEmpty()) {
             if (propList_.isEmpty()) {
@@ -524,6 +529,9 @@ public final class MassivePropSyncInfoOuterClass {
               propListBuilder_.addAllMessages(other.propList_);
             }
           }
+        }
+        if (other.getId() != 0L) {
+          setId(other.getId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -554,37 +562,6 @@ public final class MassivePropSyncInfoOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private long id_ ;
-      /**
-       * <code>int64 id = 1;</code>
-       * @return The id.
-       */
-      @java.lang.Override
-      public long getId() {
-        return id_;
-      }
-      /**
-       * <code>int64 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(long value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0L;
-        onChanged();
-        return this;
-      }
 
       private java.util.List<emu.grasscutter.net.proto.MassivePropParamOuterClass.MassivePropParam> propList_ =
         java.util.Collections.emptyList();
@@ -825,6 +802,37 @@ public final class MassivePropSyncInfoOuterClass {
         }
         return propListBuilder_;
       }
+
+      private long id_ ;
+      /**
+       * <code>int64 id = 1;</code>
+       * @return The id.
+       */
+      @java.lang.Override
+      public long getId() {
+        return id_;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(long value) {
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = 0L;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -893,10 +901,10 @@ public final class MassivePropSyncInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031MassivePropSyncInfo.proto\032\026MassiveProp" +
-      "Param.proto\"G\n\023MassivePropSyncInfo\022\n\n\002id" +
-      "\030\001 \001(\003\022$\n\tprop_list\030\002 \003(\0132\021.MassivePropP" +
-      "aramB:\n\031emu.grasscutter.net.protoB\035Massi" +
-      "vePropSyncInfoOuterClassb\006proto3"
+      "Param.proto\"G\n\023MassivePropSyncInfo\022$\n\tpr" +
+      "op_list\030\002 \003(\0132\021.MassivePropParam\022\n\n\002id\030\001" +
+      " \001(\003B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -908,7 +916,7 @@ public final class MassivePropSyncInfoOuterClass {
     internal_static_MassivePropSyncInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MassivePropSyncInfo_descriptor,
-        new java.lang.String[] { "Id", "PropList", });
+        new java.lang.String[] { "PropList", "Id", });
     emu.grasscutter.net.proto.MassivePropParamOuterClass.getDescriptor();
   }
 

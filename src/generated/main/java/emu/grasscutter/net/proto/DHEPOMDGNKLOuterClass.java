@@ -19,30 +19,34 @@ public final class DHEPOMDGNKLOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_finished = 2;</code>
-     * @return The isFinished.
-     */
-    boolean getIsFinished();
-
-    /**
-     * <code>uint32 level_id = 4;</code>
+     * <code>uint32 level_id = 1;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>bool is_level_open = 9;</code>
+     * <code>bool is_level_open = 11;</code>
      * @return The isLevelOpen.
      */
     boolean getIsLevelOpen();
 
     /**
-     * <code>uint32 max_score = 15;</code>
+     * <code>bool is_finished = 9;</code>
+     * @return The isFinished.
+     */
+    boolean getIsFinished();
+
+    /**
+     * <code>uint32 max_score = 4;</code>
      * @return The maxScore.
      */
     int getMaxScore();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code DHEPOMDGNKL}
    */
   public static final class DHEPOMDGNKL extends
@@ -87,24 +91,24 @@ public final class DHEPOMDGNKLOuterClass {
             case 0:
               done = true;
               break;
-            case 16: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 32: {
+            case 8: {
 
               levelId_ = input.readUInt32();
               break;
             }
-            case 72: {
-
-              isLevelOpen_ = input.readBool();
-              break;
-            }
-            case 120: {
+            case 32: {
 
               maxScore_ = input.readUInt32();
+              break;
+            }
+            case 72: {
+
+              isFinished_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              isLevelOpen_ = input.readBool();
               break;
             }
             default: {
@@ -139,21 +143,10 @@ public final class DHEPOMDGNKLOuterClass {
               emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL.class, emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL.Builder.class);
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 2;
-    private boolean isFinished_;
-    /**
-     * <code>bool is_finished = 2;</code>
-     * @return The isFinished.
-     */
-    @java.lang.Override
-    public boolean getIsFinished() {
-      return isFinished_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 4;
+    public static final int LEVEL_ID_FIELD_NUMBER = 1;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 4;</code>
+     * <code>uint32 level_id = 1;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -161,10 +154,10 @@ public final class DHEPOMDGNKLOuterClass {
       return levelId_;
     }
 
-    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 9;
+    public static final int IS_LEVEL_OPEN_FIELD_NUMBER = 11;
     private boolean isLevelOpen_;
     /**
-     * <code>bool is_level_open = 9;</code>
+     * <code>bool is_level_open = 11;</code>
      * @return The isLevelOpen.
      */
     @java.lang.Override
@@ -172,10 +165,21 @@ public final class DHEPOMDGNKLOuterClass {
       return isLevelOpen_;
     }
 
-    public static final int MAX_SCORE_FIELD_NUMBER = 15;
+    public static final int IS_FINISHED_FIELD_NUMBER = 9;
+    private boolean isFinished_;
+    /**
+     * <code>bool is_finished = 9;</code>
+     * @return The isFinished.
+     */
+    @java.lang.Override
+    public boolean getIsFinished() {
+      return isFinished_;
+    }
+
+    public static final int MAX_SCORE_FIELD_NUMBER = 4;
     private int maxScore_;
     /**
-     * <code>uint32 max_score = 15;</code>
+     * <code>uint32 max_score = 4;</code>
      * @return The maxScore.
      */
     @java.lang.Override
@@ -197,17 +201,17 @@ public final class DHEPOMDGNKLOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isFinished_ != false) {
-        output.writeBool(2, isFinished_);
-      }
       if (levelId_ != 0) {
-        output.writeUInt32(4, levelId_);
-      }
-      if (isLevelOpen_ != false) {
-        output.writeBool(9, isLevelOpen_);
+        output.writeUInt32(1, levelId_);
       }
       if (maxScore_ != 0) {
-        output.writeUInt32(15, maxScore_);
+        output.writeUInt32(4, maxScore_);
+      }
+      if (isFinished_ != false) {
+        output.writeBool(9, isFinished_);
+      }
+      if (isLevelOpen_ != false) {
+        output.writeBool(11, isLevelOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -218,21 +222,21 @@ public final class DHEPOMDGNKLOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isFinished_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isFinished_);
-      }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, levelId_);
-      }
-      if (isLevelOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isLevelOpen_);
+          .computeUInt32Size(1, levelId_);
       }
       if (maxScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, maxScore_);
+          .computeUInt32Size(4, maxScore_);
+      }
+      if (isFinished_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isFinished_);
+      }
+      if (isLevelOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, isLevelOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -249,12 +253,12 @@ public final class DHEPOMDGNKLOuterClass {
       }
       emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL other = (emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL) obj;
 
-      if (getIsFinished()
-          != other.getIsFinished()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
       if (getIsLevelOpen()
           != other.getIsLevelOpen()) return false;
+      if (getIsFinished()
+          != other.getIsFinished()) return false;
       if (getMaxScore()
           != other.getMaxScore()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -268,14 +272,14 @@ public final class DHEPOMDGNKLOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinished());
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + IS_LEVEL_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsLevelOpen());
+      hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinished());
       hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxScore();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -374,6 +378,10 @@ public final class DHEPOMDGNKLOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code DHEPOMDGNKL}
      */
     public static final class Builder extends
@@ -411,11 +419,11 @@ public final class DHEPOMDGNKLOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isFinished_ = false;
-
         levelId_ = 0;
 
         isLevelOpen_ = false;
+
+        isFinished_ = false;
 
         maxScore_ = 0;
 
@@ -445,9 +453,9 @@ public final class DHEPOMDGNKLOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL buildPartial() {
         emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL result = new emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL(this);
-        result.isFinished_ = isFinished_;
         result.levelId_ = levelId_;
         result.isLevelOpen_ = isLevelOpen_;
+        result.isFinished_ = isFinished_;
         result.maxScore_ = maxScore_;
         onBuilt();
         return result;
@@ -497,14 +505,14 @@ public final class DHEPOMDGNKLOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL other) {
         if (other == emu.grasscutter.net.proto.DHEPOMDGNKLOuterClass.DHEPOMDGNKL.getDefaultInstance()) return this;
-        if (other.getIsFinished() != false) {
-          setIsFinished(other.getIsFinished());
-        }
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
         if (other.getIsLevelOpen() != false) {
           setIsLevelOpen(other.getIsLevelOpen());
+        }
+        if (other.getIsFinished() != false) {
+          setIsFinished(other.getIsFinished());
         }
         if (other.getMaxScore() != 0) {
           setMaxScore(other.getMaxScore());
@@ -538,40 +546,9 @@ public final class DHEPOMDGNKLOuterClass {
         return this;
       }
 
-      private boolean isFinished_ ;
-      /**
-       * <code>bool is_finished = 2;</code>
-       * @return The isFinished.
-       */
-      @java.lang.Override
-      public boolean getIsFinished() {
-        return isFinished_;
-      }
-      /**
-       * <code>bool is_finished = 2;</code>
-       * @param value The isFinished to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsFinished(boolean value) {
-        
-        isFinished_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_finished = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsFinished() {
-        
-        isFinished_ = false;
-        onChanged();
-        return this;
-      }
-
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 4;</code>
+       * <code>uint32 level_id = 1;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -579,7 +556,7 @@ public final class DHEPOMDGNKLOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 4;</code>
+       * <code>uint32 level_id = 1;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -590,7 +567,7 @@ public final class DHEPOMDGNKLOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 4;</code>
+       * <code>uint32 level_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -602,7 +579,7 @@ public final class DHEPOMDGNKLOuterClass {
 
       private boolean isLevelOpen_ ;
       /**
-       * <code>bool is_level_open = 9;</code>
+       * <code>bool is_level_open = 11;</code>
        * @return The isLevelOpen.
        */
       @java.lang.Override
@@ -610,7 +587,7 @@ public final class DHEPOMDGNKLOuterClass {
         return isLevelOpen_;
       }
       /**
-       * <code>bool is_level_open = 9;</code>
+       * <code>bool is_level_open = 11;</code>
        * @param value The isLevelOpen to set.
        * @return This builder for chaining.
        */
@@ -621,7 +598,7 @@ public final class DHEPOMDGNKLOuterClass {
         return this;
       }
       /**
-       * <code>bool is_level_open = 9;</code>
+       * <code>bool is_level_open = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsLevelOpen() {
@@ -631,9 +608,40 @@ public final class DHEPOMDGNKLOuterClass {
         return this;
       }
 
+      private boolean isFinished_ ;
+      /**
+       * <code>bool is_finished = 9;</code>
+       * @return The isFinished.
+       */
+      @java.lang.Override
+      public boolean getIsFinished() {
+        return isFinished_;
+      }
+      /**
+       * <code>bool is_finished = 9;</code>
+       * @param value The isFinished to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsFinished(boolean value) {
+        
+        isFinished_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_finished = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsFinished() {
+        
+        isFinished_ = false;
+        onChanged();
+        return this;
+      }
+
       private int maxScore_ ;
       /**
-       * <code>uint32 max_score = 15;</code>
+       * <code>uint32 max_score = 4;</code>
        * @return The maxScore.
        */
       @java.lang.Override
@@ -641,7 +649,7 @@ public final class DHEPOMDGNKLOuterClass {
         return maxScore_;
       }
       /**
-       * <code>uint32 max_score = 15;</code>
+       * <code>uint32 max_score = 4;</code>
        * @param value The maxScore to set.
        * @return This builder for chaining.
        */
@@ -652,7 +660,7 @@ public final class DHEPOMDGNKLOuterClass {
         return this;
       }
       /**
-       * <code>uint32 max_score = 15;</code>
+       * <code>uint32 max_score = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
@@ -728,11 +736,10 @@ public final class DHEPOMDGNKLOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021DHEPOMDGNKL.proto\"^\n\013DHEPOMDGNKL\022\023\n\013is" +
-      "_finished\030\002 \001(\010\022\020\n\010level_id\030\004 \001(\r\022\025\n\ris_" +
-      "level_open\030\t \001(\010\022\021\n\tmax_score\030\017 \001(\rB2\n\031e" +
-      "mu.grasscutter.net.protoB\025DHEPOMDGNKLOut" +
-      "erClassb\006proto3"
+      "\n\021DHEPOMDGNKL.proto\"^\n\013DHEPOMDGNKL\022\020\n\010le" +
+      "vel_id\030\001 \001(\r\022\025\n\ris_level_open\030\013 \001(\010\022\023\n\013i" +
+      "s_finished\030\t \001(\010\022\021\n\tmax_score\030\004 \001(\rB\033\n\031e" +
+      "mu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -743,7 +750,7 @@ public final class DHEPOMDGNKLOuterClass {
     internal_static_DHEPOMDGNKL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DHEPOMDGNKL_descriptor,
-        new java.lang.String[] { "IsFinished", "LevelId", "IsLevelOpen", "MaxScore", });
+        new java.lang.String[] { "LevelId", "IsLevelOpen", "IsFinished", "MaxScore", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

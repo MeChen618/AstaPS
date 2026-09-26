@@ -19,47 +19,51 @@ public final class TeamChainSettleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 total_score = 4;</code>
-     * @return The totalScore.
-     */
-    int getTotalScore();
-
-    /**
-     * <code>uint32 difficulty = 5;</code>
-     * @return The difficulty.
-     */
-    int getDifficulty();
-
-    /**
-     * <code>repeated uint32 score_list = 10;</code>
+     * <code>repeated uint32 score_list = 11;</code>
      * @return A list containing the scoreList.
      */
     java.util.List<java.lang.Integer> getScoreListList();
     /**
-     * <code>repeated uint32 score_list = 10;</code>
+     * <code>repeated uint32 score_list = 11;</code>
      * @return The count of scoreList.
      */
     int getScoreListCount();
     /**
-     * <code>repeated uint32 score_list = 10;</code>
+     * <code>repeated uint32 score_list = 11;</code>
      * @param index The index of the element to return.
      * @return The scoreList at the given index.
      */
     int getScoreList(int index);
 
     /**
-     * <code>uint32 stage_id = 11;</code>
+     * <code>bool is_new_record = 8;</code>
+     * @return The isNewRecord.
+     */
+    boolean getIsNewRecord();
+
+    /**
+     * <code>uint32 total_score = 3;</code>
+     * @return The totalScore.
+     */
+    int getTotalScore();
+
+    /**
+     * <code>uint32 stage_id = 12;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>bool is_new_record = 12;</code>
-     * @return The isNewRecord.
+     * <code>uint32 difficulty = 4;</code>
+     * @return The difficulty.
      */
-    boolean getIsNewRecord();
+    int getDifficulty();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code TeamChainSettleInfo}
    */
   public static final class TeamChainSettleInfo extends
@@ -106,17 +110,22 @@ public final class TeamChainSettleInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 24: {
 
               totalScore_ = input.readUInt32();
               break;
             }
-            case 40: {
+            case 32: {
 
               difficulty_ = input.readUInt32();
               break;
             }
-            case 80: {
+            case 64: {
+
+              isNewRecord_ = input.readBool();
+              break;
+            }
+            case 88: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 scoreList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -124,7 +133,7 @@ public final class TeamChainSettleInfoOuterClass {
               scoreList_.addInt(input.readUInt32());
               break;
             }
-            case 82: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -137,14 +146,9 @@ public final class TeamChainSettleInfoOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 88: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
             case 96: {
 
-              isNewRecord_ = input.readBool();
+              stageId_ = input.readUInt32();
               break;
             }
             default: {
@@ -182,32 +186,10 @@ public final class TeamChainSettleInfoOuterClass {
               emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo.class, emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo.Builder.class);
     }
 
-    public static final int TOTAL_SCORE_FIELD_NUMBER = 4;
-    private int totalScore_;
-    /**
-     * <code>uint32 total_score = 4;</code>
-     * @return The totalScore.
-     */
-    @java.lang.Override
-    public int getTotalScore() {
-      return totalScore_;
-    }
-
-    public static final int DIFFICULTY_FIELD_NUMBER = 5;
-    private int difficulty_;
-    /**
-     * <code>uint32 difficulty = 5;</code>
-     * @return The difficulty.
-     */
-    @java.lang.Override
-    public int getDifficulty() {
-      return difficulty_;
-    }
-
-    public static final int SCORE_LIST_FIELD_NUMBER = 10;
+    public static final int SCORE_LIST_FIELD_NUMBER = 11;
     private com.google.protobuf.Internal.IntList scoreList_;
     /**
-     * <code>repeated uint32 score_list = 10;</code>
+     * <code>repeated uint32 score_list = 11;</code>
      * @return A list containing the scoreList.
      */
     @java.lang.Override
@@ -216,14 +198,14 @@ public final class TeamChainSettleInfoOuterClass {
       return scoreList_;
     }
     /**
-     * <code>repeated uint32 score_list = 10;</code>
+     * <code>repeated uint32 score_list = 11;</code>
      * @return The count of scoreList.
      */
     public int getScoreListCount() {
       return scoreList_.size();
     }
     /**
-     * <code>repeated uint32 score_list = 10;</code>
+     * <code>repeated uint32 score_list = 11;</code>
      * @param index The index of the element to return.
      * @return The scoreList at the given index.
      */
@@ -232,10 +214,32 @@ public final class TeamChainSettleInfoOuterClass {
     }
     private int scoreListMemoizedSerializedSize = -1;
 
-    public static final int STAGE_ID_FIELD_NUMBER = 11;
+    public static final int IS_NEW_RECORD_FIELD_NUMBER = 8;
+    private boolean isNewRecord_;
+    /**
+     * <code>bool is_new_record = 8;</code>
+     * @return The isNewRecord.
+     */
+    @java.lang.Override
+    public boolean getIsNewRecord() {
+      return isNewRecord_;
+    }
+
+    public static final int TOTAL_SCORE_FIELD_NUMBER = 3;
+    private int totalScore_;
+    /**
+     * <code>uint32 total_score = 3;</code>
+     * @return The totalScore.
+     */
+    @java.lang.Override
+    public int getTotalScore() {
+      return totalScore_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 12;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 11;</code>
+     * <code>uint32 stage_id = 12;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -243,15 +247,15 @@ public final class TeamChainSettleInfoOuterClass {
       return stageId_;
     }
 
-    public static final int IS_NEW_RECORD_FIELD_NUMBER = 12;
-    private boolean isNewRecord_;
+    public static final int DIFFICULTY_FIELD_NUMBER = 4;
+    private int difficulty_;
     /**
-     * <code>bool is_new_record = 12;</code>
-     * @return The isNewRecord.
+     * <code>uint32 difficulty = 4;</code>
+     * @return The difficulty.
      */
     @java.lang.Override
-    public boolean getIsNewRecord() {
-      return isNewRecord_;
+    public int getDifficulty() {
+      return difficulty_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -270,23 +274,23 @@ public final class TeamChainSettleInfoOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (totalScore_ != 0) {
-        output.writeUInt32(4, totalScore_);
+        output.writeUInt32(3, totalScore_);
       }
       if (difficulty_ != 0) {
-        output.writeUInt32(5, difficulty_);
+        output.writeUInt32(4, difficulty_);
+      }
+      if (isNewRecord_ != false) {
+        output.writeBool(8, isNewRecord_);
       }
       if (getScoreListList().size() > 0) {
-        output.writeUInt32NoTag(82);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(scoreListMemoizedSerializedSize);
       }
       for (int i = 0; i < scoreList_.size(); i++) {
         output.writeUInt32NoTag(scoreList_.getInt(i));
       }
       if (stageId_ != 0) {
-        output.writeUInt32(11, stageId_);
-      }
-      if (isNewRecord_ != false) {
-        output.writeBool(12, isNewRecord_);
+        output.writeUInt32(12, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -299,11 +303,15 @@ public final class TeamChainSettleInfoOuterClass {
       size = 0;
       if (totalScore_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, totalScore_);
+          .computeUInt32Size(3, totalScore_);
       }
       if (difficulty_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, difficulty_);
+          .computeUInt32Size(4, difficulty_);
+      }
+      if (isNewRecord_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isNewRecord_);
       }
       {
         int dataSize = 0;
@@ -321,11 +329,7 @@ public final class TeamChainSettleInfoOuterClass {
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, stageId_);
-      }
-      if (isNewRecord_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isNewRecord_);
+          .computeUInt32Size(12, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -342,16 +346,16 @@ public final class TeamChainSettleInfoOuterClass {
       }
       emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo other = (emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo) obj;
 
-      if (getTotalScore()
-          != other.getTotalScore()) return false;
-      if (getDifficulty()
-          != other.getDifficulty()) return false;
       if (!getScoreListList()
           .equals(other.getScoreListList())) return false;
-      if (getStageId()
-          != other.getStageId()) return false;
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
+      if (getTotalScore()
+          != other.getTotalScore()) return false;
+      if (getStageId()
+          != other.getStageId()) return false;
+      if (getDifficulty()
+          != other.getDifficulty()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -363,19 +367,19 @@ public final class TeamChainSettleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOTAL_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalScore();
-      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
-      hash = (53 * hash) + getDifficulty();
       if (getScoreListCount() > 0) {
         hash = (37 * hash) + SCORE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getScoreListList().hashCode();
       }
-      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getStageId();
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
+      hash = (37 * hash) + TOTAL_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalScore();
+      hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getStageId();
+      hash = (37 * hash) + DIFFICULTY_FIELD_NUMBER;
+      hash = (53 * hash) + getDifficulty();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -472,6 +476,10 @@ public final class TeamChainSettleInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code TeamChainSettleInfo}
      */
     public static final class Builder extends
@@ -509,15 +517,15 @@ public final class TeamChainSettleInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        totalScore_ = 0;
-
-        difficulty_ = 0;
-
         scoreList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        isNewRecord_ = false;
+
+        totalScore_ = 0;
+
         stageId_ = 0;
 
-        isNewRecord_ = false;
+        difficulty_ = 0;
 
         return this;
       }
@@ -546,15 +554,15 @@ public final class TeamChainSettleInfoOuterClass {
       public emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo buildPartial() {
         emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo result = new emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo(this);
         int from_bitField0_ = bitField0_;
-        result.totalScore_ = totalScore_;
-        result.difficulty_ = difficulty_;
         if (((bitField0_ & 0x00000001) != 0)) {
           scoreList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.scoreList_ = scoreList_;
-        result.stageId_ = stageId_;
         result.isNewRecord_ = isNewRecord_;
+        result.totalScore_ = totalScore_;
+        result.stageId_ = stageId_;
+        result.difficulty_ = difficulty_;
         onBuilt();
         return result;
       }
@@ -603,12 +611,6 @@ public final class TeamChainSettleInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo other) {
         if (other == emu.grasscutter.net.proto.TeamChainSettleInfoOuterClass.TeamChainSettleInfo.getDefaultInstance()) return this;
-        if (other.getTotalScore() != 0) {
-          setTotalScore(other.getTotalScore());
-        }
-        if (other.getDifficulty() != 0) {
-          setDifficulty(other.getDifficulty());
-        }
         if (!other.scoreList_.isEmpty()) {
           if (scoreList_.isEmpty()) {
             scoreList_ = other.scoreList_;
@@ -619,11 +621,17 @@ public final class TeamChainSettleInfoOuterClass {
           }
           onChanged();
         }
+        if (other.getIsNewRecord() != false) {
+          setIsNewRecord(other.getIsNewRecord());
+        }
+        if (other.getTotalScore() != 0) {
+          setTotalScore(other.getTotalScore());
+        }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        if (other.getIsNewRecord() != false) {
-          setIsNewRecord(other.getIsNewRecord());
+        if (other.getDifficulty() != 0) {
+          setDifficulty(other.getDifficulty());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -655,68 +663,6 @@ public final class TeamChainSettleInfoOuterClass {
       }
       private int bitField0_;
 
-      private int totalScore_ ;
-      /**
-       * <code>uint32 total_score = 4;</code>
-       * @return The totalScore.
-       */
-      @java.lang.Override
-      public int getTotalScore() {
-        return totalScore_;
-      }
-      /**
-       * <code>uint32 total_score = 4;</code>
-       * @param value The totalScore to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalScore(int value) {
-        
-        totalScore_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 total_score = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalScore() {
-        
-        totalScore_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int difficulty_ ;
-      /**
-       * <code>uint32 difficulty = 5;</code>
-       * @return The difficulty.
-       */
-      @java.lang.Override
-      public int getDifficulty() {
-        return difficulty_;
-      }
-      /**
-       * <code>uint32 difficulty = 5;</code>
-       * @param value The difficulty to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDifficulty(int value) {
-        
-        difficulty_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 difficulty = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDifficulty() {
-        
-        difficulty_ = 0;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.Internal.IntList scoreList_ = emptyIntList();
       private void ensureScoreListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
@@ -725,7 +671,7 @@ public final class TeamChainSettleInfoOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @return A list containing the scoreList.
        */
       public java.util.List<java.lang.Integer>
@@ -734,14 +680,14 @@ public final class TeamChainSettleInfoOuterClass {
                  java.util.Collections.unmodifiableList(scoreList_) : scoreList_;
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @return The count of scoreList.
        */
       public int getScoreListCount() {
         return scoreList_.size();
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @param index The index of the element to return.
        * @return The scoreList at the given index.
        */
@@ -749,7 +695,7 @@ public final class TeamChainSettleInfoOuterClass {
         return scoreList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The scoreList to set.
        * @return This builder for chaining.
@@ -762,7 +708,7 @@ public final class TeamChainSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @param value The scoreList to add.
        * @return This builder for chaining.
        */
@@ -773,7 +719,7 @@ public final class TeamChainSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @param values The scoreList to add.
        * @return This builder for chaining.
        */
@@ -786,7 +732,7 @@ public final class TeamChainSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 score_list = 10;</code>
+       * <code>repeated uint32 score_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearScoreList() {
@@ -796,40 +742,9 @@ public final class TeamChainSettleInfoOuterClass {
         return this;
       }
 
-      private int stageId_ ;
-      /**
-       * <code>uint32 stage_id = 11;</code>
-       * @return The stageId.
-       */
-      @java.lang.Override
-      public int getStageId() {
-        return stageId_;
-      }
-      /**
-       * <code>uint32 stage_id = 11;</code>
-       * @param value The stageId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStageId(int value) {
-        
-        stageId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 stage_id = 11;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStageId() {
-        
-        stageId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isNewRecord_ ;
       /**
-       * <code>bool is_new_record = 12;</code>
+       * <code>bool is_new_record = 8;</code>
        * @return The isNewRecord.
        */
       @java.lang.Override
@@ -837,7 +752,7 @@ public final class TeamChainSettleInfoOuterClass {
         return isNewRecord_;
       }
       /**
-       * <code>bool is_new_record = 12;</code>
+       * <code>bool is_new_record = 8;</code>
        * @param value The isNewRecord to set.
        * @return This builder for chaining.
        */
@@ -848,12 +763,105 @@ public final class TeamChainSettleInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_new_record = 12;</code>
+       * <code>bool is_new_record = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
         
         isNewRecord_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int totalScore_ ;
+      /**
+       * <code>uint32 total_score = 3;</code>
+       * @return The totalScore.
+       */
+      @java.lang.Override
+      public int getTotalScore() {
+        return totalScore_;
+      }
+      /**
+       * <code>uint32 total_score = 3;</code>
+       * @param value The totalScore to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalScore(int value) {
+        
+        totalScore_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 total_score = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalScore() {
+        
+        totalScore_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 12;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 12;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int difficulty_ ;
+      /**
+       * <code>uint32 difficulty = 4;</code>
+       * @return The difficulty.
+       */
+      @java.lang.Override
+      public int getDifficulty() {
+        return difficulty_;
+      }
+      /**
+       * <code>uint32 difficulty = 4;</code>
+       * @param value The difficulty to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDifficulty(int value) {
+        
+        difficulty_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 difficulty = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDifficulty() {
+        
+        difficulty_ = 0;
         onChanged();
         return this;
       }
@@ -925,11 +933,10 @@ public final class TeamChainSettleInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TeamChainSettleInfo.proto\"{\n\023TeamChain" +
-      "SettleInfo\022\023\n\013total_score\030\004 \001(\r\022\022\n\ndiffi" +
-      "culty\030\005 \001(\r\022\022\n\nscore_list\030\n \003(\r\022\020\n\010stage" +
-      "_id\030\013 \001(\r\022\025\n\ris_new_record\030\014 \001(\010B:\n\031emu." +
-      "grasscutter.net.protoB\035TeamChainSettleIn" +
-      "foOuterClassb\006proto3"
+      "SettleInfo\022\022\n\nscore_list\030\013 \003(\r\022\025\n\ris_new" +
+      "_record\030\010 \001(\010\022\023\n\013total_score\030\003 \001(\r\022\020\n\010st" +
+      "age_id\030\014 \001(\r\022\022\n\ndifficulty\030\004 \001(\rB\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -940,7 +947,7 @@ public final class TeamChainSettleInfoOuterClass {
     internal_static_TeamChainSettleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TeamChainSettleInfo_descriptor,
-        new java.lang.String[] { "TotalScore", "Difficulty", "ScoreList", "StageId", "IsNewRecord", });
+        new java.lang.String[] { "ScoreList", "IsNewRecord", "TotalScore", "StageId", "Difficulty", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

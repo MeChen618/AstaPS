@@ -19,21 +19,61 @@ public final class FEDNPBICDHBOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint64 avatar_guid_list = 1;</code>
+     * <code>repeated uint64 avatar_guid_list = 9;</code>
      * @return A list containing the avatarGuidList.
      */
     java.util.List<java.lang.Long> getAvatarGuidListList();
     /**
-     * <code>repeated uint64 avatar_guid_list = 1;</code>
+     * <code>repeated uint64 avatar_guid_list = 9;</code>
      * @return The count of avatarGuidList.
      */
     int getAvatarGuidListCount();
     /**
-     * <code>repeated uint64 avatar_guid_list = 1;</code>
+     * <code>repeated uint64 avatar_guid_list = 9;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
     long getAvatarGuidList(int index);
+
+    /**
+     * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+     * @return A list containing the eliteMonsterIdList.
+     */
+    java.util.List<java.lang.Integer> getEliteMonsterIdListList();
+    /**
+     * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+     * @return The count of eliteMonsterIdList.
+     */
+    int getEliteMonsterIdListCount();
+    /**
+     * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+     * @param index The index of the element to return.
+     * @return The eliteMonsterIdList at the given index.
+     */
+    int getEliteMonsterIdList(int index);
+
+    /**
+     * <code>repeated uint32 monster_id_list = 11;</code>
+     * @return A list containing the monsterIdList.
+     */
+    java.util.List<java.lang.Integer> getMonsterIdListList();
+    /**
+     * <code>repeated uint32 monster_id_list = 11;</code>
+     * @return The count of monsterIdList.
+     */
+    int getMonsterIdListCount();
+    /**
+     * <code>repeated uint32 monster_id_list = 11;</code>
+     * @param index The index of the element to return.
+     * @return The monsterIdList at the given index.
+     */
+    int getMonsterIdList(int index);
+
+    /**
+     * <code>bool is_open = 15;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
 
     /**
      * <code>bool is_finish = 2;</code>
@@ -42,64 +82,28 @@ public final class FEDNPBICDHBOuterClass {
     boolean getIsFinish();
 
     /**
-     * <code>bool is_open = 5;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>uint32 max_score = 7;</code>
+     * <code>uint32 max_score = 14;</code>
      * @return The maxScore.
      */
     int getMaxScore();
 
     /**
-     * <code>uint32 level_id = 10;</code>
-     * @return The levelId.
-     */
-    int getLevelId();
-
-    /**
-     * <code>uint32 use_time = 11;</code>
+     * <code>uint32 use_time = 1;</code>
      * @return The useTime.
      */
     int getUseTime();
 
     /**
-     * <code>repeated uint32 monster_id_list = 12;</code>
-     * @return A list containing the monsterIdList.
+     * <code>uint32 level_id = 7;</code>
+     * @return The levelId.
      */
-    java.util.List<java.lang.Integer> getMonsterIdListList();
-    /**
-     * <code>repeated uint32 monster_id_list = 12;</code>
-     * @return The count of monsterIdList.
-     */
-    int getMonsterIdListCount();
-    /**
-     * <code>repeated uint32 monster_id_list = 12;</code>
-     * @param index The index of the element to return.
-     * @return The monsterIdList at the given index.
-     */
-    int getMonsterIdList(int index);
-
-    /**
-     * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-     * @return A list containing the eliteMonsterIdList.
-     */
-    java.util.List<java.lang.Integer> getEliteMonsterIdListList();
-    /**
-     * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-     * @return The count of eliteMonsterIdList.
-     */
-    int getEliteMonsterIdListCount();
-    /**
-     * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-     * @param index The index of the element to return.
-     * @return The eliteMonsterIdList at the given index.
-     */
-    int getEliteMonsterIdList(int index);
+    int getLevelId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FEDNPBICDHB}
    */
   public static final class FEDNPBICDHB extends
@@ -113,8 +117,8 @@ public final class FEDNPBICDHBOuterClass {
     }
     private FEDNPBICDHB() {
       avatarGuidList_ = emptyLongList();
-      monsterIdList_ = emptyIntList();
       EliteMonsterIdList_ = emptyIntList();
+      monsterIdList_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -149,6 +153,42 @@ public final class FEDNPBICDHBOuterClass {
               done = true;
               break;
             case 8: {
+
+              useTime_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              isFinish_ = input.readBool();
+              break;
+            }
+            case 32: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                EliteMonsterIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              EliteMonsterIdList_.addInt(input.readUInt32());
+              break;
+            }
+            case 34: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                EliteMonsterIdList_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                EliteMonsterIdList_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+            case 56: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 72: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarGuidList_ = newLongList();
                 mutable_bitField0_ |= 0x00000001;
@@ -156,7 +196,7 @@ public final class FEDNPBICDHBOuterClass {
               avatarGuidList_.addLong(input.readUInt64());
               break;
             }
-            case 10: {
+            case 74: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -169,45 +209,20 @@ public final class FEDNPBICDHBOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 16: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
             case 88: {
-
-              useTime_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 monsterIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               monsterIdList_.addInt(input.readUInt32());
               break;
             }
-            case 98: {
+            case 90: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
                 monsterIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               while (input.getBytesUntilLimit() > 0) {
                 monsterIdList_.addInt(input.readUInt32());
@@ -215,25 +230,14 @@ public final class FEDNPBICDHBOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                EliteMonsterIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              EliteMonsterIdList_.addInt(input.readUInt32());
+            case 112: {
+
+              maxScore_ = input.readUInt32();
               break;
             }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                EliteMonsterIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                EliteMonsterIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
+            case 120: {
+
+              isOpen_ = input.readBool();
               break;
             }
             default: {
@@ -251,14 +255,14 @@ public final class FEDNPBICDHBOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          EliteMonsterIdList_.makeImmutable(); // C
+        }
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           avatarGuidList_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          monsterIdList_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          EliteMonsterIdList_.makeImmutable(); // C
+          monsterIdList_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -277,10 +281,10 @@ public final class FEDNPBICDHBOuterClass {
               emu.grasscutter.net.proto.FEDNPBICDHBOuterClass.FEDNPBICDHB.class, emu.grasscutter.net.proto.FEDNPBICDHBOuterClass.FEDNPBICDHB.Builder.class);
     }
 
-    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 1;
+    public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 9;
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
-     * <code>repeated uint64 avatar_guid_list = 1;</code>
+     * <code>repeated uint64 avatar_guid_list = 9;</code>
      * @return A list containing the avatarGuidList.
      */
     @java.lang.Override
@@ -289,14 +293,14 @@ public final class FEDNPBICDHBOuterClass {
       return avatarGuidList_;
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 1;</code>
+     * <code>repeated uint64 avatar_guid_list = 9;</code>
      * @return The count of avatarGuidList.
      */
     public int getAvatarGuidListCount() {
       return avatarGuidList_.size();
     }
     /**
-     * <code>repeated uint64 avatar_guid_list = 1;</code>
+     * <code>repeated uint64 avatar_guid_list = 9;</code>
      * @param index The index of the element to return.
      * @return The avatarGuidList at the given index.
      */
@@ -304,6 +308,73 @@ public final class FEDNPBICDHBOuterClass {
       return avatarGuidList_.getLong(index);
     }
     private int avatarGuidListMemoizedSerializedSize = -1;
+
+    public static final int _ELITE_MONSTER_ID_LIST_FIELD_NUMBER = 4;
+    private com.google.protobuf.Internal.IntList EliteMonsterIdList_;
+    /**
+     * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+     * @return A list containing the eliteMonsterIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getEliteMonsterIdListList() {
+      return EliteMonsterIdList_;
+    }
+    /**
+     * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+     * @return The count of eliteMonsterIdList.
+     */
+    public int getEliteMonsterIdListCount() {
+      return EliteMonsterIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+     * @param index The index of the element to return.
+     * @return The eliteMonsterIdList at the given index.
+     */
+    public int getEliteMonsterIdList(int index) {
+      return EliteMonsterIdList_.getInt(index);
+    }
+    private int EliteMonsterIdListMemoizedSerializedSize = -1;
+
+    public static final int MONSTER_ID_LIST_FIELD_NUMBER = 11;
+    private com.google.protobuf.Internal.IntList monsterIdList_;
+    /**
+     * <code>repeated uint32 monster_id_list = 11;</code>
+     * @return A list containing the monsterIdList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getMonsterIdListList() {
+      return monsterIdList_;
+    }
+    /**
+     * <code>repeated uint32 monster_id_list = 11;</code>
+     * @return The count of monsterIdList.
+     */
+    public int getMonsterIdListCount() {
+      return monsterIdList_.size();
+    }
+    /**
+     * <code>repeated uint32 monster_id_list = 11;</code>
+     * @param index The index of the element to return.
+     * @return The monsterIdList at the given index.
+     */
+    public int getMonsterIdList(int index) {
+      return monsterIdList_.getInt(index);
+    }
+    private int monsterIdListMemoizedSerializedSize = -1;
+
+    public static final int IS_OPEN_FIELD_NUMBER = 15;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 15;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
 
     public static final int IS_FINISH_FIELD_NUMBER = 2;
     private boolean isFinish_;
@@ -316,21 +387,10 @@ public final class FEDNPBICDHBOuterClass {
       return isFinish_;
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 5;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 5;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int MAX_SCORE_FIELD_NUMBER = 7;
+    public static final int MAX_SCORE_FIELD_NUMBER = 14;
     private int maxScore_;
     /**
-     * <code>uint32 max_score = 7;</code>
+     * <code>uint32 max_score = 14;</code>
      * @return The maxScore.
      */
     @java.lang.Override
@@ -338,21 +398,10 @@ public final class FEDNPBICDHBOuterClass {
       return maxScore_;
     }
 
-    public static final int LEVEL_ID_FIELD_NUMBER = 10;
-    private int levelId_;
-    /**
-     * <code>uint32 level_id = 10;</code>
-     * @return The levelId.
-     */
-    @java.lang.Override
-    public int getLevelId() {
-      return levelId_;
-    }
-
-    public static final int USE_TIME_FIELD_NUMBER = 11;
+    public static final int USE_TIME_FIELD_NUMBER = 1;
     private int useTime_;
     /**
-     * <code>uint32 use_time = 11;</code>
+     * <code>uint32 use_time = 1;</code>
      * @return The useTime.
      */
     @java.lang.Override
@@ -360,61 +409,16 @@ public final class FEDNPBICDHBOuterClass {
       return useTime_;
     }
 
-    public static final int MONSTER_ID_LIST_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.IntList monsterIdList_;
+    public static final int LEVEL_ID_FIELD_NUMBER = 7;
+    private int levelId_;
     /**
-     * <code>repeated uint32 monster_id_list = 12;</code>
-     * @return A list containing the monsterIdList.
+     * <code>uint32 level_id = 7;</code>
+     * @return The levelId.
      */
     @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getMonsterIdListList() {
-      return monsterIdList_;
+    public int getLevelId() {
+      return levelId_;
     }
-    /**
-     * <code>repeated uint32 monster_id_list = 12;</code>
-     * @return The count of monsterIdList.
-     */
-    public int getMonsterIdListCount() {
-      return monsterIdList_.size();
-    }
-    /**
-     * <code>repeated uint32 monster_id_list = 12;</code>
-     * @param index The index of the element to return.
-     * @return The monsterIdList at the given index.
-     */
-    public int getMonsterIdList(int index) {
-      return monsterIdList_.getInt(index);
-    }
-    private int monsterIdListMemoizedSerializedSize = -1;
-
-    public static final int _ELITE_MONSTER_ID_LIST_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.IntList EliteMonsterIdList_;
-    /**
-     * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-     * @return A list containing the eliteMonsterIdList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getEliteMonsterIdListList() {
-      return EliteMonsterIdList_;
-    }
-    /**
-     * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-     * @return The count of eliteMonsterIdList.
-     */
-    public int getEliteMonsterIdListCount() {
-      return EliteMonsterIdList_.size();
-    }
-    /**
-     * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-     * @param index The index of the element to return.
-     * @return The eliteMonsterIdList at the given index.
-     */
-    public int getEliteMonsterIdList(int index) {
-      return EliteMonsterIdList_.getInt(index);
-    }
-    private int EliteMonsterIdListMemoizedSerializedSize = -1;
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -431,41 +435,41 @@ public final class FEDNPBICDHBOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (useTime_ != 0) {
+        output.writeUInt32(1, useTime_);
+      }
+      if (isFinish_ != false) {
+        output.writeBool(2, isFinish_);
+      }
+      if (getEliteMonsterIdListList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(EliteMonsterIdListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < EliteMonsterIdList_.size(); i++) {
+        output.writeUInt32NoTag(EliteMonsterIdList_.getInt(i));
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(7, levelId_);
+      }
       if (getAvatarGuidListList().size() > 0) {
-        output.writeUInt32NoTag(10);
+        output.writeUInt32NoTag(74);
         output.writeUInt32NoTag(avatarGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < avatarGuidList_.size(); i++) {
         output.writeUInt64NoTag(avatarGuidList_.getLong(i));
       }
-      if (isFinish_ != false) {
-        output.writeBool(2, isFinish_);
-      }
-      if (isOpen_ != false) {
-        output.writeBool(5, isOpen_);
-      }
-      if (maxScore_ != 0) {
-        output.writeUInt32(7, maxScore_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(10, levelId_);
-      }
-      if (useTime_ != 0) {
-        output.writeUInt32(11, useTime_);
-      }
       if (getMonsterIdListList().size() > 0) {
-        output.writeUInt32NoTag(98);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(monsterIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < monsterIdList_.size(); i++) {
         output.writeUInt32NoTag(monsterIdList_.getInt(i));
       }
-      if (getEliteMonsterIdListList().size() > 0) {
-        output.writeUInt32NoTag(106);
-        output.writeUInt32NoTag(EliteMonsterIdListMemoizedSerializedSize);
+      if (maxScore_ != 0) {
+        output.writeUInt32(14, maxScore_);
       }
-      for (int i = 0; i < EliteMonsterIdList_.size(); i++) {
-        output.writeUInt32NoTag(EliteMonsterIdList_.getInt(i));
+      if (isOpen_ != false) {
+        output.writeBool(15, isOpen_);
       }
       unknownFields.writeTo(output);
     }
@@ -476,6 +480,32 @@ public final class FEDNPBICDHBOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (useTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, useTime_);
+      }
+      if (isFinish_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, isFinish_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < EliteMonsterIdList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(EliteMonsterIdList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getEliteMonsterIdListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        EliteMonsterIdListMemoizedSerializedSize = dataSize;
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, levelId_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < avatarGuidList_.size(); i++) {
@@ -489,26 +519,6 @@ public final class FEDNPBICDHBOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         avatarGuidListMemoizedSerializedSize = dataSize;
-      }
-      if (isFinish_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isFinish_);
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isOpen_);
-      }
-      if (maxScore_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, maxScore_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, levelId_);
-      }
-      if (useTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, useTime_);
       }
       {
         int dataSize = 0;
@@ -524,19 +534,13 @@ public final class FEDNPBICDHBOuterClass {
         }
         monsterIdListMemoizedSerializedSize = dataSize;
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < EliteMonsterIdList_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(EliteMonsterIdList_.getInt(i));
-        }
-        size += dataSize;
-        if (!getEliteMonsterIdListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        EliteMonsterIdListMemoizedSerializedSize = dataSize;
+      if (maxScore_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, maxScore_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, isOpen_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -555,20 +559,20 @@ public final class FEDNPBICDHBOuterClass {
 
       if (!getAvatarGuidListList()
           .equals(other.getAvatarGuidListList())) return false;
-      if (getIsFinish()
-          != other.getIsFinish()) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (getMaxScore()
-          != other.getMaxScore()) return false;
-      if (getLevelId()
-          != other.getLevelId()) return false;
-      if (getUseTime()
-          != other.getUseTime()) return false;
-      if (!getMonsterIdListList()
-          .equals(other.getMonsterIdListList())) return false;
       if (!getEliteMonsterIdListList()
           .equals(other.getEliteMonsterIdListList())) return false;
+      if (!getMonsterIdListList()
+          .equals(other.getMonsterIdListList())) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getIsFinish()
+          != other.getIsFinish()) return false;
+      if (getMaxScore()
+          != other.getMaxScore()) return false;
+      if (getUseTime()
+          != other.getUseTime()) return false;
+      if (getLevelId()
+          != other.getLevelId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -584,26 +588,26 @@ public final class FEDNPBICDHBOuterClass {
         hash = (37 * hash) + AVATAR_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarGuidListList().hashCode();
       }
-      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsFinish());
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
-      hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + getMaxScore();
-      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getUseTime();
-      if (getMonsterIdListCount() > 0) {
-        hash = (37 * hash) + MONSTER_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMonsterIdListList().hashCode();
-      }
       if (getEliteMonsterIdListCount() > 0) {
         hash = (37 * hash) + _ELITE_MONSTER_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEliteMonsterIdListList().hashCode();
       }
+      if (getMonsterIdListCount() > 0) {
+        hash = (37 * hash) + MONSTER_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getMonsterIdListList().hashCode();
+      }
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
+      hash = (37 * hash) + IS_FINISH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsFinish());
+      hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxScore();
+      hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUseTime();
+      hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLevelId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -700,6 +704,10 @@ public final class FEDNPBICDHBOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FEDNPBICDHB}
      */
     public static final class Builder extends
@@ -739,20 +747,20 @@ public final class FEDNPBICDHBOuterClass {
         super.clear();
         avatarGuidList_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
-        isFinish_ = false;
-
+        EliteMonsterIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        monsterIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
         isOpen_ = false;
+
+        isFinish_ = false;
 
         maxScore_ = 0;
 
-        levelId_ = 0;
-
         useTime_ = 0;
 
-        monsterIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        EliteMonsterIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        levelId_ = 0;
+
         return this;
       }
 
@@ -785,21 +793,21 @@ public final class FEDNPBICDHBOuterClass {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarGuidList_ = avatarGuidList_;
-        result.isFinish_ = isFinish_;
-        result.isOpen_ = isOpen_;
-        result.maxScore_ = maxScore_;
-        result.levelId_ = levelId_;
-        result.useTime_ = useTime_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          monsterIdList_.makeImmutable();
+          EliteMonsterIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.monsterIdList_ = monsterIdList_;
+        result.EliteMonsterIdList_ = EliteMonsterIdList_;
         if (((bitField0_ & 0x00000004) != 0)) {
-          EliteMonsterIdList_.makeImmutable();
+          monsterIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.EliteMonsterIdList_ = EliteMonsterIdList_;
+        result.monsterIdList_ = monsterIdList_;
+        result.isOpen_ = isOpen_;
+        result.isFinish_ = isFinish_;
+        result.maxScore_ = maxScore_;
+        result.useTime_ = useTime_;
+        result.levelId_ = levelId_;
         onBuilt();
         return result;
       }
@@ -858,40 +866,40 @@ public final class FEDNPBICDHBOuterClass {
           }
           onChanged();
         }
-        if (other.getIsFinish() != false) {
-          setIsFinish(other.getIsFinish());
-        }
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
-        if (other.getMaxScore() != 0) {
-          setMaxScore(other.getMaxScore());
-        }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getUseTime() != 0) {
-          setUseTime(other.getUseTime());
+        if (!other.EliteMonsterIdList_.isEmpty()) {
+          if (EliteMonsterIdList_.isEmpty()) {
+            EliteMonsterIdList_ = other.EliteMonsterIdList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureEliteMonsterIdListIsMutable();
+            EliteMonsterIdList_.addAll(other.EliteMonsterIdList_);
+          }
+          onChanged();
         }
         if (!other.monsterIdList_.isEmpty()) {
           if (monsterIdList_.isEmpty()) {
             monsterIdList_ = other.monsterIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureMonsterIdListIsMutable();
             monsterIdList_.addAll(other.monsterIdList_);
           }
           onChanged();
         }
-        if (!other.EliteMonsterIdList_.isEmpty()) {
-          if (EliteMonsterIdList_.isEmpty()) {
-            EliteMonsterIdList_ = other.EliteMonsterIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureEliteMonsterIdListIsMutable();
-            EliteMonsterIdList_.addAll(other.EliteMonsterIdList_);
-          }
-          onChanged();
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
+        }
+        if (other.getIsFinish() != false) {
+          setIsFinish(other.getIsFinish());
+        }
+        if (other.getMaxScore() != 0) {
+          setMaxScore(other.getMaxScore());
+        }
+        if (other.getUseTime() != 0) {
+          setUseTime(other.getUseTime());
+        }
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -931,7 +939,7 @@ public final class FEDNPBICDHBOuterClass {
          }
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @return A list containing the avatarGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -940,14 +948,14 @@ public final class FEDNPBICDHBOuterClass {
                  java.util.Collections.unmodifiableList(avatarGuidList_) : avatarGuidList_;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @return The count of avatarGuidList.
        */
       public int getAvatarGuidListCount() {
         return avatarGuidList_.size();
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @param index The index of the element to return.
        * @return The avatarGuidList at the given index.
        */
@@ -955,7 +963,7 @@ public final class FEDNPBICDHBOuterClass {
         return avatarGuidList_.getLong(index);
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @param index The index to set the value at.
        * @param value The avatarGuidList to set.
        * @return This builder for chaining.
@@ -968,7 +976,7 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @param value The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -979,7 +987,7 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @param values The avatarGuidList to add.
        * @return This builder for chaining.
        */
@@ -992,12 +1000,201 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint64 avatar_guid_list = 1;</code>
+       * <code>repeated uint64 avatar_guid_list = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuidList() {
         avatarGuidList_ = emptyLongList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList EliteMonsterIdList_ = emptyIntList();
+      private void ensureEliteMonsterIdListIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          EliteMonsterIdList_ = mutableCopy(EliteMonsterIdList_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @return A list containing the eliteMonsterIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getEliteMonsterIdListList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(EliteMonsterIdList_) : EliteMonsterIdList_;
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @return The count of eliteMonsterIdList.
+       */
+      public int getEliteMonsterIdListCount() {
+        return EliteMonsterIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @param index The index of the element to return.
+       * @return The eliteMonsterIdList at the given index.
+       */
+      public int getEliteMonsterIdList(int index) {
+        return EliteMonsterIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The eliteMonsterIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEliteMonsterIdList(
+          int index, int value) {
+        ensureEliteMonsterIdListIsMutable();
+        EliteMonsterIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @param value The eliteMonsterIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addEliteMonsterIdList(int value) {
+        ensureEliteMonsterIdListIsMutable();
+        EliteMonsterIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @param values The eliteMonsterIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllEliteMonsterIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureEliteMonsterIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, EliteMonsterIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 _elite_monster_id_list = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEliteMonsterIdList() {
+        EliteMonsterIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList monsterIdList_ = emptyIntList();
+      private void ensureMonsterIdListIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          monsterIdList_ = mutableCopy(monsterIdList_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @return A list containing the monsterIdList.
+       */
+      public java.util.List<java.lang.Integer>
+          getMonsterIdListList() {
+        return ((bitField0_ & 0x00000004) != 0) ?
+                 java.util.Collections.unmodifiableList(monsterIdList_) : monsterIdList_;
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @return The count of monsterIdList.
+       */
+      public int getMonsterIdListCount() {
+        return monsterIdList_.size();
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @param index The index of the element to return.
+       * @return The monsterIdList at the given index.
+       */
+      public int getMonsterIdList(int index) {
+        return monsterIdList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @param index The index to set the value at.
+       * @param value The monsterIdList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonsterIdList(
+          int index, int value) {
+        ensureMonsterIdListIsMutable();
+        monsterIdList_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @param value The monsterIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMonsterIdList(int value) {
+        ensureMonsterIdListIsMutable();
+        monsterIdList_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @param values The monsterIdList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMonsterIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureMonsterIdListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, monsterIdList_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 monster_id_list = 11;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonsterIdList() {
+        monsterIdList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 15;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 15;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
         onChanged();
         return this;
       }
@@ -1033,40 +1230,9 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 5;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 5;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private int maxScore_ ;
       /**
-       * <code>uint32 max_score = 7;</code>
+       * <code>uint32 max_score = 14;</code>
        * @return The maxScore.
        */
       @java.lang.Override
@@ -1074,7 +1240,7 @@ public final class FEDNPBICDHBOuterClass {
         return maxScore_;
       }
       /**
-       * <code>uint32 max_score = 7;</code>
+       * <code>uint32 max_score = 14;</code>
        * @param value The maxScore to set.
        * @return This builder for chaining.
        */
@@ -1085,7 +1251,7 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
       /**
-       * <code>uint32 max_score = 7;</code>
+       * <code>uint32 max_score = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
@@ -1095,40 +1261,9 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
 
-      private int levelId_ ;
-      /**
-       * <code>uint32 level_id = 10;</code>
-       * @return The levelId.
-       */
-      @java.lang.Override
-      public int getLevelId() {
-        return levelId_;
-      }
-      /**
-       * <code>uint32 level_id = 10;</code>
-       * @param value The levelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLevelId(int value) {
-        
-        levelId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 level_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLevelId() {
-        
-        levelId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int useTime_ ;
       /**
-       * <code>uint32 use_time = 11;</code>
+       * <code>uint32 use_time = 1;</code>
        * @return The useTime.
        */
       @java.lang.Override
@@ -1136,7 +1271,7 @@ public final class FEDNPBICDHBOuterClass {
         return useTime_;
       }
       /**
-       * <code>uint32 use_time = 11;</code>
+       * <code>uint32 use_time = 1;</code>
        * @param value The useTime to set.
        * @return This builder for chaining.
        */
@@ -1147,7 +1282,7 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
       /**
-       * <code>uint32 use_time = 11;</code>
+       * <code>uint32 use_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearUseTime() {
@@ -1157,160 +1292,33 @@ public final class FEDNPBICDHBOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Internal.IntList monsterIdList_ = emptyIntList();
-      private void ensureMonsterIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          monsterIdList_ = mutableCopy(monsterIdList_);
-          bitField0_ |= 0x00000002;
-         }
-      }
+      private int levelId_ ;
       /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @return A list containing the monsterIdList.
+       * <code>uint32 level_id = 7;</code>
+       * @return The levelId.
        */
-      public java.util.List<java.lang.Integer>
-          getMonsterIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
-                 java.util.Collections.unmodifiableList(monsterIdList_) : monsterIdList_;
+      @java.lang.Override
+      public int getLevelId() {
+        return levelId_;
       }
       /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @return The count of monsterIdList.
-       */
-      public int getMonsterIdListCount() {
-        return monsterIdList_.size();
-      }
-      /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @param index The index of the element to return.
-       * @return The monsterIdList at the given index.
-       */
-      public int getMonsterIdList(int index) {
-        return monsterIdList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @param index The index to set the value at.
-       * @param value The monsterIdList to set.
+       * <code>uint32 level_id = 7;</code>
+       * @param value The levelId to set.
        * @return This builder for chaining.
        */
-      public Builder setMonsterIdList(
-          int index, int value) {
-        ensureMonsterIdListIsMutable();
-        monsterIdList_.setInt(index, value);
+      public Builder setLevelId(int value) {
+        
+        levelId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @param value The monsterIdList to add.
+       * <code>uint32 level_id = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder addMonsterIdList(int value) {
-        ensureMonsterIdListIsMutable();
-        monsterIdList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @param values The monsterIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMonsterIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMonsterIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, monsterIdList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 monster_id_list = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMonsterIdList() {
-        monsterIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList EliteMonsterIdList_ = emptyIntList();
-      private void ensureEliteMonsterIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          EliteMonsterIdList_ = mutableCopy(EliteMonsterIdList_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @return A list containing the eliteMonsterIdList.
-       */
-      public java.util.List<java.lang.Integer>
-          getEliteMonsterIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
-                 java.util.Collections.unmodifiableList(EliteMonsterIdList_) : EliteMonsterIdList_;
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @return The count of eliteMonsterIdList.
-       */
-      public int getEliteMonsterIdListCount() {
-        return EliteMonsterIdList_.size();
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @param index The index of the element to return.
-       * @return The eliteMonsterIdList at the given index.
-       */
-      public int getEliteMonsterIdList(int index) {
-        return EliteMonsterIdList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @param index The index to set the value at.
-       * @param value The eliteMonsterIdList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEliteMonsterIdList(
-          int index, int value) {
-        ensureEliteMonsterIdListIsMutable();
-        EliteMonsterIdList_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @param value The eliteMonsterIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addEliteMonsterIdList(int value) {
-        ensureEliteMonsterIdListIsMutable();
-        EliteMonsterIdList_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @param values The eliteMonsterIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllEliteMonsterIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureEliteMonsterIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, EliteMonsterIdList_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 _elite_monster_id_list = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEliteMonsterIdList() {
-        EliteMonsterIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+      public Builder clearLevelId() {
+        
+        levelId_ = 0;
         onChanged();
         return this;
       }
@@ -1382,12 +1390,12 @@ public final class FEDNPBICDHBOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021FEDNPBICDHB.proto\"\273\001\n\013FEDNPBICDHB\022\030\n\020a" +
-      "vatar_guid_list\030\001 \003(\004\022\021\n\tis_finish\030\002 \001(\010" +
-      "\022\017\n\007is_open\030\005 \001(\010\022\021\n\tmax_score\030\007 \001(\r\022\020\n\010" +
-      "level_id\030\n \001(\r\022\020\n\010use_time\030\013 \001(\r\022\027\n\017mons" +
-      "ter_id_list\030\014 \003(\r\022\036\n\026_elite_monster_id_l" +
-      "ist\030\r \003(\rB2\n\031emu.grasscutter.net.protoB\025" +
-      "FEDNPBICDHBOuterClassb\006proto3"
+      "vatar_guid_list\030\t \003(\004\022\036\n\026_elite_monster_" +
+      "id_list\030\004 \003(\r\022\027\n\017monster_id_list\030\013 \003(\r\022\017" +
+      "\n\007is_open\030\017 \001(\010\022\021\n\tis_finish\030\002 \001(\010\022\021\n\tma" +
+      "x_score\030\016 \001(\r\022\020\n\010use_time\030\001 \001(\r\022\020\n\010level" +
+      "_id\030\007 \001(\rB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1398,7 +1406,7 @@ public final class FEDNPBICDHBOuterClass {
     internal_static_FEDNPBICDHB_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FEDNPBICDHB_descriptor,
-        new java.lang.String[] { "AvatarGuidList", "IsFinish", "IsOpen", "MaxScore", "LevelId", "UseTime", "MonsterIdList", "EliteMonsterIdList", });
+        new java.lang.String[] { "AvatarGuidList", "EliteMonsterIdList", "MonsterIdList", "IsOpen", "IsFinish", "MaxScore", "UseTime", "LevelId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

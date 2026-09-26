@@ -9,13 +9,14 @@
  */
 package emu.grasscutter.game.avatar;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.proto.ProudSkillExtraLevelNotifyOuterClass;
 
 final class SkirkTeamBonusNotify {
-    private static final int OPCODE = 4108;
+    private static final int OPCODE = PacketOpcodes.ProudSkillExtraLevelNotify;
 
     private SkirkTeamBonusNotify() {
     }
@@ -25,7 +26,7 @@ final class SkirkTeamBonusNotify {
             return;
         }
         ProudSkillExtraLevelNotifyOuterClass.ProudSkillExtraLevelNotify proudSkillExtraLevelNotify = ProudSkillExtraLevelNotifyOuterClass.ProudSkillExtraLevelNotify.newBuilder().setAvatarGuid(avatar.getGuid()).setTalentType(3).setTalentIndex(n).setExtraLevel(n2).build();
-        BasePacket basePacket = new BasePacket(4108);
+        BasePacket basePacket = new BasePacket(OPCODE);
         basePacket.setData(proudSkillExtraLevelNotify.toByteArray());
         player.sendPacket(basePacket);
     }

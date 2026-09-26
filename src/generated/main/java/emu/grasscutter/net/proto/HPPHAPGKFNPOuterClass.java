@@ -25,6 +25,10 @@ public final class HPPHAPGKFNPOuterClass {
     int getRouteId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code HPPHAPGKFNP}
    */
   public static final class HPPHAPGKFNP extends
@@ -273,6 +277,10 @@ public final class HPPHAPGKFNPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code HPPHAPGKFNP}
      */
     public static final class Builder extends
@@ -517,8 +525,8 @@ public final class HPPHAPGKFNPOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021HPPHAPGKFNP.proto\"\037\n\013HPPHAPGKFNP\022\020\n\010ro" +
-      "ute_id\030\001 \001(\005B2\n\031emu.grasscutter.net.prot" +
-      "oB\025HPPHAPGKFNPOuterClassb\006proto3"
+      "ute_id\030\001 \001(\005B\033\n\031emu.grasscutter.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

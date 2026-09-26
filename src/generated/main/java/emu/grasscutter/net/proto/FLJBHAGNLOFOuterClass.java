@@ -19,47 +19,41 @@ public final class FLJBHAGNLOFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 CMFBOGELCPE = 1;</code>
-     * @return The cMFBOGELCPE.
-     */
-    int getCMFBOGELCPE();
-
-    /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO> 
         getIJNNOEEKODGList();
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO getIJNNOEEKODG(int index);
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     int getIJNNOEEKODGCount();
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder> 
         getIJNNOEEKODGOrBuilderList();
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder getIJNNOEEKODGOrBuilder(
         int index);
 
     /**
-     * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+     * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
      * @return A list containing the dFDEJLLNPJF.
      */
     java.util.List<java.lang.Integer> getDFDEJLLNPJFList();
     /**
-     * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+     * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
      * @return The count of dFDEJLLNPJF.
      */
     int getDFDEJLLNPJFCount();
     /**
-     * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+     * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
      * @param index The index of the element to return.
      * @return The dFDEJLLNPJF at the given index.
      */
@@ -83,12 +77,22 @@ public final class FLJBHAGNLOFOuterClass {
     int getFKCIFOHLLBM(int index);
 
     /**
-     * <code>uint32 ALAKKGOILIC = 10;</code>
+     * <code>uint32 CMFBOGELCPE = 13;</code>
+     * @return The cMFBOGELCPE.
+     */
+    int getCMFBOGELCPE();
+
+    /**
+     * <code>uint32 ALAKKGOILIC = 12;</code>
      * @return The aLAKKGOILIC.
      */
     int getALAKKGOILIC();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code FLJBHAGNLOF}
    */
   public static final class FLJBHAGNLOF extends
@@ -137,39 +141,13 @@ public final class FLJBHAGNLOFOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              cMFBOGELCPE_ = input.readUInt32();
-              break;
-            }
-            case 26: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 iJNNOEEKODG_ = new java.util.ArrayList<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO>();
                 mutable_bitField0_ |= 0x00000001;
               }
               iJNNOEEKODG_.add(
                   input.readMessage(emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                dFDEJLLNPJF_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              dFDEJLLNPJF_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                dFDEJLLNPJF_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                dFDEJLLNPJF_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
               break;
             }
             case 72: {
@@ -193,9 +171,35 @@ public final class FLJBHAGNLOFOuterClass {
               input.popLimit(limit);
               break;
             }
-            case 80: {
+            case 96: {
 
               aLAKKGOILIC_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              cMFBOGELCPE_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                dFDEJLLNPJF_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              dFDEJLLNPJF_.addInt(input.readUInt32());
+              break;
+            }
+            case 114: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+                dFDEJLLNPJF_ = newIntList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                dFDEJLLNPJF_.addInt(input.readUInt32());
+              }
+              input.popLimit(limit);
               break;
             }
             default: {
@@ -216,11 +220,11 @@ public final class FLJBHAGNLOFOuterClass {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           iJNNOEEKODG_ = java.util.Collections.unmodifiableList(iJNNOEEKODG_);
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          dFDEJLLNPJF_.makeImmutable(); // C
-        }
         if (((mutable_bitField0_ & 0x00000004) != 0)) {
           fKCIFOHLLBM_.makeImmutable(); // C
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          dFDEJLLNPJF_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -239,28 +243,17 @@ public final class FLJBHAGNLOFOuterClass {
               emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF.class, emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF.Builder.class);
     }
 
-    public static final int CMFBOGELCPE_FIELD_NUMBER = 1;
-    private int cMFBOGELCPE_;
-    /**
-     * <code>uint32 CMFBOGELCPE = 1;</code>
-     * @return The cMFBOGELCPE.
-     */
-    @java.lang.Override
-    public int getCMFBOGELCPE() {
-      return cMFBOGELCPE_;
-    }
-
-    public static final int IJNNOEEKODG_FIELD_NUMBER = 3;
+    public static final int IJNNOEEKODG_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO> iJNNOEEKODG_;
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO> getIJNNOEEKODGList() {
       return iJNNOEEKODG_;
     }
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder> 
@@ -268,21 +261,21 @@ public final class FLJBHAGNLOFOuterClass {
       return iJNNOEEKODG_;
     }
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     @java.lang.Override
     public int getIJNNOEEKODGCount() {
       return iJNNOEEKODG_.size();
     }
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO getIJNNOEEKODG(int index) {
       return iJNNOEEKODG_.get(index);
     }
     /**
-     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+     * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder getIJNNOEEKODGOrBuilder(
@@ -290,10 +283,10 @@ public final class FLJBHAGNLOFOuterClass {
       return iJNNOEEKODG_.get(index);
     }
 
-    public static final int DFDEJLLNPJF_FIELD_NUMBER = 6;
+    public static final int DFDEJLLNPJF_FIELD_NUMBER = 14;
     private com.google.protobuf.Internal.IntList dFDEJLLNPJF_;
     /**
-     * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+     * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
      * @return A list containing the dFDEJLLNPJF.
      */
     @java.lang.Override
@@ -302,14 +295,14 @@ public final class FLJBHAGNLOFOuterClass {
       return dFDEJLLNPJF_;
     }
     /**
-     * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+     * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
      * @return The count of dFDEJLLNPJF.
      */
     public int getDFDEJLLNPJFCount() {
       return dFDEJLLNPJF_.size();
     }
     /**
-     * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+     * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
      * @param index The index of the element to return.
      * @return The dFDEJLLNPJF at the given index.
      */
@@ -346,10 +339,21 @@ public final class FLJBHAGNLOFOuterClass {
     }
     private int fKCIFOHLLBMMemoizedSerializedSize = -1;
 
-    public static final int ALAKKGOILIC_FIELD_NUMBER = 10;
+    public static final int CMFBOGELCPE_FIELD_NUMBER = 13;
+    private int cMFBOGELCPE_;
+    /**
+     * <code>uint32 CMFBOGELCPE = 13;</code>
+     * @return The cMFBOGELCPE.
+     */
+    @java.lang.Override
+    public int getCMFBOGELCPE() {
+      return cMFBOGELCPE_;
+    }
+
+    public static final int ALAKKGOILIC_FIELD_NUMBER = 12;
     private int aLAKKGOILIC_;
     /**
-     * <code>uint32 ALAKKGOILIC = 10;</code>
+     * <code>uint32 ALAKKGOILIC = 12;</code>
      * @return The aLAKKGOILIC.
      */
     @java.lang.Override
@@ -372,18 +376,8 @@ public final class FLJBHAGNLOFOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (cMFBOGELCPE_ != 0) {
-        output.writeUInt32(1, cMFBOGELCPE_);
-      }
       for (int i = 0; i < iJNNOEEKODG_.size(); i++) {
-        output.writeMessage(3, iJNNOEEKODG_.get(i));
-      }
-      if (getDFDEJLLNPJFList().size() > 0) {
-        output.writeUInt32NoTag(50);
-        output.writeUInt32NoTag(dFDEJLLNPJFMemoizedSerializedSize);
-      }
-      for (int i = 0; i < dFDEJLLNPJF_.size(); i++) {
-        output.writeUInt32NoTag(dFDEJLLNPJF_.getInt(i));
+        output.writeMessage(4, iJNNOEEKODG_.get(i));
       }
       if (getFKCIFOHLLBMList().size() > 0) {
         output.writeUInt32NoTag(74);
@@ -393,7 +387,17 @@ public final class FLJBHAGNLOFOuterClass {
         output.writeUInt32NoTag(fKCIFOHLLBM_.getInt(i));
       }
       if (aLAKKGOILIC_ != 0) {
-        output.writeUInt32(10, aLAKKGOILIC_);
+        output.writeUInt32(12, aLAKKGOILIC_);
+      }
+      if (cMFBOGELCPE_ != 0) {
+        output.writeUInt32(13, cMFBOGELCPE_);
+      }
+      if (getDFDEJLLNPJFList().size() > 0) {
+        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(dFDEJLLNPJFMemoizedSerializedSize);
+      }
+      for (int i = 0; i < dFDEJLLNPJF_.size(); i++) {
+        output.writeUInt32NoTag(dFDEJLLNPJF_.getInt(i));
       }
       unknownFields.writeTo(output);
     }
@@ -404,27 +408,9 @@ public final class FLJBHAGNLOFOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (cMFBOGELCPE_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, cMFBOGELCPE_);
-      }
       for (int i = 0; i < iJNNOEEKODG_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, iJNNOEEKODG_.get(i));
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < dFDEJLLNPJF_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeUInt32SizeNoTag(dFDEJLLNPJF_.getInt(i));
-        }
-        size += dataSize;
-        if (!getDFDEJLLNPJFList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        dFDEJLLNPJFMemoizedSerializedSize = dataSize;
+          .computeMessageSize(4, iJNNOEEKODG_.get(i));
       }
       {
         int dataSize = 0;
@@ -442,7 +428,25 @@ public final class FLJBHAGNLOFOuterClass {
       }
       if (aLAKKGOILIC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, aLAKKGOILIC_);
+          .computeUInt32Size(12, aLAKKGOILIC_);
+      }
+      if (cMFBOGELCPE_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, cMFBOGELCPE_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < dFDEJLLNPJF_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(dFDEJLLNPJF_.getInt(i));
+        }
+        size += dataSize;
+        if (!getDFDEJLLNPJFList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        dFDEJLLNPJFMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -459,14 +463,14 @@ public final class FLJBHAGNLOFOuterClass {
       }
       emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF other = (emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF) obj;
 
-      if (getCMFBOGELCPE()
-          != other.getCMFBOGELCPE()) return false;
       if (!getIJNNOEEKODGList()
           .equals(other.getIJNNOEEKODGList())) return false;
       if (!getDFDEJLLNPJFList()
           .equals(other.getDFDEJLLNPJFList())) return false;
       if (!getFKCIFOHLLBMList()
           .equals(other.getFKCIFOHLLBMList())) return false;
+      if (getCMFBOGELCPE()
+          != other.getCMFBOGELCPE()) return false;
       if (getALAKKGOILIC()
           != other.getALAKKGOILIC()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -480,8 +484,6 @@ public final class FLJBHAGNLOFOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CMFBOGELCPE_FIELD_NUMBER;
-      hash = (53 * hash) + getCMFBOGELCPE();
       if (getIJNNOEEKODGCount() > 0) {
         hash = (37 * hash) + IJNNOEEKODG_FIELD_NUMBER;
         hash = (53 * hash) + getIJNNOEEKODGList().hashCode();
@@ -494,6 +496,8 @@ public final class FLJBHAGNLOFOuterClass {
         hash = (37 * hash) + FKCIFOHLLBM_FIELD_NUMBER;
         hash = (53 * hash) + getFKCIFOHLLBMList().hashCode();
       }
+      hash = (37 * hash) + CMFBOGELCPE_FIELD_NUMBER;
+      hash = (53 * hash) + getCMFBOGELCPE();
       hash = (37 * hash) + ALAKKGOILIC_FIELD_NUMBER;
       hash = (53 * hash) + getALAKKGOILIC();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -592,6 +596,10 @@ public final class FLJBHAGNLOFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code FLJBHAGNLOF}
      */
     public static final class Builder extends
@@ -630,8 +638,6 @@ public final class FLJBHAGNLOFOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        cMFBOGELCPE_ = 0;
-
         if (iJNNOEEKODGBuilder_ == null) {
           iJNNOEEKODG_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -642,6 +648,8 @@ public final class FLJBHAGNLOFOuterClass {
         bitField0_ = (bitField0_ & ~0x00000002);
         fKCIFOHLLBM_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000004);
+        cMFBOGELCPE_ = 0;
+
         aLAKKGOILIC_ = 0;
 
         return this;
@@ -671,7 +679,6 @@ public final class FLJBHAGNLOFOuterClass {
       public emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF buildPartial() {
         emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF result = new emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF(this);
         int from_bitField0_ = bitField0_;
-        result.cMFBOGELCPE_ = cMFBOGELCPE_;
         if (iJNNOEEKODGBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             iJNNOEEKODG_ = java.util.Collections.unmodifiableList(iJNNOEEKODG_);
@@ -691,6 +698,7 @@ public final class FLJBHAGNLOFOuterClass {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.fKCIFOHLLBM_ = fKCIFOHLLBM_;
+        result.cMFBOGELCPE_ = cMFBOGELCPE_;
         result.aLAKKGOILIC_ = aLAKKGOILIC_;
         onBuilt();
         return result;
@@ -740,9 +748,6 @@ public final class FLJBHAGNLOFOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF other) {
         if (other == emu.grasscutter.net.proto.FLJBHAGNLOFOuterClass.FLJBHAGNLOF.getDefaultInstance()) return this;
-        if (other.getCMFBOGELCPE() != 0) {
-          setCMFBOGELCPE(other.getCMFBOGELCPE());
-        }
         if (iJNNOEEKODGBuilder_ == null) {
           if (!other.iJNNOEEKODG_.isEmpty()) {
             if (iJNNOEEKODG_.isEmpty()) {
@@ -789,6 +794,9 @@ public final class FLJBHAGNLOFOuterClass {
           }
           onChanged();
         }
+        if (other.getCMFBOGELCPE() != 0) {
+          setCMFBOGELCPE(other.getCMFBOGELCPE());
+        }
         if (other.getALAKKGOILIC() != 0) {
           setALAKKGOILIC(other.getALAKKGOILIC());
         }
@@ -822,37 +830,6 @@ public final class FLJBHAGNLOFOuterClass {
       }
       private int bitField0_;
 
-      private int cMFBOGELCPE_ ;
-      /**
-       * <code>uint32 CMFBOGELCPE = 1;</code>
-       * @return The cMFBOGELCPE.
-       */
-      @java.lang.Override
-      public int getCMFBOGELCPE() {
-        return cMFBOGELCPE_;
-      }
-      /**
-       * <code>uint32 CMFBOGELCPE = 1;</code>
-       * @param value The cMFBOGELCPE to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCMFBOGELCPE(int value) {
-        
-        cMFBOGELCPE_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 CMFBOGELCPE = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCMFBOGELCPE() {
-        
-        cMFBOGELCPE_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO> iJNNOEEKODG_ =
         java.util.Collections.emptyList();
       private void ensureIJNNOEEKODGIsMutable() {
@@ -866,7 +843,7 @@ public final class FLJBHAGNLOFOuterClass {
           emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder> iJNNOEEKODGBuilder_;
 
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO> getIJNNOEEKODGList() {
         if (iJNNOEEKODGBuilder_ == null) {
@@ -876,7 +853,7 @@ public final class FLJBHAGNLOFOuterClass {
         }
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public int getIJNNOEEKODGCount() {
         if (iJNNOEEKODGBuilder_ == null) {
@@ -886,7 +863,7 @@ public final class FLJBHAGNLOFOuterClass {
         }
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO getIJNNOEEKODG(int index) {
         if (iJNNOEEKODGBuilder_ == null) {
@@ -896,7 +873,7 @@ public final class FLJBHAGNLOFOuterClass {
         }
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder setIJNNOEEKODG(
           int index, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO value) {
@@ -913,7 +890,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder setIJNNOEEKODG(
           int index, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder builderForValue) {
@@ -927,7 +904,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder addIJNNOEEKODG(emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO value) {
         if (iJNNOEEKODGBuilder_ == null) {
@@ -943,7 +920,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder addIJNNOEEKODG(
           int index, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO value) {
@@ -960,7 +937,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder addIJNNOEEKODG(
           emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder builderForValue) {
@@ -974,7 +951,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder addIJNNOEEKODG(
           int index, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder builderForValue) {
@@ -988,7 +965,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder addAllIJNNOEEKODG(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO> values) {
@@ -1003,7 +980,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder clearIJNNOEEKODG() {
         if (iJNNOEEKODGBuilder_ == null) {
@@ -1016,7 +993,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public Builder removeIJNNOEEKODG(int index) {
         if (iJNNOEEKODGBuilder_ == null) {
@@ -1029,14 +1006,14 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder getIJNNOEEKODGBuilder(
           int index) {
         return getIJNNOEEKODGFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder getIJNNOEEKODGOrBuilder(
           int index) {
@@ -1046,7 +1023,7 @@ public final class FLJBHAGNLOFOuterClass {
         }
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIOOrBuilder> 
            getIJNNOEEKODGOrBuilderList() {
@@ -1057,14 +1034,14 @@ public final class FLJBHAGNLOFOuterClass {
         }
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder addIJNNOEEKODGBuilder() {
         return getIJNNOEEKODGFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder addIJNNOEEKODGBuilder(
           int index) {
@@ -1072,7 +1049,7 @@ public final class FLJBHAGNLOFOuterClass {
             index, emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.getDefaultInstance());
       }
       /**
-       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 3;</code>
+       * <code>repeated .NNOLNLHNOIO IJNNOEEKODG = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.NNOLNLHNOIO.Builder> 
            getIJNNOEEKODGBuilderList() {
@@ -1101,7 +1078,7 @@ public final class FLJBHAGNLOFOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @return A list containing the dFDEJLLNPJF.
        */
       public java.util.List<java.lang.Integer>
@@ -1110,14 +1087,14 @@ public final class FLJBHAGNLOFOuterClass {
                  java.util.Collections.unmodifiableList(dFDEJLLNPJF_) : dFDEJLLNPJF_;
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @return The count of dFDEJLLNPJF.
        */
       public int getDFDEJLLNPJFCount() {
         return dFDEJLLNPJF_.size();
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @param index The index of the element to return.
        * @return The dFDEJLLNPJF at the given index.
        */
@@ -1125,7 +1102,7 @@ public final class FLJBHAGNLOFOuterClass {
         return dFDEJLLNPJF_.getInt(index);
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @param index The index to set the value at.
        * @param value The dFDEJLLNPJF to set.
        * @return This builder for chaining.
@@ -1138,7 +1115,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @param value The dFDEJLLNPJF to add.
        * @return This builder for chaining.
        */
@@ -1149,7 +1126,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @param values The dFDEJLLNPJF to add.
        * @return This builder for chaining.
        */
@@ -1162,7 +1139,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 DFDEJLLNPJF = 6;</code>
+       * <code>repeated uint32 DFDEJLLNPJF = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearDFDEJLLNPJF() {
@@ -1251,9 +1228,40 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
 
+      private int cMFBOGELCPE_ ;
+      /**
+       * <code>uint32 CMFBOGELCPE = 13;</code>
+       * @return The cMFBOGELCPE.
+       */
+      @java.lang.Override
+      public int getCMFBOGELCPE() {
+        return cMFBOGELCPE_;
+      }
+      /**
+       * <code>uint32 CMFBOGELCPE = 13;</code>
+       * @param value The cMFBOGELCPE to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCMFBOGELCPE(int value) {
+        
+        cMFBOGELCPE_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 CMFBOGELCPE = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCMFBOGELCPE() {
+        
+        cMFBOGELCPE_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int aLAKKGOILIC_ ;
       /**
-       * <code>uint32 ALAKKGOILIC = 10;</code>
+       * <code>uint32 ALAKKGOILIC = 12;</code>
        * @return The aLAKKGOILIC.
        */
       @java.lang.Override
@@ -1261,7 +1269,7 @@ public final class FLJBHAGNLOFOuterClass {
         return aLAKKGOILIC_;
       }
       /**
-       * <code>uint32 ALAKKGOILIC = 10;</code>
+       * <code>uint32 ALAKKGOILIC = 12;</code>
        * @param value The aLAKKGOILIC to set.
        * @return This builder for chaining.
        */
@@ -1272,7 +1280,7 @@ public final class FLJBHAGNLOFOuterClass {
         return this;
       }
       /**
-       * <code>uint32 ALAKKGOILIC = 10;</code>
+       * <code>uint32 ALAKKGOILIC = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearALAKKGOILIC() {
@@ -1349,11 +1357,11 @@ public final class FLJBHAGNLOFOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021FLJBHAGNLOF.proto\032\021NNOLNLHNOIO.proto\"\204" +
-      "\001\n\013FLJBHAGNLOF\022\023\n\013CMFBOGELCPE\030\001 \001(\r\022!\n\013I" +
-      "JNNOEEKODG\030\003 \003(\0132\014.NNOLNLHNOIO\022\023\n\013DFDEJL" +
-      "LNPJF\030\006 \003(\r\022\023\n\013FKCIFOHLLBM\030\t \003(\r\022\023\n\013ALAK" +
-      "KGOILIC\030\n \001(\rB2\n\031emu.grasscutter.net.pro" +
-      "toB\025FLJBHAGNLOFOuterClassb\006proto3"
+      "\001\n\013FLJBHAGNLOF\022!\n\013IJNNOEEKODG\030\004 \003(\0132\014.NN" +
+      "OLNLHNOIO\022\023\n\013DFDEJLLNPJF\030\016 \003(\r\022\023\n\013FKCIFO" +
+      "HLLBM\030\t \003(\r\022\023\n\013CMFBOGELCPE\030\r \001(\r\022\023\n\013ALAK" +
+      "KGOILIC\030\014 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1365,7 +1373,7 @@ public final class FLJBHAGNLOFOuterClass {
     internal_static_FLJBHAGNLOF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FLJBHAGNLOF_descriptor,
-        new java.lang.String[] { "CMFBOGELCPE", "IJNNOEEKODG", "DFDEJLLNPJF", "FKCIFOHLLBM", "ALAKKGOILIC", });
+        new java.lang.String[] { "IJNNOEEKODG", "DFDEJLLNPJF", "FKCIFOHLLBM", "CMFBOGELCPE", "ALAKKGOILIC", });
     emu.grasscutter.net.proto.NNOLNLHNOIOOuterClass.getDescriptor();
   }
 

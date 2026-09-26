@@ -37,14 +37,14 @@ public final class ShopGoodsBuilder {
                         .setScoin(info.getScoin())
                         .setHcoin(info.getHcoin())
                         .setMcoin(info.getMcoin())
-                        .setOCFMGIPGLDK(buyLimit)
+                        .setBuyLimit(buyLimit)
                         // Caps the purchase slider; monthly remaining uses buy_limit - bought_num.
                         .setSingleLimit(buyLimit > 0 ? Math.max(1, buyLimit - bought) : 0)
                         .setBeginTime(info.getBeginTime())
                         .setEndTime(info.getEndTime())
                         .setMinLevel(info.getMinLevel())
                         .setMaxLevel(info.getMaxLevel())
-                        .setELPGDNACFOA(disableType)
+                        .setDisableType(disableType)
                         .setBoughtNum(bought)
                         .setNextRefreshTime(nextRefreshTime);
 

@@ -720,16 +720,16 @@ public final class FurnitureMakeStartRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033FurnitureMakeStartRsp.proto\032\027Furniture" +
-      "MakeSlot.proto\"Y\n\025FurnitureMakeStartRsp\022" +
-      "/\n\023furniture_make_slot\030\002 \001(\0132\022.Furniture" +
-      "MakeSlot\022\017\n\007retcode\030\003 \001(\005B<\n\031emu.grasscu" +
-      "tter.net.protoB\037FurnitureMakeStartRspOut" +
-      "erClassb\006proto3"
+      "MakeSlot.proto\032\rRetcode.proto\"Y\n\025Furnitu" +
+      "reMakeStartRsp\022/\n\023furniture_make_slot\030\002 " +
+      "\001(\0132\022.FurnitureMakeSlot\022\017\n\007retcode\030\003 \001(\005" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass.getDescriptor(),
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_FurnitureMakeStartRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -738,6 +738,7 @@ public final class FurnitureMakeStartRspOuterClass {
         internal_static_FurnitureMakeStartRsp_descriptor,
         new java.lang.String[] { "FurnitureMakeSlot", "Retcode", });
     emu.grasscutter.net.proto.FurnitureMakeSlotOuterClass.getDescriptor();
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

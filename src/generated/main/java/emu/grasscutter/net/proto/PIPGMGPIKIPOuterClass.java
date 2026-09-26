@@ -19,18 +19,22 @@ public final class PIPGMGPIKIPOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 MOALINDDJKJ = 5;</code>
-     * @return The mOALINDDJKJ.
-     */
-    int getMOALINDDJKJ();
-
-    /**
-     * <code>uint32 stage = 9;</code>
+     * <code>uint32 stage = 5;</code>
      * @return The stage.
      */
     int getStage();
+
+    /**
+     * <code>uint32 MOALINDDJKJ = 2;</code>
+     * @return The mOALINDDJKJ.
+     */
+    int getMOALINDDJKJ();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code PIPGMGPIKIP}
    */
   public static final class PIPGMGPIKIP extends
@@ -75,12 +79,12 @@ public final class PIPGMGPIKIPOuterClass {
             case 0:
               done = true;
               break;
-            case 40: {
+            case 16: {
 
               mOALINDDJKJ_ = input.readUInt32();
               break;
             }
-            case 72: {
+            case 40: {
 
               stage_ = input.readUInt32();
               break;
@@ -117,143 +121,26 @@ public final class PIPGMGPIKIPOuterClass {
               emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP.class, emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP.Builder.class);
     }
 
-    /**
-     * Protobuf enum {@code PIPGMGPIKIP.IEBKFMGNBOP}
-     */
-    public enum IEBKFMGNBOP
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>IEBKFMGNBOP_STRANGE = 0;</code>
-       */
-      IEBKFMGNBOP_STRANGE(0),
-      /**
-       * <code>IEBKFMGNBOP_FAMILIAR = 1;</code>
-       */
-      IEBKFMGNBOP_FAMILIAR(1),
-      /**
-       * <code>IEBKFMGNBOP_HONEY = 2;</code>
-       */
-      IEBKFMGNBOP_HONEY(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>IEBKFMGNBOP_STRANGE = 0;</code>
-       */
-      public static final int IEBKFMGNBOP_STRANGE_VALUE = 0;
-      /**
-       * <code>IEBKFMGNBOP_FAMILIAR = 1;</code>
-       */
-      public static final int IEBKFMGNBOP_FAMILIAR_VALUE = 1;
-      /**
-       * <code>IEBKFMGNBOP_HONEY = 2;</code>
-       */
-      public static final int IEBKFMGNBOP_HONEY_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IEBKFMGNBOP valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static IEBKFMGNBOP forNumber(int value) {
-        switch (value) {
-          case 0: return IEBKFMGNBOP_STRANGE;
-          case 1: return IEBKFMGNBOP_FAMILIAR;
-          case 2: return IEBKFMGNBOP_HONEY;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IEBKFMGNBOP>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IEBKFMGNBOP> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IEBKFMGNBOP>() {
-              public IEBKFMGNBOP findValueByNumber(int number) {
-                return IEBKFMGNBOP.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final IEBKFMGNBOP[] VALUES = values();
-
-      public static IEBKFMGNBOP valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private IEBKFMGNBOP(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:PIPGMGPIKIP.IEBKFMGNBOP)
-    }
-
-    public static final int MOALINDDJKJ_FIELD_NUMBER = 5;
-    private int mOALINDDJKJ_;
-    /**
-     * <code>uint32 MOALINDDJKJ = 5;</code>
-     * @return The mOALINDDJKJ.
-     */
-    @java.lang.Override
-    public int getMOALINDDJKJ() {
-      return mOALINDDJKJ_;
-    }
-
-    public static final int STAGE_FIELD_NUMBER = 9;
+    public static final int STAGE_FIELD_NUMBER = 5;
     private int stage_;
     /**
-     * <code>uint32 stage = 9;</code>
+     * <code>uint32 stage = 5;</code>
      * @return The stage.
      */
     @java.lang.Override
     public int getStage() {
       return stage_;
+    }
+
+    public static final int MOALINDDJKJ_FIELD_NUMBER = 2;
+    private int mOALINDDJKJ_;
+    /**
+     * <code>uint32 MOALINDDJKJ = 2;</code>
+     * @return The mOALINDDJKJ.
+     */
+    @java.lang.Override
+    public int getMOALINDDJKJ() {
+      return mOALINDDJKJ_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -271,10 +158,10 @@ public final class PIPGMGPIKIPOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (mOALINDDJKJ_ != 0) {
-        output.writeUInt32(5, mOALINDDJKJ_);
+        output.writeUInt32(2, mOALINDDJKJ_);
       }
       if (stage_ != 0) {
-        output.writeUInt32(9, stage_);
+        output.writeUInt32(5, stage_);
       }
       unknownFields.writeTo(output);
     }
@@ -287,11 +174,11 @@ public final class PIPGMGPIKIPOuterClass {
       size = 0;
       if (mOALINDDJKJ_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, mOALINDDJKJ_);
+          .computeUInt32Size(2, mOALINDDJKJ_);
       }
       if (stage_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, stage_);
+          .computeUInt32Size(5, stage_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -308,10 +195,10 @@ public final class PIPGMGPIKIPOuterClass {
       }
       emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP other = (emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP) obj;
 
-      if (getMOALINDDJKJ()
-          != other.getMOALINDDJKJ()) return false;
       if (getStage()
           != other.getStage()) return false;
+      if (getMOALINDDJKJ()
+          != other.getMOALINDDJKJ()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -323,10 +210,10 @@ public final class PIPGMGPIKIPOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MOALINDDJKJ_FIELD_NUMBER;
-      hash = (53 * hash) + getMOALINDDJKJ();
       hash = (37 * hash) + STAGE_FIELD_NUMBER;
       hash = (53 * hash) + getStage();
+      hash = (37 * hash) + MOALINDDJKJ_FIELD_NUMBER;
+      hash = (53 * hash) + getMOALINDDJKJ();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -423,6 +310,10 @@ public final class PIPGMGPIKIPOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code PIPGMGPIKIP}
      */
     public static final class Builder extends
@@ -460,9 +351,9 @@ public final class PIPGMGPIKIPOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        mOALINDDJKJ_ = 0;
-
         stage_ = 0;
+
+        mOALINDDJKJ_ = 0;
 
         return this;
       }
@@ -490,8 +381,8 @@ public final class PIPGMGPIKIPOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP buildPartial() {
         emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP result = new emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP(this);
-        result.mOALINDDJKJ_ = mOALINDDJKJ_;
         result.stage_ = stage_;
+        result.mOALINDDJKJ_ = mOALINDDJKJ_;
         onBuilt();
         return result;
       }
@@ -540,11 +431,11 @@ public final class PIPGMGPIKIPOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP other) {
         if (other == emu.grasscutter.net.proto.PIPGMGPIKIPOuterClass.PIPGMGPIKIP.getDefaultInstance()) return this;
-        if (other.getMOALINDDJKJ() != 0) {
-          setMOALINDDJKJ(other.getMOALINDDJKJ());
-        }
         if (other.getStage() != 0) {
           setStage(other.getStage());
+        }
+        if (other.getMOALINDDJKJ() != 0) {
+          setMOALINDDJKJ(other.getMOALINDDJKJ());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -575,40 +466,9 @@ public final class PIPGMGPIKIPOuterClass {
         return this;
       }
 
-      private int mOALINDDJKJ_ ;
-      /**
-       * <code>uint32 MOALINDDJKJ = 5;</code>
-       * @return The mOALINDDJKJ.
-       */
-      @java.lang.Override
-      public int getMOALINDDJKJ() {
-        return mOALINDDJKJ_;
-      }
-      /**
-       * <code>uint32 MOALINDDJKJ = 5;</code>
-       * @param value The mOALINDDJKJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMOALINDDJKJ(int value) {
-        
-        mOALINDDJKJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 MOALINDDJKJ = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMOALINDDJKJ() {
-        
-        mOALINDDJKJ_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int stage_ ;
       /**
-       * <code>uint32 stage = 9;</code>
+       * <code>uint32 stage = 5;</code>
        * @return The stage.
        */
       @java.lang.Override
@@ -616,7 +476,7 @@ public final class PIPGMGPIKIPOuterClass {
         return stage_;
       }
       /**
-       * <code>uint32 stage = 9;</code>
+       * <code>uint32 stage = 5;</code>
        * @param value The stage to set.
        * @return This builder for chaining.
        */
@@ -627,12 +487,43 @@ public final class PIPGMGPIKIPOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage = 9;</code>
+       * <code>uint32 stage = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearStage() {
         
         stage_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int mOALINDDJKJ_ ;
+      /**
+       * <code>uint32 MOALINDDJKJ = 2;</code>
+       * @return The mOALINDDJKJ.
+       */
+      @java.lang.Override
+      public int getMOALINDDJKJ() {
+        return mOALINDDJKJ_;
+      }
+      /**
+       * <code>uint32 MOALINDDJKJ = 2;</code>
+       * @param value The mOALINDDJKJ to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMOALINDDJKJ(int value) {
+        
+        mOALINDDJKJ_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 MOALINDDJKJ = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMOALINDDJKJ() {
+        
+        mOALINDDJKJ_ = 0;
         onChanged();
         return this;
       }
@@ -703,12 +594,9 @@ public final class PIPGMGPIKIPOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021PIPGMGPIKIP.proto\"\212\001\n\013PIPGMGPIKIP\022\023\n\013M" +
-      "OALINDDJKJ\030\005 \001(\r\022\r\n\005stage\030\t \001(\r\"W\n\013IEBKF" +
-      "MGNBOP\022\027\n\023IEBKFMGNBOP_STRANGE\020\000\022\030\n\024IEBKF" +
-      "MGNBOP_FAMILIAR\020\001\022\025\n\021IEBKFMGNBOP_HONEY\020\002" +
-      "B2\n\031emu.grasscutter.net.protoB\025PIPGMGPIK" +
-      "IPOuterClassb\006proto3"
+      "\n\021PIPGMGPIKIP.proto\"1\n\013PIPGMGPIKIP\022\r\n\005st" +
+      "age\030\005 \001(\r\022\023\n\013MOALINDDJKJ\030\002 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -719,7 +607,7 @@ public final class PIPGMGPIKIPOuterClass {
     internal_static_PIPGMGPIKIP_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PIPGMGPIKIP_descriptor,
-        new java.lang.String[] { "MOALINDDJKJ", "Stage", });
+        new java.lang.String[] { "Stage", "MOALINDDJKJ", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

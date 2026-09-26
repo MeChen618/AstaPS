@@ -19,42 +19,46 @@ public final class GearLevelDataOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 AEAJNEDAFJI = 1;</code>
-     * @return The aEAJNEDAFJI.
-     */
-    int getAEAJNEDAFJI();
-
-    /**
-     * <code>bool is_open = 2;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>uint32 level_id = 5;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     int getLevelId();
 
     /**
-     * <code>uint32 IOAAECDDKOC = 9;</code>
-     * @return The iOAAECDDKOC.
+     * <code>uint32 shortest_time = 12;</code>
+     * @return The shortestTime.
      */
-    int getIOAAECDDKOC();
+    int getShortestTime();
 
     /**
-     * <code>bool is_finished = 11;</code>
+     * <code>bool is_finished = 3;</code>
      * @return The isFinished.
      */
     boolean getIsFinished();
 
     /**
-     * <code>uint32 open_time = 15;</code>
+     * <code>bool is_open = 8;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 last_duration = 2;</code>
+     * @return The lastDuration.
+     */
+    int getLastDuration();
+
+    /**
+     * <code>uint32 open_time = 14;</code>
      * @return The openTime.
      */
     int getOpenTime();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GearLevelData}
    */
   public static final class GearLevelData extends
@@ -99,32 +103,32 @@ public final class GearLevelDataOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              aEAJNEDAFJI_ = input.readUInt32();
-              break;
-            }
             case 16: {
 
-              isOpen_ = input.readBool();
+              lastDuration_ = input.readUInt32();
               break;
             }
-            case 40: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              iOAAECDDKOC_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 24: {
 
               isFinished_ = input.readBool();
               break;
             }
-            case 120: {
+            case 56: {
+
+              levelId_ = input.readUInt32();
+              break;
+            }
+            case 64: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 96: {
+
+              shortestTime_ = input.readUInt32();
+              break;
+            }
+            case 112: {
 
               openTime_ = input.readUInt32();
               break;
@@ -161,32 +165,10 @@ public final class GearLevelDataOuterClass {
               emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.class, emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.Builder.class);
     }
 
-    public static final int AEAJNEDAFJI_FIELD_NUMBER = 1;
-    private int aEAJNEDAFJI_;
-    /**
-     * <code>uint32 AEAJNEDAFJI = 1;</code>
-     * @return The aEAJNEDAFJI.
-     */
-    @java.lang.Override
-    public int getAEAJNEDAFJI() {
-      return aEAJNEDAFJI_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 2;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 2;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int LEVEL_ID_FIELD_NUMBER = 5;
+    public static final int LEVEL_ID_FIELD_NUMBER = 7;
     private int levelId_;
     /**
-     * <code>uint32 level_id = 5;</code>
+     * <code>uint32 level_id = 7;</code>
      * @return The levelId.
      */
     @java.lang.Override
@@ -194,21 +176,21 @@ public final class GearLevelDataOuterClass {
       return levelId_;
     }
 
-    public static final int IOAAECDDKOC_FIELD_NUMBER = 9;
-    private int iOAAECDDKOC_;
+    public static final int SHORTEST_TIME_FIELD_NUMBER = 12;
+    private int shortestTime_;
     /**
-     * <code>uint32 IOAAECDDKOC = 9;</code>
-     * @return The iOAAECDDKOC.
+     * <code>uint32 shortest_time = 12;</code>
+     * @return The shortestTime.
      */
     @java.lang.Override
-    public int getIOAAECDDKOC() {
-      return iOAAECDDKOC_;
+    public int getShortestTime() {
+      return shortestTime_;
     }
 
-    public static final int IS_FINISHED_FIELD_NUMBER = 11;
+    public static final int IS_FINISHED_FIELD_NUMBER = 3;
     private boolean isFinished_;
     /**
-     * <code>bool is_finished = 11;</code>
+     * <code>bool is_finished = 3;</code>
      * @return The isFinished.
      */
     @java.lang.Override
@@ -216,10 +198,32 @@ public final class GearLevelDataOuterClass {
       return isFinished_;
     }
 
-    public static final int OPEN_TIME_FIELD_NUMBER = 15;
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 8;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int LAST_DURATION_FIELD_NUMBER = 2;
+    private int lastDuration_;
+    /**
+     * <code>uint32 last_duration = 2;</code>
+     * @return The lastDuration.
+     */
+    @java.lang.Override
+    public int getLastDuration() {
+      return lastDuration_;
+    }
+
+    public static final int OPEN_TIME_FIELD_NUMBER = 14;
     private int openTime_;
     /**
-     * <code>uint32 open_time = 15;</code>
+     * <code>uint32 open_time = 14;</code>
      * @return The openTime.
      */
     @java.lang.Override
@@ -241,23 +245,23 @@ public final class GearLevelDataOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (aEAJNEDAFJI_ != 0) {
-        output.writeUInt32(1, aEAJNEDAFJI_);
-      }
-      if (isOpen_ != false) {
-        output.writeBool(2, isOpen_);
-      }
-      if (levelId_ != 0) {
-        output.writeUInt32(5, levelId_);
-      }
-      if (iOAAECDDKOC_ != 0) {
-        output.writeUInt32(9, iOAAECDDKOC_);
+      if (lastDuration_ != 0) {
+        output.writeUInt32(2, lastDuration_);
       }
       if (isFinished_ != false) {
-        output.writeBool(11, isFinished_);
+        output.writeBool(3, isFinished_);
+      }
+      if (levelId_ != 0) {
+        output.writeUInt32(7, levelId_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(8, isOpen_);
+      }
+      if (shortestTime_ != 0) {
+        output.writeUInt32(12, shortestTime_);
       }
       if (openTime_ != 0) {
-        output.writeUInt32(15, openTime_);
+        output.writeUInt32(14, openTime_);
       }
       unknownFields.writeTo(output);
     }
@@ -268,29 +272,29 @@ public final class GearLevelDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (aEAJNEDAFJI_ != 0) {
+      if (lastDuration_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, aEAJNEDAFJI_);
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isOpen_);
-      }
-      if (levelId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, levelId_);
-      }
-      if (iOAAECDDKOC_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, iOAAECDDKOC_);
+          .computeUInt32Size(2, lastDuration_);
       }
       if (isFinished_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isFinished_);
+          .computeBoolSize(3, isFinished_);
+      }
+      if (levelId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, levelId_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isOpen_);
+      }
+      if (shortestTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, shortestTime_);
       }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, openTime_);
+          .computeUInt32Size(14, openTime_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -307,16 +311,16 @@ public final class GearLevelDataOuterClass {
       }
       emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData other = (emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData) obj;
 
-      if (getAEAJNEDAFJI()
-          != other.getAEAJNEDAFJI()) return false;
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (getIOAAECDDKOC()
-          != other.getIOAAECDDKOC()) return false;
+      if (getShortestTime()
+          != other.getShortestTime()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
+      if (getLastDuration()
+          != other.getLastDuration()) return false;
       if (getOpenTime()
           != other.getOpenTime()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -330,18 +334,18 @@ public final class GearLevelDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + AEAJNEDAFJI_FIELD_NUMBER;
-      hash = (53 * hash) + getAEAJNEDAFJI();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (37 * hash) + IOAAECDDKOC_FIELD_NUMBER;
-      hash = (53 * hash) + getIOAAECDDKOC();
+      hash = (37 * hash) + SHORTEST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getShortestTime();
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
+      hash = (37 * hash) + LAST_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLastDuration();
       hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOpenTime();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -440,6 +444,10 @@ public final class GearLevelDataOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GearLevelData}
      */
     public static final class Builder extends
@@ -477,15 +485,15 @@ public final class GearLevelDataOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        aEAJNEDAFJI_ = 0;
+        levelId_ = 0;
+
+        shortestTime_ = 0;
+
+        isFinished_ = false;
 
         isOpen_ = false;
 
-        levelId_ = 0;
-
-        iOAAECDDKOC_ = 0;
-
-        isFinished_ = false;
+        lastDuration_ = 0;
 
         openTime_ = 0;
 
@@ -515,11 +523,11 @@ public final class GearLevelDataOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData buildPartial() {
         emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData result = new emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData(this);
-        result.aEAJNEDAFJI_ = aEAJNEDAFJI_;
-        result.isOpen_ = isOpen_;
         result.levelId_ = levelId_;
-        result.iOAAECDDKOC_ = iOAAECDDKOC_;
+        result.shortestTime_ = shortestTime_;
         result.isFinished_ = isFinished_;
+        result.isOpen_ = isOpen_;
+        result.lastDuration_ = lastDuration_;
         result.openTime_ = openTime_;
         onBuilt();
         return result;
@@ -569,20 +577,20 @@ public final class GearLevelDataOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData other) {
         if (other == emu.grasscutter.net.proto.GearLevelDataOuterClass.GearLevelData.getDefaultInstance()) return this;
-        if (other.getAEAJNEDAFJI() != 0) {
-          setAEAJNEDAFJI(other.getAEAJNEDAFJI());
+        if (other.getLevelId() != 0) {
+          setLevelId(other.getLevelId());
+        }
+        if (other.getShortestTime() != 0) {
+          setShortestTime(other.getShortestTime());
+        }
+        if (other.getIsFinished() != false) {
+          setIsFinished(other.getIsFinished());
         }
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        if (other.getLevelId() != 0) {
-          setLevelId(other.getLevelId());
-        }
-        if (other.getIOAAECDDKOC() != 0) {
-          setIOAAECDDKOC(other.getIOAAECDDKOC());
-        }
-        if (other.getIsFinished() != false) {
-          setIsFinished(other.getIsFinished());
+        if (other.getLastDuration() != 0) {
+          setLastDuration(other.getLastDuration());
         }
         if (other.getOpenTime() != 0) {
           setOpenTime(other.getOpenTime());
@@ -616,71 +624,9 @@ public final class GearLevelDataOuterClass {
         return this;
       }
 
-      private int aEAJNEDAFJI_ ;
-      /**
-       * <code>uint32 AEAJNEDAFJI = 1;</code>
-       * @return The aEAJNEDAFJI.
-       */
-      @java.lang.Override
-      public int getAEAJNEDAFJI() {
-        return aEAJNEDAFJI_;
-      }
-      /**
-       * <code>uint32 AEAJNEDAFJI = 1;</code>
-       * @param value The aEAJNEDAFJI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAEAJNEDAFJI(int value) {
-        
-        aEAJNEDAFJI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 AEAJNEDAFJI = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAEAJNEDAFJI() {
-        
-        aEAJNEDAFJI_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 2;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 2;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private int levelId_ ;
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return The levelId.
        */
       @java.lang.Override
@@ -688,7 +634,7 @@ public final class GearLevelDataOuterClass {
         return levelId_;
       }
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 7;</code>
        * @param value The levelId to set.
        * @return This builder for chaining.
        */
@@ -699,7 +645,7 @@ public final class GearLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 level_id = 5;</code>
+       * <code>uint32 level_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
@@ -709,40 +655,40 @@ public final class GearLevelDataOuterClass {
         return this;
       }
 
-      private int iOAAECDDKOC_ ;
+      private int shortestTime_ ;
       /**
-       * <code>uint32 IOAAECDDKOC = 9;</code>
-       * @return The iOAAECDDKOC.
+       * <code>uint32 shortest_time = 12;</code>
+       * @return The shortestTime.
        */
       @java.lang.Override
-      public int getIOAAECDDKOC() {
-        return iOAAECDDKOC_;
+      public int getShortestTime() {
+        return shortestTime_;
       }
       /**
-       * <code>uint32 IOAAECDDKOC = 9;</code>
-       * @param value The iOAAECDDKOC to set.
+       * <code>uint32 shortest_time = 12;</code>
+       * @param value The shortestTime to set.
        * @return This builder for chaining.
        */
-      public Builder setIOAAECDDKOC(int value) {
+      public Builder setShortestTime(int value) {
         
-        iOAAECDDKOC_ = value;
+        shortestTime_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 IOAAECDDKOC = 9;</code>
+       * <code>uint32 shortest_time = 12;</code>
        * @return This builder for chaining.
        */
-      public Builder clearIOAAECDDKOC() {
+      public Builder clearShortestTime() {
         
-        iOAAECDDKOC_ = 0;
+        shortestTime_ = 0;
         onChanged();
         return this;
       }
 
       private boolean isFinished_ ;
       /**
-       * <code>bool is_finished = 11;</code>
+       * <code>bool is_finished = 3;</code>
        * @return The isFinished.
        */
       @java.lang.Override
@@ -750,7 +696,7 @@ public final class GearLevelDataOuterClass {
         return isFinished_;
       }
       /**
-       * <code>bool is_finished = 11;</code>
+       * <code>bool is_finished = 3;</code>
        * @param value The isFinished to set.
        * @return This builder for chaining.
        */
@@ -761,7 +707,7 @@ public final class GearLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>bool is_finished = 11;</code>
+       * <code>bool is_finished = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
@@ -771,9 +717,71 @@ public final class GearLevelDataOuterClass {
         return this;
       }
 
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 8;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 8;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int lastDuration_ ;
+      /**
+       * <code>uint32 last_duration = 2;</code>
+       * @return The lastDuration.
+       */
+      @java.lang.Override
+      public int getLastDuration() {
+        return lastDuration_;
+      }
+      /**
+       * <code>uint32 last_duration = 2;</code>
+       * @param value The lastDuration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastDuration(int value) {
+        
+        lastDuration_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 last_duration = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLastDuration() {
+        
+        lastDuration_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int openTime_ ;
       /**
-       * <code>uint32 open_time = 15;</code>
+       * <code>uint32 open_time = 14;</code>
        * @return The openTime.
        */
       @java.lang.Override
@@ -781,7 +789,7 @@ public final class GearLevelDataOuterClass {
         return openTime_;
       }
       /**
-       * <code>uint32 open_time = 15;</code>
+       * <code>uint32 open_time = 14;</code>
        * @param value The openTime to set.
        * @return This builder for chaining.
        */
@@ -792,7 +800,7 @@ public final class GearLevelDataOuterClass {
         return this;
       }
       /**
-       * <code>uint32 open_time = 15;</code>
+       * <code>uint32 open_time = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
@@ -868,12 +876,11 @@ public final class GearLevelDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023GearLevelData.proto\"\204\001\n\rGearLevelData\022" +
-      "\023\n\013AEAJNEDAFJI\030\001 \001(\r\022\017\n\007is_open\030\002 \001(\010\022\020\n" +
-      "\010level_id\030\005 \001(\r\022\023\n\013IOAAECDDKOC\030\t \001(\r\022\023\n\013" +
-      "is_finished\030\013 \001(\010\022\021\n\topen_time\030\017 \001(\rB4\n\031" +
-      "emu.grasscutter.net.protoB\027GearLevelData" +
-      "OuterClassb\006proto3"
+      "\n\023GearLevelData.proto\"\210\001\n\rGearLevelData\022" +
+      "\020\n\010level_id\030\007 \001(\r\022\025\n\rshortest_time\030\014 \001(\r" +
+      "\022\023\n\013is_finished\030\003 \001(\010\022\017\n\007is_open\030\010 \001(\010\022\025" +
+      "\n\rlast_duration\030\002 \001(\r\022\021\n\topen_time\030\016 \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -884,7 +891,7 @@ public final class GearLevelDataOuterClass {
     internal_static_GearLevelData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_GearLevelData_descriptor,
-        new java.lang.String[] { "AEAJNEDAFJI", "IsOpen", "LevelId", "IOAAECDDKOC", "IsFinished", "OpenTime", });
+        new java.lang.String[] { "LevelId", "ShortestTime", "IsFinished", "IsOpen", "LastDuration", "OpenTime", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

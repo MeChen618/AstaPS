@@ -19,30 +19,34 @@ public final class GBLGAGAPIFEOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC> 
         getAvatarListList();
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC getAvatarList(int index);
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     int getAvatarListCount();
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder> 
         getAvatarListOrBuilderList();
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder getAvatarListOrBuilder(
         int index);
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code GBLGAGAPIFE}
    */
   public static final class GBLGAGAPIFE extends
@@ -89,7 +93,7 @@ public final class GBLGAGAPIFEOuterClass {
             case 0:
               done = true;
               break;
-            case 90: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarList_ = new java.util.ArrayList<emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC>();
                 mutable_bitField0_ |= 0x00000001;
@@ -133,17 +137,17 @@ public final class GBLGAGAPIFEOuterClass {
               emu.grasscutter.net.proto.GBLGAGAPIFEOuterClass.GBLGAGAPIFE.class, emu.grasscutter.net.proto.GBLGAGAPIFEOuterClass.GBLGAGAPIFE.Builder.class);
     }
 
-    public static final int AVATAR_LIST_FIELD_NUMBER = 11;
+    public static final int AVATAR_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC> avatarList_;
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC> getAvatarListList() {
       return avatarList_;
     }
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder> 
@@ -151,21 +155,21 @@ public final class GBLGAGAPIFEOuterClass {
       return avatarList_;
     }
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     @java.lang.Override
     public int getAvatarListCount() {
       return avatarList_.size();
     }
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC getAvatarList(int index) {
       return avatarList_.get(index);
     }
     /**
-     * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+     * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder getAvatarListOrBuilder(
@@ -188,7 +192,7 @@ public final class GBLGAGAPIFEOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < avatarList_.size(); i++) {
-        output.writeMessage(11, avatarList_.get(i));
+        output.writeMessage(4, avatarList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -201,7 +205,7 @@ public final class GBLGAGAPIFEOuterClass {
       size = 0;
       for (int i = 0; i < avatarList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, avatarList_.get(i));
+          .computeMessageSize(4, avatarList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -331,6 +335,10 @@ public final class GBLGAGAPIFEOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code GBLGAGAPIFE}
      */
     public static final class Builder extends
@@ -528,7 +536,7 @@ public final class GBLGAGAPIFEOuterClass {
           emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder> avatarListBuilder_;
 
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC> getAvatarListList() {
         if (avatarListBuilder_ == null) {
@@ -538,7 +546,7 @@ public final class GBLGAGAPIFEOuterClass {
         }
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public int getAvatarListCount() {
         if (avatarListBuilder_ == null) {
@@ -548,7 +556,7 @@ public final class GBLGAGAPIFEOuterClass {
         }
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC getAvatarList(int index) {
         if (avatarListBuilder_ == null) {
@@ -558,7 +566,7 @@ public final class GBLGAGAPIFEOuterClass {
         }
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder setAvatarList(
           int index, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC value) {
@@ -575,7 +583,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder setAvatarList(
           int index, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder builderForValue) {
@@ -589,7 +597,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder addAvatarList(emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC value) {
         if (avatarListBuilder_ == null) {
@@ -605,7 +613,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder addAvatarList(
           int index, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC value) {
@@ -622,7 +630,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder addAvatarList(
           emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder builderForValue) {
@@ -636,7 +644,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder addAvatarList(
           int index, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder builderForValue) {
@@ -650,7 +658,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder addAllAvatarList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC> values) {
@@ -665,7 +673,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder clearAvatarList() {
         if (avatarListBuilder_ == null) {
@@ -678,7 +686,7 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public Builder removeAvatarList(int index) {
         if (avatarListBuilder_ == null) {
@@ -691,14 +699,14 @@ public final class GBLGAGAPIFEOuterClass {
         return this;
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder getAvatarListBuilder(
           int index) {
         return getAvatarListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder getAvatarListOrBuilder(
           int index) {
@@ -708,7 +716,7 @@ public final class GBLGAGAPIFEOuterClass {
         }
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFCOrBuilder> 
            getAvatarListOrBuilderList() {
@@ -719,14 +727,14 @@ public final class GBLGAGAPIFEOuterClass {
         }
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder addAvatarListBuilder() {
         return getAvatarListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.getDefaultInstance());
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder addAvatarListBuilder(
           int index) {
@@ -734,7 +742,7 @@ public final class GBLGAGAPIFEOuterClass {
             index, emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.getDefaultInstance());
       }
       /**
-       * <code>repeated .ILMONMILAFC avatar_list = 11;</code>
+       * <code>repeated .ILMONMILAFC avatar_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.ILMONMILAFCOuterClass.ILMONMILAFC.Builder> 
            getAvatarListBuilderList() {
@@ -822,9 +830,9 @@ public final class GBLGAGAPIFEOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021GBLGAGAPIFE.proto\032\021ILMONMILAFC.proto\"0" +
-      "\n\013GBLGAGAPIFE\022!\n\013avatar_list\030\013 \003(\0132\014.ILM" +
-      "ONMILAFCB2\n\031emu.grasscutter.net.protoB\025G" +
-      "BLGAGAPIFEOuterClassb\006proto3"
+      "\n\013GBLGAGAPIFE\022!\n\013avatar_list\030\004 \003(\0132\014.ILM" +
+      "ONMILAFCB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

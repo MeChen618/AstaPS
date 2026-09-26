@@ -4,7 +4,7 @@ import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.battlepass.BattlePassReward;
 import emu.grasscutter.net.proto.BattlePassCycleOuterClass.BattlePassCycle;
 import emu.grasscutter.net.proto.BattlePassProductOuterClass.BattlePassProduct;
-import emu.grasscutter.net.proto.BattlePassRewardPlanOptionOuterClass.BattlePassRewardPlanOption;
+import emu.grasscutter.net.proto.BattlePassRewardPlanOption._BattlePassRewardPlanOption;
 import emu.grasscutter.net.proto.BattlePassScheduleOuterClass.BattlePassSchedule;
 import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus;
 import java.time.DayOfWeek;
@@ -48,10 +48,6 @@ public final class SafeBattlePassSchedule {
                         .setNormalProductId("201")
                         .setExtraProductId("202")
                         .setUpgradeProductId("203")
-                        // 7.0 fields recovered from the reference JAR descriptor.
-                        .setINBAJBDMBPL("201")
-                        .setJGEJPPIADOL("202")
-                        .setMJLEGCBKLKI("203")
                         .build();
 
         BattlePassSchedule.Builder builder =
@@ -60,8 +56,8 @@ public final class SafeBattlePassSchedule {
                         .setIsViewed(true)
                         .setUnlockStatus(
                                 paid
-                                        ? BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_PAID
-                                        : BattlePassUnlockStatus.BattlePassUnlockSTATUS_BATTLE_PASS_UNLOCK_FREE)
+                                        ? BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_PAID
+                                        : BattlePassUnlockStatus.BattlePassUnlockStatus_BATTLE_PASS_UNLOCK_FREE)
                         .setEndTime(END_TIME)
                         .setCurCycle(
                                 BattlePassCycle.newBuilder()
@@ -78,13 +74,10 @@ public final class SafeBattlePassSchedule {
 
         for (int i = 1; i <= 5; i++) {
             builder.addRewardPlanOptionList(
-                    BattlePassRewardPlanOption.newBuilder()
+                    _BattlePassRewardPlanOption.newBuilder()
                             .setBattlePassPlan(plan)
                             .setFBHFDJJIDBD(i)
-                            .setBajoajbladk(false)
-                            .setOMEPJOHGDFA(i)
-                            .setRewardType(plan)
-                            .setLatestBajoajbladk(false)
+                            .setENGHPDCKACD(false)
                             .build());
         }
 

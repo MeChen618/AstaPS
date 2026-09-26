@@ -19,18 +19,6 @@ public final class RegionSimpleInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
      * <code>string title = 2;</code>
      * @return The title.
      */
@@ -65,8 +53,24 @@ public final class RegionSimpleInfoOuterClass {
      */
     com.google.protobuf.ByteString
         getDispatchUrlBytes();
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code RegionSimpleInfo}
    */
   public static final class RegionSimpleInfo extends
@@ -79,10 +83,10 @@ public final class RegionSimpleInfoOuterClass {
       super(builder);
     }
     private RegionSimpleInfo() {
-      name_ = "";
       title_ = "";
       type_ = "";
       dispatchUrl_ = "";
+      name_ = "";
     }
 
     @java.lang.Override
@@ -169,44 +173,6 @@ public final class RegionSimpleInfoOuterClass {
       return emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.internal_static_RegionSimpleInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo.class, emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo.Builder.class);
-    }
-
-    public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
-    /**
-     * <code>string name = 1;</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 1;</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int TITLE_FIELD_NUMBER = 2;
@@ -323,6 +289,44 @@ public final class RegionSimpleInfoOuterClass {
       }
     }
 
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -385,14 +389,14 @@ public final class RegionSimpleInfoOuterClass {
       }
       emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo other = (emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo) obj;
 
-      if (!getName()
-          .equals(other.getName())) return false;
       if (!getTitle()
           .equals(other.getTitle())) return false;
       if (!getType()
           .equals(other.getType())) return false;
       if (!getDispatchUrl()
           .equals(other.getDispatchUrl())) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -404,14 +408,14 @@ public final class RegionSimpleInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + DISPATCH_URL_FIELD_NUMBER;
       hash = (53 * hash) + getDispatchUrl().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -508,6 +512,10 @@ public final class RegionSimpleInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code RegionSimpleInfo}
      */
     public static final class Builder extends
@@ -545,13 +553,13 @@ public final class RegionSimpleInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        name_ = "";
-
         title_ = "";
 
         type_ = "";
 
         dispatchUrl_ = "";
+
+        name_ = "";
 
         return this;
       }
@@ -579,10 +587,10 @@ public final class RegionSimpleInfoOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo buildPartial() {
         emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo result = new emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo(this);
-        result.name_ = name_;
         result.title_ = title_;
         result.type_ = type_;
         result.dispatchUrl_ = dispatchUrl_;
+        result.name_ = name_;
         onBuilt();
         return result;
       }
@@ -631,10 +639,6 @@ public final class RegionSimpleInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo other) {
         if (other == emu.grasscutter.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo.getDefaultInstance()) return this;
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          onChanged();
-        }
         if (!other.getTitle().isEmpty()) {
           title_ = other.title_;
           onChanged();
@@ -645,6 +649,10 @@ public final class RegionSimpleInfoOuterClass {
         }
         if (!other.getDispatchUrl().isEmpty()) {
           dispatchUrl_ = other.dispatchUrl_;
+          onChanged();
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -673,82 +681,6 @@ public final class RegionSimpleInfoOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 1;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 1;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        name_ = value;
-        onChanged();
         return this;
       }
 
@@ -979,6 +911,82 @@ public final class RegionSimpleInfoOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1047,10 +1055,9 @@ public final class RegionSimpleInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026RegionSimpleInfo.proto\"S\n\020RegionSimple" +
-      "Info\022\014\n\004name\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\014\n\004typ" +
-      "e\030\003 \001(\t\022\024\n\014dispatch_url\030\004 \001(\tB7\n\031emu.gra" +
-      "sscutter.net.protoB\032RegionSimpleInfoOute" +
-      "rClassb\006proto3"
+      "Info\022\r\n\005title\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\024\n\014dis" +
+      "patch_url\030\004 \001(\t\022\014\n\004name\030\001 \001(\tB\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1061,7 +1068,7 @@ public final class RegionSimpleInfoOuterClass {
     internal_static_RegionSimpleInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RegionSimpleInfo_descriptor,
-        new java.lang.String[] { "Name", "Title", "Type", "DispatchUrl", });
+        new java.lang.String[] { "Title", "Type", "DispatchUrl", "Name", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

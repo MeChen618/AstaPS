@@ -19,24 +19,28 @@ public final class IIOFHFIDENJOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 item_id = 3;</code>
-     * @return The itemId.
-     */
-    int getItemId();
-
-    /**
-     * <code>uint32 DEMKCGALOEB = 11;</code>
+     * <code>uint32 DEMKCGALOEB = 5;</code>
      * @return The dEMKCGALOEB.
      */
     int getDEMKCGALOEB();
 
     /**
-     * <code>uint32 ECNLAOHFCKA = 13;</code>
+     * <code>uint32 item_id = 10;</code>
+     * @return The itemId.
+     */
+    int getItemId();
+
+    /**
+     * <code>uint32 ECNLAOHFCKA = 7;</code>
      * @return The eCNLAOHFCKA.
      */
     int getECNLAOHFCKA();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code IIOFHFIDENJ}
    */
   public static final class IIOFHFIDENJ extends
@@ -81,19 +85,19 @@ public final class IIOFHFIDENJOuterClass {
             case 0:
               done = true;
               break;
-            case 24: {
-
-              itemId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 40: {
 
               dEMKCGALOEB_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 56: {
 
               eCNLAOHFCKA_ = input.readUInt32();
+              break;
+            }
+            case 80: {
+
+              itemId_ = input.readUInt32();
               break;
             }
             default: {
@@ -128,21 +132,10 @@ public final class IIOFHFIDENJOuterClass {
               emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ.class, emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ.Builder.class);
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 3;
-    private int itemId_;
-    /**
-     * <code>uint32 item_id = 3;</code>
-     * @return The itemId.
-     */
-    @java.lang.Override
-    public int getItemId() {
-      return itemId_;
-    }
-
-    public static final int DEMKCGALOEB_FIELD_NUMBER = 11;
+    public static final int DEMKCGALOEB_FIELD_NUMBER = 5;
     private int dEMKCGALOEB_;
     /**
-     * <code>uint32 DEMKCGALOEB = 11;</code>
+     * <code>uint32 DEMKCGALOEB = 5;</code>
      * @return The dEMKCGALOEB.
      */
     @java.lang.Override
@@ -150,10 +143,21 @@ public final class IIOFHFIDENJOuterClass {
       return dEMKCGALOEB_;
     }
 
-    public static final int ECNLAOHFCKA_FIELD_NUMBER = 13;
+    public static final int ITEM_ID_FIELD_NUMBER = 10;
+    private int itemId_;
+    /**
+     * <code>uint32 item_id = 10;</code>
+     * @return The itemId.
+     */
+    @java.lang.Override
+    public int getItemId() {
+      return itemId_;
+    }
+
+    public static final int ECNLAOHFCKA_FIELD_NUMBER = 7;
     private int eCNLAOHFCKA_;
     /**
-     * <code>uint32 ECNLAOHFCKA = 13;</code>
+     * <code>uint32 ECNLAOHFCKA = 7;</code>
      * @return The eCNLAOHFCKA.
      */
     @java.lang.Override
@@ -175,14 +179,14 @@ public final class IIOFHFIDENJOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (itemId_ != 0) {
-        output.writeUInt32(3, itemId_);
-      }
       if (dEMKCGALOEB_ != 0) {
-        output.writeUInt32(11, dEMKCGALOEB_);
+        output.writeUInt32(5, dEMKCGALOEB_);
       }
       if (eCNLAOHFCKA_ != 0) {
-        output.writeUInt32(13, eCNLAOHFCKA_);
+        output.writeUInt32(7, eCNLAOHFCKA_);
+      }
+      if (itemId_ != 0) {
+        output.writeUInt32(10, itemId_);
       }
       unknownFields.writeTo(output);
     }
@@ -193,17 +197,17 @@ public final class IIOFHFIDENJOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (itemId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, itemId_);
-      }
       if (dEMKCGALOEB_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, dEMKCGALOEB_);
+          .computeUInt32Size(5, dEMKCGALOEB_);
       }
       if (eCNLAOHFCKA_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, eCNLAOHFCKA_);
+          .computeUInt32Size(7, eCNLAOHFCKA_);
+      }
+      if (itemId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, itemId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,10 +224,10 @@ public final class IIOFHFIDENJOuterClass {
       }
       emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ other = (emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ) obj;
 
-      if (getItemId()
-          != other.getItemId()) return false;
       if (getDEMKCGALOEB()
           != other.getDEMKCGALOEB()) return false;
+      if (getItemId()
+          != other.getItemId()) return false;
       if (getECNLAOHFCKA()
           != other.getECNLAOHFCKA()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,10 +241,10 @@ public final class IIOFHFIDENJOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getItemId();
       hash = (37 * hash) + DEMKCGALOEB_FIELD_NUMBER;
       hash = (53 * hash) + getDEMKCGALOEB();
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getItemId();
       hash = (37 * hash) + ECNLAOHFCKA_FIELD_NUMBER;
       hash = (53 * hash) + getECNLAOHFCKA();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -339,6 +343,10 @@ public final class IIOFHFIDENJOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code IIOFHFIDENJ}
      */
     public static final class Builder extends
@@ -376,9 +384,9 @@ public final class IIOFHFIDENJOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        itemId_ = 0;
-
         dEMKCGALOEB_ = 0;
+
+        itemId_ = 0;
 
         eCNLAOHFCKA_ = 0;
 
@@ -408,8 +416,8 @@ public final class IIOFHFIDENJOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ buildPartial() {
         emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ result = new emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ(this);
-        result.itemId_ = itemId_;
         result.dEMKCGALOEB_ = dEMKCGALOEB_;
+        result.itemId_ = itemId_;
         result.eCNLAOHFCKA_ = eCNLAOHFCKA_;
         onBuilt();
         return result;
@@ -459,11 +467,11 @@ public final class IIOFHFIDENJOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ other) {
         if (other == emu.grasscutter.net.proto.IIOFHFIDENJOuterClass.IIOFHFIDENJ.getDefaultInstance()) return this;
-        if (other.getItemId() != 0) {
-          setItemId(other.getItemId());
-        }
         if (other.getDEMKCGALOEB() != 0) {
           setDEMKCGALOEB(other.getDEMKCGALOEB());
+        }
+        if (other.getItemId() != 0) {
+          setItemId(other.getItemId());
         }
         if (other.getECNLAOHFCKA() != 0) {
           setECNLAOHFCKA(other.getECNLAOHFCKA());
@@ -497,40 +505,9 @@ public final class IIOFHFIDENJOuterClass {
         return this;
       }
 
-      private int itemId_ ;
-      /**
-       * <code>uint32 item_id = 3;</code>
-       * @return The itemId.
-       */
-      @java.lang.Override
-      public int getItemId() {
-        return itemId_;
-      }
-      /**
-       * <code>uint32 item_id = 3;</code>
-       * @param value The itemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemId(int value) {
-        
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 item_id = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int dEMKCGALOEB_ ;
       /**
-       * <code>uint32 DEMKCGALOEB = 11;</code>
+       * <code>uint32 DEMKCGALOEB = 5;</code>
        * @return The dEMKCGALOEB.
        */
       @java.lang.Override
@@ -538,7 +515,7 @@ public final class IIOFHFIDENJOuterClass {
         return dEMKCGALOEB_;
       }
       /**
-       * <code>uint32 DEMKCGALOEB = 11;</code>
+       * <code>uint32 DEMKCGALOEB = 5;</code>
        * @param value The dEMKCGALOEB to set.
        * @return This builder for chaining.
        */
@@ -549,7 +526,7 @@ public final class IIOFHFIDENJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 DEMKCGALOEB = 11;</code>
+       * <code>uint32 DEMKCGALOEB = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearDEMKCGALOEB() {
@@ -559,9 +536,40 @@ public final class IIOFHFIDENJOuterClass {
         return this;
       }
 
+      private int itemId_ ;
+      /**
+       * <code>uint32 item_id = 10;</code>
+       * @return The itemId.
+       */
+      @java.lang.Override
+      public int getItemId() {
+        return itemId_;
+      }
+      /**
+       * <code>uint32 item_id = 10;</code>
+       * @param value The itemId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemId(int value) {
+        
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 item_id = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemId() {
+        
+        itemId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int eCNLAOHFCKA_ ;
       /**
-       * <code>uint32 ECNLAOHFCKA = 13;</code>
+       * <code>uint32 ECNLAOHFCKA = 7;</code>
        * @return The eCNLAOHFCKA.
        */
       @java.lang.Override
@@ -569,7 +577,7 @@ public final class IIOFHFIDENJOuterClass {
         return eCNLAOHFCKA_;
       }
       /**
-       * <code>uint32 ECNLAOHFCKA = 13;</code>
+       * <code>uint32 ECNLAOHFCKA = 7;</code>
        * @param value The eCNLAOHFCKA to set.
        * @return This builder for chaining.
        */
@@ -580,7 +588,7 @@ public final class IIOFHFIDENJOuterClass {
         return this;
       }
       /**
-       * <code>uint32 ECNLAOHFCKA = 13;</code>
+       * <code>uint32 ECNLAOHFCKA = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearECNLAOHFCKA() {
@@ -656,10 +664,10 @@ public final class IIOFHFIDENJOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021IIOFHFIDENJ.proto\"H\n\013IIOFHFIDENJ\022\017\n\007it" +
-      "em_id\030\003 \001(\r\022\023\n\013DEMKCGALOEB\030\013 \001(\r\022\023\n\013ECNL" +
-      "AOHFCKA\030\r \001(\rB2\n\031emu.grasscutter.net.pro" +
-      "toB\025IIOFHFIDENJOuterClassb\006proto3"
+      "\n\021IIOFHFIDENJ.proto\"H\n\013IIOFHFIDENJ\022\023\n\013DE" +
+      "MKCGALOEB\030\005 \001(\r\022\017\n\007item_id\030\n \001(\r\022\023\n\013ECNL" +
+      "AOHFCKA\030\007 \001(\rB\033\n\031emu.grasscutter.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -670,7 +678,7 @@ public final class IIOFHFIDENJOuterClass {
     internal_static_IIOFHFIDENJ_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_IIOFHFIDENJ_descriptor,
-        new java.lang.String[] { "ItemId", "DEMKCGALOEB", "ECNLAOHFCKA", });
+        new java.lang.String[] { "DEMKCGALOEB", "ItemId", "ECNLAOHFCKA", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

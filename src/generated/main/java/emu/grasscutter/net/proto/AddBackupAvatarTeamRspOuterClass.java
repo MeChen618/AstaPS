@@ -516,14 +516,15 @@ public final class AddBackupAvatarTeamRspOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034AddBackupAvatarTeamRsp.proto\")\n\026AddBac" +
-      "kupAvatarTeamRsp\022\017\n\007retcode\030\014 \001(\005B=\n\031emu" +
-      ".grasscutter.net.protoB AddBackupAvatarT" +
-      "eamRspOuterClassb\006proto3"
+      "\n\034AddBackupAvatarTeamRsp.proto\032\rRetcode." +
+      "proto\")\n\026AddBackupAvatarTeamRsp\022\017\n\007retco" +
+      "de\030\014 \001(\005B\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor(),
         });
     internal_static_AddBackupAvatarTeamRsp_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -531,6 +532,7 @@ public final class AddBackupAvatarTeamRspOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AddBackupAvatarTeamRsp_descriptor,
         new java.lang.String[] { "Retcode", });
+    emu.grasscutter.net.proto.RetcodeOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

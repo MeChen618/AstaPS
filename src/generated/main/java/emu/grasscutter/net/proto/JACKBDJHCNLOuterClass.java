@@ -25,18 +25,22 @@ public final class JACKBDJHCNLOuterClass {
     int getKMDOFBPMGAI();
 
     /**
-     * <code>uint64 OOJEOFFBPEI = 2;</code>
-     * @return The oOJEOFFBPEI.
-     */
-    long getOOJEOFFBPEI();
-
-    /**
      * <code>uint32 LDDKIALCPNA = 3;</code>
      * @return The lDDKIALCPNA.
      */
     int getLDDKIALCPNA();
+
+    /**
+     * <code>uint64 OOJEOFFBPEI = 2;</code>
+     * @return The oOJEOFFBPEI.
+     */
+    long getOOJEOFFBPEI();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JACKBDJHCNL}
    */
   public static final class JACKBDJHCNL extends
@@ -139,17 +143,6 @@ public final class JACKBDJHCNLOuterClass {
       return kMDOFBPMGAI_;
     }
 
-    public static final int OOJEOFFBPEI_FIELD_NUMBER = 2;
-    private long oOJEOFFBPEI_;
-    /**
-     * <code>uint64 OOJEOFFBPEI = 2;</code>
-     * @return The oOJEOFFBPEI.
-     */
-    @java.lang.Override
-    public long getOOJEOFFBPEI() {
-      return oOJEOFFBPEI_;
-    }
-
     public static final int LDDKIALCPNA_FIELD_NUMBER = 3;
     private int lDDKIALCPNA_;
     /**
@@ -159,6 +152,17 @@ public final class JACKBDJHCNLOuterClass {
     @java.lang.Override
     public int getLDDKIALCPNA() {
       return lDDKIALCPNA_;
+    }
+
+    public static final int OOJEOFFBPEI_FIELD_NUMBER = 2;
+    private long oOJEOFFBPEI_;
+    /**
+     * <code>uint64 OOJEOFFBPEI = 2;</code>
+     * @return The oOJEOFFBPEI.
+     */
+    @java.lang.Override
+    public long getOOJEOFFBPEI() {
+      return oOJEOFFBPEI_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -222,10 +226,10 @@ public final class JACKBDJHCNLOuterClass {
 
       if (getKMDOFBPMGAI()
           != other.getKMDOFBPMGAI()) return false;
-      if (getOOJEOFFBPEI()
-          != other.getOOJEOFFBPEI()) return false;
       if (getLDDKIALCPNA()
           != other.getLDDKIALCPNA()) return false;
+      if (getOOJEOFFBPEI()
+          != other.getOOJEOFFBPEI()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -239,11 +243,11 @@ public final class JACKBDJHCNLOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + KMDOFBPMGAI_FIELD_NUMBER;
       hash = (53 * hash) + getKMDOFBPMGAI();
+      hash = (37 * hash) + LDDKIALCPNA_FIELD_NUMBER;
+      hash = (53 * hash) + getLDDKIALCPNA();
       hash = (37 * hash) + OOJEOFFBPEI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOOJEOFFBPEI());
-      hash = (37 * hash) + LDDKIALCPNA_FIELD_NUMBER;
-      hash = (53 * hash) + getLDDKIALCPNA();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -340,6 +344,10 @@ public final class JACKBDJHCNLOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JACKBDJHCNL}
      */
     public static final class Builder extends
@@ -379,9 +387,9 @@ public final class JACKBDJHCNLOuterClass {
         super.clear();
         kMDOFBPMGAI_ = 0;
 
-        oOJEOFFBPEI_ = 0L;
-
         lDDKIALCPNA_ = 0;
+
+        oOJEOFFBPEI_ = 0L;
 
         return this;
       }
@@ -410,8 +418,8 @@ public final class JACKBDJHCNLOuterClass {
       public emu.grasscutter.net.proto.JACKBDJHCNLOuterClass.JACKBDJHCNL buildPartial() {
         emu.grasscutter.net.proto.JACKBDJHCNLOuterClass.JACKBDJHCNL result = new emu.grasscutter.net.proto.JACKBDJHCNLOuterClass.JACKBDJHCNL(this);
         result.kMDOFBPMGAI_ = kMDOFBPMGAI_;
-        result.oOJEOFFBPEI_ = oOJEOFFBPEI_;
         result.lDDKIALCPNA_ = lDDKIALCPNA_;
+        result.oOJEOFFBPEI_ = oOJEOFFBPEI_;
         onBuilt();
         return result;
       }
@@ -463,11 +471,11 @@ public final class JACKBDJHCNLOuterClass {
         if (other.getKMDOFBPMGAI() != 0) {
           setKMDOFBPMGAI(other.getKMDOFBPMGAI());
         }
-        if (other.getOOJEOFFBPEI() != 0L) {
-          setOOJEOFFBPEI(other.getOOJEOFFBPEI());
-        }
         if (other.getLDDKIALCPNA() != 0) {
           setLDDKIALCPNA(other.getLDDKIALCPNA());
+        }
+        if (other.getOOJEOFFBPEI() != 0L) {
+          setOOJEOFFBPEI(other.getOOJEOFFBPEI());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -529,37 +537,6 @@ public final class JACKBDJHCNLOuterClass {
         return this;
       }
 
-      private long oOJEOFFBPEI_ ;
-      /**
-       * <code>uint64 OOJEOFFBPEI = 2;</code>
-       * @return The oOJEOFFBPEI.
-       */
-      @java.lang.Override
-      public long getOOJEOFFBPEI() {
-        return oOJEOFFBPEI_;
-      }
-      /**
-       * <code>uint64 OOJEOFFBPEI = 2;</code>
-       * @param value The oOJEOFFBPEI to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOOJEOFFBPEI(long value) {
-        
-        oOJEOFFBPEI_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 OOJEOFFBPEI = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOOJEOFFBPEI() {
-        
-        oOJEOFFBPEI_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private int lDDKIALCPNA_ ;
       /**
        * <code>uint32 LDDKIALCPNA = 3;</code>
@@ -587,6 +564,37 @@ public final class JACKBDJHCNLOuterClass {
       public Builder clearLDDKIALCPNA() {
         
         lDDKIALCPNA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long oOJEOFFBPEI_ ;
+      /**
+       * <code>uint64 OOJEOFFBPEI = 2;</code>
+       * @return The oOJEOFFBPEI.
+       */
+      @java.lang.Override
+      public long getOOJEOFFBPEI() {
+        return oOJEOFFBPEI_;
+      }
+      /**
+       * <code>uint64 OOJEOFFBPEI = 2;</code>
+       * @param value The oOJEOFFBPEI to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOOJEOFFBPEI(long value) {
+        
+        oOJEOFFBPEI_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 OOJEOFFBPEI = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOOJEOFFBPEI() {
+        
+        oOJEOFFBPEI_ = 0L;
         onChanged();
         return this;
       }
@@ -658,9 +666,9 @@ public final class JACKBDJHCNLOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021JACKBDJHCNL.proto\"L\n\013JACKBDJHCNL\022\023\n\013KM" +
-      "DOFBPMGAI\030\001 \001(\r\022\023\n\013OOJEOFFBPEI\030\002 \001(\004\022\023\n\013" +
-      "LDDKIALCPNA\030\003 \001(\rB2\n\031emu.grasscutter.net" +
-      ".protoB\025JACKBDJHCNLOuterClassb\006proto3"
+      "DOFBPMGAI\030\001 \001(\r\022\023\n\013LDDKIALCPNA\030\003 \001(\r\022\023\n\013" +
+      "OOJEOFFBPEI\030\002 \001(\004B\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -671,7 +679,7 @@ public final class JACKBDJHCNLOuterClass {
     internal_static_JACKBDJHCNL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JACKBDJHCNL_descriptor,
-        new java.lang.String[] { "KMDOFBPMGAI", "OOJEOFFBPEI", "LDDKIALCPNA", });
+        new java.lang.String[] { "KMDOFBPMGAI", "LDDKIALCPNA", "OOJEOFFBPEI", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

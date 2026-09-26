@@ -1,7 +1,7 @@
 package emu.grasscutter.server.packet.send;
 
 import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.TeamMoonPhaseChangeNotifyOuterClass.TeamMoonPhaseChangeNotify;
+import emu.grasscutter.net.proto.TeamMoonPhaseChangeNotify._TeamMoonPhaseChangeNotify;
 
 public final class PacketTeamMoonPhaseChangeNotify extends BasePacket {
 
@@ -9,10 +9,10 @@ public final class PacketTeamMoonPhaseChangeNotify extends BasePacket {
     private static final int MOON_PHASE_TYPE = 10000;
 
     public PacketTeamMoonPhaseChangeNotify(int moonsignLevel) {
-        super(PacketOpcodes.TeamMoonPhaseChangeNotify);
+        super(PacketOpcodes._TeamMoonPhaseChangeNotify);
 
         this.setData(
-                TeamMoonPhaseChangeNotify.newBuilder()
+                _TeamMoonPhaseChangeNotify.newBuilder()
                         .setMoonPhaseType(MOON_PHASE_TYPE)
                         .setMoonPhaseLevel(moonsignLevel));
     }

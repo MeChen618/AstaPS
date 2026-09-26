@@ -19,52 +19,56 @@ public final class MMMHJIEENHAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 6;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-     * @return A list containing the mJFOJBBAOPB.
-     */
-    java.util.List<java.lang.Integer> getMJFOJBBAOPBList();
-    /**
-     * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-     * @return The count of mJFOJBBAOPB.
-     */
-    int getMJFOJBBAOPBCount();
-    /**
-     * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-     * @param index The index of the element to return.
-     * @return The mJFOJBBAOPB at the given index.
-     */
-    int getMJFOJBBAOPB(int index);
-
-    /**
-     * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+     * <code>repeated uint32 KEENOEEOGBC = 12;</code>
      * @return A list containing the kEENOEEOGBC.
      */
     java.util.List<java.lang.Integer> getKEENOEEOGBCList();
     /**
-     * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+     * <code>repeated uint32 KEENOEEOGBC = 12;</code>
      * @return The count of kEENOEEOGBC.
      */
     int getKEENOEEOGBCCount();
     /**
-     * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+     * <code>repeated uint32 KEENOEEOGBC = 12;</code>
      * @param index The index of the element to return.
      * @return The kEENOEEOGBC at the given index.
      */
     int getKEENOEEOGBC(int index);
 
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+     * @return A list containing the mJFOJBBAOPB.
+     */
+    java.util.List<java.lang.Integer> getMJFOJBBAOPBList();
+    /**
+     * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+     * @return The count of mJFOJBBAOPB.
+     */
+    int getMJFOJBBAOPBCount();
+    /**
+     * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+     * @param index The index of the element to return.
+     * @return The mJFOJBBAOPB at the given index.
+     */
+    int getMJFOJBBAOPB(int index);
+
+    /**
+     * <code>bool is_open = 9;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MMMHJIEENHA}
    */
   public static final class MMMHJIEENHA extends
@@ -77,8 +81,8 @@ public final class MMMHJIEENHAOuterClass {
       super(builder);
     }
     private MMMHJIEENHA() {
-      mJFOJBBAOPB_ = emptyIntList();
       kEENOEEOGBC_ = emptyIntList();
+      mJFOJBBAOPB_ = emptyIntList();
     }
 
     @java.lang.Override
@@ -112,25 +116,20 @@ public final class MMMHJIEENHAOuterClass {
             case 0:
               done = true;
               break;
-            case 48: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+            case 8: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 mJFOJBBAOPB_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               mJFOJBBAOPB_.addInt(input.readUInt32());
               break;
             }
-            case 66: {
+            case 10: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
                 mJFOJBBAOPB_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
+                mutable_bitField0_ |= 0x00000002;
               }
               while (input.getBytesUntilLimit() > 0) {
                 mJFOJBBAOPB_.addInt(input.readUInt32());
@@ -138,30 +137,35 @@ public final class MMMHJIEENHAOuterClass {
               input.popLimit(limit);
               break;
             }
+            case 32: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
             case 72: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 96: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 kEENOEEOGBC_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               kEENOEEOGBC_.addInt(input.readUInt32());
               break;
             }
-            case 74: {
+            case 98: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
+              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
                 kEENOEEOGBC_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000001;
               }
               while (input.getBytesUntilLimit() > 0) {
                 kEENOEEOGBC_.addInt(input.readUInt32());
               }
               input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              stageId_ = input.readUInt32();
               break;
             }
             default: {
@@ -179,10 +183,10 @@ public final class MMMHJIEENHAOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
           mJFOJBBAOPB_.makeImmutable(); // C
         }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
           kEENOEEOGBC_.makeImmutable(); // C
         }
         this.unknownFields = unknownFields.build();
@@ -202,49 +206,10 @@ public final class MMMHJIEENHAOuterClass {
               emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA.class, emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 6;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 6;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int MJFOJBBAOPB_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.IntList mJFOJBBAOPB_;
-    /**
-     * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-     * @return A list containing the mJFOJBBAOPB.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Integer>
-        getMJFOJBBAOPBList() {
-      return mJFOJBBAOPB_;
-    }
-    /**
-     * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-     * @return The count of mJFOJBBAOPB.
-     */
-    public int getMJFOJBBAOPBCount() {
-      return mJFOJBBAOPB_.size();
-    }
-    /**
-     * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-     * @param index The index of the element to return.
-     * @return The mJFOJBBAOPB at the given index.
-     */
-    public int getMJFOJBBAOPB(int index) {
-      return mJFOJBBAOPB_.getInt(index);
-    }
-    private int mJFOJBBAOPBMemoizedSerializedSize = -1;
-
-    public static final int KEENOEEOGBC_FIELD_NUMBER = 9;
+    public static final int KEENOEEOGBC_FIELD_NUMBER = 12;
     private com.google.protobuf.Internal.IntList kEENOEEOGBC_;
     /**
-     * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+     * <code>repeated uint32 KEENOEEOGBC = 12;</code>
      * @return A list containing the kEENOEEOGBC.
      */
     @java.lang.Override
@@ -253,14 +218,14 @@ public final class MMMHJIEENHAOuterClass {
       return kEENOEEOGBC_;
     }
     /**
-     * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+     * <code>repeated uint32 KEENOEEOGBC = 12;</code>
      * @return The count of kEENOEEOGBC.
      */
     public int getKEENOEEOGBCCount() {
       return kEENOEEOGBC_.size();
     }
     /**
-     * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+     * <code>repeated uint32 KEENOEEOGBC = 12;</code>
      * @param index The index of the element to return.
      * @return The kEENOEEOGBC at the given index.
      */
@@ -269,10 +234,49 @@ public final class MMMHJIEENHAOuterClass {
     }
     private int kEENOEEOGBCMemoizedSerializedSize = -1;
 
-    public static final int STAGE_ID_FIELD_NUMBER = 12;
+    public static final int MJFOJBBAOPB_FIELD_NUMBER = 1;
+    private com.google.protobuf.Internal.IntList mJFOJBBAOPB_;
+    /**
+     * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+     * @return A list containing the mJFOJBBAOPB.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getMJFOJBBAOPBList() {
+      return mJFOJBBAOPB_;
+    }
+    /**
+     * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+     * @return The count of mJFOJBBAOPB.
+     */
+    public int getMJFOJBBAOPBCount() {
+      return mJFOJBBAOPB_.size();
+    }
+    /**
+     * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+     * @param index The index of the element to return.
+     * @return The mJFOJBBAOPB at the given index.
+     */
+    public int getMJFOJBBAOPB(int index) {
+      return mJFOJBBAOPB_.getInt(index);
+    }
+    private int mJFOJBBAOPBMemoizedSerializedSize = -1;
+
+    public static final int IS_OPEN_FIELD_NUMBER = 9;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 9;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 4;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 12;</code>
+     * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -295,25 +299,25 @@ public final class MMMHJIEENHAOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (isOpen_ != false) {
-        output.writeBool(6, isOpen_);
-      }
       if (getMJFOJBBAOPBList().size() > 0) {
-        output.writeUInt32NoTag(66);
+        output.writeUInt32NoTag(10);
         output.writeUInt32NoTag(mJFOJBBAOPBMemoizedSerializedSize);
       }
       for (int i = 0; i < mJFOJBBAOPB_.size(); i++) {
         output.writeUInt32NoTag(mJFOJBBAOPB_.getInt(i));
       }
+      if (stageId_ != 0) {
+        output.writeUInt32(4, stageId_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(9, isOpen_);
+      }
       if (getKEENOEEOGBCList().size() > 0) {
-        output.writeUInt32NoTag(74);
+        output.writeUInt32NoTag(98);
         output.writeUInt32NoTag(kEENOEEOGBCMemoizedSerializedSize);
       }
       for (int i = 0; i < kEENOEEOGBC_.size(); i++) {
         output.writeUInt32NoTag(kEENOEEOGBC_.getInt(i));
-      }
-      if (stageId_ != 0) {
-        output.writeUInt32(12, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -324,10 +328,6 @@ public final class MMMHJIEENHAOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isOpen_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < mJFOJBBAOPB_.size(); i++) {
@@ -342,6 +342,14 @@ public final class MMMHJIEENHAOuterClass {
         }
         mJFOJBBAOPBMemoizedSerializedSize = dataSize;
       }
+      if (stageId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, stageId_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isOpen_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < kEENOEEOGBC_.size(); i++) {
@@ -355,10 +363,6 @@ public final class MMMHJIEENHAOuterClass {
               .computeInt32SizeNoTag(dataSize);
         }
         kEENOEEOGBCMemoizedSerializedSize = dataSize;
-      }
-      if (stageId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -375,12 +379,12 @@ public final class MMMHJIEENHAOuterClass {
       }
       emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA other = (emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA) obj;
 
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
-      if (!getMJFOJBBAOPBList()
-          .equals(other.getMJFOJBBAOPBList())) return false;
       if (!getKEENOEEOGBCList()
           .equals(other.getKEENOEEOGBCList())) return false;
+      if (!getMJFOJBBAOPBList()
+          .equals(other.getMJFOJBBAOPBList())) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
       if (getStageId()
           != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -394,17 +398,17 @@ public final class MMMHJIEENHAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsOpen());
-      if (getMJFOJBBAOPBCount() > 0) {
-        hash = (37 * hash) + MJFOJBBAOPB_FIELD_NUMBER;
-        hash = (53 * hash) + getMJFOJBBAOPBList().hashCode();
-      }
       if (getKEENOEEOGBCCount() > 0) {
         hash = (37 * hash) + KEENOEEOGBC_FIELD_NUMBER;
         hash = (53 * hash) + getKEENOEEOGBCList().hashCode();
       }
+      if (getMJFOJBBAOPBCount() > 0) {
+        hash = (37 * hash) + MJFOJBBAOPB_FIELD_NUMBER;
+        hash = (53 * hash) + getMJFOJBBAOPBList().hashCode();
+      }
+      hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOpen());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -503,6 +507,10 @@ public final class MMMHJIEENHAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MMMHJIEENHA}
      */
     public static final class Builder extends
@@ -540,12 +548,12 @@ public final class MMMHJIEENHAOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        kEENOEEOGBC_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mJFOJBBAOPB_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         isOpen_ = false;
 
-        mJFOJBBAOPB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        kEENOEEOGBC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         stageId_ = 0;
 
         return this;
@@ -575,17 +583,17 @@ public final class MMMHJIEENHAOuterClass {
       public emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA buildPartial() {
         emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA result = new emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA(this);
         int from_bitField0_ = bitField0_;
-        result.isOpen_ = isOpen_;
         if (((bitField0_ & 0x00000001) != 0)) {
-          mJFOJBBAOPB_.makeImmutable();
+          kEENOEEOGBC_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.mJFOJBBAOPB_ = mJFOJBBAOPB_;
+        result.kEENOEEOGBC_ = kEENOEEOGBC_;
         if (((bitField0_ & 0x00000002) != 0)) {
-          kEENOEEOGBC_.makeImmutable();
+          mJFOJBBAOPB_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000002);
         }
-        result.kEENOEEOGBC_ = kEENOEEOGBC_;
+        result.mJFOJBBAOPB_ = mJFOJBBAOPB_;
+        result.isOpen_ = isOpen_;
         result.stageId_ = stageId_;
         onBuilt();
         return result;
@@ -635,28 +643,28 @@ public final class MMMHJIEENHAOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA other) {
         if (other == emu.grasscutter.net.proto.MMMHJIEENHAOuterClass.MMMHJIEENHA.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
+        if (!other.kEENOEEOGBC_.isEmpty()) {
+          if (kEENOEEOGBC_.isEmpty()) {
+            kEENOEEOGBC_ = other.kEENOEEOGBC_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKEENOEEOGBCIsMutable();
+            kEENOEEOGBC_.addAll(other.kEENOEEOGBC_);
+          }
+          onChanged();
         }
         if (!other.mJFOJBBAOPB_.isEmpty()) {
           if (mJFOJBBAOPB_.isEmpty()) {
             mJFOJBBAOPB_ = other.mJFOJBBAOPB_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureMJFOJBBAOPBIsMutable();
             mJFOJBBAOPB_.addAll(other.mJFOJBBAOPB_);
           }
           onChanged();
         }
-        if (!other.kEENOEEOGBC_.isEmpty()) {
-          if (kEENOEEOGBC_.isEmpty()) {
-            kEENOEEOGBC_ = other.kEENOEEOGBC_;
-            bitField0_ = (bitField0_ & ~0x00000002);
-          } else {
-            ensureKEENOEEOGBCIsMutable();
-            kEENOEEOGBC_.addAll(other.kEENOEEOGBC_);
-          }
-          onChanged();
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
@@ -691,141 +699,31 @@ public final class MMMHJIEENHAOuterClass {
       }
       private int bitField0_;
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 6;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 6;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList mJFOJBBAOPB_ = emptyIntList();
-      private void ensureMJFOJBBAOPBIsMutable() {
+      private com.google.protobuf.Internal.IntList kEENOEEOGBC_ = emptyIntList();
+      private void ensureKEENOEEOGBCIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          mJFOJBBAOPB_ = mutableCopy(mJFOJBBAOPB_);
+          kEENOEEOGBC_ = mutableCopy(kEENOEEOGBC_);
           bitField0_ |= 0x00000001;
          }
       }
       /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @return A list containing the mJFOJBBAOPB.
-       */
-      public java.util.List<java.lang.Integer>
-          getMJFOJBBAOPBList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
-                 java.util.Collections.unmodifiableList(mJFOJBBAOPB_) : mJFOJBBAOPB_;
-      }
-      /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @return The count of mJFOJBBAOPB.
-       */
-      public int getMJFOJBBAOPBCount() {
-        return mJFOJBBAOPB_.size();
-      }
-      /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @param index The index of the element to return.
-       * @return The mJFOJBBAOPB at the given index.
-       */
-      public int getMJFOJBBAOPB(int index) {
-        return mJFOJBBAOPB_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @param index The index to set the value at.
-       * @param value The mJFOJBBAOPB to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMJFOJBBAOPB(
-          int index, int value) {
-        ensureMJFOJBBAOPBIsMutable();
-        mJFOJBBAOPB_.setInt(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @param value The mJFOJBBAOPB to add.
-       * @return This builder for chaining.
-       */
-      public Builder addMJFOJBBAOPB(int value) {
-        ensureMJFOJBBAOPBIsMutable();
-        mJFOJBBAOPB_.addInt(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @param values The mJFOJBBAOPB to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllMJFOJBBAOPB(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureMJFOJBBAOPBIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, mJFOJBBAOPB_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 MJFOJBBAOPB = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMJFOJBBAOPB() {
-        mJFOJBBAOPB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList kEENOEEOGBC_ = emptyIntList();
-      private void ensureKEENOEEOGBCIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
-          kEENOEEOGBC_ = mutableCopy(kEENOEEOGBC_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @return A list containing the kEENOEEOGBC.
        */
       public java.util.List<java.lang.Integer>
           getKEENOEEOGBCList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000001) != 0) ?
                  java.util.Collections.unmodifiableList(kEENOEEOGBC_) : kEENOEEOGBC_;
       }
       /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @return The count of kEENOEEOGBC.
        */
       public int getKEENOEEOGBCCount() {
         return kEENOEEOGBC_.size();
       }
       /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @param index The index of the element to return.
        * @return The kEENOEEOGBC at the given index.
        */
@@ -833,7 +731,7 @@ public final class MMMHJIEENHAOuterClass {
         return kEENOEEOGBC_.getInt(index);
       }
       /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @param index The index to set the value at.
        * @param value The kEENOEEOGBC to set.
        * @return This builder for chaining.
@@ -846,7 +744,7 @@ public final class MMMHJIEENHAOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @param value The kEENOEEOGBC to add.
        * @return This builder for chaining.
        */
@@ -857,7 +755,7 @@ public final class MMMHJIEENHAOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @param values The kEENOEEOGBC to add.
        * @return This builder for chaining.
        */
@@ -870,19 +768,129 @@ public final class MMMHJIEENHAOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 KEENOEEOGBC = 9;</code>
+       * <code>repeated uint32 KEENOEEOGBC = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearKEENOEEOGBC() {
         kEENOEEOGBC_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList mJFOJBBAOPB_ = emptyIntList();
+      private void ensureMJFOJBBAOPBIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          mJFOJBBAOPB_ = mutableCopy(mJFOJBBAOPB_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @return A list containing the mJFOJBBAOPB.
+       */
+      public java.util.List<java.lang.Integer>
+          getMJFOJBBAOPBList() {
+        return ((bitField0_ & 0x00000002) != 0) ?
+                 java.util.Collections.unmodifiableList(mJFOJBBAOPB_) : mJFOJBBAOPB_;
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @return The count of mJFOJBBAOPB.
+       */
+      public int getMJFOJBBAOPBCount() {
+        return mJFOJBBAOPB_.size();
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @param index The index of the element to return.
+       * @return The mJFOJBBAOPB at the given index.
+       */
+      public int getMJFOJBBAOPB(int index) {
+        return mJFOJBBAOPB_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The mJFOJBBAOPB to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMJFOJBBAOPB(
+          int index, int value) {
+        ensureMJFOJBBAOPBIsMutable();
+        mJFOJBBAOPB_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @param value The mJFOJBBAOPB to add.
+       * @return This builder for chaining.
+       */
+      public Builder addMJFOJBBAOPB(int value) {
+        ensureMJFOJBBAOPBIsMutable();
+        mJFOJBBAOPB_.addInt(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @param values The mJFOJBBAOPB to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllMJFOJBBAOPB(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureMJFOJBBAOPBIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, mJFOJBBAOPB_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 MJFOJBBAOPB = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMJFOJBBAOPB() {
+        mJFOJBBAOPB_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 9;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 9;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
         onChanged();
         return this;
       }
 
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -890,7 +898,7 @@ public final class MMMHJIEENHAOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -901,7 +909,7 @@ public final class MMMHJIEENHAOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 12;</code>
+       * <code>uint32 stage_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -977,11 +985,10 @@ public final class MMMHJIEENHAOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MMMHJIEENHA.proto\"Z\n\013MMMHJIEENHA\022\017\n\007is" +
-      "_open\030\006 \001(\010\022\023\n\013MJFOJBBAOPB\030\010 \003(\r\022\023\n\013KEEN" +
-      "OEEOGBC\030\t \003(\r\022\020\n\010stage_id\030\014 \001(\rB2\n\031emu.g" +
-      "rasscutter.net.protoB\025MMMHJIEENHAOuterCl" +
-      "assb\006proto3"
+      "\n\021MMMHJIEENHA.proto\"Z\n\013MMMHJIEENHA\022\023\n\013KE" +
+      "ENOEEOGBC\030\014 \003(\r\022\023\n\013MJFOJBBAOPB\030\001 \003(\r\022\017\n\007" +
+      "is_open\030\t \001(\010\022\020\n\010stage_id\030\004 \001(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -992,7 +999,7 @@ public final class MMMHJIEENHAOuterClass {
     internal_static_MMMHJIEENHA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MMMHJIEENHA_descriptor,
-        new java.lang.String[] { "IsOpen", "MJFOJBBAOPB", "KEENOEEOGBC", "StageId", });
+        new java.lang.String[] { "KEENOEEOGBC", "MJFOJBBAOPB", "IsOpen", "StageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

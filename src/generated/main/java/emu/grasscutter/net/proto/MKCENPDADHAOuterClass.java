@@ -19,51 +19,55 @@ public final class MKCENPDADHAOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
-     * @return Whether the dungeonInfo field is set.
+     * <code>string PJBGKFGIKBA = 12;</code>
+     * @return The pJBGKFGIKBA.
      */
-    boolean hasDungeonInfo();
+    java.lang.String getPJBGKFGIKBA();
     /**
-     * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
-     * @return The dungeonInfo.
+     * <code>string PJBGKFGIKBA = 12;</code>
+     * @return The bytes for pJBGKFGIKBA.
      */
-    emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK getDungeonInfo();
-    /**
-     * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
-     */
-    emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder getDungeonInfoOrBuilder();
+    com.google.protobuf.ByteString
+        getPJBGKFGIKBABytes();
 
     /**
-     * <code>string EFAEIFOKMDL = 8;</code>
+     * <code>string EFAEIFOKMDL = 1;</code>
      * @return The eFAEIFOKMDL.
      */
     java.lang.String getEFAEIFOKMDL();
     /**
-     * <code>string EFAEIFOKMDL = 8;</code>
+     * <code>string EFAEIFOKMDL = 1;</code>
      * @return The bytes for eFAEIFOKMDL.
      */
     com.google.protobuf.ByteString
         getEFAEIFOKMDLBytes();
 
     /**
-     * <code>bool is_trial = 9;</code>
+     * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
+     * @return Whether the dungeonInfo field is set.
+     */
+    boolean hasDungeonInfo();
+    /**
+     * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
+     * @return The dungeonInfo.
+     */
+    emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK getDungeonInfo();
+    /**
+     * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
+     */
+    emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder getDungeonInfoOrBuilder();
+
+    /**
+     * <code>bool is_trial = 11;</code>
      * @return The isTrial.
      */
     boolean getIsTrial();
-
-    /**
-     * <code>string PJBGKFGIKBA = 10;</code>
-     * @return The pJBGKFGIKBA.
-     */
-    java.lang.String getPJBGKFGIKBA();
-    /**
-     * <code>string PJBGKFGIKBA = 10;</code>
-     * @return The bytes for pJBGKFGIKBA.
-     */
-    com.google.protobuf.ByteString
-        getPJBGKFGIKBABytes();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MKCENPDADHA}
    */
   public static final class MKCENPDADHA extends
@@ -76,8 +80,8 @@ public final class MKCENPDADHAOuterClass {
       super(builder);
     }
     private MKCENPDADHA() {
-      eFAEIFOKMDL_ = "";
       pJBGKFGIKBA_ = "";
+      eFAEIFOKMDL_ = "";
     }
 
     @java.lang.Override
@@ -110,7 +114,24 @@ public final class MKCENPDADHAOuterClass {
             case 0:
               done = true;
               break;
-            case 34: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              eFAEIFOKMDL_ = s;
+              break;
+            }
+            case 88: {
+
+              isTrial_ = input.readBool();
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pJBGKFGIKBA_ = s;
+              break;
+            }
+            case 106: {
               emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.Builder subBuilder = null;
               if (dungeonInfo_ != null) {
                 subBuilder = dungeonInfo_.toBuilder();
@@ -121,23 +142,6 @@ public final class MKCENPDADHAOuterClass {
                 dungeonInfo_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              eFAEIFOKMDL_ = s;
-              break;
-            }
-            case 72: {
-
-              isTrial_ = input.readBool();
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pJBGKFGIKBA_ = s;
               break;
             }
             default: {
@@ -172,85 +176,10 @@ public final class MKCENPDADHAOuterClass {
               emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA.class, emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA.Builder.class);
     }
 
-    public static final int DUNGEON_INFO_FIELD_NUMBER = 4;
-    private emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK dungeonInfo_;
-    /**
-     * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
-     * @return Whether the dungeonInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasDungeonInfo() {
-      return dungeonInfo_ != null;
-    }
-    /**
-     * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
-     * @return The dungeonInfo.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK getDungeonInfo() {
-      return dungeonInfo_ == null ? emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.getDefaultInstance() : dungeonInfo_;
-    }
-    /**
-     * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder getDungeonInfoOrBuilder() {
-      return getDungeonInfo();
-    }
-
-    public static final int EFAEIFOKMDL_FIELD_NUMBER = 8;
-    private volatile java.lang.Object eFAEIFOKMDL_;
-    /**
-     * <code>string EFAEIFOKMDL = 8;</code>
-     * @return The eFAEIFOKMDL.
-     */
-    @java.lang.Override
-    public java.lang.String getEFAEIFOKMDL() {
-      java.lang.Object ref = eFAEIFOKMDL_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        eFAEIFOKMDL_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string EFAEIFOKMDL = 8;</code>
-     * @return The bytes for eFAEIFOKMDL.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getEFAEIFOKMDLBytes() {
-      java.lang.Object ref = eFAEIFOKMDL_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        eFAEIFOKMDL_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_TRIAL_FIELD_NUMBER = 9;
-    private boolean isTrial_;
-    /**
-     * <code>bool is_trial = 9;</code>
-     * @return The isTrial.
-     */
-    @java.lang.Override
-    public boolean getIsTrial() {
-      return isTrial_;
-    }
-
-    public static final int PJBGKFGIKBA_FIELD_NUMBER = 10;
+    public static final int PJBGKFGIKBA_FIELD_NUMBER = 12;
     private volatile java.lang.Object pJBGKFGIKBA_;
     /**
-     * <code>string PJBGKFGIKBA = 10;</code>
+     * <code>string PJBGKFGIKBA = 12;</code>
      * @return The pJBGKFGIKBA.
      */
     @java.lang.Override
@@ -267,7 +196,7 @@ public final class MKCENPDADHAOuterClass {
       }
     }
     /**
-     * <code>string PJBGKFGIKBA = 10;</code>
+     * <code>string PJBGKFGIKBA = 12;</code>
      * @return The bytes for pJBGKFGIKBA.
      */
     @java.lang.Override
@@ -285,6 +214,81 @@ public final class MKCENPDADHAOuterClass {
       }
     }
 
+    public static final int EFAEIFOKMDL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object eFAEIFOKMDL_;
+    /**
+     * <code>string EFAEIFOKMDL = 1;</code>
+     * @return The eFAEIFOKMDL.
+     */
+    @java.lang.Override
+    public java.lang.String getEFAEIFOKMDL() {
+      java.lang.Object ref = eFAEIFOKMDL_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eFAEIFOKMDL_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string EFAEIFOKMDL = 1;</code>
+     * @return The bytes for eFAEIFOKMDL.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEFAEIFOKMDLBytes() {
+      java.lang.Object ref = eFAEIFOKMDL_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        eFAEIFOKMDL_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DUNGEON_INFO_FIELD_NUMBER = 13;
+    private emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK dungeonInfo_;
+    /**
+     * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
+     * @return Whether the dungeonInfo field is set.
+     */
+    @java.lang.Override
+    public boolean hasDungeonInfo() {
+      return dungeonInfo_ != null;
+    }
+    /**
+     * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
+     * @return The dungeonInfo.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK getDungeonInfo() {
+      return dungeonInfo_ == null ? emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.getDefaultInstance() : dungeonInfo_;
+    }
+    /**
+     * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder getDungeonInfoOrBuilder() {
+      return getDungeonInfo();
+    }
+
+    public static final int IS_TRIAL_FIELD_NUMBER = 11;
+    private boolean isTrial_;
+    /**
+     * <code>bool is_trial = 11;</code>
+     * @return The isTrial.
+     */
+    @java.lang.Override
+    public boolean getIsTrial() {
+      return isTrial_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -299,17 +303,17 @@ public final class MKCENPDADHAOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (dungeonInfo_ != null) {
-        output.writeMessage(4, getDungeonInfo());
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eFAEIFOKMDL_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, eFAEIFOKMDL_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, eFAEIFOKMDL_);
       }
       if (isTrial_ != false) {
-        output.writeBool(9, isTrial_);
+        output.writeBool(11, isTrial_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pJBGKFGIKBA_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, pJBGKFGIKBA_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, pJBGKFGIKBA_);
+      }
+      if (dungeonInfo_ != null) {
+        output.writeMessage(13, getDungeonInfo());
       }
       unknownFields.writeTo(output);
     }
@@ -320,19 +324,19 @@ public final class MKCENPDADHAOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (dungeonInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getDungeonInfo());
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eFAEIFOKMDL_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, eFAEIFOKMDL_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, eFAEIFOKMDL_);
       }
       if (isTrial_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isTrial_);
+          .computeBoolSize(11, isTrial_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pJBGKFGIKBA_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, pJBGKFGIKBA_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, pJBGKFGIKBA_);
+      }
+      if (dungeonInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getDungeonInfo());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -349,17 +353,17 @@ public final class MKCENPDADHAOuterClass {
       }
       emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA other = (emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA) obj;
 
+      if (!getPJBGKFGIKBA()
+          .equals(other.getPJBGKFGIKBA())) return false;
+      if (!getEFAEIFOKMDL()
+          .equals(other.getEFAEIFOKMDL())) return false;
       if (hasDungeonInfo() != other.hasDungeonInfo()) return false;
       if (hasDungeonInfo()) {
         if (!getDungeonInfo()
             .equals(other.getDungeonInfo())) return false;
       }
-      if (!getEFAEIFOKMDL()
-          .equals(other.getEFAEIFOKMDL())) return false;
       if (getIsTrial()
           != other.getIsTrial()) return false;
-      if (!getPJBGKFGIKBA()
-          .equals(other.getPJBGKFGIKBA())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -371,17 +375,17 @@ public final class MKCENPDADHAOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PJBGKFGIKBA_FIELD_NUMBER;
+      hash = (53 * hash) + getPJBGKFGIKBA().hashCode();
+      hash = (37 * hash) + EFAEIFOKMDL_FIELD_NUMBER;
+      hash = (53 * hash) + getEFAEIFOKMDL().hashCode();
       if (hasDungeonInfo()) {
         hash = (37 * hash) + DUNGEON_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getDungeonInfo().hashCode();
       }
-      hash = (37 * hash) + EFAEIFOKMDL_FIELD_NUMBER;
-      hash = (53 * hash) + getEFAEIFOKMDL().hashCode();
       hash = (37 * hash) + IS_TRIAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTrial());
-      hash = (37 * hash) + PJBGKFGIKBA_FIELD_NUMBER;
-      hash = (53 * hash) + getPJBGKFGIKBA().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -478,6 +482,10 @@ public final class MKCENPDADHAOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MKCENPDADHA}
      */
     public static final class Builder extends
@@ -515,17 +523,17 @@ public final class MKCENPDADHAOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        pJBGKFGIKBA_ = "";
+
+        eFAEIFOKMDL_ = "";
+
         if (dungeonInfoBuilder_ == null) {
           dungeonInfo_ = null;
         } else {
           dungeonInfo_ = null;
           dungeonInfoBuilder_ = null;
         }
-        eFAEIFOKMDL_ = "";
-
         isTrial_ = false;
-
-        pJBGKFGIKBA_ = "";
 
         return this;
       }
@@ -553,14 +561,14 @@ public final class MKCENPDADHAOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA buildPartial() {
         emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA result = new emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA(this);
+        result.pJBGKFGIKBA_ = pJBGKFGIKBA_;
+        result.eFAEIFOKMDL_ = eFAEIFOKMDL_;
         if (dungeonInfoBuilder_ == null) {
           result.dungeonInfo_ = dungeonInfo_;
         } else {
           result.dungeonInfo_ = dungeonInfoBuilder_.build();
         }
-        result.eFAEIFOKMDL_ = eFAEIFOKMDL_;
         result.isTrial_ = isTrial_;
-        result.pJBGKFGIKBA_ = pJBGKFGIKBA_;
         onBuilt();
         return result;
       }
@@ -609,19 +617,19 @@ public final class MKCENPDADHAOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA other) {
         if (other == emu.grasscutter.net.proto.MKCENPDADHAOuterClass.MKCENPDADHA.getDefaultInstance()) return this;
-        if (other.hasDungeonInfo()) {
-          mergeDungeonInfo(other.getDungeonInfo());
+        if (!other.getPJBGKFGIKBA().isEmpty()) {
+          pJBGKFGIKBA_ = other.pJBGKFGIKBA_;
+          onChanged();
         }
         if (!other.getEFAEIFOKMDL().isEmpty()) {
           eFAEIFOKMDL_ = other.eFAEIFOKMDL_;
           onChanged();
         }
+        if (other.hasDungeonInfo()) {
+          mergeDungeonInfo(other.getDungeonInfo());
+        }
         if (other.getIsTrial() != false) {
           setIsTrial(other.getIsTrial());
-        }
-        if (!other.getPJBGKFGIKBA().isEmpty()) {
-          pJBGKFGIKBA_ = other.pJBGKFGIKBA_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -652,18 +660,170 @@ public final class MKCENPDADHAOuterClass {
         return this;
       }
 
+      private java.lang.Object pJBGKFGIKBA_ = "";
+      /**
+       * <code>string PJBGKFGIKBA = 12;</code>
+       * @return The pJBGKFGIKBA.
+       */
+      public java.lang.String getPJBGKFGIKBA() {
+        java.lang.Object ref = pJBGKFGIKBA_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pJBGKFGIKBA_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string PJBGKFGIKBA = 12;</code>
+       * @return The bytes for pJBGKFGIKBA.
+       */
+      public com.google.protobuf.ByteString
+          getPJBGKFGIKBABytes() {
+        java.lang.Object ref = pJBGKFGIKBA_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pJBGKFGIKBA_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string PJBGKFGIKBA = 12;</code>
+       * @param value The pJBGKFGIKBA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPJBGKFGIKBA(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        pJBGKFGIKBA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string PJBGKFGIKBA = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPJBGKFGIKBA() {
+        
+        pJBGKFGIKBA_ = getDefaultInstance().getPJBGKFGIKBA();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string PJBGKFGIKBA = 12;</code>
+       * @param value The bytes for pJBGKFGIKBA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPJBGKFGIKBABytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        pJBGKFGIKBA_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object eFAEIFOKMDL_ = "";
+      /**
+       * <code>string EFAEIFOKMDL = 1;</code>
+       * @return The eFAEIFOKMDL.
+       */
+      public java.lang.String getEFAEIFOKMDL() {
+        java.lang.Object ref = eFAEIFOKMDL_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          eFAEIFOKMDL_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string EFAEIFOKMDL = 1;</code>
+       * @return The bytes for eFAEIFOKMDL.
+       */
+      public com.google.protobuf.ByteString
+          getEFAEIFOKMDLBytes() {
+        java.lang.Object ref = eFAEIFOKMDL_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          eFAEIFOKMDL_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string EFAEIFOKMDL = 1;</code>
+       * @param value The eFAEIFOKMDL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEFAEIFOKMDL(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        eFAEIFOKMDL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string EFAEIFOKMDL = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEFAEIFOKMDL() {
+        
+        eFAEIFOKMDL_ = getDefaultInstance().getEFAEIFOKMDL();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string EFAEIFOKMDL = 1;</code>
+       * @param value The bytes for eFAEIFOKMDL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEFAEIFOKMDLBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        eFAEIFOKMDL_ = value;
+        onChanged();
+        return this;
+      }
+
       private emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK dungeonInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK, emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.Builder, emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder> dungeonInfoBuilder_;
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        * @return Whether the dungeonInfo field is set.
        */
       public boolean hasDungeonInfo() {
         return dungeonInfoBuilder_ != null || dungeonInfo_ != null;
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        * @return The dungeonInfo.
        */
       public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK getDungeonInfo() {
@@ -674,7 +834,7 @@ public final class MKCENPDADHAOuterClass {
         }
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       public Builder setDungeonInfo(emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK value) {
         if (dungeonInfoBuilder_ == null) {
@@ -690,7 +850,7 @@ public final class MKCENPDADHAOuterClass {
         return this;
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       public Builder setDungeonInfo(
           emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.Builder builderForValue) {
@@ -704,7 +864,7 @@ public final class MKCENPDADHAOuterClass {
         return this;
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       public Builder mergeDungeonInfo(emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK value) {
         if (dungeonInfoBuilder_ == null) {
@@ -722,7 +882,7 @@ public final class MKCENPDADHAOuterClass {
         return this;
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       public Builder clearDungeonInfo() {
         if (dungeonInfoBuilder_ == null) {
@@ -736,7 +896,7 @@ public final class MKCENPDADHAOuterClass {
         return this;
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.Builder getDungeonInfoBuilder() {
         
@@ -744,7 +904,7 @@ public final class MKCENPDADHAOuterClass {
         return getDungeonInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       public emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder getDungeonInfoOrBuilder() {
         if (dungeonInfoBuilder_ != null) {
@@ -755,7 +915,7 @@ public final class MKCENPDADHAOuterClass {
         }
       }
       /**
-       * <code>.BCFNIJFCBJK dungeon_info = 4;</code>
+       * <code>.BCFNIJFCBJK dungeon_info = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK, emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJK.Builder, emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.BCFNIJFCBJKOrBuilder> 
@@ -771,85 +931,9 @@ public final class MKCENPDADHAOuterClass {
         return dungeonInfoBuilder_;
       }
 
-      private java.lang.Object eFAEIFOKMDL_ = "";
-      /**
-       * <code>string EFAEIFOKMDL = 8;</code>
-       * @return The eFAEIFOKMDL.
-       */
-      public java.lang.String getEFAEIFOKMDL() {
-        java.lang.Object ref = eFAEIFOKMDL_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          eFAEIFOKMDL_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string EFAEIFOKMDL = 8;</code>
-       * @return The bytes for eFAEIFOKMDL.
-       */
-      public com.google.protobuf.ByteString
-          getEFAEIFOKMDLBytes() {
-        java.lang.Object ref = eFAEIFOKMDL_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          eFAEIFOKMDL_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string EFAEIFOKMDL = 8;</code>
-       * @param value The eFAEIFOKMDL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEFAEIFOKMDL(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        eFAEIFOKMDL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string EFAEIFOKMDL = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEFAEIFOKMDL() {
-        
-        eFAEIFOKMDL_ = getDefaultInstance().getEFAEIFOKMDL();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string EFAEIFOKMDL = 8;</code>
-       * @param value The bytes for eFAEIFOKMDL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEFAEIFOKMDLBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        eFAEIFOKMDL_ = value;
-        onChanged();
-        return this;
-      }
-
       private boolean isTrial_ ;
       /**
-       * <code>bool is_trial = 9;</code>
+       * <code>bool is_trial = 11;</code>
        * @return The isTrial.
        */
       @java.lang.Override
@@ -857,7 +941,7 @@ public final class MKCENPDADHAOuterClass {
         return isTrial_;
       }
       /**
-       * <code>bool is_trial = 9;</code>
+       * <code>bool is_trial = 11;</code>
        * @param value The isTrial to set.
        * @return This builder for chaining.
        */
@@ -868,88 +952,12 @@ public final class MKCENPDADHAOuterClass {
         return this;
       }
       /**
-       * <code>bool is_trial = 9;</code>
+       * <code>bool is_trial = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
         
         isTrial_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object pJBGKFGIKBA_ = "";
-      /**
-       * <code>string PJBGKFGIKBA = 10;</code>
-       * @return The pJBGKFGIKBA.
-       */
-      public java.lang.String getPJBGKFGIKBA() {
-        java.lang.Object ref = pJBGKFGIKBA_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          pJBGKFGIKBA_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string PJBGKFGIKBA = 10;</code>
-       * @return The bytes for pJBGKFGIKBA.
-       */
-      public com.google.protobuf.ByteString
-          getPJBGKFGIKBABytes() {
-        java.lang.Object ref = pJBGKFGIKBA_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          pJBGKFGIKBA_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string PJBGKFGIKBA = 10;</code>
-       * @param value The pJBGKFGIKBA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPJBGKFGIKBA(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        pJBGKFGIKBA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string PJBGKFGIKBA = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPJBGKFGIKBA() {
-        
-        pJBGKFGIKBA_ = getDefaultInstance().getPJBGKFGIKBA();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string PJBGKFGIKBA = 10;</code>
-       * @param value The bytes for pJBGKFGIKBA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPJBGKFGIKBABytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        pJBGKFGIKBA_ = value;
         onChanged();
         return this;
       }
@@ -1021,11 +1029,10 @@ public final class MKCENPDADHAOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021MKCENPDADHA.proto\032\021BCFNIJFCBJK.proto\"m" +
-      "\n\013MKCENPDADHA\022\"\n\014dungeon_info\030\004 \001(\0132\014.BC" +
-      "FNIJFCBJK\022\023\n\013EFAEIFOKMDL\030\010 \001(\t\022\020\n\010is_tri" +
-      "al\030\t \001(\010\022\023\n\013PJBGKFGIKBA\030\n \001(\tB2\n\031emu.gra" +
-      "sscutter.net.protoB\025MKCENPDADHAOuterClas" +
-      "sb\006proto3"
+      "\n\013MKCENPDADHA\022\023\n\013PJBGKFGIKBA\030\014 \001(\t\022\023\n\013EF" +
+      "AEIFOKMDL\030\001 \001(\t\022\"\n\014dungeon_info\030\r \001(\0132\014." +
+      "BCFNIJFCBJK\022\020\n\010is_trial\030\013 \001(\010B\033\n\031emu.gra" +
+      "sscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1037,7 +1044,7 @@ public final class MKCENPDADHAOuterClass {
     internal_static_MKCENPDADHA_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MKCENPDADHA_descriptor,
-        new java.lang.String[] { "DungeonInfo", "EFAEIFOKMDL", "IsTrial", "PJBGKFGIKBA", });
+        new java.lang.String[] { "PJBGKFGIKBA", "EFAEIFOKMDL", "DungeonInfo", "IsTrial", });
     emu.grasscutter.net.proto.BCFNIJFCBJKOuterClass.getDescriptor();
   }
 

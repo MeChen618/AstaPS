@@ -19,42 +19,46 @@ public final class JLHFIDHPJMFOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 uid = 4;</code>
-     * @return The uid.
-     */
-    int getUid();
-
-    /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> 
         getAvatarInfoListList();
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getAvatarInfoList(int index);
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     int getAvatarInfoListCount();
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
         getAvatarInfoListOrBuilderList();
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
         int index);
 
     /**
-     * <code>bool NDJCMBBPOKH = 15;</code>
+     * <code>bool NDJCMBBPOKH = 9;</code>
      * @return The nDJCMBBPOKH.
      */
     boolean getNDJCMBBPOKH();
+
+    /**
+     * <code>uint32 uid = 13;</code>
+     * @return The uid.
+     */
+    int getUid();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JLHFIDHPJMF}
    */
   public static final class JLHFIDHPJMF extends
@@ -101,23 +105,23 @@ public final class JLHFIDHPJMFOuterClass {
             case 0:
               done = true;
               break;
-            case 32: {
+            case 72: {
+
+              nDJCMBBPOKH_ = input.readBool();
+              break;
+            }
+            case 104: {
 
               uid_ = input.readUInt32();
               break;
             }
-            case 114: {
+            case 122: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 avatarInfoList_ = new java.util.ArrayList<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
               avatarInfoList_.add(
                   input.readMessage(emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              nDJCMBBPOKH_ = input.readBool();
               break;
             }
             default: {
@@ -155,28 +159,17 @@ public final class JLHFIDHPJMFOuterClass {
               emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF.class, emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF.Builder.class);
     }
 
-    public static final int UID_FIELD_NUMBER = 4;
-    private int uid_;
-    /**
-     * <code>uint32 uid = 4;</code>
-     * @return The uid.
-     */
-    @java.lang.Override
-    public int getUid() {
-      return uid_;
-    }
-
-    public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 14;
+    public static final int AVATAR_INFO_LIST_FIELD_NUMBER = 15;
     private java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> avatarInfoList_;
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> getAvatarInfoListList() {
       return avatarInfoList_;
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
@@ -184,21 +177,21 @@ public final class JLHFIDHPJMFOuterClass {
       return avatarInfoList_;
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     @java.lang.Override
     public int getAvatarInfoListCount() {
       return avatarInfoList_.size();
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getAvatarInfoList(int index) {
       return avatarInfoList_.get(index);
     }
     /**
-     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+     * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
@@ -206,15 +199,26 @@ public final class JLHFIDHPJMFOuterClass {
       return avatarInfoList_.get(index);
     }
 
-    public static final int NDJCMBBPOKH_FIELD_NUMBER = 15;
+    public static final int NDJCMBBPOKH_FIELD_NUMBER = 9;
     private boolean nDJCMBBPOKH_;
     /**
-     * <code>bool NDJCMBBPOKH = 15;</code>
+     * <code>bool NDJCMBBPOKH = 9;</code>
      * @return The nDJCMBBPOKH.
      */
     @java.lang.Override
     public boolean getNDJCMBBPOKH() {
       return nDJCMBBPOKH_;
+    }
+
+    public static final int UID_FIELD_NUMBER = 13;
+    private int uid_;
+    /**
+     * <code>uint32 uid = 13;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public int getUid() {
+      return uid_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -231,14 +235,14 @@ public final class JLHFIDHPJMFOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (nDJCMBBPOKH_ != false) {
+        output.writeBool(9, nDJCMBBPOKH_);
+      }
       if (uid_ != 0) {
-        output.writeUInt32(4, uid_);
+        output.writeUInt32(13, uid_);
       }
       for (int i = 0; i < avatarInfoList_.size(); i++) {
-        output.writeMessage(14, avatarInfoList_.get(i));
-      }
-      if (nDJCMBBPOKH_ != false) {
-        output.writeBool(15, nDJCMBBPOKH_);
+        output.writeMessage(15, avatarInfoList_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -249,17 +253,17 @@ public final class JLHFIDHPJMFOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (nDJCMBBPOKH_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, nDJCMBBPOKH_);
+      }
       if (uid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, uid_);
+          .computeUInt32Size(13, uid_);
       }
       for (int i = 0; i < avatarInfoList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, avatarInfoList_.get(i));
-      }
-      if (nDJCMBBPOKH_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, nDJCMBBPOKH_);
+          .computeMessageSize(15, avatarInfoList_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -276,12 +280,12 @@ public final class JLHFIDHPJMFOuterClass {
       }
       emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF other = (emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF) obj;
 
-      if (getUid()
-          != other.getUid()) return false;
       if (!getAvatarInfoListList()
           .equals(other.getAvatarInfoListList())) return false;
       if (getNDJCMBBPOKH()
           != other.getNDJCMBBPOKH()) return false;
+      if (getUid()
+          != other.getUid()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -293,8 +297,6 @@ public final class JLHFIDHPJMFOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + getUid();
       if (getAvatarInfoListCount() > 0) {
         hash = (37 * hash) + AVATAR_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarInfoListList().hashCode();
@@ -302,6 +304,8 @@ public final class JLHFIDHPJMFOuterClass {
       hash = (37 * hash) + NDJCMBBPOKH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNDJCMBBPOKH());
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + getUid();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -398,6 +402,10 @@ public final class JLHFIDHPJMFOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JLHFIDHPJMF}
      */
     public static final class Builder extends
@@ -436,8 +444,6 @@ public final class JLHFIDHPJMFOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        uid_ = 0;
-
         if (avatarInfoListBuilder_ == null) {
           avatarInfoList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -445,6 +451,8 @@ public final class JLHFIDHPJMFOuterClass {
           avatarInfoListBuilder_.clear();
         }
         nDJCMBBPOKH_ = false;
+
+        uid_ = 0;
 
         return this;
       }
@@ -473,7 +481,6 @@ public final class JLHFIDHPJMFOuterClass {
       public emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF buildPartial() {
         emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF result = new emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF(this);
         int from_bitField0_ = bitField0_;
-        result.uid_ = uid_;
         if (avatarInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarInfoList_ = java.util.Collections.unmodifiableList(avatarInfoList_);
@@ -484,6 +491,7 @@ public final class JLHFIDHPJMFOuterClass {
           result.avatarInfoList_ = avatarInfoListBuilder_.build();
         }
         result.nDJCMBBPOKH_ = nDJCMBBPOKH_;
+        result.uid_ = uid_;
         onBuilt();
         return result;
       }
@@ -532,9 +540,6 @@ public final class JLHFIDHPJMFOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF other) {
         if (other == emu.grasscutter.net.proto.JLHFIDHPJMFOuterClass.JLHFIDHPJMF.getDefaultInstance()) return this;
-        if (other.getUid() != 0) {
-          setUid(other.getUid());
-        }
         if (avatarInfoListBuilder_ == null) {
           if (!other.avatarInfoList_.isEmpty()) {
             if (avatarInfoList_.isEmpty()) {
@@ -563,6 +568,9 @@ public final class JLHFIDHPJMFOuterClass {
         }
         if (other.getNDJCMBBPOKH() != false) {
           setNDJCMBBPOKH(other.getNDJCMBBPOKH());
+        }
+        if (other.getUid() != 0) {
+          setUid(other.getUid());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -594,37 +602,6 @@ public final class JLHFIDHPJMFOuterClass {
       }
       private int bitField0_;
 
-      private int uid_ ;
-      /**
-       * <code>uint32 uid = 4;</code>
-       * @return The uid.
-       */
-      @java.lang.Override
-      public int getUid() {
-        return uid_;
-      }
-      /**
-       * <code>uint32 uid = 4;</code>
-       * @param value The uid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUid(int value) {
-        
-        uid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 uid = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUid() {
-        
-        uid_ = 0;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> avatarInfoList_ =
         java.util.Collections.emptyList();
       private void ensureAvatarInfoListIsMutable() {
@@ -638,7 +615,7 @@ public final class JLHFIDHPJMFOuterClass {
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> avatarInfoListBuilder_;
 
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> getAvatarInfoListList() {
         if (avatarInfoListBuilder_ == null) {
@@ -648,7 +625,7 @@ public final class JLHFIDHPJMFOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public int getAvatarInfoListCount() {
         if (avatarInfoListBuilder_ == null) {
@@ -658,7 +635,7 @@ public final class JLHFIDHPJMFOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo getAvatarInfoList(int index) {
         if (avatarInfoListBuilder_ == null) {
@@ -668,7 +645,7 @@ public final class JLHFIDHPJMFOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder setAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
@@ -685,7 +662,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder setAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -699,7 +676,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder addAvatarInfoList(emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
         if (avatarInfoListBuilder_ == null) {
@@ -715,7 +692,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder addAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo value) {
@@ -732,7 +709,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder addAvatarInfoList(
           emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -746,7 +723,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder addAvatarInfoList(
           int index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder builderForValue) {
@@ -760,7 +737,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder addAllAvatarInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo> values) {
@@ -775,7 +752,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder clearAvatarInfoList() {
         if (avatarInfoListBuilder_ == null) {
@@ -788,7 +765,7 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public Builder removeAvatarInfoList(int index) {
         if (avatarInfoListBuilder_ == null) {
@@ -801,14 +778,14 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder getAvatarInfoListBuilder(
           int index) {
         return getAvatarInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder getAvatarInfoListOrBuilder(
           int index) {
@@ -818,7 +795,7 @@ public final class JLHFIDHPJMFOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfoOrBuilder> 
            getAvatarInfoListOrBuilderList() {
@@ -829,14 +806,14 @@ public final class JLHFIDHPJMFOuterClass {
         }
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder addAvatarInfoListBuilder() {
         return getAvatarInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder addAvatarInfoListBuilder(
           int index) {
@@ -844,7 +821,7 @@ public final class JLHFIDHPJMFOuterClass {
             index, emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 14;</code>
+       * <code>repeated .SocialShowAvatarInfo avatar_info_list = 15;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.SocialShowAvatarInfo.Builder> 
            getAvatarInfoListBuilderList() {
@@ -867,7 +844,7 @@ public final class JLHFIDHPJMFOuterClass {
 
       private boolean nDJCMBBPOKH_ ;
       /**
-       * <code>bool NDJCMBBPOKH = 15;</code>
+       * <code>bool NDJCMBBPOKH = 9;</code>
        * @return The nDJCMBBPOKH.
        */
       @java.lang.Override
@@ -875,7 +852,7 @@ public final class JLHFIDHPJMFOuterClass {
         return nDJCMBBPOKH_;
       }
       /**
-       * <code>bool NDJCMBBPOKH = 15;</code>
+       * <code>bool NDJCMBBPOKH = 9;</code>
        * @param value The nDJCMBBPOKH to set.
        * @return This builder for chaining.
        */
@@ -886,12 +863,43 @@ public final class JLHFIDHPJMFOuterClass {
         return this;
       }
       /**
-       * <code>bool NDJCMBBPOKH = 15;</code>
+       * <code>bool NDJCMBBPOKH = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearNDJCMBBPOKH() {
         
         nDJCMBBPOKH_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int uid_ ;
+      /**
+       * <code>uint32 uid = 13;</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public int getUid() {
+        return uid_;
+      }
+      /**
+       * <code>uint32 uid = 13;</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(int value) {
+        
+        uid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 uid = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        
+        uid_ = 0;
         onChanged();
         return this;
       }
@@ -963,11 +971,10 @@ public final class JLHFIDHPJMFOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021JLHFIDHPJMF.proto\032\032SocialShowAvatarInf" +
-      "o.proto\"`\n\013JLHFIDHPJMF\022\013\n\003uid\030\004 \001(\r\022/\n\020a" +
-      "vatar_info_list\030\016 \003(\0132\025.SocialShowAvatar" +
-      "Info\022\023\n\013NDJCMBBPOKH\030\017 \001(\010B2\n\031emu.grasscu" +
-      "tter.net.protoB\025JLHFIDHPJMFOuterClassb\006p" +
-      "roto3"
+      "o.proto\"`\n\013JLHFIDHPJMF\022/\n\020avatar_info_li" +
+      "st\030\017 \003(\0132\025.SocialShowAvatarInfo\022\023\n\013NDJCM" +
+      "BBPOKH\030\t \001(\010\022\013\n\003uid\030\r \001(\rB\033\n\031emu.grasscu" +
+      "tter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -979,7 +986,7 @@ public final class JLHFIDHPJMFOuterClass {
     internal_static_JLHFIDHPJMF_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JLHFIDHPJMF_descriptor,
-        new java.lang.String[] { "Uid", "AvatarInfoList", "NDJCMBBPOKH", });
+        new java.lang.String[] { "AvatarInfoList", "NDJCMBBPOKH", "Uid", });
     emu.grasscutter.net.proto.SocialShowAvatarInfoOuterClass.getDescriptor();
   }
 

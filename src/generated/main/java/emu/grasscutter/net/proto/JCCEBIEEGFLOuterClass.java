@@ -19,18 +19,6 @@ public final class JCCEBIEEGFLOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 KKIGBPEBAMA = 1;</code>
-     * @return The kKIGBPEBAMA.
-     */
-    int getKKIGBPEBAMA();
-
-    /**
-     * <code>float AJLKEBKLNGJ = 2;</code>
-     * @return The aJLKEBKLNGJ.
-     */
-    float getAJLKEBKLNGJ();
-
-    /**
      * <code>float DPBIFKMAFKG = 3;</code>
      * @return The dPBIFKMAFKG.
      */
@@ -43,10 +31,22 @@ public final class JCCEBIEEGFLOuterClass {
     float getDBKOFKJEAFP();
 
     /**
-     * <code>uint64 HKGMDHHCIFE = 5;</code>
-     * @return The hKGMDHHCIFE.
+     * <code>float AJLKEBKLNGJ = 2;</code>
+     * @return The aJLKEBKLNGJ.
      */
-    long getHKGMDHHCIFE();
+    float getAJLKEBKLNGJ();
+
+    /**
+     * <code>uint32 KKIGBPEBAMA = 1;</code>
+     * @return The kKIGBPEBAMA.
+     */
+    int getKKIGBPEBAMA();
+
+    /**
+     * <code>uint64 OLCAAHIHPAG = 9;</code>
+     * @return The oLCAAHIHPAG.
+     */
+    long getOLCAAHIHPAG();
 
     /**
      * <code>uint64 NKMDMPFFICJ = 6;</code>
@@ -55,10 +55,10 @@ public final class JCCEBIEEGFLOuterClass {
     long getNKMDMPFFICJ();
 
     /**
-     * <code>uint64 LDINHKNEEBL = 7;</code>
-     * @return The lDINHKNEEBL.
+     * <code>uint64 HKGMDHHCIFE = 5;</code>
+     * @return The hKGMDHHCIFE.
      */
-    long getLDINHKNEEBL();
+    long getHKGMDHHCIFE();
 
     /**
      * <code>uint64 GFFEGOMDFBB = 8;</code>
@@ -67,12 +67,16 @@ public final class JCCEBIEEGFLOuterClass {
     long getGFFEGOMDFBB();
 
     /**
-     * <code>uint64 OLCAAHIHPAG = 9;</code>
-     * @return The oLCAAHIHPAG.
+     * <code>uint64 LDINHKNEEBL = 7;</code>
+     * @return The lDINHKNEEBL.
      */
-    long getOLCAAHIHPAG();
+    long getLDINHKNEEBL();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code JCCEBIEEGFL}
    */
   public static final class JCCEBIEEGFL extends
@@ -194,28 +198,6 @@ public final class JCCEBIEEGFLOuterClass {
               emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL.class, emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL.Builder.class);
     }
 
-    public static final int KKIGBPEBAMA_FIELD_NUMBER = 1;
-    private int kKIGBPEBAMA_;
-    /**
-     * <code>uint32 KKIGBPEBAMA = 1;</code>
-     * @return The kKIGBPEBAMA.
-     */
-    @java.lang.Override
-    public int getKKIGBPEBAMA() {
-      return kKIGBPEBAMA_;
-    }
-
-    public static final int AJLKEBKLNGJ_FIELD_NUMBER = 2;
-    private float aJLKEBKLNGJ_;
-    /**
-     * <code>float AJLKEBKLNGJ = 2;</code>
-     * @return The aJLKEBKLNGJ.
-     */
-    @java.lang.Override
-    public float getAJLKEBKLNGJ() {
-      return aJLKEBKLNGJ_;
-    }
-
     public static final int DPBIFKMAFKG_FIELD_NUMBER = 3;
     private float dPBIFKMAFKG_;
     /**
@@ -238,15 +220,37 @@ public final class JCCEBIEEGFLOuterClass {
       return dBKOFKJEAFP_;
     }
 
-    public static final int HKGMDHHCIFE_FIELD_NUMBER = 5;
-    private long hKGMDHHCIFE_;
+    public static final int AJLKEBKLNGJ_FIELD_NUMBER = 2;
+    private float aJLKEBKLNGJ_;
     /**
-     * <code>uint64 HKGMDHHCIFE = 5;</code>
-     * @return The hKGMDHHCIFE.
+     * <code>float AJLKEBKLNGJ = 2;</code>
+     * @return The aJLKEBKLNGJ.
      */
     @java.lang.Override
-    public long getHKGMDHHCIFE() {
-      return hKGMDHHCIFE_;
+    public float getAJLKEBKLNGJ() {
+      return aJLKEBKLNGJ_;
+    }
+
+    public static final int KKIGBPEBAMA_FIELD_NUMBER = 1;
+    private int kKIGBPEBAMA_;
+    /**
+     * <code>uint32 KKIGBPEBAMA = 1;</code>
+     * @return The kKIGBPEBAMA.
+     */
+    @java.lang.Override
+    public int getKKIGBPEBAMA() {
+      return kKIGBPEBAMA_;
+    }
+
+    public static final int OLCAAHIHPAG_FIELD_NUMBER = 9;
+    private long oLCAAHIHPAG_;
+    /**
+     * <code>uint64 OLCAAHIHPAG = 9;</code>
+     * @return The oLCAAHIHPAG.
+     */
+    @java.lang.Override
+    public long getOLCAAHIHPAG() {
+      return oLCAAHIHPAG_;
     }
 
     public static final int NKMDMPFFICJ_FIELD_NUMBER = 6;
@@ -260,15 +264,15 @@ public final class JCCEBIEEGFLOuterClass {
       return nKMDMPFFICJ_;
     }
 
-    public static final int LDINHKNEEBL_FIELD_NUMBER = 7;
-    private long lDINHKNEEBL_;
+    public static final int HKGMDHHCIFE_FIELD_NUMBER = 5;
+    private long hKGMDHHCIFE_;
     /**
-     * <code>uint64 LDINHKNEEBL = 7;</code>
-     * @return The lDINHKNEEBL.
+     * <code>uint64 HKGMDHHCIFE = 5;</code>
+     * @return The hKGMDHHCIFE.
      */
     @java.lang.Override
-    public long getLDINHKNEEBL() {
-      return lDINHKNEEBL_;
+    public long getHKGMDHHCIFE() {
+      return hKGMDHHCIFE_;
     }
 
     public static final int GFFEGOMDFBB_FIELD_NUMBER = 8;
@@ -282,15 +286,15 @@ public final class JCCEBIEEGFLOuterClass {
       return gFFEGOMDFBB_;
     }
 
-    public static final int OLCAAHIHPAG_FIELD_NUMBER = 9;
-    private long oLCAAHIHPAG_;
+    public static final int LDINHKNEEBL_FIELD_NUMBER = 7;
+    private long lDINHKNEEBL_;
     /**
-     * <code>uint64 OLCAAHIHPAG = 9;</code>
-     * @return The oLCAAHIHPAG.
+     * <code>uint64 LDINHKNEEBL = 7;</code>
+     * @return The lDINHKNEEBL.
      */
     @java.lang.Override
-    public long getOLCAAHIHPAG() {
-      return oLCAAHIHPAG_;
+    public long getLDINHKNEEBL() {
+      return lDINHKNEEBL_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -394,27 +398,27 @@ public final class JCCEBIEEGFLOuterClass {
       }
       emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL other = (emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL) obj;
 
-      if (getKKIGBPEBAMA()
-          != other.getKKIGBPEBAMA()) return false;
-      if (java.lang.Float.floatToIntBits(getAJLKEBKLNGJ())
-          != java.lang.Float.floatToIntBits(
-              other.getAJLKEBKLNGJ())) return false;
       if (java.lang.Float.floatToIntBits(getDPBIFKMAFKG())
           != java.lang.Float.floatToIntBits(
               other.getDPBIFKMAFKG())) return false;
       if (java.lang.Float.floatToIntBits(getDBKOFKJEAFP())
           != java.lang.Float.floatToIntBits(
               other.getDBKOFKJEAFP())) return false;
-      if (getHKGMDHHCIFE()
-          != other.getHKGMDHHCIFE()) return false;
-      if (getNKMDMPFFICJ()
-          != other.getNKMDMPFFICJ()) return false;
-      if (getLDINHKNEEBL()
-          != other.getLDINHKNEEBL()) return false;
-      if (getGFFEGOMDFBB()
-          != other.getGFFEGOMDFBB()) return false;
+      if (java.lang.Float.floatToIntBits(getAJLKEBKLNGJ())
+          != java.lang.Float.floatToIntBits(
+              other.getAJLKEBKLNGJ())) return false;
+      if (getKKIGBPEBAMA()
+          != other.getKKIGBPEBAMA()) return false;
       if (getOLCAAHIHPAG()
           != other.getOLCAAHIHPAG()) return false;
+      if (getNKMDMPFFICJ()
+          != other.getNKMDMPFFICJ()) return false;
+      if (getHKGMDHHCIFE()
+          != other.getHKGMDHHCIFE()) return false;
+      if (getGFFEGOMDFBB()
+          != other.getGFFEGOMDFBB()) return false;
+      if (getLDINHKNEEBL()
+          != other.getLDINHKNEEBL()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -426,32 +430,32 @@ public final class JCCEBIEEGFLOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KKIGBPEBAMA_FIELD_NUMBER;
-      hash = (53 * hash) + getKKIGBPEBAMA();
-      hash = (37 * hash) + AJLKEBKLNGJ_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAJLKEBKLNGJ());
       hash = (37 * hash) + DPBIFKMAFKG_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getDPBIFKMAFKG());
       hash = (37 * hash) + DBKOFKJEAFP_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getDBKOFKJEAFP());
-      hash = (37 * hash) + HKGMDHHCIFE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getHKGMDHHCIFE());
-      hash = (37 * hash) + NKMDMPFFICJ_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getNKMDMPFFICJ());
-      hash = (37 * hash) + LDINHKNEEBL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getLDINHKNEEBL());
-      hash = (37 * hash) + GFFEGOMDFBB_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGFFEGOMDFBB());
+      hash = (37 * hash) + AJLKEBKLNGJ_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getAJLKEBKLNGJ());
+      hash = (37 * hash) + KKIGBPEBAMA_FIELD_NUMBER;
+      hash = (53 * hash) + getKKIGBPEBAMA();
       hash = (37 * hash) + OLCAAHIHPAG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getOLCAAHIHPAG());
+      hash = (37 * hash) + NKMDMPFFICJ_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getNKMDMPFFICJ());
+      hash = (37 * hash) + HKGMDHHCIFE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getHKGMDHHCIFE());
+      hash = (37 * hash) + GFFEGOMDFBB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGFFEGOMDFBB());
+      hash = (37 * hash) + LDINHKNEEBL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLDINHKNEEBL());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -548,6 +552,10 @@ public final class JCCEBIEEGFLOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code JCCEBIEEGFL}
      */
     public static final class Builder extends
@@ -585,23 +593,23 @@ public final class JCCEBIEEGFLOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        kKIGBPEBAMA_ = 0;
-
-        aJLKEBKLNGJ_ = 0F;
-
         dPBIFKMAFKG_ = 0F;
 
         dBKOFKJEAFP_ = 0F;
 
-        hKGMDHHCIFE_ = 0L;
+        aJLKEBKLNGJ_ = 0F;
+
+        kKIGBPEBAMA_ = 0;
+
+        oLCAAHIHPAG_ = 0L;
 
         nKMDMPFFICJ_ = 0L;
 
-        lDINHKNEEBL_ = 0L;
+        hKGMDHHCIFE_ = 0L;
 
         gFFEGOMDFBB_ = 0L;
 
-        oLCAAHIHPAG_ = 0L;
+        lDINHKNEEBL_ = 0L;
 
         return this;
       }
@@ -629,15 +637,15 @@ public final class JCCEBIEEGFLOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL buildPartial() {
         emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL result = new emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL(this);
-        result.kKIGBPEBAMA_ = kKIGBPEBAMA_;
-        result.aJLKEBKLNGJ_ = aJLKEBKLNGJ_;
         result.dPBIFKMAFKG_ = dPBIFKMAFKG_;
         result.dBKOFKJEAFP_ = dBKOFKJEAFP_;
-        result.hKGMDHHCIFE_ = hKGMDHHCIFE_;
-        result.nKMDMPFFICJ_ = nKMDMPFFICJ_;
-        result.lDINHKNEEBL_ = lDINHKNEEBL_;
-        result.gFFEGOMDFBB_ = gFFEGOMDFBB_;
+        result.aJLKEBKLNGJ_ = aJLKEBKLNGJ_;
+        result.kKIGBPEBAMA_ = kKIGBPEBAMA_;
         result.oLCAAHIHPAG_ = oLCAAHIHPAG_;
+        result.nKMDMPFFICJ_ = nKMDMPFFICJ_;
+        result.hKGMDHHCIFE_ = hKGMDHHCIFE_;
+        result.gFFEGOMDFBB_ = gFFEGOMDFBB_;
+        result.lDINHKNEEBL_ = lDINHKNEEBL_;
         onBuilt();
         return result;
       }
@@ -686,32 +694,32 @@ public final class JCCEBIEEGFLOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL other) {
         if (other == emu.grasscutter.net.proto.JCCEBIEEGFLOuterClass.JCCEBIEEGFL.getDefaultInstance()) return this;
-        if (other.getKKIGBPEBAMA() != 0) {
-          setKKIGBPEBAMA(other.getKKIGBPEBAMA());
-        }
-        if (other.getAJLKEBKLNGJ() != 0F) {
-          setAJLKEBKLNGJ(other.getAJLKEBKLNGJ());
-        }
         if (other.getDPBIFKMAFKG() != 0F) {
           setDPBIFKMAFKG(other.getDPBIFKMAFKG());
         }
         if (other.getDBKOFKJEAFP() != 0F) {
           setDBKOFKJEAFP(other.getDBKOFKJEAFP());
         }
-        if (other.getHKGMDHHCIFE() != 0L) {
-          setHKGMDHHCIFE(other.getHKGMDHHCIFE());
+        if (other.getAJLKEBKLNGJ() != 0F) {
+          setAJLKEBKLNGJ(other.getAJLKEBKLNGJ());
+        }
+        if (other.getKKIGBPEBAMA() != 0) {
+          setKKIGBPEBAMA(other.getKKIGBPEBAMA());
+        }
+        if (other.getOLCAAHIHPAG() != 0L) {
+          setOLCAAHIHPAG(other.getOLCAAHIHPAG());
         }
         if (other.getNKMDMPFFICJ() != 0L) {
           setNKMDMPFFICJ(other.getNKMDMPFFICJ());
         }
-        if (other.getLDINHKNEEBL() != 0L) {
-          setLDINHKNEEBL(other.getLDINHKNEEBL());
+        if (other.getHKGMDHHCIFE() != 0L) {
+          setHKGMDHHCIFE(other.getHKGMDHHCIFE());
         }
         if (other.getGFFEGOMDFBB() != 0L) {
           setGFFEGOMDFBB(other.getGFFEGOMDFBB());
         }
-        if (other.getOLCAAHIHPAG() != 0L) {
-          setOLCAAHIHPAG(other.getOLCAAHIHPAG());
+        if (other.getLDINHKNEEBL() != 0L) {
+          setLDINHKNEEBL(other.getLDINHKNEEBL());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -739,68 +747,6 @@ public final class JCCEBIEEGFLOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int kKIGBPEBAMA_ ;
-      /**
-       * <code>uint32 KKIGBPEBAMA = 1;</code>
-       * @return The kKIGBPEBAMA.
-       */
-      @java.lang.Override
-      public int getKKIGBPEBAMA() {
-        return kKIGBPEBAMA_;
-      }
-      /**
-       * <code>uint32 KKIGBPEBAMA = 1;</code>
-       * @param value The kKIGBPEBAMA to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKKIGBPEBAMA(int value) {
-        
-        kKIGBPEBAMA_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KKIGBPEBAMA = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKKIGBPEBAMA() {
-        
-        kKIGBPEBAMA_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private float aJLKEBKLNGJ_ ;
-      /**
-       * <code>float AJLKEBKLNGJ = 2;</code>
-       * @return The aJLKEBKLNGJ.
-       */
-      @java.lang.Override
-      public float getAJLKEBKLNGJ() {
-        return aJLKEBKLNGJ_;
-      }
-      /**
-       * <code>float AJLKEBKLNGJ = 2;</code>
-       * @param value The aJLKEBKLNGJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAJLKEBKLNGJ(float value) {
-        
-        aJLKEBKLNGJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float AJLKEBKLNGJ = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAJLKEBKLNGJ() {
-        
-        aJLKEBKLNGJ_ = 0F;
-        onChanged();
         return this;
       }
 
@@ -866,33 +812,95 @@ public final class JCCEBIEEGFLOuterClass {
         return this;
       }
 
-      private long hKGMDHHCIFE_ ;
+      private float aJLKEBKLNGJ_ ;
       /**
-       * <code>uint64 HKGMDHHCIFE = 5;</code>
-       * @return The hKGMDHHCIFE.
+       * <code>float AJLKEBKLNGJ = 2;</code>
+       * @return The aJLKEBKLNGJ.
        */
       @java.lang.Override
-      public long getHKGMDHHCIFE() {
-        return hKGMDHHCIFE_;
+      public float getAJLKEBKLNGJ() {
+        return aJLKEBKLNGJ_;
       }
       /**
-       * <code>uint64 HKGMDHHCIFE = 5;</code>
-       * @param value The hKGMDHHCIFE to set.
+       * <code>float AJLKEBKLNGJ = 2;</code>
+       * @param value The aJLKEBKLNGJ to set.
        * @return This builder for chaining.
        */
-      public Builder setHKGMDHHCIFE(long value) {
+      public Builder setAJLKEBKLNGJ(float value) {
         
-        hKGMDHHCIFE_ = value;
+        aJLKEBKLNGJ_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 HKGMDHHCIFE = 5;</code>
+       * <code>float AJLKEBKLNGJ = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHKGMDHHCIFE() {
+      public Builder clearAJLKEBKLNGJ() {
         
-        hKGMDHHCIFE_ = 0L;
+        aJLKEBKLNGJ_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private int kKIGBPEBAMA_ ;
+      /**
+       * <code>uint32 KKIGBPEBAMA = 1;</code>
+       * @return The kKIGBPEBAMA.
+       */
+      @java.lang.Override
+      public int getKKIGBPEBAMA() {
+        return kKIGBPEBAMA_;
+      }
+      /**
+       * <code>uint32 KKIGBPEBAMA = 1;</code>
+       * @param value The kKIGBPEBAMA to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKKIGBPEBAMA(int value) {
+        
+        kKIGBPEBAMA_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KKIGBPEBAMA = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKKIGBPEBAMA() {
+        
+        kKIGBPEBAMA_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long oLCAAHIHPAG_ ;
+      /**
+       * <code>uint64 OLCAAHIHPAG = 9;</code>
+       * @return The oLCAAHIHPAG.
+       */
+      @java.lang.Override
+      public long getOLCAAHIHPAG() {
+        return oLCAAHIHPAG_;
+      }
+      /**
+       * <code>uint64 OLCAAHIHPAG = 9;</code>
+       * @param value The oLCAAHIHPAG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOLCAAHIHPAG(long value) {
+        
+        oLCAAHIHPAG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 OLCAAHIHPAG = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOLCAAHIHPAG() {
+        
+        oLCAAHIHPAG_ = 0L;
         onChanged();
         return this;
       }
@@ -928,33 +936,33 @@ public final class JCCEBIEEGFLOuterClass {
         return this;
       }
 
-      private long lDINHKNEEBL_ ;
+      private long hKGMDHHCIFE_ ;
       /**
-       * <code>uint64 LDINHKNEEBL = 7;</code>
-       * @return The lDINHKNEEBL.
+       * <code>uint64 HKGMDHHCIFE = 5;</code>
+       * @return The hKGMDHHCIFE.
        */
       @java.lang.Override
-      public long getLDINHKNEEBL() {
-        return lDINHKNEEBL_;
+      public long getHKGMDHHCIFE() {
+        return hKGMDHHCIFE_;
       }
       /**
-       * <code>uint64 LDINHKNEEBL = 7;</code>
-       * @param value The lDINHKNEEBL to set.
+       * <code>uint64 HKGMDHHCIFE = 5;</code>
+       * @param value The hKGMDHHCIFE to set.
        * @return This builder for chaining.
        */
-      public Builder setLDINHKNEEBL(long value) {
+      public Builder setHKGMDHHCIFE(long value) {
         
-        lDINHKNEEBL_ = value;
+        hKGMDHHCIFE_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 LDINHKNEEBL = 7;</code>
+       * <code>uint64 HKGMDHHCIFE = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLDINHKNEEBL() {
+      public Builder clearHKGMDHHCIFE() {
         
-        lDINHKNEEBL_ = 0L;
+        hKGMDHHCIFE_ = 0L;
         onChanged();
         return this;
       }
@@ -990,33 +998,33 @@ public final class JCCEBIEEGFLOuterClass {
         return this;
       }
 
-      private long oLCAAHIHPAG_ ;
+      private long lDINHKNEEBL_ ;
       /**
-       * <code>uint64 OLCAAHIHPAG = 9;</code>
-       * @return The oLCAAHIHPAG.
+       * <code>uint64 LDINHKNEEBL = 7;</code>
+       * @return The lDINHKNEEBL.
        */
       @java.lang.Override
-      public long getOLCAAHIHPAG() {
-        return oLCAAHIHPAG_;
+      public long getLDINHKNEEBL() {
+        return lDINHKNEEBL_;
       }
       /**
-       * <code>uint64 OLCAAHIHPAG = 9;</code>
-       * @param value The oLCAAHIHPAG to set.
+       * <code>uint64 LDINHKNEEBL = 7;</code>
+       * @param value The lDINHKNEEBL to set.
        * @return This builder for chaining.
        */
-      public Builder setOLCAAHIHPAG(long value) {
+      public Builder setLDINHKNEEBL(long value) {
         
-        oLCAAHIHPAG_ = value;
+        lDINHKNEEBL_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint64 OLCAAHIHPAG = 9;</code>
+       * <code>uint64 LDINHKNEEBL = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOLCAAHIHPAG() {
+      public Builder clearLDINHKNEEBL() {
         
-        oLCAAHIHPAG_ = 0L;
+        lDINHKNEEBL_ = 0L;
         onChanged();
         return this;
       }
@@ -1087,14 +1095,13 @@ public final class JCCEBIEEGFLOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021JCCEBIEEGFL.proto\"\312\001\n\013JCCEBIEEGFL\022\023\n\013K" +
-      "KIGBPEBAMA\030\001 \001(\r\022\023\n\013AJLKEBKLNGJ\030\002 \001(\002\022\023\n" +
-      "\013DPBIFKMAFKG\030\003 \001(\002\022\023\n\013DBKOFKJEAFP\030\004 \001(\002\022" +
-      "\023\n\013HKGMDHHCIFE\030\005 \001(\004\022\023\n\013NKMDMPFFICJ\030\006 \001(" +
-      "\004\022\023\n\013LDINHKNEEBL\030\007 \001(\004\022\023\n\013GFFEGOMDFBB\030\010 " +
-      "\001(\004\022\023\n\013OLCAAHIHPAG\030\t \001(\004B2\n\031emu.grasscut" +
-      "ter.net.protoB\025JCCEBIEEGFLOuterClassb\006pr" +
-      "oto3"
+      "\n\021JCCEBIEEGFL.proto\"\312\001\n\013JCCEBIEEGFL\022\023\n\013D" +
+      "PBIFKMAFKG\030\003 \001(\002\022\023\n\013DBKOFKJEAFP\030\004 \001(\002\022\023\n" +
+      "\013AJLKEBKLNGJ\030\002 \001(\002\022\023\n\013KKIGBPEBAMA\030\001 \001(\r\022" +
+      "\023\n\013OLCAAHIHPAG\030\t \001(\004\022\023\n\013NKMDMPFFICJ\030\006 \001(" +
+      "\004\022\023\n\013HKGMDHHCIFE\030\005 \001(\004\022\023\n\013GFFEGOMDFBB\030\010 " +
+      "\001(\004\022\023\n\013LDINHKNEEBL\030\007 \001(\004B\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1105,7 +1112,7 @@ public final class JCCEBIEEGFLOuterClass {
     internal_static_JCCEBIEEGFL_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_JCCEBIEEGFL_descriptor,
-        new java.lang.String[] { "KKIGBPEBAMA", "AJLKEBKLNGJ", "DPBIFKMAFKG", "DBKOFKJEAFP", "HKGMDHHCIFE", "NKMDMPFFICJ", "LDINHKNEEBL", "GFFEGOMDFBB", "OLCAAHIHPAG", });
+        new java.lang.String[] { "DPBIFKMAFKG", "DBKOFKJEAFP", "AJLKEBKLNGJ", "KKIGBPEBAMA", "OLCAAHIHPAG", "NKMDMPFFICJ", "HKGMDHHCIFE", "GFFEGOMDFBB", "LDINHKNEEBL", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

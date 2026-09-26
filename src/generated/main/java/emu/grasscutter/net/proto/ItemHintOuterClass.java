@@ -19,30 +19,6 @@ public final class ItemHintOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 item_id = 1;</code>
-     * @return The itemId.
-     */
-    int getItemId();
-
-    /**
-     * <code>uint32 count = 2;</code>
-     * @return The count.
-     */
-    int getCount();
-
-    /**
-     * <code>bool is_new = 3;</code>
-     * @return The isNew.
-     */
-    boolean getIsNew();
-
-    /**
-     * <code>uint64 guid = 4;</code>
-     * @return The guid.
-     */
-    long getGuid();
-
-    /**
      * <code>repeated .OBLGMFAIFCM JFCPGMBKDDO = 5;</code>
      */
     java.util.List<emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCM> 
@@ -65,8 +41,36 @@ public final class ItemHintOuterClass {
      */
     emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCMOrBuilder getJFCPGMBKDDOOrBuilder(
         int index);
+
+    /**
+     * <code>bool is_new = 3;</code>
+     * @return The isNew.
+     */
+    boolean getIsNew();
+
+    /**
+     * <code>uint32 item_id = 1;</code>
+     * @return The itemId.
+     */
+    int getItemId();
+
+    /**
+     * <code>uint64 guid = 4;</code>
+     * @return The guid.
+     */
+    long getGuid();
+
+    /**
+     * <code>uint32 count = 2;</code>
+     * @return The count.
+     */
+    int getCount();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code ItemHint}
    */
   public static final class ItemHint extends
@@ -177,50 +181,6 @@ public final class ItemHintOuterClass {
               emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.class, emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.Builder.class);
     }
 
-    public static final int ITEM_ID_FIELD_NUMBER = 1;
-    private int itemId_;
-    /**
-     * <code>uint32 item_id = 1;</code>
-     * @return The itemId.
-     */
-    @java.lang.Override
-    public int getItemId() {
-      return itemId_;
-    }
-
-    public static final int COUNT_FIELD_NUMBER = 2;
-    private int count_;
-    /**
-     * <code>uint32 count = 2;</code>
-     * @return The count.
-     */
-    @java.lang.Override
-    public int getCount() {
-      return count_;
-    }
-
-    public static final int IS_NEW_FIELD_NUMBER = 3;
-    private boolean isNew_;
-    /**
-     * <code>bool is_new = 3;</code>
-     * @return The isNew.
-     */
-    @java.lang.Override
-    public boolean getIsNew() {
-      return isNew_;
-    }
-
-    public static final int GUID_FIELD_NUMBER = 4;
-    private long guid_;
-    /**
-     * <code>uint64 guid = 4;</code>
-     * @return The guid.
-     */
-    @java.lang.Override
-    public long getGuid() {
-      return guid_;
-    }
-
     public static final int JFCPGMBKDDO_FIELD_NUMBER = 5;
     private java.util.List<emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCM> jFCPGMBKDDO_;
     /**
@@ -259,6 +219,50 @@ public final class ItemHintOuterClass {
     public emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCMOrBuilder getJFCPGMBKDDOOrBuilder(
         int index) {
       return jFCPGMBKDDO_.get(index);
+    }
+
+    public static final int IS_NEW_FIELD_NUMBER = 3;
+    private boolean isNew_;
+    /**
+     * <code>bool is_new = 3;</code>
+     * @return The isNew.
+     */
+    @java.lang.Override
+    public boolean getIsNew() {
+      return isNew_;
+    }
+
+    public static final int ITEM_ID_FIELD_NUMBER = 1;
+    private int itemId_;
+    /**
+     * <code>uint32 item_id = 1;</code>
+     * @return The itemId.
+     */
+    @java.lang.Override
+    public int getItemId() {
+      return itemId_;
+    }
+
+    public static final int GUID_FIELD_NUMBER = 4;
+    private long guid_;
+    /**
+     * <code>uint64 guid = 4;</code>
+     * @return The guid.
+     */
+    @java.lang.Override
+    public long getGuid() {
+      return guid_;
+    }
+
+    public static final int COUNT_FIELD_NUMBER = 2;
+    private int count_;
+    /**
+     * <code>uint32 count = 2;</code>
+     * @return The count.
+     */
+    @java.lang.Override
+    public int getCount() {
+      return count_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -334,16 +338,16 @@ public final class ItemHintOuterClass {
       }
       emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint other = (emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint) obj;
 
-      if (getItemId()
-          != other.getItemId()) return false;
-      if (getCount()
-          != other.getCount()) return false;
-      if (getIsNew()
-          != other.getIsNew()) return false;
-      if (getGuid()
-          != other.getGuid()) return false;
       if (!getJFCPGMBKDDOList()
           .equals(other.getJFCPGMBKDDOList())) return false;
+      if (getIsNew()
+          != other.getIsNew()) return false;
+      if (getItemId()
+          != other.getItemId()) return false;
+      if (getGuid()
+          != other.getGuid()) return false;
+      if (getCount()
+          != other.getCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -355,20 +359,20 @@ public final class ItemHintOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getItemId();
-      hash = (37 * hash) + COUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getCount();
-      hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsNew());
-      hash = (37 * hash) + GUID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGuid());
       if (getJFCPGMBKDDOCount() > 0) {
         hash = (37 * hash) + JFCPGMBKDDO_FIELD_NUMBER;
         hash = (53 * hash) + getJFCPGMBKDDOList().hashCode();
       }
+      hash = (37 * hash) + IS_NEW_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsNew());
+      hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getItemId();
+      hash = (37 * hash) + GUID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGuid());
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getCount();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -465,6 +469,10 @@ public final class ItemHintOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code ItemHint}
      */
     public static final class Builder extends
@@ -503,20 +511,20 @@ public final class ItemHintOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        itemId_ = 0;
-
-        count_ = 0;
-
-        isNew_ = false;
-
-        guid_ = 0L;
-
         if (jFCPGMBKDDOBuilder_ == null) {
           jFCPGMBKDDO_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
           jFCPGMBKDDOBuilder_.clear();
         }
+        isNew_ = false;
+
+        itemId_ = 0;
+
+        guid_ = 0L;
+
+        count_ = 0;
+
         return this;
       }
 
@@ -544,10 +552,6 @@ public final class ItemHintOuterClass {
       public emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint buildPartial() {
         emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint result = new emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint(this);
         int from_bitField0_ = bitField0_;
-        result.itemId_ = itemId_;
-        result.count_ = count_;
-        result.isNew_ = isNew_;
-        result.guid_ = guid_;
         if (jFCPGMBKDDOBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             jFCPGMBKDDO_ = java.util.Collections.unmodifiableList(jFCPGMBKDDO_);
@@ -557,6 +561,10 @@ public final class ItemHintOuterClass {
         } else {
           result.jFCPGMBKDDO_ = jFCPGMBKDDOBuilder_.build();
         }
+        result.isNew_ = isNew_;
+        result.itemId_ = itemId_;
+        result.guid_ = guid_;
+        result.count_ = count_;
         onBuilt();
         return result;
       }
@@ -605,18 +613,6 @@ public final class ItemHintOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint other) {
         if (other == emu.grasscutter.net.proto.ItemHintOuterClass.ItemHint.getDefaultInstance()) return this;
-        if (other.getItemId() != 0) {
-          setItemId(other.getItemId());
-        }
-        if (other.getCount() != 0) {
-          setCount(other.getCount());
-        }
-        if (other.getIsNew() != false) {
-          setIsNew(other.getIsNew());
-        }
-        if (other.getGuid() != 0L) {
-          setGuid(other.getGuid());
-        }
         if (jFCPGMBKDDOBuilder_ == null) {
           if (!other.jFCPGMBKDDO_.isEmpty()) {
             if (jFCPGMBKDDO_.isEmpty()) {
@@ -642,6 +638,18 @@ public final class ItemHintOuterClass {
               jFCPGMBKDDOBuilder_.addAllMessages(other.jFCPGMBKDDO_);
             }
           }
+        }
+        if (other.getIsNew() != false) {
+          setIsNew(other.getIsNew());
+        }
+        if (other.getItemId() != 0) {
+          setItemId(other.getItemId());
+        }
+        if (other.getGuid() != 0L) {
+          setGuid(other.getGuid());
+        }
+        if (other.getCount() != 0) {
+          setCount(other.getCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -672,130 +680,6 @@ public final class ItemHintOuterClass {
         return this;
       }
       private int bitField0_;
-
-      private int itemId_ ;
-      /**
-       * <code>uint32 item_id = 1;</code>
-       * @return The itemId.
-       */
-      @java.lang.Override
-      public int getItemId() {
-        return itemId_;
-      }
-      /**
-       * <code>uint32 item_id = 1;</code>
-       * @param value The itemId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setItemId(int value) {
-        
-        itemId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 item_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearItemId() {
-        
-        itemId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int count_ ;
-      /**
-       * <code>uint32 count = 2;</code>
-       * @return The count.
-       */
-      @java.lang.Override
-      public int getCount() {
-        return count_;
-      }
-      /**
-       * <code>uint32 count = 2;</code>
-       * @param value The count to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCount(int value) {
-        
-        count_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 count = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCount() {
-        
-        count_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isNew_ ;
-      /**
-       * <code>bool is_new = 3;</code>
-       * @return The isNew.
-       */
-      @java.lang.Override
-      public boolean getIsNew() {
-        return isNew_;
-      }
-      /**
-       * <code>bool is_new = 3;</code>
-       * @param value The isNew to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsNew(boolean value) {
-        
-        isNew_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_new = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsNew() {
-        
-        isNew_ = false;
-        onChanged();
-        return this;
-      }
-
-      private long guid_ ;
-      /**
-       * <code>uint64 guid = 4;</code>
-       * @return The guid.
-       */
-      @java.lang.Override
-      public long getGuid() {
-        return guid_;
-      }
-      /**
-       * <code>uint64 guid = 4;</code>
-       * @param value The guid to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGuid(long value) {
-        
-        guid_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint64 guid = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGuid() {
-        
-        guid_ = 0L;
-        onChanged();
-        return this;
-      }
 
       private java.util.List<emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.OBLGMFAIFCM> jFCPGMBKDDO_ =
         java.util.Collections.emptyList();
@@ -1036,6 +920,130 @@ public final class ItemHintOuterClass {
         }
         return jFCPGMBKDDOBuilder_;
       }
+
+      private boolean isNew_ ;
+      /**
+       * <code>bool is_new = 3;</code>
+       * @return The isNew.
+       */
+      @java.lang.Override
+      public boolean getIsNew() {
+        return isNew_;
+      }
+      /**
+       * <code>bool is_new = 3;</code>
+       * @param value The isNew to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsNew(boolean value) {
+        
+        isNew_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_new = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsNew() {
+        
+        isNew_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int itemId_ ;
+      /**
+       * <code>uint32 item_id = 1;</code>
+       * @return The itemId.
+       */
+      @java.lang.Override
+      public int getItemId() {
+        return itemId_;
+      }
+      /**
+       * <code>uint32 item_id = 1;</code>
+       * @param value The itemId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setItemId(int value) {
+        
+        itemId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 item_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearItemId() {
+        
+        itemId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long guid_ ;
+      /**
+       * <code>uint64 guid = 4;</code>
+       * @return The guid.
+       */
+      @java.lang.Override
+      public long getGuid() {
+        return guid_;
+      }
+      /**
+       * <code>uint64 guid = 4;</code>
+       * @param value The guid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGuid(long value) {
+        
+        guid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 guid = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGuid() {
+        
+        guid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int count_ ;
+      /**
+       * <code>uint32 count = 2;</code>
+       * @return The count.
+       */
+      @java.lang.Override
+      public int getCount() {
+        return count_;
+      }
+      /**
+       * <code>uint32 count = 2;</code>
+       * @param value The count to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCount(int value) {
+        
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 count = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCount() {
+        
+        count_ = 0;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1104,11 +1112,10 @@ public final class ItemHintOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\016ItemHint.proto\032\021OBLGMFAIFCM.proto\"k\n\010I" +
-      "temHint\022\017\n\007item_id\030\001 \001(\r\022\r\n\005count\030\002 \001(\r\022" +
-      "\016\n\006is_new\030\003 \001(\010\022\014\n\004guid\030\004 \001(\004\022!\n\013JFCPGMB" +
-      "KDDO\030\005 \003(\0132\014.OBLGMFAIFCMB/\n\031emu.grasscut" +
-      "ter.net.protoB\022ItemHintOuterClassb\006proto" +
-      "3"
+      "temHint\022!\n\013JFCPGMBKDDO\030\005 \003(\0132\014.OBLGMFAIF" +
+      "CM\022\016\n\006is_new\030\003 \001(\010\022\017\n\007item_id\030\001 \001(\r\022\014\n\004g" +
+      "uid\030\004 \001(\004\022\r\n\005count\030\002 \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1120,7 +1127,7 @@ public final class ItemHintOuterClass {
     internal_static_ItemHint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ItemHint_descriptor,
-        new java.lang.String[] { "ItemId", "Count", "IsNew", "Guid", "JFCPGMBKDDO", });
+        new java.lang.String[] { "JFCPGMBKDDO", "IsNew", "ItemId", "Guid", "Count", });
     emu.grasscutter.net.proto.OBLGMFAIFCMOuterClass.getDescriptor();
   }
 

@@ -19,24 +19,28 @@ public final class MichiaeMatsuriStageOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool is_open = 1;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>uint32 open_time = 7;</code>
+     * <code>uint32 open_time = 3;</code>
      * @return The openTime.
      */
     int getOpenTime();
 
     /**
-     * <code>uint32 stage_id = 13;</code>
+     * <code>bool is_open = 5;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
      */
     int getStageId();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MichiaeMatsuriStage}
    */
   public static final class MichiaeMatsuriStage extends
@@ -81,17 +85,17 @@ public final class MichiaeMatsuriStageOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 56: {
+            case 24: {
 
               openTime_ = input.readUInt32();
               break;
             }
-            case 104: {
+            case 40: {
+
+              isOpen_ = input.readBool();
+              break;
+            }
+            case 80: {
 
               stageId_ = input.readUInt32();
               break;
@@ -128,21 +132,10 @@ public final class MichiaeMatsuriStageOuterClass {
               emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.class, emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.Builder.class);
     }
 
-    public static final int IS_OPEN_FIELD_NUMBER = 1;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 1;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int OPEN_TIME_FIELD_NUMBER = 7;
+    public static final int OPEN_TIME_FIELD_NUMBER = 3;
     private int openTime_;
     /**
-     * <code>uint32 open_time = 7;</code>
+     * <code>uint32 open_time = 3;</code>
      * @return The openTime.
      */
     @java.lang.Override
@@ -150,10 +143,21 @@ public final class MichiaeMatsuriStageOuterClass {
       return openTime_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 13;
+    public static final int IS_OPEN_FIELD_NUMBER = 5;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 5;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 10;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 13;</code>
+     * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -175,14 +179,14 @@ public final class MichiaeMatsuriStageOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isOpen_ != false) {
-        output.writeBool(1, isOpen_);
-      }
       if (openTime_ != 0) {
-        output.writeUInt32(7, openTime_);
+        output.writeUInt32(3, openTime_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(5, isOpen_);
       }
       if (stageId_ != 0) {
-        output.writeUInt32(13, stageId_);
+        output.writeUInt32(10, stageId_);
       }
       unknownFields.writeTo(output);
     }
@@ -193,17 +197,17 @@ public final class MichiaeMatsuriStageOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, isOpen_);
-      }
       if (openTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, openTime_);
+          .computeUInt32Size(3, openTime_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, isOpen_);
       }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, stageId_);
+          .computeUInt32Size(10, stageId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -220,10 +224,10 @@ public final class MichiaeMatsuriStageOuterClass {
       }
       emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage other = (emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage) obj;
 
-      if (getIsOpen()
-          != other.getIsOpen()) return false;
       if (getOpenTime()
           != other.getOpenTime()) return false;
+      if (getIsOpen()
+          != other.getIsOpen()) return false;
       if (getStageId()
           != other.getStageId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -237,11 +241,11 @@ public final class MichiaeMatsuriStageOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getOpenTime();
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getOpenTime();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -340,6 +344,10 @@ public final class MichiaeMatsuriStageOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MichiaeMatsuriStage}
      */
     public static final class Builder extends
@@ -377,9 +385,9 @@ public final class MichiaeMatsuriStageOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        isOpen_ = false;
-
         openTime_ = 0;
+
+        isOpen_ = false;
 
         stageId_ = 0;
 
@@ -409,8 +417,8 @@ public final class MichiaeMatsuriStageOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage buildPartial() {
         emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage result = new emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage(this);
-        result.isOpen_ = isOpen_;
         result.openTime_ = openTime_;
+        result.isOpen_ = isOpen_;
         result.stageId_ = stageId_;
         onBuilt();
         return result;
@@ -460,11 +468,11 @@ public final class MichiaeMatsuriStageOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage other) {
         if (other == emu.grasscutter.net.proto.MichiaeMatsuriStageOuterClass.MichiaeMatsuriStage.getDefaultInstance()) return this;
-        if (other.getIsOpen() != false) {
-          setIsOpen(other.getIsOpen());
-        }
         if (other.getOpenTime() != 0) {
           setOpenTime(other.getOpenTime());
+        }
+        if (other.getIsOpen() != false) {
+          setIsOpen(other.getIsOpen());
         }
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
@@ -498,40 +506,9 @@ public final class MichiaeMatsuriStageOuterClass {
         return this;
       }
 
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 1;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 1;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
       private int openTime_ ;
       /**
-       * <code>uint32 open_time = 7;</code>
+       * <code>uint32 open_time = 3;</code>
        * @return The openTime.
        */
       @java.lang.Override
@@ -539,7 +516,7 @@ public final class MichiaeMatsuriStageOuterClass {
         return openTime_;
       }
       /**
-       * <code>uint32 open_time = 7;</code>
+       * <code>uint32 open_time = 3;</code>
        * @param value The openTime to set.
        * @return This builder for chaining.
        */
@@ -550,7 +527,7 @@ public final class MichiaeMatsuriStageOuterClass {
         return this;
       }
       /**
-       * <code>uint32 open_time = 7;</code>
+       * <code>uint32 open_time = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
@@ -560,9 +537,40 @@ public final class MichiaeMatsuriStageOuterClass {
         return this;
       }
 
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 5;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 5;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
       private int stageId_ ;
       /**
-       * <code>uint32 stage_id = 13;</code>
+       * <code>uint32 stage_id = 10;</code>
        * @return The stageId.
        */
       @java.lang.Override
@@ -570,7 +578,7 @@ public final class MichiaeMatsuriStageOuterClass {
         return stageId_;
       }
       /**
-       * <code>uint32 stage_id = 13;</code>
+       * <code>uint32 stage_id = 10;</code>
        * @param value The stageId to set.
        * @return This builder for chaining.
        */
@@ -581,7 +589,7 @@ public final class MichiaeMatsuriStageOuterClass {
         return this;
       }
       /**
-       * <code>uint32 stage_id = 13;</code>
+       * <code>uint32 stage_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
@@ -658,10 +666,9 @@ public final class MichiaeMatsuriStageOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031MichiaeMatsuriStage.proto\"K\n\023MichiaeMa" +
-      "tsuriStage\022\017\n\007is_open\030\001 \001(\010\022\021\n\topen_time" +
-      "\030\007 \001(\r\022\020\n\010stage_id\030\r \001(\rB:\n\031emu.grasscut" +
-      "ter.net.protoB\035MichiaeMatsuriStageOuterC" +
-      "lassb\006proto3"
+      "tsuriStage\022\021\n\topen_time\030\003 \001(\r\022\017\n\007is_open" +
+      "\030\005 \001(\010\022\020\n\010stage_id\030\n \001(\rB\033\n\031emu.grasscut" +
+      "ter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -672,7 +679,7 @@ public final class MichiaeMatsuriStageOuterClass {
     internal_static_MichiaeMatsuriStage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MichiaeMatsuriStage_descriptor,
-        new java.lang.String[] { "IsOpen", "OpenTime", "StageId", });
+        new java.lang.String[] { "OpenTime", "IsOpen", "StageId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

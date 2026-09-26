@@ -19,12 +19,6 @@ public final class MapMarkPointOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 scene_id = 1;</code>
-     * @return The sceneId.
-     */
-    int getSceneId();
-
-    /**
      * <code>string name = 2;</code>
      * @return The name.
      */
@@ -52,21 +46,10 @@ public final class MapMarkPointOuterClass {
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>.MapMarkPointType point_type = 4;</code>
-     * @return The enum numeric value on the wire for pointType.
+     * <code>uint32 scene_id = 1;</code>
+     * @return The sceneId.
      */
-    int getPointTypeValue();
-    /**
-     * <code>.MapMarkPointType point_type = 4;</code>
-     * @return The pointType.
-     */
-    emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType getPointType();
-
-    /**
-     * <code>uint32 monster_id = 5;</code>
-     * @return The monsterId.
-     */
-    int getMonsterId();
+    int getSceneId();
 
     /**
      * <code>.MapMarkFromType from_type = 6;</code>
@@ -80,18 +63,39 @@ public final class MapMarkPointOuterClass {
     emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.MapMarkFromType getFromType();
 
     /**
+     * <code>uint32 _map_layer_id = 8;</code>
+     * @return The mapLayerId.
+     */
+    int getMapLayerId();
+
+    /**
      * <code>uint32 quest_id = 7;</code>
      * @return The questId.
      */
     int getQuestId();
 
     /**
-     * <code>uint32 _map_layer_id = 8;</code>
-     * @return The mapLayerId.
+     * <code>uint32 monster_id = 5;</code>
+     * @return The monsterId.
      */
-    int getMapLayerId();
+    int getMonsterId();
+
+    /**
+     * <code>.MapMarkPointType point_type = 4;</code>
+     * @return The enum numeric value on the wire for pointType.
+     */
+    int getPointTypeValue();
+    /**
+     * <code>.MapMarkPointType point_type = 4;</code>
+     * @return The pointType.
+     */
+    emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType getPointType();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MapMarkPoint}
    */
   public static final class MapMarkPoint extends
@@ -105,8 +109,8 @@ public final class MapMarkPointOuterClass {
     }
     private MapMarkPoint() {
       name_ = "";
-      pointType_ = 0;
       fromType_ = 0;
+      pointType_ = 0;
     }
 
     @java.lang.Override
@@ -222,17 +226,6 @@ public final class MapMarkPointOuterClass {
               emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.class, emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.Builder.class);
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 1;
-    private int sceneId_;
-    /**
-     * <code>uint32 scene_id = 1;</code>
-     * @return The sceneId.
-     */
-    @java.lang.Override
-    public int getSceneId() {
-      return sceneId_;
-    }
-
     public static final int NAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object name_;
     /**
@@ -297,34 +290,15 @@ public final class MapMarkPointOuterClass {
       return getPos();
     }
 
-    public static final int POINT_TYPE_FIELD_NUMBER = 4;
-    private int pointType_;
+    public static final int SCENE_ID_FIELD_NUMBER = 1;
+    private int sceneId_;
     /**
-     * <code>.MapMarkPointType point_type = 4;</code>
-     * @return The enum numeric value on the wire for pointType.
-     */
-    @java.lang.Override public int getPointTypeValue() {
-      return pointType_;
-    }
-    /**
-     * <code>.MapMarkPointType point_type = 4;</code>
-     * @return The pointType.
-     */
-    @java.lang.Override public emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType getPointType() {
-      @SuppressWarnings("deprecation")
-      emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType result = emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.valueOf(pointType_);
-      return result == null ? emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.UNRECOGNIZED : result;
-    }
-
-    public static final int MONSTER_ID_FIELD_NUMBER = 5;
-    private int monsterId_;
-    /**
-     * <code>uint32 monster_id = 5;</code>
-     * @return The monsterId.
+     * <code>uint32 scene_id = 1;</code>
+     * @return The sceneId.
      */
     @java.lang.Override
-    public int getMonsterId() {
-      return monsterId_;
+    public int getSceneId() {
+      return sceneId_;
     }
 
     public static final int FROM_TYPE_FIELD_NUMBER = 6;
@@ -346,6 +320,17 @@ public final class MapMarkPointOuterClass {
       return result == null ? emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.MapMarkFromType.UNRECOGNIZED : result;
     }
 
+    public static final int _MAP_LAYER_ID_FIELD_NUMBER = 8;
+    private int MapLayerId_;
+    /**
+     * <code>uint32 _map_layer_id = 8;</code>
+     * @return The mapLayerId.
+     */
+    @java.lang.Override
+    public int getMapLayerId() {
+      return MapLayerId_;
+    }
+
     public static final int QUEST_ID_FIELD_NUMBER = 7;
     private int questId_;
     /**
@@ -357,15 +342,34 @@ public final class MapMarkPointOuterClass {
       return questId_;
     }
 
-    public static final int _MAP_LAYER_ID_FIELD_NUMBER = 8;
-    private int MapLayerId_;
+    public static final int MONSTER_ID_FIELD_NUMBER = 5;
+    private int monsterId_;
     /**
-     * <code>uint32 _map_layer_id = 8;</code>
-     * @return The mapLayerId.
+     * <code>uint32 monster_id = 5;</code>
+     * @return The monsterId.
      */
     @java.lang.Override
-    public int getMapLayerId() {
-      return MapLayerId_;
+    public int getMonsterId() {
+      return monsterId_;
+    }
+
+    public static final int POINT_TYPE_FIELD_NUMBER = 4;
+    private int pointType_;
+    /**
+     * <code>.MapMarkPointType point_type = 4;</code>
+     * @return The enum numeric value on the wire for pointType.
+     */
+    @java.lang.Override public int getPointTypeValue() {
+      return pointType_;
+    }
+    /**
+     * <code>.MapMarkPointType point_type = 4;</code>
+     * @return The pointType.
+     */
+    @java.lang.Override public emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType getPointType() {
+      @SuppressWarnings("deprecation")
+      emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType result = emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.valueOf(pointType_);
+      return result == null ? emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -461,8 +465,6 @@ public final class MapMarkPointOuterClass {
       }
       emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint other = (emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint) obj;
 
-      if (getSceneId()
-          != other.getSceneId()) return false;
       if (!getName()
           .equals(other.getName())) return false;
       if (hasPos() != other.hasPos()) return false;
@@ -470,14 +472,16 @@ public final class MapMarkPointOuterClass {
         if (!getPos()
             .equals(other.getPos())) return false;
       }
-      if (pointType_ != other.pointType_) return false;
-      if (getMonsterId()
-          != other.getMonsterId()) return false;
+      if (getSceneId()
+          != other.getSceneId()) return false;
       if (fromType_ != other.fromType_) return false;
-      if (getQuestId()
-          != other.getQuestId()) return false;
       if (getMapLayerId()
           != other.getMapLayerId()) return false;
+      if (getQuestId()
+          != other.getQuestId()) return false;
+      if (getMonsterId()
+          != other.getMonsterId()) return false;
+      if (pointType_ != other.pointType_) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -489,24 +493,24 @@ public final class MapMarkPointOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
       }
-      hash = (37 * hash) + POINT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + pointType_;
-      hash = (37 * hash) + MONSTER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getMonsterId();
+      hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + FROM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + fromType_;
-      hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getQuestId();
       hash = (37 * hash) + _MAP_LAYER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMapLayerId();
+      hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestId();
+      hash = (37 * hash) + MONSTER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getMonsterId();
+      hash = (37 * hash) + POINT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + pointType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -603,6 +607,10 @@ public final class MapMarkPointOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MapMarkPoint}
      */
     public static final class Builder extends
@@ -640,8 +648,6 @@ public final class MapMarkPointOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        sceneId_ = 0;
-
         name_ = "";
 
         if (posBuilder_ == null) {
@@ -650,15 +656,17 @@ public final class MapMarkPointOuterClass {
           pos_ = null;
           posBuilder_ = null;
         }
-        pointType_ = 0;
-
-        monsterId_ = 0;
+        sceneId_ = 0;
 
         fromType_ = 0;
 
+        MapLayerId_ = 0;
+
         questId_ = 0;
 
-        MapLayerId_ = 0;
+        monsterId_ = 0;
+
+        pointType_ = 0;
 
         return this;
       }
@@ -686,18 +694,18 @@ public final class MapMarkPointOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint buildPartial() {
         emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint result = new emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint(this);
-        result.sceneId_ = sceneId_;
         result.name_ = name_;
         if (posBuilder_ == null) {
           result.pos_ = pos_;
         } else {
           result.pos_ = posBuilder_.build();
         }
-        result.pointType_ = pointType_;
-        result.monsterId_ = monsterId_;
+        result.sceneId_ = sceneId_;
         result.fromType_ = fromType_;
-        result.questId_ = questId_;
         result.MapLayerId_ = MapLayerId_;
+        result.questId_ = questId_;
+        result.monsterId_ = monsterId_;
+        result.pointType_ = pointType_;
         onBuilt();
         return result;
       }
@@ -746,9 +754,6 @@ public final class MapMarkPointOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint other) {
         if (other == emu.grasscutter.net.proto.MapMarkPointOuterClass.MapMarkPoint.getDefaultInstance()) return this;
-        if (other.getSceneId() != 0) {
-          setSceneId(other.getSceneId());
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -756,20 +761,23 @@ public final class MapMarkPointOuterClass {
         if (other.hasPos()) {
           mergePos(other.getPos());
         }
-        if (other.pointType_ != 0) {
-          setPointTypeValue(other.getPointTypeValue());
-        }
-        if (other.getMonsterId() != 0) {
-          setMonsterId(other.getMonsterId());
+        if (other.getSceneId() != 0) {
+          setSceneId(other.getSceneId());
         }
         if (other.fromType_ != 0) {
           setFromTypeValue(other.getFromTypeValue());
         }
+        if (other.getMapLayerId() != 0) {
+          setMapLayerId(other.getMapLayerId());
+        }
         if (other.getQuestId() != 0) {
           setQuestId(other.getQuestId());
         }
-        if (other.getMapLayerId() != 0) {
-          setMapLayerId(other.getMapLayerId());
+        if (other.getMonsterId() != 0) {
+          setMonsterId(other.getMonsterId());
+        }
+        if (other.pointType_ != 0) {
+          setPointTypeValue(other.getPointTypeValue());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -797,37 +805,6 @@ public final class MapMarkPointOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private int sceneId_ ;
-      /**
-       * <code>uint32 scene_id = 1;</code>
-       * @return The sceneId.
-       */
-      @java.lang.Override
-      public int getSceneId() {
-        return sceneId_;
-      }
-      /**
-       * <code>uint32 scene_id = 1;</code>
-       * @param value The sceneId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSceneId(int value) {
-        
-        sceneId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 scene_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSceneId() {
-        
-        sceneId_ = 0;
-        onChanged();
         return this;
       }
 
@@ -1026,87 +1003,33 @@ public final class MapMarkPointOuterClass {
         return posBuilder_;
       }
 
-      private int pointType_ = 0;
+      private int sceneId_ ;
       /**
-       * <code>.MapMarkPointType point_type = 4;</code>
-       * @return The enum numeric value on the wire for pointType.
-       */
-      @java.lang.Override public int getPointTypeValue() {
-        return pointType_;
-      }
-      /**
-       * <code>.MapMarkPointType point_type = 4;</code>
-       * @param value The enum numeric value on the wire for pointType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPointTypeValue(int value) {
-        
-        pointType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.MapMarkPointType point_type = 4;</code>
-       * @return The pointType.
+       * <code>uint32 scene_id = 1;</code>
+       * @return The sceneId.
        */
       @java.lang.Override
-      public emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType getPointType() {
-        @SuppressWarnings("deprecation")
-        emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType result = emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.valueOf(pointType_);
-        return result == null ? emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.UNRECOGNIZED : result;
+      public int getSceneId() {
+        return sceneId_;
       }
       /**
-       * <code>.MapMarkPointType point_type = 4;</code>
-       * @param value The pointType to set.
+       * <code>uint32 scene_id = 1;</code>
+       * @param value The sceneId to set.
        * @return This builder for chaining.
        */
-      public Builder setPointType(emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+      public Builder setSceneId(int value) {
         
-        pointType_ = value.getNumber();
+        sceneId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>.MapMarkPointType point_type = 4;</code>
+       * <code>uint32 scene_id = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearPointType() {
+      public Builder clearSceneId() {
         
-        pointType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int monsterId_ ;
-      /**
-       * <code>uint32 monster_id = 5;</code>
-       * @return The monsterId.
-       */
-      @java.lang.Override
-      public int getMonsterId() {
-        return monsterId_;
-      }
-      /**
-       * <code>uint32 monster_id = 5;</code>
-       * @param value The monsterId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMonsterId(int value) {
-        
-        monsterId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 monster_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMonsterId() {
-        
-        monsterId_ = 0;
+        sceneId_ = 0;
         onChanged();
         return this;
       }
@@ -1165,6 +1088,37 @@ public final class MapMarkPointOuterClass {
         return this;
       }
 
+      private int MapLayerId_ ;
+      /**
+       * <code>uint32 _map_layer_id = 8;</code>
+       * @return The mapLayerId.
+       */
+      @java.lang.Override
+      public int getMapLayerId() {
+        return MapLayerId_;
+      }
+      /**
+       * <code>uint32 _map_layer_id = 8;</code>
+       * @param value The mapLayerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMapLayerId(int value) {
+        
+        MapLayerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 _map_layer_id = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMapLayerId() {
+        
+        MapLayerId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private int questId_ ;
       /**
        * <code>uint32 quest_id = 7;</code>
@@ -1196,33 +1150,87 @@ public final class MapMarkPointOuterClass {
         return this;
       }
 
-      private int MapLayerId_ ;
+      private int monsterId_ ;
       /**
-       * <code>uint32 _map_layer_id = 8;</code>
-       * @return The mapLayerId.
+       * <code>uint32 monster_id = 5;</code>
+       * @return The monsterId.
        */
       @java.lang.Override
-      public int getMapLayerId() {
-        return MapLayerId_;
+      public int getMonsterId() {
+        return monsterId_;
       }
       /**
-       * <code>uint32 _map_layer_id = 8;</code>
-       * @param value The mapLayerId to set.
+       * <code>uint32 monster_id = 5;</code>
+       * @param value The monsterId to set.
        * @return This builder for chaining.
        */
-      public Builder setMapLayerId(int value) {
+      public Builder setMonsterId(int value) {
         
-        MapLayerId_ = value;
+        monsterId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 _map_layer_id = 8;</code>
+       * <code>uint32 monster_id = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMapLayerId() {
+      public Builder clearMonsterId() {
         
-        MapLayerId_ = 0;
+        monsterId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pointType_ = 0;
+      /**
+       * <code>.MapMarkPointType point_type = 4;</code>
+       * @return The enum numeric value on the wire for pointType.
+       */
+      @java.lang.Override public int getPointTypeValue() {
+        return pointType_;
+      }
+      /**
+       * <code>.MapMarkPointType point_type = 4;</code>
+       * @param value The enum numeric value on the wire for pointType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPointTypeValue(int value) {
+        
+        pointType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.MapMarkPointType point_type = 4;</code>
+       * @return The pointType.
+       */
+      @java.lang.Override
+      public emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType getPointType() {
+        @SuppressWarnings("deprecation")
+        emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType result = emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.valueOf(pointType_);
+        return result == null ? emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.MapMarkPointType point_type = 4;</code>
+       * @param value The pointType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPointType(emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.MapMarkPointType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        pointType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.MapMarkPointType point_type = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPointType() {
+        
+        pointType_ = 0;
         onChanged();
         return this;
       }
@@ -1295,13 +1303,13 @@ public final class MapMarkPointOuterClass {
     java.lang.String[] descriptorData = {
       "\n\022MapMarkPoint.proto\032\025MapMarkFromType.pr" +
       "oto\032\026MapMarkPointType.proto\032\014Vector.prot" +
-      "o\"\315\001\n\014MapMarkPoint\022\020\n\010scene_id\030\001 \001(\r\022\014\n\004" +
-      "name\030\002 \001(\t\022\024\n\003pos\030\003 \001(\0132\007.Vector\022%\n\npoin" +
-      "t_type\030\004 \001(\0162\021.MapMarkPointType\022\022\n\nmonst" +
-      "er_id\030\005 \001(\r\022#\n\tfrom_type\030\006 \001(\0162\020.MapMark" +
-      "FromType\022\020\n\010quest_id\030\007 \001(\r\022\025\n\r_map_layer" +
-      "_id\030\010 \001(\rB3\n\031emu.grasscutter.net.protoB\026" +
-      "MapMarkPointOuterClassb\006proto3"
+      "o\"\315\001\n\014MapMarkPoint\022\014\n\004name\030\002 \001(\t\022\024\n\003pos\030" +
+      "\003 \001(\0132\007.Vector\022\020\n\010scene_id\030\001 \001(\r\022#\n\tfrom" +
+      "_type\030\006 \001(\0162\020.MapMarkFromType\022\025\n\r_map_la" +
+      "yer_id\030\010 \001(\r\022\020\n\010quest_id\030\007 \001(\r\022\022\n\nmonste" +
+      "r_id\030\005 \001(\r\022%\n\npoint_type\030\004 \001(\0162\021.MapMark" +
+      "PointTypeB\033\n\031emu.grasscutter.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1315,7 +1323,7 @@ public final class MapMarkPointOuterClass {
     internal_static_MapMarkPoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MapMarkPoint_descriptor,
-        new java.lang.String[] { "SceneId", "Name", "Pos", "PointType", "MonsterId", "FromType", "QuestId", "MapLayerId", });
+        new java.lang.String[] { "Name", "Pos", "SceneId", "FromType", "MapLayerId", "QuestId", "MonsterId", "PointType", });
     emu.grasscutter.net.proto.MapMarkFromTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.MapMarkPointTypeOuterClass.getDescriptor();
     emu.grasscutter.net.proto.VectorOuterClass.getDescriptor();

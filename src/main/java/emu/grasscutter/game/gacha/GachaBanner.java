@@ -406,14 +406,11 @@ public class GachaBanner {
                         .setTenCostItemId(this.costItemId10)
                         .setGachaPrefabPath(this.getPrefabPath())
                         .setGachaPreviewPrefabPath(previewPath)
-                        .setGachaProbUrl(details)
-                        .setGachaProbUrlOversea(details)
-                        .setGachaRecordUrl(record)
-                        .setGachaRecordUrlOversea(record)
+                        // 7.1: the four details/record URL strings cannot be told apart in the 7.1 dump
                         .setLeftGachaTimes(leftGachaTimes)
                         .setGachaTimesLimit(gachaTimesLimit)
-                        .setGachaSortId(this.getTabSortId())
-                        .setIsNewWish(true);
+                        .setGachaSortId(this.getTabSortId());
+        // 7.1: is_new_wish cannot be identified in the 7.1 dump
 
         if (hasEpitomized()) {
             info.setWishItemId(wishItemId)
@@ -438,7 +435,7 @@ public class GachaBanner {
 
         if (this.hasEpitomized() && !this.isChronicleLinkedBanner()) {
             for (int id : this.resolveEpitomizedPathItems()) {
-                info.addDisplayChronicle5ItemList(id);
+                // 7.1: display_chronicle5_item_list cannot be identified in the 7.1 dump
                 info.addDisplayUp5ItemList(id);
             }
         }

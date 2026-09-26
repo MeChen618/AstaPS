@@ -19,36 +19,44 @@ public final class RequestLiveInfoRspOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string live_url = 8;</code>
-     * @return The liveUrl.
+     * <code>string HHLKJAJADAM = 6;</code>
+     * @return The hHLKJAJADAM.
      */
-    java.lang.String getLiveUrl();
+    java.lang.String getHHLKJAJADAM();
     /**
-     * <code>string live_url = 8;</code>
-     * @return The bytes for liveUrl.
+     * <code>string HHLKJAJADAM = 6;</code>
+     * @return The bytes for hHLKJAJADAM.
      */
     com.google.protobuf.ByteString
-        getLiveUrlBytes();
+        getHHLKJAJADAMBytes();
 
     /**
-     * <code>string spare_live_url = 10;</code>
-     * @return The spareLiveUrl.
+     * <code>string GNJHJJBLKNP = 2;</code>
+     * @return The gNJHJJBLKNP.
      */
-    java.lang.String getSpareLiveUrl();
+    java.lang.String getGNJHJJBLKNP();
     /**
-     * <code>string spare_live_url = 10;</code>
-     * @return The bytes for spareLiveUrl.
+     * <code>string GNJHJJBLKNP = 2;</code>
+     * @return The bytes for gNJHJJBLKNP.
      */
     com.google.protobuf.ByteString
-        getSpareLiveUrlBytes();
+        getGNJHJJBLKNPBytes();
 
+    /**
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
+     */
     int getRetcode();
 
+    /**
+     * <code>uint32 live_id = 10;</code>
+     * @return The liveId.
+     */
     int getLiveId();
   }
   /**
    * <pre>
-   * CmdId: 27558
+   * CmdId: 291
    * </pre>
    *
    * Protobuf type {@code RequestLiveInfoRsp}
@@ -63,8 +71,8 @@ public final class RequestLiveInfoRspOuterClass {
       super(builder);
     }
     private RequestLiveInfoRsp() {
-      liveUrl_ = "";
-      spareLiveUrl_ = "";
+      hHLKJAJADAM_ = "";
+      gNJHJJBLKNP_ = "";
     }
 
     @java.lang.Override
@@ -97,21 +105,21 @@ public final class RequestLiveInfoRspOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gNJHJJBLKNP_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              hHLKJAJADAM_ = s;
+              break;
+            }
+            case 72: {
 
               retcode_ = input.readInt32();
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              liveUrl_ = s;
-              break;
-            }
-            case 128002: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              spareLiveUrl_ = s;
               break;
             }
             case 80: {
@@ -151,85 +159,88 @@ public final class RequestLiveInfoRspOuterClass {
               emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp.class, emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp.Builder.class);
     }
 
-    public static final int LIVE_URL_FIELD_NUMBER = 8;
-    private volatile java.lang.Object liveUrl_;
+    public static final int HHLKJAJADAM_FIELD_NUMBER = 6;
+    private volatile java.lang.Object hHLKJAJADAM_;
     /**
-     * <code>string live_url = 8;</code>
-     * @return The liveUrl.
+     * <code>string HHLKJAJADAM = 6;</code>
+     * @return The hHLKJAJADAM.
      */
     @java.lang.Override
-    public java.lang.String getLiveUrl() {
-      java.lang.Object ref = liveUrl_;
+    public java.lang.String getHHLKJAJADAM() {
+      java.lang.Object ref = hHLKJAJADAM_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        liveUrl_ = s;
+        hHLKJAJADAM_ = s;
         return s;
       }
     }
     /**
-     * <code>string live_url = 8;</code>
-     * @return The bytes for liveUrl.
+     * <code>string HHLKJAJADAM = 6;</code>
+     * @return The bytes for hHLKJAJADAM.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getLiveUrlBytes() {
-      java.lang.Object ref = liveUrl_;
+        getHHLKJAJADAMBytes() {
+      java.lang.Object ref = hHLKJAJADAM_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        liveUrl_ = b;
+        hHLKJAJADAM_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SPARE_LIVE_URL_FIELD_NUMBER = 16000;
-    private volatile java.lang.Object spareLiveUrl_;
+    public static final int GNJHJJBLKNP_FIELD_NUMBER = 2;
+    private volatile java.lang.Object gNJHJJBLKNP_;
     /**
-     * <code>string spare_live_url = 10;</code>
-     * @return The spareLiveUrl.
+     * <code>string GNJHJJBLKNP = 2;</code>
+     * @return The gNJHJJBLKNP.
      */
     @java.lang.Override
-    public java.lang.String getSpareLiveUrl() {
-      java.lang.Object ref = spareLiveUrl_;
+    public java.lang.String getGNJHJJBLKNP() {
+      java.lang.Object ref = gNJHJJBLKNP_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        spareLiveUrl_ = s;
+        gNJHJJBLKNP_ = s;
         return s;
       }
     }
     /**
-     * <code>string spare_live_url = 10;</code>
-     * @return The bytes for spareLiveUrl.
+     * <code>string GNJHJJBLKNP = 2;</code>
+     * @return The bytes for gNJHJJBLKNP.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSpareLiveUrlBytes() {
-      java.lang.Object ref = spareLiveUrl_;
+        getGNJHJJBLKNPBytes() {
+      java.lang.Object ref = gNJHJJBLKNP_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        spareLiveUrl_ = b;
+        gNJHJJBLKNP_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 13;
+    public static final int RETCODE_FIELD_NUMBER = 9;
     private int retcode_;
-
+    /**
+     * <code>int32 retcode = 9;</code>
+     * @return The retcode.
+     */
     @java.lang.Override
     public int getRetcode() {
       return retcode_;
@@ -237,7 +248,10 @@ public final class RequestLiveInfoRspOuterClass {
 
     public static final int LIVE_ID_FIELD_NUMBER = 10;
     private int liveId_;
-
+    /**
+     * <code>uint32 live_id = 10;</code>
+     * @return The liveId.
+     */
     @java.lang.Override
     public int getLiveId() {
       return liveId_;
@@ -257,14 +271,14 @@ public final class RequestLiveInfoRspOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gNJHJJBLKNP_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gNJHJJBLKNP_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hHLKJAJADAM_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, hHLKJAJADAM_);
+      }
       if (retcode_ != 0) {
-        output.writeInt32(13, retcode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(liveUrl_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, liveUrl_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spareLiveUrl_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16000, spareLiveUrl_);
+        output.writeInt32(9, retcode_);
       }
       if (liveId_ != 0) {
         output.writeUInt32(10, liveId_);
@@ -278,15 +292,15 @@ public final class RequestLiveInfoRspOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gNJHJJBLKNP_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gNJHJJBLKNP_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hHLKJAJADAM_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, hHLKJAJADAM_);
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, retcode_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(liveUrl_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, liveUrl_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spareLiveUrl_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16000, spareLiveUrl_);
+          .computeInt32Size(9, retcode_);
       }
       if (liveId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -307,10 +321,10 @@ public final class RequestLiveInfoRspOuterClass {
       }
       emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp other = (emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp) obj;
 
-      if (!getLiveUrl()
-          .equals(other.getLiveUrl())) return false;
-      if (!getSpareLiveUrl()
-          .equals(other.getSpareLiveUrl())) return false;
+      if (!getHHLKJAJADAM()
+          .equals(other.getHHLKJAJADAM())) return false;
+      if (!getGNJHJJBLKNP()
+          .equals(other.getGNJHJJBLKNP())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (getLiveId()
@@ -326,10 +340,10 @@ public final class RequestLiveInfoRspOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LIVE_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getLiveUrl().hashCode();
-      hash = (37 * hash) + SPARE_LIVE_URL_FIELD_NUMBER;
-      hash = (53 * hash) + getSpareLiveUrl().hashCode();
+      hash = (37 * hash) + HHLKJAJADAM_FIELD_NUMBER;
+      hash = (53 * hash) + getHHLKJAJADAM().hashCode();
+      hash = (37 * hash) + GNJHJJBLKNP_FIELD_NUMBER;
+      hash = (53 * hash) + getGNJHJJBLKNP().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + LIVE_ID_FIELD_NUMBER;
@@ -431,7 +445,7 @@ public final class RequestLiveInfoRspOuterClass {
     }
     /**
      * <pre>
-     * CmdId: 27558
+     * CmdId: 291
      * </pre>
      *
      * Protobuf type {@code RequestLiveInfoRsp}
@@ -471,9 +485,9 @@ public final class RequestLiveInfoRspOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        liveUrl_ = "";
+        hHLKJAJADAM_ = "";
 
-        spareLiveUrl_ = "";
+        gNJHJJBLKNP_ = "";
 
         retcode_ = 0;
 
@@ -505,8 +519,8 @@ public final class RequestLiveInfoRspOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp buildPartial() {
         emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp result = new emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp(this);
-        result.liveUrl_ = liveUrl_;
-        result.spareLiveUrl_ = spareLiveUrl_;
+        result.hHLKJAJADAM_ = hHLKJAJADAM_;
+        result.gNJHJJBLKNP_ = gNJHJJBLKNP_;
         result.retcode_ = retcode_;
         result.liveId_ = liveId_;
         onBuilt();
@@ -557,12 +571,12 @@ public final class RequestLiveInfoRspOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp other) {
         if (other == emu.grasscutter.net.proto.RequestLiveInfoRspOuterClass.RequestLiveInfoRsp.getDefaultInstance()) return this;
-        if (!other.getLiveUrl().isEmpty()) {
-          liveUrl_ = other.liveUrl_;
+        if (!other.getHHLKJAJADAM().isEmpty()) {
+          hHLKJAJADAM_ = other.hHLKJAJADAM_;
           onChanged();
         }
-        if (!other.getSpareLiveUrl().isEmpty()) {
-          spareLiveUrl_ = other.spareLiveUrl_;
+        if (!other.getGNJHJJBLKNP().isEmpty()) {
+          gNJHJJBLKNP_ = other.gNJHJJBLKNP_;
           onChanged();
         }
         if (other.getRetcode() != 0) {
@@ -600,195 +614,215 @@ public final class RequestLiveInfoRspOuterClass {
         return this;
       }
 
-      private java.lang.Object liveUrl_ = "";
+      private java.lang.Object hHLKJAJADAM_ = "";
       /**
-       * <code>string live_url = 8;</code>
-       * @return The liveUrl.
+       * <code>string HHLKJAJADAM = 6;</code>
+       * @return The hHLKJAJADAM.
        */
-      public java.lang.String getLiveUrl() {
-        java.lang.Object ref = liveUrl_;
+      public java.lang.String getHHLKJAJADAM() {
+        java.lang.Object ref = hHLKJAJADAM_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          liveUrl_ = s;
+          hHLKJAJADAM_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string live_url = 8;</code>
-       * @return The bytes for liveUrl.
+       * <code>string HHLKJAJADAM = 6;</code>
+       * @return The bytes for hHLKJAJADAM.
        */
       public com.google.protobuf.ByteString
-          getLiveUrlBytes() {
-        java.lang.Object ref = liveUrl_;
+          getHHLKJAJADAMBytes() {
+        java.lang.Object ref = hHLKJAJADAM_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          liveUrl_ = b;
+          hHLKJAJADAM_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string live_url = 8;</code>
-       * @param value The liveUrl to set.
+       * <code>string HHLKJAJADAM = 6;</code>
+       * @param value The hHLKJAJADAM to set.
        * @return This builder for chaining.
        */
-      public Builder setLiveUrl(
+      public Builder setHHLKJAJADAM(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
-        liveUrl_ = value;
+  
+        hHLKJAJADAM_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string live_url = 8;</code>
+       * <code>string HHLKJAJADAM = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearLiveUrl() {
-
-        liveUrl_ = getDefaultInstance().getLiveUrl();
+      public Builder clearHHLKJAJADAM() {
+        
+        hHLKJAJADAM_ = getDefaultInstance().getHHLKJAJADAM();
         onChanged();
         return this;
       }
       /**
-       * <code>string live_url = 8;</code>
-       * @param value The bytes for liveUrl to set.
+       * <code>string HHLKJAJADAM = 6;</code>
+       * @param value The bytes for hHLKJAJADAM to set.
        * @return This builder for chaining.
        */
-      public Builder setLiveUrlBytes(
+      public Builder setHHLKJAJADAMBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
-        liveUrl_ = value;
+        
+        hHLKJAJADAM_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object spareLiveUrl_ = "";
+      private java.lang.Object gNJHJJBLKNP_ = "";
       /**
-       * <code>string spare_live_url = 10;</code>
-       * @return The spareLiveUrl.
+       * <code>string GNJHJJBLKNP = 2;</code>
+       * @return The gNJHJJBLKNP.
        */
-      public java.lang.String getSpareLiveUrl() {
-        java.lang.Object ref = spareLiveUrl_;
+      public java.lang.String getGNJHJJBLKNP() {
+        java.lang.Object ref = gNJHJJBLKNP_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          spareLiveUrl_ = s;
+          gNJHJJBLKNP_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string spare_live_url = 10;</code>
-       * @return The bytes for spareLiveUrl.
+       * <code>string GNJHJJBLKNP = 2;</code>
+       * @return The bytes for gNJHJJBLKNP.
        */
       public com.google.protobuf.ByteString
-          getSpareLiveUrlBytes() {
-        java.lang.Object ref = spareLiveUrl_;
+          getGNJHJJBLKNPBytes() {
+        java.lang.Object ref = gNJHJJBLKNP_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          spareLiveUrl_ = b;
+          gNJHJJBLKNP_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string spare_live_url = 10;</code>
-       * @param value The spareLiveUrl to set.
+       * <code>string GNJHJJBLKNP = 2;</code>
+       * @param value The gNJHJJBLKNP to set.
        * @return This builder for chaining.
        */
-      public Builder setSpareLiveUrl(
+      public Builder setGNJHJJBLKNP(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-
-        spareLiveUrl_ = value;
+  
+        gNJHJJBLKNP_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string spare_live_url = 10;</code>
+       * <code>string GNJHJJBLKNP = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSpareLiveUrl() {
-
-        spareLiveUrl_ = getDefaultInstance().getSpareLiveUrl();
+      public Builder clearGNJHJJBLKNP() {
+        
+        gNJHJJBLKNP_ = getDefaultInstance().getGNJHJJBLKNP();
         onChanged();
         return this;
       }
       /**
-       * <code>string spare_live_url = 10;</code>
-       * @param value The bytes for spareLiveUrl to set.
+       * <code>string GNJHJJBLKNP = 2;</code>
+       * @param value The bytes for gNJHJJBLKNP to set.
        * @return This builder for chaining.
        */
-      public Builder setSpareLiveUrlBytes(
+      public Builder setGNJHJJBLKNPBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-
-        spareLiveUrl_ = value;
+        
+        gNJHJJBLKNP_ = value;
         onChanged();
         return this;
       }
 
       private int retcode_ ;
-
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @return The retcode.
+       */
       @java.lang.Override
       public int getRetcode() {
         return retcode_;
       }
-
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @param value The retcode to set.
+       * @return This builder for chaining.
+       */
       public Builder setRetcode(int value) {
-
+        
         retcode_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>int32 retcode = 9;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearRetcode() {
-
+        
         retcode_ = 0;
         onChanged();
         return this;
       }
 
       private int liveId_ ;
-
+      /**
+       * <code>uint32 live_id = 10;</code>
+       * @return The liveId.
+       */
       @java.lang.Override
       public int getLiveId() {
         return liveId_;
       }
-
+      /**
+       * <code>uint32 live_id = 10;</code>
+       * @param value The liveId to set.
+       * @return This builder for chaining.
+       */
       public Builder setLiveId(int value) {
-
+        
         liveId_ = value;
         onChanged();
         return this;
       }
-
+      /**
+       * <code>uint32 live_id = 10;</code>
+       * @return This builder for chaining.
+       */
       public Builder clearLiveId() {
-
+        
         liveId_ = 0;
         onChanged();
         return this;
@@ -804,6 +838,7 @@ public final class RequestLiveInfoRspOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:RequestLiveInfoRsp)
     }
@@ -847,7 +882,7 @@ public final class RequestLiveInfoRspOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_RequestLiveInfoRsp_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_RequestLiveInfoRsp_fieldAccessorTable;
 
@@ -860,8 +895,8 @@ public final class RequestLiveInfoRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030RequestLiveInfoRsp.proto\"`\n\022RequestLiv" +
-      "eInfoRsp\022\020\n\010live_url\030\010 \001(\t\022\026\n\016spare_live" +
-      "_url\030\n \001(\t\022\017\n\007retcode\030\003 \001(\005\022\017\n\007live_id\030\017" +
+      "eInfoRsp\022\023\n\013HHLKJAJADAM\030\006 \001(\t\022\023\n\013GNJHJJB" +
+      "LKNP\030\002 \001(\t\022\017\n\007retcode\030\t \001(\005\022\017\n\007live_id\030\n" +
       " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
       "3"
     };
@@ -874,7 +909,7 @@ public final class RequestLiveInfoRspOuterClass {
     internal_static_RequestLiveInfoRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RequestLiveInfoRsp_descriptor,
-        new java.lang.String[] { "LiveUrl", "SpareLiveUrl", "Retcode", "LiveId", });
+        new java.lang.String[] { "HHLKJAJADAM", "GNJHJJBLKNP", "Retcode", "LiveId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -3,6 +3,7 @@
  */
 package emu.grasscutter.game.avatar;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.Grasscutter;
 
 public final class AvatarExtraLevelOpcodes {
@@ -11,7 +12,7 @@ public final class AvatarExtraLevelOpcodes {
     public static final int KAMPJK_REQ = 7979;
     public static final int KAMPJK_RSP = 7980;
     public static final int EXTRA_LEVEL_UPGRADE_REQ = 25098;
-    public static final int EXTRA_LEVEL_UPGRADE_RSP = 27534;
+    public static final int EXTRA_LEVEL_UPGRADE_RSP = PacketOpcodes._AvatarExtraLevelUpgradeRsp;
     public static final int REQ = 0;
     public static final int RSP = 0;
     private static int discoveredReqOpcode;
@@ -51,15 +52,7 @@ public final class AvatarExtraLevelOpcodes {
         if (discoveredRspOpcode > 0) {
             return discoveredRspOpcode;
         }
-        if (n == 7979) {
-            return 7980;
-        }
-        if (n == 25098) {
-            return 27534;
-        }
-        if (n > 0 && n != 6091) {
-            return n + 1;
-        }
-        return 0;
+        // The request/response pairs above are 7.0 CmdIds; 7.1 names only the response.
+        return PacketOpcodes._AvatarExtraLevelUpgradeRsp;
     }
 }

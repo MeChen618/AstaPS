@@ -19,18 +19,22 @@ public final class TowerEnterLevelReqOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 enter_point_id = 10;</code>
-     * @return The enterPointId.
-     */
-    int getEnterPointId();
-
-    /**
-     * <code>bool _is_restart_floor = 11;</code>
+     * <code>bool _is_restart_floor = 4;</code>
      * @return The isRestartFloor.
      */
     boolean getIsRestartFloor();
+
+    /**
+     * <code>uint32 enter_point_id = 15;</code>
+     * @return The enterPointId.
+     */
+    int getEnterPointId();
   }
   /**
+   * <pre>
+   * CmdId: 21373
+   * </pre>
+   *
    * Protobuf type {@code TowerEnterLevelReq}
    */
   public static final class TowerEnterLevelReq extends
@@ -75,14 +79,14 @@ public final class TowerEnterLevelReqOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
-
-              enterPointId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 32: {
 
               IsRestartFloor_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              enterPointId_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +121,26 @@ public final class TowerEnterLevelReqOuterClass {
               emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.class, emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.Builder.class);
     }
 
-    public static final int ENTER_POINT_ID_FIELD_NUMBER = 10;
-    private int enterPointId_;
-    /**
-     * <code>uint32 enter_point_id = 10;</code>
-     * @return The enterPointId.
-     */
-    @java.lang.Override
-    public int getEnterPointId() {
-      return enterPointId_;
-    }
-
-    public static final int _IS_RESTART_FLOOR_FIELD_NUMBER = 11;
+    public static final int _IS_RESTART_FLOOR_FIELD_NUMBER = 4;
     private boolean IsRestartFloor_;
     /**
-     * <code>bool _is_restart_floor = 11;</code>
+     * <code>bool _is_restart_floor = 4;</code>
      * @return The isRestartFloor.
      */
     @java.lang.Override
     public boolean getIsRestartFloor() {
       return IsRestartFloor_;
+    }
+
+    public static final int ENTER_POINT_ID_FIELD_NUMBER = 15;
+    private int enterPointId_;
+    /**
+     * <code>uint32 enter_point_id = 15;</code>
+     * @return The enterPointId.
+     */
+    @java.lang.Override
+    public int getEnterPointId() {
+      return enterPointId_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +157,11 @@ public final class TowerEnterLevelReqOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (enterPointId_ != 0) {
-        output.writeUInt32(10, enterPointId_);
-      }
       if (IsRestartFloor_ != false) {
-        output.writeBool(11, IsRestartFloor_);
+        output.writeBool(4, IsRestartFloor_);
+      }
+      if (enterPointId_ != 0) {
+        output.writeUInt32(15, enterPointId_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class TowerEnterLevelReqOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (enterPointId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, enterPointId_);
-      }
       if (IsRestartFloor_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, IsRestartFloor_);
+          .computeBoolSize(4, IsRestartFloor_);
+      }
+      if (enterPointId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, enterPointId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +195,10 @@ public final class TowerEnterLevelReqOuterClass {
       }
       emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq other = (emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq) obj;
 
-      if (getEnterPointId()
-          != other.getEnterPointId()) return false;
       if (getIsRestartFloor()
           != other.getIsRestartFloor()) return false;
+      if (getEnterPointId()
+          != other.getEnterPointId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,11 +210,11 @@ public final class TowerEnterLevelReqOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ENTER_POINT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getEnterPointId();
       hash = (37 * hash) + _IS_RESTART_FLOOR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsRestartFloor());
+      hash = (37 * hash) + ENTER_POINT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterPointId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -307,6 +311,10 @@ public final class TowerEnterLevelReqOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 21373
+     * </pre>
+     *
      * Protobuf type {@code TowerEnterLevelReq}
      */
     public static final class Builder extends
@@ -344,9 +352,9 @@ public final class TowerEnterLevelReqOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        enterPointId_ = 0;
-
         IsRestartFloor_ = false;
+
+        enterPointId_ = 0;
 
         return this;
       }
@@ -374,8 +382,8 @@ public final class TowerEnterLevelReqOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq buildPartial() {
         emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq result = new emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq(this);
-        result.enterPointId_ = enterPointId_;
         result.IsRestartFloor_ = IsRestartFloor_;
+        result.enterPointId_ = enterPointId_;
         onBuilt();
         return result;
       }
@@ -424,11 +432,11 @@ public final class TowerEnterLevelReqOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq other) {
         if (other == emu.grasscutter.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.getDefaultInstance()) return this;
-        if (other.getEnterPointId() != 0) {
-          setEnterPointId(other.getEnterPointId());
-        }
         if (other.getIsRestartFloor() != false) {
           setIsRestartFloor(other.getIsRestartFloor());
+        }
+        if (other.getEnterPointId() != 0) {
+          setEnterPointId(other.getEnterPointId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -459,40 +467,9 @@ public final class TowerEnterLevelReqOuterClass {
         return this;
       }
 
-      private int enterPointId_ ;
-      /**
-       * <code>uint32 enter_point_id = 10;</code>
-       * @return The enterPointId.
-       */
-      @java.lang.Override
-      public int getEnterPointId() {
-        return enterPointId_;
-      }
-      /**
-       * <code>uint32 enter_point_id = 10;</code>
-       * @param value The enterPointId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnterPointId(int value) {
-        
-        enterPointId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 enter_point_id = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnterPointId() {
-        
-        enterPointId_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean IsRestartFloor_ ;
       /**
-       * <code>bool _is_restart_floor = 11;</code>
+       * <code>bool _is_restart_floor = 4;</code>
        * @return The isRestartFloor.
        */
       @java.lang.Override
@@ -500,7 +477,7 @@ public final class TowerEnterLevelReqOuterClass {
         return IsRestartFloor_;
       }
       /**
-       * <code>bool _is_restart_floor = 11;</code>
+       * <code>bool _is_restart_floor = 4;</code>
        * @param value The isRestartFloor to set.
        * @return This builder for chaining.
        */
@@ -511,12 +488,43 @@ public final class TowerEnterLevelReqOuterClass {
         return this;
       }
       /**
-       * <code>bool _is_restart_floor = 11;</code>
+       * <code>bool _is_restart_floor = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsRestartFloor() {
         
         IsRestartFloor_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int enterPointId_ ;
+      /**
+       * <code>uint32 enter_point_id = 15;</code>
+       * @return The enterPointId.
+       */
+      @java.lang.Override
+      public int getEnterPointId() {
+        return enterPointId_;
+      }
+      /**
+       * <code>uint32 enter_point_id = 15;</code>
+       * @param value The enterPointId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnterPointId(int value) {
+        
+        enterPointId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 enter_point_id = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnterPointId() {
+        
+        enterPointId_ = 0;
         onChanged();
         return this;
       }
@@ -588,10 +596,9 @@ public final class TowerEnterLevelReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030TowerEnterLevelReq.proto\"G\n\022TowerEnter" +
-      "LevelReq\022\026\n\016enter_point_id\030\n \001(\r\022\031\n\021_is_" +
-      "restart_floor\030\013 \001(\010B9\n\031emu.grasscutter.n" +
-      "et.protoB\034TowerEnterLevelReqOuterClassb\006" +
-      "proto3"
+      "LevelReq\022\031\n\021_is_restart_floor\030\004 \001(\010\022\026\n\016e" +
+      "nter_point_id\030\017 \001(\rB\033\n\031emu.grasscutter.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -602,7 +609,7 @@ public final class TowerEnterLevelReqOuterClass {
     internal_static_TowerEnterLevelReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_TowerEnterLevelReq_descriptor,
-        new java.lang.String[] { "EnterPointId", "IsRestartFloor", });
+        new java.lang.String[] { "IsRestartFloor", "EnterPointId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

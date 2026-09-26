@@ -19,12 +19,16 @@ public final class BargainTerminateNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 bargain_id = 13;</code>
+     * <code>uint32 bargain_id = 12;</code>
      * @return The bargainId.
      */
     int getBargainId();
   }
   /**
+   * <pre>
+   * CmdId: 7831
+   * </pre>
+   *
    * Protobuf type {@code BargainTerminateNotify}
    */
   public static final class BargainTerminateNotify extends
@@ -69,7 +73,7 @@ public final class BargainTerminateNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 104: {
+            case 96: {
 
               bargainId_ = input.readUInt32();
               break;
@@ -106,10 +110,10 @@ public final class BargainTerminateNotifyOuterClass {
               emu.grasscutter.net.proto.BargainTerminateNotifyOuterClass.BargainTerminateNotify.class, emu.grasscutter.net.proto.BargainTerminateNotifyOuterClass.BargainTerminateNotify.Builder.class);
     }
 
-    public static final int BARGAIN_ID_FIELD_NUMBER = 13;
+    public static final int BARGAIN_ID_FIELD_NUMBER = 12;
     private int bargainId_;
     /**
-     * <code>uint32 bargain_id = 13;</code>
+     * <code>uint32 bargain_id = 12;</code>
      * @return The bargainId.
      */
     @java.lang.Override
@@ -132,7 +136,7 @@ public final class BargainTerminateNotifyOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (bargainId_ != 0) {
-        output.writeUInt32(13, bargainId_);
+        output.writeUInt32(12, bargainId_);
       }
       unknownFields.writeTo(output);
     }
@@ -145,7 +149,7 @@ public final class BargainTerminateNotifyOuterClass {
       size = 0;
       if (bargainId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, bargainId_);
+          .computeUInt32Size(12, bargainId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -273,6 +277,10 @@ public final class BargainTerminateNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 7831
+     * </pre>
+     *
      * Protobuf type {@code BargainTerminateNotify}
      */
     public static final class Builder extends
@@ -421,7 +429,7 @@ public final class BargainTerminateNotifyOuterClass {
 
       private int bargainId_ ;
       /**
-       * <code>uint32 bargain_id = 13;</code>
+       * <code>uint32 bargain_id = 12;</code>
        * @return The bargainId.
        */
       @java.lang.Override
@@ -429,7 +437,7 @@ public final class BargainTerminateNotifyOuterClass {
         return bargainId_;
       }
       /**
-       * <code>uint32 bargain_id = 13;</code>
+       * <code>uint32 bargain_id = 12;</code>
        * @param value The bargainId to set.
        * @return This builder for chaining.
        */
@@ -440,7 +448,7 @@ public final class BargainTerminateNotifyOuterClass {
         return this;
       }
       /**
-       * <code>uint32 bargain_id = 13;</code>
+       * <code>uint32 bargain_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearBargainId() {
@@ -517,9 +525,8 @@ public final class BargainTerminateNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034BargainTerminateNotify.proto\",\n\026Bargai" +
-      "nTerminateNotify\022\022\n\nbargain_id\030\r \001(\rB=\n\031" +
-      "emu.grasscutter.net.protoB BargainTermin" +
-      "ateNotifyOuterClassb\006proto3"
+      "nTerminateNotify\022\022\n\nbargain_id\030\014 \001(\rB\033\n\031" +
+      "emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

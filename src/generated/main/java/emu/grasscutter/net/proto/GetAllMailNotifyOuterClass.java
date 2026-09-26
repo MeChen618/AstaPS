@@ -518,9 +518,8 @@ public final class GetAllMailNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GetAllMailNotify.proto\"(\n\020GetAllMailNo" +
-      "tify\022\024\n\014is_collected\030\004 \001(\010B7\n\031emu.grassc" +
-      "utter.net.protoB\032GetAllMailNotifyOuterCl" +
-      "assb\006proto3"
+      "tify\022\024\n\014is_collected\030\004 \001(\010B\033\n\031emu.grassc" +
+      "utter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

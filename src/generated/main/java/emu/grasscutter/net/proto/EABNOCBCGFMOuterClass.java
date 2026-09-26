@@ -19,54 +19,58 @@ public final class EABNOCBCGFMOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 PHDOCOKGBOF = 1;</code>
-     * @return The pHDOCOKGBOF.
+     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
+     * @return Whether the fOHNJKCKKPC field is set.
      */
-    int getPHDOCOKGBOF();
+    boolean hasFOHNJKCKKPC();
+    /**
+     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
+     * @return The fOHNJKCKKPC.
+     */
+    emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC getFOHNJKCKKPC();
+    /**
+     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
+     */
+    emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPCOrBuilder getFOHNJKCKKPCOrBuilder();
 
     /**
-     * <code>uint32 round = 5;</code>
-     * @return The round.
-     */
-    int getRound();
-
-    /**
-     * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
+     * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
      * @return Whether the eJGAEGAPEBA field is set.
      */
     boolean hasEJGAEGAPEBA();
     /**
-     * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
+     * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
      * @return The eJGAEGAPEBA.
      */
     emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC getEJGAEGAPEBA();
     /**
-     * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
+     * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
      */
     emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder getEJGAEGAPEBAOrBuilder();
 
     /**
-     * <code>uint32 GEPHOFOGHJC = 12;</code>
+     * <code>uint32 GEPHOFOGHJC = 10;</code>
      * @return The gEPHOFOGHJC.
      */
     int getGEPHOFOGHJC();
 
     /**
-     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
-     * @return Whether the fOHNJKCKKPC field is set.
+     * <code>uint32 round = 14;</code>
+     * @return The round.
      */
-    boolean hasFOHNJKCKKPC();
+    int getRound();
+
     /**
-     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
-     * @return The fOHNJKCKKPC.
+     * <code>uint32 PHDOCOKGBOF = 13;</code>
+     * @return The pHDOCOKGBOF.
      */
-    emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC getFOHNJKCKKPC();
-    /**
-     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
-     */
-    emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPCOrBuilder getFOHNJKCKKPCOrBuilder();
+    int getPHDOCOKGBOF();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code EABNOCBCGFM}
    */
   public static final class EABNOCBCGFM extends
@@ -111,35 +115,7 @@ public final class EABNOCBCGFMOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              pHDOCOKGBOF_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              round_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder subBuilder = null;
-              if (eJGAEGAPEBA_ != null) {
-                subBuilder = eJGAEGAPEBA_.toBuilder();
-              }
-              eJGAEGAPEBA_ = input.readMessage(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(eJGAEGAPEBA_);
-                eJGAEGAPEBA_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              gEPHOFOGHJC_ = input.readUInt32();
-              break;
-            }
-            case 114: {
+            case 26: {
               emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC.Builder subBuilder = null;
               if (fOHNJKCKKPC_ != null) {
                 subBuilder = fOHNJKCKKPC_.toBuilder();
@@ -148,6 +124,34 @@ public final class EABNOCBCGFMOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(fOHNJKCKKPC_);
                 fOHNJKCKKPC_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
+
+              gEPHOFOGHJC_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+
+              pHDOCOKGBOF_ = input.readUInt32();
+              break;
+            }
+            case 112: {
+
+              round_ = input.readUInt32();
+              break;
+            }
+            case 122: {
+              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder subBuilder = null;
+              if (eJGAEGAPEBA_ != null) {
+                subBuilder = eJGAEGAPEBA_.toBuilder();
+              }
+              eJGAEGAPEBA_ = input.readMessage(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(eJGAEGAPEBA_);
+                eJGAEGAPEBA_ = subBuilder.buildPartial();
               }
 
               break;
@@ -184,69 +188,10 @@ public final class EABNOCBCGFMOuterClass {
               emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM.class, emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM.Builder.class);
     }
 
-    public static final int PHDOCOKGBOF_FIELD_NUMBER = 1;
-    private int pHDOCOKGBOF_;
-    /**
-     * <code>uint32 PHDOCOKGBOF = 1;</code>
-     * @return The pHDOCOKGBOF.
-     */
-    @java.lang.Override
-    public int getPHDOCOKGBOF() {
-      return pHDOCOKGBOF_;
-    }
-
-    public static final int ROUND_FIELD_NUMBER = 5;
-    private int round_;
-    /**
-     * <code>uint32 round = 5;</code>
-     * @return The round.
-     */
-    @java.lang.Override
-    public int getRound() {
-      return round_;
-    }
-
-    public static final int EJGAEGAPEBA_FIELD_NUMBER = 8;
-    private emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC eJGAEGAPEBA_;
-    /**
-     * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-     * @return Whether the eJGAEGAPEBA field is set.
-     */
-    @java.lang.Override
-    public boolean hasEJGAEGAPEBA() {
-      return eJGAEGAPEBA_ != null;
-    }
-    /**
-     * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-     * @return The eJGAEGAPEBA.
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC getEJGAEGAPEBA() {
-      return eJGAEGAPEBA_ == null ? emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance() : eJGAEGAPEBA_;
-    }
-    /**
-     * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder getEJGAEGAPEBAOrBuilder() {
-      return getEJGAEGAPEBA();
-    }
-
-    public static final int GEPHOFOGHJC_FIELD_NUMBER = 12;
-    private int gEPHOFOGHJC_;
-    /**
-     * <code>uint32 GEPHOFOGHJC = 12;</code>
-     * @return The gEPHOFOGHJC.
-     */
-    @java.lang.Override
-    public int getGEPHOFOGHJC() {
-      return gEPHOFOGHJC_;
-    }
-
-    public static final int FOHNJKCKKPC_FIELD_NUMBER = 14;
+    public static final int FOHNJKCKKPC_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC fOHNJKCKKPC_;
     /**
-     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
      * @return Whether the fOHNJKCKKPC field is set.
      */
     @java.lang.Override
@@ -254,7 +199,7 @@ public final class EABNOCBCGFMOuterClass {
       return fOHNJKCKKPC_ != null;
     }
     /**
-     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
      * @return The fOHNJKCKKPC.
      */
     @java.lang.Override
@@ -262,11 +207,70 @@ public final class EABNOCBCGFMOuterClass {
       return fOHNJKCKKPC_ == null ? emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC.getDefaultInstance() : fOHNJKCKKPC_;
     }
     /**
-     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+     * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPCOrBuilder getFOHNJKCKKPCOrBuilder() {
       return getFOHNJKCKKPC();
+    }
+
+    public static final int EJGAEGAPEBA_FIELD_NUMBER = 15;
+    private emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC eJGAEGAPEBA_;
+    /**
+     * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+     * @return Whether the eJGAEGAPEBA field is set.
+     */
+    @java.lang.Override
+    public boolean hasEJGAEGAPEBA() {
+      return eJGAEGAPEBA_ != null;
+    }
+    /**
+     * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+     * @return The eJGAEGAPEBA.
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC getEJGAEGAPEBA() {
+      return eJGAEGAPEBA_ == null ? emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance() : eJGAEGAPEBA_;
+    }
+    /**
+     * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder getEJGAEGAPEBAOrBuilder() {
+      return getEJGAEGAPEBA();
+    }
+
+    public static final int GEPHOFOGHJC_FIELD_NUMBER = 10;
+    private int gEPHOFOGHJC_;
+    /**
+     * <code>uint32 GEPHOFOGHJC = 10;</code>
+     * @return The gEPHOFOGHJC.
+     */
+    @java.lang.Override
+    public int getGEPHOFOGHJC() {
+      return gEPHOFOGHJC_;
+    }
+
+    public static final int ROUND_FIELD_NUMBER = 14;
+    private int round_;
+    /**
+     * <code>uint32 round = 14;</code>
+     * @return The round.
+     */
+    @java.lang.Override
+    public int getRound() {
+      return round_;
+    }
+
+    public static final int PHDOCOKGBOF_FIELD_NUMBER = 13;
+    private int pHDOCOKGBOF_;
+    /**
+     * <code>uint32 PHDOCOKGBOF = 13;</code>
+     * @return The pHDOCOKGBOF.
+     */
+    @java.lang.Override
+    public int getPHDOCOKGBOF() {
+      return pHDOCOKGBOF_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -283,20 +287,20 @@ public final class EABNOCBCGFMOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (pHDOCOKGBOF_ != 0) {
-        output.writeUInt32(1, pHDOCOKGBOF_);
-      }
-      if (round_ != 0) {
-        output.writeUInt32(5, round_);
-      }
-      if (eJGAEGAPEBA_ != null) {
-        output.writeMessage(8, getEJGAEGAPEBA());
+      if (fOHNJKCKKPC_ != null) {
+        output.writeMessage(3, getFOHNJKCKKPC());
       }
       if (gEPHOFOGHJC_ != 0) {
-        output.writeUInt32(12, gEPHOFOGHJC_);
+        output.writeUInt32(10, gEPHOFOGHJC_);
       }
-      if (fOHNJKCKKPC_ != null) {
-        output.writeMessage(14, getFOHNJKCKKPC());
+      if (pHDOCOKGBOF_ != 0) {
+        output.writeUInt32(13, pHDOCOKGBOF_);
+      }
+      if (round_ != 0) {
+        output.writeUInt32(14, round_);
+      }
+      if (eJGAEGAPEBA_ != null) {
+        output.writeMessage(15, getEJGAEGAPEBA());
       }
       unknownFields.writeTo(output);
     }
@@ -307,25 +311,25 @@ public final class EABNOCBCGFMOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (pHDOCOKGBOF_ != 0) {
+      if (fOHNJKCKKPC_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, pHDOCOKGBOF_);
-      }
-      if (round_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, round_);
-      }
-      if (eJGAEGAPEBA_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getEJGAEGAPEBA());
+          .computeMessageSize(3, getFOHNJKCKKPC());
       }
       if (gEPHOFOGHJC_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, gEPHOFOGHJC_);
+          .computeUInt32Size(10, gEPHOFOGHJC_);
       }
-      if (fOHNJKCKKPC_ != null) {
+      if (pHDOCOKGBOF_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getFOHNJKCKKPC());
+          .computeUInt32Size(13, pHDOCOKGBOF_);
+      }
+      if (round_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, round_);
+      }
+      if (eJGAEGAPEBA_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getEJGAEGAPEBA());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -342,10 +346,11 @@ public final class EABNOCBCGFMOuterClass {
       }
       emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM other = (emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM) obj;
 
-      if (getPHDOCOKGBOF()
-          != other.getPHDOCOKGBOF()) return false;
-      if (getRound()
-          != other.getRound()) return false;
+      if (hasFOHNJKCKKPC() != other.hasFOHNJKCKKPC()) return false;
+      if (hasFOHNJKCKKPC()) {
+        if (!getFOHNJKCKKPC()
+            .equals(other.getFOHNJKCKKPC())) return false;
+      }
       if (hasEJGAEGAPEBA() != other.hasEJGAEGAPEBA()) return false;
       if (hasEJGAEGAPEBA()) {
         if (!getEJGAEGAPEBA()
@@ -353,11 +358,10 @@ public final class EABNOCBCGFMOuterClass {
       }
       if (getGEPHOFOGHJC()
           != other.getGEPHOFOGHJC()) return false;
-      if (hasFOHNJKCKKPC() != other.hasFOHNJKCKKPC()) return false;
-      if (hasFOHNJKCKKPC()) {
-        if (!getFOHNJKCKKPC()
-            .equals(other.getFOHNJKCKKPC())) return false;
-      }
+      if (getRound()
+          != other.getRound()) return false;
+      if (getPHDOCOKGBOF()
+          != other.getPHDOCOKGBOF()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -369,20 +373,20 @@ public final class EABNOCBCGFMOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PHDOCOKGBOF_FIELD_NUMBER;
-      hash = (53 * hash) + getPHDOCOKGBOF();
-      hash = (37 * hash) + ROUND_FIELD_NUMBER;
-      hash = (53 * hash) + getRound();
+      if (hasFOHNJKCKKPC()) {
+        hash = (37 * hash) + FOHNJKCKKPC_FIELD_NUMBER;
+        hash = (53 * hash) + getFOHNJKCKKPC().hashCode();
+      }
       if (hasEJGAEGAPEBA()) {
         hash = (37 * hash) + EJGAEGAPEBA_FIELD_NUMBER;
         hash = (53 * hash) + getEJGAEGAPEBA().hashCode();
       }
       hash = (37 * hash) + GEPHOFOGHJC_FIELD_NUMBER;
       hash = (53 * hash) + getGEPHOFOGHJC();
-      if (hasFOHNJKCKKPC()) {
-        hash = (37 * hash) + FOHNJKCKKPC_FIELD_NUMBER;
-        hash = (53 * hash) + getFOHNJKCKKPC().hashCode();
-      }
+      hash = (37 * hash) + ROUND_FIELD_NUMBER;
+      hash = (53 * hash) + getRound();
+      hash = (37 * hash) + PHDOCOKGBOF_FIELD_NUMBER;
+      hash = (53 * hash) + getPHDOCOKGBOF();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -479,6 +483,10 @@ public final class EABNOCBCGFMOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code EABNOCBCGFM}
      */
     public static final class Builder extends
@@ -516,10 +524,12 @@ public final class EABNOCBCGFMOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        pHDOCOKGBOF_ = 0;
-
-        round_ = 0;
-
+        if (fOHNJKCKKPCBuilder_ == null) {
+          fOHNJKCKKPC_ = null;
+        } else {
+          fOHNJKCKKPC_ = null;
+          fOHNJKCKKPCBuilder_ = null;
+        }
         if (eJGAEGAPEBABuilder_ == null) {
           eJGAEGAPEBA_ = null;
         } else {
@@ -528,12 +538,10 @@ public final class EABNOCBCGFMOuterClass {
         }
         gEPHOFOGHJC_ = 0;
 
-        if (fOHNJKCKKPCBuilder_ == null) {
-          fOHNJKCKKPC_ = null;
-        } else {
-          fOHNJKCKKPC_ = null;
-          fOHNJKCKKPCBuilder_ = null;
-        }
+        round_ = 0;
+
+        pHDOCOKGBOF_ = 0;
+
         return this;
       }
 
@@ -560,19 +568,19 @@ public final class EABNOCBCGFMOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM buildPartial() {
         emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM result = new emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM(this);
-        result.pHDOCOKGBOF_ = pHDOCOKGBOF_;
-        result.round_ = round_;
+        if (fOHNJKCKKPCBuilder_ == null) {
+          result.fOHNJKCKKPC_ = fOHNJKCKKPC_;
+        } else {
+          result.fOHNJKCKKPC_ = fOHNJKCKKPCBuilder_.build();
+        }
         if (eJGAEGAPEBABuilder_ == null) {
           result.eJGAEGAPEBA_ = eJGAEGAPEBA_;
         } else {
           result.eJGAEGAPEBA_ = eJGAEGAPEBABuilder_.build();
         }
         result.gEPHOFOGHJC_ = gEPHOFOGHJC_;
-        if (fOHNJKCKKPCBuilder_ == null) {
-          result.fOHNJKCKKPC_ = fOHNJKCKKPC_;
-        } else {
-          result.fOHNJKCKKPC_ = fOHNJKCKKPCBuilder_.build();
-        }
+        result.round_ = round_;
+        result.pHDOCOKGBOF_ = pHDOCOKGBOF_;
         onBuilt();
         return result;
       }
@@ -621,11 +629,8 @@ public final class EABNOCBCGFMOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM other) {
         if (other == emu.grasscutter.net.proto.EABNOCBCGFMOuterClass.EABNOCBCGFM.getDefaultInstance()) return this;
-        if (other.getPHDOCOKGBOF() != 0) {
-          setPHDOCOKGBOF(other.getPHDOCOKGBOF());
-        }
-        if (other.getRound() != 0) {
-          setRound(other.getRound());
+        if (other.hasFOHNJKCKKPC()) {
+          mergeFOHNJKCKKPC(other.getFOHNJKCKKPC());
         }
         if (other.hasEJGAEGAPEBA()) {
           mergeEJGAEGAPEBA(other.getEJGAEGAPEBA());
@@ -633,8 +638,11 @@ public final class EABNOCBCGFMOuterClass {
         if (other.getGEPHOFOGHJC() != 0) {
           setGEPHOFOGHJC(other.getGEPHOFOGHJC());
         }
-        if (other.hasFOHNJKCKKPC()) {
-          mergeFOHNJKCKKPC(other.getFOHNJKCKKPC());
+        if (other.getRound() != 0) {
+          setRound(other.getRound());
+        }
+        if (other.getPHDOCOKGBOF() != 0) {
+          setPHDOCOKGBOF(other.getPHDOCOKGBOF());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -665,230 +673,18 @@ public final class EABNOCBCGFMOuterClass {
         return this;
       }
 
-      private int pHDOCOKGBOF_ ;
-      /**
-       * <code>uint32 PHDOCOKGBOF = 1;</code>
-       * @return The pHDOCOKGBOF.
-       */
-      @java.lang.Override
-      public int getPHDOCOKGBOF() {
-        return pHDOCOKGBOF_;
-      }
-      /**
-       * <code>uint32 PHDOCOKGBOF = 1;</code>
-       * @param value The pHDOCOKGBOF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPHDOCOKGBOF(int value) {
-        
-        pHDOCOKGBOF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 PHDOCOKGBOF = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPHDOCOKGBOF() {
-        
-        pHDOCOKGBOF_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int round_ ;
-      /**
-       * <code>uint32 round = 5;</code>
-       * @return The round.
-       */
-      @java.lang.Override
-      public int getRound() {
-        return round_;
-      }
-      /**
-       * <code>uint32 round = 5;</code>
-       * @param value The round to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRound(int value) {
-        
-        round_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 round = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRound() {
-        
-        round_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC eJGAEGAPEBA_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder> eJGAEGAPEBABuilder_;
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       * @return Whether the eJGAEGAPEBA field is set.
-       */
-      public boolean hasEJGAEGAPEBA() {
-        return eJGAEGAPEBABuilder_ != null || eJGAEGAPEBA_ != null;
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       * @return The eJGAEGAPEBA.
-       */
-      public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC getEJGAEGAPEBA() {
-        if (eJGAEGAPEBABuilder_ == null) {
-          return eJGAEGAPEBA_ == null ? emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance() : eJGAEGAPEBA_;
-        } else {
-          return eJGAEGAPEBABuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      public Builder setEJGAEGAPEBA(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC value) {
-        if (eJGAEGAPEBABuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          eJGAEGAPEBA_ = value;
-          onChanged();
-        } else {
-          eJGAEGAPEBABuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      public Builder setEJGAEGAPEBA(
-          emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder builderForValue) {
-        if (eJGAEGAPEBABuilder_ == null) {
-          eJGAEGAPEBA_ = builderForValue.build();
-          onChanged();
-        } else {
-          eJGAEGAPEBABuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      public Builder mergeEJGAEGAPEBA(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC value) {
-        if (eJGAEGAPEBABuilder_ == null) {
-          if (eJGAEGAPEBA_ != null) {
-            eJGAEGAPEBA_ =
-              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.newBuilder(eJGAEGAPEBA_).mergeFrom(value).buildPartial();
-          } else {
-            eJGAEGAPEBA_ = value;
-          }
-          onChanged();
-        } else {
-          eJGAEGAPEBABuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      public Builder clearEJGAEGAPEBA() {
-        if (eJGAEGAPEBABuilder_ == null) {
-          eJGAEGAPEBA_ = null;
-          onChanged();
-        } else {
-          eJGAEGAPEBA_ = null;
-          eJGAEGAPEBABuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder getEJGAEGAPEBABuilder() {
-        
-        onChanged();
-        return getEJGAEGAPEBAFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder getEJGAEGAPEBAOrBuilder() {
-        if (eJGAEGAPEBABuilder_ != null) {
-          return eJGAEGAPEBABuilder_.getMessageOrBuilder();
-        } else {
-          return eJGAEGAPEBA_ == null ?
-              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance() : eJGAEGAPEBA_;
-        }
-      }
-      /**
-       * <code>.AFCJANIEJKC EJGAEGAPEBA = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder> 
-          getEJGAEGAPEBAFieldBuilder() {
-        if (eJGAEGAPEBABuilder_ == null) {
-          eJGAEGAPEBABuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder>(
-                  getEJGAEGAPEBA(),
-                  getParentForChildren(),
-                  isClean());
-          eJGAEGAPEBA_ = null;
-        }
-        return eJGAEGAPEBABuilder_;
-      }
-
-      private int gEPHOFOGHJC_ ;
-      /**
-       * <code>uint32 GEPHOFOGHJC = 12;</code>
-       * @return The gEPHOFOGHJC.
-       */
-      @java.lang.Override
-      public int getGEPHOFOGHJC() {
-        return gEPHOFOGHJC_;
-      }
-      /**
-       * <code>uint32 GEPHOFOGHJC = 12;</code>
-       * @param value The gEPHOFOGHJC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setGEPHOFOGHJC(int value) {
-        
-        gEPHOFOGHJC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 GEPHOFOGHJC = 12;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearGEPHOFOGHJC() {
-        
-        gEPHOFOGHJC_ = 0;
-        onChanged();
-        return this;
-      }
-
       private emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC fOHNJKCKKPC_;
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC, emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC.Builder, emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPCOrBuilder> fOHNJKCKKPCBuilder_;
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        * @return Whether the fOHNJKCKKPC field is set.
        */
       public boolean hasFOHNJKCKKPC() {
         return fOHNJKCKKPCBuilder_ != null || fOHNJKCKKPC_ != null;
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        * @return The fOHNJKCKKPC.
        */
       public emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC getFOHNJKCKKPC() {
@@ -899,7 +695,7 @@ public final class EABNOCBCGFMOuterClass {
         }
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       public Builder setFOHNJKCKKPC(emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC value) {
         if (fOHNJKCKKPCBuilder_ == null) {
@@ -915,7 +711,7 @@ public final class EABNOCBCGFMOuterClass {
         return this;
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       public Builder setFOHNJKCKKPC(
           emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC.Builder builderForValue) {
@@ -929,7 +725,7 @@ public final class EABNOCBCGFMOuterClass {
         return this;
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       public Builder mergeFOHNJKCKKPC(emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC value) {
         if (fOHNJKCKKPCBuilder_ == null) {
@@ -947,7 +743,7 @@ public final class EABNOCBCGFMOuterClass {
         return this;
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       public Builder clearFOHNJKCKKPC() {
         if (fOHNJKCKKPCBuilder_ == null) {
@@ -961,7 +757,7 @@ public final class EABNOCBCGFMOuterClass {
         return this;
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       public emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC.Builder getFOHNJKCKKPCBuilder() {
         
@@ -969,7 +765,7 @@ public final class EABNOCBCGFMOuterClass {
         return getFOHNJKCKKPCFieldBuilder().getBuilder();
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       public emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPCOrBuilder getFOHNJKCKKPCOrBuilder() {
         if (fOHNJKCKKPCBuilder_ != null) {
@@ -980,7 +776,7 @@ public final class EABNOCBCGFMOuterClass {
         }
       }
       /**
-       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 14;</code>
+       * <code>.EEEPOOPKBPC FOHNJKCKKPC = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC, emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPC.Builder, emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.EEEPOOPKBPCOrBuilder> 
@@ -994,6 +790,218 @@ public final class EABNOCBCGFMOuterClass {
           fOHNJKCKKPC_ = null;
         }
         return fOHNJKCKKPCBuilder_;
+      }
+
+      private emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC eJGAEGAPEBA_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder> eJGAEGAPEBABuilder_;
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       * @return Whether the eJGAEGAPEBA field is set.
+       */
+      public boolean hasEJGAEGAPEBA() {
+        return eJGAEGAPEBABuilder_ != null || eJGAEGAPEBA_ != null;
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       * @return The eJGAEGAPEBA.
+       */
+      public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC getEJGAEGAPEBA() {
+        if (eJGAEGAPEBABuilder_ == null) {
+          return eJGAEGAPEBA_ == null ? emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance() : eJGAEGAPEBA_;
+        } else {
+          return eJGAEGAPEBABuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      public Builder setEJGAEGAPEBA(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC value) {
+        if (eJGAEGAPEBABuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          eJGAEGAPEBA_ = value;
+          onChanged();
+        } else {
+          eJGAEGAPEBABuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      public Builder setEJGAEGAPEBA(
+          emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder builderForValue) {
+        if (eJGAEGAPEBABuilder_ == null) {
+          eJGAEGAPEBA_ = builderForValue.build();
+          onChanged();
+        } else {
+          eJGAEGAPEBABuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      public Builder mergeEJGAEGAPEBA(emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC value) {
+        if (eJGAEGAPEBABuilder_ == null) {
+          if (eJGAEGAPEBA_ != null) {
+            eJGAEGAPEBA_ =
+              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.newBuilder(eJGAEGAPEBA_).mergeFrom(value).buildPartial();
+          } else {
+            eJGAEGAPEBA_ = value;
+          }
+          onChanged();
+        } else {
+          eJGAEGAPEBABuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      public Builder clearEJGAEGAPEBA() {
+        if (eJGAEGAPEBABuilder_ == null) {
+          eJGAEGAPEBA_ = null;
+          onChanged();
+        } else {
+          eJGAEGAPEBA_ = null;
+          eJGAEGAPEBABuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder getEJGAEGAPEBABuilder() {
+        
+        onChanged();
+        return getEJGAEGAPEBAFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      public emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder getEJGAEGAPEBAOrBuilder() {
+        if (eJGAEGAPEBABuilder_ != null) {
+          return eJGAEGAPEBABuilder_.getMessageOrBuilder();
+        } else {
+          return eJGAEGAPEBA_ == null ?
+              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.getDefaultInstance() : eJGAEGAPEBA_;
+        }
+      }
+      /**
+       * <code>.AFCJANIEJKC EJGAEGAPEBA = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder> 
+          getEJGAEGAPEBAFieldBuilder() {
+        if (eJGAEGAPEBABuilder_ == null) {
+          eJGAEGAPEBABuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKC.Builder, emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.AFCJANIEJKCOrBuilder>(
+                  getEJGAEGAPEBA(),
+                  getParentForChildren(),
+                  isClean());
+          eJGAEGAPEBA_ = null;
+        }
+        return eJGAEGAPEBABuilder_;
+      }
+
+      private int gEPHOFOGHJC_ ;
+      /**
+       * <code>uint32 GEPHOFOGHJC = 10;</code>
+       * @return The gEPHOFOGHJC.
+       */
+      @java.lang.Override
+      public int getGEPHOFOGHJC() {
+        return gEPHOFOGHJC_;
+      }
+      /**
+       * <code>uint32 GEPHOFOGHJC = 10;</code>
+       * @param value The gEPHOFOGHJC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGEPHOFOGHJC(int value) {
+        
+        gEPHOFOGHJC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 GEPHOFOGHJC = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGEPHOFOGHJC() {
+        
+        gEPHOFOGHJC_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int round_ ;
+      /**
+       * <code>uint32 round = 14;</code>
+       * @return The round.
+       */
+      @java.lang.Override
+      public int getRound() {
+        return round_;
+      }
+      /**
+       * <code>uint32 round = 14;</code>
+       * @param value The round to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRound(int value) {
+        
+        round_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 round = 14;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRound() {
+        
+        round_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int pHDOCOKGBOF_ ;
+      /**
+       * <code>uint32 PHDOCOKGBOF = 13;</code>
+       * @return The pHDOCOKGBOF.
+       */
+      @java.lang.Override
+      public int getPHDOCOKGBOF() {
+        return pHDOCOKGBOF_;
+      }
+      /**
+       * <code>uint32 PHDOCOKGBOF = 13;</code>
+       * @param value The pHDOCOKGBOF to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPHDOCOKGBOF(int value) {
+        
+        pHDOCOKGBOF_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 PHDOCOKGBOF = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPHDOCOKGBOF() {
+        
+        pHDOCOKGBOF_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1063,12 +1071,11 @@ public final class EABNOCBCGFMOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021EABNOCBCGFM.proto\032\021AFCJANIEJKC.proto\032\021" +
-      "EEEPOOPKBPC.proto\"\214\001\n\013EABNOCBCGFM\022\023\n\013PHD" +
-      "OCOKGBOF\030\001 \001(\r\022\r\n\005round\030\005 \001(\r\022!\n\013EJGAEGA" +
-      "PEBA\030\010 \001(\0132\014.AFCJANIEJKC\022\023\n\013GEPHOFOGHJC\030" +
-      "\014 \001(\r\022!\n\013FOHNJKCKKPC\030\016 \001(\0132\014.EEEPOOPKBPC" +
-      "B2\n\031emu.grasscutter.net.protoB\025EABNOCBCG" +
-      "FMOuterClassb\006proto3"
+      "EEEPOOPKBPC.proto\"\214\001\n\013EABNOCBCGFM\022!\n\013FOH" +
+      "NJKCKKPC\030\003 \001(\0132\014.EEEPOOPKBPC\022!\n\013EJGAEGAP" +
+      "EBA\030\017 \001(\0132\014.AFCJANIEJKC\022\023\n\013GEPHOFOGHJC\030\n" +
+      " \001(\r\022\r\n\005round\030\016 \001(\r\022\023\n\013PHDOCOKGBOF\030\r \001(\r" +
+      "B\033\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1081,7 +1088,7 @@ public final class EABNOCBCGFMOuterClass {
     internal_static_EABNOCBCGFM_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EABNOCBCGFM_descriptor,
-        new java.lang.String[] { "PHDOCOKGBOF", "Round", "EJGAEGAPEBA", "GEPHOFOGHJC", "FOHNJKCKKPC", });
+        new java.lang.String[] { "FOHNJKCKKPC", "EJGAEGAPEBA", "GEPHOFOGHJC", "Round", "PHDOCOKGBOF", });
     emu.grasscutter.net.proto.AFCJANIEJKCOuterClass.getDescriptor();
     emu.grasscutter.net.proto.EEEPOOPKBPCOuterClass.getDescriptor();
   }

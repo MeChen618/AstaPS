@@ -19,18 +19,22 @@ public final class MHJHCJJGOADOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 progress = 10;</code>
-     * @return The progress.
-     */
-    int getProgress();
-
-    /**
-     * <code>uint32 POBNCEDDLGD = 15;</code>
+     * <code>uint32 POBNCEDDLGD = 13;</code>
      * @return The pOBNCEDDLGD.
      */
     int getPOBNCEDDLGD();
+
+    /**
+     * <code>uint32 progress = 15;</code>
+     * @return The progress.
+     */
+    int getProgress();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code MHJHCJJGOAD}
    */
   public static final class MHJHCJJGOAD extends
@@ -75,14 +79,14 @@ public final class MHJHCJJGOADOuterClass {
             case 0:
               done = true;
               break;
-            case 80: {
+            case 104: {
 
-              progress_ = input.readUInt32();
+              pOBNCEDDLGD_ = input.readUInt32();
               break;
             }
             case 120: {
 
-              pOBNCEDDLGD_ = input.readUInt32();
+              progress_ = input.readUInt32();
               break;
             }
             default: {
@@ -117,26 +121,26 @@ public final class MHJHCJJGOADOuterClass {
               emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD.class, emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD.Builder.class);
     }
 
-    public static final int PROGRESS_FIELD_NUMBER = 10;
-    private int progress_;
-    /**
-     * <code>uint32 progress = 10;</code>
-     * @return The progress.
-     */
-    @java.lang.Override
-    public int getProgress() {
-      return progress_;
-    }
-
-    public static final int POBNCEDDLGD_FIELD_NUMBER = 15;
+    public static final int POBNCEDDLGD_FIELD_NUMBER = 13;
     private int pOBNCEDDLGD_;
     /**
-     * <code>uint32 POBNCEDDLGD = 15;</code>
+     * <code>uint32 POBNCEDDLGD = 13;</code>
      * @return The pOBNCEDDLGD.
      */
     @java.lang.Override
     public int getPOBNCEDDLGD() {
       return pOBNCEDDLGD_;
+    }
+
+    public static final int PROGRESS_FIELD_NUMBER = 15;
+    private int progress_;
+    /**
+     * <code>uint32 progress = 15;</code>
+     * @return The progress.
+     */
+    @java.lang.Override
+    public int getProgress() {
+      return progress_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,11 +157,11 @@ public final class MHJHCJJGOADOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (progress_ != 0) {
-        output.writeUInt32(10, progress_);
-      }
       if (pOBNCEDDLGD_ != 0) {
-        output.writeUInt32(15, pOBNCEDDLGD_);
+        output.writeUInt32(13, pOBNCEDDLGD_);
+      }
+      if (progress_ != 0) {
+        output.writeUInt32(15, progress_);
       }
       unknownFields.writeTo(output);
     }
@@ -168,13 +172,13 @@ public final class MHJHCJJGOADOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (progress_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(10, progress_);
-      }
       if (pOBNCEDDLGD_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, pOBNCEDDLGD_);
+          .computeUInt32Size(13, pOBNCEDDLGD_);
+      }
+      if (progress_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, progress_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -191,10 +195,10 @@ public final class MHJHCJJGOADOuterClass {
       }
       emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD other = (emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD) obj;
 
-      if (getProgress()
-          != other.getProgress()) return false;
       if (getPOBNCEDDLGD()
           != other.getPOBNCEDDLGD()) return false;
+      if (getProgress()
+          != other.getProgress()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -206,10 +210,10 @@ public final class MHJHCJJGOADOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getProgress();
       hash = (37 * hash) + POBNCEDDLGD_FIELD_NUMBER;
       hash = (53 * hash) + getPOBNCEDDLGD();
+      hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getProgress();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,6 +310,10 @@ public final class MHJHCJJGOADOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code MHJHCJJGOAD}
      */
     public static final class Builder extends
@@ -343,9 +351,9 @@ public final class MHJHCJJGOADOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        progress_ = 0;
-
         pOBNCEDDLGD_ = 0;
+
+        progress_ = 0;
 
         return this;
       }
@@ -373,8 +381,8 @@ public final class MHJHCJJGOADOuterClass {
       @java.lang.Override
       public emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD buildPartial() {
         emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD result = new emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD(this);
-        result.progress_ = progress_;
         result.pOBNCEDDLGD_ = pOBNCEDDLGD_;
+        result.progress_ = progress_;
         onBuilt();
         return result;
       }
@@ -423,11 +431,11 @@ public final class MHJHCJJGOADOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD other) {
         if (other == emu.grasscutter.net.proto.MHJHCJJGOADOuterClass.MHJHCJJGOAD.getDefaultInstance()) return this;
-        if (other.getProgress() != 0) {
-          setProgress(other.getProgress());
-        }
         if (other.getPOBNCEDDLGD() != 0) {
           setPOBNCEDDLGD(other.getPOBNCEDDLGD());
+        }
+        if (other.getProgress() != 0) {
+          setProgress(other.getProgress());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -458,40 +466,9 @@ public final class MHJHCJJGOADOuterClass {
         return this;
       }
 
-      private int progress_ ;
-      /**
-       * <code>uint32 progress = 10;</code>
-       * @return The progress.
-       */
-      @java.lang.Override
-      public int getProgress() {
-        return progress_;
-      }
-      /**
-       * <code>uint32 progress = 10;</code>
-       * @param value The progress to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProgress(int value) {
-        
-        progress_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 progress = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProgress() {
-        
-        progress_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int pOBNCEDDLGD_ ;
       /**
-       * <code>uint32 POBNCEDDLGD = 15;</code>
+       * <code>uint32 POBNCEDDLGD = 13;</code>
        * @return The pOBNCEDDLGD.
        */
       @java.lang.Override
@@ -499,7 +476,7 @@ public final class MHJHCJJGOADOuterClass {
         return pOBNCEDDLGD_;
       }
       /**
-       * <code>uint32 POBNCEDDLGD = 15;</code>
+       * <code>uint32 POBNCEDDLGD = 13;</code>
        * @param value The pOBNCEDDLGD to set.
        * @return This builder for chaining.
        */
@@ -510,12 +487,43 @@ public final class MHJHCJJGOADOuterClass {
         return this;
       }
       /**
-       * <code>uint32 POBNCEDDLGD = 15;</code>
+       * <code>uint32 POBNCEDDLGD = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearPOBNCEDDLGD() {
         
         pOBNCEDDLGD_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int progress_ ;
+      /**
+       * <code>uint32 progress = 15;</code>
+       * @return The progress.
+       */
+      @java.lang.Override
+      public int getProgress() {
+        return progress_;
+      }
+      /**
+       * <code>uint32 progress = 15;</code>
+       * @param value The progress to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProgress(int value) {
+        
+        progress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 progress = 15;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProgress() {
+        
+        progress_ = 0;
         onChanged();
         return this;
       }
@@ -586,10 +594,9 @@ public final class MHJHCJJGOADOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021MHJHCJJGOAD.proto\"4\n\013MHJHCJJGOAD\022\020\n\010pr" +
-      "ogress\030\n \001(\r\022\023\n\013POBNCEDDLGD\030\017 \001(\rB2\n\031emu" +
-      ".grasscutter.net.protoB\025MHJHCJJGOADOuter" +
-      "Classb\006proto3"
+      "\n\021MHJHCJJGOAD.proto\"4\n\013MHJHCJJGOAD\022\023\n\013PO" +
+      "BNCEDDLGD\030\r \001(\r\022\020\n\010progress\030\017 \001(\rB\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -600,7 +607,7 @@ public final class MHJHCJJGOADOuterClass {
     internal_static_MHJHCJJGOAD_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MHJHCJJGOAD_descriptor,
-        new java.lang.String[] { "Progress", "POBNCEDDLGD", });
+        new java.lang.String[] { "POBNCEDDLGD", "Progress", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

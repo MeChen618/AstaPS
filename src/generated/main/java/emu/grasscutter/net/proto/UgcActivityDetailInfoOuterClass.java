@@ -19,48 +19,52 @@ public final class UgcActivityDetailInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> 
         getOfficialCustomDungeonListList();
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon getOfficialCustomDungeonList(int index);
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     int getOfficialCustomDungeonListCount();
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder> 
         getOfficialCustomDungeonListOrBuilderList();
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder getOfficialCustomDungeonListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 custom_dungeon_group_id = 4;</code>
+     * <code>uint32 custom_dungeon_group_id = 14;</code>
      * @return The customDungeonGroupId.
      */
     int getCustomDungeonGroupId();
 
     /**
-     * <code>bool is_ugc_feature_closed = 11;</code>
+     * <code>bool is_ugc_feature_closed = 7;</code>
      * @return The isUgcFeatureClosed.
      */
     boolean getIsUgcFeatureClosed();
 
     /**
-     * <code>bool is_enable_ugc = 12;</code>
+     * <code>bool is_enable_ugc = 9;</code>
      * @return The isEnableUgc.
      */
     boolean getIsEnableUgc();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code UgcActivityDetailInfo}
    */
   public static final class UgcActivityDetailInfo extends
@@ -107,7 +111,7 @@ public final class UgcActivityDetailInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 26: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 officialCustomDungeonList_ = new java.util.ArrayList<emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon>();
                 mutable_bitField0_ |= 0x00000001;
@@ -116,19 +120,19 @@ public final class UgcActivityDetailInfoOuterClass {
                   input.readMessage(emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.parser(), extensionRegistry));
               break;
             }
-            case 32: {
-
-              customDungeonGroupId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
+            case 56: {
 
               isUgcFeatureClosed_ = input.readBool();
               break;
             }
-            case 96: {
+            case 72: {
 
               isEnableUgc_ = input.readBool();
+              break;
+            }
+            case 112: {
+
+              customDungeonGroupId_ = input.readUInt32();
               break;
             }
             default: {
@@ -166,17 +170,17 @@ public final class UgcActivityDetailInfoOuterClass {
               emu.grasscutter.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo.class, emu.grasscutter.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo.Builder.class);
     }
 
-    public static final int OFFICIAL_CUSTOM_DUNGEON_LIST_FIELD_NUMBER = 3;
+    public static final int OFFICIAL_CUSTOM_DUNGEON_LIST_FIELD_NUMBER = 4;
     private java.util.List<emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> officialCustomDungeonList_;
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> getOfficialCustomDungeonListList() {
       return officialCustomDungeonList_;
     }
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder> 
@@ -184,21 +188,21 @@ public final class UgcActivityDetailInfoOuterClass {
       return officialCustomDungeonList_;
     }
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     @java.lang.Override
     public int getOfficialCustomDungeonListCount() {
       return officialCustomDungeonList_.size();
     }
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon getOfficialCustomDungeonList(int index) {
       return officialCustomDungeonList_.get(index);
     }
     /**
-     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+     * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder getOfficialCustomDungeonListOrBuilder(
@@ -206,10 +210,10 @@ public final class UgcActivityDetailInfoOuterClass {
       return officialCustomDungeonList_.get(index);
     }
 
-    public static final int CUSTOM_DUNGEON_GROUP_ID_FIELD_NUMBER = 4;
+    public static final int CUSTOM_DUNGEON_GROUP_ID_FIELD_NUMBER = 14;
     private int customDungeonGroupId_;
     /**
-     * <code>uint32 custom_dungeon_group_id = 4;</code>
+     * <code>uint32 custom_dungeon_group_id = 14;</code>
      * @return The customDungeonGroupId.
      */
     @java.lang.Override
@@ -217,10 +221,10 @@ public final class UgcActivityDetailInfoOuterClass {
       return customDungeonGroupId_;
     }
 
-    public static final int IS_UGC_FEATURE_CLOSED_FIELD_NUMBER = 11;
+    public static final int IS_UGC_FEATURE_CLOSED_FIELD_NUMBER = 7;
     private boolean isUgcFeatureClosed_;
     /**
-     * <code>bool is_ugc_feature_closed = 11;</code>
+     * <code>bool is_ugc_feature_closed = 7;</code>
      * @return The isUgcFeatureClosed.
      */
     @java.lang.Override
@@ -228,10 +232,10 @@ public final class UgcActivityDetailInfoOuterClass {
       return isUgcFeatureClosed_;
     }
 
-    public static final int IS_ENABLE_UGC_FIELD_NUMBER = 12;
+    public static final int IS_ENABLE_UGC_FIELD_NUMBER = 9;
     private boolean isEnableUgc_;
     /**
-     * <code>bool is_enable_ugc = 12;</code>
+     * <code>bool is_enable_ugc = 9;</code>
      * @return The isEnableUgc.
      */
     @java.lang.Override
@@ -254,16 +258,16 @@ public final class UgcActivityDetailInfoOuterClass {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < officialCustomDungeonList_.size(); i++) {
-        output.writeMessage(3, officialCustomDungeonList_.get(i));
-      }
-      if (customDungeonGroupId_ != 0) {
-        output.writeUInt32(4, customDungeonGroupId_);
+        output.writeMessage(4, officialCustomDungeonList_.get(i));
       }
       if (isUgcFeatureClosed_ != false) {
-        output.writeBool(11, isUgcFeatureClosed_);
+        output.writeBool(7, isUgcFeatureClosed_);
       }
       if (isEnableUgc_ != false) {
-        output.writeBool(12, isEnableUgc_);
+        output.writeBool(9, isEnableUgc_);
+      }
+      if (customDungeonGroupId_ != 0) {
+        output.writeUInt32(14, customDungeonGroupId_);
       }
       unknownFields.writeTo(output);
     }
@@ -276,19 +280,19 @@ public final class UgcActivityDetailInfoOuterClass {
       size = 0;
       for (int i = 0; i < officialCustomDungeonList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, officialCustomDungeonList_.get(i));
-      }
-      if (customDungeonGroupId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, customDungeonGroupId_);
+          .computeMessageSize(4, officialCustomDungeonList_.get(i));
       }
       if (isUgcFeatureClosed_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, isUgcFeatureClosed_);
+          .computeBoolSize(7, isUgcFeatureClosed_);
       }
       if (isEnableUgc_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, isEnableUgc_);
+          .computeBoolSize(9, isEnableUgc_);
+      }
+      if (customDungeonGroupId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(14, customDungeonGroupId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -432,6 +436,10 @@ public final class UgcActivityDetailInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code UgcActivityDetailInfo}
      */
     public static final class Builder extends
@@ -647,7 +655,7 @@ public final class UgcActivityDetailInfoOuterClass {
           emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder> officialCustomDungeonListBuilder_;
 
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> getOfficialCustomDungeonListList() {
         if (officialCustomDungeonListBuilder_ == null) {
@@ -657,7 +665,7 @@ public final class UgcActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public int getOfficialCustomDungeonListCount() {
         if (officialCustomDungeonListBuilder_ == null) {
@@ -667,7 +675,7 @@ public final class UgcActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon getOfficialCustomDungeonList(int index) {
         if (officialCustomDungeonListBuilder_ == null) {
@@ -677,7 +685,7 @@ public final class UgcActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder setOfficialCustomDungeonList(
           int index, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon value) {
@@ -694,7 +702,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder setOfficialCustomDungeonList(
           int index, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder builderForValue) {
@@ -708,7 +716,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder addOfficialCustomDungeonList(emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon value) {
         if (officialCustomDungeonListBuilder_ == null) {
@@ -724,7 +732,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder addOfficialCustomDungeonList(
           int index, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon value) {
@@ -741,7 +749,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder addOfficialCustomDungeonList(
           emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder builderForValue) {
@@ -755,7 +763,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder addOfficialCustomDungeonList(
           int index, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder builderForValue) {
@@ -769,7 +777,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder addAllOfficialCustomDungeonList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon> values) {
@@ -784,7 +792,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder clearOfficialCustomDungeonList() {
         if (officialCustomDungeonListBuilder_ == null) {
@@ -797,7 +805,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public Builder removeOfficialCustomDungeonList(int index) {
         if (officialCustomDungeonListBuilder_ == null) {
@@ -810,14 +818,14 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder getOfficialCustomDungeonListBuilder(
           int index) {
         return getOfficialCustomDungeonListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder getOfficialCustomDungeonListOrBuilder(
           int index) {
@@ -827,7 +835,7 @@ public final class UgcActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeonOrBuilder> 
            getOfficialCustomDungeonListOrBuilderList() {
@@ -838,14 +846,14 @@ public final class UgcActivityDetailInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder addOfficialCustomDungeonListBuilder() {
         return getOfficialCustomDungeonListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.getDefaultInstance());
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder addOfficialCustomDungeonListBuilder(
           int index) {
@@ -853,7 +861,7 @@ public final class UgcActivityDetailInfoOuterClass {
             index, emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.getDefaultInstance());
       }
       /**
-       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 3;</code>
+       * <code>repeated .OfficialCustomDungeon official_custom_dungeon_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.OfficialCustomDungeonOuterClass.OfficialCustomDungeon.Builder> 
            getOfficialCustomDungeonListBuilderList() {
@@ -876,7 +884,7 @@ public final class UgcActivityDetailInfoOuterClass {
 
       private int customDungeonGroupId_ ;
       /**
-       * <code>uint32 custom_dungeon_group_id = 4;</code>
+       * <code>uint32 custom_dungeon_group_id = 14;</code>
        * @return The customDungeonGroupId.
        */
       @java.lang.Override
@@ -884,7 +892,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return customDungeonGroupId_;
       }
       /**
-       * <code>uint32 custom_dungeon_group_id = 4;</code>
+       * <code>uint32 custom_dungeon_group_id = 14;</code>
        * @param value The customDungeonGroupId to set.
        * @return This builder for chaining.
        */
@@ -895,7 +903,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 custom_dungeon_group_id = 4;</code>
+       * <code>uint32 custom_dungeon_group_id = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearCustomDungeonGroupId() {
@@ -907,7 +915,7 @@ public final class UgcActivityDetailInfoOuterClass {
 
       private boolean isUgcFeatureClosed_ ;
       /**
-       * <code>bool is_ugc_feature_closed = 11;</code>
+       * <code>bool is_ugc_feature_closed = 7;</code>
        * @return The isUgcFeatureClosed.
        */
       @java.lang.Override
@@ -915,7 +923,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return isUgcFeatureClosed_;
       }
       /**
-       * <code>bool is_ugc_feature_closed = 11;</code>
+       * <code>bool is_ugc_feature_closed = 7;</code>
        * @param value The isUgcFeatureClosed to set.
        * @return This builder for chaining.
        */
@@ -926,7 +934,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_ugc_feature_closed = 11;</code>
+       * <code>bool is_ugc_feature_closed = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsUgcFeatureClosed() {
@@ -938,7 +946,7 @@ public final class UgcActivityDetailInfoOuterClass {
 
       private boolean isEnableUgc_ ;
       /**
-       * <code>bool is_enable_ugc = 12;</code>
+       * <code>bool is_enable_ugc = 9;</code>
        * @return The isEnableUgc.
        */
       @java.lang.Override
@@ -946,7 +954,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return isEnableUgc_;
       }
       /**
-       * <code>bool is_enable_ugc = 12;</code>
+       * <code>bool is_enable_ugc = 9;</code>
        * @param value The isEnableUgc to set.
        * @return This builder for chaining.
        */
@@ -957,7 +965,7 @@ public final class UgcActivityDetailInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool is_enable_ugc = 12;</code>
+       * <code>bool is_enable_ugc = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEnableUgc() {
@@ -1035,12 +1043,11 @@ public final class UgcActivityDetailInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033UgcActivityDetailInfo.proto\032\033OfficialC" +
       "ustomDungeon.proto\"\254\001\n\025UgcActivityDetail" +
-      "Info\022<\n\034official_custom_dungeon_list\030\003 \003" +
+      "Info\022<\n\034official_custom_dungeon_list\030\004 \003" +
       "(\0132\026.OfficialCustomDungeon\022\037\n\027custom_dun" +
-      "geon_group_id\030\004 \001(\r\022\035\n\025is_ugc_feature_cl" +
-      "osed\030\013 \001(\010\022\025\n\ris_enable_ugc\030\014 \001(\010B<\n\031emu" +
-      ".grasscutter.net.protoB\037UgcActivityDetai" +
-      "lInfoOuterClassb\006proto3"
+      "geon_group_id\030\016 \001(\r\022\035\n\025is_ugc_feature_cl" +
+      "osed\030\007 \001(\010\022\025\n\ris_enable_ugc\030\t \001(\010B\033\n\031emu" +
+      ".grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,123 +19,127 @@ public final class RogueStageInfoOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+     * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+     * @return Whether the avatarTeam field is set.
+     */
+    boolean hasAvatarTeam();
+    /**
+     * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+     * @return The avatarTeam.
+     */
+    emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo getAvatarTeam();
+    /**
+     * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+     */
+    emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder getAvatarTeamOrBuilder();
+
+    /**
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
      */
     java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> 
         getRuneRecordListList();
     /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
      */
     emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord getRuneRecordList(int index);
     /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
      */
     int getRuneRecordListCount();
     /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder> 
         getRuneRecordListOrBuilderList();
     /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
      */
     emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder getRuneRecordListOrBuilder(
         int index);
 
     /**
-     * <code>uint32 cur_level = 3;</code>
-     * @return The curLevel.
-     */
-    int getCurLevel();
-
-    /**
-     * <code>bool is_taken_reward = 4;</code>
-     * @return The isTakenReward.
-     */
-    boolean getIsTakenReward();
-
-    /**
-     * <code>bool is_open = 6;</code>
-     * @return The isOpen.
-     */
-    boolean getIsOpen();
-
-    /**
-     * <code>uint32 KKJFEBAPLHL = 7;</code>
-     * @return The kKJFEBAPLHL.
-     */
-    int getKKJFEBAPLHL();
-
-    /**
-     * <code>uint32 LNLCFJGNECG = 8;</code>
-     * @return The lNLCFJGNECG.
-     */
-    int getLNLCFJGNECG();
-
-    /**
-     * <code>bool is_passed = 9;</code>
-     * @return The isPassed.
-     */
-    boolean getIsPassed();
-
-    /**
-     * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-     * @return Whether the avatarTeam field is set.
-     */
-    boolean hasAvatarTeam();
-    /**
-     * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-     * @return The avatarTeam.
-     */
-    emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo getAvatarTeam();
-    /**
-     * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-     */
-    emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder getAvatarTeamOrBuilder();
-
-    /**
-     * <code>bool DHLBAPDOFMF = 11;</code>
+     * <code>bool DHLBAPDOFMF = 14;</code>
      * @return The dHLBAPDOFMF.
      */
     boolean getDHLBAPDOFMF();
 
     /**
-     * <code>bool KAJLCAPNCFA = 12;</code>
+     * <code>bool KAJLCAPNCFA = 7;</code>
      * @return The kAJLCAPNCFA.
      */
     boolean getKAJLCAPNCFA();
 
     /**
-     * <code>uint32 stage_id = 13;</code>
+     * <code>bool is_passed = 3;</code>
+     * @return The isPassed.
+     */
+    boolean getIsPassed();
+
+    /**
+     * <code>uint32 KKJFEBAPLHL = 13;</code>
+     * @return The kKJFEBAPLHL.
+     */
+    int getKKJFEBAPLHL();
+
+    /**
+     * <code>uint32 revise_monster_level = 1812;</code>
+     * @return The reviseMonsterLevel.
+     */
+    int getReviseMonsterLevel();
+
+    /**
+     * <code>uint32 JEEEJLIDCCN = 2;</code>
+     * @return The jEEEJLIDCCN.
+     */
+    int getJEEEJLIDCCN();
+
+    /**
+     * <code>uint32 cur_level = 12;</code>
+     * @return The curLevel.
+     */
+    int getCurLevel();
+
+    /**
+     * <code>bool is_taken_reward = 6;</code>
+     * @return The isTakenReward.
+     */
+    boolean getIsTakenReward();
+
+    /**
+     * <code>bool is_open = 8;</code>
+     * @return The isOpen.
+     */
+    boolean getIsOpen();
+
+    /**
+     * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
      */
     int getStageId();
 
     /**
-     * <code>uint32 JEEEJLIDCCN = 14;</code>
-     * @return The jEEEJLIDCCN.
+     * <code>uint32 LNLCFJGNECG = 1208;</code>
+     * @return The lNLCFJGNECG.
      */
-    int getJEEEJLIDCCN();
+    int getLNLCFJGNECG();
+
+    /**
+     * <code>uint32 CPDHCBHKOEC = 10;</code>
+     * @return The cPDHCBHKOEC.
+     */
+    int getCPDHCBHKOEC();
 
     /**
      * <code>uint32 JKCCEMMPJIO = 15;</code>
      * @return The jKCCEMMPJIO.
      */
     int getJKCCEMMPJIO();
-
-    /**
-     * <code>uint32 CPDHCBHKOEC = 186;</code>
-     * @return The cPDHCBHKOEC.
-     */
-    int getCPDHCBHKOEC();
-
-    /**
-     * <code>uint32 revise_monster_level = 535;</code>
-     * @return The reviseMonsterLevel.
-     */
-    int getReviseMonsterLevel();
   }
   /**
+   * <pre>
+   * CmdId: -
+   * </pre>
+   *
    * Protobuf type {@code RogueStageInfo}
    */
   public static final class RogueStageInfo extends
@@ -182,46 +186,37 @@ public final class RogueStageInfoOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                runeRecordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              runeRecordList_.add(
-                  input.readMessage(emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.parser(), extensionRegistry));
+            case 8: {
+
+              stageId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+
+              jEEEJLIDCCN_ = input.readUInt32();
               break;
             }
             case 24: {
 
-              curLevel_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isTakenReward_ = input.readBool();
+              isPassed_ = input.readBool();
               break;
             }
             case 48: {
 
-              isOpen_ = input.readBool();
+              isTakenReward_ = input.readBool();
               break;
             }
             case 56: {
 
-              kKJFEBAPLHL_ = input.readUInt32();
+              kAJLCAPNCFA_ = input.readBool();
               break;
             }
             case 64: {
 
-              lNLCFJGNECG_ = input.readUInt32();
+              isOpen_ = input.readBool();
               break;
             }
-            case 72: {
-
-              isPassed_ = input.readBool();
-              break;
-            }
-            case 82: {
+            case 74: {
               emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder subBuilder = null;
               if (avatarTeam_ != null) {
                 subBuilder = avatarTeam_.toBuilder();
@@ -234,24 +229,33 @@ public final class RogueStageInfoOuterClass {
 
               break;
             }
-            case 88: {
+            case 80: {
 
-              dHLBAPDOFMF_ = input.readBool();
+              cPDHCBHKOEC_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                runeRecordList_ = new java.util.ArrayList<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              runeRecordList_.add(
+                  input.readMessage(emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.parser(), extensionRegistry));
               break;
             }
             case 96: {
 
-              kAJLCAPNCFA_ = input.readBool();
+              curLevel_ = input.readUInt32();
               break;
             }
             case 104: {
 
-              stageId_ = input.readUInt32();
+              kKJFEBAPLHL_ = input.readUInt32();
               break;
             }
             case 112: {
 
-              jEEEJLIDCCN_ = input.readUInt32();
+              dHLBAPDOFMF_ = input.readBool();
               break;
             }
             case 120: {
@@ -259,12 +263,12 @@ public final class RogueStageInfoOuterClass {
               jKCCEMMPJIO_ = input.readUInt32();
               break;
             }
-            case 1488: {
+            case 9664: {
 
-              cPDHCBHKOEC_ = input.readUInt32();
+              lNLCFJGNECG_ = input.readUInt32();
               break;
             }
-            case 4280: {
+            case 14496: {
 
               reviseMonsterLevel_ = input.readUInt32();
               break;
@@ -304,116 +308,10 @@ public final class RogueStageInfoOuterClass {
               emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo.class, emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo.Builder.class);
     }
 
-    public static final int RUNE_RECORD_LIST_FIELD_NUMBER = 1;
-    private java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> runeRecordList_;
-    /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> getRuneRecordListList() {
-      return runeRecordList_;
-    }
-    /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder> 
-        getRuneRecordListOrBuilderList() {
-      return runeRecordList_;
-    }
-    /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
-     */
-    @java.lang.Override
-    public int getRuneRecordListCount() {
-      return runeRecordList_.size();
-    }
-    /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord getRuneRecordList(int index) {
-      return runeRecordList_.get(index);
-    }
-    /**
-     * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder getRuneRecordListOrBuilder(
-        int index) {
-      return runeRecordList_.get(index);
-    }
-
-    public static final int CUR_LEVEL_FIELD_NUMBER = 3;
-    private int curLevel_;
-    /**
-     * <code>uint32 cur_level = 3;</code>
-     * @return The curLevel.
-     */
-    @java.lang.Override
-    public int getCurLevel() {
-      return curLevel_;
-    }
-
-    public static final int IS_TAKEN_REWARD_FIELD_NUMBER = 4;
-    private boolean isTakenReward_;
-    /**
-     * <code>bool is_taken_reward = 4;</code>
-     * @return The isTakenReward.
-     */
-    @java.lang.Override
-    public boolean getIsTakenReward() {
-      return isTakenReward_;
-    }
-
-    public static final int IS_OPEN_FIELD_NUMBER = 6;
-    private boolean isOpen_;
-    /**
-     * <code>bool is_open = 6;</code>
-     * @return The isOpen.
-     */
-    @java.lang.Override
-    public boolean getIsOpen() {
-      return isOpen_;
-    }
-
-    public static final int KKJFEBAPLHL_FIELD_NUMBER = 7;
-    private int kKJFEBAPLHL_;
-    /**
-     * <code>uint32 KKJFEBAPLHL = 7;</code>
-     * @return The kKJFEBAPLHL.
-     */
-    @java.lang.Override
-    public int getKKJFEBAPLHL() {
-      return kKJFEBAPLHL_;
-    }
-
-    public static final int LNLCFJGNECG_FIELD_NUMBER = 8;
-    private int lNLCFJGNECG_;
-    /**
-     * <code>uint32 LNLCFJGNECG = 8;</code>
-     * @return The lNLCFJGNECG.
-     */
-    @java.lang.Override
-    public int getLNLCFJGNECG() {
-      return lNLCFJGNECG_;
-    }
-
-    public static final int IS_PASSED_FIELD_NUMBER = 9;
-    private boolean isPassed_;
-    /**
-     * <code>bool is_passed = 9;</code>
-     * @return The isPassed.
-     */
-    @java.lang.Override
-    public boolean getIsPassed() {
-      return isPassed_;
-    }
-
-    public static final int AVATAR_TEAM_FIELD_NUMBER = 10;
+    public static final int AVATAR_TEAM_FIELD_NUMBER = 9;
     private emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo avatarTeam_;
     /**
-     * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
+     * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
      * @return Whether the avatarTeam field is set.
      */
     @java.lang.Override
@@ -421,7 +319,7 @@ public final class RogueStageInfoOuterClass {
       return avatarTeam_ != null;
     }
     /**
-     * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
+     * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
      * @return The avatarTeam.
      */
     @java.lang.Override
@@ -429,17 +327,57 @@ public final class RogueStageInfoOuterClass {
       return avatarTeam_ == null ? emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.getDefaultInstance() : avatarTeam_;
     }
     /**
-     * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
+     * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder getAvatarTeamOrBuilder() {
       return getAvatarTeam();
     }
 
-    public static final int DHLBAPDOFMF_FIELD_NUMBER = 11;
+    public static final int RUNE_RECORD_LIST_FIELD_NUMBER = 11;
+    private java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> runeRecordList_;
+    /**
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> getRuneRecordListList() {
+      return runeRecordList_;
+    }
+    /**
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder> 
+        getRuneRecordListOrBuilderList() {
+      return runeRecordList_;
+    }
+    /**
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
+     */
+    @java.lang.Override
+    public int getRuneRecordListCount() {
+      return runeRecordList_.size();
+    }
+    /**
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord getRuneRecordList(int index) {
+      return runeRecordList_.get(index);
+    }
+    /**
+     * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder getRuneRecordListOrBuilder(
+        int index) {
+      return runeRecordList_.get(index);
+    }
+
+    public static final int DHLBAPDOFMF_FIELD_NUMBER = 14;
     private boolean dHLBAPDOFMF_;
     /**
-     * <code>bool DHLBAPDOFMF = 11;</code>
+     * <code>bool DHLBAPDOFMF = 14;</code>
      * @return The dHLBAPDOFMF.
      */
     @java.lang.Override
@@ -447,10 +385,10 @@ public final class RogueStageInfoOuterClass {
       return dHLBAPDOFMF_;
     }
 
-    public static final int KAJLCAPNCFA_FIELD_NUMBER = 12;
+    public static final int KAJLCAPNCFA_FIELD_NUMBER = 7;
     private boolean kAJLCAPNCFA_;
     /**
-     * <code>bool KAJLCAPNCFA = 12;</code>
+     * <code>bool KAJLCAPNCFA = 7;</code>
      * @return The kAJLCAPNCFA.
      */
     @java.lang.Override
@@ -458,10 +396,87 @@ public final class RogueStageInfoOuterClass {
       return kAJLCAPNCFA_;
     }
 
-    public static final int STAGE_ID_FIELD_NUMBER = 13;
+    public static final int IS_PASSED_FIELD_NUMBER = 3;
+    private boolean isPassed_;
+    /**
+     * <code>bool is_passed = 3;</code>
+     * @return The isPassed.
+     */
+    @java.lang.Override
+    public boolean getIsPassed() {
+      return isPassed_;
+    }
+
+    public static final int KKJFEBAPLHL_FIELD_NUMBER = 13;
+    private int kKJFEBAPLHL_;
+    /**
+     * <code>uint32 KKJFEBAPLHL = 13;</code>
+     * @return The kKJFEBAPLHL.
+     */
+    @java.lang.Override
+    public int getKKJFEBAPLHL() {
+      return kKJFEBAPLHL_;
+    }
+
+    public static final int REVISE_MONSTER_LEVEL_FIELD_NUMBER = 1812;
+    private int reviseMonsterLevel_;
+    /**
+     * <code>uint32 revise_monster_level = 1812;</code>
+     * @return The reviseMonsterLevel.
+     */
+    @java.lang.Override
+    public int getReviseMonsterLevel() {
+      return reviseMonsterLevel_;
+    }
+
+    public static final int JEEEJLIDCCN_FIELD_NUMBER = 2;
+    private int jEEEJLIDCCN_;
+    /**
+     * <code>uint32 JEEEJLIDCCN = 2;</code>
+     * @return The jEEEJLIDCCN.
+     */
+    @java.lang.Override
+    public int getJEEEJLIDCCN() {
+      return jEEEJLIDCCN_;
+    }
+
+    public static final int CUR_LEVEL_FIELD_NUMBER = 12;
+    private int curLevel_;
+    /**
+     * <code>uint32 cur_level = 12;</code>
+     * @return The curLevel.
+     */
+    @java.lang.Override
+    public int getCurLevel() {
+      return curLevel_;
+    }
+
+    public static final int IS_TAKEN_REWARD_FIELD_NUMBER = 6;
+    private boolean isTakenReward_;
+    /**
+     * <code>bool is_taken_reward = 6;</code>
+     * @return The isTakenReward.
+     */
+    @java.lang.Override
+    public boolean getIsTakenReward() {
+      return isTakenReward_;
+    }
+
+    public static final int IS_OPEN_FIELD_NUMBER = 8;
+    private boolean isOpen_;
+    /**
+     * <code>bool is_open = 8;</code>
+     * @return The isOpen.
+     */
+    @java.lang.Override
+    public boolean getIsOpen() {
+      return isOpen_;
+    }
+
+    public static final int STAGE_ID_FIELD_NUMBER = 1;
     private int stageId_;
     /**
-     * <code>uint32 stage_id = 13;</code>
+     * <code>uint32 stage_id = 1;</code>
      * @return The stageId.
      */
     @java.lang.Override
@@ -469,15 +484,26 @@ public final class RogueStageInfoOuterClass {
       return stageId_;
     }
 
-    public static final int JEEEJLIDCCN_FIELD_NUMBER = 14;
-    private int jEEEJLIDCCN_;
+    public static final int LNLCFJGNECG_FIELD_NUMBER = 1208;
+    private int lNLCFJGNECG_;
     /**
-     * <code>uint32 JEEEJLIDCCN = 14;</code>
-     * @return The jEEEJLIDCCN.
+     * <code>uint32 LNLCFJGNECG = 1208;</code>
+     * @return The lNLCFJGNECG.
      */
     @java.lang.Override
-    public int getJEEEJLIDCCN() {
-      return jEEEJLIDCCN_;
+    public int getLNLCFJGNECG() {
+      return lNLCFJGNECG_;
+    }
+
+    public static final int CPDHCBHKOEC_FIELD_NUMBER = 10;
+    private int cPDHCBHKOEC_;
+    /**
+     * <code>uint32 CPDHCBHKOEC = 10;</code>
+     * @return The cPDHCBHKOEC.
+     */
+    @java.lang.Override
+    public int getCPDHCBHKOEC() {
+      return cPDHCBHKOEC_;
     }
 
     public static final int JKCCEMMPJIO_FIELD_NUMBER = 15;
@@ -489,28 +515,6 @@ public final class RogueStageInfoOuterClass {
     @java.lang.Override
     public int getJKCCEMMPJIO() {
       return jKCCEMMPJIO_;
-    }
-
-    public static final int CPDHCBHKOEC_FIELD_NUMBER = 186;
-    private int cPDHCBHKOEC_;
-    /**
-     * <code>uint32 CPDHCBHKOEC = 186;</code>
-     * @return The cPDHCBHKOEC.
-     */
-    @java.lang.Override
-    public int getCPDHCBHKOEC() {
-      return cPDHCBHKOEC_;
-    }
-
-    public static final int REVISE_MONSTER_LEVEL_FIELD_NUMBER = 535;
-    private int reviseMonsterLevel_;
-    /**
-     * <code>uint32 revise_monster_level = 535;</code>
-     * @return The reviseMonsterLevel.
-     */
-    @java.lang.Override
-    public int getReviseMonsterLevel() {
-      return reviseMonsterLevel_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -527,50 +531,50 @@ public final class RogueStageInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < runeRecordList_.size(); i++) {
-        output.writeMessage(1, runeRecordList_.get(i));
-      }
-      if (curLevel_ != 0) {
-        output.writeUInt32(3, curLevel_);
-      }
-      if (isTakenReward_ != false) {
-        output.writeBool(4, isTakenReward_);
-      }
-      if (isOpen_ != false) {
-        output.writeBool(6, isOpen_);
-      }
-      if (kKJFEBAPLHL_ != 0) {
-        output.writeUInt32(7, kKJFEBAPLHL_);
-      }
-      if (lNLCFJGNECG_ != 0) {
-        output.writeUInt32(8, lNLCFJGNECG_);
-      }
-      if (isPassed_ != false) {
-        output.writeBool(9, isPassed_);
-      }
-      if (avatarTeam_ != null) {
-        output.writeMessage(10, getAvatarTeam());
-      }
-      if (dHLBAPDOFMF_ != false) {
-        output.writeBool(11, dHLBAPDOFMF_);
-      }
-      if (kAJLCAPNCFA_ != false) {
-        output.writeBool(12, kAJLCAPNCFA_);
-      }
       if (stageId_ != 0) {
-        output.writeUInt32(13, stageId_);
+        output.writeUInt32(1, stageId_);
       }
       if (jEEEJLIDCCN_ != 0) {
-        output.writeUInt32(14, jEEEJLIDCCN_);
+        output.writeUInt32(2, jEEEJLIDCCN_);
+      }
+      if (isPassed_ != false) {
+        output.writeBool(3, isPassed_);
+      }
+      if (isTakenReward_ != false) {
+        output.writeBool(6, isTakenReward_);
+      }
+      if (kAJLCAPNCFA_ != false) {
+        output.writeBool(7, kAJLCAPNCFA_);
+      }
+      if (isOpen_ != false) {
+        output.writeBool(8, isOpen_);
+      }
+      if (avatarTeam_ != null) {
+        output.writeMessage(9, getAvatarTeam());
+      }
+      if (cPDHCBHKOEC_ != 0) {
+        output.writeUInt32(10, cPDHCBHKOEC_);
+      }
+      for (int i = 0; i < runeRecordList_.size(); i++) {
+        output.writeMessage(11, runeRecordList_.get(i));
+      }
+      if (curLevel_ != 0) {
+        output.writeUInt32(12, curLevel_);
+      }
+      if (kKJFEBAPLHL_ != 0) {
+        output.writeUInt32(13, kKJFEBAPLHL_);
+      }
+      if (dHLBAPDOFMF_ != false) {
+        output.writeBool(14, dHLBAPDOFMF_);
       }
       if (jKCCEMMPJIO_ != 0) {
         output.writeUInt32(15, jKCCEMMPJIO_);
       }
-      if (cPDHCBHKOEC_ != 0) {
-        output.writeUInt32(186, cPDHCBHKOEC_);
+      if (lNLCFJGNECG_ != 0) {
+        output.writeUInt32(1208, lNLCFJGNECG_);
       }
       if (reviseMonsterLevel_ != 0) {
-        output.writeUInt32(535, reviseMonsterLevel_);
+        output.writeUInt32(1812, reviseMonsterLevel_);
       }
       unknownFields.writeTo(output);
     }
@@ -581,65 +585,65 @@ public final class RogueStageInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < runeRecordList_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, runeRecordList_.get(i));
-      }
-      if (curLevel_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, curLevel_);
-      }
-      if (isTakenReward_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isTakenReward_);
-      }
-      if (isOpen_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isOpen_);
-      }
-      if (kKJFEBAPLHL_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, kKJFEBAPLHL_);
-      }
-      if (lNLCFJGNECG_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, lNLCFJGNECG_);
-      }
-      if (isPassed_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isPassed_);
-      }
-      if (avatarTeam_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getAvatarTeam());
-      }
-      if (dHLBAPDOFMF_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, dHLBAPDOFMF_);
-      }
-      if (kAJLCAPNCFA_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, kAJLCAPNCFA_);
-      }
       if (stageId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, stageId_);
+          .computeUInt32Size(1, stageId_);
       }
       if (jEEEJLIDCCN_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, jEEEJLIDCCN_);
+          .computeUInt32Size(2, jEEEJLIDCCN_);
+      }
+      if (isPassed_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isPassed_);
+      }
+      if (isTakenReward_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, isTakenReward_);
+      }
+      if (kAJLCAPNCFA_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, kAJLCAPNCFA_);
+      }
+      if (isOpen_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isOpen_);
+      }
+      if (avatarTeam_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getAvatarTeam());
+      }
+      if (cPDHCBHKOEC_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, cPDHCBHKOEC_);
+      }
+      for (int i = 0; i < runeRecordList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, runeRecordList_.get(i));
+      }
+      if (curLevel_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, curLevel_);
+      }
+      if (kKJFEBAPLHL_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(13, kKJFEBAPLHL_);
+      }
+      if (dHLBAPDOFMF_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, dHLBAPDOFMF_);
       }
       if (jKCCEMMPJIO_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, jKCCEMMPJIO_);
       }
-      if (cPDHCBHKOEC_ != 0) {
+      if (lNLCFJGNECG_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(186, cPDHCBHKOEC_);
+          .computeUInt32Size(1208, lNLCFJGNECG_);
       }
       if (reviseMonsterLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(535, reviseMonsterLevel_);
+          .computeUInt32Size(1812, reviseMonsterLevel_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -656,39 +660,39 @@ public final class RogueStageInfoOuterClass {
       }
       emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo other = (emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo) obj;
 
+      if (hasAvatarTeam() != other.hasAvatarTeam()) return false;
+      if (hasAvatarTeam()) {
+        if (!getAvatarTeam()
+            .equals(other.getAvatarTeam())) return false;
+      }
       if (!getRuneRecordListList()
           .equals(other.getRuneRecordListList())) return false;
+      if (getDHLBAPDOFMF()
+          != other.getDHLBAPDOFMF()) return false;
+      if (getKAJLCAPNCFA()
+          != other.getKAJLCAPNCFA()) return false;
+      if (getIsPassed()
+          != other.getIsPassed()) return false;
+      if (getKKJFEBAPLHL()
+          != other.getKKJFEBAPLHL()) return false;
+      if (getReviseMonsterLevel()
+          != other.getReviseMonsterLevel()) return false;
+      if (getJEEEJLIDCCN()
+          != other.getJEEEJLIDCCN()) return false;
       if (getCurLevel()
           != other.getCurLevel()) return false;
       if (getIsTakenReward()
           != other.getIsTakenReward()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (getKKJFEBAPLHL()
-          != other.getKKJFEBAPLHL()) return false;
-      if (getLNLCFJGNECG()
-          != other.getLNLCFJGNECG()) return false;
-      if (getIsPassed()
-          != other.getIsPassed()) return false;
-      if (hasAvatarTeam() != other.hasAvatarTeam()) return false;
-      if (hasAvatarTeam()) {
-        if (!getAvatarTeam()
-            .equals(other.getAvatarTeam())) return false;
-      }
-      if (getDHLBAPDOFMF()
-          != other.getDHLBAPDOFMF()) return false;
-      if (getKAJLCAPNCFA()
-          != other.getKAJLCAPNCFA()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (getJEEEJLIDCCN()
-          != other.getJEEEJLIDCCN()) return false;
-      if (getJKCCEMMPJIO()
-          != other.getJKCCEMMPJIO()) return false;
+      if (getLNLCFJGNECG()
+          != other.getLNLCFJGNECG()) return false;
       if (getCPDHCBHKOEC()
           != other.getCPDHCBHKOEC()) return false;
-      if (getReviseMonsterLevel()
-          != other.getReviseMonsterLevel()) return false;
+      if (getJKCCEMMPJIO()
+          != other.getJKCCEMMPJIO()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -700,10 +704,29 @@ public final class RogueStageInfoOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAvatarTeam()) {
+        hash = (37 * hash) + AVATAR_TEAM_FIELD_NUMBER;
+        hash = (53 * hash) + getAvatarTeam().hashCode();
+      }
       if (getRuneRecordListCount() > 0) {
         hash = (37 * hash) + RUNE_RECORD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRuneRecordListList().hashCode();
       }
+      hash = (37 * hash) + DHLBAPDOFMF_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDHLBAPDOFMF());
+      hash = (37 * hash) + KAJLCAPNCFA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getKAJLCAPNCFA());
+      hash = (37 * hash) + IS_PASSED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsPassed());
+      hash = (37 * hash) + KKJFEBAPLHL_FIELD_NUMBER;
+      hash = (53 * hash) + getKKJFEBAPLHL();
+      hash = (37 * hash) + REVISE_MONSTER_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getReviseMonsterLevel();
+      hash = (37 * hash) + JEEEJLIDCCN_FIELD_NUMBER;
+      hash = (53 * hash) + getJEEEJLIDCCN();
       hash = (37 * hash) + CUR_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getCurLevel();
       hash = (37 * hash) + IS_TAKEN_REWARD_FIELD_NUMBER;
@@ -712,33 +735,14 @@ public final class RogueStageInfoOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (37 * hash) + KKJFEBAPLHL_FIELD_NUMBER;
-      hash = (53 * hash) + getKKJFEBAPLHL();
-      hash = (37 * hash) + LNLCFJGNECG_FIELD_NUMBER;
-      hash = (53 * hash) + getLNLCFJGNECG();
-      hash = (37 * hash) + IS_PASSED_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsPassed());
-      if (hasAvatarTeam()) {
-        hash = (37 * hash) + AVATAR_TEAM_FIELD_NUMBER;
-        hash = (53 * hash) + getAvatarTeam().hashCode();
-      }
-      hash = (37 * hash) + DHLBAPDOFMF_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getDHLBAPDOFMF());
-      hash = (37 * hash) + KAJLCAPNCFA_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getKAJLCAPNCFA());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (37 * hash) + JEEEJLIDCCN_FIELD_NUMBER;
-      hash = (53 * hash) + getJEEEJLIDCCN();
-      hash = (37 * hash) + JKCCEMMPJIO_FIELD_NUMBER;
-      hash = (53 * hash) + getJKCCEMMPJIO();
+      hash = (37 * hash) + LNLCFJGNECG_FIELD_NUMBER;
+      hash = (53 * hash) + getLNLCFJGNECG();
       hash = (37 * hash) + CPDHCBHKOEC_FIELD_NUMBER;
       hash = (53 * hash) + getCPDHCBHKOEC();
-      hash = (37 * hash) + REVISE_MONSTER_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + getReviseMonsterLevel();
+      hash = (37 * hash) + JKCCEMMPJIO_FIELD_NUMBER;
+      hash = (53 * hash) + getJKCCEMMPJIO();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -835,6 +839,10 @@ public final class RogueStageInfoOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: -
+     * </pre>
+     *
      * Protobuf type {@code RogueStageInfo}
      */
     public static final class Builder extends
@@ -873,43 +881,43 @@ public final class RogueStageInfoOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (runeRecordListBuilder_ == null) {
-          runeRecordList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          runeRecordListBuilder_.clear();
-        }
-        curLevel_ = 0;
-
-        isTakenReward_ = false;
-
-        isOpen_ = false;
-
-        kKJFEBAPLHL_ = 0;
-
-        lNLCFJGNECG_ = 0;
-
-        isPassed_ = false;
-
         if (avatarTeamBuilder_ == null) {
           avatarTeam_ = null;
         } else {
           avatarTeam_ = null;
           avatarTeamBuilder_ = null;
         }
+        if (runeRecordListBuilder_ == null) {
+          runeRecordList_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          runeRecordListBuilder_.clear();
+        }
         dHLBAPDOFMF_ = false;
 
         kAJLCAPNCFA_ = false;
 
-        stageId_ = 0;
+        isPassed_ = false;
+
+        kKJFEBAPLHL_ = 0;
+
+        reviseMonsterLevel_ = 0;
 
         jEEEJLIDCCN_ = 0;
 
-        jKCCEMMPJIO_ = 0;
+        curLevel_ = 0;
+
+        isTakenReward_ = false;
+
+        isOpen_ = false;
+
+        stageId_ = 0;
+
+        lNLCFJGNECG_ = 0;
 
         cPDHCBHKOEC_ = 0;
 
-        reviseMonsterLevel_ = 0;
+        jKCCEMMPJIO_ = 0;
 
         return this;
       }
@@ -938,6 +946,11 @@ public final class RogueStageInfoOuterClass {
       public emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo buildPartial() {
         emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo result = new emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo(this);
         int from_bitField0_ = bitField0_;
+        if (avatarTeamBuilder_ == null) {
+          result.avatarTeam_ = avatarTeam_;
+        } else {
+          result.avatarTeam_ = avatarTeamBuilder_.build();
+        }
         if (runeRecordListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             runeRecordList_ = java.util.Collections.unmodifiableList(runeRecordList_);
@@ -947,24 +960,19 @@ public final class RogueStageInfoOuterClass {
         } else {
           result.runeRecordList_ = runeRecordListBuilder_.build();
         }
+        result.dHLBAPDOFMF_ = dHLBAPDOFMF_;
+        result.kAJLCAPNCFA_ = kAJLCAPNCFA_;
+        result.isPassed_ = isPassed_;
+        result.kKJFEBAPLHL_ = kKJFEBAPLHL_;
+        result.reviseMonsterLevel_ = reviseMonsterLevel_;
+        result.jEEEJLIDCCN_ = jEEEJLIDCCN_;
         result.curLevel_ = curLevel_;
         result.isTakenReward_ = isTakenReward_;
         result.isOpen_ = isOpen_;
-        result.kKJFEBAPLHL_ = kKJFEBAPLHL_;
-        result.lNLCFJGNECG_ = lNLCFJGNECG_;
-        result.isPassed_ = isPassed_;
-        if (avatarTeamBuilder_ == null) {
-          result.avatarTeam_ = avatarTeam_;
-        } else {
-          result.avatarTeam_ = avatarTeamBuilder_.build();
-        }
-        result.dHLBAPDOFMF_ = dHLBAPDOFMF_;
-        result.kAJLCAPNCFA_ = kAJLCAPNCFA_;
         result.stageId_ = stageId_;
-        result.jEEEJLIDCCN_ = jEEEJLIDCCN_;
-        result.jKCCEMMPJIO_ = jKCCEMMPJIO_;
+        result.lNLCFJGNECG_ = lNLCFJGNECG_;
         result.cPDHCBHKOEC_ = cPDHCBHKOEC_;
-        result.reviseMonsterLevel_ = reviseMonsterLevel_;
+        result.jKCCEMMPJIO_ = jKCCEMMPJIO_;
         onBuilt();
         return result;
       }
@@ -1013,6 +1021,9 @@ public final class RogueStageInfoOuterClass {
 
       public Builder mergeFrom(emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo other) {
         if (other == emu.grasscutter.net.proto.RogueStageInfoOuterClass.RogueStageInfo.getDefaultInstance()) return this;
+        if (other.hasAvatarTeam()) {
+          mergeAvatarTeam(other.getAvatarTeam());
+        }
         if (runeRecordListBuilder_ == null) {
           if (!other.runeRecordList_.isEmpty()) {
             if (runeRecordList_.isEmpty()) {
@@ -1039,6 +1050,24 @@ public final class RogueStageInfoOuterClass {
             }
           }
         }
+        if (other.getDHLBAPDOFMF() != false) {
+          setDHLBAPDOFMF(other.getDHLBAPDOFMF());
+        }
+        if (other.getKAJLCAPNCFA() != false) {
+          setKAJLCAPNCFA(other.getKAJLCAPNCFA());
+        }
+        if (other.getIsPassed() != false) {
+          setIsPassed(other.getIsPassed());
+        }
+        if (other.getKKJFEBAPLHL() != 0) {
+          setKKJFEBAPLHL(other.getKKJFEBAPLHL());
+        }
+        if (other.getReviseMonsterLevel() != 0) {
+          setReviseMonsterLevel(other.getReviseMonsterLevel());
+        }
+        if (other.getJEEEJLIDCCN() != 0) {
+          setJEEEJLIDCCN(other.getJEEEJLIDCCN());
+        }
         if (other.getCurLevel() != 0) {
           setCurLevel(other.getCurLevel());
         }
@@ -1048,38 +1077,17 @@ public final class RogueStageInfoOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        if (other.getKKJFEBAPLHL() != 0) {
-          setKKJFEBAPLHL(other.getKKJFEBAPLHL());
+        if (other.getStageId() != 0) {
+          setStageId(other.getStageId());
         }
         if (other.getLNLCFJGNECG() != 0) {
           setLNLCFJGNECG(other.getLNLCFJGNECG());
         }
-        if (other.getIsPassed() != false) {
-          setIsPassed(other.getIsPassed());
-        }
-        if (other.hasAvatarTeam()) {
-          mergeAvatarTeam(other.getAvatarTeam());
-        }
-        if (other.getDHLBAPDOFMF() != false) {
-          setDHLBAPDOFMF(other.getDHLBAPDOFMF());
-        }
-        if (other.getKAJLCAPNCFA() != false) {
-          setKAJLCAPNCFA(other.getKAJLCAPNCFA());
-        }
-        if (other.getStageId() != 0) {
-          setStageId(other.getStageId());
-        }
-        if (other.getJEEEJLIDCCN() != 0) {
-          setJEEEJLIDCCN(other.getJEEEJLIDCCN());
-        }
-        if (other.getJKCCEMMPJIO() != 0) {
-          setJKCCEMMPJIO(other.getJKCCEMMPJIO());
-        }
         if (other.getCPDHCBHKOEC() != 0) {
           setCPDHCBHKOEC(other.getCPDHCBHKOEC());
         }
-        if (other.getReviseMonsterLevel() != 0) {
-          setReviseMonsterLevel(other.getReviseMonsterLevel());
+        if (other.getJKCCEMMPJIO() != 0) {
+          setJKCCEMMPJIO(other.getJKCCEMMPJIO());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1111,6 +1119,125 @@ public final class RogueStageInfoOuterClass {
       }
       private int bitField0_;
 
+      private emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo avatarTeam_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder> avatarTeamBuilder_;
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       * @return Whether the avatarTeam field is set.
+       */
+      public boolean hasAvatarTeam() {
+        return avatarTeamBuilder_ != null || avatarTeam_ != null;
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       * @return The avatarTeam.
+       */
+      public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo getAvatarTeam() {
+        if (avatarTeamBuilder_ == null) {
+          return avatarTeam_ == null ? emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.getDefaultInstance() : avatarTeam_;
+        } else {
+          return avatarTeamBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      public Builder setAvatarTeam(emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo value) {
+        if (avatarTeamBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          avatarTeam_ = value;
+          onChanged();
+        } else {
+          avatarTeamBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      public Builder setAvatarTeam(
+          emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder builderForValue) {
+        if (avatarTeamBuilder_ == null) {
+          avatarTeam_ = builderForValue.build();
+          onChanged();
+        } else {
+          avatarTeamBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      public Builder mergeAvatarTeam(emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo value) {
+        if (avatarTeamBuilder_ == null) {
+          if (avatarTeam_ != null) {
+            avatarTeam_ =
+              emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.newBuilder(avatarTeam_).mergeFrom(value).buildPartial();
+          } else {
+            avatarTeam_ = value;
+          }
+          onChanged();
+        } else {
+          avatarTeamBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      public Builder clearAvatarTeam() {
+        if (avatarTeamBuilder_ == null) {
+          avatarTeam_ = null;
+          onChanged();
+        } else {
+          avatarTeam_ = null;
+          avatarTeamBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder getAvatarTeamBuilder() {
+        
+        onChanged();
+        return getAvatarTeamFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder getAvatarTeamOrBuilder() {
+        if (avatarTeamBuilder_ != null) {
+          return avatarTeamBuilder_.getMessageOrBuilder();
+        } else {
+          return avatarTeam_ == null ?
+              emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.getDefaultInstance() : avatarTeam_;
+        }
+      }
+      /**
+       * <code>.RogueShowAvatarTeamInfo avatar_team = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder> 
+          getAvatarTeamFieldBuilder() {
+        if (avatarTeamBuilder_ == null) {
+          avatarTeamBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder>(
+                  getAvatarTeam(),
+                  getParentForChildren(),
+                  isClean());
+          avatarTeam_ = null;
+        }
+        return avatarTeamBuilder_;
+      }
+
       private java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> runeRecordList_ =
         java.util.Collections.emptyList();
       private void ensureRuneRecordListIsMutable() {
@@ -1124,7 +1251,7 @@ public final class RogueStageInfoOuterClass {
           emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder> runeRecordListBuilder_;
 
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> getRuneRecordListList() {
         if (runeRecordListBuilder_ == null) {
@@ -1134,7 +1261,7 @@ public final class RogueStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public int getRuneRecordListCount() {
         if (runeRecordListBuilder_ == null) {
@@ -1144,7 +1271,7 @@ public final class RogueStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord getRuneRecordList(int index) {
         if (runeRecordListBuilder_ == null) {
@@ -1154,7 +1281,7 @@ public final class RogueStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder setRuneRecordList(
           int index, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord value) {
@@ -1171,7 +1298,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder setRuneRecordList(
           int index, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder builderForValue) {
@@ -1185,7 +1312,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder addRuneRecordList(emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord value) {
         if (runeRecordListBuilder_ == null) {
@@ -1201,7 +1328,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder addRuneRecordList(
           int index, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord value) {
@@ -1218,7 +1345,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder addRuneRecordList(
           emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder builderForValue) {
@@ -1232,7 +1359,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder addRuneRecordList(
           int index, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder builderForValue) {
@@ -1246,7 +1373,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder addAllRuneRecordList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord> values) {
@@ -1261,7 +1388,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder clearRuneRecordList() {
         if (runeRecordListBuilder_ == null) {
@@ -1274,7 +1401,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public Builder removeRuneRecordList(int index) {
         if (runeRecordListBuilder_ == null) {
@@ -1287,14 +1414,14 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder getRuneRecordListBuilder(
           int index) {
         return getRuneRecordListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder getRuneRecordListOrBuilder(
           int index) {
@@ -1304,7 +1431,7 @@ public final class RogueStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecordOrBuilder> 
            getRuneRecordListOrBuilderList() {
@@ -1315,14 +1442,14 @@ public final class RogueStageInfoOuterClass {
         }
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder addRuneRecordListBuilder() {
         return getRuneRecordListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.getDefaultInstance());
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder addRuneRecordListBuilder(
           int index) {
@@ -1330,7 +1457,7 @@ public final class RogueStageInfoOuterClass {
             index, emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.getDefaultInstance());
       }
       /**
-       * <code>repeated .RoguelikeRuneRecord rune_record_list = 1;</code>
+       * <code>repeated .RoguelikeRuneRecord rune_record_list = 11;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.RoguelikeRuneRecord.Builder> 
            getRuneRecordListBuilderList() {
@@ -1351,314 +1478,9 @@ public final class RogueStageInfoOuterClass {
         return runeRecordListBuilder_;
       }
 
-      private int curLevel_ ;
-      /**
-       * <code>uint32 cur_level = 3;</code>
-       * @return The curLevel.
-       */
-      @java.lang.Override
-      public int getCurLevel() {
-        return curLevel_;
-      }
-      /**
-       * <code>uint32 cur_level = 3;</code>
-       * @param value The curLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCurLevel(int value) {
-        
-        curLevel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 cur_level = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCurLevel() {
-        
-        curLevel_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isTakenReward_ ;
-      /**
-       * <code>bool is_taken_reward = 4;</code>
-       * @return The isTakenReward.
-       */
-      @java.lang.Override
-      public boolean getIsTakenReward() {
-        return isTakenReward_;
-      }
-      /**
-       * <code>bool is_taken_reward = 4;</code>
-       * @param value The isTakenReward to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsTakenReward(boolean value) {
-        
-        isTakenReward_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_taken_reward = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsTakenReward() {
-        
-        isTakenReward_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean isOpen_ ;
-      /**
-       * <code>bool is_open = 6;</code>
-       * @return The isOpen.
-       */
-      @java.lang.Override
-      public boolean getIsOpen() {
-        return isOpen_;
-      }
-      /**
-       * <code>bool is_open = 6;</code>
-       * @param value The isOpen to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsOpen(boolean value) {
-        
-        isOpen_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_open = 6;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsOpen() {
-        
-        isOpen_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int kKJFEBAPLHL_ ;
-      /**
-       * <code>uint32 KKJFEBAPLHL = 7;</code>
-       * @return The kKJFEBAPLHL.
-       */
-      @java.lang.Override
-      public int getKKJFEBAPLHL() {
-        return kKJFEBAPLHL_;
-      }
-      /**
-       * <code>uint32 KKJFEBAPLHL = 7;</code>
-       * @param value The kKJFEBAPLHL to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKKJFEBAPLHL(int value) {
-        
-        kKJFEBAPLHL_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 KKJFEBAPLHL = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKKJFEBAPLHL() {
-        
-        kKJFEBAPLHL_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int lNLCFJGNECG_ ;
-      /**
-       * <code>uint32 LNLCFJGNECG = 8;</code>
-       * @return The lNLCFJGNECG.
-       */
-      @java.lang.Override
-      public int getLNLCFJGNECG() {
-        return lNLCFJGNECG_;
-      }
-      /**
-       * <code>uint32 LNLCFJGNECG = 8;</code>
-       * @param value The lNLCFJGNECG to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLNLCFJGNECG(int value) {
-        
-        lNLCFJGNECG_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 LNLCFJGNECG = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearLNLCFJGNECG() {
-        
-        lNLCFJGNECG_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean isPassed_ ;
-      /**
-       * <code>bool is_passed = 9;</code>
-       * @return The isPassed.
-       */
-      @java.lang.Override
-      public boolean getIsPassed() {
-        return isPassed_;
-      }
-      /**
-       * <code>bool is_passed = 9;</code>
-       * @param value The isPassed to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIsPassed(boolean value) {
-        
-        isPassed_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>bool is_passed = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearIsPassed() {
-        
-        isPassed_ = false;
-        onChanged();
-        return this;
-      }
-
-      private emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo avatarTeam_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder> avatarTeamBuilder_;
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       * @return Whether the avatarTeam field is set.
-       */
-      public boolean hasAvatarTeam() {
-        return avatarTeamBuilder_ != null || avatarTeam_ != null;
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       * @return The avatarTeam.
-       */
-      public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo getAvatarTeam() {
-        if (avatarTeamBuilder_ == null) {
-          return avatarTeam_ == null ? emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.getDefaultInstance() : avatarTeam_;
-        } else {
-          return avatarTeamBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      public Builder setAvatarTeam(emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo value) {
-        if (avatarTeamBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          avatarTeam_ = value;
-          onChanged();
-        } else {
-          avatarTeamBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      public Builder setAvatarTeam(
-          emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder builderForValue) {
-        if (avatarTeamBuilder_ == null) {
-          avatarTeam_ = builderForValue.build();
-          onChanged();
-        } else {
-          avatarTeamBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      public Builder mergeAvatarTeam(emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo value) {
-        if (avatarTeamBuilder_ == null) {
-          if (avatarTeam_ != null) {
-            avatarTeam_ =
-              emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.newBuilder(avatarTeam_).mergeFrom(value).buildPartial();
-          } else {
-            avatarTeam_ = value;
-          }
-          onChanged();
-        } else {
-          avatarTeamBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      public Builder clearAvatarTeam() {
-        if (avatarTeamBuilder_ == null) {
-          avatarTeam_ = null;
-          onChanged();
-        } else {
-          avatarTeam_ = null;
-          avatarTeamBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder getAvatarTeamBuilder() {
-        
-        onChanged();
-        return getAvatarTeamFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      public emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder getAvatarTeamOrBuilder() {
-        if (avatarTeamBuilder_ != null) {
-          return avatarTeamBuilder_.getMessageOrBuilder();
-        } else {
-          return avatarTeam_ == null ?
-              emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.getDefaultInstance() : avatarTeam_;
-        }
-      }
-      /**
-       * <code>.RogueShowAvatarTeamInfo avatar_team = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder> 
-          getAvatarTeamFieldBuilder() {
-        if (avatarTeamBuilder_ == null) {
-          avatarTeamBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfo.Builder, emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.RogueShowAvatarTeamInfoOrBuilder>(
-                  getAvatarTeam(),
-                  getParentForChildren(),
-                  isClean());
-          avatarTeam_ = null;
-        }
-        return avatarTeamBuilder_;
-      }
-
       private boolean dHLBAPDOFMF_ ;
       /**
-       * <code>bool DHLBAPDOFMF = 11;</code>
+       * <code>bool DHLBAPDOFMF = 14;</code>
        * @return The dHLBAPDOFMF.
        */
       @java.lang.Override
@@ -1666,7 +1488,7 @@ public final class RogueStageInfoOuterClass {
         return dHLBAPDOFMF_;
       }
       /**
-       * <code>bool DHLBAPDOFMF = 11;</code>
+       * <code>bool DHLBAPDOFMF = 14;</code>
        * @param value The dHLBAPDOFMF to set.
        * @return This builder for chaining.
        */
@@ -1677,7 +1499,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool DHLBAPDOFMF = 11;</code>
+       * <code>bool DHLBAPDOFMF = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearDHLBAPDOFMF() {
@@ -1689,7 +1511,7 @@ public final class RogueStageInfoOuterClass {
 
       private boolean kAJLCAPNCFA_ ;
       /**
-       * <code>bool KAJLCAPNCFA = 12;</code>
+       * <code>bool KAJLCAPNCFA = 7;</code>
        * @return The kAJLCAPNCFA.
        */
       @java.lang.Override
@@ -1697,7 +1519,7 @@ public final class RogueStageInfoOuterClass {
         return kAJLCAPNCFA_;
       }
       /**
-       * <code>bool KAJLCAPNCFA = 12;</code>
+       * <code>bool KAJLCAPNCFA = 7;</code>
        * @param value The kAJLCAPNCFA to set.
        * @return This builder for chaining.
        */
@@ -1708,7 +1530,7 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool KAJLCAPNCFA = 12;</code>
+       * <code>bool KAJLCAPNCFA = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearKAJLCAPNCFA() {
@@ -1718,40 +1540,102 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
 
-      private int stageId_ ;
+      private boolean isPassed_ ;
       /**
-       * <code>uint32 stage_id = 13;</code>
-       * @return The stageId.
+       * <code>bool is_passed = 3;</code>
+       * @return The isPassed.
        */
       @java.lang.Override
-      public int getStageId() {
-        return stageId_;
+      public boolean getIsPassed() {
+        return isPassed_;
       }
       /**
-       * <code>uint32 stage_id = 13;</code>
-       * @param value The stageId to set.
+       * <code>bool is_passed = 3;</code>
+       * @param value The isPassed to set.
        * @return This builder for chaining.
        */
-      public Builder setStageId(int value) {
+      public Builder setIsPassed(boolean value) {
         
-        stageId_ = value;
+        isPassed_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 stage_id = 13;</code>
+       * <code>bool is_passed = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearStageId() {
+      public Builder clearIsPassed() {
         
-        stageId_ = 0;
+        isPassed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int kKJFEBAPLHL_ ;
+      /**
+       * <code>uint32 KKJFEBAPLHL = 13;</code>
+       * @return The kKJFEBAPLHL.
+       */
+      @java.lang.Override
+      public int getKKJFEBAPLHL() {
+        return kKJFEBAPLHL_;
+      }
+      /**
+       * <code>uint32 KKJFEBAPLHL = 13;</code>
+       * @param value The kKJFEBAPLHL to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKKJFEBAPLHL(int value) {
+        
+        kKJFEBAPLHL_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 KKJFEBAPLHL = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKKJFEBAPLHL() {
+        
+        kKJFEBAPLHL_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int reviseMonsterLevel_ ;
+      /**
+       * <code>uint32 revise_monster_level = 1812;</code>
+       * @return The reviseMonsterLevel.
+       */
+      @java.lang.Override
+      public int getReviseMonsterLevel() {
+        return reviseMonsterLevel_;
+      }
+      /**
+       * <code>uint32 revise_monster_level = 1812;</code>
+       * @param value The reviseMonsterLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviseMonsterLevel(int value) {
+        
+        reviseMonsterLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 revise_monster_level = 1812;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearReviseMonsterLevel() {
+        
+        reviseMonsterLevel_ = 0;
         onChanged();
         return this;
       }
 
       private int jEEEJLIDCCN_ ;
       /**
-       * <code>uint32 JEEEJLIDCCN = 14;</code>
+       * <code>uint32 JEEEJLIDCCN = 2;</code>
        * @return The jEEEJLIDCCN.
        */
       @java.lang.Override
@@ -1759,7 +1643,7 @@ public final class RogueStageInfoOuterClass {
         return jEEEJLIDCCN_;
       }
       /**
-       * <code>uint32 JEEEJLIDCCN = 14;</code>
+       * <code>uint32 JEEEJLIDCCN = 2;</code>
        * @param value The jEEEJLIDCCN to set.
        * @return This builder for chaining.
        */
@@ -1770,12 +1654,198 @@ public final class RogueStageInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 JEEEJLIDCCN = 14;</code>
+       * <code>uint32 JEEEJLIDCCN = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearJEEEJLIDCCN() {
         
         jEEEJLIDCCN_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int curLevel_ ;
+      /**
+       * <code>uint32 cur_level = 12;</code>
+       * @return The curLevel.
+       */
+      @java.lang.Override
+      public int getCurLevel() {
+        return curLevel_;
+      }
+      /**
+       * <code>uint32 cur_level = 12;</code>
+       * @param value The curLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCurLevel(int value) {
+        
+        curLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 cur_level = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCurLevel() {
+        
+        curLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isTakenReward_ ;
+      /**
+       * <code>bool is_taken_reward = 6;</code>
+       * @return The isTakenReward.
+       */
+      @java.lang.Override
+      public boolean getIsTakenReward() {
+        return isTakenReward_;
+      }
+      /**
+       * <code>bool is_taken_reward = 6;</code>
+       * @param value The isTakenReward to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsTakenReward(boolean value) {
+        
+        isTakenReward_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_taken_reward = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsTakenReward() {
+        
+        isTakenReward_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOpen_ ;
+      /**
+       * <code>bool is_open = 8;</code>
+       * @return The isOpen.
+       */
+      @java.lang.Override
+      public boolean getIsOpen() {
+        return isOpen_;
+      }
+      /**
+       * <code>bool is_open = 8;</code>
+       * @param value The isOpen to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIsOpen(boolean value) {
+        
+        isOpen_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool is_open = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIsOpen() {
+        
+        isOpen_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int stageId_ ;
+      /**
+       * <code>uint32 stage_id = 1;</code>
+       * @return The stageId.
+       */
+      @java.lang.Override
+      public int getStageId() {
+        return stageId_;
+      }
+      /**
+       * <code>uint32 stage_id = 1;</code>
+       * @param value The stageId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStageId(int value) {
+        
+        stageId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 stage_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStageId() {
+        
+        stageId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int lNLCFJGNECG_ ;
+      /**
+       * <code>uint32 LNLCFJGNECG = 1208;</code>
+       * @return The lNLCFJGNECG.
+       */
+      @java.lang.Override
+      public int getLNLCFJGNECG() {
+        return lNLCFJGNECG_;
+      }
+      /**
+       * <code>uint32 LNLCFJGNECG = 1208;</code>
+       * @param value The lNLCFJGNECG to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLNLCFJGNECG(int value) {
+        
+        lNLCFJGNECG_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 LNLCFJGNECG = 1208;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLNLCFJGNECG() {
+        
+        lNLCFJGNECG_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cPDHCBHKOEC_ ;
+      /**
+       * <code>uint32 CPDHCBHKOEC = 10;</code>
+       * @return The cPDHCBHKOEC.
+       */
+      @java.lang.Override
+      public int getCPDHCBHKOEC() {
+        return cPDHCBHKOEC_;
+      }
+      /**
+       * <code>uint32 CPDHCBHKOEC = 10;</code>
+       * @param value The cPDHCBHKOEC to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCPDHCBHKOEC(int value) {
+        
+        cPDHCBHKOEC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint32 CPDHCBHKOEC = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCPDHCBHKOEC() {
+        
+        cPDHCBHKOEC_ = 0;
         onChanged();
         return this;
       }
@@ -1807,68 +1877,6 @@ public final class RogueStageInfoOuterClass {
       public Builder clearJKCCEMMPJIO() {
         
         jKCCEMMPJIO_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int cPDHCBHKOEC_ ;
-      /**
-       * <code>uint32 CPDHCBHKOEC = 186;</code>
-       * @return The cPDHCBHKOEC.
-       */
-      @java.lang.Override
-      public int getCPDHCBHKOEC() {
-        return cPDHCBHKOEC_;
-      }
-      /**
-       * <code>uint32 CPDHCBHKOEC = 186;</code>
-       * @param value The cPDHCBHKOEC to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCPDHCBHKOEC(int value) {
-        
-        cPDHCBHKOEC_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 CPDHCBHKOEC = 186;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCPDHCBHKOEC() {
-        
-        cPDHCBHKOEC_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int reviseMonsterLevel_ ;
-      /**
-       * <code>uint32 revise_monster_level = 535;</code>
-       * @return The reviseMonsterLevel.
-       */
-      @java.lang.Override
-      public int getReviseMonsterLevel() {
-        return reviseMonsterLevel_;
-      }
-      /**
-       * <code>uint32 revise_monster_level = 535;</code>
-       * @param value The reviseMonsterLevel to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReviseMonsterLevel(int value) {
-        
-        reviseMonsterLevel_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 revise_monster_level = 535;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReviseMonsterLevel() {
-        
-        reviseMonsterLevel_ = 0;
         onChanged();
         return this;
       }
@@ -1941,18 +1949,17 @@ public final class RogueStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024RogueStageInfo.proto\032\035RogueShowAvatarT" +
       "eamInfo.proto\032\031RoguelikeRuneRecord.proto" +
-      "\"\204\003\n\016RogueStageInfo\022.\n\020rune_record_list\030" +
-      "\001 \003(\0132\024.RoguelikeRuneRecord\022\021\n\tcur_level" +
-      "\030\003 \001(\r\022\027\n\017is_taken_reward\030\004 \001(\010\022\017\n\007is_op" +
-      "en\030\006 \001(\010\022\023\n\013KKJFEBAPLHL\030\007 \001(\r\022\023\n\013LNLCFJG" +
-      "NECG\030\010 \001(\r\022\021\n\tis_passed\030\t \001(\010\022-\n\013avatar_" +
-      "team\030\n \001(\0132\030.RogueShowAvatarTeamInfo\022\023\n\013" +
-      "DHLBAPDOFMF\030\013 \001(\010\022\023\n\013KAJLCAPNCFA\030\014 \001(\010\022\020" +
-      "\n\010stage_id\030\r \001(\r\022\023\n\013JEEEJLIDCCN\030\016 \001(\r\022\023\n" +
-      "\013JKCCEMMPJIO\030\017 \001(\r\022\024\n\013CPDHCBHKOEC\030\272\001 \001(\r" +
-      "\022\035\n\024revise_monster_level\030\227\004 \001(\rB5\n\031emu.g" +
-      "rasscutter.net.protoB\030RogueStageInfoOute" +
-      "rClassb\006proto3"
+      "\"\204\003\n\016RogueStageInfo\022-\n\013avatar_team\030\t \001(\013" +
+      "2\030.RogueShowAvatarTeamInfo\022.\n\020rune_recor" +
+      "d_list\030\013 \003(\0132\024.RoguelikeRuneRecord\022\023\n\013DH" +
+      "LBAPDOFMF\030\016 \001(\010\022\023\n\013KAJLCAPNCFA\030\007 \001(\010\022\021\n\t" +
+      "is_passed\030\003 \001(\010\022\023\n\013KKJFEBAPLHL\030\r \001(\r\022\035\n\024" +
+      "revise_monster_level\030\224\016 \001(\r\022\023\n\013JEEEJLIDC" +
+      "CN\030\002 \001(\r\022\021\n\tcur_level\030\014 \001(\r\022\027\n\017is_taken_" +
+      "reward\030\006 \001(\010\022\017\n\007is_open\030\010 \001(\010\022\020\n\010stage_i" +
+      "d\030\001 \001(\r\022\024\n\013LNLCFJGNECG\030\270\t \001(\r\022\023\n\013CPDHCBH" +
+      "KOEC\030\n \001(\r\022\023\n\013JKCCEMMPJIO\030\017 \001(\rB\033\n\031emu.g" +
+      "rasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1965,7 +1972,7 @@ public final class RogueStageInfoOuterClass {
     internal_static_RogueStageInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RogueStageInfo_descriptor,
-        new java.lang.String[] { "RuneRecordList", "CurLevel", "IsTakenReward", "IsOpen", "KKJFEBAPLHL", "LNLCFJGNECG", "IsPassed", "AvatarTeam", "DHLBAPDOFMF", "KAJLCAPNCFA", "StageId", "JEEEJLIDCCN", "JKCCEMMPJIO", "CPDHCBHKOEC", "ReviseMonsterLevel", });
+        new java.lang.String[] { "AvatarTeam", "RuneRecordList", "DHLBAPDOFMF", "KAJLCAPNCFA", "IsPassed", "KKJFEBAPLHL", "ReviseMonsterLevel", "JEEEJLIDCCN", "CurLevel", "IsTakenReward", "IsOpen", "StageId", "LNLCFJGNECG", "CPDHCBHKOEC", "JKCCEMMPJIO", });
     emu.grasscutter.net.proto.RogueShowAvatarTeamInfoOuterClass.getDescriptor();
     emu.grasscutter.net.proto.RoguelikeRuneRecordOuterClass.getDescriptor();
   }

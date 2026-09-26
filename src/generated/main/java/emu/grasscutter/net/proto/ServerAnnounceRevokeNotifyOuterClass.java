@@ -19,23 +19,27 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 config_id_list = 11;</code>
+     * <code>repeated uint32 config_id_list = 4;</code>
      * @return A list containing the configIdList.
      */
     java.util.List<java.lang.Integer> getConfigIdListList();
     /**
-     * <code>repeated uint32 config_id_list = 11;</code>
+     * <code>repeated uint32 config_id_list = 4;</code>
      * @return The count of configIdList.
      */
     int getConfigIdListCount();
     /**
-     * <code>repeated uint32 config_id_list = 11;</code>
+     * <code>repeated uint32 config_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The configIdList at the given index.
      */
     int getConfigIdList(int index);
   }
   /**
+   * <pre>
+   * CmdId: 29694
+   * </pre>
+   *
    * Protobuf type {@code ServerAnnounceRevokeNotify}
    */
   public static final class ServerAnnounceRevokeNotify extends
@@ -82,7 +86,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
             case 0:
               done = true;
               break;
-            case 88: {
+            case 32: {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 configIdList_ = newIntList();
                 mutable_bitField0_ |= 0x00000001;
@@ -90,7 +94,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
               configIdList_.addInt(input.readUInt32());
               break;
             }
-            case 90: {
+            case 34: {
               int length = input.readRawVarint32();
               int limit = input.pushLimit(length);
               if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
@@ -138,10 +142,10 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
               emu.grasscutter.net.proto.ServerAnnounceRevokeNotifyOuterClass.ServerAnnounceRevokeNotify.class, emu.grasscutter.net.proto.ServerAnnounceRevokeNotifyOuterClass.ServerAnnounceRevokeNotify.Builder.class);
     }
 
-    public static final int CONFIG_ID_LIST_FIELD_NUMBER = 11;
+    public static final int CONFIG_ID_LIST_FIELD_NUMBER = 4;
     private com.google.protobuf.Internal.IntList configIdList_;
     /**
-     * <code>repeated uint32 config_id_list = 11;</code>
+     * <code>repeated uint32 config_id_list = 4;</code>
      * @return A list containing the configIdList.
      */
     @java.lang.Override
@@ -150,14 +154,14 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       return configIdList_;
     }
     /**
-     * <code>repeated uint32 config_id_list = 11;</code>
+     * <code>repeated uint32 config_id_list = 4;</code>
      * @return The count of configIdList.
      */
     public int getConfigIdListCount() {
       return configIdList_.size();
     }
     /**
-     * <code>repeated uint32 config_id_list = 11;</code>
+     * <code>repeated uint32 config_id_list = 4;</code>
      * @param index The index of the element to return.
      * @return The configIdList at the given index.
      */
@@ -182,7 +186,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
                         throws java.io.IOException {
       getSerializedSize();
       if (getConfigIdListList().size() > 0) {
-        output.writeUInt32NoTag(90);
+        output.writeUInt32NoTag(34);
         output.writeUInt32NoTag(configIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < configIdList_.size(); i++) {
@@ -339,6 +343,10 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
       return builder;
     }
     /**
+     * <pre>
+     * CmdId: 29694
+     * </pre>
+     *
      * Protobuf type {@code ServerAnnounceRevokeNotify}
      */
     public static final class Builder extends
@@ -506,7 +514,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
          }
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @return A list containing the configIdList.
        */
       public java.util.List<java.lang.Integer>
@@ -515,14 +523,14 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
                  java.util.Collections.unmodifiableList(configIdList_) : configIdList_;
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @return The count of configIdList.
        */
       public int getConfigIdListCount() {
         return configIdList_.size();
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @param index The index of the element to return.
        * @return The configIdList at the given index.
        */
@@ -530,7 +538,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return configIdList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @param index The index to set the value at.
        * @param value The configIdList to set.
        * @return This builder for chaining.
@@ -543,7 +551,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @param value The configIdList to add.
        * @return This builder for chaining.
        */
@@ -554,7 +562,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @param values The configIdList to add.
        * @return This builder for chaining.
        */
@@ -567,7 +575,7 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
         return this;
       }
       /**
-       * <code>repeated uint32 config_id_list = 11;</code>
+       * <code>repeated uint32 config_id_list = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearConfigIdList() {
@@ -645,9 +653,8 @@ public final class ServerAnnounceRevokeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n ServerAnnounceRevokeNotify.proto\"4\n\032Se" +
       "rverAnnounceRevokeNotify\022\026\n\016config_id_li" +
-      "st\030\013 \003(\rBA\n\031emu.grasscutter.net.protoB$S" +
-      "erverAnnounceRevokeNotifyOuterClassb\006pro" +
-      "to3"
+      "st\030\004 \003(\rB\033\n\031emu.grasscutter.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
