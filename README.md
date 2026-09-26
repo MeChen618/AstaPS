@@ -6,10 +6,12 @@ A private server for Genshin Impact **7.1.0**, built on Grasscutter.
 
 > This is a research and preservation project. It is not affiliated with, endorsed by, or connected to HoYoverse / miHoYo in any way, and it is not for commercial use.
 
+If you can fix a bug, please help me.
+
 ## What it is
 
 - **Up-to-date content.** Monster and gadget spawn data current with 7.1.0, Spiral Abyss rotations, domains, the artifact shop, battle pass, and the rest of the live-service surface.
-- **Built to survive a bad day.** Database writes are split across four bounded pools that apply backpressure instead of dropping a player's progress; one world throwing during a tick no longer stalls everyone else's.
+- **Built to survive a bad day.** Database writes are split across four bounded pools that apply backpressure instead of dropping a player's progress; one world throwing during a tick no longer stops all the others.
 - **Visible when it is unwell.** A status readout logs CPU, memory, GC and every thread pool's queue depth on an interval, and `/api/status` serves the same figures over HTTP.
 - **English throughout.** Source, comments, commit messages and command output.
 
@@ -20,7 +22,7 @@ A private server for Genshin Impact **7.1.0**, built on Grasscutter.
 | Java | 21 to build. The sources target 17, but virtual threads and other 21 APIs compile against the JDK's own classes. |
 | MongoDB | Community Server. Must be running before the server starts. |
 | Game client | Genshin Impact 7.1.0 |
-| Resources | A 7.1.0 resource pack, extracted to `resources/` in the server directory. Not included here. |
+| Resources | A 7.1.0 resource pack, extracted to `resources/` in the server directory. If you don't have Resources, you can download it [here](https://1drv.ms/u/c/444d933f3e05a8df/IQCvnLqSDhbvT5UpSZW9cjDMAbK7ThRplKXcqY5dgX27utE?e=lo1Ze4). |
 
 ## Building
 
@@ -45,7 +47,7 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 There is no registration page. An account is created either way:
 
 - **From the console.** `account create <username> [uid] [password]`
-- **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when testing clients that do not know how to prompt for a password.
+- **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
 Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
 
