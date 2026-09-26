@@ -232,13 +232,13 @@ public final class GachaInfoOuterClass {
         getTitleTextmapBytes();
 
     /**
-     * <code>uint32 wish_max_progress = 586;</code>
+     * <code>uint32 wish_max_progress = 1272;</code>
      * @return The wishMaxProgress.
      */
     int getWishMaxProgress();
 
     /**
-     * <code>uint32 wish_progress = 1272;</code>
+     * <code>uint32 wish_progress = 586;</code>
      * @return The wishProgress.
      */
     int getWishProgress();
@@ -428,7 +428,7 @@ public final class GachaInfoOuterClass {
             }
             case 4688: {
 
-              wishMaxProgress_ = input.readUInt32();
+              wishProgress_ = input.readUInt32();
               break;
             }
             case 4720: {
@@ -444,7 +444,7 @@ public final class GachaInfoOuterClass {
             }
             case 10176: {
 
-              wishProgress_ = input.readUInt32();
+              wishMaxProgress_ = input.readUInt32();
               break;
             }
             case 10744: {
@@ -1072,10 +1072,10 @@ public final class GachaInfoOuterClass {
       }
     }
 
-    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 586;
+    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 1272;
     private int wishMaxProgress_;
     /**
-     * <code>uint32 wish_max_progress = 586;</code>
+     * <code>uint32 wish_max_progress = 1272;</code>
      * @return The wishMaxProgress.
      */
     @java.lang.Override
@@ -1083,10 +1083,10 @@ public final class GachaInfoOuterClass {
       return wishMaxProgress_;
     }
 
-    public static final int WISH_PROGRESS_FIELD_NUMBER = 1272;
+    public static final int WISH_PROGRESS_FIELD_NUMBER = 586;
     private int wishProgress_;
     /**
-     * <code>uint32 wish_progress = 1272;</code>
+     * <code>uint32 wish_progress = 586;</code>
      * @return The wishProgress.
      */
     @java.lang.Override
@@ -1222,8 +1222,8 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 425, gachaProbUrlOversea_);
       }
-      if (wishMaxProgress_ != 0) {
-        output.writeUInt32(586, wishMaxProgress_);
+      if (wishProgress_ != 0) {
+        output.writeUInt32(586, wishProgress_);
       }
       if (wishItemId_ != 0) {
         output.writeUInt32(590, wishItemId_);
@@ -1231,8 +1231,8 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaRecordUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 600, gachaRecordUrl_);
       }
-      if (wishProgress_ != 0) {
-        output.writeUInt32(1272, wishProgress_);
+      if (wishMaxProgress_ != 0) {
+        output.writeUInt32(1272, wishMaxProgress_);
       }
       if (getDisplayUp5ItemListList().size() > 0) {
         output.writeUInt32NoTag(10746);
@@ -1339,9 +1339,9 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425, gachaProbUrlOversea_);
       }
-      if (wishMaxProgress_ != 0) {
+      if (wishProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(586, wishMaxProgress_);
+          .computeUInt32Size(586, wishProgress_);
       }
       if (wishItemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1350,9 +1350,9 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaRecordUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(600, gachaRecordUrl_);
       }
-      if (wishProgress_ != 0) {
+      if (wishMaxProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1272, wishProgress_);
+          .computeUInt32Size(1272, wishMaxProgress_);
       }
       {
         int dataSize = 0;
@@ -3215,7 +3215,7 @@ public final class GachaInfoOuterClass {
 
       private int wishMaxProgress_ ;
       /**
-       * <code>uint32 wish_max_progress = 586;</code>
+       * <code>uint32 wish_max_progress = 1272;</code>
        * @return The wishMaxProgress.
        */
       @java.lang.Override
@@ -3223,7 +3223,7 @@ public final class GachaInfoOuterClass {
         return wishMaxProgress_;
       }
       /**
-       * <code>uint32 wish_max_progress = 586;</code>
+       * <code>uint32 wish_max_progress = 1272;</code>
        * @param value The wishMaxProgress to set.
        * @return This builder for chaining.
        */
@@ -3234,7 +3234,7 @@ public final class GachaInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wish_max_progress = 586;</code>
+       * <code>uint32 wish_max_progress = 1272;</code>
        * @return This builder for chaining.
        */
       public Builder clearWishMaxProgress() {
@@ -3246,7 +3246,7 @@ public final class GachaInfoOuterClass {
 
       private int wishProgress_ ;
       /**
-       * <code>uint32 wish_progress = 1272;</code>
+       * <code>uint32 wish_progress = 586;</code>
        * @return The wishProgress.
        */
       @java.lang.Override
@@ -3254,7 +3254,7 @@ public final class GachaInfoOuterClass {
         return wishProgress_;
       }
       /**
-       * <code>uint32 wish_progress = 1272;</code>
+       * <code>uint32 wish_progress = 586;</code>
        * @param value The wishProgress to set.
        * @return This builder for chaining.
        */
@@ -3265,7 +3265,7 @@ public final class GachaInfoOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wish_progress = 1272;</code>
+       * <code>uint32 wish_progress = 586;</code>
        * @return This builder for chaining.
        */
       public Builder clearWishProgress() {
@@ -3659,8 +3659,8 @@ public final class GachaInfoOuterClass {
       "_wish\030\221\017 \001(\010\022\036\n\025display_up5_item_list\030\277\n" +
       " \003(\r\022!\n\030gacha_record_url_oversea\030\360\017 \001(\t\022" +
       "\037\n\026gacha_prob_url_oversea\030\251\003 \001(\t\022\025\n\rtitl" +
-      "e_textmap\030\007 \001(\t\022\032\n\021wish_max_progress\030\312\004 " +
-      "\001(\r\022\026\n\rwish_progress\030\370\t \001(\r\022\'\n\036cur_sched" +
+      "e_textmap\030\007 \001(\t\022\032\n\021wish_max_progress\030\370\t " +
+      "\001(\r\022\026\n\rwish_progress\030\312\004 \001(\r\022\'\n\036cur_sched" +
       "ule_daily_gacha_times\030\373\014 \001(\r\022\025\n\014wish_ite" +
       "m_id\030\316\004 \001(\r\022)\n\022gacha_up_info_list\030\213\017 \003(\013" +
       "2\014.GachaUpInfoB0\n\031emu.grasscutter.net.pr" +
