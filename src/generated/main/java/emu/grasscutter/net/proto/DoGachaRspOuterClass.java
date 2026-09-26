@@ -67,7 +67,7 @@ public final class DoGachaRspOuterClass {
     int getGachaScheduleId();
 
     /**
-     * <code>uint32 wish_progress = 15;</code>
+     * <code>uint32 wish_progress = 8;</code>
      * @return The wishProgress.
      */
     int getWishProgress();
@@ -85,7 +85,7 @@ public final class DoGachaRspOuterClass {
     int getTenCostItemId();
 
     /**
-     * <code>uint32 wish_item_id = 8;</code>
+     * <code>uint32 wish_item_id = 12;</code>
      * @return The wishItemId.
      */
     int getWishItemId();
@@ -115,7 +115,7 @@ public final class DoGachaRspOuterClass {
         int index);
 
     /**
-     * <code>uint32 wish_max_progress = 12;</code>
+     * <code>uint32 wish_max_progress = 15;</code>
      * @return The wishMaxProgress.
      */
     int getWishMaxProgress();
@@ -230,7 +230,7 @@ public final class DoGachaRspOuterClass {
             }
             case 64: {
 
-              wishItemId_ = input.readUInt32();
+              wishProgress_ = input.readUInt32();
               break;
             }
             case 80: {
@@ -245,7 +245,7 @@ public final class DoGachaRspOuterClass {
             }
             case 96: {
 
-              wishMaxProgress_ = input.readUInt32();
+              wishItemId_ = input.readUInt32();
               break;
             }
             case 106: {
@@ -264,7 +264,7 @@ public final class DoGachaRspOuterClass {
             }
             case 120: {
 
-              wishProgress_ = input.readUInt32();
+              wishMaxProgress_ = input.readUInt32();
               break;
             }
             case 11712: {
@@ -430,10 +430,10 @@ public final class DoGachaRspOuterClass {
       return gachaScheduleId_;
     }
 
-    public static final int WISH_PROGRESS_FIELD_NUMBER = 15;
+    public static final int WISH_PROGRESS_FIELD_NUMBER = 8;
     private int wishProgress_;
     /**
-     * <code>uint32 wish_progress = 15;</code>
+     * <code>uint32 wish_progress = 8;</code>
      * @return The wishProgress.
      */
     @java.lang.Override
@@ -463,10 +463,10 @@ public final class DoGachaRspOuterClass {
       return tenCostItemId_;
     }
 
-    public static final int WISH_ITEM_ID_FIELD_NUMBER = 8;
+    public static final int WISH_ITEM_ID_FIELD_NUMBER = 12;
     private int wishItemId_;
     /**
-     * <code>uint32 wish_item_id = 8;</code>
+     * <code>uint32 wish_item_id = 12;</code>
      * @return The wishItemId.
      */
     @java.lang.Override
@@ -514,10 +514,10 @@ public final class DoGachaRspOuterClass {
       return gachaItemList_.get(index);
     }
 
-    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 12;
+    public static final int WISH_MAX_PROGRESS_FIELD_NUMBER = 15;
     private int wishMaxProgress_;
     /**
-     * <code>uint32 wish_max_progress = 12;</code>
+     * <code>uint32 wish_max_progress = 15;</code>
      * @return The wishMaxProgress.
      */
     @java.lang.Override
@@ -620,8 +620,8 @@ public final class DoGachaRspOuterClass {
       if (costItemNum_ != 0) {
         output.writeUInt32(7, costItemNum_);
       }
-      if (wishItemId_ != 0) {
-        output.writeUInt32(8, wishItemId_);
+      if (wishProgress_ != 0) {
+        output.writeUInt32(8, wishProgress_);
       }
       if (tenCostItemNum_ != 0) {
         output.writeUInt32(10, tenCostItemNum_);
@@ -629,8 +629,8 @@ public final class DoGachaRspOuterClass {
       if (gachaTimes_ != 0) {
         output.writeUInt32(11, gachaTimes_);
       }
-      if (wishMaxProgress_ != 0) {
-        output.writeUInt32(12, wishMaxProgress_);
+      if (wishItemId_ != 0) {
+        output.writeUInt32(12, wishItemId_);
       }
       for (int i = 0; i < gachaItemList_.size(); i++) {
         output.writeMessage(13, gachaItemList_.get(i));
@@ -638,8 +638,8 @@ public final class DoGachaRspOuterClass {
       if (costItemId_ != 0) {
         output.writeUInt32(14, costItemId_);
       }
-      if (wishProgress_ != 0) {
-        output.writeUInt32(15, wishProgress_);
+      if (wishMaxProgress_ != 0) {
+        output.writeUInt32(15, wishMaxProgress_);
       }
       if (dailyGachaTimes_ != 0) {
         output.writeUInt32(1464, dailyGachaTimes_);
@@ -694,9 +694,9 @@ public final class DoGachaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, costItemNum_);
       }
-      if (wishItemId_ != 0) {
+      if (wishProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(8, wishItemId_);
+          .computeUInt32Size(8, wishProgress_);
       }
       if (tenCostItemNum_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -706,9 +706,9 @@ public final class DoGachaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, gachaTimes_);
       }
-      if (wishMaxProgress_ != 0) {
+      if (wishItemId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, wishMaxProgress_);
+          .computeUInt32Size(12, wishItemId_);
       }
       for (int i = 0; i < gachaItemList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -718,9 +718,9 @@ public final class DoGachaRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, costItemId_);
       }
-      if (wishProgress_ != 0) {
+      if (wishMaxProgress_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, wishProgress_);
+          .computeUInt32Size(15, wishMaxProgress_);
       }
       if (dailyGachaTimes_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1509,7 +1509,7 @@ public final class DoGachaRspOuterClass {
 
       private int wishProgress_ ;
       /**
-       * <code>uint32 wish_progress = 15;</code>
+       * <code>uint32 wish_progress = 8;</code>
        * @return The wishProgress.
        */
       @java.lang.Override
@@ -1517,7 +1517,7 @@ public final class DoGachaRspOuterClass {
         return wishProgress_;
       }
       /**
-       * <code>uint32 wish_progress = 15;</code>
+       * <code>uint32 wish_progress = 8;</code>
        * @param value The wishProgress to set.
        * @return This builder for chaining.
        */
@@ -1528,7 +1528,7 @@ public final class DoGachaRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wish_progress = 15;</code>
+       * <code>uint32 wish_progress = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearWishProgress() {
@@ -1602,7 +1602,7 @@ public final class DoGachaRspOuterClass {
 
       private int wishItemId_ ;
       /**
-       * <code>uint32 wish_item_id = 8;</code>
+       * <code>uint32 wish_item_id = 12;</code>
        * @return The wishItemId.
        */
       @java.lang.Override
@@ -1610,7 +1610,7 @@ public final class DoGachaRspOuterClass {
         return wishItemId_;
       }
       /**
-       * <code>uint32 wish_item_id = 8;</code>
+       * <code>uint32 wish_item_id = 12;</code>
        * @param value The wishItemId to set.
        * @return This builder for chaining.
        */
@@ -1621,7 +1621,7 @@ public final class DoGachaRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wish_item_id = 8;</code>
+       * <code>uint32 wish_item_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearWishItemId() {
@@ -1873,7 +1873,7 @@ public final class DoGachaRspOuterClass {
 
       private int wishMaxProgress_ ;
       /**
-       * <code>uint32 wish_max_progress = 12;</code>
+       * <code>uint32 wish_max_progress = 15;</code>
        * @return The wishMaxProgress.
        */
       @java.lang.Override
@@ -1881,7 +1881,7 @@ public final class DoGachaRspOuterClass {
         return wishMaxProgress_;
       }
       /**
-       * <code>uint32 wish_max_progress = 12;</code>
+       * <code>uint32 wish_max_progress = 15;</code>
        * @param value The wishMaxProgress to set.
        * @return This builder for chaining.
        */
@@ -1892,7 +1892,7 @@ public final class DoGachaRspOuterClass {
         return this;
       }
       /**
-       * <code>uint32 wish_max_progress = 12;</code>
+       * <code>uint32 wish_max_progress = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearWishMaxProgress() {
@@ -2160,10 +2160,10 @@ public final class DoGachaRspOuterClass {
       "\030\013 \001(\r\022\033\n\021gacha_times_limit\030\322\206\003 \001(\r\022\017\n\007r" +
       "etcode\030\004 \001(\005\022\024\n\014cost_item_id\030\016 \001(\r\022\022\n\nga" +
       "cha_type\030\001 \001(\r\022\031\n\021gacha_schedule_id\030\006 \001(" +
-      "\r\022\025\n\rwish_progress\030\017 \001(\r\022\025\n\rcost_item_nu" +
+      "\r\022\025\n\rwish_progress\030\010 \001(\r\022\025\n\rcost_item_nu" +
       "m\030\007 \001(\r\022\032\n\020ten_cost_item_id\030\326\206\003 \001(\r\022\024\n\014w" +
-      "ish_item_id\030\010 \001(\r\022#\n\017gacha_item_list\030\r \003" +
-      "(\0132\n.GachaItem\022\031\n\021wish_max_progress\030\014 \001(" +
+      "ish_item_id\030\014 \001(\r\022#\n\017gacha_item_list\030\r \003" +
+      "(\0132\n.GachaItem\022\031\n\021wish_max_progress\030\017 \001(" +
       "\r\022\030\n\020new_gacha_random\030\002 \001(\r\022\'\n\036cur_sched" +
       "ule_daily_gacha_times\030\202\016 \001(\r\022\"\n\030is_under" +
       "_minors_restrict\030\332\206\003 \001(\010\022#\n\031is_under_gen" +
