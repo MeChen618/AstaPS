@@ -277,7 +277,16 @@ publishing {
 }
 
 clean {
-    delete protobuf.generatedFilesBaseDir
+    // The 7.1 protocol dump ships as generated Java sources without the
+    // original .proto inputs. Preserve those sources on clean unless this
+    // checkout actually has protocol definitions that can regenerate them.
+    def hasProtoSources =
+        !fileTree('proto').matching { include '**/*.proto' }.isEmpty() ||
+        !fileTree('src/main/proto').matching { include '**/*.proto' }.isEmpty()
+
+    if (hasProtoSources) {
+        delete protobuf.generatedFilesBaseDir
+    }
 }
 
 protobuf {
