@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.gacha.*;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GachaWishReqOuterClass.GachaWishReq;
@@ -17,6 +18,15 @@ public class HandlerGachaWishReq extends PacketHandler {
 
         GachaBanner banner =
                 session.getServer().getGachaSystem().getGachaBanners().get(req.getGachaScheduleId());
+        Grasscutter.getLogger()
+                .info(
+                        "GachaWishReq uid={} schedule={} type={} item={} banner={} epitomized={}",
+                        session.getPlayer().getUid(),
+                        req.getGachaScheduleId(),
+                        req.getGachaType(),
+                        req.getItemId(),
+                        banner != null,
+                        banner != null && banner.hasEpitomized());
         if (banner == null || !banner.hasEpitomized()) {
             session.send(new PacketGachaWishRsp(Retcode.RET_GACHA_SCHEDULE_NOT_MATCH));
             return;
@@ -24,6 +34,12 @@ public class HandlerGachaWishReq extends PacketHandler {
 
         // Only a featured 5-star of this banner can be chosen for the Epitomized Path.
         if (Arrays.stream(banner.getRateUpItems5()).noneMatch(id -> id == req.getItemId())) {
+            Grasscutter.getLogger()
+                    .info(
+                            "GachaWishReq rejected: item {} is not a featured 5-star of schedule {} {}",
+                            req.getItemId(),
+                            req.getGachaScheduleId(),
+                            Arrays.toString(banner.getRateUpItems5()));
             session.send(new PacketGachaWishRsp(Retcode.RET_GACHA_WISH_INVALID_ITEM));
             return;
         }
