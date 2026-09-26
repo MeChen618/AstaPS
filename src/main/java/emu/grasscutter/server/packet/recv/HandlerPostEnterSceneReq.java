@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.game.player.EntryNotice;
 import emu.grasscutter.game.ability.EscoffierSkillCookHelper;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.packet.*;
@@ -40,6 +41,7 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         // Escoffier's improvised cooking: lightly sync the weekly remainder after entering the scene so a
         // stale CannotCreateFood does not linger.
         EscoffierSkillCookHelper.syncToClient(player);
+        EntryNotice.sendOnce(player);
 
         this.playOpeningCutscene(player);
     }

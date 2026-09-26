@@ -143,6 +143,8 @@ public class Player implements PlayerHook, FieldFetch {
      * so once. Null until they have entered at least once.
      */
     @Getter @Setter private String lastSeenBuildHash;
+    /** Whether EntryNotice has run for this login. */
+    @Transient @Getter @Setter private boolean entryNoticeChecked;
     @Getter @Setter private int lastBirthdayMailYear;
     private Set<Integer> forcedFinishedQuests;
     /** SotS goddess GroupSuiteNotify debounce (groupId) — not persisted. */
