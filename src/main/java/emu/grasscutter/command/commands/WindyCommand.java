@@ -1,40 +1,34 @@
+// From https://github.com/XeonSucksLAB/UnknownAnimeGamePS
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.net.packet.BasePacket;
+import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketWindSeedClientNotify;
+
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import emu.grasscutter.game.player.Player;
-import emu.grasscutter.command.Command;
-import emu.grasscutter.command.CommandHandler;
 
-@Command(label = "windy", usage = {"<scriptName>"}, aliases = { "w" }, permission = "player.windy", permissionTargeted = "player.windy.others")
-public class WindyCommand implements CommandHandler
-{
+@Command(
+    label = "windy",
+    usage = {"[<lua>]"},
+    permission = "server.windy",
+    targetRequirement = Command.TargetRequirement.PLAYER)
+public final class WindyCommand implements CommandHandler {
+
     @Override
-    public void execute(final Player sender, final Player targetPlayer, final List<String> args) {
-        if (args.isEmpty()) {
-            this.sendUsageMessage(sender);
-            return;
-        }
+    public void execute(Player sender, Player targetPlayer, List<String> args) {
+        // Send windy packet
+        var fullpath = Paths.get(".").toAbsolutePath().normalize().resolve("lua").resolve(args.get(0));
 
-        final String script = args.get(0);
-        // Reject path separators so a script name cannot walk out of the Windy directory.
-        if (script.contains("/") || script.contains("\\") || script.contains("..")) {
-            CommandHandler.sendMessage(sender, "Invalid script name.");
-            return;
+        try {
+            targetPlayer.sendPacket(new PacketWindSeedClientNotify(Files.readAllBytes(fullpath)));
+            CommandHandler.sendMessage(sender, "Read BYTECODE from Lua script: " + fullpath);
+        } catch (IOException e) {
+            CommandHandler.sendMessage(sender, "Error reading Lua script: " + e.getMessage());
         }
-
-        final String path = "C:/Windy/" + script + ".luac";
-        if (!Files.isRegularFile(Paths.get(path))) {
-            // PacketWindSeedClientNotify silently falls back to the stock UID watermark when the
-            // file is missing, which looks like success while doing something else entirely.
-            CommandHandler.sendMessage(sender, "No such script: " + path);
-            return;
-        }
-
-        targetPlayer.sendPacket(new PacketWindSeedClientNotify(path));
-        CommandHandler.sendMessage(sender, "Successfully executed the " + script + " Lua script!");
     }
+
 }
