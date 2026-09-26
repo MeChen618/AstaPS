@@ -9,7 +9,7 @@
 ## 這是什麼
 
 - **內容跟得上版本。** 怪物與裝置的生成資料對齊 7.1.0，深境螺旋輪換、秘境、聖遺物商店、戰令等營運內容都在。
-- **撐得住出事的那天。** 寫庫拆成四個有界執行緒池，塞滿時回壓而不是把玩家的存檔丟掉；某個世界在 tick 裡拋例外不再讓其他所有人的世界一起停下。
+- **撐得住出事的那天。** 寫庫拆成四個有界執行緒池，塞滿時回壓而不是把玩家的存檔丟掉；某個世界在 tick 裡拋例外不再讓其他所有人的世界一起卡住。
 - **出問題看得見。** 狀態日誌定時輸出 CPU、記憶體、GC 和每個執行緒池的佇列深度，`/api/status` 也以 HTTP 提供同一份數字。
 - **全英文。** 原始碼、註解、提交訊息、指令輸出皆然。
 
@@ -45,7 +45,7 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 沒有註冊網頁。建立帳號有兩條路：
 
 - **從主控台。** `account create <使用者名稱> [uid] [密碼]`
-- **登入時直接註冊。** 用一個沒人占用的名字登入就等於註冊。開啟 `account.useIntegrationPassword` 後，在使用者名稱欄填 `帳號&&密碼`、密碼欄留空即可。
+- **登入時直接註冊。** 用一個沒人占用的名字登入就等於註冊。開啟 `account.useIntegrationPassword` 後，在使用者名稱欄填 `帳號&&密碼`、密碼欄留空即可 — 在測試不懂問密碼的客戶端時很有用。
 
 密碼以 BCrypt 雜湊儲存。主控台需要 `server.game.enableConsole` 設為 `true` 才會接受輸入。
 
@@ -64,10 +64,14 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 本專案採用 **GNU General Public License v3.0**，見 [`LICENSE`](LICENSE)。
 
-`LICENSE-ClassGraph.txt` 不是本專案的授權條款。ClassGraph 是一個 MIT 授權的相依套件，它的 class 會被打包進 `grasscutter.jar`，而 MIT 只要求該聲明隨之一起散布。
+`LICENSE-ClassGraph.txt` 不是本專案的授權條款。ClassGraph 是一個 MIT 授權的相依套件，它的 class 會被打包進 `grasscutter.jar`，而 MIT 只要求該聲明隨之一起帶著。
 
 ## 致謝
 
 本伺服器基於 **Grasscutter**。參考專案：**LunaGC**、**HunkyMeow**。
 
 本倉庫根部的匯入提交中，以姓名列出了它所承載的各位作者。
+
+## Proto 來源
+
+協議定義來自 [genshin-protocol](https://gitlab.com/kitkat-multiverse/genshin-protocol)。

@@ -9,7 +9,7 @@ A private server for Genshin Impact **7.1.0**, built on Grasscutter.
 ## What it is
 
 - **Up-to-date content.** Monster and gadget spawn data current with 7.1.0, Spiral Abyss rotations, domains, the artifact shop, battle pass, and the rest of the live-service surface.
-- **Built to survive a bad day.** Database writes are split across four bounded pools that apply backpressure instead of dropping a player's progress; one world throwing during a tick no longer stops everyone else's.
+- **Built to survive a bad day.** Database writes are split across four bounded pools that apply backpressure instead of dropping a player's progress; one world throwing during a tick no longer stalls everyone else's.
 - **Visible when it is unwell.** A status readout logs CPU, memory, GC and every thread pool's queue depth on an interval, and `/api/status` serves the same figures over HTTP.
 - **English throughout.** Source, comments, commit messages and command output.
 
@@ -45,7 +45,7 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 There is no registration page. An account is created either way:
 
 - **From the console.** `account create <username> [uid] [password]`
-- **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful without a form.
+- **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when testing clients that do not know how to prompt for a password.
 
 Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
 
@@ -71,3 +71,7 @@ Released under the **GNU General Public License v3.0**. See [`LICENSE`](LICENSE)
 This server is based on **Grasscutter**. Reference projects: **LunaGC**, **HunkyMeow**.
 
 The import commit at the root of this repository credits by name the authors whose work it carries.
+
+## Proto Sources
+
+Protocol definitions sourced from [genshin-protocol](https://gitlab.com/kitkat-multiverse/genshin-protocol).
