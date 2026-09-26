@@ -413,7 +413,10 @@ public class GachaBanner {
                         .setLeftGachaTimes(leftGachaTimes)
                         .setGachaTimesLimit(gachaTimesLimit)
                         .setGachaSortId(this.getTabSortId())
-                        .setIsNewWish(true);
+                        .setIsNewWish(true)
+                        // 7.1 has two unnamed bools here (410, 1937) and is_new_wish is one of them;
+                        // with only one set the Epitomized Path button did nothing, so both are.
+                        .setHMOJLEMLHDK(true);
 
         if (hasEpitomized()) {
             info.setWishItemId(wishItemId)

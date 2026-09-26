@@ -150,7 +150,7 @@ public final class GachaInfoOuterClass {
     int getDisplayChronicle5ItemList(int index);
 
     /**
-     * <code>bool HMOJLEMLHDK = 50011;</code>
+     * <code>bool HMOJLEMLHDK = 410;</code>
      * @return The hMOJLEMLHDK.
      */
     boolean getHMOJLEMLHDK();
@@ -415,6 +415,11 @@ public final class GachaInfoOuterClass {
               gachaPrefabPath_ = s;
               break;
             }
+            case 3280: {
+
+              hMOJLEMLHDK_ = input.readBool();
+              break;
+            }
             case 3402: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -528,11 +533,6 @@ public final class GachaInfoOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               gachaRecordUrlOversea_ = s;
-              break;
-            }
-            case 400088: {
-
-              hMOJLEMLHDK_ = input.readBool();
               break;
             }
             default: {
@@ -880,10 +880,10 @@ public final class GachaInfoOuterClass {
     }
     private int displayChronicle5ItemListMemoizedSerializedSize = -1;
 
-    public static final int HMOJLEMLHDK_FIELD_NUMBER = 50011;
+    public static final int HMOJLEMLHDK_FIELD_NUMBER = 410;
     private boolean hMOJLEMLHDK_;
     /**
-     * <code>bool HMOJLEMLHDK = 50011;</code>
+     * <code>bool HMOJLEMLHDK = 410;</code>
      * @return The hMOJLEMLHDK.
      */
     @java.lang.Override
@@ -1216,6 +1216,9 @@ public final class GachaInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaPrefabPath_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, gachaPrefabPath_);
       }
+      if (hMOJLEMLHDK_ != false) {
+        output.writeBool(410, hMOJLEMLHDK_);
+      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 425, gachaProbUrlOversea_);
       }
@@ -1263,9 +1266,6 @@ public final class GachaInfoOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaRecordUrlOversea_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2032, gachaRecordUrlOversea_);
-      }
-      if (hMOJLEMLHDK_ != false) {
-        output.writeBool(50011, hMOJLEMLHDK_);
       }
       unknownFields.writeTo(output);
     }
@@ -1331,6 +1331,10 @@ public final class GachaInfoOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaPrefabPath_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, gachaPrefabPath_);
+      }
+      if (hMOJLEMLHDK_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(410, hMOJLEMLHDK_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaProbUrlOversea_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425, gachaProbUrlOversea_);
@@ -1406,10 +1410,6 @@ public final class GachaInfoOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(gachaRecordUrlOversea_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2032, gachaRecordUrlOversea_);
-      }
-      if (hMOJLEMLHDK_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(50011, hMOJLEMLHDK_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2767,7 +2767,7 @@ public final class GachaInfoOuterClass {
 
       private boolean hMOJLEMLHDK_ ;
       /**
-       * <code>bool HMOJLEMLHDK = 50011;</code>
+       * <code>bool HMOJLEMLHDK = 410;</code>
        * @return The hMOJLEMLHDK.
        */
       @java.lang.Override
@@ -2775,7 +2775,7 @@ public final class GachaInfoOuterClass {
         return hMOJLEMLHDK_;
       }
       /**
-       * <code>bool HMOJLEMLHDK = 50011;</code>
+       * <code>bool HMOJLEMLHDK = 410;</code>
        * @param value The hMOJLEMLHDK to set.
        * @return This builder for chaining.
        */
@@ -2786,7 +2786,7 @@ public final class GachaInfoOuterClass {
         return this;
       }
       /**
-       * <code>bool HMOJLEMLHDK = 50011;</code>
+       * <code>bool HMOJLEMLHDK = 410;</code>
        * @return This builder for chaining.
        */
       public Builder clearHMOJLEMLHDK() {
@@ -3643,7 +3643,7 @@ public final class GachaInfoOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017GachaInfo.proto\032\021GachaUpInfo.proto\"\210\006\n" +
+      "\n\017GachaInfo.proto\032\021GachaUpInfo.proto\"\207\006\n" +
       "\tGachaInfo\022!\n\031gacha_preview_prefab_path\030" +
       "\n \001(\t\022\030\n\020ten_cost_item_id\030\005 \001(\r\022\022\n\ngacha" +
       "_type\030\002 \001(\r\022\022\n\nbegin_time\030\006 \001(\r\022\023\n\013sched" +
@@ -3654,17 +3654,17 @@ public final class GachaInfoOuterClass {
       " \001(\r\022\026\n\016gacha_prob_url\030\t \001(\t\022\031\n\021gacha_pr" +
       "efab_path\030\017 \001(\t\022\020\n\010end_time\030\003 \001(\r\022\025\n\rgac" +
       "ha_sort_id\030\013 \001(\r\022&\n\035display_chronicle_5_" +
-      "item_list\030\353\014 \003(\r\022\025\n\013HMOJLEMLHDK\030\333\206\003 \001(\010\022" +
-      "\036\n\025display_up4_item_list\030\240\013 \003(\r\022\024\n\013is_ne" +
-      "w_wish\030\221\017 \001(\010\022\036\n\025display_up5_item_list\030\277" +
-      "\n \003(\r\022!\n\030gacha_record_url_oversea\030\360\017 \001(\t" +
-      "\022\037\n\026gacha_prob_url_oversea\030\251\003 \001(\t\022\025\n\rtit" +
-      "le_textmap\030\007 \001(\t\022\032\n\021wish_max_progress\030\312\004" +
-      " \001(\r\022\026\n\rwish_progress\030\370\t \001(\r\022\'\n\036cur_sche" +
-      "dule_daily_gacha_times\030\373\014 \001(\r\022\025\n\014wish_it" +
-      "em_id\030\316\004 \001(\r\022)\n\022gacha_up_info_list\030\213\017 \003(" +
-      "\0132\014.GachaUpInfoB0\n\031emu.grasscutter.net.p" +
-      "rotoB\023GachaInfoOuterClassb\006proto3"
+      "item_list\030\353\014 \003(\r\022\024\n\013HMOJLEMLHDK\030\232\003 \001(\010\022\036" +
+      "\n\025display_up4_item_list\030\240\013 \003(\r\022\024\n\013is_new" +
+      "_wish\030\221\017 \001(\010\022\036\n\025display_up5_item_list\030\277\n" +
+      " \003(\r\022!\n\030gacha_record_url_oversea\030\360\017 \001(\t\022" +
+      "\037\n\026gacha_prob_url_oversea\030\251\003 \001(\t\022\025\n\rtitl" +
+      "e_textmap\030\007 \001(\t\022\032\n\021wish_max_progress\030\312\004 " +
+      "\001(\r\022\026\n\rwish_progress\030\370\t \001(\r\022\'\n\036cur_sched" +
+      "ule_daily_gacha_times\030\373\014 \001(\r\022\025\n\014wish_ite" +
+      "m_id\030\316\004 \001(\r\022)\n\022gacha_up_info_list\030\213\017 \003(\013" +
+      "2\014.GachaUpInfoB0\n\031emu.grasscutter.net.pr" +
+      "otoB\023GachaInfoOuterClassb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
