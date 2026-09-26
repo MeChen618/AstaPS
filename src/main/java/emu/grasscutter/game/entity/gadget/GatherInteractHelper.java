@@ -12,6 +12,7 @@ import emu.grasscutter.game.entity.EntityItem;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.world.SpawnDataEntry;
+import it.unimi.dsi.fastutil.ints.IntSets;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
@@ -26,8 +27,8 @@ public final class GatherInteractHelper {
    private static Int2ObjectMap<GatherData> byItemId;
    private static IntSet hardcodedInitDisableGadgetIds;
    private static Int2ObjectMap<String> serverControllerByGadgetId;
-   private static final IntSet explicitlyGatherEnabled = new IntOpenHashSet();
-   private static final IntSet gatherLootDropped = new IntOpenHashSet();
+   private static final IntSet explicitlyGatherEnabled = IntSets.synchronize(new IntOpenHashSet());
+   private static final IntSet gatherLootDropped = IntSets.synchronize(new IntOpenHashSet());
    private static final IntSet breakFirstGadgetIds = IntOpenHashSet.of(new int[]{70540028, 70520018, 70520019, 70510005});
    private static final IntSet breakFirstPointTypes = IntOpenHashSet.of(2029, 3006);
    private static final IntSet breakFirstItemIds = IntOpenHashSet.of(100033, 100054);
@@ -300,6 +301,12 @@ public final class GatherInteractHelper {
       if (var0 != null) {
          explicitlyGatherEnabled.add(var0.getId());
       }
+   }
+
+   /** Entity ids are never reused, so both sets would otherwise only ever grow. */
+   public static void clearEntityState(int entityId) {
+      explicitlyGatherEnabled.remove(entityId);
+      gatherLootDropped.remove(entityId);
    }
 
    public static void markGatherInteractDisabled(EntityGadget var0) {

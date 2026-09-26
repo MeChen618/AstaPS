@@ -27,6 +27,8 @@ import emu.grasscutter.server.packet.send.PacketEntityFightPropChangeReasonNotif
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
 import emu.grasscutter.utils.Utils;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2FloatOpenHashMap;
 
@@ -66,10 +68,10 @@ public final class ClorindeBoLUtil {
     /** Short Impale the Night window, used only to help identify healing - no longer gates Swift Hunt BoL. */
     private static final long DODGE_WINDOW_MS = 800L;
 
-    private static final Int2LongOpenHashMap LAST_SHOT_GRANT_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap LAST_DODGE_HEAL_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap VIGIL_UNTIL_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap DODGE_UNTIL_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_SHOT_GRANT_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap LAST_DODGE_HEAL_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap VIGIL_UNTIL_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap DODGE_UNTIL_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     private static final ThreadLocal<Float> HEAL_SAVED_BOL = new ThreadLocal<>();
 
     private ClorindeBoLUtil() {}

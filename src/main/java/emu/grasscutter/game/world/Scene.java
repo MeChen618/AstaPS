@@ -215,21 +215,25 @@ public class Scene {
         return this.entities.containsKey(entity.getId());
     }
 
-    public synchronized void addPlayer(Player player) {
-
-        if (getPlayers().contains(player)) {
-            return;
+    public void addPlayer(Player player) {
+        // Leave the old scene before taking this scene's lock. Holding one scene's lock while
+        // waiting for another's deadlocks two players swapping between the same two scenes.
+        var previous = player.getScene();
+        if (previous != null && previous != this) {
+            previous.removePlayer(player);
         }
 
-        if (player.getScene() != null) {
-            player.getScene().removePlayer(player);
+        synchronized (this) {
+            if (getPlayers().contains(player)) {
+                return;
+            }
+
+            getPlayers().add(player);
+            player.setSceneId(this.getId());
+            player.setScene(this);
+
+            this.setupPlayerAvatars(player);
         }
-
-        getPlayers().add(player);
-        player.setSceneId(this.getId());
-        player.setScene(this);
-
-        this.setupPlayerAvatars(player);
     }
 
     public synchronized void removePlayer(Player player) {
@@ -298,6 +302,9 @@ public class Scene {
         var team = player.getTeamManager().getActiveTeam();
 
         team.forEach(e -> removeEntity(e, VisionType.VisionType_VISION_REMOVE));
+        // The team is rebuilt with new entities on the next scene, so the off-field members' ids
+        // are dead too.
+        team.forEach(EntityRuntimeStateCleanup::clear);
         team.clear();
     }
 
@@ -420,6 +427,7 @@ public class Scene {
     public synchronized void removeEntity(GameEntity entity, VisionType visionType) {
         GameEntity removed = this.removeEntityDirectly(entity);
         if (removed != null) {
+            EntityRuntimeStateCleanup.clear(removed);
             this.broadcastPacket(new PacketSceneEntityDisappearNotify(removed, visionType));
         }
     }
@@ -431,6 +439,7 @@ public class Scene {
                         .map(this::removeEntityDirectly)
                         .filter(Objects::nonNull)
                         .toList();
+        toRemove.forEach(EntityRuntimeStateCleanup::clear);
         if (!toRemove.isEmpty()) {
             this.broadcastPacket(new PacketSceneEntityDisappearNotify(toRemove, visionType));
         }

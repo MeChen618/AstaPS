@@ -51,7 +51,10 @@ public class World implements Iterable<Player> {
     @Getter private final Int2ObjectMap<Scene> scenes;
 
     @Getter private EntityWorld entity;
-    private int nextEntityId = 0;
+    // Lock-free: entity ids are taken while a Scene lock is held, and World.addPlayer/removePlayer
+    // take the World lock and then a Scene lock, so a synchronized counter could deadlock them.
+    private final java.util.concurrent.atomic.AtomicInteger nextEntityId =
+            new java.util.concurrent.atomic.AtomicInteger();
     private int nextPeerId = 0;
     private int worldLevel;
 
@@ -180,8 +183,8 @@ public class World implements Iterable<Player> {
      * @param idType The entity type.
      * @return The next entity ID.
      */
-    public synchronized int getNextEntityId(EntityIdType idType) {
-        return (idType.getId() << GameConstants.ENTITY_ID_BIT_SHIFT) + ++this.nextEntityId;
+    public int getNextEntityId(EntityIdType idType) {
+        return (idType.getId() << GameConstants.ENTITY_ID_BIT_SHIFT) + this.nextEntityId.incrementAndGet();
     }
 
     public synchronized void addPlayer(Player player) {

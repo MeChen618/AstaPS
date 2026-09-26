@@ -32,7 +32,8 @@ public final class StatueOfferRewardHelper {
             new IntOpenHashSet(new int[] {107008, 107018, 107025, 107027, 107031});
 
     /** cityId -> level -> itemId -> count */
-    private static final Map<Integer, Int2ObjectMap<Int2IntMap>> CACHE = new HashMap<>();
+    // Built once, then published whole: readers never see a map that is still being filled.
+    private static volatile Map<Integer, Int2ObjectMap<Int2IntMap>> CACHE = Map.of();
 
     private static final Object LOCK = new Object();
 
@@ -49,9 +50,11 @@ public final class StatueOfferRewardHelper {
         if (!CACHE.isEmpty()) return;
         synchronized (LOCK) {
             if (!CACHE.isEmpty()) return;
+            Map<Integer, Int2ObjectMap<Int2IntMap>> built = new HashMap<>();
             for (int cityId = 1; cityId <= 8; cityId++) {
-                CACHE.put(cityId, buildCity(cityId));
+                built.put(cityId, buildCity(cityId));
             }
+            CACHE = built;
         }
     }
 

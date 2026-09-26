@@ -10,6 +10,8 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketEvtBeingHealedNotify;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 
 /**
@@ -35,8 +37,8 @@ public final class LaumaC1HealHelper {
     private static final float DEFAULT_CD_SEC = 1.9f;
     private static final long DEFAULT_WINDOW_MS = 20_000L;
 
-    private static final Int2LongOpenHashMap LAST_HEAL_MS = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap WINDOW_UNTIL_MS = new Int2LongOpenHashMap();
+    private static final Int2LongMap LAST_HEAL_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap WINDOW_UNTIL_MS = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
 
     private LaumaC1HealHelper() {}
 

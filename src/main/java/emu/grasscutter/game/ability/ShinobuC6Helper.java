@@ -9,6 +9,8 @@ import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
+import it.unimi.dsi.fastutil.ints.Int2LongMaps;
+import it.unimi.dsi.fastutil.ints.Int2LongMap;
 import it.unimi.dsi.fastutil.ints.Int2LongOpenHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -30,8 +32,8 @@ public final class ShinobuC6Helper {
     private static final float DEFAULT_DURATION_SEC = 15f;
     private static final long DEFAULT_CD_MS = 60_000L;
 
-    private static final Int2LongOpenHashMap LETHAL_CD_UNTIL = new Int2LongOpenHashMap();
-    private static final Int2LongOpenHashMap EM_CD_UNTIL = new Int2LongOpenHashMap();
+    private static final Int2LongMap LETHAL_CD_UNTIL = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
+    private static final Int2LongMap EM_CD_UNTIL = Int2LongMaps.synchronize(new Int2LongOpenHashMap());
     private static final ConcurrentHashMap<Integer, Integer> EM_TASK_IDS = new ConcurrentHashMap<>();
 
     static {

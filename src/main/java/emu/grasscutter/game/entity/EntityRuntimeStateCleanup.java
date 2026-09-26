@@ -12,6 +12,7 @@ import emu.grasscutter.game.ability.SkirkCunningBridge;
 import emu.grasscutter.game.ability.SkirkCunningHelper;
 import emu.grasscutter.game.ability.SkirkInvokeLog;
 import emu.grasscutter.game.ability.actions.ActionAvatarSkillStart;
+import emu.grasscutter.game.entity.gadget.GatherInteractHelper;
 
 /** Releases static combat state when an entity leaves a scene. */
 public final class EntityRuntimeStateCleanup {
@@ -35,5 +36,6 @@ public final class EntityRuntimeStateCleanup {
         // Per-entity cleanup of the Qiqi skill HoT, the Kuki Shinobu C6 cooldown and similar.
         ShinobuC6Helper.clearEntityState(entityId);
         QiqiEHealHelper.clearEntityState(entityId);
+        GatherInteractHelper.clearEntityState(entityId);
     }
 }
