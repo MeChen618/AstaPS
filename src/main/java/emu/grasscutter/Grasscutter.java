@@ -364,7 +364,7 @@ public final class Grasscutter {
         } else if (!config.server.game.enableConsole) {
             // The loop below never runs, so saying "type help" would be an invitation to type at a
             // prompt that is not there.
-            logger.info("Done! The console is disabled; set server.game.enableConsole to use it.");
+            logger.info("Done! The server is ready and players can log in now. The console is disabled; set server.game.enableConsole to use it.");
             return;
         } else {
             logger.info(translate("messages.status.done"));

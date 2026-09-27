@@ -52,7 +52,7 @@
       "free_software": "Grasscutter 是免费开源软件，遵循 AGPL-3.0 license。\n\t如果你是付费购买的，那你已经被骗了。\n\t项目地址：https://github.com/Grasscutters/Grasscutter",
       "starting": "正在启动 Grasscutter...",
       "shutdown": "正在关闭...",
-      "done": "加载完成！输入 \"help\" 查看命令列表",
+      "done": "加载完成！服务器已就绪，现在可以登录了。输入 \"help\" 查看命令列表",
       "error": "发生了一个错误",
       "welcome": "欢迎使用 Grasscutter！",
       "run_mode_error": "无效的服务器运行模式：%s",

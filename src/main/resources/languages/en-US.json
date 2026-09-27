@@ -52,7 +52,7 @@
       "free_software": "Grasscutter is FREE software. If you have paid for this, you may have been scammed. Homepage: https://github.com/Grasscutters/Grasscutter",
       "starting": "Starting Grasscutter...",
       "shutdown": "Shutting down...",
-      "done": "Done! For help, type \"help\"",
+      "done": "Done! The server is ready and players can log in now. For help, type \"help\"",
       "error": "An error occurred.",
       "welcome": "Welcome to Grasscutter!",
       "run_mode_error": "Invalid server run mode: %s.",
