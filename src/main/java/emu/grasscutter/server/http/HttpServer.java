@@ -164,6 +164,10 @@ public final class HttpServer {
         @Override
         public void applyRoutes(Javalin javalin) {
             javalin.error(404, ctx -> {
+                // A missing SDK string bundle has to stay a 404: the SDK then uses the strings it
+                // ships with. Answered 200 with the empty JSON below, it takes that as the bundle and
+                // prints raw keys on the login screen (Android, which asks for plat_os).
+                if (ctx.path().startsWith("/admin/mi18n/")) return;
                 ctx.status(200);
                 ctx.contentType(ContentType.APPLICATION_JSON);
                 ctx.result("{\"retcode\":0,\"message\":\"OK\",\"data\":{}}");
