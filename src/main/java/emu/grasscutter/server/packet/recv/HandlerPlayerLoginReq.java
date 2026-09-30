@@ -31,12 +31,15 @@ public class HandlerPlayerLoginReq extends PacketHandler {
             // PICKING_CHARACTER, the state the router demands before it accepts SetPlayerBornDataReq.
             session.setState(SessionState.PICKING_CHARACTER);
 
-            if (intro.doSetPlayerBornDataNotify > 0) {
-                session.send(new BasePacket(intro.doSetPlayerBornDataNotify));
+            int notifyCmdId = intro.doSetPlayerBornDataNotify > 0
+                    ? intro.doSetPlayerBornDataNotify
+                    : PacketOpcodes.DoSetPlayerBornDataNotify;
+            if (notifyCmdId > 0) {
+                session.send(new BasePacket(notifyCmdId));
             }
             Grasscutter.getLogger()
                     .info("[intro] new account, waiting for character creation (notify cmdId={}).",
-                            intro.doSetPlayerBornDataNotify > 0 ? intro.doSetPlayerBornDataNotify : "unsent");
+                            notifyCmdId > 0 ? notifyCmdId : "unsent");
 
             session.send(new PacketPlayerLoginRsp(session));
             this.scheduleFallback(session, player);
