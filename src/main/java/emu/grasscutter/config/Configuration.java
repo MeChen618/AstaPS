@@ -28,12 +28,11 @@ public final class Configuration extends ConfigContainer {
     /** The sole runtime source for player-facing/gameplay settings. */
     public static final GameConfig GAME = GameConfig.get();
 
-    /* Temporary source-compatible names; all point to GAME and hold no second state. */
-    @Deprecated public static final ConfigContainer.Account ACCOUNT = GAME.account;
-    @Deprecated public static final ConfigContainer.GameOptions GAME_OPTIONS = GAME;
-    @Deprecated public static final ConfigContainer.GameOptions.InventoryLimits INVENTORY_LIMITS =
-            GAME.inventoryLimits;
-    @Deprecated public static final ConfigContainer.GameOptions.HandbookOptions HANDBOOK = GAME.handbook;
+    /* Temporary source-compatible names. These disappear once callers are migrated. */
+    @Deprecated public static final GameConfig.Account ACCOUNT = GAME.account;
+    @Deprecated public static final GameConfig GAME_OPTIONS = GAME;
+    @Deprecated public static final GameConfig.InventoryLimits INVENTORY_LIMITS = GAME.inventoryLimits;
+    @Deprecated public static final GameConfig.HandbookOptions HANDBOOK = GAME.handbook;
 
     public static final boolean FAST_REQUIRE = config.server.fastRequire;
     private static final String DATA_FOLDER = config.folderStructure.data;
