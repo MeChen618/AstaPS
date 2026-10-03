@@ -162,6 +162,15 @@ public class ConfigContainer {
         public boolean isShowPacketPayload = false;
         public boolean isShowLoopPackets = false;
         public boolean cacheSceneEntitiesEveryRun = false;
+        public VisionOptions[] visionOptions =
+                new VisionOptions[] {
+                    new VisionOptions("VISION_LEVEL_NORMAL", 80, 20),
+                    new VisionOptions("VISION_LEVEL_LITTLE_REMOTE", 16, 40),
+                    new VisionOptions("VISION_LEVEL_REMOTE", 1000, 250),
+                    new VisionOptions("VISION_LEVEL_SUPER", 4000, 1000),
+                    new VisionOptions("VISION_LEVEL_NEARBY", 40, 20),
+                    new VisionOptions("VISION_LEVEL_SUPER_NEARBY", 20, 20)
+                };
     }
 
     public static class Dispatch {
@@ -334,7 +343,6 @@ public class ConfigContainer {
         }
     }
 
-    /** Schema retained for game.json. */
     public static class VisionOptions {
         public String name;
         public int visionRange;
