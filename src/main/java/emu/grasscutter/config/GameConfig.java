@@ -20,7 +20,6 @@ public final class GameConfig extends ConfigContainer.GameOptions {
     public ConfigContainer.JoinOptions joinOptions = new ConfigContainer.JoinOptions();
     public ConfigContainer.ConsoleAccount serverAccount = new ConfigContainer.ConsoleAccount();
     public ConfigContainer.ConsoleAccount dpsAccount = defaultDpsAccount();
-    public ConfigContainer.VisionOptions[] visionOptions = defaultVisionOptions();
 
     public static synchronized GameConfig load(JsonObject legacyRoot) {
         if (current != null) return current;
@@ -103,11 +102,6 @@ public final class GameConfig extends ConfigContainer.GameOptions {
                             game.get("dpsAccount"),
                             ConfigContainer.ConsoleAccount.class,
                             migrated.dpsAccount);
-            migrated.visionOptions =
-                    decodeOr(
-                            game.get("visionOptions"),
-                            ConfigContainer.VisionOptions[].class,
-                            migrated.visionOptions);
         }
         return migrated;
     }
@@ -129,7 +123,6 @@ public final class GameConfig extends ConfigContainer.GameOptions {
         if (joinOptions == null) joinOptions = new ConfigContainer.JoinOptions();
         if (serverAccount == null) serverAccount = new ConfigContainer.ConsoleAccount();
         if (dpsAccount == null) dpsAccount = defaultDpsAccount();
-        if (visionOptions == null || visionOptions.length == 0) visionOptions = defaultVisionOptions();
     }
 
     private static void save(GameConfig value) {
@@ -159,8 +152,7 @@ public final class GameConfig extends ConfigContainer.GameOptions {
         return game.has("gameOptions")
                 || game.has("joinOptions")
                 || game.has("serverAccount")
-                || game.has("dpsAccount")
-                || game.has("visionOptions");
+                || game.has("dpsAccount");
     }
 
     private static void backupLegacyConfig() {
@@ -183,16 +175,5 @@ public final class GameConfig extends ConfigContainer.GameOptions {
         account.signature = "Send dps30 to start, dpsstop to end early";
         account.adventureRank = 60;
         return account;
-    }
-
-    private static ConfigContainer.VisionOptions[] defaultVisionOptions() {
-        return new ConfigContainer.VisionOptions[] {
-            new ConfigContainer.VisionOptions("VISION_LEVEL_NORMAL", 80, 20),
-            new ConfigContainer.VisionOptions("VISION_LEVEL_LITTLE_REMOTE", 16, 40),
-            new ConfigContainer.VisionOptions("VISION_LEVEL_REMOTE", 1000, 250),
-            new ConfigContainer.VisionOptions("VISION_LEVEL_SUPER", 4000, 1000),
-            new ConfigContainer.VisionOptions("VISION_LEVEL_NEARBY", 40, 20),
-            new ConfigContainer.VisionOptions("VISION_LEVEL_SUPER_NEARBY", 20, 20)
-        };
     }
 }
