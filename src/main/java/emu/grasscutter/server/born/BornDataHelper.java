@@ -1,7 +1,6 @@
 package emu.grasscutter.server.born;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
@@ -11,19 +10,25 @@ import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.player.Player;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /** Owns the persistent transition from an empty account to a born player. */
 public final class BornDataHelper {
     private BornDataHelper() {}
 
-    /** Resolves the configured Traveler used by the automatic/skip-intro birth path. */
+    /** Resolves the existing config-born.json choice used by automatic birth. */
     public static int resolveAutomaticAvatarId() {
-        int avatarId = GAME_OPTIONS.defaultAvatarId;
+        int avatarId =
+                BornDataConfig.isRandomGender()
+                        ? (ThreadLocalRandom.current().nextBoolean()
+                                ? GameConstants.MAIN_CHARACTER_MALE
+                                : GameConstants.MAIN_CHARACTER_FEMALE)
+                        : BornDataConfig.getAvatarId();
         if (avatarId != GameConstants.MAIN_CHARACTER_MALE
                 && avatarId != GameConstants.MAIN_CHARACTER_FEMALE) {
             Grasscutter.getLogger()
                     .warn(
-                            "Invalid gameOptions.defaultAvatarId {}; falling back to Lumine ({}).",
+                            "Invalid automatic Traveler avatarId {}; falling back to Lumine ({}).",
                             avatarId,
                             GameConstants.MAIN_CHARACTER_FEMALE);
             return GameConstants.MAIN_CHARACTER_FEMALE;
@@ -31,25 +36,17 @@ public final class BornDataHelper {
         return avatarId;
     }
 
-    /** Resolves the configured nickname used by the automatic/skip-intro birth path. */
-    public static String resolveAutomaticNickname() {
-        String nickname = GAME_OPTIONS.defaultNickname;
+    public static String resolveAutomaticNickname(Player player) {
+        String fallback =
+                player.getAccount() != null ? player.getAccount().getUsername() : "Traveler";
+        String nickname = BornDataConfig.getNickname(fallback);
         return nickname == null || nickname.isBlank() ? "Traveler" : nickname;
     }
 
-    /**
-     * Completes the one-time persistent birth transition shared by native selection and automatic
-     * birth.
-     *
-     * <p>This method creates only the Traveler and player metadata. World creation, scene entry, and
-     * Quest 351 bootstrap deliberately stay outside this helper so every birth mode can share the
-     * same scene-ready lifecycle.
-     */
+    /** Completes the one-time persistent birth transition shared by both birth paths. */
     public static boolean completeBirth(Player player, int avatarId, String nickname) {
         synchronized (player) {
-            if (player.getAvatars().getAvatarCount() != 0) {
-                return false;
-            }
+            if (player.getAvatars().getAvatarCount() != 0) return false;
 
             int startingSkillDepot = startingSkillDepotFor(avatarId);
             if (startingSkillDepot == 0) {
@@ -75,7 +72,7 @@ public final class BornDataHelper {
             player.setNickname(resolvedNickname);
 
             Avatar mainCharacter = new Avatar(avatarId);
-            if (!GAME_OPTIONS.questing.enabled) {
+            if (!GAME.questing.enabled) {
                 mainCharacter.setSkillDepotData(
                         GameData.getAvatarSkillDepotDataMap().get(startingSkillDepot));
             }
@@ -94,7 +91,7 @@ public final class BornDataHelper {
 
     /** Sends the standard one-time welcome mail after either birth path succeeds. */
     public static void sendWelcomeMail(Player player) {
-        var welcomeMail = GAME_INFO.joinOptions.welcomeMail;
+        var welcomeMail = GAME.joinOptions.welcomeMail;
         Mail mail = new Mail();
         mail.mailContent.title = welcomeMail.title;
         mail.mailContent.sender = welcomeMail.sender;
@@ -106,22 +103,11 @@ public final class BornDataHelper {
         player.sendMail(mail);
     }
 
-    /**
-     * Repairs only metadata for an account that already owns avatars.
-     *
-     * <p>A player with no avatars is a new/incomplete account. Its birth must be performed explicitly
-     * through {@link #completeBirth(Player, int, String)} by either the native-selection handler or
-     * the automatic-birth path.
-     */
+    /** Repairs only metadata for an account that already owns avatars. */
     public static void ensureMainCharacter(Player player) {
         if (player.getMainCharacterId() != 0 && player.getAvatars().getAvatarCount() > 0) {
             if (player.getNickname() == null || player.getNickname().isBlank()) {
-                String nickname =
-                        BornDataConfig.getNickname(
-                                player.getAccount() != null
-                                        ? player.getAccount().getUsername()
-                                        : "Traveler");
-                player.setNickname(nickname);
+                player.setNickname(resolveAutomaticNickname(player));
                 player.save();
             }
             return;
@@ -149,18 +135,12 @@ public final class BornDataHelper {
         }
 
         if (player.getNickname() == null || player.getNickname().isBlank()) {
-            player.setNickname(
-                    BornDataConfig.getNickname(
-                            player.getAccount() != null
-                                    ? player.getAccount().getUsername()
-                                    : "Traveler"));
+            player.setNickname(resolveAutomaticNickname(player));
         }
         player.setMainCharacterId(avatarId);
         player.setHeadImage(avatarId);
         List<Integer> list = player.getTeamManager().getCurrentSinglePlayerTeamInfo().getAvatars();
-        if (!list.contains(avatarId)) {
-            list.add(avatarId);
-        }
+        if (!list.contains(avatarId)) list.add(avatarId);
         player.save();
     }
 
@@ -178,8 +158,7 @@ public final class BornDataHelper {
             return GameConstants.MAIN_CHARACTER_FEMALE;
         }
         for (Avatar avatar : player.getAvatars()) {
-            if (avatar == null) continue;
-            return avatar.getAvatarId();
+            if (avatar != null) return avatar.getAvatarId();
         }
         return 0;
     }
