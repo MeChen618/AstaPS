@@ -3,7 +3,7 @@ package emu.grasscutter.server.packet.send;
 import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.config.ConfigContainer.ConsoleAccount;
+import emu.grasscutter.config.GameConfig.ConsoleAccount;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
