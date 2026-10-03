@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.game.ability.EscoffierSkillCookHelper;
 import emu.grasscutter.game.player.EntryNotice;
@@ -23,11 +23,14 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         var player = session.getPlayer();
         var scene = player.getScene();
         var questManager = player.getQuestManager();
+        boolean freshPlayerBootstrap = BornIntroGate.isFreshPlayerBootstrap(session);
 
-        // Create the initial quest set only after the first native scene handshake. This keeps Quest
-        // 351 out of QuestManager.onLogin()'s reconnect rewind and gives its ENTER_MY_WORLD checks the
-        // scene that has just become ready.
-        BornIntroGate.finishOnSceneReady(session);
+        // Both native-selection and automatic births converge here. The first PostEnterSceneRsp
+        // must reach the client before Quest 351 starts so its actors see a ready playable scene.
+        if (freshPlayerBootstrap) {
+            session.send(new PacketPostEnterSceneRsp(player));
+            BornIntroGate.finishOnSceneReady(session);
+        }
 
         switch (scene.getSceneType()) {
             case SCENE_ROOM ->
@@ -43,20 +46,22 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         }
         questManager.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE, scene.getPrevScene());
 
-        session.send(new PacketPostEnterSceneRsp(player));
+        if (!freshPlayerBootstrap) session.send(new PacketPostEnterSceneRsp(player));
 
         EscoffierSkillCookHelper.syncToClient(player);
         EntryNotice.sendOnce(player);
         session.send(new PacketGetPlayerFriendListRsp(player));
         session.getServer().getChatManager().ensureServerConversation(player);
 
-        this.playOpeningCutscene(player);
+        // Fresh 7.1 starts the opening from AQ351/35104. A configured legacy first-login cutscene
+        // here would create a second independent intro source after fresh quest bootstrap.
+        if (!freshPlayerBootstrap) this.playOpeningCutscene(player);
     }
 
     /** Fired here rather than at login: a cutscene sent before the scene is up is discarded. */
     private void playOpeningCutscene(emu.grasscutter.game.player.Player player) {
-        int cutscene = GAME_OPTIONS.firstLoginCutscene;
-        if (GAME_OPTIONS.disableCutscenes || cutscene <= 0 || player.isPlayedFirstLoginCutscene()) return;
+        int cutscene = GAME.firstLoginCutscene;
+        if (GAME.disableCutscenes || cutscene <= 0 || player.isPlayedFirstLoginCutscene()) return;
 
         player.setPlayedFirstLoginCutscene(true);
         player.save();

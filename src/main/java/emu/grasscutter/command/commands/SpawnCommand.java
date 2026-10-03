@@ -1,7 +1,7 @@
 package emu.grasscutter.command.commands;
 
 import static emu.grasscutter.command.CommandHelpers.*;
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.command.*;
@@ -10,10 +10,10 @@ import emu.grasscutter.data.NameIndex;
 import emu.grasscutter.data.excels.*;
 import emu.grasscutter.data.excels.monster.MonsterData;
 import emu.grasscutter.game.entity.*;
-import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.world.*;
+import emu.grasscutter.scripts.data.SceneGroup;
 import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.regex.Pattern;
@@ -56,17 +56,12 @@ public final class SpawnCommand implements CommandHandler {
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
         SpawnParameters param = new SpawnParameters();
-
         parseIntParameters(args, param, intCommandHandlers);
-
-        // At this point, first remaining argument MUST be the id and the rest the pos
         if (args.size() < 1) {
-            sendUsageMessage(sender); // Reachable if someone does `/give lv90` or similar
+            sendUsageMessage(sender);
             throw new IllegalArgumentException();
         }
 
-        // A name can run to several words, and the branching below counts arguments to decide what
-        // each one means, so fold the name back down to the single id argument it stands in for.
         if (!isNumber(args.get(0))) {
             var name = args.remove(0);
             var id = NameIndex.resolveEntity(name, args);
@@ -83,22 +78,19 @@ public final class SpawnCommand implements CommandHandler {
                     rot.setY(CommandHelpers.parseRelative(args.get(5), rot.getY()));
                     rot.setZ(CommandHelpers.parseRelative(args.get(6), rot.getZ()));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(
-                            sender, translate(sender, "commands.execution.argument_error"));
-                } // Fallthrough
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
+                }
             case 4:
                 try {
                     pos = CommandHelpers.parsePosition(args.get(1), args.get(2), args.get(3), pos, rot);
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(
-                            sender, translate(sender, "commands.execution.argument_error"));
-                } // Fallthrough
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.execution.argument_error"));
+                }
             case 1:
                 try {
                     param.id = Integer.parseInt(args.get(0));
                 } catch (NumberFormatException ignored) {
-                    CommandHandler.sendMessage(
-                            sender, translate(sender, "commands.generic.invalid.entityId"));
+                    CommandHandler.sendMessage(sender, translate(sender, "commands.generic.invalid.entityId"));
                 }
                 break;
             default:
@@ -117,36 +109,26 @@ public final class SpawnCommand implements CommandHandler {
         }
 
         param.scene = targetPlayer.getScene();
-
-        if (param.scene.getEntities().size() + param.amount > GAME_OPTIONS.sceneEntityLimit) {
+        if (param.scene.getEntities().size() + param.amount > GAME.sceneEntityLimit) {
             param.amount =
                     Math.max(
-                            Math.min(
-                                    GAME_OPTIONS.sceneEntityLimit - param.scene.getEntities().size(), param.amount),
+                            Math.min(GAME.sceneEntityLimit - param.scene.getEntities().size(), param.amount),
                             0);
-            CommandHandler.sendMessage(
-                    sender, translate(sender, "commands.spawn.limit_reached", param.amount));
-            if (param.amount <= 0) {
-                return;
-            }
+            CommandHandler.sendMessage(sender, translate(sender, "commands.spawn.limit_reached", param.amount));
+            if (param.amount <= 0) return;
         }
 
         double maxRadius = Math.sqrt(param.amount * 0.2 / Math.PI);
         for (int i = 0; i < param.amount; i++) {
             pos = GetRandomPositionInCircle(param.pos, maxRadius).addY(3);
             GameEntity entity = null;
-            if (itemData != null) {
-                entity = createItem(itemData, param, pos);
-            }
+            if (itemData != null) entity = createItem(itemData, param, pos);
             if (gadgetData != null) {
                 pos.addY(-3);
                 entity = createGadget(gadgetData, param, pos, targetPlayer);
             }
-            if (monsterData != null) {
-                entity = createMonster(monsterData, param, pos);
-            }
+            if (monsterData != null) entity = createMonster(monsterData, param, pos);
             applyCommonParameters(entity, param);
-
             param.scene.addEntity(entity);
         }
         CommandHandler.sendMessage(
@@ -157,12 +139,9 @@ public final class SpawnCommand implements CommandHandler {
         return new EntityItem(param.scene, null, itemData, pos, param.rot, 1, true);
     }
 
-    private EntityMonster createMonster(
-            MonsterData monsterData, SpawnParameters param, Position pos) {
+    private EntityMonster createMonster(MonsterData monsterData, SpawnParameters param, Position pos) {
         var entity = new EntityMonster(param.scene, monsterData, pos, param.rot, param.lvl);
-        if (param.ai != -1) {
-            entity.setAiId(param.ai);
-        }
+        if (param.ai != -1) entity.setAiId(param.ai);
         return entity;
     }
 
@@ -173,10 +152,6 @@ public final class SpawnCommand implements CommandHandler {
             entity = new EntityVehicle(param.scene, targetPlayer, param.id, 0, pos, param.rot);
         } else {
             var gadget = new EntityGadget(param.scene, param.id, pos, param.rot);
-
-            // With a group and config given, attach the real SceneGadget from the map script so the
-            // gadget keeps its map identity - drop table, interaction, state - instead of spawning
-            // as a bare prop that cannot be opened.
             if (param.groupId != -1 && param.configId != -1) {
                 var group = SceneGroup.of(param.groupId).load(param.scene.getId());
                 if (group != null && group.gadgets != null) {
@@ -190,28 +165,17 @@ public final class SpawnCommand implements CommandHandler {
                     }
                 }
             }
-
-            // Builds the Chest/Worktop/GatherPoint content, without which it is not interactive.
             gadget.buildContent();
-
-            if (param.state != -1) {
-                gadget.setState(param.state);
-            }
+            if (param.state != -1) gadget.setState(param.state);
             entity = gadget;
         }
         return entity;
     }
 
     private void applyCommonParameters(GameEntity entity, SpawnParameters param) {
-        if (param.blockId != -1) {
-            entity.setBlockId(param.blockId);
-        }
-        if (param.groupId != -1) {
-            entity.setGroupId(param.groupId);
-        }
-        if (param.configId != -1) {
-            entity.setConfigId(param.configId);
-        }
+        if (param.blockId != -1) entity.setBlockId(param.blockId);
+        if (param.groupId != -1) entity.setGroupId(param.groupId);
+        if (param.configId != -1) entity.setConfigId(param.configId);
         if (param.maxHP != -1) {
             entity.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, param.maxHP);
             entity.setFightProperty(FightProperty.FIGHT_PROP_BASE_HP, param.maxHP);

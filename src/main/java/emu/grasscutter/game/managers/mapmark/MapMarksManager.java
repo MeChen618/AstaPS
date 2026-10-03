@@ -26,8 +26,7 @@ public class MapMarksManager extends BasePlayerManager {
         switch (op) {
             case Operation_ADD -> {
                 MapMark createMark = new MapMark(req.getMark());
-                // keep teleporting functionality on fishhook mark.
-                if (Configuration.GAME_OPTIONS.fishhookTeleport
+                if (Configuration.GAME.fishhookTeleport
                         && createMark.getMapMarkPointType() == MapMarkPointType.MapMarkPointType_FISH_POOL) {
                     this.teleport(player, createMark);
                     return;
@@ -45,9 +44,7 @@ public class MapMarksManager extends BasePlayerManager {
                 this.removeMapMark(deleteMark.getPosition());
             }
         }
-        if (op != Operation.Operation_GET) {
-            this.save();
-        }
+        if (op != Operation.Operation_GET) this.save();
         player.getSession().send(new PacketMarkMapRsp(this.getMapMarks()));
     }
 

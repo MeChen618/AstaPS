@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.inventory.GameItem;
@@ -21,7 +21,7 @@ public class PacketPlayerStoreNotify extends BasePacket {
         PlayerStoreNotify.Builder p =
                 PlayerStoreNotify.newBuilder()
                         .setStoreType(StoreType.StoreType_STORE_PACK)
-                        .setWeightLimit(GAME_OPTIONS.inventoryLimits.all);
+                        .setWeightLimit(GAME.inventoryLimits.all);
 
         for (GameItem item : player.getInventory()) {
             Item itemProto = item.toProto();
@@ -30,9 +30,6 @@ public class PacketPlayerStoreNotify extends BasePacket {
 
         this.setData(p.build());
 
-        // Official login burst near StoreWeightLimit: FLIJ Offer + empty companion.
-        // Delay must outlast cold-start onLogin. Use isConnected (not isActive): ACTIVE is only
-        // set at the very end of onLogin, and isActive()-at-1s previously skipped → TxtItemName.
         ArtifactTransmuterSystem.clearLoginOfferFlag(player.getUid());
         Grasscutter.getGameServer()
                 .getScheduler()
@@ -49,7 +46,10 @@ public class PacketPlayerStoreNotify extends BasePacket {
                                 }
                             } catch (Throwable t) {
                                 Grasscutter.getLogger()
-                                        .warn("ArtifactTransmuter login Offer failed uid={}: {}", player.getUid(), t.toString());
+                                        .warn(
+                                                "ArtifactTransmuter login Offer failed uid={}: {}",
+                                                player.getUid(),
+                                                t.toString());
                             }
                         },
                         8);

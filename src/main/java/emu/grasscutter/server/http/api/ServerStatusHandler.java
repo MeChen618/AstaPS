@@ -1,6 +1,6 @@
 package emu.grasscutter.server.http.api;
 
-import static emu.grasscutter.config.Configuration.ACCOUNT;
+import static emu.grasscutter.config.Configuration.GAME;
 import static emu.grasscutter.server.http.api.ApiHandler.ERROR_RET_CODE;
 import static emu.grasscutter.server.http.api.ApiHandler.SUCCESS_RET_CODE;
 
@@ -17,16 +17,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Serves the same figures the periodic status log prints.
- *
- * <p>Built on {@link ServerRuntimeSnapshot} rather than a monitoring class of its own, so the log
- * and this endpoint cannot drift apart and report different numbers for the same server.
- */
 public final class ServerStatusHandler {
     private ServerStatusHandler() {}
 
-    /** Player count from this process. A dispatch-only node has no game server and reports 0. */
     private static int onlinePlayers() {
         var gameServer = Grasscutter.getGameServer();
         return gameServer == null ? 0 : gameServer.getPlayers().size();
@@ -45,7 +38,7 @@ public final class ServerStatusHandler {
 
             var game = new LinkedHashMap<String, Object>();
             game.put("players", onlinePlayers());
-            game.put("maxPlayers", ACCOUNT.maxPlayer);
+            game.put("maxPlayers", GAME.account.maxPlayer);
             game.put("gameVersion", GameConstants.VERSION);
             game.put("uptime", runtime.uptimeText());
             game.put("startedAt", runtime.startedAtText());
@@ -79,7 +72,6 @@ public final class ServerStatusHandler {
 
             ctx.result(JsonUtils.encode(response));
         } catch (Throwable t) {
-            // Never let a monitoring endpoint take a thread down with it.
             Grasscutter.getLogger().warn("Failed to build the status response.", t);
             ctx.result("{\"retcode\":" + ERROR_RET_CODE + ",\"message\":\"internal error\"}");
         }
@@ -98,7 +90,6 @@ public final class ServerStatusHandler {
                             entry.put("poolSize", pool.currentPoolSize());
                             entry.put("maxThreads", pool.maximumPoolSize());
                             entry.put("queueSize", pool.queueSize());
-                            // -1 means unbounded.
                             entry.put("queueCapacity", pool.queueCapacity());
                             entry.put("submitted", pool.submittedTaskCount());
                             entry.put("completed", pool.completedTaskCount());
@@ -114,8 +105,7 @@ public final class ServerStatusHandler {
 
     public static void listRoutes(Context ctx) {
         ctx.contentType("text/plain; charset=UTF-8");
-        ctx.result(
-                """
+        ctx.result("""
                 /api/help
                 /api/status
                 /status/server

@@ -1,9 +1,9 @@
 package emu.grasscutter.server.packet.send;
 
-import static emu.grasscutter.config.Configuration.GAME_INFO;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.GameConstants;
-import emu.grasscutter.config.ConfigContainer.ConsoleAccount;
+import emu.grasscutter.config.GameConfig.ConsoleAccount;
 import emu.grasscutter.game.friends.Friendship;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
@@ -19,9 +19,8 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
         super(PacketOpcodes.GetPlayerFriendListRsp);
 
         GetPlayerFriendListRsp.Builder proto = GetPlayerFriendListRsp.newBuilder();
-        // Both are added, neither replaces the other: Chiori and DPS.
-        proto.addFriendList(buildBotFriend(GameConstants.SERVER_CONSOLE_UID, GAME_INFO.serverAccount));
-        proto.addFriendList(buildBotFriend(GameConstants.SERVER_DPS_UID, resolveDpsAccount()));
+        proto.addFriendList(buildBotFriend(GameConstants.SERVER_CONSOLE_UID, GAME.serverAccount));
+        proto.addFriendList(buildBotFriend(GameConstants.SERVER_DPS_UID, GAME.dpsAccount));
 
         for (Friendship friendship : player.getFriendsList().getFriends().values()) {
             proto.addFriendList(friendship.toProto());
@@ -30,31 +29,8 @@ public class PacketGetPlayerFriendListRsp extends BasePacket {
         this.setData(proto);
     }
 
-
-    private static ConsoleAccount resolveDpsAccount() {
-        try {
-            var field = GAME_INFO.getClass().getField("dpsAccount");
-            Object value = field.get(GAME_INFO);
-            if (value instanceof ConsoleAccount account) {
-                return account;
-            }
-        } catch (Throwable ignored) {
-        }
-        ConsoleAccount fallback = new ConsoleAccount();
-        fallback.nickName = "DPS";
-        fallback.signature = "Send dps30 to start, dpsstop to end early";
-        fallback.adventureRank = 60;
-        fallback.avatarId =
-                GAME_INFO.serverAccount != null ? GAME_INFO.serverAccount.avatarId : 10000007;
-        fallback.nameCardId =
-                GAME_INFO.serverAccount != null ? GAME_INFO.serverAccount.nameCardId : 210001;
-        return fallback;
-    }
-
     private static FriendBrief buildBotFriend(int uid, ConsoleAccount account) {
-        if (account == null) {
-            account = new ConsoleAccount();
-        }
+        if (account == null) account = new ConsoleAccount();
         return FriendBrief.newBuilder()
                 .setUid(uid)
                 .setNickname(account.nickName)
