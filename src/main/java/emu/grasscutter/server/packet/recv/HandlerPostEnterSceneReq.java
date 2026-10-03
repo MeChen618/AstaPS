@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.game.ability.EscoffierSkillCookHelper;
 import emu.grasscutter.game.player.EntryNotice;
@@ -25,9 +25,8 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         var questManager = player.getQuestManager();
         boolean freshPlayerBootstrap = BornIntroGate.isFreshPlayerBootstrap(session);
 
-        // Both native-selection and automatic/skip-intro births converge here. The first
-        // PostEnterSceneRsp must reach the client before Quest 351 starts so its quest actors are
-        // created against a ready playable scene.
+        // Both native-selection and automatic births converge here. The first PostEnterSceneRsp
+        // must reach the client before Quest 351 starts so its actors see a ready playable scene.
         if (freshPlayerBootstrap) {
             session.send(new PacketPostEnterSceneRsp(player));
             BornIntroGate.finishOnSceneReady(session);
@@ -47,9 +46,7 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         }
         questManager.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE, scene.getPrevScene());
 
-        if (!freshPlayerBootstrap) {
-            session.send(new PacketPostEnterSceneRsp(player));
-        }
+        if (!freshPlayerBootstrap) session.send(new PacketPostEnterSceneRsp(player));
 
         EscoffierSkillCookHelper.syncToClient(player);
         EntryNotice.sendOnce(player);
@@ -63,8 +60,8 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
 
     /** Fired here rather than at login: a cutscene sent before the scene is up is discarded. */
     private void playOpeningCutscene(emu.grasscutter.game.player.Player player) {
-        int cutscene = GAME_OPTIONS.firstLoginCutscene;
-        if (GAME_OPTIONS.disableCutscenes || cutscene <= 0 || player.isPlayedFirstLoginCutscene()) return;
+        int cutscene = GAME.firstLoginCutscene;
+        if (GAME.disableCutscenes || cutscene <= 0 || player.isPlayedFirstLoginCutscene()) return;
 
         player.setPlayedFirstLoginCutscene(true);
         player.save();
