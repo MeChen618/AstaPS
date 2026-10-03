@@ -1,6 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.player.Player;
@@ -22,11 +22,10 @@ public class HandlerPlayerLoginReq extends PacketHandler {
         }
 
         Player player = session.getPlayer();
-        var intro = GAME_OPTIONS.newAccountIntro;
+        var intro = GAME.newAccountIntro;
         boolean freshAccount = player.getAvatars().getAvatarCount() == 0;
-        boolean skipIntro = freshAccount && intro.skip;
 
-        if (freshAccount && intro.enabled && !skipIntro) {
+        if (freshAccount && intro.enabled) {
             // Native selection keeps the account unborn until SetPlayerBornDataReq. World/scene
             // initialization therefore remains outside this login request.
             session.setState(SessionState.PICKING_CHARACTER);
@@ -49,7 +48,7 @@ public class HandlerPlayerLoginReq extends PacketHandler {
         boolean autoBornNow = false;
         if (freshAccount) {
             int avatarId = BornDataHelper.resolveAutomaticAvatarId();
-            String nickname = BornDataHelper.resolveAutomaticNickname();
+            String nickname = BornDataHelper.resolveAutomaticNickname(player);
             if (!BornDataHelper.completeBirth(player, avatarId, nickname)) {
                 Grasscutter.getLogger()
                         .error(
@@ -67,11 +66,9 @@ public class HandlerPlayerLoginReq extends PacketHandler {
 
             Grasscutter.getLogger()
                     .info(
-                            "[born-flow] uid={} mode=auto avatar={} skipIntro={} introEnabled={}; visuals bypassed, scene-ready quest bootstrap preserved.",
+                            "[born-flow] uid={} mode=auto avatar={}; native intro disabled, scene-ready quest bootstrap preserved.",
                             player.getUid(),
-                            avatarId,
-                            skipIntro,
-                            intro.enabled);
+                            avatarId);
         } else {
             BornDataHelper.ensureMainCharacter(player);
         }
