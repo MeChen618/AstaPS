@@ -1,6 +1,6 @@
 package emu.grasscutter.game.shop;
 
-import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
+import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.*;
@@ -13,8 +13,8 @@ import java.util.*;
 import lombok.Getter;
 
 public class ShopSystem extends BaseGameSystem {
-    private static final int REFRESH_HOUR = 4; // In GMT+8 server
-    private static final String TIME_ZONE = "Asia/Shanghai"; // GMT+8 Timezone
+    private static final int REFRESH_HOUR = 4;
+    private static final String TIME_ZONE = "Asia/Shanghai";
     private final Int2ObjectMap<List<ShopInfo>> shopData;
     private final Int2ObjectMap<List<ItemParamData>> shopChestData;
 
@@ -39,13 +39,8 @@ public class ShopSystem extends BaseGameSystem {
         };
     }
 
-    public Int2ObjectMap<List<ShopInfo>> getShopData() {
-        return shopData;
-    }
-
-    public List<ItemParamData> getShopChestData(int chestId) {
-        return this.shopChestData.get(chestId);
-    }
+    public Int2ObjectMap<List<ShopInfo>> getShopData() { return shopData; }
+    public List<ItemParamData> getShopChestData(int chestId) { return this.shopChestData.get(chestId); }
 
     private void loadShop() {
         getShopData().clear();
@@ -61,20 +56,14 @@ public class ShopSystem extends BaseGameSystem {
                 Grasscutter.getLogger().error("Unable to load shop data. Shop data size is 0.");
             }
 
-            if (GAME_OPTIONS.enableShopItems) {
-                // Shop.json is the curated source and every one of its shops also exists in the
-                // excel data, so appending there would list those items twice. Fill only the
-                // shops it does not define.
+            if (GAME.enableShopItems) {
                 GameData.getShopGoodsDataEntries()
                         .forEach(
                                 (k, v) -> {
                                     int shopId = k.intValue();
                                     if (getShopData().containsKey(shopId)) return;
-
                                     var items = new ArrayList<ShopInfo>(v.size());
-                                    for (ShopGoodsData sgd : v) {
-                                        items.add(new ShopInfo(sgd));
-                                    }
+                                    for (ShopGoodsData sgd : v) items.add(new ShopInfo(sgd));
                                     getShopData().put(shopId, items);
                                 });
             }
@@ -95,9 +84,7 @@ public class ShopSystem extends BaseGameSystem {
                         var list = new ArrayList<ItemParamData>(entries.length);
                         for (var entry : entries) {
                             var idAndCount = entry.split(":");
-                            int id = Integer.parseInt(idAndCount[0]);
-                            int count = Integer.parseInt(idAndCount[1]);
-                            list.add(new ItemParamData(id, count));
+                            list.add(new ItemParamData(Integer.parseInt(idAndCount[0]), Integer.parseInt(idAndCount[1])));
                         }
                         this.shopChestData.put((int) chestId, list);
                     });
@@ -113,15 +100,9 @@ public class ShopSystem extends BaseGameSystem {
         loadArtifactShop();
     }
 
-    /**
-     * Lists the 5-star artifacts. Called on its own after the resources finish loading, because the
-     * shop system is built before them and has no item data to work from yet.
-     */
     public synchronized void loadArtifactShop() {
         this.artifactShop.install(getShopData());
     }
 
-    public GameServer getServer() {
-        return server;
-    }
+    public GameServer getServer() { return server; }
 }
