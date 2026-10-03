@@ -3,7 +3,7 @@ package emu.grasscutter.game.shop;
 import static emu.grasscutter.config.Configuration.GAME;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.config.ConfigContainer.GameOptions.ArtifactShopOptions;
+import emu.grasscutter.config.GameConfig.ArtifactShopOptions;
 import emu.grasscutter.data.*;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
