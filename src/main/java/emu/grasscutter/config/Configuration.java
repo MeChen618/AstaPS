@@ -6,7 +6,7 @@ import emu.grasscutter.utils.FileUtils;
 import java.nio.file.Path;
 import java.util.Locale;
 
-/** Shared configuration access. New gameplay code should read {@link #GAME} directly. */
+/** Shared configuration access. */
 public final class Configuration extends ConfigContainer {
     private Configuration() {}
 
@@ -25,17 +25,15 @@ public final class Configuration extends ConfigContainer {
     public static final ConfigContainer.Policies HTTP_POLICIES = config.server.http.policies;
     public static final ConfigContainer.Files HTTP_STATIC_FILES = config.server.http.files;
 
-    /** Root of game.json. */
+    /** The sole runtime source for player-facing/gameplay settings. */
     public static final GameConfig GAME = GameConfig.get();
 
-    public static final ConfigContainer.Account ACCOUNT = GAME.account;
-    public static final ConfigContainer.GameOptions.InventoryLimits INVENTORY_LIMITS =
+    /* Temporary source-compatible names; all point to GAME and hold no second state. */
+    @Deprecated public static final ConfigContainer.Account ACCOUNT = GAME.account;
+    @Deprecated public static final ConfigContainer.GameOptions GAME_OPTIONS = GAME;
+    @Deprecated public static final ConfigContainer.GameOptions.InventoryLimits INVENTORY_LIMITS =
             GAME.inventoryLimits;
-    public static final ConfigContainer.GameOptions.HandbookOptions HANDBOOK = GAME.handbook;
-
-    /** Compatibility alias while older callers are moved to GAME. */
-    @Deprecated
-    public static final ConfigContainer.GameOptions GAME_OPTIONS = config.server.game.gameOptions;
+    @Deprecated public static final ConfigContainer.GameOptions.HandbookOptions HANDBOOK = GAME.handbook;
 
     public static final boolean FAST_REQUIRE = config.server.fastRequire;
     private static final String DATA_FOLDER = config.folderStructure.data;
