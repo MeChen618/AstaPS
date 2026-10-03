@@ -2,8 +2,7 @@ package emu.grasscutter.game.mail;
 
 import static emu.grasscutter.config.Configuration.GAME;
 
-import emu.grasscutter.config.ConfigContainer.GameOptions.BirthdayMailOptions;
-import emu.grasscutter.config.ConfigContainer.GameOptions.BirthdayMailOptions.GiftItem;
+import emu.grasscutter.config.GameConfig.BirthdayMailOptions.GiftItem;
 import emu.grasscutter.game.mail.Mail.MailContent;
 import emu.grasscutter.game.mail.Mail.MailItem;
 import emu.grasscutter.game.player.Player;
