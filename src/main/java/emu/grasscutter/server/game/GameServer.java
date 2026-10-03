@@ -35,8 +35,8 @@ import emu.grasscutter.game.world.WorldDataSystem;
 import emu.grasscutter.net.packet.PacketHandler;
 import emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture;
 import emu.grasscutter.net.proto.SocialDetailOuterClass.SocialDetail;
-import emu.grasscutter.server.dispatch.DispatchClient;
 import emu.grasscutter.server.ServerWatchdog;
+import emu.grasscutter.server.dispatch.DispatchClient;
 import emu.grasscutter.server.event.game.ServerTickEvent;
 import emu.grasscutter.server.event.internal.ServerStartEvent;
 import emu.grasscutter.server.event.internal.ServerStopEvent;
@@ -55,7 +55,6 @@ import org.jetbrains.annotations.*;
 
 @Getter
 public final class GameServer extends KcpServer implements Iterable<Player> {
-    // Game server base
     private final InetSocketAddress address;
     private final GameServerPacketHandler packetHandler;
     private final Map<Integer, Player> players;
@@ -64,7 +63,6 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
 
     @Setter private DispatchClient dispatchClient;
 
-    // Server systems
     private final InventorySystem inventorySystem;
     private final GachaSystem gachaSystem;
     private final ShopSystem shopSystem;
@@ -82,15 +80,10 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     private final QuestSystem questSystem;
     private final TalkSystem talkSystem;
 
-    // Extra
     private final ServerTaskScheduler scheduler;
     private final TaskMap taskMap;
-
     private ChatSystemHandler chatManager;
 
-    /**
-     * @return The URI for the dispatch server.
-     */
     @SneakyThrows
     public static URI getDispatchUrl() {
         return new URI(DISPATCH_INFO.dispatchUrl);
@@ -101,19 +94,15 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public GameServer(InetSocketAddress address) {
-        // Check if we are in dispatch only mode.
         if (Grasscutter.getRunMode() == ServerRunMode.DISPATCH_ONLY) {
-            // Set all the systems to null.
             this.scheduler = null;
             this.taskMap = null;
-
             this.address = null;
             this.packetHandler = null;
             this.dispatchClient = null;
             this.players = null;
             this.worlds = null;
             this.homeWorlds = null;
-
             this.inventorySystem = null;
             this.gachaSystem = null;
             this.shopSystem = null;
@@ -138,7 +127,7 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         channelConfig.setMtu(1400);
         channelConfig.setSndwnd(256);
         channelConfig.setRcvwnd(256);
-        channelConfig.setTimeoutMillis(30 * 1000); // 30s
+        channelConfig.setTimeoutMillis(30 * 1000);
         channelConfig.setUseConvChannel(true);
         channelConfig.setAckNoDelay(false);
 
@@ -150,19 +139,15 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         CookingCompoundManager.initialize();
         CombineManger.initialize();
 
-        // Game Server base
         this.address = address;
         this.packetHandler = new GameServerPacketHandler(PacketHandler.class);
         this.dispatchClient = new DispatchClient(GameServer.getDispatchUrl());
         this.players = new ConcurrentHashMap<>();
         this.worlds = Collections.synchronizedSet(new HashSet<>());
         this.homeWorlds = Int2ObjectMaps.synchronize(new Int2ObjectOpenHashMap<>());
-
-        // Extra
         this.scheduler = new ServerTaskScheduler();
         this.taskMap = new TaskMap(true);
 
-        // Create game systems
         this.inventorySystem = new InventorySystem(this);
         this.gachaSystem = new GachaSystem(this);
         this.shopSystem = new ShopSystem(this);
@@ -179,19 +164,12 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         this.announcementSystem = new AnnouncementSystem(this);
         this.questSystem = new QuestSystem(this);
         this.talkSystem = new TalkSystem(this);
-
-        // Chata manager
         this.chatManager = new ChatSystem(this);
     }
 
     private static InetSocketAddress getAdapterInetSocketAddress() {
-        InetSocketAddress inetSocketAddress;
-        if (GAME_INFO.bindAddress.equals("")) {
-            inetSocketAddress = new InetSocketAddress(GAME_INFO.bindPort);
-        } else {
-            inetSocketAddress = new InetSocketAddress(GAME_INFO.bindAddress, GAME_INFO.bindPort);
-        }
-        return inetSocketAddress;
+        if (GAME_INFO.bindAddress.equals("")) return new InetSocketAddress(GAME_INFO.bindPort);
+        return new InetSocketAddress(GAME_INFO.bindAddress, GAME_INFO.bindPort);
     }
 
     @Deprecated
@@ -221,23 +199,10 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     @Nullable public Player getPlayerByUid(int id, boolean allowOfflinePlayers) {
-        // Console / bot accounts are not real players
-        if (GameConstants.isServerBotUid(id)) {
-            return null;
-        }
-
-        // Get from online players
+        if (GameConstants.isServerBotUid(id)) return null;
         Player player = this.getPlayers().get(id);
-
-        if (!allowOfflinePlayers) {
-            return player;
-        }
-
-        // Check database if character isnt here
-        if (player == null) {
-            player = DatabaseHelper.getPlayerByUid(id);
-        }
-
+        if (!allowOfflinePlayers) return player;
+        if (player == null) player = DatabaseHelper.getPlayerByUid(id);
         return player;
     }
 
@@ -249,12 +214,6 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         return playerOpt.orElse(null);
     }
 
-    /**
-     * Tries to find a player with the matching IP address.
-     *
-     * @param ipAddress The IP address. This should just be numbers without a port.
-     * @return The player, or null if one could not be found.
-     */
     public Player getPlayerByIpAddress(String ipAddress) {
         return this.getPlayers().values().stream()
                 .map(Player::getSession)
@@ -268,9 +227,9 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     public SocialDetail.Builder getSocialDetailByUid(int id) {
         if (GameConstants.isServerBotUid(id)) {
             var serverAccount =
-                    id == GameConstants.SERVER_DPS_UID && GAME_INFO.dpsAccount != null
-                            ? GAME_INFO.dpsAccount
-                            : GAME_INFO.serverAccount;
+                    id == GameConstants.SERVER_DPS_UID && GAME.dpsAccount != null
+                            ? GAME.dpsAccount
+                            : GAME.serverAccount;
             return SocialDetail.newBuilder()
                     .setUid(id)
                     .setProfilePicture(ProfilePicture.newBuilder().setAvatarId(serverAccount.avatarId))
@@ -284,13 +243,8 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
                     .setFriendEnterHomeOptionValue(0);
         }
 
-        // Get from online players
         Player player = this.getPlayerByUid(id, true);
-
-        if (player == null) {
-            return null;
-        }
-
+        if (player == null) return null;
         return player.getSocialDetail();
     }
 
@@ -299,40 +253,22 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
                 getPlayers().values().stream()
                         .filter(player -> player.getAccount().getUsername().equals(username))
                         .findFirst();
-        if (playerOpt.isPresent()) {
-            return playerOpt.get().getAccount();
-        }
+        if (playerOpt.isPresent()) return playerOpt.get().getAccount();
         return DatabaseHelper.getAccountByName(username);
     }
 
     public synchronized void onTick() {
-        // Nothing that happens in a tick can be recorded while the database is unreachable, and
-        // every save it would queue just piles up behind a connection that is not coming back.
-        // The watchdog clears this as soon as the database answers again.
         if (ServerWatchdog.isDatabaseDown()) return;
 
         var tickStart = Instant.now();
-
-        // Each of these is guarded on its own. One world or one player throwing used to abandon the
-        // whole tick, so everybody else's world stopped moving for reasons that had nothing to do
-        // with them - and the scheduler at the end never ran at all.
-        // Lock the home world cache before the world set. Logging in takes them in that order
-        // (computeIfAbsent builds a HomeWorld, which registers itself in the world set), so taking
-        // the world set first here deadlocked the tick against a login and froze the server.
         synchronized (this.homeWorlds) {
             this.worlds.removeIf(
                     world -> {
                         try {
                             boolean shouldRemove = world.onTick();
                             if (shouldRemove && world instanceof HomeWorld homeWorld) {
-                                // Home worlds are indexed separately from the world tick set.
-                                // Remove the same instance from that cache, otherwise the host
-                                // player and every loaded home scene stay strongly reachable after
-                                // the last player leaves.
                                 Player host = homeWorld.getHost();
-                                if (host != null) {
-                                    this.homeWorlds.remove(host.getUid(), homeWorld);
-                                }
+                                if (host != null) this.homeWorlds.remove(host.getUid(), homeWorld);
                             }
                             return shouldRemove;
                         } catch (Throwable e) {
@@ -359,9 +295,7 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
             Grasscutter.getLogger().error("A scheduled task threw.", e);
         }
 
-        // Call server tick event.
-        ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
-        event.call();
+        new ServerTickEvent(tickStart, Instant.now()).call();
     }
 
     public void registerWorld(World world) {
@@ -369,29 +303,21 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public void deregisterWorld(World world) {
-        if (world == null) {
-            return;
-        }
+        if (world == null) return;
         this.worlds.remove(world);
         if (world instanceof HomeWorld homeWorld) {
             Player host = homeWorld.getHost();
-            if (host != null) {
-                this.homeWorlds.remove(host.getUid(), homeWorld);
-            }
+            if (host != null) this.homeWorlds.remove(host.getUid(), homeWorld);
         }
-        world.save(); // Save the player's world
+        world.save();
     }
 
     public HomeWorld getHomeWorldOrCreate(Player owner) {
-        return this.getHomeWorlds()
-                .computeIfAbsent(owner.getUid(), (uid) -> new HomeWorld(this, owner));
+        return this.getHomeWorlds().computeIfAbsent(owner.getUid(), uid -> new HomeWorld(this, owner));
     }
 
-    /** Removes an empty home world only when it is still the cached instance for its host. */
     public void releaseHomeWorldIfEmpty(HomeWorld homeWorld) {
-        if (homeWorld == null || homeWorld.getPlayerCount() != 0) {
-            return;
-        }
+        if (homeWorld == null || homeWorld.getPlayerCount() != 0) return;
         Player host = homeWorld.getHost();
         if (host != null && this.homeWorlds.remove(host.getUid(), homeWorld)) {
             this.worlds.remove(homeWorld);
@@ -399,17 +325,9 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public void start() {
-        if (Grasscutter.getRunMode() == ServerRunMode.GAME_ONLY) {
-            // Connect to dispatch server.
-            this.dispatchClient.connect();
-        }
-
-        // Settle which Spiral Abyss rotation is live now that the resources are in. Doing it here
-        // rather than on the first abyss screen means a resource set that cannot build any rotation
-        // says so at boot, not to whoever opens the abyss first.
+        if (Grasscutter.getRunMode() == ServerRunMode.GAME_ONLY) this.dispatchClient.connect();
         this.announceTowerRotation();
 
-        // Schedule game loop.
         Timer gameLoop = new Timer();
         gameLoop.scheduleAtFixedRate(
                 new TimerTask() {
@@ -418,8 +336,6 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
                         try {
                             onTick();
                         } catch (Throwable e) {
-                            // A Timer thread dies on anything it does not catch, and it is the only
-                            // thing driving the world - so the game would simply stop, quietly.
                             Grasscutter.getLogger().error(translate("messages.game.game_update_error"), e);
                         }
                     }
@@ -429,8 +345,7 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         Grasscutter.getLogger().info(translate("messages.status.free_software"));
         Grasscutter.getLogger()
                 .info(translate("messages.game.address_bind", GAME_INFO.accessAddress, address.getPort()));
-        ServerStartEvent event = new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
-        event.call();
+        new ServerStartEvent(ServerEvent.Type.GAME, OffsetDateTime.now()).call();
     }
 
     private void announceTowerRotation() {
@@ -451,22 +366,15 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     }
 
     public void onServerShutdown() {
-        var event = new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now());
-        event.call();
-
-        // Save players & the world.
+        new ServerStopEvent(ServerEvent.Type.GAME, OffsetDateTime.now()).call();
         this.getPlayers().forEach((uid, player) -> player.getSession().close());
         this.getWorlds().forEach(World::save);
-
-        Utils.sleep(1000L); // Wait 1 second for operations to finish.
-        this.stop(); // Stop the server.
+        Utils.sleep(1000L);
+        this.stop();
 
         try {
             var threadPool = GameSessionManager.getLogicThread();
-
-            // Shutdown network thread.
             threadPool.shutdownGracefully();
-            // Wait for the network thread to finish.
             if (!threadPool.awaitTermination(5, TimeUnit.SECONDS)) {
                 Grasscutter.getLogger().error("Logic thread did not terminate!");
             }
