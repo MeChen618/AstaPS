@@ -12,15 +12,9 @@ import lombok.NoArgsConstructor;
 
 /** Runtime/deployment configuration stored in {@code config.json}. */
 public class ConfigContainer {
-    /*
-     * Configuration changes:
-     * Version 16 - layered Ley Line rates.
-     * Version 17 - fixed exploration rewards were added to gameOptions.
-     * Version 18 - new-account default avatar/nickname and intro skip were added.
-     * Version 19 - player/gameplay settings moved to game.json.
-     */
+    /* Version 16 moves all player-facing/gameplay settings to game.json. */
     private static int version() {
-        return 19;
+        return 16;
     }
 
     private static ThreadPoolOptions mergeThreadPoolDefaults(ThreadPoolOptions existing) {
@@ -32,23 +26,20 @@ public class ConfigContainer {
         return merged;
     }
 
-    /** Migrates gameplay configuration first, then normalizes config.json itself. */
+    /** Migrates gameplay configuration, then rewrites config.json in its runtime-only shape. */
     public static void updateConfig() {
         JsonObject raw = null;
-        boolean legacy = false;
         try {
             raw = JsonUtils.loadToClass(Grasscutter.configFile.toPath(), JsonObject.class);
-            legacy = raw == null || !raw.has("version");
-            if (legacy) Grasscutter.getLogger().info("Updating legacy config...");
-            GameConfig.loadAndBind(raw, config);
+            GameConfig.load(raw);
         } catch (Exception exception) {
-            Grasscutter.getLogger().error("Failed to load gameplay configuration.", exception);
+            Grasscutter.getLogger().error("Failed to load configuration.", exception);
             System.exit(1);
             return;
         }
 
         int latest = version();
-        if (!legacy && config.version == latest) return;
+        if (config.version == latest) return;
 
         config.server.threadPools = mergeThreadPoolDefaults(config.server.threadPools);
         config.version = latest;
@@ -58,10 +49,6 @@ public class ConfigContainer {
     public Structure folderStructure = new Structure();
     public Database databaseInfo = new Database();
     public Language language = new Language();
-
-    /** Compatibility view backed by game.json; transient so it never returns to config.json. */
-    public transient Account account = new Account();
-
     public Server server = new Server();
     public int version = version();
 
@@ -137,6 +124,7 @@ public class ConfigContainer {
         public String document = "EN";
     }
 
+    /** Schema retained for game.json and legacy-config migration. */
     public static class Account {
         public boolean autoCreate = false;
         public boolean EXPERIMENTAL_RealPassword = false;
@@ -156,6 +144,7 @@ public class ConfigContainer {
         public Files files = new Files();
     }
 
+    /** Network/process settings for the game server. Gameplay settings live in GameConfig. */
     public static class Game {
         public WatchdogOptions watchdog = new WatchdogOptions();
         public String bindAddress = "0.0.0.0";
@@ -173,13 +162,6 @@ public class ConfigContainer {
         public boolean isShowPacketPayload = false;
         public boolean isShowLoopPackets = false;
         public boolean cacheSceneEntitiesEveryRun = false;
-
-        /** Legacy accessors bound to GameConfig at startup; none are serialized to config.json. */
-        public transient GameOptions gameOptions = new GameOptions();
-        public transient JoinOptions joinOptions = new JoinOptions();
-        public transient ConsoleAccount serverAccount = new ConsoleAccount();
-        public transient ConsoleAccount dpsAccount = defaultDpsAccount();
-        public transient VisionOptions[] visionOptions = defaultVisionOptions();
     }
 
     public static class Dispatch {
@@ -216,10 +198,7 @@ public class ConfigContainer {
         }
     }
 
-    /**
-     * Legacy in-memory shape for old callers. Persistent gameplay configuration lives in GameConfig;
-     * GameConfig.bindLegacyViews keeps these values synchronized at startup.
-     */
+    /** Schema for GameConfig; there is no GameOptions instance in ConfigContainer. */
     public static class GameOptions {
         public InventoryLimits inventoryLimits = new InventoryLimits();
         public AvatarLimits avatarLimits = new AvatarLimits();
@@ -228,19 +207,12 @@ public class ConfigContainer {
         public boolean watchGachaConfig = false;
         public boolean enableShopItems = false;
         public ArtifactShopOptions artifactShop = new ArtifactShopOptions();
-
-        /** Compatibility-only view for callers predating game.json.rewards. */
-        public ExplorationRewardOptions explorationRewards = new ExplorationRewardOptions();
-
         public boolean staminaUsage = true;
         public boolean energyUsage = true;
         public boolean fishhookTeleport = true;
         public boolean trialCostumes = false;
-        public int defaultAvatarId = 10000007;
-        public String defaultNickname = "Traveler";
         public int firstLoginCutscene = 0;
         public boolean disableCutscenes = false;
-        public boolean forceFinishMainQuestsOnLogin = false;
         public NewAccountIntro newAccountIntro = new NewAccountIntro();
 
         @SerializedName(value = "questing", alternate = "questOptions")
@@ -261,82 +233,14 @@ public class ConfigContainer {
             public int costItemId = 0;
             public int costItemCount = 0;
             public int buyLimit = 0;
+            public int artifactLevel = 20;
             public double critWeight = 8;
             public double damageWeight = 3;
             public double highRollBias = 3;
         }
 
-        public static class ExplorationRewardOptions {
-            public UnlockReward waypoint = new UnlockReward(5, 10, 0, 0, 0);
-            public UnlockReward statue = new UnlockReward(5, 50, 0, 0, 0);
-            public ChestRewards chests = new ChestRewards();
-
-            public static class UnlockReward {
-                public int primogems;
-                public int adventureExp;
-                public int fragileResin;
-                public int heroWit;
-                public int mysticEnhancementOre;
-
-                public UnlockReward() {}
-
-                public UnlockReward(
-                        int primogems,
-                        int adventureExp,
-                        int fragileResin,
-                        int heroWit,
-                        int mysticEnhancementOre) {
-                    this.primogems = primogems;
-                    this.adventureExp = adventureExp;
-                    this.fragileResin = fragileResin;
-                    this.heroWit = heroWit;
-                    this.mysticEnhancementOre = mysticEnhancementOre;
-                }
-            }
-
-            public static class ChestRewards {
-                public ChestReward common = new ChestReward(0, 10, 1, 500, 1, 1, 0, 0);
-                public ChestReward exquisite = new ChestReward(2, 20, 2, 1000, 2, 2, 1, 0);
-                public ChestReward precious = new ChestReward(5, 30, 3, 1500, 3, 2, 2, 1);
-                public ChestReward luxurious = new ChestReward(10, 30, 4, 2000, 4, 2, 3, 1);
-            }
-
-            public static class ChestReward {
-                public int primogems;
-                public int adventureExp;
-                public int sigil;
-                public int mora;
-                public int fineEnhancementOre;
-                public int wanderersAdvice;
-                public int adventurersExperience;
-                public int herosWit;
-
-                public ChestReward() {}
-
-                public ChestReward(
-                        int primogems,
-                        int adventureExp,
-                        int sigil,
-                        int mora,
-                        int fineEnhancementOre,
-                        int wanderersAdvice,
-                        int adventurersExperience,
-                        int herosWit) {
-                    this.primogems = primogems;
-                    this.adventureExp = adventureExp;
-                    this.sigil = sigil;
-                    this.mora = mora;
-                    this.fineEnhancementOre = fineEnhancementOre;
-                    this.wanderersAdvice = wanderersAdvice;
-                    this.adventurersExperience = adventurersExperience;
-                    this.herosWit = herosWit;
-                }
-            }
-        }
-
         public static class NewAccountIntro {
             public boolean enabled = false;
-            public boolean skip = false;
             public int doSetPlayerBornDataNotify = 0;
             public int setPlayerBornDataRsp = 0;
             public int fallbackSeconds = 15;
@@ -356,68 +260,8 @@ public class ConfigContainer {
         }
 
         public static class Rates {
-            public float adventureExp = 1.5f;
-            public float mora = 2.0f;
-
-            @com.google.gson.annotations.JsonAdapter(LeyLineRatesAdapter.class)
-            public LeyLineRates leyLines = new LeyLineRates();
-        }
-
-        public static class LeyLineRates {
-            public float global = 2.0f;
+            public float adventureExp = 1.0f;
             public float mora = 1.0f;
-            public float experienceBooks = 1.0f;
-        }
-
-        public static class LeyLineRatesAdapter
-                implements com.google.gson.JsonDeserializer<LeyLineRates>,
-                        com.google.gson.JsonSerializer<LeyLineRates> {
-            @Override
-            public LeyLineRates deserialize(
-                    com.google.gson.JsonElement json,
-                    java.lang.reflect.Type typeOfT,
-                    com.google.gson.JsonDeserializationContext context) {
-                var rates = new LeyLineRates();
-                if (json == null || json.isJsonNull()) return rates;
-                if (json.isJsonPrimitive()) {
-                    rates.global = json.getAsFloat();
-                    return rates;
-                }
-
-                var object = json.getAsJsonObject();
-                if (object.has("global")) {
-                    rates.global = object.get("global").getAsFloat();
-                    if (object.has("mora")) rates.mora = object.get("mora").getAsFloat();
-                    if (object.has("experienceBooks")) {
-                        rates.experienceBooks = object.get("experienceBooks").getAsFloat();
-                    } else if (object.has("exp")) {
-                        rates.experienceBooks = object.get("exp").getAsFloat();
-                    }
-                    return rates;
-                }
-
-                rates.global = 1.0f;
-                if (object.has("mora")) rates.mora = object.get("mora").getAsFloat();
-                if (object.has("experienceBooks")) {
-                    rates.experienceBooks = object.get("experienceBooks").getAsFloat();
-                } else if (object.has("exp")) {
-                    rates.experienceBooks = object.get("exp").getAsFloat();
-                }
-                return rates;
-            }
-
-            @Override
-            public com.google.gson.JsonElement serialize(
-                    LeyLineRates src,
-                    java.lang.reflect.Type typeOfSrc,
-                    com.google.gson.JsonSerializationContext context) {
-                if (src == null) return com.google.gson.JsonNull.INSTANCE;
-                var object = new JsonObject();
-                object.addProperty("global", src.global);
-                object.addProperty("mora", src.mora);
-                object.addProperty("experienceBooks", src.experienceBooks);
-                return object;
-            }
         }
 
         public static class TowerOptions {
@@ -428,9 +272,9 @@ public class ConfigContainer {
         }
 
         public static class ResinOptions {
-            public boolean resinUsage = true;
-            public int cap = 300;
-            public int rechargeTime = 360;
+            public boolean resinUsage = false;
+            public int cap = 1600;
+            public int rechargeTime = 180;
         }
 
         public static class Questing {
@@ -445,7 +289,6 @@ public class ConfigContainer {
             public String gradientTo = "#FF1493";
             public int cmdId = 0;
             public int payloadField = 0;
-            public String[] sweep = {};
         }
 
         public static class BirthdayMailOptions {
@@ -491,6 +334,7 @@ public class ConfigContainer {
         }
     }
 
+    /** Schema retained for game.json. */
     public static class VisionOptions {
         public String name;
         public int visionRange;
@@ -505,6 +349,7 @@ public class ConfigContainer {
         }
     }
 
+    /** Schema retained for game.json. */
     public static class JoinOptions {
         public int[] welcomeEmotes = {2007, 1002, 4010};
         public String welcomeMessage = "Welcome to the Chiori test server";
@@ -518,6 +363,7 @@ public class ConfigContainer {
         }
     }
 
+    /** Schema retained for game.json. */
     public static class ConsoleAccount {
         public int avatarId = 10000007;
         public int nameCardId = 210001;
@@ -527,28 +373,8 @@ public class ConfigContainer {
         public String signature = "Welcome to LunaGC";
     }
 
-    private static ConsoleAccount defaultDpsAccount() {
-        ConsoleAccount account = new ConsoleAccount();
-        account.nickName = "DPS";
-        account.signature = "Send dps30 to start, dpsstop to end early";
-        account.adventureRank = 60;
-        return account;
-    }
-
-    private static VisionOptions[] defaultVisionOptions() {
-        return new VisionOptions[] {
-            new VisionOptions("VISION_LEVEL_NORMAL", 80, 20),
-            new VisionOptions("VISION_LEVEL_LITTLE_REMOTE", 16, 40),
-            new VisionOptions("VISION_LEVEL_REMOTE", 1000, 250),
-            new VisionOptions("VISION_LEVEL_SUPER", 4000, 1000),
-            new VisionOptions("VISION_LEVEL_NEARBY", 40, 20),
-            new VisionOptions("VISION_LEVEL_SUPER_NEARBY", 20, 20)
-        };
-    }
-
     public static class Files {
         public String indexFile = "./index.html";
-        public String errorFile = "./404.html";
     }
 
     @NoArgsConstructor
