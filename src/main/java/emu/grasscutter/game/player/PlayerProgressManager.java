@@ -317,17 +317,21 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                 }
             }
 
-            // Starter-statue talk (NPC 1201 / talk 31141) also needs quest 35205 finished.
-            var q = this.player.getQuestManager().getQuestById(35205);
-            if (q == null) {
-                this.player.getQuestManager().addQuest(35205);
-                q = this.player.getQuestManager().getQuestById(35205);
-            }
-            if (q != null && q.getState() != QuestState.QUEST_STATE_FINISHED) {
-                q.setState(QuestState.QUEST_STATE_FINISHED);
-                q.setFinishTime(emu.grasscutter.utils.Utils.getCurrentSeconds());
-                q.save();
-                finished++;
+            // Only bypass the starter-statue quest when the normal quest runtime is unavailable.
+            // Pre-finishing 35205 during normal questing materializes main quest 352 before the
+            // 351 -> 352 handoff and leaves its opening subquest unstarted.
+            if (shouldBypassStarterStatueQuest()) {
+                var q = this.player.getQuestManager().getQuestById(35205);
+                if (q == null) {
+                    this.player.getQuestManager().addQuest(35205);
+                    q = this.player.getQuestManager().getQuestById(35205);
+                }
+                if (q != null && q.getState() != QuestState.QUEST_STATE_FINISHED) {
+                    q.setState(QuestState.QUEST_STATE_FINISHED);
+                    q.setFinishTime(emu.grasscutter.utils.Utils.getCurrentSeconds());
+                    q.save();
+                    finished++;
+                }
             }
 
             // Forge EVERY area Talk gate - locked pillars auto-unlock on EnterTrans; F tip ready.
@@ -341,6 +345,16 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                         "Statue talk gates ready uid={} count={} (no quest prerequisite for F)",
                         this.player.getUid(),
                         finished);
+    }
+
+    static boolean shouldBypassStarterStatueQuest() {
+        return shouldBypassStarterStatueQuest(
+                GAME_OPTIONS.questing.enabled,
+                emu.grasscutter.config.Configuration.SERVER.game.enableScriptInBigWorld);
+    }
+
+    static boolean shouldBypassStarterStatueQuest(boolean questingEnabled, boolean scriptsEnabled) {
+        return !questingEnabled || !scriptsEnabled;
     }
 
     /** Ensure starter statue exists; do not mass-unlock every statue (map fog is per-statue). */
