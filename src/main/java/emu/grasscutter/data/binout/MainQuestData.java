@@ -2,6 +2,7 @@ package emu.grasscutter.data.binout;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.enums.QuestType;
 import java.util.*;
 import lombok.Data;
