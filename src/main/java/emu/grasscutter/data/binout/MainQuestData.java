@@ -80,6 +80,9 @@ public class MainQuestData {
         private int order;
         private boolean isMpBlock;
         private boolean isRewind, finishParent;
+        private List<QuestData.QuestExecParam> beginExec;
+        private List<QuestData.QuestExecParam> finishExec;
+        private List<QuestData.QuestExecParam> failExec;
     }
 
     @Data
