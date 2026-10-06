@@ -2,7 +2,6 @@ package emu.grasscutter.data.binout;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.enums.QuestType;
 import java.util.*;
 import lombok.Data;
@@ -81,9 +80,6 @@ public class MainQuestData {
         private int order;
         private boolean isMpBlock;
         private boolean isRewind, finishParent;
-        private List<QuestData.QuestExecParam> beginExec;
-        private List<QuestData.QuestExecParam> finishExec;
-        private List<QuestData.QuestExecParam> failExec;
     }
 
     @Data

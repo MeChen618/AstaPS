@@ -71,26 +71,6 @@ public class QuestData extends GameResource {
     public void applyFrom(MainQuestData.SubQuestData additionalData) {
         this.isRewind = additionalData.isRewind();
         this.finishParent = additionalData.isFinishParent();
-
-        // Some 7.1 QuestExcel rows materialize an exec list as empty while the embedded
-        // BinOutput subquest still carries the runtime action. Only fill a missing list;
-        // never replace a meaningful QuestExcel exec sequence.
-        this.beginExec = fillMissingExecs(this.beginExec, additionalData.getBeginExec());
-        this.finishExec = fillMissingExecs(this.finishExec, additionalData.getFinishExec());
-        this.failExec = fillMissingExecs(this.failExec, additionalData.getFailExec());
-    }
-
-    private static List<QuestExecParam> fillMissingExecs(
-            List<QuestExecParam> excelExecs, List<QuestExecParam> binExecs) {
-        if (excelExecs != null && !excelExecs.isEmpty()) return excelExecs;
-        if (binExecs == null || binExecs.isEmpty()) return excelExecs;
-
-        var meaningful =
-                binExecs.stream()
-                        .filter(Objects::nonNull)
-                        .filter(exec -> exec.getType() != null)
-                        .toList();
-        return meaningful.isEmpty() ? excelExecs : meaningful;
     }
 
     private void addToCache() {
