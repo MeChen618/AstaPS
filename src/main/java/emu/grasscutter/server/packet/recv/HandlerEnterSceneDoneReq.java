@@ -137,6 +137,13 @@ public class HandlerEnterSceneDoneReq extends PacketHandler {
             }
         } catch (Throwable t) {
         }
+        // Statue auto-heal needs to know the player is standing at a statue, and 7.1's
+        // EnterTransPointRegionNotify CmdId is unknown, so the client's own region notification
+        // cannot be relied on. Drive it from position instead.
+        try {
+            player.getSotsManager().startProximityProbe();
+        } catch (Throwable t) {
+        }
         // TPS ammunition reserves, which the client expects before the Rsp.
         emu.grasscutter.game.tps.TpsWeaponSystem.sendSceneAmmunition(player);
 

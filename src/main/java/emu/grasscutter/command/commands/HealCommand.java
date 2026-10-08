@@ -19,6 +19,18 @@ public final class HealCommand implements CommandHandler {
 
     @Override
     public void execute(Player sender, Player targetPlayer, List<String> args) {
+        // "all" covers every avatar the player owns. The default only walks the active team, which
+        // leaves avatars that were granted/levelled through GM commands stuck at the low HP they
+        // were created with.
+        if (args.size() == 1 && args.get(0).equalsIgnoreCase("all")) {
+            int offTeam = targetPlayer.getTeamManager().healAllAvatars();
+            CommandHandler.sendMessage(
+                    sender,
+                    "Healed the active team and "
+                            + offTeam
+                            + " avatar(s) that were not in it.");
+            return;
+        }
         targetPlayer
                 .getTeamManager()
                 .getActiveTeam()
