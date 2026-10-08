@@ -24,6 +24,15 @@ public class ExecNotifyGroupLua extends QuestExecHandler {
         }
         scene.runWhenFinished(
                 () -> {
+                    // A quest may reference a scene group that is not yet in the player's
+                    // visible grid. Register that group's native Lua triggers before
+                    // dispatching its quest event; otherwise callEvent silently finds none.
+                    if (scriptManager.getGroupById(groupId) == null) {
+                        emu.grasscutter.Grasscutter.getLogger()
+                                .warn("Quest {} could not notify Lua group {} in scene {}: group unavailable",
+                                        quest.getSubQuestId(), groupId, sceneId);
+                        return;
+                    }
                     val eventType =
                             quest.getState() == QuestState.QUEST_STATE_FINISHED
                                     ? EventType.EVENT_QUEST_FINISH

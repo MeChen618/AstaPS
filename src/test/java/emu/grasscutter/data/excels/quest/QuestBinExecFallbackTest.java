@@ -57,6 +57,25 @@ final class QuestBinExecFallbackTest {
     }
 
     @Test
+    void amberBowTutorialRestoresNativeLuaNotification() {
+        // The native Quest 35404 start event reaches scene group 133003439.
+        // That group's QUEST_START -> timer -> gadget-3834 script drives the target.
+        var excel = GSON.fromJson(
+                "{\"subId\":35404,\"mainId\":354,\"beginExec\":[],\"finishExec\":[],\"failExec\":[]}",
+                QuestData.class);
+        var nativeData = GSON.fromJson(
+                "{\"subId\":35404,\"beginExec\":[{\"type\":\"QUEST_EXEC_NOTIFY_GROUP_LUA\","
+                        + "\"param\":[\"3\",\"133003439\"]}]}",
+                MainQuestData.SubQuestData.class);
+        var actions = QuestData.effectiveExecList(
+                excel.getBeginExec(), nativeData.getBeginExec());
+
+        assertEquals(1, actions.size());
+        assertEquals("QUEST_EXEC_NOTIFY_GROUP_LUA", actions.get(0).getType().name());
+        assertEquals(List.of("3", "133003439"), List.of(actions.get(0).getParam()));
+    }
+
+    @Test
     void nonemptyExcelActionsStayAuthoritative() {
         var excel = exec("QUEST_EXEC_GRANT_TRIAL_AVATAR");
         var bin = exec("QUEST_EXEC_REFRESH_GROUP_SUITE");
