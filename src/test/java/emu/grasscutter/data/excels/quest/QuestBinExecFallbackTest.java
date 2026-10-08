@@ -67,10 +67,13 @@ final class QuestBinExecFallbackTest {
                 "{\"subId\":35302,\"beginExec\":[{\"type\":\"QUEST_EXEC_REFRESH_GROUP_SUITE\","
                         + "\"param\":[\"3\",\"133003002,2\"]}]}",
                 MainQuestData.SubQuestData.class);
-        slimeExcel.applyFrom(slimeNative);
+        // Exercise the merge policy directly. applyFrom() also emits server startup
+        // diagnostics, and must not bootstrap the full Grasscutter runtime in a unit test.
+        var slimeActions = QuestData.effectiveExecList(
+                slimeExcel.getBeginExec(), slimeNative.getBeginExec());
 
-        assertEquals(1, slimeExcel.getBeginExec().size());
-        var slimeExec = slimeExcel.getBeginExec().get(0);
+        assertEquals(1, slimeActions.size());
+        var slimeExec = slimeActions.get(0);
         assertEquals("QUEST_EXEC_REFRESH_GROUP_SUITE", slimeExec.getType().name());
         assertEquals(List.of("3", "133003002,2"), List.of(slimeExec.getParam()));
 
@@ -81,10 +84,11 @@ final class QuestBinExecFallbackTest {
                 "{\"subId\":35301,\"finishExec\":[{\"type\":\"QUEST_EXEC_GRANT_TRIAL_AVATAR\","
                         + "\"param\":[\"1\"]}]}",
                 MainQuestData.SubQuestData.class);
-        amberExcel.applyFrom(amberNative);
+        var amberActions = QuestData.effectiveExecList(
+                amberExcel.getFinishExec(), amberNative.getFinishExec());
 
-        assertEquals("QUEST_EXEC_GRANT_TRIAL_AVATAR", amberExcel.getFinishExec().get(0).getType().name());
-        assertEquals(List.of("1"), List.of(amberExcel.getFinishExec().get(0).getParam()));
+        assertEquals("QUEST_EXEC_GRANT_TRIAL_AVATAR", amberActions.get(0).getType().name());
+        assertEquals(List.of("1"), List.of(amberActions.get(0).getParam()));
     }
 
     @Test
