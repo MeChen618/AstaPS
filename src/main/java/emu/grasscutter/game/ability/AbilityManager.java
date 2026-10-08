@@ -1162,6 +1162,7 @@ public final class AbilityManager extends BasePlayerManager {
                 Grasscutter.getLogger().warn("[MaxHPRatio] modifierChange remove failed: {}", t.toString());
             }
             try {
+                entity.refreshModifierLockHP();
                 entity.refreshModifierInvincible();
                 emu.grasscutter.game.world.EffigyCombatHelper.onModifiersChanged(entity);
             } catch (Throwable ignored) {
