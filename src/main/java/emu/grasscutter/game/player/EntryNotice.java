@@ -1,6 +1,7 @@
 package emu.grasscutter.game.player;
 
 import emu.grasscutter.BuildConfig;
+import emu.grasscutter.game.quest.QuestChapterBootstrap;
 import emu.grasscutter.server.packet.send.PacketAntiAddictNotify;
 import java.util.Objects;
 
@@ -19,10 +20,15 @@ public final class EntryNotice {
 
     public static void sendOnce(Player player) {
         if (player == null || player.isEntryNoticeChecked()) return;
-        player.setEntryNoticeChecked(true);
 
+        // PostEnterSceneReq arrives while the 7.1 opening plot is still running.
+        // Do not cover subtitle lines with announcements or other server UI.
+        if (QuestChapterBootstrap.isOpeningStoryPending(player.getQuestManager())) return;
+
+        player.setEntryNoticeChecked(true);
         if (player.isPendingWelcomeNotice()) {
-            player.sendPacket(new PacketAntiAddictNotify(1, "Welcome to AstaPS"));
+            // A forced AntiAddictNotify modal interrupts story even when deferred to the first
+            // playable quest. Follow play/rino: skip unsolicited first-login branding.
             player.setPendingWelcomeNotice(false);
         } else if (!Objects.equals(player.getLastSeenBuildHash(), BuildConfig.GIT_HASH)) {
             player.sendPacket(

@@ -2,14 +2,41 @@ package emu.grasscutter.game.quest;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.quest.enums.QuestState;
 import java.util.List;
 
 /** Restores chapter-controller quests linked to active main-quest series by resource data. */
 public final class QuestChapterBootstrap {
     private QuestChapterBootstrap() {}
 
+    /**
+     * The first PostEnterSceneRsp only means that a scene exists. It does not mean that
+     * Quest 351's opening cinematic and Paimon dialogue have ended. Starting the linked
+     * chapter controller here displays the Prologue: Act I banner on top of that dialogue.
+     */
+    public static boolean isOpeningStoryPending(QuestManager questManager) {
+        if (questManager == null) return false;
+        var opening = questManager.getMainQuestById(351);
+        if (opening == null) return false;
+        var intro = opening.getChildQuestById(35104);
+        var dialogue = opening.getChildQuestById(35100);
+        if (intro == null || dialogue == null) return false;
+        return shouldDeferOpeningPresentation(intro.getState(), dialogue.getState());
+    }
+
+    static boolean shouldDeferOpeningPresentation(QuestState intro, QuestState dialogue) {
+        return intro != null && intro != QuestState.QUEST_STATE_UNSTARTED
+                && dialogue != QuestState.QUEST_STATE_FINISHED;
+    }
+
     public static void startForActiveMainQuests(QuestManager questManager) {
         if (questManager == null) return;
+        if (isOpeningStoryPending(questManager)) {
+            Grasscutter.getLogger().info(
+                    "[intro-presentation] uid={} defer chapter controller until 35100 finishes",
+                    questManager.getPlayer().getUid());
+            return;
+        }
 
         // Starting a controller mutates mainQuests, so snapshot the source quests first.
         List<Integer> sourceMainQuestIds =
