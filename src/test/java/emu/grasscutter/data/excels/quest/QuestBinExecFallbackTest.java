@@ -95,6 +95,37 @@ final class QuestBinExecFallbackTest {
     }
 
     @Test
+    void parsesActualNative353QuestActionsAndPreservesSlimeSuite() {
+        // Mirrors BinOutput/Quest/353.json: Amber dialogue, trial grant, then skill tutorial slime.
+        String nativeSubquests =
+                """
+                {"id":353,"subQuests":[
+                    {"subId":35301,
+                     "beginExec":[{"type":"QUEST_EXEC_REFRESH_GROUP_SUITE",
+                                   "param":["3","133003002,1"]}],
+                     "finishExec":[{"type":"QUEST_EXEC_GRANT_TRIAL_AVATAR","param":["1"]}]},
+                    {"subId":35302,
+                     "beginExec":[{"type":"QUEST_EXEC_REFRESH_GROUP_SUITE",
+                                   "param":["3","133003002,2"]}]}
+                ]}
+                """;
+        var nativeMain =
+                GSON.fromJson(
+                        nativeSubquests, emu.grasscutter.data.binout.MainQuestData.class);
+        var subs = nativeMain.getSubQuests();
+        assertEquals(35301, subs[0].getSubId());
+        assertEquals(
+                "QUEST_EXEC_GRANT_TRIAL_AVATAR",
+                subs[0].getFinishExec().get(0).getType().name());
+        assertEquals(35302, subs[1].getSubId());
+
+        var recoveredBegin = QuestData.effectiveExecList(List.of(), subs[1].getBeginExec());
+        assertEquals(1, recoveredBegin.size());
+        assertEquals("QUEST_EXEC_REFRESH_GROUP_SUITE", recoveredBegin.get(0).getType().name());
+        assertEquals("133003002,2", recoveredBegin.get(0).getParam()[1]);
+    }
+
+    @Test
     void invalidOrAbsentActionsAreIgnored() {
         var unknown = exec("NOT_AN_EXEC_TYPE");
         assertTrue(QuestData.effectiveExecList(List.of(), List.of(unknown)).isEmpty());
