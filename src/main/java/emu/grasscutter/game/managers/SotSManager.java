@@ -11,8 +11,6 @@ import emu.grasscutter.game.props.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.ChangHpReasonOuterClass.ChangHpReason;
 import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import emu.grasscutter.server.event.player.PlayerLevelStatueEvent;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
@@ -40,8 +38,9 @@ public class SotSManager extends BasePlayerManager {
 
     private static final long PROXIMITY_PERIOD_MS = 2000;
 
-    private static final Int2ObjectMap<java.util.List<emu.grasscutter.data.binout.ScenePointEntry>>
-            STATUE_POINT_CACHE = new Int2ObjectOpenHashMap<>();
+    /** Shared by every player's proximity timer thread, so it has to be a concurrent map. */
+    private static final java.util.Map<Integer, java.util.List<emu.grasscutter.data.binout.ScenePointEntry>>
+            STATUE_POINT_CACHE = new java.util.concurrent.ConcurrentHashMap<>();
 
     private Timer proximityTimer;
     private int nearbyStatuePointId = 0;
@@ -181,20 +180,19 @@ public class SotSManager extends BasePlayerManager {
     /** Statue trans points of one scene, resolved once and cached. */
     private static java.util.List<emu.grasscutter.data.binout.ScenePointEntry>
             statuePointsForScene(int sceneId) {
-        var cached = STATUE_POINT_CACHE.get(sceneId);
-        if (cached != null) return cached;
-
-        var out = new ArrayList<emu.grasscutter.data.binout.ScenePointEntry>();
-        for (var entry : GameData.getScenePointEntryMap().values()) {
-            if (entry == null || entry.getPointData() == null) continue;
-            if (entry.getSceneId() != sceneId) continue;
-            if (!emu.grasscutter.game.managers.StatueTalkQuests.isStatuePoint(entry.getPointData()))
-                continue;
-            out.add(entry);
-        }
-        var immutable = java.util.List.copyOf(out);
-        STATUE_POINT_CACHE.put(sceneId, immutable);
-        return immutable;
+        return STATUE_POINT_CACHE.computeIfAbsent(
+                sceneId,
+                id -> {
+                    var out = new ArrayList<emu.grasscutter.data.binout.ScenePointEntry>();
+                    for (var entry : GameData.getScenePointEntryMap().values()) {
+                        if (entry == null || entry.getPointData() == null) continue;
+                        if (entry.getSceneId() != id) continue;
+                        if (!emu.grasscutter.game.managers.StatueTalkQuests.isStatuePoint(
+                                entry.getPointData())) continue;
+                        out.add(entry);
+                    }
+                    return java.util.List.copyOf(out);
+                });
     }
 
     /** Starts the proximity probe. Safe to call more than once. */
