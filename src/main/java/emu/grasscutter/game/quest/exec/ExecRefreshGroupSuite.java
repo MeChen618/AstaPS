@@ -45,7 +45,7 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
                             sceneId);
                 }
                 scene.getScheduler()
-                        .scheduleDelayedTaskTicks(
+                        .scheduleDelayedTask(
                                 () -> executeWhenReady(quest, paramStr, attempt + 1), 1);
                 return true;
             }
