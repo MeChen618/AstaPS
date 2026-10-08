@@ -3,6 +3,7 @@ package emu.grasscutter.data.excels.quest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.gson.Gson;
+import emu.grasscutter.data.binout.MainQuestData;
 import com.google.gson.reflect.TypeToken;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -54,6 +55,36 @@ final class QuestBinExecFallbackTest {
         var result = QuestData.effectiveExecList(List.of(), List.of(bin));
         assertEquals(1, result.size());
         assertEquals("133003002,2", result.get(0).getParam()[1]);
+    }
+
+    @Test
+    void actualSubQuestMappingRestoresAmberTeachingSlimeAndTrialGrant() {
+        // Reproduce the real resource loader sequence: QuestExcel rows first, BinOutput rows second.
+        var slimeExcel = GSON.fromJson(
+                "{\"subId\":35302,\"mainId\":353,\"beginExec\":[],\"finishExec\":[],\"failExec\":[]}",
+                QuestData.class);
+        var slimeNative = GSON.fromJson(
+                "{\"subId\":35302,\"beginExec\":[{\"type\":\"QUEST_EXEC_REFRESH_GROUP_SUITE\","
+                        + "\"param\":[\"3\",\"133003002,2\"]}]}",
+                MainQuestData.SubQuestData.class);
+        slimeExcel.applyFrom(slimeNative);
+
+        assertEquals(1, slimeExcel.getBeginExec().size());
+        var slimeExec = slimeExcel.getBeginExec().get(0);
+        assertEquals("QUEST_EXEC_REFRESH_GROUP_SUITE", slimeExec.getType().name());
+        assertEquals(List.of("3", "133003002,2"), List.of(slimeExec.getParam()));
+
+        var amberExcel = GSON.fromJson(
+                "{\"subId\":35301,\"mainId\":353,\"beginExec\":[],\"finishExec\":[],\"failExec\":[]}",
+                QuestData.class);
+        var amberNative = GSON.fromJson(
+                "{\"subId\":35301,\"finishExec\":[{\"type\":\"QUEST_EXEC_GRANT_TRIAL_AVATAR\","
+                        + "\"param\":[\"1\"]}]}",
+                MainQuestData.SubQuestData.class);
+        amberExcel.applyFrom(amberNative);
+
+        assertEquals("QUEST_EXEC_GRANT_TRIAL_AVATAR", amberExcel.getFinishExec().get(0).getType().name());
+        assertEquals(List.of("1"), List.of(amberExcel.getFinishExec().get(0).getParam()));
     }
 
     @Test
