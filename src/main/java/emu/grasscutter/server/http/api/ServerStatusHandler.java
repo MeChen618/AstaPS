@@ -97,6 +97,8 @@ public final class ServerStatusHandler {
             response.put("health", health.health().name());
             response.put("bottleneck", health.bottleneck());
             response.put("diagnosis", health.diagnosisText());
+            // Stable key for clients that show the diagnosis in another language.
+            response.put("diagnosisCode", health.diagnosis().name());
             response.put("suggestion", health.suggestion());
             response.put("game", game);
             response.put("jvm", jvm);
@@ -146,6 +148,7 @@ public final class ServerStatusHandler {
         response.put("health", ThreadPoolHealth.DANGER.name());
         response.put("bottleneck", "GAME_TICK_STALLED");
         response.put("diagnosis", "No game tick has completed within the liveness threshold.");
+        response.put("diagnosisCode", "GAME_TICK_STALLED");
         response.put("suggestion", "Capture a thread dump and inspect the game tick and logic queue.");
     }
 
@@ -154,6 +157,7 @@ public final class ServerStatusHandler {
             response.put("health", ThreadPoolHealth.DANGER.name());
             response.put("bottleneck", "JVM_DEADLOCK");
             response.put("diagnosis", "JVM lock cycle detected; game processing may be stalled.");
+            response.put("diagnosisCode", "JVM_DEADLOCK");
             response.put("suggestion", "Capture a thread dump and correct the conflicting lock order.");
         } else if (deadlock.status() == JvmDeadlockSnapshot.Status.UNKNOWN
                 && (ThreadPoolHealth.NORMAL.name().equals(response.get("health"))
@@ -161,6 +165,7 @@ public final class ServerStatusHandler {
             response.put("health", ThreadPoolHealth.WARNING.name());
             response.put("bottleneck", "JVM_DEADLOCK_CHECK");
             response.put("diagnosis", "JVM deadlock detection is incomplete or unavailable.");
+            response.put("diagnosisCode", "JVM_DEADLOCK_CHECK");
             response.put("suggestion", "Check the JVM monitoring capability and inspect a thread dump.");
         }
     }
