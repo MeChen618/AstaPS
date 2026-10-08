@@ -103,9 +103,10 @@ public class ActionCreateGadget extends AbilityActionHandler {
     @Override
     public boolean execute(
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
-        final var entity = action.gadgetID == 70950005 && "CurLocalAvatar".equals(action.target)
-                ? resolveTarget(ability, target, action.target)
-                : ability.getOwner();
+        // Light-guide followers arrive through EvtCreateGadgetNotify. A second server
+        // follower renders another attached effect and does not track the client's movement.
+        if (action.gadgetID == 70950005) return true;
+        final var entity = ability.getOwner();
         if (entity == null) return false;
 
         // The client owns these chains and spawns its own copies, so ours are only ever duplicates -
