@@ -13,7 +13,8 @@ public final class GameConstants {
 
     public static final int ENTITY_ID_BIT_SHIFT = 21;
     public static final int DEFAULT_TEAMS = 4;
-    public static final int MAX_TEAMS = 50;
+    // 20 party slots in total (the 4 defaults plus 16 custom ones), matching the official client.
+    public static final int MAX_TEAMS = 20;
     public static final int MAIN_CHARACTER_MALE = 10000005;
     public static final int MAIN_CHARACTER_FEMALE = 10000007;
     public static final Position START_POSITION = new Position(2747, 194, -1719);
