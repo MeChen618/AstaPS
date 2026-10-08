@@ -1069,7 +1069,8 @@ public class ScriptLib {
             scriptManager.finishCutscene(cutsceneId);
             return 0;
         }
-        scriptManager.getScene().broadcastPacket(new PacketCutsceneBeginNotify(cutsceneId));
+        // Scene triggers need the client's finish acknowledgement to resume after the movie.
+        scriptManager.getScene().broadcastPacket(new PacketCutsceneBeginNotify(cutsceneId, true));
 
         return 0;
     }
