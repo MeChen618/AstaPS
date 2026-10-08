@@ -11,6 +11,7 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.data.binout.config.*;
 import emu.grasscutter.data.binout.routes.*;
 import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.data.custom.*;
 import emu.grasscutter.data.excels.trial.TrialAvatarActivityDataData;
 import emu.grasscutter.data.server.*;
@@ -704,6 +705,37 @@ public final class ResourceLoader {
             Grasscutter.getLogger().debug("Loaded {} quest keys.", questEncryptionMap.size());
         } catch (Exception e) {
             Grasscutter.getLogger().error("Unable to load quest keys.", e);
+        }
+
+        // Some resource-pack forks have stripped beginExec/finishExec from 7.1 BinOutput.
+        // Preserve their native 351-353 actions in a bundled vanilla baseline; only fill gaps
+        // remaining after QuestExcel and BinOutput have both been loaded.
+        try {
+            var baselines =
+                    DataLoader.loadBundledList(
+                            "quest-7.1-intro-exec-baseline.json", QuestData.QuestExecFallbackRow.class);
+            int recovered = 0;
+            for (var baseline : baselines) {
+                var quest = GameData.getQuestDataMap().get(baseline.getSubId());
+                if (quest == null) {
+                    Grasscutter.getLogger()
+                            .warn("[quest-resource] Native action baseline has no quest row {}", baseline.getSubId());
+                    continue;
+                }
+                int count = quest.fillMissingExecutions(baseline);
+                if (count > 0) {
+                    recovered += count;
+                    Grasscutter.getLogger()
+                            .info(
+                                    "[quest-resource] Recovered {} missing 7.1 native actions for sub={}",
+                                    count, baseline.getSubId());
+                }
+            }
+            Grasscutter.getLogger().info(
+                    "[quest-resource] Native 7.1 intro action baseline restored {} action(s)", recovered);
+        } catch (IOException e) {
+            Grasscutter.getLogger()
+                    .error("Failed to load bundled 7.1 intro quest action baseline.", e);
         }
 
         Grasscutter.getLogger()
