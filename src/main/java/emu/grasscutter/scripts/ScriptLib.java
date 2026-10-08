@@ -417,6 +417,24 @@ public class ScriptLib {
         val groupId = currentGroup.get().id;
         val variables = getSceneScriptManager().getVariables(groupId);
 
+        // These three seals store pickup receipts as bits, not a numeric counter.
+        // Repeated or concurrent reports for one light must not add its bit twice.
+        if (groupId >= 133007228 && groupId <= 133007230
+                && "Temp_Point_Value".equals(var) && (value == 1 || value == 2 || value == 4)) {
+            final int old;
+            final int updated;
+            synchronized (variables) {
+                old = variables.getOrDefault(var, 0);
+                updated = old | value;
+                variables.put(var, updated);
+            }
+            if (updated != old) {
+                getSceneScriptManager().callEvent(new ScriptArgs(groupId,
+                        EventType.EVENT_VARIABLE_CHANGE, updated, old).setEventSource(var));
+            }
+            return LuaValue.ZERO;
+        }
+
         val old = variables.getOrDefault(var, 0);
         variables.put(var, old + value);
         getSceneScriptManager().callEvent(new ScriptArgs(groupId, EventType.EVENT_VARIABLE_CHANGE, old + value, old).setEventSource(var));
