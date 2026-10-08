@@ -271,6 +271,31 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
      ******************************************************************************************************************
      *****************************************************************************************************************/
     private void addStatueQuestsOnLogin() {
+        // During native questing, preserve the real 303xx talk/finish-exec lifecycle.
+        // play/rino leaves these steps unfinished until their respective statue talks.
+        // The older compatibility path below silently finished them and forcibly unlocked
+        // starter point 7 at login, ahead of quest 35205 which owns that unlock.
+        if (!shouldBypassStarterStatueQuest()) {
+            var nativeStatueQuest = GameData.getMainQuestDataMap().get(303);
+            if (nativeStatueQuest == null || nativeStatueQuest.getSubQuests() == null) return;
+
+            var manager = this.player.getQuestManager();
+            var parent = manager.getMainQuestById(303);
+            if (parent == null) {
+                manager.addQuest(30302);
+                parent = manager.getMainQuestById(303);
+            }
+            if (parent == null) return;
+
+            for (var sub : nativeStatueQuest.getSubQuests()) {
+                var quest = parent.getChildQuestById(sub.getSubId());
+                if (quest != null && quest.getState() == QuestState.QUEST_STATE_UNSTARTED) {
+                    manager.addQuest(sub.getSubId());
+                }
+            }
+            return;
+        }
+
         // Get all currently existing subquests for the "unlock all statues" main quest.
         var statueMainQuest = GameData.getMainQuestDataMap().get(303);
         if (statueMainQuest == null || statueMainQuest.getSubQuests() == null) {
