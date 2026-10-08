@@ -1153,6 +1153,9 @@ public final class AbilityManager extends BasePlayerManager {
             }
             try {
                 entity.refreshModifierInvincible();
+                // LockHP is set by onAddAbilityModifier the same way invincibility is, so it needs
+                // the same recompute on removal or the entity stays immune for good.
+                entity.refreshLockHP();
                 emu.grasscutter.game.world.EffigyCombatHelper.onModifiersChanged(entity);
             } catch (Throwable ignored) {
             }
