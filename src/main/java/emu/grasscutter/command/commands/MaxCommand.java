@@ -72,7 +72,13 @@ public final class MaxCommand implements CommandHandler {
 
         // The new max HP does not fill itself in, and a character that arrives at level 90 on a
         // level 1 health bar is not what anyone means by maxed.
-        healActiveTeam(targetPlayer);
+        if (all) {
+            // Every character was just maxed, so every character must be healed too - healing only
+            // the active team would leave the rest at the HP they were created with.
+            targetPlayer.getTeamManager().healAllAvatars();
+        } else {
+            healActiveTeam(targetPlayer);
+        }
 
         if (all) {
             CommandHandler.sendMessage(sender, "Maxed out " + targets.size() + " characters.");
