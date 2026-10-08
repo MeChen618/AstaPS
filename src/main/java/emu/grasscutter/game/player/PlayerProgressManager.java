@@ -1058,6 +1058,11 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         boolean isNew = this.player.getUnlockedScenePoints(sceneId).add(pointId);
         this.player.getForceLockedScenePoints(sceneId).remove(pointId);
         if (isNew) {
+            this.player.save();
+            emu.grasscutter.Grasscutter.getLogger()
+                    .info(
+                            "[quest-point] source=statue-activation uid={} scene={} point={}",
+                            this.player.getUid(), sceneId, pointId);
             this.player.sendPacket(
                     new emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify(
                             sceneId, pointId));

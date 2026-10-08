@@ -15,6 +15,10 @@ public class HandlerUnlockTransPointReq extends PacketHandler {
                 emu.grasscutter.game.managers.StatueTalkQuests.isStatuePoint(
                         entry != null ? entry.getPointData() : null);
         if (isStatue) {
+            emu.grasscutter.Grasscutter.getLogger()
+                    .info(
+                            "[quest-point] source=client-request uid={} scene={} point={} statue=true",
+                            session.getPlayer().getUid(), req.getSceneId(), req.getPointId());
             // 真解锁 + 把雕像 gadget 补回去 + 铺回血代理
             session.getPlayer()
                     .getProgressManager()
@@ -29,7 +33,7 @@ public class HandlerUnlockTransPointReq extends PacketHandler {
                         .unlockTransPoint(req.getSceneId(), req.getPointId(), isStatue);
         emu.grasscutter.Grasscutter.getLogger()
                 .info(
-                        "UnlockTransPointReq uid={} scene={} point={} statue={} unlocked={}",
+                        "[quest-point] source=client-request uid={} scene={} point={} statue={} unlocked={}",
                         session.getPlayer().getUid(),
                         req.getSceneId(),
                         req.getPointId(),
