@@ -34,7 +34,20 @@ public final class AvatarStatePersist {
             float f2;
             float f3 = avatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
             float f4 = fArray[0];
-            if (f4 > f3 * 1.05f && f3 > 0.0f) {
+            // A recalc that runs before artifacts/weapons are loaded computes a too-small max, so
+            // the saved HP has to survive it (that is what the branch below is for). But base HP at
+            // the avatar's level is a floor for max HP - equipment only adds to it - so once the
+            // computed max has reached that floor the recalc is trustworthy and an above-max saved
+            // value is genuine surplus (a max-HP-ratio modifier such as Actor_MaxHPRatio was active
+            // when it was saved). Left alone that surplus is persisted forever, and the character's
+            // HP bar keeps reading full while damage eats the invisible excess first.
+            float baseHp =
+                    avatar.getAvatarData() != null
+                            ? avatar.getAvatarData().getBaseHp(avatar.getLevel())
+                            : 0f;
+            boolean maxIsTrustworthy = f3 > 0.0f && (baseHp <= 0.0f || f3 >= baseHp * 0.99f);
+            if (f4 > f3 && maxIsTrustworthy) {
+                f4 = f3;
             }
             if (f3 > 0.0f && f4 > 0.0f) {
                 if (f4 <= 1.01f && f3 > 10.0f) {

@@ -262,19 +262,15 @@ public class ConfigContainer {
 
     /** The browser console at /console: server status, live log and console commands. */
     public static class WebConsole {
-        public static final String DEFAULT_PASSWORD = "mechen618";
-
-        public boolean enabled = true;
-        /*
-         * Not written to config.json: left null, DEFAULT_PASSWORD applies. Add a "password" entry
-         * here to use another one.
-         */
+        // Remote command execution is opt-in. A missing password never enables it.
+        public boolean enabled = false;
+        /* Configure explicitly in config.json; no built-in credentials are accepted. */
         public String password = null;
         /* How long a login stays valid. */
         public int sessionHours = 12;
 
         public String effectivePassword() {
-            return password == null || password.isBlank() ? DEFAULT_PASSWORD : password;
+            return password == null || password.isBlank() ? null : password;
         }
     }
 

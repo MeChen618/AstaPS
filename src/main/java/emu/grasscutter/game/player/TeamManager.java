@@ -825,6 +825,17 @@ public final class TeamManager extends BasePlayerDataManager {
 
         this.setCurrentTeamId(teamId);
         this.updateTeamEntities(new PacketChooseCurAvatarTeamRsp(teamId));
+
+        // ChooseCurAvatarTeamRsp has no 7.1 CmdId (PacketOpcodes gives it 0), and GameSession.send()
+        // drops any packet whose opcode is <= 0 - so the client never learns the active team changed.
+        // It keeps showing the previous team as 出战, refuses to switch back to it, and shows no
+        // confirmation; only a relogin repairs the view, because the full team data goes out on
+        // login. Re-send the same notify that login and add/removeCustomTeam already use, which
+        // does have a 7.1 CmdId and carries cur_avatar_team_id.
+        this.getPlayer().sendPacket(new PacketAvatarTeamAllDataNotify(this.getPlayer()));
+        // Also nudge the team-config screen: AvatarTeamUpdateNotify is what the other team
+        // operations (reorder, trial avatar) use to get that screen to redraw.
+        this.getPlayer().sendPacket(new PacketAvatarTeamUpdateNotify(this.getPlayer()));
     }
 
     public synchronized void setTeamName(int teamId, String teamName) {
@@ -1018,14 +1029,15 @@ public final class TeamManager extends BasePlayerDataManager {
                     return false;
                 }
 
-                entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1f);
+                // Uses EntityAvatar.reviveToRatio() rather than setting CUR_HP here: that method
+                // clears the dead flag as well, which this one used to skip - leaving isAlive()
+                // false, so every later heal (the statue's included) refused the character and it
+                // sat at 1 HP until a teleport rebuilt the entity.
+                if (entity.reviveToRatio(0f) <= 0f) {
+                    return false;
+                }
 
                 player.getSatiationManager().removeSatiationDirectly(entity.getAvatar(), 15000);
-                this.getPlayer()
-                    .sendPacket(
-                        new PacketAvatarFightPropUpdateNotify(
-                            entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
-                this.getPlayer().sendPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
                 return true;
             }
         }
@@ -1033,8 +1045,48 @@ public final class TeamManager extends BasePlayerDataManager {
         return false;
     }
 
-    public boolean healAvatar(Avatar avatar, int healRate, int healAmount) {
-        for (EntityAvatar entity : this.getActiveTeam()) {
+    /**
+     * Tops up every avatar the player owns, not just the active team.
+     *
+     * <p>The active team is healed through their live entities so the client sees the change
+     * immediately; everyone else is healed on the persisted {@code currentHp}, because an avatar
+     * that is not in the team has no entity in the scene. Without this, avatars that were granted
+     * and levelled through GM commands keep the low HP they were created with forever — no command
+     * and no statue would ever touch them, since both only walk the active team.
+     */
+    public int healAllAvatars() {
+        var team = this.getActiveTeam();
+        var inTeam = new java.util.HashSet<emu.grasscutter.game.avatar.Avatar>();
+        for (EntityAvatar entity : team) {
+            inTeam.add(entity.getAvatar());
+            var maxHp = entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+            var curHp = entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+            if (curHp >= maxHp) continue;
+            entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, maxHp);
+            if (entity.getWorld() != null) {
+                entity.getWorld()
+                        .broadcastPacket(
+                                new PacketAvatarFightPropUpdateNotify(
+                                        entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
+                entity.getWorld()
+                        .broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
+            }
+        }
+
+        int healedOffTeam = 0;
+        for (var avatar : this.getPlayer().getAvatars().getAvatars().values()) {
+            if (inTeam.contains(avatar)) continue;
+            var maxHp = avatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+            if (maxHp <= 0f || avatar.getCurrentHp() >= maxHp) continue;
+            avatar.setCurrentHp(maxHp);
+            avatar.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, maxHp);
+            healedOffTeam++;
+        }
+        if (healedOffTeam > 0) this.getPlayer().save();
+        return healedOffTeam;
+    }
+
+    public boolean healAvatar(Avatar avatar, int healRate, int healAmount) {        for (EntityAvatar entity : this.getActiveTeam()) {
             if (entity.getAvatar() == avatar) {
                 if (!entity.isAlive()) {
                     return false;
@@ -1167,6 +1219,9 @@ public final class TeamManager extends BasePlayerDataManager {
 
         if (!this.teams.containsKey(id)) {
             player.sendPacket(new PacketDelBackupAvatarTeamRsp(Retcode.RET_FAIL, id));
+            // Without this the failure reply is followed by the success path below, so a team that
+            // does not exist is reported as dissolved anyway.
+            return;
         }
 
         this.teams.remove(id);

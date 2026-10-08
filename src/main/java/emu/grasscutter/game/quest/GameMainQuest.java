@@ -189,12 +189,18 @@ public class GameMainQuest {
             }
         }
 
-        // Hand off to the main quests that follow. Only those whose opening can never be met on its
-        // own are started here; one with a real prerequisite still starts through that.
-        if (mainQuestData.getSuggestTrackMainQuestList() != null) {
-            for (int next : mainQuestData.getSuggestTrackMainQuestList()) {
-                this.getOwner().getQuestManager().startMainQuestIfUnlinked(next);
-            }
+        this.tryStartFollowingQuests();
+    }
+
+    /** Retries only successor startup after this parent has already been persisted as finished. */
+    void tryStartFollowingQuests() {
+        if (!this.isFinished && this.state != ParentQuestState.PARENT_QUEST_STATE_FINISHED) return;
+
+        var mainQuestData = GameData.getMainQuestDataMap().get(this.parentQuestId);
+        if (mainQuestData == null || mainQuestData.getSuggestTrackMainQuestList() == null) return;
+
+        for (int next : mainQuestData.getSuggestTrackMainQuestList()) {
+            this.getOwner().getQuestManager().startMainQuestIfUnlinked(next);
         }
     }
     // TODO
