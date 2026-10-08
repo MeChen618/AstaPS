@@ -1075,7 +1075,11 @@ public final class PacketOpcodes {
     public static final int _TakeDailyTaskScoreRewardRsp = 7226;
     // public static final int FPCKPAHLBDD = 20060;
     // public static final int MLNGJJBBBMG = 9069;
-    public static final int AddBackupAvatarTeamReq = 0; // 7.1 CmdId unknown (7.0: 6882)
+    // The client sends this when adding a party slot; opcode 2419 was read off a live session
+    // (see ARTIFACTS.md 50). Without it the handler is never registered - registerPacketHandler
+    // skips opcodes <= 0 - so the request landed on nobody and the client retried for a few
+    // seconds and gave up, which is why "add team" only ever produced a click response.
+    public static final int AddBackupAvatarTeamReq = 2419; // 7.1 CmdId (7.0: 6882)
     // public static final int JLGHHJBDLMD = 8258;
     public static final int LunaRiteSacrificeRsp = 25613;
     public static final int CanUseSkillNotify = 918;
@@ -2009,7 +2013,10 @@ public final class PacketOpcodes {
     public static final int OneoffGatherPointDetectorDataNotify = 25175;
     // public static final int MDHHPFOHJLG = 21086;
     public static final int FishBiteRsp = 0; // 7.1 CmdId unknown (7.0: 23637)
-    public static final int DelBackupAvatarTeamReq = 0; // 7.1 CmdId unknown (7.0: 23640)
+    // Read off a live session: the client sends this when dissolving a custom party slot, with the
+    // team id in wire field 4 (see HandlerDelBackupAvatarTeamReq). It was 0 before, so the handler
+    // was never registered and dissolving produced no response at all.
+    public static final int DelBackupAvatarTeamReq = 24481; // 7.1 CmdId (7.0: 23640)
     // public static final int BILPEKCIFLC = 25524;
     // public static final int JAIOKOPLKKK = 5909;
     // public static final int EMKCJAAFIEL = 23779;
