@@ -1,6 +1,7 @@
 package emu.grasscutter.server.born;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.quest.QuestChapterBootstrap;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEnterScenePeerNotify;
 import emu.grasscutter.server.packet.send.PacketEnterSceneReadyRsp;
@@ -247,9 +248,10 @@ public final class BornIntroGate {
 
         try {
             // Player.onLogin already sent the full new-player quest snapshot. onPlayerBorn creates
-            // Quest 351 through its normal incremental update path. A second full snapshot here can
-            // reload the newly-started client quest actor and replay the opening sequence.
+            // the visible prologue through normal incremental updates; then restore any hidden
+            // chapter controller linked to the active main-quest series from ChapterData.
             player.getQuestManager().onPlayerBorn();
+            QuestChapterBootstrap.startForActiveMainQuests(player.getQuestManager());
             remove(session);
         } catch (Throwable t) {
             synchronized (state) {
