@@ -1058,7 +1058,7 @@ public final class AbilityManager extends BasePlayerManager {
                 final var finalAbility = instancedAbility;
                 final var finalEntity = entity;
                 for (var a : modifierData.onAdded) {
-                    executeAction(finalAbility, a, invoke.getAbilityData(), finalEntity);
+                    executeActionNow(finalAbility, a, invoke.getAbilityData(), finalEntity);
                 }
             } else if (modifierData.onAdded != null) {
                 // A modifier whose onAdded neither attaches nor applies another modifier used to run
