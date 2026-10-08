@@ -53,9 +53,8 @@ public final class ActionPredicated extends AbilityActionHandler {
         // and a guessed "_HasTarget_Mark = 1" pushed to the client tells it every enemy is a valid
         // one, however far away, which is how out of range attacks started landing.
         if (blindScene(target)) {
-            final var resolvedTarget = target;
             AbilityManager.runServerOwned(
-                    () -> dispatchOwnerOnly(mgr, ability, action.successActions, abilityData, resolvedTarget));
+                    () -> dispatchOwnerOnly(mgr, ability, action.successActions, abilityData, target));
             return true;
         }
 
