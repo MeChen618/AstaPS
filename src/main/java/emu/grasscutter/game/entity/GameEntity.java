@@ -314,6 +314,30 @@ public abstract class GameEntity {
         this.modifierInvincible = inv;
     }
 
+    /**
+     * Recomputes {@code lockHP} from the modifiers still attached, the way
+     * {@link #refreshModifierInvincible()} does for invincibility.
+     *
+     * <p>Without this, a LockHP-state modifier arriving as a client MODIFIER_CHANGE sets the flag
+     * and nothing ever clears it again, so the entity stays damage-immune for the rest of its life.
+     * Only the active team ever receives those modifiers, which is why played characters silently
+     * stop taking damage while unused ones keep working normally.
+     */
+    public void refreshLockHP() {
+        boolean locked = false;
+        if (this.instancedModifiers != null) {
+            for (var ctrl : this.instancedModifiers.values()) {
+                if (ctrl != null
+                        && ctrl.getModifierData() != null
+                        && ctrl.getModifierData().state == AbilityModifier.State.LockHP) {
+                    locked = true;
+                    break;
+                }
+            }
+        }
+        this.lockHP = locked;
+    }
+
     protected MotionInfo getMotionInfo() {
         return MotionInfo.newBuilder()
                 .setPos(this.getPosition().toProto())
