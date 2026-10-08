@@ -1342,7 +1342,7 @@ public class Avatar {
      */
     public int getTrialSkillLevel() {
         // Use default data if custom data not available.
-        if (GameData.getTrialAvatarCustomData().isEmpty()) {
+        if (GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId()) == null) {
             var template = getTrialTemplate(); // round trial level to fit template levels
 
             var templateData = GameData.getTrialAvatarTemplateDataMap().get(template);
@@ -1368,7 +1368,7 @@ public class Avatar {
      */
     public int getTrialWeaponId() {
         // Use default data if custom data not available.
-        if (GameData.getTrialAvatarCustomData().isEmpty()) {
+        if (GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId()) == null) {
             if (GameData.getTrialAvatarDataMap().get(this.getTrialAvatarId()) == null)
                 return this.getAvatarData().getInitialWeapon();
 
@@ -1392,7 +1392,7 @@ public class Avatar {
      */
     public List<Integer> getTrialReliquary() {
         // Use default data if custom data not available.
-        if (GameData.getTrialAvatarCustomData().isEmpty()) {
+        if (GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId()) == null) {
             int trialAvatarTemplateLevel = getTrialTemplate();
 
             TrialAvatarTemplateData templateData =
