@@ -414,7 +414,7 @@ public final class DefaultAuthenticators {
             // Fail closed: never trust a caller-supplied session token simply because
             // an account with that UID exists.
             Account account = DatabaseHelper.getAccountById(loginData.uid);
-            boolean successfulLogin = account != null && account.matchesSessionKey(loginData.token);
+            successfulLogin = account != null && account.matchesSessionKey(loginData.token);
             Grasscutter.getLogger()
                     .info(
                             "[Combo] credential verification={} for uid={}",
