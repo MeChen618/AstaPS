@@ -99,29 +99,6 @@ public class QuestData extends GameResource {
     }
 
 
-    /**
-     * Fill incomplete resource packs from the bundled native 7.1 intro baseline.
-     * Only absent actions are restored; an existing QuestExcel/BinOutput action wins.
-     */
-    public int fillMissingExecutions(QuestExecFallbackRow baseline) {
-        if (baseline == null || baseline.getSubId() != this.subId) return 0;
-        int previous =
-                this.beginExec.size() + this.finishExec.size() + this.failExec.size();
-        this.beginExec = effectiveExecList(this.beginExec, baseline.getBeginExec());
-        this.finishExec = effectiveExecList(this.finishExec, baseline.getFinishExec());
-        this.failExec = effectiveExecList(this.failExec, baseline.getFailExec());
-        return this.beginExec.size() + this.finishExec.size() + this.failExec.size() - previous;
-    }
-
-    /** Actions extracted from the complete 7.1 native BinOutput/Quest files. */
-    @Data
-    public static class QuestExecFallbackRow {
-        private int subId;
-        private List<QuestExecParam> beginExec;
-        private List<QuestExecParam> finishExec;
-        private List<QuestExecParam> failExec;
-    }
-
     static List<QuestExecParam> effectiveExecList(
             List<QuestExecParam> excel, List<QuestExecParam> bin) {
         var validExcel = validExecs(excel);
