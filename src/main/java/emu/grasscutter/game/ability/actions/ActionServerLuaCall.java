@@ -6,12 +6,17 @@ import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.entity.GameEntity;
 import emu.grasscutter.scripts.ScriptLoader;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import javax.script.Bindings;
 import org.luaj.vm2.LuaFunction;
 import org.luaj.vm2.LuaValue;
 
 @AbilityAction(AbilityModifierAction.Type.ServerLuaCall)
 public final class ActionServerLuaCall extends AbilityActionHandler {
+    private static final MissingFunctionWarningLimiter missingFunctionWarnings =
+            new MissingFunctionWarningLimiter(TimeUnit.MINUTES.toNanos(1));
+
     @Override
     public boolean execute(
             Ability ability, AbilityModifierAction action, ByteString abilityData, GameEntity target) {
@@ -76,8 +81,18 @@ public final class ActionServerLuaCall extends AbilityActionHandler {
         try {
             // Resolve the function from the script.
             var function = bindings.get(functionName);
-            if (!(function instanceof LuaFunction luaFunction))
-                throw new Exception("Function is not a LuaFunction.");
+            if (!(function instanceof LuaFunction luaFunction)) {
+                long suppressed = missingFunctionWarnings.acquireWarning(System.nanoTime());
+                if (suppressed >= 0) {
+                    Grasscutter.getLogger().warn(
+                            "Unable to invoke {}: binding is not a LuaFunction ({});"
+                                    + " suppressed {} repeated missing-function warnings.",
+                            functionName,
+                            function == null ? "missing" : function.getClass().getSimpleName(),
+                            suppressed);
+                }
+                return false;
+            }
 
             // Convert parameters to Lua values.
             var lParam1 = LuaValue.valueOf(action.param1.getInt(ability));
@@ -96,6 +111,27 @@ public final class ActionServerLuaCall extends AbilityActionHandler {
         } catch (Exception exception) {
             Grasscutter.getLogger().warn("Unable to invoke {}.", functionName, exception);
             return false;
+        }
+    }
+
+    // One global warning sample per interval; never retain players, bindings or missing names.
+    static final class MissingFunctionWarningLimiter {
+        private final long intervalNanos;
+        private final AtomicLong lastWarningNanos = new AtomicLong(Long.MIN_VALUE);
+        private final AtomicLong suppressedWarnings = new AtomicLong();
+
+        MissingFunctionWarningLimiter(long intervalNanos) {
+            this.intervalNanos = intervalNanos;
+        }
+
+        long acquireWarning(long nowNanos) {
+            long previous = this.lastWarningNanos.get();
+            if ((previous != Long.MIN_VALUE && nowNanos - previous < this.intervalNanos)
+                    || !this.lastWarningNanos.compareAndSet(previous, nowNanos)) {
+                this.suppressedWarnings.incrementAndGet();
+                return -1;
+            }
+            return this.suppressedWarnings.getAndSet(0);
         }
     }
 }

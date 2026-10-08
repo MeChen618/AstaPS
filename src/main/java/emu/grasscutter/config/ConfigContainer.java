@@ -37,9 +37,10 @@ public class ConfigContainer {
      *              encryption key used for packets is a constant or randomly generated.
      * Version 14 - 'server.threadPools' was added for managed thread-pool sizing.
      * Version 15 - 'server.watchdog' was added for the database monitor and timed restart.
+     * Version 16 - 'server.http.webConsole' was added for the password-protected web console.
      */
     private static int version() {
-        return 15;
+        return 16;
     }
 
     /**
@@ -256,6 +257,25 @@ public class ConfigContainer {
         public Encryption encryption = new Encryption();
         public Policies policies = new Policies();
         public Files files = new Files();
+        public WebConsole webConsole = new WebConsole();
+    }
+
+    /** The browser console at /console: server status, live log and console commands. */
+    public static class WebConsole {
+        public static final String DEFAULT_PASSWORD = "mechen618";
+
+        public boolean enabled = true;
+        /*
+         * Not written to config.json: left null, DEFAULT_PASSWORD applies. Add a "password" entry
+         * here to use another one.
+         */
+        public String password = null;
+        /* How long a login stays valid. */
+        public int sessionHours = 12;
+
+        public String effectivePassword() {
+            return password == null || password.isBlank() ? DEFAULT_PASSWORD : password;
+        }
     }
 
     public static class Game {

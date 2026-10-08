@@ -264,6 +264,24 @@ public class Account {
         this.permissions.clear();
     }
 
+    /** Rejects absent credentials before comparing either login or session tokens. */
+    public static boolean credentialMatches(String expected, String candidate) {
+        return expected != null
+                && !expected.isBlank()
+                && candidate != null
+                && expected.equals(candidate);
+    }
+
+    /** Checks the credential used by GetPlayerTokenReq. */
+    public boolean matchesLoginToken(String candidate) {
+        return credentialMatches(this.token, candidate);
+    }
+
+    /** Checks the account/session credential used by the HTTP login and combo flows. */
+    public boolean matchesSessionKey(String candidate) {
+        return credentialMatches(this.sessionKey, candidate);
+    }
+
     // TODO make unique
     public String generateLoginToken() {
         this.token = Utils.bytesToHex(Crypto.createSessionKey(32));

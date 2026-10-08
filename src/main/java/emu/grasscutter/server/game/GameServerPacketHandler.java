@@ -10,6 +10,7 @@ import emu.grasscutter.net.packet.*;
 import emu.grasscutter.server.event.game.ReceivePacketEvent;
 import emu.grasscutter.server.game.GameSession.SessionState;
 import it.unimi.dsi.fastutil.ints.*;
+import java.util.HexFormat;
 public final class GameServerPacketHandler {
 
     private final Int2ObjectMap<PacketHandler> handlers;
@@ -209,18 +210,21 @@ public final class GameServerPacketHandler {
                             session.getPlayer(), opcode, payload, header)) {
                 return;
             }
-            String hex = "";
-            if (payload != null && payload.length > 0 && payload.length <= 128) {
-                StringBuilder sb = new StringBuilder(payload.length * 2);
-                for (byte b : payload) {
-                    sb.append(String.format("%02x", b));
-                }
-                hex = " hex=" + sb;
+            // Extra level (90->95->100): also feed unknown opcodes to the sniffer, so a
+            // cap-breakthrough request that is not yet named still upgrades the avatar.
+            if (session.getPlayer() != null
+                    && emu.grasscutter.game.avatar.AvatarExtraLevelHelper.tryHandleUnregisteredPacket(
+                            session.getPlayer(), opcode, payload)) {
+                return;
             }
             // Unhandled requests go to debug: a 7.1 client sends dozens this server has no
             // handler for, and listing them at every login was noise.
             var logger = Grasscutter.getLogger();
             if (logger.isDebugEnabled()) {
+                String hex = "";
+                if (payload != null && payload.length > 0 && payload.length <= 128) {
+                    hex = " hex=" + HexFormat.of().formatHex(payload);
+                }
                 var line = "Unhandled packet opcode {} ({}) len={} from {}{}";
                 Object[] args = {
                     opcode,

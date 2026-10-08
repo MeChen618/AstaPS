@@ -1,6 +1,6 @@
 # AstaPS
 
-English · [繁體中文](README_zh-TW.md)
+English · [简体中文](README_zh-CN.md) · [繁體中文](README_zh-TW.md)
 
 A private server for Genshin Impact **7.1.0**, built on Grasscutter.
 

@@ -352,11 +352,12 @@ public class EntityAvatar extends GameEntity {
                         .setWearingFlycloakId(avatar.getFlyCloak())
                         .setCostumeId(avatar.getCostume())
                         .setTraceEffectId(avatar.getTraceEffect())
+                        .setWeaponSkinId(avatar.getWeaponSkinId())
                         .setBornTime(avatar.getBornTime());
 
         for (GameItem item : avatar.getEquips().values()) {
             if (item.getItemData().getEquipType() == EquipType.EQUIP_WEAPON) {
-                avatarInfo.setWeapon(item.createSceneWeaponInfo());
+                avatarInfo.setWeapon(item.createSceneWeaponInfo(avatar.getWeaponSkinId()));
             } else {
                 avatarInfo.addReliquaryList(item.createSceneReliquaryInfo());
             }

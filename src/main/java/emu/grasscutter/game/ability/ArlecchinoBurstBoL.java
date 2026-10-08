@@ -262,36 +262,38 @@ public final class ArlecchinoBurstBoL {
         }
         long now = System.currentTimeMillis();
         for (var entry : List.copyOf(PENDING.entrySet())) {
-            PendingBurst pending = entry.getValue();
-            long lockEnd = pending.castAtMs() + LOCK_MS;
+            EntityAvatar avatar = entry.getValue().avatar();
+            if (avatar == null) continue;
+            synchronized (avatar) {
+                PendingBurst pending = PENDING.get(entry.getKey());
+                if (pending == null || pending.avatar() != avatar) continue;
+                long lockEnd = pending.castAtMs() + LOCK_MS;
 
-            // Keep client bar pinned while we still hold BoL (client Q often zeros locally).
-            if (now < (pending.clearAtMs() > 0L ? pending.clearAtMs() : lockEnd + MISS_TIMEOUT_MS)) {
-                EntityAvatar av = pending.avatar();
-                if (av != null) {
-                    repinClientBoL(av);
+                // Keep client bar pinned while we still hold BoL (client Q often zeros locally).
+                if (now < (pending.clearAtMs() > 0L ? pending.clearAtMs() : lockEnd + MISS_TIMEOUT_MS)) {
+                    repinClientBoL(avatar);
                 }
-            }
 
-            // Never clear during the consume lock.
-            if (now < lockEnd) {
-                continue;
-            }
+                // Never clear during the consume lock.
+                if (now < lockEnd) {
+                    continue;
+                }
 
-            boolean due =
-                    (pending.clearAtMs() > 0L && now >= pending.clearAtMs())
-                            || (pending.clearAtMs() == 0L
-                                    && now - pending.castAtMs() >= MISS_TIMEOUT_MS);
-            if (!due) {
-                continue;
-            }
-            String reason =
-                    pending.clearAtMs() > 0L && now >= pending.clearAtMs()
-                            ? "post-slash"
-                            : "miss-timeout";
-            if (PENDING.remove(entry.getKey(), pending)) {
-                applyClear(
-                        pending.avatar(), pending.bolSnapshot(), pending.castSnapshot(), reason);
+                boolean due =
+                        (pending.clearAtMs() > 0L && now >= pending.clearAtMs())
+                                || (pending.clearAtMs() == 0L
+                                        && now - pending.castAtMs() >= MISS_TIMEOUT_MS);
+                if (!due) {
+                    continue;
+                }
+                String reason =
+                        pending.clearAtMs() > 0L && now >= pending.clearAtMs()
+                                ? "post-slash"
+                                : "miss-timeout";
+                if (PENDING.remove(entry.getKey(), pending)) {
+                    applyClear(
+                            pending.avatar(), pending.bolSnapshot(), pending.castSnapshot(), reason);
+                }
             }
         }
     }
@@ -303,18 +305,36 @@ public final class ArlecchinoBurstBoL {
         if (avatar == null) {
             return false;
         }
-        PendingBurst pending = PENDING.get(avatar.getId());
-        if (pending == null) {
-            return false;
-        }
-        long now = System.currentTimeMillis();
-        long lockEnd = pending.castAtMs() + LOCK_MS;
-        boolean hold =
-                now < lockEnd
-                        || (pending.clearAtMs() > 0L && now < pending.clearAtMs())
-                        || (pending.clearAtMs() == 0L
-                                && now - pending.castAtMs() < MISS_TIMEOUT_MS);
-        if (hold) {
+        synchronized (avatar) {
+            PendingBurst pending = PENDING.get(avatar.getId());
+            if (pending == null) {
+                return false;
+            }
+            long now = System.currentTimeMillis();
+            long lockEnd = pending.castAtMs() + LOCK_MS;
+            boolean hold =
+                    now < lockEnd
+                            || (pending.clearAtMs() > 0L && now < pending.clearAtMs())
+                            || (pending.clearAtMs() == 0L
+                                    && now - pending.castAtMs() < MISS_TIMEOUT_MS);
+            if (hold) {
+                if (amount > 0f) {
+                    DEFERRED_HEAL.merge(
+                            avatar.getId(),
+                            new DeferredHeal(amount, mute),
+                            (a, b) ->
+                                    new DeferredHeal(
+                                            Math.max(a.amount(), b.amount()), a.mute() && b.mute()));
+                }
+                Grasscutter.getLogger()
+                        .info(
+                                "[BoL] Arlecchino burst: defer heal amount={} (lockLeft={} clearAt={})",
+                                amount,
+                                Math.max(0L, lockEnd - now),
+                                pending.clearAtMs());
+                return true;
+            }
+            // Past hold - settle clear first, then flush this heal (do not fall through to heal()).
             if (amount > 0f) {
                 DEFERRED_HEAL.merge(
                         avatar.getId(),
@@ -323,28 +343,12 @@ public final class ArlecchinoBurstBoL {
                                 new DeferredHeal(
                                         Math.max(a.amount(), b.amount()), a.mute() && b.mute()));
             }
-            Grasscutter.getLogger()
-                    .info(
-                            "[BoL] Arlecchino burst: defer heal amount={} (lockLeft={} clearAt={})",
-                            amount,
-                            Math.max(0L, lockEnd - now),
-                            pending.clearAtMs());
+            if (!PENDING.remove(avatar.getId(), pending)) {
+                return false;
+            }
+            applyClear(pending.avatar(), pending.bolSnapshot(), pending.castSnapshot(), "burst-heal");
             return true;
         }
-        // Past hold — settle clear first, then flush this heal (do not fall through to heal()).
-        if (amount > 0f) {
-            DEFERRED_HEAL.merge(
-                    avatar.getId(),
-                    new DeferredHeal(amount, mute),
-                    (a, b) ->
-                            new DeferredHeal(
-                                    Math.max(a.amount(), b.amount()), a.mute() && b.mute()));
-        }
-        if (!PENDING.remove(avatar.getId(), pending)) {
-            return false;
-        }
-        applyClear(pending.avatar(), pending.bolSnapshot(), pending.castSnapshot(), "burst-heal");
-        return true;
     }
 
     public static void onBurstHeal(EntityAvatar avatar) {
@@ -522,7 +526,7 @@ public final class ArlecchinoBurstBoL {
             return;
         }
         // Ordinary heal() returns 0 at full HP / convertToHpDebt; use BoLUtil burst HP path.
-        float real = ArlecchinoBoLUtil.applyBurstHeal(avatar, deferred.amount());
+        float real = ArlecchinoBoLUtil.applyBurstHeal(avatar, deferred.amount(), deferred.mute());
         Grasscutter.getLogger()
                 .info(
                         "[BoL] Arlecchino burst: flushed deferred heal amount={} real={}",

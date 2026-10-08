@@ -542,14 +542,16 @@ public class Scene {
         if (!(target instanceof EntityAvatar)) {
             EntityAvatar arlecAttacker = resolveArlecchinoAttacker(attacker);
             if (arlecAttacker != null) {
-                // Q slash often reports ElementalBurst_Gadget as attackerId - still settle BoL clear.
-                if (ArlecchinoBurstBoL.isPending(arlecAttacker.getId())
-                        || (attacker instanceof EntityAvatar)) {
-                    ArlecchinoBurstBoL.onAttack(arlecAttacker, result);
-                }
-                // Masque of the Red Death: only avatar Normal Attacks consume BoL, not gadget / CA / plunge / E / Q.
-                if (attacker instanceof EntityAvatar) {
-                    reduceArlecchinoBoLOnNormalAttack(arlecAttacker, result);
+                synchronized (arlecAttacker) {
+                    // Q slash often reports ElementalBurst_Gadget as attackerId - still settle BoL clear.
+                    if (ArlecchinoBurstBoL.isPending(arlecAttacker.getId())
+                            || (attacker instanceof EntityAvatar)) {
+                        ArlecchinoBurstBoL.onAttack(arlecAttacker, result);
+                    }
+                    // Masque of the Red Death: only avatar Normal Attacks consume BoL, not gadget / CA / plunge / E / Q.
+                    if (attacker instanceof EntityAvatar) {
+                        reduceArlecchinoBoLOnNormalAttack(arlecAttacker, result);
+                    }
                 }
             }
         }

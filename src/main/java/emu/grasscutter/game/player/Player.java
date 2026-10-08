@@ -82,6 +82,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private String nickname;
     @Getter private String signature;
     @Getter private int headImage;
+    @Getter private int profileFrameId = 100011;
     @Getter private Map<Integer, Set<Integer>> sceneTags;
     @Getter private int nameCardId = 210001;
     @Getter private Position position;
@@ -109,6 +110,7 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter private Set<Integer> flyCloakList;
     @Getter private Set<Integer> traceEffectList;
     @Getter private Set<Integer> costumeList;
+    @Getter private Set<Integer> weaponSkinList;
     @Getter private Set<Integer> personalLineList;
     @Getter @Setter private Set<Integer> rewardedLevels;
     @Getter @Setter private Set<Integer> homeRewardedLevels;
@@ -281,6 +283,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.flyCloakList = new HashSet<>();
         this.traceEffectList = new HashSet<>();
         this.costumeList = new HashSet<>();
+        this.weaponSkinList = new HashSet<>();
         this.personalLineList = new HashSet<>();
         this.towerData = new TowerData();
         this.collectionRecordStore = new PlayerCollectionRecords();
@@ -349,7 +352,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.applyProperties();
         this.applyStartingSceneTags();
         this.getFlyCloakList().add(140001);
-        this.getNameCardList().add(210001);
+        for (int __nc = 210001; __nc <= 210100; __nc++) { this.getNameCardList().add(__nc); }
         setPhlogistonValue(100);
         for(int t=0; t < 20; t++){
             this.getTraceEffectList().add(215001+t);
@@ -494,6 +497,12 @@ public class Player implements PlayerHook, FieldFetch {
 
     public void setHeadImage(int picture) {
         this.headImage = picture;
+        this.updateProfile();
+        this.save();
+    }
+
+    public void setProfileFrameId(int frameId) {
+        this.profileFrameId = frameId;
         this.updateProfile();
         this.save();
     }
@@ -1012,6 +1021,26 @@ public class Player implements PlayerHook, FieldFetch {
         this.sendPacket(new PacketAvatarGainCostumeNotify(costumeId));
     }
 
+    /** 0 means "no skin" (unequip) and must count as valid, otherwise the client's
+     * unequip/resend request gets a failure retcode and shows "server error". */
+    public boolean hasWeaponSkin(int weaponSkinId) {
+        return weaponSkinId <= 0 || this.getWeaponSkinList().contains(weaponSkinId);
+    }
+
+    /** Unlocks one or more weapon skins (from ITEM_USE_ADD_WEAPON_SKIN materials). */
+    public void addWeaponSkins(List<Integer> skinIds) {
+        boolean changed = false;
+        for (int id : skinIds) {
+            if (id != 0 && this.getWeaponSkinList().add(id)) {
+                changed = true;
+            }
+        }
+        if (changed) {
+            this.save();
+            this.sendPacket(new PacketAvatarWeaponSkinDataNotify(this));
+        }
+    }
+
     public void addTraceEffect(int traceEffectId) {
         this.getTraceEffectList().add(traceEffectId);
         this.sendPacket(new PacketAvatarGainTraceEffectNotify(traceEffectId));
@@ -1105,9 +1134,9 @@ public class Player implements PlayerHook, FieldFetch {
             .setNickname(this.getNickname())
             .setPlayerLevel(this.getLevel())
             .setMpSettingType(this.getMpSetting())
-            .setNameCardId(this.getNameCardId())
+            .setNameCardId(this.getNameCardId() == 0 || this.getNameCardId() == 210001 ? 210003 : this.getNameCardId())
             .setSignature(this.getSignature())
-            .setProfilePicture(ProfilePictureHelper.toProto(this.getHeadImage()));
+            .setProfilePicture(ProfilePictureHelper.toProto(this.getHeadImage()).toBuilder().setProfileFrameId(this.getProfileFrameId()).build());
 
         if (this.getWorld() != null) {
             onlineInfo.setCurPlayerNumInWorld(getWorld().getPlayerCount());
@@ -1157,13 +1186,13 @@ public class Player implements PlayerHook, FieldFetch {
 
         return SocialDetail.newBuilder()
             .setUid(this.getUid())
-            .setProfilePicture(ProfilePictureHelper.toProto(this.getHeadImage()))
+            .setProfilePicture(ProfilePictureHelper.toProto(this.getHeadImage()).toBuilder().setProfileFrameId(this.getProfileFrameId()).build())
             .setNickname(this.getNickname())
             .setSignature(this.getSignature())
             .setLevel(this.getLevel())
             .setBirthday(this.getBirthday().getFilledProtoWhenNotEmpty())
             .setWorldLevel(this.getWorldLevel())
-            .setNameCardId(this.getNameCardId())
+            .setNameCardId(this.getNameCardId() == 0 || this.getNameCardId() == 210001 ? 210003 : this.getNameCardId())
             .setIsShowAvatar(this.isShowAvatars())
             .setIsShowConstellationNum(showConstellation)
             .addAllShowAvatarInfoList(socialShowAvatarInfoList)
@@ -1515,6 +1544,12 @@ public class Player implements PlayerHook, FieldFetch {
         session.send(new PacketStoreWeightLimitNotify());
         session.send(new PacketPlayerStoreNotify(this));
         session.send(new PacketAvatarDataNotify(this));
+        session.send(new PacketAvatarWeaponSkinDataNotify(this));
+        // 登录时下发头像/头像框数据：否则重登后个人主页的头像框会显示成"?"，要重新应用一次才恢复。
+        // (HandlerMiao21517 修复头像框时发的也是这一组：25989+6326+4162。)
+        session.send(new PacketBeyondProfilePictureDataNotify(this));
+        session.send(new PacketBeyondPlayerDetailRsp(this));
+        session.send(new PacketGetPlayerSocialDetailRsp(this.getSocialDetail(), 0));
 
         this.getProgressManager().onPlayerLogin();
         try {

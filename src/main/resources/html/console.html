@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AstaPS 控制台</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --panel: #ffffff; --text: #1d2129; --muted: #6b7280; --border: #e3e5e8;
+    --accent: #2563eb; --accent-text: #ffffff; --ok: #15803d; --warn: #b45309; --bad: #b91c1c;
+    --log-bg: #0f1115; --log-text: #d6d9de; --log-warn: #f0b429; --log-error: #ff6b6b; --log-debug: #8b93a1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111317; --panel: #1a1d23; --text: #e6e8eb; --muted: #9aa1ab; --border: #2b2f37;
+      --accent: #3b82f6; --ok: #4ade80; --warn: #fbbf24; --bad: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.5 system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .hidden { display: none !important; }
+  button, input { font: inherit; }
+  button { cursor: pointer; border: 1px solid var(--border); background: var(--panel); color: var(--text);
+    border-radius: 6px; padding: 6px 12px; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+  input[type=text], input[type=password] { width: 100%; padding: 8px 10px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--panel); color: var(--text); }
+
+  #login { max-width: 340px; margin: 18vh auto 0; padding: 0 16px; }
+  #login .box { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  #login h1 { font-size: 18px; margin: 0 0 16px; }
+  #login form { display: flex; flex-direction: column; gap: 12px; }
+  #login-error { color: var(--bad); min-height: 1.5em; margin: 0; }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 12px 16px; border-bottom: 1px solid var(--border); background: var(--panel); }
+  header h1 { font-size: 16px; margin: 0; }
+  main { max-width: 1200px; margin: 0 auto; padding: 16px; display: grid; gap: 16px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .card, .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; }
+  .card { padding: 12px 14px; }
+  .card .label { color: var(--muted); font-size: 12px; }
+  .card .value { font-size: 20px; font-weight: 600; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .card .sub { color: var(--muted); font-size: 12px; }
+  .NORMAL { color: var(--ok); } .WARNING { color: var(--warn); } .DANGER { color: var(--bad); }
+  .panel h2 { font-size: 14px; margin: 0; padding: 10px 14px; border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .panel h2 .tools { display: flex; gap: 8px; align-items: center; font-weight: normal; font-size: 12px; color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 800px) { .two { grid-template-columns: 1fr; } }
+
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 6px 14px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th { color: var(--muted); font-weight: normal; font-size: 12px; }
+  .table-wrap { max-height: 320px; overflow: auto; }
+  .empty { color: var(--muted); padding: 14px; }
+
+  .log { background: var(--log-bg); color: var(--log-text); margin: 0; padding: 10px 14px; height: 420px;
+    overflow: auto; font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    white-space: pre-wrap; word-break: break-all; border-radius: 0 0 10px 10px; }
+  .log .WARN { color: var(--log-warn); } .log .ERROR { color: var(--log-error); }
+  .log .DEBUG, .log .TRACE { color: var(--log-debug); }
+
+  #cmd-form { display: flex; gap: 8px; padding: 12px 14px; }
+  #cmd-form input { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  #cmd-output { height: 260px; border-radius: 0 0 10px 10px; }
+  #cmd-output .cmd { color: #7cc4ff; }
+</style>
+</head>
+<body>
+
+<section id="login">
+  <div class="box">
+    <h1>AstaPS 控制台</h1>
+    <form id="login-form">
+      <input id="password" type="password" placeholder="控制台密码" autocomplete="current-password" required>
+      <button class="primary" type="submit">登录</button>
+      <p id="login-error"></p>
+    </form>
+  </div>
+</section>
+
+<section id="app" class="hidden">
+  <header>
+    <h1>AstaPS 控制台</h1>
+    <button id="logout" type="button">退出登录</button>
+  </header>
+  <main>
+    <div class="cards">
+      <div class="card"><div class="label">在线玩家</div><div class="value" id="s-players">-</div><div class="sub" id="s-version"></div></div>
+      <div class="card"><div class="label">运行时间</div><div class="value" id="s-uptime">-</div><div class="sub" id="s-started"></div></div>
+      <div class="card"><div class="label">状态</div><div class="value" id="s-health">-</div><div class="sub" id="s-diagnosis"></div></div>
+      <div class="card"><div class="label">进程 CPU</div><div class="value" id="s-cpu">-</div><div class="sub" id="s-syscpu"></div></div>
+      <div class="card"><div class="label">JVM 内存</div><div class="value" id="s-mem">-</div><div class="sub" id="s-memsub"></div></div>
+      <div class="card"><div class="label">系统内存</div><div class="value" id="s-sysmem">-</div><div class="sub" id="s-sysmemsub"></div></div>
+    </div>
+
+    <div class="two">
+      <div class="panel">
+        <h2>执行命令 <span class="tools">和服务器控制台一样，不用加 /；↑↓ 切换历史</span></h2>
+        <form id="cmd-form">
+          <input id="cmd" type="text" placeholder="例如：list 或 give @10001 201 x1000" autocomplete="off" spellcheck="false">
+          <button class="primary" type="submit">执行</button>
+        </form>
+        <pre class="log" id="cmd-output"></pre>
+      </div>
+      <div class="panel">
+        <h2>在线玩家 <span class="tools" id="players-updated"></span></h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>UID</th><th>昵称</th><th>冒险等级</th><th>世界等级</th><th>场景</th></tr></thead>
+            <tbody id="players"></tbody>
+          </table>
+          <div class="empty hidden" id="players-empty">没有在线玩家</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>服务器日志
+        <span class="tools">
+          <input id="log-filter" type="text" placeholder="过滤" style="width:140px;padding:3px 8px">
+          <label><input id="log-follow" type="checkbox" checked> 自动滚动</label>
+        </span>
+      </h2>
+      <pre class="log" id="log"></pre>
+    </div>
+  </main>
+</section>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const store = {
+    get() { try { return sessionStorage.getItem("astaps-console-token"); } catch (e) { return null; } },
+    set(v) { try { v ? sessionStorage.setItem("astaps-console-token", v) : sessionStorage.removeItem("astaps-console-token"); } catch (e) {} },
+  };
+  let token = store.get();
+  let lastSeq = 0;
+  let timers = [];
+  const MAX_LOG_LINES = 2000;
+
+  async function api(path, options = {}) {
+    const headers = Object.assign({ "Content-Type": "application/json" }, options.headers || {});
+    if (token) headers["X-Console-Token"] = token;
+    const response = await fetch(path, Object.assign({}, options, { headers }));
+    if (response.status === 401) { showLogin("登录已过期，请重新登录"); throw new Error("unauthorized"); }
+    return response;
+  }
+
+  function showLogin(message) {
+    timers.forEach(clearInterval); timers = [];
+    token = null; store.set(null);
+    $("app").classList.add("hidden");
+    $("login").classList.remove("hidden");
+    $("login-error").textContent = message || "";
+    $("password").focus();
+  }
+
+  function showApp() {
+    $("login").classList.add("hidden");
+    $("app").classList.remove("hidden");
+    $("log").textContent = ""; lastSeq = 0;
+    refreshStatus(); refreshPlayers(); refreshLogs();
+    timers.push(setInterval(refreshStatus, 5000));
+    timers.push(setInterval(refreshPlayers, 5000));
+    timers.push(setInterval(refreshLogs, 2000));
+    $("cmd").focus();
+  }
+
+  $("login-form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    $("login-error").textContent = "";
+    try {
+      const response = await fetch("/console/api/login", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: $("password").value }),
+      });
+      const body = await response.json().catch(() => ({}));
+      if (response.ok && body.token) {
+        token = body.token; store.set(token); $("password").value = ""; showApp();
+      } else if (response.status === 429) {
+        $("login-error").textContent = "密码错误次数过多，请 10 分钟后再试";
+      } else {
+        $("login-error").textContent = "密码错误";
+      }
+    } catch (e) {
+      $("login-error").textContent = "无法连接服务器";
+    }
+  });
+
+  $("logout").addEventListener("click", async () => {
+    try { await api("/console/api/logout", { method: "POST" }); } catch (e) {}
+    showLogin();
+  });
+
+  const pct = (v) => (typeof v === "number" && v >= 0) ? (v * 100).toFixed(1) + "%" : "-";
+  const mb = (v) => (typeof v === "number" && v >= 0) ? (v / 1048576).toFixed(0) + " MB" : "-";
+  const healthText = { NORMAL: "正常", WARNING: "注意", DANGER: "危险" };
+
+  async function refreshStatus() {
+    try {
+      const s = await (await fetch("/api/status", { cache: "no-store" })).json();
+      const g = s.game || {}, j = s.jvm || {}, sys = s.system || {};
+      $("s-players").textContent = g.maxPlayers > 0 ? `${g.players} / ${g.maxPlayers}` : `${g.players ?? "-"}`;
+      $("s-version").textContent = g.gameVersion ? "版本 " + g.gameVersion : "";
+      $("s-uptime").textContent = g.uptime || "-";
+      $("s-started").textContent = g.startedAt ? "启动于 " + g.startedAt : "";
+      const health = $("s-health");
+      health.textContent = healthText[s.health] || s.health || "-";
+      health.className = "value " + (s.health || "");
+      $("s-diagnosis").textContent = s.diagnosis || "";
+      $("s-cpu").textContent = pct(j.processCpuLoad);
+      $("s-syscpu").textContent = "系统 " + pct(sys.systemCpuLoad);
+      $("s-mem").textContent = pct(j.memoryUsage);
+      $("s-memsub").textContent = `${mb(j.usedMemoryBytes)} / ${mb(j.maxMemoryBytes)}`;
+      $("s-sysmem").textContent = pct(sys.memoryUsage);
+      $("s-sysmemsub").textContent = (typeof sys.totalMemoryBytes === "number" && typeof sys.freeMemoryBytes === "number")
+        ? `${mb(sys.totalMemoryBytes - sys.freeMemoryBytes)} / ${mb(sys.totalMemoryBytes)}` : "";
+    } catch (e) {}
+  }
+
+  async function refreshPlayers() {
+    try {
+      const body = await (await api("/console/api/players")).json();
+      const tbody = $("players");
+      tbody.replaceChildren();
+      for (const p of body.players || []) {
+        const tr = document.createElement("tr");
+        for (const v of [p.uid, p.nickname, p.level, p.worldLevel, p.sceneId]) {
+          const td = document.createElement("td"); td.textContent = v ?? ""; tr.appendChild(td);
+        }
+        tbody.appendChild(tr);
+      }
+      $("players-empty").classList.toggle("hidden", (body.players || []).length > 0);
+      $("players-updated").textContent = "更新于 " + new Date().toLocaleTimeString();
+    } catch (e) {}
+  }
+
+  function matchesFilter(text) {
+    const filter = $("log-filter").value.trim().toLowerCase();
+    return !filter || text.toLowerCase().includes(filter);
+  }
+
+  function appendLog(target, level, text) {
+    const div = document.createElement("div");
+    div.className = level;
+    div.textContent = text;
+    if (target === $("log") && !matchesFilter(text)) div.classList.add("hidden");
+    target.appendChild(div);
+    while (target.childNodes.length > MAX_LOG_LINES) target.removeChild(target.firstChild);
+  }
+
+  async function refreshLogs() {
+    try {
+      const body = await (await api("/console/api/logs?after=" + lastSeq)).json();
+      const log = $("log");
+      const lines = body.lines || [];
+      for (const line of lines) { appendLog(log, line.level, line.text); lastSeq = Math.max(lastSeq, line.seq); }
+      if (lines.length && $("log-follow").checked) log.scrollTop = log.scrollHeight;
+    } catch (e) {}
+  }
+
+  $("log-filter").addEventListener("input", () => {
+    for (const div of $("log").childNodes) div.classList.toggle("hidden", !matchesFilter(div.textContent));
+  });
+
+  const history = [];
+  let historyIndex = 0;
+  $("cmd").addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp" && historyIndex > 0) {
+      historyIndex--; $("cmd").value = history[historyIndex]; event.preventDefault();
+    } else if (event.key === "ArrowDown" && historyIndex < history.length) {
+      historyIndex++; $("cmd").value = history[historyIndex] ?? ""; event.preventDefault();
+    }
+  });
+
+  $("cmd-form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const command = $("cmd").value.trim();
+    if (!command) return;
+    if (history[history.length - 1] !== command) history.push(command);
+    historyIndex = history.length;
+    $("cmd").value = "";
+    const out = $("cmd-output");
+    const line = document.createElement("div");
+    line.className = "cmd"; line.textContent = "> " + command;
+    out.appendChild(line);
+    try {
+      const response = await api("/console/api/command", { method: "POST", body: JSON.stringify({ command }) });
+      const body = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        appendLog(out, "ERROR", "执行失败：" + (body.message || body.error || response.status));
+      } else if (!body.output || body.output.length === 0) {
+        appendLog(out, "DEBUG", "（没有直接输出，结果请看下方日志）");
+      } else {
+        for (const text of body.output) appendLog(out, "INFO", text);
+      }
+    } catch (e) {
+      if (e.message !== "unauthorized") appendLog(out, "ERROR", "无法连接服务器");
+    }
+    out.scrollTop = out.scrollHeight;
+  });
+
+  if (token) showApp(); else showLogin();
+})();
+</script>
+</body>
+</html>

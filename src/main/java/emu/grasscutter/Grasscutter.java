@@ -162,6 +162,7 @@ public final class Grasscutter {
             httpServer.addRouter(DocumentationServerHandler.class);
             httpServer.addRouter(HandbookHandler.class);
             httpServer.addRouter(emu.grasscutter.server.http.api.ApiHandler.class);
+            httpServer.addRouter(emu.grasscutter.server.http.console.WebConsoleHandler.class);
         }
 
         // Check if the HTTP server should start.

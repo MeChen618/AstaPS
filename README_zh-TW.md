@@ -1,6 +1,6 @@
 # AstaPS
 
-[English](README.md) · 繁體中文
+[English](README.md) · [简体中文](README_zh-CN.md) · 繁體中文
 
 一個基於 Grasscutter 的《原神》**7.1.0** 私人伺服器。
 

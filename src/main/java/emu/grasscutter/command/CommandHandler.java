@@ -26,6 +26,7 @@ public interface CommandHandler {
         // Send message to target.
         if (player == null) {
             Grasscutter.getLogger().info(event.getMessage());
+            CommandOutputCapture.offer(event.getMessage());
         } else {
             player.dropMessage(event.getMessage().replace("\n\t", "\n\n"));
         }

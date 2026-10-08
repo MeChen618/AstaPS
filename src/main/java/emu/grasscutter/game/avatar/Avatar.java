@@ -89,6 +89,7 @@ public class Avatar {
 
     @Getter @Setter private int flyCloak;
     @Getter @Setter private int costume;
+    @Getter @Setter private int weaponSkinId;
     @Getter private int bornTime;
 
     @Getter @Setter private int fetterLevel = 1;
@@ -1207,7 +1208,8 @@ public class Avatar {
                         .setFetterInfo(avatarFetter)
                         .setWearingFlycloakId(this.getFlyCloak())
                         .setCostumeId(this.getCostume())
-                        .setTraceEffectId(this.getTraceEffect());
+                        .setTraceEffectId(this.getTraceEffect())
+                        .setWeaponSkinId(this.getWeaponSkinId());
 
         this.getSkillExtraChargeMap()
                 .forEach(
@@ -1240,6 +1242,10 @@ public class Avatar {
             avatarInfo.setExpeditionStateValue(expeditionInfo.getState());
         }
 
+        // 7.x extra level (90->95->100): send the effective max level / extra tier so the
+        // character screen shows the breakthrough; without this the client never enables it.
+        emu.grasscutter.game.avatar.AvatarExtraLevelHelper.applyAvatarInfoExtraLevel(avatarInfo, this);
+
         return avatarInfo.build();
     }
 
@@ -1260,7 +1266,8 @@ public class Avatar {
                         .putAllSkillLevelMap(this.getSkillLevelMap())
                         .putAllProudSkillExtraLevelMap(this.getProudSkillBonusMap())
                         .setFetterInfo(avatarFetter)
-                        .setCostumeId(this.getCostume());
+                        .setCostumeId(this.getCostume())
+                        .setWeaponSkinId(this.getWeaponSkinId());
 
         showAvatarInfo.putPropMap(
                 PlayerProperty.PROP_LEVEL.getId(),

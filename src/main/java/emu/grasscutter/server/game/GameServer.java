@@ -62,6 +62,11 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
     private final Map<Integer, Player> players;
     private final Set<World> worlds;
     private final Int2ObjectMap<HomeWorld> homeWorlds;
+    private volatile long completedTickCount;
+    private volatile long lastTickCompletedAtMillis;
+    private volatile long lastTickCompletedNanos;
+    private volatile long lastTickDurationMillis;
+    private volatile long maxTickDurationMillis;
 
     @Setter private DispatchClient dispatchClient;
 
@@ -315,57 +320,84 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
         // The watchdog clears this as soon as the database answers again.
         if (ServerWatchdog.isDatabaseDown()) return;
 
-        var tickStart = Instant.now();
-
-        // Each of these is guarded on its own. One world or one player throwing used to abandon the
-        // whole tick, so everybody else's world stopped moving for reasons that had nothing to do
-        // with them - and the scheduler at the end never ran at all.
-        // Lock the home world cache before the world set. Logging in takes them in that order
-        // (computeIfAbsent builds a HomeWorld, which registers itself in the world set), so taking
-        // the world set first here deadlocked the tick against a login and froze the server.
-        synchronized (this.homeWorlds) {
-            this.worlds.removeIf(
-                    world -> {
-                        try {
-                            boolean shouldRemove = world.onTick();
-                            if (shouldRemove && world instanceof HomeWorld homeWorld) {
-                                // Home worlds are indexed separately from the world tick set.
-                                // Remove the same instance from that cache, otherwise the host
-                                // player and every loaded home scene stay strongly reachable after
-                                // the last player leaves.
-                                Player host = homeWorld.getHost();
-                                if (host != null) {
-                                    this.homeWorlds.remove(host.getUid(), homeWorld);
-                                }
-                            }
-                            return shouldRemove;
-                        } catch (Throwable e) {
-                            Grasscutter.getLogger().error("A world threw while ticking.", e);
-                            return false;
-                        }
-                    });
-        }
-
-        this.players
-                .values()
-                .forEach(
-                        player -> {
-                            try {
-                                player.onTick();
-                            } catch (Throwable e) {
-                                Grasscutter.getLogger().error("Player {} threw while ticking.", player.getUid(), e);
-                            }
-                        });
-
+        long tickStartedNanos = System.nanoTime();
+        boolean completed = false;
         try {
-            this.getScheduler().runTasks();
-        } catch (Throwable e) {
-            Grasscutter.getLogger().error("A scheduled task threw.", e);
-        }
+            var tickStart = Instant.now();
 
-        // Call server tick event.
-        ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
-        event.call();
+            // Each of these is guarded on its own. One world or one player throwing used to abandon
+            // the whole tick, so everybody else's world stopped moving - and the scheduler at the
+            // end never ran at all. Collection locks are only held while copying, never while
+            // calling back into a world or player that may need the same caches in reverse order.
+            final List<World> worldSnapshot;
+            synchronized (this.worlds) {
+                worldSnapshot = new ArrayList<>(this.worlds);
+            }
+            for (World world : worldSnapshot) {
+                if (!this.worlds.contains(world)) continue;
+                try {
+                    if (world.onTick()) {
+                        this.removeWorldIfEmpty(world);
+                    }
+                } catch (Throwable e) {
+                    Grasscutter.getLogger().error("A world threw while ticking.", e);
+                }
+            }
+
+            this.players
+                    .values()
+                    .forEach(
+                            player -> {
+                                try {
+                                    player.onTick();
+                                } catch (Throwable e) {
+                                    Grasscutter.getLogger().error("Player {} threw while ticking.", player.getUid(), e);
+                                }
+                            });
+
+            try {
+                this.getScheduler().runTasks();
+            } catch (Throwable e) {
+                Grasscutter.getLogger().error("A scheduled task threw.", e);
+            }
+
+            // Call server tick event.
+            ServerTickEvent event = new ServerTickEvent(tickStart, Instant.now());
+            event.call();
+            completed = true;
+        } finally {
+            long finishedNanos = System.nanoTime();
+            long duration = TimeUnit.NANOSECONDS.toMillis(finishedNanos - tickStartedNanos);
+            this.lastTickDurationMillis = duration;
+            this.maxTickDurationMillis = Math.max(this.maxTickDurationMillis, duration);
+            if (completed) {
+                this.lastTickCompletedAtMillis = System.currentTimeMillis();
+                this.lastTickCompletedNanos = finishedNanos;
+                // Publish completion after its timestamps. Status reads must not take the tick lock.
+                this.completedTickCount++;
+            }
+        }
+    }
+
+    /** Complete loops, including the tick event; isolated world/player errors do not stop progress. */
+    public long getCompletedTickCount() {
+        return this.completedTickCount;
+    }
+
+    public long getLastTickCompletedAtMillis() {
+        return this.lastTickCompletedAtMillis;
+    }
+
+    public long getLastTickCompletedNanos() {
+        return this.lastTickCompletedNanos;
+    }
+
+    public long getLastTickDurationMillis() {
+        return this.lastTickDurationMillis;
+    }
+
+    public long getMaxTickDurationMillis() {
+        return this.maxTickDurationMillis;
     }
 
     public void registerWorld(World world) {
@@ -391,14 +423,25 @@ public final class GameServer extends KcpServer implements Iterable<Player> {
                 .computeIfAbsent(owner.getUid(), (uid) -> new HomeWorld(this, owner));
     }
 
-    /** Removes an empty home world only when it is still the cached instance for its host. */
+    /** Removes an empty home world without deleting a newer cached instance for its host. */
     public void releaseHomeWorldIfEmpty(HomeWorld homeWorld) {
-        if (homeWorld == null || homeWorld.getPlayerCount() != 0) {
-            return;
+        if (homeWorld != null) {
+            this.removeWorldIfEmpty(homeWorld);
         }
-        Player host = homeWorld.getHost();
-        if (host != null && this.homeWorlds.remove(host.getUid(), homeWorld)) {
-            this.worlds.remove(homeWorld);
+    }
+
+    private void removeWorldIfEmpty(World world) {
+        // addPlayer/removePlayer use the world monitor. Recheck after onTick so a player who
+        // joined after the snapshot cannot lose their world to an earlier empty-world result.
+        synchronized (world) {
+            if (world.getPlayerCount() != 0) return;
+            if (world instanceof HomeWorld homeWorld) {
+                Player host = homeWorld.getHost();
+                if (host != null) {
+                    this.homeWorlds.remove(host.getUid(), homeWorld);
+                }
+            }
+            this.worlds.remove(world);
         }
     }
 

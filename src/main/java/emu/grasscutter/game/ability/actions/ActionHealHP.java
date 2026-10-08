@@ -4,6 +4,7 @@ import com.google.protobuf.ByteString;
 import emu.grasscutter.data.binout.AbilityModifier.AbilityModifierAction;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.ability.ArlecchinoBurstBoL;
+import emu.grasscutter.game.ability.ArlecchinoBoLUtil;
 import emu.grasscutter.game.ability.ClorindeBoLUtil;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.*;
@@ -110,21 +111,10 @@ public final class ActionHealHP extends AbilityActionHandler {
         // Officially it is set to 1 only at the end of the successful High branch, and cleared back to 0 by
         // onBeingHealed.
 
-        // Her burst clears the Bond and then heals off what it cleared, so the clear has to land
-        // first - otherwise heal() below spends the payout paying the Bond straight back down.
         String abilityName =
                 ability.getData() != null && ability.getData().abilityName != null
                         ? ability.getData().abilityName
                         : "";
-        if (target instanceof EntityAvatar burstHealer
-                && burstHealer.getAvatar() != null
-                && burstHealer.getAvatar().getAvatarId() == 10000096
-                && ((healTag != null && healTag.contains("ElementalBurst"))
-                        || abilityName.contains("ElementalBurst")
-                        || abilityName.contains("Burst"))) {
-            ArlecchinoBurstBoL.onBurstHeal(burstHealer);
-        }
-
         // Clorinde: ForbidFoodHeal makes isConvertToHpDebt() always true. The old x0.8 path that paid down
         // BoL without restoring HP has been removed.
         // Impale and Night Vigil conversion are handled by handleHealHp at the top of the file; this is a
@@ -156,9 +146,25 @@ public final class ActionHealHP extends AbilityActionHandler {
             finalAmount = amountToRegenerate * (1.0f + healAdd + healedAdd) * action.healRatio.get(ability, 1f);
         }
 
-        float realHeal = healTarget.heal(finalAmount, action.muteHealEffect);
-        if (realHeal > 0 && !action.muteHealEffect) {
-            healTarget.getWorld().broadcastPacket(new PacketEvtBeingHealedNotify(owner, healTarget, finalAmount, realHeal));
+        if (healTarget instanceof EntityAvatar burstHealer
+                && burstHealer.getAvatar() != null
+                && burstHealer.getAvatar().getAvatarId() == ArlecchinoBoLUtil.ARLECCHINO_AVATAR_ID
+                && (ArlecchinoBoLUtil.BURST_HEAL_TAG.equals(healTag)
+                        || (abilityName.contains("Arlecchino")
+                                && abilityName.contains("ElementalBurst")))) {
+            // Preserve the cast's Bond until its damage settles; the payout restores HP directly.
+            synchronized (burstHealer) {
+                if (!ArlecchinoBurstBoL.prepareBurstHeal(
+                        burstHealer, finalAmount, action.muteHealEffect)) {
+                    ArlecchinoBoLUtil.applyBurstHeal(
+                            burstHealer, finalAmount, action.muteHealEffect);
+                }
+            }
+        } else {
+            float realHeal = healTarget.heal(finalAmount, action.muteHealEffect);
+            if (realHeal > 0 && !action.muteHealEffect) {
+                healTarget.getWorld().broadcastPacket(new PacketEvtBeingHealedNotify(owner, healTarget, finalAmount, realHeal));
+            }
         }
 
         if (finalAmount > 0) {

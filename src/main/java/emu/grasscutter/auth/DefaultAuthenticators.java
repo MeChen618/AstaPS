@@ -357,7 +357,7 @@ public final class DefaultAuthenticators {
             Account account = DatabaseHelper.getAccountById(requestData.uid);
 
             // Check if account exists/token is valid.
-            successfulLogin = account != null && account.getSessionKey().equals(requestData.token);
+            successfulLogin = account != null && account.matchesSessionKey(requestData.token);
 
             // Set response data.
             if (successfulLogin) {
@@ -411,41 +411,15 @@ public final class DefaultAuthenticators {
                 return response;
             }
 
-            // Log the combo login attempt for diagnostics.
-            String dbKey = "";
+            // Fail closed: never trust a caller-supplied session token simply because
+            // an account with that UID exists.
             Account account = DatabaseHelper.getAccountById(loginData.uid);
-            if (account != null) {
-                var sk = account.getSessionKey();
-                dbKey = sk == null ? "<null>" : sk.substring(0, Math.min(20, sk.length()));
-            }
-            Grasscutter.getLogger().info(
-                    "[Combo] login from " + address
-                            + " uid=" + loginData.uid
-                            + " token=" + (loginData.token == null ? "<null>" : loginData.token.substring(0, Math.min(20, loginData.token.length())))
-                            + " dbKey=" + dbKey
-                            + " account=" + (account != null));
-
-            // Get account from database.
-            // Check if account exists/token is valid.
-            // Lenient mode for private servers: if the stored session key differs (e.g. the
-            // client cached a token from another server/play session), adopt the client's
-            // token so the combo login succeeds instead of failing with a "session key error".
-            if (account != null) {
-                var sk = account.getSessionKey();
-                if (sk == null || !sk.equals(loginData.token)) {
-                    Grasscutter.getLogger().info(
-                            "[Combo] adopting token for uid=" + loginData.uid
-                                    + " (old=" + (sk == null ? "null" : sk.substring(0, Math.min(12, sk.length())))
-                                    + " new=" + (loginData.token == null ? "null" : loginData.token.substring(0, Math.min(12, loginData.token.length())))
-                                    + ")");
-                    account.setSessionKey(loginData.token);
-                    account.save();
-                }
-                successfulLogin = true;
-            } else {
-                successfulLogin = false;
-            }
-            Grasscutter.getLogger().info("[Combo] verification=" + successfulLogin);
+            successfulLogin = account != null && account.matchesSessionKey(loginData.token);
+            Grasscutter.getLogger()
+                    .info(
+                            "[Combo] credential verification={} for uid={}",
+                            successfulLogin,
+                            loginData.uid);
 
             // Set response data.
             if (successfulLogin) {

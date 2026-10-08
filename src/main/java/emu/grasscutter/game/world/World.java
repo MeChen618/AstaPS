@@ -339,7 +339,7 @@ public class World implements Iterable<Player> {
 
     public void deregisterScene(Scene scene) {
         scene.saveGroups();
-        this.getScenes().remove(scene.getId());
+        this.getScenes().remove(scene.getId(), scene);
     }
 
     public void save() {
@@ -578,12 +578,17 @@ public class World implements Iterable<Player> {
     public boolean onTick() {
         // Check if there are players in this world.
         if (this.getPlayerCount() == 0) return true;
-        // Tick all associated scenes.
-        this.getScenes()
-                .forEach(
-                        (k, scene) -> {
-                            if (scene.getPlayerCount() > 0) scene.onTick();
-                        });
+        // Scene removal takes its monitor before this map's monitor. Never hold the map
+        // monitor while ticking a scene: group loading takes the scene monitor in reverse.
+        final List<Scene> sceneSnapshot;
+        synchronized (this.scenes) {
+            sceneSnapshot = new ArrayList<>(this.scenes.values());
+        }
+        for (Scene scene : sceneSnapshot) {
+            if (this.scenes.get(scene.getId()) == scene && scene.getPlayerCount() > 0) {
+                scene.onTick();
+            }
+        }
 
         // sync time every 10 seconds
         if (this.tickCount % 10 == 0) {

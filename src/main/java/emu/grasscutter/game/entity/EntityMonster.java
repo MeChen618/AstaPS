@@ -316,8 +316,15 @@ public class EntityMonster extends GameEntity {
                                         getConfigId(),
                                         monsterData.getId())
                                 .setSourceEntityId(getId())
-                                .setParam3((int) this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP))
+                                .setParam3(hpPercentage(
+                                        this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP),
+                                        this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)))
                                 .setEventSource(getConfigId()));
+    }
+
+    static int hpPercentage(float currentHp, float maxHp) {
+        if (!Float.isFinite(currentHp) || !Float.isFinite(maxHp) || maxHp <= 0f) return 100;
+        return (int) Math.max(0d, Math.min(100d, 100d * currentHp / maxHp));
     }
 
     @Override

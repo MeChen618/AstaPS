@@ -359,7 +359,7 @@ public abstract class GameEntity {
         return heal(amount, false);
     }
 
-    public float heal(float amount, boolean mute) {
+    public synchronized float heal(float amount, boolean mute) {
         ClorindeBoLUtil.beforeHeal(this);
         try {
         if (this.getFightProperties() == null) {
@@ -451,6 +451,18 @@ public abstract class GameEntity {
     }
 
     public void damage(float amount, int killerId, ElementType attackType, PropChangeReason propChangeReason, ChangHpReason changeHpReason) {
+        damage(amount, killerId, attackType, propChangeReason, changeHpReason, true);
+    }
+
+    /** Ability HP costs can ignore LockHP when their resource leaves enableLockHP disabled. */
+    public void loseHpByAbility(float amount, boolean respectLockHp) {
+        damage(amount, 0, ElementType.None,
+                PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY,
+                ChangHpReason.ChangHpReason_CHANGE_HP_SUB_ABILITY, respectLockHp);
+    }
+
+    private void damage(float amount, int killerId, ElementType attackType,
+            PropChangeReason propChangeReason, ChangHpReason changeHpReason, boolean respectLockHp) {
 
         if (this.getFightProperties() == null || !hasFightProperty(FightProperty.FIGHT_PROP_CUR_HP)) {
             return;
@@ -483,7 +495,7 @@ public abstract class GameEntity {
 
                 effectiveDamage = curHp - 1;
             }
-        } else if (curHp != Float.POSITIVE_INFINITY && !lockHP
+        } else if (curHp != Float.POSITIVE_INFINITY && (!lockHP || !respectLockHp)
                 || lockHP && curHp <= event.getDamage()) {
             effectiveDamage = event.getDamage();
         }

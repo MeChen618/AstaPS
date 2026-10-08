@@ -61,7 +61,7 @@ public final class AvatarExtraLevelUpgradeReqParser {
     private static ParsedExtraLevelUpgradeReq parseFallback(byte[] payload)
             throws InvalidProtocolBufferException {
         Map<Integer, Long> fields = readNumericFields(payload);
-        for (int field : new int[] {1, 5, 7, 13, 14, 15}) {
+        for (int field : new int[] {1, 5, 7, 11, 12, 13, 14, 15}) {
             long guid = fields.getOrDefault(field, 0L);
             if (guid > 0) {
                 int target = fields.containsKey(9) ? fields.get(9).intValue() : fields.getOrDefault(11, 0L).intValue();

@@ -765,53 +765,7 @@ public class SceneScriptManager {
     }
 
     public void checkRegions() {
-        if (this.regions.size() == 0) {
-            return;
-        }
-
-        for (var region : this.regions.values()) {
-            // currently all condition_ENTER_REGION Events check for avatar, so we have no necessary to
-            // add other types of entity
-            var entities =
-                    getScene().getEntities().values().stream()
-                            .filter(e -> region.getMetaRegion().contains(e.getPosition()))
-                            .toList();
-
-            var entitiesIds = entities.stream().map(GameEntity::getId).toList();
-            var enterEntities =
-                    entitiesIds.stream().filter(e -> !region.getEntities().contains(e)).toList();
-            var leaveEntities =
-                    region.getEntities().stream().filter(e -> !entitiesIds.contains(e)).toList();
-
-            entities.forEach(region::addEntity);
-
-            for (var targetId : enterEntities) {
-                if (EntityIdType.toEntityType(targetId >> ENTITY_ID_BIT_SHIFT).getValue() == 19) continue;
-                Grasscutter.getLogger()
-                        .trace("Call EVENT_ENTER_REGION_{}", region.getMetaRegion().config_id);
-                this.callEvent(
-                        new ScriptArgs(region.getGroupId(), EventType.EVENT_ENTER_REGION, region.getConfigId())
-                                .setEventSource(EntityIdType.toEntityType(targetId >> ENTITY_ID_BIT_SHIFT).getValue())
-                                .setSourceEntityId(region.getId())
-                                .setTargetEntityId(targetId));
-            }
-
-            for (var entityId : region.getEntities()) {
-                var entity = this.getScene().getEntityById(entityId);
-                if (entity == null || !region.getMetaRegion().contains(entity.getPosition())) {
-                    region.removeEntity(entityId);
-                }
-            }
-
-            for (var targetId : leaveEntities) {
-                if (EntityIdType.toEntityType(targetId >> ENTITY_ID_BIT_SHIFT).getValue() == 19) continue;
-                this.callEvent(
-                        new ScriptArgs(region.getGroupId(), EventType.EVENT_LEAVE_REGION, region.getConfigId())
-                                .setEventSource(EntityIdType.toEntityType(targetId >> ENTITY_ID_BIT_SHIFT).getValue())
-                                .setSourceEntityId(region.getId())
-                                .setTargetEntityId(targetId));
-            }
-        }
+        RegionMembershipTick.check(this, this.regions);
     }
 
     public List<EntityGadget> getGadgetsInGroupSuite(

@@ -1239,44 +1239,55 @@ public final class ArlecchinoBoLUtil {
         }
     }
 
-    /*
-     * WARNING - Removed try catching itself - possible behaviour change.
-     */
     public static float applyBurstHeal(EntityAvatar entityAvatar, float f) {
-        if (entityAvatar == null || f <= 0.0f) {
+        return applyBurstHeal(entityAvatar, f, false);
+    }
+
+    public static float applyBurstHeal(EntityAvatar entityAvatar, float amount, boolean mute) {
+        if (entityAvatar == null || amount <= 0.0f) {
             return 0.0f;
         }
-        boolean bl = entityAvatar.isConvertToHpDebt();
-        entityAvatar.setConvertToHpDebt(false);
-        try {
-            float f2 = entityAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
-            float f3 = entityAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
-            float f4 = Math.min(Math.max(0.0f, f3 - f2), f);
-            if (f4 <= 0.0f) {
-                Grasscutter.getLogger().info("[BoL] burst heal skipped (full HP) cur=" + f2 + " max=" + f3 + " asked=" + f);
-                if (entityAvatar.getScene() != null) {
-                    entityAvatar.getScene().broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, 0.0f, f));
+        synchronized (entityAvatar) {
+            float currentHp = entityAvatar.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+            if (currentHp <= 0.0f) {
+                return 0.0f;
+            }
+            boolean convertToHpDebt = entityAvatar.isConvertToHpDebt();
+            entityAvatar.setConvertToHpDebt(false);
+            try {
+                float maxHp = entityAvatar.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+                float healed = Math.min(Math.max(0.0f, maxHp - currentHp), amount);
+                if (healed <= 0.0f) {
+                    Grasscutter.getLogger().info("[BoL] burst heal skipped (full HP) cur=" + currentHp + " max=" + maxHp + " asked=" + amount);
+                    if (!mute && entityAvatar.getScene() != null) {
+                        entityAvatar.getScene().broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, amount, 0.0f));
+                    }
+                    return 0.0f;
                 }
-                float f5 = 0.0f;
-                return f5;
+                entityAvatar.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, currentHp + healed);
+                var reason = mute
+                        ? PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_NONE
+                        : PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY;
+                if (entityAvatar.getScene() != null) {
+                    entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP));
+                    entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(healed), reason, ChangHpReasonOuterClass.ChangHpReason.ChangHpReason_CHANGE_HP_ADD_ABILITY));
+                    if (!mute) {
+                        entityAvatar.getScene().broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, amount, healed));
+                    }
+                } else if (entityAvatar.getWorld() != null) {
+                    World world = entityAvatar.getWorld();
+                    world.broadcastPacket(new PacketEntityFightPropUpdateNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP));
+                    world.broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(healed), reason, ChangHpReasonOuterClass.ChangHpReason.ChangHpReason_CHANGE_HP_ADD_ABILITY));
+                    if (!mute) {
+                        world.broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, amount, healed));
+                    }
+                }
+                Grasscutter.getLogger().info("[BoL] burst HP " + currentHp + "/" + maxHp + " -> " + (currentHp + healed) + " (+" + healed + ")");
+                return healed;
             }
-            entityAvatar.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, f2 + f4);
-            if (entityAvatar.getScene() != null) {
-                entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropUpdateNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP));
-                entityAvatar.getScene().broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(f4), PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangHpReasonOuterClass.ChangHpReason.ChangHpReason_CHANGE_HP_ADD_ABILITY));
-                entityAvatar.getScene().broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, f4, f));
-            } else if (entityAvatar.getWorld() != null) {
-                World world = entityAvatar.getWorld();
-                world.broadcastPacket(new PacketEntityFightPropUpdateNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP));
-                world.broadcastPacket(new PacketEntityFightPropChangeReasonNotify((GameEntity)entityAvatar, FightProperty.FIGHT_PROP_CUR_HP, Float.valueOf(f4), PropChangeReasonOuterClass.PropChangeReason.PropChangeReason_PROP_CHANGE_ABILITY, ChangHpReasonOuterClass.ChangHpReason.ChangHpReason_CHANGE_HP_ADD_ABILITY));
-                world.broadcastPacket(new PacketEvtBeingHealedNotify(entityAvatar, entityAvatar, f4, f));
+            finally {
+                entityAvatar.setConvertToHpDebt(convertToHpDebt);
             }
-            Grasscutter.getLogger().info("[BoL] burst HP " + f2 + "/" + f3 + " -> " + (f2 + f4) + " (+" + f4 + ")");
-            float f6 = f4;
-            return f6;
-        }
-        finally {
-            entityAvatar.setConvertToHpDebt(bl);
         }
     }
 

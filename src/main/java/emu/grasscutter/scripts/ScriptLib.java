@@ -29,6 +29,7 @@ import org.slf4j.*;
 
 import javax.annotation.Nullable;
 import java.util.*;
+import java.util.function.Supplier;
 
 import static emu.grasscutter.GameConstants.ENTITY_ID_BIT_SHIFT;
 import static emu.grasscutter.game.props.EnterReason.Lua;
@@ -103,6 +104,30 @@ public class ScriptLib {
 
     public void removeCurrentEntity() {
         this.currentEntity.remove();
+    }
+
+    /** Entity callbacks need the same scene and group context as scene-script triggers. */
+    public <T> T withEntityContext(GameEntity entity, Supplier<T> callback) {
+        var previousManager = sceneScriptManager.getIfExists();
+        var previousGroup = currentGroup.getIfExists();
+        var previousEntity = currentEntity.getIfExists();
+        var manager = entity.getScene().getScriptManager();
+        var instance = manager.getGroupInstanceById(entity.getGroupId());
+        sceneScriptManager.set(manager);
+        currentGroup.set(instance != null ? instance.getLuaGroup() : null);
+        currentEntity.set(entity);
+        try {
+            return callback.get();
+        } finally {
+            restoreContext(sceneScriptManager, previousManager);
+            restoreContext(currentGroup, previousGroup);
+            restoreContext(currentEntity, previousEntity);
+        }
+    }
+
+    private static <T> void restoreContext(FastThreadLocal<T> context, T previous) {
+        if (previous == null) context.remove();
+        else context.set(previous);
     }
 
     public Optional<GameEntity> getCurrentEntity() {

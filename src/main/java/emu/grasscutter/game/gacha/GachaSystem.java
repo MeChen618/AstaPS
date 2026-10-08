@@ -335,6 +335,7 @@ public class GachaSystem extends BaseGameSystem {
         BannerPools pools = new BannerPools(banner, player);
         List<GachaItem> list = new ArrayList<>();
         int stardust = 0, starglitter = 0;
+        boolean anyGold = false; // 本次响应是否含 5★，用于触发捕获明光
 
         if (banner.isRemoveC6FromPool()) { // The ultimate form of pity (non-vanilla)
             pools.rateUpItems4 = removeC6FromPool(pools.rateUpItems4, player);
@@ -370,6 +371,7 @@ public class GachaSystem extends BaseGameSystem {
             GachaItem.Builder gachaItem = GachaItem.newBuilder();
             // Plays the Capturing Radiance animation on this card
             if (pull.capturedRadiance()) gachaItem.setIsFlashCard(true);
+            if (itemData.getRankLevel() == 5) anyGold = true; // 出金 -> 客户端播捕获明光
             int addStardust = 0, addStarglitter = 0;
             boolean isTransferItem = false;
 
@@ -471,7 +473,7 @@ public class GachaSystem extends BaseGameSystem {
         }
 
             // Packets
-        player.sendPacket(new PacketDoGachaRsp(banner, list, gachaInfo));
+        player.sendPacket(new PacketDoGachaRsp(banner, list, gachaInfo, anyGold));
 
         if (banner.isChronicleMixedBanner()) {
             player.sendPacket(new PacketGachaSimpleInfoNotify(false));

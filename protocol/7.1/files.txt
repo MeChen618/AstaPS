@@ -384,7 +384,6 @@ DJNNMCLAEBL.proto
 DLFMKKOHGGC.proto
 DOAKNFOOGMH.proto
 DOCGOEBMIOH.proto
-DOJNKINHCBK.proto
 DPEEOGGEECK.proto
 DPICLKABIDC.proto
 DPIFNBBLBCI.proto
@@ -555,7 +554,6 @@ FHNGLNCPHKA.proto
 FIEHCAPFKFI.proto
 FIIHDNCNDHH.proto
 FJFKBKCECBC.proto
-FKIDOLCNIEH.proto
 FKPFJHCNOLD.proto
 FLJBHAGNLOF.proto
 FMCJAEEPDAE.proto
@@ -676,6 +674,12 @@ GadgetInteractRsp.proto
 GadgetPlayInfo.proto
 GadgetStateNotify.proto
 GalleryStopReason.proto
+GamblingChessCardResult.proto
+GamblingChessDetailInfo.proto
+GamblingChessGameInfo.proto
+GamblingChessStageInfo.proto
+GamblingChessStageVoteInfo.proto
+GamblingChessVoteRecord.proto
 GatherGadgetInfo.proto
 GearActivityDetailInfo.proto
 GearLevelData.proto
@@ -755,7 +759,6 @@ GroupUnloadNotify.proto
 H5ActivityIdsNotify.proto
 HAECOBPCFPL.proto
 HALAGNDHLFK.proto
-HANCFGOLHNG.proto
 HBJLPIDKEND.proto
 HDHLLCCCLJM.proto
 HDNLDEHMAJP.proto
@@ -876,7 +879,6 @@ IHFAIFNHCKD.proto
 IHNALHEKDID.proto
 IHPAJHCDDIF.proto
 IIOFHFIDENJ.proto
-IJIBOPNAHOK.proto
 IJNAPHNIHJH.proto
 IKFFPHHDHJJ.proto
 IKJLKLMCEHM.proto
@@ -888,7 +890,6 @@ INJNJCALJGD.proto
 INKBFLJAEJP.proto
 IOJHNKOGKGC.proto
 IPHFKFLNBGH.proto
-IPLELCNENDH.proto
 IPPDBOLOOIB.proto
 InferencePageInfo.proto
 InfernceWordInfo.proto
@@ -925,7 +926,6 @@ ItemHint.proto
 ItemParam.proto
 JACKBDJHCNL.proto
 JAGCAMGLGDP.proto
-JAJCDOALDML.proto
 JCCEBIEEGFL.proto
 JDOHCNIHDEH.proto
 JEDABPPFPPK.proto
@@ -939,13 +939,11 @@ JJAAPEINGAC.proto
 JJKBEPPIFIE.proto
 JJKLMLAMDJO.proto
 JJNLBIGDBFJ.proto
-JKDOMGCJEKE.proto
 JLCGGDBJIJM.proto
 JLHFIDHPJMF.proto
 JMBPOAGEPCL.proto
 JMHOPEHDMMM.proto
 JNMJNFCENKB.proto
-JPACIHPGOGF.proto
 JPGDPIOHKOL.proto
 JPLNCOKGBBG.proto
 JigsawPictureData.proto
@@ -982,8 +980,6 @@ LAHCJMJCHCO.proto
 LBBDOIMGFNI.proto
 LBFLDOEMDHP.proto
 LBGHHNDLACN.proto
-LCIIJHABCEF.proto
-LCLBENCEGKG.proto
 LDFIMPJCMDI.proto
 LDLLBOKBIAP.proto
 LEEAPMKHDJK.proto
@@ -1115,9 +1111,7 @@ NBBPKNJHPDK.proto
 NBKIIACAEDE.proto
 NBMAFDLIACA.proto
 NCEPICHGNNH.proto
-NCFCIJCDDLJ.proto
 NCKAKJEKMGN.proto
-NDBCFPJNBPA.proto
 NDPGIKHKOHF.proto
 NEHIBHKFNEG.proto
 NFCFJEMPKJE.proto
@@ -1129,7 +1123,6 @@ NHKBDCPGNMN.proto
 NHLNPMELFHM.proto
 NIMJOPLLFCB.proto
 NMBMNBEAFOB.proto
-NMDNNCIPAGL.proto
 NMGCANGGNKB.proto
 NMPMEMFEOMA.proto
 NNGBNNMJABP.proto
@@ -1175,9 +1168,7 @@ PBBCDKFGPFF.proto
 PBDNAHFDJDA.proto
 PBNLFGAMIGI.proto
 PDKKLGIEJCN.proto
-PDNPFCPDDFD.proto
 PDOHMBLHDAK.proto
-PEFKCJAGEHH.proto
 PFFMGFPKANE.proto
 PFPIOBPBJMM.proto
 PGDMAIHKGFO.proto
@@ -1896,6 +1887,7 @@ _LoliJumpLevelInfo.proto
 _LoliRunDungeonSettleInfo.proto
 _LostSamachurlDetailInfo.proto
 _LostSamachurlSneakSettleInfo.proto
+_LunaRiteV2DetailInfo.proto
 _MapLayerInfo.proto
 _MapMarkLevelInfo.proto
 _MapMarkRecord.proto
@@ -1977,6 +1969,9 @@ _RechargeDiskDetailInfo.proto
 _RechargeDiskSettleInfo.proto
 _RevenueBonusBuffInfo.proto
 _RevenueBonusInfo.proto
+_RogueBallLevelInfo.proto
+_RogueBallSettleInfo.proto
+_RogueBallSnapshot.proto
 _RoleCombatSettleInfo.proto
 _RotateMoverInfo.proto
 _RouteMoverInfo.proto
@@ -1995,6 +1990,7 @@ _ShowLoadingScreenNotify.proto
 _SlimeCannonDetailInfo.proto
 _SlimeCannonLevelInfo.proto
 _SlimeCannonSettleInfo.proto
+_SnowBallFightDetailInfo.proto
 _SnowRaceCombatSettleInfo.proto
 _SnowRaceDetailInfo.proto
 _SnowRaceParkourSettleInfo.proto
@@ -2009,6 +2005,8 @@ _SubSwitchComp.proto
 _SumeruAdventureGoalFightingLevelInfo.proto
 _SumeruAdventureTrainingDetailInfo.proto
 _SumeruAdventureTrainingSettleInfo.proto
+_SummonBattleLevelInfo.proto
+_SummonBattleSettleInfo.proto
 _TacticReturnToBornPosInfo.proto
 _TakeDailyTaskScoreRewardReq.proto
 _TakeDailyTaskScoreRewardRsp.proto
@@ -2053,6 +2051,8 @@ _UpgradeToBonusFacilityRevenueBuffInfo.proto
 _Vector2Int.proto
 _VectorMoverInfo.proto
 _VehiclePhlogistonNotify.proto
+_VineManRunLevelInfo.proto
+_VineManRunSettleInfo.proto
 _WatergunDetailInfo.proto
 _WeekActiveDetailInfo.proto
 _WispCageData.proto

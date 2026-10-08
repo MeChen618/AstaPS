@@ -1,0 +1,121 @@
+# AstaPS
+
+[English](README.md) · 简体中文 · [繁體中文](README_zh-TW.md)
+
+一个基于 Grasscutter 的《原神》**7.1.0** 私人服务器。
+
+> 这是一个研究与保存性质的项目，与 HoYoverse / miHoYo 没有任何从属、背书或关联，亦不作商业用途。
+
+如果你能修复问题，请帮帮我。
+
+## 这是什么
+
+- **内容跟得上版本。** 怪物与机关的生成数据对齐 7.1.0，深境螺旋轮换、秘境、圣遗物商店、战令等运营内容都在。
+- **撑得住出问题的那天。** 写库拆成四个有界线程池，塞满时施加背压而不是丢掉玩家的存档；某个世界在 tick 中抛异常，不再让其他所有人的世界一起停摆。
+- **出问题时看得见。** 状态输出会定时打印 CPU、内存、GC 以及每个线程池的队列深度，`/api/status` 也通过 HTTP 提供同一组数据。
+- **全英文。** 源码、注释、提交信息、命令输出皆然。
+
+## 需求
+
+| | |
+|---|---|
+| Java | 编译需要 **JDK 21**，运行需要 **Java 21**。AstaPS 使用了虚拟线程等 Java 21 API。 |
+| MongoDB | Community Server，必须在服务器启动前先跑起来。 |
+| 游戏客户端 | 原神 7.1.0。官方客户端会校验 region 签名，要连私服需要另打客户端补丁，例如 [hk4e-patch-universal](https://github.com/capyb2222/animegamepatch)。AstaPS 本身不附带补丁。 |
+| 资源文件 | 7.1.0 的资源包，解压到服务器目录下的 `resources/`。如果没有资源文件，可以通过[该链接](https://github.com/MeChen618/AstaPS-Resource)下载。 |
+
+## 编译
+
+编译前先确认两个 Java 命令都指向 21：
+
+```
+java -version
+javac -version
+```
+
+然后执行：
+
+```
+./gradlew jar -PskipHandbook=1
+```
+
+`grasscutter.jar` 会生成在项目根目录。去掉 `-PskipHandbook=1` 可一并编译游戏内的手册；该步骤需要 NodeJS，没有就会失败。
+
+Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
+
+## 运行
+
+1. 启动 MongoDB。
+2. 把 7.1.0 资源包放进 `resources/`。
+3. 先运行一次 jar。它会生成 `config.json`，若缺少关键内容则退出。
+4. 再启动一次。默认情况下，调度服务器监听 `8088`，游戏服务器监听 `22101`。
+5. 把客户端指向调度服务器。用 Fiddler、mitmproxy 之类的代理可以做到，客户端补丁也行。
+
+### 账号
+
+没有注册页面。账号通过以下任一方式创建：
+
+- **从控制台。** `account create <username> [uid] [password]`
+- **在登录时。** 用一个没人占用的名字登录即注册该账号。开启 `account.useIntegrationPassword` 时，在用户名框中填 `name&&password`，密码框留空——当你要同时代理大量客户端、又不想为每个都建用户时很方便。
+
+密码以 BCrypt 哈希存储。控制台需要把 `server.game.enableConsole` 设为 `true`。
+
+## 命令
+
+`help` 会列出全部命令。几个常用的：
+
+| | |
+|---|---|
+| `give` | 发放角色、武器、圣遗物与材料。默认等级 100。 |
+| `account` | 创建 / 删除账号，重置密码。 |
+| `banip` / `unbanip` | 封禁某个 IP。封禁 IP 时，从该 IP 登录的账号也会一并被封。 |
+| `sysmail` | 向所有玩家发送系统邮件。 |
+
+## TPS 射击（7.1）
+
+至冬的第三人称射击模式可用：枪械与手雷会装备在角色普通武器旁的槽位，可在 TPS 秘境中瞄准并射击。相关命令需要 `player.tps` 和 `player.enterdungeon` 权限。
+
+**1. 获取武器**
+
+```
+/tps give          全部八把 TPS 武器（224001–224008），或指定一把：/tps give 224001
+/tps accessory     解锁你已拥有武器上的所有配件
+```
+
+**2. 游玩 TPS 秘境**
+
+```
+/dungeon 10955                       靶场
+/dungeon 10953、10960 到 10964       涌出的灰色原野各阶段
+```
+
+进入后，你的队伍会被替换为 TPS 旅行者（与你使用的旅行者对应，等级 20），并带上你的 TPS 装备，首次则为 224001。在那里切换使用的武器会保留为你的装备配置。离开秘境后恢复你的队伍。
+
+**3. 秘境之外**
+
+任何角色都可以装备 TPS 武器，方便试玩：
+
+```
+/tps wear 224001 224004    大世界角色装备一把步枪和一枚手雷（至多 2 把枪 + 1 枚手雷）
+/tps refill                补满所有弹药
+```
+
+弹药处理仍部分处于实验阶段。服务端做了什么、`/tps ammo` 的开关，以及尚未定论的部分，见 [docs/tps/README.md](docs/tps/README.md)。
+
+## 许可
+
+以 **GNU General Public License v3.0** 发布。见 [`LICENSE`](LICENSE)。
+
+`LICENSE-ClassGraph.txt` 不是本项目的许可。ClassGraph 是一个 MIT 许可的依赖，其编译后的类随 `grasscutter.jar` 一同分发，MIT 只要求其声明随附其中。
+
+## 致谢
+
+本服务器基于 **Grasscutter**。参考项目：**LunaGC**、**HunkyMeow**。
+
+需求中链接的客户端补丁 [hk4e-patch-universal](https://github.com/capyb2222/animegamepatch) 由 **capyb2222** 维护，基于 [xeondev](https://git.xeondev.com/reversedrooms/hk4e-patch) 最初的 hk4e-patch 以及 [oureveryday](https://github.com/oureveryday/) 最初的 hk4e-patch-universal。它是独立项目，遵循其自身的 GPL-3.0 许可。
+
+本仓库根目录的导入提交，按姓名列出了其承载作品的作者。
+
+## 协议来源
+
+协议定义来源于 [genshin-protocol](https://gitlab.com/kitkat-multiverse/genshin-protocol)。

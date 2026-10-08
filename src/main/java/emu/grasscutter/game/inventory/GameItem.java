@@ -388,6 +388,11 @@ public class GameItem {
     }
 
     public SceneWeaponInfo createSceneWeaponInfo() {
+        return createSceneWeaponInfo(0);
+    }
+
+    /** {@code weaponSkinId} is the avatar's equipped weapon skin (7.1 SceneWeaponInfo field 11). */
+    public SceneWeaponInfo createSceneWeaponInfo(int weaponSkinId) {
         var weaponInfo =
                 SceneWeaponInfo.newBuilder()
                         .setEntityId(this.getWeaponEntity() != null ? this.getWeaponEntity().getId() : 0)
@@ -401,6 +406,10 @@ public class GameItem {
             for (int affix : this.getAffixes()) {
                 weaponInfo.putAffixMap(affix, this.getRefinement());
             }
+        }
+
+        if (weaponSkinId != 0) {
+            weaponInfo.setWeaponSkinId(weaponSkinId);
         }
 
         return weaponInfo.build();

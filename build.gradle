@@ -132,6 +132,7 @@ dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.8.2'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.8.2'
+    testImplementation group: 'org.ow2.asm', name: 'asm', version: '9.5'
 
     // HTTP client library for testing.
     testImplementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.10.0'

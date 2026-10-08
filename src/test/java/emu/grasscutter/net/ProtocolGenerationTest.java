@@ -2,16 +2,21 @@ package emu.grasscutter.net;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AABLEDJBAKKOuterClass.AABLEDJBAKK;
 import emu.grasscutter.net.proto.AbilityMetaUpdateTpsWeaponAmmunitionOuterClass.AbilityMetaUpdateTpsWeaponAmmunition;
+import emu.grasscutter.net.proto.ActivityInfoOuterClass.ActivityInfo;
 import emu.grasscutter.net.proto.AvatarEnterSceneInfoOuterClass.AvatarEnterSceneInfo;
 import emu.grasscutter.net.proto.AvatarInfoOuterClass.AvatarInfo;
 import emu.grasscutter.net.proto.BirthdayOuterClass.Birthday;
+import emu.grasscutter.net.proto.GetActivityInfoReqOuterClass.GetActivityInfoReq;
 import emu.grasscutter.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo;
 import emu.grasscutter.net.proto.SceneTeamAvatarOuterClass.SceneTeamAvatar;
 import emu.grasscutter.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo;
 import emu.grasscutter.net.proto.TpsEquipChangeNotifyOuterClass.TpsEquipChangeNotify;
 import emu.grasscutter.net.proto.TpsWeapon._TpsWeapon;
+import java.util.HexFormat;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /** Pins descriptor-based 7.1 Java generation against the protobuf runtime used by AstaPS. */
@@ -67,5 +72,17 @@ public final class ProtocolGenerationTest {
                 SceneWeaponInfo.getDescriptor().findFieldByName("ammunition_list").getNumber());
         assertEquals(
                 2, _TpsWeapon.getDescriptor().findFieldByName("accessory_id_list").getNumber());
+    }
+
+    @Test
+    public void activityMessagesUseTheClientFieldNumbers() throws Exception {
+        assertEquals(186, PacketOpcodes.GetActivityInfoReq);
+
+        // What a 7.1 client sends for activities 5001 and 5003: packed field 14.
+        var request = GetActivityInfoReq.parseFrom(HexFormat.of().parseHex("720489278b27"));
+        assertEquals(List.of(5001, 5003), request.getActivityIdListList());
+
+        assertEquals(
+                1917, ActivityInfo.getDescriptor().findFieldByName("meet_cond_list").getNumber());
     }
 }

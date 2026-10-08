@@ -165,6 +165,22 @@ public class ItemData extends GameResource {
                 this.useOnGain = true;
             }
         }
+
+        // Elemental particles (MATERIAL_ADSORBATE: 元素球 / 燃素球) lost useOnGain in 7.1 data too, so
+        // collecting one stored it as a bag material and the burst never charged. Their useTarget is
+        // already ITEM_USE_TARGET_CUR_TEAM, which is exactly the on-field/off-field split that
+        // ItemUseAddEnergy applies. Only rows whose action really grants energy get flipped.
+        if (!this.useOnGain
+                && this.materialType == MaterialType.MATERIAL_ADSORBATE
+                && this.itemUseActions != null
+                && this.itemUseActions.stream()
+                        .anyMatch(
+                                a ->
+                                        a.getItemUseOp() == ItemUseOp.ITEM_USE_ADD_ELEM_ENERGY
+                                                || a.getItemUseOp()
+                                                        == ItemUseOp.ITEM_USE_ADD_ALL_ENERGY)) {
+            this.useOnGain = true;
+        }
     }
 
     @Getter
