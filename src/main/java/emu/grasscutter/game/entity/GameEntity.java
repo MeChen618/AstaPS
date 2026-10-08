@@ -98,6 +98,13 @@ public abstract class GameEntity {
     // Abilities run on a thread pool, so a plain HashMap here threw ConcurrentModificationException
     // out of whichever action happened to be reading the values while another wrote them
     @Getter private Map<String, Float> globalAbilityValues = new ConcurrentHashMap<>();
+    /**
+     * Global <em>positions</em>, written by SetGlobalPos and read back by a Summon whose born block
+     * is keyed on one. Separate from {@link #globalAbilityValues} because that map holds floats and
+     * a position is not one.
+     */
+    @Getter
+    private final Map<String, Position> globalAbilityPositions = new ConcurrentHashMap<>();
     private long convertToHpDebtSetAtMs = 0L;
 
     public GameEntity(Scene scene) {

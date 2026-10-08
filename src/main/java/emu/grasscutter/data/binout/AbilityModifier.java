@@ -387,6 +387,13 @@ public class AbilityModifier implements Serializable {
         @SerializedName(value = "healTag", alternate = {"FFNEJGGNAFF"})
         public String healTag;
         public String key;
+        /**
+         * The born block a position-writing action carries, and the one a Summon carries when its
+         * position is keyed on a global value. Kept as a raw map because the block is a union of
+         * {@code ConfigBornBy*} variants and only three keys are ever read ({@code $type},
+         * {@code positionKey}, {@code offset}).
+         */
+        public Map<String, Object> born;
         public String abilityName;
         public String globalValueKey;
         public String abilityFormula;

@@ -76,7 +76,14 @@ public final class AbilityManager extends BasePlayerManager {
         java.util.EnumSet.of(
             AbilityModifierAction.Type.Predicated,
             AbilityModifierAction.Type.CreateGadget,
-            AbilityModifierAction.Type.SetGlobalValue);
+            AbilityModifierAction.Type.SetGlobalValue,
+            // A Summon whose born block is keyed on a global position reads that position back from
+            // the server's copy. Leaving SetGlobalPos out meant the key was never written, so the
+            // summon fell back to the position packed in the notify - none, for a modifier removal -
+            // and spawned at the world origin thousands of units from its caster, where it fell
+            // through the floor and was culled by die_y. The Perpetual Mechanical Array's split
+            // minions were gone before the player could see them.
+            AbilityModifierAction.Type.SetGlobalPos);
 
     /**
      * What a server owned chain may run, at any depth.
