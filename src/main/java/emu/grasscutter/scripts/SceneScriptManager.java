@@ -48,6 +48,7 @@ public class SceneScriptManager {
     private boolean noCacheGroupGridsToDisk;
 
     private final Map<String, SceneTimeAxis> timeAxis = new ConcurrentHashMap<>();
+    private final Map<Integer, Set<Integer>> pendingCutsceneGroups = new HashMap<>();
 
     /** current triggers controlled by RefreshGroup */
     private final Map<Integer, Set<SceneTrigger>> currentTriggers;
@@ -1383,11 +1384,27 @@ public class SceneScriptManager {
         }
     }
 
+    /** Associates a scene cutscene with the groups waiting for its completion. */
+    public synchronized void registerCutscene(int cutsceneId, int groupId) {
+        if (destroyed || cutsceneId <= 0 || groupId <= 0) return;
+        pendingCutsceneGroups.computeIfAbsent(cutsceneId, id -> new HashSet<>()).add(groupId);
+    }
+
+    /** Consumes the pending request once, even if multiple clients report completion. */
+    public synchronized void finishCutscene(int cutsceneId) {
+        var groups = pendingCutsceneGroups.remove(cutsceneId);
+        if (destroyed || groups == null) return;
+        for (int groupId : groups) {
+            callEvent(new ScriptArgs(groupId, EventType.EVENT_CUTSCENE_END, cutsceneId));
+        }
+    }
+
     public synchronized void onDestroy() {
         if (this.destroyed) {
             return;
         }
         this.destroyed = true;
+        this.pendingCutsceneGroups.clear();
         this.sealBattleManager.clear();
 
         activeGroupTimers.forEach(
