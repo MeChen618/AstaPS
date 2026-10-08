@@ -356,6 +356,9 @@ public class AbilityModifier implements Serializable {
 
         public DynamicFloat limboByTargetMaxHPRatio = DynamicFloat.ZERO;
 
+        // The ability JSON spells this "HealRatio"; without the alias the ratio silently falls back
+        // to ONE and every HealHP amount that scales by it comes out unscaled.
+        @SerializedName(value = "HealRatio", alternate = "healRatio")
         public DynamicFloat healRatio = DynamicFloat.ONE;
         public DynamicFloat speed = DynamicFloat.ONE;
 
@@ -412,6 +415,10 @@ public class AbilityModifier implements Serializable {
 
         public int skillID;
         public int resistanceListID;
+        // The ability JSON spells this "monsterId". Gson here uses the identity field naming
+        // policy, so the case mismatch left this at 0 and every Summon action failed with
+        // "Failed to find monster by ID 0" - the boss split minions never came into existence.
+        @SerializedName(value = "monsterId", alternate = "monsterID")
         public int monsterID;
         public int summonTag;
 

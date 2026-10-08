@@ -69,6 +69,16 @@ public abstract class GameEntity {
     @Getter @Setter private boolean modifierInvincible;
     private boolean limbo;
     private float limboHpThreshold;
+    /**
+     * Limbo modifiers currently applied, keyed by ability + modifier name, with the HP ratio each
+     * one pins.
+     *
+     * <p>{@link #limbo} used to be sticky: it was set when a Limbo modifier landed and never
+     * recomputed, so an entity whose stage-control modifier ended (the Perpetual Mechanical Array's
+     * split, Hu Tao C6) stayed damage-proof below its threshold forever. Tracking which modifiers
+     * are still active lets a removal clear exactly the one that ended.
+     */
+    private final Map<String, Float> activeLimboModifiers = new ConcurrentHashMap<>();
 
     @Setter(AccessLevel.PROTECTED)
     @Getter
@@ -230,6 +240,44 @@ public abstract class GameEntity {
     }
 
     /**
+     * Records that a Limbo modifier is active on this entity, so its removal can be told apart from
+     * an unrelated one. Called from the same path that sets the limbo flag.
+     */
+    public void trackLimboModifier(
+            emu.grasscutter.game.ability.Ability ability, String modifierName, float hpThreshold) {
+        if (ability == null || modifierName == null) return;
+        activeLimboModifiers.put(
+                ability.getData().abilityName + "|" + modifierName, hpThreshold);
+        setLimbo(recomputeLimboThreshold());
+    }
+
+    /**
+     * Drops one Limbo modifier and re-derives the gate from the ones still active.
+     *
+     * <p>The most restrictive threshold wins: while a modifier pinning HP at 80% is up, damage has
+     * to stop there, so taking the maximum is what keeps the entity alive as long as any limbo
+     * modifier remains.
+     */
+    public void onLimboModifierRemoved(
+            emu.grasscutter.game.ability.Ability ability, String modifierName) {
+        if (ability == null || modifierName == null) return;
+        activeLimboModifiers.remove(ability.getData().abilityName + "|" + modifierName);
+        if (activeLimboModifiers.isEmpty()) {
+            clearLimbo();
+        } else {
+            setLimbo(recomputeLimboThreshold());
+        }
+    }
+
+    private float recomputeLimboThreshold() {
+        float max = 0f;
+        for (float threshold : activeLimboModifiers.values()) {
+            max = Math.max(max, threshold);
+        }
+        return max;
+    }
+
+    /**
      * Applies fight-prop modifier properties when the owning {@link emu.grasscutter.game.ability.Ability}
      * is known (needed to resolve DynamicFloat ability specials).
      */
@@ -238,6 +286,9 @@ public abstract class GameEntity {
         if (ability != null && modifierName != null) {
             emu.grasscutter.game.ability.AbilityMaxHpRatioHelper.onModifierAdded(
                     ability, modifierName, data, this);
+            if (data != null && data.state == AbilityModifier.State.Limbo) {
+                this.trackLimboModifier(ability, modifierName, limboThresholdOf(data));
+            }
         }
     }
 
@@ -275,14 +326,16 @@ public abstract class GameEntity {
             // No ability instance here to resolve a named special against, so an unresolvable
             // one reads as zero. Limbo modifiers without an explicit threshold (e.g. Hu Tao C6)
             // still need death-prevention, so fall back to a tiny floor.
-            float hpThresholdRatio =
-                    data.properties != null ? data.properties.Actor_HpThresholdRatio.get(0f) : 0f;
-            if (hpThresholdRatio <= 0.0f) {
-                hpThresholdRatio = 1e-6f;
-            }
-            Grasscutter.getLogger().debug("Limbo set to {}", hpThresholdRatio);
-            this.setLimbo(hpThresholdRatio);
+            Grasscutter.getLogger().debug("Limbo set to {}", limboThresholdOf(data));
+            this.setLimbo(limboThresholdOf(data));
         }
+    }
+
+    /** The HP ratio a Limbo modifier pins, with a tiny floor so death-prevention still applies. */
+    private static float limboThresholdOf(AbilityModifier data) {
+        float hpThresholdRatio =
+                data.properties != null ? data.properties.Actor_HpThresholdRatio.get(0f) : 0f;
+        return hpThresholdRatio <= 0.0f ? 1e-6f : hpThresholdRatio;
     }
 
     public boolean isLockHP() {
