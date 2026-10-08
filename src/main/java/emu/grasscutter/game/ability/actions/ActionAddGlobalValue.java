@@ -25,19 +25,18 @@ public final class ActionAddGlobalValue extends AbilityActionHandler {
             if (!PredicateEvaluator.all(preds, ability, ability.getOwner(), target, action)) return true;
         }
         var properties = propertiesFor(ability);
+        target = resolveTarget(ability, target, action.target);
+        if (target == null) return false;
         String valueKey = action.key;
-        float valueToAdd = action.ratio.get(properties, 0f);
+        float valueToAdd = action.writtenValue().get(properties, 0f);
         float maxValue = action.maxValue.get(properties, 0f);
         float minValue = action.minValue.get(properties, 0f);
 
         float currentGlobalValue = target.getGlobalAbilityValues().getOrDefault(valueKey, 0f);
 
         float newValue = currentGlobalValue + valueToAdd;
-        if (newValue > maxValue) {
-            newValue = maxValue;
-        }
-        if (newValue < minValue) {
-            newValue = minValue;
+        if (action.useLimitRange) {
+            newValue = Math.max(minValue, Math.min(maxValue, newValue));
         }
 
         target.getGlobalAbilityValues().put(valueKey, newValue);
