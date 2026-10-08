@@ -83,7 +83,7 @@ public class MainQuestData {
         private boolean isMpBlock;
         private boolean isRewind, finishParent;
 
-        // Preserve the complete native 7.1 prologue prerequisite fields.
+        // Preserve native 7.1 prerequisite conditions, including chapter controller 36301.
         private List<QuestData.QuestAcceptCondition> acceptCond;
         private LogicType acceptCondComb;
 

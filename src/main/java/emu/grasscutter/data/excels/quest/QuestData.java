@@ -80,16 +80,17 @@ public class QuestData extends GameResource {
         this.finishExec = effectiveExecList(this.finishExec, additionalData.getFinishExec());
         this.failExec = effectiveExecList(this.failExec, additionalData.getFailExec());
 
-        // The full 7.1 BinOutput contains native prerequisites which may differ from
-        // flattened QuestExcel rows. A stale 35101 prerequisite leaves Paimon stuck.
-        var corrected = selectNative351AcceptConditions(
+        // Native 7.1 prerequisites govern Paimon's 35101 and the 36301 chapter gate.
+        // A flattened quest-0 placeholder must not start the chapter before hilltop 35202.
+        var corrected = selectNativePrologueAcceptConditions(
                 this.mainId, this.acceptCond, additionalData.getAcceptCond());
         if (!sameAcceptConditions(this.acceptCond, corrected)) {
             removeFromAcceptCache();
             this.acceptCond = corrected;
             addToCache();
         }
-        if (this.mainId == 351 && additionalData.getAcceptCondComb() != null) {
+        if ((this.mainId == 351 || this.mainId == 363)
+                && additionalData.getAcceptCondComb() != null) {
             this.acceptCondComb = additionalData.getAcceptCondComb();
         }
 
@@ -135,10 +136,10 @@ public class QuestData extends GameResource {
                 .toList();
     }
 
-    /** Keep the working 351 native transition prerequisites when the Excel row differs. */
-    static List<QuestAcceptCondition> selectNative351AcceptConditions(
+    /** Use native prologue prerequisites, including the hilltop 35202 -> 36301 chapter trigger. */
+    static List<QuestAcceptCondition> selectNativePrologueAcceptConditions(
             int mainId, List<QuestAcceptCondition> excel, List<QuestAcceptCondition> nativeValues) {
-        if (mainId != 351 || nativeValues == null || nativeValues.isEmpty()) return excel;
+        if ((mainId != 351 && mainId != 363) || nativeValues == null || nativeValues.isEmpty()) return excel;
         var validNative = nativeValues.stream()
                 .filter(Objects::nonNull)
                 .filter(c -> c.getType() != null && c.getParam() != null && c.getParam().length > 0)

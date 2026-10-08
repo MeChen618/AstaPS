@@ -10,7 +10,6 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.props.WatcherTriggerType;
 import emu.grasscutter.game.quest.enums.*;
-import emu.grasscutter.game.player.EntryNotice;
 import emu.grasscutter.net.proto.ChapterStateOuterClass;
 import emu.grasscutter.net.proto.QuestOuterClass.Quest;
 import emu.grasscutter.scripts.data.SceneGroup;
@@ -281,17 +280,6 @@ public class GameQuest {
                 .forEach(item -> this.getOwner().getInventory().addItem(item, ActionReason.QuestItem));
 
         this.save();
-
-        // Quest 35100 finishes only after its native opening plot/trigger completes.
-        // The initial scene-ready callback is too early for chapter banners and server notices:
-        // the player can still be watching the Traveler/Paimon cinematic at that point.
-        if (this.mainQuestId == 351 && this.subQuestId == 35100) {
-            Grasscutter.getLogger().info(
-                    "[intro-presentation] uid={} opening dialogue complete; releasing chapter and notices",
-                    this.getOwner().getUid());
-            QuestChapterBootstrap.startForActiveMainQuests(this.getOwner().getQuestManager());
-            EntryNotice.sendOnce(this.getOwner());
-        }
 
         Grasscutter.getLogger().debug("Quest {} was completed.", subQuestId);
     }
