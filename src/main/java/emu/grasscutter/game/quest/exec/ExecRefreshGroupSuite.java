@@ -90,7 +90,19 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
             // entities that are about to be spawned.
             group.dontUnload = true;
 
-            if (!scriptManager.refreshGroupSuite(groupId, suiteId, quest)) {
+            boolean applied = scriptManager.refreshGroupSuite(groupId, suiteId, quest);
+            if (quest.getMainQuestId() >= 351 && quest.getMainQuestId() <= 353) {
+                var instance = scriptManager.getGroupInstanceById(groupId);
+                Grasscutter.getLogger()
+                        .info(
+                                "[quest-group] uid={} main={} sub={} scene={} group={} suite={} applied={} activeSuite={}",
+                                quest.getOwner().getUid(),
+                                quest.getMainQuestId(),
+                                quest.getSubQuestId(),
+                                sceneId, groupId, suiteId, applied,
+                                instance != null ? instance.getActiveSuiteId() : 0);
+            }
+            if (!applied) {
                 Grasscutter.getLogger().warn(
                         "Quest {} failed to refresh group {} suite {} in scene {}",
                         quest.getSubQuestId(),

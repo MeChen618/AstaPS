@@ -68,9 +68,40 @@ public class QuestData extends GameResource {
         this.addToCache();
     }
 
+    /**
+     * Keep QuestExcel actions authoritative when present, but use the per-subquest BinOutput
+     * actions when the Excel export has no usable entries. Quest 35302 requires its beginExec
+     * group-suite refresh to spawn the combat-training slime.
+     */
     public void applyFrom(MainQuestData.SubQuestData additionalData) {
         this.isRewind = additionalData.isRewind();
         this.finishParent = additionalData.isFinishParent();
+        this.beginExec = effectiveExecList(this.beginExec, additionalData.getBeginExec());
+        this.finishExec = effectiveExecList(this.finishExec, additionalData.getFinishExec());
+        this.failExec = effectiveExecList(this.failExec, additionalData.getFailExec());
+
+        if (this.subId == 35106 || this.subId == 35205
+                || this.subId == 35301 || this.subId == 35302) {
+            Grasscutter.getLogger()
+                    .info(
+                            "[quest-resource] main={} sub={} beginExec={} finishExec={} failExec={}",
+                            this.mainId, this.subId,
+                            this.beginExec.size(), this.finishExec.size(), this.failExec.size());
+        }
+    }
+
+    static List<QuestExecParam> effectiveExecList(
+            List<QuestExecParam> excel, List<QuestExecParam> bin) {
+        var validExcel = validExecs(excel);
+        return validExcel.isEmpty() ? validExecs(bin) : validExcel;
+    }
+
+    private static List<QuestExecParam> validExecs(List<QuestExecParam> execs) {
+        if (execs == null || execs.isEmpty()) return Collections.emptyList();
+        return execs.stream()
+                .filter(Objects::nonNull)
+                .filter(exec -> exec.getType() != null)
+                .toList();
     }
 
     private void addToCache() {

@@ -62,8 +62,9 @@ public class GameQuest {
     private void logEarlyQuestTransition(String action) {
         if (this.mainQuestId < 351 || this.mainQuestId > 353) return;
         Grasscutter.getLogger().info(
-                "[quest-intro] uid={} main={} sub={} action={} state={}",
-                this.getOwner().getUid(), this.mainQuestId, this.subQuestId, action, this.state);
+                "[quest-intro] uid={} main={} sub={} action={} state={} beginExec={} finishExec={}",
+                this.getOwner().getUid(), this.mainQuestId, this.subQuestId, action, this.state,
+                this.questData.getBeginExec().size(), this.questData.getFinishExec().size());
     }
 
     public void start() {
