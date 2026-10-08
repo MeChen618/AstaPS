@@ -66,7 +66,6 @@ public class MaPassportAuthenticator {
 
             Grasscutter.getLogger().debug("Generating session key");
             account.generateV2SessionKey();
-            emu.grasscutter.database.DatabaseManager.getGameDatastore().save(account);
             Grasscutter.getLogger().info("User " + username + " has successfully logged in");
             return createLoginSuccessResponse(account);
         } catch (Exception e) {
@@ -89,25 +88,10 @@ public class MaPassportAuthenticator {
                 return createTokenErrorResponse(MaPassportError.RELOGIN_REQUIRED);
             }
 
-            String accountSessionKey = account.getSessionKey();
-            if (accountSessionKey == null || !accountSessionKey.equals(request.stoken)) {
+            if (!account.matchesSessionKey(request.stoken)) {
                 Grasscutter.getLogger()
-                        .info(
-                                "Adopting stoken for account: "
-                                        + account.getUsername()
-                                        + " (old="
-                                        + (accountSessionKey == null
-                                                ? "null"
-                                                : accountSessionKey.substring(
-                                                        0, Math.min(12, accountSessionKey.length())))
-                                        + " new="
-                                        + (request.stoken == null
-                                                ? "null"
-                                                : request.stoken.substring(
-                                                        0, Math.min(12, request.stoken.length())))
-                                        + ")");
-                account.setSessionKey(request.stoken);
-                account.save();
+                        .info("Ma-passport token verification rejected for mid: {}", request.mid);
+                return createTokenErrorResponse(MaPassportError.RELOGIN_REQUIRED);
             }
 
             Grasscutter.getLogger()

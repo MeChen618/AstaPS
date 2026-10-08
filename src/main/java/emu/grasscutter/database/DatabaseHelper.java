@@ -274,8 +274,21 @@ public final class DatabaseHelper {
      * @param object The object to save.
      */
     public static void saveAccountAsync(Object object) {
-        DatabaseHelper.eventExecutorAccount.submit(
-                () -> DatabaseManager.getAccountDatastore().save(object));
+        if (object instanceof Account account) {
+            // Account writes must complete in order: Morphia replaces the whole document.
+            // A queued, stale account could otherwise overwrite a freshly issued login token.
+            saveAccount(account);
+            return;
+        }
+
+        DatabaseHelper.eventExecutorAccount.execute(
+                () -> {
+                    try {
+                        DatabaseManager.getAccountDatastore().save(object);
+                    } catch (Exception e) {
+                        Grasscutter.getLogger().error("Failed to save account datastore object.", e);
+                    }
+                });
     }
 
     /**
@@ -292,7 +305,8 @@ public final class DatabaseHelper {
         } else if (object instanceof SceneGroupInstance groupInstance) {
             submitGroupSave(groupInstance);
         } else if (object instanceof Account account) {
-            DatabaseHelper.eventExecutorAccount.submit(() -> saveWithRetry(account));
+            // Do not schedule an out-of-order, whole-document account replacement.
+            saveAccount(account);
         } else {
             submitDefaultSave(object);
         }
@@ -494,7 +508,10 @@ public final class DatabaseHelper {
     }
 
     public static void saveAccount(Account account) {
-        DatabaseHelper.saveAccountAsync(account);
+        // Account authentication is a read-after-write protocol. The token must be
+        // persisted before an HTTP login response can hand it to the client.
+        // Propagate MongoDB failures so callers cannot report a successful login.
+        DatabaseManager.getAccountDatastore().save(account);
     }
 
     public static Account getAccountByName(String username) {
