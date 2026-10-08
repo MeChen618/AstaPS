@@ -80,6 +80,19 @@ public class QuestData extends GameResource {
         this.finishExec = effectiveExecList(this.finishExec, additionalData.getFinishExec());
         this.failExec = effectiveExecList(this.failExec, additionalData.getFailExec());
 
+        // The full 7.1 BinOutput contains native prerequisites which may differ from
+        // flattened QuestExcel rows. A stale 35101 prerequisite leaves Paimon stuck.
+        var corrected = selectNative351AcceptConditions(
+                this.mainId, this.acceptCond, additionalData.getAcceptCond());
+        if (!sameAcceptConditions(this.acceptCond, corrected)) {
+            removeFromAcceptCache();
+            this.acceptCond = corrected;
+            addToCache();
+        }
+        if (this.mainId == 351 && additionalData.getAcceptCondComb() != null) {
+            this.acceptCondComb = additionalData.getAcceptCondComb();
+        }
+
         // Keep this data-only merge free of Grasscutter bootstrap side effects:
         // resource-level diagnostics are emitted by ResourceLoader after loading.
     }
@@ -120,6 +133,55 @@ public class QuestData extends GameResource {
                 .filter(Objects::nonNull)
                 .filter(exec -> exec.getType() != null)
                 .toList();
+    }
+
+    /** Keep the working 351 native transition prerequisites when the Excel row differs. */
+    static List<QuestAcceptCondition> selectNative351AcceptConditions(
+            int mainId, List<QuestAcceptCondition> excel, List<QuestAcceptCondition> nativeValues) {
+        if (mainId != 351 || nativeValues == null || nativeValues.isEmpty()) return excel;
+        var validNative = nativeValues.stream()
+                .filter(Objects::nonNull)
+                .filter(c -> c.getType() != null && c.getParam() != null && c.getParam().length > 0)
+                .toList();
+        return validNative.isEmpty() ? excel : validNative;
+    }
+
+    static boolean sameAcceptConditions(
+            List<QuestAcceptCondition> a, List<QuestAcceptCondition> b) {
+        if (a == b) return true;
+        if (a == null || b == null || a.size() != b.size()) return false;
+        for (int i = 0; i < a.size(); i++) {
+            var left = a.get(i);
+            var right = b.get(i);
+            if (left == null || right == null) return false;
+            if (left.getType() != right.getType()
+                    || !Arrays.equals(left.getParam(), right.getParam())
+                    || !Objects.equals(left.getParamStr(), right.getParamStr())) return false;
+        }
+        return true;
+    }
+
+    /** Invalidate old QuestExcel condition index entries before installing BinOutput keys. */
+    private void removeFromAcceptCache() {
+        if (this.acceptCond == null) return;
+        var keys = new HashSet<String>();
+        if (this.acceptCond.isEmpty()) {
+            keys.add(questConditionKey(QuestCond.QUEST_COND_NONE, 0, null));
+        } else {
+            for (var cond : this.acceptCond) {
+                if (cond != null && cond.getType() != null
+                        && cond.getParam() != null && cond.getParam().length > 0) {
+                    keys.add(cond.asKey());
+                }
+            }
+        }
+        for (var key : keys) {
+            var quests = GameData.getBeginCondQuestMap().get(key);
+            if (quests != null) {
+                quests.remove(this);
+                if (quests.isEmpty()) GameData.getBeginCondQuestMap().remove(key);
+            }
+        }
     }
 
     private void addToCache() {

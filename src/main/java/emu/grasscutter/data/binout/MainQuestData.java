@@ -3,6 +3,7 @@ package emu.grasscutter.data.binout;
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestType;
 import java.util.*;
 import lombok.Data;
@@ -81,6 +82,10 @@ public class MainQuestData {
         private int order;
         private boolean isMpBlock;
         private boolean isRewind, finishParent;
+
+        // Preserve the complete native 7.1 prologue prerequisite fields.
+        private List<QuestData.QuestAcceptCondition> acceptCond;
+        private LogicType acceptCondComb;
 
         // Actions present in native BinOutput can be absent from the flattened Excel export.
         private List<QuestData.QuestExecParam> beginExec;

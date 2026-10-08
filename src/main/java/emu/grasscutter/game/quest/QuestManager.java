@@ -595,6 +595,13 @@ public final class QuestManager extends BasePlayerManager {
     public void triggerEvent(QuestCond condType, String paramStr, int... params) {
         Grasscutter.getLogger().trace("Trigger Event {}, {}, {}", condType, paramStr, params);
         var potentialQuests = GameData.getQuestDataByConditions(condType, params[0], paramStr);
+        if (condType == QuestCond.QUEST_COND_STATE_EQUAL && params.length > 1 && params[0] == 35100) {
+            Grasscutter.getLogger().info(
+                    "[quest-handoff] uid={} prior=35100 state={} candidates={}",
+                    player.getUid(), params[1],
+                    potentialQuests == null ? "none"
+                            : potentialQuests.stream().map(q -> q.getSubId()).toList());
+        }
         if (potentialQuests == null) {
             return;
         }
@@ -604,6 +611,7 @@ public final class QuestManager extends BasePlayerManager {
 
         potentialQuests.forEach(
                 questData -> {
+                    try {
                     if (this.wasSubQuestStarted(questData)) {
                         return;
                     }
@@ -646,9 +654,25 @@ public final class QuestManager extends BasePlayerManager {
                         }
                     }
 
+                    if (condType == QuestCond.QUEST_COND_STATE_EQUAL
+                            && params.length > 1 && params[0] == 35100
+                            && questData.getMainId() == 351) {
+                        Grasscutter.getLogger().info(
+                                "[quest-handoff] uid={} candidate={} accepted={} progress={} comb={}",
+                                player.getUid(), questData.getSubId(), shouldAccept,
+                                Arrays.toString(acceptProgressLists.get(questData.getId())),
+                                questData.getAcceptCondComb());
+                    }
                     if (shouldAccept) {
-                        GameQuest quest = owner.getQuestManager().addQuest(questData);
+                        owner.getQuestManager().addQuest(questData);
                         Grasscutter.getLogger().debug("Added quest {}", questData.getSubId());
+                    }
+                    } catch (RuntimeException exception) {
+                        // Executor.submit() otherwise hides the error and suppresses later candidates.
+                        Grasscutter.getLogger().error(
+                                "Quest acceptance failure uid={} main={} sub={} event={}",
+                                player.getUid(), questData.getMainId(), questData.getSubId(),
+                                condType, exception);
                     }
                 });
     }
