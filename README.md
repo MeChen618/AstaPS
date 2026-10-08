@@ -60,6 +60,34 @@ There is no registration page. An account is created either way:
 
 Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
 
+### Web console (opt-in)
+
+The HTTP web console at `/console` can execute server-console commands. It is **disabled by
+default** and has **no built-in password**. To enable it, edit the existing `config.json`:
+
+```json
+{
+  "server": {
+    "http": {
+      "webConsole": {
+        "enabled": true,
+        "password": "replace-with-a-long-unique-secret"
+      }
+    }
+  }
+}
+```
+
+This is an excerpt: preserve all the other settings in your generated `config.json`.
+If `enabled` is true but `password` is missing or blank, the web-console routes are not
+registered and startup logs an error. Older installations that relied on the former built-in
+password must set their own password explicitly after upgrading.
+
+The console password and session token are transmitted over HTTP unless you provide
+transport encryption. Keep the HTTP port behind a firewall or trusted TLS reverse proxy;
+for a single-machine setup, set `server.http.bindAddress` to `127.0.0.1`. Never expose
+this command-execution interface directly to the public Internet.
+
 ## Commands
 
 `help` lists them. A few worth knowing:

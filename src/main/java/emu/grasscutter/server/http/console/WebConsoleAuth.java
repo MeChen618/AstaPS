@@ -42,7 +42,10 @@ final class WebConsoleAuth {
 
     /** Returns a new session token, or null when the password is wrong. */
     String login(String address, String password) {
-        var expected = options.effectivePassword().getBytes(StandardCharsets.UTF_8);
+        var configuredPassword = options.effectivePassword();
+        if (!options.enabled || configuredPassword == null) return null;
+
+        var expected = configuredPassword.getBytes(StandardCharsets.UTF_8);
         var given = (password == null ? "" : password).getBytes(StandardCharsets.UTF_8);
         if (expected.length == 0 || !MessageDigest.isEqual(expected, given)) {
             failures.merge(
@@ -59,7 +62,7 @@ final class WebConsoleAuth {
     }
 
     boolean isValid(String token) {
-        if (token == null) return false;
+        if (!options.enabled || options.effectivePassword() == null || token == null) return false;
         var expiry = sessions.get(token);
         if (expiry == null) return false;
         if (System.currentTimeMillis() > expiry) {
