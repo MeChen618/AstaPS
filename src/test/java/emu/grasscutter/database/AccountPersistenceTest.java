@@ -10,9 +10,11 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Proxy;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /** Account credentials must be committed before they are returned to the HTTP caller. */
+@Tag("integration")
 public class AccountPersistenceTest {
     @Test
     public void generatedTokenWaitsForDatabaseWrite() throws Exception {

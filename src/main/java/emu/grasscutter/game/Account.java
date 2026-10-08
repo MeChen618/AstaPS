@@ -264,20 +264,22 @@ public class Account {
         this.permissions.clear();
     }
 
-    /** Checks the credential used by GetPlayerTokenReq, never accepting an absent token. */
-    public boolean matchesLoginToken(String candidate) {
-        return this.token != null
-                && !this.token.isBlank()
+    /** Rejects absent credentials before comparing either login or session tokens. */
+    public static boolean credentialMatches(String expected, String candidate) {
+        return expected != null
+                && !expected.isBlank()
                 && candidate != null
-                && this.token.equals(candidate);
+                && expected.equals(candidate);
+    }
+
+    /** Checks the credential used by GetPlayerTokenReq. */
+    public boolean matchesLoginToken(String candidate) {
+        return credentialMatches(this.token, candidate);
     }
 
     /** Checks the account/session credential used by the HTTP login and combo flows. */
     public boolean matchesSessionKey(String candidate) {
-        return this.sessionKey != null
-                && !this.sessionKey.isBlank()
-                && candidate != null
-                && this.sessionKey.equals(candidate);
+        return credentialMatches(this.sessionKey, candidate);
     }
 
     // TODO make unique
