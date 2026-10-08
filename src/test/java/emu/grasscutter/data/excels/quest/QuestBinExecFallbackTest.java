@@ -25,8 +25,23 @@ final class QuestBinExecFallbackTest {
     }
 
     @Test
-    void actualSubQuestMappingRestoresAmberTeachingSlimeAndTrialGrant() {
-        // Reproduce the real resource loader sequence: QuestExcel rows first, BinOutput rows second.
+    void actualSubQuestMappingRestoresTravelerWindTutorialWithoutEarlyAmber() {
+        // 35301 is still the Traveler's wind-element tutorial. The unwanted trial
+        // grant was injected into the 7.1 resources by commit c98b896710.
+        var dialogueExcel = GSON.fromJson(
+                "{\"subId\":35301,\"mainId\":353,\"beginExec\":[],\"finishExec\":[],\"failExec\":[]}",
+                QuestData.class);
+        var dialogueNative = GSON.fromJson(
+                "{\"subId\":35301,\"beginExec\":[{\"type\":\"QUEST_EXEC_REFRESH_GROUP_SUITE\","
+                        + "\"param\":[\"3\",\"133003002,1\"]}]}",
+                MainQuestData.SubQuestData.class);
+        var dialogueBegin = QuestData.effectiveExecList(
+                dialogueExcel.getBeginExec(), dialogueNative.getBeginExec());
+        assertEquals(1, dialogueBegin.size());
+        assertEquals("133003002,1", dialogueBegin.get(0).getParam()[1]);
+        assertTrue(QuestData.effectiveExecList(
+                dialogueExcel.getFinishExec(), dialogueNative.getFinishExec()).isEmpty());
+
         var slimeExcel = GSON.fromJson(
                 "{\"subId\":35302,\"mainId\":353,\"beginExec\":[],\"finishExec\":[],\"failExec\":[]}",
                 QuestData.class);
@@ -34,28 +49,11 @@ final class QuestBinExecFallbackTest {
                 "{\"subId\":35302,\"beginExec\":[{\"type\":\"QUEST_EXEC_REFRESH_GROUP_SUITE\","
                         + "\"param\":[\"3\",\"133003002,2\"]}]}",
                 MainQuestData.SubQuestData.class);
-        // Exercise the merge policy directly. applyFrom() also emits server startup
-        // diagnostics, and must not bootstrap the full Grasscutter runtime in a unit test.
-        var slimeActions = QuestData.effectiveExecList(
+        var slimeBegin = QuestData.effectiveExecList(
                 slimeExcel.getBeginExec(), slimeNative.getBeginExec());
-
-        assertEquals(1, slimeActions.size());
-        var slimeExec = slimeActions.get(0);
-        assertEquals("QUEST_EXEC_REFRESH_GROUP_SUITE", slimeExec.getType().name());
-        assertEquals(List.of("3", "133003002,2"), List.of(slimeExec.getParam()));
-
-        var amberExcel = GSON.fromJson(
-                "{\"subId\":35301,\"mainId\":353,\"beginExec\":[],\"finishExec\":[],\"failExec\":[]}",
-                QuestData.class);
-        var amberNative = GSON.fromJson(
-                "{\"subId\":35301,\"finishExec\":[{\"type\":\"QUEST_EXEC_GRANT_TRIAL_AVATAR\","
-                        + "\"param\":[\"1\"]}]}",
-                MainQuestData.SubQuestData.class);
-        var amberActions = QuestData.effectiveExecList(
-                amberExcel.getFinishExec(), amberNative.getFinishExec());
-
-        assertEquals("QUEST_EXEC_GRANT_TRIAL_AVATAR", amberActions.get(0).getType().name());
-        assertEquals(List.of("1"), List.of(amberActions.get(0).getParam()));
+        assertEquals(1, slimeBegin.size());
+        assertEquals("QUEST_EXEC_REFRESH_GROUP_SUITE", slimeBegin.get(0).getType().name());
+        assertEquals(List.of("3", "133003002,2"), List.of(slimeBegin.get(0).getParam()));
     }
 
     @Test
@@ -66,15 +64,15 @@ final class QuestBinExecFallbackTest {
     }
 
     @Test
-    void parsesActualNative353QuestActionsAndPreservesSlimeSuite() {
-        // Mirrors BinOutput/Quest/353.json: Amber dialogue, trial grant, then skill tutorial slime.
+    void parsesNative353QuestActionsWithoutInjectingAmber() {
+        // Mirrors the original 7.1 resource before the erroneous c98b896710 grant,
+        // corroborated by GCResource 3700 and 4000.
         String nativeSubquests =
                 """
                 {"id":353,"subQuests":[
                     {"subId":35301,
                      "beginExec":[{"type":"QUEST_EXEC_REFRESH_GROUP_SUITE",
-                                   "param":["3","133003002,1"]}],
-                     "finishExec":[{"type":"QUEST_EXEC_GRANT_TRIAL_AVATAR","param":["1"]}]},
+                                   "param":["3","133003002,1"]}]},
                     {"subId":35302,
                      "beginExec":[{"type":"QUEST_EXEC_REFRESH_GROUP_SUITE",
                                    "param":["3","133003002,2"]}]}
@@ -85,9 +83,8 @@ final class QuestBinExecFallbackTest {
                         nativeSubquests, emu.grasscutter.data.binout.MainQuestData.class);
         var subs = nativeMain.getSubQuests();
         assertEquals(35301, subs[0].getSubId());
-        assertEquals(
-                "QUEST_EXEC_GRANT_TRIAL_AVATAR",
-                subs[0].getFinishExec().get(0).getType().name());
+        assertTrue(QuestData.effectiveExecList(List.of(), subs[0].getFinishExec()).isEmpty());
+        assertEquals("133003002,1", subs[0].getBeginExec().get(0).getParam()[1]);
         assertEquals(35302, subs[1].getSubId());
 
         var recoveredBegin = QuestData.effectiveExecList(List.of(), subs[1].getBeginExec());
