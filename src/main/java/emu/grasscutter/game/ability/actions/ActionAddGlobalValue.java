@@ -43,10 +43,12 @@ public final class ActionAddGlobalValue extends AbilityActionHandler {
 
         target.onAbilityValueUpdate();
         if (!AbilityManager.isServerOwnedChain()) {
-            target
-                    .getScene()
-                    .getHost()
-                    .sendPacket(new PacketServerGlobalValueChangeNotify(target, valueKey, newValue));
+            // Team entities are created before scene entry and may have no scene reference.
+            var scene = target.getScene();
+            var recipient = scene == null ? ability.getPlayerOwner() : scene.getHost();
+            if (recipient != null) {
+                recipient.sendPacket(new PacketServerGlobalValueChangeNotify(target, valueKey, newValue));
+            }
         }
 
         return true;
