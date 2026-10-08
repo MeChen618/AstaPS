@@ -2,6 +2,7 @@ package emu.grasscutter.data.binout;
 
 import dev.morphia.annotations.Entity;
 import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestType;
@@ -91,6 +92,9 @@ public class MainQuestData {
         private List<QuestData.QuestExecParam> beginExec;
         private List<QuestData.QuestExecParam> finishExec;
         private List<QuestData.QuestExecParam> failExec;
+
+        // Subquest rewards are present in native BinOutput, even if absent in QuestExcel.
+        private List<ItemParamData> gainItems;
     }
 
     @Data

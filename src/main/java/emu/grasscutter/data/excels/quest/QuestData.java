@@ -79,6 +79,7 @@ public class QuestData extends GameResource {
         this.beginExec = effectiveExecList(this.beginExec, additionalData.getBeginExec());
         this.finishExec = effectiveExecList(this.finishExec, additionalData.getFinishExec());
         this.failExec = effectiveExecList(this.failExec, additionalData.getFailExec());
+        this.gainItems = effectiveGainItems(this.gainItems, additionalData.getGainItems());
 
         // Native 7.1 prerequisites govern Paimon's 35101 and the 36301 chapter gate.
         // A flattened quest-0 placeholder must not start the chapter before hilltop 35202.
@@ -103,6 +104,25 @@ public class QuestData extends GameResource {
             List<QuestExecParam> excel, List<QuestExecParam> bin) {
         var validExcel = validExecs(excel);
         return validExcel.isEmpty() ? validExecs(bin) : validExcel;
+    }
+
+    /**
+     * Preserve explicit QuestExcel rewards; recover converter-dropped rewards from
+     * native BinOutput when the flattened row contains none.
+     * E.g. native 35402 grants item 1021 on completing Amber's introductory talk.
+     */
+    static List<ItemParamData> effectiveGainItems(
+            List<ItemParamData> excel, List<ItemParamData> bin) {
+        var validExcel = validGainItems(excel);
+        return validExcel.isEmpty() ? validGainItems(bin) : validExcel;
+    }
+
+    private static List<ItemParamData> validGainItems(List<ItemParamData> items) {
+        if (items == null || items.isEmpty()) return Collections.emptyList();
+        return items.stream()
+                .filter(Objects::nonNull)
+                .filter(item -> item.getId() > 0 && item.getCount() > 0)
+                .toList();
     }
 
     private static List<QuestExecParam> validExecs(List<QuestExecParam> execs) {
