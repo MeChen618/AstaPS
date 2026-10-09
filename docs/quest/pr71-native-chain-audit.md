@@ -76,15 +76,15 @@ The maintainer can therefore merge AstaPS #71 independently. Until the
 Resource maintainer accepts #14, deployments intended to play the full
 7.1 Mondstadt Prologue **must select the already-reviewed fork resource
 snapshot explicitly**. The tested resource HEAD is
-`7570649ca0579bfd6820e29f6431a1e58c0fb1dc` (the workflow
-`37872435114` passed). No quest data is duplicated in AstaPS Java or
+`38b0db14a1fa23be0fbfb03eef2afd39591d65c6` (the workflow
+`37882409974` passed). No quest data is duplicated in AstaPS Java or
 checked into the server repo.
 
 For a **new** deployment, from the AstaPS server's working directory:
 
 ```sh
 git clone --branch fix/35301-native-trial-sequence https://github.com/RinoPaw/AstaPS-Resource.git resources
-git -C resources checkout --detach 7570649ca0579bfd6820e29f6431a1e58c0fb1dc
+git -C resources checkout --detach 38b0db14a1fa23be0fbfb03eef2afd39591d65c6
 git -C resources rev-parse HEAD
 ```
 
@@ -93,7 +93,7 @@ preserve any local changes, then fetch and select the tested snapshot:
 
 ```sh
 git -C resources fetch https://github.com/RinoPaw/AstaPS-Resource.git fix/35301-native-trial-sequence
-git -C resources checkout --detach 7570649ca0579bfd6820e29f6431a1e58c0fb1dc
+git -C resources checkout --detach 38b0db14a1fa23be0fbfb03eef2afd39591d65c6
 git -C resources rev-parse HEAD
 ```
 
