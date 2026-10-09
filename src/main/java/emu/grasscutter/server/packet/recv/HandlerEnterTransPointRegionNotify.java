@@ -1,7 +1,6 @@
 package emu.grasscutter.server.packet.recv;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.EnterTransPointRegionNotifyOuterClass.EnterTransPointRegionNotify;
 import emu.grasscutter.server.game.GameSession;
@@ -11,10 +10,6 @@ import java.util.List;
 
 @Opcodes(PacketOpcodes.EnterTransPointRegionNotify)
 public class HandlerEnterTransPointRegionNotify extends PacketHandler {
-    static boolean allowsAutomaticStatueUnlock(boolean questingActive) {
-        return !questingActive;
-    }
-
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         String hex = Utils.bytesToHex(payload == null ? new byte[0] : payload);
@@ -46,18 +41,9 @@ public class HandlerEnterTransPointRegionNotify extends PacketHandler {
                             tags);
 
             var player = session.getPlayer();
-            if (player != null && sceneId == 3 && (pointId == 6 || pointId == 7)) {
-                Grasscutter.getLogger()
-                        .info(
-                                "[quest-point] source=enter-region uid={} scene={} point={} questingActive={}",
-                                uid, sceneId, pointId, QuestManager.isQuestingActive());
-            }
-            // Proximity-based statue activation is for questing-off compatibility only.
-            // With native quests running, the starter statue is unlocked by quest 35205.
-            if (player != null
-                    && allowsAutomaticStatueUnlock(QuestManager.isQuestingActive())
-                    && sceneId > 0
-                    && pointId > 0) {
+            // Locked statues: auto-unlock on enter — no Talk/quest playthrough required for F
+            // or map unlock. Works whether questing is on or off.
+            if (player != null && sceneId > 0 && pointId > 0) {
                 try {
                     var entry =
                             emu.grasscutter.data.GameData.getScenePointEntryById(sceneId, pointId);
@@ -70,12 +56,8 @@ public class HandlerEnterTransPointRegionNotify extends PacketHandler {
                                     && (player.isScenePointForceLocked(sceneId, pointId)
                                             || !player.getUnlockedScenePoints(sceneId)
                                                     .contains(pointId));
-                    if (locked) {
+                    if (locked) { // 靠近就解锁；已解锁则完全不碰
                         try {
-                            Grasscutter.getLogger()
-                                    .info(
-                                            "[quest-point] source=legacy-region-unlock uid={} scene={} point={}",
-                                            uid, sceneId, pointId);
                             player.getProgressManager().miaoUnlockStatue(sceneId, pointId);
                             player.sendPacket(
                                     new emu.grasscutter.server.packet.send.PacketGetSceneAreaRsp(

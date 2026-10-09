@@ -64,22 +64,21 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
             return;
         }
 
-        // The working play/rino 7.1 birth flow arms the native-intro gate before acknowledging
-        // birth. A fast client can send the first pause cycle immediately after the response.
-        session.setState(SessionState.ACTIVE);
-        BornIntroGate.armNativeIntro(session);
-
-        // Publish the chosen Traveler and name before acknowledging SetPlayerBornDataReq.
-        // The client initializes its post-born quest actor/tracking state after this boundary.
-        // Keep the legacy response-opcode override for deployments that explicitly configure it.
-        session.send(new PacketAvatarDataNotify(player));
-        session.send(new PacketPlayerNicknameNotify(req.getNickName()));
+        // 7.1 accepts the chosen Traveler first, then runs a second native intro client-side. Do
+        // not create the World yet: sending scene-entry here cuts that intro off and eventually
+        // makes the client reconnect.
         int configuredRsp = GAME_OPTIONS.newAccountIntro.setPlayerBornDataRsp;
         if (configuredRsp > 0 && configuredRsp != PacketSetPlayerBornDataRsp.CMD_ID) {
             session.send(new BasePacket(configuredRsp));
         } else {
             session.send(new PacketSetPlayerBornDataRsp());
         }
+        session.send(new PacketPlayerNicknameNotify(req.getNickName()));
+
+        // Normal packets (including the pause-cycle signal below) arrive after 26105, so leave the
+        // character-picking router state before returning from this handler.
+        session.setState(SessionState.ACTIVE);
+        BornIntroGate.arm(session);
 
         Grasscutter.getLogger()
                 .info(

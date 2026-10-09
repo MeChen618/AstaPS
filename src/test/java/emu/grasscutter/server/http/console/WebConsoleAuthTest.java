@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 class WebConsoleAuthTest {
     private static WebConsoleAuth auth(String password) {
         var options = new WebConsole();
+        options.enabled = true;
         options.password = password;
         return new WebConsoleAuth(options);
     }
@@ -36,25 +37,38 @@ class WebConsoleAuthTest {
     }
 
     @Test
-    void unsetPasswordFallsBackToTheBuiltInOne() {
+    void unsetOrBlankPasswordNeverAuthenticates() {
         for (var configured : new String[] {null, "", "  "}) {
             var auth = auth(configured);
             assertNull(auth.login("1.2.3.4", ""));
-            assertNotNull(auth.login("1.2.3.4", WebConsole.DEFAULT_PASSWORD));
+            assertNull(auth.login("1.2.3.4", "mechen618"));
+            assertNull(auth.login("1.2.3.4", null));
         }
     }
 
     @Test
-    void builtInPasswordIsNotWrittenToConfig() {
-        var json = emu.grasscutter.utils.JsonUtils.encode(new WebConsole());
+    void consoleIsDisabledAndHasNoCredentialByDefault() {
+        var options = new WebConsole();
+        assertFalse(options.enabled);
+        assertNull(options.effectivePassword());
+
+        var json = emu.grasscutter.utils.JsonUtils.encode(options);
         assertFalse(json.contains("password"), json);
         assertTrue(json.contains("enabled"), json);
     }
 
     @Test
-    void configuredPasswordReplacesTheBuiltInOne() {
+    void disabledConsoleRefusesEvenAnExplicitPassword() {
+        var options = new WebConsole();
+        options.password = "secret";
+        var auth = new WebConsoleAuth(options);
+        assertNull(auth.login("1.2.3.4", "secret"));
+    }
+
+    @Test
+    void configuredPasswordIsTheOnlyAcceptedCredential() {
         var auth = auth("secret");
-        assertNull(auth.login("1.2.3.4", WebConsole.DEFAULT_PASSWORD));
+        assertNull(auth.login("1.2.3.4", "mechen618"));
         assertNotNull(auth.login("1.2.3.4", "secret"));
     }
 
@@ -69,6 +83,7 @@ class WebConsoleAuthTest {
     @Test
     void expiredSessionIsRejected() {
         var options = new WebConsole();
+        options.enabled = true;
         options.password = "secret";
         options.sessionHours = 0;
         var auth = new WebConsoleAuth(options);

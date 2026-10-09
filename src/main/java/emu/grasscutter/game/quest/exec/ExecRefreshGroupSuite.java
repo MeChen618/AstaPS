@@ -90,31 +90,7 @@ public class ExecRefreshGroupSuite extends QuestExecHandler {
             // entities that are about to be spawned.
             group.dontUnload = true;
 
-            boolean applied = scriptManager.refreshGroupSuite(groupId, suiteId, quest);
-            // 35302's Suite 2 contains the combat-training slime (config 439). Report the
-            // actual world entity too: an active suite alone does not prove that it spawned.
-            if (groupId == 133003002 && suiteId == 2) {
-                var slime = scene.getEntityByConfigId(439, groupId);
-                Grasscutter.getLogger()
-                        .info(
-                                "[quest-slime] uid={} sub={} group={} suite={} applied={} spawned={} entityId={}",
-                                quest.getOwner().getUid(),
-                                quest.getSubQuestId(),
-                                groupId, suiteId, applied, slime != null,
-                                slime != null ? slime.getId() : 0);
-            }
-            if (quest.getMainQuestId() >= 351 && quest.getMainQuestId() <= 353) {
-                var instance = scriptManager.getGroupInstanceById(groupId);
-                Grasscutter.getLogger()
-                        .info(
-                                "[quest-group] uid={} main={} sub={} scene={} group={} suite={} applied={} activeSuite={}",
-                                quest.getOwner().getUid(),
-                                quest.getMainQuestId(),
-                                quest.getSubQuestId(),
-                                sceneId, groupId, suiteId, applied,
-                                instance != null ? instance.getActiveSuiteId() : 0);
-            }
-            if (!applied) {
+            if (!scriptManager.refreshGroupSuite(groupId, suiteId, quest)) {
                 Grasscutter.getLogger().warn(
                         "Quest {} failed to refresh group {} suite {} in scene {}",
                         quest.getSubQuestId(),

@@ -815,9 +815,16 @@ public class Avatar {
         this.fightProperties.putAll(this.fightPropOverrides);
 
         // Set current hp
+        // Clamped to the freshly computed max: a max-HP-ratio modifier (Actor_MaxHPRatio, e.g.
+        // Columbina C2 / Yelan C4 / Furina overflow) can leave CUR_HP above MAX_HP once it expires,
+        // and an unclamped value survives every recalc - hpPercent then stays above 1 and is fed
+        // straight back in - and gets persisted. Such a character's HP bar reads full while the real
+        // value sits above the cap, so damage appears to do nothing until the surplus is eaten.
+        float restoredHp =
+                this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * hpPercent;
         this.setFightProperty(
                 FightProperty.FIGHT_PROP_CUR_HP,
-                this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) * hpPercent);
+                Math.min(restoredHp, this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP)));
 
         // Set HP Debts
         this.setFightProperty(
@@ -1342,7 +1349,7 @@ public class Avatar {
      */
     public int getTrialSkillLevel() {
         // Use default data if custom data not available.
-        if (GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId()) == null) {
+        if (GameData.getTrialAvatarCustomData().isEmpty()) {
             var template = getTrialTemplate(); // round trial level to fit template levels
 
             var templateData = GameData.getTrialAvatarTemplateDataMap().get(template);
@@ -1368,7 +1375,7 @@ public class Avatar {
      */
     public int getTrialWeaponId() {
         // Use default data if custom data not available.
-        if (GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId()) == null) {
+        if (GameData.getTrialAvatarCustomData().isEmpty()) {
             if (GameData.getTrialAvatarDataMap().get(this.getTrialAvatarId()) == null)
                 return this.getAvatarData().getInitialWeapon();
 
@@ -1392,7 +1399,7 @@ public class Avatar {
      */
     public List<Integer> getTrialReliquary() {
         // Use default data if custom data not available.
-        if (GameData.getTrialAvatarCustomData().get(this.getTrialAvatarId()) == null) {
+        if (GameData.getTrialAvatarCustomData().isEmpty()) {
             int trialAvatarTemplateLevel = getTrialTemplate();
 
             TrialAvatarTemplateData templateData =
@@ -1515,7 +1522,14 @@ public class Avatar {
         float miaoMax = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
         if (Math.abs(miaoCurProp - this.currentHp) > 1.0f) {
         }
+        // Never persist an above-max HP: a max-HP-ratio modifier (Actor_MaxHPRatio) raises the cap
+        // while it is active, and persisting that inflated value makes it permanent once the
+        // modifier is gone. MAX_HP is fully computed by the time we save, so clamping here is safe.
         this.currentHp = this.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP);
+        float persistedMaxHp = this.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP);
+        if (persistedMaxHp > 0f && this.currentHp > persistedMaxHp) {
+            this.currentHp = persistedMaxHp;
+        }
         try {
             AvatarSkillDepotData depot = this.getSkillDepot();
             if (depot != null && depot.getElementType() != null) {

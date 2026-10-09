@@ -1,6 +1,7 @@
 package emu.grasscutter.server.born;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.game.quest.QuestChapterBootstrap;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketEnterScenePeerNotify;
 import emu.grasscutter.server.packet.send.PacketEnterSceneReadyRsp;
@@ -246,9 +247,11 @@ public final class BornIntroGate {
         }
 
         try {
-            // Start Quest 351. Chapter controller 36301 starts via the native
-            // QUEST_COND_STATE_EQUAL(35202, FINISHED) event, not at scene entry.
+            // Player.onLogin already sent the full new-player quest snapshot. onPlayerBorn creates
+            // the visible prologue through normal incremental updates; then restore any hidden
+            // chapter controller linked to the active main-quest series from ChapterData.
             player.getQuestManager().onPlayerBorn();
+            QuestChapterBootstrap.startForActiveMainQuests(player.getQuestManager());
             remove(session);
         } catch (Throwable t) {
             synchronized (state) {

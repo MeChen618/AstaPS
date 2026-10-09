@@ -11,10 +11,6 @@ public class PacketScenePointUnlockNotify extends BasePacket {
         // hide_point_list = field 6, unhide_point_list = field 8, point_list = field 15.
         // The generated API misnames wire field 4 as unhidePointList, so normal unlocks must only
         // populate scene_id + point_list or the client receives an unlock+lock contradiction.
-        if (sceneId == 3 && (pointId == 6 || pointId == 7)) {
-            emu.grasscutter.Grasscutter.getLogger()
-                    .info("[quest-point] source=unlock-notify scene={} point={}", sceneId, pointId);
-        }
         ScenePointUnlockNotify.Builder p =
                 ScenePointUnlockNotify.newBuilder()
                         .setSceneId(sceneId)

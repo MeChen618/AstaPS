@@ -18,8 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The browser console at /console: live log, online players and console commands, behind the
- * built-in password, or {@code server.http.webConsole.password} when config.json sets one.
+ * The browser console at /console: live log, online players and console commands. Requires
+ * explicit opt-in and a non-blank {@code server.http.webConsole.password}.
  *
  * <p>Server metrics come from the existing public /api/status endpoint; everything here needs a
  * session token.
@@ -34,11 +34,12 @@ public final class WebConsoleHandler implements Router {
     public void applyRoutes(Javalin javalin) {
         if (!options.enabled) return;
 
-        if (options.effectivePassword().equals(WebConsole.DEFAULT_PASSWORD)) {
+        if (options.effectivePassword() == null) {
             Grasscutter.getLogger()
-                    .warn(
-                            "Web console uses the built-in password. Add server.http.webConsole.password"
-                                    + " to config.json to change it before exposing the HTTP port.");
+                    .error(
+                            "Web console disabled: server.http.webConsole.enabled is true, but"
+                                    + " server.http.webConsole.password is missing or blank.");
+            return;
         }
 
         WebConsoleLog.install();

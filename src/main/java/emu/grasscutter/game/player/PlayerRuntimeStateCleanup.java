@@ -64,6 +64,7 @@ public final class PlayerRuntimeStateCleanup {
         run("Dive", () -> DiveAbilityHelper.clearPlayer(uid));
         // The statue auto-heal timer is a thread of its own and keeps the player alive otherwise.
         run("Statue", () -> player.getSotsManager().handleExitTransPointRegionNotify());
+        run("StatueProbe", () -> player.getSotsManager().stopProximityProbe());
     }
 
     private static void run(String name, Runnable cleanup) {

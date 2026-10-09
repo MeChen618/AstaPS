@@ -641,6 +641,18 @@ public class Player implements PlayerHook, FieldFetch {
         this.setOrFetch(PlayerProperty.PROP_PLAYER_LEVEL, 1);
         this.setOrFetch(PlayerProperty.PROP_IS_SPRING_AUTO_USE, 1);
         this.setOrFetch(PlayerProperty.PROP_SPRING_AUTO_USE_PERCENT, 50);
+        // The statue's spring volume is only ever written by SotSManager.refillSpringVolume(),
+        // which runs off the auto-recover timer that starts on entering a statue region. Without
+        // these the client's 神像的恩泽 panel reads 0/0 and offers nothing to heal, and
+        // checkAndHealAvatar() can never heal because the balance stays at zero.
+        // Statue healing no longer charges the spring volume (see SotSManager), so the balance is
+        // display-only. Set it outright rather than with setOrFetch: setOrFetch keeps a previously
+        // saved non-zero value, which left a half-drained balance creeping back up over minutes
+        // instead of reading full. MAX first, because CUR's sanity check clamps against it.
+        this.setProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME,
+            PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax(), false);
+        this.setProperty(PlayerProperty.PROP_CUR_SPRING_VOLUME,
+            PlayerProperty.PROP_MAX_SPRING_VOLUME.getMax(), false);
         this.setOrFetch(PlayerProperty.PROP_IS_FLYABLE,
             withQuesting ? 0 : 1);
         this.setOrFetch(PlayerProperty.PROP_PLAYER_CAN_DIVE,

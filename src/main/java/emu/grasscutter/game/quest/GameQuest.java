@@ -58,21 +58,11 @@ public class GameQuest {
         this.finishTime = 0;
     }
 
-    /** Limited 351-353 breadcrumbs reveal overlapping active objectives during the prologue. */
-    private void logEarlyQuestTransition(String action) {
-        if (this.mainQuestId < 351 || this.mainQuestId > 353) return;
-        Grasscutter.getLogger().info(
-                "[quest-intro] uid={} main={} sub={} action={} state={} beginExec={} finishExec={}",
-                this.getOwner().getUid(), this.mainQuestId, this.subQuestId, action, this.state,
-                this.questData.getBeginExec().size(), this.questData.getFinishExec().size());
-    }
-
     public void start() {
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
         this.startGameDay = getOwner().getWorld().getTotalGameTimeDays();
         this.state = QuestState.QUEST_STATE_UNFINISHED;
-        logEarlyQuestTransition("start");
 
         val triggerCond =
                 questData.getFinishCond().stream()
@@ -228,7 +218,6 @@ public class GameQuest {
             this.state = QuestState.QUEST_STATE_FINISHED;
         }
         this.finishTime = Utils.getCurrentSeconds();
-        logEarlyQuestTransition("finish");
 
         this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
 
@@ -280,7 +269,6 @@ public class GameQuest {
                 .forEach(item -> this.getOwner().getInventory().addItem(item, ActionReason.QuestItem));
 
         this.save();
-
         Grasscutter.getLogger().debug("Quest {} was completed.", subQuestId);
     }
 
