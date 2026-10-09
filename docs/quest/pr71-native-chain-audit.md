@@ -64,50 +64,9 @@ fixes both representations on current upstream Resource main and restores
 The dedicated Resource CI checks both representations and the surrounding
 slime, forest, and target actions.
 
-## Deploying before upstream Resource PR #14 is merged
+## Resource deployment
 
-The server and Resource repositories are separate. `AstaPS` reads
-`./resources/ExcelBinOutput`, `./resources/BinOutput/Quest` and scene scripts
-from the **resource directory on disk**; it does not fetch the Resource
-repository automatically, and accepting server PR #71 does not apply the
-Resource PR #14 JSON changes.
-
-The maintainer can therefore merge AstaPS #71 independently. Until the
-Resource maintainer accepts #14, deployments intended to play the full
-7.1 Mondstadt Prologue **must select the already-reviewed fork resource
-snapshot explicitly**. The tested resource HEAD is
-`38b0db14a1fa23be0fbfb03eef2afd39591d65c6` (the workflow
-`37882409974` passed). No quest data is duplicated in AstaPS Java or
-checked into the server repo.
-
-For a **new** deployment, from the AstaPS server's working directory:
-
-```sh
-git clone --branch fix/35301-native-trial-sequence https://github.com/RinoPaw/AstaPS-Resource.git resources
-git -C resources checkout --detach 38b0db14a1fa23be0fbfb03eef2afd39591d65c6
-git -C resources rev-parse HEAD
-```
-
-For a server whose `resources/` is **already a Git checkout**, first
-preserve any local changes, then fetch and select the tested snapshot:
-
-```sh
-git -C resources fetch https://github.com/RinoPaw/AstaPS-Resource.git fix/35301-native-trial-sequence
-git -C resources checkout --detach 38b0db14a1fa23be0fbfb03eef2afd39591d65c6
-git -C resources rev-parse HEAD
-```
-
-If `resources/` is a copied/extracted folder rather than a Git checkout,
-back it up before replacing it with a new checkout. Do not execute the
-`git -C resources` commands in that case.
-
-This is a **temporary deployment selection**, not a new upstream
-dependency or a fork-only runtime architecture. Once upstream Resource
-main includes #14's corrections, normal installations can use the
-upstream Resource release again. If the user installs upstream Resource
-main before #14 merges, 35301 will still prematurely grant trial Amber,
-and many missing Acts II/III begin actions remain absent even though
-AstaPS #71 compiled successfully.
+[Resource PR #14](https://github.com/MeChen618/AstaPS-Resource/pull/14) is merged into upstream Resource `main` (`97bd823`). Use the latest upstream Resource checkout in `resources/`; no fork-only resource pin is required. Existing local test installs can keep their reviewed PR #14 checkout until the next resource update.
 
 ## Validation and limits
 
