@@ -989,7 +989,18 @@ public class ScriptLib {
                 groupValue.isnumber() ? groupValue.toint() : 0,
                 activeGroup != null ? activeGroup.id : 0);
         if (groupId <= 0) return 1;
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(
+        var scriptManager = getSceneScriptManager();
+        // Q39403 can remove an off-grid seal gadget from another Lua group.
+        // Record the explicit script kill before looking up a spawned entity.
+        var group = scriptManager.getGroupById(groupId);
+        if (group != null && group.gadgets != null
+                && group.gadgets.containsKey(configId.toint())) {
+            var instance = scriptManager.getGroupInstanceById(groupId);
+            if (instance != null && instance.markScriptGadgetDestroyed(configId.toint())) {
+                instance.save();
+            }
+        }
+        var entity = scriptManager.getScene().getEntityByConfigId(
                 configId.toint(), groupId);
         if (entity != null) {
             getSceneScriptManager().getScene().killEntity(entity, 0);
