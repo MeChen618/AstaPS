@@ -67,8 +67,25 @@ public abstract class GameEntity {
     private boolean modifierLockHP;
     /** Set when an ability modifier with {@code state: Invincible} is active. */
     @Getter @Setter private boolean modifierInvincible;
+    /**
+     * HP left in the revival-shield stack this entity is holding, or -1 when it has none.
+     *
+     * <p>Separate from {@link #modifierInvincible} because that flag only says "damage stops here":
+     * a shield stack has to soak the hit and lose a layer, which is the only way the fight opens up.
+     */
+    @Getter @Setter private float shieldPool = -1f;
     private boolean limbo;
     private float limboHpThreshold;
+    /**
+     * Limbo modifiers currently applied, keyed by ability + modifier name, with the HP ratio each
+     * one pins.
+     *
+     * <p>{@link #limbo} used to be sticky: it was set when a Limbo modifier landed and never
+     * recomputed, so an entity whose stage-control modifier ended (the Perpetual Mechanical Array's
+     * split, Hu Tao C6) stayed damage-proof below its threshold forever. Tracking which modifiers
+     * are still active lets a removal clear exactly the one that ended.
+     */
+    private final Map<String, Float> activeLimboModifiers = new ConcurrentHashMap<>();
 
     @Setter(AccessLevel.PROTECTED)
     @Getter
@@ -88,6 +105,13 @@ public abstract class GameEntity {
     // Abilities run on a thread pool, so a plain HashMap here threw ConcurrentModificationException
     // out of whichever action happened to be reading the values while another wrote them
     @Getter private Map<String, Float> globalAbilityValues = new ConcurrentHashMap<>();
+    /**
+     * Global <em>positions</em>, written by SetGlobalPos and read back by a Summon whose born block
+     * is keyed on one. Separate from {@link #globalAbilityValues} because that map holds floats and
+     * a position is not one.
+     */
+    @Getter
+    private final Map<String, Position> globalAbilityPositions = new ConcurrentHashMap<>();
     private long convertToHpDebtSetAtMs = 0L;
 
     public GameEntity(Scene scene) {
@@ -229,6 +253,61 @@ public abstract class GameEntity {
         return limbo;
     }
 
+    float getLimboHpThreshold() {
+        return limboHpThreshold;
+    }
+
+    /**
+     * Records that a Limbo modifier is active on this entity, so its removal can be told apart from
+     * an unrelated one. Called from the same path that sets the limbo flag.
+     */
+    public void trackLimboModifier(
+            emu.grasscutter.game.ability.Ability ability, String modifierName, float hpThreshold) {
+        if (ability == null || modifierName == null) return;
+        trackLimboModifier(ability.getData().abilityName, modifierName, hpThreshold);
+    }
+
+    void trackLimboModifier(String abilityName, String modifierName, float hpThreshold) {
+        activeLimboModifiers.put(abilityName + "|" + modifierName, hpThreshold);
+        setLimbo(recomputeLimboThreshold());
+    }
+
+    /**
+     * Drops one Limbo modifier and re-derives the gate from the ones still active.
+     *
+     * <p>The most restrictive threshold wins: while a modifier pinning HP at 80% is up, damage has
+     * to stop there, so taking the maximum is what keeps the entity alive as long as any limbo
+     * modifier remains.
+     */
+    public void onLimboModifierRemoved(
+            emu.grasscutter.game.ability.Ability ability, String modifierName) {
+        if (ability == null || modifierName == null) return;
+        onLimboModifierRemoved(ability.getData().abilityName, modifierName);
+    }
+
+    void onLimboModifierRemoved(String abilityName, String modifierName) {
+        // ActionRemoveModifier calls this for every removal, not just limbo ones, and limbo can also
+        // be set without being tracked (the AttachTo* mixins and SkirkCunningHelper go through
+        // onAddAbilityModifier(data)). Only a tracked entry going away may release the gate, or an
+        // unrelated removal would clear a limbo nothing here put in place.
+        if (activeLimboModifiers.remove(abilityName + "|" + modifierName) == null) {
+            return;
+        }
+        if (activeLimboModifiers.isEmpty()) {
+            clearLimbo();
+        } else {
+            setLimbo(recomputeLimboThreshold());
+        }
+    }
+
+    private float recomputeLimboThreshold() {
+        float max = 0f;
+        for (float threshold : activeLimboModifiers.values()) {
+            max = Math.max(max, threshold);
+        }
+        return max;
+    }
+
     /**
      * Applies fight-prop modifier properties when the owning {@link emu.grasscutter.game.ability.Ability}
      * is known (needed to resolve DynamicFloat ability specials).
@@ -238,6 +317,9 @@ public abstract class GameEntity {
         if (ability != null && modifierName != null) {
             emu.grasscutter.game.ability.AbilityMaxHpRatioHelper.onModifierAdded(
                     ability, modifierName, data, this);
+            if (data != null && data.state == AbilityModifier.State.Limbo) {
+                this.trackLimboModifier(ability, modifierName, limboThresholdOf(data));
+            }
         }
     }
 
@@ -275,14 +357,16 @@ public abstract class GameEntity {
             // No ability instance here to resolve a named special against, so an unresolvable
             // one reads as zero. Limbo modifiers without an explicit threshold (e.g. Hu Tao C6)
             // still need death-prevention, so fall back to a tiny floor.
-            float hpThresholdRatio =
-                    data.properties != null ? data.properties.Actor_HpThresholdRatio.get(0f) : 0f;
-            if (hpThresholdRatio <= 0.0f) {
-                hpThresholdRatio = 1e-6f;
-            }
-            Grasscutter.getLogger().debug("Limbo set to {}", hpThresholdRatio);
-            this.setLimbo(hpThresholdRatio);
+            Grasscutter.getLogger().debug("Limbo set to {}", limboThresholdOf(data));
+            this.setLimbo(limboThresholdOf(data));
         }
+    }
+
+    /** The HP ratio a Limbo modifier pins, with a tiny floor so death-prevention still applies. */
+    private static float limboThresholdOf(AbilityModifier data) {
+        float hpThresholdRatio =
+                data.properties != null ? data.properties.Actor_HpThresholdRatio.get(0f) : 0f;
+        return hpThresholdRatio <= 0.0f ? 1e-6f : hpThresholdRatio;
     }
 
     public boolean isLockHP() {
@@ -483,7 +567,22 @@ public abstract class GameEntity {
         }
 
         if (this.modifierInvincible) {
-            return;
+            // A shield stack soaks the hit and loses a layer; a plain Invincible modifier still
+            // blocks outright.
+            var shieldSetup = MultiShieldHelper.findSetup(this);
+            if (shieldSetup != null
+                    && MultiShieldHelper.absorb(
+                            this,
+                            shieldSetup,
+                            amount,
+                            MultiShieldHelper.effectivenessFor(this, amount, killerId, attackType))) {
+                return;
+            }
+            if (shieldSetup == null) return;
+            // The stack just ran out. Breaking it recomputed the flag from the modifiers left, so a
+            // separate Invincible modifier (the boss's return-to-born one, say) still blocks the hit.
+            if (this.modifierInvincible) return;
+            // Nothing else protects it - fall through so this hit lands on the HP bar.
         }
 
         EntityDamageEvent event =
