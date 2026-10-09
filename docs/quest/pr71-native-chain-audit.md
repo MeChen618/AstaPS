@@ -64,6 +64,51 @@ fixes both representations on current upstream Resource main and restores
 The dedicated Resource CI checks both representations and the surrounding
 slime, forest, and target actions.
 
+## Deploying before upstream Resource PR #14 is merged
+
+The server and Resource repositories are separate. `AstaPS` reads
+`./resources/ExcelBinOutput`, `./resources/BinOutput/Quest` and scene scripts
+from the **resource directory on disk**; it does not fetch the Resource
+repository automatically, and accepting server PR #71 does not apply the
+Resource PR #14 JSON changes.
+
+The maintainer can therefore merge AstaPS #71 independently. Until the
+Resource maintainer accepts #14, deployments intended to play the full
+7.1 Mondstadt Prologue **must select the already-reviewed fork resource
+snapshot explicitly**. The tested resource HEAD is
+`7570649ca0579bfd6820e29f6431a1e58c0fb1dc` (the workflow
+`37872435114` passed). No quest data is duplicated in AstaPS Java or
+checked into the server repo.
+
+For a **new** deployment, from the AstaPS server's working directory:
+
+```sh
+git clone --branch fix/35301-native-trial-sequence https://github.com/RinoPaw/AstaPS-Resource.git resources
+git -C resources checkout --detach 7570649ca0579bfd6820e29f6431a1e58c0fb1dc
+git -C resources rev-parse HEAD
+```
+
+For a server whose `resources/` is **already a Git checkout**, first
+preserve any local changes, then fetch and select the tested snapshot:
+
+```sh
+git -C resources fetch https://github.com/RinoPaw/AstaPS-Resource.git fix/35301-native-trial-sequence
+git -C resources checkout --detach 7570649ca0579bfd6820e29f6431a1e58c0fb1dc
+git -C resources rev-parse HEAD
+```
+
+If `resources/` is a copied/extracted folder rather than a Git checkout,
+back it up before replacing it with a new checkout. Do not execute the
+`git -C resources` commands in that case.
+
+This is a **temporary deployment selection**, not a new upstream
+dependency or a fork-only runtime architecture. Once upstream Resource
+main includes #14's corrections, normal installations can use the
+upstream Resource release again. If the user installs upstream Resource
+main before #14 merges, 35301 will still prematurely grant trial Amber,
+and many missing Acts II/III begin actions remain absent even though
+AstaPS #71 compiled successfully.
+
 ## Validation and limits
 
 Server JUnit tests cover fallback precedence, reviewed 351/363 gate selection,
