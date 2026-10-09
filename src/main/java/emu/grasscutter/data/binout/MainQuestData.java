@@ -1,7 +1,10 @@
 package emu.grasscutter.data.binout;
 
 import dev.morphia.annotations.Entity;
+import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.quest.enums.LogicType;
 import emu.grasscutter.game.quest.enums.QuestType;
 import java.util.*;
 import lombok.Data;
@@ -80,6 +83,21 @@ public class MainQuestData {
         private int order;
         private boolean isMpBlock;
         private boolean isRewind, finishParent;
+
+        // Materialized BinOutput preserves reviewed prerequisites, including 36301.
+        private List<QuestData.QuestAcceptCondition> acceptCond;
+        private LogicType acceptCondComb;
+        // The flattened QuestExcel row may lose this multi-objective rule.
+        private LogicType finishCondComb;
+        private LogicType failCondComb;
+
+        // Per-subquest BinOutput actions can be absent from the flattened Excel export.
+        private List<QuestData.QuestExecParam> beginExec;
+        private List<QuestData.QuestExecParam> finishExec;
+        private List<QuestData.QuestExecParam> failExec;
+
+        // Materialized BinOutput can retain rewards missing from QuestExcel.
+        private List<ItemParamData> gainItems;
     }
 
     @Data

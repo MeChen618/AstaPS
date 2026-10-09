@@ -611,10 +611,20 @@ public final class QuestManager extends BasePlayerManager {
                     acceptProgressLists.putIfAbsent(questData.getId(), new int[acceptCond.size()]);
                     for (int i = 0; i < acceptCond.size(); i++) {
                         val condition = acceptCond.get(i);
-                        if (condition.getType() == condType) {
+                        // Quest-state conditions are live gates. An earlier NOT_EQUAL
+                        // may become false before the other prerequisite finishes.
+                        boolean liveQuestState =
+                                condition.getType() == QuestCond.QUEST_COND_STATE_EQUAL
+                                        || condition.getType() == QuestCond.QUEST_COND_STATE_NOT_EQUAL;
+                        if (condition.getType() == condType || liveQuestState) {
                             boolean result =
                                     questSystem.triggerCondition(owner, questData, condition, paramStr, params);
-                            acceptProgressLists.get(questData.getId())[i] = result ? 1 : 0;
+                            int[] progress = acceptProgressLists.get(questData.getId());
+                            if (liveQuestState) {
+                                QuestProgress.recordCurrent(progress, i, result);
+                            } else {
+                                QuestProgress.recordMatch(progress, i, result);
+                            }
                         }
                     }
 
@@ -714,6 +724,24 @@ public final class QuestManager extends BasePlayerManager {
                                 }
                             }
                         });
+    }
+
+    /**
+     * Recover weather that belongs to a still-active quest when an account rejoins.
+     * Return true when setWeather already sent the scene's initial weather packet.
+     */
+    public boolean restoreActiveQuestWeather(int sceneId) {
+        if (sceneId <= 0 || player.getWeatherId() != 0) return false;
+        var active = getActiveMainQuests().stream()
+                .flatMap(main -> main.getActiveQuests().stream())
+                .map(GameQuest::getQuestData)
+                .filter(Objects::nonNull)
+                .toList();
+        int areaId = QuestWeatherRestore.selectArea(
+                active, sceneId, GameData.getWeatherDataMap()::get);
+        if (areaId <= 0) return false;
+        player.setWeather(areaId);
+        return true;
     }
 
     public List<QuestGroupSuite> getSceneGroupSuite(int sceneId) {

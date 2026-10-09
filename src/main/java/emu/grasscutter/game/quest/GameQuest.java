@@ -146,6 +146,18 @@ public class GameQuest {
     public void setConfig(QuestData config) {
         if (config == null || getSubQuestId() != config.getId()) return;
         this.questData = config;
+
+        // An older save may have a different number of condition slots.
+        // Positional flags cannot be safely mapped when the 7.1 definition changed.
+        this.finishProgressList =
+                reconcileProgress(this.finishProgressList, config.getFinishCond().size());
+        this.failProgressList =
+                reconcileProgress(this.failProgressList, config.getFailCond().size());
+    }
+
+    private static int[] reconcileProgress(int[] saved, int expectedSize) {
+        if (saved != null && saved.length == expectedSize) return saved;
+        return new int[expectedSize];
     }
 
     public void setFinishProgress(int index, int value) {
@@ -292,6 +304,8 @@ public class GameQuest {
                     .forEach(t -> this.getOwner().getTeamManager().removeTrialAvatar(t));
         }
 
+        // A failed quest must survive a disconnect before the next rewind.
+        this.save();
         Grasscutter.getLogger().debug("Quest {} is failed", subQuestId);
     }
 

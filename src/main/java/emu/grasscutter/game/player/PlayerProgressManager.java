@@ -75,6 +75,20 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         super(player);
     }
 
+    record TransPointUnlockTransition(boolean changed, boolean newlyUnlocked, boolean wasForceLocked) {}
+
+    static boolean applyQuestPointLock(Set<Integer> forceLockedPoints, int pointId) {
+        return forceLockedPoints.add(pointId);
+    }
+
+    static TransPointUnlockTransition applyTransPointUnlock(
+            Set<Integer> unlockedPoints, Set<Integer> forceLockedPoints, int pointId) {
+        boolean wasForceLocked = forceLockedPoints.remove(pointId);
+        boolean newlyUnlocked = unlockedPoints.add(pointId);
+        return new TransPointUnlockTransition(
+                wasForceLocked || newlyUnlocked, newlyUnlocked, wasForceLocked);
+    }
+
     /**********
      * Handler for player login.
      **********/
@@ -1030,9 +1044,13 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         var entry = GameData.getScenePointEntryById(sceneId, pointId);
         if (entry == null || entry.getPointData() == null) return;
         var pd = entry.getPointData();
-        boolean isNew = this.player.getUnlockedScenePoints(sceneId).add(pointId);
-        this.player.getForceLockedScenePoints(sceneId).remove(pointId);
-        if (isNew) {
+        var transition =
+                applyTransPointUnlock(
+                        this.player.getUnlockedScenePoints(sceneId),
+                        this.player.getForceLockedScenePoints(sceneId),
+                        pointId);
+        boolean isNew = transition.newlyUnlocked();
+        if (transition.changed()) {
             this.player.sendPacket(
                     new emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify(
                             sceneId, pointId));
@@ -1070,16 +1088,33 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.refreshStatueGoddessNpc(sceneId, pointId);
     }
 
+    /**
+     * Lock a quest-controlled scene point on the client and in persisted player state.
+     * ScenePointUnlockNotify's generated field 4 is the 7.1 locked-point wire field.
+     */
+    public boolean lockTransPoint(int sceneId, int pointId) {
+        if (sceneId <= 0 || pointId <= 0) return false;
+        applyQuestPointLock(this.player.getForceLockedScenePoints(sceneId), pointId);
+        this.player.sendPacket(PacketScenePointUnlockNotify.lock(sceneId, pointId));
+        this.player.save();
+        return true;
+    }
+
     public boolean unlockTransPoint(int sceneId, int pointId, boolean isStatue) {
-        // Check whether the unlocked point exists and whether it is still locked.
         ScenePointEntry scenePointEntry = GameData.getScenePointEntryById(sceneId, pointId);
-
-        // Clear test lock first so a force-locked statue can be unlocked via UnlockTransPointReq.
-        this.player.getForceLockedScenePoints(sceneId).remove(pointId);
-
-        if (scenePointEntry == null || this.player.getUnlockedScenePoints(sceneId).contains(pointId)) {
+        if (scenePointEntry == null) {
             return false;
         }
+
+        var transition =
+                applyTransPointUnlock(
+                        this.player.getUnlockedScenePoints(sceneId),
+                        this.player.getForceLockedScenePoints(sceneId),
+                        pointId);
+        if (!transition.changed()) {
+            return false;
+        }
+        boolean newlyUnlocked = transition.newlyUnlocked();
 
         var pointData = scenePointEntry.getPointData();
         if (!isStatue
@@ -1087,23 +1122,22 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             isStatue = true;
         }
 
-        // Add the point to the list of unlocked points for its scene.
-        this.player.getUnlockedScenePoints(sceneId).add(pointId);
-
-        // Map fog is statue-only (official: one SotS gives one WorldArea). Waypoints and dungeon
-        // entries must not open areas - unlocking a Guili Plains TP was clearing Qiongji Yetan fog.
-        if (isStatue && pointData != null && pointData.getAreaId() > 0) {
+        // Permanent exploration state survives QUEST_EXEC_LOCK_POINT. Only a genuine first unlock
+        // opens map areas and grants exploration rewards; releasing a quest lock still counts as an
+        // unlock event for quest/script logic below.
+        if (newlyUnlocked && isStatue && pointData != null && pointData.getAreaId() > 0) {
             this.unlockSceneAreaHierarchy(sceneId, pointData.getAreaId());
         }
 
-        // Unlock rewards: statues vs waypoints/dungeon entries.
-        if (isStatue) {
+        // Unlock rewards: statues vs waypoints/dungeon entries. Never duplicate them when a quest
+        // temporarily re-locks a point the player had already discovered.
+        if (newlyUnlocked && isStatue) {
             this.player.getInventory().addItem(201, 2888, ActionReason.UnlockPointReward); // primogems
             this.player.getInventory().addItem(102, 800, ActionReason.UnlockPointReward); // adventure EXP
             this.player.getInventory().addItem(107009, 3, ActionReason.UnlockPointReward); // fragile resin
             this.player.getInventory().addItem(104003, 50, ActionReason.UnlockPointReward); // hero's wit
             this.player.getInventory().addItem(104013, 20, ActionReason.UnlockPointReward); // mystic enhancement ore
-        } else {
+        } else if (newlyUnlocked) {
             // Ordinary waypoint or domain entrance
             this.player.getInventory().addItem(201, 2888, ActionReason.UnlockPointReward); // primogems
             this.player.getInventory().addItem(102, 300, ActionReason.UnlockPointReward); // adventure EXP

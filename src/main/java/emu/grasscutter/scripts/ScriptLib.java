@@ -974,17 +974,37 @@ public class ScriptLib {
         return true;
     }
 
+    /** Use Lua's explicit target group when a quest event affects another group. */
+    static int killEntityTargetGroup(int requestedGroupId, int currentGroupId) {
+        return requestedGroupId > 0 ? requestedGroupId : currentGroupId;
+    }
+
     public int KillEntityByConfigId(LuaTable table) {
         logger.debug("[LUA] Call KillEntityByConfigId with {}", printTable(table));
         var configId = table.get("config_id");
-        if (configId == LuaValue.NIL) {
-            return 1;
+        if (!configId.isnumber() || configId.toint() <= 0) return 1;
+        var groupValue = table.get("group_id");
+        var activeGroup = getCurrentGroup().get();
+        int groupId = killEntityTargetGroup(
+                groupValue.isnumber() ? groupValue.toint() : 0,
+                activeGroup != null ? activeGroup.id : 0);
+        if (groupId <= 0) return 1;
+        var scriptManager = getSceneScriptManager();
+        // Q39403 can remove an off-grid seal gadget from another Lua group.
+        // Record the explicit script kill before looking up a spawned entity.
+        var group = scriptManager.getGroupById(groupId);
+        if (group != null && group.gadgets != null
+                && group.gadgets.containsKey(configId.toint())) {
+            var instance = scriptManager.getGroupInstanceById(groupId);
+            if (instance != null && instance.markScriptGadgetDestroyed(configId.toint())) {
+                instance.save();
+            }
         }
-        var entity = getSceneScriptManager().getScene().getEntityByConfigId(configId.toint(), getCurrentGroup().get().id);
-        if (entity == null) {
-            return 0;
+        var entity = scriptManager.getScene().getEntityByConfigId(
+                configId.toint(), groupId);
+        if (entity != null) {
+            getSceneScriptManager().getScene().killEntity(entity, 0);
         }
-        getSceneScriptManager().getScene().killEntity(entity, 0);
         return 0;
     }
 

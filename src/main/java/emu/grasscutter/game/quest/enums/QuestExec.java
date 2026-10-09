@@ -22,7 +22,7 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_ROLLBACK_QUEST(14),
     QUEST_EXEC_NOTIFY_GROUP_LUA(15),
     QUEST_EXEC_SET_OPEN_STATE(16),
-    QUEST_EXEC_LOCK_POINT(17), // missing
+    QUEST_EXEC_LOCK_POINT(17),
     QUEST_EXEC_DEL_PACK_ITEM_BATCH(18),
     QUEST_EXEC_REFRESH_GROUP_SUITE(19),
     QUEST_EXEC_REMOVE_TRIAL_AVATAR(20),
@@ -94,7 +94,7 @@ public enum QuestExec implements QuestTrigger {
 
     static {
         Stream.of(values())
-                .filter(e -> e.name().startsWith("QUEST_CONTENT_"))
+                .filter(e -> e.name().startsWith("QUEST_EXEC_"))
                 .forEach(
                         e -> {
                             contentMap.put(e.getValue(), e);

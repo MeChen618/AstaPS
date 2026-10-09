@@ -45,6 +45,7 @@ public class SceneScriptManager {
     private volatile boolean isInit;
     private volatile boolean initAttempted;
     private volatile boolean destroyed;
+    private final SceneScriptInitGate initialization = new SceneScriptInitGate();
     private boolean noCacheGroupGridsToDisk;
 
     private final Map<String, SceneTimeAxis> timeAxis = new ConcurrentHashMap<>();
@@ -102,6 +103,8 @@ public class SceneScriptManager {
         // TEMPORARY
         if (this.getScene().getId() < 10
                 && !Grasscutter.getConfig().server.game.enableScriptInBigWorld) {
+            this.initAttempted = true;
+            this.initialization.complete(false);
             return;
         }
 
@@ -352,16 +355,44 @@ public class SceneScriptManager {
         return true;
     }
 
+    /**
+     * Store only the latest quest-owned scene suite for a (scene, group) pair.
+     * A successful reset to suite 0 drops the override entirely.
+     */
+    static boolean rememberQuestGroupSuite(
+            List<QuestGroupSuite> saved, int sceneId, int groupId, int suiteId) {
+        if (saved == null || sceneId <= 0 || groupId <= 0 || suiteId < 0) return false;
+        synchronized (saved) {
+            int matches = 0;
+            int oldSuite = -1;
+            for (var entry : saved) {
+                if (entry != null && entry.getScene() == sceneId && entry.getGroup() == groupId) {
+                    matches++;
+                    oldSuite = entry.getSuite();
+                }
+            }
+            if ((suiteId == 0 && matches == 0)
+                    || (suiteId > 0 && matches == 1 && oldSuite == suiteId)) return false;
+            saved.removeIf(
+                    entry -> entry != null && entry.getScene() == sceneId && entry.getGroup() == groupId);
+            if (suiteId > 0) {
+                saved.add(QuestGroupSuite.of().scene(sceneId).group(groupId).suite(suiteId).build());
+            }
+            return true;
+        }
+    }
+
     public boolean refreshGroupSuite(int groupId, int suiteId, GameQuest quest) {
         var result = refreshGroupSuite(groupId, suiteId);
-        if (suiteId != 0 && quest != null) {
-            quest
-                    .getMainQuest()
-                    .getQuestGroupSuites()
-                    .add(
-                            QuestGroupSuite.of().scene(getScene().getId()).group(groupId).suite(suiteId).build());
+        if (result && quest != null) {
+            boolean changed =
+                    rememberQuestGroupSuite(
+                            quest.getMainQuest().getQuestGroupSuites(),
+                            getScene().getId(), groupId, suiteId);
+            // The task's beginExec may execute after the initial GameQuest.start save.
+            // Persist an applied suite transition so relog cannot replay stale waves.
+            if (changed) quest.save();
         }
-
         return result;
     }
 
@@ -530,31 +561,27 @@ public class SceneScriptManager {
     }
 
     private void init() {
-        if (this.destroyed) {
-            this.initAttempted = true;
-            return;
-        }
-        var event = new SceneMetaLoadEvent(getScene());
-        event.call();
-
-        if (event.isOverride()) {
-            // Group grids should not be cached to disk when a scene
-            // group override is in effect. Otherwise, when the server
-            // next runs without that override, the cached content
-            // will not make sense.
-            noCacheGroupGridsToDisk = true;
-        }
-
-        if (!this.destroyed) {
-            var meta = ScriptLoader.getSceneMeta(getScene().getId());
-            if (meta != null) {
-                this.meta = meta;
-
-                // TEMP
-                this.isInit = true;
+        try {
+            if (this.destroyed) return;
+            var event = new SceneMetaLoadEvent(getScene());
+            event.call();
+            if (event.isOverride()) {
+                noCacheGroupGridsToDisk = true;
             }
+            if (!this.destroyed) {
+                var loadedMeta = ScriptLoader.getSceneMeta(getScene().getId());
+                if (loadedMeta != null) {
+                    this.meta = loadedMeta;
+                    this.isInit = true;
+                }
+            }
+        } catch (RuntimeException exception) {
+            Grasscutter.getLogger().error(
+                    "Scene {} script initialization failed", scene.getId(), exception);
+        } finally {
+            this.initAttempted = true;
+            this.initialization.complete(this.isInit && !this.destroyed);
         }
-        this.initAttempted = true;
     }
 
     public List<Grid> getGroupGrids() {
@@ -726,6 +753,15 @@ public class SceneScriptManager {
         return initAttempted;
     }
 
+    /** One-shot callback for the actual scene script initialization outcome. */
+    public void whenInitialized(java.util.function.Consumer<Boolean> callback) {
+        this.initialization.whenComplete(callback);
+    }
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
+
     public void loadBlockFromScript(SceneBlock block) {
         block.load(scene.getId(), meta.context);
     }
@@ -775,6 +811,14 @@ public class SceneScriptManager {
         RegionMembershipTick.check(this, this.regions);
     }
 
+    /** A script-requested permanent kill is independent of ordinary oneoff death rules. */
+    static boolean shouldSpawnGadget(
+            boolean alreadySpawned, boolean scriptDestroyed,
+            boolean oneoff, boolean persistent, boolean ordinaryDead) {
+        return !alreadySpawned && !scriptDestroyed
+                && (!oneoff || !persistent || !ordinaryDead);
+    }
+
     public List<EntityGadget> getGadgetsInGroupSuite(
             SceneGroupInstance groupInstance, SceneSuite suite) {
         var group = groupInstance.getLuaGroup();
@@ -782,10 +826,11 @@ public class SceneScriptManager {
                 .filter(
                         m -> {
                             var entity = scene.getEntityByConfigId(m.config_id, group.id);
-                            return (entity == null || entity.getGroupId() != group.id)
-                                    && (!m.isOneoff
-                                            || !m.persistent
-                                            || !groupInstance.getDeadEntities().contains(m.config_id));
+                            return shouldSpawnGadget(
+                                    entity != null && entity.getGroupId() == group.id,
+                                    groupInstance.isScriptGadgetDestroyed(m.config_id),
+                                    m.isOneoff, m.persistent,
+                                    groupInstance.getDeadEntities().contains(m.config_id));
                         })
                 .map(g -> createGadget(group.id, group.block_id, g, groupInstance.getCachedGadgetState(g)))
                 .filter(Objects::nonNull)
@@ -1404,6 +1449,7 @@ public class SceneScriptManager {
             return;
         }
         this.destroyed = true;
+        this.initialization.complete(false);
         this.pendingCutsceneGroups.clear();
         this.sealBattleManager.clear();
 
