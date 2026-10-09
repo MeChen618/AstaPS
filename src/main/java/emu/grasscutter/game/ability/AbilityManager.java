@@ -76,7 +76,14 @@ public final class AbilityManager extends BasePlayerManager {
         java.util.EnumSet.of(
             AbilityModifierAction.Type.Predicated,
             AbilityModifierAction.Type.CreateGadget,
-            AbilityModifierAction.Type.SetGlobalValue);
+            AbilityModifierAction.Type.SetGlobalValue,
+            // A Summon whose born block is keyed on a global position reads that position back from
+            // the server's copy. Leaving SetGlobalPos out meant the key was never written, so the
+            // summon fell back to the position packed in the notify - none, for a modifier removal -
+            // and spawned at the world origin thousands of units from its caster, where it fell
+            // through the floor and was culled by die_y. The Perpetual Mechanical Array's split
+            // minions were gone before the player could see them.
+            AbilityModifierAction.Type.SetGlobalPos);
 
     /**
      * What a server owned chain may run, at any depth.
@@ -1102,21 +1109,21 @@ public final class AbilityManager extends BasePlayerManager {
 
             // Max HP ratio props (Yelan C4 / Furina overflow / Columbina C2, etc.) arrive as
             // client MODIFIER_CHANGE, not via ActionAttachModifier - apply here.
+            String resolvedModName = null;
             try {
-                String maxHpModName = null;
                 for (var e : instancedAbilityData.modifiers.entrySet()) {
                     if (e.getValue() == modifierData) {
-                        maxHpModName = e.getKey();
+                        resolvedModName = e.getKey();
                         break;
                     }
                 }
-                if (maxHpModName == null) {
-                    maxHpModName =
+                if (resolvedModName == null) {
+                    resolvedModName =
                             resolveModifierMapName(instancedAbilityData, modChange.getModifierLocalId());
                 }
-                if (maxHpModName != null && AbilityMaxHpRatioHelper.hasMaxHpRatio(modifierData)) {
+                if (resolvedModName != null && AbilityMaxHpRatioHelper.hasMaxHpRatio(modifierData)) {
                     AbilityMaxHpRatioHelper.onModifierAdded(
-                            instancedAbility, maxHpModName, modifierData, entity);
+                            instancedAbility, resolvedModName, modifierData, entity);
                 }
             } catch (Throwable t) {
                 Grasscutter.getLogger().warn("[MaxHPRatio] modifierChange add failed: {}", t.toString());
@@ -1124,7 +1131,9 @@ public final class AbilityManager extends BasePlayerManager {
 
             // Hypostasis LockHP / Invincible / ShieldBar arrive as client MODIFIER_CHANGE.
             try {
-                entity.onAddAbilityModifier(modifierData, instancedAbility, null);
+                // Same resolved name the MaxHPRatio block above uses: the limbo bookkeeping keys on
+                // ability + modifier name, and a null name would leave the modifier untracked.
+                entity.onAddAbilityModifier(modifierData, instancedAbility, resolvedModName);
                 emu.grasscutter.game.world.EffigyCombatHelper.onModifiersChanged(entity);
             } catch (Throwable ignored) {
             }
@@ -1164,6 +1173,33 @@ public final class AbilityManager extends BasePlayerManager {
             try {
                 entity.refreshModifierLockHP();
                 entity.refreshModifierInvincible();
+                // Same story for limbo: the flag is sticky on the entity, so a limbo modifier the
+                // client just retired has to release the gate or the entity never takes damage
+                // below its threshold again.
+                if (removed != null && removed.getModifierData() != null) {
+                    boolean wasLimbo =
+                            removed.getModifierData().state
+                                    == emu.grasscutter.data.binout.AbilityModifier.State.Limbo;
+                    if (wasLimbo) {
+                        String limboModName = null;
+                        if (removed.getAbilityData() != null) {
+                            for (var e : removed.getAbilityData().modifiers.entrySet()) {
+                                if (e.getValue() == removed.getModifierData()) {
+                                    limboModName = e.getKey();
+                                    break;
+                                }
+                            }
+                        }
+                        if (limboModName == null && removed.getAbilityData() != null) {
+                            limboModName =
+                                    resolveModifierMapName(
+                                            removed.getAbilityData(), modChange.getModifierLocalId());
+                        }
+                        if (limboModName != null) {
+                            entity.onLimboModifierRemoved(removed.getAbility(), limboModName);
+                        }
+                    }
+                }
                 emu.grasscutter.game.world.EffigyCombatHelper.onModifiersChanged(entity);
             } catch (Throwable ignored) {
             }
