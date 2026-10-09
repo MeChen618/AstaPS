@@ -1149,7 +1149,7 @@ public final class PacketOpcodes {
     public static final int SetPlayerNameReq = 22295;
     public static final int SetWidgetSlotRsp = 25794;
     // public static final int FMKDPHDBHIM = 4251;
-    public static final int TakeInvestigationTargetRewardReq = 0; // 7.1 CmdId unknown (7.0: 7412)
+    public static final int TakeInvestigationTargetRewardReq = 2703; // Confirmed by 7.1 Experience claims
     // public static final int PCLEHGGPNKK = 1947;
     // public static final int BENHPFCNFNE = 29598;
     // public static final int DNFBFDPINBA = 22612;
