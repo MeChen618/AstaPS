@@ -74,10 +74,6 @@ public abstract class GameEntity {
      * a shield stack has to soak the hit and lose a layer, which is the only way the fight opens up.
      */
     @Getter @Setter private float shieldPool = -1f;
-    /** When a shield-breaking reaction last landed, which is what suspends the stack's top-up. */
-    @Getter @Setter private long lastStarReactionMs = 0L;
-    /** When the stack last took a hit, so the top-up can be scaled by elapsed time. */
-    @Getter @Setter private long lastShieldHitMs = 0L;
     private boolean limbo;
     private float limboHpThreshold;
     /**
@@ -257,6 +253,10 @@ public abstract class GameEntity {
         return limbo;
     }
 
+    float getLimboHpThreshold() {
+        return limboHpThreshold;
+    }
+
     /**
      * Records that a Limbo modifier is active on this entity, so its removal can be told apart from
      * an unrelated one. Called from the same path that sets the limbo flag.
@@ -264,8 +264,11 @@ public abstract class GameEntity {
     public void trackLimboModifier(
             emu.grasscutter.game.ability.Ability ability, String modifierName, float hpThreshold) {
         if (ability == null || modifierName == null) return;
-        activeLimboModifiers.put(
-                ability.getData().abilityName + "|" + modifierName, hpThreshold);
+        trackLimboModifier(ability.getData().abilityName, modifierName, hpThreshold);
+    }
+
+    void trackLimboModifier(String abilityName, String modifierName, float hpThreshold) {
+        activeLimboModifiers.put(abilityName + "|" + modifierName, hpThreshold);
         setLimbo(recomputeLimboThreshold());
     }
 
@@ -279,7 +282,17 @@ public abstract class GameEntity {
     public void onLimboModifierRemoved(
             emu.grasscutter.game.ability.Ability ability, String modifierName) {
         if (ability == null || modifierName == null) return;
-        activeLimboModifiers.remove(ability.getData().abilityName + "|" + modifierName);
+        onLimboModifierRemoved(ability.getData().abilityName, modifierName);
+    }
+
+    void onLimboModifierRemoved(String abilityName, String modifierName) {
+        // ActionRemoveModifier calls this for every removal, not just limbo ones, and limbo can also
+        // be set without being tracked (the AttachTo* mixins and SkirkCunningHelper go through
+        // onAddAbilityModifier(data)). Only a tracked entry going away may release the gate, or an
+        // unrelated removal would clear a limbo nothing here put in place.
+        if (activeLimboModifiers.remove(abilityName + "|" + modifierName) == null) {
+            return;
+        }
         if (activeLimboModifiers.isEmpty()) {
             clearLimbo();
         } else {
@@ -563,11 +576,13 @@ public abstract class GameEntity {
                             shieldSetup,
                             amount,
                             MultiShieldHelper.effectivenessFor(this, amount, killerId, attackType))) {
-                this.setLastShieldHitMs(System.currentTimeMillis());
                 return;
             }
             if (shieldSetup == null) return;
-            // Stack just ran out - fall through so this hit lands on the HP bar.
+            // The stack just ran out. Breaking it recomputed the flag from the modifiers left, so a
+            // separate Invincible modifier (the boss's return-to-born one, say) still blocks the hit.
+            if (this.modifierInvincible) return;
+            // Nothing else protects it - fall through so this hit lands on the HP bar.
         }
 
         EntityDamageEvent event =

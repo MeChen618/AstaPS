@@ -20,10 +20,14 @@ import java.util.Set;
  * fight only opens up once every layer is gone.
  *
  * <p>The data drives it through {@code Init_ShieldValue} - its presence on the ability is what marks a
- * stack - so nothing here is boss-specific beyond that marker. What is deliberately not reproduced is
- * the official self-heal while shielded and the star-reaction requirement that cancels it: this server
- * does not simulate elemental reactions (the client owns them), so a heal the player cannot cut off
- * would make the fight unwinnable rather than hard.
+ * stack - so nothing here is boss-specific beyond that marker. The official self-heal while shielded
+ * is not simulated: its rate ({@code HealHPRatio}) is written by the scene at runtime and no resource
+ * carries it. Instead ordinary hits are damped (see {@link #ORDINARY_EFFICIENCY} and
+ * {@link #ORDINARY_NET_SHARE}) while a star reaction, as classified by {@link DPSReactionHelper}, hits
+ * the stack at the {@code StarMode_Shield_Break} multiple.
+ *
+ * <p>Layers are only removed from the server's own modifier records; the client is not sent a
+ * modifier change, so its shield display can lag behind until the phase ends.
  */
 public final class MultiShieldHelper {
 
@@ -135,9 +139,32 @@ public final class MultiShieldHelper {
         float perLayer = setup.perLayerHp(maxHp);
         if (perLayer <= 0f) return false;
 
-        int layers = countLayers(entity, setup);
-        if (layers <= 0) return false;
+        // Hits from several players land on separate threads; the pool is a read-modify-write.
+        // GameEntity.heal() already synchronizes on the entity, so this shares its lock.
+        boolean broken;
+        synchronized (entity) {
+            int layers = countLayers(entity, setup);
+            if (layers <= 0) return false;
+            broken = drain(entity, setup, perLayer, maxHp, layers, amount, effectiveness);
+        }
+        if (!broken) return true;
 
+        // Stack is empty: the fight opens up. Clear the phase marker the stack modifier's onAdded set.
+        if (clearPhaseMarkers(entity, setup)) entity.onAbilityValueUpdate();
+        Grasscutter.getLogger()
+                .debug("[MultiShield] entity={} stack broken, boss is now damageable", entity.getId());
+        return false;
+    }
+
+    /** @return true when the last layer fell. */
+    private static boolean drain(
+            GameEntity entity,
+            Setup setup,
+            float perLayer,
+            float maxHp,
+            int layers,
+            float amount,
+            float effectiveness) {
         float pool = entity.getShieldPool();
         if (pool < 0f) {
             pool = layers * perLayer;
@@ -167,22 +194,52 @@ public final class MultiShieldHelper {
                     .debug("[MultiShield] entity={} layer broken, {} left", entity.getId(), layers);
         }
 
-        entity.setShieldPool(pool);
+        // Drop the pool once the stack is empty, so the next stack starts sized from its own layers.
+        entity.setShieldPool(layers <= 0 ? -1f : pool);
+        return layers <= 0;
+    }
 
-        if (layers <= 0) {
-            // Stack is empty: the fight opens up. Drop the pool so the next hit lands on HP, and clear
-            // the phase marker the MultiShield modifier's onAdded set.
-            entity.setShieldPool(-1f);
-            Map<String, Float> values = entity.getGlobalAbilityValues();
-            if (values != null) {
-                values.put("_MONSTER_Zharptitsa_HasMultiShield", 0f);
-                entity.onAbilityValueUpdate();
+    /**
+     * Resets the global values a stack modifier raises for its phase.
+     *
+     * <p>The stack modifier (named {@code ...MultiShield...}) sets its phase marker in {@code onAdded}
+     * and resets it in {@code onRemoved} - for the Zharptitsa {@code _MONSTER_Zharptitsa_HasMultiShield}.
+     * Breaking the stack here is what ends the phase, so every key such a modifier both sets and
+     * resets is cleared, instead of naming one boss's key.
+     *
+     * @return true if any value changed
+     */
+    static boolean clearPhaseMarkers(GameEntity entity, Setup setup) {
+        Map<String, Float> values = entity.getGlobalAbilityValues();
+        var modifiers = setup.ability().modifiers;
+        if (values == null || modifiers == null) return false;
+
+        boolean changed = false;
+        for (var entry : modifiers.entrySet()) {
+            if (entry.getKey() == null || !entry.getKey().contains("MultiShield")) continue;
+            AbilityModifier modifier = entry.getValue();
+            if (modifier == null) continue;
+            Set<String> raised = globalValueKeys(modifier.onAdded);
+            for (String key : globalValueKeys(modifier.onRemoved)) {
+                if (!raised.contains(key)) continue;
+                Float old = values.put(key, 0f);
+                changed |= old == null || old != 0f;
             }
-            Grasscutter.getLogger()
-                    .debug("[MultiShield] entity={} stack broken, boss is now damageable", entity.getId());
-            return false;
         }
-        return true;
+        return changed;
+    }
+
+    private static Set<String> globalValueKeys(AbilityModifier.AbilityModifierAction[] actions) {
+        if (actions == null) return Set.of();
+        var keys = new java.util.HashSet<String>();
+        for (var action : actions) {
+            if (action == null || action.key == null) continue;
+            if (action.type == AbilityModifier.AbilityModifierAction.Type.SetGlobalValue
+                    || action.type == AbilityModifier.AbilityModifierAction.Type.SetGlobalValueV2) {
+                keys.add(action.key);
+            }
+        }
+        return keys;
     }
 
     /**
@@ -192,7 +249,6 @@ public final class MultiShieldHelper {
     public static float effectivenessFor(GameEntity entity, float amount, int killerId, ElementType element) {
         String reaction = classifyReaction(entity, killerId, element);
         if (reaction != null && SHIELD_BREAKING_REACTIONS.contains(reaction)) {
-            entity.setLastStarReactionMs(System.currentTimeMillis());
             float multiplier = starShieldBreakMultiplier(entity);
             Grasscutter.getLogger()
                     .debug(
