@@ -24,6 +24,16 @@ replaced by the corresponding upstream implementations.
   `35100 FINISHED -> 35101`, `35202 FINISHED -> 36301`. Do not display
   Chapter 1001 START before the hilltop talk.
 
+For multi-condition finish/fail objectives, if flattened QuestExcel has
+`LOGIC_NONE` or no meaningful combinator, a reviewed explicit BinOutput
+`LOGIC_AND` or `LOGIC_OR` restores its intended meaning. This applies to
+30901's three-dungeon AND and the alternative battle fail routes. Explicit
+meaningful Excel logic takes precedence; single-condition rows remain intact.
+
+The first world-entry welcome modal is suppressed to prevent an
+`AntiAddictNotify` from interrupting the 7.1 birth cinematic. Notices for
+returning players after a server update and active announcements remain.
+
 The 35302 begin action activates scene 3 group 133003002 suite 2, which
 contains tutorial slime config 439. The Traveler must keep Anemo abilities
 during the 353 tutorial. `35404` notifies group 133003439 for the bow target.
