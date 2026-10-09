@@ -75,6 +75,20 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         super(player);
     }
 
+    record TransPointUnlockTransition(boolean changed, boolean newlyUnlocked, boolean wasForceLocked) {}
+
+    static boolean applyQuestPointLock(Set<Integer> forceLockedPoints, int pointId) {
+        return forceLockedPoints.add(pointId);
+    }
+
+    static TransPointUnlockTransition applyTransPointUnlock(
+            Set<Integer> unlockedPoints, Set<Integer> forceLockedPoints, int pointId) {
+        boolean wasForceLocked = forceLockedPoints.remove(pointId);
+        boolean newlyUnlocked = unlockedPoints.add(pointId);
+        return new TransPointUnlockTransition(
+                wasForceLocked || newlyUnlocked, newlyUnlocked, wasForceLocked);
+    }
+
     /**********
      * Handler for player login.
      **********/
@@ -1030,9 +1044,13 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         var entry = GameData.getScenePointEntryById(sceneId, pointId);
         if (entry == null || entry.getPointData() == null) return;
         var pd = entry.getPointData();
-        boolean wasForceLocked = this.player.getForceLockedScenePoints(sceneId).remove(pointId);
-        boolean isNew = this.player.getUnlockedScenePoints(sceneId).add(pointId);
-        if (isNew || wasForceLocked) {
+        var transition =
+                applyTransPointUnlock(
+                        this.player.getUnlockedScenePoints(sceneId),
+                        this.player.getForceLockedScenePoints(sceneId),
+                        pointId);
+        boolean isNew = transition.newlyUnlocked();
+        if (transition.changed()) {
             this.player.sendPacket(
                     new emu.grasscutter.server.packet.send.PacketScenePointUnlockNotify(
                             sceneId, pointId));
@@ -1076,7 +1094,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
      */
     public boolean lockTransPoint(int sceneId, int pointId) {
         if (sceneId <= 0 || pointId <= 0) return false;
-        this.player.getForceLockedScenePoints(sceneId).add(pointId);
+        applyQuestPointLock(this.player.getForceLockedScenePoints(sceneId), pointId);
         this.player.sendPacket(PacketScenePointUnlockNotify.lock(sceneId, pointId));
         this.player.save();
         return true;
@@ -1088,11 +1106,15 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
             return false;
         }
 
-        boolean wasForceLocked = this.player.getForceLockedScenePoints(sceneId).remove(pointId);
-        boolean newlyUnlocked = this.player.getUnlockedScenePoints(sceneId).add(pointId);
-        if (!wasForceLocked && !newlyUnlocked) {
+        var transition =
+                applyTransPointUnlock(
+                        this.player.getUnlockedScenePoints(sceneId),
+                        this.player.getForceLockedScenePoints(sceneId),
+                        pointId);
+        if (!transition.changed()) {
             return false;
         }
+        boolean newlyUnlocked = transition.newlyUnlocked();
 
         var pointData = scenePointEntry.getPointData();
         if (!isStatue
