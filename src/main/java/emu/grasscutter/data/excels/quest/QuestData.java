@@ -81,7 +81,7 @@ public class QuestData extends GameResource {
         this.failExec = effectiveExecList(this.failExec, additionalData.getFailExec());
         this.gainItems = effectiveGainItems(this.gainItems, additionalData.getGainItems());
 
-        // Native 7.1 prerequisites govern Paimon's 35101 and the 36301 chapter gate.
+        // Reviewed BinOutput prerequisites govern 35101 and the 36301 chapter gate.
         // A flattened quest-0 placeholder must not start the chapter before hilltop 35202.
         var corrected = selectNativePrologueAcceptConditions(
                 this.mainId, this.acceptCond, additionalData.getAcceptCond());
@@ -108,7 +108,7 @@ public class QuestData extends GameResource {
 
     /**
      * Preserve explicit QuestExcel rewards; recover converter-dropped rewards from
-     * native BinOutput when the flattened row contains none.
+     * materialized BinOutput when the flattened row contains none.
      * E.g. native 35402 grants item 1021 on completing Amber's introductory talk.
      */
     static List<ItemParamData> effectiveGainItems(
@@ -133,7 +133,7 @@ public class QuestData extends GameResource {
                 .toList();
     }
 
-    /** Use native prologue prerequisites, including the hilltop 35202 -> 36301 chapter trigger. */
+    /** Use reviewed 351/363 BinOutput prerequisites for the hilltop 35202 -> 36301 gate. */
     static List<QuestAcceptCondition> selectNativePrologueAcceptConditions(
             int mainId, List<QuestAcceptCondition> excel, List<QuestAcceptCondition> nativeValues) {
         if ((mainId != 351 && mainId != 363) || nativeValues == null || nativeValues.isEmpty()) return excel;

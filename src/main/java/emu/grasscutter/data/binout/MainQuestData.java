@@ -84,16 +84,16 @@ public class MainQuestData {
         private boolean isMpBlock;
         private boolean isRewind, finishParent;
 
-        // Preserve native 7.1 prerequisite conditions, including chapter controller 36301.
+        // Materialized BinOutput preserves reviewed prerequisites, including 36301.
         private List<QuestData.QuestAcceptCondition> acceptCond;
         private LogicType acceptCondComb;
 
-        // Actions present in native BinOutput can be absent from the flattened Excel export.
+        // Per-subquest BinOutput actions can be absent from the flattened Excel export.
         private List<QuestData.QuestExecParam> beginExec;
         private List<QuestData.QuestExecParam> finishExec;
         private List<QuestData.QuestExecParam> failExec;
 
-        // Subquest rewards are present in native BinOutput, even if absent in QuestExcel.
+        // Materialized BinOutput can retain rewards missing from QuestExcel.
         private List<ItemParamData> gainItems;
     }
 

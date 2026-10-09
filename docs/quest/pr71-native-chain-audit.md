@@ -1,45 +1,68 @@
-# PR #71 — native 7.1 quest-chain audit
+# PR #71: Mondstadt prologue fixes against upstream main
 
-## Scope and evidence
+## Baseline
 
-Product branch: `upstream/fix-quest-runtime`; test resources: **MeChen618/AstaPS-Resource/main** only.
-Source of truth: `BinOutput/Quest/{351,352,353,354,355,361,363}.json`, `ExcelBinOutput/ChapterExcelConfigData.json`, `ExcelBinOutput/TriggerExcelConfigData.json`, `Scripts/Scene/3/scene3_group133003002.lua`. 
-`play/rino` is a behavior regression reference, **not** a replacement for the native evidence.
+This pull request is rebuilt on **MeChen618/AstaPS main** (initial integration
+point `532cbd8`), including merged server PR #87 and Resource PR #13. It does
+not use `play/rino` as a base. The old PR branch is retained as one merge
+parent for review history, but its overlapping runtime changes have been
+replaced by the corresponding upstream implementations.
 
-| Transition | Native prerequisite/event | Observable expected behavior |
-| --- | --- | --- |
-| Born → 35104 | First quest bootstrap only | Opening cinematic; no chapter-start banner |
-| 35104 → 35100 | `FINISH_PLOT(35104)` | Reach Paimon |
-| 35100 → 35101 / 35107 | `FINISH_PLOT(35100)` or trigger `1053`; `35101` accepts state `35100=FINISHED` | Paimon continues; 35107 is hidden |
-| 35106 | `UNLOCK_TRANS_POINT(scene=3, point=6)` | First actual waypoint unlock |
-| 35105 / 35103 → 35102 | Alternative route conditions → `TRIGGER_FIRE(1017)` | Climb completed; 351 parent ends |
-| 35200 → 35201 → 35202 | Area triggers `1021`, `1001/1095`; `COMPLETE_TALK(35216)` | Hilltop overlook and Paimon talk |
-| 35202 → 36301 | `STATE_EQUAL(35202, FINISHED)` | **Chapter 1001 START banner**; no manual launch |
-| 35203 → 35204 → 35205 | Plot `35203` plus trigger `1172`, trigger `1003`, `FINISH_PLOT(35205)` | Swim to statue; point `3/7` and area `3/1` unlock; Traveler gains Anemo |
-| 35301 → 35302 | `COMPLETE_TALK(35328)` | Traveler stays active; no trial Amber grant in the native 35301. The historical accidental resource grant is removed in [Resource PR #14](https://github.com/MeChen618/AstaPS-Resource/pull/14). |
-| 35302 | `REFRESH_GROUP_SUITE(scene=3, group=133003002, suite=2)` | Tutorial slime monster config `439`, monster `20011202` |
-| 35302 → 35309 → 35303 → 35310 → 35304 → 35311 | Native skill and Lua-notify predicates | Elemental skill / hold / burst tutorial |
-| 35311 → 361 → 355 → 354 | Plot and area transitions | Forest/Dvalin scene; Amber formally appears in 354 |
+## Source precedence
 
-## Explicit anti-patch rules
+- `QuestExcelConfigData.json` is the loaded subquest table. Its populated
+  action and reward lists remain authoritative.
+- `BinOutput/Quest/<mainId>.json` is a **materialized resource representation**.
+  It may include reviewed compatibility prerequisites and begin actions.
+  These fields are **not** proof that ordinary 7.1 native Quest records contain
+  `acceptCond` or `beginExec`. The independent `Genshin-Reverse` native
+  decoder is a distinct source.
+- If an Excel action or reward list is empty, fall back to the corresponding
+  valid BinOutput list. Do not insert BinOutput-only subquest rows.
+- The reviewed 351 and 363 accept conditions override stale flattened
+  prerequisites, with old acceptance index entries removed before reindexing.
+  `35100 FINISHED -> 35101`, `35202 FINISHED -> 36301`. Do not display
+  Chapter 1001 START before the hilltop talk.
 
-1. Do not use timed sleeps, forced quest-completion, fake events, hardcoded UI suppression, or direct chapter-controller starts to mask a state error.
-2. For each defect identify the **native quest predicate**, the **emitted server event**, and the **client-visible result** before behavior modification.
-3. Quest visibility matters: hidden subquests can be active alongside a visible objective. Do not collapse them into a single linear ID order.
-4. Source policy: `QuestExcelConfigData` first for populated execution lists, `BinOutput/Quest` for missing execution lists. The 351/363 native accept-condition repair is a *reviewed exception*, backed by regression tests. Do not generalize source precedence before comparing more native files.
-5. A missing native action is a resource validation error, **not** a reason to embed a second copy of quest data. The stale `quest-7.1-intro-exec-baseline.json` fork-compatibility overlay is removed.
-6. When changing a predicate index, remove stale cache keys and verify the actual emitted event starts the intended subquest.
-7. CI build and tests are required before asking for a client run. CI cannot validate animation, map markers, or team behavior.
+The 35302 begin action activates scene 3 group 133003002 suite 2, which
+contains tutorial slime config 439. The Traveler must keep Anemo abilities
+during the 353 tutorial. `35404` notifies group 133003439 for the bow target.
+The formal Amber encounter comes after the 355 forest sequence.
 
-## Known issues; no speculative fixes
+## Generic progress corrections
 
-- First-birth persistent Return prompt: client-side activation predicate remains unverified. `HandlerQuestTransmitReq` logs requests but does not synthesize a teleport.
-- Two map objective markers after first waypoint/hill: exact simultaneous subquest states and guide geometry have not been captured.
-- `35302` slime visibility: the first fire slime now spawned in the 2026-10-08 gameplay screenshot; re-verify with the corrected 35301 resource to confirm the Traveler's wind-element actions can complete the tutorial.
-- `35301` **must not grant trial Amber**: upstream resource commit `c98b896710` introduced this premature action; the prior 7.1 file and GCResource 3700/4000 all omit it. The tested erroneous resource switched the player to Amber before the wind skill tutorial; see [Resource PR #14](https://github.com/MeChen618/AstaPS-Resource/pull/14). General trial-avatar code remains unchanged.
-- `ExecRefreshGroupSuite` still retries asynchronously on scene-script initialization, for up to 100 attempts. **Unverified lifecycle strategy**; do not increase the limit or add waits as a substitute for a proper initialization hook. Audit this separately before changing it.
-- `TalkManager.isTalkNpc` currently allows null scene entities for client-local quest actors; authorization of that specific client path needs protocol/identity review.
+Finish/fail objective flags are cumulative until the quest's normal reset.
+Previously a later nonmatching event wrote zero over earlier satisfied
+predicates. This made 30901's three distinct dungeon clears under
+`LOGIC_AND` impossible to accumulate. Repeated matches now avoid redundant
+client progress notifications.
 
-## Verification matrix
+Quest-state accept gates (`STATE_EQUAL` and `STATE_NOT_EQUAL`) are different:
+they are live conditions and are re-evaluated for a candidate state event.
+This prevents a stale NOT_EQUAL result from accepting an excluded branch.
+On saved-quest rebind, persisted finish/fail progress arrays with an obsolete
+condition count are reset to the loaded row's current shape.
 
-The next fresh-account test must use upstream resources and check in order: no birth banner; Paimon after `35100`; waypoint `3/6`; climb and hilltop talk `35216`; chapter begin **at `36301`**, not `35100`; statue `3/7`; first slime `133003002/439` with the **Traveler** still selected; forest/Dvalin; formal Amber dialogue `35404` and team state. Preserve timestamps and quest-ID logs for each observed mismatch.
+## Resource companion
+
+The upstream materialized 35301 had a nonnative
+`GRANT_TRIAL_AVATAR(1)`, introduced in resource commit `c98b896710`.
+The invalid action existed in **both** BinOutput and the 51 MB flattened
+QuestExcel. [Resource PR #14](https://github.com/MeChen618/AstaPS-Resource/pull/14)
+fixes both representations on current upstream Resource main and restores
+`35402.gainItems = [{itemId:1021,count:1}]` after the formal Amber encounter.
+The dedicated Resource CI checks both representations and the surrounding
+slime, forest, and target actions.
+
+## Validation and limits
+
+Server JUnit tests cover fallback precedence, reviewed 351/363 gate selection,
+the 353 slime/354 target actions, the 35402 reward, cumulative three-dungeon
+objectives, live acceptance state gates, and saved progress shape changes.
+The paired Resource CI covers the relevant JSON/Lua assets.
+
+Successful CI does not verify cinematic timing, in-world NPC/talk actors,
+map-marker duplication, scene spawning, full Act II/III gameplay, Dvalin
+combat visuals, or the client-side weather/scene handshake. Those need a
+continuous 7.1 client regression run. Do not force quest completion, create
+fake quest events, or insert time delays to conceal remaining defects.
