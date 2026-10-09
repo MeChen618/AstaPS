@@ -80,6 +80,12 @@ public class QuestData extends GameResource {
         this.finishExec = effectiveExecList(this.finishExec, additionalData.getFinishExec());
         this.failExec = effectiveExecList(this.failExec, additionalData.getFailExec());
         this.gainItems = effectiveGainItems(this.gainItems, additionalData.getGainItems());
+        this.finishCondComb =
+                effectiveConditionCombinator(
+                        this.finishCondComb, additionalData.getFinishCondComb(), this.finishCond);
+        this.failCondComb =
+                effectiveConditionCombinator(
+                        this.failCondComb, additionalData.getFailCondComb(), this.failCond);
 
         // Reviewed BinOutput prerequisites govern 35101 and the 36301 chapter gate.
         // A flattened quest-0 placeholder must not start the chapter before hilltop 35202.
@@ -99,6 +105,21 @@ public class QuestData extends GameResource {
         // resource-level diagnostics are emitted by ResourceLoader after loading.
     }
 
+
+    /**
+     * When a flattened QuestExcel row omits an explicit multi-objective combinator,
+     * recover it from BinOutput. Preserve any meaningful Excel rule and do not
+     * apply an absent source or a multi-condition rule to a single predicate.
+     */
+    static LogicType effectiveConditionCombinator(
+            LogicType excel, LogicType bin, List<QuestContentCondition> conditions) {
+        if (conditions == null || conditions.size() <= 1
+                || (excel != null && excel != LogicType.LOGIC_NONE)
+                || bin == null || bin == LogicType.LOGIC_NONE) {
+            return excel;
+        }
+        return bin;
+    }
 
     static List<QuestExecParam> effectiveExecList(
             List<QuestExecParam> excel, List<QuestExecParam> bin) {

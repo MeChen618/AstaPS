@@ -87,6 +87,9 @@ public class MainQuestData {
         // Materialized BinOutput preserves reviewed prerequisites, including 36301.
         private List<QuestData.QuestAcceptCondition> acceptCond;
         private LogicType acceptCondComb;
+        // The flattened QuestExcel row may lose this multi-objective rule.
+        private LogicType finishCondComb;
+        private LogicType failCondComb;
 
         // Per-subquest BinOutput actions can be absent from the flattened Excel export.
         private List<QuestData.QuestExecParam> beginExec;
