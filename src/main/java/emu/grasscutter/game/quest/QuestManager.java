@@ -726,6 +726,24 @@ public final class QuestManager extends BasePlayerManager {
                         });
     }
 
+    /**
+     * Recover weather that belongs to a still-active quest when an account rejoins.
+     * Return true when setWeather already sent the scene's initial weather packet.
+     */
+    public boolean restoreActiveQuestWeather(int sceneId) {
+        if (sceneId <= 0 || player.getWeatherId() != 0) return false;
+        var active = getActiveMainQuests().stream()
+                .flatMap(main -> main.getActiveQuests().stream())
+                .map(GameQuest::getQuestData)
+                .filter(Objects::nonNull)
+                .toList();
+        int areaId = QuestWeatherRestore.selectArea(
+                active, sceneId, GameData.getWeatherDataMap()::get);
+        if (areaId <= 0) return false;
+        player.setWeather(areaId);
+        return true;
+    }
+
     public List<QuestGroupSuite> getSceneGroupSuite(int sceneId) {
         return getMainQuests().values().stream()
                 .filter(i -> i.getState() != ParentQuestState.PARENT_QUEST_STATE_FINISHED)
