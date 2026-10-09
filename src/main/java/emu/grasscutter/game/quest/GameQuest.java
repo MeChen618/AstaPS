@@ -304,6 +304,8 @@ public class GameQuest {
                     .forEach(t -> this.getOwner().getTeamManager().removeTrialAvatar(t));
         }
 
+        // A failed quest must survive a disconnect before the next rewind.
+        this.save();
         Grasscutter.getLogger().debug("Quest {} is failed", subQuestId);
     }
 
