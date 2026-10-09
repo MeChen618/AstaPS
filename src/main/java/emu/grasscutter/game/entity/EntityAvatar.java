@@ -126,6 +126,7 @@ public class EntityAvatar extends GameEntity {
 
     @Override
     public void onDeath(int killerId) {
+        boolean alreadyDead = this.isDead();
         var st = Thread.currentThread().getStackTrace();
         Grasscutter.getLogger().info("[DEATH] avatarId={} entityId={} killerId={} | {}  {}  {}  {}  {}",
             this.getAvatar().getAvatarId(), this.getId(), killerId,
@@ -139,14 +140,27 @@ public class EntityAvatar extends GameEntity {
         this.killedType = PlayerDieType.PlayerDieType_PLAYER_DIE_KILL_BY_MONSTER;
         this.killedBy = killerId;
         clearEnergy(ChangeEnergyReason.ChangeEnergyReason_CHANGE_ENERGY_NONE);
+        notifyTeamWipeIfNeeded(alreadyDead);
     }
 
     public void onDeath(PlayerDieType dieType, int killerId) {
+        boolean alreadyDead = this.isDead();
         super.onDeath(killerId);
 
         this.killedType = dieType;
         this.killedBy = killerId;
         clearEnergy(ChangeEnergyReason.ChangeEnergyReason_CHANGE_ENERGY_NONE);
+        notifyTeamWipeIfNeeded(alreadyDead);
+    }
+
+    private void notifyTeamWipeIfNeeded(boolean alreadyDead) {
+        if (alreadyDead || !this.isDead()) return;
+        var owner = this.getPlayer();
+        if (owner == null || owner.getQuestManager() == null || owner.getTeamManager() == null) return;
+        var team = owner.getTeamManager().getActiveTeam();
+        if (!team.isEmpty() && team.stream().allMatch(member -> member != null && member.isDead())) {
+            owner.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_TEAM_DEAD, 1);
+        }
     }
 
     @Override
