@@ -59,7 +59,16 @@ public class ExecNotifyGroupLua extends QuestExecHandler {
         // Scene 3 may exist and finish its initial load before the player returns
         // from 39403's dungeon scene 1008. The load and player-presence gates
         // must both be true or the one-shot event is silently lost.
-        scene.runWhenPlayerEnters(player, () -> scene.runWhenFinished(dispatch));
+        scriptManager.whenInitialized(ready -> {
+            if (ready) {
+                scene.runWhenPlayerEnters(
+                        player, () -> scene.runWhenFinished(dispatch));
+            } else {
+                Grasscutter.getLogger().warn(
+                        "Quest {} Lua group {} cannot initialize scripts in scene {}",
+                        quest.getSubQuestId(), groupId, sceneId);
+            }
+        });
         return true;
     }
 
