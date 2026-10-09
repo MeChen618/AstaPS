@@ -1280,20 +1280,26 @@ public final class TeamManager extends BasePlayerDataManager {
     }
 
     public List<Integer> getTrialAvatarParam(int trialAvatarId) {
-        if (GameData.getTrialAvatarCustomData()
-            .isEmpty()) {
-            if (GameData.getTrialAvatarDataMap().get(trialAvatarId) == null) return List.of();
+        var custom = GameData.getTrialAvatarCustomData().get(trialAvatarId);
+        var base = GameData.getTrialAvatarDataMap().get(trialAvatarId);
+        return selectTrialAvatarParams(
+                custom != null ? custom.getTrialAvatarParamList() : null,
+                base != null ? base.getTrialAvatarParamList() : null);
+    }
 
-            return GameData.getTrialAvatarDataMap().get(trialAvatarId).getTrialAvatarParamList();
+    /**
+     * Activity trial-avatar configuration is sparse. A custom entry for a
+     * different event must not suppress the quest's original trial avatar.
+     */
+    static List<Integer> selectTrialAvatarParams(
+            List<String> customParams, List<Integer> nativeParams) {
+        if (customParams != null && !customParams.isEmpty()) {
+            var first = customParams.get(0);
+            if (first != null && !first.isBlank()) {
+                return Stream.of(first.split(";")).map(Integer::parseInt).toList();
+            }
         }
-
-        if (GameData.getTrialAvatarCustomData().get(trialAvatarId) == null) return List.of();
-
-        val trialCustomParams =
-            GameData.getTrialAvatarCustomData().get(trialAvatarId).getTrialAvatarParamList();
-        return trialCustomParams.isEmpty()
-            ? List.of()
-            : Stream.of(trialCustomParams.get(0).split(";")).map(Integer::parseInt).toList();
+        return nativeParams != null ? nativeParams : List.of();
     }
 
     public boolean addTrialAvatar(int avatarId, int questMainId, GrantReason reason) {
