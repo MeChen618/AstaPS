@@ -67,6 +67,17 @@ public abstract class GameEntity {
     private boolean modifierLockHP;
     /** Set when an ability modifier with {@code state: Invincible} is active. */
     @Getter @Setter private boolean modifierInvincible;
+    /**
+     * HP left in the revival-shield stack this entity is holding, or -1 when it has none.
+     *
+     * <p>Separate from {@link #modifierInvincible} because that flag only says "damage stops here":
+     * a shield stack has to soak the hit and lose a layer, which is the only way the fight opens up.
+     */
+    @Getter @Setter private float shieldPool = -1f;
+    /** When a shield-breaking reaction last landed, which is what suspends the stack's top-up. */
+    @Getter @Setter private long lastStarReactionMs = 0L;
+    /** When the stack last took a hit, so the top-up can be scaled by elapsed time. */
+    @Getter @Setter private long lastShieldHitMs = 0L;
     private boolean limbo;
     private float limboHpThreshold;
     /**
@@ -543,7 +554,20 @@ public abstract class GameEntity {
         }
 
         if (this.modifierInvincible) {
-            return;
+            // A shield stack soaks the hit and loses a layer; a plain Invincible modifier still
+            // blocks outright.
+            var shieldSetup = MultiShieldHelper.findSetup(this);
+            if (shieldSetup != null
+                    && MultiShieldHelper.absorb(
+                            this,
+                            shieldSetup,
+                            amount,
+                            MultiShieldHelper.effectivenessFor(this, amount, killerId, attackType))) {
+                this.setLastShieldHitMs(System.currentTimeMillis());
+                return;
+            }
+            if (shieldSetup == null) return;
+            // Stack just ran out - fall through so this hit lands on the HP bar.
         }
 
         EntityDamageEvent event =
