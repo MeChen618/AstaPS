@@ -42,7 +42,10 @@ public final class NpcCommand implements CommandHandler {
         @Override
         public void run() {
             var scene = targetPlayer.getScene();
-            if (scene == null) return;
+            if (scene == null) {
+                CommandOutput.sendMessage(sender, "Target player has no active scene.");
+                return;
+            }
 
             String op = args.get(0);
             if (op.equalsIgnoreCase("near")) {
