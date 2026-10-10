@@ -53,7 +53,7 @@ The Picocli command tree keeps one route for each operation:
 
 - `kill` kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall`, `kill character`, and `suicide` routes are removed.
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
-- `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
+- `avatar stat set <stat> <value> [--avatar <avatarId>]`, `avatar stat lock <stat> [value] [--avatar <avatarId>]`, and `avatar stat unlock <stat> [--avatar <avatarId>]` replace top-level `setStats`, `stats`, and `stat` without aliases. The old `freeze` and `unfreeze` routes remain removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
 - `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. `unban <playerSelector|IPv4>` uses the same parser without subcommands or a keystore key. Account ban/unban requires `server.ban` and, for another account, `server.ban.others`; IP ban/unban requires `server.banip`.
@@ -221,6 +221,9 @@ avatar talent skill <level> [--avatar <avatarId>]  # alias: e
 avatar talent burst <level> [--avatar <avatarId>]  # alias: q
 avatar talent all <level> [--avatar <avatarId>]
 avatar talent list [--avatar <avatarId>]
+avatar stat set <stat> <value> [--avatar <avatarId>]
+avatar stat lock <stat> [value] [--avatar <avatarId>]
+avatar stat unlock <stat> [--avatar <avatarId>]
 avatar friendship set <level> [--avatar <avatarId>]
 avatar extralevel [--avatar <avatarId>]
 avatar max [--avatar <avatarId> | --all]
@@ -230,6 +233,11 @@ avatar max [--avatar <avatarId> | --all]
 single-character operations use the currently active character. `--all` selects
 every owned character, and is mutually exclusive with `--avatar`. The
 `talent all` operation means all skills of one character, not every character.
+`avatar stat` has no shorthand alias. Stat operations keep `player.setstats[.others]`
+permissions. `set` changes the current in-memory combat value; `lock` uses a
+transient fight-property override; `unlock` removes that override. For selected
+off-team avatars, `set` sends an avatar fight-property update instead of an entity
+scene packet. The override is not stored in the character save.
 The standalone `constellation`, `talent`, `extralevel` (`el`),
 `setFetterLevel`, and `max` commands and their aliases were removed.
 
@@ -237,7 +245,7 @@ Permissions are enforced per operation. Constellation set/reset retain distinct
 `player.setconstellation[.others]` and `player.resetconstellation[.others]`
 permissions. Talents use `player.settalent[.others]`; friendship uses
 `player.setfetterlevel[.others]`; extra-level upgrades use `player.give[.others]`;
-and max uses `player.max[.others]`. The `avatar list` operation currently
+max uses `player.max[.others]`. The `avatar list` operation currently
 requires `player.give[.others]`.
 
 The target must be online. Specifying `--avatar` does not allow modification of
