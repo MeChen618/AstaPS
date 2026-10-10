@@ -54,6 +54,14 @@ public final class AccountCreateArgumentsTest {
     }
 
     @Test
+    void usageShowsSimpleSyntaxWhileKeepingUidOnlyParsing() {
+        var create = new AccountCommand().createCommandLine(null, null).getSubcommands().get("create");
+        var usage = create.getUsageMessage();
+        assertEquals(true, usage.contains("account create <username> [password] [@UID]"));
+        assertEquals(false, usage.contains("password|@UID"));
+    }
+
+    @Test
     void resetPasswordRequiresUsernameAndNewPassword() {
         var handler = new AccountCommand();
         assertDoesNotThrow(
