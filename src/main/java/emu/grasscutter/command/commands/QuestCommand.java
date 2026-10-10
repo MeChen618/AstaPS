@@ -299,6 +299,10 @@ public final class QuestCommand implements CommandHandler {
 
         @Override
         public void run() {
+            if (targetPlayer.getScene() == null) {
+                CommandOutput.sendMessage(sender, "Target player has no active scene.");
+                return;
+            }
             var scriptManager = targetPlayer.getScene().getScriptManager();
             var group = scriptManager.getGroupById(questId.value());
             if (group == null) {
