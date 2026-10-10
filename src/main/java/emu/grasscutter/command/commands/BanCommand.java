@@ -35,7 +35,7 @@ public final class BanCommand implements CommandHandler {
             CommandMap.parseExplicitTargetSelector(value);
             return new BanTarget(TargetType.PLAYER, value);
         }
-        // Old dotted usernames remain resolvable unless they look like a complete IPv4.
+        // Only a complete IPv4 address may omit the explicit player-selector suffix.
         if (value.matches("[0-9]+(\\.[0-9]+){3}")) {
             for (String octet : value.split("\\.")) {
                 if (octet.length() > 3
