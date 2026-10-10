@@ -47,20 +47,29 @@ public final class AvatarCommand implements CommandHandler {
         root.addSubcommand("list", new ListAvatars(sender, targetPlayer));
 
         var constellation = new CommandLine(new Help(sender));
+        constellation.getCommandSpec().name("constellation");
         constellation.addSubcommand("set", new ConstellationSet(sender, targetPlayer));
         constellation.addSubcommand("reset", new ConstellationReset(sender, targetPlayer));
         root.addSubcommand("constellation", constellation);
 
         var talent = new CommandLine(new Help(sender));
+        talent.getCommandSpec().name("talent");
         talent.addSubcommand("set", new TalentSet(sender, targetPlayer));
-        talent.addSubcommand("normal", new TalentSlot(sender, targetPlayer, Slot.NORMAL), "n");
-        talent.addSubcommand("skill", new TalentSlot(sender, targetPlayer, Slot.SKILL), "e");
-        talent.addSubcommand("burst", new TalentSlot(sender, targetPlayer, Slot.BURST), "q");
+        var normal = new CommandLine(new TalentSlot(sender, targetPlayer, Slot.NORMAL));
+        var skill = new CommandLine(new TalentSlot(sender, targetPlayer, Slot.SKILL));
+        var burst = new CommandLine(new TalentSlot(sender, targetPlayer, Slot.BURST));
+        normal.getCommandSpec().name("normal");
+        skill.getCommandSpec().name("skill");
+        burst.getCommandSpec().name("burst");
+        talent.addSubcommand("normal", normal, "n");
+        talent.addSubcommand("skill", skill, "e");
+        talent.addSubcommand("burst", burst, "q");
         talent.addSubcommand("all", new TalentAll(sender, targetPlayer));
         talent.addSubcommand("list", new TalentList(sender, targetPlayer));
         root.addSubcommand("talent", talent);
 
         var friendship = new CommandLine(new Help(sender));
+        friendship.getCommandSpec().name("friendship");
         friendship.addSubcommand("set", new FriendshipSet(sender, targetPlayer));
         root.addSubcommand("friendship", friendship);
 
