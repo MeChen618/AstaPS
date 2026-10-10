@@ -92,10 +92,24 @@ public final class SensitiveCommandSyntaxTest {
     }
 
     @Test
+    void announceAndSendMessageExposeOnlySupportedAliases() {
+        var map = new CommandMap(false);
+        map.registerCommand("announce", new AnnounceCommand());
+        map.registerCommand("sendMessage", new SendMessageCommand());
+        assertSame(map.getHandler("announce"), map.getHandler("a"));
+        assertSame(map.getHandler("sendMessage"), map.getHandler("say"));
+        for (var removed : List.of("sendservmsg", "sendservermessage", "b", "broadcast")) {
+            assertNull(map.getHandler(removed));
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed));
+        }
+    }
+
+    @Test
     void coopAndMailUseIdenticalExplicitPlayerSelectors() {
         for (String selector : List.of("@10001", "rino@", "20261010@", "rino@10001")) {
-            assertDoesNotThrow(() -> new CoopCommand()
-                    .createCommandLine(null, null).parseArgs(selector), selector);
+            var coop = new CoopCommand().createCommandLine(null, null);
+            assertDoesNotThrow(() -> coop.parseArgs(selector), selector);
+            assertDoesNotThrow(() -> coop.parseArgs("@10002", selector), selector);
             assertDoesNotThrow(() -> new MailCommand()
                     .createCommandLine(null, null)
                     .parseArgs("send", selector, "--title", "Hello", "--body", "Test"), selector);
@@ -106,9 +120,38 @@ public final class SensitiveCommandSyntaxTest {
             assertThrows(CommandLine.ParameterException.class,
                     () -> new CoopCommand().createCommandLine(null, null).parseArgs(invalid));
             assertThrows(CommandLine.ParameterException.class,
+                    () -> new CoopCommand().createCommandLine(null, null).parseArgs("@10002", invalid));
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> new CoopCommand().createCommandLine(null, null).parseArgs(invalid, "@10001"));
+            assertThrows(CommandLine.ParameterException.class,
                     () -> new MailCommand().createCommandLine(null, null)
                             .parseArgs("send", invalid, "--title", "Hello", "--body", "Test"));
         }
+    }
+
+    @Test
+    void coopRequiresHostAndMapsOptionalGuestCorrectly() {
+        var cli = new CoopCommand().createCommandLine(null, null);
+        assertTrue(cli.getUsageMessage().contains("coop [guestSelector] <hostSelector>"));
+        assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
+        assertThrows(CommandLine.ParameterException.class,
+                () -> cli.parseArgs("@10001", "@10002", "@10003"));
+
+        var one = CoopCommand.splitSelectors(
+                List.of(CommandMap.parseExplicitTargetSelector("@10002")));
+        assertNull(one.guest());
+        assertEquals(10002, one.host().uid());
+
+        var two = CoopCommand.splitSelectors(List.of(
+                CommandMap.parseExplicitTargetSelector("@10001"),
+                CommandMap.parseExplicitTargetSelector("@10002")));
+        assertEquals(10001, two.guest().uid());
+        assertEquals(10002, two.host().uid());
+
+        var annotation = CoopCommand.class.getAnnotation(Command.class);
+        assertEquals(Command.TargetRequirement.NONE, annotation.targetRequirement());
+        assertFalse(annotation.inlineTarget());
+        assertEquals("server.coop", annotation.permission());
     }
 
     @Test
