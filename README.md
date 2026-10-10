@@ -39,7 +39,7 @@ Then build with:
 ./gradlew jar -PskipHandbook=1
 ```
 
-`grasscutter.jar` lands in the project root. Drop `-PskipHandbook=1` to build the in-game handbook as well; that step needs NodeJS and fails without it.
+`grasscutter-7.1.0.jar` lands in the project root. Drop `-PskipHandbook=1` to build the in-game handbook as well; that step needs NodeJS and fails without it.
 
 On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
@@ -55,7 +55,7 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
 There is no registration page. An account is created either way:
 
-- **From the console.** `account create <username> [uid] [password]`
+- **From the console.** `account create <username> <password> [@UID]` (password required; UID optional).
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
 Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
@@ -90,14 +90,27 @@ this command-execution interface directly to the public Internet.
 
 ## Commands
 
-`help` lists them. A few worth knowing:
+Built-in commands now use **Picocli** for positional arguments, named options and subcommands. Run `help` to list available commands, or `help <command>` for their syntax and aliases. The interactive server console uses JLine for **Tab completion**. In-game commands use `/`; the server console omits that prefix.
 
-| | |
+| Command | Purpose |
 |---|---|
-| `give` | Avatars, weapons, artifacts and materials. Level 100 by default. |
-| `account` | Create and delete accounts, reset passwords. |
-| `banip` / `unbanip` | Ban an address. Banning one also bans the account arriving from it. |
-| `sysmail` | Send system mail to every player. |
+| `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
+| `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
+| `ban ip` / `unban ip` | Ban or unban IP addresses (replaces `banip` / `unbanip`). |
+| `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
+
+Example server-console commands:
+
+```text
+help give
+give 202 --amount 3 @10001
+account create alice <password> [@UID]
+account clone alice alice-copy [@UID]
+```
+
+Where supported, `@UID` selects the target player; it does **not** load a Picocli argument file. In `account create` and `account clone`, the optional `@UID` instead specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`.
+
+See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
 
 ## TPS shooting (7.1)
 
@@ -134,7 +147,7 @@ Ammunition handling is still partly experimental. See [docs/tps/README.md](docs/
 
 Released under the **GNU General Public License v3.0**. See [`LICENSE`](LICENSE).
 
-`LICENSE-ClassGraph.txt` is not this project's licence. ClassGraph is an MIT-licensed dependency whose compiled classes ship inside `grasscutter.jar`, and MIT asks only that its notice travels with them.
+`LICENSE-ClassGraph.txt` is not this project's licence. ClassGraph is an MIT-licensed dependency whose compiled classes ship inside `grasscutter-7.1.0.jar`, and MIT asks only that its notice travels with them.
 
 ## Credits
 

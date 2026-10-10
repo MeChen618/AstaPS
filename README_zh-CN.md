@@ -39,7 +39,7 @@ javac -version
 ./gradlew jar -PskipHandbook=1
 ```
 
-`grasscutter.jar` 会生成在项目根目录。去掉 `-PskipHandbook=1` 可一并编译游戏内的手册；该步骤需要 NodeJS，没有就会失败。
+`grasscutter-7.1.0.jar` 会生成在项目根目录。去掉 `-PskipHandbook=1` 可一并编译游戏内的手册；该步骤需要 NodeJS，没有就会失败。
 
 Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
@@ -55,21 +55,34 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 没有注册页面。账号通过以下任一方式创建：
 
-- **从控制台。** `account create <username> [uid] [password]`
+- **从控制台。** `account create <username> <password> [@UID]`（密码必填，UID 可选）。
 - **在登录时。** 用一个没人占用的名字登录即注册该账号。开启 `account.useIntegrationPassword` 时，在用户名框中填 `name&&password`，密码框留空——当你要同时代理大量客户端、又不想为每个都建用户时很方便。
 
 密码以 BCrypt 哈希存储。控制台需要把 `server.game.enableConsole` 设为 `true`。
 
 ## 命令
 
-`help` 会列出全部命令。几个常用的：
+内置命令已迁移至 **Picocli**，支持位置参数、具名选项和子命令。输入 `help` 查看命令列表，或用 `help <命令>` 查看语法及别名。交互式服务器控制台通过 JLine 支持 **Tab 自动补全**。游戏内命令以 `/` 开头，服务器控制台不需要。
 
-| | |
+| 命令 | 用途 |
 |---|---|
-| `give` | 发放角色、武器、圣遗物与材料。默认等级 100。 |
-| `account` | 创建 / 删除账号，重置密码。 |
-| `banip` / `unbanip` | 封禁某个 IP。封禁 IP 时，从该 IP 登录的账号也会一并被封。 |
-| `sysmail` | 向所有玩家发送系统邮件。 |
+| `give` | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
+| `account create / clone / delete / resetpass` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。 |
+| `ban ip` / `unban ip` | 封禁或解封 IP，替代旧的 `banip` / `unbanip`。 |
+| `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
+
+服务器控制台示例：
+
+```text
+help give
+give 202 --amount 3 @10001
+account create alice <password> [@UID]
+account clone alice alice-copy [@UID]
+```
+
+对于支持指定目标的命令，`@UID` 表示目标玩家，**不是** Picocli 参数文件；在 `account create` 和 `account clone` 中，可选的 `@UID` 表示**新账号的 UID**。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpass <username> <new-password>`。
+
+详细说明见 [CLI 迁移文档](docs/cli-picocli-migration.md)；插件开发者请参阅 [命令 API v5 文档](docs/plugin-command-api-v5.md)。
 
 ## TPS 射击（7.1）
 
@@ -106,7 +119,7 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 以 **GNU General Public License v3.0** 发布。见 [`LICENSE`](LICENSE)。
 
-`LICENSE-ClassGraph.txt` 不是本项目的许可。ClassGraph 是一个 MIT 许可的依赖，其编译后的类随 `grasscutter.jar` 一同分发，MIT 只要求其声明随附其中。
+`LICENSE-ClassGraph.txt` 不是本项目的许可。ClassGraph 是一个 MIT 许可的依赖，其编译后的类随 `grasscutter-7.1.0.jar` 一同分发，MIT 只要求其声明随附其中。
 
 ## 致谢
 
