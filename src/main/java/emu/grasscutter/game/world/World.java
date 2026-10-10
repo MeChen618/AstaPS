@@ -6,6 +6,7 @@ import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
+import emu.grasscutter.game.ability.NatsaurusVehicleHelper;
 import emu.grasscutter.game.entity.EntityTeam;
 import emu.grasscutter.game.entity.EntityWorld;
 import emu.grasscutter.game.player.Player;
@@ -431,6 +432,14 @@ public class World implements Iterable<Player> {
     }
 
     public boolean transferPlayerToScene(Player player, TeleportProperties teleportProperties) {
+        // Being soul-attached is bound to the dragon's position in the world, and the client keeps
+        // steering that entity until it is told otherwise. Moving the character out from under the mount
+        // therefore teleports the avatar and leaves the camera, the inputs and the dragon behind at the
+        // old spot - unrecoverable short of a relog. The mount has to go with the rider: leaving it as a
+        // soul candle would only reappear in the scene this transfer is about to re-send, and the client
+        // would hang its camera back on it and play it as a killed dragon.
+        NatsaurusVehicleHelper.takeAway(player);
+
         // If a queued teleport already exists, cancel it. This prevents the player from
         // becoming stranded in a dungeon due to quitting it by teleporting to a map waypoint.
         synchronized (player) {

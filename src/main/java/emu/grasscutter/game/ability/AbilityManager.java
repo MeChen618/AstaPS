@@ -159,6 +159,29 @@ public final class AbilityManager extends BasePlayerManager {
     private long arlecchinoChargedAttackTime = 0L;
     private long arlecchinoESkillTime = 0L;
 
+    /**
+     * Mixins the server runs itself when the client attaches the modifier carrying them.
+     *
+     * <p>Most mixins are a reaction the client reports: it invokes the local id and the server runs the
+     * handler. {@code TryEnterVehicleMixin} is the other shape - the client attaches {@code Avatar_Perform}
+     * and then only plays an animation, so nothing ever invokes it. Captures of Natlan's soul-attach
+     * (龙之魂附) show the hold producing a scan invoke, four modifier attaches and a
+     * {@code MOTION_NATSAURUS_ENTERING} state change, and no invoke against local id 4 at all. Without the
+     * server firing it the animation runs out and the camera falls back to the character.
+     */
+    private static final java.util.EnumSet<AbilityMixinData.Type> SERVER_OWNED_MIXIN_ON_ATTACH =
+        java.util.EnumSet.of(AbilityMixinData.Type.TryEnterVehicleMixin);
+
+    /**
+     * The entity the scan mixin last picked up, held between the scan invoke and the modifier attach that
+     * follows it. The attach carries no reference to the Saurian, so this is the only link between the two.
+     */
+    @Getter private volatile GameEntity scanTarget;
+
+    public void setScanTarget(GameEntity scanTarget) {
+        this.scanTarget = scanTarget;
+    }
+
     public AbilityManager(Player player) {
         super(player);
         removePendingEnergyClear();
@@ -354,6 +377,24 @@ public final class AbilityManager extends BasePlayerManager {
                         .error("Ability mixin {} threw at {}.", mixinData.type, ability, e);
                 }
             });
+    }
+
+    /**
+     * Fires the mixins the server owns on a modifier the client just attached.
+     *
+     * <p>See {@link #SERVER_OWNED_MIXIN_ON_ATTACH} for why these never arrive as an invoke.
+     */
+    private void runServerOwnedMixinsOnAttach(
+            Ability ability, AbilityModifier modifierData, ByteString abilityData) {
+        if (ability == null || modifierData == null || modifierData.modifierMixins == null) return;
+
+        for (var mixin : modifierData.modifierMixins) {
+            if (mixin == null || mixin.type == null) continue;
+            if (!SERVER_OWNED_MIXIN_ON_ATTACH.contains(mixin.type)) continue;
+            if (!mixinHandlers.containsKey(mixin.type)) continue;
+
+            executeMixin(ability, mixin, abilityData);
+        }
     }
 
     public void onAbilityInvoke(AbilityInvokeEntry invoke) throws Exception {
@@ -1060,6 +1101,8 @@ public final class AbilityManager extends BasePlayerManager {
             if (!fromParentName || !hasOrchestration) {
                 entity.getInstancedModifiers().put(head.getInstancedModifierId(), modifier);
             }
+
+            runServerOwnedMixinsOnAttach(instancedAbility, modifierData, invoke.getAbilityData());
 
             // Light-lock gadgets report modifier additions by instance ID, without parentAbilityName.
             // Their Lua receiver and follower cleanup must also run for that explicit client request.
