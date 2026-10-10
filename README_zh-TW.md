@@ -62,41 +62,16 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 ## 指令
 
-內建指令已改用 **Picocli**，支援位置參數、具名選項與子指令。輸入 `help` 可列出指令及別名，`help <指令>` 查看指令語法，或輸入 `help <指令> <子指令>` 查看子指令語法（例如 `help teleport pos`）。參數輸入錯誤時會顯示原因及對應語法。互動式伺服器主控台使用 JLine 提供 **Tab 自動補齊**。遊戲內指令以 `/` 開頭，主控台則不需要。
+遊戲內指令以 `/` 開頭，伺服器主控台不需要。輸入 `help` 查看指令列表，`help <指令> [子指令...]` 查看語法及別名。主控台支援 Tab 補齊，參數錯誤時會顯示對應語法。
 
-**玩家選擇器（`playerSelector`）：** `@UID`（玩家 UID）、`username@`（帳號使用者名稱）或 `username@UID`（使用者名稱和 UID 均須相符）。指定既有玩家時使用此語法。
-
-| 指令 | 用途 |
-|---|---|
-| `give`（`g`） | 發放角色、武器、聖遺物和材料；支援 `--amount`、`--level` 等選項，預設等級 100。 |
-| `battlepass`（`bp`） | 管理紀行等級購買（`buy <levels>`）與付費狀態（`paid [true|false]`）。 |
-| `account create / clone / delete / resetpassword` | 建立、複製、刪除帳號和重設密碼，**僅限伺服器主控台**。`account passwd` 是別名。 |
-| `ban <playerSelector> [endTime] [原因...]` | 停權帳號，需要 `server.ban` 權限；停權其他帳號還需要 `server.ban.others`。`endTime` 為 Unix 時間戳記。 |
-| `ban <IPv4> [原因...]` / `unban <IPv4>` | 使用 `server.banip` 權限管理永久 IP 封鎖，無須輸入 keystore 金鑰。 |
-| `unban <playerSelector>` | 解除帳號停權，需要 `server.ban` 權限；處理其他帳號還需要 `server.ban.others`。 |
-| `kick <playerSelector>` | 使用 `server.kick` 權限踢出線上玩家；已移除 `restart` 別名與金鑰參數。 |
-| `mail send` / `mail system` | 向指定玩家或所有玩家寄送郵件、管理系統郵件，取代舊的 `sysmail`。 |
-| `announce send <content...>` / `announce template <templateId>` | 發送臨時公告或發佈公告範本，`announce tpl` 是 `template` 的別名。 |
-| `say <message...>` | 傳送伺服器訊息，舊命令 `sendMessage` 已移除。 |
-| `player list` | 列出線上玩家的暱稱和 UID，取代舊命令 `list [uid]` 及 `players`。 |
-| `avatar` | 管理已擁有角色：`list`、`constellation`、`talent`、`stat`、`friendship`、`extralevel`、`max`。用 `--avatar <avatarId>` 指定角色，部分指令支援 `--all`。 |
-| `coop [guestSelector] <hostSelector>` | 將訪客送入線上房主的世界；省略訪客時使用目前命令目標（遊戲內預設自己）。 |
-
-伺服器主控台範例：
+玩家選擇器支援 `@UID`、`username@` 和 `username@UID`。帳號管理僅限伺服器主控台。
 
 ```text
-help give
 help teleport pos
 give 202 --amount 3 @10001
-tp pos 1000 200 300 3 @10001
-account create alice
-account create bob secret @10001
-account clone alice@ alice-copy @10002
 ```
 
-建立或複製帳號時，以獨立的可選參數 `@UID` 指定新 UID；省略時自動分配。`account create` 也允許省略密碼、直接指定 `@UID`。現有帳號使用 `accountSelector`：`@UID`、`username@` 或 `username@UID`。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpassword <accountSelector> <new-password>`（別名 `account passwd`），刪除帳號使用 `account delete <accountSelector>`。重設密碼會撤銷舊登入權杖和工作階段權杖，並中斷玩家連線。
-
-詳細說明請見 [CLI 遷移文件](docs/cli-picocli-migration.md)；外掛作者請參閱 [指令 API v5 文件](docs/plugin-command-api-v5.md)。
+詳細說明請見 [CLI 遷移文件](docs/cli-picocli-migration.md)；外掛開發者請參閱 [指令 API v5 文件](docs/plugin-command-api-v5.md)。
 
 ## TPS 射擊玩法（7.1）
 

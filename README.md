@@ -90,41 +90,16 @@ this command-execution interface directly to the public Internet.
 
 ## Commands
 
-Built-in commands use **Picocli** for positional arguments, named options and subcommands. Run `help` to list commands and aliases, `help <command>` for a command's syntax, or `help <command> <subcommand>` for a subcommand's syntax (e.g. `help teleport pos`). Invalid arguments print an error followed by the relevant usage. The interactive server console uses JLine for **Tab completion**. In-game commands use `/`; the server console omits that prefix.
+In-game commands use `/`; the server console omits it. Use `help` to list commands, or `help <command> [subcommand...]` for syntax and aliases. The console supports Tab completion; invalid arguments show usage.
 
-**Player selector (`playerSelector`):** `@UID` (player UID), `username@` (account username), or `username@UID` (both must match). Use this format in commands that target an existing player.
-
-| Command | Purpose |
-|---|---|
-| `give` (`g`) | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
-| `battlepass` (`bp`) | Manage BP level purchases (`buy <levels>`) and premium status (`paid [true|false]`). |
-| `avatar` | Manage owned characters: `list`, `constellation`, `talent`, `stat`, `friendship`, `extralevel`, and `max`. Use `--avatar <avatarId>` for one character or `--all` where supported. |
-| `account create / clone / delete / resetpassword` | Manage accounts from the **server console only** (`account passwd` is an alias of `resetpassword`). |
-| `ban <playerSelector> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). `endTime` is a Unix timestamp. |
-| `ban <IPv4> [reason...]` / `unban <IPv4>` | Manage permanent IP bans with `server.banip`, without passing a keystore key. |
-| `unban <playerSelector>` | Unban an account with `server.ban` (and `server.ban.others` for another account). |
-| `kick <playerSelector>` | Disconnect an online player with `server.kick`. The old `restart` alias and keystore key argument are removed. |
-| `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
-| `announce send <content...>` / `announce template <templateId>` | Send a temporary announcement or publish a stored template; `announce tpl` is an alias for `template`. |
-| `say <message...>` | Send a server message (the former `sendMessage` command is removed). |
-| `player list` | List connected players with their nicknames and UIDs. Replaces `list [uid]` and `players`. |
-| `coop [guestSelector] <hostSelector>` | Move a guest into an online host's world. Omitted guest uses the current command target (the sender in-game by default). |
-
-Example server-console commands:
+Player selectors: `@UID`, `username@`, or `username@UID`. Account management is console-only.
 
 ```text
-help give
 help teleport pos
 give 202 --amount 3 @10001
-tp pos 1000 200 300 3 @10001
-account create alice
-account create bob secret @10001
-account clone alice@ alice-copy @10002
 ```
 
-Use a separate optional `@UID` argument to reserve a UID when creating or cloning; if omitted, the UID is allocated automatically. Create also supports an `@UID` without a password. Existing accounts use `accountSelector`: `@UID`, `username@`, or `username@UID`. Cloning requires the source player to be offline and does not copy friendships or shared beatmaps. Reset a password with `account resetpassword <accountSelector> <new-password>` (or `account passwd`); this revokes login and session tokens and disconnects the player. Delete an account with `account delete <accountSelector>`.
-
-See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
+See the [CLI migration guide](docs/cli-picocli-migration.md) for details and the [command API v5 guide](docs/plugin-command-api-v5.md) for plugins.
 
 ## TPS shooting (7.1)
 

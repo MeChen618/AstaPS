@@ -62,41 +62,16 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 ## 命令
 
-内置命令已迁移至 **Picocli**，支持位置参数、具名选项和子命令。输入 `help` 查看命令及别名，`help <命令>` 查看命令语法，或用 `help <命令> <子命令>` 查看子命令语法（例如 `help teleport pos`）。参数输入错误时会显示错误原因和对应语法。交互式服务器控制台通过 JLine 支持 **Tab 自动补全**。游戏内命令以 `/` 开头，服务器控制台不需要。
+游戏内命令以 `/` 开头，服务器控制台不需要。输入 `help` 查看命令列表，`help <命令> [子命令...]` 查看语法和别名。控制台支持 Tab 补全，参数错误时会显示对应语法。
 
-**玩家选择器（`playerSelector`）：** `@UID`（玩家 UID）、`username@`（账号用户名）或 `username@UID`（用户名与 UID 同时匹配）。指定已有玩家时使用该语法。
-
-| 命令 | 用途 |
-|---|---|
-| `give`（`g`） | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
-| `battlepass`（`bp`） | 管理纪行等级购买（`buy <levels>`）及付费状态（`paid [true|false]`）。 |
-| `account create / clone / delete / resetpassword` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。`account passwd` 是重置密码的别名。 |
-| `ban <playerSelector> [endTime] [原因...]` | 封禁账号，需要 `server.ban` 权限；封禁他人账号还需要 `server.ban.others`。`endTime` 为 Unix 时间戳。 |
-| `ban <IPv4> [原因...]` / `unban <IPv4>` | 使用 `server.banip` 权限管理永久 IP 封禁，无需传入 keystore 密钥。 |
-| `unban <playerSelector>` | 解封账号，需要 `server.ban` 权限；操作其他账号还需要 `server.ban.others`。 |
-| `kick <playerSelector>` | 使用 `server.kick` 权限踢出在线玩家，已移除 `restart` 别名和密钥参数。 |
-| `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
-| `announce send <content...>` / `announce template <templateId>` | 发送临时公告或发布公告模板，`announce tpl` 是 `template` 的别名。 |
-| `say <message...>` | 发送服务器消息，旧命令 `sendMessage` 已删除。 |
-| `player list` | 列出在线玩家的昵称和 UID，替代旧命令 `list [uid]` 和 `players`。 |
-| `avatar` | 管理已有角色：`list`、`constellation`、`talent`、`stat`、`friendship`、`extralevel`、`max`。可用 `--avatar <avatarId>` 指定角色，部分命令支持 `--all`。 |
-| `coop [guestSelector] <hostSelector>` | 将访客送入在线房主的世界；省略访客时使用当前命令目标（游戏内默认自身）。 |
-
-服务器控制台示例：
+玩家选择器支持 `@UID`、`username@` 和 `username@UID`。账号管理仅限服务器控制台。
 
 ```text
-help give
 help teleport pos
 give 202 --amount 3 @10001
-tp pos 1000 200 300 3 @10001
-account create alice
-account create bob secret @10001
-account clone alice@ alice-copy @10002
 ```
 
-创建或克隆账号时，使用独立的可选参数 `@UID` 指定新 UID；省略时自动分配。`account create` 也允许省略密码、直接指定 `@UID`。已有账号使用 `accountSelector`：`@UID`、`username@` 或 `username@UID`。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpassword <accountSelector> <new-password>`（别名 `account passwd`），删除账号使用 `account delete <accountSelector>`。重置密码会撤销旧登录令牌和会话令牌，并断开玩家连接。
-
-详细说明见 [CLI 迁移文档](docs/cli-picocli-migration.md)；插件开发者请参阅 [命令 API v5 文档](docs/plugin-command-api-v5.md)。
+详细说明见 [CLI 迁移文档](docs/cli-picocli-migration.md)；插件开发参阅 [命令 API v5](docs/plugin-command-api-v5.md)。
 
 ## TPS 射击（7.1）
 
