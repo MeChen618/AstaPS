@@ -58,7 +58,7 @@ The Picocli command tree keeps one route for each operation:
 - `kick <playerSelector>` disconnects an online player. It requires `server.kick`, does not accept a keystore key, and no longer has the misleading `restart` alias.
 - `announce send <content...>` is the only direct-send route; bare `announce <content...>` is removed. `announce template <templateId>` is the canonical template route; `announce tpl` remains an alias.
 - `say <message...>` is the canonical message command. `sendMessage`, `sendservmsg`, `sendservermessage`, `b`, and `broadcast` are removed.
-- `player list [--uid]` replaces `list [uid]` and `players`; `--uid` toggles UID display, not player selection.
+- `player list` replaces `list [uid]` and `players`; it always displays each online player’s nickname and UID. The `--uid` option is not supported.
 - `account resetpassword <username> <new-password>` replaces `account resetpass`; `account passwd` is its sole shortcut.
 - `info` has no `troubleshoot` or `helpme` aliases.
 - `coop [guestSelector] <hostSelector>` requires an online host. When the guest is omitted, it uses the current command target (the sender by default in-game); in the console, choose a guest with `target` or provide both selectors. Each explicit selector follows `playerSelector` syntax. Moving another player requires `server.coop.others`.
