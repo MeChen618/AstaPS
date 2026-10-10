@@ -65,7 +65,7 @@ public final class ConstellationCommand implements CommandHandler {
                     targetPlayer,
                     "player.setconstellation",
                     "player.setconstellation.others")) return;
-            if (level < 0 || level > 6) {
+            if (!validLevel(level)) {
                 CommandOutput.sendTranslatedMessage(sender, "commands.setConst.range_error");
                 return;
             }
@@ -134,7 +134,7 @@ public final class ConstellationCommand implements CommandHandler {
         avatar.forceConstellationLevel(level);
         avatar.recalcConstellations();
         avatar.recalcStats(true);
-        avatar.save();
+        // forceConstellationLevel already saves the avatar.
         if (reloadIfLowered && level < before) reloadScene(player);
     }
 
@@ -147,6 +147,10 @@ public final class ConstellationCommand implements CommandHandler {
         world.transferPlayerToScene(player, 1, pos);
         world.transferPlayerToScene(player, sceneId, pos);
         player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
+    }
+
+    static boolean validLevel(int level) {
+        return level >= 0 && level <= 6;
     }
 
     private static boolean validTarget(Player sender, Player target) {
