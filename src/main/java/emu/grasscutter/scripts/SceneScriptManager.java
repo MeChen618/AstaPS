@@ -1435,6 +1435,11 @@ public class SceneScriptManager {
         pendingCutsceneGroups.computeIfAbsent(cutsceneId, id -> new HashSet<>()).add(groupId);
     }
 
+    /** Whether a scripted scene is already waiting for a genuine cutscene completion. */
+    public synchronized boolean hasPendingCutscene(int cutsceneId) {
+        return !destroyed && pendingCutsceneGroups.containsKey(cutsceneId);
+    }
+
     /** Consumes the pending request once, even if multiple clients report completion. */
     public synchronized void finishCutscene(int cutsceneId) {
         var groups = pendingCutsceneGroups.remove(cutsceneId);

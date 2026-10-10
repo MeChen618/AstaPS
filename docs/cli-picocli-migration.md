@@ -171,3 +171,21 @@ IPv4 address and can resolve a reserved UID before a character exists.
 `mail send all` continues to broadcast. `account create` and `account clone`
 allocate or reserve **new** UIDs rather than select existing players, so their
 UID creation parameters are not player target selectors.
+
+### GM cutscene playback safety
+
+`cutscene list [search]` is a resource lookup and no longer requires an online
+target. The results are ordered by numeric cutscene ID, with the existing 30
+result cap. `cutscene <id>` still requires an online player; an ID absent from
+`CutsceneExcelConfigData` is rejected unless `--force` is supplied. Invalid
+non-positive IDs are always rejected. `--force` only bypasses the Excel lookup,
+not online or gameplay-safety checks.
+
+Manually initiated cutscenes are tracked per game session. Their finish
+notifications still receive the normal client acknowledgement, but never
+complete pending scene scripts or trigger the Spiral Abyss half-time team
+swap. Manual playback of an ID already awaited by scene scripts or the Abyss
+transition is refused. Pending manual IDs are cleared upon acknowledgement
+or after a bounded timeout; disconnecting ends the session-scoped tracking.
+This prevents manual GM playback from being mistaken for a quest or tower
+completion, but does not claim to make unknown client-side IDs playable.

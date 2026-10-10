@@ -19,6 +19,9 @@ public class HandlerCutSceneFinishNotify extends PacketHandler {
         // Ack so the client dismisses the cutscene overlay.
         session.send(new PacketCutSceneEndNotify(cutsceneId));
 
+        // A manual GM playback is visual-only. Never complete a quest script or a tower swap.
+        if (session.consumeManualCutscene(cutsceneId)) return;
+
         var scene = player.getScene();
         if (scene != null) {
             scene.getScriptManager().finishCutscene(cutsceneId);
