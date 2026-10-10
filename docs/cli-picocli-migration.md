@@ -52,8 +52,8 @@ The Picocli command tree keeps one route for each operation:
 - `kill` (aliases `killCharacter`, `suicide`) kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall` and `kill character` routes are removed.
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
-- `setSceneTag add <id>`, `remove <id>` and `reset` replace the duplicate `set`, `del` and `restore` subcommands.
-- `ban <@UID|accountName|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. UID and account bans can expire; IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
+- `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
+- `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.\n- `ban <@UID|accountName|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. UID and account bans can expire; IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
 
 ## Review and validation
 
@@ -76,7 +76,7 @@ are also rejected without awarding items.
 
 ### Bulk achievement commands
 
-`achievement grantall` and `achievement revokeall` now call the achievement
+`achievement grant all` and `achievement revoke all` now call the achievement
 manager's batched operations. Grant-all visits every used achievement ID directly,
 sets each unfinished stage to its own required progress, and applies its individual
 completion transition and event. It does not use the parent marker or synchronize
@@ -86,7 +86,7 @@ status-transition counts, recompute the completed count once, queue one achievem
 document save, and group unique changed achievements into update packets of at
 most 128 entries. Single-ID grant, revoke and progress retain linked-stage behavior.
 
-`achievement revokeall` does not use stage-group membership: every completed
+`achievement revoke all` does not use stage-group membership: every completed
 achievement ID is reset directly, even if the final stage marked `isParent` has
 not been completed. It does not erase progress in achievements that are already
 unfinished. Already claimed rewards remain non-redeemable after reset.
@@ -117,3 +117,18 @@ would be deleted without changing the inventory. The preview applies the
 same category, rarity, level, refinement, locked and equipped filters as
 the destructive path; `all` also includes furniture, display and virtual
 inventory items. Without `--dry-run`, deletion behavior is unchanged.
+
+### Decoupled bulk command selectors
+
+The standalone `achievement grantall` / `achievement revokeall` routes have been
+replaced by `achievement grant all` / `achievement revoke all`. The same
+`grant` / `revoke` route also accepts a numeric achievement ID; batch manager
+operations and localized success keys are unchanged.
+
+`tag unlock all` (also `setSceneTag unlock all`) replaces `tag unlockall`.
+`unlock all` replaces the standalone `unlockall` command while retaining its
+current permission keys and behavior. These commands deliberately do different
+things: `unlock all` leaves scene tags unchanged, but `tag unlock all` enables
+scene tags and can create incompatible quest terrain states. Legacy concatenated
+commands are removed rather than kept as duplicate aliases. Other uses of
+`all` (such as `restore all` and `clear all`) keep their existing meanings.

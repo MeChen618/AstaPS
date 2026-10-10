@@ -17,15 +17,29 @@ import picocli.CommandLine.Parameters;
         targetRequirement = Command.TargetRequirement.PLAYER,
         threading = true)
 public final class AchievementCommand implements CommandHandler {
+    private record AchievementTarget(Integer achievementId) {
+        boolean all() {
+            return achievementId == null;
+        }
+    }
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
+        commandLine.registerConverter(
+                AchievementTarget.class,
+                value -> {
+                    if ("all".equalsIgnoreCase(value)) return new AchievementTarget(null);
+                    try {
+                        return new AchievementTarget(Integer.parseInt(value));
+                    } catch (NumberFormatException ignored) {
+                        throw new CommandLine.TypeConversionException(
+                                "Expected a numeric achievement ID or 'all'");
+                    }
+                });
         commandLine.addSubcommand("grant", new Grant(sender, targetPlayer));
         commandLine.addSubcommand("revoke", new Revoke(sender, targetPlayer));
         commandLine.addSubcommand("progress", new Progress(sender, targetPlayer));
-        commandLine.addSubcommand("grantall", new GrantAll(sender, targetPlayer));
-        commandLine.addSubcommand("revokeall", new RevokeAll(sender, targetPlayer));
         return commandLine;
     }
 
@@ -57,9 +71,10 @@ public final class AchievementCommand implements CommandHandler {
         }
     }
 
+    @CommandLine.Command(name = "grant")
     private static final class Grant extends AchievementCommandBase {
-        @Parameters(index = "0", paramLabel = "<achievementId>")
-        private int achievementId;
+        @Parameters(index = "0", paramLabel = "<achievementId|all>")
+        private AchievementTarget selection;
 
         private Grant(Player sender, Player targetPlayer) {
             super(sender, targetPlayer);
@@ -67,7 +82,13 @@ public final class AchievementCommand implements CommandHandler {
 
         @Override
         public void run() {
-            var result = achievements().grant(achievementId);
+            if (selection.all()) {
+                int changed = achievements().grantAll();
+                sendSuccessMessage(sender, "grantall", changed, targetPlayer.getNickname());
+                return;
+            }
+
+            var result = achievements().grant(selection.achievementId());
             switch (result.getRet()) {
                 case SUCCESS -> sendSuccessMessage(sender, "grant", targetPlayer.getNickname());
                 case ACHIEVEMENT_NOT_FOUND -> CommandOutput.sendTranslatedMessage(
@@ -78,9 +99,10 @@ public final class AchievementCommand implements CommandHandler {
         }
     }
 
+    @CommandLine.Command(name = "revoke")
     private static final class Revoke extends AchievementCommandBase {
-        @Parameters(index = "0", paramLabel = "<achievementId>")
-        private int achievementId;
+        @Parameters(index = "0", paramLabel = "<achievementId|all>")
+        private AchievementTarget selection;
 
         private Revoke(Player sender, Player targetPlayer) {
             super(sender, targetPlayer);
@@ -88,7 +110,13 @@ public final class AchievementCommand implements CommandHandler {
 
         @Override
         public void run() {
-            var result = achievements().revoke(achievementId);
+            if (selection.all()) {
+                int changed = achievements().revokeAll();
+                sendSuccessMessage(sender, "revokeall", changed, targetPlayer.getNickname());
+                return;
+            }
+
+            var result = achievements().revoke(selection.achievementId());
             switch (result.getRet()) {
                 case SUCCESS -> sendSuccessMessage(sender, "revoke", targetPlayer.getNickname());
                 case ACHIEVEMENT_NOT_FOUND -> CommandOutput.sendTranslatedMessage(
@@ -119,32 +147,6 @@ public final class AchievementCommand implements CommandHandler {
                 case ACHIEVEMENT_NOT_FOUND -> CommandOutput.sendTranslatedMessage(
                         sender, result.getRet().getKey());
             }
-        }
-    }
-
-    @CommandLine.Command(name = "grantall")
-    private static final class GrantAll extends AchievementCommandBase {
-        private GrantAll(Player sender, Player targetPlayer) {
-            super(sender, targetPlayer);
-        }
-
-        @Override
-        public void run() {
-            int changed = achievements().grantAll();
-            sendSuccessMessage(sender, "grantall", changed, targetPlayer.getNickname());
-        }
-    }
-
-    @CommandLine.Command(name = "revokeall")
-    private static final class RevokeAll extends AchievementCommandBase {
-        private RevokeAll(Player sender, Player targetPlayer) {
-            super(sender, targetPlayer);
-        }
-
-        @Override
-        public void run() {
-            int changed = achievements().revokeAll();
-            sendSuccessMessage(sender, "revokeall", changed, targetPlayer.getNickname());
         }
     }
 

@@ -21,14 +21,19 @@ import picocli.CommandLine.Parameters;
         permission = "player.setscenetag",
         permissionTargeted = "player.setscenetag.others")
 public final class SetSceneTagCommand implements CommandHandler {
+    private enum Scope {
+        ALL
+    }
+
     private final Int2ObjectMap<SceneTagData> sceneTagData = GameData.getSceneTagDataMap();
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
+        commandLine.setCaseInsensitiveEnumValuesAllowed(true);
         commandLine.addSubcommand("add", new SetTag(sender, targetPlayer, true));
         commandLine.addSubcommand("remove", new SetTag(sender, targetPlayer, false));
-        commandLine.addSubcommand("unlockall", new UnlockAll(targetPlayer));
+        commandLine.addSubcommand("unlock", new UnlockAll(targetPlayer));
         commandLine.addSubcommand("reset", new Reset(targetPlayer));
         commandLine.addSubcommand("list", new ListTags(sender, targetPlayer));
         return commandLine;
@@ -80,8 +85,11 @@ public final class SetSceneTagCommand implements CommandHandler {
         }
     }
 
-    @CommandLine.Command(name = "unlockall")
+    @CommandLine.Command(name = "unlock")
     private final class UnlockAll implements Runnable {
+        @Parameters(index = "0", paramLabel = "<all>")
+        private Scope scope;
+
         private final Player targetPlayer;
 
         private UnlockAll(Player targetPlayer) {

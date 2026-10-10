@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 import picocli.CommandLine;
 
 @Command(
-        label = "unlockall",
+        label = "unlock",
         permission = "player.unlockall",
         permissionTargeted = "player.unlockall.others")
 public final class UnlockAllCommand implements CommandHandler {
@@ -26,15 +26,37 @@ public final class UnlockAllCommand implements CommandHandler {
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        return new CommandLine(new Args(sender, targetPlayer));
+        var commandLine = new CommandLine(new Root(sender));
+        commandLine.addSubcommand("all", new All(sender, targetPlayer));
+        return commandLine;
     }
 
-    @CommandLine.Command(name = "unlockall")
-    private static final class Args implements Runnable {
+    // Existing language keys and permission strings remain compatible.
+    @Override
+    public String getDescriptionKey() {
+        return "commands.unlockall.description";
+    }
+
+    @CommandLine.Command(name = "unlock")
+    private final class Root implements Runnable {
+        private final Player sender;
+
+        private Root(Player sender) {
+            this.sender = sender;
+        }
+
+        @Override
+        public void run() {
+            UnlockAllCommand.this.sendUsageMessage(sender);
+        }
+    }
+
+    @CommandLine.Command(name = "all")
+    private static final class All implements Runnable {
         private final Player sender;
         private final Player targetPlayer;
 
-        private Args(Player sender, Player targetPlayer) {
+        private All(Player sender, Player targetPlayer) {
             this.sender = sender;
             this.targetPlayer = targetPlayer;
         }
