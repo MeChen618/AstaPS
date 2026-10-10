@@ -122,16 +122,22 @@ Snezhnaya's third-person shooter mode works: guns and grenades worn next to an a
 **1. Get the weapons**
 
 ```
-/tps give          all eight TPS weapons (224001–224008), or one: /tps give 224001
-/tps accessory     unlock every accessory on the weapons you own
+/tps give
+/tps give 224001
+/tps accessory
 ```
+
+The first command grants all eight TPS weapons (224001–224008); the second grants only weapon 224001. The third unlocks accessories for owned weapons.
 
 **2. Play a TPS domain**
 
 ```
-/dungeon 10955                       the shooting range
-/dungeon 10953, 10960 to 10964       the Emerged Grey Field stages
+/dungeon 10955
+/dungeon 10953
+/dungeon 10960
 ```
+
+Each line is a separate command. Dungeon 10955 is the shooting range; 10953 and 10960–10964 are Emerged Grey Field stages.
 
 Inside, your team is swapped for the TPS Traveler (matching your Traveler, level 20), wearing your TPS loadout, or 224001 the first time. Weapons you switch to there are kept as your loadout. Leaving the domain restores your team.
 
@@ -140,9 +146,11 @@ Inside, your team is swapped for the TPS Traveler (matching your Traveler, level
 Any avatar can wear TPS weapons, which is handy for trying them out:
 
 ```
-/tps wear 224001 224004    the field avatar wears a rifle and a grenade (at most 2 guns and 1 grenade)
-/tps refill                refill all ammunition
+/tps wear 224001 224004
+/tps refill
 ```
+
+The first command equips a rifle and a grenade (at most two guns and one grenade); the second refills ammunition.
 
 Ammunition handling is still partly experimental. See [docs/tps/README.md](docs/tps/README.md) for what the server does, the `/tps ammo` switches, and what is not settled yet.
 

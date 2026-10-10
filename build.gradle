@@ -197,6 +197,10 @@ test {
             excludeTags project.property('excludeTags').split(',')
         }
     }
+    // A JVM can exit before writing XML reports; log the last started test to diagnose it.
+    testLogging {
+        events 'started', 'failed'
+    }
     setMaxHeapSize('4G')
 }
 

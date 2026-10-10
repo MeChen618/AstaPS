@@ -94,16 +94,22 @@ account clone alice alice-copy @10002
 **1. 取得武器**
 
 ```
-/tps give          全部八把 TPS 武器（224001–224008），或指定一把：/tps give 224001
-/tps accessory     解鎖已擁有武器的全部配件
+/tps give
+/tps give 224001
+/tps accessory
 ```
+
+第一條指令發放全部八把 TPS 武器（224001–224008）；第二條只發放 224001；第三條解鎖已擁有武器的配件。
 
 **2. 進入 TPS 秘境**
 
 ```
-/dungeon 10955                       射擊靶場
-/dungeon 10953、10960 到 10964        灰原（Emerged Grey Field）各關
+/dungeon 10955
+/dungeon 10953
+/dungeon 10960
 ```
+
+每行都是獨立指令。10955 是射擊靶場，10953 和 10960–10964 是灰原（Emerged Grey Field）各關。
 
 進入後，隊伍會換成 TPS 旅行者（與你的旅行者同性別，20 級），裝備你的 TPS 配裝，第一次進入時是 224001。在秘境裡換的武器會保存成你的配裝。離開秘境後隊伍會恢復原狀。
 
@@ -112,9 +118,11 @@ account clone alice alice-copy @10002
 任何角色都能裝備 TPS 武器，方便試用：
 
 ```
-/tps wear 224001 224004    場上角色裝備一把步槍和一顆手榴彈（最多 2 把槍、1 顆手榴彈）
-/tps refill                補滿全部彈藥
+/tps wear 224001 224004
+/tps refill
 ```
+
+第一條指令裝備步槍和手榴彈（最多兩把槍、一顆手榴彈），第二條補滿彈藥。
 
 彈藥處理仍有部分屬於實驗性質。伺服器端的實作細節、`/tps ammo` 的切換選項，以及尚未確定的部分，見 [docs/tps/README.md](docs/tps/README.md)。
 
