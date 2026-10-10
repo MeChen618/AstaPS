@@ -182,7 +182,7 @@
       "not_found_error": "🇺🇸Entity does not exist"
     },
     "avatar": {
-      "description": "所持キャラクターの一覧、命ノ星座、天賦、好感度、追加レベル、最大強化を管理します。"
+      "description": "所持キャラクターの一覧、命ノ星座、天賦、戦闘ステータス、好感度、追加レベル、最大強化を管理します。"
     },
     "battlepass": {
       "description": "紀行レベルの購入と有料報酬の状態を管理します。"
