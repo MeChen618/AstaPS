@@ -9,7 +9,6 @@ import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.player.Player;
 import java.util.Map;
 import picocli.CommandLine;
-import picocli.CommandLine.Option;
 
 @Command(label = "player", targetRequirement = Command.TargetRequirement.NONE, inlineTarget = false)
 public final class PlayerCommand implements CommandHandler {
@@ -34,12 +33,15 @@ public final class PlayerCommand implements CommandHandler {
         }
     }
 
+    static String formatPlayer(String nickname, int uid, boolean styled) {
+        return styled
+                ? nickname + " <color=green>(" + uid + ")</color>"
+                : nickname + " (" + uid + ")";
+    }
+
     @CommandLine.Command(name = "list")
     private static final class ListPlayers implements Runnable {
         private final Player sender;
-
-        @Option(names = "--uid", description = "Include player UIDs in the list")
-        private boolean includeUid;
 
         private ListPlayers(Player sender) {
             this.sender = sender;
@@ -54,17 +56,7 @@ public final class PlayerCommand implements CommandHandler {
 
             String players =
                     playersMap.values().stream()
-                            .map(
-                                    player -> {
-                                        if (!includeUid) return player.getNickname();
-                                        if (sender != null) {
-                                            return player.getNickname()
-                                                    + " <color=green>("
-                                                    + player.getUid()
-                                                    + ")</color>";
-                                        }
-                                        return player.getNickname() + " (" + player.getUid() + ")";
-                                    })
+                            .map(player -> formatPlayer(player.getNickname(), player.getUid(), sender != null))
                             .reduce((left, right) -> left + ", " + right)
                             .orElse("");
             CommandOutput.sendMessage(sender, players);
