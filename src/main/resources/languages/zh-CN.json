@@ -448,7 +448,7 @@
     "unban": {
       "success": "成功取消玩家的封禁。",
       "failure": "取消玩家的封禁失败，因为玩家不存在。",
-      "description": "取消玩家的封禁"
+      "description": "解除账号或 IP 封禁"
     },
     "info": {
       "description": "生成问题排除用的 debug 信息"
