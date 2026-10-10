@@ -115,8 +115,9 @@ public final class SensitiveCommandSyntaxTest {
         assertEquals("player", PlayerCommand.class.getAnnotation(Command.class).label());
         assertFalse(PlayerCommand.class.getAnnotation(Command.class).inlineTarget());
         assertTrue(players.getSubcommands().containsKey("list"));
-        assertDoesNotThrow(() -> players.parseArgs("list"));
-        assertDoesNotThrow(() -> players.parseArgs("list", "--uid"));
+        assertFalse(players.parseArgs("list").subcommand().hasMatchedOption("--uid"));
+        assertTrue(players.parseArgs("list", "--uid").subcommand().hasMatchedOption("--uid"));
+        assertTrue(players.getSubcommands().get("list").getUsageMessage().contains("--uid"));
         assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "uid"));
         assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("--uid"));
         var say = new SayCommand().createCommandLine(null, null);
