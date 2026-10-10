@@ -848,7 +848,7 @@ public final class PacketOpcodes {
     public static final int _UgcDungeonPlayRecordNotify = 5825;
     public static final int _WorldOwnerPlayerDataNotify = 3396;
     public static final int PrivateChatRsp = 0; // 7.1 CmdId unknown (7.0: 5253)
-    public static final int TakePlayerLevelRewardReq = 0; // 7.1 CmdId unknown (7.0: 5263)
+    public static final int TakePlayerLevelRewardReq = 7321; // 7.1 Katheryne rank 2/3/4 clicks, 2026-10-10
     public static final int WinterCampSetWishListRsp = 4063;
     // public static final int NCDDACPBBDF = 26654;
     // public static final int KCJCNHKHJCB = 2144;
