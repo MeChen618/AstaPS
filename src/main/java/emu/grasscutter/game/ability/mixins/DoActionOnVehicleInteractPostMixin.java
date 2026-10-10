@@ -39,12 +39,23 @@ public class DoActionOnVehicleInteractPostMixin extends AbilityMixinHandler {
         return true;
     }
 
-    /** Whether the player is currently riding, which decides which half of the mixin runs. */
+    /**
+     * Whether the player is currently riding, which decides which half of the mixin runs.
+     *
+     * <p>Checked against the riders rather than the owner: a dismounted Saurian stays in the scene as a
+     * soul candle still owned by the player, so an owner check reads "on the vehicle" forever after the
+     * first ride and {@code onVehicleOut} never runs.
+     */
     private boolean isOnVehicle(Ability ability) {
         var player = ability.getPlayerOwner();
         if (player == null || player.getScene() == null) return false;
+        int uid = player.getUid();
         return player.getScene().getEntities().values().stream()
                 .filter(entity -> entity instanceof EntityVehicle)
-                .anyMatch(entity -> player.equals(((EntityVehicle) entity).getOwner()));
+                .anyMatch(
+                        entity ->
+                                ((EntityVehicle) entity)
+                                        .getVehicleMembers().stream()
+                                                .anyMatch(member -> member.getUid() == uid));
     }
 }
