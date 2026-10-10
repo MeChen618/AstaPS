@@ -15,7 +15,7 @@ import picocli.CommandLine.Parameters;
 /** Sets a player's nickname server-side, including rich-text names. */
 @Command(
         label = "name",
-        aliases = {"nickname", "rename"},
+        aliases = {"rename"},
         permission = "player.name",
         permissionTargeted = "player.name.others")
 public final class NameCommand implements CommandHandler {
