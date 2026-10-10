@@ -60,6 +60,10 @@ final class AvatarStatCommand {
     static CommandLine create(Player sender, Player targetPlayer) {
         var command = new AvatarStatCommand();
         var cli = new CommandLine(new Root(sender));
+        cli.addSubcommand("set", command.new Set(sender, targetPlayer));
+        cli.addSubcommand("lock", command.new Lock(sender, targetPlayer));
+        cli.addSubcommand("unlock", command.new Unlock(sender, targetPlayer));
+        // Register after constructing the tree: Picocli converters are local to each command.
         CommandHandler.registerConverterTree(
                 cli,
                 StatArg.class,
@@ -70,9 +74,6 @@ final class AvatarStatCommand {
                     }
                     return new StatArg(stat);
                 });
-        cli.addSubcommand("set", command.new Set(sender, targetPlayer));
-        cli.addSubcommand("lock", command.new Lock(sender, targetPlayer));
-        cli.addSubcommand("unlock", command.new Unlock(sender, targetPlayer));
         return cli;
     }
 
