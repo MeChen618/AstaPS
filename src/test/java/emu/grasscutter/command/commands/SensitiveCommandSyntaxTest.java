@@ -1,12 +1,15 @@
 package emu.grasscutter.command.commands;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandMap;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import picocli.CommandLine;
 
@@ -36,6 +39,50 @@ public final class SensitiveCommandSyntaxTest {
         assertNull(map.getHandler("killall"));
         assertTrue(map.getCommandLine().getSubcommands().containsKey("killcharacter"));
         assertTrue(map.getCommandLine().getSubcommands().containsKey("suicide"));
+    }
+
+    @Test
+    void playerBanUsesMandatoryLeadingAtUid() {
+        var ban = new BanCommand();
+        assertFalse(BanCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertThrows(
+                CommandLine.ParameterException.class,
+                () -> ban.createCommandLine(null, null).parseArgs("player"));
+        assertDoesNotThrow(
+                () -> ban.createCommandLine(null, null).parseArgs("player", "@10001"));
+        assertDoesNotThrow(
+                () -> ban.createCommandLine(null, null).parseArgs("player", "@10001", "1800000000", "Cheating"));
+        assertDoesNotThrow(
+                () -> ban.createCommandLine(null, null).parseArgs("player", "@10001", "Cheating"));
+    }
+
+    @Test
+    void playerBanParsesOptionalEndTimeAndReasonWithoutChangingUidPosition() {
+        var defaultBan = BanCommand.parsePlayerArguments("@10001", List.of());
+        assertEquals(10001, defaultBan.uid());
+        assertEquals("Reason not specified.", defaultBan.reason());
+
+        var specifiedBan =
+                BanCommand.parsePlayerArguments("@10002", List.of("1800000000", "Repeated", "abuse"));
+        assertEquals(10002, specifiedBan.uid());
+        assertEquals(1800000000, specifiedBan.endTime());
+        assertEquals("Repeated abuse", specifiedBan.reason());
+
+        var reasonOnly = BanCommand.parsePlayerArguments("@10003", List.of("Cheating"));
+        assertEquals(defaultBan.endTime(), reasonOnly.endTime());
+        assertEquals("Cheating", reasonOnly.reason());
+    }
+
+    @Test
+    void playerBanRejectsMissingAndMisplacedUidOrOverflowEndTime() {
+        for (String selector : List.of("10001", "1800000000", "@alice", "@0", "@-1", "@9999999999999")) {
+            assertThrows(
+                    IllegalArgumentException.class,
+                    () -> BanCommand.parsePlayerArguments(selector, List.of("@10001")));
+        }
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> BanCommand.parsePlayerArguments("@10001", List.of("999999999999999999")));
     }
 
     @Test

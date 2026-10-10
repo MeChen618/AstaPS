@@ -2,6 +2,7 @@ package emu.grasscutter.command.commands;
 
 import static emu.grasscutter.config.Configuration.HTTP_ENCRYPTION;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
@@ -9,18 +10,23 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.BannedIp;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameSession;
+import java.util.List;
 import java.util.Objects;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
-@Command(label = "ban", targetRequirement = Command.TargetRequirement.NONE)
+@Command(
+        label = "ban",
+        targetRequirement = Command.TargetRequirement.NONE,
+        inlineTarget = false)
 public final class BanCommand implements CommandHandler {
     private static final int DEFAULT_BAN_END = 2051190000;
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
-        commandLine.addSubcommand("player", new BanPlayer(sender, targetPlayer));
+        commandLine.setExpandAtFiles(false);
+        commandLine.addSubcommand("player", new BanPlayer(sender));
         commandLine.addSubcommand("ip", new BanIp(sender));
         return commandLine;
     }
@@ -39,33 +45,75 @@ public final class BanCommand implements CommandHandler {
         }
     }
 
-    @CommandLine.Command(name = "player")
+    record PlayerBanArguments(int uid, int endTime, String reason) {}
+
+    /**
+     * The player UID is mandatory and positional; unlike other GM commands, ban player
+     * does not consume an arbitrary @UID elsewhere in the argument list.
+     * A nonnumeric first trailing word starts the reason (with default end time).
+     */
+    static PlayerBanArguments parsePlayerArguments(String selector, List<String> trailingWords) {
+        if (selector == null || !selector.matches("@[0-9]+")) {
+            throw new IllegalArgumentException("Player UID must use @<digits> syntax.");
+        }
+
+        final int uid;
+        try {
+            uid = Integer.parseInt(selector.substring(1));
+        } catch (NumberFormatException invalid) {
+            throw new IllegalArgumentException("Invalid player UID: " + selector);
+        }
+        if (uid <= 0) throw new IllegalArgumentException("Invalid player UID: " + selector);
+
+        int endTime = DEFAULT_BAN_END;
+        int reasonStart = 0;
+        if (!trailingWords.isEmpty() && trailingWords.get(0).matches("-?[0-9]+")) {
+            try {
+                endTime = Integer.parseInt(trailingWords.get(0));
+            } catch (NumberFormatException invalid) {
+                throw new IllegalArgumentException("Invalid ban end time: " + trailingWords.get(0));
+            }
+            reasonStart = 1;
+        }
+
+        String reason = reasonStart == trailingWords.size()
+                ? "Reason not specified."
+                : String.join(" ", trailingWords.subList(reasonStart, trailingWords.size()));
+        return new PlayerBanArguments(uid, endTime, reason);
+    }
+
+    @CommandLine.Command(
+            name = "player",
+            customSynopsis = "ban player @UID [endTime] [reason...]")
     private static final class BanPlayer implements Runnable {
         private final Player sender;
-        private final Player targetPlayer;
 
-        @Parameters(index = "0", arity = "0..1", paramLabel = "[endTime]")
-        private Integer endTime;
+        @Parameters(index = "0", paramLabel = "@UID")
+        private String targetUid;
 
-        @Parameters(index = "1..*", arity = "0..*", paramLabel = "[reason]")
-        private String[] reasonWords = new String[0];
+        @Parameters(index = "1..*", arity = "0..*", paramLabel = "[endTime] [reason...]")
+        private List<String> remaining = List.of();
 
-        private BanPlayer(Player sender, Player targetPlayer) {
+        private BanPlayer(Player sender) {
             this.sender = sender;
-            this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
+            final PlayerBanArguments args;
+            try {
+                args = parsePlayerArguments(targetUid, remaining);
+            } catch (IllegalArgumentException invalid) {
+                CommandOutput.sendMessage(sender, invalid.getMessage());
+                return;
+            }
+
+            Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(args.uid(), true);
             if (targetPlayer == null) {
-                CommandOutput.sendTranslatedMessage(sender, "commands.execution.need_target");
+                CommandOutput.sendTranslatedMessage(sender, "commands.execution.player_exist_error");
                 return;
             }
             if (!hasPermission(sender, targetPlayer, "server.ban", "server.ban.others")) return;
-
-            int until = endTime == null ? DEFAULT_BAN_END : endTime;
-            String reason =
-                    reasonWords.length == 0 ? "Reason not specified." : String.join(" ", reasonWords);
 
             Account account = targetPlayer.getAccount();
             if (account == null) {
@@ -73,8 +121,8 @@ public final class BanCommand implements CommandHandler {
                 return;
             }
 
-            account.setBanReason(reason);
-            account.setBanEndTime(until);
+            account.setBanReason(args.reason());
+            account.setBanEndTime(args.endTime());
             account.setBanStartTime((int) (System.currentTimeMillis() / 1000));
             account.setBanned(true);
             account.save();
