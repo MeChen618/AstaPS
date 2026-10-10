@@ -3,6 +3,7 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.OpenConfigEntry;
 import emu.grasscutter.data.binout.OpenConfigEntry.AbilityVarSetter;
@@ -23,16 +24,17 @@ import picocli.CommandLine.Parameters;
 @Command(
         label = "debug",
         permission = "grasscutter.command.debug",
+        permissionTargeted = "grasscutter.command.debug",
         targetRequirement = Command.TargetRequirement.NONE)
 public final class DebugCommand implements CommandHandler {
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
-        commandLine.addSubcommand("abilities", new Abilities(sender));
-        commandLine.addSubcommand("entity", new CurrentEntity(sender));
-        commandLine.addSubcommand("setvar", new SetVar(sender));
-        commandLine.addSubcommand("dynamicmap", new DynamicMap(sender));
+        commandLine.addSubcommand("abilities", new Abilities(sender, targetPlayer));
+        commandLine.addSubcommand("entity", new CurrentEntity(sender, targetPlayer));
+        commandLine.addSubcommand("setvar", new SetVar(sender, targetPlayer));
+        commandLine.addSubcommand("dynamicmap", new DynamicMap(sender, targetPlayer));
         return commandLine;
     }
 
@@ -53,6 +55,7 @@ public final class DebugCommand implements CommandHandler {
     @CommandLine.Command(name = "abilities")
     private static final class Abilities implements Runnable {
         private final Player sender;
+        private final Player targetPlayer;
 
         @Parameters(index = "0", paramLabel = "<entityId>")
         private int entityId;
@@ -60,20 +63,28 @@ public final class DebugCommand implements CommandHandler {
         @Option(names = "--config", description = "Interpret the id as a config ID")
         private boolean configId;
 
-        private Abilities(Player sender) {
+        private Abilities(Player sender, Player targetPlayer) {
             this.sender = sender;
+            this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
-            if (sender == null) return;
-            var scene = sender.getScene();
+            if (targetPlayer == null || !targetPlayer.isOnline()) {
+                CommandOutput.sendMessage(sender, "This debug operation requires an online target player.");
+                return;
+            }
+            var scene = targetPlayer.getScene();
+            if (scene == null) {
+                CommandOutput.sendMessage(sender, "The target player has no active scene.");
+                return;
+            }
             var entity =
                     configId
                             ? scene.getFirstEntityByConfigId(entityId)
                             : scene.getEntityById(entityId);
             if (entity == null) {
-                sender.dropMessage("Entity not found.");
+                CommandOutput.sendMessage(sender, "Entity not found.");
                 return;
             }
 
@@ -98,27 +109,32 @@ public final class DebugCommand implements CommandHandler {
             } catch (Exception exception) {
                 Grasscutter.getLogger().warn("Failed to get abilities.", exception);
             }
-            sender.dropMessage("Check console for abilities.");
+            CommandOutput.sendMessage(sender, "Check console for abilities.");
         }
     }
 
     @CommandLine.Command(name = "entity")
     private static final class CurrentEntity implements Runnable {
         private final Player sender;
+        private final Player targetPlayer;
 
-        private CurrentEntity(Player sender) {
+        private CurrentEntity(Player sender, Player targetPlayer) {
             this.sender = sender;
+            this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
-            if (sender == null) return;
-            var avatarEntity = sender.getTeamManager().getCurrentAvatarEntity();
-            if (avatarEntity == null) {
-                sender.dropMessage("No current avatar entity.");
+            if (targetPlayer == null || !targetPlayer.isOnline()) {
+                CommandOutput.sendMessage(sender, "This debug operation requires an online target player.");
                 return;
             }
-            sender.dropMessage(
+            var avatarEntity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
+            if (avatarEntity == null) {
+                CommandOutput.sendMessage(sender, "No current avatar entity.");
+                return;
+            }
+            CommandOutput.sendMessage(sender, 
                     "Current avatar entityId="
                             + avatarEntity.getId()
                             + " avatarId="
@@ -131,6 +147,7 @@ public final class DebugCommand implements CommandHandler {
     @CommandLine.Command(name = "setvar")
     private static final class SetVar implements Runnable {
         private final Player sender;
+        private final Player targetPlayer;
 
         @Parameters(index = "0", paramLabel = "<entityId>")
         private int entityId;
@@ -144,13 +161,17 @@ public final class DebugCommand implements CommandHandler {
         @Option(names = "--ability", defaultValue = "1", paramLabel = "<index>")
         private int abilityIndex;
 
-        private SetVar(Player sender) {
+        private SetVar(Player sender, Player targetPlayer) {
             this.sender = sender;
+            this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
-            if (sender == null) return;
+            if (targetPlayer == null || !targetPlayer.isOnline()) {
+                CommandOutput.sendMessage(sender, "This debug operation requires an online target player.");
+                return;
+            }
             var entry =
                     AbilityScalarValueEntry.newBuilder()
                             .setKey(AbilityString.newBuilder().setStr(varName).build())
@@ -171,7 +192,7 @@ public final class DebugCommand implements CommandHandler {
                             .setHead(head)
                             .setAbilityData(overrideMap.toByteString())
                             .build();
-            sender.sendPacket(new PacketAbilityInvocationsNotify(reinit));
+            targetPlayer.sendPacket(new PacketAbilityInvocationsNotify(reinit));
 
             var override =
                     AbilityInvokeEntry.newBuilder()
@@ -183,8 +204,8 @@ public final class DebugCommand implements CommandHandler {
                             .setHead(head)
                             .setAbilityData(entry.toByteString())
                             .build();
-            sender.sendPacket(new PacketAbilityInvocationsNotify(override));
-            sender.dropMessage(
+            targetPlayer.sendPacket(new PacketAbilityInvocationsNotify(override));
+            CommandOutput.sendMessage(sender, 
                     "Sent REINIT_OVERRIDEMAP+OVERRIDE_PARAM: entity="
                             + entityId
                             + " ability="
@@ -199,17 +220,22 @@ public final class DebugCommand implements CommandHandler {
     @CommandLine.Command(name = "dynamicmap")
     private static final class DynamicMap implements Runnable {
         private final Player sender;
+        private final Player targetPlayer;
 
-        private DynamicMap(Player sender) {
+        private DynamicMap(Player sender, Player targetPlayer) {
             this.sender = sender;
+            this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
-            if (sender == null) return;
-            var entity = sender.getTeamManager().getCurrentAvatarEntity();
+            if (targetPlayer == null || !targetPlayer.isOnline()) {
+                CommandOutput.sendMessage(sender, "This debug operation requires an online target player.");
+                return;
+            }
+            var entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
             if (entity == null) {
-                sender.dropMessage("No current avatar entity.");
+                CommandOutput.sendMessage(sender, "No current avatar entity.");
                 return;
             }
             var avatar = entity.getAvatar();
@@ -236,7 +262,7 @@ public final class DebugCommand implements CommandHandler {
                 }
             }
             Grasscutter.getLogger().info("=== total entries: {} ===", total);
-            sender.dropMessage("Check console for dynamicValueMap (" + total + " entries).");
+            CommandOutput.sendMessage(sender, "Check console for dynamicValueMap (" + total + " entries).");
         }
     }
 
