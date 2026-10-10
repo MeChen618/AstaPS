@@ -28,6 +28,11 @@ Create accepts a username alone, a username and password, a username and @UID, o
 three (password before @UID). Without a password, the account stays passwordless until
 one is set via resetpass.
 
+Console-created and automatically registered accounts receive no implicit administrator
+permissions. Both use the same configured `account.defaultPermissions` and explicit
+grants. Legacy database documents missing a `permissions` field no longer acquire `*`
+on load; existing explicitly stored grants remain unchanged.
+
 The clone operation needs an offline source player and a new account name.
 It copies player-owned gameplay collections and uses the database writer barrier
 to avoid copying unfinished saves; friendships and shared beatmaps are excluded.

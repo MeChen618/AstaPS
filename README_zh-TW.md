@@ -55,7 +55,7 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 沒有註冊網頁。建立帳號有兩條路：
 
-- **從主控台。** `account create <使用者名稱> [<密碼>] [@UID]`（密碼與 UID 均可選）。
+- **從主控台。** `account create <使用者名稱> [<密碼>] [@UID]`（密碼與 UID 均可選，新帳號僅使用設定中的預設權限，不會自動取得 `*` 管理員權限）。
 - **登入時直接註冊。** 用一個沒人占用的名字登入就等於註冊。開啟 `account.useIntegrationPassword` 後，在使用者名稱欄填 `帳號&&密碼`、密碼欄留空即可，很方便在代理一堆客戶端時用。
 
 設定的密碼會以 BCrypt 雜湊儲存。不指定密碼時，帳號暫不驗證密碼，可稍後使用 `account resetpass` 設定。主控台需要 `server.game.enableConsole` 設為 `true` 才會接受輸入。

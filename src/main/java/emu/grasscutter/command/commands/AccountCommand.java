@@ -237,7 +237,7 @@ public final class AccountCommand implements CommandHandler {
         }
 
         if (passwordHash != null) account.setPassword(passwordHash);
-        account.addPermission("*");
+        // New console-created accounts use the same default permissions as autoCreate.
         account.save();
         CommandOutput.sendMessage(
                 sender, translate(sender, "commands.account.create", account.getReservedPlayerUid()));

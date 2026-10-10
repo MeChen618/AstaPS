@@ -58,7 +58,7 @@ There is no registration page. An account is created either way:
 - **From the console.** `account create <username> [<password>] [@UID]` (password and UID optional).
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
-Provided passwords are BCrypt-hashed. An account created without a password has no password check until one is set. The console needs `server.game.enableConsole` set to `true`.
+Provided passwords are BCrypt-hashed. An account created without a password has no password check until one is set. New accounts receive only configured default permissions, never an automatic `*` administrator grant. The console needs `server.game.enableConsole` set to `true`.
 
 ### Web console (opt-in)
 

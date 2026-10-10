@@ -4,11 +4,34 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import emu.grasscutter.game.Account;
 import java.util.Map;
+import org.bson.Document;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
 
 class AccountCreationServiceTest {
+    @Test
+    void newlyInsertedAccountsReceiveNoImplicitSuperuserPermission() {
+        var store = new FakeStore(10_000);
+        var created = AccountCreationService.insert(account("ordinary"), store);
+
+        assertNotNull(created);
+        assertTrue(created.getPermissions().isEmpty());
+        assertTrue(store.byId.get(created.getId()).getPermissions().isEmpty());
+    }
+
+    @Test
+    void legacyDocumentsWithoutPermissionFieldDoNotBecomeAdministrators() {
+        var loaded = account("legacy");
+        loaded.onLoad(new Document("username", "legacy"));
+        assertTrue(loaded.getPermissions().isEmpty());
+
+        // Explicit administrative grants must still be preserved for existing admins.
+        loaded.addPermission("*");
+        loaded.onLoad(new Document("username", "legacy").append("permissions", java.util.List.of("*")));
+        assertEquals(java.util.List.of("*"), loaded.getPermissions());
+    }
+
     @Test
     void staleIdCollisionRetriesWithoutOverwritingExistingAccount() {
         var store = new FakeStore(10_000);

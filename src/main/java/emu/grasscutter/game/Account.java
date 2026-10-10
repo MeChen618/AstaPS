@@ -295,11 +295,8 @@ public class Account {
 
     @PreLoad
     public void onLoad(Document document) {
-        // Grant the superuser permissions to accounts created before the permissions update
-        if (!document.containsKey("permissions")) {
-            this.addPermission("*");
-        }
-
+        // Missing permissions on legacy documents must not imply administrator access.
+        // Only explicitly stored grants and configured ACCOUNT.defaultPermissions apply.
         // Set account default language as server default language
         if (!document.containsKey("locale")) {
             this.locale = LANGUAGE;
