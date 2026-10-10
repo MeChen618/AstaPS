@@ -18,7 +18,12 @@ import picocli.CommandLine.Model.CommandSpec;
 
 /** Internal avatar subcommand, not a standalone command or alias. */
 final class AvatarStatCommand {
+    private static final String PERMISSION = "player.setstats";
     private final Map<String, Stat> stats = new HashMap<>();
+
+    static String operationPermission() {
+        return PERMISSION;
+    }
 
     private record StatArg(Stat stat) {}
 
@@ -97,7 +102,7 @@ final class AvatarStatCommand {
         }
 
         protected boolean permitted() {
-            return AvatarCommand.permitted(sender, target, "player.setstats");
+            return AvatarCommand.permitted(sender, target, PERMISSION);
         }
 
         protected Avatar avatar() {
