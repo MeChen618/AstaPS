@@ -35,6 +35,10 @@ public final class AccountCommand implements CommandHandler {
         commandLine.addSubcommand("clone", new Clone(sender));
         commandLine.addSubcommand("delete", new Delete(sender));
         commandLine.addSubcommand("resetpassword", new ResetPass(sender), "passwd");
+        // AstaPS uses @UID as a selector, never as an argument-file reference.
+        for (CommandLine child : new java.util.HashSet<>(commandLine.getSubcommands().values())) {
+            child.setExpandAtFiles(false);
+        }
         CommandHandler.registerConverterTree(
                 commandLine,
                 NewAccount.class,
