@@ -184,6 +184,9 @@
     "avatar": {
       "description": "Gestiona personajes: lista, constelaciones, talentos, amistad, niveles extra y mejoras máximas."
     },
+    "battlepass": {
+      "description": "Gestiona la compra de niveles y el estado prémium del pase de batalla."
+    },
     "give": {
       "usage_relic": "Usa: give <artifactID> [mainPropID] [<appendPropID>[,<veces>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Este artifactID pertenece a un rango de la lista negra, puede que no sea el que buscas.",
