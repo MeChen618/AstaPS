@@ -3,6 +3,7 @@ package emu.grasscutter.command;
 import static emu.grasscutter.config.Configuration.SERVER;
 
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ExecuteCommandEvent;
 import java.util.ArrayList;
@@ -32,6 +33,9 @@ public final class CommandMap {
     private static final Parser COMMAND_PARSER = new DefaultParser();
 
     private record SelectedTarget(int uid, String username) {}
+
+    /** A target identifies a player by UID, account username, or both explicitly. */
+    record TargetSelector(String username, Integer uid) {}
 
     private final Map<String, CommandHandler> commands = new TreeMap<>();
     private final Map<String, CommandHandler> aliases = new TreeMap<>();
@@ -86,14 +90,22 @@ public final class CommandMap {
         return selector.startsWith("@") ? selector.substring(1) : selector;
     }
 
+    /** Recognize only explicit selector tokens; do not steal ordinary email arguments. */
+    static boolean isTargetSelector(String token) {
+        if (token == null) return false;
+        int separator = token.indexOf('@');
+        if (separator < 0) return false;
+        return separator == 0
+                || separator == token.length() - 1
+                || isDecimalUid(token.substring(separator + 1));
+    }
+
     static String takeInlineTargetSelector(List<String> args, boolean inlineTarget) {
         if (!inlineTarget) return null;
 
         for (int i = 0; i < args.size(); i++) {
             String arg = args.get(i);
-            if (arg.startsWith("@")) {
-                return args.remove(i).substring(1);
-            }
+            if (isTargetSelector(arg)) return args.remove(i);
         }
         return null;
     }
@@ -119,15 +131,75 @@ public final class CommandMap {
         return normalizedAliases;
     }
 
-    /** Command selectors are player UIDs only, never account usernames. */
-    static int parseTargetUid(String selector) {
-        if (selector == null || selector.isEmpty()) return INVALID_UID;
-        try {
-            int uid = Integer.parseInt(selector);
-            return uid > 0 ? uid : INVALID_UID;
-        } catch (NumberFormatException ignored) {
-            return INVALID_UID;
+    /** The separators make numeric usernames unambiguous: 20261010@ is a name. */
+    static TargetSelector parseTargetSelector(String selector) {
+        if (selector == null || selector.isEmpty() || selector.equals("@")) {
+            throw new IllegalArgumentException("Use @UID, username@, or username@UID.");
         }
+
+        int separator = selector.indexOf('@');
+        if (separator < 0) {
+            // Legacy 'target 10001' is an explicit UID; no bare username lookup.
+            return new TargetSelector(null, parsePositiveUid(selector));
+        }
+        if (separator != selector.lastIndexOf('@')) {
+            throw new IllegalArgumentException("Use @UID, username@, or username@UID.");
+        }
+
+        String username = separator == 0 ? null : selector.substring(0, separator);
+        String uidText = selector.substring(separator + 1);
+        Integer uid = uidText.isEmpty() ? null : parsePositiveUid(uidText);
+        return new TargetSelector(username, uid);
+    }
+
+    private static boolean isDecimalUid(String text) {
+        return !text.isEmpty() && text.chars().allMatch(c -> c >= '0' && c <= '9');
+    }
+
+    private static int parsePositiveUid(String text) {
+        if (isDecimalUid(text)) {
+            try {
+                int uid = Integer.parseInt(text);
+                if (uid > 0) return uid;
+            } catch (NumberFormatException ignored) {
+                // Values outside the int range are invalid.
+            }
+        }
+        throw new IllegalArgumentException("Invalid player UID: " + text);
+    }
+
+    static boolean targetMatches(TargetSelector selector, String username, int uid) {
+        return (selector.uid() == null || selector.uid() == uid)
+                && (selector.username() == null || selector.username().equals(username));
+    }
+
+    private static Player findPlayer(TargetSelector selector) {
+        if (selector.uid() != null) {
+            return Grasscutter.getGameServer().getPlayerByUid(selector.uid(), true);
+        }
+        var account = DatabaseHelper.getAccountByName(selector.username());
+        return account == null ? null : DatabaseHelper.getPlayerByAccount(account, Player.class);
+    }
+
+    private static Player resolveTarget(String selector, Player sender) {
+        final TargetSelector parsed;
+        try {
+            parsed = parseTargetSelector(selector);
+        } catch (IllegalArgumentException invalid) {
+            CommandOutput.sendMessage(sender, invalid.getMessage());
+            throw invalid;
+        }
+
+        Player target = findPlayer(parsed);
+        if (target == null) {
+            CommandOutput.sendTranslatedMessage(sender, "commands.execution.player_exist_error");
+            throw new IllegalArgumentException("Player not found");
+        }
+        if (!targetMatches(parsed, target.getAccount().getUsername(), target.getUid())) {
+            CommandOutput.sendMessage(sender, "Account username and UID do not match.");
+            throw new IllegalArgumentException("Player selector mismatch");
+        }
+        return target;
     }
 
     private static CommandLine configureCommandLine(
@@ -395,21 +467,7 @@ public final class CommandMap {
             List<String> args,
             boolean inlineTarget) {
         String inlineSelector = takeInlineTargetSelector(args, inlineTarget);
-        if (inlineSelector != null) {
-            if (inlineSelector.isEmpty()) return null;
-
-            int uid = parseTargetUid(inlineSelector);
-            if (uid == INVALID_UID) {
-                CommandOutput.sendTranslatedMessage(player, "commands.generic.invalid.uid");
-                throw new IllegalArgumentException();
-            }
-            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-            if (targetPlayer == null) {
-                CommandOutput.sendTranslatedMessage(player, "commands.execution.player_exist_error");
-                throw new IllegalArgumentException();
-            }
-            return targetPlayer;
-        }
+        if (inlineSelector != null) return resolveTarget(inlineSelector, player);
 
         if (targetPlayer != null) return targetPlayer;
 
@@ -427,23 +485,20 @@ public final class CommandMap {
     }
 
     private boolean setPlayerTarget(String playerId, Player player, String selector) {
-        if (selector.isEmpty()) {
+        if (selector.isEmpty() || selector.equals("@")) {
             selectedTargets.remove(playerId);
             CommandOutput.sendTranslatedMessage(player, "commands.execution.clear_target");
             return true;
         }
 
-        int uid = parseTargetUid(selector);
-        if (uid == INVALID_UID) {
-            CommandOutput.sendTranslatedMessage(player, "commands.generic.invalid.uid");
-            return false;
-        }
-        Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
-        if (targetPlayer == null) {
-            CommandOutput.sendTranslatedMessage(player, "commands.execution.player_exist_error");
+        final Player targetPlayer;
+        try {
+            targetPlayer = resolveTarget(selector, player);
+        } catch (IllegalArgumentException invalid) {
             return false;
         }
 
+        int uid = targetPlayer.getUid();
         String username = targetPlayer.getAccount().getUsername();
         selectedTargets.put(playerId, new SelectedTarget(uid, username));
         String target = uid + " (" + username + ")";
@@ -500,8 +555,8 @@ public final class CommandMap {
         List<String> args = tokens;
         String playerId = (player == null) ? CONSOLE_ID : player.getAccount().getId();
 
-        if (rawLabel.startsWith("@")) {
-            this.setPlayerTarget(playerId, player, rawLabel.substring(1));
+        if (isTargetSelector(rawLabel)) {
+            this.setPlayerTarget(playerId, player, rawLabel);
             return;
         }
         if (label.equals("target")) {

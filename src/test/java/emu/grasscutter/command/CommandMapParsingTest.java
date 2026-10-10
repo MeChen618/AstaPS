@@ -23,33 +23,60 @@ public final class CommandMapParsingTest {
     }
 
     @Test
-    public void targetSelectorAcceptsPlainAndAtUid() {
-        assertEquals("10001", CommandMap.normalizeTargetSelector("10001"));
-        assertEquals("10001", CommandMap.normalizeTargetSelector("@10001"));
+    public void explicitTargetSelectorsDistinguishUidUsernameAndBoth() {
+        assertEquals(new CommandMap.TargetSelector(null, 10001),
+                CommandMap.parseTargetSelector("@10001"));
+        assertEquals(new CommandMap.TargetSelector("rino", null),
+                CommandMap.parseTargetSelector("rino@"));
+        assertEquals(new CommandMap.TargetSelector("rino", 10001),
+                CommandMap.parseTargetSelector("rino@10001"));
+        assertEquals(new CommandMap.TargetSelector("20261010", null),
+                CommandMap.parseTargetSelector("20261010@"));
+        assertEquals(new CommandMap.TargetSelector("20261010", 10001),
+                CommandMap.parseTargetSelector("20261010@10001"));
+        assertEquals(new CommandMap.TargetSelector(null, 10001),
+                CommandMap.parseTargetSelector("10001"));
+        assertEquals(new CommandMap.TargetSelector(null, 10001),
+                CommandMap.parseTargetSelector(CommandMap.normalizeTargetSelector("@10001")));
+        assertTrue(CommandMap.targetMatches(
+                CommandMap.parseTargetSelector("rino@10001"), "rino", 10001));
+        assertFalse(CommandMap.targetMatches(
+                CommandMap.parseTargetSelector("rino@10001"), "alice", 10001));
+        assertFalse(CommandMap.targetMatches(
+                CommandMap.parseTargetSelector("rino@10001"), "rino", 10002));
+        assertTrue(CommandMap.targetMatches(
+                CommandMap.parseTargetSelector("20261010@"), "20261010", 10002));
     }
 
     @Test
-    public void commandTargetSelectorsRequirePositiveNumericUids() {
-        assertEquals(10001, CommandMap.parseTargetUid("10001"));
-        assertEquals(20261010, CommandMap.parseTargetUid("20261010"));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("rino"));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("name:20261010"));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("uid:10001"));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid(""));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("0"));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("-1"));
-        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("2147483648"));
+    public void malformedTargetsNeverResolveViaAnotherInterpretation() {
+        for (String bad : new String[] {
+                "", "@", "@rino", "rino", "@0", "@-1", "rino@0",
+                "rino@abc", "rino@@10001", "@2147483648", "name:20261010",
+                "@+123", "rino@+123"
+        }) {
+            assertThrows(IllegalArgumentException.class,
+                    () -> CommandMap.parseTargetSelector(bad), bad);
+        }
     }
 
     @Test
-    public void inlineTargetConsumptionRespectsCommandPolicy() {
-        var commandLocalArgs = new ArrayList<>(List.of("clone", "@123"));
-        assertNull(CommandMap.takeInlineTargetSelector(commandLocalArgs, false));
-        assertEquals(List.of("clone", "@123"), commandLocalArgs);
+    public void inlineSelectorRecognitionDoesNotConsumeEmailArguments() {
+        assertTrue(CommandMap.isTargetSelector("@10001"));
+        assertTrue(CommandMap.isTargetSelector("rino@"));
+        assertTrue(CommandMap.isTargetSelector("rino@10001"));
+        assertTrue(CommandMap.isTargetSelector("@"));
+        assertFalse(CommandMap.isTargetSelector("rino"));
+        assertFalse(CommandMap.isTargetSelector("someone@example.com"));
+        assertFalse(CommandMap.isTargetSelector("rino@other"));
 
-        var globalTargetArgs = new ArrayList<>(List.of("foo", "@123", "bar"));
-        assertEquals("123", CommandMap.takeInlineTargetSelector(globalTargetArgs, true));
-        assertEquals(List.of("foo", "bar"), globalTargetArgs);
+        var inlineArgs = new ArrayList<>(List.of("give", "rino@10001", "someone@example.com"));
+        assertEquals("rino@10001", CommandMap.takeInlineTargetSelector(inlineArgs, true));
+        assertEquals(List.of("give", "someone@example.com"), inlineArgs);
+
+        var localArgs = new ArrayList<>(List.of("coop", "@10001"));
+        assertNull(CommandMap.takeInlineTargetSelector(localArgs, false));
+        assertEquals(List.of("coop", "@10001"), localArgs);
     }
 
     @Test
