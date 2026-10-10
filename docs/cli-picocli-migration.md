@@ -142,3 +142,14 @@ restores `asta> `. The prompt uses the same target state as command execution;
 per-command inline `@UID` overrides do not change that remembered target. The
 account name is cached when selecting the target, so rendering the prompt never
 loads offline players or queries the database.
+
+### Numeric usernames and target-selector ambiguity
+
+Account names may consist entirely of digits, including date-like names such as
+`20261010`. Both standalone `@20261010` and inline `@20261010` first resolve
+that exact account name, then fall back to UID lookup if no account with a player
+matches. If both a numeric username and a different player's UID match, the
+command is rejected to avoid accidentally modifying the wrong player. Specify
+`@name:20261010` for the account or `@uid:20261010` for that UID explicitly.
+The `target` command accepts the same prefixes, and `@` still clears the
+remembered target. Non-numeric usernames and ordinary UID selectors are unchanged.

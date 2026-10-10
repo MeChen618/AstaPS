@@ -30,6 +30,37 @@ public final class CommandMapParsingTest {
     }
 
     @Test
+    public void numericAccountUsernamesRemainSelectable() {
+        assertTrue(emu.grasscutter.game.AccountUsernamePolicy.isValid("20261010"));
+        java.util.function.Function<String, Integer> lookup =
+                name -> "20261010".equals(name) ? 10001 : null;
+
+        assertEquals(10001, CommandMap.resolveTargetUid("20261010", lookup, uid -> false));
+        assertEquals(10001, CommandMap.resolveTargetUid("name:20261010", lookup, uid -> true));
+        assertEquals(10002, CommandMap.resolveTargetUid("10002", lookup, uid -> true));
+        assertEquals(10002, CommandMap.resolveTargetUid("uid:10002", lookup, uid -> false));
+        assertEquals(10001, CommandMap.resolveTargetUid("name:20261010", lookup, uid -> false));
+        assertEquals(10001, CommandMap.resolveTargetUid("20261010", lookup, uid -> uid == 10001));
+        assertEquals(10001, CommandMap.resolveTargetUid("rino", name -> 10001, uid -> false));
+    }
+
+    @Test
+    public void numericTargetCollisionIsRejectedInsteadOfPickingTheWrongPlayer() {
+        java.util.function.Function<String, Integer> lookup =
+                name -> "20261010".equals(name) ? 10001 : null;
+        var ambiguous = assertThrows(
+                IllegalArgumentException.class,
+                () -> CommandMap.resolveTargetUid("20261010", lookup, uid -> uid == 20261010));
+        assertTrue(ambiguous.getMessage().contains("@name:20261010"));
+        assertTrue(ambiguous.getMessage().contains("@uid:20261010"));
+
+        assertEquals(10001, CommandMap.resolveTargetUid("name:20261010", lookup, uid -> true));
+        assertEquals(20261010, CommandMap.resolveTargetUid("uid:20261010", lookup, uid -> true));
+        assertEquals(Integer.MIN_VALUE, CommandMap.resolveTargetUid("missing", name -> null, uid -> false));
+        assertEquals(Integer.MIN_VALUE, CommandMap.resolveTargetUid("uid:abc", lookup, uid -> true));
+    }
+
+    @Test
     public void inlineTargetConsumptionRespectsCommandPolicy() {
         var commandLocalArgs = new ArrayList<>(List.of("clone", "@123"));
         assertNull(CommandMap.takeInlineTargetSelector(commandLocalArgs, false));

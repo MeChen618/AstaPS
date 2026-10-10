@@ -17,6 +17,8 @@ import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
+import java.util.function.Function;
+import java.util.function.IntPredicate;
 import org.jline.reader.Parser;
 import org.jline.reader.SyntaxError;
 import org.jline.reader.impl.DefaultParser;
@@ -120,16 +122,59 @@ public final class CommandMap {
         return normalizedAliases;
     }
 
-    private static int getUidFromString(String input) {
-        try {
-            return Integer.parseInt(input);
-        } catch (NumberFormatException ignored) {
-            var account = DatabaseHelper.getAccountByName(input);
-            if (account == null) return INVALID_UID;
-            var player = DatabaseHelper.getPlayerByAccount(account, Player.class);
-            if (player == null) return INVALID_UID;
-            return player.getUid();
+    /**
+     * A numeric account username is valid and must not silently resolve to a different player's UID.
+     * Unqualified selectors accept either username or UID; ambiguous values require name:/uid:.
+     */
+    static int resolveTargetUid(
+            String selector, Function<String, Integer> usernameToUid, IntPredicate uidExists) {
+        if (selector == null || selector.isEmpty()) return INVALID_UID;
+        if (selector.startsWith("uid:")) return parseUid(selector.substring("uid:".length()));
+
+        String username = selector.startsWith("name:")
+                ? selector.substring("name:".length())
+                : selector;
+        Integer namedUid = username.isEmpty() ? null : usernameToUid.apply(username);
+        int accountUid = namedUid != null && namedUid > 0 ? namedUid : INVALID_UID;
+        if (selector.startsWith("name:")) return accountUid;
+
+        int numericUid = parseUid(selector);
+        if (accountUid != INVALID_UID) {
+            if (numericUid != INVALID_UID && accountUid != numericUid && uidExists.test(numericUid)) {
+                throw new AmbiguousTargetException(selector);
+            }
+            return accountUid;
         }
+        return numericUid;
+    }
+
+    private static int parseUid(String input) {
+        try {
+            int uid = Integer.parseInt(input);
+            return uid > 0 ? uid : INVALID_UID;
+        } catch (NumberFormatException ignored) {
+            return INVALID_UID;
+        }
+    }
+
+    private static final class AmbiguousTargetException extends IllegalArgumentException {
+        private AmbiguousTargetException(String selector) {
+            super("Ambiguous player selector '" + selector
+                    + "': both a username and a different UID match. Use @name:"
+                    + selector + " or @uid:" + selector + ".");
+        }
+    }
+
+    private static int getUidFromString(String input) {
+        return resolveTargetUid(
+                input,
+                username -> {
+                    var account = DatabaseHelper.getAccountByName(username);
+                    if (account == null) return null;
+                    var player = DatabaseHelper.getPlayerByAccount(account, Player.class);
+                    return player == null ? null : player.getUid();
+                },
+                uid -> Grasscutter.getGameServer().getPlayerByUid(uid, true) != null);
     }
 
     private static CommandLine configureCommandLine(
@@ -400,7 +445,13 @@ public final class CommandMap {
         if (inlineSelector != null) {
             if (inlineSelector.isEmpty()) return null;
 
-            int uid = getUidFromString(inlineSelector);
+            int uid;
+            try {
+                uid = getUidFromString(inlineSelector);
+            } catch (AmbiguousTargetException ambiguous) {
+                CommandOutput.sendMessage(player, ambiguous.getMessage());
+                throw ambiguous;
+            }
             if (uid == INVALID_UID) {
                 CommandOutput.sendTranslatedMessage(player, "commands.generic.invalid.uid");
                 throw new IllegalArgumentException();
@@ -435,7 +486,13 @@ public final class CommandMap {
             return true;
         }
 
-        int uid = getUidFromString(selector);
+        int uid;
+        try {
+            uid = getUidFromString(selector);
+        } catch (AmbiguousTargetException ambiguous) {
+            CommandOutput.sendMessage(player, ambiguous.getMessage());
+            return false;
+        }
         if (uid == INVALID_UID) {
             CommandOutput.sendTranslatedMessage(player, "commands.generic.invalid.uid");
             return false;
