@@ -55,7 +55,7 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
 There is no registration page. An account is created either way:
 
-- **From the console.** `account create <username> [<password>] [@UID]` (password and UID optional).
+- **From the console.** `account create <username> [password] [@UID]` (password and UID optional).
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
 Provided passwords are BCrypt-hashed. An account created without a password has no password check until one is set. New accounts receive only configured default permissions, never an automatic `*` administrator grant. The console needs `server.game.enableConsole` set to `true`.
@@ -99,7 +99,9 @@ Built-in commands use **Picocli** for positional arguments, named options and su
 | `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
 | `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
 | `ban <playerSelector> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). `endTime` is a Unix timestamp. |
-| `ban <IPv4> [reason...]` / `unban ip <key> <IPv4>` | Manage permanent IP bans with `server.banip`. Unbanning uses the configured keystore key. |
+| `ban <IPv4> [reason...]` / `unban <IPv4>` | Manage permanent IP bans with `server.banip`, without passing a keystore key. |
+| `unban <playerSelector>` | Unban an account with `server.ban` (and `server.ban.others` for another account). |
+| `kick <playerSelector>` | Disconnect an online player with `server.kick`. The old `restart` alias and keystore key argument are removed. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
 
 Example server-console commands:
