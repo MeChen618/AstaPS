@@ -3,7 +3,6 @@ package emu.grasscutter.command;
 import static emu.grasscutter.config.Configuration.SERVER;
 
 import emu.grasscutter.Grasscutter;
-import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ExecuteCommandEvent;
 import java.util.ArrayList;
@@ -120,23 +119,15 @@ public final class CommandMap {
         return normalizedAliases;
     }
 
-    /** Select an account by its exact username, even when the name consists only of digits. */
-    static int resolveAccountUsername(
-            String username, java.util.function.Function<String, Integer> lookup) {
-        if (username == null || username.isEmpty()) return INVALID_UID;
-        Integer uid = lookup.apply(username);
-        return uid != null && uid > 0 ? uid : INVALID_UID;
-    }
-
-    private static int getUidFromUsername(String username) {
-        return resolveAccountUsername(
-                username,
-                name -> {
-                    var account = DatabaseHelper.getAccountByName(name);
-                    if (account == null) return null;
-                    var player = DatabaseHelper.getPlayerByAccount(account, Player.class);
-                    return player == null ? null : player.getUid();
-                });
+    /** Command selectors are player UIDs only, never account usernames. */
+    static int parseTargetUid(String selector) {
+        if (selector == null || selector.isEmpty()) return INVALID_UID;
+        try {
+            int uid = Integer.parseInt(selector);
+            return uid > 0 ? uid : INVALID_UID;
+        } catch (NumberFormatException ignored) {
+            return INVALID_UID;
+        }
     }
 
     private static CommandLine configureCommandLine(
@@ -407,9 +398,9 @@ public final class CommandMap {
         if (inlineSelector != null) {
             if (inlineSelector.isEmpty()) return null;
 
-            int uid = getUidFromUsername(inlineSelector);
+            int uid = parseTargetUid(inlineSelector);
             if (uid == INVALID_UID) {
-                CommandOutput.sendMessage(player, "No player for account username: " + inlineSelector);
+                CommandOutput.sendTranslatedMessage(player, "commands.generic.invalid.uid");
                 throw new IllegalArgumentException();
             }
             targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);
@@ -442,9 +433,9 @@ public final class CommandMap {
             return true;
         }
 
-        int uid = getUidFromUsername(selector);
+        int uid = parseTargetUid(selector);
         if (uid == INVALID_UID) {
-            CommandOutput.sendMessage(player, "No player for account username: " + selector);
+            CommandOutput.sendTranslatedMessage(player, "commands.generic.invalid.uid");
             return false;
         }
         Player targetPlayer = Grasscutter.getGameServer().getPlayerByUid(uid, true);

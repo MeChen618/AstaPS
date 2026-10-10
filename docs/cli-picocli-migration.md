@@ -8,7 +8,7 @@ unrelated quest, protocol, resource, combat or server changes.
 
 - Built-in commands declare their grammar using Picocli arguments, options and subcommands.
 - The console uses JLine parsing and Picocli completion.
-- `@username` selects a target by its exact account username (including numeric usernames), not a Picocli argument file. Command-local UID arguments are unaffected.
+- `@UID` selects a player by numeric UID only, not by account username and not as a Picocli argument file.
 - Commands can opt out of implicit target parsing when `@UID` is positional data.
 - New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
@@ -136,17 +136,18 @@ commands are removed rather than kept as duplicate aliases. Other uses of
 ### Target-aware JLine console prompt
 
 The JLine prompt is `asta> ` when the console has no remembered target.
-After `@rino` (or `target @rino`), it displays the account name and UID,
+After `@10001` (or `target @10001`), it displays the account name and UID,
 e.g. `rino@10001> `. Entering `@` (or `target`) clears the selection and
 restores `asta> `. The prompt uses the same target state as command execution;
-per-command inline `@username` overrides do not change that remembered target.
+per-command inline `@UID` overrides do not change that remembered target.
 The account name is cached when selecting the target, so rendering the prompt
 never loads offline players or queries the database.
 
-### Username-only command targets
+### UID-only command targets
 
-`@rino`, `@20261010`, and inline `@username` selectors address a player by
-their exact **account username** only. Digit-only usernames are valid.
-The numeric string is never interpreted as a UID, and there is no fallback or
-`name:`/`uid:` selector grammar. A valid account with no created player cannot
-be selected as a player target. `@` clears the remembered target.
+`@10001`, `@20261010`, and inline `@UID` selectors address a player by
+**positive numeric UID only**. No username lookup, fallback, or `name:`/`uid:`
+selector grammar is provided. Account usernames can still consist entirely of
+digits (for example `20261010`), but `@20261010` selects only player UID
+`20261010` regardless of whether an account with that username exists.
+`@` clears the remembered target.

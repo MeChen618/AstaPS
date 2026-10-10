@@ -23,28 +23,22 @@ public final class CommandMapParsingTest {
     }
 
     @Test
-    public void targetSelectorAcceptsPlainAndAtUsername() {
-        assertEquals("20261010", CommandMap.normalizeTargetSelector("20261010"));
-        assertEquals("20261010", CommandMap.normalizeTargetSelector("@20261010"));
-        assertEquals("Alice", CommandMap.normalizeTargetSelector("@Alice"));
+    public void targetSelectorAcceptsPlainAndAtUid() {
+        assertEquals("10001", CommandMap.normalizeTargetSelector("10001"));
+        assertEquals("10001", CommandMap.normalizeTargetSelector("@10001"));
     }
 
     @Test
-    public void targetSelectorUsesOnlyAccountUsernames() {
-        assertTrue(emu.grasscutter.game.AccountUsernamePolicy.isValid("20261010"));
-        java.util.function.Function<String, Integer> usernames =
-                username -> switch (username) {
-                    case "rino" -> 10001;
-                    case "20261010" -> 10002;
-                    default -> null;
-                };
-
-        assertEquals(10001, CommandMap.resolveAccountUsername("rino", usernames));
-        assertEquals(10002, CommandMap.resolveAccountUsername("20261010", usernames));
-        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("10002", usernames));
-        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("uid:10002", usernames));
-        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("name:20261010", usernames));
-        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("", usernames));
+    public void commandTargetSelectorsRequirePositiveNumericUids() {
+        assertEquals(10001, CommandMap.parseTargetUid("10001"));
+        assertEquals(20261010, CommandMap.parseTargetUid("20261010"));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("rino"));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("name:20261010"));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("uid:10001"));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid(""));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("0"));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("-1"));
+        assertEquals(Integer.MIN_VALUE, CommandMap.parseTargetUid("2147483648"));
     }
 
     @Test
