@@ -181,6 +181,12 @@
       "description": "🇺🇸Modify an existing entity's properties",
       "not_found_error": "🇺🇸Entity does not exist"
     },
+    "avatar": {
+      "description": "보유 캐릭터의 목록, 운명의 자리, 특성, 전투 능력치, 호감도, 추가 레벨과 최대 강화를 관리합니다."
+    },
+    "battlepass": {
+      "description": "기행 레벨 구매와 유료 보상 상태를 관리합니다."
+    },
     "give": {
       "usage_relic": "사용법: give <성유물ID> [mainPropID] [<appendPropID>[,<times>]]... [lv<레벨 0-20>]",
       "illegal_relic": "이 성유물ID는 블랙리스트 범위에 있습니다. 원하는 ID가 아닐 수 있습니다.",
@@ -224,7 +230,7 @@
       "language_not_found": "현재 서버에 해당 언어가 없습니다.",
       "description": "현재 언어를 표시하거나 변경합니다"
     },
-    "list": {
+    "player": {
       "success": "%s명의 플레이어가 온라인입니다:",
       "description": "온라인 상태의 플레이어를 표시합니다."
     },
@@ -328,7 +334,7 @@
       "error": "오류: 잘못된 시공 단계 %s. Console에서 스택을 확인하십시오.",
       "description": "지정된 사용자에게 메세지를 보냅니다. 이 명령어의 사용법은 세부 내용에 따라 달라집니다."
     },
-    "sendMessage": {
+    "say": {
       "success": "메세지 전송 성공.",
       "description": "서버가 플레이어에게 메세지를 전송합니다. 목표를 지정하지 않고 명령어를 사용하는 경우, 서버의 모든 인원에게 메세지가 발송됩니다."
     },

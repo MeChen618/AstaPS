@@ -181,6 +181,12 @@
       "description": "Modifica le proprietà di un entità esistente",
       "not_found_error": "L'entità non esiste."
     },
+    "avatar": {
+      "description": "Gestisci i personaggi: elenco, costellazioni, talenti, statistiche di combattimento, amicizia, livelli extra e potenziamento massimo."
+    },
+    "battlepass": {
+      "description": "Gestisce l'acquisto dei livelli e lo stato premium del pass battaglia."
+    },
     "give": {
       "usage_relic": "Utilizzo: give <IDmanufatto> [mainPropID] [<appendPropID>[,<volte>]]... [lv<livello 0-20>]",
       "illegal_relic": "Questo ID manufatto appartiene ad una blacklist, potrebbe non essere quello che volevi.",
@@ -224,7 +230,7 @@
       "language_not_found": "Attualmente, il server non ha quella lingua.",
       "description": "Mostra o cambia la lingua corrente"
     },
-    "list": {
+    "player": {
       "success": "Ci sono %s player online:",
       "description": "Lista player online"
     },
@@ -328,7 +334,7 @@
       "error": "ERRORE: fase di costruzione %s non valida. Controlla lo stacktrace della console.",
       "description": "Invia posta all'utente specificato. L'utilizzo di questo comando cambia in base al suo stato di composizione"
     },
-    "sendMessage": {
+    "say": {
       "success": "Messaggio inviato.",
       "description": "Invia un messaggio a un giocatore come server. Se usato senza bersaglio, invia a tutti i giocatori sul server."
     },

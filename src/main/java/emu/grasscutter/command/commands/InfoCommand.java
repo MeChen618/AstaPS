@@ -11,7 +11,6 @@ import picocli.CommandLine;
 
 @Command(
         label = "info",
-        aliases = {"troubleshoot", "helpme"},
         targetRequirement = Command.TargetRequirement.NONE)
 public final class InfoCommand implements CommandHandler {
     @Override

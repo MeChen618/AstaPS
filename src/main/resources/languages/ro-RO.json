@@ -181,6 +181,12 @@
       "description": "🇺🇸Modify an existing entity's properties",
       "not_found_error": "🇺🇸Entity does not exist"
     },
+    "avatar": {
+      "description": "Gestionează personajele: listă, constelații, talente, statistici de luptă, prietenie, niveluri suplimentare și îmbunătățiri maxime."
+    },
+    "battlepass": {
+      "description": "Gestionează achiziția nivelurilor și accesul la recompensele premium ale permisului de luptă."
+    },
     "give": {
       "usage_relic": "Utilizare: give <artifactID> [mainPropID] [<appendPropID>[,<t>]]... [lv<nivel 0-20>]",
       "illegal_relic": "Acest ID de artefact aparține unui interval de pe lista neagră, este posibil să nu fie cel pe care l-ați dorit.",
@@ -224,7 +230,7 @@
       "language_not_found": "În prezent, serverul nu are această limbă.",
       "description": "Afișează sau modifică limba curentă."
     },
-    "list": {
+    "player": {
       "success": "Există %s jucător(i) online:",
       "description": "Enumeră jucătorii online."
     },
@@ -328,7 +334,7 @@
       "error": "EROARE: Etapă de construcție invalidă %s. Verificați consola pentru stacktrace.",
       "description": "Trimite corespondența către utilizatorul specificat. Utilizarea acestei comenzi se modifică în funcție de starea de compunere a acesteia."
     },
-    "sendMessage": {
+    "say": {
       "success": "Mesaj trimis.",
       "description": "Trimite un mesaj unui jucător în calitate de server. Dacă este utilizat fără țintă, trimite mesajul către toți jucătorii de pe server."
     },

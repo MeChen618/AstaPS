@@ -1,29 +1,34 @@
 package emu.grasscutter.command.commands;
 
-import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.FightProperty;
+import emu.grasscutter.server.packet.send.PacketAvatarFightPropNotify;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import picocli.CommandLine;
+import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
+import picocli.CommandLine.Spec;
+import picocli.CommandLine.Model.CommandSpec;
 
-@Command(
-        label = "setStats",
-        aliases = {"stats", "stat"},
-        permission = "player.setstats",
-        permissionTargeted = "player.setstats.others")
-public final class SetStatsCommand implements CommandHandler {
+/** Internal avatar subcommand, not a standalone command or alias. */
+final class AvatarStatCommand {
+    private static final String PERMISSION = "player.setstats";
     private final Map<String, Stat> stats = new HashMap<>();
+
+    static String operationPermission() {
+        return PERMISSION;
+    }
 
     private record StatArg(Stat stat) {}
 
-    public SetStatsCommand() {
+    private AvatarStatCommand() {
         for (String key : FightProperty.getShortNames()) {
             stats.put(key, new Stat(FightProperty.getPropByShortName(key)));
         }
@@ -52,117 +57,154 @@ public final class SetStatsCommand implements CommandHandler {
         stats.put("ephys", stats.get("phys%"));
     }
 
-    @Override
-    public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new ImplicitSet(sender, targetPlayer));
-        commandLine.registerConverter(
+    static CommandLine create(Player sender, Player targetPlayer) {
+        var command = new AvatarStatCommand();
+        var cli = new CommandLine(new Root(sender));
+        cli.addSubcommand("set", command.new Set(sender, targetPlayer));
+        cli.addSubcommand("lock", command.new Lock(sender, targetPlayer));
+        cli.addSubcommand("unlock", command.new Unlock(sender, targetPlayer));
+        // Register after constructing the tree: Picocli converters are local to each command.
+        CommandHandler.registerConverterTree(
+                cli,
                 StatArg.class,
                 value -> {
-                    Stat stat = stats.get(value.toLowerCase());
+                    Stat stat = command.stats.get(value.toLowerCase(Locale.ROOT));
                     if (stat == null) {
                         throw new CommandLine.TypeConversionException("Unknown stat: " + value);
                     }
                     return new StatArg(stat);
                 });
-        commandLine.addSubcommand("lock", new Lock(sender, targetPlayer));
-        commandLine.addSubcommand("unlock", new Unlock(sender, targetPlayer));
-        return commandLine;
+        return cli;
     }
 
-    @CommandLine.Command(name = "setStats")
-    private final class ImplicitSet implements Runnable {
+    @CommandLine.Command(name = "stat")
+    private static final class Root implements Runnable {
         private final Player sender;
-        private final Player targetPlayer;
+        @Spec private CommandSpec spec;
 
+        private Root(Player sender) {
+            this.sender = sender;
+        }
+
+        @Override
+        public void run() {
+            CommandOutput.sendMessage(sender, spec.commandLine().getUsageMessage().stripTrailing());
+        }
+    }
+
+    private abstract class StatOperation implements Runnable {
+        protected final Player sender;
+        protected final Player target;
+
+        @Option(names = "--avatar", paramLabel = "<avatarId>")
+        protected Integer avatarId;
+
+        private StatOperation(Player sender, Player target) {
+            this.sender = sender;
+            this.target = target;
+        }
+
+        protected boolean permitted() {
+            return AvatarCommand.permitted(sender, target, PERMISSION);
+        }
+
+        protected Avatar avatar() {
+            return AvatarCommand.selectOwnedAvatar(sender, target, avatarId);
+        }
+    }
+
+    @CommandLine.Command(name = "set")
+    private final class Set extends StatOperation {
         @Parameters(index = "0", paramLabel = "<stat>")
         private StatArg stat;
 
         @Parameters(index = "1", paramLabel = "<value>")
         private String value;
 
-        private ImplicitSet(Player sender, Player targetPlayer) {
-            this.sender = sender;
-            this.targetPlayer = targetPlayer;
+        private Set(Player sender, Player target) {
+            super(sender, target);
         }
 
         @Override
         public void run() {
-            applySet(sender, targetPlayer, stat.stat(), value);
+            if (!permitted()) return;
+            Avatar avatar = avatar();
+            if (avatar == null) return;
+            float parsed;
+            try {
+                parsed = parsePercent(value);
+            } catch (NumberFormatException invalid) {
+                CommandOutput.sendTranslatedMessage(sender, "commands.generic.invalid.statValue");
+                return;
+            }
+
+            // Active-team entities need the scene packet; off-team avatars have no entity.
+            EntityAvatar entity = avatar.getAsEntity();
+            if (entity == null) {
+                avatar.setFightProperty(stat.stat().prop, parsed);
+                target.sendPacket(new PacketAvatarFightPropNotify(avatar));
+            } else {
+                entity.setFightProperty(stat.stat().prop, parsed);
+                entity.getWorld().broadcastPacket(
+                        new PacketEntityFightPropUpdateNotify(entity, stat.stat().prop));
+            }
+            report(sender, target, Action.ACTION_SET, stat.stat(), parsed);
         }
     }
 
-    private final class Lock implements Runnable {
-        private final Player sender;
-        private final Player targetPlayer;
-
+    @CommandLine.Command(name = "lock")
+    private final class Lock extends StatOperation {
         @Parameters(index = "0", paramLabel = "<stat>")
         private StatArg stat;
 
         @Parameters(index = "1", arity = "0..1", paramLabel = "[value]")
         private String value;
 
-        private Lock(Player sender, Player targetPlayer) {
-            this.sender = sender;
-            this.targetPlayer = targetPlayer;
+        private Lock(Player sender, Player target) {
+            super(sender, target);
         }
 
         @Override
         public void run() {
-            EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-            Avatar avatar = entity.getAvatar();
+            if (!permitted()) return;
+            Avatar avatar = avatar();
+            if (avatar == null) return;
             float parsed;
             if (value == null) {
                 parsed = avatar.getFightProperty(stat.stat().prop);
             } else {
                 try {
                     parsed = parsePercent(value);
-                } catch (NumberFormatException ignored) {
+                } catch (NumberFormatException invalid) {
                     CommandOutput.sendTranslatedMessage(sender, "commands.generic.invalid.statValue");
                     return;
                 }
             }
-
             avatar.getFightPropOverrides().put(stat.stat().prop.getId(), parsed);
             avatar.recalcStats();
-            report(sender, targetPlayer, Action.ACTION_LOCK, stat.stat(), parsed);
+            report(sender, target, Action.ACTION_LOCK, stat.stat(), parsed);
         }
     }
 
-    private final class Unlock implements Runnable {
-        private final Player sender;
-        private final Player targetPlayer;
-
+    @CommandLine.Command(name = "unlock")
+    private final class Unlock extends StatOperation {
         @Parameters(index = "0", paramLabel = "<stat>")
         private StatArg stat;
 
-        private Unlock(Player sender, Player targetPlayer) {
-            this.sender = sender;
-            this.targetPlayer = targetPlayer;
+        private Unlock(Player sender, Player target) {
+            super(sender, target);
         }
 
         @Override
         public void run() {
-            Avatar avatar = targetPlayer.getTeamManager().getCurrentAvatarEntity().getAvatar();
+            if (!permitted()) return;
+            Avatar avatar = avatar();
+            if (avatar == null) return;
             float previous = avatar.getFightProperty(stat.stat().prop);
             avatar.getFightPropOverrides().remove(stat.stat().prop.getId());
             avatar.recalcStats();
-            report(sender, targetPlayer, Action.ACTION_UNLOCK, stat.stat(), previous);
+            report(sender, target, Action.ACTION_UNLOCK, stat.stat(), previous);
         }
-    }
-
-    private void applySet(Player sender, Player targetPlayer, Stat stat, String text) {
-        float value;
-        try {
-            value = parsePercent(text);
-        } catch (NumberFormatException ignored) {
-            CommandOutput.sendTranslatedMessage(sender, "commands.generic.invalid.statValue");
-            return;
-        }
-
-        EntityAvatar entity = targetPlayer.getTeamManager().getCurrentAvatarEntity();
-        entity.setFightProperty(stat.prop, value);
-        entity.getWorld().broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, stat.prop));
-        report(sender, targetPlayer, Action.ACTION_SET, stat, value);
     }
 
     private void report(Player sender, Player targetPlayer, Action action, Stat stat, float value) {

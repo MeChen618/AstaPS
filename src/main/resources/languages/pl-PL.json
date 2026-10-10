@@ -181,6 +181,12 @@
       "description": "🇺🇸Modify an existing entity's properties",
       "not_found_error": "🇺🇸Entity does not exist"
     },
+    "avatar": {
+      "description": "Zarządzaj postaciami: lista, konstelacje, talenty, statystyki walki, przyjaźń, dodatkowe poziomy i maksymalny rozwój."
+    },
+    "battlepass": {
+      "description": "Zarządzaj zakupem poziomów przepustki bojowej i statusem premium."
+    },
     "give": {
       "usage_relic": "give <ID reliktu> [ID pierwszego przedmiotu] [<ID drugiego przedmiotu>[, <ile razy je połączyć>]]... [lv<poziom od 0 do 20>]",
       "illegal_relic": "Ten ID reliktu znajduje się na czarnej liście i może być nie tym, czego szukasz.",
@@ -224,7 +230,7 @@
       "language_not_found": "Nie znaleziono języka o kodzie \"%s\".",
       "description": "Pokaż lub zmień bieżący kod języka."
     },
-    "list": {
+    "player": {
       "success": "%s graczy online:",
       "description": "Pokaż ile jest graczy na serwerze."
     },
@@ -328,7 +334,7 @@
       "error": "BŁĄD: niepoprawny etap konstrukcji: %s.",
       "description": "Wyślij wiadomość wraz z przedmiotami do wybranego lub wszystkich graczy."
     },
-    "sendMessage": {
+    "say": {
       "success": "Wiadomość wysłana.",
       "description": "Wyślij wiadomość do gracza jako serwer. Jeśli nie określono celu, wysyła do wszystkich graczy na serwerze."
     },

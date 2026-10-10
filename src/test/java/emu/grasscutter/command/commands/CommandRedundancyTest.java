@@ -21,7 +21,7 @@ public final class CommandRedundancyTest {
             assertNull(map.getHandler(removed), removed);
         }
         assertNull(map.getHandler("killCharacter"));
-        assertNotNull(map.getHandler("suicide"));
+        assertNull(map.getHandler("suicide"));
         assertNotNull(map.getHandler("restore"));
         assertTrue(map.getCommandLine().getSubcommands().containsKey("restore"));
     }
@@ -31,21 +31,24 @@ public final class CommandRedundancyTest {
         var map = new CommandMap(false);
         map.registerCommand("barrier", new BarrierCommand());
         map.registerCommand("dungeon", new EnterDungeonCommand());
-        map.registerCommand("extralevel", new ExtraLevelCommand());
+        map.registerCommand("avatar", new AvatarCommand());
         map.registerCommand("kill", new KillCommand());
         map.registerCommand("trackmat", new TrackMatCommand());
         map.registerCommand("waypoints", new WaypointsCommand());
 
         for (String removed : new String[] {
                 "pb", "enter_dungeon", "enterdungeon", "levelbreak",
-                "killCharacter", "mattrack", "unlockwp"
+                "killCharacter", "mattrack", "unlockwp", "suicide",
+                "extralevel", "el", "constellation", "talent",
+                "setfetterlevel", "setfetterlvl", "setfriendship",
+                "max", "maxavatar", "maxchar"
         }) {
             assertNull(map.getHandler(removed), removed);
             assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
         }
         for (String retained : new String[] {
-                "barrier", "br", "dungeon", "extralevel", "el",
-                "kill", "suicide", "trackmat", "trackmaterial", "waypoints", "wp"
+                "barrier", "br", "dungeon", "avatar",
+                "kill", "trackmat", "trackmaterial", "waypoints", "wp"
         }) {
             assertNotNull(map.getHandler(retained), retained);
             assertTrue(map.getCommandLine().getSubcommands().containsKey(retained), retained);
@@ -53,15 +56,64 @@ public final class CommandRedundancyTest {
     }
 
     @Test
-    void setStatsKeepsSingleSetPathAndDistinctLockCommands() {
-        CommandLine cli = new SetStatsCommand().createCommandLine(null, null);
-        for (String retained : new String[] {"lock", "unlock"}) {
-            assertTrue(cli.getSubcommands().containsKey(retained), retained);
+    void primaryBattlepassAndRemainingAliasesHaveNoLegacyDuplicates() {
+        var map = new CommandMap(false);
+        map.registerCommand("battlepass", new BattlePassCommand());
+        map.registerCommand("give", new GiveCommand());
+        map.registerCommand("name", new NameCommand());
+        map.registerCommand("namecard", new NameCardCommand());
+        map.registerCommand("kill", new KillCommand());
+
+        assertNotNull(map.getHandler("battlepass"));
+        assertTrue(map.getHandler("battlepass") == map.getHandler("bp"));
+        assertTrue(map.getHandler("give") == map.getHandler("g"));
+        assertTrue(map.getHandler("name") == map.getHandler("rename"));
+        assertTrue(map.getHandler("namecard") == map.getHandler("card"));
+        for (String removed : new String[] {
+                "item", "giveitem", "nickname", "setnamecard", "suicide"
+        }) {
+            assertNull(map.getHandler(removed), removed);
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
         }
-        for (String removed : new String[] {"set", "freeze", "unfreeze"}) {
-            assertFalse(cli.getSubcommands().containsKey(removed), removed);
+
+        assertTrue(new BattlePassCommand().createCommandLine(null, null)
+                .getUsageMessage().contains("battlepass"));
+        assertTrue(new BattlePassCommand().createCommandLine(null, null)
+                .getSubcommands().containsKey("buy"));
+        assertTrue(new BattlePassCommand().createCommandLine(null, null)
+                .getSubcommands().containsKey("paid"));
+    }
+
+    @Test
+    void avatarGroupReplacesRemovedTopLevelCharacterCommands() {
+        var cli = new AvatarCommand().createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("constellation"));
+        assertTrue(cli.getSubcommands().containsKey("talent"));
+        assertTrue(cli.getSubcommands().containsKey("friendship"));
+        assertTrue(cli.getSubcommands().containsKey("extralevel"));
+        assertTrue(cli.getSubcommands().containsKey("max"));
+    }
+
+    @Test
+    void avatarStatHasSetLockAndUnlockWithoutTopLevelAliases() {
+        var map = new CommandMap(false);
+        map.registerCommand("avatar", new AvatarCommand());
+        for (String removed : new String[] {"setStats", "stats", "stat"}) {
+            assertNull(map.getHandler(removed), removed);
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
         }
-        assertNotNull(cli.getCommandSpec().positionalParameters());
+
+        CommandLine cli = new AvatarCommand().createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("stat"));
+        var stat = cli.getSubcommands().get("stat");
+        for (String retained : new String[] {"set", "lock", "unlock"}) {
+            assertTrue(stat.getSubcommands().containsKey(retained), retained);
+        }
+        for (String removed : new String[] {"freeze", "unfreeze"}) {
+            assertFalse(stat.getSubcommands().containsKey(removed), removed);
+        }
+        org.junit.jupiter.api.Assertions.assertDoesNotThrow(
+                () -> cli.parseArgs("stat", "set", "atk", "3000"));
     }
 
     @Test

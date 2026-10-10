@@ -169,7 +169,7 @@
     },
     "coop": {
       "success": "召喚了 %s 到 %s 的世界。",
-      "description": "強制傳送指定使用者到他人的世界。如果未指定玩家，則會將你設為多人遊戲狀態。"
+      "description": "將訪客送入線上房主的世界；未指定訪客時使用目前命令目標"
     },
     "enter_dungeon": {
       "changed": "已進入祕境 %s",
@@ -180,6 +180,12 @@
     "entity": {
       "description": "編輯現有實體的屬性",
       "not_found_error": "實體不存在"
+    },
+    "avatar": {
+      "description": "管理已擁有的角色：查看列表、命之座、天賦、戰鬥屬性、好感度、額外等級與最大強化。"
+    },
+    "battlepass": {
+      "description": "管理紀行等級購買與付費獎勵狀態。"
     },
     "give": {
       "usage_relic": "用法： give <聖遺物 ID> [主詞條 ID] [<副詞條 ID>[,<次數>]]... [lv<等級 0-20>]",
@@ -224,7 +230,7 @@
       "language_not_found": "目前客戶端沒有這種語言：%s",
       "description": "顯示或切換目前語言。"
     },
-    "list": {
+    "player": {
       "success": "目前總線上人數：%s",
       "description": "查看所有線上玩家"
     },
@@ -328,7 +334,7 @@
       "error": "錯誤：無效的編寫階段 %s。需要 stacktrace 請查看伺服器命令提示字元。",
       "description": "向指定使用者傳送郵件。此指令的用法可根據附加的參數而改變。"
     },
-    "sendMessage": {
+    "say": {
       "success": "訊息已傳送。",
       "description": "向指定玩家傳送訊息。"
     },
@@ -448,7 +454,7 @@
     "unban": {
       "success": "撤銷停權成功。",
       "failure": "撤銷停權失敗，玩家帳號不存在。",
-      "description": "撤銷停權指定玩家。"
+      "description": "解除帳號或 IP 的停權。"
     },
     "info": {
       "description": "產生疑難排解用的除錯資訊。"

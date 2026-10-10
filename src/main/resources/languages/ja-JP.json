@@ -181,6 +181,12 @@
       "description": "🇺🇸Modify an existing entity's properties",
       "not_found_error": "🇺🇸Entity does not exist"
     },
+    "avatar": {
+      "description": "所持キャラクターの一覧、命ノ星座、天賦、戦闘ステータス、好感度、追加レベル、最大強化を管理します。"
+    },
+    "battlepass": {
+      "description": "紀行レベルの購入と有料報酬の状態を管理します。"
+    },
     "give": {
       "usage_relic": "使用方法: give <聖遺物ID> [メインステータスID] [<サブステータスID>[,<強化回数>]]... [lv<レベル 0-20>]",
       "illegal_relic": "この聖遺物IDはブラックリストに登録された範囲に属しています。必要な範囲ではない可能性があります。",
@@ -224,7 +230,7 @@
       "language_not_found": "現在、サーバーにはその言語がありません。",
       "description": "現在の言語を表示または変更します｡"
     },
-    "list": {
+    "player": {
       "success": "%s 人のプレイヤーがオンラインです:",
       "description": "オンラインのプレイヤーを取得します。"
     },
@@ -328,7 +334,7 @@
       "error": "エラー: 建設ステージ %s が無効です。 コンソールでスタック トレースを確認します。",
       "description": "指定したユーザーにメールを送信します。 このコマンドの使用法は、その合成状態に基づいて変化します"
     },
-    "sendMessage": {
+    "say": {
       "success": "メッセージを送信しました。",
       "description": "サーバーとしてプレイヤーにメッセージを送信します。 ターゲットなしで使用すると、サーバー上のすべてのプレイヤーに送信されます。"
     },

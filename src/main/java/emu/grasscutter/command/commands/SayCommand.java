@@ -10,18 +10,17 @@ import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(
-        label = "sendMessage",
-        aliases = {"say", "sendservmsg", "sendservermessage", "b", "broadcast"},
+        label = "say",
         permission = "server.sendmessage",
         permissionTargeted = "server.sendmessage.others",
         targetRequirement = TargetRequirement.NONE)
-public final class SendMessageCommand implements CommandHandler {
+public final class SayCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         return new CommandLine(new Args(sender, targetPlayer));
     }
 
-    @CommandLine.Command(name = "sendMessage")
+    @CommandLine.Command(name = "say")
     private static final class Args implements Runnable {
         private final Player sender;
         private final Player targetPlayer;
@@ -44,7 +43,7 @@ public final class SendMessageCommand implements CommandHandler {
             } else {
                 CommandOutput.sendMessage(targetPlayer, message);
             }
-            CommandOutput.sendTranslatedMessage(sender, "commands.sendMessage.success");
+            CommandOutput.sendTranslatedMessage(sender, "commands.say.success");
         }
     }
 }

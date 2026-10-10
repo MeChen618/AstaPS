@@ -10,11 +10,22 @@ public final class AnnounceCommandTest {
     @Test
     void parsesAllRoutes() {
         var command = new AnnounceCommand();
-        assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("Hello", "world"));
+        assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("send", "Hello", "world"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> command.createCommandLine(null, null).parseArgs("Hello", "world"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> command.createCommandLine(null, null).parseArgs("send"));
+        var cli = command.createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("send"));
+        assertTrue(cli.getSubcommands().containsKey("template"));
+        assertTrue(cli.getSubcommands().containsKey("tpl"));
+        assertSame(cli.getSubcommands().get("template"), cli.getSubcommands().get("tpl"));
+        assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("template", "42"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("tpl", "42"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("refresh"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("revoke", "42"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs());
+        assertThrows(CommandLine.ParameterException.class, () -> command.createCommandLine(null, null).parseArgs("template"));
         assertThrows(CommandLine.ParameterException.class, () -> command.createCommandLine(null, null).parseArgs("tpl"));
         assertThrows(CommandLine.ParameterException.class, () -> command.createCommandLine(null, null).parseArgs("revoke", "not-an-id"));
     }

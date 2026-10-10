@@ -1,64 +1,72 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.config.Configuration.HTTP_ENCRYPTION;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-import java.util.Objects;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
-@Command(label = "unban", targetRequirement = Command.TargetRequirement.NONE)
+@Command(label = "unban", targetRequirement = Command.TargetRequirement.NONE, inlineTarget = false)
 public final class UnbanCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new Root(sender));
-        commandLine.addSubcommand("player", new UnbanPlayer(sender, targetPlayer));
-        commandLine.addSubcommand("ip", new UnbanIp(sender));
+        var commandLine = new CommandLine(new Args(sender));
+        commandLine.setExpandAtFiles(false);
         return commandLine;
     }
 
-    @CommandLine.Command(name = "unban")
-    private final class Root implements Runnable {
+    @CommandLine.Command(
+            name = "unban",
+            description = "playerSelector: @UID (UID), username@ (account), username@UID (both match).",
+            customSynopsis = "unban <playerSelector|IPv4>")
+    private static final class Args implements Runnable {
         private final Player sender;
 
-        private Root(Player sender) {
+        @Parameters(index = "0", paramLabel = "<playerSelector|IPv4>")
+        private String selector;
+
+        private Args(Player sender) {
             this.sender = sender;
         }
 
         @Override
         public void run() {
-            UnbanCommand.this.sendUsageMessage(sender);
-        }
-    }
-
-    @CommandLine.Command(name = "player")
-    private static final class UnbanPlayer implements Runnable {
-        private final Player sender;
-        private final Player targetPlayer;
-
-        private UnbanPlayer(Player sender, Player targetPlayer) {
-            this.sender = sender;
-            this.targetPlayer = targetPlayer;
-        }
-
-        @Override
-        public void run() {
-            if (targetPlayer == null) {
-                CommandOutput.sendTranslatedMessage(sender, "commands.execution.need_target");
+            final BanCommand.BanTarget target;
+            try {
+                target = BanCommand.parseTarget(selector, "unban");
+            } catch (IllegalArgumentException invalid) {
+                CommandOutput.sendMessage(sender, invalid.getMessage());
                 return;
             }
-            if (!hasPermission(sender, targetPlayer, "server.ban", "server.ban")) return;
 
-            Account account = targetPlayer.getAccount();
+            if (target.type() == BanCommand.TargetType.IPV4) {
+                unbanIp(target.value());
+                return;
+            }
+            unbanPlayer(target.value());
+        }
+
+        private void unbanPlayer(String selector) {
+            final Account account;
+            try {
+                account = CommandMap.findAccount(CommandMap.parseExplicitTargetSelector(selector));
+            } catch (IllegalArgumentException invalid) {
+                CommandOutput.sendMessage(sender, invalid.getMessage());
+                return;
+            }
             if (account == null) {
                 CommandOutput.sendTranslatedMessage(sender, "commands.unban.failure");
                 return;
             }
+
+            boolean someoneElse = sender != null
+                    && !sender.getAccount().getId().equals(account.getId());
+            if (!BanCommand.hasPermission(
+                    sender, "server.ban", someoneElse ? "server.ban.others" : null)) return;
 
             account.setBanReason(null);
             account.setBanEndTime(0);
@@ -67,29 +75,9 @@ public final class UnbanCommand implements CommandHandler {
             account.save();
             CommandOutput.sendTranslatedMessage(sender, "commands.unban.success");
         }
-    }
 
-    @CommandLine.Command(name = "ip")
-    private static final class UnbanIp implements Runnable {
-        private final Player sender;
-
-        @Parameters(index = "0", paramLabel = "<key>")
-        private String key;
-
-        @Parameters(index = "1", paramLabel = "<ip>")
-        private String ip;
-
-        private UnbanIp(Player sender) {
-            this.sender = sender;
-        }
-
-        @Override
-        public void run() {
-            if (!hasPermission(sender, sender, "server.banip", "server.banip")) return;
-            if (!Objects.equals(key, HTTP_ENCRYPTION.keystorePassword)) {
-                CommandOutput.sendMessage(sender, "Wrong key.");
-                return;
-            }
+        private void unbanIp(String ip) {
+            if (!BanCommand.hasPermission(sender, "server.banip", null)) return;
             if (!DatabaseHelper.removeBannedIp(ip)) {
                 CommandOutput.sendMessage(sender, "No ban recorded for " + ip + ".");
                 return;
@@ -102,15 +90,5 @@ public final class UnbanCommand implements CommandHandler {
                             ? "Unbanned IP " + ip + ", along with " + unbanned + " account(s)."
                             : "Unbanned IP " + ip + ".");
         }
-    }
-
-    private static boolean hasPermission(
-            Player sender, Player targetPlayer, String permission, String permissionTargeted) {
-        if (sender == null) return true;
-        var account = sender.getAccount();
-        String required = targetPlayer != null && targetPlayer != sender ? permissionTargeted : permission;
-        if (account != null && account.hasPermission(required)) return true;
-        CommandOutput.sendTranslatedMessage(sender, "commands.generic.permission_error");
-        return false;
     }
 }

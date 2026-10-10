@@ -9,7 +9,7 @@ unrelated quest, protocol, resource, combat or server changes.
 - Built-in commands declare their grammar using Picocli arguments, options and subcommands.
 - The console uses JLine parsing and Picocli completion.
 - Player-targeting commands share the `playerSelector` syntax below. `@` clears the remembered target.
-- Commands with positional player selectors (`coop`, `ban`, `mail send`) keep those arguments in place, while using the same centralized identity parser and resolver as ordinary command targets.
+- Commands with positional player selectors (`coop`, `ban`, `unban`, `kick`, `mail send`) keep those arguments in place, while using the same centralized identity parser and resolver as ordinary command targets.
 - New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
 - Console feedback continues to reach the web-console output capture.
@@ -19,22 +19,24 @@ unrelated quest, protocol, resource, combat or server changes.
 Console-only commands include:
 
 ```text
-account create <username> [<password>] [@UID]
-account clone <source-account> <new-account> [@UID]
-account delete <account>
-account resetpass <account> <new-password>
+account create <username> [password] [@UID]
+account clone <sourceSelector> <newUsername> [@UID]
+account delete <accountSelector>
+account resetpassword <accountSelector> <new-password> # alias: account passwd
 ```
 
 Create accepts a username alone, a username and password, a username and @UID, or all
-three (password before @UID). Without a password, the account stays passwordless until
-one is set via resetpass.
+three (password before @UID). Clone accepts an explicit source selector, a new username,
+and an optional trailing @UID. Without a reserved UID, one is allocated automatically.
+Without a password, a newly created account stays passwordless until one is set via
+resetpassword (alias: passwd).
 
 Console-created and automatically registered accounts receive no implicit administrator
 permissions. Both use the same configured `account.defaultPermissions` and explicit
 grants. Legacy database documents missing a `permissions` field no longer acquire `*`
 on load; existing explicitly stored grants remain unchanged.
 
-`account resetpass <username> <new-password>` replaces the account password and
+`account resetpassword <accountSelector> <new-password>` replaces the account password and
 atomically removes the existing `token` and `sessionKey` from the MongoDB
 account document. The write is synchronous and performed behind the database
 write barrier, so success is reported only after the change is committed.
@@ -49,15 +51,23 @@ The clone inherits the source account password and permissions.
 
 The Picocli command tree keeps one route for each operation:
 
-- `kill` (alias `suicide`) kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall` and `kill character` routes are removed.
+- `kill` kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall`, `kill character`, and `suicide` routes are removed.
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
-- `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
+- `avatar stat set <stat> <value> [--avatar <avatarId>]`, `avatar stat lock <stat> [value] [--avatar <avatarId>]`, and `avatar stat unlock <stat> [--avatar <avatarId>]` replace top-level `setStats`, `stats`, and `stat` without aliases. The old `freeze` and `unfreeze` routes remain removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
-- `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. Account bans use `server.ban` and `server.ban.others` for another account. IP bans use `server.banip`, and `unban ip <key> <IPv4>` uses the configured keystore key.
+- `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. `unban <playerSelector|IPv4>` uses the same parser without subcommands or a keystore key. Account ban/unban requires `server.ban` and, for another account, `server.ban.others`; IP ban/unban requires `server.banip`.
+- `kick <playerSelector>` disconnects an online player. It requires `server.kick`, does not accept a keystore key, and no longer has the misleading `restart` alias.
+- `announce send <content...>` is the only direct-send route; bare `announce <content...>` is removed. `announce template <templateId>` is the canonical template route; `announce tpl` remains an alias.
+- `say <message...>` is the canonical message command. `sendMessage`, `sendservmsg`, `sendservermessage`, `b`, and `broadcast` are removed.
+- `player list` replaces `list [uid]` and `players`; it always displays each online player’s nickname and UID. The `--uid` option is not supported.
+- `account resetpassword <accountSelector> <new-password>` replaces `account resetpass`; `account passwd` is its sole shortcut. `account delete` and `account clone` also use an explicit selector for the existing account.
+- `info` has no `troubleshoot` or `helpme` aliases.
+- `battlepass` is the canonical battle-pass command with `bp` as its only alias; `give` retains `g`, `name` retains `rename`, and `namecard` retains `card`. Removed `item`, `giveitem`, `nickname`, and `setnamecard` aliases.
+- `coop [guestSelector] <hostSelector>` requires an online host. When the guest is omitted, it uses the current command target (the sender by default in-game); in the console, choose a guest with `target` or provide both selectors. Each explicit selector follows `playerSelector` syntax. Moving another player requires `server.coop.others`.
 
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
-- Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack` and `unlockwp`; use `br`, `el`, `suicide`, `trackmaterial` and `wp` respectively.
+- Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack`, `unlockwp`, `item`, `giveitem`, `nickname`, `setnamecard`, and `suicide`. The old `el` shortcut is also gone after migrating `extralevel` into `avatar`.
 
 ## Help and invalid input
 
@@ -102,7 +112,7 @@ unfinished. Already claimed rewards remain non-redeemable after reset.
 
 ### Battle-pass purchases and paid state
 
-`bp buy <levels> [@UID]` and the client's `BuyBattlePassLevelReq` now both
+`battlepass buy <levels> [@UID]` (alias: `bp buy`) and the client's `BuyBattlePassLevelReq` now both
 use `BattlePassManager.buyLevels`. The manager validates requested levels,
 caps the purchase at the remaining levels up to the BP maximum, computes the
 price from `BATTLE_PASS_LEVEL_PRICE`, and rejects insufficient funds or a
@@ -110,7 +120,7 @@ failed primogem debit without changing BP level. Successful purchases save
 both the player's primogem balance and the battle-pass level, retain fractional
 BP progress, and send both regular and beyond BP schedule updates.
 
-`bp paid [true|false] [@UID]` now uses the persisted `paid` field for
+`battlepass paid [true|false] [@UID]` (alias: `bp paid`) uses the persisted `paid` field for
 both state changes and queries. The ordinary 7.1 schedule derives its unlock
 status and platform flags from that field. The compatibility helper also
 uses the manager setter rather than reflection. New players default to a
@@ -157,14 +167,16 @@ never loads offline players or queries the database.
 **`playerSelector`:** `@UID` (player UID), `username@` (exact account username), or
 `username@UID` (both must match).
 
-Use `playerSelector` for general command targets, `coop` hosts, `ban` accounts,
-and `mail send` recipients. The `ban` command also accepts an IPv4 address;
+Use `playerSelector` for general command targets, `coop` guests and hosts, `ban` / `unban` accounts,
+`kick` targets, and `mail send` recipients. The `ban` and `unban` commands also accept IPv4 addresses;
 it can resolve accounts with reserved UIDs before character creation. `mail send all`
 broadcasts to all players. `@` clears the remembered target, and
 `target 10001` selects UID 10001.
 
-In `account create` and `account clone`, the `@UID` argument reserves a new
-account UID. Username/UID matching in player selectors is exact.
+In `account create` and `account clone`, a separate trailing `@UID` argument reserves
+an optional UID for the new account. Existing account selectors use `@UID`, `username@`, or `username@UID`,
+including accounts with a reserved UID but no character save. Username/UID matching
+is exact.
 
 ### GM cutscene playback safety
 
@@ -195,22 +207,50 @@ or offline target before loading any daily-task state. The root command can
 print help without a selected player.
 
 
-### Constellation command review
+### Avatar command consolidation
 
-`constellation set <0-6> [all]` and `constellation reset [all]` retain their
-separate permission keys (`player.setconstellation[.others]` and
-`player.resetconstellation[.others]`). Both now check for an active online
-target before accessing avatar data; a console command without a target is
-rejected. The level boundaries and Picocli routes have regression tests.
+Character-specific commands now share one `avatar` command group:
 
-`Avatar.forceConstellationLevel` already saves each changed avatar, so the
-command no longer queues another identical save after stat recalculation.
-The database writer also coalesces pending saves of the same object; multi-avatar
-updates still visit each avatar separately, since there is no verified
-atomic batch-update path for distinct avatar documents.
+```text
+avatar list
+avatar constellation set <0-6> [--avatar <avatarId> | --all]
+avatar constellation reset [--avatar <avatarId> | --all]
+avatar talent set <talentId> <level> [--avatar <avatarId>]
+avatar talent normal <level> [--avatar <avatarId>] # alias: n
+avatar talent skill <level> [--avatar <avatarId>]  # alias: e
+avatar talent burst <level> [--avatar <avatarId>]  # alias: q
+avatar talent all <level> [--avatar <avatarId>]
+avatar talent list [--avatar <avatarId>]
+avatar stat set <stat> <value> [--avatar <avatarId>]
+avatar stat lock <stat> [value] [--avatar <avatarId>]
+avatar stat unlock <stat> [--avatar <avatarId>]
+avatar friendship set <level> [--avatar <avatarId>]
+avatar extralevel [--avatar <avatarId>]
+avatar max [--avatar <avatarId> | --all]
+```
 
-The existing scene transfer used when lowering constellation levels or
-changing all characters remains in place pending client verification. An
-`AvatarDataNotify` snapshot is not proven to refresh scene entity abilities,
-and replacing the transfer without verifying that behavior risks stale gameplay
-state. Do not treat this as a resolved scene-transition issue.
+`--avatar` selects a character owned by the target player by avatar ID. Without it,
+single-character operations use the currently active character. `--all` selects
+every owned character, and is mutually exclusive with `--avatar`. The
+`talent all` operation means all skills of one character, not every character.
+`avatar stat` has no shorthand alias. Stat operations keep `player.setstats[.others]`
+permissions. `set` changes the current in-memory combat value; `lock` uses a
+transient fight-property override; `unlock` removes that override. For selected
+off-team avatars, `set` sends an avatar fight-property update instead of an entity
+scene packet. The override is not stored in the character save.
+The standalone `constellation`, `talent`, `extralevel` (`el`),
+`setFetterLevel`, and `max` commands and their aliases were removed.
+
+Permissions are enforced per operation. Constellation set/reset retain distinct
+`player.setconstellation[.others]` and `player.resetconstellation[.others]`
+permissions. Talents use `player.settalent[.others]`; friendship uses
+`player.setfetterlevel[.others]`; extra-level upgrades use `player.give[.others]`;
+max uses `player.max[.others]`. The `avatar list` operation currently
+requires `player.give[.others]`.
+
+The target must be online. Specifying `--avatar` does not allow modification of
+unowned characters. Extra-level upgrades still consume their required materials;
+max retains its level-90 cap. `Avatar.forceConstellationLevel` saves each changed
+avatar. The existing scene transfer when lowering constellation levels or
+changing all characters remains in place until the client refresh behavior
+is verified; this is not a resolved scene-transition issue.

@@ -22,6 +22,12 @@ public final class SensitiveCommandSyntaxTest {
         assertTrue(cli.getUsageMessage().contains("<playerSelector|IPv4>"));
         assertTrue(cli.getUsageMessage().contains("playerSelector: @UID"));
         assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
+
+        var unbanCli = new UnbanCommand().createCommandLine(null, null);
+        assertTrue(unbanCli.getSubcommands().isEmpty());
+        assertFalse(UnbanCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertTrue(unbanCli.getUsageMessage().contains("unban <playerSelector|IPv4>"));
+        assertThrows(CommandLine.ParameterException.class, () -> unbanCli.parseArgs());
     }
 
     @Test
@@ -37,7 +43,7 @@ public final class SensitiveCommandSyntaxTest {
         map.registerCommand("kill", new KillCommand());
         assertNull(map.getHandler("killall"));
         assertFalse(map.getCommandLine().getSubcommands().containsKey("killcharacter"));
-        assertTrue(map.getCommandLine().getSubcommands().containsKey("suicide"));
+        assertFalse(map.getCommandLine().getSubcommands().containsKey("suicide"));
     }
 
     @Test
@@ -86,10 +92,48 @@ public final class SensitiveCommandSyntaxTest {
     }
 
     @Test
+    void canonicalCommandsDoNotRetainRemovedEntrypoints() {
+        var map = new CommandMap(false);
+        map.registerCommand("announce", new AnnounceCommand());
+        map.registerCommand("say", new SayCommand());
+        map.registerCommand("player", new PlayerCommand());
+        map.registerCommand("info", new InfoCommand());
+
+        assertSame(map.getHandler("announce"), map.getHandler("a"));
+        assertTrue(new AnnounceCommand().createCommandLine(null, null).getSubcommands().containsKey("send"));
+        assertNotNull(map.getHandler("say"));
+        assertNotNull(map.getHandler("player"));
+        assertNotNull(map.getHandler("info"));
+        for (var removed : List.of(
+                "list", "players", "sendmessage", "sendservmsg", "sendservermessage", "b",
+                "broadcast", "troubleshoot", "helpme")) {
+            assertNull(map.getHandler(removed), removed);
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
+        }
+
+        var players = new PlayerCommand().createCommandLine(null, null);
+        assertEquals("player", PlayerCommand.class.getAnnotation(Command.class).label());
+        assertFalse(PlayerCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertTrue(players.getSubcommands().containsKey("list"));
+        assertDoesNotThrow(() -> players.parseArgs("list"));
+        assertFalse(players.getSubcommands().get("list").getUsageMessage().contains("--uid"));
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "--uid"));
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "uid"));
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("--uid"));
+        assertEquals("Alice (10001)", PlayerCommand.formatPlayer("Alice", 10001, false));
+        assertEquals("Alice <color=green>(10001)</color>",
+                PlayerCommand.formatPlayer("Alice", 10001, true));
+        var say = new SayCommand().createCommandLine(null, null);
+        assertThrows(CommandLine.ParameterException.class, () -> say.parseArgs());
+        assertDoesNotThrow(() -> say.parseArgs("hello", "world"));
+    }
+
+    @Test
     void coopAndMailUseIdenticalExplicitPlayerSelectors() {
         for (String selector : List.of("@10001", "rino@", "20261010@", "rino@10001")) {
-            assertDoesNotThrow(() -> new CoopCommand()
-                    .createCommandLine(null, null).parseArgs(selector), selector);
+            var coop = new CoopCommand().createCommandLine(null, null);
+            assertDoesNotThrow(() -> coop.parseArgs(selector), selector);
+            assertDoesNotThrow(() -> coop.parseArgs("@10002", selector), selector);
             assertDoesNotThrow(() -> new MailCommand()
                     .createCommandLine(null, null)
                     .parseArgs("send", selector, "--title", "Hello", "--body", "Test"), selector);
@@ -100,16 +144,68 @@ public final class SensitiveCommandSyntaxTest {
             assertThrows(CommandLine.ParameterException.class,
                     () -> new CoopCommand().createCommandLine(null, null).parseArgs(invalid));
             assertThrows(CommandLine.ParameterException.class,
+                    () -> new CoopCommand().createCommandLine(null, null).parseArgs("@10002", invalid));
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> new CoopCommand().createCommandLine(null, null).parseArgs(invalid, "@10001"));
+            assertThrows(CommandLine.ParameterException.class,
                     () -> new MailCommand().createCommandLine(null, null)
                             .parseArgs("send", invalid, "--title", "Hello", "--body", "Test"));
         }
     }
 
     @Test
-    void unbanIpStillRequiresKey() {
+    void coopRequiresHostAndMapsOptionalGuestCorrectly() {
+        var cli = new CoopCommand().createCommandLine(null, null);
+        assertTrue(cli.getUsageMessage().contains("coop [guestSelector] <hostSelector>"));
+        assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
         assertThrows(CommandLine.ParameterException.class,
-                () -> new UnbanCommand().createCommandLine(null, null).parseArgs("ip", "127.0.0.1"));
-        assertDoesNotThrow(
-                () -> new UnbanCommand().createCommandLine(null, null).parseArgs("ip", "key", "127.0.0.1"));
+                () -> cli.parseArgs("@10001", "@10002", "@10003"));
+
+        var one = CoopCommand.splitSelectors(
+                List.of(CommandMap.parseExplicitTargetSelector("@10002")));
+        assertNull(one.guest());
+        assertEquals(10002, one.host().uid());
+
+        var two = CoopCommand.splitSelectors(List.of(
+                CommandMap.parseExplicitTargetSelector("@10001"),
+                CommandMap.parseExplicitTargetSelector("@10002")));
+        assertEquals(10001, two.guest().uid());
+        assertEquals(10002, two.host().uid());
+
+        var annotation = CoopCommand.class.getAnnotation(Command.class);
+        assertEquals(Command.TargetRequirement.NONE, annotation.targetRequirement());
+        assertFalse(annotation.inlineTarget());
+        assertEquals("server.coop", annotation.permission());
+    }
+
+    @Test
+    void unbanAndKickUseExplicitSelectorsWithoutKeystoreKeys() {
+        var unban = new UnbanCommand().createCommandLine(null, null);
+        var kick = new KickCommand().createCommandLine(null, null);
+        for (String selector : List.of("@10001", "rino@", "rino@10001", "20261010@")) {
+            assertDoesNotThrow(() -> unban.parseArgs(selector), selector);
+            assertDoesNotThrow(() -> kick.parseArgs(selector), selector);
+            assertEquals(BanCommand.TargetType.PLAYER, BanCommand.parseTarget(selector, "unban").type());
+        }
+        assertDoesNotThrow(() -> unban.parseArgs("127.0.0.1"));
+        assertEquals(BanCommand.TargetType.IPV4, BanCommand.parseTarget("127.0.0.1", "unban").type());
+        assertThrows(CommandLine.ParameterException.class,
+                () -> unban.parseArgs("ip", "key", "127.0.0.1"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> unban.parseArgs("player", "@10001"));
+
+        assertFalse(KickCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertEquals("server.kick", KickCommand.class.getAnnotation(Command.class).permission());
+        assertEquals(Command.TargetRequirement.NONE,
+                KickCommand.class.getAnnotation(Command.class).targetRequirement());
+        assertTrue(kick.getUsageMessage().contains("kick <playerSelector>"));
+        assertThrows(CommandLine.ParameterException.class, () -> kick.parseArgs());
+        assertThrows(IllegalArgumentException.class,
+                () -> CommandMap.parseExplicitTargetSelector("keystorePassword"));
+
+        var map = new CommandMap(false);
+        map.registerCommand("kick", new KickCommand());
+        assertNull(map.getHandler("restart"));
+        assertFalse(map.getCommandLine().getSubcommands().containsKey("restart"));
     }
 }

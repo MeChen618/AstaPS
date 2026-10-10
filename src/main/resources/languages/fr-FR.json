@@ -181,6 +181,12 @@
       "description": "Modifie les propriétés d'une entité existante",
       "not_found_error": "L'entité n'existe pas"
     },
+    "avatar": {
+      "description": "Gérer les personnages : liste, constellations, aptitudes, statistiques de combat, amitié, niveaux supplémentaires et amélioration maximale."
+    },
+    "battlepass": {
+      "description": "Gérer l'achat de niveaux et le statut premium du passe de combat."
+    },
     "give": {
       "usage_relic": "Utilisation: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "L'ID de cet artéfact appartient a une liste blacklistée, ce n'est peut-être pas celui que vous désirez.",
@@ -224,7 +230,7 @@
       "language_not_found": "Actuellement, cette langue n'est pas supportée par le serveur.",
       "description": "Affiche ou change la langue du serveur"
     },
-    "list": {
+    "player": {
       "success": "Il y a %s joueur(s) connectés:",
       "description": "Liste tous les joueurs connectés"
     },
@@ -328,7 +334,7 @@
       "error": "ERREUR: Stade de construction invalide : %s. Vérifiez la console pour la pile d'appels.",
       "description": "Envoie un courrier à l'utilisateur spécifié. L'utilisation de la commande change en fonction du stade de la composition du message."
     },
-    "sendMessage": {
+    "say": {
       "success": "Message envoyé.",
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
