@@ -108,6 +108,27 @@ public final class CommandMapParsingTest {
     }
 
     @Test
+    public void targetRequirementsRejectMissingPlayersBeforeCommandExecution() {
+        assertTrue(CommandMap.targetUsable(Command.TargetRequirement.NONE, null));
+        assertFalse(CommandMap.targetUsable(Command.TargetRequirement.PLAYER, null));
+        assertFalse(CommandMap.targetUsable(Command.TargetRequirement.ONLINE, null));
+        assertFalse(CommandMap.targetUsable(Command.TargetRequirement.OFFLINE, null));
+    }
+
+    @Test
+    public void rejectedThreadedCommandsDoNotRun() {
+        var ran = new AtomicBoolean();
+        assertThrows(java.util.concurrent.RejectedExecutionException.class,
+                () -> CommandMap.executeCommand(
+                        () -> ran.set(true),
+                        true,
+                        command -> {
+                            throw new java.util.concurrent.RejectedExecutionException("executor shut down");
+                        }));
+        assertFalse(ran.get());
+    }
+
+    @Test
     public void threadedExecutionUsesProvidedExecutor() {
         var submitted = new AtomicBoolean();
         var ran = new AtomicBoolean();
