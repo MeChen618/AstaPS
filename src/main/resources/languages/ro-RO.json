@@ -224,7 +224,7 @@
       "language_not_found": "În prezent, serverul nu are această limbă.",
       "description": "Afișează sau modifică limba curentă."
     },
-    "list": {
+    "player": {
       "success": "Există %s jucător(i) online:",
       "description": "Enumeră jucătorii online."
     },
@@ -328,7 +328,7 @@
       "error": "EROARE: Etapă de construcție invalidă %s. Verificați consola pentru stacktrace.",
       "description": "Trimite corespondența către utilizatorul specificat. Utilizarea acestei comenzi se modifică în funcție de starea de compunere a acesteia."
     },
-    "sendMessage": {
+    "say": {
       "success": "Mesaj trimis.",
       "description": "Trimite un mesaj unui jucător în calitate de server. Dacă este utilizat fără țintă, trimite mesajul către toți jucătorii de pe server."
     },
