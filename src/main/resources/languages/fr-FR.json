@@ -224,7 +224,7 @@
       "language_not_found": "Actuellement, cette langue n'est pas supportée par le serveur.",
       "description": "Affiche ou change la langue du serveur"
     },
-    "list": {
+    "player": {
       "success": "Il y a %s joueur(s) connectés:",
       "description": "Liste tous les joueurs connectés"
     },
@@ -328,7 +328,7 @@
       "error": "ERREUR: Stade de construction invalide : %s. Vérifiez la console pour la pile d'appels.",
       "description": "Envoie un courrier à l'utilisateur spécifié. L'utilisation de la commande change en fonction du stade de la composition du message."
     },
-    "sendMessage": {
+    "say": {
       "success": "Message envoyé.",
       "description": "Envoie un message au joueur spécifié en tant que Serveur"
     },
