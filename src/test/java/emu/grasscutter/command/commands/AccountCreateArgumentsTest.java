@@ -3,101 +3,118 @@ package emu.grasscutter.command.commands;
 import static org.junit.jupiter.api.Assertions.*;
 
 import emu.grasscutter.command.CommandMap;
+import emu.grasscutter.game.AccountUsernamePolicy;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import picocli.CommandLine;
 
 public final class AccountCreateArgumentsTest {
     @Test
-    void newAccountNamesCarryOptionalReservedUid() {
-        var automatic = AccountCommand.parseNewAccount("alice");
-        assertEquals("alice", automatic.username());
-        assertEquals(0, automatic.uid());
+    void createArgumentsSupportPasswordlessAndReservedUidForms() {
+        var noOptions = AccountCommand.parseCreateArguments(null, null);
+        assertNull(noOptions.password());
+        assertEquals(0, noOptions.uid());
 
-        var reserved = AccountCommand.parseNewAccount("bob@10001");
-        assertEquals("bob", reserved.username());
-        assertEquals(10001, reserved.uid());
-        assertEquals("20261010", AccountCommand.parseNewAccount("20261010@10002").username());
-    }
+        var password = AccountCommand.parseCreateArguments("secret", null);
+        assertEquals("secret", password.password());
+        assertEquals(0, password.uid());
 
-    @Test
-    void malformedNewAccountNamesAreRejected() {
-        for (String invalid : List.of(
-                "", " ", "@10001", "bob@", "bob@0", "bob@-1", "bob@not-a-uid",
-                "bob@10001@10002", "bob@999999999999999999", "bob.name",
-                "bob @10001")) {
-            assertThrows(IllegalArgumentException.class,
-                    () -> AccountCommand.parseNewAccount(invalid), invalid);
-        }
+        var uidOnly = AccountCommand.parseCreateArguments("@10001", null);
+        assertNull(uidOnly.password());
+        assertEquals(10001, uidOnly.uid());
+
+        var both = AccountCommand.parseCreateArguments("secret", 10002);
+        assertEquals("secret", both.password());
+        assertEquals(10002, both.uid());
+
         assertThrows(IllegalArgumentException.class,
-                () -> AccountCommand.parseNewAccount(null));
+                () -> AccountCommand.parseCreateArguments("@10001", 10002));
+        assertThrows(IllegalArgumentException.class,
+                () -> AccountCommand.parseCreateArguments("@invalid", null));
     }
 
     @Test
-    void createAndCloneAcceptCompactNewAccountSyntax() {
-        var cmd = new AccountCommand();
-        for (String name : List.of("alice", "alice@10001")) {
-            assertDoesNotThrow(
-                    () -> cmd.createCommandLine(null, null).parseArgs("create", name), name);
-            assertDoesNotThrow(
-                    () -> cmd.createCommandLine(null, null).parseArgs("create", name, "secret"), name);
-        }
+    void createParsesAllFourDocumentedForms() {
+        var command = new AccountCommand();
+        assertDoesNotThrow(() -> command.createCommandLine(null, null)
+                .parseArgs("create", "alice"));
+        assertDoesNotThrow(() -> command.createCommandLine(null, null)
+                .parseArgs("create", "alice", "secret"));
+        assertDoesNotThrow(() -> command.createCommandLine(null, null)
+                .parseArgs("create", "alice", "@10001"));
+        assertDoesNotThrow(() -> command.createCommandLine(null, null)
+                .parseArgs("create", "alice", "secret", "@10001"));
+    }
 
+    @Test
+    void cloneUsesExplicitSourceAndSeparateOptionalUid() {
+        var command = new AccountCommand();
         for (String source : List.of("@10001", "alice@", "alice@10001")) {
-            for (String target : List.of("bob", "bob@10002")) {
-                assertDoesNotThrow(
-                        () -> cmd.createCommandLine(null, null).parseArgs("clone", source, target),
-                        source + " -> " + target);
-            }
+            assertDoesNotThrow(() -> command.createCommandLine(null, null)
+                    .parseArgs("clone", source, "bob"), source);
+            assertDoesNotThrow(() -> command.createCommandLine(null, null)
+                    .parseArgs("clone", source, "bob", "@10002"), source);
+        }
+        for (String invalidSource : List.of("alice", "10001", "@0", "alice@other")) {
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> command.createCommandLine(null, null)
+                            .parseArgs("clone", invalidSource, "bob"), invalidSource);
         }
     }
 
     @Test
-    void parserRejectsMalformedNewNamesInBothCreationRoutes() {
-        var cmd = new AccountCommand();
-        for (String invalid : List.of("bob@", "bob@0", "@10002", "bob@xyz")) {
+    void uidMustBePositiveAndWrittenAsSeparateAtArgument() {
+        var command = new AccountCommand();
+        for (String invalidUid : List.of("10001", "@0", "@-1", "@abc", "@999999999999999999")) {
             assertThrows(CommandLine.ParameterException.class,
-                    () -> cmd.createCommandLine(null, null).parseArgs("create", invalid),
-                    invalid);
+                    () -> command.createCommandLine(null, null)
+                            .parseArgs("create", "alice", "secret", invalidUid), invalidUid);
             assertThrows(CommandLine.ParameterException.class,
-                    () -> cmd.createCommandLine(null, null).parseArgs("clone", "alice@", invalid),
-                    invalid);
+                    () -> command.createCommandLine(null, null)
+                            .parseArgs("clone", "alice@", "bob", invalidUid), invalidUid);
         }
+        assertThrows(CommandLine.ParameterException.class,
+                () -> command.createCommandLine(null, null)
+                        .parseArgs("create", "alice", "secret", "@10001", "extra"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> command.createCommandLine(null, null)
+                        .parseArgs("clone", "alice@", "bob", "@10001", "extra"));
+        assertFalse(AccountUsernamePolicy.isValid("bob@10002"));
+        assertFalse(AccountUsernamePolicy.isValid("bob@"));
     }
 
     @Test
-    void deleteAndResetPasswordUseOnlyExplicitExistingAccountSelectors() {
-        var cmd = new AccountCommand();
+    void deleteAndResetPasswordContinueToRequireSelectors() {
+        var command = new AccountCommand();
         for (String existing : List.of("@10001", "alice@", "alice@10001")) {
             assertDoesNotThrow(
-                    () -> cmd.createCommandLine(null, null).parseArgs("delete", existing));
+                    () -> command.createCommandLine(null, null).parseArgs("delete", existing));
             assertDoesNotThrow(
-                    () -> cmd.createCommandLine(null, null)
+                    () -> command.createCommandLine(null, null)
                             .parseArgs("resetpassword", existing, "newpass"));
             assertDoesNotThrow(
-                    () -> cmd.createCommandLine(null, null)
+                    () -> command.createCommandLine(null, null)
                             .parseArgs("passwd", existing, "newpass"));
         }
-
         for (String invalid : List.of("alice", "10001", "@0", "alice@other")) {
             assertThrows(CommandLine.ParameterException.class,
-                    () -> cmd.createCommandLine(null, null).parseArgs("delete", invalid));
+                    () -> command.createCommandLine(null, null).parseArgs("delete", invalid));
             assertThrows(CommandLine.ParameterException.class,
-                    () -> cmd.createCommandLine(null, null)
+                    () -> command.createCommandLine(null, null)
                             .parseArgs("resetpassword", invalid, "newpass"));
-            assertThrows(CommandLine.ParameterException.class,
-                    () -> cmd.createCommandLine(null, null)
-                            .parseArgs("clone", invalid, "bob"));
         }
     }
 
     @Test
-    void usageAndAliasesShowOnlyCanonicalForms() {
+    void usageAndAliasesShowRestoredCreateCloneForms() {
         var cli = new AccountCommand().createCommandLine(null, null);
-        assertTrue(cli.getSubcommands().get("create").getUsageMessage()
-                .contains("account create <newName[@newUID]> [password]"));
-        assertTrue(cli.getSubcommands().get("clone").getUsageMessage()
-                .contains("account clone <sourceSelector> <newName[@newUID]>"));
+        var createUsage = cli.getSubcommands().get("create").getUsageMessage();
+        assertTrue(createUsage.contains("account create <username> [password] [@UID]"));
+        assertFalse(createUsage.contains("password|@UID"));
+
+        var cloneUsage = cli.getSubcommands().get("clone").getUsageMessage();
+        assertTrue(cloneUsage.contains("account clone <sourceSelector> <newUsername> [@UID]"));
+
         assertTrue(cli.getSubcommands().get("delete").getUsageMessage()
                 .contains("<accountSelector>"));
         assertTrue(cli.getSubcommands().get("resetpassword").getUsageMessage()
@@ -108,21 +125,5 @@ public final class AccountCreateArgumentsTest {
         assertThrows(CommandLine.ParameterException.class,
                 () -> cli.parseArgs("resetpass", "alice@", "newpass"));
         assertEquals("alice", CommandMap.parseExplicitTargetSelector("alice@").username());
-    }
-
-    @Test
-    void oldSeparatedUidArgumentsAndExcessPositionsAreRejected() {
-        var cmd = new AccountCommand();
-        assertThrows(CommandLine.ParameterException.class,
-                () -> cmd.createCommandLine(null, null)
-                        .parseArgs("create", "alice", "secret", "@10001"));
-        assertThrows(CommandLine.ParameterException.class,
-                () -> cmd.createCommandLine(null, null)
-                        .parseArgs("clone", "alice@", "bob", "@10002"));
-        assertThrows(CommandLine.ParameterException.class,
-                () -> cmd.createCommandLine(null, null).parseArgs("delete"));
-        assertThrows(CommandLine.ParameterException.class,
-                () -> cmd.createCommandLine(null, null)
-                        .parseArgs("resetpassword", "alice@"));
     }
 }
