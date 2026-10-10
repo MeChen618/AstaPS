@@ -60,7 +60,7 @@ public final class ConstellationCommand implements CommandHandler {
 
         @Override
         public void run() {
-            if (!hasPermission(
+            if (!validTarget(sender, targetPlayer) || !hasPermission(
                     sender,
                     targetPlayer,
                     "player.setconstellation",
@@ -104,7 +104,7 @@ public final class ConstellationCommand implements CommandHandler {
 
         @Override
         public void run() {
-            if (!hasPermission(
+            if (!validTarget(sender, targetPlayer) || !hasPermission(
                     sender,
                     targetPlayer,
                     "player.resetconstellation",
@@ -149,9 +149,18 @@ public final class ConstellationCommand implements CommandHandler {
         player.getScene().broadcastPacket(new PacketSceneEntityAppearNotify(player));
     }
 
+    private static boolean validTarget(Player sender, Player target) {
+        if (target == null || !target.isOnline() || target.getSession() == null
+                || !target.getSession().isActive()) {
+            CommandOutput.sendMessage(sender, "Constellation changes require an online player.");
+            return false;
+        }
+        return true;
+    }
+
     private static boolean hasPermission(
             Player sender, Player targetPlayer, String permission, String permissionTargeted) {
-        if (sender == null) return true;
+        if (sender == null) return true; // Console remains trusted after target validation.
         var account = sender.getAccount();
         String required = targetPlayer != sender ? permissionTargeted : permission;
         if (account != null && account.hasPermission(required)) return true;
