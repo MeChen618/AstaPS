@@ -22,19 +22,19 @@ Console-only commands include:
 account create <username> [<password>] [@UID]
 account clone <source-account> <new-account> [@UID]
 account delete <account>
-account resetpass <account> <new-password>
+account resetpassword <account> <new-password> # alias: account passwd
 ```
 
 Create accepts a username alone, a username and password, a username and @UID, or all
 three (password before @UID). Without a password, the account stays passwordless until
-one is set via resetpass.
+one is set via resetpassword (alias: passwd).
 
 Console-created and automatically registered accounts receive no implicit administrator
 permissions. Both use the same configured `account.defaultPermissions` and explicit
 grants. Legacy database documents missing a `permissions` field no longer acquire `*`
 on load; existing explicitly stored grants remain unchanged.
 
-`account resetpass <username> <new-password>` replaces the account password and
+`account resetpassword <username> <new-password>` replaces the account password and
 atomically removes the existing `token` and `sessionKey` from the MongoDB
 account document. The write is synchronous and performed behind the database
 write barrier, so success is reported only after the change is committed.
@@ -56,7 +56,11 @@ The Picocli command tree keeps one route for each operation:
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
 - `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. `unban <playerSelector|IPv4>` uses the same parser without subcommands or a keystore key. Account ban/unban requires `server.ban` and, for another account, `server.ban.others`; IP ban/unban requires `server.banip`.
 - `kick <playerSelector>` disconnects an online player. It requires `server.kick`, does not accept a keystore key, and no longer has the misleading `restart` alias.
-- `announce template <templateId>` is the canonical template announcement route; `announce tpl` remains an alias. `sendMessage` only retains the `say` alias; `sendservmsg`, `sendservermessage`, `b`, and `broadcast` are removed.
+- `announce send <content...>` is the only direct-send route; bare `announce <content...>` is removed. `announce template <templateId>` is the canonical template route; `announce tpl` remains an alias.
+- `say <message...>` is the canonical message command. `sendMessage`, `sendservmsg`, `sendservermessage`, `b`, and `broadcast` are removed.
+- `player list [--uid]` replaces `list [uid]` and `players`; `--uid` toggles UID display, not player selection.
+- `account resetpassword <username> <new-password>` replaces `account resetpass`; `account passwd` is its sole shortcut.
+- `info` has no `troubleshoot` or `helpme` aliases.
 - `coop [guestSelector] <hostSelector>` requires an online host. When the guest is omitted, it uses the current command target (the sender by default in-game); in the console, choose a guest with `target` or provide both selectors. Each explicit selector follows `playerSelector` syntax. Moving another player requires `server.coop.others`.
 
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
