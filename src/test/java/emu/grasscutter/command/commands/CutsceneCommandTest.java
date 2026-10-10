@@ -15,8 +15,7 @@ public final class CutsceneCommandTest {
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("list"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null)
                 .parseArgs("list", "some", "path"));
-        assertThrows(CommandLine.ParameterException.class,
-                () -> command.createCommandLine(null, null).parseArgs());
+        assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs());
     }
 
     @Test

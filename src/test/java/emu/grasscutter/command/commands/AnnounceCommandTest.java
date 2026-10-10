@@ -14,7 +14,7 @@ public final class AnnounceCommandTest {
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("tpl", "42"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("refresh"));
         assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs("revoke", "42"));
-        assertThrows(CommandLine.ParameterException.class, () -> command.createCommandLine(null, null).parseArgs());
+        assertDoesNotThrow(() -> command.createCommandLine(null, null).parseArgs());
         assertThrows(CommandLine.ParameterException.class, () -> command.createCommandLine(null, null).parseArgs("tpl"));
         assertThrows(CommandLine.ParameterException.class, () -> command.createCommandLine(null, null).parseArgs("revoke", "not-an-id"));
     }

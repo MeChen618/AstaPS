@@ -40,8 +40,8 @@ public final class CutsceneCommand implements CommandHandler {
         private final Player sender;
         private final Player targetPlayer;
 
-        @Parameters(index = "0", paramLabel = "<cutsceneId>")
-        private int cutsceneId;
+        @Parameters(index = "0", arity = "0..1", paramLabel = "[cutsceneId]")
+        private Integer cutsceneId;
 
         @Option(names = "--force", description = "Send an ID missing from CutsceneExcelConfigData")
         private boolean force;
@@ -53,6 +53,10 @@ public final class CutsceneCommand implements CommandHandler {
 
         @Override
         public void run() {
+            if (cutsceneId == null) {
+                new CutsceneCommand().sendUsageMessage(sender);
+                return;
+            }
             if (targetPlayer == null || !targetPlayer.isOnline() || targetPlayer.getSession() == null
                     || !targetPlayer.getSession().isActive()) {
                 CommandOutput.sendMessage(sender, "Playing a cutscene requires an online player.");

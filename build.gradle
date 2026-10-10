@@ -188,6 +188,8 @@ jar {
 }
 
 test {
+    // Load the lightweight server resource fixture before server-backed unit test classes.
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
     useJUnitPlatform {
         // GrasscutterTest boots a real server, so it needs MongoDB and the resources pack, which
         // is gitignored. A fresh checkout cannot run it. Tagging lets CI ask for the tests that

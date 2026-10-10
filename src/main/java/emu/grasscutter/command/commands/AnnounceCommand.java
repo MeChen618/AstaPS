@@ -40,8 +40,8 @@ public final class AnnounceCommand implements CommandHandler {
     private static final class Broadcast implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0..*", arity = "1..*", paramLabel = "<content>")
-        private List<String> content;
+        @Parameters(index = "0..*", arity = "0..*", paramLabel = "[content...]")
+        private List<String> content = List.of();
 
         private Broadcast(Player sender) {
             this.sender = sender;
@@ -49,13 +49,12 @@ public final class AnnounceCommand implements CommandHandler {
 
         @Override
         public void run() {
-            var manager = Grasscutter.getGameServer().getAnnouncementSystem();
             String text = String.join(" ", content);
             if (!validContent(text)) {
                 CommandOutput.sendMessage(sender, "Announcement content must not be blank.");
                 return;
             }
-            int id = manager.broadcastTemporary(text);
+            int id = Grasscutter.getGameServer().getAnnouncementSystem().broadcastTemporary(text);
             CommandOutput.sendMessage(sender, translate(sender, "commands.announce.send_success", id));
         }
     }
