@@ -11,7 +11,7 @@ import emu.grasscutter.game.avatar.AvatarExtraLevelOpcodes;
 import emu.grasscutter.game.avatar.AvatarGuidCodec;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.proto.AvatarExtraLevelUpgradeReqParser;
-import emu.grasscutter.net.proto.AvatarPromoteReqOuterClass;
+import emu.grasscutter.net.proto.AvatarPromoteReqParser;
 import emu.grasscutter.net.proto.ParsedExtraLevelUpgradeReq;
 import java.util.Set;
 
@@ -53,13 +53,12 @@ public final class ExtraLevelUiBridge {
             }
             return false;
         }
-        if ((n == PROMOTE_REQ_70 && n != 0) || n == 6091) {
+        if (n == PROMOTE_REQ_70 || n == 6091) {
             if (byArray.length > 256) {
                 return false;
             }
             try {
-                AvatarPromoteReqOuterClass.AvatarPromoteReq avatarPromoteReq = AvatarPromoteReqOuterClass.AvatarPromoteReq.parseFrom(byArray);
-                long l = AvatarGuidCodec.resolve(player, avatarPromoteReq.getGuid());
+                long l = AvatarGuidCodec.resolve(player, AvatarPromoteReqParser.parseGuid(byArray));
                 Avatar avatar = player.getAvatars().getAvatarByGuid(l);
                 if (avatar != null && ExtraLevelUiBridge.isExtraLevelCandidate(avatar)) {
                     Grasscutter.getLogger().info("ExtraLevel PromoteReq opcode={} avatar={} level={}", n, avatar.getAvatarId(), avatar.getLevel());
