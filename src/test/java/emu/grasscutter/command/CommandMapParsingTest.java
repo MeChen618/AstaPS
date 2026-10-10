@@ -61,6 +61,20 @@ public final class CommandMapParsingTest {
     }
 
     @Test
+    public void explicitSelectorsRejectBareNamesAndUids() {
+        assertEquals(new CommandMap.TargetSelector(null, 10001),
+                CommandMap.parseExplicitTargetSelector("@10001"));
+        assertEquals(new CommandMap.TargetSelector("rino", null),
+                CommandMap.parseExplicitTargetSelector("rino@"));
+        assertEquals(new CommandMap.TargetSelector("20261010", 10001),
+                CommandMap.parseExplicitTargetSelector("20261010@10001"));
+        for (String invalid : List.of("rino", "10001", "someone@example.com", "@")) {
+            assertThrows(IllegalArgumentException.class,
+                    () -> CommandMap.parseExplicitTargetSelector(invalid), invalid);
+        }
+    }
+
+    @Test
     public void inlineSelectorRecognitionDoesNotConsumeEmailArguments() {
         assertTrue(CommandMap.isTargetSelector("@10001"));
         assertTrue(CommandMap.isTargetSelector("rino@"));

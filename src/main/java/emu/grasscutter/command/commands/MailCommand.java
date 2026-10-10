@@ -6,6 +6,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
+import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.mail.Mail;
 import emu.grasscutter.game.mail.SystemMailHelper;
@@ -23,9 +24,9 @@ import picocli.CommandLine.Parameters;
         targetRequirement = Command.TargetRequirement.NONE,
         inlineTarget = false)
 public final class MailCommand implements CommandHandler {
-    private record Recipient(Integer uid) {
+    private record Recipient(CommandMap.TargetSelector target) {
         private boolean all() {
-            return uid == null;
+            return target == null;
         }
     }
 
@@ -34,21 +35,15 @@ public final class MailCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
+        commandLine.setExpandAtFiles(false);
         commandLine.registerConverter(
                 Recipient.class,
                 value -> {
                     if (value.equalsIgnoreCase("all")) return new Recipient(null);
-                    if (value.length() < 2 || value.charAt(0) != '@') {
-                        throw new CommandLine.TypeConversionException(
-                                "Recipient must be @<UID> or 'all'");
-                    }
                     try {
-                        int uid = Integer.parseInt(value.substring(1));
-                        if (uid <= 0) throw new NumberFormatException();
-                        return new Recipient(uid);
-                    } catch (NumberFormatException ignored) {
-                        throw new CommandLine.TypeConversionException(
-                                "Recipient must be @<UID> or 'all'");
+                        return new Recipient(CommandMap.parseExplicitTargetSelector(value));
+                    } catch (IllegalArgumentException invalid) {
+                        throw new CommandLine.TypeConversionException(invalid.getMessage());
                     }
                 });
         commandLine.registerConverter(
@@ -117,7 +112,7 @@ public final class MailCommand implements CommandHandler {
     private static final class Send implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<@UID|all>")
+        @Parameters(index = "0", paramLabel = "<playerSelector|all>")
         private Recipient recipient;
 
         @Option(names = "--title", required = true, arity = "1..*", paramLabel = "<title>")
@@ -163,22 +158,29 @@ public final class MailCommand implements CommandHandler {
                 return;
             }
 
-            Player stored = DatabaseHelper.getPlayerByUid(recipient.uid());
+            final Player stored;
+            try {
+                stored = CommandMap.findPlayer(recipient.target());
+            } catch (IllegalArgumentException mismatch) {
+                CommandOutput.sendMessage(sender, mismatch.getMessage());
+                return;
+            }
             if (stored == null) {
                 CommandOutput.sendMessage(
                         sender,
                         translate(
                                 sender,
                                 "commands.sendMail.user_not_exist",
-                                String.valueOf(recipient.uid())));
+                                recipient.target().toString()));
                 return;
             }
+            int uid = stored.getUid();
             Player target =
                     Objects.requireNonNullElse(
-                            Grasscutter.getGameServer().getPlayerByUid(recipient.uid(), false), stored);
+                            Grasscutter.getGameServer().getPlayerByUid(uid, false), stored);
             target.sendMail(mail);
             CommandOutput.sendMessage(
-                    sender, translate(sender, "commands.sendMail.send_done", recipient.uid()));
+                    sender, translate(sender, "commands.sendMail.send_done", uid));
         }
     }
 

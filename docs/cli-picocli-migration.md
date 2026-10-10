@@ -9,7 +9,7 @@ unrelated quest, protocol, resource, combat or server changes.
 - Built-in commands declare their grammar using Picocli arguments, options and subcommands.
 - The console uses JLine parsing and Picocli completion.
 - Player targets use explicit `@UID`, `username@`, or `username@UID` selectors; `@` clears the saved target. These tokens are never Picocli argument files.
-- Commands can opt out of implicit target parsing when `@UID` is positional data.
+- Commands with positional player selectors (`coop`, `ban`, `mail send`) keep those arguments in place, while using the same centralized identity parser and resolver as ordinary command targets.
 - New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
 - Console feedback continues to reach the web-console output capture.
@@ -155,3 +155,19 @@ username/UID fallback. The same selectors work as inline targets for commands
 that allow inline target parsing; commands which reserve their own `@UID`
 parameters keep that behavior. `@` clears the remembered target; the legacy
 `target 10001` also remains an explicit UID selector.
+
+### Shared player identity selectors
+
+General command targets, `coop` hosts, `ban` player/account targets and
+`mail send` recipients all accept the same explicit forms:
+`@10001` (player UID), `rino@` (exact account username), or
+`rino@10001` (both must match). Date-like usernames such as `20261010@`
+remain unambiguous and are never interpreted as UIDs. A username/UID mismatch
+rejects the command instead of falling back to a different target.
+
+`coop` still treats its positional selector as the **host**, rather than the
+command's implicit guest target. `ban` still accepts a bare account name or
+IPv4 address and can resolve a reserved UID before a character exists.
+`mail send all` continues to broadcast. `account create` and `account clone`
+allocate or reserve **new** UIDs rather than select existing players, so their
+UID creation parameters are not player target selectors.

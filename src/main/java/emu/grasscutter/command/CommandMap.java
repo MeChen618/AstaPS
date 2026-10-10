@@ -4,6 +4,7 @@ import static emu.grasscutter.config.Configuration.SERVER;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.event.game.ExecuteCommandEvent;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public final class CommandMap {
     private record SelectedTarget(int uid, String username) {}
 
     /** A target identifies a player by UID, account username, or both explicitly. */
-    record TargetSelector(String username, Integer uid) {}
+    public record TargetSelector(String username, Integer uid) {}
 
     private final Map<String, CommandHandler> commands = new TreeMap<>();
     private final Map<String, CommandHandler> aliases = new TreeMap<>();
@@ -132,7 +133,7 @@ public final class CommandMap {
     }
 
     /** The separators make numeric usernames unambiguous: 20261010@ is a name. */
-    static TargetSelector parseTargetSelector(String selector) {
+    public static TargetSelector parseTargetSelector(String selector) {
         if (selector == null || selector.isEmpty() || selector.equals("@")) {
             throw new IllegalArgumentException("Use @UID, username@, or username@UID.");
         }
@@ -152,6 +153,14 @@ public final class CommandMap {
         return new TargetSelector(username, uid);
     }
 
+    /** Positional player references must spell their intent with an @ separator. */
+    public static TargetSelector parseExplicitTargetSelector(String selector) {
+        if (!isTargetSelector(selector)) {
+            throw new IllegalArgumentException("Use @UID, username@, or username@UID.");
+        }
+        return parseTargetSelector(selector);
+    }
+
     private static boolean isDecimalUid(String text) {
         return !text.isEmpty() && text.chars().allMatch(c -> c >= '0' && c <= '9');
     }
@@ -168,17 +177,42 @@ public final class CommandMap {
         throw new IllegalArgumentException("Invalid player UID: " + text);
     }
 
-    static boolean targetMatches(TargetSelector selector, String username, int uid) {
+    public static boolean targetMatches(TargetSelector selector, String username, int uid) {
         return (selector.uid() == null || selector.uid() == uid)
                 && (selector.username() == null || selector.username().equals(username));
     }
 
-    private static Player findPlayer(TargetSelector selector) {
+    /** Resolve the same explicit player identity for commands and positional arguments. */
+    public static Player findPlayer(TargetSelector selector) {
+        final Player player;
         if (selector.uid() != null) {
-            return Grasscutter.getGameServer().getPlayerByUid(selector.uid(), true);
+            player = Grasscutter.getGameServer().getPlayerByUid(selector.uid(), true);
+        } else {
+            var account = DatabaseHelper.getAccountByName(selector.username());
+            player = account == null ? null : DatabaseHelper.getPlayerByAccount(account, Player.class);
         }
-        var account = DatabaseHelper.getAccountByName(selector.username());
-        return account == null ? null : DatabaseHelper.getPlayerByAccount(account, Player.class);
+        if (player != null && !targetMatches(selector, player.getAccount().getUsername(), player.getUid())) {
+            throw new IllegalArgumentException("Account username and UID do not match.");
+        }
+        return player;
+    }
+
+    /** Unlike a player, an account may exist with just a reserved UID. */
+    public static Account findAccount(TargetSelector selector) {
+        final Account account;
+        if (selector.uid() != null) {
+            Player player = Grasscutter.getGameServer().getPlayerByUid(selector.uid(), true);
+            account = player == null
+                    ? DatabaseHelper.getAccountByPlayerId(selector.uid())
+                    : player.getAccount();
+        } else {
+            account = DatabaseHelper.getAccountByName(selector.username());
+        }
+        if (account != null && selector.username() != null
+                && !selector.username().equals(account.getUsername())) {
+            throw new IllegalArgumentException("Account username and UID do not match.");
+        }
+        return account;
     }
 
     private static Player resolveTarget(String selector, Player sender) {
@@ -190,14 +224,16 @@ public final class CommandMap {
             throw invalid;
         }
 
-        Player target = findPlayer(parsed);
+        final Player target;
+        try {
+            target = findPlayer(parsed);
+        } catch (IllegalArgumentException mismatch) {
+            CommandOutput.sendMessage(sender, mismatch.getMessage());
+            throw mismatch;
+        }
         if (target == null) {
             CommandOutput.sendTranslatedMessage(sender, "commands.execution.player_exist_error");
             throw new IllegalArgumentException("Player not found");
-        }
-        if (!targetMatches(parsed, target.getAccount().getUsername(), target.getUid())) {
-            CommandOutput.sendMessage(sender, "Account username and UID do not match.");
-            throw new IllegalArgumentException("Player selector mismatch");
         }
         return target;
     }

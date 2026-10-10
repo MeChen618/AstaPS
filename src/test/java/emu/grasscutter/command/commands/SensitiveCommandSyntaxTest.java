@@ -19,7 +19,7 @@ public final class SensitiveCommandSyntaxTest {
         var cli = new BanCommand().createCommandLine(null, null);
         assertTrue(cli.getSubcommands().isEmpty());
         assertFalse(BanCommand.class.getAnnotation(Command.class).inlineTarget());
-        assertTrue(cli.getUsageMessage().contains("<@UID|accountName|IPv4>"));
+        assertTrue(cli.getUsageMessage().contains("<playerSelector|accountName|IPv4>"));
         assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
     }
 
@@ -41,7 +41,7 @@ public final class SensitiveCommandSyntaxTest {
 
     @Test
     void threeKindsOfBanTargetAndOptionalReason() {
-        for (String target : List.of("@10001", "account_name", "123.123.123.123")) {
+        for (String target : List.of("@10001", "rino@", "rino@10001", "20261010@", "account_name", "123.123.123.123")) {
             assertDoesNotThrow(
                     () -> new BanCommand().createCommandLine(null, null).parseArgs(target));
         }
@@ -50,7 +50,10 @@ public final class SensitiveCommandSyntaxTest {
         assertEquals(BanCommand.TargetType.ACCOUNT, BanCommand.parseTarget("account_name").type());
         assertEquals(BanCommand.TargetType.IPV4, BanCommand.parseTarget("123.123.123.123").type());
         assertEquals(BanCommand.TargetType.ACCOUNT, BanCommand.parseTarget("legacy.name").type());
-        assertEquals(BanCommand.TargetType.ACCOUNT, BanCommand.parseTarget("@legacy").type());
+        assertEquals(BanCommand.TargetType.UID, BanCommand.parseTarget("rino@").type());
+        assertEquals(BanCommand.TargetType.UID, BanCommand.parseTarget("20261010@10001").type());
+        assertEquals(10001, BanCommand.parseTarget("rino@10001").uid());
+        assertThrows(IllegalArgumentException.class, () -> BanCommand.parseTarget("@legacy"));
 
         var timed = BanCommand.parseBanArguments("account_name",
                 List.of("1800000000", "Repeated", "abuse"));
@@ -67,7 +70,7 @@ public final class SensitiveCommandSyntaxTest {
     @Test
     void rejectsInvalidSelectorsAndIpExpiration() {
         for (String invalid : List.of("@", "@0", "@-1", "@99999999999999",
-                "123.123.123.999", "001.2.3.4")) {
+                "rino@0", "rino@other", "123.123.123.999", "001.2.3.4")) {
             assertThrows(IllegalArgumentException.class, () -> BanCommand.parseTarget(invalid));
         }
         assertThrows(IllegalArgumentException.class,
@@ -76,6 +79,26 @@ public final class SensitiveCommandSyntaxTest {
                 () -> BanCommand.parseBanArguments("@10001", List.of("999999999999999999")));
         assertThrows(IllegalArgumentException.class,
                 () -> BanCommand.parseBanArguments("123.123.123.123", List.of("1800000000")));
+    }
+
+    @Test
+    void coopAndMailUseIdenticalExplicitPlayerSelectors() {
+        for (String selector : List.of("@10001", "rino@", "20261010@", "rino@10001")) {
+            assertDoesNotThrow(() -> new CoopCommand()
+                    .createCommandLine(null, null).parseArgs(selector), selector);
+            assertDoesNotThrow(() -> new MailCommand()
+                    .createCommandLine(null, null)
+                    .parseArgs("send", selector, "--title", "Hello", "--body", "Test"), selector);
+        }
+        assertDoesNotThrow(() -> new MailCommand().createCommandLine(null, null)
+                .parseArgs("send", "all", "--title", "Hello", "--body", "Test"));
+        for (String invalid : List.of("@0", "rino@other", "@rino", "10001", "rino")) {
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> new CoopCommand().createCommandLine(null, null).parseArgs(invalid));
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> new MailCommand().createCommandLine(null, null)
+                            .parseArgs("send", invalid, "--title", "Hello", "--body", "Test"));
+        }
     }
 
     @Test

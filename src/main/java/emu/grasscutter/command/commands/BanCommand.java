@@ -4,7 +4,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
-import emu.grasscutter.database.DatabaseHelper;
+import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.BannedIp;
 import emu.grasscutter.game.player.Player;
@@ -29,17 +29,11 @@ public final class BanCommand implements CommandHandler {
 
     static BanTarget parseTarget(String value) {
         if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException("Specify @UID, account name, or IPv4 address.");
+            throw new IllegalArgumentException("Specify @UID, username@, username@UID, account name, or IPv4.");
         }
-        if (value.matches("@[0-9]+")) {
-            try {
-                int uid = Integer.parseInt(value.substring(1));
-                if (uid > 0) return new BanTarget(TargetType.UID, uid, value);
-            } catch (NumberFormatException ignored) {}
-            throw new IllegalArgumentException("Invalid player UID: " + value);
-        }
-        if (value.equals("@") || value.matches("@-?[0-9]+")) {
-            throw new IllegalArgumentException("Invalid player UID: " + value);
+        if (value.contains("@")) {
+            var selector = CommandMap.parseExplicitTargetSelector(value);
+            return new BanTarget(TargetType.UID, selector.uid() == null ? 0 : selector.uid(), value);
         }
         // Old dotted usernames remain resolvable unless they look like a complete IPv4.
         if (value.matches("[0-9]+(\\.[0-9]+){3}")) {
@@ -78,11 +72,11 @@ public final class BanCommand implements CommandHandler {
     }
 
     @CommandLine.Command(name = "ban",
-            customSynopsis = "ban <@UID|accountName|IPv4> [endTime] [reason...]")
+            customSynopsis = "ban <playerSelector|accountName|IPv4> [endTime] [reason...]")
     private static final class BanTargetCommand implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<@UID|accountName|IPv4>")
+        @Parameters(index = "0", paramLabel = "<playerSelector|accountName|IPv4>")
         private String target;
 
         @Parameters(index = "1..*", arity = "0..*", paramLabel = "[endTime] [reason...]")
@@ -108,14 +102,14 @@ public final class BanCommand implements CommandHandler {
                 return;
             }
 
-            Account account;
-            if (args.target().type() == TargetType.UID) {
-                Player player = Grasscutter.getGameServer().getPlayerByUid(args.target().uid(), true);
-                account = player == null
-                        ? DatabaseHelper.getAccountByPlayerId(args.target().uid())
-                        : player.getAccount();
-            } else {
-                account = Grasscutter.getGameServer().getAccountByName(args.target().value());
+            final Account account;
+            try {
+                account = args.target().type() == TargetType.UID
+                        ? CommandMap.findAccount(CommandMap.parseExplicitTargetSelector(args.target().value()))
+                        : Grasscutter.getGameServer().getAccountByName(args.target().value());
+            } catch (IllegalArgumentException mismatch) {
+                CommandOutput.sendMessage(sender, mismatch.getMessage());
+                return;
             }
 
             if (account == null) {
