@@ -99,7 +99,7 @@ public final class WaypointsCommand implements CommandHandler {
                             + " ("
                             + fresh
                             + " new), and opened every area of the scene."
-                            + " If a region is still walled off, try /tag unlockall - the barrier at a"
+                            + " If a region is still walled off, try /tag unlock all - the barrier at a"
                             + " region boundary is usually a scene tag rather than an area lock.");
         }
     }
