@@ -224,7 +224,7 @@
       "language_not_found": "目前客戶端沒有這種語言：%s",
       "description": "顯示或切換目前語言。"
     },
-    "list": {
+    "player": {
       "success": "目前總線上人數：%s",
       "description": "查看所有線上玩家"
     },
@@ -328,7 +328,7 @@
       "error": "錯誤：無效的編寫階段 %s。需要 stacktrace 請查看伺服器命令提示字元。",
       "description": "向指定使用者傳送郵件。此指令的用法可根據附加的參數而改變。"
     },
-    "sendMessage": {
+    "say": {
       "success": "訊息已傳送。",
       "description": "向指定玩家傳送訊息。"
     },
