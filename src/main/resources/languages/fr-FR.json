@@ -184,6 +184,9 @@
     "avatar": {
       "description": "Gérer les personnages : liste, constellations, aptitudes, amitié, niveaux supplémentaires et amélioration maximale."
     },
+    "battlepass": {
+      "description": "Gérer l'achat de niveaux et le statut premium du passe de combat."
+    },
     "give": {
       "usage_relic": "Utilisation: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "L'ID de cet artéfact appartient a une liste blacklistée, ce n'est peut-être pas celui que vous désirez.",
