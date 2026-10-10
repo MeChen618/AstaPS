@@ -45,6 +45,7 @@ public final class AvatarCommand implements CommandHandler {
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var root = new CommandLine(new Root(sender));
         root.addSubcommand("list", new ListAvatars(sender, targetPlayer));
+        root.addSubcommand("stat", AvatarStatCommand.create(sender, targetPlayer));
 
         var constellation = new CommandLine(new Help(sender));
         constellation.getCommandSpec().name("constellation");
@@ -76,6 +77,39 @@ public final class AvatarCommand implements CommandHandler {
         root.addSubcommand("extralevel", new ExtraLevel(sender, targetPlayer));
         root.addSubcommand("max", new Max(sender, targetPlayer));
         return root;
+    }
+
+    /** Re-check targets and the original stat permission after nested-command routing. */
+    static boolean permitted(Player sender, Player target, String permission) {
+        if (target == null || !target.isOnline()
+                || target.getSession() == null || !target.getSession().isActive()) {
+            CommandOutput.sendMessage(sender, "Avatar operations require an online player.");
+            return false;
+        }
+        if (sender == null) return true;
+        var account = sender.getAccount();
+        String required = target != sender ? permission + ".others" : permission;
+        if (account != null && account.hasPermission(required)) return true;
+        CommandOutput.sendTranslatedMessage(sender, "commands.generic.permission_error");
+        return false;
+    }
+
+    static Avatar selectOwnedAvatar(Player sender, Player target, Integer avatarId) {
+        if (avatarId != null) {
+            if (avatarId <= 0) {
+                CommandOutput.sendMessage(sender, "Avatar ID must be positive.");
+                return null;
+            }
+            Avatar avatar = target.getAvatars().getAvatarById(avatarId);
+            if (avatar == null) CommandOutput.sendMessage(sender, "Avatar not owned: " + avatarId);
+            return avatar;
+        }
+        var active = target.getTeamManager().getCurrentAvatarEntity();
+        if (active == null) {
+            CommandOutput.sendMessage(sender, "No active character; specify --avatar <avatarId>.");
+            return null;
+        }
+        return active.getAvatar();
     }
 
     @CommandLine.Command(name = "avatar")
@@ -127,36 +161,11 @@ public final class AvatarCommand implements CommandHandler {
         }
 
         protected boolean permitted(String permission) {
-            // Internal callers can execute this command tree without CommandMap's target gate.
-            if (target == null || !target.isOnline()
-                    || target.getSession() == null || !target.getSession().isActive()) {
-                CommandOutput.sendMessage(sender, "Avatar operations require an online player.");
-                return false;
-            }
-            if (sender == null) return true;
-            var account = sender.getAccount();
-            String required = target != sender ? permission + ".others" : permission;
-            if (account != null && account.hasPermission(required)) return true;
-            CommandOutput.sendTranslatedMessage(sender, "commands.generic.permission_error");
-            return false;
+            return AvatarCommand.permitted(sender, target, permission);
         }
 
         protected Avatar select(Integer avatarId) {
-            if (avatarId != null) {
-                if (avatarId <= 0) {
-                    CommandOutput.sendMessage(sender, "Avatar ID must be positive.");
-                    return null;
-                }
-                Avatar avatar = target.getAvatars().getAvatarById(avatarId);
-                if (avatar == null) CommandOutput.sendMessage(sender, "Avatar not owned: " + avatarId);
-                return avatar;
-            }
-            var active = target.getTeamManager().getCurrentAvatarEntity();
-            if (active == null) {
-                CommandOutput.sendMessage(sender, "No active character; specify --avatar <avatarId>.");
-                return null;
-            }
-            return active.getAvatar();
+            return selectOwnedAvatar(sender, target, avatarId);
         }
 
         protected java.util.List<Avatar> selectMany(Selection selection) {
