@@ -631,7 +631,7 @@ public final class CommandMap {
         }
         if (label.equals("target")) {
             if (args.size() > 1) {
-                CommandOutput.sendMessage(player, "Usage: target [@UID|username@|username@UID]");
+                CommandOutput.sendMessage(player, "Usage: target [UID|@UID|username@|username@UID]");
                 return;
             }
             this.setPlayerTarget(
