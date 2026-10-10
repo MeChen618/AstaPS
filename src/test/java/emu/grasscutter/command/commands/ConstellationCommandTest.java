@@ -22,6 +22,15 @@ public final class ConstellationCommandTest {
     }
 
     @Test
+    void levelRangeIsInclusiveZeroThroughSix() {
+        assertFalse(ConstellationCommand.validLevel(-1));
+        for (int level = 0; level <= 6; level++) {
+            assertTrue(ConstellationCommand.validLevel(level));
+        }
+        assertFalse(ConstellationCommand.validLevel(7));
+    }
+
+    @Test
     void commandRetainsOnlineTargetRequirement() {
         assertEquals(Command.TargetRequirement.ONLINE,
                 ConstellationCommand.class.getAnnotation(Command.class).targetRequirement());
