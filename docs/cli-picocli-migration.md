@@ -51,7 +51,7 @@ The clone inherits the source account password and permissions.
 
 The Picocli command tree keeps one route for each operation:
 
-- `kill` (alias `suicide`) kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall` and `kill character` routes are removed.
+- `kill` kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall`, `kill character`, and `suicide` routes are removed.
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
@@ -63,10 +63,11 @@ The Picocli command tree keeps one route for each operation:
 - `player list` replaces `list [uid]` and `players`; it always displays each online player’s nickname and UID. The `--uid` option is not supported.
 - `account resetpassword <accountSelector> <new-password>` replaces `account resetpass`; `account passwd` is its sole shortcut. `account delete` and `account clone` also use an explicit selector for the existing account.
 - `info` has no `troubleshoot` or `helpme` aliases.
+- `battlepass` is the canonical battle-pass command with `bp` as its only alias; `give` retains `g`, `name` retains `rename`, and `namecard` retains `card`. Removed `item`, `giveitem`, `nickname`, and `setnamecard` aliases.
 - `coop [guestSelector] <hostSelector>` requires an online host. When the guest is omitted, it uses the current command target (the sender by default in-game); in the console, choose a guest with `target` or provide both selectors. Each explicit selector follows `playerSelector` syntax. Moving another player requires `server.coop.others`.
 
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
-- Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack` and `unlockwp`; use `br`, `el`, `suicide`, `trackmaterial` and `wp` respectively.
+- Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack`, `unlockwp`, `item`, `giveitem`, `nickname`, `setnamecard`, and `suicide`. The old `el` shortcut is also gone after migrating `extralevel` into `avatar`.
 
 ## Help and invalid input
 
@@ -111,7 +112,7 @@ unfinished. Already claimed rewards remain non-redeemable after reset.
 
 ### Battle-pass purchases and paid state
 
-`bp buy <levels> [@UID]` and the client's `BuyBattlePassLevelReq` now both
+`battlepass buy <levels> [@UID]` (alias: `bp buy`) and the client's `BuyBattlePassLevelReq` now both
 use `BattlePassManager.buyLevels`. The manager validates requested levels,
 caps the purchase at the remaining levels up to the BP maximum, computes the
 price from `BATTLE_PASS_LEVEL_PRICE`, and rejects insufficient funds or a
@@ -119,7 +120,7 @@ failed primogem debit without changing BP level. Successful purchases save
 both the player's primogem balance and the battle-pass level, retain fractional
 BP progress, and send both regular and beyond BP schedule updates.
 
-`bp paid [true|false] [@UID]` now uses the persisted `paid` field for
+`battlepass paid [true|false] [@UID]` (alias: `bp paid`) uses the persisted `paid` field for
 both state changes and queries. The ordinary 7.1 schedule derives its unlock
 status and platform flags from that field. The compatibility helper also
 uses the manager setter rather than reflection. New players default to a
