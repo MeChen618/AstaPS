@@ -1,9 +1,11 @@
 package emu.grasscutter.command.commands;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import picocli.CommandLine;
@@ -57,8 +59,8 @@ public final class AccountCreateArgumentsTest {
     void usageShowsSimpleSyntaxWhileKeepingUidOnlyParsing() {
         var create = new AccountCommand().createCommandLine(null, null).getSubcommands().get("create");
         var usage = create.getUsageMessage();
-        assertEquals(true, usage.contains("account create <username> [password] [@UID]"));
-        assertEquals(false, usage.contains("password|@UID"));
+        assertTrue(usage.contains("account create <username> [password] [@UID]"));
+        assertFalse(usage.contains("password|@UID"));
     }
 
     @Test
