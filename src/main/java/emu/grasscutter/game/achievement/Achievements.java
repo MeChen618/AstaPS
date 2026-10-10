@@ -33,6 +33,17 @@ public class Achievements {
     @Getter private int finishedAchievementNum;
     private List<Integer> takenGoalRewardIdList;
 
+    @PostLoad
+    void restoreLegacyRewardClaims() {
+        if (this.achievementList == null) return;
+        for (Achievement achievement : this.achievementList.values()) {
+            if (achievement != null && achievement.getStatus() == Status.Status_REWARD_TAKEN) {
+                // Legacy BSON documents had no rewardClaimed field. Persist it on next save.
+                achievement.setStatus(Status.Status_REWARD_TAKEN);
+            }
+        }
+    }
+
     public static Achievements getByPlayer(Player player) {
         var achievements =
                 player.getAchievements() == null
@@ -69,7 +80,7 @@ public class Achievements {
         return map;
     }
 
-    public AchievementControlReturns grant(int achievementId) {
+    public synchronized AchievementControlReturns grant(int achievementId) {
         var a = this.getAchievement(achievementId);
 
         if (a == null || this.isFinished(achievementId)) {
@@ -81,7 +92,7 @@ public class Achievements {
         return this.progress(achievementId, a.getTotalProgress());
     }
 
-    public AchievementControlReturns revoke(int achievementId) {
+    public synchronized AchievementControlReturns revoke(int achievementId) {
         var a = this.getAchievement(achievementId);
 
         if (a == null || !this.isFinished(achievementId)) {
@@ -93,7 +104,7 @@ public class Achievements {
         return this.progress(achievementId, 0);
     }
 
-    public AchievementControlReturns progress(int achievementId, int progress) {
+    public synchronized AchievementControlReturns progress(int achievementId, int progress) {
         var a = this.getAchievement(achievementId);
         if (a == null) {
             return AchievementControlReturns.achievementNotFound();
@@ -125,7 +136,7 @@ public class Achievements {
 
     private boolean update(Achievement a) {
         if (a.getStatus() == Status.Status_UNFINISHED && a.getCurProgress() >= a.getTotalProgress()) {
-            a.setStatus(Status.Status_FINISHED);
+            a.setStatus(a.statusOnCompletion());
             a.setFinishTimestampSec(currentTimeSecs.getAsInt());
 
             // Call PlayerCompleteAchievementEvent.
@@ -201,17 +212,18 @@ public class Achievements {
         return status == Status.Status_FINISHED || status == Status.Status_REWARD_TAKEN;
     }
 
-    public void takeReward(List<Integer> ids) {
-        List<GameItem> rewards = Lists.newArrayList();
+    public synchronized void takeReward(List<Integer> ids) {
+        // Validate the entire batch before mutating anything. A duplicate ID or an unfinished,
+        // revoked, or already-claimed achievement cannot be redeemed.
+        if (ids.isEmpty() || new HashSet<>(ids).size() != ids.size()) {
+            this.player.sendPacket(new PacketTakeAchievementRewardRsp());
+            return;
+        }
 
+        List<GameItem> rewards = Lists.newArrayList();
         for (int i : ids) {
             var target = GameData.getAchievementDataMap().get(i);
-            if (target == null) {
-                Grasscutter.getLogger().warn("null returned while taking reward!");
-                return;
-            }
-
-            if (this.isRewardTaken(i)) {
+            if (target == null || !target.isUsed() || !this.isRewardLeft(i)) {
                 this.player.sendPacket(new PacketTakeAchievementRewardRsp());
                 return;
             }
@@ -219,7 +231,8 @@ public class Achievements {
             var data = GameData.getRewardDataMap().get(target.getFinishRewardId());
             if (data == null) {
                 Grasscutter.getLogger().warn("null returned while getting reward data!");
-                continue;
+                this.player.sendPacket(new PacketTakeAchievementRewardRsp());
+                return;
             }
 
             data.getRewardItemList()
@@ -233,12 +246,14 @@ public class Achievements {
 
                                 rewards.add(new GameItem(itemData, itemParamData.getCount()));
                             });
-
-            var a = this.getAchievement(i);
-            a.setStatus(Status.Status_REWARD_TAKEN);
-            this.save();
-            this.sendUpdatePacket(a);
         }
+
+        for (int i : ids) {
+            var achievement = this.getAchievement(i);
+            achievement.setStatus(Status.Status_REWARD_TAKEN);
+            this.sendUpdatePacket(achievement);
+        }
+        this.save();
 
         this.player.getInventory().addItems(rewards, ActionReason.AchievementReward);
         this.player.sendPacket(
@@ -246,14 +261,17 @@ public class Achievements {
                         ids, rewards.stream().map(GameItem::toItemParam).toList()));
     }
 
-    public void takeGoalReward(List<Integer> ids) {
+    public synchronized void takeGoalReward(List<Integer> ids) {
+        // A previously claimed goal (or the same goal twice in one request) is not payable.
+        if (ids.isEmpty()
+                || new HashSet<>(ids).size() != ids.size()
+                || ids.stream().anyMatch(this.takenGoalRewardIdList::contains)) {
+            this.player.sendPacket(new PacketTakeAchievementGoalRewardRsp());
+            return;
+        }
+
         List<GameItem> rewards = Lists.newArrayList();
-
         for (int i : ids) {
-            if (this.takenGoalRewardIdList.contains(i)) {
-                this.player.sendPacket(new PacketTakeAchievementGoalRewardRsp());
-            }
-
             var goalData = GameData.getAchievementGoalDataMap().get(i);
             if (goalData == null) {
                 Grasscutter.getLogger().warn("null returned while getting goal reward data!");
@@ -289,11 +307,15 @@ public class Achievements {
     }
 
     public boolean isRewardTaken(int achievementId) {
-        return this.getStatus(achievementId) == Status.Status_REWARD_TAKEN;
+        var achievement = this.achievementList.get(achievementId);
+        return achievement != null && achievement.hasClaimedReward();
     }
 
     public boolean isRewardLeft(int achievementId) {
-        return this.getStatus(achievementId) == Status.Status_FINISHED;
+        var achievement = this.achievementList.get(achievementId);
+        return achievement != null
+                && achievement.getStatus() == Status.Status_FINISHED
+                && !achievement.hasClaimedReward();
     }
 
     private boolean isPacketSendable() {

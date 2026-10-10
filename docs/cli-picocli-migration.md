@@ -60,3 +60,14 @@ The Picocli command tree keeps one route for each operation:
 - Compile and run unit tests, including command parser/registry and database writer tests.
 - Ensure game clients are not asked to test before CI has passed.
 - Keep the upstream PR as a draft until CI succeeds and compatibility exceptions are documented.
+
+
+### Achievement reward redemption
+
+An achievement's persisted `rewardClaimed` flag is independent of its current progress
+and completion state. Legacy `REWARD_TAKEN` statuses are migrated on load. Revoking a
+completed achievement clears its progress but never refunds or resets a previously
+claimed reward; completing it again restores `REWARD_TAKEN` rather than making it
+claimable. Reward requests require the achievement to be finished and unclaimed, and
+reject duplicate IDs. Already claimed achievement-goal rewards and duplicate goal IDs
+are also rejected without awarding items.
