@@ -96,7 +96,8 @@ Built-in commands use **Picocli** for positional arguments, named options and su
 
 | Command | Purpose |
 |---|---|
-| `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
+| `give` (`g`) | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
+| `battlepass` (`bp`) | Manage BP level purchases (`buy <levels>`) and premium status (`paid [true|false]`). |
 | `avatar` | Manage owned characters: `list`, `constellation`, `talent`, `friendship`, `extralevel`, and `max`. Use `--avatar <avatarId>` for one character or `--all` where supported. |
 | `account create / clone / delete / resetpassword` | Manage accounts from the **server console only** (`account passwd` is an alias of `resetpassword`). |
 | `ban <playerSelector> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). `endTime` is a Unix timestamp. |
