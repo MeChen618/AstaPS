@@ -18,7 +18,7 @@ import picocli.CommandLine.Unmatched;
         targetRequirement = Command.TargetRequirement.NONE,
         inlineTarget = false)
 public final class AccountCommand implements CommandHandler {
-    private record UidArg(int value) {}
+    record NewAccount(String username, int uid) {}
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
@@ -35,22 +35,68 @@ public final class AccountCommand implements CommandHandler {
         commandLine.addSubcommand("clone", new Clone(sender));
         commandLine.addSubcommand("delete", new Delete(sender));
         commandLine.addSubcommand("resetpassword", new ResetPass(sender), "passwd");
-        CommandHandler.registerConverterTree(commandLine,UidArg.class, value -> parseUid(sender, value));
+        CommandHandler.registerConverterTree(
+                commandLine,
+                NewAccount.class,
+                value -> {
+                    try {
+                        return parseNewAccount(value);
+                    } catch (IllegalArgumentException invalid) {
+                        throw new CommandLine.TypeConversionException(invalid.getMessage());
+                    }
+                });
+        CommandHandler.registerConverterTree(
+                commandLine,
+                CommandMap.TargetSelector.class,
+                value -> {
+                    try {
+                        return CommandMap.parseExplicitTargetSelector(value);
+                    } catch (IllegalArgumentException invalid) {
+                        throw new CommandLine.TypeConversionException(invalid.getMessage());
+                    }
+                });
 
         return commandLine;
     }
 
-    private static UidArg parseUid(Player sender, String value) {
-        if (value == null || value.length() < 2 || value.charAt(0) != '@') {
-            throw new CommandLine.TypeConversionException("UID must use @<digits> syntax.");
+    /** New accounts use name or name@UID; existing accounts use accountSelector. */
+    static NewAccount parseNewAccount(String token) {
+        if (token == null || token.isBlank()) {
+            throw new IllegalArgumentException("New account name must not be blank.");
+        }
+
+        int separator = token.indexOf('@');
+        if (separator != token.lastIndexOf('@')) {
+            throw new IllegalArgumentException("Use name or name@UID for a new account.");
+        }
+        String username = separator < 0 ? token : token.substring(0, separator);
+        AccountUsernamePolicy.requireValid(username);
+        if (separator < 0) return new NewAccount(username, 0);
+
+        String requestedUid = token.substring(separator + 1);
+        if (requestedUid.isEmpty()
+                || !requestedUid.chars().allMatch(ch -> ch >= '0' && ch <= '9')) {
+            throw new IllegalArgumentException("Use name@UID with a positive numeric UID.");
         }
         try {
-            int uid = Integer.parseInt(value.substring(1));
-            if (uid <= 0) throw new NumberFormatException();
-            return new UidArg(uid);
+            int uid = Integer.parseInt(requestedUid);
+            if (uid > 0) return new NewAccount(username, uid);
         } catch (NumberFormatException ignored) {
-            throw new CommandLine.TypeConversionException(
-                    translate(sender, "commands.account.invalid"));
+            // Reject values outside the integer UID range.
+        }
+        throw new IllegalArgumentException("Use name@UID with a positive numeric UID.");
+    }
+
+    private static Account findExistingAccount(Player sender, CommandMap.TargetSelector selector) {
+        try {
+            Account account = CommandMap.findAccount(selector);
+            if (account == null) {
+                CommandOutput.sendTranslatedMessage(sender, "commands.account.no_account");
+            }
+            return account;
+        } catch (IllegalArgumentException mismatch) {
+            CommandOutput.sendMessage(sender, mismatch.getMessage());
+            return null;
         }
     }
 
@@ -84,36 +130,17 @@ public final class AccountCommand implements CommandHandler {
         }
     }
 
-    record CreateArguments(String password, int uid) {}
-
-    /**
-     * A lone @UID specifies a reserved UID, not a password. When a password is supplied,
-     * the optional @UID follows it.
-     */
-    static CreateArguments parseCreateArguments(String passwordOrUid, Integer trailingUid) {
-        if (passwordOrUid != null && passwordOrUid.startsWith("@")) {
-            if (trailingUid != null) {
-                throw new IllegalArgumentException("Specify the new account UID only once.");
-            }
-            return new CreateArguments(null, parseUid(null, passwordOrUid).value());
-        }
-        return new CreateArguments(passwordOrUid, trailingUid == null ? 0 : trailingUid);
-    }
-
     @picocli.CommandLine.Command(
             name = "create",
-            customSynopsis = "account create <username> [password] [@UID]")
+            customSynopsis = "account create <newName[@newUID]> [password]")
     private final class Create implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<username>")
-        private String username;
+        @Parameters(index = "0", paramLabel = "<newName[@newUID]>")
+        private NewAccount newAccount;
 
-        @Parameters(index = "1", arity = "0..1", paramLabel = "<password|@UID>")
-        private String passwordOrUid;
-
-        @Parameters(index = "2", arity = "0..1", paramLabel = "<@UID>")
-        private UidArg trailingUid;
+        @Parameters(index = "1", arity = "0..1", paramLabel = "[password]")
+        private String password;
 
         private Create(Player sender) {
             this.sender = sender;
@@ -121,29 +148,27 @@ public final class AccountCommand implements CommandHandler {
 
         @Override
         public void run() {
-            try {
-                var arguments =
-                        parseCreateArguments(
-                                passwordOrUid, trailingUid == null ? null : trailingUid.value());
-                createAccount(sender, username, arguments.password(), arguments.uid());
-            } catch (IllegalArgumentException invalid) {
-                CommandOutput.sendMessage(sender, invalid.getMessage());
+            // Do not silently treat the removed 'create name @UID' form as a password.
+            if (password != null && password.matches("@[0-9]+")) {
+                CommandOutput.sendMessage(
+                        sender, "Specify the UID in the new account name: name@UID.");
+                return;
             }
+            createAccount(sender, newAccount.username(), password, newAccount.uid());
         }
     }
 
-    @picocli.CommandLine.Command(name = "clone")
+    @picocli.CommandLine.Command(
+            name = "clone",
+            customSynopsis = "account clone <sourceSelector> <newName[@newUID]>")
     private static final class Clone implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<source-account>")
-        private String sourceUsername;
+        @Parameters(index = "0", paramLabel = "<sourceSelector>")
+        private CommandMap.TargetSelector sourceSelector;
 
-        @Parameters(index = "1", paramLabel = "<target-account>")
-        private String targetUsername;
-
-        @Parameters(index = "2", arity = "0..1", paramLabel = "[@UID]")
-        private UidArg uid;
+        @Parameters(index = "1", paramLabel = "<newName[@newUID]>")
+        private NewAccount target;
 
         private Clone(Player sender) {
             this.sender = sender;
@@ -152,16 +177,21 @@ public final class AccountCommand implements CommandHandler {
         @Override
         public void run() {
             try {
+                Account source = CommandMap.findAccount(sourceSelector);
+                if (source == null) {
+                    CommandOutput.sendTranslatedMessage(sender, "commands.account.no_account");
+                    return;
+                }
                 var result =
                         PlayerCloneService.cloneOffline(
-                                sourceUsername, targetUsername, uid == null ? 0 : uid.value());
+                                source, target.username(), target.uid());
                 CommandOutput.sendMessage(
                         sender,
                         "Cloned %s (UID %d) to %s (UID %d): %d persisted documents copied."
                                 .formatted(
-                                        sourceUsername,
+                                        source.getUsername(),
                                         result.sourceUid(),
-                                        targetUsername,
+                                        target.username(),
                                         result.targetUid(),
                                         result.clonedDocuments()));
                 CommandOutput.sendMessage(
@@ -177,8 +207,8 @@ public final class AccountCommand implements CommandHandler {
     private final class Delete implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<username>")
-        private String username;
+        @Parameters(index = "0", paramLabel = "<accountSelector>")
+        private CommandMap.TargetSelector selector;
 
         private Delete(Player sender) {
             this.sender = sender;
@@ -186,11 +216,8 @@ public final class AccountCommand implements CommandHandler {
 
         @Override
         public void run() {
-            Account toDelete = DatabaseHelper.getAccountByName(username);
-            if (toDelete == null) {
-                CommandOutput.sendMessage(sender, translate(sender, "commands.account.no_account"));
-                return;
-            }
+            Account toDelete = findExistingAccount(sender, selector);
+            if (toDelete == null) return;
 
             AccountDeletionService.delete(toDelete);
             CommandOutput.sendMessage(sender, translate(sender, "commands.account.delete"));
@@ -201,8 +228,8 @@ public final class AccountCommand implements CommandHandler {
     private final class ResetPass implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<username>")
-        private String username;
+        @Parameters(index = "0", paramLabel = "<accountSelector>")
+        private CommandMap.TargetSelector selector;
 
         @Parameters(index = "1", paramLabel = "<password>")
         private String password;
@@ -213,11 +240,8 @@ public final class AccountCommand implements CommandHandler {
 
         @Override
         public void run() {
-            Account toUpdate = DatabaseHelper.getAccountByName(username);
-            if (toUpdate == null) {
-                CommandOutput.sendMessage(sender, translate(sender, "commands.account.no_account"));
-                return;
-            }
+            Account toUpdate = findExistingAccount(sender, selector);
+            if (toUpdate == null) return;
 
             String passwordHash = hashPassword(sender, password);
             if (passwordHash == null) return;
