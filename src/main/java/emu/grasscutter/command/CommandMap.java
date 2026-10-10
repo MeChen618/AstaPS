@@ -111,6 +111,28 @@ public final class CommandMap {
         return null;
     }
 
+    /** Check again immediately before execution: threaded commands may sit in the queue while a player disconnects. */
+    static boolean targetUsable(Command.TargetRequirement requirement, Player target) {
+        if (requirement == Command.TargetRequirement.NONE) return true;
+        if (target == null) return false;
+        return switch (requirement) {
+            case NONE, PLAYER -> true;
+            case ONLINE -> target.isOnline()
+                    && target.getSession() != null
+                    && target.getSession().isActive();
+            case OFFLINE -> !target.isOnline();
+        };
+    }
+
+    private static void sendUnavailableTarget(Player sender, Command.TargetRequirement requirement) {
+        String key = switch (requirement) {
+            case ONLINE -> "commands.execution.need_target_online";
+            case OFFLINE -> "commands.execution.need_target_offline";
+            default -> "commands.execution.need_target";
+        };
+        CommandOutput.sendTranslatedMessage(sender, key);
+    }
+
     static void executeCommand(Runnable runnable, boolean threaded, Executor executor) {
         if (threaded) executor.execute(runnable);
         else runnable.run();
@@ -639,35 +661,43 @@ public final class CommandMap {
         }
 
         Command.TargetRequirement targetRequirement = annotation.targetRequirement();
-        if (targetRequirement != Command.TargetRequirement.NONE) {
-            if (targetPlayer == null) {
-                handler.sendUsageMessage(player);
-                CommandOutput.sendTranslatedMessage(player, "commands.execution.need_target");
-                return;
-            }
-            if (targetRequirement == Command.TargetRequirement.ONLINE
-                    && (!targetPlayer.isOnline() || targetPlayer.getSession() == null
-                            || !targetPlayer.getSession().isActive())) {
-                handler.sendUsageMessage(player);
-                CommandOutput.sendTranslatedMessage(player, "commands.execution.need_target_online");
-                return;
-            }
-            if (targetRequirement == Command.TargetRequirement.OFFLINE && targetPlayer.isOnline()) {
-                handler.sendUsageMessage(player);
-                CommandOutput.sendTranslatedMessage(player, "commands.execution.need_target_offline");
-                return;
-            }
+        if (!targetUsable(targetRequirement, targetPlayer)) {
+            handler.sendUsageMessage(player);
+            sendUnavailableTarget(player, targetPlayer == null
+                    ? Command.TargetRequirement.PLAYER : targetRequirement);
+            return;
         }
 
         final Player sender = player;
         final Player target = targetPlayer;
         final String[] commandArgs = args.toArray(String[]::new);
         Runnable runnable = () -> {
-            CommandLine cli = configureCommandLine(handler.createCommandLine(sender, target), sender, handler);
-            cli.execute(commandArgs);
+            // Permission and target selection happened on dispatch; queued work must not
+            // operate on a player who logged out or changed online state in the meantime.
+            if (!targetUsable(targetRequirement, target)) {
+                sendUnavailableTarget(sender, targetRequirement);
+                return;
+            }
+            try {
+                CommandLine cli = configureCommandLine(
+                        handler.createCommandLine(sender, target), sender, handler);
+                cli.execute(commandArgs);
+            } catch (RuntimeException exception) {
+                // Picocli handles command.run() failures, but model construction itself
+                // is outside its error handler. Keep those exceptions off the game loop.
+                Grasscutter.getLogger().error(
+                        "Failed to construct or run command " + handler.getLabel() + ".", exception);
+                CommandOutput.sendMessage(sender, "Command execution failed.");
+            }
         };
 
-        executeCommand(runnable, annotation.threading(), Grasscutter.getThreadPool());
+        try {
+            executeCommand(runnable, annotation.threading(), Grasscutter.getThreadPool());
+        } catch (java.util.concurrent.RejectedExecutionException exception) {
+            Grasscutter.getLogger().warn(
+                    "Command executor rejected " + handler.getLabel() + ".", exception);
+            CommandOutput.sendMessage(sender, "Command executor is unavailable.");
+        }
     }
 
     private void scan() {
