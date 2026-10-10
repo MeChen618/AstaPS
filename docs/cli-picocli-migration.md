@@ -199,3 +199,24 @@ server console. Other `dailytask` operations (`list`, `load`, `reset`, `city`,
 `finish`, and `bonus`) still require an online player and reject a missing
 or offline target before loading any daily-task state. The root command can
 print help without a selected player.
+
+
+### Constellation command review
+
+`constellation set <0-6> [all]` and `constellation reset [all]` retain their
+separate permission keys (`player.setconstellation[.others]` and
+`player.resetconstellation[.others]`). Both now check for an active online
+target before accessing avatar data; a console command without a target is
+rejected. The level boundaries and Picocli routes have regression tests.
+
+`Avatar.forceConstellationLevel` already saves each changed avatar, so the
+command no longer queues another identical save after stat recalculation.
+The database writer also coalesces pending saves of the same object; multi-avatar
+updates still visit each avatar separately, since there is no verified
+atomic batch-update path for distinct avatar documents.
+
+The existing scene transfer used when lowering constellation levels or
+changing all characters remains in place pending client verification. An
+`AvatarDataNotify` snapshot is not proven to refresh scene entity abilities,
+and replacing the transfer without verifying that behavior risks stale gameplay
+state. Do not treat this as a resolved scene-transition issue.
