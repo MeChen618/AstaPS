@@ -71,7 +71,7 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 | `give` | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
 | `account create / clone / delete / resetpass` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。 |
 | `ban <playerSelector> [endTime] [原因...]` | 封禁账号，需要 `server.ban` 权限；封禁他人账号还需要 `server.ban.others`。`endTime` 为 Unix 时间戳。 |
-| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 封禁或解封 IP，需要 `server.banip` 权限；IP 封禁不会过期，只有**解封**需要配置中的 keystore 密钥。 |
+| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 使用 `server.banip` 权限管理永久 IP 封禁；解封时使用配置中的 keystore 密钥。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
 
 服务器控制台示例：

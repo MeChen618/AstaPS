@@ -99,7 +99,7 @@ Built-in commands use **Picocli** for positional arguments, named options and su
 | `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
 | `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
 | `ban <playerSelector> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). `endTime` is a Unix timestamp. |
-| `ban <IPv4> [reason...]` / `unban ip <key> <IPv4>` | Ban or unban an IP with `server.banip`. IP bans do not expire; only **unbanning** requires the configured keystore key. |
+| `ban <IPv4> [reason...]` / `unban ip <key> <IPv4>` | Manage permanent IP bans with `server.banip`. Unbanning uses the configured keystore key. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
 
 Example server-console commands:
