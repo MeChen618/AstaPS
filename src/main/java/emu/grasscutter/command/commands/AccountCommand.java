@@ -39,7 +39,16 @@ public final class AccountCommand implements CommandHandler {
         for (CommandLine child : new java.util.HashSet<>(commandLine.getSubcommands().values())) {
             child.setExpandAtFiles(false);
         }
-        CommandHandler.registerConverterTree(commandLine, UidArg.class, value -> parseUid(sender, value));
+        CommandHandler.registerConverterTree(
+                commandLine,
+                UidArg.class,
+                value -> {
+                    try {
+                        return parseUid(sender, value);
+                    } catch (IllegalArgumentException invalid) {
+                        throw new CommandLine.TypeConversionException(invalid.getMessage());
+                    }
+                });
         CommandHandler.registerConverterTree(
                 commandLine,
                 CommandMap.TargetSelector.class,
@@ -56,14 +65,14 @@ public final class AccountCommand implements CommandHandler {
 
     private static UidArg parseUid(Player sender, String value) {
         if (value == null || value.length() < 2 || value.charAt(0) != '@') {
-            throw new CommandLine.TypeConversionException("UID must use @<digits> syntax.");
+            throw new IllegalArgumentException("UID must use @<digits> syntax.");
         }
         try {
             int uid = Integer.parseInt(value.substring(1));
             if (uid <= 0) throw new NumberFormatException();
             return new UidArg(uid);
         } catch (NumberFormatException ignored) {
-            throw new CommandLine.TypeConversionException(
+            throw new IllegalArgumentException(
                     translate(sender, "commands.account.invalid"));
         }
     }
@@ -133,7 +142,7 @@ public final class AccountCommand implements CommandHandler {
         @Parameters(index = "0", paramLabel = "<username>")
         private String username;
 
-        @Parameters(index = "1", arity = "0..1", paramLabel = "<password|@UID>")
+        @Parameters(index = "1", arity = "0..1", paramLabel = "<password>")
         private String passwordOrUid;
 
         @Parameters(index = "2", arity = "0..1", paramLabel = "<@UID>")
