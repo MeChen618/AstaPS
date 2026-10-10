@@ -181,6 +181,9 @@
       "description": "Modify an existing entity's properties",
       "not_found_error": "Entity does not exist"
     },
+    "avatar": {
+      "description": "Manage owned characters: list, constellations, talents, friendship, extra levels, and max upgrades."
+    },
     "give": {
       "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
