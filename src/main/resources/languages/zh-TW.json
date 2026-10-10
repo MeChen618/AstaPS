@@ -184,6 +184,9 @@
     "avatar": {
       "description": "管理已擁有的角色：查看列表、命之座、天賦、好感度、額外等級與最大強化。"
     },
+    "battlepass": {
+      "description": "管理紀行等級購買與付費獎勵狀態。"
+    },
     "give": {
       "usage_relic": "用法： give <聖遺物 ID> [主詞條 ID] [<副詞條 ID>[,<次數>]]... [lv<等級 0-20>]",
       "illegal_relic": "你不可以取得這個聖遺物，因為該聖遺物 ID 在黑名單列表內。",
