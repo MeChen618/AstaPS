@@ -81,6 +81,7 @@ public final class AvatarCommand implements CommandHandler {
         }
     }
 
+    @CommandLine.Command(name = "group")
     private static final class Help implements Runnable {
         private final Player sender;
         private final String path;
