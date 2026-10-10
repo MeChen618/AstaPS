@@ -96,6 +96,10 @@ public final class SpawnCommand implements CommandHandler {
 
         @Override
         public void run() {
+            if (targetPlayer.getScene() == null) {
+                CommandOutput.sendMessage(sender, "Target player has no active scene.");
+                return;
+            }
             if (amount <= 0 || level <= 0) {
                 CommandOutput.sendMessage(sender, "amount and level must be positive");
                 return;
