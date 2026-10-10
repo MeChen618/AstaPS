@@ -91,6 +91,10 @@ public final class GameServerPacketHandler {
             this.registerPacketHandler(
                     emu.grasscutter.server.packet.recv.HandlerDungeonQuickOpenReq.class);
         }
+        // Keep Katheryne claims registered when a patched class is missed by Reflections.
+        registerIfAbsent(
+                PacketOpcodes.TakePlayerLevelRewardReq,
+                emu.grasscutter.server.packet.recv.HandlerTakePlayerLevelRewardReq.class);
         // Adventurer Handbook Investigation/preparation claim rewards.
         registerIfAbsent(
                 PacketOpcodes.TakeInvestigationTargetRewardReq,
