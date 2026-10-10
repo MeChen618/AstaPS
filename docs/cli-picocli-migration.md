@@ -49,11 +49,21 @@ The clone inherits the source account password and permissions.
 
 The Picocli command tree keeps one route for each operation:
 
-- `kill` (aliases `killCharacter`, `suicide`) kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall` and `kill character` routes are removed.
+- `kill` (alias `suicide`) kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall` and `kill character` routes are removed.
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
-- `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.\n- `ban <@UID|accountName|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. UID and account bans can expire; IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
+- `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
+- `ban <@UID|accountName|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. UID and account bans can expire; IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
+
+- `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
+- Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack` and `unlockwp`; use `br`, `el`, `suicide`, `trackmaterial` and `wp` respectively.
+
+## Help and invalid input
+
+- `help` lists commands with their aliases and short descriptions; `help <command>` shows the full command usage. Nested command help is available as `help <command> <subcommand>`, for example `help teleport pos` or `help tp pos`.
+- Picocli parse errors, including type-conversion errors, show both the error message and the corresponding command or subcommand syntax.
+- To ban an IP, use `ban <IPv4> [reason...]` with `server.banip`. To undo the ban, use `unban ip <key> <IPv4>`; only the latter requires the keystore key.
 
 ## Review and validation
 
