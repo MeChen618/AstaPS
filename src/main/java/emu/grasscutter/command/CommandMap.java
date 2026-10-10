@@ -645,7 +645,9 @@ public final class CommandMap {
                 CommandOutput.sendTranslatedMessage(player, "commands.execution.need_target");
                 return;
             }
-            if (targetRequirement == Command.TargetRequirement.ONLINE && !targetPlayer.isOnline()) {
+            if (targetRequirement == Command.TargetRequirement.ONLINE
+                    && (!targetPlayer.isOnline() || targetPlayer.getSession() == null
+                            || !targetPlayer.getSession().isActive())) {
                 handler.sendUsageMessage(player);
                 CommandOutput.sendTranslatedMessage(player, "commands.execution.need_target_online");
                 return;
