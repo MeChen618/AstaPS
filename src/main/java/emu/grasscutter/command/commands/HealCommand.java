@@ -2,72 +2,53 @@ package emu.grasscutter.command.commands;
 
 import static emu.grasscutter.utils.lang.Language.translate;
 
-import emu.grasscutter.command.*;
+import emu.grasscutter.command.Command;
+import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.net.proto.ChangeHpDebtsReason._ChangeHpDebtsReason;
-import emu.grasscutter.net.proto.PropChangeReasonOuterClass.PropChangeReason;
-import emu.grasscutter.game.props.FightProperty;
-import emu.grasscutter.server.packet.send.*;
-import java.util.List;
+import picocli.CommandLine;
+import picocli.CommandLine.Parameters;
 
+/** Legacy heal and heal all commands alongside restore hp. */
 @Command(
         label = "heal",
         aliases = {"h"},
         permission = "player.heal",
         permissionTargeted = "player.heal.others")
 public final class HealCommand implements CommandHandler {
-
     @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
-        // "all" covers every avatar the player owns. The default only walks the active team, which
-        // leaves avatars that were granted/levelled through GM commands stuck at the low HP they
-        // were created with.
-        if (args.size() == 1 && args.get(0).equalsIgnoreCase("all")) {
-            int offTeam = targetPlayer.getTeamManager().healAllAvatars();
-            CommandHandler.sendMessage(
-                    sender,
-                    "Healed the active team and "
-                            + offTeam
-                            + " avatar(s) that were not in it.");
-            return;
+    public CommandLine createCommandLine(Player sender, Player targetPlayer) {
+        return new CommandLine(new Args(sender, targetPlayer));
+    }
+
+    @CommandLine.Command(name = "heal")
+    private final class Args implements Runnable {
+        private final Player sender;
+        private final Player targetPlayer;
+
+        @Parameters(index = "0", arity = "0..1", paramLabel = "[all]")
+        private String scope;
+
+        private Args(Player sender, Player targetPlayer) {
+            this.sender = sender;
+            this.targetPlayer = targetPlayer;
         }
-        targetPlayer
-                .getTeamManager()
-                .getActiveTeam()
-                .forEach(
-                        entity -> {
-                            boolean isAlive = entity.isAlive();
-                            entity.setFightProperty(
-                                    FightProperty.FIGHT_PROP_CUR_HP,
-                                    entity.getFightProperty(FightProperty.FIGHT_PROP_MAX_HP));
-                                   if (entity.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS) > 0) {
-                                        entity.setFightProperty(
-                                            FightProperty.FIGHT_PROP_CUR_HP_DEBTS,
-                                            0.0f
 
-                                    );
-                                    entity
-                                    .getWorld()
-                                    .broadcastPacket(new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS));
-                                    entity.getWorld().broadcastPacket(new PacketEntityFightPropChangeReasonNotify(entity, FightProperty.FIGHT_PROP_CUR_HP_DEBTS, 0f, PropChangeReason.PropChangeReason_PROP_CHANGE_NONE,
-
-                                    _ChangeHpDebtsReason._ChangeHpDebtsReason_CHANGE_HP_DEBTS_PAY_FINISH
-                                   ));
-                                   }
-
-                            entity
-                                    .getWorld()
-                                    .broadcastPacket(
-                                            new PacketAvatarFightPropUpdateNotify(
-                                                    entity.getAvatar(), FightProperty.FIGHT_PROP_CUR_HP));
-
-
-                            if (!isAlive) {
-                                entity
-                                        .getWorld()
-                                        .broadcastPacket(new PacketAvatarLifeStateChangeNotify(entity.getAvatar()));
-                            }
-                        });
-        CommandHandler.sendMessage(sender, translate(sender, "commands.heal.success"));
+        @Override
+        public void run() {
+            if (scope == null) {
+                RestoreCommand.restoreHp(targetPlayer);
+                CommandOutput.sendMessage(sender, translate(sender, "commands.heal.success"));
+            } else if (scope.equalsIgnoreCase("all")) {
+                int offTeam = targetPlayer.getTeamManager().healAllAvatars();
+                CommandOutput.sendMessage(
+                        sender,
+                        "Healed the active team and "
+                                + offTeam
+                                + " avatar(s) that were not in it.");
+            } else {
+                HealCommand.this.sendUsageMessage(sender);
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 public class AnnouncementSystem extends BaseGameSystem {
     private final Map<Integer, AnnounceConfigItem> announceConfigItemMap;
+    private final TemporaryAnnouncementIds temporaryIds = new TemporaryAnnouncementIds();
 
     public AnnouncementSystem(GameServer server) {
         super(server);
@@ -73,6 +74,22 @@ public class AnnouncementSystem extends BaseGameSystem {
 
     public int refresh() {
         return loadConfig();
+    }
+
+    /** Broadcast a short-lived announcement and return its unique ID. */
+    public int broadcastTemporary(String text) {
+        int id = temporaryIds.issue(new HashSet<>(announceConfigItemMap.keySet()));
+        getOnlinePlayers().forEach(
+                player -> player.sendPacket(new PacketServerAnnounceNotify(text, id)));
+        return id;
+    }
+
+    /** Revoke a configured template or a currently live temporary announcement. */
+    public boolean revokeKnown(int id) {
+        boolean temporary = temporaryIds.revoke(id);
+        if (!temporary && !announceConfigItemMap.containsKey(id)) return false;
+        revoke(id);
+        return true;
     }
 
     public void revoke(int tplId) {

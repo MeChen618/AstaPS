@@ -1221,7 +1221,7 @@ public class DailyTaskManager {
         }
     }
 
-	public long getDefinedCombatTaskCount(int cityId) {
+	public static long getDefinedCombatTaskCount(int cityId) {
 		return GameData.getDailyTaskDataMap()
 				.values()
 				.stream()
@@ -1230,7 +1230,7 @@ public class DailyTaskManager {
 				.count();
 	}
 
-	public long getResourceBackedTaskCount(int cityId) {
+	public static long getResourceBackedTaskCount(int cityId) {
 		return GameData.getDailyTaskDataMap()
 				.values()
 				.stream()

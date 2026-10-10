@@ -116,14 +116,15 @@ public final class DungeonSystem extends BaseGameSystem {
             scene.removePlayer(player);
         }
 
-        if (player.getWorld().transferPlayerToScene(player, sceneId, data)) {
-            scene = player.getScene();
-            scene.setDungeonManager(new DungeonManager(scene, data));
-            MissingDomainFallbackManager.install(scene, data);
-            scene.addDungeonSettleObserver(basicDungeonSettleObserver);
-            if (DomainDungeonHelper.isDomainScene(scene)) {
-                DomainDungeonHelper.onPlayerEnterDomain(player);
-            }
+        if (!player.getWorld().transferPlayerToScene(player, sceneId, data)) {
+            return false;
+        }
+        scene = player.getScene();
+        scene.setDungeonManager(new DungeonManager(scene, data));
+        MissingDomainFallbackManager.install(scene, data);
+        scene.addDungeonSettleObserver(basicDungeonSettleObserver);
+        if (DomainDungeonHelper.isDomainScene(scene)) {
+            DomainDungeonHelper.onPlayerEnterDomain(player);
         }
 
         if (savePrevious) scene.setPrevScenePoint(pointId);

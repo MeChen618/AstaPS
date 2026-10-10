@@ -255,9 +255,11 @@ public final class DefaultAuthenticators {
                 // This account has been created AUTOMATICALLY. There will be no permissions added.
                 if (decryptedPassword.length() >= 8) {
                     account = DatabaseHelper.createAccountWithUid(requestData.account, 0);
-                    account.setPassword(
-                            BCrypt.withDefaults().hashToString(12, decryptedPassword.toCharArray()));
-                    account.save();
+                    if (account != null) {
+                        account.setPassword(
+                                BCrypt.withDefaults().hashToString(12, decryptedPassword.toCharArray()));
+                        account.save();
+                    }
 
                     // Check if the account was created successfully.
                     if (account == null) {

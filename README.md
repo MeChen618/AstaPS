@@ -39,7 +39,7 @@ Then build with:
 ./gradlew jar -PskipHandbook=1
 ```
 
-`grasscutter.jar` lands in the project root. Drop `-PskipHandbook=1` to build the in-game handbook as well; that step needs NodeJS and fails without it.
+`grasscutter-7.1.0.jar` lands in the project root. Drop `-PskipHandbook=1` to build the in-game handbook as well; that step needs NodeJS and fails without it.
 
 On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
@@ -55,10 +55,10 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
 There is no registration page. An account is created either way:
 
-- **From the console.** `account create <username> [uid] [password]`
+- **From the console.** `account create <username> [<password>] [@UID]` (password and UID optional).
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
-Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
+Provided passwords are BCrypt-hashed. An account created without a password has no password check until one is set. New accounts receive only configured default permissions, never an automatic `*` administrator grant. The console needs `server.game.enableConsole` set to `true`.
 
 ### Web console (opt-in)
 
@@ -90,14 +90,30 @@ this command-execution interface directly to the public Internet.
 
 ## Commands
 
-`help` lists them. A few worth knowing:
+Built-in commands use **Picocli** for positional arguments, named options and subcommands. Run `help` to list commands and aliases, `help <command>` for a command's syntax, or `help <command> <subcommand>` for a subcommand's syntax (e.g. `help teleport pos`). Invalid arguments print an error followed by the relevant usage. The interactive server console uses JLine for **Tab completion**. In-game commands use `/`; the server console omits that prefix.
 
-| | |
+| Command | Purpose |
 |---|---|
-| `give` | Avatars, weapons, artifacts and materials. Level 100 by default. |
-| `account` | Create and delete accounts, reset passwords. |
-| `banip` / `unbanip` | Ban an address. Banning one also bans the account arriving from it. |
-| `sysmail` | Send system mail to every player. |
+| `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
+| `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
+| `ban <IPv4> [reason...]` / `unban ip <key> <IPv4>` | Ban or unban an IP. Banning requires `server.banip`; only **unbanning** requires the configured keystore key. |
+| `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
+
+Example server-console commands:
+
+```text
+help give
+help teleport pos
+give 202 --amount 3 @10001
+tp pos 1000 200 300 3 @10001
+account create alice
+account create bob secret @10001
+account clone alice alice-copy @10002
+```
+
+Where supported, `@UID` selects the target player; it does **not** load a Picocli argument file. In `account create` and `account clone`, the optional `@UID` instead specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`; this revokes both existing login and session tokens and disconnects the player.
+
+See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
 
 ## TPS shooting (7.1)
 
@@ -106,16 +122,22 @@ Snezhnaya's third-person shooter mode works: guns and grenades worn next to an a
 **1. Get the weapons**
 
 ```
-/tps give          all eight TPS weapons (224001–224008), or one: /tps give 224001
-/tps accessory     unlock every accessory on the weapons you own
+/tps give
+/tps give 224001
+/tps accessory
 ```
+
+The first command grants all eight TPS weapons (224001–224008); the second grants only weapon 224001. The third unlocks accessories for owned weapons.
 
 **2. Play a TPS domain**
 
 ```
-/dungeon 10955                       the shooting range
-/dungeon 10953, 10960 to 10964       the Emerged Grey Field stages
+/dungeon 10955
+/dungeon 10953
+/dungeon 10960
 ```
+
+Each line is a separate command. Dungeon 10955 is the shooting range; 10953 and 10960–10964 are Emerged Grey Field stages.
 
 Inside, your team is swapped for the TPS Traveler (matching your Traveler, level 20), wearing your TPS loadout, or 224001 the first time. Weapons you switch to there are kept as your loadout. Leaving the domain restores your team.
 
@@ -124,9 +146,11 @@ Inside, your team is swapped for the TPS Traveler (matching your Traveler, level
 Any avatar can wear TPS weapons, which is handy for trying them out:
 
 ```
-/tps wear 224001 224004    the field avatar wears a rifle and a grenade (at most 2 guns and 1 grenade)
-/tps refill                refill all ammunition
+/tps wear 224001 224004
+/tps refill
 ```
+
+The first command equips a rifle and a grenade (at most two guns and one grenade); the second refills ammunition.
 
 Ammunition handling is still partly experimental. See [docs/tps/README.md](docs/tps/README.md) for what the server does, the `/tps ammo` switches, and what is not settled yet.
 
@@ -134,7 +158,7 @@ Ammunition handling is still partly experimental. See [docs/tps/README.md](docs/
 
 Released under the **GNU General Public License v3.0**. See [`LICENSE`](LICENSE).
 
-`LICENSE-ClassGraph.txt` is not this project's licence. ClassGraph is an MIT-licensed dependency whose compiled classes ship inside `grasscutter.jar`, and MIT asks only that its notice travels with them.
+`LICENSE-ClassGraph.txt` is not this project's licence. ClassGraph is an MIT-licensed dependency whose compiled classes ship inside `grasscutter-7.1.0.jar`, and MIT asks only that its notice travels with them.
 
 ## Credits
 

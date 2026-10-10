@@ -1,59 +1,89 @@
 package emu.grasscutter.command.commands;
 
-import static emu.grasscutter.command.CommandHelpers.matchIntOrNeg;
-
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
+import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.dps.DPSMeter;
 import emu.grasscutter.game.player.Player;
-import java.util.List;
-import java.util.Set;
-import java.util.regex.Pattern;
+import picocli.CommandLine;
+import picocli.CommandLine.Parameters;
 
-/**
- * {@code /dps} - the DPS test.
- *
- * <p>In game the prefix-free form is more common: send "dps30" in chat to start and "dpsstop" to end,
- * which {@link emu.grasscutter.game.chat.ChatSystem} forwards to {@link DPSMeter}.
- */
-@Command(
-        label = "dps",
-        usage = {"[<seconds>] [x<targetCount>]", "stop"},
-        targetRequirement = Command.TargetRequirement.ONLINE)
+/** Controls the in-server DPS test. */
+@Command(label = "dps", targetRequirement = Command.TargetRequirement.NONE)
 public final class DPSCommand implements CommandHandler {
-
-    private static final Pattern COUNT_REGEX = Pattern.compile("^x(\\d+)$");
-    private static final Pattern TIME_REGEX = Pattern.compile("^s?(\\d+)$");
-
-    private static final Set<String> STOP_WORDS = Set.of("stop");
-    private static final Set<String> START_WORDS = Set.of("start");
-
     @Override
-    public void execute(Player sender, Player targetPlayer, List<String> args) {
-        var seconds = DPSMeter.DEFAULT_SECONDS;
-        var count = 1;
+    public CommandLine createCommandLine(Player sender, Player targetPlayer) {
+        var root = new CommandLine(new Root(sender));
+        root.addSubcommand("start", new Start(sender, targetPlayer));
+        root.addSubcommand("stop", new Stop(sender, targetPlayer));
+        return root;
+    }
 
-        for (var arg : args) {
-            var token = arg.toLowerCase();
+    @CommandLine.Command(name = "dps")
+    private final class Root implements Runnable {
+        private final Player sender;
 
-            if (STOP_WORDS.contains(token)) {
-                DPSMeter.stop(targetPlayer);
-                return;
-            }
-            if (START_WORDS.contains(token)) continue;
-
-            var parsedCount = matchIntOrNeg(COUNT_REGEX, token);
-            if (parsedCount != -1) {
-                count = parsedCount;
-                continue;
-            }
-
-            var parsedTime = matchIntOrNeg(TIME_REGEX, token);
-            if (parsedTime != -1) {
-                seconds = parsedTime;
-            }
+        private Root(Player sender) {
+            this.sender = sender;
         }
 
-        DPSMeter.start(targetPlayer, seconds, count);
+        @Override
+        public void run() {
+            DPSCommand.this.sendUsageMessage(sender);
+        }
+    }
+
+    @CommandLine.Command(name = "start")
+    private static final class Start implements Runnable {
+        private final Player sender;
+        private final Player targetPlayer;
+
+        @Parameters(index = "0", arity = "0..1", paramLabel = "[seconds]")
+        private Integer seconds;
+
+        @Parameters(index = "1", arity = "0..1", paramLabel = "[targetCount]")
+        private Integer targetCount;
+
+        private Start(Player sender, Player targetPlayer) {
+            this.sender = sender;
+            this.targetPlayer = targetPlayer;
+        }
+
+        @Override
+        public void run() {
+            if (!onlineTarget(sender, targetPlayer)) return;
+            int duration = seconds == null ? DPSMeter.DEFAULT_SECONDS : seconds;
+            int count = targetCount == null ? 1 : targetCount;
+            if (duration < DPSMeter.MIN_SECONDS || duration > DPSMeter.MAX_SECONDS
+                    || count < 1 || count > DPSMeter.MAX_TARGETS) {
+                CommandOutput.sendMessage(sender, "seconds must be 1..120 and targetCount must be 1..10.");
+                return;
+            }
+            DPSMeter.start(targetPlayer, duration, count);
+        }
+    }
+
+    @CommandLine.Command(name = "stop")
+    private static final class Stop implements Runnable {
+        private final Player sender;
+        private final Player targetPlayer;
+
+        private Stop(Player sender, Player targetPlayer) {
+            this.sender = sender;
+            this.targetPlayer = targetPlayer;
+        }
+
+        @Override
+        public void run() {
+            if (!onlineTarget(sender, targetPlayer)) return;
+            DPSMeter.stop(targetPlayer);
+        }
+    }
+    private static boolean onlineTarget(Player sender, Player target) {
+        if (target == null || !target.isOnline() || target.getScene() == null) {
+            CommandOutput.sendMessage(sender, "DPS operations require an online player in a scene.");
+            return false;
+        }
+        return true;
     }
 }

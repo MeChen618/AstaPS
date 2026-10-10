@@ -82,8 +82,13 @@ dependencies {
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.7'
 
     // Line reading libraries.
-    implementation group: 'org.jline', name: 'jline', version: '3.21.0'
-    implementation group: 'org.jline', name: 'jline-terminal-jna', version: '3.21.0'
+    implementation 'org.jline:jline-reader:3.30.14'
+    implementation 'org.jline:jline-console:3.30.14'
+    implementation 'org.jline:jline-terminal-jna:3.30.14'
+    implementation 'info.picocli:picocli:4.7.7'
+    implementation('info.picocli:picocli-shell-jline3:4.7.7') {
+        exclude group: 'org.jline', module: 'jline'
+    }
     implementation group: 'net.java.dev.jna', name: 'jna', version: '5.10.0'
 
     // Java Netty for networking.
@@ -183,6 +188,8 @@ jar {
 }
 
 test {
+    // Load the lightweight server resource fixture before server-backed unit test classes.
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
     useJUnitPlatform {
         // GrasscutterTest boots a real server, so it needs MongoDB and the resources pack, which
         // is gitignored. A fresh checkout cannot run it. Tagging lets CI ask for the tests that
@@ -191,6 +198,10 @@ test {
         if (project.hasProperty('excludeTags')) {
             excludeTags project.property('excludeTags').split(',')
         }
+    }
+    // A JVM can exit before writing XML reports; log the last started test to diagnose it.
+    testLogging {
+        events 'started', 'failed'
     }
     setMaxHeapSize('4G')
 }

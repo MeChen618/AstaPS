@@ -1200,6 +1200,11 @@ public class TowerManager extends BasePlayerManager {
                         delayTicks);
     }
 
+    /** Prevent GM playback of the cutscene ID while a lower-half swap is pending. */
+    public boolean isAwaitingCutsceneFinish(int cutsceneId) {
+        return cutsceneId == MID_HALF_CUTSCENE_ID && midHalfCutscenePending;
+    }
+
     /** The mid-half cutscene finished → swap once the minimum hold has passed. */
     public void onMidHalfCutsceneFinished(int cutsceneId) {
         if (cutsceneId != MID_HALF_CUTSCENE_ID) return;

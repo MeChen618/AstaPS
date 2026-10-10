@@ -23,6 +23,21 @@ public class GameSession implements GameSessionManager.KcpChannel {
     @Getter @Setter private Account account;
     @Getter private Player player;
 
+    /** Session-scoped GM playback completions must not drive gameplay state machines. */
+    private final ManualCutsceneTracker manualCutscenes = new ManualCutsceneTracker();
+
+    public boolean registerManualCutscene(int cutsceneId) {
+        return manualCutscenes.register(cutsceneId);
+    }
+
+    public void cancelManualCutscene(int cutsceneId) {
+        manualCutscenes.cancel(cutsceneId);
+    }
+
+    public boolean consumeManualCutscene(int cutsceneId) {
+        return manualCutscenes.consume(cutsceneId);
+    }
+
     @Getter private long encryptSeed = Crypto.ENCRYPT_SEED;
     private byte[] encryptKey = Crypto.ENCRYPT_KEY;
 
