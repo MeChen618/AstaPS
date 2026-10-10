@@ -100,7 +100,9 @@ public final class AccountCommand implements CommandHandler {
         return new CreateArguments(passwordOrUid, trailingUid == null ? 0 : trailingUid);
     }
 
-    @picocli.CommandLine.Command(name = "create")
+    @picocli.CommandLine.Command(
+            name = "create",
+            customSynopsis = "account create <username> [password] [@UID]")
     private final class Create implements Runnable {
         private final Player sender;
 
