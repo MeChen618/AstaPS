@@ -55,7 +55,7 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
 There is no registration page. An account is created either way:
 
-- **From the console.** `account create <newName[@newUID]> [password]` (password and UID optional).
+- **From the console.** `account create <username> [password] [@UID]` (password and UID optional).
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
 Provided passwords are BCrypt-hashed. An account created without a password has no password check until one is set. New accounts receive only configured default permissions, never an automatic `*` administrator grant. The console needs `server.game.enableConsole` set to `true`.
@@ -116,11 +116,11 @@ help teleport pos
 give 202 --amount 3 @10001
 tp pos 1000 200 300 3 @10001
 account create alice
-account create bob@10001 secret
-account clone alice@ alice-copy@10002
+account create bob secret @10001
+account clone alice@ alice-copy @10002
 ```
 
-Use `newName` to allocate a UID or `newName@UID` to reserve one when creating or cloning. Existing accounts use `accountSelector`: `@UID`, `username@`, or `username@UID`. Cloning requires the source player to be offline and does not copy friendships or shared beatmaps. Reset a password with `account resetpassword <accountSelector> <new-password>` (or `account passwd`); this revokes login and session tokens and disconnects the player. Delete an account with `account delete <accountSelector>`.
+Use a separate optional `@UID` argument to reserve a UID when creating or cloning; if omitted, the UID is allocated automatically. Create also supports an `@UID` without a password. Existing accounts use `accountSelector`: `@UID`, `username@`, or `username@UID`. Cloning requires the source player to be offline and does not copy friendships or shared beatmaps. Reset a password with `account resetpassword <accountSelector> <new-password>` (or `account passwd`); this revokes login and session tokens and disconnects the player. Delete an account with `account delete <accountSelector>`.
 
 See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
 
