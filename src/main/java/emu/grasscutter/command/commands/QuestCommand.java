@@ -31,7 +31,17 @@ public final class QuestCommand implements CommandHandler {
         var commandLine = new CommandLine(new Root(sender));
         commandLine.setExpandAtFiles(false);
 
-        commandLine.registerConverter(
+        commandLine.addSubcommand("forcefinish", new ForceFinish(sender, targetPlayer));
+        commandLine.addSubcommand("add", new Add(sender, targetPlayer));
+        commandLine.addSubcommand("finish", new Finish(sender, targetPlayer));
+        commandLine.addSubcommand("running", new Running(sender, targetPlayer));
+        commandLine.addSubcommand("talking", new Talking(sender, targetPlayer));
+        commandLine.addSubcommand("dungeons", new Dungeons(sender, targetPlayer));
+        commandLine.addSubcommand("debug", new Debug(sender, targetPlayer));
+        commandLine.addSubcommand("triggers", new Triggers(sender, targetPlayer));
+        commandLine.addSubcommand("grouptriggers", new GroupTriggers(sender, targetPlayer));
+        commandLine.addSubcommand("list", new ListQuests(sender, targetPlayer));
+        CommandHandler.registerConverterTree(commandLine,
                 QuestId.class,
                 value -> {
                     try {
@@ -41,7 +51,7 @@ public final class QuestCommand implements CommandHandler {
                                 translate(sender, "commands.quest.invalid_id"));
                     }
                 });
-        commandLine.registerConverter(
+        CommandHandler.registerConverterTree(commandLine,
                 ForceFinishTarget.class,
                 value -> {
                     if ("all".equalsIgnoreCase(value)) return new ForceFinishTarget(null);
@@ -53,16 +63,6 @@ public final class QuestCommand implements CommandHandler {
                     }
                 });
 
-        commandLine.addSubcommand("forcefinish", new ForceFinish(sender, targetPlayer));
-        commandLine.addSubcommand("add", new Add(sender, targetPlayer));
-        commandLine.addSubcommand("finish", new Finish(sender, targetPlayer));
-        commandLine.addSubcommand("running", new Running(sender, targetPlayer));
-        commandLine.addSubcommand("talking", new Talking(sender, targetPlayer));
-        commandLine.addSubcommand("dungeons", new Dungeons(sender, targetPlayer));
-        commandLine.addSubcommand("debug", new Debug(sender, targetPlayer));
-        commandLine.addSubcommand("triggers", new Triggers(sender, targetPlayer));
-        commandLine.addSubcommand("grouptriggers", new GroupTriggers(sender, targetPlayer));
-        commandLine.addSubcommand("list", new ListQuests(sender, targetPlayer));
         return commandLine;
     }
 

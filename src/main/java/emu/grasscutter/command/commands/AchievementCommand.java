@@ -26,7 +26,10 @@ public final class AchievementCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
-        commandLine.registerConverter(
+        commandLine.addSubcommand("grant", new Grant(sender, targetPlayer));
+        commandLine.addSubcommand("revoke", new Revoke(sender, targetPlayer));
+        commandLine.addSubcommand("progress", new Progress(sender, targetPlayer));
+        CommandHandler.registerConverterTree(commandLine,
                 AchievementTarget.class,
                 value -> {
                     if ("all".equalsIgnoreCase(value)) return new AchievementTarget(null);
@@ -37,9 +40,6 @@ public final class AchievementCommand implements CommandHandler {
                                 "Expected a numeric achievement ID or 'all'");
                     }
                 });
-        commandLine.addSubcommand("grant", new Grant(sender, targetPlayer));
-        commandLine.addSubcommand("revoke", new Revoke(sender, targetPlayer));
-        commandLine.addSubcommand("progress", new Progress(sender, targetPlayer));
         return commandLine;
     }
 

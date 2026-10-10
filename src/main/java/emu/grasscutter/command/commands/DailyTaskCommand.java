@@ -22,7 +22,14 @@ public final class DailyTaskCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
-        commandLine.registerConverter(
+        commandLine.addSubcommand("list", new ListTasks(sender, targetPlayer));
+        commandLine.addSubcommand("load", new Load(sender, targetPlayer));
+        commandLine.addSubcommand("reset", new Reset(sender, targetPlayer));
+        commandLine.addSubcommand("city", new City(sender, targetPlayer));
+        commandLine.addSubcommand("finish", new Finish(sender, targetPlayer));
+        commandLine.addSubcommand("support", new Support(sender));
+        commandLine.addSubcommand("bonus", new Bonus(sender, targetPlayer));
+        CommandHandler.registerConverterTree(commandLine,
                 CityArg.class,
                 value -> {
                     Integer cityId = parseCityId(value);
@@ -32,13 +39,6 @@ public final class DailyTaskCommand implements CommandHandler {
                     }
                     return new CityArg(cityId);
                 });
-        commandLine.addSubcommand("list", new ListTasks(sender, targetPlayer));
-        commandLine.addSubcommand("load", new Load(sender, targetPlayer));
-        commandLine.addSubcommand("reset", new Reset(sender, targetPlayer));
-        commandLine.addSubcommand("city", new City(sender, targetPlayer));
-        commandLine.addSubcommand("finish", new Finish(sender, targetPlayer));
-        commandLine.addSubcommand("support", new Support(sender));
-        commandLine.addSubcommand("bonus", new Bonus(sender, targetPlayer));
         return commandLine;
     }
 

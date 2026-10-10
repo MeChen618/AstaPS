@@ -16,6 +16,23 @@ public interface CommandHandler {
         CommandOutput.sendTranslatedMessage(player, key, arguments);
     }
 
+    /** Propagate a custom converter through Picocli subcommands, including nested routes. */
+    static <T> void registerConverterTree(
+            CommandLine root, Class<T> type, CommandLine.ITypeConverter<T> converter) {
+        root.registerConverter(type, converter);
+        for (CommandLine child : new java.util.HashSet<>(root.getSubcommands().values())) {
+            registerConverterTree(child, type, converter);
+        }
+    }
+
+    /** Picocli enum parsing settings are per-command and must reach each subcommand. */
+    static void allowCaseInsensitiveEnums(CommandLine root) {
+        root.setCaseInsensitiveEnumValuesAllowed(true);
+        for (CommandLine child : new java.util.HashSet<>(root.getSubcommands().values())) {
+            allowCaseInsensitiveEnums(child);
+        }
+    }
+
     /** Build this command's picocli tree for one invocation or for completion when both players are null. */
     CommandLine createCommandLine(Player sender, Player targetPlayer);
 

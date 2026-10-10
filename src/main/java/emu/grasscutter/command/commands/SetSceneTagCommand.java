@@ -30,12 +30,12 @@ public final class SetSceneTagCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
-        commandLine.setCaseInsensitiveEnumValuesAllowed(true);
         commandLine.addSubcommand("add", new SetTag(sender, targetPlayer, true));
         commandLine.addSubcommand("remove", new SetTag(sender, targetPlayer, false));
         commandLine.addSubcommand("unlock", new UnlockAll(targetPlayer));
         commandLine.addSubcommand("reset", new Reset(targetPlayer));
         commandLine.addSubcommand("list", new ListTags(sender, targetPlayer));
+        CommandHandler.allowCaseInsensitiveEnums(commandLine);
         return commandLine;
     }
 

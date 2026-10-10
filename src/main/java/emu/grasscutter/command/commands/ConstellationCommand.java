@@ -22,9 +22,9 @@ public final class ConstellationCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
-        commandLine.setCaseInsensitiveEnumValuesAllowed(true);
         commandLine.addSubcommand("set", new Set(sender, targetPlayer));
         commandLine.addSubcommand("reset", new Reset(sender, targetPlayer));
+        CommandHandler.allowCaseInsensitiveEnums(commandLine);
         return commandLine;
     }
 

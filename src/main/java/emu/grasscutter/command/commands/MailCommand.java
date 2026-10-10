@@ -36,7 +36,9 @@ public final class MailCommand implements CommandHandler {
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
         commandLine.setExpandAtFiles(false);
-        commandLine.registerConverter(
+        commandLine.addSubcommand("send", new Send(sender));
+        commandLine.addSubcommand("system", createSystemCommand(sender));
+        CommandHandler.registerConverterTree(commandLine,
                 Recipient.class,
                 value -> {
                     if (value.equalsIgnoreCase("all")) return new Recipient(null);
@@ -46,7 +48,7 @@ public final class MailCommand implements CommandHandler {
                         throw new CommandLine.TypeConversionException(invalid.getMessage());
                     }
                 });
-        commandLine.registerConverter(
+        CommandHandler.registerConverterTree(commandLine,
                 Attachment.class,
                 value -> {
                     String[] parts = value.split(":");
@@ -65,8 +67,6 @@ public final class MailCommand implements CommandHandler {
                                 "Attachment values must be positive integers");
                     }
                 });
-        commandLine.addSubcommand("send", new Send(sender));
-        commandLine.addSubcommand("system", createSystemCommand(sender));
         return commandLine;
     }
 

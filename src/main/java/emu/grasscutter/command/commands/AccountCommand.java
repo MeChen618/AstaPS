@@ -31,12 +31,12 @@ public final class AccountCommand implements CommandHandler {
 
         var commandLine = new CommandLine(new AccountRoot(sender));
         commandLine.setExpandAtFiles(false);
-        commandLine.registerConverter(UidArg.class, value -> parseUid(sender, value));
-
         commandLine.addSubcommand("create", new Create(sender));
         commandLine.addSubcommand("clone", new Clone(sender));
         commandLine.addSubcommand("delete", new Delete(sender));
         commandLine.addSubcommand("resetpass", new ResetPass(sender));
+        CommandHandler.registerConverterTree(commandLine,UidArg.class, value -> parseUid(sender, value));
+
         return commandLine;
     }
 
