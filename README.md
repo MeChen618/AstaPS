@@ -97,14 +97,15 @@ Built-in commands use **Picocli** for positional arguments, named options and su
 | Command | Purpose |
 |---|---|
 | `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
-| `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
+| `account create / clone / delete / resetpassword` | Manage accounts from the **server console only** (`account passwd` is an alias of `resetpassword`). |
 | `ban <playerSelector> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). `endTime` is a Unix timestamp. |
 | `ban <IPv4> [reason...]` / `unban <IPv4>` | Manage permanent IP bans with `server.banip`, without passing a keystore key. |
 | `unban <playerSelector>` | Unban an account with `server.ban` (and `server.ban.others` for another account). |
 | `kick <playerSelector>` | Disconnect an online player with `server.kick`. The old `restart` alias and keystore key argument are removed. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
-| `announce template <templateId>` | Publish a stored announcement template; `announce tpl` is an alias. |
-| `sendMessage <message...>` | Send a server message (`say` alias only). |
+| `announce send <content...>` / `announce template <templateId>` | Send a temporary announcement or publish a stored template; `announce tpl` is an alias for `template`. |
+| `say <message...>` | Send a server message (the former `sendMessage` command is removed). |
+| `player list [--uid]` | List connected players; `--uid` includes UID values. Replaces `list [uid]` and `players`. |
 | `coop [guestSelector] <hostSelector>` | Move a guest into an online host's world. Omitted guest uses the current command target (the sender in-game by default). |
 
 Example server-console commands:
@@ -119,7 +120,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-In `account create` and `account clone`, the optional `@UID` specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`; this revokes both existing login and session tokens and disconnects the player.
+In `account create` and `account clone`, the optional `@UID` specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpassword <username> <new-password>` (or `account passwd`); this revokes both existing login and session tokens and disconnects the player.
 
 See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
 
