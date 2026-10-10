@@ -29,6 +29,8 @@ import picocli.CommandLine;
 import picocli.CommandLine.ArgGroup;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Parameters;
+import picocli.CommandLine.Spec;
+import picocli.CommandLine.Model.CommandSpec;
 
 /** Unified player-owned character operations. The player target is selected by CommandMap. */
 @Command(label = "avatar", targetRequirement = Command.TargetRequirement.ONLINE)
@@ -44,12 +46,12 @@ public final class AvatarCommand implements CommandHandler {
         var root = new CommandLine(new Root(sender));
         root.addSubcommand("list", new ListAvatars(sender, targetPlayer));
 
-        var constellation = new CommandLine(new Help(sender, "avatar constellation"));
+        var constellation = new CommandLine(new Help(sender));
         constellation.addSubcommand("set", new ConstellationSet(sender, targetPlayer));
         constellation.addSubcommand("reset", new ConstellationReset(sender, targetPlayer));
         root.addSubcommand("constellation", constellation);
 
-        var talent = new CommandLine(new Help(sender, "avatar talent"));
+        var talent = new CommandLine(new Help(sender));
         talent.addSubcommand("set", new TalentSet(sender, targetPlayer));
         talent.addSubcommand("normal", new TalentSlot(sender, targetPlayer, Slot.NORMAL), "n");
         talent.addSubcommand("skill", new TalentSlot(sender, targetPlayer, Slot.SKILL), "e");
@@ -58,7 +60,7 @@ public final class AvatarCommand implements CommandHandler {
         talent.addSubcommand("list", new TalentList(sender, targetPlayer));
         root.addSubcommand("talent", talent);
 
-        var friendship = new CommandLine(new Help(sender, "avatar friendship"));
+        var friendship = new CommandLine(new Help(sender));
         friendship.addSubcommand("set", new FriendshipSet(sender, targetPlayer));
         root.addSubcommand("friendship", friendship);
 
@@ -84,16 +86,16 @@ public final class AvatarCommand implements CommandHandler {
     @CommandLine.Command(name = "group")
     private static final class Help implements Runnable {
         private final Player sender;
-        private final String path;
 
-        private Help(Player sender, String path) {
+        @Spec private CommandSpec spec;
+
+        private Help(Player sender) {
             this.sender = sender;
-            this.path = path;
         }
 
         @Override
         public void run() {
-            CommandOutput.sendMessage(sender, "Usage: " + path + " <subcommand>");
+            CommandOutput.sendMessage(sender, spec.commandLine().getUsageMessage().stripTrailing());
         }
     }
 
