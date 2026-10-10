@@ -55,12 +55,22 @@ public final class PlayerCloneService {
     public static synchronized CloneResult cloneOffline(
             String sourceUsername, String targetUsername, int requestedUid) {
         requireUsername(sourceUsername, "Source");
-        AccountUsernamePolicy.requireValid(targetUsername);
-
         Account sourceAccount = DatabaseHelper.getAccountByName(sourceUsername);
         if (sourceAccount == null) {
             throw new IllegalArgumentException("Source account does not exist: " + sourceUsername);
         }
+        return cloneOffline(sourceAccount, targetUsername, requestedUid);
+    }
+
+    /** Clone an already resolved source account, including accounts selected by player UID. */
+    public static synchronized CloneResult cloneOffline(
+            Account sourceAccount, String targetUsername, int requestedUid) {
+        if (sourceAccount == null) {
+            throw new IllegalArgumentException("Source account does not exist.");
+        }
+        String sourceUsername = sourceAccount.getUsername();
+        requireUsername(sourceUsername, "Source");
+        AccountUsernamePolicy.requireValid(targetUsername);
         if (DatabaseHelper.getAccountByName(targetUsername) != null) {
             throw new IllegalArgumentException("Target account already exists: " + targetUsername);
         }
