@@ -182,7 +182,7 @@
       "not_found_error": "Entity does not exist"
     },
     "avatar": {
-      "description": "Manage owned characters: list, constellations, talents, friendship, extra levels, and max upgrades."
+      "description": "Manage owned characters: list, constellations, talents, combat stats, friendship, extra levels, and max upgrades."
     },
     "battlepass": {
       "description": "Manage battle-pass level purchases and premium reward access."
