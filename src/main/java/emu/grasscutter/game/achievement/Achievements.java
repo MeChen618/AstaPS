@@ -14,7 +14,6 @@ import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
 import java.util.function.Consumer;
-import java.util.function.IntPredicate;
 import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 import lombok.*;
@@ -123,48 +122,52 @@ public class Achievements {
      * linked-stage propagation. The returned count has the same meaning as the old loop.
      */
     public synchronized int grantAll() {
-        return this.changeAll(true);
-    }
-
-    public synchronized int revokeAll() {
-        return this.changeAll(false);
-    }
-
-    private int changeAll(boolean grant) {
         var batch = new UpdateBatch();
         for (AchievementData data : GameData.getAchievementDataMap().values()) {
-            if (!data.isUsed() || !data.isParent()) continue;
-
-            var achievement = this.getAchievement(data.getId());
-            if (achievement == null) continue;
-            // Revoking must consider every stage, not only the representative.
-            // The representative can be unfinished while an earlier stage was completed.
-            if (grant) {
-                if (this.isFinished(data.getId())) continue;
-            } else if (!hasCompletedStage(
-                    data.getId(), data.getExcludedGroupAchievementIdList(), this::isFinished)) {
+            if (!data.isUsed() || !data.isParent() || this.isFinished(data.getId())) {
                 continue;
             }
 
-            achievement.setCurProgress(grant ? achievement.getTotalProgress() : 0);
+            var achievement = this.getAchievement(data.getId());
+            if (achievement == null) continue;
+            achievement.setCurProgress(achievement.getTotalProgress());
             this.updateRelatedAchievements(achievement, batch);
         }
+        return this.finishBulkUpdate(batch);
+    }
 
+    public synchronized int revokeAll() {
+        var batch = new UpdateBatch();
+        // Each stage has its own ID and persisted state. Revoke those states directly
+        // rather than checking the final stage (isParent) for each group.
+        for (Achievement achievement : this.achievementList.values()) {
+            if (achievement == null || this.isInvalid(achievement.getId())) continue;
+            if (resetCompletedAchievement(achievement)) {
+                batch.record(achievement, true);
+            }
+        }
+        return this.finishBulkUpdate(batch);
+    }
+
+    /** Clear an achieved ID without touching its durable reward-claim history. */
+    static boolean resetCompletedAchievement(Achievement achievement) {
+        if (achievement == null) return false;
+        var status = achievement.getStatus();
+        if (status != Status.Status_FINISHED && status != Status.Status_REWARD_TAKEN) {
+            return false;
+        }
+        achievement.setCurProgress(0);
+        achievement.setStatus(Status.Status_UNFINISHED);
+        achievement.setFinishTimestampSec(0);
+        return true;
+    }
+
+    private int finishBulkUpdate(UpdateBatch batch) {
         if (batch.isEmpty()) return 0;
         this.computeFinishedAchievementNum();
         this.save();
         batch.flush(this::sendUpdatePacket);
         return batch.changedCount();
-    }
-
-    /** Whether a stage group needs revocation, including partially completed stage chains. */
-    static boolean hasCompletedStage(
-            int representativeId, Collection<Integer> otherStageIds, IntPredicate isFinished) {
-        if (isFinished.test(representativeId)) return true;
-        for (int stageId : otherStageIds) {
-            if (isFinished.test(stageId)) return true;
-        }
-        return false;
     }
 
     private int notifyOtherAchievements(Achievement achievement) {

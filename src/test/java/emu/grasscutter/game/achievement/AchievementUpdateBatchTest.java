@@ -1,11 +1,10 @@
 package emu.grasscutter.game.achievement;
 
-import static emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status.Status_FINISHED;
+import static emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
@@ -49,31 +48,50 @@ class AchievementUpdateBatchTest {
     }
 
     @Test
-    void revokeAllIncludesEarlierFinishedStagesWhenParentIsUnfinished() {
-        var finished = Set.of(10001, 10002);
+    void revokeAllResetsEachCompletedStageRegardlessOfParent() {
+        var stageOne = achievement(10001);
+        var stageTwo = achievement(10002);
+        var parent = new Achievement(Status_UNFINISHED, 10003, 10, 4, 0);
+        var changes = new Achievements.UpdateBatch();
 
-        assertTrue(
-                Achievements.hasCompletedStage(
-                        10003, Set.of(10001, 10002), finished::contains));
+        for (Achievement stage : List.of(stageOne, stageTwo, parent)) {
+            if (Achievements.resetCompletedAchievement(stage)) {
+                changes.record(stage, true);
+            }
+        }
+
+        assertEquals(2, changes.changedCount());
+        assertEquals(Status_UNFINISHED, stageOne.getStatus());
+        assertEquals(Status_UNFINISHED, stageTwo.getStatus());
+        assertEquals(0, stageOne.getCurProgress());
+        assertEquals(0, stageTwo.getFinishTimestampSec());
+        // An unfinished stage is not a completed achievement to revoke.
+        assertEquals(4, parent.getCurProgress());
+        assertEquals(Status_UNFINISHED, parent.getStatus());
     }
 
     @Test
-    void revokeAllIncludesFinishedParentEvenWhenOtherStagesAreUnfinished() {
-        var finished = Set.of(10003);
+    void revokeAllPreservesAlreadyClaimedRewardHistory() {
+        var stage = new Achievement(Status_REWARD_TAKEN, 10001, 5, 5, 123);
+        assertTrue(Achievements.resetCompletedAchievement(stage));
 
-        assertTrue(
-                Achievements.hasCompletedStage(
-                        10003, Set.of(10001, 10002), finished::contains));
+        assertEquals(Status_UNFINISHED, stage.getStatus());
+        assertEquals(0, stage.getCurProgress());
+        assertEquals(0, stage.getFinishTimestampSec());
+        assertTrue(stage.hasClaimedReward());
+        assertEquals(Status_REWARD_TAKEN, stage.statusOnCompletion());
+        assertFalse(Achievements.resetCompletedAchievement(stage));
     }
 
     @Test
-    void revokeAllSkipsGroupsWithNoFinishedStages() {
-        var finished = Set.of(20001);
+    void revokeAllLeavesUnfinishedAndInvalidStatesUntouched() {
+        var unfinished = new Achievement(Status_UNFINISHED, 10001, 5, 3, 0);
+        var invalid = new Achievement(Status_INVALID, 10002, 5, 0, 0);
 
-        assertFalse(
-                Achievements.hasCompletedStage(
-                        10003, Set.of(10001, 10002), finished::contains));
-        assertFalse(Achievements.hasCompletedStage(10004, Set.of(), finished::contains));
+        assertFalse(Achievements.resetCompletedAchievement(unfinished));
+        assertFalse(Achievements.resetCompletedAchievement(invalid));
+        assertFalse(Achievements.resetCompletedAchievement(null));
+        assertEquals(3, unfinished.getCurProgress());
     }
 
     @Test
