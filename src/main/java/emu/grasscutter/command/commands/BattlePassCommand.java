@@ -14,8 +14,8 @@ import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(
-        label = "bp",
-        aliases = {"battlepass"},
+        label = "battlepass",
+        aliases = {"bp"},
         permission = "player.setprop",
         permissionTargeted = "player.setprop.others")
 public final class BattlePassCommand implements CommandHandler {
@@ -39,7 +39,7 @@ public final class BattlePassCommand implements CommandHandler {
         };
     }
 
-    @CommandLine.Command(name = "bp")
+    @CommandLine.Command(name = "battlepass")
     private final class Root implements Runnable {
         private final Player sender;
 
