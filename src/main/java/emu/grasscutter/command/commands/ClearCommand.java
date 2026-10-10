@@ -7,6 +7,7 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.inventory.ItemType;
 import emu.grasscutter.game.player.Player;
+import java.util.List;
 import java.util.Locale;
 import java.util.stream.Stream;
 import picocli.CommandLine;
@@ -59,6 +60,9 @@ public final class ClearCommand implements CommandHandler {
         @Option(names = {"--rarity"}, defaultValue = "4", paramLabel = "<maxRarity>")
         private int rarity;
 
+        @Option(names = "--dry-run", description = "Preview matching items without removing them")
+        private boolean dryRun;
+
         private Args(Player sender, Player targetPlayer) {
             this.sender = sender;
             this.targetPlayer = targetPlayer;
@@ -74,6 +78,22 @@ public final class ClearCommand implements CommandHandler {
 
             Inventory inventory = targetPlayer.getInventory();
             String playerName = targetPlayer.getNickname();
+            if (dryRun) {
+                var preview = summarize(selectedItems(inventory, scope, level, refinement, rarity));
+                CommandOutput.sendMessage(
+                        sender,
+                        "Dry run for "
+                                + playerName
+                                + " ("
+                                + scope.name().toLowerCase(Locale.ROOT)
+                                + "): would remove "
+                                + preview.stacks()
+                                + " item stacks ("
+                                + preview.quantity()
+                                + " total items). No items changed.");
+                return;
+            }
+
             switch (scope) {
                 case WEAPONS -> {
                     inventory.removeItems(getWeapons(inventory, level, refinement, rarity).toList());
@@ -90,6 +110,35 @@ public final class ClearCommand implements CommandHandler {
                 case ALL -> clearAll(sender, inventory, playerName, level, refinement, rarity);
             }
         }
+    }
+
+    record Preview(long stacks, long quantity) {}
+
+    /** Count both inventory entries and stack quantities without mutating any item. */
+    static Preview summarize(List<GameItem> items) {
+        return new Preview(items.size(), items.stream().mapToLong(GameItem::getCount).sum());
+    }
+
+    /** The preview uses exactly the same category and threshold filters as real deletion. */
+    private static List<GameItem> selectedItems(
+            Inventory inventory, Scope scope, int level, int refinement, int rarity) {
+        Stream<GameItem> selected =
+                switch (scope) {
+                    case WEAPONS -> getWeapons(inventory, level, refinement, rarity);
+                    case ARTIFACTS -> getRelics(inventory, level, rarity);
+                    case MATERIALS -> getOther(ItemType.ITEM_MATERIAL, inventory, rarity);
+                    case ALL ->
+                            Stream.of(
+                                            getRelics(inventory, level, rarity),
+                                            getWeapons(inventory, level, refinement, rarity),
+                                            getOther(ItemType.ITEM_MATERIAL, inventory, rarity),
+                                            getOther(ItemType.ITEM_FURNITURE, inventory, rarity),
+                                            getOther(ItemType.ITEM_DISPLAY, inventory, rarity),
+                                            getOther(ItemType.ITEM_VIRTUAL, inventory, rarity))
+                                    .flatMap(stream -> stream);
+                };
+        // Inventory.removeItem rejects empty stacks; do not count them as deletions.
+        return selected.filter(item -> item.getCount() > 0).toList();
     }
 
     private static Stream<GameItem> getOther(ItemType type, Inventory inventory, int rarity) {

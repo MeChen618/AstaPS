@@ -106,3 +106,14 @@ both state changes and queries. The ordinary 7.1 schedule derives its unlock
 status and platform flags from that field. The compatibility helper also
 uses the manager setter rather than reflection. New players default to a
 free battle pass; previously persisted paid grants remain unchanged.
+
+### Inventory clear preview
+
+`clear <all|weapons|artifacts|materials> [--level N] [--refinement N]
+[--rarity N] [--dry-run] [@UID]` supports `--dry-run` to preview the
+matching inventory entries and their total stack quantities. For example,
+`clear all --dry-run @10001` reports how many stacks and individual items
+would be deleted without changing the inventory. The preview applies the
+same category, rarity, level, refinement, locked and equipped filters as
+the destructive path; `all` also includes furniture, display and virtual
+inventory items. Without `--dry-run`, deletion behavior is unchanged.
