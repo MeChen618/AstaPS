@@ -181,6 +181,9 @@
       "description": "编辑现存实体的属性",
       "not_found_error": "实体不存在。"
     },
+    "avatar": {
+      "description": "管理已拥有的角色：查看列表、命座、天赋、好感度、额外等级与一键强化。"
+    },
     "give": {
       "usage_relic": "用法：give <圣遗物 ID> [主词条 ID] [<副词条 ID>[,<强化次数>]]... [lv<等级 0-20>]",
       "illegal_relic": "此圣遗物 ID 属于黑名单范围，也许不是你想要的。",
