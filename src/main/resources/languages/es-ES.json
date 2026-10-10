@@ -182,7 +182,7 @@
       "not_found_error": "🇺🇸Entity does not exist"
     },
     "avatar": {
-      "description": "Gestiona personajes: lista, constelaciones, talentos, amistad, niveles extra y mejoras máximas."
+      "description": "Gestiona personajes: lista, constelaciones, talentos, estadísticas de combate, amistad, niveles extra y mejoras máximas."
     },
     "battlepass": {
       "description": "Gestiona la compra de niveles y el estado prémium del pase de batalla."
