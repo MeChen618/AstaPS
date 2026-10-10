@@ -224,7 +224,7 @@
       "language_not_found": "Currently, the server does not have that language.",
       "description": "Display or change current language"
     },
-    "list": {
+    "player": {
       "success": "There are %s player(s) online:",
       "description": "List online players"
     },
@@ -328,7 +328,7 @@
       "error": "ERROR: Invalid construction stage %s. Check console for stacktrace.",
       "description": "Sends mail to the specified user. The usage of this command changes based on its composition state"
     },
-    "sendMessage": {
+    "say": {
       "success": "Message sent.",
       "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
     },
