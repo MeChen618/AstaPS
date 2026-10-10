@@ -182,7 +182,7 @@
       "not_found_error": "🇺🇸Entity does not exist"
     },
     "avatar": {
-      "description": "Gestionează personajele: listă, constelații, talente, prietenie, niveluri suplimentare și îmbunătățiri maxime."
+      "description": "Gestionează personajele: listă, constelații, talente, statistici de luptă, prietenie, niveluri suplimentare și îmbunătățiri maxime."
     },
     "battlepass": {
       "description": "Gestionează achiziția nivelurilor și accesul la recompensele premium ale permisului de luptă."
