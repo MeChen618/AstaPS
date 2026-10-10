@@ -55,7 +55,7 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 没有注册页面。账号通过以下任一方式创建：
 
-- **从控制台。** `account create <newName[@newUID]> [password]`（密码与 UID 均可选，新账号仅使用配置中的默认权限，不自动获得 `*` 管理员权限）。
+- **从控制台。** `account create <username> [password] [@UID]`（密码与 UID 均可选，新账号仅使用配置中的默认权限，不自动获得 `*` 管理员权限）。
 - **在登录时。** 用一个没人占用的名字登录即注册该账号。开启 `account.useIntegrationPassword` 时，在用户名框中填 `name&&password`，密码框留空——当你要同时代理大量客户端、又不想为每个都建用户时很方便。
 
 设置的密码以 BCrypt 哈希存储。不指定密码时，账号暂不校验密码，可通过 `account resetpassword` 后续设置。控制台需要把 `server.game.enableConsole` 设为 `true`。
@@ -88,11 +88,11 @@ help teleport pos
 give 202 --amount 3 @10001
 tp pos 1000 200 300 3 @10001
 account create alice
-account create bob@10001 secret
-account clone alice@ alice-copy@10002
+account create bob secret @10001
+account clone alice@ alice-copy @10002
 ```
 
-创建或克隆账号时，`newName` 表示自动分配 UID，`newName@UID` 表示指定 UID。已有账号使用 `accountSelector`：`@UID`、`username@` 或 `username@UID`。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpassword <accountSelector> <new-password>`（别名 `account passwd`），删除账号使用 `account delete <accountSelector>`。重置密码会撤销旧登录令牌和会话令牌，并断开玩家连接。
+创建或克隆账号时，使用独立的可选参数 `@UID` 指定新 UID；省略时自动分配。`account create` 也允许省略密码、直接指定 `@UID`。已有账号使用 `accountSelector`：`@UID`、`username@` 或 `username@UID`。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpassword <accountSelector> <new-password>`（别名 `account passwd`），删除账号使用 `account delete <accountSelector>`。重置密码会撤销旧登录令牌和会话令牌，并断开玩家连接。
 
 详细说明见 [CLI 迁移文档](docs/cli-picocli-migration.md)；插件开发者请参阅 [命令 API v5 文档](docs/plugin-command-api-v5.md)。
 
