@@ -224,7 +224,7 @@
       "language_not_found": "Attualmente, il server non ha quella lingua.",
       "description": "Mostra o cambia la lingua corrente"
     },
-    "list": {
+    "player": {
       "success": "Ci sono %s player online:",
       "description": "Lista player online"
     },
@@ -328,7 +328,7 @@
       "error": "ERRORE: fase di costruzione %s non valida. Controlla lo stacktrace della console.",
       "description": "Invia posta all'utente specificato. L'utilizzo di questo comando cambia in base al suo stato di composizione"
     },
-    "sendMessage": {
+    "say": {
       "success": "Messaggio inviato.",
       "description": "Invia un messaggio a un giocatore come server. Se usato senza bersaglio, invia a tutti i giocatori sul server."
     },
