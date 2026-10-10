@@ -49,7 +49,7 @@ public final class PlayerCommand implements CommandHandler {
         public void run() {
             Map<Integer, Player> playersMap = Grasscutter.getGameServer().getPlayers();
 
-            CommandOutput.sendMessage(sender, translate(sender, "commands.list.success", playersMap.size()));
+            CommandOutput.sendMessage(sender, translate(sender, "commands.player.success", playersMap.size()));
             if (playersMap.isEmpty()) return;
 
             String players =
