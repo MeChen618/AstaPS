@@ -66,11 +66,20 @@ public final class AccountCreateArgumentsTest {
     @Test
     void resetPasswordRequiresUsernameAndNewPassword() {
         var handler = new AccountCommand();
+        var cli = handler.createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("resetpassword"));
+        assertTrue(cli.getSubcommands().containsKey("passwd"));
+        assertFalse(cli.getSubcommands().containsKey("resetpass"));
         assertDoesNotThrow(
-                () -> handler.createCommandLine(null, null).parseArgs("resetpass", "alice", "newpass"));
+                () -> handler.createCommandLine(null, null).parseArgs("resetpassword", "alice", "newpass"));
+        assertDoesNotThrow(
+                () -> handler.createCommandLine(null, null).parseArgs("passwd", "alice", "newpass"));
         assertThrows(
                 CommandLine.ParameterException.class,
-                () -> handler.createCommandLine(null, null).parseArgs("resetpass", "alice"));
+                () -> handler.createCommandLine(null, null).parseArgs("resetpassword", "alice"));
+        assertThrows(
+                CommandLine.ParameterException.class,
+                () -> handler.createCommandLine(null, null).parseArgs("resetpass", "alice", "newpass"));
     }
 
     @Test
