@@ -23,41 +23,28 @@ public final class CommandMapParsingTest {
     }
 
     @Test
-    public void targetSelectorAcceptsPlainAndAtUid() {
-        assertEquals("123", CommandMap.normalizeTargetSelector("123"));
-        assertEquals("123", CommandMap.normalizeTargetSelector("@123"));
-        assertEquals("Alice", CommandMap.normalizeTargetSelector("Alice"));
+    public void targetSelectorAcceptsPlainAndAtUsername() {
+        assertEquals("20261010", CommandMap.normalizeTargetSelector("20261010"));
+        assertEquals("20261010", CommandMap.normalizeTargetSelector("@20261010"));
+        assertEquals("Alice", CommandMap.normalizeTargetSelector("@Alice"));
     }
 
     @Test
-    public void numericAccountUsernamesRemainSelectable() {
+    public void targetSelectorUsesOnlyAccountUsernames() {
         assertTrue(emu.grasscutter.game.AccountUsernamePolicy.isValid("20261010"));
-        java.util.function.Function<String, Integer> lookup =
-                name -> "20261010".equals(name) ? 10001 : null;
+        java.util.function.Function<String, Integer> usernames =
+                username -> switch (username) {
+                    case "rino" -> 10001;
+                    case "20261010" -> 10002;
+                    default -> null;
+                };
 
-        assertEquals(10001, CommandMap.resolveTargetUid("20261010", lookup, uid -> false));
-        assertEquals(10001, CommandMap.resolveTargetUid("name:20261010", lookup, uid -> true));
-        assertEquals(10002, CommandMap.resolveTargetUid("10002", lookup, uid -> true));
-        assertEquals(10002, CommandMap.resolveTargetUid("uid:10002", lookup, uid -> false));
-        assertEquals(10001, CommandMap.resolveTargetUid("name:20261010", lookup, uid -> false));
-        assertEquals(10001, CommandMap.resolveTargetUid("20261010", lookup, uid -> uid == 10001));
-        assertEquals(10001, CommandMap.resolveTargetUid("rino", name -> 10001, uid -> false));
-    }
-
-    @Test
-    public void numericTargetCollisionIsRejectedInsteadOfPickingTheWrongPlayer() {
-        java.util.function.Function<String, Integer> lookup =
-                name -> "20261010".equals(name) ? 10001 : null;
-        var ambiguous = assertThrows(
-                IllegalArgumentException.class,
-                () -> CommandMap.resolveTargetUid("20261010", lookup, uid -> uid == 20261010));
-        assertTrue(ambiguous.getMessage().contains("@name:20261010"));
-        assertTrue(ambiguous.getMessage().contains("@uid:20261010"));
-
-        assertEquals(10001, CommandMap.resolveTargetUid("name:20261010", lookup, uid -> true));
-        assertEquals(20261010, CommandMap.resolveTargetUid("uid:20261010", lookup, uid -> true));
-        assertEquals(Integer.MIN_VALUE, CommandMap.resolveTargetUid("missing", name -> null, uid -> false));
-        assertEquals(Integer.MIN_VALUE, CommandMap.resolveTargetUid("uid:abc", lookup, uid -> true));
+        assertEquals(10001, CommandMap.resolveAccountUsername("rino", usernames));
+        assertEquals(10002, CommandMap.resolveAccountUsername("20261010", usernames));
+        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("10002", usernames));
+        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("uid:10002", usernames));
+        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("name:20261010", usernames));
+        assertEquals(Integer.MIN_VALUE, CommandMap.resolveAccountUsername("", usernames));
     }
 
     @Test

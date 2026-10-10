@@ -8,7 +8,7 @@ unrelated quest, protocol, resource, combat or server changes.
 
 - Built-in commands declare their grammar using Picocli arguments, options and subcommands.
 - The console uses JLine parsing and Picocli completion.
-- `@UID` remains an AstaPS target selector, not a Picocli argument file.
+- `@username` selects a target by its exact account username (including numeric usernames), not a Picocli argument file. Command-local UID arguments are unaffected.
 - Commands can opt out of implicit target parsing when `@UID` is positional data.
 - New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
@@ -136,20 +136,17 @@ commands are removed rather than kept as duplicate aliases. Other uses of
 ### Target-aware JLine console prompt
 
 The JLine prompt is `asta> ` when the console has no remembered target.
-After `target @10001` (or `@10001`), it displays the resolved account name and UID,
-e.g. `rino@10001> `. `target` with no arguments clears the selection and
+After `@rino` (or `target @rino`), it displays the account name and UID,
+e.g. `rino@10001> `. Entering `@` (or `target`) clears the selection and
 restores `asta> `. The prompt uses the same target state as command execution;
-per-command inline `@UID` overrides do not change that remembered target. The
-account name is cached when selecting the target, so rendering the prompt never
-loads offline players or queries the database.
+per-command inline `@username` overrides do not change that remembered target.
+The account name is cached when selecting the target, so rendering the prompt
+never loads offline players or queries the database.
 
-### Numeric usernames and target-selector ambiguity
+### Username-only command targets
 
-Account names may consist entirely of digits, including date-like names such as
-`20261010`. Both standalone `@20261010` and inline `@20261010` first resolve
-that exact account name, then fall back to UID lookup if no account with a player
-matches. If both a numeric username and a different player's UID match, the
-command is rejected to avoid accidentally modifying the wrong player. Specify
-`@name:20261010` for the account or `@uid:20261010` for that UID explicitly.
-The `target` command accepts the same prefixes, and `@` still clears the
-remembered target. Non-numeric usernames and ordinary UID selectors are unchanged.
+`@rino`, `@20261010`, and inline `@username` selectors address a player by
+their exact **account username** only. Digit-only usernames are valid.
+The numeric string is never interpreted as a UID, and there is no fallback or
+`name:`/`uid:` selector grammar. A valid account with no created player cannot
+be selected as a player target. `@` clears the remembered target.
