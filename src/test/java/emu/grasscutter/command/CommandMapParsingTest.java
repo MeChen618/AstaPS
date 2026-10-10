@@ -243,6 +243,22 @@ public final class CommandMapParsingTest {
     }
 
     @Test
+    public void builtinTargetRoutingCannotBeShadowed() {
+        var map = new CommandMap(false);
+        assertTrue(CommandMap.isReservedCommandName("target"));
+        assertTrue(CommandMap.isReservedCommandName("@10001"));
+        assertTrue(CommandMap.isReservedCommandName("rino@"));
+        assertFalse(CommandMap.isReservedCommandName("email"));
+
+        assertThrows(IllegalArgumentException.class,
+                () -> map.registerCommand("target", new TargetNameCollisionCommand()));
+        assertThrows(IllegalArgumentException.class,
+                () -> map.registerCommand("alias-target", new TargetAliasCollisionCommand()));
+        assertNull(map.getHandler("target"));
+        assertNull(map.getHandler("alias-target"));
+    }
+
+    @Test
     public void registrationRejectsUnannotatedHandlers() {
         var map = new CommandMap(false);
 
@@ -374,6 +390,29 @@ public final class CommandMapParsingTest {
                 emu.grasscutter.game.player.Player sender,
                 emu.grasscutter.game.player.Player targetPlayer) {
             if (sender == null && targetPlayer == null) this.completionBuilds.incrementAndGet();
+            return new CommandLine(CommandLine.Model.CommandSpec.create());
+        }
+    }
+
+    @Command(label = "target", targetRequirement = Command.TargetRequirement.NONE)
+    private static final class TargetNameCollisionCommand implements CommandHandler {
+        @Override
+        public CommandLine createCommandLine(
+                emu.grasscutter.game.player.Player sender,
+                emu.grasscutter.game.player.Player targetPlayer) {
+            return new CommandLine(CommandLine.Model.CommandSpec.create());
+        }
+    }
+
+    @Command(
+            label = "alias-target",
+            aliases = {"target"},
+            targetRequirement = Command.TargetRequirement.NONE)
+    private static final class TargetAliasCollisionCommand implements CommandHandler {
+        @Override
+        public CommandLine createCommandLine(
+                emu.grasscutter.game.player.Player sender,
+                emu.grasscutter.game.player.Player targetPlayer) {
             return new CommandLine(CommandLine.Model.CommandSpec.create());
         }
     }
