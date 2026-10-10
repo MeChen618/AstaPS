@@ -76,12 +76,14 @@ are also rejected without awarding items.
 ### Bulk achievement commands
 
 `achievement grantall` and `achievement revokeall` now call the achievement
-manager's batched operations. Grant-all keeps the used/parent filters and linked-stage completion events.
-Revoke-all instead iterates each persisted, valid achievement ID and resets every
-completed state without using the parent marker. Both retain reward-claim history
-and status-transition counts. It recomputes the completed count once, queues one achievement
-document save, and groups unique changed achievements into update packets of at
-most 128 entries. Single-ID grant, revoke and progress retain the same behavior.
+manager's batched operations. Grant-all visits every used achievement ID directly,
+sets each unfinished stage to its own required progress, and applies its individual
+completion transition and event. It does not use the parent marker or synchronize
+progress across stages. Revoke-all iterates each persisted, valid achievement ID and
+resets completed states independently. Both preserve reward-claim history and
+status-transition counts, recompute the completed count once, queue one achievement
+document save, and group unique changed achievements into update packets of at
+most 128 entries. Single-ID grant, revoke and progress retain linked-stage behavior.
 
 `achievement revokeall` does not use stage-group membership: every completed
 achievement ID is reset directly, even if the final stage marked `isParent` has

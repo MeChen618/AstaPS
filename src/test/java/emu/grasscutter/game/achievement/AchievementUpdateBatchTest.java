@@ -48,6 +48,59 @@ class AchievementUpdateBatchTest {
     }
 
     @Test
+    void grantAllCompletesIndependentIdsEvenWhenGroupFinalStageAlreadyFinished() {
+        var earlierStage = new Achievement(Status_UNFINISHED, 10001, 5, 2, 0);
+        var middleStage = new Achievement(Status_UNFINISHED, 10002, 10, 0, 0);
+        var finalStage = new Achievement(Status_FINISHED, 10003, 20, 20, 100);
+        var batch = new Achievements.UpdateBatch();
+        var completedIds = new ArrayList<Integer>();
+
+        Achievements.grantUnfinishedStages(
+                List.of(earlierStage, middleStage, finalStage),
+                stage -> {
+                    completedIds.add(stage.getId());
+                    stage.setStatus(stage.statusOnCompletion());
+                    stage.setFinishTimestampSec(123);
+                    return true;
+                },
+                batch);
+
+        assertEquals(List.of(10001, 10002), completedIds);
+        assertEquals(2, batch.changedCount());
+        assertEquals(5, earlierStage.getCurProgress());
+        assertEquals(10, middleStage.getCurProgress());
+        assertEquals(20, finalStage.getCurProgress());
+        assertEquals(100, finalStage.getFinishTimestampSec());
+        assertEquals(Status_FINISHED, earlierStage.getStatus());
+        assertEquals(Status_FINISHED, middleStage.getStatus());
+        assertEquals(Status_FINISHED, finalStage.getStatus());
+    }
+
+    @Test
+    void grantAllPreservesClaimedRewardsWhileRecompletingPreviouslyRevokedId() {
+        var claimed = new Achievement(Status_REWARD_TAKEN, 10001, 5, 5, 123);
+        claimed.setStatus(Status_UNFINISHED);
+        claimed.setCurProgress(0);
+        var unclaimed = new Achievement(Status_UNFINISHED, 10002, 3, 0, 0);
+        var batch = new Achievements.UpdateBatch();
+
+        Achievements.grantUnfinishedStages(
+                List.of(claimed, unclaimed),
+                stage -> {
+                    stage.setStatus(stage.statusOnCompletion());
+                    return true;
+                },
+                batch);
+
+        assertEquals(2, batch.changedCount());
+        assertEquals(5, claimed.getCurProgress());
+        assertEquals(Status_REWARD_TAKEN, claimed.getStatus());
+        assertTrue(claimed.hasClaimedReward());
+        assertEquals(Status_FINISHED, unclaimed.getStatus());
+        assertFalse(unclaimed.hasClaimedReward());
+    }
+
+    @Test
     void revokeAllResetsEachCompletedStageRegardlessOfParent() {
         var stageOne = achievement(10001);
         var stageTwo = achievement(10002);

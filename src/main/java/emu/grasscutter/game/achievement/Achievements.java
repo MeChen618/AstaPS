@@ -14,6 +14,7 @@ import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 import lombok.*;
@@ -117,23 +118,41 @@ public class Achievements {
     }
 
     /**
-     * Apply a bulk grant or revoke without persisting or notifying once per achievement.
-     * Status transitions still pass through update(), including all completion events and
-     * linked-stage propagation. The returned count has the same meaning as the old loop.
+     * Apply bulk changes without persisting or notifying once per achievement.
+     * Grant-all completes each valid ID independently, while ordinary single-ID commands
+     * retain their linked-stage propagation. Each completion still fires its event.
      */
     public synchronized int grantAll() {
         var batch = new UpdateBatch();
-        for (AchievementData data : GameData.getAchievementDataMap().values()) {
-            if (!data.isUsed() || !data.isParent() || this.isFinished(data.getId())) {
+        var stages =
+                GameData.getAchievementDataMap().values().stream()
+                        .filter(AchievementData::isUsed)
+                        .map(data -> this.getAchievement(data.getId()))
+                        .filter(Objects::nonNull)
+                        .toList();
+
+        // Bypass linked-stage progress propagation here: each ID has its own required
+        // progress and completion state, regardless of its group's representative.
+        grantUnfinishedStages(stages, this::update, batch);
+        return this.finishBulkUpdate(batch);
+    }
+
+    /**
+     * Set each unfinished stage to its own threshold, then run the normal transition
+     * handler (including its per-achievement completion event). No sibling stage is
+     * reset or overwritten by a lower threshold from another ID.
+     */
+    static void grantUnfinishedStages(
+            Iterable<Achievement> stages,
+            Function<Achievement, Boolean> update,
+            UpdateBatch batch) {
+        for (Achievement achievement : stages) {
+            if (achievement == null || achievement.getStatus() != Status.Status_UNFINISHED) {
                 continue;
             }
-
-            var achievement = this.getAchievement(data.getId());
-            if (achievement == null) continue;
             achievement.setCurProgress(achievement.getTotalProgress());
-            this.updateRelatedAchievements(achievement, batch);
+            batch.record(achievement, update.apply(achievement));
         }
-        return this.finishBulkUpdate(batch);
     }
 
     public synchronized int revokeAll() {
