@@ -16,7 +16,8 @@ import picocli.CommandLine.Parameters;
         label = "announce",
         permission = "server.announce",
         aliases = {"a"},
-        targetRequirement = Command.TargetRequirement.NONE)
+        targetRequirement = Command.TargetRequirement.NONE,
+        inlineTarget = false)
 public final class AnnounceCommand implements CommandHandler {
 
     static boolean validId(int id) {
@@ -29,7 +30,8 @@ public final class AnnounceCommand implements CommandHandler {
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new Broadcast(sender));
+        var commandLine = new CommandLine(new Root(sender));
+        commandLine.addSubcommand("send", new Broadcast(sender));
         commandLine.addSubcommand("template", new Template(sender), "tpl");
         commandLine.addSubcommand("refresh", new Refresh(sender));
         commandLine.addSubcommand("revoke", new Revoke(sender));
@@ -37,10 +39,24 @@ public final class AnnounceCommand implements CommandHandler {
     }
 
     @CommandLine.Command(name = "announce")
+    private final class Root implements Runnable {
+        private final Player sender;
+
+        private Root(Player sender) {
+            this.sender = sender;
+        }
+
+        @Override
+        public void run() {
+            AnnounceCommand.this.sendUsageMessage(sender);
+        }
+    }
+
+    @CommandLine.Command(name = "send")
     private static final class Broadcast implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0..*", arity = "0..*", paramLabel = "[content...]")
+        @Parameters(index = "0..*", arity = "1..*", paramLabel = "<content...>")
         private List<String> content = List.of();
 
         private Broadcast(Player sender) {
