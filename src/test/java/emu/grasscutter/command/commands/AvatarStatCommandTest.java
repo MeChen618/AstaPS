@@ -36,7 +36,7 @@ public final class AvatarStatCommandTest {
         for (String[] args : new String[][] {
                 {"stat", "set", "atk", "3000"},
                 {"stat", "set", "cr", "100%", "--avatar", "10000002"},
-                {"stat", "set", "crit", "0.5"},
+                {"stat", "set", "cd", "0.5"},
                 {"stat", "lock", "atk"},
                 {"stat", "lock", "atk", "3000"},
                 {"stat", "lock", "er", "250%", "--avatar", "10000002"},
