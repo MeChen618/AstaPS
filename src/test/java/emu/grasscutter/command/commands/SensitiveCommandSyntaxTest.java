@@ -22,6 +22,12 @@ public final class SensitiveCommandSyntaxTest {
         assertTrue(cli.getUsageMessage().contains("<playerSelector|IPv4>"));
         assertTrue(cli.getUsageMessage().contains("playerSelector: @UID"));
         assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
+
+        var unbanCli = new UnbanCommand().createCommandLine(null, null);
+        assertTrue(unbanCli.getSubcommands().isEmpty());
+        assertFalse(UnbanCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertTrue(unbanCli.getUsageMessage().contains("unban <playerSelector|IPv4>"));
+        assertThrows(CommandLine.ParameterException.class, () -> unbanCli.parseArgs());
     }
 
     @Test
@@ -106,10 +112,33 @@ public final class SensitiveCommandSyntaxTest {
     }
 
     @Test
-    void unbanIpStillRequiresKey() {
+    void unbanAndKickUseExplicitSelectorsWithoutKeystoreKeys() {
+        var unban = new UnbanCommand().createCommandLine(null, null);
+        var kick = new KickCommand().createCommandLine(null, null);
+        for (String selector : List.of("@10001", "rino@", "rino@10001", "20261010@")) {
+            assertDoesNotThrow(() -> unban.parseArgs(selector), selector);
+            assertDoesNotThrow(() -> kick.parseArgs(selector), selector);
+            assertEquals(BanCommand.TargetType.PLAYER, BanCommand.parseTarget(selector, "unban").type());
+        }
+        assertDoesNotThrow(() -> unban.parseArgs("127.0.0.1"));
+        assertEquals(BanCommand.TargetType.IPV4, BanCommand.parseTarget("127.0.0.1", "unban").type());
         assertThrows(CommandLine.ParameterException.class,
-                () -> new UnbanCommand().createCommandLine(null, null).parseArgs("ip", "127.0.0.1"));
-        assertDoesNotThrow(
-                () -> new UnbanCommand().createCommandLine(null, null).parseArgs("ip", "key", "127.0.0.1"));
+                () -> unban.parseArgs("ip", "key", "127.0.0.1"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> unban.parseArgs("player", "@10001"));
+
+        assertFalse(KickCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertEquals("server.kick", KickCommand.class.getAnnotation(Command.class).permission());
+        assertEquals(Command.TargetRequirement.NONE,
+                KickCommand.class.getAnnotation(Command.class).targetRequirement());
+        assertTrue(kick.getUsageMessage().contains("kick <playerSelector>"));
+        assertThrows(CommandLine.ParameterException.class, () -> kick.parseArgs());
+        assertThrows(IllegalArgumentException.class,
+                () -> CommandMap.parseExplicitTargetSelector("keystorePassword"));
+
+        var map = new CommandMap(false);
+        map.registerCommand("kick", new KickCommand());
+        assertNull(map.getHandler("restart"));
+        assertFalse(map.getCommandLine().getSubcommands().containsKey("restart"));
     }
 }
