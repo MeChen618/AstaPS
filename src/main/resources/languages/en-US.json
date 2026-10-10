@@ -184,6 +184,9 @@
     "avatar": {
       "description": "Manage owned characters: list, constellations, talents, friendship, extra levels, and max upgrades."
     },
+    "battlepass": {
+      "description": "Manage battle-pass level purchases and premium reward access."
+    },
     "give": {
       "usage_relic": "Usage: give <artifactID> [mainPropID] [<appendPropID>[,<times>]]... [lv<level 0-20>]",
       "illegal_relic": "This artifactID belongs to a blacklisted range, it may not be the one you wanted.",
