@@ -182,7 +182,7 @@
       "not_found_error": "🇺🇸Entity does not exist"
     },
     "avatar": {
-      "description": "보유 캐릭터의 목록, 운명의 자리, 특성, 호감도, 추가 레벨과 최대 강화를 관리합니다."
+      "description": "보유 캐릭터의 목록, 운명의 자리, 특성, 전투 능력치, 호감도, 추가 레벨과 최대 강화를 관리합니다."
     },
     "battlepass": {
       "description": "기행 레벨 구매와 유료 보상 상태를 관리합니다."
