@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.config.Configuration.HTTP_ENCRYPTION;
 import static emu.grasscutter.utils.lang.Language.translate;
 
 import emu.grasscutter.command.Command;
@@ -14,30 +15,40 @@ import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.proto.PlayerDieTypeOuterClass.PlayerDieType;
 import emu.grasscutter.server.packet.send.PacketEntityFightPropUpdateNotify;
 import java.util.List;
+import java.util.Objects;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
-@Command(label = "kill", targetRequirement = Command.TargetRequirement.PLAYER)
+@Command(
+        label = "kill",
+        aliases = {"killCharacter", "suicide"},
+        targetRequirement = Command.TargetRequirement.PLAYER)
 public final class KillCommand implements CommandHandler {
+    static CommandLine createKillAllCommandLine(Player sender, Player targetPlayer) {
+        return new CommandLine(new KillAll(sender, targetPlayer));
+    }
+
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new Root(sender));
+        var commandLine = new CommandLine(new Root(sender, targetPlayer));
         commandLine.addSubcommand("all", new KillAll(sender, targetPlayer));
         commandLine.addSubcommand("character", new KillCharacter(sender, targetPlayer));
         return commandLine;
     }
 
     @CommandLine.Command(name = "kill")
-    private final class Root implements Runnable {
+    private static final class Root implements Runnable {
         private final Player sender;
+        private final Player targetPlayer;
 
-        private Root(Player sender) {
+        private Root(Player sender, Player targetPlayer) {
             this.sender = sender;
+            this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
-            KillCommand.this.sendUsageMessage(sender);
+            new KillCharacter(sender, targetPlayer).run();
         }
     }
 
@@ -46,7 +57,10 @@ public final class KillCommand implements CommandHandler {
         private final Player sender;
         private final Player targetPlayer;
 
-        @Parameters(index = "0", arity = "0..1", paramLabel = "[sceneId]")
+        @Parameters(index = "0", paramLabel = "<key>")
+        private String key;
+
+        @Parameters(index = "1", arity = "0..1", paramLabel = "[sceneId]")
         private Integer sceneId;
 
         private KillAll(Player sender, Player targetPlayer) {
@@ -57,6 +71,10 @@ public final class KillCommand implements CommandHandler {
         @Override
         public void run() {
             if (!hasPermission(sender, targetPlayer, "server.killall", "server.killall.others")) return;
+            if (!Objects.equals(key, HTTP_ENCRYPTION.keystorePassword)) {
+                CommandOutput.sendMessage(sender, "Wrong key.");
+                return;
+            }
 
             Scene scene =
                     sceneId == null

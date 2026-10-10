@@ -1,16 +1,22 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.config.Configuration.HTTP_ENCRYPTION;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
+import java.util.Objects;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(label = "unban", targetRequirement = Command.TargetRequirement.NONE)
 public final class UnbanCommand implements CommandHandler {
+    static CommandLine createUnbanIpCommandLine(Player sender) {
+        return new CommandLine(new UnbanIp(sender));
+    }
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
@@ -70,7 +76,10 @@ public final class UnbanCommand implements CommandHandler {
     private static final class UnbanIp implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<ip>")
+        @Parameters(index = "0", paramLabel = "<key>")
+        private String key;
+
+        @Parameters(index = "1", paramLabel = "<ip>")
         private String ip;
 
         private UnbanIp(Player sender) {
@@ -80,6 +89,10 @@ public final class UnbanCommand implements CommandHandler {
         @Override
         public void run() {
             if (!hasPermission(sender, sender, "server.banip", "server.banip")) return;
+            if (!Objects.equals(key, HTTP_ENCRYPTION.keystorePassword)) {
+                CommandOutput.sendMessage(sender, "Wrong key.");
+                return;
+            }
             if (!DatabaseHelper.removeBannedIp(ip)) {
                 CommandOutput.sendMessage(sender, "No ban recorded for " + ip + ".");
                 return;

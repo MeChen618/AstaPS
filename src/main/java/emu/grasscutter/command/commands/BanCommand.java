@@ -1,5 +1,7 @@
 package emu.grasscutter.command.commands;
 
+import static emu.grasscutter.config.Configuration.HTTP_ENCRYPTION;
+
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
@@ -7,12 +9,17 @@ import emu.grasscutter.game.Account;
 import emu.grasscutter.game.BannedIp;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.game.GameSession;
+import java.util.Objects;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(label = "ban", targetRequirement = Command.TargetRequirement.NONE)
 public final class BanCommand implements CommandHandler {
     private static final int DEFAULT_BAN_END = 2051190000;
+
+    static CommandLine createBanIpCommandLine(Player sender) {
+        return new CommandLine(new BanIp(sender));
+    }
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
@@ -86,10 +93,13 @@ public final class BanCommand implements CommandHandler {
     private static final class BanIp implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<ip>")
+        @Parameters(index = "0", paramLabel = "<key>")
+        private String key;
+
+        @Parameters(index = "1", paramLabel = "<ip>")
         private String ip;
 
-        @Parameters(index = "1..*", arity = "0..*", paramLabel = "[reason]")
+        @Parameters(index = "2..*", arity = "0..*", paramLabel = "[reason]")
         private String[] reasonWords = new String[0];
 
         private BanIp(Player sender) {
@@ -99,6 +109,10 @@ public final class BanCommand implements CommandHandler {
         @Override
         public void run() {
             if (!hasPermission(sender, sender, "server.banip", "server.banip")) return;
+            if (!Objects.equals(key, HTTP_ENCRYPTION.keystorePassword)) {
+                CommandOutput.sendMessage(sender, "Wrong key.");
+                return;
+            }
             String reason = reasonWords.length == 0 ? "No reason given" : String.join(" ", reasonWords);
             new BannedIp(ip, reason).save();
             CommandOutput.sendMessage(sender, "Banned IP " + ip + ". Reason: " + reason);
