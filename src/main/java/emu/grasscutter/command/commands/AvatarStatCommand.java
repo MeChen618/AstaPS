@@ -1,5 +1,6 @@
 package emu.grasscutter.command.commands;
 
+import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
@@ -59,7 +60,8 @@ final class AvatarStatCommand {
     static CommandLine create(Player sender, Player targetPlayer) {
         var command = new AvatarStatCommand();
         var cli = new CommandLine(new Root(sender));
-        cli.registerConverter(
+        CommandHandler.registerConverterTree(
+                cli,
                 StatArg.class,
                 value -> {
                     Stat stat = command.stats.get(value.toLowerCase(Locale.ROOT));
