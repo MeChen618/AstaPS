@@ -54,7 +54,6 @@ import emu.grasscutter.net.proto.BattlePassUnlockStatusOuterClass;
 import emu.grasscutter.server.packet.send.PacketBattlePassCurScheduleUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketBeyondBattlePassCurScheduleUpdateNotify;
 import emu.grasscutter.server.packet.send.PacketTakeBattlePassRewardRsp;
-import java.lang.reflect.Field;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -280,19 +279,9 @@ public final class BattlePassCompatHelper {
     }
 
     public static boolean setPaidFlag(BattlePassManager battlePassManager, boolean bl) {
-        if (battlePassManager == null) {
-            return false;
-        }
-        try {
-            Field field = BattlePassManager.class.getDeclaredField("paid");
-            field.setAccessible(true);
-            field.setBoolean(battlePassManager, bl);
-            return true;
-        }
-        catch (Exception exception) {
-            Grasscutter.getLogger().error("BattlePass setPaid failed", (Throwable)exception);
-            return false;
-        }
+        if (battlePassManager == null) return false;
+        battlePassManager.setPaid(bl);
+        return true;
     }
 
     public static void prepareClaimState(BattlePassManager battlePassManager) {

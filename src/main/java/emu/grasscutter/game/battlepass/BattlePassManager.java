@@ -108,8 +108,11 @@ public class BattlePassManager extends BasePlayerDataManager {
     }
 
     public boolean isPaid() {
-        // ToDo: Change this when we actually support unlocking "paid" BP.
-        return true;
+        return this.paid;
+    }
+
+    public void setPaid(boolean paid) {
+        this.paid = paid;
     }
 
     public Map<Integer, BattlePassReward> getTakenRewards() {
@@ -290,23 +293,39 @@ public class BattlePassManager extends BasePlayerDataManager {
         getPlayer().sendPacket(new PacketTakeBattlePassRewardRsp(takeOptionList, rewardItems));
     }
 
-    public int buyLevels(int buyLevel) {
-        int boughtLevels = Math.min(buyLevel, GameConstants.BATTLE_PASS_MAX_LEVEL - buyLevel);
+    /** A validated purchase quote, shared by GM and client-level purchases. */
+    public record LevelPurchase(int levels, int cost) {}
 
-        if (boughtLevels > 0) {
-            int price = GameConstants.BATTLE_PASS_LEVEL_PRICE * boughtLevels;
+    public static LevelPurchase quoteLevelPurchase(int currentLevel, int requestedLevels) {
+        if (requestedLevels <= 0 || currentLevel < 0
+                || currentLevel >= GameConstants.BATTLE_PASS_MAX_LEVEL) {
+            return new LevelPurchase(0, 0);
+        }
+        int levels = Math.min(requestedLevels, GameConstants.BATTLE_PASS_MAX_LEVEL - currentLevel);
+        return new LevelPurchase(levels, levels * GameConstants.BATTLE_PASS_LEVEL_PRICE);
+    }
 
-            if (getPlayer().getPrimogems() < price) {
-                return 0;
-            }
+    /**
+     * Purchase levels through the same path for both the BP UI and GM command.
+     * A rejected or cancelled primogem debit must not advance the BP level.
+     */
+    public synchronized int buyLevels(int requestedLevels) {
+        LevelPurchase quote = quoteLevelPurchase(this.level, requestedLevels);
+        if (quote.levels() == 0 || this.getPlayer() == null) return 0;
 
-            this.level += boughtLevels;
-            this.save();
-
-            getPlayer().sendPacket(new PacketBattlePassCurScheduleUpdateNotify(getPlayer()));
+        Player player = this.getPlayer();
+        int balance = player.getPrimogems();
+        if (balance < quote.cost() || !player.setPrimogems(balance - quote.cost())) {
+            return 0;
         }
 
-        return boughtLevels;
+        // Preserve the current fractional BP points when buying whole levels.
+        this.level += quote.levels();
+        player.save();
+        this.save();
+        player.sendPacket(new PacketBattlePassCurScheduleUpdateNotify(player));
+        player.sendPacket(new PacketBeyondBattlePassCurScheduleUpdateNotify(player));
+        return quote.levels();
     }
 
     public void resetDailyMissions() {

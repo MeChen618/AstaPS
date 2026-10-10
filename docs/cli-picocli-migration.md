@@ -90,3 +90,19 @@ most 128 entries. Single-ID grant, revoke and progress retain linked-stage behav
 achievement ID is reset directly, even if the final stage marked `isParent` has
 not been completed. It does not erase progress in achievements that are already
 unfinished. Already claimed rewards remain non-redeemable after reset.
+
+### Battle-pass purchases and paid state
+
+`bp buy <levels> [@UID]` and the client's `BuyBattlePassLevelReq` now both
+use `BattlePassManager.buyLevels`. The manager validates requested levels,
+caps the purchase at the remaining levels up to the BP maximum, computes the
+price from `BATTLE_PASS_LEVEL_PRICE`, and rejects insufficient funds or a
+failed primogem debit without changing BP level. Successful purchases save
+both the player's primogem balance and the battle-pass level, retain fractional
+BP progress, and send both regular and beyond BP schedule updates.
+
+`bp paid [true|false] [@UID]` now uses the persisted `paid` field for
+both state changes and queries. The ordinary 7.1 schedule derives its unlock
+status and platform flags from that field. The compatibility helper also
+uses the manager setter rather than reflection. New players default to a
+free battle pass; previously persisted paid grants remain unchanged.

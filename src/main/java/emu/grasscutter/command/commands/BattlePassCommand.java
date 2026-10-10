@@ -3,7 +3,6 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
-import emu.grasscutter.game.battlepass.BattlePassCompatHelper;
 import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.server.packet.send.PacketBattlePassAllDataNotify;
@@ -97,30 +96,28 @@ public final class BattlePassCommand implements CommandHandler {
             BattlePassManager battlePass = battlePass(player);
             if (battlePass == null) return;
 
-            int purchasable = Math.min(levels, Math.max(0, 50 - battlePass.getLevel()));
-            if (purchasable <= 0) {
+            var quote = BattlePassManager.quoteLevelPurchase(battlePass.getLevel(), levels);
+            if (quote.levels() == 0) {
                 CommandOutput.sendMessage(sender, "Already at max BP level.");
                 return;
             }
-
-            int cost = 150 * purchasable;
-            if (player.getPrimogems() < cost) {
+            if (player.getPrimogems() < quote.cost()) {
                 CommandOutput.sendMessage(
-                        sender, "Need " + cost + " primogems, have " + player.getPrimogems());
+                        sender, "Need " + quote.cost() + " primogems, have " + player.getPrimogems());
                 return;
             }
 
-            player.setPrimogems(player.getPrimogems() - cost);
-            battlePass.setLevel(battlePass.getLevel() + purchasable);
-            battlePass.save();
-            player.sendPacket(new PacketBattlePassCurScheduleUpdateNotify(player));
-            player.sendPacket(new PacketBeyondBattlePassCurScheduleUpdateNotify(player));
+            int bought = battlePass.buyLevels(levels);
+            if (bought == 0) {
+                CommandOutput.sendMessage(sender, "BP level purchase failed; primogems were not charged.");
+                return;
+            }
             CommandOutput.sendMessage(
                     sender,
                     "Bought "
-                            + purchasable
+                            + bought
                             + " BP levels for "
-                            + cost
+                            + quote.cost()
                             + " primogems. Now level "
                             + battlePass.getLevel());
         }
@@ -147,11 +144,7 @@ public final class BattlePassCommand implements CommandHandler {
                 return;
             }
 
-            if (!BattlePassCompatHelper.setPaidFlag(battlePass, paid.value())) {
-                CommandOutput.sendMessage(sender, "setPaidFlag failed");
-                return;
-            }
-
+            battlePass.setPaid(paid.value());
             battlePass.save();
             player.sendPacket(new PacketBattlePassAllDataNotify(player));
             player.sendPacket(new PacketBattlePassCurScheduleUpdateNotify(player));
