@@ -34,7 +34,7 @@ public final class AccountCommand implements CommandHandler {
         commandLine.addSubcommand("create", new Create(sender));
         commandLine.addSubcommand("clone", new Clone(sender));
         commandLine.addSubcommand("delete", new Delete(sender));
-        commandLine.addSubcommand("resetpass", new ResetPass(sender));
+        commandLine.addSubcommand("resetpassword", new ResetPass(sender), "passwd");
         CommandHandler.registerConverterTree(commandLine,UidArg.class, value -> parseUid(sender, value));
 
         return commandLine;
@@ -197,7 +197,7 @@ public final class AccountCommand implements CommandHandler {
         }
     }
 
-    @picocli.CommandLine.Command(name = "resetpass")
+    @picocli.CommandLine.Command(name = "resetpassword")
     private final class ResetPass implements Runnable {
         private final Player sender;
 
