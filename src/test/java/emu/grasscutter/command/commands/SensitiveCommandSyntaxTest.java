@@ -92,16 +92,36 @@ public final class SensitiveCommandSyntaxTest {
     }
 
     @Test
-    void announceAndSendMessageExposeOnlySupportedAliases() {
+    void canonicalCommandsDoNotRetainRemovedEntrypoints() {
         var map = new CommandMap(false);
         map.registerCommand("announce", new AnnounceCommand());
-        map.registerCommand("sendMessage", new SendMessageCommand());
+        map.registerCommand("say", new SayCommand());
+        map.registerCommand("player", new PlayerCommand());
+        map.registerCommand("info", new InfoCommand());
+
         assertSame(map.getHandler("announce"), map.getHandler("a"));
-        assertSame(map.getHandler("sendMessage"), map.getHandler("say"));
-        for (var removed : List.of("sendservmsg", "sendservermessage", "b", "broadcast")) {
-            assertNull(map.getHandler(removed));
-            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed));
+        assertTrue(new AnnounceCommand().createCommandLine(null, null).getSubcommands().containsKey("send"));
+        assertNotNull(map.getHandler("say"));
+        assertNotNull(map.getHandler("player"));
+        assertNotNull(map.getHandler("info"));
+        for (var removed : List.of(
+                "list", "players", "sendmessage", "sendservmsg", "sendservermessage", "b",
+                "broadcast", "troubleshoot", "helpme")) {
+            assertNull(map.getHandler(removed), removed);
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
         }
+
+        var players = new PlayerCommand().createCommandLine(null, null);
+        assertEquals("player", PlayerCommand.class.getAnnotation(Command.class).label());
+        assertFalse(PlayerCommand.class.getAnnotation(Command.class).inlineTarget());
+        assertTrue(players.getSubcommands().containsKey("list"));
+        assertDoesNotThrow(() -> players.parseArgs("list"));
+        assertDoesNotThrow(() -> players.parseArgs("list", "--uid"));
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "uid"));
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("--uid"));
+        var say = new SayCommand().createCommandLine(null, null);
+        assertThrows(CommandLine.ParameterException.class, () -> say.parseArgs());
+        assertDoesNotThrow(() -> say.parseArgs("hello", "world"));
     }
 
     @Test
