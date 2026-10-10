@@ -14,9 +14,6 @@ import picocli.CommandLine.Parameters;
 
 @Command(label = "unban", targetRequirement = Command.TargetRequirement.NONE)
 public final class UnbanCommand implements CommandHandler {
-    static CommandLine createUnbanIpCommandLine(Player sender) {
-        return new CommandLine(new UnbanIp(sender));
-    }
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));

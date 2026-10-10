@@ -1,12 +1,23 @@
 package emu.grasscutter.command.commands;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import emu.grasscutter.command.CommandMap;
 import org.junit.jupiter.api.Test;
 import picocli.CommandLine;
 
 public final class SensitiveCommandSyntaxTest {
+    @Test
+    void banIpIsAvailableOnlyAsSubcommand() {
+        var map = new CommandMap(false);
+        map.registerCommand("ban", new BanCommand());
+        map.registerCommand("unban", new UnbanCommand());
+        assertNull(map.getHandler("banip"));
+        assertNull(map.getHandler("unbanip"));
+    }
+
     @Test
     void bothKillAllRoutesRequireAnExplicitKey() {
         assertThrows(
@@ -26,13 +37,8 @@ public final class SensitiveCommandSyntaxTest {
         assertThrows(
                 CommandLine.ParameterException.class,
                 () -> new BanCommand().createCommandLine(null, null).parseArgs("ip", "127.0.0.1"));
-        assertThrows(
-                CommandLine.ParameterException.class,
-                () -> new BanIpCommand().createCommandLine(null, null).parseArgs("key"));
         assertDoesNotThrow(
                 () -> new BanCommand().createCommandLine(null, null).parseArgs("ip", "key", "127.0.0.1"));
-        assertDoesNotThrow(
-                () -> new BanIpCommand().createCommandLine(null, null).parseArgs("key", "127.0.0.1"));
     }
 
     @Test
@@ -40,12 +46,7 @@ public final class SensitiveCommandSyntaxTest {
         assertThrows(
                 CommandLine.ParameterException.class,
                 () -> new UnbanCommand().createCommandLine(null, null).parseArgs("ip", "127.0.0.1"));
-        assertThrows(
-                CommandLine.ParameterException.class,
-                () -> new UnBanIpCommand().createCommandLine(null, null).parseArgs("key"));
         assertDoesNotThrow(
                 () -> new UnbanCommand().createCommandLine(null, null).parseArgs("ip", "key", "127.0.0.1"));
-        assertDoesNotThrow(
-                () -> new UnBanIpCommand().createCommandLine(null, null).parseArgs("key", "127.0.0.1"));
     }
 }

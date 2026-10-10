@@ -17,10 +17,6 @@ import picocli.CommandLine.Parameters;
 public final class BanCommand implements CommandHandler {
     private static final int DEFAULT_BAN_END = 2051190000;
 
-    static CommandLine createBanIpCommandLine(Player sender) {
-        return new CommandLine(new BanIp(sender));
-    }
-
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
