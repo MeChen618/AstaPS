@@ -28,6 +28,7 @@ public final class EnterDungeonCommandTest {
         assertEquals(Command.TargetRequirement.ONLINE, command.targetRequirement());
         assertEquals("player.enterdungeon", command.permission());
         assertEquals("player.enterdungeon.others", command.permissionTargeted());
-        assertArrayEquals(new String[] {"enterdungeon", "dungeon"}, command.aliases());
+        assertEquals("dungeon", command.label());
+        assertArrayEquals(new String[] {}, command.aliases());
     }
 }

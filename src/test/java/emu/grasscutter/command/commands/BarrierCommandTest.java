@@ -28,6 +28,6 @@ public final class BarrierCommandTest {
         var annotation = BarrierCommand.class.getAnnotation(Command.class);
         assertEquals("player.setprop", annotation.permission());
         assertEquals("player.setprop.others", annotation.permissionTargeted());
-        assertArrayEquals(new String[] {"br", "pb"}, annotation.aliases());
+        assertArrayEquals(new String[] {"br"}, annotation.aliases());
     }
 }

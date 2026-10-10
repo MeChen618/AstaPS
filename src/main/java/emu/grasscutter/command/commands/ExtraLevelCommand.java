@@ -12,7 +12,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "extralevel",
-        aliases = {"el", "levelbreak"},
+        aliases = {"el"},
         permission = "player.give",
         permissionTargeted = "player.give.others")
 public final class ExtraLevelCommand implements CommandHandler {

@@ -10,7 +10,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "barrier",
-        aliases = {"br", "pb"},
+        aliases = {"br"},
         permission = "player.setprop",
         permissionTargeted = "player.setprop.others",
         targetRequirement = Command.TargetRequirement.NONE)

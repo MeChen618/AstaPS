@@ -11,11 +11,15 @@ import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(
-        label = "enter_dungeon",
-        aliases = {"enterdungeon", "dungeon"},
+        label = "dungeon",
         permission = "player.enterdungeon",
         permissionTargeted = "player.enterdungeon.others")
 public final class EnterDungeonCommand implements CommandHandler {
+    // The command has been renamed; preserve existing translated text keys.
+    @Override
+    public String getDescriptionKey() {
+        return "commands.enter_dungeon.description";
+    }
     static boolean validDungeonId(int id) {
         return id > 0;
     }
@@ -25,7 +29,7 @@ public final class EnterDungeonCommand implements CommandHandler {
         return new CommandLine(new Args(sender, targetPlayer));
     }
 
-    @CommandLine.Command(name = "enter_dungeon")
+    @CommandLine.Command(name = "dungeon")
     private static final class Args implements Runnable {
         private final Player sender;
         private final Player targetPlayer;

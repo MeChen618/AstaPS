@@ -21,7 +21,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "kill",
-        aliases = {"killCharacter", "suicide"},
+        aliases = {"suicide"},
         targetRequirement = Command.TargetRequirement.PLAYER)
 public final class KillCommand implements CommandHandler {
     @Override

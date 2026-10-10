@@ -17,7 +17,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "waypoints",
-        aliases = {"wp", "unlockwp"},
+        aliases = {"wp"},
         permission = "player.waypoints",
         permissionTargeted = "player.waypoints.others")
 public final class WaypointsCommand implements CommandHandler {

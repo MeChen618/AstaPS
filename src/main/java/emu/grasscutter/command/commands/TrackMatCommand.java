@@ -10,7 +10,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "trackmat",
-        aliases = {"trackmaterial", "mattrack"},
+        aliases = {"trackmaterial"},
         permission = "player.teleport",
         permissionTargeted = "player.teleport.others",
         targetRequirement = Command.TargetRequirement.PLAYER)
