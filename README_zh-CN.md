@@ -55,7 +55,7 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 没有注册页面。账号通过以下任一方式创建：
 
-- **从控制台。** `account create <username> [<password>] [@UID]`（密码与 UID 均可选，新账号仅使用配置中的默认权限，不自动获得 `*` 管理员权限）。
+- **从控制台。** `account create <username> [password] [@UID]`（密码与 UID 均可选，新账号仅使用配置中的默认权限，不自动获得 `*` 管理员权限）。
 - **在登录时。** 用一个没人占用的名字登录即注册该账号。开启 `account.useIntegrationPassword` 时，在用户名框中填 `name&&password`，密码框留空——当你要同时代理大量客户端、又不想为每个都建用户时很方便。
 
 设置的密码以 BCrypt 哈希存储。不指定密码时，账号暂不校验密码，可通过 `account resetpass` 后续设置。控制台需要把 `server.game.enableConsole` 设为 `true`。
@@ -71,7 +71,9 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 | `give` | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
 | `account create / clone / delete / resetpass` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。 |
 | `ban <playerSelector> [endTime] [原因...]` | 封禁账号，需要 `server.ban` 权限；封禁他人账号还需要 `server.ban.others`。`endTime` 为 Unix 时间戳。 |
-| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 使用 `server.banip` 权限管理永久 IP 封禁；解封时使用配置中的 keystore 密钥。 |
+| `ban <IPv4> [原因...]` / `unban <IPv4>` | 使用 `server.banip` 权限管理永久 IP 封禁，无需传入 keystore 密钥。 |
+| `unban <playerSelector>` | 解封账号，需要 `server.ban` 权限；操作其他账号还需要 `server.ban.others`。 |
+| `kick <playerSelector>` | 使用 `server.kick` 权限踢出在线玩家，已移除 `restart` 别名和密钥参数。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
 
 服务器控制台示例：
