@@ -34,7 +34,7 @@ public final class SensitiveCommandSyntaxTest {
         var map = new CommandMap(false);
         map.registerCommand("kill", new KillCommand());
         assertNull(map.getHandler("killall"));
-        assertTrue(map.getCommandLine().getSubcommands().containsKey("killCharacter"));
+        assertTrue(map.getCommandLine().getSubcommands().containsKey("killcharacter"));
         assertTrue(map.getCommandLine().getSubcommands().containsKey("suicide"));
     }
 
