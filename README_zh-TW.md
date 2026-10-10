@@ -68,7 +68,8 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 | 指令 | 用途 |
 |---|---|
-| `give` | 發放角色、武器、聖遺物和材料；支援 `--amount`、`--level` 等選項，預設等級 100。 |
+| `give`（`g`） | 發放角色、武器、聖遺物和材料；支援 `--amount`、`--level` 等選項，預設等級 100。 |
+| `battlepass`（`bp`） | 管理紀行等級購買（`buy <levels>`）與付費狀態（`paid [true|false]`）。 |
 | `account create / clone / delete / resetpassword` | 建立、複製、刪除帳號和重設密碼，**僅限伺服器主控台**。`account passwd` 是別名。 |
 | `ban <playerSelector> [endTime] [原因...]` | 停權帳號，需要 `server.ban` 權限；停權其他帳號還需要 `server.ban.others`。`endTime` 為 Unix 時間戳記。 |
 | `ban <IPv4> [原因...]` / `unban <IPv4>` | 使用 `server.banip` 權限管理永久 IP 封鎖，無須輸入 keystore 金鑰。 |
