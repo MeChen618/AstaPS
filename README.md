@@ -103,6 +103,9 @@ Built-in commands use **Picocli** for positional arguments, named options and su
 | `unban <playerSelector>` | Unban an account with `server.ban` (and `server.ban.others` for another account). |
 | `kick <playerSelector>` | Disconnect an online player with `server.kick`. The old `restart` alias and keystore key argument are removed. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
+| `announce template <templateId>` | Publish a stored announcement template; `announce tpl` is an alias. |
+| `sendMessage <message...>` | Send a server message (`say` alias only). |
+| `coop [guestSelector] <hostSelector>` | Move a guest into an online host's world. Omitted guest uses the current command target (the sender in-game by default). |
 
 Example server-console commands:
 
