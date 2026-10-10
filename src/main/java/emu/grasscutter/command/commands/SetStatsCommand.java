@@ -64,11 +64,8 @@ public final class SetStatsCommand implements CommandHandler {
                     }
                     return new StatArg(stat);
                 });
-        commandLine.addSubcommand("set", new ExplicitSet(sender, targetPlayer));
         commandLine.addSubcommand("lock", new Lock(sender, targetPlayer));
-        commandLine.addSubcommand("freeze", new Lock(sender, targetPlayer));
         commandLine.addSubcommand("unlock", new Unlock(sender, targetPlayer));
-        commandLine.addSubcommand("unfreeze", new Unlock(sender, targetPlayer));
         return commandLine;
     }
 
@@ -84,27 +81,6 @@ public final class SetStatsCommand implements CommandHandler {
         private String value;
 
         private ImplicitSet(Player sender, Player targetPlayer) {
-            this.sender = sender;
-            this.targetPlayer = targetPlayer;
-        }
-
-        @Override
-        public void run() {
-            applySet(sender, targetPlayer, stat.stat(), value);
-        }
-    }
-
-    private final class ExplicitSet implements Runnable {
-        private final Player sender;
-        private final Player targetPlayer;
-
-        @Parameters(index = "0", paramLabel = "<stat>")
-        private StatArg stat;
-
-        @Parameters(index = "1", paramLabel = "<value>")
-        private String value;
-
-        private ExplicitSet(Player sender, Player targetPlayer) {
             this.sender = sender;
             this.targetPlayer = targetPlayer;
         }

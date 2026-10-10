@@ -1,8 +1,10 @@
 package emu.grasscutter.command.commands;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import emu.grasscutter.command.CommandMap;
 import org.junit.jupiter.api.Test;
@@ -19,17 +21,21 @@ public final class SensitiveCommandSyntaxTest {
     }
 
     @Test
-    void bothKillAllRoutesRequireAnExplicitKey() {
+    void killAllRequiresExplicitKeyWithoutLegacyOrCharacterRoutes() {
+        var commandLine = new KillCommand().createCommandLine(null, null);
+        assertTrue(commandLine.getSubcommands().containsKey("all"));
+        assertFalse(commandLine.getSubcommands().containsKey("character"));
+        assertFalse(commandLine.getSubcommands().containsKey("avatar"));
         assertThrows(
                 CommandLine.ParameterException.class,
-                () -> new KillCommand().createCommandLine(null, null).parseArgs("all"));
-        assertThrows(
-                CommandLine.ParameterException.class,
-                () -> new KillAllCommand().createCommandLine(null, null).parseArgs());
-        assertDoesNotThrow(
-                () -> new KillCommand().createCommandLine(null, null).parseArgs("all", "key", "3"));
-        assertDoesNotThrow(
-                () -> new KillAllCommand().createCommandLine(null, null).parseArgs("key", "3"));
+                () -> commandLine.parseArgs("all"));
+        assertDoesNotThrow(() -> commandLine.parseArgs("all", "key", "3"));
+
+        var map = new CommandMap(false);
+        map.registerCommand("kill", new KillCommand());
+        assertNull(map.getHandler("killall"));
+        assertTrue(map.getCommandLine().getSubcommands().containsKey("killCharacter"));
+        assertTrue(map.getCommandLine().getSubcommands().containsKey("suicide"));
     }
 
     @Test

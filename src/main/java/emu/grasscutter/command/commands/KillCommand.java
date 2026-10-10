@@ -24,15 +24,10 @@ import picocli.CommandLine.Parameters;
         aliases = {"killCharacter", "suicide"},
         targetRequirement = Command.TargetRequirement.PLAYER)
 public final class KillCommand implements CommandHandler {
-    static CommandLine createKillAllCommandLine(Player sender, Player targetPlayer) {
-        return new CommandLine(new KillAll(sender, targetPlayer));
-    }
-
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender, targetPlayer));
         commandLine.addSubcommand("all", new KillAll(sender, targetPlayer));
-        commandLine.addSubcommand("character", new KillCharacter(sender, targetPlayer));
         return commandLine;
     }
 
@@ -101,7 +96,7 @@ public final class KillCommand implements CommandHandler {
         }
     }
 
-    @CommandLine.Command(name = "character", aliases = {"avatar", "suicide"})
+    /** Default kill action; no separate character subcommand. */
     private static final class KillCharacter implements Runnable {
         private final Player sender;
         private final Player targetPlayer;

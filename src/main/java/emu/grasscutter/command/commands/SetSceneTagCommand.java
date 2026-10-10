@@ -27,12 +27,9 @@ public final class SetSceneTagCommand implements CommandHandler {
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
         commandLine.addSubcommand("add", new SetTag(sender, targetPlayer, true));
-        commandLine.addSubcommand("set", new SetTag(sender, targetPlayer, true));
         commandLine.addSubcommand("remove", new SetTag(sender, targetPlayer, false));
-        commandLine.addSubcommand("del", new SetTag(sender, targetPlayer, false));
         commandLine.addSubcommand("unlockall", new UnlockAll(targetPlayer));
         commandLine.addSubcommand("reset", new Reset(targetPlayer));
-        commandLine.addSubcommand("restore", new Reset(targetPlayer));
         commandLine.addSubcommand("list", new ListTags(sender, targetPlayer));
         return commandLine;
     }

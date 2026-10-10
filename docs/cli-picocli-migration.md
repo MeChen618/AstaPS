@@ -33,6 +33,16 @@ It copies player-owned gameplay collections and uses the database writer barrier
 to avoid copying unfinished saves; friendships and shared beatmaps are excluded.
 The clone inherits the source account password and permissions.
 
+## Canonical command routes
+
+The Picocli command tree keeps one route for each operation:
+
+- `kill` (aliases `killCharacter`, `suicide`) kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall` and `kill character` routes are removed.
+- `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
+- `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
+- `setSceneTag add <id>`, `remove <id>` and `reset` replace the duplicate `set`, `del` and `restore` subcommands.
+- `ban ip <key> <ip> [reason...]` and `unban ip <key> <ip>` are the only IP-ban routes; standalone `banip` and `unbanip` were removed.
+
 ## Review and validation
 
 - Compare the complete command registry and aliases against upstream before merge.

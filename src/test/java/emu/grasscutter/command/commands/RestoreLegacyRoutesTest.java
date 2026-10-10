@@ -18,11 +18,12 @@ public final class RestoreLegacyRoutesTest {
     }
 
     @Test
-    void energyAliasesHaveNoPositionalArguments() {
-        var handler = new erCommand();
-        assertDoesNotThrow(() -> handler.createCommandLine(null, null).parseArgs());
+    void restoreEnergyRemainsTheSupportedRoute() {
+        var handler = new RestoreCommand();
+        var commandLine = handler.createCommandLine(null, null);
+        assertDoesNotThrow(() -> commandLine.parseArgs("energy"));
         assertThrows(
                 CommandLine.ParameterException.class,
-                () -> handler.createCommandLine(null, null).parseArgs("extra"));
+                () -> commandLine.parseArgs("energy", "extra"));
     }
 }
