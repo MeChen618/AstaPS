@@ -107,7 +107,7 @@ public final class RestoreCommand implements CommandHandler {
         }
     }
 
-    private static void restoreHp(Player player) {
+    static void restoreHp(Player player) {
         player.getTeamManager()
                 .getActiveTeam()
                 .forEach(
@@ -148,7 +148,7 @@ public final class RestoreCommand implements CommandHandler {
                         });
     }
 
-    private static void restoreEnergy(Player player) {
+    static void restoreEnergy(Player player) {
         player.getTeamManager()
                 .getActiveTeam()
                 .forEach(
