@@ -224,7 +224,7 @@
       "language_not_found": "目前服务端没有这种语言：%s",
       "description": "显示或切换当前语言"
     },
-    "list": {
+    "player": {
       "success": "目前在线人数：%s",
       "description": "查看所有玩家"
     },
@@ -328,7 +328,7 @@
       "error": "错误：无效的撰写阶段 %s。需要 StackTrace 请查看控制台。",
       "description": "向指定用户发送邮件。此命令的用法会根据撰写阶段而改变"
     },
-    "sendMessage": {
+    "say": {
       "success": "消息已发送。",
       "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
     },
