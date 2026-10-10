@@ -55,7 +55,7 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 沒有註冊網頁。建立帳號有兩條路：
 
-- **從主控台。** `account create <使用者名稱> [<密碼>] [@UID]`（密碼與 UID 均可選，新帳號僅使用設定中的預設權限，不會自動取得 `*` 管理員權限）。
+- **從主控台。** `account create <newName[@newUID]> [password]`（密碼與 UID 均可選，新帳號僅使用設定中的預設權限，不會自動取得 `*` 管理員權限）。
 - **登入時直接註冊。** 用一個沒人占用的名字登入就等於註冊。開啟 `account.useIntegrationPassword` 後，在使用者名稱欄填 `帳號&&密碼`、密碼欄留空即可，很方便在代理一堆客戶端時用。
 
 設定的密碼會以 BCrypt 雜湊儲存。不指定密碼時，帳號暫不驗證密碼，可稍後使用 `account resetpassword` 設定。主控台需要 `server.game.enableConsole` 設為 `true` 才會接受輸入。
@@ -88,11 +88,11 @@ help teleport pos
 give 202 --amount 3 @10001
 tp pos 1000 200 300 3 @10001
 account create alice
-account create bob secret @10001
-account clone alice alice-copy @10002
+account create bob@10001 secret
+account clone alice@ alice-copy@10002
 ```
 
-在 `account create` 和 `account clone` 中，可選的 `@UID` 指定**新帳號的 UID**。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpassword <使用者名稱> <新密碼>`（別名 `account passwd`），會撤銷舊登入權杖和工作階段權杖，並中斷玩家連線。
+建立或複製帳號時，`newName` 會自動分配 UID，`newName@UID` 則指定 UID。現有帳號使用 `accountSelector`：`@UID`、`username@` 或 `username@UID`。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpassword <accountSelector> <new-password>`（別名 `account passwd`），刪除帳號使用 `account delete <accountSelector>`。重設密碼會撤銷舊登入權杖和工作階段權杖，並中斷玩家連線。
 
 詳細說明請見 [CLI 遷移文件](docs/cli-picocli-migration.md)；外掛作者請參閱 [指令 API v5 文件](docs/plugin-command-api-v5.md)。
 
