@@ -115,11 +115,14 @@ public final class SensitiveCommandSyntaxTest {
         assertEquals("player", PlayerCommand.class.getAnnotation(Command.class).label());
         assertFalse(PlayerCommand.class.getAnnotation(Command.class).inlineTarget());
         assertTrue(players.getSubcommands().containsKey("list"));
-        assertFalse(players.parseArgs("list").subcommand().hasMatchedOption("--uid"));
-        assertTrue(players.parseArgs("list", "--uid").subcommand().hasMatchedOption("--uid"));
-        assertTrue(players.getSubcommands().get("list").getUsageMessage().contains("--uid"));
+        assertDoesNotThrow(() -> players.parseArgs("list"));
+        assertFalse(players.getSubcommands().get("list").getUsageMessage().contains("--uid"));
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "--uid"));
         assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "uid"));
         assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("--uid"));
+        assertEquals("Alice (10001)", PlayerCommand.formatPlayer("Alice", 10001, false));
+        assertEquals("Alice <color=green>(10001)</color>",
+                PlayerCommand.formatPlayer("Alice", 10001, true));
         var say = new SayCommand().createCommandLine(null, null);
         assertThrows(CommandLine.ParameterException.class, () -> say.parseArgs());
         assertDoesNotThrow(() -> say.parseArgs("hello", "world"));
