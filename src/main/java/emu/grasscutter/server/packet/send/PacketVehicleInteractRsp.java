@@ -2,8 +2,10 @@ package emu.grasscutter.server.packet.send;
 
 
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.game.ability.NatsaurusVehicleHelper;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.FightProperty;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.VehicleInteractRspOuterClass.VehicleInteractRsp;
@@ -17,8 +19,18 @@ public class PacketVehicleInteractRsp extends BasePacket {
         VehicleInteractRsp.Builder proto = VehicleInteractRsp.newBuilder();
 
         GameEntity vehicle = player.getScene().getEntityById(entityId);
-        vehicle.setFightProperty(1010,1000);
-        vehicle.setFightProperty(2000,1000);
+        if (vehicle == null) {
+            this.setData(VehicleInteractRsp.newBuilder().build());
+            return;
+        }
+        // Only a fallback. A vehicle whose gadget config carries combat properties already has its HP
+        // out of fillFightProps, and the Natlan Saurian mounts are flagged isInvincible there, so they
+        // come out with CUR_HP at infinity. Overwriting both with a flat 1000 is what made a ridden
+        // Saurian die to a single hit.
+        if (!(vehicle instanceof EntityVehicle mount) || !NatsaurusVehicleHelper.isNatsaurusMount(mount)) {
+            vehicle.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP.getId(), 1000);
+            vehicle.setFightProperty(FightProperty.FIGHT_PROP_MAX_HP.getId(), 1000);
+        }
         if (vehicle instanceof EntityVehicle) {
             proto.setEntityId(vehicle.getId());
 

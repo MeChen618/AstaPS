@@ -753,6 +753,9 @@ public class Scene {
                 && emu.grasscutter.game.dungeons.WeeklyBossModelCleanup.shouldForceRemoveModel(
                         this, boss)) {
             emu.grasscutter.game.dungeons.WeeklyBossModelCleanup.removeBossAndOwnedGadgets(this, boss);
+        } else if (target instanceof EntityVehicle vehicle
+                && emu.grasscutter.game.ability.NatsaurusVehicleHelper.isNatsaurusMount(vehicle)) {
+            scheduleVehicleRemoval(vehicle);
         } else {
             this.removeEntity(target);
         }
@@ -764,6 +767,38 @@ public class Scene {
         target.onDeath(attackerId);
         this.triggerDungeonEvent(
                 DungeonPassConditionType.DUNGEON_COND_KILL_MONSTER_COUNT, ++killedMonsterCount);
+    }
+
+    /**
+     * Kills a mount the way its own model knows how: collapse first, then take the corpse away.
+     *
+     * <p>Each vision type on its own gets one half wrong. {@code VISION_REMOVE} alone drops the mount at
+     * once, so the client never plays the death animation it has; {@code VISION_DIE} alone gives the
+     * collapse but leaves the corpse, and a Saurian mount gadget with nobody on it *is* a soul candle, so
+     * what the player sees is the dragon they rode turning into a candle they cannot interact with.
+     * Holding the candle back is worse than either: the mount is still there while the rider is told to
+     * dismount, and the client plays its "possession ended" transformation instead of the death.
+     *
+     * <p>So this removes with {@code VISION_DIE}, which the client animates, and then - after the die
+     * block's own {@code dieEndTime}, 1.5s for the Natlan Saurians - broadcasts the removal itself. The
+     * entity is already out of the scene by then, so there is nothing left to remove and only the notify
+     * needs sending.
+     */
+    private void scheduleVehicleRemoval(EntityVehicle vehicle) {
+        var combat = vehicle.getConfigGadget() == null ? null : vehicle.getConfigGadget().getCombat();
+        var die = combat == null ? null : combat.getDie();
+        double seconds = die == null || !die.isHasAnimatorDie() ? 0d : die.getDieEndTime();
+
+        this.removeEntity(vehicle, VisionType.VisionType_VISION_DIE);
+
+        if (seconds <= 0d) return;
+
+        int tickRateMs = Math.max(1, emu.grasscutter.config.Configuration.GAME_INFO.tickRateMs);
+        int ticks = (int) Math.ceil(seconds * 1000d / tickRateMs);
+        this.scheduler.scheduleDelayedTask(
+            () -> this.broadcastPacket(
+                    new PacketSceneEntityDisappearNotify(vehicle, VisionType.VisionType_VISION_REMOVE)),
+            ticks);
     }
 
     public void onTick() {
