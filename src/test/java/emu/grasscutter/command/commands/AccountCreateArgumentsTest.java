@@ -54,6 +54,16 @@ public final class AccountCreateArgumentsTest {
     }
 
     @Test
+    void resetPasswordRequiresUsernameAndNewPassword() {
+        var handler = new AccountCommand();
+        assertDoesNotThrow(
+                () -> handler.createCommandLine(null, null).parseArgs("resetpass", "alice", "newpass"));
+        assertThrows(
+                CommandLine.ParameterException.class,
+                () -> handler.createCommandLine(null, null).parseArgs("resetpass", "alice"));
+    }
+
+    @Test
     void picocliRejectsMalformedTrailingUid() {
         var command = new AccountCommand();
         assertThrows(

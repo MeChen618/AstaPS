@@ -33,6 +33,12 @@ permissions. Both use the same configured `account.defaultPermissions` and expli
 grants. Legacy database documents missing a `permissions` field no longer acquire `*`
 on load; existing explicitly stored grants remain unchanged.
 
+`account resetpass <username> <new-password>` replaces the account password and
+atomically removes the existing `token` and `sessionKey` from the MongoDB
+account document. The write is synchronous and performed behind the database
+write barrier, so success is reported only after the change is committed.
+The currently connected player is then disconnected and must log in again.
+
 The clone operation needs an offline source player and a new account name.
 It copies player-owned gameplay collections and uses the database writer barrier
 to avoid copying unfinished saves; friendships and shared beatmaps are excluded.

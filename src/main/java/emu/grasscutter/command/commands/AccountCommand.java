@@ -219,10 +219,10 @@ public final class AccountCommand implements CommandHandler {
             String passwordHash = hashPassword(sender, password);
             if (passwordHash == null) return;
 
+            // Persist both password and token revocation before reporting success.
+            AccountPasswordResetService.resetPassword(toUpdate, passwordHash);
             kickAccount(toUpdate);
-            toUpdate.setPassword(passwordHash);
-            toUpdate.save();
-            CommandOutput.sendMessage(sender, "Password Updated.");
+            CommandOutput.sendMessage(sender, "Password Updated. Existing login tokens revoked.");
         }
     }
 

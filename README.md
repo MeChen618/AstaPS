@@ -109,7 +109,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-Where supported, `@UID` selects the target player; it does **not** load a Picocli argument file. In `account create` and `account clone`, the optional `@UID` instead specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`.
+Where supported, `@UID` selects the target player; it does **not** load a Picocli argument file. In `account create` and `account clone`, the optional `@UID` instead specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`; this revokes both existing login and session tokens and disconnects the player.
 
 See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
 

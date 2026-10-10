@@ -81,7 +81,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-對支援指定目標的指令，`@UID` 代表目標玩家，**不是** Picocli 參數檔案；在 `account create` 和 `account clone` 中，可選的 `@UID` 則指定**新帳號的 UID**。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpass <使用者名稱> <新密碼>`。
+對支援指定目標的指令，`@UID` 代表目標玩家，**不是** Picocli 參數檔案；在 `account create` 和 `account clone` 中，可選的 `@UID` 則指定**新帳號的 UID**。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpass <使用者名稱> <新密碼>`，會撤銷舊登入權杖和工作階段權杖，並中斷玩家連線。
 
 詳細說明請見 [CLI 遷移文件](docs/cli-picocli-migration.md)；外掛作者請參閱 [指令 API v5 文件](docs/plugin-command-api-v5.md)。
 
