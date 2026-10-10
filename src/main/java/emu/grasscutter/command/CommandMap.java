@@ -260,24 +260,25 @@ public final class CommandMap {
         return target;
     }
 
+    /** Always pair a Picocli input error with the relevant command or subcommand syntax. */
+    static List<String> parameterErrorMessages(CommandLine.ParameterException exception) {
+        Throwable cause = exception.getCause();
+        String detail = cause instanceof CommandLine.TypeConversionException conversion
+                        && conversion.getMessage() != null
+                        && !conversion.getMessage().isBlank()
+                ? conversion.getMessage()
+                : exception.getMessage();
+        String syntax = exception.getCommandLine().getUsageMessage().stripTrailing();
+        return detail == null || detail.isBlank() ? List.of(syntax) : List.of(detail, syntax);
+    }
+
     private static CommandLine configureCommandLine(
             CommandLine cli, Player sender, CommandHandler handler) {
         cli.setExpandAtFiles(false);
         cli.setParameterExceptionHandler(
                 (exception, argv) -> {
-                    Throwable cause = exception.getCause();
-                    if (cause instanceof CommandLine.TypeConversionException conversion
-                            && conversion.getMessage() != null
-                            && !conversion.getMessage().isBlank()) {
-                        CommandOutput.sendMessage(sender, conversion.getMessage());
-                    } else {
-                        String message = exception.getMessage();
-                        if (message != null && !message.isBlank()) {
-                            CommandOutput.sendMessage(sender, message);
-                        }
-                        CommandOutput.sendMessage(
-                                sender, exception.getCommandLine().getUsageMessage().stripTrailing());
-                    }
+                    parameterErrorMessages(exception)
+                            .forEach(message -> CommandOutput.sendMessage(sender, message));
                     return exception.getCommandLine().getCommandSpec().exitCodeOnInvalidInput();
                 });
         cli.setExecutionExceptionHandler(
