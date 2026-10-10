@@ -8,15 +8,13 @@ import emu.grasscutter.command.CommandMap;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.game.player.Player;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(label = "help", targetRequirement = Command.TargetRequirement.NONE)
 public final class HelpCommand implements CommandHandler {
-    private static final boolean SHOW_COMMANDS_WITHOUT_PERMISSIONS = false;
-
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         return new CommandLine(new Args(sender));
@@ -26,8 +24,8 @@ public final class HelpCommand implements CommandHandler {
     private final class Args implements Runnable {
         private final Player player;
 
-        @Parameters(index = "0", arity = "0..1", paramLabel = "[command]")
-        private String commandName;
+        @Parameters(index = "0..*", arity = "0..*", paramLabel = "[command [subcommand...]]")
+        private List<String> commandPath = List.of();
 
         private Args(Player player) {
             this.player = player;
@@ -37,61 +35,73 @@ public final class HelpCommand implements CommandHandler {
         public void run() {
             Account account = player == null ? null : player.getAccount();
             var commandMap = CommandMap.getInstance();
-            List<String> commands = new ArrayList<>();
-            List<String> denied = new ArrayList<>();
 
-            if (commandName == null) {
-                commandMap
-                        .getHandlers()
-                        .forEach(
-                                (label, handler) ->
-                                        addVisibleCommand(player, account, handler, commands, denied));
+            if (commandPath.isEmpty()) {
                 CommandOutput.sendTranslatedMessage(player, "commands.help.available_commands");
-            } else {
-                CommandHandler handler = commandMap.getHandler(commandName);
-                if (handler == null) {
-                    CommandOutput.sendTranslatedMessage(player, "commands.generic.command_exist_error");
-                    CommandOutput.sendMessage(player, "Command: " + commandName.toLowerCase());
-                    return;
-                }
-                addVisibleCommand(player, account, handler, commands, denied);
+                commandMap.getHandlers().forEach((label, handler) -> {
+                    if (isVisible(player, account, handler)) {
+                        CommandOutput.sendMessage(player, summarize(player, handler));
+                    }
+                });
+                return;
             }
 
-            String suffix = "\n\t" + translate(player, "commands.help.warn_player_has_no_permission");
-            commands.forEach(text -> CommandOutput.sendMessage(player, text));
-            denied.forEach(text -> CommandOutput.sendMessage(player, text + suffix));
+            CommandHandler handler = commandMap.getHandler(commandPath.getFirst());
+            if (handler == null) {
+                CommandOutput.sendTranslatedMessage(player, "commands.generic.command_exist_error");
+                CommandOutput.sendMessage(player, "Command: " + commandPath.getFirst());
+                return;
+            }
+            if (!isVisible(player, account, handler)) {
+                CommandOutput.sendTranslatedMessage(player, "commands.generic.permission_error");
+                return;
+            }
+
+            CommandLine root = handler.createCommandLine(player, null);
+            CommandLine selected = findSubcommand(root, commandPath.subList(1, commandPath.size()));
+            if (selected == null) {
+                CommandOutput.sendMessage(player, "Unknown subcommand: " + commandPath.getLast());
+                CommandOutput.sendMessage(player, root.getUsageMessage().stripTrailing());
+                return;
+            }
+            CommandOutput.sendMessage(player, describe(player, handler, selected));
         }
     }
 
-    private static void addVisibleCommand(
-            Player player,
-            Account account,
-            CommandHandler handler,
-            List<String> commands,
-            List<String> denied) {
-        Command metadata = handler.getClass().getAnnotation(Command.class);
-        boolean allowed = player == null || account.hasPermission(metadata.permission());
-        if (allowed) {
-            commands.add(describe(player, handler));
-        } else if (SHOW_COMMANDS_WITHOUT_PERMISSIONS) {
-            denied.add(describe(player, handler));
+    static CommandLine findSubcommand(CommandLine root, List<String> names) {
+        CommandLine current = root;
+        for (String name : names) {
+            current = current.getSubcommands().get(name.toLowerCase(Locale.ROOT));
+            if (current == null) return null;
         }
+        return current;
     }
 
-    private static String describe(Player player, CommandHandler handler) {
+    private static boolean isVisible(Player player, Account account, CommandHandler handler) {
+        String permission = handler.getClass().getAnnotation(Command.class).permission();
+        return player == null || account != null && account.hasPermission(permission);
+    }
+
+    private static String summarize(Player player, CommandHandler handler) {
         Command metadata = handler.getClass().getAnnotation(Command.class);
-        StringBuilder builder =
-                new StringBuilder(handler.getLabel())
-                        .append(" - ")
-                        .append(handler.getDescriptionString(player))
-                        .append("\n\t")
-                        .append(handler.getUsageString(player));
+        String summary = handler.getLabel() + " - " + handler.getDescriptionString(player);
+        return metadata.aliases().length == 0
+                ? summary
+                : summary + " (" + translate(player, "commands.help.aliases")
+                        + String.join(", ", metadata.aliases()) + ")";
+    }
+
+    private static String describe(Player player, CommandHandler handler, CommandLine commandLine) {
+        Command metadata = handler.getClass().getAnnotation(Command.class);
+        StringBuilder builder = new StringBuilder(handler.getLabel())
+                .append(" - ")
+                .append(handler.getDescriptionString(player))
+                .append("\n\t")
+                .append(commandLine.getUsageMessage().stripTrailing());
 
         if (metadata.aliases().length > 0) {
-            builder.append("\n\t").append(translate(player, "commands.help.aliases"));
-            for (String alias : metadata.aliases()) {
-                builder.append(alias).append(' ');
-            }
+            builder.append("\n\t").append(translate(player, "commands.help.aliases"))
+                    .append(String.join(", ", metadata.aliases()));
         }
 
         builder.append("\n\t").append(translate(player, "commands.help.tip_need_permission"));
@@ -101,12 +111,8 @@ public final class HelpCommand implements CommandHandler {
             builder.append(metadata.permission());
         }
         if (!metadata.permissionTargeted().isEmpty()) {
-            builder.append(' ')
-                    .append(
-                            translate(
-                                    player,
-                                    "commands.help.tip_permission_targeted",
-                                    metadata.permissionTargeted()));
+            builder.append(' ').append(translate(
+                    player, "commands.help.tip_permission_targeted", metadata.permissionTargeted()));
         }
         return builder.toString();
     }
