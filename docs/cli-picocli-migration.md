@@ -206,22 +206,42 @@ or offline target before loading any daily-task state. The root command can
 print help without a selected player.
 
 
-### Constellation command review
+### Avatar command consolidation
 
-`constellation set <0-6> [all]` and `constellation reset [all]` retain their
-separate permission keys (`player.setconstellation[.others]` and
-`player.resetconstellation[.others]`). Both now check for an active online
-target before accessing avatar data; a console command without a target is
-rejected. The level boundaries and Picocli routes have regression tests.
+Character-specific commands now share one `avatar` command group:
 
-`Avatar.forceConstellationLevel` already saves each changed avatar, so the
-command no longer queues another identical save after stat recalculation.
-The database writer also coalesces pending saves of the same object; multi-avatar
-updates still visit each avatar separately, since there is no verified
-atomic batch-update path for distinct avatar documents.
+```text
+avatar list
+avatar constellation set <0-6> [--avatar <avatarId> | --all]
+avatar constellation reset [--avatar <avatarId> | --all]
+avatar talent set <talentId> <level> [--avatar <avatarId>]
+avatar talent normal <level> [--avatar <avatarId>] # alias: n
+avatar talent skill <level> [--avatar <avatarId>]  # alias: e
+avatar talent burst <level> [--avatar <avatarId>]  # alias: q
+avatar talent all <level> [--avatar <avatarId>]
+avatar talent list [--avatar <avatarId>]
+avatar friendship set <level> [--avatar <avatarId>]
+avatar extralevel [--avatar <avatarId>]
+avatar max [--avatar <avatarId> | --all]
+```
 
-The existing scene transfer used when lowering constellation levels or
-changing all characters remains in place pending client verification. An
-`AvatarDataNotify` snapshot is not proven to refresh scene entity abilities,
-and replacing the transfer without verifying that behavior risks stale gameplay
-state. Do not treat this as a resolved scene-transition issue.
+`--avatar` selects a character owned by the target player by avatar ID. Without it,
+single-character operations use the currently active character. `--all` selects
+every owned character, and is mutually exclusive with `--avatar`. The
+`talent all` operation means all skills of one character, not every character.
+The standalone `constellation`, `talent`, `extralevel` (`el`),
+`setFetterLevel`, and `max` commands and their aliases were removed.
+
+Permissions are enforced per operation. Constellation set/reset retain distinct
+`player.setconstellation[.others]` and `player.resetconstellation[.others]`
+permissions. Talents use `player.settalent[.others]`; friendship uses
+`player.setfetterlevel[.others]`; extra-level upgrades use `player.give[.others]`;
+and max uses `player.max[.others]`. The `avatar list` operation currently
+requires `player.give[.others]`.
+
+The target must be online. Specifying `--avatar` does not allow modification of
+unowned characters. Extra-level upgrades still consume their required materials;
+max retains its level-90 cap. `Avatar.forceConstellationLevel` saves each changed
+avatar. The existing scene transfer when lowering constellation levels or
+changing all characters remains in place until the client refresh behavior
+is verified; this is not a resolved scene-transition issue.
