@@ -105,7 +105,7 @@ Built-in commands use **Picocli** for positional arguments, named options and su
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
 | `announce send <content...>` / `announce template <templateId>` | Send a temporary announcement or publish a stored template; `announce tpl` is an alias for `template`. |
 | `say <message...>` | Send a server message (the former `sendMessage` command is removed). |
-| `player list [--uid]` | List connected players; `--uid` includes UID values. Replaces `list [uid]` and `players`. |
+| `player list` | List connected players with their nicknames and UIDs. Replaces `list [uid]` and `players`. |
 | `coop [guestSelector] <hostSelector>` | Move a guest into an online host's world. Omitted guest uses the current command target (the sender in-game by default). |
 
 Example server-console commands:
