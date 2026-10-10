@@ -181,6 +181,9 @@
       "description": "Modifica le proprietà di un entità esistente",
       "not_found_error": "L'entità non esiste."
     },
+    "avatar": {
+      "description": "Gestisci i personaggi: elenco, costellazioni, talenti, amicizia, livelli extra e potenziamento massimo."
+    },
     "give": {
       "usage_relic": "Utilizzo: give <IDmanufatto> [mainPropID] [<appendPropID>[,<volte>]]... [lv<livello 0-20>]",
       "illegal_relic": "Questo ID manufatto appartiene ad una blacklist, potrebbe non essere quello che volevi.",
