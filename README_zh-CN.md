@@ -75,6 +75,9 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 | `unban <playerSelector>` | 解封账号，需要 `server.ban` 权限；操作其他账号还需要 `server.ban.others`。 |
 | `kick <playerSelector>` | 使用 `server.kick` 权限踢出在线玩家，已移除 `restart` 别名和密钥参数。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
+| `announce template <templateId>` | 发布公告模板，`announce tpl` 为别名。 |
+| `sendMessage <message...>` | 发送服务器消息，仅保留 `say` 别名。 |
+| `coop [guestSelector] <hostSelector>` | 将访客送入在线房主的世界；省略访客时使用当前命令目标（游戏内默认自身）。 |
 
 服务器控制台示例：
 
