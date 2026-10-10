@@ -12,7 +12,8 @@ import picocli.CommandLine.Parameters;
         label = "barrier",
         aliases = {"br", "pb"},
         permission = "player.setprop",
-        permissionTargeted = "player.setprop.others")
+        permissionTargeted = "player.setprop.others",
+        targetRequirement = Command.TargetRequirement.NONE)
 public final class BarrierCommand implements CommandHandler {
     private enum State {
         ON,
@@ -39,8 +40,8 @@ public final class BarrierCommand implements CommandHandler {
         private final Player sender;
         private final Player targetPlayer;
 
-        @Parameters(index = "0", arity = "0..1", paramLabel = "[on|off]")
-        private State state = State.OFF;
+        @Parameters(index = "0", paramLabel = "<on|off>")
+        private State state;
 
         private Args(Player sender, Player targetPlayer) {
             this.sender = sender;
@@ -49,6 +50,11 @@ public final class BarrierCommand implements CommandHandler {
 
         @Override
         public void run() {
+            if (targetPlayer == null || !targetPlayer.isOnline()
+                    || targetPlayer.getSession() == null || !targetPlayer.getSession().isActive()) {
+                CommandOutput.sendMessage(sender, "Barrier control requires an online player.");
+                return;
+            }
             boolean enabled = state == State.ON;
             targetPlayer.sendPacket(new PacketOpenStateChangeNotify(48, enabled ? 0 : 1));
             CommandOutput.sendMessage(sender, enabled ? "Restored barrier" : "Removed barrier");
