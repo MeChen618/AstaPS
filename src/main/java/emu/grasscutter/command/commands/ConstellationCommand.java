@@ -131,10 +131,7 @@ public final class ConstellationCommand implements CommandHandler {
 
     private static void apply(Player player, Avatar avatar, int level, boolean reloadIfLowered) {
         int before = avatar.getCoreProudSkillLevel();
-        avatar.forceConstellationLevel(level);
-        avatar.recalcConstellations();
-        avatar.recalcStats(true);
-        // forceConstellationLevel already saves the avatar.
+        avatar.forceConstellationLevel(level); // Recalculates and saves once.
         if (reloadIfLowered && level < before) reloadScene(player);
     }
 
