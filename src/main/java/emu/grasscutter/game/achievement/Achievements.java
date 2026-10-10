@@ -13,7 +13,7 @@ import emu.grasscutter.net.proto.AchievementOuterClass.Achievement.Status;
 import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 import lombok.*;
@@ -26,6 +26,8 @@ public class Achievements {
     private static final IntSupplier currentTimeSecs =
             () -> (int) (System.currentTimeMillis() / 1000L);
     private static final Achievement INVALID = new Achievement(Status.Status_INVALID, -1, 0, 0, 0);
+    // Keep individual update notifications comfortably smaller than a full achievement snapshot.
+    static final int UPDATE_PACKET_BATCH_SIZE = 128;
     @Id private ObjectId id;
     private int uid;
     @Transient private Player player;
@@ -114,24 +116,95 @@ public class Achievements {
         return AchievementControlReturns.success(this.notifyOtherAchievements(a));
     }
 
-    private int notifyOtherAchievements(Achievement a) {
-        var changedNum = new AtomicInteger();
+    /**
+     * Apply a bulk grant or revoke without persisting or notifying once per achievement.
+     * Status transitions still pass through update(), including all completion events and
+     * linked-stage propagation. The returned count has the same meaning as the old loop.
+     */
+    public synchronized int grantAll() {
+        return this.changeAll(true);
+    }
 
-        changedNum.addAndGet(this.update(a) ? 1 : 0);
+    public synchronized int revokeAll() {
+        return this.changeAll(false);
+    }
 
-        GameData.getAchievementDataMap().get(a.getId()).getExcludedGroupAchievementIdList().stream()
-                .map(this::getAchievement)
-                .filter(Objects::nonNull)
-                .forEach(
-                        other -> {
-                            other.setCurProgress(a.getCurProgress());
-                            changedNum.addAndGet(this.update(other) ? 1 : 0);
-                        });
+    private int changeAll(boolean grant) {
+        var batch = new UpdateBatch();
+        for (AchievementData data : GameData.getAchievementDataMap().values()) {
+            if (!data.isUsed() || !data.isParent()) continue;
 
+            var achievement = this.getAchievement(data.getId());
+            if (achievement == null) continue;
+            // Preserve the old grant()/revoke() conditions, including linked stages.
+            if (grant ? this.isFinished(data.getId()) : !this.isFinished(data.getId())) {
+                continue;
+            }
+
+            achievement.setCurProgress(grant ? achievement.getTotalProgress() : 0);
+            this.updateRelatedAchievements(achievement, batch);
+        }
+
+        if (batch.isEmpty()) return 0;
         this.computeFinishedAchievementNum();
         this.save();
-        this.sendUpdatePacket(a);
-        return changedNum.intValue();
+        batch.flush(this::sendUpdatePacket);
+        return batch.changedCount();
+    }
+
+    private int notifyOtherAchievements(Achievement achievement) {
+        var batch = new UpdateBatch();
+        this.updateRelatedAchievements(achievement, batch);
+        this.computeFinishedAchievementNum();
+        this.save();
+        batch.flush(this::sendUpdatePacket);
+        return batch.changedCount();
+    }
+
+    /** Shared by single-target and bulk operations so events and stage propagation match. */
+    private void updateRelatedAchievements(Achievement achievement, UpdateBatch batch) {
+        batch.record(achievement, this.update(achievement));
+        for (int linkedId :
+                GameData.getAchievementDataMap()
+                        .get(achievement.getId())
+                        .getExcludedGroupAchievementIdList()) {
+            var linked = this.getAchievement(linkedId);
+            if (linked == null) continue;
+            linked.setCurProgress(achievement.getCurProgress());
+            batch.record(linked, this.update(linked));
+        }
+    }
+
+    /** Collect unique affected IDs, count transitions, and emit bounded update packets. */
+    static final class UpdateBatch {
+        private final Map<Integer, Achievement> updated = new LinkedHashMap<>();
+        private int changedCount;
+
+        void record(Achievement achievement, boolean statusChanged) {
+            updated.put(achievement.getId(), achievement);
+            if (statusChanged) changedCount++;
+        }
+
+        boolean isEmpty() {
+            return updated.isEmpty();
+        }
+
+        int changedCount() {
+            return changedCount;
+        }
+
+        void flush(Consumer<List<Achievement>> send) {
+            if (updated.isEmpty()) return;
+            var chunk = new ArrayList<Achievement>(UPDATE_PACKET_BATCH_SIZE);
+            for (Achievement achievement : updated.values()) {
+                chunk.add(achievement);
+                if (chunk.size() == UPDATE_PACKET_BATCH_SIZE) {
+                    send.accept(chunk);
+                    chunk = new ArrayList<>(UPDATE_PACKET_BATCH_SIZE);
+                }
+            }
+            if (!chunk.isEmpty()) send.accept(chunk);
+        }
     }
 
     private boolean update(Achievement a) {
@@ -158,20 +231,6 @@ public class Achievements {
                         .filter(a -> this.isFinished(a.getId()))
                         .mapToInt(value -> 1)
                         .sum();
-    }
-
-    private void sendUpdatePacket(Achievement achievement) {
-        List<Achievement> achievements = Lists.newArrayList(achievement);
-        achievements.addAll(
-                GameData.getAchievementDataMap()
-                        .get(achievement.getId())
-                        .getExcludedGroupAchievementIdList()
-                        .stream()
-                        .map(this::getAchievement)
-                        .filter(Objects::nonNull)
-                        .toList());
-
-        this.sendUpdatePacket(achievements);
     }
 
     private void sendUpdatePacket(List<Achievement> achievement) {

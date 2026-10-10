@@ -71,3 +71,13 @@ claimed reward; completing it again restores `REWARD_TAKEN` rather than making i
 claimable. Reward requests require the achievement to be finished and unclaimed, and
 reject duplicate IDs. Already claimed achievement-goal rewards and duplicate goal IDs
 are also rejected without awarding items.
+
+
+### Bulk achievement commands
+
+`achievement grantall` and `achievement revokeall` now call the achievement
+manager's batched operations. Each operation preserves the existing used/parent
+filters, status-transition counts, linked stages, reward-claim history and per-stage
+completion events. It recomputes the completed count once, queues one achievement
+document save, and groups unique changed achievements into update packets of at
+most 128 entries. Single-ID grant, revoke and progress retain the same behavior.

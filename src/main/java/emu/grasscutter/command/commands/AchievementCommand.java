@@ -3,12 +3,9 @@ package emu.grasscutter.command.commands;
 import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
-import emu.grasscutter.data.GameData;
-import emu.grasscutter.data.excels.achievement.AchievementData;
 import emu.grasscutter.game.achievement.AchievementControlReturns;
 import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.player.Player;
-import java.util.concurrent.atomic.AtomicInteger;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
@@ -133,18 +130,8 @@ public final class AchievementCommand implements CommandHandler {
 
         @Override
         public void run() {
-            var counter = new AtomicInteger();
-            GameData.getAchievementDataMap().values().stream()
-                    .filter(AchievementData::isUsed)
-                    .filter(AchievementData::isParent)
-                    .forEach(
-                            data -> {
-                                var result = achievements().grant(data.getId());
-                                if (result.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                                    counter.addAndGet(result.getChangedAchievementStatusNum());
-                                }
-                            });
-            sendSuccessMessage(sender, "grantall", counter.get(), targetPlayer.getNickname());
+            int changed = achievements().grantAll();
+            sendSuccessMessage(sender, "grantall", changed, targetPlayer.getNickname());
         }
     }
 
@@ -156,18 +143,8 @@ public final class AchievementCommand implements CommandHandler {
 
         @Override
         public void run() {
-            var counter = new AtomicInteger();
-            GameData.getAchievementDataMap().values().stream()
-                    .filter(AchievementData::isUsed)
-                    .filter(AchievementData::isParent)
-                    .forEach(
-                            data -> {
-                                var result = achievements().revoke(data.getId());
-                                if (result.getRet() == AchievementControlReturns.Return.SUCCESS) {
-                                    counter.addAndGet(result.getChangedAchievementStatusNum());
-                                }
-                            });
-            sendSuccessMessage(sender, "revokeall", counter.get(), targetPlayer.getNickname());
+            int changed = achievements().revokeAll();
+            sendSuccessMessage(sender, "revokeall", changed, targetPlayer.getNickname());
         }
     }
 
