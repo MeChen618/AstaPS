@@ -64,8 +64,8 @@ public interface Dumpers {
      */
     static void dumpCommands(String locale) {
         // Check that commands are registered.
-        var commandMap = CommandMap.getInstance();
-        if (commandMap == null) commandMap = new CommandMap(true);
+        var existingMap = CommandMap.getInstance();
+        var commandMap = existingMap != null ? existingMap : new CommandMap(true);
 
         // Convert all registered commands to an info map.
         var dump = new HashMap<String, CommandInfo>();
