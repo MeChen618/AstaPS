@@ -77,7 +77,7 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
 | `announce send <content...>` / `announce template <templateId>` | 发送临时公告或发布公告模板，`announce tpl` 是 `template` 的别名。 |
 | `say <message...>` | 发送服务器消息，旧命令 `sendMessage` 已删除。 |
-| `player list [--uid]` | 列出在线玩家；`--uid` 同时显示 UID，替代旧命令 `list [uid]` 和 `players`。 |
+| `player list` | 列出在线玩家的昵称和 UID，替代旧命令 `list [uid]` 和 `players`。 |
 | `coop [guestSelector] <hostSelector>` | 将访客送入在线房主的世界；省略访客时使用当前命令目标（游戏内默认自身）。 |
 
 服务器控制台示例：
