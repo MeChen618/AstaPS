@@ -9,13 +9,13 @@ import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 /** Controls the in-server DPS test. */
-@Command(label = "dps", targetRequirement = Command.TargetRequirement.ONLINE)
+@Command(label = "dps", targetRequirement = Command.TargetRequirement.NONE)
 public final class DPSCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var root = new CommandLine(new Root(sender));
-        root.addSubcommand("start", new Start(targetPlayer));
-        root.addSubcommand("stop", new Stop(targetPlayer));
+        root.addSubcommand("start", new Start(sender, targetPlayer));
+        root.addSubcommand("stop", new Stop(sender, targetPlayer));
         return root;
     }
 
@@ -35,6 +35,7 @@ public final class DPSCommand implements CommandHandler {
 
     @CommandLine.Command(name = "start")
     private static final class Start implements Runnable {
+        private final Player sender;
         private final Player targetPlayer;
 
         @Parameters(index = "0", arity = "0..1", paramLabel = "[seconds]")
@@ -43,16 +44,19 @@ public final class DPSCommand implements CommandHandler {
         @Parameters(index = "1", arity = "0..1", paramLabel = "[targetCount]")
         private Integer targetCount;
 
-        private Start(Player targetPlayer) {
+        private Start(Player sender, Player targetPlayer) {
+            this.sender = sender;
             this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
+            if (!onlineTarget(sender, targetPlayer)) return;
             int duration = seconds == null ? DPSMeter.DEFAULT_SECONDS : seconds;
             int count = targetCount == null ? 1 : targetCount;
-            if (duration <= 0 || count <= 0) {
-                CommandOutput.sendMessage(targetPlayer, "seconds and targetCount must be positive.");
+            if (duration < DPSMeter.MIN_SECONDS || duration > DPSMeter.MAX_SECONDS
+                    || count < 1 || count > DPSMeter.MAX_TARGETS) {
+                CommandOutput.sendMessage(sender, "seconds must be 1..120 and targetCount must be 1..10.");
                 return;
             }
             DPSMeter.start(targetPlayer, duration, count);
@@ -63,13 +67,22 @@ public final class DPSCommand implements CommandHandler {
     private static final class Stop implements Runnable {
         private final Player targetPlayer;
 
-        private Stop(Player targetPlayer) {
+        private Stop(Player sender, Player targetPlayer) {
+            this.sender = sender;
             this.targetPlayer = targetPlayer;
         }
 
         @Override
         public void run() {
+            if (!onlineTarget(sender, targetPlayer)) return;
             DPSMeter.stop(targetPlayer);
         }
+    }
+    private static boolean onlineTarget(Player sender, Player target) {
+        if (target == null || !target.isOnline() || target.getScene() == null) {
+            CommandOutput.sendMessage(sender, "DPS operations require an online player in a scene.");
+            return false;
+        }
+        return true;
     }
 }
