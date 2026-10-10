@@ -182,7 +182,7 @@
       "not_found_error": "L'entità non esiste."
     },
     "avatar": {
-      "description": "Gestisci i personaggi: elenco, costellazioni, talenti, amicizia, livelli extra e potenziamento massimo."
+      "description": "Gestisci i personaggi: elenco, costellazioni, talenti, statistiche di combattimento, amicizia, livelli extra e potenziamento massimo."
     },
     "battlepass": {
       "description": "Gestisce l'acquisto dei livelli e lo stato premium del pass battaglia."
