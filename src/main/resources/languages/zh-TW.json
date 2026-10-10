@@ -439,7 +439,7 @@
       "success": "停權成功。",
       "failure": "停權失敗，玩家帳號不存在。",
       "invalid_time": "無效的時間戳。",
-      "description": "停權指定玩家。"
+      "description": "停權帳號或封鎖 IPv4 位址"
     },
     "unlockall": {
       "success": "已為 %s 解鎖所有開放狀態。",

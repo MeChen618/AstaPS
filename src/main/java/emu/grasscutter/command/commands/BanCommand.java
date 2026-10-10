@@ -23,19 +23,19 @@ public final class BanCommand implements CommandHandler {
         return cli;
     }
 
-    enum TargetType { UID, ACCOUNT, IPV4 }
-    record BanTarget(TargetType type, int uid, String value) {}
+    enum TargetType { PLAYER, IPV4 }
+    record BanTarget(TargetType type, String value) {}
     record BanArguments(BanTarget target, int endTime, String reason) {}
 
     static BanTarget parseTarget(String value) {
         if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException("Specify @UID, username@, username@UID, account name, or IPv4.");
+            throw new IllegalArgumentException("Specify <playerSelector|IPv4>. See help ban.");
         }
         if (value.contains("@")) {
-            var selector = CommandMap.parseExplicitTargetSelector(value);
-            return new BanTarget(TargetType.UID, selector.uid() == null ? 0 : selector.uid(), value);
+            CommandMap.parseExplicitTargetSelector(value);
+            return new BanTarget(TargetType.PLAYER, value);
         }
-        // Old dotted usernames remain resolvable unless they look like a complete IPv4.
+        // Only a complete IPv4 address may omit the explicit player-selector suffix.
         if (value.matches("[0-9]+(\\.[0-9]+){3}")) {
             for (String octet : value.split("\\.")) {
                 if (octet.length() > 3
@@ -44,9 +44,10 @@ public final class BanCommand implements CommandHandler {
                     throw new IllegalArgumentException("Invalid IPv4 address: " + value);
                 }
             }
-            return new BanTarget(TargetType.IPV4, 0, value);
+            return new BanTarget(TargetType.IPV4, value);
         }
-        return new BanTarget(TargetType.ACCOUNT, 0, value);
+        throw new IllegalArgumentException(
+                "Invalid ban target: " + value + ". Use <playerSelector|IPv4>. See help ban.");
     }
 
     static BanArguments parseBanArguments(String target, List<String> trailing) {
@@ -63,7 +64,7 @@ public final class BanCommand implements CommandHandler {
         }
         if (parsed.type() == TargetType.IPV4 && offset != 0) {
             throw new IllegalArgumentException(
-                    "IPv4 bans do not expire; omit endTime and supply only a reason.");
+                    "For an IPv4 address, use ban <IPv4> [reason...].");
         }
         String reason = trailing.size() == offset
                 ? "Reason not specified."
@@ -72,11 +73,12 @@ public final class BanCommand implements CommandHandler {
     }
 
     @CommandLine.Command(name = "ban",
-            customSynopsis = "ban <playerSelector|accountName|IPv4> [endTime] [reason...]")
+            description = "playerSelector: @UID (UID), username@ (account), username@UID (both match).",
+            customSynopsis = "ban <playerSelector|IPv4> [endTime] [reason...]")
     private static final class BanTargetCommand implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<playerSelector|accountName|IPv4>")
+        @Parameters(index = "0", paramLabel = "<playerSelector|IPv4>")
         private String target;
 
         @Parameters(index = "1..*", arity = "0..*", paramLabel = "[endTime] [reason...]")
@@ -104,9 +106,8 @@ public final class BanCommand implements CommandHandler {
 
             final Account account;
             try {
-                account = args.target().type() == TargetType.UID
-                        ? CommandMap.findAccount(CommandMap.parseExplicitTargetSelector(args.target().value()))
-                        : Grasscutter.getGameServer().getAccountByName(args.target().value());
+                account = CommandMap.findAccount(
+                        CommandMap.parseExplicitTargetSelector(args.target().value()));
             } catch (IllegalArgumentException mismatch) {
                 CommandOutput.sendMessage(sender, mismatch.getMessage());
                 return;

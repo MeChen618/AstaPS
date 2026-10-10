@@ -440,7 +440,7 @@
       "success": "Successful.",
       "failure": "Failed, player not found.",
       "invalid_time": "Unable to parse timestamp.",
-      "description": "Ban a player"
+      "description": "Ban an account or IPv4 address"
     },
     "unlockall": {
       "success": "Unlocked all open states for %s.",

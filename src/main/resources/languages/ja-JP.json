@@ -439,7 +439,7 @@
       "success": "成功しました。",
       "failure": "失敗しました。プレイヤーが見つかりません。",
       "invalid_time": "タイムスタンプを解析できません。",
-      "description": "プレイヤーをBANします｡"
+      "description": "アカウントまたはIPv4アドレスをBANします。"
     },
     "unlockall": {
       "success": "%s のすべてのオープンなステータスのロックを解除しました。",

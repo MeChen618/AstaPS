@@ -64,11 +64,14 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 内置命令已迁移至 **Picocli**，支持位置参数、具名选项和子命令。输入 `help` 查看命令及别名，`help <命令>` 查看命令语法，或用 `help <命令> <子命令>` 查看子命令语法（例如 `help teleport pos`）。参数输入错误时会显示错误原因和对应语法。交互式服务器控制台通过 JLine 支持 **Tab 自动补全**。游戏内命令以 `/` 开头，服务器控制台不需要。
 
+**玩家选择器（`playerSelector`）：** `@UID`（玩家 UID）、`username@`（账号用户名）或 `username@UID`（用户名与 UID 同时匹配）。指定已有玩家时使用该语法。
+
 | 命令 | 用途 |
 |---|---|
 | `give` | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
 | `account create / clone / delete / resetpass` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。 |
-| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 封禁或解封 IP；封禁需要 `server.banip` 权限，只有**解封**需要配置中的 keystore 密钥。 |
+| `ban <playerSelector> [endTime] [原因...]` | 封禁账号，需要 `server.ban` 权限；封禁他人账号还需要 `server.ban.others`。`endTime` 为 Unix 时间戳。 |
+| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 使用 `server.banip` 权限管理永久 IP 封禁；解封时使用配置中的 keystore 密钥。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
 
 服务器控制台示例：
@@ -83,7 +86,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-对于支持指定目标的命令，`@UID` 表示目标玩家，**不是** Picocli 参数文件；在 `account create` 和 `account clone` 中，可选的 `@UID` 表示**新账号的 UID**。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpass <username> <new-password>`，会撤销旧登录令牌和会话令牌，并断开玩家连接。
+在 `account create` 和 `account clone` 中，可选的 `@UID` 表示**新账号的 UID**。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpass <username> <new-password>`，会撤销旧登录令牌和会话令牌，并断开玩家连接。
 
 详细说明见 [CLI 迁移文档](docs/cli-picocli-migration.md)；插件开发者请参阅 [命令 API v5 文档](docs/plugin-command-api-v5.md)。
 

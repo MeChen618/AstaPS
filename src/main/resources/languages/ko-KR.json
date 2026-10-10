@@ -439,7 +439,7 @@
       "success": "성공.",
       "failure": "실패, 플레이어가 발견되지 않았습니다.",
       "invalid_time": "timestamp를 분석할 수 없습니다.",
-      "description": "플레이어를 밴합니다."
+      "description": "계정 또는 IPv4 주소를 차단합니다."
     },
     "unlockall": {
       "success": "%s의 모든 오픈 스탯을 잠금 해제합니다.",
