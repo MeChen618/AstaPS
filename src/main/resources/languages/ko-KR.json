@@ -181,6 +181,9 @@
       "description": "🇺🇸Modify an existing entity's properties",
       "not_found_error": "🇺🇸Entity does not exist"
     },
+    "avatar": {
+      "description": "보유 캐릭터의 목록, 운명의 자리, 특성, 호감도, 추가 레벨과 최대 강화를 관리합니다."
+    },
     "give": {
       "usage_relic": "사용법: give <성유물ID> [mainPropID] [<appendPropID>[,<times>]]... [lv<레벨 0-20>]",
       "illegal_relic": "이 성유물ID는 블랙리스트 범위에 있습니다. 원하는 ID가 아닐 수 있습니다.",
