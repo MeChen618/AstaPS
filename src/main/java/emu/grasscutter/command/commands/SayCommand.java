@@ -43,7 +43,7 @@ public final class SayCommand implements CommandHandler {
             } else {
                 CommandOutput.sendMessage(targetPlayer, message);
             }
-            CommandOutput.sendTranslatedMessage(sender, "commands.sendMessage.success");
+            CommandOutput.sendTranslatedMessage(sender, "commands.say.success");
         }
     }
 }
