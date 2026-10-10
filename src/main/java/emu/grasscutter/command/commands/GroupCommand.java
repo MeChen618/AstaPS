@@ -55,6 +55,10 @@ public final class GroupCommand implements CommandHandler {
 
         @Override
         public void run() {
+            if (targetPlayer.getScene() == null) {
+                CommandOutput.sendMessage(sender, "Target player has no active scene.");
+                return;
+            }
             SceneGroupInstance groupInstance =
                     targetPlayer.getScene().getScriptManager().getGroupInstanceById(groupId);
             if (groupInstance == null) {
