@@ -9,7 +9,7 @@ unrelated quest, protocol, resource, combat or server changes.
 - Built-in commands declare their grammar using Picocli arguments, options and subcommands.
 - The console uses JLine parsing and Picocli completion.
 - Player-targeting commands share the `playerSelector` syntax below. `@` clears the remembered target.
-- Commands with positional player selectors (`coop`, `ban`, `mail send`) keep those arguments in place, while using the same centralized identity parser and resolver as ordinary command targets.
+- Commands with positional player selectors (`coop`, `ban`, `unban`, `kick`, `mail send`) keep those arguments in place, while using the same centralized identity parser and resolver as ordinary command targets.
 - New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
 - Console feedback continues to reach the web-console output capture.
@@ -54,7 +54,8 @@ The Picocli command tree keeps one route for each operation:
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
-- `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. Account bans use `server.ban` and `server.ban.others` for another account. IP bans use `server.banip`, and `unban ip <key> <IPv4>` uses the configured keystore key.
+- `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. `unban <playerSelector|IPv4>` uses the same parser without subcommands or a keystore key. Account ban/unban requires `server.ban` and, for another account, `server.ban.others`; IP ban/unban requires `server.banip`.
+- `kick <playerSelector>` disconnects an online player. It requires `server.kick`, does not accept a keystore key, and no longer has the misleading `restart` alias.
 
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
 - Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack` and `unlockwp`; use `br`, `el`, `suicide`, `trackmaterial` and `wp` respectively.
@@ -157,8 +158,8 @@ never loads offline players or queries the database.
 **`playerSelector`:** `@UID` (player UID), `username@` (exact account username), or
 `username@UID` (both must match).
 
-Use `playerSelector` for general command targets, `coop` hosts, `ban` accounts,
-and `mail send` recipients. The `ban` command also accepts an IPv4 address;
+Use `playerSelector` for general command targets, `coop` hosts, `ban` / `unban` accounts,
+`kick` targets, and `mail send` recipients. The `ban` and `unban` commands also accept IPv4 addresses;
 it can resolve accounts with reserved UIDs before character creation. `mail send all`
 broadcasts to all players. `@` clears the remembered target, and
 `target 10001` selects UID 10001.
