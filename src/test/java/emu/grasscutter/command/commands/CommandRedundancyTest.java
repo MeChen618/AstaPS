@@ -31,25 +31,38 @@ public final class CommandRedundancyTest {
         var map = new CommandMap(false);
         map.registerCommand("barrier", new BarrierCommand());
         map.registerCommand("dungeon", new EnterDungeonCommand());
-        map.registerCommand("extralevel", new ExtraLevelCommand());
+        map.registerCommand("avatar", new AvatarCommand());
         map.registerCommand("kill", new KillCommand());
         map.registerCommand("trackmat", new TrackMatCommand());
         map.registerCommand("waypoints", new WaypointsCommand());
 
         for (String removed : new String[] {
                 "pb", "enter_dungeon", "enterdungeon", "levelbreak",
-                "killCharacter", "mattrack", "unlockwp"
+                "killCharacter", "mattrack", "unlockwp",
+                "extralevel", "el", "constellation", "talent",
+                "setfetterlevel", "setfetterlvl", "setfriendship",
+                "max", "maxavatar", "maxchar"
         }) {
             assertNull(map.getHandler(removed), removed);
             assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
         }
         for (String retained : new String[] {
-                "barrier", "br", "dungeon", "extralevel", "el",
+                "barrier", "br", "dungeon", "avatar",
                 "kill", "suicide", "trackmat", "trackmaterial", "waypoints", "wp"
         }) {
             assertNotNull(map.getHandler(retained), retained);
             assertTrue(map.getCommandLine().getSubcommands().containsKey(retained), retained);
         }
+    }
+
+    @Test
+    void avatarGroupReplacesRemovedTopLevelCharacterCommands() {
+        var cli = new AvatarCommand().createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("constellation"));
+        assertTrue(cli.getSubcommands().containsKey("talent"));
+        assertTrue(cli.getSubcommands().containsKey("friendship"));
+        assertTrue(cli.getSubcommands().containsKey("extralevel"));
+        assertTrue(cli.getSubcommands().containsKey("max"));
     }
 
     @Test
