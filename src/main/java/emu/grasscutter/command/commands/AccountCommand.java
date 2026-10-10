@@ -7,6 +7,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.command.*;
 import emu.grasscutter.database.*;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.AccountUsernamePolicy;
 import emu.grasscutter.game.player.Player;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
@@ -227,6 +228,7 @@ public final class AccountCommand implements CommandHandler {
     }
 
     private void createAccount(Player sender, String username, String password, int uid) {
+        AccountUsernamePolicy.requireValid(username);
         String passwordHash = password == null ? null : hashPassword(sender, password);
         if (password != null && passwordHash == null) return;
 

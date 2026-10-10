@@ -5,6 +5,7 @@ import static com.mongodb.client.model.Filters.eq;
 import emu.grasscutter.GameConstants;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.AccountUsernamePolicy;
 import emu.grasscutter.game.player.Player;
 import java.util.List;
 import org.bson.Document;
@@ -54,7 +55,7 @@ public final class PlayerCloneService {
     public static synchronized CloneResult cloneOffline(
             String sourceUsername, String targetUsername, int requestedUid) {
         requireUsername(sourceUsername, "Source");
-        requireUsername(targetUsername, "Target");
+        AccountUsernamePolicy.requireValid(targetUsername);
 
         Account sourceAccount = DatabaseHelper.getAccountByName(sourceUsername);
         if (sourceAccount == null) {

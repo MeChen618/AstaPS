@@ -10,6 +10,7 @@ unrelated quest, protocol, resource, combat or server changes.
 - The console uses JLine parsing and Picocli completion.
 - `@UID` remains an AstaPS target selector, not a Picocli argument file.
 - Commands can opt out of implicit target parsing when `@UID` is positional data.
+- New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
 - Console feedback continues to reach the web-console output capture.
 
@@ -52,7 +53,7 @@ The Picocli command tree keeps one route for each operation:
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>` and `reset` replace the duplicate `set`, `del` and `restore` subcommands.
-- `ban @UID [endTime] [reason...]` requires an explicit numeric first argument; a reason can be supplied without an end time. The old `ban player` route is removed. It does not consume the generic inline `@UID` selector, and resolves offline players by the specified UID. `ban ip <key> <ip> [reason...]` and `unban ip <key> <ip>` remain the IP-ban routes; standalone `banip` and `unbanip` were removed.
+- `ban <@UID|accountName|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. UID and account bans can expire; IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
 
 ## Review and validation
 

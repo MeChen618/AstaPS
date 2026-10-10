@@ -1,6 +1,7 @@
 package emu.grasscutter.database;
 
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.AccountUsernamePolicy;
 
 /** Insert-only account creation policy, separated so races can be tested without a live MongoDB. */
 final class AccountCreationService {
@@ -21,6 +22,7 @@ final class AccountCreationService {
     private AccountCreationService() {}
 
     static Account insert(Account account, Store store) {
+        AccountUsernamePolicy.requireValid(account.getUsername());
         for (int attempt = 0; attempt < MAX_ID_RETRIES; attempt++) {
             account.setId(Integer.toString(store.nextId()));
             switch (store.tryInsert(account)) {

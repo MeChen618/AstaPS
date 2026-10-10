@@ -11,6 +11,19 @@ import org.junit.jupiter.api.Test;
 
 class AccountCreationServiceTest {
     @Test
+    void newAccountNamesRejectUidAndIpSeparators() {
+        for (String bad : java.util.Arrays.asList(null, "", "  ", "alice@example",
+                "alice.name", "1.2.3.4", "@10001")) {
+            assertFalse(emu.grasscutter.game.AccountUsernamePolicy.isValid(bad));
+            assertThrows(IllegalArgumentException.class,
+                    () -> AccountCreationService.insert(account(bad), new FakeStore(10000)));
+        }
+        for (String good : java.util.List.of("account_name", "alice", "name-123")) {
+            assertTrue(emu.grasscutter.game.AccountUsernamePolicy.isValid(good));
+        }
+    }
+
+    @Test
     void newlyInsertedAccountsReceiveNoImplicitSuperuserPermission() {
         var store = new FakeStore(10_000);
         var created = AccountCreationService.insert(account("ordinary"), store);

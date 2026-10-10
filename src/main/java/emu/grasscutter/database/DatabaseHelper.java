@@ -9,6 +9,7 @@ import dev.morphia.query.*;
 import dev.morphia.query.experimental.filters.Filters;
 import emu.grasscutter.*;
 import emu.grasscutter.game.Account;
+import emu.grasscutter.game.AccountUsernamePolicy;
 import emu.grasscutter.game.BannedIp;
 import emu.grasscutter.game.achievement.Achievements;
 import emu.grasscutter.game.activity.PlayerActivityData;
@@ -485,6 +486,7 @@ public final class DatabaseHelper {
     }
 
     public static Account createAccountWithUid(String username, int reservedUid) {
+        if (!AccountUsernamePolicy.isValid(username)) return null;
         // Unique names only
         if (DatabaseHelper.checkIfAccountExists(username)) {
             return null;
@@ -531,6 +533,7 @@ public final class DatabaseHelper {
      */
     public static Account createAccountWithHashedPassword(
             String username, String password, String email) {
+        if (!AccountUsernamePolicy.isValid(username)) return null;
         if (DatabaseHelper.getAccountByName(username) != null) return null;
 
         var account = new Account();
@@ -541,6 +544,7 @@ public final class DatabaseHelper {
     }
 
     public static Account createAccountWithPassword(String username, String password) {
+        if (!AccountUsernamePolicy.isValid(username)) return null;
         // Unique names only
         Account exists = DatabaseHelper.getAccountByName(username);
         if (exists != null) {
