@@ -71,7 +71,9 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 | `give` | 發放角色、武器、聖遺物和材料；支援 `--amount`、`--level` 等選項，預設等級 100。 |
 | `account create / clone / delete / resetpass` | 建立、複製、刪除帳號和重設密碼，**僅限伺服器主控台**。 |
 | `ban <playerSelector> [endTime] [原因...]` | 停權帳號，需要 `server.ban` 權限；停權其他帳號還需要 `server.ban.others`。`endTime` 為 Unix 時間戳記。 |
-| `ban <IPv4> [原因...]` / `unban ip <金鑰> <IPv4>` | 使用 `server.banip` 權限管理永久 IP 封鎖；解除封鎖時使用設定中的 keystore 金鑰。 |
+| `ban <IPv4> [原因...]` / `unban <IPv4>` | 使用 `server.banip` 權限管理永久 IP 封鎖，無須輸入 keystore 金鑰。 |
+| `unban <playerSelector>` | 解除帳號停權，需要 `server.ban` 權限；處理其他帳號還需要 `server.ban.others`。 |
+| `kick <playerSelector>` | 使用 `server.kick` 權限踢出線上玩家；已移除 `restart` 別名與金鑰參數。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家寄送郵件、管理系統郵件，取代舊的 `sysmail`。 |
 
 伺服器主控台範例：
