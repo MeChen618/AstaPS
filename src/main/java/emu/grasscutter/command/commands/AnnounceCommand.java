@@ -59,7 +59,7 @@ public final class AnnounceCommand implements CommandHandler {
         }
     }
 
-    @CommandLine.Command(name = "template", aliases = {"tpl"})
+    @CommandLine.Command(name = "template")
     private static final class Template implements Runnable {
         private final Player sender;
 
