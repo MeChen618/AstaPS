@@ -63,13 +63,20 @@ class AchievementRewardClaimTest {
     }
 
     @Test
-    void legacyClaimStatusesAreMigratedOnLoad() {
+    void legacyClaimStatusesAreMigratedOnLoad() throws ReflectiveOperationException {
         var item = achievement(Status_REWARD_TAKEN);
         var record = savedAchievements(item);
 
-        record.restoreLegacyRewardClaims();
-        item.setStatus(Status_UNFINISHED);
+        // Emulate an older BSON document that has REWARD_TAKEN but no rewardClaimed field.
+        var persistedClaim = Achievement.class.getDeclaredField("rewardClaimed");
+        persistedClaim.setAccessible(true);
+        persistedClaim.setBoolean(item, false);
+        assertFalse(item.isRewardClaimed());
 
+        record.restoreLegacyRewardClaims();
+        assertTrue(item.isRewardClaimed());
+
+        item.setStatus(Status_UNFINISHED);
         assertTrue(item.hasClaimedReward());
         assertFalse(record.isRewardLeft(10001));
     }
