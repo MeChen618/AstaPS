@@ -62,20 +62,22 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 ## 指令
 
-內建指令已改用 **Picocli**，支援位置參數、具名選項與子指令。輸入 `help` 可列出指令，或輸入 `help <指令>` 查看語法與別名。互動式伺服器主控台使用 JLine 提供 **Tab 自動補齊**。遊戲內指令以 `/` 開頭，主控台則不需要。
+內建指令已改用 **Picocli**，支援位置參數、具名選項與子指令。輸入 `help` 可列出指令及別名，`help <指令>` 查看指令語法，或輸入 `help <指令> <子指令>` 查看子指令語法（例如 `help teleport pos`）。參數輸入錯誤時會顯示原因及對應語法。互動式伺服器主控台使用 JLine 提供 **Tab 自動補齊**。遊戲內指令以 `/` 開頭，主控台則不需要。
 
 | 指令 | 用途 |
 |---|---|
 | `give` | 發放角色、武器、聖遺物和材料；支援 `--amount`、`--level` 等選項，預設等級 100。 |
 | `account create / clone / delete / resetpass` | 建立、複製、刪除帳號和重設密碼，**僅限伺服器主控台**。 |
-| `ban ip <金鑰> <IP> [原因...]` / `unban ip <金鑰> <IP>` | 封鎖或解除封鎖 IP；必須提供設定中的 keystore 金鑰。 |
+| `ban <IPv4> [原因...]` / `unban ip <金鑰> <IPv4>` | 封鎖或解除封鎖 IP；封鎖需要 `server.banip` 權限，只有**解除封鎖**需要設定中的 keystore 金鑰。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家寄送郵件、管理系統郵件，取代舊的 `sysmail`。 |
 
 伺服器主控台範例：
 
 ```text
 help give
+help teleport pos
 give 202 --amount 3 @10001
+tp pos 1000 200 300 3 @10001
 account create alice
 account create bob secret @10001
 account clone alice alice-copy @10002

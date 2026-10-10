@@ -90,20 +90,22 @@ this command-execution interface directly to the public Internet.
 
 ## Commands
 
-Built-in commands now use **Picocli** for positional arguments, named options and subcommands. Run `help` to list available commands, or `help <command>` for their syntax and aliases. The interactive server console uses JLine for **Tab completion**. In-game commands use `/`; the server console omits that prefix.
+Built-in commands use **Picocli** for positional arguments, named options and subcommands. Run `help` to list commands and aliases, `help <command>` for a command's syntax, or `help <command> <subcommand>` for a subcommand's syntax (e.g. `help teleport pos`). Invalid arguments print an error followed by the relevant usage. The interactive server console uses JLine for **Tab completion**. In-game commands use `/`; the server console omits that prefix.
 
 | Command | Purpose |
 |---|---|
 | `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
 | `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
-| `ban ip <key> <ip> [reason...]` / `unban ip <key> <ip>` | Manage IP bans; the configured keystore key is required. |
+| `ban <IPv4> [reason...]` / `unban ip <key> <IPv4>` | Ban or unban an IP. Banning requires `server.banip`; only **unbanning** requires the configured keystore key. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
 
 Example server-console commands:
 
 ```text
 help give
+help teleport pos
 give 202 --amount 3 @10001
+tp pos 1000 200 300 3 @10001
 account create alice
 account create bob secret @10001
 account clone alice alice-copy @10002

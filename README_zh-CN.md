@@ -62,20 +62,22 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 
 ## 命令
 
-内置命令已迁移至 **Picocli**，支持位置参数、具名选项和子命令。输入 `help` 查看命令列表，或用 `help <命令>` 查看语法及别名。交互式服务器控制台通过 JLine 支持 **Tab 自动补全**。游戏内命令以 `/` 开头，服务器控制台不需要。
+内置命令已迁移至 **Picocli**，支持位置参数、具名选项和子命令。输入 `help` 查看命令及别名，`help <命令>` 查看命令语法，或用 `help <命令> <子命令>` 查看子命令语法（例如 `help teleport pos`）。参数输入错误时会显示错误原因和对应语法。交互式服务器控制台通过 JLine 支持 **Tab 自动补全**。游戏内命令以 `/` 开头，服务器控制台不需要。
 
 | 命令 | 用途 |
 |---|---|
 | `give` | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
 | `account create / clone / delete / resetpass` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。 |
-| `ban ip <密钥> <IP> [原因...]` / `unban ip <密钥> <IP>` | 封禁或解封 IP；必须提供配置中的 keystore 密钥。 |
+| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 封禁或解封 IP；封禁需要 `server.banip` 权限，只有**解封**需要配置中的 keystore 密钥。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
 
 服务器控制台示例：
 
 ```text
 help give
+help teleport pos
 give 202 --amount 3 @10001
+tp pos 1000 200 300 3 @10001
 account create alice
 account create bob secret @10001
 account clone alice alice-copy @10002
