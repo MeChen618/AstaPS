@@ -3,7 +3,6 @@ package emu.grasscutter.server.packet.recv;
 import static emu.grasscutter.config.Configuration.*;
 
 import emu.grasscutter.*;
-import emu.grasscutter.command.commands.SendMailCommand.MailBuilder;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.mail.Mail;
@@ -87,14 +86,14 @@ public class HandlerSetPlayerBornDataReq extends PacketHandler {
                         avatarId);
 
         var welcomeMail = GAME_INFO.joinOptions.welcomeMail;
-        MailBuilder mailBuilder = new MailBuilder(player.getUid(), new Mail());
-        mailBuilder.mail.mailContent.title = welcomeMail.title;
-        mailBuilder.mail.mailContent.sender = welcomeMail.sender;
-        mailBuilder.mail.mailContent.content =
+        Mail mail = new Mail();
+        mail.mailContent.title = welcomeMail.title;
+        mail.mailContent.sender = welcomeMail.sender;
+        mail.mailContent.content =
                 welcomeMail.content
                         + "\n<type=\"browser\" text=\"GitHub\" href=\"https://github.com/Grasscutters/Grasscutter\"/>";
-        mailBuilder.mail.itemList.addAll(Arrays.asList(welcomeMail.items));
-        mailBuilder.mail.importance = 1;
-        player.sendMail(mailBuilder.mail);
+        mail.itemList.addAll(Arrays.asList(welcomeMail.items));
+        mail.importance = 1;
+        player.sendMail(mail);
     }
 }
