@@ -224,7 +224,7 @@
       "language_not_found": "El servidor no tiene ese idioma actualmente.",
       "description": "Muestra o cambia el idioma actual"
     },
-    "list": {
+    "player": {
       "success": "Hay %s jugador(es) activos:",
       "description": "Lista los jugadores activos"
     },
@@ -328,7 +328,7 @@
       "error": "ERROR: Estado de construcción inválido %s. Comprueba la consola para ver los detalles.",
       "description": "Envía un mensaje al usuario especificado. El uso de este comando cambia con el estado de la construcción del mensaje"
     },
-    "sendMessage": {
+    "say": {
       "success": "Mensaje enviado.",
       "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
     },
