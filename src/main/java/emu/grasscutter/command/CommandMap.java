@@ -29,6 +29,7 @@ import picocli.shell.jline3.PicocliJLineCompleter;
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public final class CommandMap {
+    private static final org.slf4j.Logger LOGGER = org.slf4j.LoggerFactory.getLogger(CommandMap.class);
     private static final int INVALID_UID = Integer.MIN_VALUE;
     private static final String CONSOLE_ID = "console";
     private static final Parser COMMAND_PARSER = new DefaultParser();
@@ -51,8 +52,10 @@ public final class CommandMap {
     }
 
     public CommandMap(boolean scan) {
-        if (scan) this.scan();
-        this.installConsoleCompleter();
+        if (scan) {
+            this.scan();
+            this.installConsoleCompleter();
+        }
     }
 
     public static CommandMap getInstance() {
@@ -283,7 +286,7 @@ public final class CommandMap {
                 });
         cli.setExecutionExceptionHandler(
                 (exception, commandLine, parseResult) -> {
-                    Grasscutter.getLogger()
+                    LOGGER
                             .error("Failed to execute command " + handler.getLabel() + ".", exception);
                     String message = exception.getMessage();
                     CommandOutput.sendMessage(
@@ -432,7 +435,7 @@ public final class CommandMap {
 
     public CommandMap registerCommand(String label, CommandHandler command) {
         label = normalizeCommandName(label);
-        Grasscutter.getLogger().trace("Registered command: " + label);
+        LOGGER.trace("Registered command: " + label);
 
         synchronized (this.picocliLock) {
             Command annotation = command.getClass().getAnnotation(Command.class);
@@ -467,7 +470,7 @@ public final class CommandMap {
                     }
 
                     String label = normalizeCommandName(annotation.label());
-                    Grasscutter.getLogger().trace("Registered command: " + label);
+                    LOGGER.trace("Registered command: " + label);
                     this.validateRegistration(label, annotation);
                     this.addRegistration(label, command, annotation);
                 }
@@ -485,7 +488,7 @@ public final class CommandMap {
 
     public CommandMap unregisterCommand(String label) {
         label = normalizeCommandName(label);
-        Grasscutter.getLogger().trace("Un-registered command: " + label);
+        LOGGER.trace("Un-registered command: " + label);
 
         synchronized (this.picocliLock) {
             CommandHandler handler = this.commands.get(label);
@@ -593,7 +596,7 @@ public final class CommandMap {
 
         if (SERVER.logCommands) {
             if (player != null) {
-                Grasscutter.getLogger()
+                LOGGER
                         .info(
                                 "Command used by ["
                                         + player.getAccount().getUsername()
@@ -602,7 +605,7 @@ public final class CommandMap {
                                         + ")]: "
                                         + rawMessage);
             } else {
-                Grasscutter.getLogger().info("Command used by server console: " + rawMessage);
+                LOGGER.info("Command used by server console: " + rawMessage);
             }
         }
 
@@ -699,7 +702,7 @@ public final class CommandMap {
             } catch (RuntimeException exception) {
                 // Picocli handles command.run() failures, but model construction itself
                 // is outside its error handler. Keep those exceptions off the game loop.
-                Grasscutter.getLogger().error(
+                LOGGER.error(
                         "Failed to construct or run command " + handler.getLabel() + ".", exception);
                 CommandOutput.sendMessage(sender, "Command execution failed.");
             }
@@ -708,7 +711,7 @@ public final class CommandMap {
         try {
             executeCommand(runnable, annotation.threading(), Grasscutter.getThreadPool());
         } catch (java.util.concurrent.RejectedExecutionException exception) {
-            Grasscutter.getLogger().warn(
+            LOGGER.warn(
                     "Command executor rejected " + handler.getLabel() + ".", exception);
             CommandOutput.sendMessage(sender, "Command executor is unavailable.");
         }
@@ -725,11 +728,11 @@ public final class CommandMap {
                 if (object instanceof CommandHandler handler) {
                     handlers.add(handler);
                 } else {
-                    Grasscutter.getLogger()
+                    LOGGER
                             .error("Class " + annotated.getName() + " is not a CommandHandler!");
                 }
             } catch (Exception exception) {
-                Grasscutter.getLogger()
+                LOGGER
                         .error(
                                 "Failed to instantiate command handler for "
                                         + annotated.getSimpleName(),
