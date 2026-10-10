@@ -7,10 +7,8 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.server.packet.send.PacketServerAnnounceNotify;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
@@ -20,6 +18,14 @@ import picocli.CommandLine.Parameters;
         aliases = {"a"},
         targetRequirement = Command.TargetRequirement.NONE)
 public final class AnnounceCommand implements CommandHandler {
+
+    static boolean validId(int id) {
+        return id > 0;
+    }
+
+    static boolean validContent(String content) {
+        return content != null && !content.isBlank();
+    }
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
@@ -44,10 +50,12 @@ public final class AnnounceCommand implements CommandHandler {
         @Override
         public void run() {
             var manager = Grasscutter.getGameServer().getAnnouncementSystem();
-            int id = ThreadLocalRandom.current().nextInt(10000, 99999);
             String text = String.join(" ", content);
-            manager.getOnlinePlayers()
-                    .forEach(player -> player.sendPacket(new PacketServerAnnounceNotify(text, id)));
+            if (!validContent(text)) {
+                CommandOutput.sendMessage(sender, "Announcement content must not be blank.");
+                return;
+            }
+            int id = manager.broadcastTemporary(text);
             CommandOutput.sendMessage(sender, translate(sender, "commands.announce.send_success", id));
         }
     }
@@ -66,6 +74,10 @@ public final class AnnounceCommand implements CommandHandler {
         @Override
         public void run() {
             var manager = Grasscutter.getGameServer().getAnnouncementSystem();
+            if (!validId(templateId)) {
+                CommandOutput.sendMessage(sender, "Announcement ID must be positive.");
+                return;
+            }
             var template = manager.getAnnounceConfigItemMap().get(templateId);
             if (template == null) {
                 CommandOutput.sendMessage(
@@ -107,7 +119,14 @@ public final class AnnounceCommand implements CommandHandler {
 
         @Override
         public void run() {
-            Grasscutter.getGameServer().getAnnouncementSystem().revoke(templateId);
+            if (!validId(templateId)) {
+                CommandOutput.sendMessage(sender, "Announcement ID must be positive.");
+                return;
+            }
+            if (!Grasscutter.getGameServer().getAnnouncementSystem().revokeKnown(templateId)) {
+                CommandOutput.sendMessage(sender, "Announcement " + templateId + " does not exist or has expired.");
+                return;
+            }
             CommandOutput.sendMessage(
                     sender, translate(sender, "commands.announce.revoke_done", templateId));
         }
