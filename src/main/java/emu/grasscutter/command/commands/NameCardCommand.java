@@ -17,7 +17,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "namecard",
-        aliases = {"card", "setnamecard"},
+        aliases = {"card"},
         permission = "player.namecard",
         permissionTargeted = "player.namecard.others")
 public final class NameCardCommand implements CommandHandler {
