@@ -5,6 +5,7 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.dailytask.DailyTaskManager;
 import java.util.Locale;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
@@ -14,7 +15,7 @@ import picocli.CommandLine.Parameters;
         aliases = {"dt"},
         permission = "player.dailytask",
         permissionTargeted = "player.dailytask.others",
-        targetRequirement = Command.TargetRequirement.ONLINE)
+        targetRequirement = Command.TargetRequirement.NONE)
 public final class DailyTaskCommand implements CommandHandler {
     private record CityArg(int id) {}
 
@@ -36,7 +37,7 @@ public final class DailyTaskCommand implements CommandHandler {
         commandLine.addSubcommand("reset", new Reset(sender, targetPlayer));
         commandLine.addSubcommand("city", new City(sender, targetPlayer));
         commandLine.addSubcommand("finish", new Finish(sender, targetPlayer));
-        commandLine.addSubcommand("support", new Support(sender, targetPlayer));
+        commandLine.addSubcommand("support", new Support(sender));
         commandLine.addSubcommand("bonus", new Bonus(sender, targetPlayer));
         return commandLine;
     }
@@ -64,8 +65,13 @@ public final class DailyTaskCommand implements CommandHandler {
             this.targetPlayer = targetPlayer;
         }
 
-        protected void loadManager() {
+        protected boolean loadManager() {
+            if (targetPlayer == null || !targetPlayer.isOnline()) {
+                CommandOutput.sendMessage(sender, "This operation requires an online target player.");
+                return false;
+            }
             targetPlayer.loadDailyTaskManager();
+            return true;
         }
     }
 
@@ -77,7 +83,7 @@ public final class DailyTaskCommand implements CommandHandler {
 
         @Override
         public void run() {
-            loadManager();
+            if (!loadManager()) return;
             var manager = targetPlayer.getDailyTaskManager();
             CommandOutput.sendMessage(
                     sender,
@@ -125,7 +131,7 @@ public final class DailyTaskCommand implements CommandHandler {
 
         @Override
         public void run() {
-            loadManager();
+            if (!loadManager()) return;
             if (targetPlayer.getScene() == null) {
                 CommandOutput.sendMessage(sender, "The target player has no active scene.");
                 return;
@@ -150,7 +156,7 @@ public final class DailyTaskCommand implements CommandHandler {
 
         @Override
         public void run() {
-            loadManager();
+            if (!loadManager()) return;
             var manager = targetPlayer.getDailyTaskManager();
             int count = manager.resetDailyTasks();
             CommandOutput.sendMessage(
@@ -170,7 +176,7 @@ public final class DailyTaskCommand implements CommandHandler {
 
         @Override
         public void run() {
-            loadManager();
+            if (!loadManager()) return;
             var manager = targetPlayer.getDailyTaskManager();
             if (!manager.setCityIdAndReset(city.id())) {
                 CommandOutput.sendMessage(
@@ -202,7 +208,7 @@ public final class DailyTaskCommand implements CommandHandler {
 
         @Override
         public void run() {
-            loadManager();
+            if (!loadManager()) return;
             var manager = targetPlayer.getDailyTaskManager();
             if (!manager.finishDailyTask(taskId)) {
                 CommandOutput.sendMessage(
@@ -215,15 +221,15 @@ public final class DailyTaskCommand implements CommandHandler {
     }
 
     @CommandLine.Command(name = "support")
-    private static final class Support extends DailyCommand {
-        private Support(Player sender, Player targetPlayer) {
-            super(sender, targetPlayer);
+    private static final class Support implements Runnable {
+        private final Player sender;
+
+        private Support(Player sender) {
+            this.sender = sender;
         }
 
         @Override
         public void run() {
-            loadManager();
-            var manager = targetPlayer.getDailyTaskManager();
             var cityIds =
                     GameData.getDailyTaskDataMap().values().stream()
                             .map(data -> data.getCityId())
@@ -232,8 +238,8 @@ public final class DailyTaskCommand implements CommandHandler {
                             .toList();
             CommandOutput.sendMessage(sender, "Daily commission Lua resource coverage:");
             for (int cityId : cityIds) {
-                long defined = manager.getDefinedCombatTaskCount(cityId);
-                long resourceBacked = manager.getResourceBackedTaskCount(cityId);
+                long defined = DailyTaskManager.getDefinedCombatTaskCount(cityId);
+                long resourceBacked = DailyTaskManager.getResourceBackedTaskCount(cityId);
                 CommandOutput.sendMessage(
                         sender,
                         "%s (%d): %d/%d combat commissions have usable encounter resources."
@@ -251,7 +257,7 @@ public final class DailyTaskCommand implements CommandHandler {
 
         @Override
         public void run() {
-            loadManager();
+            if (!loadManager()) return;
             if (!targetPlayer.getDailyTaskManager().claimScoreReward()) {
                 CommandOutput.sendMessage(
                         sender,

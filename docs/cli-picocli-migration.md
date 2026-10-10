@@ -189,3 +189,13 @@ transition is refused. Pending manual IDs are cleared upon acknowledgement
 or after a bounded timeout; disconnecting ends the session-scoped tracking.
 This prevents manual GM playback from being mistaken for a quest or tower
 completion, but does not claim to make unknown client-side IDs playable.
+
+### Daily commission resource diagnostics
+
+`dailytask support` (or `dt support`) reports commission definition and Lua
+resource coverage by city. It only inspects loaded game resources and no longer
+requires an online player or a daily-task database record; it works from the
+server console. Other `dailytask` operations (`list`, `load`, `reset`, `city`,
+`finish`, and `bonus`) still require an online player and reject a missing
+or offline target before loading any daily-task state. The root command can
+print help without a selected player.
