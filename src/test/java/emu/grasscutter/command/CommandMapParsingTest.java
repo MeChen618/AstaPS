@@ -103,6 +103,25 @@ public final class CommandMapParsingTest {
     }
 
     @Test
+    public void parameterErrorsIncludeBothCauseAndSubcommandUsage() {
+        var dungeon = new emu.grasscutter.command.commands.EnterDungeonCommand()
+                .createCommandLine(null, null);
+        var invalidId = assertThrows(CommandLine.ParameterException.class,
+                () -> dungeon.parseArgs("not-an-integer"));
+        var converted = CommandMap.parameterErrorMessages(invalidId);
+        assertEquals(2, converted.size());
+        assertTrue(converted.get(1).contains("<dungeonId>"));
+
+        var teleport = new emu.grasscutter.command.commands.TeleportCommand()
+                .createCommandLine(null, null);
+        var missing = assertThrows(CommandLine.ParameterException.class,
+                () -> teleport.parseArgs("pos", "1", "2"));
+        var messages = CommandMap.parameterErrorMessages(missing);
+        assertEquals(2, messages.size());
+        assertTrue(messages.get(1).contains("<z>"));
+    }
+
+    @Test
     public void rootDisablesPicocliArgumentFiles() {
         assertFalse(CommandMap.createRootCommandLine().isExpandAtFiles());
     }
