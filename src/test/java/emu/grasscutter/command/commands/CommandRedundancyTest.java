@@ -21,7 +21,7 @@ public final class CommandRedundancyTest {
             assertNull(map.getHandler(removed), removed);
         }
         assertNull(map.getHandler("killCharacter"));
-        assertNotNull(map.getHandler("suicide"));
+        assertNull(map.getHandler("suicide"));
         assertNotNull(map.getHandler("restore"));
         assertTrue(map.getCommandLine().getSubcommands().containsKey("restore"));
     }
@@ -38,7 +38,7 @@ public final class CommandRedundancyTest {
 
         for (String removed : new String[] {
                 "pb", "enter_dungeon", "enterdungeon", "levelbreak",
-                "killCharacter", "mattrack", "unlockwp",
+                "killCharacter", "mattrack", "unlockwp", "suicide",
                 "extralevel", "el", "constellation", "talent",
                 "setfetterlevel", "setfetterlvl", "setfriendship",
                 "max", "maxavatar", "maxchar"
@@ -48,11 +48,40 @@ public final class CommandRedundancyTest {
         }
         for (String retained : new String[] {
                 "barrier", "br", "dungeon", "avatar",
-                "kill", "suicide", "trackmat", "trackmaterial", "waypoints", "wp"
+                "kill", "trackmat", "trackmaterial", "waypoints", "wp"
         }) {
             assertNotNull(map.getHandler(retained), retained);
             assertTrue(map.getCommandLine().getSubcommands().containsKey(retained), retained);
         }
+    }
+
+    @Test
+    void primaryBattlepassAndRemainingAliasesHaveNoLegacyDuplicates() {
+        var map = new CommandMap(false);
+        map.registerCommand("battlepass", new BattlePassCommand());
+        map.registerCommand("give", new GiveCommand());
+        map.registerCommand("name", new NameCommand());
+        map.registerCommand("namecard", new NameCardCommand());
+        map.registerCommand("kill", new KillCommand());
+
+        assertNotNull(map.getHandler("battlepass"));
+        assertTrue(map.getHandler("battlepass") == map.getHandler("bp"));
+        assertTrue(map.getHandler("give") == map.getHandler("g"));
+        assertTrue(map.getHandler("name") == map.getHandler("rename"));
+        assertTrue(map.getHandler("namecard") == map.getHandler("card"));
+        for (String removed : new String[] {
+                "item", "giveitem", "nickname", "setnamecard", "suicide"
+        }) {
+            assertNull(map.getHandler(removed), removed);
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
+        }
+
+        assertTrue(new BattlePassCommand().createCommandLine(null, null)
+                .getUsageMessage().contains("battlepass"));
+        assertTrue(new BattlePassCommand().createCommandLine(null, null)
+                .getSubcommands().containsKey("buy"));
+        assertTrue(new BattlePassCommand().createCommandLine(null, null)
+                .getSubcommands().containsKey("paid"));
     }
 
     @Test
