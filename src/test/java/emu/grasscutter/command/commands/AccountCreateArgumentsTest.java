@@ -53,6 +53,19 @@ public final class AccountCreateArgumentsTest {
     }
 
     @Test
+    void parserRejectsMalformedNewNamesInBothCreationRoutes() {
+        var cmd = new AccountCommand();
+        for (String invalid : List.of("bob@", "bob@0", "@10002", "bob@xyz")) {
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> cmd.createCommandLine(null, null).parseArgs("create", invalid),
+                    invalid);
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> cmd.createCommandLine(null, null).parseArgs("clone", "alice@", invalid),
+                    invalid);
+        }
+    }
+
+    @Test
     void deleteAndResetPasswordUseOnlyExplicitExistingAccountSelectors() {
         var cmd = new AccountCommand();
         for (String existing : List.of("@10001", "alice@", "alice@10001")) {
