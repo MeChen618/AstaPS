@@ -11,7 +11,7 @@ import picocli.CommandLine.Parameters;
 
 @Command(
         label = "sendMessage",
-        aliases = {"say", "sendservmsg", "sendservermessage", "b", "broadcast"},
+        aliases = {"say"},
         permission = "server.sendmessage",
         permissionTargeted = "server.sendmessage.others",
         targetRequirement = TargetRequirement.NONE)
