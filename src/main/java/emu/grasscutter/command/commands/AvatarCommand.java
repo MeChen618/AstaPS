@@ -127,6 +127,12 @@ public final class AvatarCommand implements CommandHandler {
         }
 
         protected boolean permitted(String permission) {
+            // Internal callers can execute this command tree without CommandMap's target gate.
+            if (target == null || !target.isOnline()
+                    || target.getSession() == null || !target.getSession().isActive()) {
+                CommandOutput.sendMessage(sender, "Avatar operations require an online player.");
+                return false;
+            }
             if (sender == null) return true;
             var account = sender.getAccount();
             String required = target != sender ? permission + ".others" : permission;
