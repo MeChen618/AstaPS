@@ -14,6 +14,7 @@ import emu.grasscutter.server.event.player.PlayerCompleteAchievementEvent;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.IntPredicate;
 import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 import lombok.*;
@@ -136,8 +137,12 @@ public class Achievements {
 
             var achievement = this.getAchievement(data.getId());
             if (achievement == null) continue;
-            // Preserve the old grant()/revoke() conditions, including linked stages.
-            if (grant ? this.isFinished(data.getId()) : !this.isFinished(data.getId())) {
+            // Revoking must consider every stage, not only the representative.
+            // The representative can be unfinished while an earlier stage was completed.
+            if (grant) {
+                if (this.isFinished(data.getId())) continue;
+            } else if (!hasCompletedStage(
+                    data.getId(), data.getExcludedGroupAchievementIdList(), this::isFinished)) {
                 continue;
             }
 
@@ -150,6 +155,16 @@ public class Achievements {
         this.save();
         batch.flush(this::sendUpdatePacket);
         return batch.changedCount();
+    }
+
+    /** Whether a stage group needs revocation, including partially completed stage chains. */
+    static boolean hasCompletedStage(
+            int representativeId, Collection<Integer> otherStageIds, IntPredicate isFinished) {
+        if (isFinished.test(representativeId)) return true;
+        for (int stageId : otherStageIds) {
+            if (isFinished.test(stageId)) return true;
+        }
+        return false;
     }
 
     private int notifyOtherAchievements(Achievement achievement) {

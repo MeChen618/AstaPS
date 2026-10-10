@@ -81,3 +81,8 @@ filters, status-transition counts, linked stages, reward-claim history and per-s
 completion events. It recomputes the completed count once, queues one achievement
 document save, and groups unique changed achievements into update packets of at
 most 128 entries. Single-ID grant, revoke and progress retain the same behavior.
+
+`achievement revokeall` detects finished stages across each group, even if its
+representative (the final stage, marked `isParent`) is unfinished. This fixes
+partially completed multi-stage achievements that were skipped by the old check.
+Already claimed rewards remain non-redeemable after reset.

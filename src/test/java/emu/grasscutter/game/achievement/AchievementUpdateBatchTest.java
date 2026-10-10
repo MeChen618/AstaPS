@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
@@ -45,6 +46,34 @@ class AchievementUpdateBatchTest {
         assertEquals(
                 IntStream.rangeClosed(1, 270).boxed().toList(),
                 packets.stream().flatMap(List::stream).map(Achievement::getId).toList());
+    }
+
+    @Test
+    void revokeAllIncludesEarlierFinishedStagesWhenParentIsUnfinished() {
+        var finished = Set.of(10001, 10002);
+
+        assertTrue(
+                Achievements.hasCompletedStage(
+                        10003, Set.of(10001, 10002), finished::contains));
+    }
+
+    @Test
+    void revokeAllIncludesFinishedParentEvenWhenOtherStagesAreUnfinished() {
+        var finished = Set.of(10003);
+
+        assertTrue(
+                Achievements.hasCompletedStage(
+                        10003, Set.of(10001, 10002), finished::contains));
+    }
+
+    @Test
+    void revokeAllSkipsGroupsWithNoFinishedStages() {
+        var finished = Set.of(20001);
+
+        assertFalse(
+                Achievements.hasCompletedStage(
+                        10003, Set.of(10001, 10002), finished::contains));
+        assertFalse(Achievements.hasCompletedStage(10004, Set.of(), finished::contains));
     }
 
     @Test
