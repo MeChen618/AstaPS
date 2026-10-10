@@ -207,7 +207,7 @@
     "kick": {
       "player_kick_player": "Player [%s:%s] has kicked player [%s:%s]",
       "server_kick_player": "Kicking player [%s:%s]...",
-      "description": "Kicks the specified player from the server (WIP)"
+      "description": "Disconnects an online player from the server"
     },
     "killall": {
       "scene_not_found_in_player_world": "Scene not found in player world.",
@@ -449,7 +449,7 @@
     "unban": {
       "success": "Successful.",
       "failure": "Failed, player not found.",
-      "description": "Unban a player"
+      "description": "Unban an account or IP address"
     },
     "info": {
       "description": "Provides the sender information about the server."
