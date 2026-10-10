@@ -203,6 +203,8 @@ public final class PacketOpcodes {
     // public static final int ReserveRogueDiaryAvatarReq = 25976;
     // public static final int BAMFFFPKDEH = 206;
     public static final int CombineDataNotify = 0; // 7.1 CmdId unknown (7.0: 985)
+    // Descriptive compatibility name; not present in the current 7.1 descriptors.
+    public static final int CraftingAvatarDataNotify = 21136;
     public static final int GetMapMarkTipsRsp = 26050;
     // public static final int NCDHECPCPPO = 20999;
     // public static final int HMDJCNLNHNE = 1001;
