@@ -1133,8 +1133,11 @@ public class Avatar {
         } else {
             this.talentIdList.removeAll(this.getTalentIdList());
             for (int i = 0; i < level; i++) {
-                if (!this.unlockConstellation(
-                        this.skillDepot.getTalents().get(i), true, false)) break;
+                int nextLevel = this.getCoreProudSkillLevel();
+                if (this.skillDepot == null || nextLevel < 0
+                        || nextLevel >= this.skillDepot.getTalents().size()
+                        || !this.unlockConstellation(
+                                this.skillDepot.getTalents().get(nextLevel), true, false)) break;
             }
         }
         this.recalcConstellations();
