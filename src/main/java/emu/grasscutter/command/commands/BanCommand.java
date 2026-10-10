@@ -28,8 +28,12 @@ public final class BanCommand implements CommandHandler {
     record BanArguments(BanTarget target, int endTime, String reason) {}
 
     static BanTarget parseTarget(String value) {
+        return parseTarget(value, "ban");
+    }
+
+    static BanTarget parseTarget(String value, String commandName) {
         if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException("Specify <playerSelector|IPv4>. See help ban.");
+            throw new IllegalArgumentException("Specify <playerSelector|IPv4>. See help " + commandName + ".");
         }
         if (value.contains("@")) {
             CommandMap.parseExplicitTargetSelector(value);
@@ -47,7 +51,7 @@ public final class BanCommand implements CommandHandler {
             return new BanTarget(TargetType.IPV4, value);
         }
         throw new IllegalArgumentException(
-                "Invalid ban target: " + value + ". Use <playerSelector|IPv4>. See help ban.");
+                "Invalid ban target: " + value + ". Use <playerSelector|IPv4>. See help " + commandName + ".");
     }
 
     static BanArguments parseBanArguments(String target, List<String> trailing) {
@@ -136,7 +140,7 @@ public final class BanCommand implements CommandHandler {
         }
     }
 
-    private static boolean hasPermission(Player sender, String permission, String additional) {
+    static boolean hasPermission(Player sender, String permission, String additional) {
         if (sender == null) return true;
         Account account = sender.getAccount();
         if (account != null && account.hasPermission(permission)
