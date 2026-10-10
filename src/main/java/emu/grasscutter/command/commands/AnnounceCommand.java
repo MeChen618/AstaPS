@@ -30,7 +30,7 @@ public final class AnnounceCommand implements CommandHandler {
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Broadcast(sender));
-        commandLine.addSubcommand("tpl", new Template(sender));
+        commandLine.addSubcommand("template", new Template(sender), "tpl");
         commandLine.addSubcommand("refresh", new Refresh(sender));
         commandLine.addSubcommand("revoke", new Revoke(sender));
         return commandLine;
@@ -59,7 +59,7 @@ public final class AnnounceCommand implements CommandHandler {
         }
     }
 
-    @CommandLine.Command(name = "tpl")
+    @CommandLine.Command(name = "template", aliases = {"tpl"})
     private static final class Template implements Runnable {
         private final Player sender;
 
