@@ -15,7 +15,7 @@ public final class AvatarCommandTest {
     @Test
     void rootGroupsExposeCanonicalRoutes() {
         var cli = command();
-        for (String route : List.of("list", "constellation", "talent", "friendship", "extralevel", "max")) {
+        for (String route : List.of("list", "constellation", "talent", "stat", "friendship", "extralevel", "max")) {
             assertTrue(cli.getSubcommands().containsKey(route), route);
         }
         assertEquals(Command.TargetRequirement.ONLINE,
