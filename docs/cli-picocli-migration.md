@@ -19,15 +19,16 @@ unrelated quest, protocol, resource, combat or server changes.
 Console-only commands include:
 
 ```text
-account create <newName[@newUID]> [password]
-account clone <sourceSelector> <newName[@newUID]>
+account create <username> [password] [@UID]
+account clone <sourceSelector> <newUsername> [@UID]
 account delete <accountSelector>
 account resetpassword <accountSelector> <new-password> # alias: account passwd
 ```
 
-Create accepts newName or newName@UID, with an optional password. The UID is allocated
-when omitted. A trailing separate @UID is no longer accepted, and name@ without a UID
-is invalid. Without a password, the account stays passwordless until one is set via
+Create accepts a username alone, a username and password, a username and @UID, or all
+three (password before @UID). Clone accepts an explicit source selector, a new username,
+and an optional trailing @UID. Without a reserved UID, one is allocated automatically.
+Without a password, a newly created account stays passwordless until one is set via
 resetpassword (alias: passwd).
 
 Console-created and automatically registered accounts receive no implicit administrator
@@ -171,8 +172,8 @@ it can resolve accounts with reserved UIDs before character creation. `mail send
 broadcasts to all players. `@` clears the remembered target, and
 `target 10001` selects UID 10001.
 
-In `account create` and `account clone`, the `newName@UID` token reserves a UID for
-the new account. Existing account selectors use `@UID`, `username@`, or `username@UID`,
+In `account create` and `account clone`, a separate trailing `@UID` argument reserves
+an optional UID for the new account. Existing account selectors use `@UID`, `username@`, or `username@UID`,
 including accounts with a reserved UID but no character save. Username/UID matching
 is exact.
 
