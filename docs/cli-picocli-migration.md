@@ -19,22 +19,23 @@ unrelated quest, protocol, resource, combat or server changes.
 Console-only commands include:
 
 ```text
-account create <username> [<password>] [@UID]
-account clone <source-account> <new-account> [@UID]
-account delete <account>
-account resetpassword <account> <new-password> # alias: account passwd
+account create <newName[@newUID]> [password]
+account clone <sourceSelector> <newName[@newUID]>
+account delete <accountSelector>
+account resetpassword <accountSelector> <new-password> # alias: account passwd
 ```
 
-Create accepts a username alone, a username and password, a username and @UID, or all
-three (password before @UID). Without a password, the account stays passwordless until
-one is set via resetpassword (alias: passwd).
+Create accepts newName or newName@UID, with an optional password. The UID is allocated
+when omitted. A trailing separate @UID is no longer accepted, and name@ without a UID
+is invalid. Without a password, the account stays passwordless until one is set via
+resetpassword (alias: passwd).
 
 Console-created and automatically registered accounts receive no implicit administrator
 permissions. Both use the same configured `account.defaultPermissions` and explicit
 grants. Legacy database documents missing a `permissions` field no longer acquire `*`
 on load; existing explicitly stored grants remain unchanged.
 
-`account resetpassword <username> <new-password>` replaces the account password and
+`account resetpassword <accountSelector> <new-password>` replaces the account password and
 atomically removes the existing `token` and `sessionKey` from the MongoDB
 account document. The write is synchronous and performed behind the database
 write barrier, so success is reported only after the change is committed.
@@ -59,7 +60,7 @@ The Picocli command tree keeps one route for each operation:
 - `announce send <content...>` is the only direct-send route; bare `announce <content...>` is removed. `announce template <templateId>` is the canonical template route; `announce tpl` remains an alias.
 - `say <message...>` is the canonical message command. `sendMessage`, `sendservmsg`, `sendservermessage`, `b`, and `broadcast` are removed.
 - `player list` replaces `list [uid]` and `players`; it always displays each online player’s nickname and UID. The `--uid` option is not supported.
-- `account resetpassword <username> <new-password>` replaces `account resetpass`; `account passwd` is its sole shortcut.
+- `account resetpassword <accountSelector> <new-password>` replaces `account resetpass`; `account passwd` is its sole shortcut. `account delete` and `account clone` also use an explicit selector for the existing account.
 - `info` has no `troubleshoot` or `helpme` aliases.
 - `coop [guestSelector] <hostSelector>` requires an online host. When the guest is omitted, it uses the current command target (the sender by default in-game); in the console, choose a guest with `target` or provide both selectors. Each explicit selector follows `playerSelector` syntax. Moving another player requires `server.coop.others`.
 
@@ -170,8 +171,10 @@ it can resolve accounts with reserved UIDs before character creation. `mail send
 broadcasts to all players. `@` clears the remembered target, and
 `target 10001` selects UID 10001.
 
-In `account create` and `account clone`, the `@UID` argument reserves a new
-account UID. Username/UID matching in player selectors is exact.
+In `account create` and `account clone`, the `newName@UID` token reserves a UID for
+the new account. Existing account selectors use `@UID`, `username@`, or `username@UID`,
+including accounts with a reserved UID but no character save. Username/UID matching
+is exact.
 
 ### GM cutscene playback safety
 
