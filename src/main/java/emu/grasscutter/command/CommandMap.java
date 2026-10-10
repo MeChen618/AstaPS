@@ -32,10 +32,12 @@ public final class CommandMap {
     private static final String CONSOLE_ID = "console";
     private static final Parser COMMAND_PARSER = new DefaultParser();
 
+    private record SelectedTarget(int uid, String username) {}
+
     private final Map<String, CommandHandler> commands = new TreeMap<>();
     private final Map<String, CommandHandler> aliases = new TreeMap<>();
     private final Map<String, Command> annotations = new TreeMap<>();
-    private final ConcurrentMap<String, Integer> targetPlayerIds = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, SelectedTarget> selectedTargets = new ConcurrentHashMap<>();
     private final Object picocliLock = new Object();
 
     private volatile CommandLine commandLine = createRootCommandLine();
@@ -55,6 +57,16 @@ public final class CommandMap {
 
     public CommandLine getCommandLine() {
         return this.commandLine;
+    }
+
+    /** Console prompt reflects the remembered default target, not a one-command @UID override. */
+    public String getConsolePrompt() {
+        SelectedTarget target = selectedTargets.get(CONSOLE_ID);
+        return target == null ? "asta> " : formatConsolePrompt(target.username(), target.uid());
+    }
+
+    static String formatConsolePrompt(String username, int uid) {
+        return username + "@" + uid + "> ";
     }
 
     static CommandLine createRootCommandLine() {
@@ -403,9 +415,9 @@ public final class CommandMap {
 
         if (targetPlayer != null) return targetPlayer;
 
-        Integer rememberedTargetUid = targetPlayerIds.get(playerId);
-        if (rememberedTargetUid != null) {
-            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(rememberedTargetUid, true);
+        SelectedTarget rememberedTarget = selectedTargets.get(playerId);
+        if (rememberedTarget != null) {
+            targetPlayer = Grasscutter.getGameServer().getPlayerByUid(rememberedTarget.uid(), true);
             if (targetPlayer == null) {
                 CommandOutput.sendTranslatedMessage(player, "commands.execution.player_exist_error");
                 throw new IllegalArgumentException();
@@ -418,7 +430,7 @@ public final class CommandMap {
 
     private boolean setPlayerTarget(String playerId, Player player, String selector) {
         if (selector.isEmpty()) {
-            targetPlayerIds.remove(playerId);
+            selectedTargets.remove(playerId);
             CommandOutput.sendTranslatedMessage(player, "commands.execution.clear_target");
             return true;
         }
@@ -434,8 +446,9 @@ public final class CommandMap {
             return false;
         }
 
-        targetPlayerIds.put(playerId, uid);
-        String target = uid + " (" + targetPlayer.getAccount().getUsername() + ")";
+        String username = targetPlayer.getAccount().getUsername();
+        selectedTargets.put(playerId, new SelectedTarget(uid, username));
+        String target = uid + " (" + username + ")";
         CommandOutput.sendTranslatedMessage(player, "commands.execution.set_target", target);
         CommandOutput.sendTranslatedMessage(
                 player,

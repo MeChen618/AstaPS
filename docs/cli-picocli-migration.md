@@ -132,3 +132,13 @@ things: `unlock all` leaves scene tags unchanged, but `tag unlock all` enables
 scene tags and can create incompatible quest terrain states. Legacy concatenated
 commands are removed rather than kept as duplicate aliases. Other uses of
 `all` (such as `restore all` and `clear all`) keep their existing meanings.
+
+### Target-aware JLine console prompt
+
+The JLine prompt is `asta> ` when the console has no remembered target.
+After `target @10001` (or `@10001`), it displays the resolved account name and UID,
+e.g. `rino@10001> `. `target` with no arguments clears the selection and
+restores `asta> `. The prompt uses the same target state as command execution;
+per-command inline `@UID` overrides do not change that remembered target. The
+account name is cached when selecting the target, so rendering the prompt never
+loads offline players or queries the database.

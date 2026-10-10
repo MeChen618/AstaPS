@@ -384,7 +384,7 @@ public final class Grasscutter {
         var isLastInterrupted = false;
         while (config.server.game.enableConsole) {
             try {
-                input = consoleLineReader.readLine("> ");
+                input = consoleLineReader.readLine(commandMap.getConsolePrompt());
             } catch (UserInterruptException e) {
                 if (!isLastInterrupted) {
                     isLastInterrupted = true;

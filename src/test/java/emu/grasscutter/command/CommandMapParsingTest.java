@@ -41,6 +41,15 @@ public final class CommandMapParsingTest {
     }
 
     @Test
+    public void consolePromptShowsSelectedTargetAccountAndUid() {
+        var map = new CommandMap(false);
+        assertEquals("asta> ", map.getConsolePrompt());
+        assertEquals("rino@10001> ", CommandMap.formatConsolePrompt("rino", 10001));
+        assertEquals("another_account@987654> ",
+                CommandMap.formatConsolePrompt("another_account", 987654));
+    }
+
+    @Test
     public void rootDisablesPicocliArgumentFiles() {
         assertFalse(CommandMap.createRootCommandLine().isExpandAtFiles());
     }
