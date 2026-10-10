@@ -182,7 +182,7 @@
       "not_found_error": "L'entité n'existe pas"
     },
     "avatar": {
-      "description": "Gérer les personnages : liste, constellations, aptitudes, amitié, niveaux supplémentaires et amélioration maximale."
+      "description": "Gérer les personnages : liste, constellations, aptitudes, statistiques de combat, amitié, niveaux supplémentaires et amélioration maximale."
     },
     "battlepass": {
       "description": "Gérer l'achat de niveaux et le statut premium du passe de combat."
