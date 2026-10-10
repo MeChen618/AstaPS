@@ -340,6 +340,11 @@ public final class CommandMap {
         }
     }
 
+    /** These tokens are handled before Picocli routing and can never reach a registered command. */
+    static boolean isReservedCommandName(String name) {
+        return "target".equals(name) || isTargetSelector(name);
+    }
+
     private void validateRegistration(String label, Command annotation) {
         String annotationLabel = normalizeCommandName(annotation.label());
         if (!label.equals(annotationLabel)) {
@@ -351,6 +356,10 @@ public final class CommandMap {
                             + "'.");
         }
 
+        if (isReservedCommandName(label)) {
+            throw new IllegalArgumentException("Reserved command name: " + label);
+        }
+
         if (this.commands.containsKey(label) || this.aliases.containsKey(label)) {
             throw new IllegalArgumentException("Command name already registered: " + label);
         }
@@ -359,6 +368,9 @@ public final class CommandMap {
         registrationNames.add(label);
         for (String alias : annotation.aliases()) {
             String normalized = normalizeCommandName(alias);
+            if (isReservedCommandName(normalized)) {
+                throw new IllegalArgumentException("Reserved command alias: " + normalized);
+            }
             if (!registrationNames.add(normalized)) {
                 throw new IllegalArgumentException(
                         "Duplicate command label or alias in registration: " + normalized);
@@ -618,11 +630,12 @@ public final class CommandMap {
             return;
         }
         if (label.equals("target")) {
-            if (!args.isEmpty()) {
-                this.setPlayerTarget(playerId, player, normalizeTargetSelector(args.get(0)));
-            } else {
-                this.setPlayerTarget(playerId, player, "");
+            if (args.size() > 1) {
+                CommandOutput.sendMessage(player, "Usage: target [@UID|username@|username@UID]");
+                return;
             }
+            this.setPlayerTarget(
+                    playerId, player, args.isEmpty() ? "" : normalizeTargetSelector(args.get(0)));
             return;
         }
 
