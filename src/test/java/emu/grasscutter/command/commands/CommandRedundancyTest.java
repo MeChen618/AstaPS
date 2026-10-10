@@ -95,15 +95,25 @@ public final class CommandRedundancyTest {
     }
 
     @Test
-    void setStatsKeepsSingleSetPathAndDistinctLockCommands() {
-        CommandLine cli = new SetStatsCommand().createCommandLine(null, null);
-        for (String retained : new String[] {"lock", "unlock"}) {
-            assertTrue(cli.getSubcommands().containsKey(retained), retained);
+    void avatarStatHasSetLockAndUnlockWithoutTopLevelAliases() {
+        var map = new CommandMap(false);
+        map.registerCommand("avatar", new AvatarCommand());
+        for (String removed : new String[] {"setStats", "stats", "stat"}) {
+            assertNull(map.getHandler(removed), removed);
+            assertFalse(map.getCommandLine().getSubcommands().containsKey(removed), removed);
         }
-        for (String removed : new String[] {"set", "freeze", "unfreeze"}) {
-            assertFalse(cli.getSubcommands().containsKey(removed), removed);
+
+        CommandLine cli = new AvatarCommand().createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("stat"));
+        var stat = cli.getSubcommands().get("stat");
+        for (String retained : new String[] {"set", "lock", "unlock"}) {
+            assertTrue(stat.getSubcommands().containsKey(retained), retained);
         }
-        assertNotNull(cli.getCommandSpec().positionalParameters());
+        for (String removed : new String[] {"freeze", "unfreeze"}) {
+            assertFalse(stat.getSubcommands().containsKey(removed), removed);
+        }
+        org.junit.jupiter.api.Assertions.assertDoesNotThrow(
+                () -> cli.parseArgs("stat", "set", "atk", "3000"));
     }
 
     @Test
