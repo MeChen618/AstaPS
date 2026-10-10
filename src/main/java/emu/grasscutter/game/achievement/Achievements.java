@@ -344,11 +344,13 @@ public class Achievements {
                             });
         }
 
+        var claimedAchievements = new ArrayList<Achievement>(ids.size());
         for (int i : ids) {
             var achievement = this.getAchievement(i);
             achievement.setStatus(Status.Status_REWARD_TAKEN);
-            this.sendUpdatePacket(achievement);
+            claimedAchievements.add(achievement);
         }
+        this.sendUpdatePacket(claimedAchievements);
         this.save();
 
         this.player.getInventory().addItems(rewards, ActionReason.AchievementReward);

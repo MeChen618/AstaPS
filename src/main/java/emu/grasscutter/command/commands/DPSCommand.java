@@ -65,6 +65,7 @@ public final class DPSCommand implements CommandHandler {
 
     @CommandLine.Command(name = "stop")
     private static final class Stop implements Runnable {
+        private final Player sender;
         private final Player targetPlayer;
 
         private Stop(Player sender, Player targetPlayer) {
