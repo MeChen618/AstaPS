@@ -184,6 +184,9 @@
     "avatar": {
       "description": "Gestisci i personaggi: elenco, costellazioni, talenti, amicizia, livelli extra e potenziamento massimo."
     },
+    "battlepass": {
+      "description": "Gestisce l'acquisto dei livelli e lo stato premium del pass battaglia."
+    },
     "give": {
       "usage_relic": "Utilizzo: give <IDmanufatto> [mainPropID] [<appendPropID>[,<volte>]]... [lv<livello 0-20>]",
       "illegal_relic": "Questo ID manufatto appartiene ad una blacklist, potrebbe non essere quello che volevi.",
