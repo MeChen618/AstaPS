@@ -68,7 +68,8 @@ Windows 上用 `.\gradlew.bat`，或运行 `gradlew-jar.bat`。
 |---|---|
 | `give` | 发放角色、武器、圣遗物和材料；支持 `--amount`、`--level` 等选项，默认等级为 100。 |
 | `account create / clone / delete / resetpass` | 创建、克隆、删除账号和重置密码，**仅限服务器控制台**。 |
-| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 封禁或解封 IP；封禁需要 `server.banip` 权限，只有**解封**需要配置中的 keystore 密钥。 |
+| `ban <@UID|username@|username@UID> [结束时间] [原因...]` | 通过明确的玩家选择器封禁账号，需要 `server.ban` 权限；封禁他人账号还需要 `server.ban.others`。 |
+| `ban <IPv4> [原因...]` / `unban ip <密钥> <IPv4>` | 封禁或解封 IP，需要 `server.banip` 权限；IP 封禁不会过期，只有**解封**需要配置中的 keystore 密钥。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家发送邮件、管理系统邮件，替代旧的 `sysmail`。 |
 
 服务器控制台示例：
@@ -83,7 +84,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-对于支持指定目标的命令，`@UID` 表示目标玩家，**不是** Picocli 参数文件；在 `account create` 和 `account clone` 中，可选的 `@UID` 表示**新账号的 UID**。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpass <username> <new-password>`，会撤销旧登录令牌和会话令牌，并断开玩家连接。
+玩家选择器中，`@10001` 表示 UID 10001，`rino@` 表示用户名为 `rino` 的账号，`rino@10001` 要求用户名和 UID 同时匹配。`ban` 不接受裸用户名（`ban rino`），必须写成 `ban rino@`；可选结束时间是仅用于账号封禁的 Unix 时间戳。对于支持指定目标的命令，`@UID` 表示目标玩家，**不是** Picocli 参数文件；在 `account create` 和 `account clone` 中，可选的 `@UID` 表示**新账号的 UID**。克隆要求源玩家离线，不复制好友关系和共享音游谱面。重置密码使用 `account resetpass <username> <new-password>`，会撤销旧登录令牌和会话令牌，并断开玩家连接。
 
 详细说明见 [CLI 迁移文档](docs/cli-picocli-migration.md)；插件开发者请参阅 [命令 API v5 文档](docs/plugin-command-api-v5.md)。
 

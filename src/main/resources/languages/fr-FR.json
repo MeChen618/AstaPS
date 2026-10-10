@@ -439,7 +439,7 @@
       "success": "Succès.",
       "failure": "Échec, joueur introuvable.",
       "invalid_time": "Impossible d'analyser le timestamp.",
-      "description": "Bannis un joueur"
+      "description": "Bannir un compte ou une adresse IPv4"
     },
     "unlockall": {
       "success": "Toutes les open states ont été débloqués pour %s.",

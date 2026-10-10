@@ -439,7 +439,7 @@
       "success": "成功封禁玩家。",
       "failure": "封禁玩家失败，因为玩家不存在。",
       "invalid_time": "无法解析时间戳。",
-      "description": "封禁玩家"
+      "description": "封禁账号或 IPv4 地址"
     },
     "unlockall": {
       "success": "已为 %s 解锁全部开放状态。",

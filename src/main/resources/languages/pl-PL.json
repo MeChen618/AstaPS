@@ -439,7 +439,7 @@
       "success": "Pomyślnie zbanowano podanego gracza.",
       "failure": "Gracz o podanym ID nie istnieje.",
       "invalid_time": "Nieprawidłowy czas bana.",
-      "description": "Zbanuj podanego gracza."
+      "description": "Zbanuj konto lub adres IPv4."
     },
     "unlockall": {
       "success": "Odblokowano wszystkie stany dla %s.",

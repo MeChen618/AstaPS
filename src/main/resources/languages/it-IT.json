@@ -425,7 +425,7 @@
       "success": "Successo.",
       "failure": "Fallito, giocatore non trovato.",
       "invalid_time": "Impossibile analizzare il timestamp.",
-      "description": "Banna un giocatore"
+      "description": "Banna un account o un indirizzo IPv4"
     },
     "unlockall": {
       "success": "Sbloccato tutti gli open state per %s.",

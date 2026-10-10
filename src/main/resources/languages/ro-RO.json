@@ -439,7 +439,7 @@
       "success": "Succes.",
       "failure": "Eșec. Jucătorul nu a fost găsit.",
       "invalid_time": "Imposibil de analizat durata.",
-      "description": "Interziceți un jucător"
+      "description": "Interzice un cont sau o adresă IPv4"
     },
     "unlockall": {
       "success": "🇺🇸Unlocked all open states for %s.",

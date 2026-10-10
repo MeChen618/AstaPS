@@ -54,7 +54,7 @@ The Picocli command tree keeps one route for each operation:
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
-- `ban <@UID|accountName|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. UID and account bans can expire; IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
+- `ban <@UID|username@|username@UID|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. Account bans can expire; bare usernames such as `ban rino` are rejected (use `ban rino@`). IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
 
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
 - Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack` and `unlockwp`; use `br`, `el`, `suicide`, `trackmaterial` and `wp` respectively.
@@ -176,8 +176,8 @@ remain unambiguous and are never interpreted as UIDs. A username/UID mismatch
 rejects the command instead of falling back to a different target.
 
 `coop` still treats its positional selector as the **host**, rather than the
-command's implicit guest target. `ban` still accepts a bare account name or
-IPv4 address and can resolve a reserved UID before a character exists.
+command's implicit guest target. `ban` accepts only explicit player selectors or an IPv4 address; it rejects
+bare account names, and it can resolve a reserved UID before a character exists.
 `mail send all` continues to broadcast. `account create` and `account clone`
 allocate or reserve **new** UIDs rather than select existing players, so their
 UID creation parameters are not player target selectors.

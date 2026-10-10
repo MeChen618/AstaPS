@@ -439,7 +439,7 @@
       "success": "Exitoso.",
       "failure": "Error, jugador no encontrado.",
       "invalid_time": "No se puede establecer la marca de tiempo.",
-      "description": "Bannea a un jugador"
+      "description": "Bloquear una cuenta o dirección IPv4"
     },
     "unlockall": {
       "success": "Desbloqueada todas las estadísticas y estados para %s.",
