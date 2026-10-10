@@ -76,6 +76,15 @@ public class GameItem {
         // Morphia only
     }
 
+    /**
+     * Assign an item ID before queueing its first asynchronous write. Reuse it for all writes,
+     * so an early delete cannot race with an insert that Morphia gave a different ID.
+     */
+    public synchronized ObjectId ensurePersistenceId() {
+        if (id == null) id = new ObjectId();
+        return id;
+    }
+
     public GameItem(int itemId) {
         this(GameData.getItemDataMap().get(itemId));
     }

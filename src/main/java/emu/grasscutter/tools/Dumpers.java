@@ -88,7 +88,7 @@ public interface Dumpers {
                                     new CommandInfo(
                                             labels,
                                             description,
-                                            List.of(command.usage()),
+                                            commandMap.getHandler(command.label()).getUsageString(null).lines().toList(),
                                             List.of(command.permission(), command.permissionTargeted()),
                                             command.targetRequirement()));
                         });

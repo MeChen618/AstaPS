@@ -107,8 +107,10 @@ public final class KillCommand implements CommandHandler {
                 return;
             }
 
+            boolean wasAlive = !entity.isDead();
             entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-            if (entity.checkIfDead()) {
+            entity.checkIfDead();
+            if (wasAlive && entity.isDead()) {
                 targetPlayer
                         .getStaminaManager()
                         .killAvatar(
@@ -123,8 +125,10 @@ public final class KillCommand implements CommandHandler {
     }
 
     private static void killEntity(GameEntity entity) {
+        boolean wasAlive = !entity.isDead();
         entity.setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 0f);
-        boolean diedNow = entity.checkIfDead();
+        entity.checkIfDead();
+        boolean diedNow = wasAlive && entity.isDead();
         entity.getWorld()
                 .broadcastPacket(
                         new PacketEntityFightPropUpdateNotify(entity, FightProperty.FIGHT_PROP_CUR_HP));
