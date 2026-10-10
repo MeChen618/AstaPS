@@ -19,7 +19,8 @@ public final class SensitiveCommandSyntaxTest {
         var cli = new BanCommand().createCommandLine(null, null);
         assertTrue(cli.getSubcommands().isEmpty());
         assertFalse(BanCommand.class.getAnnotation(Command.class).inlineTarget());
-        assertTrue(cli.getUsageMessage().contains("<@UID|username@|username@UID|IPv4>"));
+        assertTrue(cli.getUsageMessage().contains("<playerSelector|IPv4>"));
+        assertTrue(cli.getUsageMessage().contains("playerSelector: @UID"));
         assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
     }
 
@@ -77,7 +78,7 @@ public final class SensitiveCommandSyntaxTest {
                 () -> BanCommand.parseBanArguments(null, List.of()));
         var bareName = assertThrows(IllegalArgumentException.class,
                 () -> BanCommand.parseBanArguments("rino", List.of("Cheating")));
-        assertTrue(bareName.getMessage().contains("username@"));
+        assertTrue(bareName.getMessage().contains("playerSelector"));
         assertThrows(IllegalArgumentException.class,
                 () -> BanCommand.parseBanArguments("@10001", List.of("999999999999999999")));
         assertThrows(IllegalArgumentException.class,

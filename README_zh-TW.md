@@ -64,11 +64,13 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 內建指令已改用 **Picocli**，支援位置參數、具名選項與子指令。輸入 `help` 可列出指令及別名，`help <指令>` 查看指令語法，或輸入 `help <指令> <子指令>` 查看子指令語法（例如 `help teleport pos`）。參數輸入錯誤時會顯示原因及對應語法。互動式伺服器主控台使用 JLine 提供 **Tab 自動補齊**。遊戲內指令以 `/` 開頭，主控台則不需要。
 
+**玩家選擇器（`playerSelector`）：** `@UID`（玩家 UID）、`username@`（帳號使用者名稱）或 `username@UID`（使用者名稱和 UID 均須相符）。指定既有玩家時使用此語法。
+
 | 指令 | 用途 |
 |---|---|
 | `give` | 發放角色、武器、聖遺物和材料；支援 `--amount`、`--level` 等選項，預設等級 100。 |
 | `account create / clone / delete / resetpass` | 建立、複製、刪除帳號和重設密碼，**僅限伺服器主控台**。 |
-| `ban <@UID|username@|username@UID> [結束時間] [原因...]` | 透過明確的玩家選擇器停權帳號，需要 `server.ban` 權限；停權其他帳號還需要 `server.ban.others`。 |
+| `ban <playerSelector> [endTime] [原因...]` | 停權帳號，需要 `server.ban` 權限；停權其他帳號還需要 `server.ban.others`。`endTime` 為 Unix 時間戳記。 |
 | `ban <IPv4> [原因...]` / `unban ip <金鑰> <IPv4>` | 封鎖或解除封鎖 IP，需要 `server.banip` 權限；IP 封鎖不會過期，只有**解除封鎖**需要設定中的 keystore 金鑰。 |
 | `mail send` / `mail system` | 向指定玩家或所有玩家寄送郵件、管理系統郵件，取代舊的 `sysmail`。 |
 
@@ -84,7 +86,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-玩家選擇器中，`@10001` 代表 UID 10001，`rino@` 代表使用者名稱為 `rino` 的帳號，`rino@10001` 要求使用者名稱與 UID 同時符合。`ban` 不接受未加 `@` 的使用者名稱（`ban rino`），須改用 `ban rino@`；可選結束時間是僅適用於帳號停權的 Unix 時間戳記。對支援指定目標的指令，`@UID` 代表目標玩家，**不是** Picocli 參數檔案；在 `account create` 和 `account clone` 中，可選的 `@UID` 則指定**新帳號的 UID**。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpass <使用者名稱> <新密碼>`，會撤銷舊登入權杖和工作階段權杖，並中斷玩家連線。
+在 `account create` 和 `account clone` 中，可選的 `@UID` 指定**新帳號的 UID**。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpass <使用者名稱> <新密碼>`，會撤銷舊登入權杖和工作階段權杖，並中斷玩家連線。
 
 詳細說明請見 [CLI 遷移文件](docs/cli-picocli-migration.md)；外掛作者請參閱 [指令 API v5 文件](docs/plugin-command-api-v5.md)。
 

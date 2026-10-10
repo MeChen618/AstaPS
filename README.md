@@ -92,11 +92,13 @@ this command-execution interface directly to the public Internet.
 
 Built-in commands use **Picocli** for positional arguments, named options and subcommands. Run `help` to list commands and aliases, `help <command>` for a command's syntax, or `help <command> <subcommand>` for a subcommand's syntax (e.g. `help teleport pos`). Invalid arguments print an error followed by the relevant usage. The interactive server console uses JLine for **Tab completion**. In-game commands use `/`; the server console omits that prefix.
 
+**Player selector (`playerSelector`):** `@UID` (player UID), `username@` (account username), or `username@UID` (both must match). Use this format in commands that target an existing player.
+
 | Command | Purpose |
 |---|---|
 | `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
 | `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
-| `ban <@UID|username@|username@UID> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). |
+| `ban <playerSelector> [endTime] [reason...]` | Ban an account with `server.ban` (and `server.ban.others` for another account). `endTime` is a Unix timestamp. |
 | `ban <IPv4> [reason...]` / `unban ip <key> <IPv4>` | Ban or unban an IP with `server.banip`. IP bans do not expire; only **unbanning** requires the configured keystore key. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
 
@@ -112,7 +114,7 @@ account create bob secret @10001
 account clone alice alice-copy @10002
 ```
 
-Player selectors: `@10001` selects UID 10001, `rino@` selects the account username `rino`, and `rino@10001` requires both to match. For bans, bare account names are rejected (`ban rino`); use `ban rino@`. Optional `endTime` is a Unix timestamp for account bans only. Where supported, `@UID` selects the target player; it does **not** load a Picocli argument file. In `account create` and `account clone`, the optional `@UID` instead specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`; this revokes both existing login and session tokens and disconnects the player.
+In `account create` and `account clone`, the optional `@UID` specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`; this revokes both existing login and session tokens and disconnects the player.
 
 See the [CLI migration guide](docs/cli-picocli-migration.md) for the command changes and the [plugin command API v5 guide](docs/plugin-command-api-v5.md) for plugin compatibility.
 

@@ -29,7 +29,7 @@ public final class BanCommand implements CommandHandler {
 
     static BanTarget parseTarget(String value) {
         if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException("Specify @UID, username@, username@UID, or IPv4.");
+            throw new IllegalArgumentException("Specify <playerSelector|IPv4>. See help ban.");
         }
         if (value.contains("@")) {
             CommandMap.parseExplicitTargetSelector(value);
@@ -47,8 +47,7 @@ public final class BanCommand implements CommandHandler {
             return new BanTarget(TargetType.IPV4, value);
         }
         throw new IllegalArgumentException(
-                "Invalid ban target: " + value + ". Use @UID, username@, username@UID, or IPv4; "
-                        + "append @ to an account username.");
+                "Invalid ban target: " + value + ". Use <playerSelector|IPv4>. See help ban.");
     }
 
     static BanArguments parseBanArguments(String target, List<String> trailing) {
@@ -65,7 +64,7 @@ public final class BanCommand implements CommandHandler {
         }
         if (parsed.type() == TargetType.IPV4 && offset != 0) {
             throw new IllegalArgumentException(
-                    "IPv4 bans do not expire; omit endTime and supply only a reason.");
+                    "For an IPv4 address, use ban <IPv4> [reason...].");
         }
         String reason = trailing.size() == offset
                 ? "Reason not specified."
@@ -74,11 +73,12 @@ public final class BanCommand implements CommandHandler {
     }
 
     @CommandLine.Command(name = "ban",
-            customSynopsis = "ban <@UID|username@|username@UID|IPv4> [endTime] [reason...]")
+            description = "playerSelector: @UID (UID), username@ (account), username@UID (both match).",
+            customSynopsis = "ban <playerSelector|IPv4> [endTime] [reason...]")
     private static final class BanTargetCommand implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "<@UID|username@|username@UID|IPv4>")
+        @Parameters(index = "0", paramLabel = "<playerSelector|IPv4>")
         private String target;
 
         @Parameters(index = "1..*", arity = "0..*", paramLabel = "[endTime] [reason...]")

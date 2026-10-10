@@ -8,7 +8,7 @@ unrelated quest, protocol, resource, combat or server changes.
 
 - Built-in commands declare their grammar using Picocli arguments, options and subcommands.
 - The console uses JLine parsing and Picocli completion.
-- Player targets use explicit `@UID`, `username@`, or `username@UID` selectors; `@` clears the saved target. These tokens are never Picocli argument files.
+- Player-targeting commands share the `playerSelector` syntax below. `@` clears the remembered target.
 - Commands with positional player selectors (`coop`, `ban`, `mail send`) keep those arguments in place, while using the same centralized identity parser and resolver as ordinary command targets.
 - New account names must not contain `@` or `.`; older stored accounts remain readable.
 - The command registry rejects duplicate names or aliases.
@@ -54,7 +54,7 @@ The Picocli command tree keeps one route for each operation:
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.
-- `ban <@UID|username@|username@UID|IPv4> [endTime] [reason...]` selects the target from its first argument, with no `player` or `ip` subcommand. Account bans can expire; bare usernames such as `ban rino` are rejected (use `ban rino@`). IPv4 bans are permanent and accept an optional reason but no end time. Account bans require `server.ban` and `server.ban.others` for someone else. IP bans require `server.banip` (no additional key). `unban ip <key> <ip>` remains unchanged.
+- `ban <playerSelector> [endTime] [reason...]` bans an account (`endTime` is a Unix timestamp); `ban <IPv4> [reason...]` bans an IP. Account bans use `server.ban` and `server.ban.others` for another account. IP bans use `server.banip`, and `unban ip <key> <IPv4>` uses the configured keystore key.
 
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
 - Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack` and `unlockwp`; use `br`, `el`, `suicide`, `trackmaterial` and `wp` respectively.
@@ -63,7 +63,6 @@ The Picocli command tree keeps one route for each operation:
 
 - `help` lists commands with their aliases and short descriptions; `help <command>` shows the full command usage. Nested command help is available as `help <command> <subcommand>`, for example `help teleport pos` or `help tp pos`.
 - Picocli parse errors, including type-conversion errors, show both the error message and the corresponding command or subcommand syntax.
-- To ban an IP, use `ban <IPv4> [reason...]` with `server.banip`. To undo the ban, use `unban ip <key> <IPv4>`; only the latter requires the keystore key.
 
 ## Review and validation
 
@@ -146,41 +145,26 @@ commands are removed rather than kept as duplicate aliases. Other uses of
 ### Target-aware JLine console prompt
 
 The JLine prompt is `asta> ` when the console has no remembered target.
-After `@10001`, `rino@`, or `rino@10001` (or the corresponding `target` forms),
-it displays the account name and UID,
+After selecting `rino@` (or `target rino@`), it displays the account name and UID,
 e.g. `rino@10001> `. Entering `@` (or `target`) clears the selection and
 restores `asta> `. The prompt uses the same target state as command execution;
 per-command inline target overrides do not change that remembered target.
 The account name is cached when selecting the target, so rendering the prompt
 never loads offline players or queries the database.
 
-### Explicit player selectors
+### Player selectors
 
-`@10001` selects player UID 10001, `rino@` selects the exact account username
-`rino`, and `rino@10001` selects that UID **only if** its account username is
-`rino`. A mismatch is rejected without changing the remembered target or
-executing a command. Account usernames may consist entirely of digits:
-`20261010@` is a username while `@20261010` is a UID. There is no
-username/UID fallback. The same selectors work as inline targets for commands
-that allow inline target parsing; commands which reserve their own `@UID`
-parameters keep that behavior. `@` clears the remembered target; the legacy
-`target 10001` also remains an explicit UID selector.
+**`playerSelector`:** `@UID` (player UID), `username@` (exact account username), or
+`username@UID` (both must match).
 
-### Shared player identity selectors
+Use `playerSelector` for general command targets, `coop` hosts, `ban` accounts,
+and `mail send` recipients. The `ban` command also accepts an IPv4 address;
+it can resolve accounts with reserved UIDs before character creation. `mail send all`
+broadcasts to all players. `@` clears the remembered target, and
+`target 10001` selects UID 10001.
 
-General command targets, `coop` hosts, `ban` player/account targets and
-`mail send` recipients all accept the same explicit forms:
-`@10001` (player UID), `rino@` (exact account username), or
-`rino@10001` (both must match). Date-like usernames such as `20261010@`
-remain unambiguous and are never interpreted as UIDs. A username/UID mismatch
-rejects the command instead of falling back to a different target.
-
-`coop` still treats its positional selector as the **host**, rather than the
-command's implicit guest target. `ban` accepts only explicit player selectors or an IPv4 address; it rejects
-bare account names, and it can resolve a reserved UID before a character exists.
-`mail send all` continues to broadcast. `account create` and `account clone`
-allocate or reserve **new** UIDs rather than select existing players, so their
-UID creation parameters are not player target selectors.
+In `account create` and `account clone`, the `@UID` argument reserves a new
+account UID. Username/UID matching in player selectors is exact.
 
 ### GM cutscene playback safety
 
