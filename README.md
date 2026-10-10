@@ -96,7 +96,7 @@ Built-in commands now use **Picocli** for positional arguments, named options an
 |---|---|
 | `give` | Grant avatars, weapons, artifacts and materials. Named options include `--amount` and `--level`; level 100 is the default. |
 | `account create / clone / delete / resetpass` | Manage accounts from the **server console only**. |
-| `ban ip` / `unban ip` | Ban or unban IP addresses (replaces `banip` / `unbanip`). |
+| `ban ip <key> <ip>` / `unban ip <key> <ip>` | Manage IP bans. Legacy `banip` / `unbanip` still work; the configured keystore key is required. |
 | `mail send` / `mail system` | Send mail to a player or all players, and manage system mail (replaces `sysmail`). |
 
 Example server-console commands:
