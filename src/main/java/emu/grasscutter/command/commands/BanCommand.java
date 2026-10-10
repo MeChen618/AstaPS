@@ -24,31 +24,16 @@ public final class BanCommand implements CommandHandler {
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new Root(sender));
+        var commandLine = new CommandLine(new BanPlayer(sender));
         commandLine.setExpandAtFiles(false);
-        commandLine.addSubcommand("player", new BanPlayer(sender));
         commandLine.addSubcommand("ip", new BanIp(sender));
         return commandLine;
-    }
-
-    @CommandLine.Command(name = "ban")
-    private final class Root implements Runnable {
-        private final Player sender;
-
-        private Root(Player sender) {
-            this.sender = sender;
-        }
-
-        @Override
-        public void run() {
-            BanCommand.this.sendUsageMessage(sender);
-        }
     }
 
     record PlayerBanArguments(int uid, int endTime, String reason) {}
 
     /**
-     * The player UID is mandatory and positional; unlike other GM commands, ban player
+     * The player UID is mandatory and positional; unlike other GM commands, ban
      * does not consume an arbitrary @UID elsewhere in the argument list.
      * A nonnumeric first trailing word starts the reason (with default end time).
      */
@@ -83,12 +68,13 @@ public final class BanCommand implements CommandHandler {
     }
 
     @CommandLine.Command(
-            name = "player",
-            customSynopsis = "ban player @UID [endTime] [reason...]")
+            name = "ban",
+            customSynopsis = "ban @UID [endTime] [reason...]")
     private static final class BanPlayer implements Runnable {
         private final Player sender;
 
-        @Parameters(index = "0", paramLabel = "@UID")
+        // Optional for Picocli because "ban ip" is a sibling route; enforced in run().
+        @Parameters(index = "0", arity = "0..1", paramLabel = "@UID")
         private String targetUid;
 
         @Parameters(index = "1..*", arity = "0..*", paramLabel = "[endTime] [reason...]")

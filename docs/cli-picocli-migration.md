@@ -52,7 +52,7 @@ The Picocli command tree keeps one route for each operation:
 - `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
 - `setStats <stat> <value>`, `setStats lock <stat> [value]` and `setStats unlock <stat>` are canonical; redundant `set`, `freeze` and `unfreeze` subcommands are removed.
 - `setSceneTag add <id>`, `remove <id>` and `reset` replace the duplicate `set`, `del` and `restore` subcommands.
-- `ban player @UID [endTime] [reason...]` requires an explicit numeric first argument; a reason can be supplied without an end time. It does not consume the generic inline `@UID` selector, and resolves offline players by the specified UID. `ban ip <key> <ip> [reason...]` and `unban ip <key> <ip>` remain the IP-ban routes; standalone `banip` and `unbanip` were removed.
+- `ban @UID [endTime] [reason...]` requires an explicit numeric first argument; a reason can be supplied without an end time. The old `ban player` route is removed. It does not consume the generic inline `@UID` selector, and resolves offline players by the specified UID. `ban ip <key> <ip> [reason...]` and `unban ip <key> <ip>` remain the IP-ban routes; standalone `banip` and `unbanip` were removed.
 
 ## Review and validation
 

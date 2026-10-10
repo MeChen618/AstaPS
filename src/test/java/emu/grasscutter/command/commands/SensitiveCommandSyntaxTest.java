@@ -45,15 +45,22 @@ public final class SensitiveCommandSyntaxTest {
     void playerBanUsesMandatoryLeadingAtUid() {
         var ban = new BanCommand();
         assertFalse(BanCommand.class.getAnnotation(Command.class).inlineTarget());
+        var cli = ban.createCommandLine(null, null);
+        assertFalse(cli.getSubcommands().containsKey("player"));
+        assertTrue(cli.getSubcommands().containsKey("ip"));
+        assertTrue(cli.getUsageMessage().contains("ban @UID [endTime] [reason...]"));
+
+        // The root positional is optional to Picocli so the "ip" subcommand
+        // remains available. Runtime validation still requires an explicit @UID.
         assertThrows(
-                CommandLine.ParameterException.class,
-                () -> ban.createCommandLine(null, null).parseArgs("player"));
+                IllegalArgumentException.class,
+                () -> BanCommand.parsePlayerArguments(null, List.of()));
         assertDoesNotThrow(
-                () -> ban.createCommandLine(null, null).parseArgs("player", "@10001"));
+                () -> ban.createCommandLine(null, null).parseArgs("@10001"));
         assertDoesNotThrow(
-                () -> ban.createCommandLine(null, null).parseArgs("player", "@10001", "1800000000", "Cheating"));
+                () -> ban.createCommandLine(null, null).parseArgs("@10001", "1800000000", "Cheating"));
         assertDoesNotThrow(
-                () -> ban.createCommandLine(null, null).parseArgs("player", "@10001", "Cheating"));
+                () -> ban.createCommandLine(null, null).parseArgs("@10001", "Cheating"));
     }
 
     @Test
