@@ -55,10 +55,10 @@ On Windows use `.\gradlew.bat`, or run `gradlew-jar.bat`.
 
 There is no registration page. An account is created either way:
 
-- **From the console.** `account create <username> <password> [@UID]` (password required; UID optional).
+- **From the console.** `account create <username> [<password>] [@UID]` (password and UID optional).
 - **At sign-in.** Signing in with a name nobody holds registers it. With `account.useIntegrationPassword` on, put `name&&password` in the username box and leave the password box alone — useful when proxying a bunch of clients at once and you don't want to set up a user for each.
 
-Passwords are BCrypt-hashed. The console needs `server.game.enableConsole` set to `true`.
+Provided passwords are BCrypt-hashed. An account created without a password has no password check until one is set. The console needs `server.game.enableConsole` set to `true`.
 
 ### Web console (opt-in)
 
@@ -104,8 +104,9 @@ Example server-console commands:
 ```text
 help give
 give 202 --amount 3 @10001
-account create alice <password> [@UID]
-account clone alice alice-copy [@UID]
+account create alice
+account create bob secret @10001
+account clone alice alice-copy @10002
 ```
 
 Where supported, `@UID` selects the target player; it does **not** load a Picocli argument file. In `account create` and `account clone`, the optional `@UID` instead specifies the **new account's UID**. Cloning requires the source player to be offline; it excludes friendships and shared beatmaps. Reset a password with `account resetpass <username> <new-password>`.

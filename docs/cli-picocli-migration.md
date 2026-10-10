@@ -18,11 +18,15 @@ unrelated quest, protocol, resource, combat or server changes.
 Console-only commands include:
 
 ```text
-account create <source-independent-name> <password> [@UID]
+account create <username> [<password>] [@UID]
 account clone <source-account> <new-account> [@UID]
 account delete <account>
 account resetpass <account> <new-password>
 ```
+
+Create accepts a username alone, a username and password, a username and @UID, or all
+three (password before @UID). Without a password, the account stays passwordless until
+one is set via resetpass.
 
 The clone operation needs an offline source player and a new account name.
 It copies player-owned gameplay collections and uses the database writer barrier
@@ -34,4 +38,4 @@ The clone inherits the source account password and permissions.
 - Compare the complete command registry and aliases against upstream before merge.
 - Compile and run unit tests, including command parser/registry and database writer tests.
 - Ensure game clients are not asked to test before CI has passed.
-- Open the upstream PR only after successful CI, with any compatibility exceptions documented.
+- Keep the upstream PR as a draft until CI succeeds and compatibility exceptions are documented.

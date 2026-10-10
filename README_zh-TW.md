@@ -55,10 +55,10 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 
 沒有註冊網頁。建立帳號有兩條路：
 
-- **從主控台。** `account create <使用者名稱> <密碼> [@UID]`（密碼必填，UID 可選）。
+- **從主控台。** `account create <使用者名稱> [<密碼>] [@UID]`（密碼與 UID 均可選）。
 - **登入時直接註冊。** 用一個沒人占用的名字登入就等於註冊。開啟 `account.useIntegrationPassword` 後，在使用者名稱欄填 `帳號&&密碼`、密碼欄留空即可，很方便在代理一堆客戶端時用。
 
-密碼以 BCrypt 雜湊儲存。主控台需要 `server.game.enableConsole` 設為 `true` 才會接受輸入。
+設定的密碼會以 BCrypt 雜湊儲存。不指定密碼時，帳號暫不驗證密碼，可稍後使用 `account resetpass` 設定。主控台需要 `server.game.enableConsole` 設為 `true` 才會接受輸入。
 
 ## 指令
 
@@ -76,8 +76,9 @@ Windows 用 `.\gradlew.bat`，或直接執行 `gradlew-jar.bat`。
 ```text
 help give
 give 202 --amount 3 @10001
-account create alice <password> [@UID]
-account clone alice alice-copy [@UID]
+account create alice
+account create bob secret @10001
+account clone alice alice-copy @10002
 ```
 
 對支援指定目標的指令，`@UID` 代表目標玩家，**不是** Picocli 參數檔案；在 `account create` 和 `account clone` 中，可選的 `@UID` 則指定**新帳號的 UID**。複製前來源玩家必須離線，好友關係和共用音遊譜面不會複製。重設密碼使用 `account resetpass <使用者名稱> <新密碼>`。

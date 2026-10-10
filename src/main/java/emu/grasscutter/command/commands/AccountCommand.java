@@ -32,7 +32,7 @@ public final class AccountCommand implements CommandHandler {
         commandLine.setExpandAtFiles(false);
         commandLine.registerConverter(UidArg.class, value -> parseUid(sender, value));
 
-        commandLine.addSubcommand("create", new CreateWithPassword(sender));
+        commandLine.addSubcommand("create", new Create(sender));
         commandLine.addSubcommand("clone", new Clone(sender));
         commandLine.addSubcommand("delete", new Delete(sender));
         commandLine.addSubcommand("resetpass", new ResetPass(sender));
@@ -83,26 +83,49 @@ public final class AccountCommand implements CommandHandler {
         }
     }
 
+    record CreateArguments(String password, int uid) {}
+
+    /**
+     * A lone @UID specifies a reserved UID, not a password. When a password is supplied,
+     * the optional @UID follows it.
+     */
+    static CreateArguments parseCreateArguments(String passwordOrUid, Integer trailingUid) {
+        if (passwordOrUid != null && passwordOrUid.startsWith("@")) {
+            if (trailingUid != null) {
+                throw new IllegalArgumentException("Specify the new account UID only once.");
+            }
+            return new CreateArguments(null, parseUid(null, passwordOrUid).value());
+        }
+        return new CreateArguments(passwordOrUid, trailingUid == null ? 0 : trailingUid);
+    }
+
     @picocli.CommandLine.Command(name = "create")
-    private final class CreateWithPassword implements Runnable {
+    private final class Create implements Runnable {
         private final Player sender;
 
         @Parameters(index = "0", paramLabel = "<username>")
         private String username;
 
-        @Parameters(index = "1", paramLabel = "<password>")
-        private String password;
+        @Parameters(index = "1", arity = "0..1", paramLabel = "<password|@UID>")
+        private String passwordOrUid;
 
-        @Parameters(index = "2", arity = "0..1", paramLabel = "[@UID]")
-        private UidArg uid;
+        @Parameters(index = "2", arity = "0..1", paramLabel = "<@UID>")
+        private UidArg trailingUid;
 
-        private CreateWithPassword(Player sender) {
+        private Create(Player sender) {
             this.sender = sender;
         }
 
         @Override
         public void run() {
-            createAccount(sender, username, password, uid == null ? 0 : uid.value());
+            try {
+                var arguments =
+                        parseCreateArguments(
+                                passwordOrUid, trailingUid == null ? null : trailingUid.value());
+                createAccount(sender, username, arguments.password(), arguments.uid());
+            } catch (IllegalArgumentException invalid) {
+                CommandOutput.sendMessage(sender, invalid.getMessage());
+            }
         }
     }
 
@@ -204,8 +227,8 @@ public final class AccountCommand implements CommandHandler {
     }
 
     private void createAccount(Player sender, String username, String password, int uid) {
-        String passwordHash = hashPassword(sender, password);
-        if (passwordHash == null) return;
+        String passwordHash = password == null ? null : hashPassword(sender, password);
+        if (password != null && passwordHash == null) return;
 
         Account account = DatabaseHelper.createAccountWithUid(username, uid);
         if (account == null) {
@@ -213,7 +236,7 @@ public final class AccountCommand implements CommandHandler {
             return;
         }
 
-        account.setPassword(passwordHash);
+        if (passwordHash != null) account.setPassword(passwordHash);
         account.addPermission("*");
         account.save();
         CommandOutput.sendMessage(
