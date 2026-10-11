@@ -52,7 +52,8 @@ The clone inherits the source account password and permissions.
 The Picocli command tree keeps one route for each operation:
 
 - `kill` kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall`, `kill character`, and `suicide` routes are removed.
-- `restore energy` replaces `er` / `e` / `energy`; `heal` and `heal all` remain because the latter covers off-team avatars.
+- `restore hp` restores the active team's HP; `restore hp --all` also heals every owned character outside the team (replaces `heal all`). `restore energy` restores active-team energy, and `restore all` restores active-team HP and energy. The old `heal` / `h` entrypoints and `er` / `e` / `energy` aliases are removed.
+- `avatar talent normal|skill|burst|all <level> [--avatar <avatarId>|--all]` and `avatar friendship set <level> [--avatar <avatarId>|--all]` support batch changes to owned characters. Talent `set`/`list` and `extralevel` remain single-character commands; `--all` and `--avatar` are mutually exclusive.
 - `avatar stat set <stat> <value> [--avatar <avatarId>]`, `avatar stat lock <stat> [value] [--avatar <avatarId>]`, and `avatar stat unlock <stat> [--avatar <avatarId>]` replace top-level `setStats`, `stats`, and `stat` without aliases. The old `freeze` and `unfreeze` routes remain removed.
 - `setSceneTag add <id>`, `remove <id>`, `reset` and `unlock all` are canonical; the old `set`, `del`, `restore` and `unlockall` subcommands are removed.
 - `unlock all [@UID]` replaces the standalone `unlockall` command. The existing `player.unlockall` permissions, open-state blacklist and scene-tag exclusion remain unchanged. It is distinct from `tag unlock all`, which operates on scene tags.

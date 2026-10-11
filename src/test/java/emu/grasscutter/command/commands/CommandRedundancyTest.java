@@ -17,7 +17,7 @@ public final class CommandRedundancyTest {
         map.registerCommand("kill", new KillCommand());
         map.registerCommand("restore", new RestoreCommand());
 
-        for (String removed : new String[] {"killall", "er", "e", "energy"}) {
+        for (String removed : new String[] {"killall", "er", "e", "energy", "heal", "h"}) {
             assertNull(map.getHandler(removed), removed);
         }
         assertNull(map.getHandler("killCharacter"));
