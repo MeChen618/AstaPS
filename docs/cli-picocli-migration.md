@@ -51,7 +51,7 @@ The clone inherits the source account password and permissions.
 
 The Picocli command tree keeps one route for each operation:
 
-- `kill` kills the active character; `kill all <key> [sceneId]` kills monsters. The standalone `killall`, `kill character`, and `suicide` routes are removed.
+- `kill` kills the active character; `kill all [sceneId]` kills monsters. The `server.killall` / `server.killall.others` permissions still protect bulk monster removal; no HTTPS keystore password is required. The standalone `killall`, `kill character`, and `suicide` routes are removed.
 - `support <pierro|valeriy|blast|all> [on|off]` controls all team-bar support buttons, including Pierro's Ronova-fight support. The former standalone `pierro` and `ronova` commands are removed; all support buttons now use the existing `player.support` / `player.support.others` permissions (not the retired `player.pierro` permissions). The `assist` alias for `support` is retained.
 - `restore hp` restores the active team's HP; `restore hp --all` also heals every owned character outside the team (replaces `heal all`). `restore energy` restores active-team energy, and `restore all` restores active-team HP and energy. The old `heal` / `h` entrypoints and `er` / `e` / `energy` aliases are removed.
 - `unlock map` unlocks map points and areas without unlocking unrelated features or equipment. `unlock map --force` also includes quest-protected points (use cautiously). Both require `player.unlockall` / `player.unlockall.others`, rather than the retired `prop unlockmap` route under `player.setprop`. `unlock all` retains its broader existing behavior.

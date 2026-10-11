@@ -31,13 +31,24 @@ public final class SensitiveCommandSyntaxTest {
     }
 
     @Test
-    void killAllRequiresExplicitKeyWithoutLegacyOrCharacterRoutes() {
+    void killAllAcceptsOptionalSceneIdWithoutCertificatePassword() {
         var cli = new KillCommand().createCommandLine(null, null);
         assertTrue(cli.getSubcommands().containsKey("all"));
         assertFalse(cli.getSubcommands().containsKey("character"));
         assertFalse(cli.getSubcommands().containsKey("avatar"));
-        assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs("all"));
-        assertDoesNotThrow(() -> cli.parseArgs("all", "key", "3"));
+
+        var usage = cli.getSubcommands().get("all").getUsageMessage();
+        assertTrue(usage.contains("[sceneId]"));
+        assertFalse(usage.contains("<key>"));
+        assertDoesNotThrow(() -> new KillCommand().createCommandLine(null, null).parseArgs("all"));
+        assertDoesNotThrow(() -> new KillCommand().createCommandLine(null, null).parseArgs("all", "3"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> new KillCommand().createCommandLine(null, null).parseArgs("all", "key", "3"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> new KillCommand().createCommandLine(null, null).parseArgs("all", "not-a-scene"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> new KillCommand().createCommandLine(null, null).parseArgs("all", "3", "4"));
+        assertDoesNotThrow(() -> new KillCommand().createCommandLine(null, null).parseArgs());
 
         var map = new CommandMap(false);
         map.registerCommand("kill", new KillCommand());
