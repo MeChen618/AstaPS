@@ -13,8 +13,7 @@ import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
 @Command(
-        label = "setProp",
-        aliases = {"prop"},
+        label = "prop",
         permission = "player.setprop",
         permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
@@ -95,12 +94,15 @@ public final class SetPropCommand implements CommandHandler {
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new SetPropArgs(sender, targetPlayer));
+        var commandLine = new CommandLine(new Root(sender));
         commandLine.setExpandAtFiles(false);
-        commandLine.registerConverter(
+        commandLine.addSubcommand("set", new SetPropArgs(sender, targetPlayer));
+        CommandHandler.registerConverterTree(
+                commandLine,
                 PropArg.class,
                 value -> new PropArg(props.get(value.toLowerCase(Locale.ROOT))));
-        commandLine.registerConverter(
+        CommandHandler.registerConverterTree(
+                commandLine,
                 ValueArg.class,
                 value -> {
                     String normalized = value.toLowerCase(Locale.ROOT);
@@ -120,15 +122,24 @@ public final class SetPropCommand implements CommandHandler {
                             };
                     return new ValueArg(parsed, normalized);
                 });
-        commandLine.setParameterExceptionHandler(
-                (exception, argv) -> {
-                    this.sendUsageMessage(sender);
-                    return 2;
-                });
         return commandLine;
     }
 
-    @picocli.CommandLine.Command(name = "setProp")
+    @picocli.CommandLine.Command(name = "prop")
+    private final class Root implements Runnable {
+        private final Player sender;
+
+        private Root(Player sender) {
+            this.sender = sender;
+        }
+
+        @Override
+        public void run() {
+            SetPropCommand.this.sendUsageMessage(sender);
+        }
+    }
+
+    @picocli.CommandLine.Command(name = "set")
     private final class SetPropArgs implements Runnable {
         private final Player sender;
         private final Player targetPlayer;
@@ -147,7 +158,7 @@ public final class SetPropCommand implements CommandHandler {
         @Override
         public void run() {
             if (property.value() == null) {
-                SetPropCommand.this.sendUsageMessage(sender);
+                CommandOutput.sendMessage(sender, "Unknown player property.");
                 return;
             }
             if (requestedValue.value() == null) {
