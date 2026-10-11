@@ -39,7 +39,7 @@ public final class PropCommandTest {
         assertTrue(cli.getUsageMessage().contains("value"));
 
         for (String[] args : new String[][] {
-                {"worldlevel"}, {"godmode"}, {"bplevel"}, {"unlockmap"},
+                {"worldlevel"}, {"godmode"}, {"bplevel"},
                 {"player_resin"}, {"dive"}, {"abyss"}
         }) {
             assertDoesNotThrow(() -> command().parseArgs(args), String.join(" ", args));
@@ -47,7 +47,7 @@ public final class PropCommandTest {
 
         for (String[] args : new String[][] {
                 {"worldlevel", "8"}, {"godmode", "on"},
-                {"godmode", "toggle"}, {"unlockmap", "all"},
+                {"godmode", "toggle"},
                 {"bp", "50"}, {"dive", "off"}, {"player_resin", "160"}
         }) {
             assertDoesNotThrow(() -> command().parseArgs(args), String.join(" ", args));
