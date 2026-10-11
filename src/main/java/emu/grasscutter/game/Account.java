@@ -226,6 +226,8 @@ public class Account {
                 banEndTime = linkedEndTime;
                 save();
             }
+            // IP ban records are authoritative even beyond the signed 2038 account field.
+            return true;
         }
 
         if (banEndTime > 0 && banEndTime <= now) {
