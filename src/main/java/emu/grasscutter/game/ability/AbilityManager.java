@@ -516,21 +516,22 @@ public final class AbilityManager extends BasePlayerManager {
 
         if (key == null) return;
 
-        // Client Q cinematic often CLEARs Cur_HPDebts before EvtDoSkillSucc - refuse + pre-arm.
+        // A global reset alone does not identify a burst; it also occurs during normal sync.
         if (isArlecchinoBoLFloatKey(key)
                 && entity instanceof EntityAvatar av
                 && av.getAvatar() != null
-                && av.getAvatar().getAvatarId() == 10000096
-                && !ArlecchinoBurstBoL.allowAuthoritativeClear(av.getId())) {
-            float cur = av.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-            if (cur > 0.5f) {
-                if (!ArlecchinoBurstBoL.isConsumeBlocked(av)) {
-                    ArlecchinoBurstBoL.onBurstCast(av);
+                && av.getAvatar().getAvatarId() == 10000096) {
+            synchronized (av) {
+                float cur = av.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+                if (cur > 0.5f) {
+                    if (!ArlecchinoBurstBoL.isConsumeBlocked(av)) {
+                        ArlecchinoBurstBoL.tryPreArmFromAbility(
+                                resolveInvocationAbility(entity, invoke), av);
+                    }
+                    av.getGlobalAbilityValues().put(key, cur);
+                    ArlecchinoBoLSync.repinUiBar(av);
+                    return;
                 }
-                ArlecchinoBurstBoL.repinClientBoL(av);
-                Grasscutter.getLogger()
-                        .info("[BoL] skip ClearGlobalFloat {} (pre-arm/repin debt={})", key, cur);
-                return;
             }
         }
 
@@ -542,6 +543,17 @@ public final class AbilityManager extends BasePlayerManager {
         return "Cur_HPDebts".equals(key)
                 || "_HPDebts".equals(key)
                 || "_ABILITY_Cur_HPDebts".equals(key);
+    }
+
+    private static Ability resolveInvocationAbility(GameEntity entity, AbilityInvokeEntry invoke) {
+        var head = invoke.getHead();
+        var modifier = entity.getInstancedModifiers().get(head.getInstancedModifierId());
+        if (modifier != null && modifier.getAbility() != null) {
+            return modifier.getAbility();
+        }
+        int index = head.getInstancedAbilityId() - 1;
+        var abilities = entity.getInstancedAbilities();
+        return index >= 0 && index < abilities.size() ? abilities.get(index) : null;
     }
 
     /**
@@ -1280,9 +1292,11 @@ public final class AbilityManager extends BasePlayerManager {
     private void handleGlobalFloatValue(AbilityInvokeEntry invoke)
         throws InvalidProtocolBufferException {
         var entity = this.player.getScene().getEntityById(invoke.getEntityId());
-        var teamEntity = this.player.getTeamManager().getEntity();
-        if (entity == null && teamEntity != null && teamEntity.getId() == invoke.getEntityId()) {
-            entity = teamEntity;
+        if (entity == null && this.player.getTeamManager() != null) {
+            var teamEntity = this.player.getTeamManager().getEntity();
+            if (teamEntity != null && teamEntity.getId() == invoke.getEntityId()) {
+                entity = teamEntity;
+            }
         }
         if (entity == null) return;
 
@@ -1339,28 +1353,23 @@ public final class AbilityManager extends BasePlayerManager {
         // Official reclaim is ExtraAttack_AddHpDebts_* via ActionAddHPDebts only.
         // A second grant here previously double-stacked 65%/130% and capped BoL instantly.
 
-        // Client predicts Q wipe via META_GLOBAL_FLOAT (Cur_HPDebts to 0) ~2s before SkillSucc.
-        // That is what blanks the BoL bar mid-cinematic while the server still holds BoL.
+        // Preserve authoritative Bond on predicted resets, but only a burst source may arm Q.
         if (isArlecchinoBoLFloatKey(key)
                 && entity instanceof EntityAvatar av
                 && av.getAvatar() != null
-                && av.getAvatar().getAvatarId() == 10000096
-                && !ArlecchinoBurstBoL.allowAuthoritativeClear(av.getId())) {
-            float cur = av.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
-            if (cur > 0.5f && value <= Math.max(0.5f, cur * 0.15f)) {
-                if (!ArlecchinoBurstBoL.isConsumeBlocked(av)) {
-                    ArlecchinoBurstBoL.onBurstCast(av);
-                    Grasscutter.getLogger()
-                            .info(
-                                    "[BoL] pre-arm from client GlobalFloat {}={} (server debt={})",
-                                    key,
-                                    value,
-                                    cur);
+                && av.getAvatar().getAvatarId() == 10000096) {
+            synchronized (av) {
+                float cur = av.getFightProperty(FightProperty.FIGHT_PROP_CUR_HP_DEBTS);
+                if (cur > 0.5f && value <= Math.max(0.5f, cur * 0.15f)) {
+                    if (!ArlecchinoBurstBoL.isConsumeBlocked(av)) {
+                        ArlecchinoBurstBoL.tryPreArmFromAbility(
+                                resolveInvocationAbility(entity, invoke), av);
+                    }
+                    entity.getGlobalAbilityValues().put(key, cur);
+                    entity.onAbilityValueUpdate();
+                    ArlecchinoBoLSync.repinUiBar(av);
+                    return;
                 }
-                entity.getGlobalAbilityValues().put(key, cur);
-                entity.onAbilityValueUpdate();
-                ArlecchinoBurstBoL.repinClientBoL(av);
-                return;
             }
         }
 
@@ -1406,16 +1415,39 @@ public final class AbilityManager extends BasePlayerManager {
         entity.getInstancedAbilities().add(data != null ? new Ability(data, entity, player) : null);
     }
 
+    /** Keep already-initialized server ability IDs in sync with changed avatar embryos. */
+    public void syncPhlogistonAvatarAbility(EntityAvatar avatar, boolean inNatlan) {
+        var abilities = avatar.getInstancedAbilities();
+        if (abilities.isEmpty()) return; // Lazy initialization will use the current region.
+        var base = avatar.getAvatar().getAvatarData().getAbilities();
+        int index = base == null ? 0 : base.size();
+        int phlogistonHash = Utils.abilityHash("DynamicAbility_Phlogiston");
+        for (int hash : GameConstants.DEFAULT_ABILITY_HASHES) {
+            if (hash == phlogistonHash) break;
+            index++;
+        }
+        if (index >= abilities.size()) return; // No fully initialized default-ability sequence.
+        var current = abilities.get(index);
+        boolean present = current != null && current.getData() != null
+                && "DynamicAbility_Phlogiston".equals(current.getData().abilityName);
+        if (inNatlan && !present) {
+            var name = GameData.getAbilityHashes().get(phlogistonHash);
+            var data = name == null ? null : GameData.getAbilityData(name);
+            abilities.add(index, data == null ? null : new Ability(data, avatar, player));
+        } else if (!inNatlan && present) {
+            abilities.remove(index);
+        }
+    }
+
     private void initializeEntityAbilities(EntityAvatar avatar) {
         var avatarData = avatar.getAvatar().getAvatarData();
         if (avatarData.getAbilities() != null) {
             for (int hash : avatarData.getAbilities()) addAbilityByHash(avatar, hash);
         }
-        // DynamicAbility_Phlogiston is what makes the client draw the phlogiston gauge at all,
-        // and it used to be attached only inside scene 101. That is why the party's global value
-        // was invisible everywhere else: the value was there, nothing was drawing it. It is a
-        // default ability like the rest of them now, so the gauge follows the party.
-        for (int hash : emu.grasscutter.GameConstants.DEFAULT_ABILITY_HASHES) {
+        // Match EntityAvatar.getAbilityControlBlock() exactly, including dense ability IDs.
+        boolean inNatlan = player.isInNatlan();
+        for (int hash : GameConstants.DEFAULT_ABILITY_HASHES) {
+            if (!GameConstants.shouldAttachDefaultAvatarAbility(hash, inNatlan)) continue;
             addAbilityByHash(avatar, hash);
         }
         for (int hash : player.getTeamManager().getTeamResonancesConfig()) {

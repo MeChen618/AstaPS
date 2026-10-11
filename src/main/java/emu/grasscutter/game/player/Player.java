@@ -89,6 +89,9 @@ public class Player implements PlayerHook, FieldFetch {
     @Getter @Setter private Position prevPos;
     @Getter @Setter private Position prevPosForHome;
     @Getter @Setter private int prevScene;
+    // Written and read only as a pair, unlike prevScene, which entering a home also overwrites.
+    @Getter @Setter private Position prevPosForDungeon;
+    @Getter @Setter private int prevSceneForDungeon;
     @Getter private Position rotation;
     @Getter private PlayerBirthday birthday;
     @Getter private PlayerCodex codex;
@@ -456,6 +459,35 @@ public class Player implements PlayerHook, FieldFetch {
         return scene;
     }
 
+    /** Check location, not only scene ID: Natlan shares Teyvat's scene 3. */
+    public boolean isInNatlan() {
+        return this.scene != null && PhlogistonRegion.contains(this.scene.getId(), this.position);
+    }
+
+    /** Update both client embryos and server ability IDs on a seamless regional crossing. */
+    public void refreshPhlogistonRegion() {
+        if (this.scene == null || this.session == null || this.teamManager == null) return;
+        boolean inNatlan = this.isInNatlan();
+        int enabled = inNatlan ? 1 : 0;
+        if (this.getProperty(PlayerProperty.PROP_PHLOGISTON_ENABLE) == enabled) return;
+
+        this.setProperty(PlayerProperty.PROP_PHLOGISTON_ENABLE, enabled);
+        for (var avatar : this.teamManager.getActiveTeam()) {
+            if (avatar == null) continue;
+            this.abilityManager.syncPhlogistonAvatarAbility(avatar, inNatlan);
+            this.sendPacket(new PacketAbilityChangeNotify(avatar));
+        }
+        var teamEntity = this.teamManager.getEntity();
+        if (teamEntity != null) {
+            this.sendPacket(new PacketAbilityChangeNotify(
+                    teamEntity.getId(), this.teamManager.getAbilityControlBlock()));
+            if (inNatlan) {
+                this.sendPacket(new PacketServerGlobalValueChangeNotify(
+                        teamEntity.getId(), "SGV_PlayerTeam_Phlogiston", this.getPhlogistonValue()));
+            }
+        }
+    }
+
     public void setScene(Scene scene) {
         this.scene = scene;
     }
@@ -664,7 +696,8 @@ public class Player implements PlayerHook, FieldFetch {
                 withQuesting ? 10000 : 0);
         this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 200);
         this.setOrFetch(PlayerProperty.PROP_PHLOGISTON_MAX_VALUE, 10000);
-        this.setProperty(PlayerProperty.PROP_PHLOGISTON_ENABLE, 1);
+        // The active scene enables phlogiston when the player actually enters Natlan.
+        this.setProperty(PlayerProperty.PROP_PHLOGISTON_ENABLE, 0, false);
 
         this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
             this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
@@ -1430,6 +1463,8 @@ public class Player implements PlayerHook, FieldFetch {
 
         this.setResinBuyCount(0);
 
+        BirthdayMailSystem.checkAndSend(this, currentDate);
+
         this.setLastDailyReset(currentTime);
     }
 
@@ -1540,6 +1575,21 @@ public class Player implements PlayerHook, FieldFetch {
                 pos = ScriptLoader.getSceneMeta(this.getSceneId()).config.born_pos;
             }
             this.position.set(pos);
+        }
+
+        // The same holds for every other dungeon, and mid-quest it strands the step: the scene
+        // comes back with no running dungeon, so the subquest never gets its rewind. Arriving in
+        // the world is what fires ENTER_MY_WORLD and lets the quest's own fail/rollback execs
+        // restart the segment, so send the player back to where they walked in from.
+        savedScene = GameData.getSceneDataMap().get(this.getSceneId());
+        if (savedScene != null && savedScene.getSceneType() == SceneType.SCENE_DUNGEON) {
+            var originScene = this.prevSceneForDungeon > 0 ? this.prevSceneForDungeon : 3;
+            var originPos = this.getPrevPosForDungeon();
+            this.setSceneId(originScene);
+            this.position.set(
+                    originPos != null && !originPos.equals(Position.ZERO)
+                            ? originPos
+                            : ScriptLoader.getSceneMeta(originScene).config.born_pos);
         }
 
         World world = new World(this);

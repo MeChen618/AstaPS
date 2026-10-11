@@ -2624,7 +2624,7 @@ public final class PacketOpcodes {
     public static final int BargainTerminateNotify = 7831;
     public static final int HomeLimitedShopInfoRsp = 2652;
     public static final int ReunionBriefInfoReq = 0; // 7.1 CmdId unknown (7.0: 27913)
-    public static final int DungeonRestartReq = 0; // 7.1 CmdId unknown (7.0: 27917)
+    public static final int DungeonRestartReq = 9381; // 7.1: confirmed in Fontaine weapon domain 4471
     // public static final int OfferingPariSearchRsp = 25683;
     public static final int PushTipsChangeNotify = 4737;
     public static final int DragonSpineCoinChangeNotify = 24405;
@@ -3015,7 +3015,7 @@ public final class PacketOpcodes {
     public static final int SceneEntityUpdateNotify = 1936; // 7.1 CmdId unknown (7.0: 1)
     public static final int SceneKickPlayerRsp = 0; // 7.1 CmdId unknown (7.0: 1)
     public static final int SetFriendEnterHomeOptionRsp = 0; // 7.1 CmdId unknown (7.0: 1)
-    public static final int SetPlayerBornDataRsp = 4259; // 7.1 CmdId unknown (7.0: 1)
+    public static final int SetPlayerBornDataRsp = 4385; // 7.1 global, runtime-confirmed
     public static final int SkipPlayerGameTimeRsp = 338; // 7.1 CmdId unknown (7.0: 1)
     public static final int TheaterLobbySceneJumpRsp = 0; // 7.1 CmdId unknown (7.0: 1)
     public static final int TowerMiddleLevelChangeTeamNotify = 0; // 7.1 CmdId unknown (7.0: 1)
