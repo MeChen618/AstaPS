@@ -218,15 +218,15 @@ avatar list
 avatar constellation set <0-6> [--avatar <avatarId> | --all]
 avatar constellation reset [--avatar <avatarId> | --all]
 avatar talent set <talentId> <level> [--avatar <avatarId>]
-avatar talent normal <level> [--avatar <avatarId>] # alias: n
-avatar talent skill <level> [--avatar <avatarId>]  # alias: e
-avatar talent burst <level> [--avatar <avatarId>]  # alias: q
-avatar talent all <level> [--avatar <avatarId>]
+avatar talent normal <level> [--avatar <avatarId> | --all] # alias: n
+avatar talent skill <level> [--avatar <avatarId> | --all]  # alias: e
+avatar talent burst <level> [--avatar <avatarId> | --all]  # alias: q
+avatar talent all <level> [--avatar <avatarId> | --all]
 avatar talent list [--avatar <avatarId>]
 avatar stat set <stat> <value> [--avatar <avatarId>]
 avatar stat lock <stat> [value] [--avatar <avatarId>]
 avatar stat unlock <stat> [--avatar <avatarId>]
-avatar friendship set <level> [--avatar <avatarId>]
+avatar friendship set <level> [--avatar <avatarId> | --all]
 avatar extralevel [--avatar <avatarId>]
 avatar max [--avatar <avatarId> | --all]
 ```
