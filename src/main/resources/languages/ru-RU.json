@@ -349,7 +349,7 @@
       "description": "Задаёт уровень дружбы для активного персонажа"
     },
     "openstate": {
-      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "Задаёт свойства аккаунта. С помощью данной команды может быть включен godmode, а также разблокированы этажи Коридора Бездны и изменён прогресс боевого пропуска. Используйте `unlock map` для карты, а `openstate` для состояний."

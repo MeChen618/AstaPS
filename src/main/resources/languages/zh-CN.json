@@ -349,7 +349,7 @@
       "description": "设置当前角色的好感度等级"
     },
     "openstate": {
-      "description": "按 ID 查询或修改开放状态：openstate <openStateId> [0|1]。"
+      "description": "按名称查询或修改开放状态：openstate <name|id> [true|false]；openstate list [filter] 可查名称。"
     },
     "prop": {
       "description": "查询或修改世界等级、无敌模式、体力、元素能量和纪行等级等玩家属性。省略 [value] 查询，提供值则修改。地图解锁用 unlock map，开放状态用 openstate。"

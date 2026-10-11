@@ -349,7 +349,7 @@
       "description": "Ustaw poziom przyjaźni obecnej postaci."
     },
     "openstate": {
-      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass. Use `unlock map` for map unlocks and `openstate` for OpenStates."

@@ -349,7 +349,7 @@
       "description": "Imposta il tuo livello di amicizia per il tuo attuale personaggio attivo"
     },
     "openstate": {
-      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "Imposta le proprietà dell'intero account. Cose come godmode possono essere abilitate in questo modo, oltre a cambiare cose come il pavimento dell'abisso sbloccato e il progresso del pass battaglia. Use `unlock map` for map unlocks and `openstate` for OpenStates."

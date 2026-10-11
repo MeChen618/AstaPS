@@ -349,7 +349,7 @@
       "description": "Stabilește nivelul Fetter pentru personajul tău activ curent."
     },
     "openstate": {
-      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass. Use `unlock map` for map unlocks and `openstate` for OpenStates."

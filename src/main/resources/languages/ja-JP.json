@@ -349,7 +349,7 @@
       "description": "現在アクティブなキャラの好感度レベルを設定します｡"
     },
     "openstate": {
-      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "アカウント全体のプロパティを設定します。 godmodeのようなものはこの方法で有効にすることができ、アンロックされた深淵の床やバトル パスの進行状況などを変更することもできます。 Use `unlock map` for map unlocks and `openstate` for OpenStates."

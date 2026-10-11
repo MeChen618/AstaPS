@@ -349,7 +349,7 @@
       "description": "Establece tu nivel de amistad para tu personaje actual."
     },
     "openstate": {
-      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abismo o progreso del pase de batalla. Use `unlock map` for map unlocks and `openstate` for OpenStates."

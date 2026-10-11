@@ -349,7 +349,7 @@
       "description": "Sets your fetter level for your current active character"
     },
     "openstate": {
-      "description": "Query or set an OpenState by numeric ID: openstate <openStateId> [0|1]."
+      "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
     "prop": {
       "description": "Query or modify player properties such as worldlevel, godmode, stamina, energy and battle-pass level. Omit [value] to query; supply it to set. Map unlocks use `unlock map`; OpenStates use `openstate`."
