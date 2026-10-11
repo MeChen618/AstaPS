@@ -19,7 +19,7 @@ import picocli.CommandLine;
  * <p>Every list and completion result is intersected with the actually loaded
  * OpenStateConfigData entries, so obsolete names are never advertised.
  */
-final class OpenStateNames {
+public final class OpenStateNames {
     private static final Map<String, Integer> BY_NAME = new HashMap<>();
     private static final Map<Integer, String> BY_ID = new HashMap<>();
 
@@ -69,14 +69,18 @@ final class OpenStateNames {
         return result;
     }
 
-    /** Completion is resolved lazily, after the server loads the 7.1 resources. */
+    static List<String> suggestions(Set<Integer> availableIds) {
+        return entries(availableIds, null).stream()
+                .filter(entry -> BY_ID.containsKey(entry.id()))
+                .map(Entry::name)
+                .toList();
+    }
+
+    /** Lazily consult the resources that are loaded when completion is requested. */
     public static final class Candidates implements Iterable<String> {
         @Override
         public Iterator<String> iterator() {
-            return entries(GameData.getOpenStateDataMap().keySet(), null).stream()
-                    .filter(entry -> BY_ID.containsKey(entry.id()))
-                    .map(Entry::name)
-                    .iterator();
+            return suggestions(GameData.getOpenStateDataMap().keySet()).iterator();
         }
     }
 
@@ -259,7 +263,8 @@ final class OpenStateNames {
         GUIDE_MUSIC_GAME_V3_TIMELINE_EDIT(2702),
         GUIDE_MUSIC_GAME_V3_SETTING(2703),
         GUIDE_ROBOTGACHA(2704),
-        GUIDE_FRAGILE_RESIN(2800);
+        GUIDE_FRAGILE_RESIN(2800),
+        ADVENTURE_MANUAL_EDUCATION(2801);
         private final int id;
 
         Known(int id) {

@@ -6,6 +6,7 @@ import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.PlayerProgressManager;
+import java.util.List;
 import java.util.Locale;
 import picocli.CommandLine;
 import picocli.CommandLine.Option;
@@ -20,6 +21,13 @@ public final class OpenStateCommand implements CommandHandler {
     private record StateArg(int id) {}
 
     private record StateValue(int value) {}
+
+    public static final class BooleanCandidates implements Iterable<String> {
+        @Override
+        public java.util.Iterator<String> iterator() {
+            return List.of("true", "false").iterator();
+        }
+    }
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
@@ -51,7 +59,8 @@ public final class OpenStateCommand implements CommandHandler {
                 completionCandidates = OpenStateNames.Candidates.class)
         private StateArg state;
 
-        @Parameters(index = "1", arity = "0..1", paramLabel = "[true|false]")
+        @Parameters(index = "1", arity = "0..1", paramLabel = "[true|false]",
+                completionCandidates = BooleanCandidates.class)
         private StateValue value;
 
         private Args(Player sender, Player targetPlayer) {
