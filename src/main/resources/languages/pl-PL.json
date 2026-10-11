@@ -348,8 +348,11 @@
       "level_error": "Błędny poziom przyjaźni.",
       "description": "Ustaw poziom przyjaźni obecnej postaci."
     },
+    "openstate": {
+      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+    },
     "prop": {
-      "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass.\n\tMożliwe nazwy własności: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel | ...\n\tTa komenda ma więcej nazw własności, które może otrzymać. Możesz je wszystkie zobaczyć w pliku \"game/props/PlayerProperty.java\".\n\tW tym pliku, przyjmują one formę \"PROP_XXX_YYY_ZZZ\", ale powinieneś je zapisywać jako \"xxx_yyy_zzz\" jeśli chcesz je użyć w tej komendzie.\nPomiń [value], aby odczytać bieżącą wartość; podaj wartość, aby ją zmienić."
+      "description": "Ustaw pewne własności konta, takie jak tryb nieśmiertelności (godmode) czy też zmiana postępu Battle Pass. Use `unlock map` for map unlocks and `openstate` for OpenStates."
     },
     "setSceneTag": {
       "description": "Ustawia znaczniki sceny specyficzne dla konta. Kontroluje to takie rzeczy jak skały blokujące drzwi, widoczne budynki i inne (zwykle związane z zadaniami) rzeczy, które wpływają na to, co jest widoczne w twoim świecie."

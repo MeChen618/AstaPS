@@ -348,8 +348,11 @@
       "level_error": "Nivel de amistad inválido.",
       "description": "Establece tu nivel de amistad para tu personaje actual."
     },
+    "openstate": {
+      "description": "Query or change an OpenState: openstate <openStateId> [0|1]."
+    },
     "prop": {
-      "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abismo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume\nOmite [value] para consultar el valor actual; indica un valor para cambiarlo."
+      "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abismo o progreso del pase de batalla. Use `unlock map` for map unlocks and `openstate` for OpenStates."
     },
     "setSceneTag": {
       "description": "Establece etiquetas de escena específicas de la cuenta. Esto controla cosas como rocas bloqueando puertas, edificios visibles y otras cosas (normalmente relacionadas con misiones) que afectan a lo que es visible en tu mundo."
