@@ -49,6 +49,11 @@ The clone inherits the source account password and permissions.
 
 ## Canonical command routes
 
+- `reload [all|config|language|gacha|shop|combine]` reloads the existing hot-reload components. Bare `reload` and `reload all` keep the previous order: config, language selection, gacha banners, shops, and reliquary decomposition. Each named subcommand reloads only that component. This does **not** reload Excel resources, active Quest JSON, scene scripts, or existing player/world state; restart for those changes. Language resources are bundled and cached, so `reload language` reselects the configured language rather than re-reading modified JSON from disk.
+- `stop` (alias `shutdown`) exits with success status 0, invoking Grasscutter's shutdown hook: disable plugins, disconnect players/save worlds, terminate the game thread, then drain database writers within a bounded timeout. The existing 1-second fixed game-shutdown wait and 5-second writer deadline are still present; neither guarantees every pending write will finish if the database stalls. A nonzero exit code is reserved for failures.
+- `info` now displays only runtime-derived version/player/server information, with no embedded legacy project attributions or fixed Discord invite. The existing permission-based detailed-information visibility is unchanged.
+
+
 The Picocli command tree keeps one route for each operation:
 
 - `kill` kills the active character; `kill all [sceneId]` kills monsters. The `server.killall` / `server.killall.others` permissions still protect bulk monster removal; no HTTPS keystore password is required. The standalone `killall`, `kill character`, and `suicide` routes are removed.
