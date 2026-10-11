@@ -71,6 +71,16 @@ public final class SensitiveCommandSyntaxTest {
                 "123.123.123.123", List.of()).reason());
         assertEquals("Spam", BanCommand.parseBanArguments(
                 "123.123.123.123", List.of("Spam")).reason());
+        var ipTimed = BanCommand.parseBanArguments("123.123.123.123",
+                List.of("2147483646", "Repeated", "abuse"));
+        assertEquals(2147483646, ipTimed.endTime());
+        assertEquals("Repeated abuse", ipTimed.reason());
+        assertEquals(0, BanCommand.parseBanArguments(
+                "123.123.123.123", List.of()).endTime());
+        assertEquals(0, BanCommand.parseBanArguments(
+                "123.123.123.123", List.of("0", "permanent")).endTime());
+        assertDoesNotThrow(() -> new BanCommand().createCommandLine(null, null)
+                .parseArgs("123.123.123.123", "2147483646", "Repeated", "abuse"));
     }
 
     @Test
@@ -88,7 +98,11 @@ public final class SensitiveCommandSyntaxTest {
         assertThrows(IllegalArgumentException.class,
                 () -> BanCommand.parseBanArguments("@10001", List.of("999999999999999999")));
         assertThrows(IllegalArgumentException.class,
-                () -> BanCommand.parseBanArguments("123.123.123.123", List.of("1800000000")));
+                () -> BanCommand.parseBanArguments("123.123.123.123", List.of("1", "past")));
+        assertThrows(IllegalArgumentException.class,
+                () -> BanCommand.parseBanArguments("123.123.123.123", List.of("-1")));
+        assertThrows(IllegalArgumentException.class,
+                () -> BanCommand.parseBanArguments("123.123.123.123", List.of("999999999999999999")));
     }
 
     @Test
@@ -115,7 +129,20 @@ public final class SensitiveCommandSyntaxTest {
         assertEquals("player", PlayerCommand.class.getAnnotation(Command.class).label());
         assertFalse(PlayerCommand.class.getAnnotation(Command.class).inlineTarget());
         assertTrue(players.getSubcommands().containsKey("list"));
+        assertTrue(players.getSubcommands().containsKey("info"));
         assertDoesNotThrow(() -> players.parseArgs("list"));
+        for (String selector : List.of("@10001", "alice@", "alice@10001")) {
+            assertDoesNotThrow(() -> new PlayerCommand().createCommandLine(null, null)
+                    .parseArgs("info", selector), selector);
+        }
+        for (String invalid : List.of("@0", "@invalid", "alice", "10001", "alice@wrong")) {
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> new PlayerCommand().createCommandLine(null, null)
+                            .parseArgs("info", invalid), invalid);
+        }
+        assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("info"));
+        assertThrows(CommandLine.ParameterException.class,
+                () -> players.parseArgs("info", "@10001", "extra"));
         assertFalse(players.getSubcommands().get("list").getUsageMessage().contains("--uid"));
         assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "--uid"));
         assertThrows(CommandLine.ParameterException.class, () -> players.parseArgs("list", "uid"));
