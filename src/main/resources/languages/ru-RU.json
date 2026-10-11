@@ -348,7 +348,7 @@
       "level_error": "Некорректный уровень дружбы.",
       "description": "Задаёт уровень дружбы для активного персонажа"
     },
-    "setProp": {
+    "prop": {
       "description": "Задаёт свойства аккаунта. С помощью данной команды может быть включен godmode, а также разблокированы этажи Коридора Бездны и изменён прогресс боевого пропуска.\n\tВозможные значения <св-во>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(прод.) см. перечисление (enum) PlayerProperty для остальных возможных значений, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setSceneTag": {

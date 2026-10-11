@@ -348,7 +348,7 @@
       "level_error": "Nivel Fetter nevalabil.",
       "description": "Stabilește nivelul Fetter pentru personajul tău activ curent."
     },
-    "setProp": {
+    "prop": {
       "description": "Stabilește proprietățile la nivel de cont. Lucruri precum godmode pot fi activate în acest fel, precum și schimbarea unor lucuri precum etajul abisului deblocat și progresul battle pass.\n\tValori pentru <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) see PlayerProperty enum for other possible values, of form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setSceneTag": {

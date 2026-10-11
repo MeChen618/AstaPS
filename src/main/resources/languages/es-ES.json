@@ -348,7 +348,7 @@
       "level_error": "Nivel de amistad inválido.",
       "description": "Establece tu nivel de amistad para tu personaje actual."
     },
-    "setProp": {
+    "prop": {
       "description": "Establece propiedades de la cuenta. Cosas como el modo Dios pueden ser establecidos con este comando, además de cambiar cosas como desbloquear pisos del abismo o progreso del pase de batalla.\n\tValores para <prop>: godmode | nostamina | unlimitedenergy | abyss | worldlevel | bplevel\n\t(cont.) Observa PlayerProperty enum para ver otros posibles valores, de la forma PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setSceneTag": {

@@ -348,7 +348,7 @@
       "level_error": "Invalid fetter level.",
       "description": "Sets your fetter level for your current active character"
     },
-    "setProp": {
+    "prop": {
       "description": "Sets accountwide properties. Things like godmode can be enabled this way, as well as changing things like unlocked abyss floor and battle pass progress.\n\tValues for <prop> (case-insensitive): GodMode | UnlimitedStamina | UnlimitedEnergy | TowerLevel | WorldLevel | BPLevel | SetOpenState | UnsetOpenState | UnlockMap\n\t(cont.) see PlayerProperty enum for other possible values, of the form PROP_MAX_SPRING_VOLUME -> max_spring_volume"
     },
     "setSceneTag": {
