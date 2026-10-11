@@ -232,7 +232,7 @@
     },
     "player": {
       "success": "目前總線上人數：%s",
-      "description": "查看所有線上玩家"
+      "description": "查看在線玩家清單及玩家詳情"
     },
     "permission": {
       "add": "已指派權限。",
