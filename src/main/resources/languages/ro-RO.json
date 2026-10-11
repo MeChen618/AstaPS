@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "Mesaj trimis.",
-      "description": "Trimite un mesaj unui jucător în calitate de server. Dacă este utilizat fără țintă, trimite mesajul către toți jucătorii de pe server."
+      "description": "Trimite un mesaj de la server tuturor jucătorilor conectați."
+    },
+    "sayto": {
+      "success": "Mesaj trimis.",
+      "description": "Trimite un mesaj de la server unui jucător conectat."
     },
     "setConst": {
       "range_error": "🇺🇸Constellation level must be between 0 and 6.",

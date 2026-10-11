@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "Messaggio inviato.",
-      "description": "Invia un messaggio a un giocatore come server. Se usato senza bersaglio, invia a tutti i giocatori sul server."
+      "description": "Invia un messaggio del server a tutti i giocatori online."
+    },
+    "sayto": {
+      "success": "Messaggio inviato.",
+      "description": "Invia un messaggio del server a un giocatore online."
     },
     "setConst": {
       "range_error": "Il livello della costellazione deve essere compreso tra 0 e 6.",

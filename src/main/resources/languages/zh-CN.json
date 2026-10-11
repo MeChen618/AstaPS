@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "消息已发送。",
-      "description": "向玩家以服务器的身份发送消息。如果没有指定目标，则向服务器的全部玩家发送"
+      "description": "向所有在线玩家广播服务器消息。"
+    },
+    "sayto": {
+      "success": "消息已发送。",
+      "description": "向指定在线玩家发送服务器消息。"
     },
     "setConst": {
       "range_error": "命之座等级必须在 0-6 之间。",

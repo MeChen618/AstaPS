@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "Message sent.",
-      "description": "Sends a message to a player as the server. If used with no target, sends to all players on the server."
+      "description": "Broadcast a server message to all online players."
+    },
+    "sayto": {
+      "success": "Message sent.",
+      "description": "Send a server message to one online player."
     },
     "setConst": {
       "range_error": "Constellation level must be between 0 and 6.",

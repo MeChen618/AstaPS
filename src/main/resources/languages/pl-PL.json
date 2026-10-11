@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "Wiadomość wysłana.",
-      "description": "Wyślij wiadomość do gracza jako serwer. Jeśli nie określono celu, wysyła do wszystkich graczy na serwerze."
+      "description": "Wyślij wiadomość serwera do wszystkich graczy online."
+    },
+    "sayto": {
+      "success": "Wiadomość wysłana.",
+      "description": "Wyślij wiadomość serwera do wybranego gracza online."
     },
     "setConst": {
       "range_error": "Poziom konstelacji musi wynosić pomiędzy 0 a 6.",

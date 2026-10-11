@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "訊息已傳送。",
-      "description": "向指定玩家傳送訊息。"
+      "description": "向所有線上玩家廣播伺服器訊息。"
+    },
+    "sayto": {
+      "success": "訊息已傳送。",
+      "description": "向指定線上玩家傳送伺服器訊息。"
     },
     "setConst": {
       "range_error": "命之座必須在 0 到 6 之間。",

@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "Mensaje enviado.",
-      "description": "Envía un mensaje a un jugador como servidor. Si se usa sin un objetivo fijado, lo envía a todos los jugadores del servidor."
+      "description": "Envía un mensaje del servidor a todos los jugadores conectados."
+    },
+    "sayto": {
+      "success": "Mensaje enviado.",
+      "description": "Envía un mensaje del servidor a un jugador conectado."
     },
     "setConst": {
       "range_error": "El nivel de constelación debe estar entre 0 y 6.",

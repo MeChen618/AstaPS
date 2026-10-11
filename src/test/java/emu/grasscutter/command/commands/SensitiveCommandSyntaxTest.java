@@ -121,12 +121,14 @@ public final class SensitiveCommandSyntaxTest {
         var map = new CommandMap(false);
         map.registerCommand("announce", new AnnounceCommand());
         map.registerCommand("say", new SayCommand());
+        map.registerCommand("sayto", new SayToCommand());
         map.registerCommand("player", new PlayerCommand());
         map.registerCommand("info", new InfoCommand());
 
         assertSame(map.getHandler("announce"), map.getHandler("a"));
         assertTrue(new AnnounceCommand().createCommandLine(null, null).getSubcommands().containsKey("send"));
         assertNotNull(map.getHandler("say"));
+        assertNotNull(map.getHandler("sayto"));
         assertNotNull(map.getHandler("player"));
         assertNotNull(map.getHandler("info"));
         for (var removed : List.of(

@@ -334,7 +334,11 @@
     },
     "say": {
       "success": "Message envoyé.",
-      "description": "Envoie un message au joueur spécifié en tant que Serveur"
+      "description": "Diffuse un message du serveur à tous les joueurs connectés."
+    },
+    "sayto": {
+      "success": "Message envoyé.",
+      "description": "Envoie un message du serveur à un joueur connecté."
     },
     "setConst": {
       "range_error": "Le niveau de constellation doit être compris entre 1 et 6.",
