@@ -425,7 +425,7 @@
       "success": "傳送 %s 到座標 %s,%s,%s，場景為 %s。",
       "description": "將玩家的位置傳送到你所指定的座標。"
     },
-    "trialAvatarActivity": {
+    "trial": {
       "description": "操縱試用角色活動的功能。這包括切換秘境和獎勵的狀態。",
       "not_found": "未找到試用角色活動玩家數據。也許該活動未被啟用。",
       "invalid_param": "無效的參數。",

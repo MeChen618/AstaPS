@@ -66,6 +66,7 @@ The Picocli command tree keeps one route for each operation:
 - `battlepass` is the canonical battle-pass command with `bp` as its only alias; `give` retains `g`, `name` retains `rename`, and `namecard` retains `card`. Removed `item`, `giveitem`, `nickname`, and `setnamecard` aliases.
 - `coop [guestSelector] <hostSelector>` requires an online host. When the guest is omitted, it uses the current command target (the sender by default in-game); in the console, choose a guest with `target` or provide both selectors. Each explicit selector follows `playerSelector` syntax. Moving another player requires `server.coop.others`.
 
+- `trial change <scheduleId>`, `trial toggledungeon <index|all>` and `trial togglereward <index|all>` replace the old `trialAvatarActivity` / `taa` entrypoints; the existing `player.trialavataractivity` permissions are retained.
 - `dungeon <dungeonId>` is the canonical dungeon command. The former `enter_dungeon` and `enterdungeon` names are removed; the `player.enterdungeon` permission key remains unchanged.
 - Removed aliases: `pb`, `levelbreak`, `killCharacter`, `mattrack`, `unlockwp`, `item`, `giveitem`, `nickname`, `setnamecard`, and `suicide`. The old `el` shortcut is also gone after migrating `extralevel` into `avatar`.
 
