@@ -20,7 +20,7 @@ import picocli.CommandLine.Parameters;
 public final class SayCommand implements CommandHandler {
     record MessageArguments(String message, CommandMap.TargetSelector recipient) {}
 
-    /** A final @a broadcasts; a final player selector whispers. Other words remain message text. */
+    /** A final player selector targets one player. Other words remain message text. */
     static MessageArguments parseMessageArguments(List<String> words) {
         if (words == null || words.isEmpty()) {
             throw new IllegalArgumentException("Specify a message.");
@@ -32,10 +32,6 @@ public final class SayCommand implements CommandHandler {
         if (at >= 0 && explicitSelector) {
             if (words.size() == 1) {
                 throw new IllegalArgumentException("Specify a message before the player selector.");
-            }
-            if (last.equals("@a")) {
-                return new MessageArguments(
-                        String.join(" ", words.subList(0, words.size() - 1)), null);
             }
             var selector = CommandMap.parseExplicitTargetSelector(last);
             return new MessageArguments(
@@ -54,7 +50,7 @@ public final class SayCommand implements CommandHandler {
     @CommandLine.Command(
             name = "say",
             customSynopsis = "say <message...> [selector]",
-            description = "Use @a to broadcast to everyone (also the default). Target one player with @UID, username@, or username@UID.")
+            description = "Omit the final selector to broadcast. Target one player with @UID, username@, or username@UID.")
     private static final class Args implements Runnable {
         private final Player sender;
 
