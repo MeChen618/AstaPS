@@ -1,14 +1,11 @@
 package emu.grasscutter.command.commands;
 
 import emu.grasscutter.command.*;
-import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.tower.TowerLevelRecord;
 import emu.grasscutter.server.packet.send.*;
 import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.IntStream;
 import picocli.CommandLine;
 import picocli.CommandLine.Parameters;
 
@@ -18,7 +15,6 @@ import picocli.CommandLine.Parameters;
         permissionTargeted = "player.setprop.others")
 public final class SetPropCommand implements CommandHandler {
 
-    private static final List<Integer> sceneAreas = IntStream.range(1, 1000).boxed().toList();
     private final Map<String, Prop> props;
 
     private record PropArg(Prop value) {}
@@ -67,18 +63,6 @@ public final class SetPropCommand implements CommandHandler {
         this.props.put("unlimitedenergy", unlimitedenergy);
         this.props.put("ue", unlimitedenergy);
 
-        Prop setopenstate = new Prop("SetOpenstate", PseudoProp.SET_OPENSTATE);
-        this.props.put("setopenstate", setopenstate);
-        this.props.put("so", setopenstate);
-
-        Prop unsetopenstate = new Prop("UnsetOpenstate", PseudoProp.UNSET_OPENSTATE);
-        this.props.put("unsetopenstate", unsetopenstate);
-        this.props.put("uo", unsetopenstate);
-
-        Prop unlockmap = new Prop("UnlockMap", PseudoProp.UNLOCK_MAP);
-        this.props.put("unlockmap", unlockmap);
-        this.props.put("um", unlockmap);
-
         Prop flyable = new Prop("IsFlyable", PlayerProperty.PROP_IS_FLYABLE, PseudoProp.IS_FLYABLE);
         this.props.put("canfly", flyable);
         this.props.put("fly", flyable);
@@ -98,7 +82,14 @@ public final class SetPropCommand implements CommandHandler {
         commandLine.setExpandAtFiles(false);
         commandLine.registerConverter(
                 PropArg.class,
-                value -> new PropArg(props.get(value.toLowerCase(Locale.ROOT))));
+                value -> {
+                    Prop property = props.get(value.toLowerCase(Locale.ROOT));
+                    if (property == null) {
+                        throw new CommandLine.TypeConversionException(
+                                "Unknown player property: " + value);
+                    }
+                    return new PropArg(property);
+                });
         commandLine.registerConverter(
                 ValueArg.class,
                 value -> {
@@ -142,10 +133,6 @@ public final class SetPropCommand implements CommandHandler {
 
         @Override
         public void run() {
-            if (property.value() == null) {
-                CommandOutput.sendMessage(sender, "Unknown player property.");
-                return;
-            }
             Prop prop = property.value();
             if (requestedValue == null) {
                 String current = readProperty(targetPlayer, prop);
@@ -170,9 +157,6 @@ public final class SetPropCommand implements CommandHandler {
                         case TOWER_LEVEL -> setTowerLevel(sender, targetPlayer, value);
                         case GOD_MODE, UNLIMITED_STAMINA, UNLIMITED_ENERGY ->
                                 setBool(sender, targetPlayer, prop.pseudoProp, value);
-                        case SET_OPENSTATE -> setOpenState(targetPlayer, value, 1);
-                        case UNSET_OPENSTATE -> setOpenState(targetPlayer, value, 0);
-                        case UNLOCK_MAP -> unlockMap(targetPlayer, value);
                         case CAN_DIVE -> canDive(targetPlayer, value);
                         default -> targetPlayer.setProperty(prop.prop, value);
                     };
@@ -223,7 +207,6 @@ public final class SetPropCommand implements CommandHandler {
                     player.getProperty(PlayerProperty.PROP_IS_FLYABLE) != 0);
             case CAN_DIVE -> Boolean.toString(
                     player.getProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE) != 0);
-            case SET_OPENSTATE, UNSET_OPENSTATE, UNLOCK_MAP -> null;
             case NONE -> Integer.toString(player.getProperty(prop.prop));
         };
     }
@@ -282,11 +265,6 @@ public final class SetPropCommand implements CommandHandler {
         return true;
     }
 
-    private boolean setOpenState(Player targetPlayer, int state, int value) {
-        targetPlayer.sendPacket(new PacketOpenStateChangeNotify(state, value));
-        return true;
-    }
-
     private boolean canDive(Player targetPlayer, int value) {
         if (value == 0) {
             targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 0);
@@ -300,44 +278,6 @@ public final class SetPropCommand implements CommandHandler {
         return true;
     }
 
-    private boolean unlockMap(Player targetPlayer, int value) {
-        GameData.getScenePointsPerScene()
-                .forEach(
-                        (sceneId, scenePoints) -> {
-                            if (value == -2) {
-                                targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePoints);
-                            } else {
-                                var scenePointsBackup = new CopyOnWriteArrayList<>(scenePoints);
-                                for (var p : scenePointsBackup) {
-                                    var scenePointEentry = GameData.getScenePointEntryById(sceneId, p);
-                                    var pointData = scenePointEentry.getPointData();
-
-                                    boolean forbidSimpleUnlock = pointData.isForbidSimpleUnlock();
-                                    boolean sceneBuildingPointLocked =
-                                            "SceneBuildingPoint".equals(pointData.getType())
-                                                    && !pointData.isUnlocked();
-
-                                    if (forbidSimpleUnlock || sceneBuildingPointLocked)
-                                        scenePointsBackup.remove(p);
-                                }
-
-                                targetPlayer.getUnlockedScenePoints(sceneId).addAll(scenePointsBackup);
-                            }
-
-                            targetPlayer.getUnlockedSceneAreas(sceneId).addAll(sceneAreas);
-
-                            targetPlayer.sendPacket(
-                                    new PacketScenePointUnlockNotify(
-                                            sceneId, targetPlayer.getUnlockedScenePoints(sceneId)));
-                            targetPlayer.sendPacket(
-                                    new PacketSceneAreaUnlockNotify(
-                                            sceneId, targetPlayer.getUnlockedSceneAreas(sceneId)));
-                        });
-
-        targetPlayer.save();
-        return true;
-    }
-
     enum PseudoProp {
         NONE,
         WORLD_LEVEL,
@@ -346,9 +286,6 @@ public final class SetPropCommand implements CommandHandler {
         GOD_MODE,
         UNLIMITED_STAMINA,
         UNLIMITED_ENERGY,
-        SET_OPENSTATE,
-        UNSET_OPENSTATE,
-        UNLOCK_MAP,
         IS_FLYABLE,
         CAN_DIVE
     }

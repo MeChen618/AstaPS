@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 import picocli.CommandLine;
+import picocli.CommandLine.Option;
 
 @Command(
         label = "unlock",
@@ -28,6 +29,7 @@ public final class UnlockAllCommand implements CommandHandler {
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
         var commandLine = new CommandLine(new Root(sender));
         commandLine.addSubcommand("all", new All(sender, targetPlayer));
+        commandLine.addSubcommand("map", new MapUnlock(sender, targetPlayer));
         return commandLine;
     }
 
@@ -73,27 +75,7 @@ public final class UnlockAllCommand implements CommandHandler {
             }
             targetPlayer.sendPacket(new PacketOpenStateUpdateNotify(targetPlayer));
 
-            GameData.getScenePointsPerScene()
-                    .forEach(
-                            (sceneId, scenePoints) -> {
-                                var points = new ArrayList<Integer>();
-                                for (var pointId : scenePoints) {
-                                    var entry = GameData.getScenePointEntryById(sceneId, pointId);
-                                    if (entry == null || entry.getPointData() == null) {
-                                        continue;
-                                    }
-                                    var data = entry.getPointData();
-                                    if (data.isForbidSimpleUnlock()) {
-                                        continue;
-                                    }
-                                    if ("SceneBuildingPoint".equals(data.getType()) && !data.isUnlocked()) {
-                                        continue;
-                                    }
-                                    points.add(pointId);
-                                }
-                                targetPlayer.getUnlockedScenePoints(sceneId).addAll(points);
-                                targetPlayer.getUnlockedSceneAreas(sceneId).addAll(SCENE_AREAS);
-                            });
+            unlockMap(targetPlayer, false);
 
             int currentScene = targetPlayer.getSceneId();
             targetPlayer.sendPacket(
@@ -140,4 +122,54 @@ public final class UnlockAllCommand implements CommandHandler {
             CommandOutput.sendMessage(sender, "Scene tags left unchanged.");
         }
     }
+    /** Add all map points, skipping story-protected ones unless explicitly forced. */
+    static int unlockMap(Player player, boolean force) {
+        int added = 0;
+        for (var scene : GameData.getScenePointsPerScene().entrySet()) {
+            int sceneId = scene.getKey();
+            var unlocked = player.getUnlockedScenePoints(sceneId);
+            for (int pointId : scene.getValue()) {
+                if (!force) {
+                    var entry = GameData.getScenePointEntryById(sceneId, pointId);
+                    if (entry == null || entry.getPointData() == null) continue;
+                    var data = entry.getPointData();
+                    if (data.isForbidSimpleUnlock()) continue;
+                    if ("SceneBuildingPoint".equals(data.getType()) && !data.isUnlocked()) continue;
+                }
+                if (unlocked.add(pointId)) added++;
+            }
+            player.getUnlockedSceneAreas(sceneId).addAll(SCENE_AREAS);
+        }
+        return added;
+    }
+
+    @CommandLine.Command(name = "map")
+    private static final class MapUnlock implements Runnable {
+        private final Player sender;
+        private final Player targetPlayer;
+
+        @Option(names = "--force", description = "Also unlock quest-protected map points")
+        private boolean force;
+
+        private MapUnlock(Player sender, Player targetPlayer) {
+            this.sender = sender;
+            this.targetPlayer = targetPlayer;
+        }
+
+        @Override
+        public void run() {
+            int added = unlockMap(targetPlayer, force);
+            for (int sceneId : GameData.getScenePointsPerScene().keySet()) {
+                targetPlayer.sendPacket(new PacketScenePointUnlockNotify(
+                        sceneId, targetPlayer.getUnlockedScenePoints(sceneId)));
+                targetPlayer.sendPacket(new PacketSceneAreaUnlockNotify(
+                        sceneId, targetPlayer.getUnlockedSceneAreas(sceneId)));
+            }
+            targetPlayer.save();
+            CommandOutput.sendMessage(sender,
+                    "Unlocked " + added + " map point(s)"
+                            + (force ? " (including quest-protected points)." : "."));
+        }
+    }
+
 }
