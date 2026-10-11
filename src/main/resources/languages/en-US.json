@@ -232,7 +232,7 @@
     },
     "player": {
       "success": "There are %s player(s) online:",
-      "description": "List online players"
+      "description": "List online players and inspect player details"
     },
     "permission": {
       "add": "Permission added.",
