@@ -67,14 +67,14 @@ public final class PropCommandTest {
     }
 
     @Test
-    void actionOnlyPropertiesNeverFakeAReadableValue() {
-        for (var action : new SetPropCommand.PseudoProp[] {
-                SetPropCommand.PseudoProp.SET_OPENSTATE,
-                SetPropCommand.PseudoProp.UNSET_OPENSTATE,
-                SetPropCommand.PseudoProp.UNLOCK_MAP
+    void actionOnlyPropertiesCannotBeParsedAsPlayerProperties() {
+        for (String name : new String[] {
+                "setopenstate", "unsetopenstate", "unlockmap", "so", "uo", "um"
         }) {
-            assertNull(SetPropCommand.readProperty(null,
-                    new SetPropCommand.Prop("action", action)));
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> command().parseArgs(name), name);
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> command().parseArgs(name, "1"), name);
         }
     }
 }

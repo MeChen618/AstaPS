@@ -160,6 +160,20 @@ public final class CommandRedundancyTest {
     }
 
     @Test
+    void mapUnlockIsUnderExistingUnlockCommand() {
+        var cli = new UnlockAllCommand().createCommandLine(null, null);
+        assertTrue(cli.getSubcommands().containsKey("map"));
+        assertTrue(cli.getSubcommands().containsKey("all"));
+        org.junit.jupiter.api.Assertions.assertDoesNotThrow(
+                () -> new UnlockAllCommand().createCommandLine(null, null).parseArgs("map"));
+        org.junit.jupiter.api.Assertions.assertDoesNotThrow(
+                () -> new UnlockAllCommand().createCommandLine(null, null).parseArgs("map", "--force"));
+        org.junit.jupiter.api.Assertions.assertThrows(
+                CommandLine.ParameterException.class,
+                () -> new UnlockAllCommand().createCommandLine(null, null).parseArgs("map", "all"));
+    }
+
+    @Test
     void globalUnlockHasAllSubcommandWithLegacyPermissions() {
         var map = new CommandMap(false);
         var handler = new UnlockAllCommand();
