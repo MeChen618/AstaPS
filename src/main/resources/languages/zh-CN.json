@@ -232,7 +232,7 @@
     },
     "player": {
       "success": "目前在线人数：%s",
-      "description": "查看所有玩家"
+      "description": "查看在线玩家列表和玩家详情"
     },
     "permission": {
       "add": "权限已添加。",
