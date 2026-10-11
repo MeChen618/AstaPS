@@ -290,7 +290,10 @@
       "description": "播放过场动画"
     },
     "sound": {
-      "description": "播放声音"
+      "description": "播放音效；sound list [filter] [--page N] 可查看已观察到的音效名。"
+    },
+    "lookup": {
+      "description": "按名称搜索物品、角色和实体；支持 --page N 分页。"
     },
     "reload": {
       "reload_start": "正在重载配置文件和数据...",

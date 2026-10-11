@@ -290,7 +290,10 @@
       "description": "播放過場動畫"
     },
     "sound": {
-      "description": "播放音效"
+      "description": "播放音效；sound list [filter] [--page N] 可查看已觀察到的音效名。"
+    },
+    "lookup": {
+      "description": "依名稱搜尋物品、角色與實體；支援 --page N 分頁。"
     },
     "reload": {
       "reload_start": "正在重新載入設定檔。",

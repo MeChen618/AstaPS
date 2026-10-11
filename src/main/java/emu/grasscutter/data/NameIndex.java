@@ -189,7 +189,7 @@ public final class NameIndex {
         long offset = (long) (page - 1) * pageSize;
         if (offset >= matches.size()) return List.of();
         int start = (int) offset;
-        return matches.subList(start, Math.min(matches.size(), start + pageSize));
+        return matches.subList(start, (int) Math.min(matches.size(), offset + pageSize));
     }
 
     /** Internal names carry underscores; nothing the game prints does. */

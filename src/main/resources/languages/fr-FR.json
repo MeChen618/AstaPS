@@ -290,7 +290,10 @@
       "description": "Joue une cinématique"
     },
     "sound": {
-      "description": "Joue un son"
+      "description": "Play a scene sound. sound list [filter] [--page N] searches observed sound names."
+    },
+    "lookup": {
+      "description": "Search game content names and IDs; paginate with --page N."
     },
     "reload": {
       "reload_start": "Rechargement de la configuration.",

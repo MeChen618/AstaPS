@@ -64,7 +64,7 @@ public final class SoundCommand implements CommandHandler {
         private final Player sender;
         private final Player targetPlayer;
 
-        @Parameters(index = "0", paramLabel = "<sound>",
+        @Parameters(index = "0", arity = "0..1", paramLabel = "<sound>",
                 completionCandidates = SoundRegistry.Candidates.class)
         private String name;
 
@@ -79,6 +79,10 @@ public final class SoundCommand implements CommandHandler {
 
         @Override
         public void run() {
+            if (name == null) {
+                CommandOutput.sendMessage(sender, "Usage: sound <sound> [x y z] or sound list [filter] [--page N]");
+                return;
+            }
             Position playPosition = coordinates.length == 3
                     ? new Position(coordinates[0], coordinates[1], coordinates[2])
                     : targetPlayer.getPosition();

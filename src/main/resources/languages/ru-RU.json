@@ -290,7 +290,10 @@
       "description": "Проигрывает кат-сцену"
     },
     "sound": {
-      "description": "Проигрывает звук"
+      "description": "Play a scene sound. sound list [filter] [--page N] searches observed sound names."
+    },
+    "lookup": {
+      "description": "Search game content names and IDs; paginate with --page N."
     },
     "reload": {
       "reload_start": "Перезагружаем файл конфигурации.",
