@@ -6,6 +6,7 @@ import emu.grasscutter.command.Command;
 import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.PointData;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.PlayerProgressManager;
 import emu.grasscutter.server.packet.send.PacketAvatarDataNotify;
@@ -122,25 +123,52 @@ public final class UnlockAllCommand implements CommandHandler {
             CommandOutput.sendMessage(sender, "Scene tags left unchanged.");
         }
     }
+    enum PointCategory {
+        WAYPOINT, STATUE, OTHER
+    }
+
+    static PointCategory classifyPoint(PointData data) {
+        if (data == null) return PointCategory.OTHER;
+        if (StatueCommand.isStatuePoint(data)) return PointCategory.STATUE;
+        if (WaypointsCommand.isWaypointType(data.getType())) return PointCategory.WAYPOINT;
+        return PointCategory.OTHER;
+    }
+
+    record MapUnlockResult(int waypoints, int statues, int otherPoints, int areaFlags) {
+        int totalPoints() {
+            return waypoints + statues + otherPoints;
+        }
+    }
+
     /** Add all map points, skipping story-protected ones unless explicitly forced. */
-    static int unlockMap(Player player, boolean force) {
-        int added = 0;
+    static MapUnlockResult unlockMap(Player player, boolean force) {
+        int waypoints = 0;
+        int statues = 0;
+        int otherPoints = 0;
+        int areaFlags = 0;
         for (var scene : GameData.getScenePointsPerScene().entrySet()) {
             int sceneId = scene.getKey();
             var unlocked = player.getUnlockedScenePoints(sceneId);
             for (int pointId : scene.getValue()) {
+                var entry = GameData.getScenePointEntryById(sceneId, pointId);
+                PointData data = entry == null ? null : entry.getPointData();
                 if (!force) {
-                    var entry = GameData.getScenePointEntryById(sceneId, pointId);
-                    if (entry == null || entry.getPointData() == null) continue;
-                    var data = entry.getPointData();
-                    if (data.isForbidSimpleUnlock()) continue;
+                    if (data == null || data.isForbidSimpleUnlock()) continue;
                     if ("SceneBuildingPoint".equals(data.getType()) && !data.isUnlocked()) continue;
                 }
-                if (unlocked.add(pointId)) added++;
+                if (!unlocked.add(pointId)) continue;
+                switch (classifyPoint(data)) {
+                    case WAYPOINT -> waypoints++;
+                    case STATUE -> statues++;
+                    case OTHER -> otherPoints++;
+                }
             }
-            player.getUnlockedSceneAreas(sceneId).addAll(SCENE_AREAS);
+            var unlockedAreas = player.getUnlockedSceneAreas(sceneId);
+            for (int area : SCENE_AREAS) {
+                if (unlockedAreas.add(area)) areaFlags++;
+            }
         }
-        return added;
+        return new MapUnlockResult(waypoints, statues, otherPoints, areaFlags);
     }
 
     @CommandLine.Command(name = "map")
@@ -158,7 +186,7 @@ public final class UnlockAllCommand implements CommandHandler {
 
         @Override
         public void run() {
-            int added = unlockMap(targetPlayer, force);
+            MapUnlockResult result = unlockMap(targetPlayer, force);
             for (int sceneId : GameData.getScenePointsPerScene().keySet()) {
                 targetPlayer.sendPacket(new PacketScenePointUnlockNotify(
                         sceneId, targetPlayer.getUnlockedScenePoints(sceneId)));
@@ -167,8 +195,12 @@ public final class UnlockAllCommand implements CommandHandler {
             }
             targetPlayer.save();
             CommandOutput.sendMessage(sender,
-                    "Unlocked " + added + " map point(s)"
-                            + (force ? " (including quest-protected points)." : "."));
+                    "Unlocked " + result.totalPoints() + " new map point(s): "
+                            + result.waypoints() + " waypoint(s), "
+                            + result.statues() + " statue(s), "
+                            + result.otherPoints() + " other point(s); "
+                            + result.areaFlags() + " new area flag(s)."
+                            + (force ? " Quest-protected points included." : ""));
         }
     }
 
