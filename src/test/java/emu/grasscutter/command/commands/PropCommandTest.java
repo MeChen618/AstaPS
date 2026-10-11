@@ -13,7 +13,7 @@ public final class PropCommandTest {
     }
 
     @Test
-    void propGroupReplacesLegacyEntrypointWithoutChangingPermissions() {
+    void minecraftStylePropIsTheSoleEntrypointWithExistingPermissions() {
         var map = new CommandMap(false);
         var handler = new SetPropCommand();
         map.registerCommand("prop", handler);
@@ -31,24 +31,50 @@ public final class PropCommandTest {
     }
 
     @Test
-    void onlyNestedSetAcceptsPlayerPropertyChanges() {
-        var commandLine = command();
-        assertEquals("prop", commandLine.getCommandName());
-        assertTrue(commandLine.getSubcommands().containsKey("set"));
-        assertTrue(commandLine.getSubcommands().get("set").getUsageMessage()
-                .contains("prop set <prop> <value>"));
+    void missingValueQueriesAndSuppliedValueSets() {
+        var cli = command();
+        assertEquals("prop", cli.getCommandName());
+        assertFalse(cli.getSubcommands().containsKey("set"));
+        assertTrue(cli.getUsageMessage().contains("property"));
+        assertTrue(cli.getUsageMessage().contains("value"));
 
-        assertDoesNotThrow(() -> command().parseArgs("set", "worldlevel", "8"));
-        assertDoesNotThrow(() -> command().parseArgs("set", "godmode", "on"));
-        assertDoesNotThrow(() -> command().parseArgs("set", "godmode", "toggle"));
-        assertDoesNotThrow(() -> command().parseArgs("set", "unlockmap", "all"));
-        assertDoesNotThrow(() -> command().parseArgs("set", "bp", "50"));
+        for (String[] args : new String[][] {
+                {"worldlevel"}, {"godmode"}, {"bplevel"}, {"unlockmap"},
+                {"player_resin"}, {"dive"}, {"abyss"}
+        }) {
+            assertDoesNotThrow(() -> command().parseArgs(args), String.join(" ", args));
+        }
 
-        assertThrows(CommandLine.ParameterException.class,
-                () -> command().parseArgs("worldlevel", "8"));
-        assertThrows(CommandLine.ParameterException.class,
-                () -> command().parseArgs("set", "worldlevel"));
-        assertThrows(CommandLine.ParameterException.class,
-                () -> command().parseArgs("set", "worldlevel", "8", "extra"));
+        for (String[] args : new String[][] {
+                {"worldlevel", "8"}, {"godmode", "on"},
+                {"godmode", "toggle"}, {"unlockmap", "all"},
+                {"bp", "50"}, {"dive", "off"}, {"player_resin", "160"}
+        }) {
+            assertDoesNotThrow(() -> command().parseArgs(args), String.join(" ", args));
+        }
+    }
+
+    @Test
+    void removedNestedSetAndInvalidArityAreRejected() {
+        for (String[] args : new String[][] {
+                {}, {"set", "worldlevel", "8"},
+                {"worldlevel", "8", "extra"},
+                {"setprop", "godmode", "on"}
+        }) {
+            assertThrows(CommandLine.ParameterException.class,
+                    () -> command().parseArgs(args), String.join(" ", args));
+        }
+    }
+
+    @Test
+    void actionOnlyPropertiesNeverFakeAReadableValue() {
+        for (var action : new SetPropCommand.PseudoProp[] {
+                SetPropCommand.PseudoProp.SET_OPENSTATE,
+                SetPropCommand.PseudoProp.UNSET_OPENSTATE,
+                SetPropCommand.PseudoProp.UNLOCK_MAP
+        }) {
+            assertNull(SetPropCommand.readProperty(null,
+                    new SetPropCommand.Prop("action", action)));
+        }
     }
 }
