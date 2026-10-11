@@ -42,9 +42,13 @@ public final class OpenStateCommand implements CommandHandler {
                 return;
             }
             if (value == null) {
-                CommandOutput.sendMessage(sender,
-                        "Open state " + id + " = "
-                                + targetPlayer.getProgressManager().getOpenState(id));
+                // Follow the same precedence as the login OpenStateUpdateNotify snapshot.
+                int current = targetPlayer.getOpenStates().containsKey(id)
+                        ? targetPlayer.getProgressManager().getOpenState(id)
+                        : emu.grasscutter.game.player.PlayerProgressManager.DEFAULT_OPEN_STATES.contains(id)
+                                ? 1
+                                : 0;
+                CommandOutput.sendMessage(sender, "Open state " + id + " = " + current);
                 return;
             }
             if (value != 0 && value != 1) {
