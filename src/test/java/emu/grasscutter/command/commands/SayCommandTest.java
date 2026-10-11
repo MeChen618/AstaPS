@@ -14,6 +14,10 @@ public final class SayCommandTest {
         assertEquals("hello world", message.message());
         assertNull(message.recipient());
 
+        var all = SayCommand.parseMessageArguments(List.of("hello", "everyone", "@a"));
+        assertEquals("hello everyone", all.message());
+        assertNull(all.recipient());
+
         var mention = SayCommand.parseMessageArguments(List.of("hello", "alice@example.com"));
         assertEquals("hello alice@example.com", mention.message());
         assertNull(mention.recipient());
@@ -46,6 +50,8 @@ public final class SayCommandTest {
                 () -> SayCommand.parseMessageArguments(List.of()));
         assertThrows(IllegalArgumentException.class,
                 () -> SayCommand.parseMessageArguments(List.of("@10001")));
+        assertThrows(IllegalArgumentException.class,
+                () -> SayCommand.parseMessageArguments(List.of("@a")));
         for (String invalid : List.of("@0", "@invalid", "alice@0", "alice@999999999999999")) {
             assertThrows(IllegalArgumentException.class,
                     () -> SayCommand.parseMessageArguments(List.of("hi", invalid)), invalid);
@@ -58,6 +64,7 @@ public final class SayCommandTest {
         var cli = command.createCommandLine(null, null);
         assertTrue(cli.getUsageMessage().contains("say <message...> [selector]"));
         assertDoesNotThrow(() -> cli.parseArgs("hello", "world"));
+        assertDoesNotThrow(() -> cli.parseArgs("hello", "@a"));
         assertDoesNotThrow(() -> cli.parseArgs("hello", "@10001"));
         assertDoesNotThrow(() -> cli.parseArgs("hello", "alice@10001"));
         assertThrows(CommandLine.ParameterException.class, () -> cli.parseArgs());
