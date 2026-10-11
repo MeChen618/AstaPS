@@ -94,15 +94,12 @@ public final class SetPropCommand implements CommandHandler {
 
     @Override
     public CommandLine createCommandLine(Player sender, Player targetPlayer) {
-        var commandLine = new CommandLine(new Root(sender));
+        var commandLine = new CommandLine(new Args(sender, targetPlayer));
         commandLine.setExpandAtFiles(false);
-        commandLine.addSubcommand("set", new SetPropArgs(sender, targetPlayer));
-        CommandHandler.registerConverterTree(
-                commandLine,
+        commandLine.registerConverter(
                 PropArg.class,
                 value -> new PropArg(props.get(value.toLowerCase(Locale.ROOT))));
-        CommandHandler.registerConverterTree(
-                commandLine,
+        commandLine.registerConverter(
                 ValueArg.class,
                 value -> {
                     String normalized = value.toLowerCase(Locale.ROOT);
@@ -125,32 +122,20 @@ public final class SetPropCommand implements CommandHandler {
         return commandLine;
     }
 
-    @picocli.CommandLine.Command(name = "prop")
-    private final class Root implements Runnable {
-        private final Player sender;
-
-        private Root(Player sender) {
-            this.sender = sender;
-        }
-
-        @Override
-        public void run() {
-            SetPropCommand.this.sendUsageMessage(sender);
-        }
-    }
-
-    @picocli.CommandLine.Command(name = "set")
-    private final class SetPropArgs implements Runnable {
+    @picocli.CommandLine.Command(
+            name = "prop",
+            description = "Query a player property, or set it by supplying a value.")
+    private final class Args implements Runnable {
         private final Player sender;
         private final Player targetPlayer;
 
-        @Parameters(index = "0", paramLabel = "<prop>")
+        @Parameters(index = "0", paramLabel = "<property>")
         private PropArg property;
 
-        @Parameters(index = "1", paramLabel = "<value>")
+        @Parameters(index = "1", arity = "0..1", paramLabel = "[value]")
         private ValueArg requestedValue;
 
-        private SetPropArgs(Player sender, Player targetPlayer) {
+        private Args(Player sender, Player targetPlayer) {
             this.sender = sender;
             this.targetPlayer = targetPlayer;
         }
@@ -161,12 +146,22 @@ public final class SetPropCommand implements CommandHandler {
                 CommandOutput.sendMessage(sender, "Unknown player property.");
                 return;
             }
+            Prop prop = property.value();
+            if (requestedValue == null) {
+                String current = readProperty(targetPlayer, prop);
+                if (current == null) {
+                    CommandOutput.sendMessage(sender,
+                            "Property " + prop.name + " does not have a readable value.");
+                } else {
+                    CommandOutput.sendMessage(sender, prop.name + " = " + current);
+                }
+                return;
+            }
             if (requestedValue.value() == null) {
                 CommandOutput.sendTranslatedMessage(sender, "commands.execution.argument_error");
                 return;
             }
 
-            Prop prop = property.value();
             int value = requestedValue.value();
             boolean success =
                     switch (prop.pseudoProp) {
@@ -202,6 +197,35 @@ public final class SetPropCommand implements CommandHandler {
                         sender, "commands.generic.invalid.value_between", prop.name, min, max);
             }
         }
+    }
+
+    /** Returns the live value behind each readable property; action-only operations return null. */
+    static String readProperty(Player player, Prop prop) {
+        return switch (prop.pseudoProp) {
+            case WORLD_LEVEL -> Integer.toString(player.getWorldLevel());
+            case BP_LEVEL -> player.getBattlePassManager() == null
+                    ? null : Integer.toString(player.getBattlePassManager().getLevel());
+            case TOWER_LEVEL -> {
+                var floorIds = player.getServer().getTowerSystem().getAllFloors();
+                var records = player.getTowerManager().getRecordMap();
+                int unlocked = 0;
+                for (int id : floorIds) {
+                    if (!records.containsKey(id)) break;
+                    unlocked++;
+                }
+                yield Integer.toString(unlocked);
+            }
+            case GOD_MODE -> Boolean.toString(player.isInGodMode());
+            case UNLIMITED_STAMINA -> Boolean.toString(player.isUnlimitedStamina());
+            case UNLIMITED_ENERGY ->
+                    Boolean.toString(!player.getEnergyManager().isEnergyUsage());
+            case IS_FLYABLE -> Boolean.toString(
+                    player.getProperty(PlayerProperty.PROP_IS_FLYABLE) != 0);
+            case CAN_DIVE -> Boolean.toString(
+                    player.getProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE) != 0);
+            case SET_OPENSTATE, UNSET_OPENSTATE, UNLOCK_MAP -> null;
+            case NONE -> Integer.toString(player.getProperty(prop.prop));
+        };
     }
 
     private boolean setTowerLevel(Player sender, Player targetPlayer, int topFloor) {
