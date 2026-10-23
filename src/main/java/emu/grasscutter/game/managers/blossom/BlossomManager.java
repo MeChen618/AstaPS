@@ -65,7 +65,9 @@ public class BlossomManager {
                     .filter(entity -> entity.getPosition().computeDistance(spawn.getPos())
                             <= OVERLAP_RANGE)
                     .findFirst().orElse(null);
+            EntityGadget ready;
             if (existing != null) {
+                ready = existing;
                 // An already-loaded script gadget at the same position owns this outcrop.
                 // Only adopt metadata when it identifies the exact authored source.
                 if (existing.getGroupId() != spawn.getGroup().getGroupId()
@@ -85,16 +87,23 @@ public class BlossomManager {
                 gadget.setConfigId(spawn.getConfigId());
                 gadget.setSpawnEntry(spawn);
                 if (spawn.getGadgetState() > 0) gadget.setState(spawn.getGadgetState());
+                ready = gadget;
                 initBlossom(gadget);
                 scene.addEntity(gadget);
             }
             scriptedSpawned.add(spawn);
             scene.getSpawnedEntities().add(spawn);
+            var published = ready.toProto().getGadget();
             Grasscutter.getLogger().info(
-                    "Ley-line worktop ready scene={} group={} config={} gadget={} source={}",
+                    "Ley-line worktop ready scene={} group={} config={} gadget={} source={} "
+                            + "entity={} state={} content={} options={} enabled={} meta={} live={}",
                     scene.getId(), spawn.getGroup().getGroupId(),
                     spawn.getConfigId(), spawn.getGadgetId(),
-                    existing == null ? "native" : "script");
+                    existing == null ? "native" : "script",
+                    ready.getId(), ready.getState(),
+                    ready.getContent() == null ? "null" : ready.getContent().getClass().getSimpleName(),
+                    published.getWorktop().getOptionList(), published.getIsEnableInteract(),
+                    ready.getMetaGadget() != null, scene.getEntityById(ready.getId()) == ready);
         }
     }
 
@@ -318,6 +327,18 @@ public class BlossomManager {
 
     /** Track ability summons at creation, including ones removed before the next world tick. */
     public void onSceneEntityCreated(GameEntity entity) {
+        if (entity instanceof EntityGadget gadget
+                && BlossomType.valueOf(gadget.getGadgetId()) != null) {
+            var published = gadget.toProto().getGadget();
+            Grasscutter.getLogger().info(
+                    "Ley-line entity registered scene={} entity={} group={} config={} gadget={} "
+                            + "state={} content={} options={} enabled={} meta={} spawnEntry={}",
+                    scene.getId(), gadget.getId(), gadget.getGroupId(), gadget.getConfigId(),
+                    gadget.getGadgetId(), gadget.getState(),
+                    gadget.getContent() == null ? "null" : gadget.getContent().getClass().getSimpleName(),
+                    published.getWorktop().getOptionList(), published.getIsEnableInteract(),
+                    gadget.getMetaGadget() != null, gadget.getSpawnEntry() != null);
+        }
         synchronized (blossomActivities) {
             for (var activity : blossomActivities) activity.onSceneEntityCreated(entity);
         }

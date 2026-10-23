@@ -1,6 +1,8 @@
 package emu.grasscutter.server.packet.recv;
 
+import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.dungeons.fallback.MissingDomainFallbackManager;
+import emu.grasscutter.game.managers.blossom.BlossomType;
 import emu.grasscutter.game.entity.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.packet.*;
@@ -19,6 +21,25 @@ public class HandlerSelectWorktopOptionReq extends PacketHandler {
 
         try {
             GameEntity entity = session.getPlayer().getScene().getEntityById(req.getGadgetEntityId());
+            EntityGadget outcrop = entity instanceof EntityGadget gadget ? gadget : null;
+            if (req.getOptionId() == 187
+                    || (outcrop != null && BlossomType.valueOf(outcrop.getGadgetId()) != null)) {
+                var worktop = outcrop != null
+                                && outcrop.getContent() instanceof emu.grasscutter.game.entity.gadget.GadgetWorktop wt
+                        ? wt : null;
+                Grasscutter.getLogger().info(
+                        "Ley-line option request uid={} entity={} option={} present={} gadget={} "
+                                + "group={} config={} state={} content={} options={} enabled={}",
+                        session.getPlayer().getUid(), req.getGadgetEntityId(), req.getOptionId(),
+                        outcrop != null, outcrop == null ? 0 : outcrop.getGadgetId(),
+                        outcrop == null ? 0 : outcrop.getGroupId(),
+                        outcrop == null ? 0 : outcrop.getConfigId(),
+                        outcrop == null ? 0 : outcrop.getState(),
+                        outcrop == null || outcrop.getContent() == null
+                                ? "null" : outcrop.getContent().getClass().getSimpleName(),
+                        worktop == null ? java.util.Set.of() : worktop.getWorktopOptions(),
+                        outcrop != null && outcrop.toProto().getGadget().getIsEnableInteract());
+            }
 
             if (!(entity instanceof EntityGadget)) {
                 return;
