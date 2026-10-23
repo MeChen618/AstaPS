@@ -41,6 +41,8 @@ public class BlossomManager {
     private Set<Integer> cachedUnlockedAreas = Set.of();
     private int activeSetRevision;
     private boolean mapMarkersDirty;
+    private long nextScriptedSpawnCheckNanos;
+    private static final long SCRIPTED_SPAWN_CHECK_INTERVAL_NANOS = 1_000_000_000L;
     private static final double SCRIPTED_SPAWN_RANGE = 400;
     private static final float OVERLAP_RANGE = 2.5f;
 
@@ -88,6 +90,11 @@ public class BlossomManager {
             }
             scriptedSpawned.add(spawn);
             scene.getSpawnedEntities().add(spawn);
+            Grasscutter.getLogger().info(
+                    "Ley-line worktop ready scene={} group={} config={} gadget={} source={}",
+                    scene.getId(), spawn.getGroup().getGroupId(),
+                    spawn.getConfigId(), spawn.getGadgetId(),
+                    existing == null ? "native" : "script");
         }
     }
 
@@ -318,9 +325,19 @@ public class BlossomManager {
 
     public void onTick() {
         activeScriptedSpawns();
-        // Scene.checkGroups() already loads nearby authored outcrops in script mode.
-        // The normal spawn-grid path needs the same loader.
-        if (!scene.getScriptManager().isInit()) ensureScriptedSpawns();
+        // Scene.checkGroups() only loads indexed Lua groups. Native BlossomGroups can
+        // reference a valid Lua gadget whose group is absent from the block index.
+        // Spawn these worktops near players in script mode too, or the map shows an
+        // outcrop marker without a usable challenge gadget.
+        if (!scene.getScriptManager().isInit()) {
+            ensureScriptedSpawns();
+        } else {
+            long now = System.nanoTime();
+            if (now >= nextScriptedSpawnCheckNanos) {
+                nextScriptedSpawnCheckNanos = now + SCRIPTED_SPAWN_CHECK_INTERVAL_NANOS;
+                ensureScriptedSpawns();
+            }
+        }
         if (mapMarkersDirty) notifyIcon();
         synchronized (blossomActivities) {
             var it = blossomActivities.iterator();
