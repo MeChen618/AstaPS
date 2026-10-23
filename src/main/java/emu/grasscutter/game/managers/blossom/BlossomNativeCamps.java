@@ -26,6 +26,8 @@ final class BlossomNativeCamps {
     private final Map<String, Source> resolved = new HashMap<>();
     private final Map<SpawnDataEntry, Source> byEntry = new IdentityHashMap<>();
     private final Set<Integer> unresolvedGroups = new HashSet<>();
+    private final Set<String> unavailable = new HashSet<>();
+    private final Set<Key> exhausted = new HashSet<>();
 
     static int initialId(int cityId, BlossomType type, List<BlossomCampData> eligible) {
         if (cityId == 1) {
@@ -37,6 +39,29 @@ final class BlossomNativeCamps {
         // No native starting-node selection has yet been recovered for other cities.
         // Choose distinct authored groups deterministically until that rule is proven.
         return eligible.get(type == BlossomType.BLUE && eligible.size() > 1 ? 1 : 0).getId();
+    }
+
+    /**
+     * Try the authored next-camp links first, then other eligible camps in the same city.
+     * Each candidate still requires a real Lua gadget matching the requested blossom type.
+     */
+    static List<BlossomCampData> candidateOrder(
+            Collection<Integer> startIds, List<BlossomCampData> eligible) {
+        var camps = new TreeMap<Integer, BlossomCampData>();
+        for (var camp : eligible) camps.put(camp.getId(), camp);
+        var queue = new ArrayDeque<>(startIds);
+        var visited = new LinkedHashSet<Integer>();
+        while (!queue.isEmpty()) {
+            int id = queue.removeFirst();
+            if (!visited.add(id)) continue;
+            var camp = camps.get(id);
+            if (camp == null || camp.getNextCampIdVec() == null) continue;
+            for (int next : camp.getNextCampIdVec()) {
+                if (camps.containsKey(next) && !visited.contains(next)) queue.addLast(next);
+            }
+        }
+        visited.addAll(camps.keySet());
+        return visited.stream().map(camps::get).filter(Objects::nonNull).toList();
     }
 
     List<SpawnDataEntry> select(Scene scene, int rank, Collection<Integer> unlockedAreas) {
@@ -71,24 +96,25 @@ final class BlossomNativeCamps {
             if (eligible.isEmpty()) continue;
 
             Key key = new Key(city, kind);
-            int initial = initialId(city, kind, eligible);
-            int campId = activeIds.computeIfAbsent(key, ignored -> initial);
-            BlossomCampData camp = rows.get(campId);
-            if (camp == null || camp.getCityId() != city || camp.getLimitLevel() > rank) {
-                campId = initial;
-                activeIds.put(key, initial);
-                camp = rows.get(campId);
+            if (exhausted.contains(key)) continue;
+            int preferred = activeIds.computeIfAbsent(key,
+                    ignored -> initialId(city, kind, eligible));
+            for (var camp : candidateOrder(List.of(preferred), eligible)) {
+                var source = resolve(scene, camp, kind, refresh.getId());
+                if (source == null) continue;
+                if (selected.stream().anyMatch(existing ->
+                        existing.getPos().computeDistance(source.entry().getPos()) < 2.5f)) {
+                    // Move to another authored site if its worktop overlaps an active flower.
+                    continue;
+                }
+                if (activeIds.put(key, camp.getId()) != camp.getId()) {
+                    Grasscutter.getLogger().info(
+                            "Ley-line available camp selected city={} kind={} camp={}",
+                            city, kind, camp.getId());
+                }
+                selected.add(source.entry());
+                break;
             }
-            if (camp == null) continue;
-            var source = resolve(scene, camp, kind, refresh.getId());
-            if (source == null) continue;
-            if (selected.stream().anyMatch(existing ->
-                    existing.getPos().computeDistance(source.entry().getPos()) < 2.5f)) {
-                // A city can have one of each type, but never stack two interactive
-                // gadgets at the same physical coordinates.
-                continue;
-            }
-            selected.add(source.entry());
         }
         return selected;
     }
@@ -97,6 +123,7 @@ final class BlossomNativeCamps {
         String key = camp.getId() + ":" + kind.name();
         Source existing = resolved.get(key);
         if (existing != null) return existing;
+        if (unavailable.contains(key)) return null;
         for (int groupId : camp.getNewGroupVec()) {
             if (unresolvedGroups.contains(groupId)) continue;
             var group = SceneGroup.of(groupId).load(scene.getId());
@@ -128,6 +155,7 @@ final class BlossomNativeCamps {
             byEntry.put(source, result);
             return result;
         }
+        unavailable.add(key);
         return null;
     }
 
@@ -145,37 +173,41 @@ final class BlossomNativeCamps {
         return source == null ? 0 : source.refreshId();
     }
 
-    boolean advance(SpawnDataEntry entry, int rank) {
+    boolean advance(Scene scene, SpawnDataEntry entry, int rank) {
         Source source = byEntry.get(entry);
         if (source == null) return false;
         var camp = GameData.getBlossomCampDataMap().get(source.campId());
-        var next = camp.getNextCampIdVec();
-        int nextId = 0;
-        if (next != null) {
-            for (int candidate : next) {
-                var row = GameData.getBlossomCampDataMap().get(candidate);
-                if (row != null && row.getCityId() == camp.getCityId()
-                        && row.getLimitLevel() <= rank
-                        && row.getNewGroupVec() != null && !row.getNewGroupVec().isEmpty()) {
-                    nextId = candidate;
-                    break;
-                }
-            }
-        }
-        if (nextId == 0) {
-            var eligible = GameData.getBlossomCampDataMap().values().stream()
-                    .filter(row -> row.getCityId() == camp.getCityId()
-                            && row.getLimitLevel() <= rank
-                            && row.getSectionId() == camp.getSectionId())
-                    .sorted(Comparator.comparingInt(BlossomCampData::getId))
-                    .toList();
-            if (eligible.isEmpty()) return false;
-            nextId = eligible.get(0).getId();
-        }
         var kind = BlossomType.valueOf(entry.getGadgetId());
-        activeIds.put(new Key(camp.getCityId(), kind), nextId);
-        Grasscutter.getLogger().info("Ley-line original camp advanced city={} kind={} {} -> {}",
-                camp.getCityId(), kind, source.campId(), nextId);
+        if (kind == null) return false;
+        var key = new Key(camp.getCityId(), kind);
+        var eligible = GameData.getBlossomCampDataMap().values().stream()
+                .filter(row -> row.getCityId() == camp.getCityId()
+                        && row.getLimitLevel() <= rank
+                        && row.getNewGroupVec() != null && !row.getNewGroupVec().isEmpty()
+                        && row.getRefreshTypeVec() != null
+                        && (row.getRefreshTypeVec().contains(1)
+                            || row.getRefreshTypeVec().contains(3)))
+                .sorted(Comparator.comparingInt(BlossomCampData::getId))
+                .toList();
+        var nextIds = camp.getNextCampIdVec() == null
+                ? List.<Integer>of() : camp.getNextCampIdVec();
+        for (var candidate : candidateOrder(nextIds, eligible)) {
+            if (candidate.getId() == source.campId()) continue;
+            var nextSource = resolve(scene, candidate, kind, source.refreshId());
+            if (nextSource == null) continue;
+            activeIds.put(key, candidate.getId());
+            Grasscutter.getLogger().info(
+                    "Ley-line original camp advanced city={} kind={} {} -> {}",
+                    camp.getCityId(), kind, source.campId(), candidate.getId());
+            return true;
+        }
+        // A city with only one usable source must not endlessly regenerate that outcrop
+        // after the player claims it. A later daily-refresh implementation can reset this.
+        exhausted.add(key);
+        activeIds.remove(key);
+        Grasscutter.getLogger().info(
+                "Ley-line city exhausted city={} kind={} source={} (no other Lua worktop)",
+                camp.getCityId(), kind, source.campId());
         return true;
     }
 }

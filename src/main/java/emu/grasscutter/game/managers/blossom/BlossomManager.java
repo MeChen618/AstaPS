@@ -204,15 +204,9 @@ public class BlossomManager {
         // Native BlossomGroups supplies many more locations than the imported grid:
         // its newGroupVec resolves directly to original Scene Lua gadgets.
         var nativeSelected = nativeCamps.select(scene, rank, unlocked);
-        var selected = nativeSelected.isEmpty()
-                ? (areaIndex.isEmpty() ? List.<SpawnDataEntry>of()
-                    : selectActiveSpawns(authoredCandidates().stream()
-                            .filter(entry -> !blossomConsumed.contains(entry)).toList(),
-                            rank, unlocked,
-                            GameData.getCityDataMap().values(),
-                            GameData.getBlossomRefreshExcelConfigDataMap().values(),
-                            entry -> areaIndex.level1AreaAt(entry.getPos().getX(), entry.getPos().getZ())))
-                : nativeSelected;
+        // Never fabricate a replacement location from the legacy spawn grid when
+        // the authoritative camp source is absent.
+        var selected = nativeSelected;
 
         activeSpawnCache = selected;
         cachedAdventureRank = rank;
@@ -529,7 +523,7 @@ public class BlossomManager {
                     // mark null as consumed, or later /spawn outcrops all get skipped.
                     var source = active.getGadget().getSpawnEntry();
                     if (source != null) {
-                        if (nativeCamps.advance(source, scene.getWorld().getHost().getLevel())) {
+                        if (nativeCamps.advance(scene, source, scene.getWorld().getHost().getLevel())) {
                             activeSpawnCache = null;
                             activeSetRevision++;
                         } else {

@@ -39,6 +39,37 @@ final class BlossomScriptedSpawnTest {
     }
 
     @Test
+    void unavailableNativeCampTraversesNextLinksBeforeFallback() {
+        var a = nativeCamp(504014001, 504014002);
+        var b = nativeCamp(504014002, 504014003);
+        var c = nativeCamp(504014003, 504014004);
+        var d = nativeCamp(504014004);
+        var ordered = BlossomNativeCamps.candidateOrder(
+                List.of(504014001), List.of(d, b, a, c));
+        assertEquals(List.of(504014001, 504014002, 504014003, 504014004),
+                ordered.stream().map(emu.grasscutter.data.excels.BlossomCampData::getId).toList());
+    }
+
+    @Test
+    void unreachableCandidatesRemainAvailableAfterGraphTraversal() {
+        var a = nativeCamp(808001001, 808001002);
+        var b = nativeCamp(808001002);
+        var available = nativeCamp(808003001);
+        assertEquals(List.of(808001001, 808001002, 808003001),
+                BlossomNativeCamps.candidateOrder(
+                        List.of(808001001), List.of(available, b, a))
+                    .stream().map(emu.grasscutter.data.excels.BlossomCampData::getId).toList());
+    }
+
+    private static emu.grasscutter.data.excels.BlossomCampData nativeCamp(
+            int id, int... next) {
+        return JsonUtils.decode(
+                "{\"id\":" + id + ",\"nextCampIdVec\":"
+                        + java.util.Arrays.toString(next) + "}",
+                emu.grasscutter.data.excels.BlossomCampData.class);
+    }
+
+    @Test
     void encounterCompletesFromKillScoreEvenWithLingeringMonsterReferences() {
         assertFalse(BlossomActivity.encounterComplete(8, 4, 0, 4));
         assertFalse(BlossomActivity.encounterComplete(8, 8, 1, 7));
