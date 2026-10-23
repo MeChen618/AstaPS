@@ -102,7 +102,7 @@ public class BlossomManager {
                     existing == null ? "native" : "script",
                     ready.getId(), ready.getState(),
                     ready.getContent() == null ? "null" : ready.getContent().getClass().getSimpleName(),
-                    published.getWorktop().getOptionList(), published.getIsEnableInteract(),
+                    published.getWorktop().getOptionListList(), published.getIsEnableInteract(),
                     ready.getMetaGadget() != null, scene.getEntityById(ready.getId()) == ready);
         }
     }
@@ -336,7 +336,7 @@ public class BlossomManager {
                     scene.getId(), gadget.getId(), gadget.getGroupId(), gadget.getConfigId(),
                     gadget.getGadgetId(), gadget.getState(),
                     gadget.getContent() == null ? "null" : gadget.getContent().getClass().getSimpleName(),
-                    published.getWorktop().getOptionList(), published.getIsEnableInteract(),
+                    published.getWorktop().getOptionListList(), published.getIsEnableInteract(),
                     gadget.getMetaGadget() != null, gadget.getSpawnEntry() != null);
         }
         synchronized (blossomActivities) {

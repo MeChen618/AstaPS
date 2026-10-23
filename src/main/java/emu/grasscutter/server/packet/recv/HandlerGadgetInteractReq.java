@@ -39,7 +39,7 @@ public class HandlerGadgetInteractReq extends PacketHandler {
                     session.getPlayer().getUid(), outcrop.getId(), req.getOpType(),
                     outcrop.getGadgetId(), outcrop.getState(),
                     outcrop.getContent() == null ? "null" : outcrop.getContent().getClass().getSimpleName(),
-                    published.getWorktop().getOptionList(), published.getIsEnableInteract());
+                    published.getWorktop().getOptionListList(), published.getIsEnableInteract());
         }
         if (entity instanceof emu.grasscutter.game.entity.EntityGadget gadget
                 && (gadget.getContent() instanceof emu.grasscutter.game.entity.gadget.GadgetLiyueDustBell
