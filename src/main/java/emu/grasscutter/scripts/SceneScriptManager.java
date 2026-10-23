@@ -1279,9 +1279,20 @@ public class SceneScriptManager {
 
     public EntityGadget createGadget(int groupId, int blockId, SceneGadget g, int state) {
         if (!emu.grasscutter.game.dailytask.DailyTaskGroupLifecycle.maySpawn(this, groupId)) return null;
-        if (scene.getSceneType() == SceneType.SCENE_WORLD
-                && !scene.getBlossomManager().isActiveAuthoredGadget(groupId, g.config_id, g.gadget_id))
-            return null;
+        boolean blossom = scene.getSceneType() == SceneType.SCENE_WORLD
+                && emu.grasscutter.game.managers.blossom.BlossomType.valueOf(g.gadget_id) != null;
+        if (blossom) {
+            if (!scene.getBlossomManager()
+                    .isActiveAuthoredGadget(groupId, g.config_id, g.gadget_id)) return null;
+            // The native-camp loader may already have created this exact Lua worktop.
+            // Reuse its identity instead of replacing its interactive entity on group load.
+            if (scene.getEntityByConfigId(g.config_id, groupId) instanceof EntityGadget existing
+                    && existing.getGadgetId() == g.gadget_id) {
+                existing.setBlockId(blockId);
+                existing.setMetaGadget(g);
+                return null;
+            }
+        }
         if (g.isOneoff) {
             var hasEntity =
                     getScene().getEntities().values().stream()
@@ -1309,6 +1320,9 @@ public class SceneScriptManager {
         entity.setRouteConfig(BaseRoute.fromSceneGadget(g));
         entity.setMetaGadget(g);
         entity.buildContent();
+        // Lua suite loading and ScriptLib.CreateGadget bypass the grid-spawn initializer.
+        // Initialize the authored outcrop before Scene publishes its first entity packet.
+        if (blossom) scene.getBlossomManager().initScriptedBlossom(entity);
 
         return entity;
     }

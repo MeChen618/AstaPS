@@ -396,6 +396,17 @@ public class BlossomManager {
         }
     }
 
+    /** Attach the selected original camp to a Lua-created entity before publishing it. */
+    public void initScriptedBlossom(EntityGadget gadget) {
+        var source = activeScriptedSpawns().stream()
+                .filter(entry -> entry.getGroup().getGroupId() == gadget.getGroupId()
+                        && entry.getConfigId() == gadget.getConfigId()
+                        && entry.getGadgetId() == gadget.getGadgetId())
+                .findFirst().orElse(null);
+        if (source != null) gadget.setSpawnEntry(source);
+        initBlossom(gadget);
+    }
+
     public void initBlossom(EntityGadget gadget) {
         if (createdEntity.contains(gadget)) {
             return;
