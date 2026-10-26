@@ -381,31 +381,30 @@ public class Achievements {
         List<GameItem> rewards = Lists.newArrayList();
         for (int i : ids) {
             var goalData = GameData.getAchievementGoalDataMap().get(i);
-            if (goalData == null) {
+            if (goalData == null
+                    || goalData.getFinishRewardId() <= 0
+                    || !isGoalComplete(i, GameData.getAchievementDataMap().values(), this::isFinished)) {
                 Grasscutter.getLogger().warn("null returned while getting goal reward data!");
-                continue;
+                this.player.sendPacket(new PacketTakeAchievementGoalRewardRsp());
+                return;
             }
 
             var data = GameData.getRewardDataMap().get(goalData.getFinishRewardId());
             if (data == null) {
                 Grasscutter.getLogger().warn("null returned while getting reward data!");
-                continue;
+                this.player.sendPacket(new PacketTakeAchievementGoalRewardRsp());
+                return;
             }
 
-            data.getRewardItemList()
-                    .forEach(
-                            itemParamData -> {
-                                var itemData = GameData.getItemDataMap().get(itemParamData.getId());
-                                if (itemData == null) {
-                                    Grasscutter.getLogger().warn("itemData == null!");
-                                    return;
-                                }
-
-                                rewards.add(new GameItem(itemData, itemParamData.getCount()));
-                            });
-
-            this.takenGoalRewardIdList.add(i);
-            this.save();
+            for (var itemParamData : data.getRewardItemList()) {
+                var itemData = GameData.getItemDataMap().get(itemParamData.getId());
+                if (itemData == null) {
+                    Grasscutter.getLogger().warn("itemData == null!");
+                    this.player.sendPacket(new PacketTakeAchievementGoalRewardRsp());
+                    return;
+                }
+                rewards.add(new GameItem(itemData, itemParamData.getCount()));
+            }
         }
 
         if (rewards.isEmpty()) {
