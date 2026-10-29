@@ -797,7 +797,7 @@ public class EntityGadget extends EntityBaseGadget {
                         .setAbilityInfo(this.initialAbilityInfo())
                         .setRendererChangedInfo(EntityRendererChangedInfo.newBuilder())
                         .setAiInfo(
-                                SceneEntityAiInfo.newBuilder().setIsEnteredCombat(true))
+                                gadgetAiInfo())
                         .setBornPos(bornPos.toProto())
                         .build();
 
