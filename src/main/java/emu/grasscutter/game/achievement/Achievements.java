@@ -17,6 +17,7 @@ import emu.grasscutter.server.packet.send.*;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntPredicate;
 import java.util.function.IntSupplier;
 import javax.annotation.Nullable;
 import lombok.*;

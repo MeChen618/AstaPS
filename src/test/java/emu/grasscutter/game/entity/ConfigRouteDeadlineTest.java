@@ -147,6 +147,13 @@ class ConfigRouteDeadlineTest {
 
     static class Fixture {
         TestScene scene;
+
+        /** Reach-point events only; each waypoint also fires a platform arrival event. */
+        List<ScriptArgs> reachEvents() {
+            return scene.manager.events.stream()
+                    .filter(e -> e.type == emu.grasscutter.scripts.constants.EventType.EVENT_PLATFORM_REACH_POINT)
+                    .toList();
+        }
         TestGadget gadget;
         ConfigRoute config;
         ScriptLib lib;
