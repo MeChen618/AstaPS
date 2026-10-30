@@ -1693,6 +1693,12 @@ public class Player implements PlayerHook, FieldFetch {
         session.send(new PacketStoreWeightLimitNotify());
         session.send(new PacketPlayerStoreNotify(this));
         session.send(new PacketAvatarDataNotify(this));
+        // Replay every saved wind-glider grant after the ownership snapshot. The 7.1 client
+        // applies individual grant notifies reliably; this also restores ownership after relog.
+        this.getFlyCloakList().stream()
+                .filter(GameData.getAvatarFlycloakDataMap()::containsKey)
+                .sorted()
+                .forEach(flycloakId -> session.send(new PacketAvatarGainFlycloakNotify(flycloakId)));
         session.send(new PacketCraftingAvatarDataNotify());
         session.send(new PacketAvatarWeaponSkinDataNotify(this));
         // 登录时下发头像/头像框数据：否则重登后个人主页的头像框会显示成"?"，要重新应用一次才恢复。

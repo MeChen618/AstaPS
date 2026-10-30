@@ -86,7 +86,13 @@ public final class UnlockAllCommand implements CommandHandler {
                     new PacketSceneAreaUnlockNotify(
                             currentScene, targetPlayer.getUnlockedSceneAreas(currentScene)));
 
-            GameData.getAvatarFlycloakDataMap().keySet().forEach(targetPlayer.getFlyCloakList()::add);
+            // Put every non-default glider in the full ownership snapshot. Replay the normal
+            // grant notifications after that snapshot below so the client applies them last.
+            var flycloakIds = GameData.getAvatarFlycloakDataMap().keySet().stream()
+                    .filter(flycloakId -> flycloakId != 140001)
+                    .sorted()
+                    .toList();
+            flycloakIds.forEach(targetPlayer.getFlyCloakList()::add);
             GameData.getAvatarTraceEffectDataMap()
                     .keySet()
                     .forEach(targetPlayer.getTraceEffectList()::add);
@@ -110,6 +116,7 @@ public final class UnlockAllCommand implements CommandHandler {
                 avatar.save();
             }
             targetPlayer.sendPacket(new PacketAvatarDataNotify(targetPlayer));
+            flycloakIds.forEach(targetPlayer::addFlycloak);
 
             // Scene tags are intentionally left unchanged.
             // Many tags represent mutually exclusive quest/activity world states. Enabling all of
@@ -120,6 +127,11 @@ public final class UnlockAllCommand implements CommandHandler {
 
             CommandOutput.sendMessage(
                     sender, translate(sender, "commands.unlockall.success", targetPlayer.getNickname()));
+            CommandOutput.sendMessage(
+                    sender,
+                    flycloakIds.isEmpty()
+                            ? "No wind-glider data was loaded; check the resource pack."
+                            : "Sent " + flycloakIds.size() + " wind-glider unlock notification(s).");
             CommandOutput.sendMessage(sender, "Scene tags left unchanged.");
         }
     }
