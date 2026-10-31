@@ -409,6 +409,10 @@ public final class Grasscutter {
             } catch (IOError e) {
                 logger.error("An IO error occurred while trying to read from console.", e);
                 return;
+            } catch (IllegalStateException e) {
+                // `stop` closes the terminal from the shutdown hook while this thread is back in
+                // readLine; JLine then throws "Terminal has been closed". Nothing is left to read.
+                return;
             }
 
             isLastInterrupted = false;
