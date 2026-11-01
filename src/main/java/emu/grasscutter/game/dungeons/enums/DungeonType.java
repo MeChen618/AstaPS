@@ -41,7 +41,8 @@ public enum DungeonType {
     DUNGEON_EFFIGY_CHALLENGE_V2(false),
     DUNGEON_CHAR_AMUSEMENT(false),
     DUNGEON_REPUTATION_SNEZ_TPS(false),
-    DUNGEON_TPS_SHOOTING_RANGE(false);
+    DUNGEON_TPS_SHOOTING_RANGE(false),
+    DUNGEON_LEY_LINE_CHALLENGE(false);
 
     @Getter private final boolean countsToBattlepass;
 
