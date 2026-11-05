@@ -7,7 +7,7 @@ import "Uint32Pair.proto";
 
 message _AutochessRecordSocialBrief {
   KHFBAMPCPPF DNBEJHIILMM = 20000;
-  repeated uint32 HDKMGJJKEMA = 20001;
+  repeated uint32 HDKMGJJKEMA = 1;
   Uint32Pair progress = 3;
   repeated uint32 _artifact_id_list = 15;
   bool NBCEKJJNAHJ = 12;

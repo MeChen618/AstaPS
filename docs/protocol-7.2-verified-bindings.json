@@ -1297,6 +1297,165 @@
           "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
         }
       ]
+    },
+    {
+      "owner": "EchoShellDetailInfo",
+      "field": "FHIALFGIKKC",
+      "old": 20000,
+      "current": 2,
+      "reference_server_number": 5,
+      "raw_field71": "HOENPENEMNL",
+      "native_type71": 18881,
+      "native_type72": 54227,
+      "raw_field72": "BKHJFLIGNGN",
+      "current_field_name": "BKHJFLIGNGN",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 3,
+      "known_native_field_controls": [
+        268141
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0x9bfbb64",
+          "handler72": "0xc488008",
+          "instruction_offset": 108,
+          "offset71": 32,
+          "offset72": 48,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "e7364c44c40ef962c29c9cda89c3549e9aa6e94b0c16051dfb77fffaf4512e74"
+        }
+      ]
+    },
+    {
+      "owner": "_TemplatePotionInfo",
+      "field": "FEFKMIBCKAN",
+      "old": 20002,
+      "current": 2,
+      "reference_server_number": 8,
+      "raw_field71": "NOMKDELEMJM",
+      "native_type71": 32285,
+      "native_type72": 84131,
+      "raw_field72": "BNNOOIIPKCN",
+      "current_field_name": "BNNOOIIPKCN",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 3,
+      "known_native_field_controls": [
+        419009
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0x102b32f8",
+          "handler72": "0xb5621dc",
+          "instruction_offset": 312,
+          "offset71": 24,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "c5f214bfa174726ae25db3aa3d78f738d405cd7a04598be9f1947f2444fdf8f1"
+        },
+        {
+          "handler71": "0x102b32f8",
+          "handler72": "0xb5621dc",
+          "instruction_offset": 112,
+          "offset71": 24,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "c5f214bfa174726ae25db3aa3d78f738d405cd7a04598be9f1947f2444fdf8f1"
+        }
+      ]
+    },
+    {
+      "owner": "_AutochessRecordSocialBrief",
+      "field": "HDKMGJJKEMA",
+      "old": 20001,
+      "current": 1,
+      "reference_server_number": 1,
+      "raw_field71": "PJBCNHMAFEA",
+      "native_type71": 54763,
+      "native_type72": 11114,
+      "raw_field72": "DAPAEHKGBIH",
+      "current_field_name": "DAPAEHKGBIH",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 3,
+      "known_native_field_controls": [
+        50494,
+        50495,
+        50496,
+        50503
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xbe9bc60",
+          "handler72": "0xfe24ef8",
+          "instruction_offset": 588,
+          "offset71": 24,
+          "offset72": 32,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "2b6961fd2d6e711be8d63aa9463a45bf8b644b542fcc530874f238e1b5f21540"
+        },
+        {
+          "handler71": "0xbe9bc60",
+          "handler72": "0xfe24ef8",
+          "instruction_offset": 656,
+          "offset71": 24,
+          "offset72": 32,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "2b6961fd2d6e711be8d63aa9463a45bf8b644b542fcc530874f238e1b5f21540"
+        }
+      ]
+    },
+    {
+      "owner": "AvatarExpeditionStartRsp",
+      "field": "ILBIKNLHAKE",
+      "old": 20000,
+      "current": 12,
+      "reference_server_number": 1,
+      "raw_field71": "KODELLHACAM",
+      "native_type71": 59762,
+      "native_type72": 87213,
+      "raw_field72": "NEFAGAOLLPG",
+      "current_field_name": "NEFAGAOLLPG",
+      "protobuf_type": 5,
+      "protobuf_cardinality": 3,
+      "known_native_field_controls": [
+        433995,
+        433997,
+        433998
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0x10539434",
+          "handler72": "0xce014a8",
+          "instruction_offset": 416,
+          "offset71": 24,
+          "offset72": 32,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "07917897d923875a41c2809278b9a9a5e1d98833230b06b148df669fd7543865"
+        },
+        {
+          "handler71": "0x10539434",
+          "handler72": "0xce014a8",
+          "instruction_offset": 604,
+          "offset71": 24,
+          "offset72": 32,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "07917897d923875a41c2809278b9a9a5e1d98833230b06b148df669fd7543865"
+        }
+      ]
     }
   ],
   "displaced_legacy_fields": [
@@ -1329,17 +1488,17 @@
     "compiled_proto_files": 2105,
     "descriptor_files": 2105,
     "verified_opcode_bindings": 11,
-    "corrected_field_numbers": 57,
+    "corrected_field_numbers": 61,
     "displaced_legacy_api_fields": 3,
     "unplanned_descriptor_changes": 0,
     "duplicate_new_opcode_bindings": 0,
-    "descriptor_sha256": "3892d2e56fec227d775d44c96ad1d6b9b8e914a79b8721ec1f7f744a62728f20",
+    "descriptor_sha256": "524bca85fe421caa8497038d1e322e4b4b3a0298fce4d751152a462a2413ef02",
     "all_message_and_enum_declarations_preserved": true,
     "untouched_manual_gacha_info_preserved": true,
     "no_end_to_end_client_test_claimed": true
   },
   "native_ascension_sender_cases": 22,
-  "native_field_instruction_cases": 276,
+  "native_field_instruction_cases": 332,
   "semantic_source_spelling_not_claimed": true,
   "live_android_session_tested": false,
   "formatter_note": "The existing Spotless/Google Java Format combination fails with NoSuchMethodError for JavaFormatterOptions.Style.valueOf; no formatting dependency changes were made.",

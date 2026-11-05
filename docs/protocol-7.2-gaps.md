@@ -4,9 +4,9 @@ Only messages the server code uses are listed.
 
 ## Verified bindings in this update
 
-Enabled 11 CmdId bindings and corrected 57 field numbers. 26 corrections come from matched original native field accesses; the others use verified current named fields, including ascension and the swapped home resource value/capacity. Three conflicting legacy fields were moved to unused compatibility slots rather than overwriting the confirmed roles.
+Enabled 11 CmdId bindings and corrected 61 field numbers. 30 corrections come from matched original native field accesses; the others use verified current named fields, including ascension and the swapped home resource value/capacity. Three conflicting legacy fields were moved to unused compatibility slots rather than overwriting the confirmed roles.
 
-The complete 2,105-file descriptor delta is checked: no unplanned schema changes, no new opcode collisions, and the hand-corrected `GachaInfo` is preserved. Native validation covers 22 ascension sender cases and 276 field instruction cases in the two client builds. Java regression tests cover ascension GUIDs, home resource counters, the two gacha flags and furniture output versus returned materials. This does not replace a live 7.2 client test.
+The complete 2,105-file descriptor delta is checked: no unplanned schema changes, no new opcode collisions, and the hand-corrected `GachaInfo` is preserved. Native validation covers 22 ascension sender cases and 332 field instruction cases in the two client builds. Java regression tests cover ascension GUIDs, home resource counters, the two gacha flags and furniture output versus returned materials. This does not replace a live 7.2 client test.
 
 `TpsEquipChangeNotify` is identified as CmdId 26670 through the native `TPSWeaponEquiped` event. Its server binding remains disabled while the nested weapon payload is checked.
 
@@ -24,7 +24,7 @@ Their 7.2 field mapping is still incomplete. A matching message name alone does 
 
 `AABLEDJBAKK`, `AbilityMetaSpecialEnergy`, `AvatarChangeElementTypeRsp`, `AvatarDelNotify`, `AvatarTraceEffectChangeNotify`, `BMJNJLKCODG`, `BPAEPJHBOFM`, `BuyBattlePassLevelRsp`, `CancelCoopTaskReq`, `CheckUgcStateReq`, `CheckUgcStateRsp`, `CheckUgcUpdateReq`, `DelBackupAvatarTeamReq`, `DelMailReq`, `DelTeamEntityNotify`, `DeleteFriendReq`, `DungeonPlayerDieRsp`, `EndCameraSceneLookNotify`, `EntityAiKillSelfNotify`, `ExecuteGadgetLuaRsp`, `ExecuteGroupTriggerRsp`, `GetFriendShowAvatarInfoReq`, `GetFriendShowNameCardInfoReq`, `GetHomeLevelUpRewardRsp`, `GetMailItemReq`, `GetPushTipsRewardRsp`, `GetShopReqNew`, `GetShopRspNew`, `GetUgcBriefInfoReq`, `GetWorldMpInfoRsp`, `HomeAvatarSummonEventRsp`, `HomeAvatarSummonFinishRsp`, `HomeChangeBgmReq`, `HomeChangeBgmRsp`, `HomeChangeEditModeReq`, `HomeChangeModuleReq`, `HomeChooseModuleReq`, `HomeResourceTakeHomeCoinRsp`, `HomeSceneInitFinishReq`, `HomeSceneJumpRsp`, `IceCreatureDataNotify`, `IceCreatureGadgetDisappearNotify`, `IceCreatureGadgetInfo`, `IceCreatureSetTypeGadgetReq`, `MarkNewNotify`, `MusicGameSettleReq`, `NALBKOPFIFD`, `PlayerApplyEnterHomeNotify`, `PlayerApplyEnterHomeResultReq`, `PlayerApplyEnterHomeResultRsp`, `PlayerApplyEnterMpReq`, `PlayerApplyEnterMpResultReq`, `PlayerApplyEnterMpResultRsp`, `PlayerChatRsp`, `PropChangeDetailInfo`, `QuestDelNotify`, `ReadMailNotify`, `ReadPrivateChatRsp`, `ReceivedTrialAvatarActivityRewardReq`, `ReformFireworksRsp`, `SceneEntityDrownReq`, `SceneEntityDrownRsp`, `SceneEntityUpdateNotify`, `SceneKickPlayerReq`, `SetBattlePassViewedRsp`, `SetNameCardReq`, `SetPlayerHeadImageRsp`, `SetPlayerPropRsp`, `SetPlayerSignatureReq`, `ShowClientGuideNotify`, `SkipPlayerGameTimeReq`, `SkipPlayerGameTimeRsp`, `SnezhnayaTrainCallNotify`, `SnezhnayaTrainCallReq`, `SnezhnayaTrainSetRouteReq`, `SnezhnayaTrainStateNotify`, `TakeAchievementGoalRewardReq`, `TakeAchievementRewardReq`, `TowerBuffSelectReq`, `TowerBuffSelectRsp`, `TowerMiddleLevelChangeTeamNotify`, `TowerSurrenderRsp`, `TowerTeamSelectRsp`, `TpsAmmunitionChangeNotify`, `TpsEquipChangeNotify`, `TpsWeaponAmmunitionInfo`, `UnfreezeGroupLimitNotify`, `UnlockPersonalLineReq`, `WatcherChangeNotify`, `WearTpsEquipReq`, `WearTpsEquipRsp`, `WidgetDoBagRsp`, `WorldPlayerReviveRsp`, `_TakeAllForgeOutputReq`
 
-## Fields with no verified 7.2 number (261 in 87 messages)
+## Fields with no verified 7.2 number (260 in 86 messages)
 
 Parked at field 20000 and up until verified. These are not current client field numbers; protobuf still writes them if server code explicitly sets them. The three displaced legacy fields stay available as Java API names, but must not be used as current client fields.
 
@@ -38,7 +38,6 @@ Parked at field 20000 and up until verified. These are not current client field 
 - `AiSyncInfo`: COFJBBPPANA, MBNNMNHEDAB
 - `AttackResult`: resolved_dir, DNMDKFFCNPJ, OHPEIAGBOIK, EFBFOAOJADK, PGPBACPJGNM, OOFNGENKHKG, FDEGAMMGNGI, CFKHDFPCHCL, EKDNPKHMJIE, MDBPICGKMLB, LNFCPOINHKK, IFHJIFEBKAO, EPLABAAGCKE, DMIEAHDCHFA, NJFMEBDIICN, IDENIGMCBJB, PKOFLCBFEOA, OMJGKPMPFBI, GGAMPLOEPMG, PLNPCMILPPD, NILAPFIGLLH, MHJDKCODNAA, MDECMKGHDAK, GMNALDFDANK, JCPDJCGGJCC, BJHAEPGOAKM
 - `AvatarEnterSceneInfo`: tps_weapon_list
-- `AvatarExpeditionStartRsp`: ILBIKNLHAKE
 - `AvatarInfo`: tps_weapon_list
 - `BargainSnapshot`: PGNJBNJCBLP, FLCAIJFGLNP
 - `BattlePassProduct`: LGOGOFAFJBK, LJKGANJLFNJ
@@ -130,7 +129,6 @@ Pairs where a message has exactly one unmatched 7.1 field and one unmatched 7.2 
 - AvatarInfo.tps_weapon_list: 20000 -> 37  (7.1 MJGFMDADPJE = 7.2 weapon_list, single-message)
 - SceneAvatarInfo.tps_weapon_list: 20000 -> 31  (7.1 MJGFMDADPJE = 7.2 weapon_list, single-message)
 - AvatarEnterSceneInfo.tps_weapon_list: 20000 -> 12  (7.1 LMAIAOIPHJL = 7.2 weapon_list, single-message)
-- AvatarExpeditionStartRsp.ILBIKNLHAKE: 20000 -> 12  (7.1 KODELLHACAM = 7.2 NEFAGAOLLPG, single-message)
 - BattlePassSchedule.JIPEKMKKHOI: 20000 -> 8  (7.1 DFDNNGJHJIC = 7.2 AMBABCAPMGE, single-message)
 - ShopGoods.KAGKMENGAFH: 20013 -> 1055  (7.1 AEHELDJPPPH = 7.2 LAJHLJGOMPH, single-message)
 - CardProductRewardNotify.OABOKBGPEHG: 20000 -> 8  (7.1 DDOINBPHJMP = 7.2 FOFGCGMLPIB, single-message)
