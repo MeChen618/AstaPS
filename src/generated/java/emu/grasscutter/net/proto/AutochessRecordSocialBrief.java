@@ -107,7 +107,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
     int getHp();
 
     /**
-     * <code>uint32 AFDKEOOHHPA = 20003;</code>
+     * <code>uint32 AFDKEOOHHPA = 8;</code>
      * @return The aFDKEOOHHPA.
      */
     int getAFDKEOOHHPA();
@@ -125,7 +125,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
     int getHOAOJBKJFLE();
 
     /**
-     * <code>uint32 LKPNNFDCJLF = 20005;</code>
+     * <code>uint32 LKPNNFDCJLF = 10;</code>
      * @return The lKPNNFDCJLF.
      */
     int getLKPNNFDCJLF();
@@ -327,10 +327,10 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
       return hp_;
     }
 
-    public static final int AFDKEOOHHPA_FIELD_NUMBER = 20003;
+    public static final int AFDKEOOHHPA_FIELD_NUMBER = 8;
     private int aFDKEOOHHPA_ = 0;
     /**
-     * <code>uint32 AFDKEOOHHPA = 20003;</code>
+     * <code>uint32 AFDKEOOHHPA = 8;</code>
      * @return The aFDKEOOHHPA.
      */
     @java.lang.Override
@@ -360,10 +360,10 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
       return hOAOJBKJFLE_;
     }
 
-    public static final int LKPNNFDCJLF_FIELD_NUMBER = 20005;
+    public static final int LKPNNFDCJLF_FIELD_NUMBER = 10;
     private int lKPNNFDCJLF_ = 0;
     /**
-     * <code>uint32 LKPNNFDCJLF = 20005;</code>
+     * <code>uint32 LKPNNFDCJLF = 10;</code>
      * @return The lKPNNFDCJLF.
      */
     @java.lang.Override
@@ -431,6 +431,12 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
       if (timestamp_ != 0) {
         output.writeUInt32(7, timestamp_);
       }
+      if (aFDKEOOHHPA_ != 0) {
+        output.writeUInt32(8, aFDKEOOHHPA_);
+      }
+      if (lKPNNFDCJLF_ != 0) {
+        output.writeUInt32(10, lKPNNFDCJLF_);
+      }
       if (maxHp_ != 0) {
         output.writeUInt32(11, maxHp_);
       }
@@ -457,12 +463,6 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
       for (int i = 0; i < hDKMGJJKEMA_.size(); i++) {
         output.writeUInt32NoTag(hDKMGJJKEMA_.getInt(i));
       }
-      if (aFDKEOOHHPA_ != 0) {
-        output.writeUInt32(20003, aFDKEOOHHPA_);
-      }
-      if (lKPNNFDCJLF_ != 0) {
-        output.writeUInt32(20005, lKPNNFDCJLF_);
-      }
       if (gBAIFJIKOON_ != 0) {
         output.writeUInt32(20006, gBAIFJIKOON_);
       }
@@ -485,6 +485,14 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
       if (timestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, timestamp_);
+      }
+      if (aFDKEOOHHPA_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, aFDKEOOHHPA_);
+      }
+      if (lKPNNFDCJLF_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, lKPNNFDCJLF_);
       }
       if (maxHp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -529,14 +537,6 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
               .computeInt32SizeNoTag(dataSize);
         }
         hDKMGJJKEMAMemoizedSerializedSize = dataSize;
-      }
-      if (aFDKEOOHHPA_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20003, aFDKEOOHHPA_);
-      }
-      if (lKPNNFDCJLF_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20005, lKPNNFDCJLF_);
       }
       if (gBAIFJIKOON_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -1000,6 +1000,16 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000080;
                 break;
               } // case 56
+              case 64: {
+                aFDKEOOHHPA_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              case 80: {
+                lKPNNFDCJLF_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
               case 88: {
                 maxHp_ = input.readUInt32();
                 bitField0_ |= 0x00000800;
@@ -1054,16 +1064,6 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
                 input.popLimit(limit);
                 break;
               } // case 160010
-              case 160024: {
-                aFDKEOOHHPA_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 160024
-              case 160040: {
-                lKPNNFDCJLF_ = input.readUInt32();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 160040
               case 160048: {
                 gBAIFJIKOON_ = input.readUInt32();
                 bitField0_ |= 0x00000400;
@@ -1558,7 +1558,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
 
       private int aFDKEOOHHPA_ ;
       /**
-       * <code>uint32 AFDKEOOHHPA = 20003;</code>
+       * <code>uint32 AFDKEOOHHPA = 8;</code>
        * @return The aFDKEOOHHPA.
        */
       @java.lang.Override
@@ -1566,7 +1566,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
         return aFDKEOOHHPA_;
       }
       /**
-       * <code>uint32 AFDKEOOHHPA = 20003;</code>
+       * <code>uint32 AFDKEOOHHPA = 8;</code>
        * @param value The aFDKEOOHHPA to set.
        * @return This builder for chaining.
        */
@@ -1578,7 +1578,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
         return this;
       }
       /**
-       * <code>uint32 AFDKEOOHHPA = 20003;</code>
+       * <code>uint32 AFDKEOOHHPA = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearAFDKEOOHHPA() {
@@ -1654,7 +1654,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
 
       private int lKPNNFDCJLF_ ;
       /**
-       * <code>uint32 LKPNNFDCJLF = 20005;</code>
+       * <code>uint32 LKPNNFDCJLF = 10;</code>
        * @return The lKPNNFDCJLF.
        */
       @java.lang.Override
@@ -1662,7 +1662,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
         return lKPNNFDCJLF_;
       }
       /**
-       * <code>uint32 LKPNNFDCJLF = 20005;</code>
+       * <code>uint32 LKPNNFDCJLF = 10;</code>
        * @param value The lKPNNFDCJLF to set.
        * @return This builder for chaining.
        */
@@ -1674,7 +1674,7 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
         return this;
       }
       /**
-       * <code>uint32 LKPNNFDCJLF = 20005;</code>
+       * <code>uint32 LKPNNFDCJLF = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearLKPNNFDCJLF() {
@@ -1846,16 +1846,16 @@ public final class AutochessRecordSocialBrief extends com.google.protobuf.Genera
   static {
     java.lang.String[] descriptorData = {
       "\n!_AutochessRecordSocialBrief.proto\032\021KHF" +
-      "BAMPCPPF.proto\032\020Uint32Pair.proto\"\277\002\n\033_Au" +
+      "BAMPCPPF.proto\032\020Uint32Pair.proto\"\273\002\n\033_Au" +
       "tochessRecordSocialBrief\022#\n\013DNBEJHIILMM\030" +
       "\240\234\001 \001(\0132\014.KHFBAMPCPPF\022\025\n\013HDKMGJJKEMA\030\241\234\001" +
       " \003(\r\022\035\n\010progress\030\003 \001(\0132\013.Uint32Pair\022\031\n\021_" +
       "artifact_id_list\030\017 \003(\r\022\023\n\013NBCEKJJNAHJ\030\014 " +
-      "\001(\010\022\n\n\002hp\030\002 \001(\r\022\025\n\013AFDKEOOHHPA\030\243\234\001 \001(\r\022\021" +
-      "\n\ttimestamp\030\007 \001(\r\022\023\n\013HOAOJBKJFLE\030\005 \001(\r\022\025" +
-      "\n\013LKPNNFDCJLF\030\245\234\001 \001(\r\022\025\n\013GBAIFJIKOON\030\246\234\001" +
-      " \001(\r\022\016\n\006max_hp\030\013 \001(\r\022\014\n\004coin\030\016 \001(\rB\033\n\031em" +
-      "u.grasscutter.net.protob\006proto3"
+      "\001(\010\022\n\n\002hp\030\002 \001(\r\022\023\n\013AFDKEOOHHPA\030\010 \001(\r\022\021\n\t" +
+      "timestamp\030\007 \001(\r\022\023\n\013HOAOJBKJFLE\030\005 \001(\r\022\023\n\013" +
+      "LKPNNFDCJLF\030\n \001(\r\022\025\n\013GBAIFJIKOON\030\246\234\001 \001(\r" +
+      "\022\016\n\006max_hp\030\013 \001(\r\022\014\n\004coin\030\016 \001(\rB\033\n\031emu.gr" +
+      "asscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

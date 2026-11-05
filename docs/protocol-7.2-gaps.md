@@ -2,27 +2,37 @@
 
 Only messages the server code uses are listed.
 
-## Opcodes with no 7.2 CmdId (92)
+## Verified bindings in this update
 
-These are 0 in `PacketOpcodes`, so their handlers are not registered and packets built with them are not sent.
+Enabled 11 CmdId bindings and corrected 57 field numbers. 26 corrections come from matched original native field accesses; the others use verified current named fields, including ascension and the swapped home resource value/capacity. Three conflicting legacy fields were moved to unused compatibility slots rather than overwriting the confirmed roles.
 
-`AvatarChangeElementTypeRsp`, `AvatarDelNotify`, `AvatarPromoteReq`, `BuyBattlePassLevelRsp`, `CancelCoopTaskReq`, `CheckUgcStateReq`, `CheckUgcStateRsp`, `DelBackupAvatarTeamReq`, `DelMailReq`, `DelTeamEntityNotify`, `DeleteFriendReq`, `DungeonPlayerDieRsp`, `EndCameraSceneLookNotify`, `EnterTrialAvatarActivityDungeonRsp`, `EntityAiKillSelfNotify`, `ExecuteGadgetLuaRsp`, `ExecuteGroupTriggerRsp`, `GetFriendShowAvatarInfoReq`, `GetFriendShowNameCardInfoReq`, `GetHomeLevelUpRewardReq`, `GetHomeLevelUpRewardRsp`, `GetMailItemReq`, `GetPushTipsRewardRsp`, `GetWorldMpInfoRsp`, `HomeAvatarSummonEventRsp`, `HomeAvatarSummonFinishRsp`, `HomeChangeBgmReq`, `HomeChangeBgmRsp`, `HomeChangeEditModeReq`, `HomeChangeModuleReq`, `HomeResourceTakeFetterExpRsp`, `HomeResourceTakeHomeCoinRsp`, `HomeSceneInitFinishReq`, `HomeSceneJumpRsp`, `IceCreatureDataNotify`, `IceCreatureGadgetDisappearNotify`, `IceCreatureLikeReq`, `IceCreatureSetTypeGadgetReq`, `MarkNewNotify`, `MusicGameSettleReq`, `MusicGameSettleRsp`, `MusicGameStartRsp`, `NALBKOPFIFD`, `PlatformChangeRouteNotify`, `PlatformStartRouteNotify`, `PlatformStopRouteNotify`, `PlayerApplyEnterHomeNotify`, `PlayerApplyEnterHomeResultReq`, `PlayerApplyEnterHomeResultRsp`, `PlayerApplyEnterMpReq`, `PlayerApplyEnterMpResultReq`, `PlayerApplyEnterMpResultRsp`, `PlayerChatRsp`, `QuestDelNotify`, `ReadMailNotify`, `ReadPrivateChatRsp`, `ReceivedTrialAvatarActivityRewardReq`, `ReceivedTrialAvatarActivityRewardRsp`, `ReformFireworksRsp`, `SceneEntityDrownReq`, `SceneEntityDrownRsp`, `SceneEntityUpdateNotify`, `SceneKickPlayerReq`, `SetBattlePassViewedRsp`, `SetNameCardReq`, `SetPlayerHeadImageRsp`, `SetPlayerPropRsp`, `SetPlayerSignatureReq`, `ShowClientGuideNotify`, `SkipPlayerGameTimeReq`, `SkipPlayerGameTimeRsp`, `SnezhnayaTrainCallNotify`, `SnezhnayaTrainCallReq`, `SnezhnayaTrainSetRouteReq`, `SnezhnayaTrainStateNotify`, `TakeAchievementGoalRewardReq`, `TakeAchievementRewardReq`, `TowerBuffSelectReq`, `TowerBuffSelectRsp`, `TowerSurrenderRsp`, `TowerTeamSelectRsp`, `TpsAmmunitionChangeNotify`, `TpsEquipChangeNotify`, `UnfreezeGroupLimitNotify`, `UnlockNameCardNotify`, `UnlockPersonalLineReq`, `WatcherChangeNotify`, `WearTpsEquipReq`, `WearTpsEquipRsp`, `WidgetDoBagRsp`, `WorldPlayerReviveRsp`, `_TakeAllForgeOutputReq`
+The complete 2,105-file descriptor delta is checked: no unplanned schema changes, no new opcode collisions, and the hand-corrected `GachaInfo` is preserved. Native validation covers 22 ascension sender cases and 276 field instruction cases in the two client builds. Java regression tests cover ascension GUIDs, home resource counters, the two gacha flags and furniture output versus returned materials. This does not replace a live 7.2 client test.
 
-## Messages with no 7.2 counterpart (105)
+`TpsEquipChangeNotify` is identified as CmdId 26670 through the native `TPSWeaponEquiped` event. Its server binding remains disabled while the nested weapon payload is checked.
 
-Their field numbers are still the 7.1 ones.
+The compact evidence index is `protocol-7.2-verified-bindings.json`. The remaining candidate pairs below have not been applied solely because they are the only fields left with a matching type.
 
-`AABLEDJBAKK`, `AbilityMetaSpecialEnergy`, `AvatarChangeElementTypeRsp`, `AvatarDelNotify`, `AvatarPromoteReq`, `AvatarTraceEffectChangeNotify`, `BMJNJLKCODG`, `BPAEPJHBOFM`, `BuyBattlePassLevelRsp`, `CancelCoopTaskReq`, `CheckUgcStateReq`, `CheckUgcStateRsp`, `CheckUgcUpdateReq`, `DelBackupAvatarTeamReq`, `DelMailReq`, `DelTeamEntityNotify`, `DeleteFriendReq`, `DungeonPlayerDieRsp`, `EndCameraSceneLookNotify`, `EnterTrialAvatarActivityDungeonRsp`, `EntityAiKillSelfNotify`, `ExecuteGadgetLuaRsp`, `ExecuteGroupTriggerRsp`, `GetFriendShowAvatarInfoReq`, `GetFriendShowNameCardInfoReq`, `GetHomeLevelUpRewardReq`, `GetHomeLevelUpRewardRsp`, `GetMailItemReq`, `GetPushTipsRewardRsp`, `GetShopReqNew`, `GetShopRspNew`, `GetUgcBriefInfoReq`, `GetWorldMpInfoRsp`, `HomeAvatarSummonEventRsp`, `HomeAvatarSummonFinishRsp`, `HomeChangeBgmReq`, `HomeChangeBgmRsp`, `HomeChangeEditModeReq`, `HomeChangeModuleReq`, `HomeChooseModuleReq`, `HomeModuleUnlockNotify`, `HomeResourceTakeFetterExpRsp`, `HomeResourceTakeHomeCoinRsp`, `HomeSceneInitFinishReq`, `HomeSceneJumpRsp`, `IceCreatureDataNotify`, `IceCreatureGadgetDisappearNotify`, `IceCreatureGadgetInfo`, `IceCreatureLikeReq`, `IceCreatureSetTypeGadgetReq`, `MarkNewNotify`, `MusicGameSettleReq`, `NALBKOPFIFD`, `PlatformChangeRouteNotify`, `PlatformStartRouteNotify`, `PlatformStopRouteNotify`, `PlayerApplyEnterHomeNotify`, `PlayerApplyEnterHomeResultReq`, `PlayerApplyEnterHomeResultRsp`, `PlayerApplyEnterMpReq`, `PlayerApplyEnterMpResultReq`, `PlayerApplyEnterMpResultRsp`, `PlayerChatRsp`, `PropChangeDetailInfo`, `QuestDelNotify`, `ReadMailNotify`, `ReadPrivateChatRsp`, `ReceivedTrialAvatarActivityRewardReq`, `ReceivedTrialAvatarActivityRewardRsp`, `ReformFireworksRsp`, `SceneEntityDrownReq`, `SceneEntityDrownRsp`, `SceneEntityUpdateNotify`, `SceneKickPlayerReq`, `SetBattlePassViewedRsp`, `SetNameCardReq`, `SetPlayerHeadImageRsp`, `SetPlayerPropRsp`, `SetPlayerSignatureReq`, `ShowClientGuideNotify`, `SkipPlayerGameTimeReq`, `SkipPlayerGameTimeRsp`, `SnezhnayaTrainCallNotify`, `SnezhnayaTrainCallReq`, `SnezhnayaTrainSetRouteReq`, `SnezhnayaTrainStateNotify`, `TakeAchievementGoalRewardReq`, `TakeAchievementRewardReq`, `TowerBuffSelectReq`, `TowerBuffSelectRsp`, `TowerMiddleLevelChangeTeamNotify`, `TowerSurrenderRsp`, `TowerTeamSelectRsp`, `TpsAmmunitionChangeNotify`, `TpsEquipChangeNotify`, `TpsWeaponAmmunitionInfo`, `UnfreezeGroupLimitNotify`, `UnlockNameCardNotify`, `UnlockPersonalLineReq`, `WatcherChangeNotify`, `WearTpsEquipReq`, `WearTpsEquipRsp`, `WidgetDoBagRsp`, `WorldPlayerReviveRsp`, `_TakeAllForgeOutputReq`
+## Disabled CmdId bindings (82)
 
-## Fields with no 7.2 number (290 in 95 messages)
+These remain 0 in `PacketOpcodes`. Their handlers are not registered and outbound packets are not sent. Some messages are identified, but still need their fields or nested payloads checked.
 
-Parked at field 20000 and up, so they are neither read nor written on the wire. `tools/protocol/remap/recover_lost_72.py` already recovered the fields whose 7.1 and 7.2 names are left unmatched together in at least two messages.
+`AvatarChangeElementTypeRsp`, `AvatarDelNotify`, `BuyBattlePassLevelRsp`, `CancelCoopTaskReq`, `CheckUgcStateReq`, `CheckUgcStateRsp`, `DelBackupAvatarTeamReq`, `DelMailReq`, `DelTeamEntityNotify`, `DeleteFriendReq`, `DungeonPlayerDieRsp`, `EndCameraSceneLookNotify`, `EntityAiKillSelfNotify`, `ExecuteGadgetLuaRsp`, `ExecuteGroupTriggerRsp`, `GetFriendShowAvatarInfoReq`, `GetFriendShowNameCardInfoReq`, `GetHomeLevelUpRewardRsp`, `GetMailItemReq`, `GetPushTipsRewardRsp`, `GetWorldMpInfoRsp`, `HomeAvatarSummonEventRsp`, `HomeAvatarSummonFinishRsp`, `HomeChangeBgmReq`, `HomeChangeBgmRsp`, `HomeChangeEditModeReq`, `HomeChangeModuleReq`, `HomeResourceTakeHomeCoinRsp`, `HomeSceneInitFinishReq`, `HomeSceneJumpRsp`, `IceCreatureDataNotify`, `IceCreatureGadgetDisappearNotify`, `IceCreatureSetTypeGadgetReq`, `MarkNewNotify`, `MusicGameSettleReq`, `MusicGameSettleRsp`, `MusicGameStartRsp`, `NALBKOPFIFD`, `PlayerApplyEnterHomeNotify`, `PlayerApplyEnterHomeResultReq`, `PlayerApplyEnterHomeResultRsp`, `PlayerApplyEnterMpReq`, `PlayerApplyEnterMpResultReq`, `PlayerApplyEnterMpResultRsp`, `PlayerChatRsp`, `QuestDelNotify`, `ReadMailNotify`, `ReadPrivateChatRsp`, `ReceivedTrialAvatarActivityRewardReq`, `ReformFireworksRsp`, `SceneEntityDrownReq`, `SceneEntityDrownRsp`, `SceneEntityUpdateNotify`, `SceneKickPlayerReq`, `SetBattlePassViewedRsp`, `SetNameCardReq`, `SetPlayerHeadImageRsp`, `SetPlayerPropRsp`, `SetPlayerSignatureReq`, `ShowClientGuideNotify`, `SkipPlayerGameTimeReq`, `SkipPlayerGameTimeRsp`, `SnezhnayaTrainCallNotify`, `SnezhnayaTrainCallReq`, `SnezhnayaTrainSetRouteReq`, `SnezhnayaTrainStateNotify`, `TakeAchievementGoalRewardReq`, `TakeAchievementRewardReq`, `TowerBuffSelectReq`, `TowerBuffSelectRsp`, `TowerSurrenderRsp`, `TowerTeamSelectRsp`, `TpsAmmunitionChangeNotify`, `TpsEquipChangeNotify`, `UnfreezeGroupLimitNotify`, `UnlockPersonalLineReq`, `WatcherChangeNotify`, `WearTpsEquipReq`, `WearTpsEquipRsp`, `WidgetDoBagRsp`, `WorldPlayerReviveRsp`, `_TakeAllForgeOutputReq`
+
+## Message schemas still requiring 7.2 bindings (94)
+
+Their 7.2 field mapping is still incomplete. A matching message name alone does not make the server schema usable.
+
+`AABLEDJBAKK`, `AbilityMetaSpecialEnergy`, `AvatarChangeElementTypeRsp`, `AvatarDelNotify`, `AvatarTraceEffectChangeNotify`, `BMJNJLKCODG`, `BPAEPJHBOFM`, `BuyBattlePassLevelRsp`, `CancelCoopTaskReq`, `CheckUgcStateReq`, `CheckUgcStateRsp`, `CheckUgcUpdateReq`, `DelBackupAvatarTeamReq`, `DelMailReq`, `DelTeamEntityNotify`, `DeleteFriendReq`, `DungeonPlayerDieRsp`, `EndCameraSceneLookNotify`, `EntityAiKillSelfNotify`, `ExecuteGadgetLuaRsp`, `ExecuteGroupTriggerRsp`, `GetFriendShowAvatarInfoReq`, `GetFriendShowNameCardInfoReq`, `GetHomeLevelUpRewardRsp`, `GetMailItemReq`, `GetPushTipsRewardRsp`, `GetShopReqNew`, `GetShopRspNew`, `GetUgcBriefInfoReq`, `GetWorldMpInfoRsp`, `HomeAvatarSummonEventRsp`, `HomeAvatarSummonFinishRsp`, `HomeChangeBgmReq`, `HomeChangeBgmRsp`, `HomeChangeEditModeReq`, `HomeChangeModuleReq`, `HomeChooseModuleReq`, `HomeResourceTakeHomeCoinRsp`, `HomeSceneInitFinishReq`, `HomeSceneJumpRsp`, `IceCreatureDataNotify`, `IceCreatureGadgetDisappearNotify`, `IceCreatureGadgetInfo`, `IceCreatureSetTypeGadgetReq`, `MarkNewNotify`, `MusicGameSettleReq`, `NALBKOPFIFD`, `PlayerApplyEnterHomeNotify`, `PlayerApplyEnterHomeResultReq`, `PlayerApplyEnterHomeResultRsp`, `PlayerApplyEnterMpReq`, `PlayerApplyEnterMpResultReq`, `PlayerApplyEnterMpResultRsp`, `PlayerChatRsp`, `PropChangeDetailInfo`, `QuestDelNotify`, `ReadMailNotify`, `ReadPrivateChatRsp`, `ReceivedTrialAvatarActivityRewardReq`, `ReformFireworksRsp`, `SceneEntityDrownReq`, `SceneEntityDrownRsp`, `SceneEntityUpdateNotify`, `SceneKickPlayerReq`, `SetBattlePassViewedRsp`, `SetNameCardReq`, `SetPlayerHeadImageRsp`, `SetPlayerPropRsp`, `SetPlayerSignatureReq`, `ShowClientGuideNotify`, `SkipPlayerGameTimeReq`, `SkipPlayerGameTimeRsp`, `SnezhnayaTrainCallNotify`, `SnezhnayaTrainCallReq`, `SnezhnayaTrainSetRouteReq`, `SnezhnayaTrainStateNotify`, `TakeAchievementGoalRewardReq`, `TakeAchievementRewardReq`, `TowerBuffSelectReq`, `TowerBuffSelectRsp`, `TowerMiddleLevelChangeTeamNotify`, `TowerSurrenderRsp`, `TowerTeamSelectRsp`, `TpsAmmunitionChangeNotify`, `TpsEquipChangeNotify`, `TpsWeaponAmmunitionInfo`, `UnfreezeGroupLimitNotify`, `UnlockPersonalLineReq`, `WatcherChangeNotify`, `WearTpsEquipReq`, `WearTpsEquipRsp`, `WidgetDoBagRsp`, `WorldPlayerReviveRsp`, `_TakeAllForgeOutputReq`
+
+## Fields with no verified 7.2 number (261 in 87 messages)
+
+Parked at field 20000 and up until verified. These are not current client field numbers; protobuf still writes them if server code explicitly sets them. The three displaced legacy fields stay available as Java API names, but must not be used as current client fields.
 
 - `AbilityIdentifier`: NBHCDKPBBOI, DLLKGHINFBJ
 - `AbilityMetaModifierChange`: MFBDIICANOF, NBBGHMGOALL, PKJMOLPCEBG, OCAMKBCONED
 - `AbilityMetaUpdateMoonOvergrowValue`: FOMPMBNENPH
 - `AbilityMetaUpdateTpsWeaponAmmunition`: FENKFADBDID
-- `ActivityInfo`: JJFJONCHEIK, meet_cond_list, expire_cond_list, is_starting, OPPDJKGIKBJ, DIEFHMGFNIJ, is_common_content_closed, is_play_open_anim
+- `ActivityInfo`: JJFJONCHEIK, meet_cond_list, expire_cond_list, is_starting, OPPDJKGIKBJ, DIEFHMGFNIJ, is_common_content_closed, is_banner_cleared
 - `ActivityTakeWatcherRewardReq`: activity_id, watcher_id
 - `AddNoGachaAvatarCardNotify`: initial_level, initial_promote_level
 - `AiSyncInfo`: COFJBBPPANA, MBNNMNHEDAB
@@ -31,37 +41,31 @@ Parked at field 20000 and up, so they are neither read nor written on the wire. 
 - `AvatarExpeditionStartRsp`: ILBIKNLHAKE
 - `AvatarInfo`: tps_weapon_list
 - `BargainSnapshot`: PGNJBNJCBLP, FLCAIJFGLNP
-- `BattlePassProduct`: LGOGOFAFJBK, extra_product_id
+- `BattlePassProduct`: LGOGOFAFJBK, LJKGANJLFNJ
 - `BattlePassSchedule`: JIPEKMKKHOI, cur_cycle_points, paid_platform_flags
-- `CancelCoopTaskRsp`: chapter_id
 - `CardProductRewardNotify`: OABOKBGPEHG
 - `ChangeAvatarReq`: is_move, FGGPBEPIJOG
 - `ChapterStateNotify`: MLBMNAKEEOM, EHKKFCAGELK
-- `ChatInfo`: ALKIPKCAPFL, OIEHJMHHCFB
-- `ClientSetGameTimeRsp`: client_game_time
+- `ChatInfo`: ALKIPKCAPFL
 - `CodexDataUpdateNotify`: OBEHJKBNDJG
 - `CombineRsp`: DAPJDPKECGP, GFDAOGHDHCI, FIHLCAAADMG, FJOLFDOBCIL, FBMBEJKABDH
 - `CompoundQueueData`: wait_count, output_time, output_count
 - `CoopChapter`: ODECGJCJBAB, JKAGGEGDKOH, lock_reason_list
 - `DailyDungeonEntryInfo`: ODDLACNLJOF, EDEOIILGGJC, AKNPDDFHEKO
-- `DelBackupAvatarTeamRsp`: retcode
 - `DoGachaRsp`: is_epitomized
 - `DungeonEntryInfo`: max_boss_chest_num, boss_chest_num
 - `DungeonPlayerDieNotify`: murderer_entity_id, OBOKABMLGHI, AOMDIHGJMNK
 - `EnterSceneDoneRsp`: PPKIKFGEINK
 - `EntityFightPropChangeReasonNotify`: EFIBMPKIJJH
-- `EvtAvatarEnterFocusNotify`: MEBKKKCNDAK, PNELCGBOIFM, KLNNOPGOMKN, IMMFFEBPCJM, CCDMIMGNCBM, JLNKDGGPICE, ADMFCLBHILF, KHOIOJCHLNL, FDCDPKDKNAL, HFFPEFBLBPC, JHJBHFINKDK, CFNHGMLGPHP
+- `EvtAvatarEnterFocusNotify`: KLNNOPGOMKN, JLNKDGGPICE, ADMFCLBHILF
 - `EvtBeingHealedNotify`: GOKLCPHOLGL, real_heal_amount, CMCCNKMGKHG, heal_amount
 - `EvtBulletHitNotify`: single_bullet_id, hit_entity_id
-- `EvtBulletMoveNotify`: EOCBPPKDLBH
 - `EvtCreateGadgetNotify`: AAMABJDMIFN, NHNFGNMNDDE, LMLMALLLGBB, PBLACGNNCDF
 - `ForgeQueueData`: next_finish_timestamp, unfinish_count, queue_id, total_finish_timestamp
-- `ForgeQueueManipulateRsp`: return_item_list, output_item_list
 - `FurnitureMakeRsp`: NDADFCDJOBK
-- `GadgetInteractReq`: DOGHJJCHDLF, IKMNHOHNBKJ, LPCDPGNKGFL, IKDIFBEOEKM, HDJABIODGCI, EBEELPIEKEL, ALLPOOBNNPH
+- `GadgetInteractReq`: DOGHJJCHDLF, IKMNHOHNBKJ, LPCDPGNKGFL, IKDIFBEOEKM, HDJABIODGCI, EBEELPIEKEL
 - `GetAllMailResultNotify`: total_page_count, page_index
-- `GetGachaInfoRsp`: BKMCHIJHJJE, LHBELFNPPNK
-- `GetPlayerTokenReq`: BIIJMKDGAGI, _gate_ticket, account_type, sub_channel_id
+- `GetPlayerTokenReq`: BIIJMKDGAGI, account_type, sub_channel_id, FDCECMCNKGC
 - `GetPlayerTokenRsp`: gm_uid, reg_platform, MGNAAEGCEDL, KONAINKDJCN, CGPIOKGGDPB, is_proficient_player, account_type, sub_channel_id
 - `GetScenePointRsp`: JHHBKAOPBAH, IEMCNADNPED, OLEEDBKCAAN
 - `GetShopmallDataRsp`: DPHCDGFOLCN
@@ -79,11 +83,11 @@ Parked at field 20000 and up, so they are neither read nor written on the wire. 
 - `MassiveEntityElementOpBatchNotify`: user_id, op_idx, source_element_type, reaction_source_type
 - `MusicGameActivityDetailInfo`: NCCMPNEBJLA, EPEEHJNIPNB
 - `OneoffGatherPointDetectorData`: CBENILCDDCB
-- `ParentQuest`: GFFBOKNBJLC, HONCJCKFDJE, EODCGKGCGDN, DDHKDIOKFIF
-- `PersonalLineAllDataRsp`: ongoing_personal_line_list, can_be_unlocked_personal_line_list, NIPKCPGAMKF
+- `ParentQuest`: GFFBOKNBJLC, HONCJCKFDJE, EODCGKGCGDN
+- `PersonalLineAllDataRsp`: NIPKCPGAMKF
 - `PingReq`: BLOPFLFBDAE, MCCPJDKDNMJ
 - `PlayerApplyEnterMpNotify`: src_thread_index, src_app_id
-- `PlayerEnterDungeonReq`: BAEJLCIOPMI, CCIOMCLOGDK
+- `PlayerEnterDungeonReq`: BAEJLCIOPMI
 - `PlayerEnterSceneNotify`: PCBFOAKLMKG, ALLIIBMKFLN, HBCAHGNHINM, BGICEPHCGEO
 - `PlayerLocationInfo`: HPOIENCPHFN
 - `PlayerLoginRsp`: stop_server_info, KKNBKGBLHDM, DPPKDPCKANP, is_sc_open, is_use_ability_hash, GICKBBGJGCK, JBEGCLMHOPF, KLKDKMBAPGA, GHAJDNKLEDA, OEMHPIKBDMB, HACEPFEEKGA
@@ -100,7 +104,6 @@ Parked at field 20000 and up, so they are neither read nor written on the wire. 
 - `Shop`: city_reputation_level, hogdkcckgap
 - `ShopGoods`: MEODDILKAAD, ELPGDNACFOA, mcoin, OCFMGIPGLDK, scoin, HBFOJABHIND, AJCBLGEDLFK, single_limit, NGPHJJIEDEH, MMMFLNHEDNI, LDCJFLOPNMP, AIALJDFIEAI, EKBHAAKJINF, KAGKMENGAFH, MBMIKDBJNAN, DCMBDJMCGGP
 - `StoreWeightLimitNotify`: CDHAIJGOKFC, DKIEKFJMMIH, OAJHCKBKFPP, reliquary_count_limit, KADABCKKMGA, _beyond_hall_facility_count_limit
-- `TakeFurnitureMakeRsp`: return_item_list, output_item_list
 - `TeamEnterSceneInfo`: JFAHOBMFLFE, FOMPMBNENPH
 - `TowerAllDataRsp`: commemorative_reward_id, EFABCDDNIFA, valid_tower_record_num, skip_to_floor_index, GKIFECKDHKD
 - `TowerCurLevelRecord`: cur_level_index, cur_floor_id
@@ -108,11 +111,10 @@ Parked at field 20000 and up, so they are neither read nor written on the wire. 
 - `TowerLevelStarCondData`: cond_value, star_cond_index
 - `TpsAmmunitionChange`: ammunition_config_id
 - `TrialAvatarActivityDetailInfo`: CBPJGGEBMBI
-- `TrialAvatarActivityRewardDetailInfo`: _passed_training_step_list, _available_training_step_list, is_can_take_reward, _is_avatar_owned, passed_dungeon, _is_skip_training, received_reward
+- `TrialAvatarActivityRewardDetailInfo`: _passed_training_step_list, _available_training_step_list, _is_avatar_owned, passed_dungeon, _is_skip_training
 - `UgcMusicBriefInfo`: CCJOGFPEKID, COAEPKLMKPE, self_max_score, HHBOBIJKFPJ, NLCMMJILBKJ, IIPJKAOBBBD, MOIDOMCHPFG, note_count, CDEMBFGJAPH
 - `WeaponPromoteRsp`: old_promote_level, cur_promote_level
 - `WorldPlayerDieNotify`: OBOKABMLGHI, murderer_entity_id, AOMDIHGJMNK
-- `_TakeAllForgeOutputRsp`: output_item_list, return_item_list
 
 ### Unconfirmed candidates
 
@@ -133,16 +135,12 @@ Pairs where a message has exactly one unmatched 7.1 field and one unmatched 7.2 
 - ShopGoods.KAGKMENGAFH: 20013 -> 1055  (7.1 AEHELDJPPPH = 7.2 LAJHLJGOMPH, single-message)
 - CardProductRewardNotify.OABOKBGPEHG: 20000 -> 8  (7.1 DDOINBPHJMP = 7.2 FOFGCGMLPIB, single-message)
 - ChatInfo.ALKIPKCAPFL: 20000 -> 4  (7.1 LOEJDBPKKNF = 7.2 MIBOFEIBECN, single-message)
-- ChatInfo.OIEHJMHHCFB: 20001 -> 10  (7.1 IEEJEEEHOGA = 7.2 CBPIPDFPBHN, single-message)
 - CodexDataUpdateNotify.OBEHJKBNDJG: 20000 -> 2  (7.1 NELOMLLAKME = 7.2 KBGFCJCMNFP, single-message)
 - DailyDungeonEntryInfo.ODDLACNLJOF: 20000 -> 1  (7.1 HAOOOFEBAMI = 7.2 BMOKOMEOKCP, single-message)
 - EnterSceneDoneRsp.PPKIKFGEINK: 20000 -> 12  (7.1 OGCIHDJAHHL = 7.2 MFLHLEMFIGI, single-message)
 - EntityFightPropChangeReasonNotify.EFIBMPKIJJH: 20000 -> 3  (7.1 HNBCFDELLDN = 7.2 GCFBFOHHHJJ, single-message)
-- EvtAvatarEnterFocusNotify.IMMFFEBPCJM: 20003 -> 1  (7.1 NOLEPJHLGKL = 7.2 IGLKLDNNDND, single-message)
 - EvtBeingHealedNotify.CMCCNKMGKHG: 20002 -> 13  (7.1 AFAHAOFIJJO = 7.2 is_mute, single-message)
 - EvtBeingHealedNotify.GOKLCPHOLGL: 20000 -> 2  (7.1 JONDCAMLJOF = 7.2 heal_tag, single-message)
-- EvtBulletMoveNotify.EOCBPPKDLBH: 20000 -> 14  (7.1 JONDPALHPCF = 7.2 NGLAODHCNHB, single-message)
-- ParentQuest.DDHKDIOKFIF: 20003 -> 4  (7.1 DHMHGDGIMAD = 7.2 JCHFKGKOJPH, single-message)
 - ParentQuest.GFFBOKNBJLC: 20000 -> 7  (7.1 PAJJMIMGHHI = 7.2 KANNCEMKHIG, single-message)
 - FurnitureMakeRsp.NDADFCDJOBK: 20000 -> 11  (7.1 IKCDMDEPMDC = 7.2 OEGCONFIHLI, single-message)
 - IceCreatureAllGadgetInfoNotify.ice_creature_gadget_info_list: 20000 -> 10  (7.1 _ice_creature_gadget_info_list = 7.2 _ice_creature_info_list, single-message)
@@ -166,7 +164,7 @@ Pairs where a message has exactly one unmatched 7.1 field and one unmatched 7.2 
 
 ## Handwritten parsers
 
-- `net/proto/AvatarPromoteReqParser.java` reads the ascension request guid from field 3, the 7.1 client field. `AvatarPromoteReq` has no named 7.2 counterpart, so the 7.2 field is unknown.
+`AvatarPromoteReqParser` now uses the generated 7.2 descriptor: CmdId 6528, `uint64 guid = 3`. Empty or malformed input still returns 0. Other handwritten wire code below remains subject to review.
 
 ## Handwritten wire code still on 7.1 numbers
 

@@ -25,7 +25,7 @@ public final class PacketOpcodes {
     public static final int GetCompoundDataReq = 29739; // 7.1: 8732
     public static final int GetFriendShowAvatarInfoReq = 0; // 7.2 CmdId unknown (7.1: 24487)
     public static final int GetFriendShowNameCardInfoReq = 0; // 7.2 CmdId unknown (7.1: 29743)
-    public static final int GetHomeLevelUpRewardReq = 0; // 7.2 CmdId unknown (7.1: 2113)
+    public static final int GetHomeLevelUpRewardReq = 4857; // 7.1: 2113
     public static final int GetProfilePictureDataReq = 21795; // 7.1: 27037
     public static final int GetUgcBriefInfoReq = 0;
     public static final int HomeChangeEditModeReq = 0; // 7.2 CmdId unknown (7.1: 29665)
@@ -866,7 +866,7 @@ public final class PacketOpcodes {
     // public static final int DOLMCAMLJHM = 24413;
     // public static final int CFJDBHFFFHI = 25707;
     // public static final int NDGHIOIDNPD = 23057;
-    public static final int ReceivedTrialAvatarActivityRewardRsp = 0; // 7.2 CmdId unknown (7.1: 21068)
+    public static final int ReceivedTrialAvatarActivityRewardRsp = 23468; // 7.1: 21068
     // public static final int NLGAPJJPCHK = 26787;
     public static final int IrodoriScanEntityRsp = 0; // 7.2 CmdId unknown (7.1: 27498)
     public static final int _SetWidgetSettingReq = 268; // 7.1: 25209
@@ -1693,7 +1693,7 @@ public final class PacketOpcodes {
     // public static final int MPLJADMBFNG = 25350;
     public static final int _SetReliquaryStarStateRsp = 8599; // 7.1: 7536
     public static final int SumoDungeonSettleNotify = 0; // 7.2 CmdId unknown (7.1: 7547)
-    public static final int PlatformStopRouteNotify = 0; // 7.2 CmdId unknown (7.1: 4699)
+    public static final int PlatformStopRouteNotify = 25529; // 7.1: 4699
     public static final int DropItemReq = 3858; // 7.1: 25716
     // public static final int UgcTowerLevelUpNotify = 2278;
     public static final int CheckAddItemExceedLimitNotify = 23995; // 7.1: 8097
@@ -2078,7 +2078,7 @@ public final class PacketOpcodes {
     public static final int BlessingAcceptGivePicRsp = 0; // 7.2 CmdId unknown (7.1: 2726)
     public static final int RogueDiaryDungeonInfoNotify = 0; // 7.2 CmdId unknown (7.1: 20847)
     // public static final int ADGHJBDBHFK = 22678;
-    public static final int PlatformStartRouteNotify = 0; // 7.2 CmdId unknown (7.1: 29891)
+    public static final int PlatformStartRouteNotify = 28296; // 7.1: 29891
     public static final int ScenePlayOutofRegionNotify = 25374; // 7.1: 24084
     public static final int EnterFishingReq = 0; // 7.1 CmdId unknown (7.0: 24152)
     // public static final int EDFGBIIOAAN = 1897;
@@ -2510,13 +2510,13 @@ public final class PacketOpcodes {
     public static final int EvtAvatarExitFocusNotify = 9718; // 7.1: 1753
     // public static final int DJAODLPAOBL = 20071;
     public static final int SumoSwitchTeamRsp = 0; // 7.2 CmdId unknown (7.1: 27645)
-    public static final int UnlockNameCardNotify = 0; // 7.2 CmdId unknown (7.1: 3626)
+    public static final int UnlockNameCardNotify = 23430; // 7.1: 3626
     // public static final int ACFDLMBNANC = 1926;
     public static final int LevelTagDataNotify = 25174; // 7.1: 863
     public static final int CheckGroupReplacedRsp = 20059; // 7.1: 8911
     public static final int AchievementUpdateNotify = 4301; // 7.1: 5513
     public static final int _PlayerNormalLuaShellNotify = 0; // 7.1 CmdId unknown (7.0: 27286)
-    public static final int AvatarPromoteReq = 0; // 7.2 CmdId unknown (7.1: 28539)
+    public static final int AvatarPromoteReq = 6528; // 7.1: 28539
     public static final int WidgetQuickHitTreeReq = 7605; // 7.1: 4121
     public static final int GCGWeekChallengeInfoNotify = 9792; // 7.1: 20117
     // public static final int HCDFOHEBFJJ = 25159;
@@ -2552,7 +2552,7 @@ public final class PacketOpcodes {
     public static final int QuestGlobalVarNotify = 2810; // 7.1: 25277
     public static final int BattlePassAllDataNotify = 8477; // 7.1: 7676
     // public static final int UgcDungeonSwitchRoomInviteReplyNotify = 25523;
-    public static final int HomeResourceTakeFetterExpRsp = 0; // 7.2 CmdId unknown (7.1: 27825)
+    public static final int HomeResourceTakeFetterExpRsp = 3653; // 7.1: 27825
     // public static final int OPGNOFMAAGF = 23786;
     public static final int _AvatarExtraLevelUpgradeRsp = 0; // 7.2 CmdId unknown (7.1: 5633)
     // public static final int JAPMAEHMHPG = 25902;
@@ -2728,7 +2728,7 @@ public final class PacketOpcodes {
     public static final int TakeMaterialDeleteReturnRsp = 3007; // 7.1: 23074
     // public static final int KPHKMKLKADJ = 26969;
     public static final int WinterCampTriathlonSettleNotify = 0; // 7.2 CmdId unknown (7.1: 24776)
-    public static final int PlatformChangeRouteNotify = 0; // 7.2 CmdId unknown (7.1: 6989)
+    public static final int PlatformChangeRouteNotify = 1089; // 7.1: 6989
     // public static final int FDMOOGNDEFH = 21778;
     public static final int EffigyChallengeInfoNotify = 0; // 7.2 CmdId unknown (7.1: 25575)
     // public static final int CANIKGGABFO = 3923;
@@ -2866,7 +2866,7 @@ public final class PacketOpcodes {
     public static final int _MonsterChessV2FlagSelectRsp = 24263; // 7.1: 4825
     // public static final int MIEENPDOGIP = 9475;
     public static final int LaunchFireworksReq = 3257; // 7.1: 26674
-    public static final int EnterTrialAvatarActivityDungeonRsp = 0; // 7.2 CmdId unknown (7.1: 21467)
+    public static final int EnterTrialAvatarActivityDungeonRsp = 29493; // 7.1: 21467
     public static final int GroupLinkChangeNotify = 0; // 7.1 CmdId unknown (7.0: 29523)
     // public static final int JourneyDiceEnterDungeonReq = 5240;
     public static final int ActivityBannerNotify = 23109; // 7.1: 26136
@@ -2989,7 +2989,7 @@ public final class PacketOpcodes {
     public static final int HomeChangeModuleRsp = 6805; // 7.1: 22143
     public static final int HomeEnterEditModeFinishRsp = 0; // 7.1 CmdId unknown (7.0: 1)
     public static final int HomeGetOnlineStatusRsp = 28241; // 7.1: 23294
-    public static final int HomeModuleUnlockNotify = 0; // 7.1 CmdId unknown (7.0: 1)
+    public static final int HomeModuleUnlockNotify = 4238;
     public static final int HomePreChangeEditModeNotify = 9102; // 7.1: 1974
     public static final int HomeSceneInitFinishRsp = 0; // 7.1 CmdId unknown (7.0: 1)
     public static final int HomeUpdateArrangementInfoRsp = 4591; // 7.1: 20044
@@ -3033,7 +3033,7 @@ public final class PacketOpcodes {
     // Snezhnaya Ice Creatures (Icemaking), from kitkat-multiverse/genshin-protocol 7.1.0.
     public static final int IceCreatureBuildReq = 5949; // 7.1: 5180
     public static final int IceCreatureBuildRsp = 28174; // 7.1: 6254
-    public static final int IceCreatureLikeReq = 0; // 7.2 CmdId unknown (7.1: 9517)
+    public static final int IceCreatureLikeReq = 3775; // 7.1: 9517
     public static final int IceCreatureLikeRsp = 5187; // 7.1: 25935
     public static final int IceCreatureGadgetRemoveReq = 27140; // 7.1: 27474
     public static final int IceCreatureGadgetRemoveRsp = 1003; // 7.1: 24183

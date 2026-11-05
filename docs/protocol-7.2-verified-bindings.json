@@ -1,0 +1,1353 @@
+{
+  "server_baseline_commit": "a49f51aa6f2787ffbc25cee46801b70dee860d23",
+  "historical_server_reference_commit": "e1c6ca694223c5125fec0558e48e278303961f0f",
+  "binding_source_protocol_descriptor_sha256": "6b0800302bb76ded18af225a68f99894bf34bc674f489273b049d9dab27b0857",
+  "enabled_opcodes": [
+    {
+      "message": "AvatarPromoteReq",
+      "cmd": 6528,
+      "current_type": 79832,
+      "source": "native_cross_version_correspondence"
+    },
+    {
+      "message": "EnterTrialAvatarActivityDungeonRsp",
+      "cmd": 29493,
+      "current_type": 57780,
+      "source": "native_cross_version_correspondence"
+    },
+    {
+      "message": "GetHomeLevelUpRewardReq",
+      "cmd": 4857,
+      "current_type": 38204,
+      "source": "native_cross_version_correspondence"
+    },
+    {
+      "message": "HomeModuleUnlockNotify",
+      "cmd": 4238,
+      "current_type": 78130,
+      "source": "native_cross_version_correspondence"
+    },
+    {
+      "message": "HomeResourceTakeFetterExpRsp",
+      "cmd": 3653,
+      "current_type": 28744,
+      "source": "native_cross_version_correspondence"
+    },
+    {
+      "message": "IceCreatureLikeReq",
+      "cmd": 3775,
+      "current_type": 56125,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "PlatformStartRouteNotify",
+      "cmd": 28296,
+      "current_type": 74793,
+      "source": "native_cross_version_correspondence"
+    },
+    {
+      "message": "PlatformStopRouteNotify",
+      "cmd": 25529,
+      "current_type": 22640,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "PlatformChangeRouteNotify",
+      "cmd": 1089,
+      "current_type": 74020,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "ReceivedTrialAvatarActivityRewardRsp",
+      "cmd": 23468,
+      "current_type": 55553,
+      "source": "reference71_structural_correspondence"
+    },
+    {
+      "message": "UnlockNameCardNotify",
+      "cmd": 23430,
+      "current_type": 16461,
+      "source": "native_call_chain"
+    }
+  ],
+  "corrected_fields": [
+    {
+      "owner": "AvatarPromoteReq",
+      "field": "guid",
+      "old": 12,
+      "current": 3,
+      "current_field": "guid",
+      "current_type": 79832
+    },
+    {
+      "owner": "EnterTrialAvatarActivityDungeonRsp",
+      "field": "trial_avatar_index_id",
+      "old": 12,
+      "current": 10,
+      "current_field": "trial_avatar_index_id",
+      "current_type": 57780
+    },
+    {
+      "owner": "EnterTrialAvatarActivityDungeonRsp",
+      "field": "activity_id",
+      "old": 3,
+      "current": 2,
+      "current_field": "activity_id",
+      "current_type": 57780
+    },
+    {
+      "owner": "EnterTrialAvatarActivityDungeonRsp",
+      "field": "retcode",
+      "old": 15,
+      "current": 3,
+      "current_field": "retcode",
+      "current_type": 57780
+    },
+    {
+      "owner": "GetHomeLevelUpRewardReq",
+      "field": "level",
+      "old": 10,
+      "current": 9,
+      "current_field": "level",
+      "current_type": 38204
+    },
+    {
+      "owner": "HomeModuleUnlockNotify",
+      "field": "module_id",
+      "old": 8,
+      "current": 9,
+      "current_field": "module_id",
+      "current_type": 78130
+    },
+    {
+      "owner": "HomeResourceTakeFetterExpRsp",
+      "field": "fetter_exp",
+      "old": 9,
+      "current": 10,
+      "current_field": "fetter_exp",
+      "current_type": 28744
+    },
+    {
+      "owner": "HomeResourceTakeFetterExpRsp",
+      "field": "retcode",
+      "old": 8,
+      "current": 3,
+      "current_field": "retcode",
+      "current_type": 28744
+    },
+    {
+      "owner": "IceCreatureLikeReq",
+      "field": "guid",
+      "old": 13,
+      "current": 14,
+      "current_field": "guid",
+      "current_type": 56125
+    },
+    {
+      "owner": "PlatformStartRouteNotify",
+      "field": "platform",
+      "old": 7,
+      "current": 3,
+      "current_field": "platform",
+      "current_type": 74793
+    },
+    {
+      "owner": "PlatformStartRouteNotify",
+      "field": "entity_id",
+      "old": 2,
+      "current": 1,
+      "current_field": "entity_id",
+      "current_type": 74793
+    },
+    {
+      "owner": "PlatformStartRouteNotify",
+      "field": "scene_time",
+      "old": 11,
+      "current": 14,
+      "current_field": "scene_time",
+      "current_type": 74793
+    },
+    {
+      "owner": "PlatformStopRouteNotify",
+      "field": "platform",
+      "old": 12,
+      "current": 2,
+      "current_field": "platform",
+      "current_type": 22640
+    },
+    {
+      "owner": "PlatformStopRouteNotify",
+      "field": "entity_id",
+      "old": 5,
+      "current": 4,
+      "current_field": "entity_id",
+      "current_type": 22640
+    },
+    {
+      "owner": "PlatformStopRouteNotify",
+      "field": "scene_time",
+      "old": 14,
+      "current": 15,
+      "current_field": "scene_time",
+      "current_type": 22640
+    },
+    {
+      "owner": "PlatformChangeRouteNotify",
+      "field": "platform",
+      "old": 4,
+      "current": 14,
+      "current_field": "platform",
+      "current_type": 74020
+    },
+    {
+      "owner": "PlatformChangeRouteNotify",
+      "field": "entity_id",
+      "old": 6,
+      "current": 1,
+      "current_field": "entity_id",
+      "current_type": 74020
+    },
+    {
+      "owner": "PlatformChangeRouteNotify",
+      "field": "scene_time",
+      "old": 7,
+      "current": 6,
+      "current_field": "scene_time",
+      "current_type": 74020
+    },
+    {
+      "owner": "ReceivedTrialAvatarActivityRewardRsp",
+      "field": "retcode",
+      "old": 5,
+      "current": 13,
+      "current_field": "retcode",
+      "current_type": 55553
+    },
+    {
+      "owner": "ReceivedTrialAvatarActivityRewardRsp",
+      "field": "activity_id",
+      "old": 8,
+      "current": 14,
+      "current_field": "activity_id",
+      "current_type": 55553
+    },
+    {
+      "owner": "ReceivedTrialAvatarActivityRewardRsp",
+      "field": "trial_avatar_index_id",
+      "old": 10,
+      "current": 2,
+      "current_field": "trial_avatar_index_id",
+      "current_type": 55553
+    },
+    {
+      "owner": "HomeResource",
+      "field": "store_limit",
+      "old": 1,
+      "current": 7,
+      "current_field": "store_limit",
+      "current_type": 75411
+    },
+    {
+      "owner": "HomeResource",
+      "field": "store_value",
+      "old": 7,
+      "current": 1,
+      "current_field": "store_value",
+      "current_type": 75411
+    },
+    {
+      "owner": "ActivityInfo",
+      "field": "is_play_open_anim",
+      "old": 20008,
+      "current": 10,
+      "current_field": "is_play_open_anim",
+      "current_type": 30488
+    },
+    {
+      "owner": "BattlePassProduct",
+      "field": "extra_product_id",
+      "old": 20001,
+      "current": 5,
+      "current_field": "extra_product_id",
+      "current_type": 53547
+    },
+    {
+      "owner": "CancelCoopTaskRsp",
+      "field": "chapter_id",
+      "old": 20000,
+      "current": 7,
+      "current_field": "chapter_id",
+      "current_type": 77577
+    },
+    {
+      "owner": "ClientSetGameTimeRsp",
+      "field": "client_game_time",
+      "old": 20000,
+      "current": 15,
+      "current_field": "client_game_time",
+      "current_type": 77280
+    },
+    {
+      "owner": "DelBackupAvatarTeamRsp",
+      "field": "retcode",
+      "old": 20000,
+      "current": 14,
+      "current_field": "retcode",
+      "current_type": 79441
+    },
+    {
+      "owner": "GetPlayerTokenReq",
+      "field": "_gate_ticket",
+      "old": 20003,
+      "current": 965,
+      "current_field": "_gate_ticket",
+      "current_type": 12855
+    },
+    {
+      "owner": "TrialAvatarActivityRewardDetailInfo",
+      "field": "is_can_take_reward",
+      "old": 20002,
+      "current": 8,
+      "current_field": "is_can_take_reward",
+      "current_type": 78844
+    },
+    {
+      "owner": "TrialAvatarActivityRewardDetailInfo",
+      "field": "received_reward",
+      "old": 20006,
+      "current": 6,
+      "current_field": "received_reward",
+      "current_type": 78844
+    },
+    {
+      "owner": "_AutochessRecordSocialBrief",
+      "field": "AFDKEOOHHPA",
+      "old": 20003,
+      "current": 8,
+      "reference_server_number": 13,
+      "raw_field71": "IHCKAGNBEDL",
+      "native_type71": 54763,
+      "native_type72": 11114,
+      "raw_field72": "KGKMDCFIFGF",
+      "current_field_name": "KGKMDCFIFGF",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        50495,
+        50496,
+        50503
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xbe9bc60",
+          "handler72": "0xfe24ef8",
+          "instruction_offset": 172,
+          "offset71": 72,
+          "offset72": 72,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "2b6961fd2d6e711be8d63aa9463a45bf8b644b542fcc530874f238e1b5f21540"
+        }
+      ]
+    },
+    {
+      "owner": "_AutochessRecordSocialBrief",
+      "field": "LKPNNFDCJLF",
+      "old": 20005,
+      "current": 10,
+      "reference_server_number": 7,
+      "raw_field71": "EDHFOPFNBGC",
+      "native_type71": 54763,
+      "native_type72": 11114,
+      "raw_field72": "HIAGKHNOPPE",
+      "current_field_name": "HIAGKHNOPPE",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        50495,
+        50496,
+        50503
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xbe9bc60",
+          "handler72": "0xfe24ef8",
+          "instruction_offset": 332,
+          "offset71": 84,
+          "offset72": 80,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "2b6961fd2d6e711be8d63aa9463a45bf8b644b542fcc530874f238e1b5f21540"
+        }
+      ]
+    },
+    {
+      "owner": "ChatInfo",
+      "field": "OIEHJMHHCFB",
+      "old": 20001,
+      "current": 10,
+      "reference_server_number": 15,
+      "raw_field71": "IEEJEEEHOGA",
+      "native_type71": 74776,
+      "native_type72": 67586,
+      "raw_field72": "CBPIPDFPBHN",
+      "current_field_name": "CBPIPDFPBHN",
+      "protobuf_type": 4,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [],
+      "independent_native_bodies": 3,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0xc2e493c",
+          "handler72": "0x10d1a63c",
+          "instruction_offset": 152,
+          "offset71": 48,
+          "offset72": 56,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "5d0061ecc34c7a4ed96d73256ae88b446a872400a908680b81a615df02546e00"
+        },
+        {
+          "handler71": "0xdb6e51c",
+          "handler72": "0xf283abc",
+          "instruction_offset": 216,
+          "offset71": 48,
+          "offset72": 56,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "c9a80cafe1cc303b134d9a3cce5586f80e0967681a89bc6e182b304ddad12b15"
+        },
+        {
+          "handler71": "0xdb6c71c",
+          "handler72": "0xf289344",
+          "instruction_offset": 52,
+          "offset71": 48,
+          "offset72": 56,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "778379f719bddb44b0fbe00b3f34a5e15ad5453a64a1c7778853c70e33c4f0be"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "MEBKKKCNDAK",
+      "old": 20000,
+      "current": 2,
+      "reference_server_number": 8,
+      "raw_field71": "MFAMFHHCEDC",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "GLACJGOMOEP",
+      "current_field_name": "disable_anim",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 336,
+          "offset71": 48,
+          "offset72": 45,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "PNELCGBOIFM",
+      "old": 20001,
+      "current": 4,
+      "reference_server_number": 7,
+      "raw_field71": "BMPLPFBLPPP",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "GBJLBCHENAG",
+      "current_field_name": "use_auto_focus",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 212,
+          "offset71": 37,
+          "offset72": 44,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "IMMFFEBPCJM",
+      "old": 20003,
+      "current": 1,
+      "reference_server_number": 12,
+      "raw_field71": "NOLEPJHLGKL",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "IGLKLDNNDND",
+      "current_field_name": "IGLKLDNNDND",
+      "protobuf_type": 5,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 372,
+          "offset71": 32,
+          "offset72": 32,
+          "instruction": "str",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "CCDMIMGNCBM",
+      "old": 20004,
+      "current": 15,
+      "reference_server_number": 1,
+      "raw_field71": "CENEJKOCNED",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "JINNEJDODAL",
+      "current_field_name": "JINNEJDODAL",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 392,
+          "offset71": 51,
+          "offset72": 50,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "KHOIOJCHLNL",
+      "old": 20007,
+      "current": 5,
+      "reference_server_number": 13,
+      "raw_field71": "IDCJNFNEFDD",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "KIDGFLIHGFD",
+      "current_field_name": "enter_normal_focus_shoot",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 296,
+          "offset71": 53,
+          "offset72": 46,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "FDCDPKDKNAL",
+      "old": 20008,
+      "current": 7,
+      "reference_server_number": 6,
+      "raw_field71": "PKLCFHBELHB",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "DFBEMJDOMIF",
+      "current_field_name": "enter_holding_focus_shoot",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 316,
+          "offset71": 49,
+          "offset72": 42,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "HFFPEFBLBPC",
+      "old": 20009,
+      "current": 12,
+      "reference_server_number": 4,
+      "raw_field71": "AOOCOLABLIO",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "DOBAHLDIOLK",
+      "current_field_name": "use_gyro",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 236,
+          "offset71": 50,
+          "offset72": 41,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "JHJBHFINKDK",
+      "old": 20010,
+      "current": 11,
+      "reference_server_number": 11,
+      "raw_field71": "KLDOBEPJGEA",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "CEFPJEFMIFI",
+      "current_field_name": "use_focus_sticky",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 188,
+          "offset71": 39,
+          "offset72": 49,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtAvatarEnterFocusNotify",
+      "field": "CFNHGMLGPHP",
+      "old": 20011,
+      "current": 13,
+      "reference_server_number": 14,
+      "raw_field71": "BNKBCIONEGB",
+      "native_type71": 48931,
+      "native_type72": 59261,
+      "raw_field72": "NKILEJBMONM",
+      "current_field_name": "disable_aim_layer",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        294416,
+        294418,
+        294420,
+        294421,
+        294422,
+        294423,
+        294424,
+        294425,
+        294428,
+        294430
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xb7d5a2c",
+          "handler72": "0xb6298bc",
+          "instruction_offset": 356,
+          "offset71": 52,
+          "offset72": 43,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "dd62c5e95e358cd6e885f95b088ddd9ee362a56e389a1369b80a7205bf9b8551"
+        }
+      ]
+    },
+    {
+      "owner": "EvtBulletMoveNotify",
+      "field": "EOCBPPKDLBH",
+      "old": 20000,
+      "current": 14,
+      "reference_server_number": 15,
+      "raw_field71": "JONDPALHPCF",
+      "native_type71": 71741,
+      "native_type72": 39365,
+      "raw_field72": "NGLAODHCNHB",
+      "current_field_name": "NGLAODHCNHB",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        198050,
+        198051,
+        198052
+      ],
+      "independent_native_bodies": 2,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0xb7c9da4",
+          "handler72": "0x9193cd0",
+          "instruction_offset": 92,
+          "offset71": 40,
+          "offset72": 40,
+          "instruction": "ldrb",
+          "mode": "load",
+          "normalized_body_sha256": "e7228c0e8a1c02d5379129df77a581c76bbe32a716921eef96ece29ddca3b188"
+        },
+        {
+          "handler71": "0xb7d07b4",
+          "handler72": "0x9198fbc",
+          "instruction_offset": 208,
+          "offset71": 40,
+          "offset72": 40,
+          "instruction": "strb",
+          "mode": "store",
+          "normalized_body_sha256": "ae334bd6b8e6bfc10758c62a0a120cf637ddcfae456429cce2d61f36b4dedb4b"
+        }
+      ]
+    },
+    {
+      "owner": "ParentQuest",
+      "field": "DDHKDIOKFIF",
+      "old": 20003,
+      "current": 4,
+      "reference_server_number": 7,
+      "raw_field71": "DHMHGDGIMAD",
+      "native_type71": 80402,
+      "native_type72": 38246,
+      "raw_field72": "JCHFKGKOJPH",
+      "current_field_name": "JCHFKGKOJPH",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        192756
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0x85e2a34",
+          "handler72": "0xad361ac",
+          "instruction_offset": 28,
+          "offset71": 93,
+          "offset72": 102,
+          "instruction": "ldrb",
+          "mode": "load",
+          "normalized_body_sha256": "a57f22eec6212dcef8943b8ae5a04f2fbaa3768ac6ac233a7288dab163a2c2b1"
+        }
+      ]
+    },
+    {
+      "owner": "GadgetInteractReq",
+      "field": "ALLPOOBNNPH",
+      "old": 20007,
+      "current": 15,
+      "reference_server_number": 12,
+      "raw_field71": "KGLMOAAIOML",
+      "native_type71": 82713,
+      "native_type72": 18226,
+      "raw_field72": "OABIMKEIKDP",
+      "current_field_name": "ui_interact_id",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        88322,
+        88327,
+        88329
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": true,
+      "native_instructions": [
+        {
+          "handler71": "0x81a6d2c",
+          "handler72": "0xbcfde04",
+          "instruction_offset": 116,
+          "offset71": 40,
+          "offset72": 40,
+          "instruction": "str",
+          "mode": "store",
+          "normalized_body_sha256": "11644c2280b540f67ce0581276482993af2f013de38b1f45c8d21a0daf2f7cab"
+        }
+      ]
+    },
+    {
+      "owner": "GetGachaInfoRsp",
+      "field": "BKMCHIJHJJE",
+      "old": 20000,
+      "current": 14,
+      "reference_server_number": 6,
+      "raw_field71": "MPMJPLKFKII",
+      "native_type71": 46886,
+      "native_type72": 56346,
+      "raw_field72": "HHHOIIDMFED",
+      "current_field_name": "is_under_general_restrict",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        279120,
+        279121,
+        279122,
+        279123
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0x120938b8",
+          "handler72": "0xdb3085c",
+          "instruction_offset": 164,
+          "offset71": 41,
+          "offset72": 32,
+          "instruction": "ldrb",
+          "mode": "load",
+          "normalized_body_sha256": "91e0f8c797e76b8daeea79f271b1113207426e8f63b47bc5cb03e080b0532b04"
+        }
+      ]
+    },
+    {
+      "owner": "GetGachaInfoRsp",
+      "field": "LHBELFNPPNK",
+      "old": 20001,
+      "current": 1,
+      "reference_server_number": 4,
+      "raw_field71": "IMOKNHBMEAK",
+      "native_type71": 46886,
+      "native_type72": 56346,
+      "raw_field72": "GGLPKHEOIPI",
+      "current_field_name": "is_under_minors_restrict",
+      "protobuf_type": 8,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        279120,
+        279121,
+        279122,
+        279123
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0x120938b8",
+          "handler72": "0xdb3085c",
+          "instruction_offset": 160,
+          "offset71": 40,
+          "offset72": 33,
+          "instruction": "ldrb",
+          "mode": "load",
+          "normalized_body_sha256": "91e0f8c797e76b8daeea79f271b1113207426e8f63b47bc5cb03e080b0532b04"
+        }
+      ]
+    },
+    {
+      "owner": "PlayerEnterDungeonReq",
+      "field": "CCIOMCLOGDK",
+      "old": 20001,
+      "current": 5,
+      "reference_server_number": 9,
+      "raw_field71": "KCEKHDKFPFB",
+      "native_type71": 41434,
+      "native_type72": 82628,
+      "raw_field72": "PNPHGNCFHHC",
+      "current_field_name": "PNPHGNCFHHC",
+      "protobuf_type": 13,
+      "protobuf_cardinality": 1,
+      "known_native_field_controls": [
+        411830,
+        411831,
+        411832
+      ],
+      "independent_native_bodies": 1,
+      "has_supported_direct_callees": false,
+      "native_instructions": [
+        {
+          "handler71": "0xd615c30",
+          "handler72": "0xf871894",
+          "instruction_offset": 120,
+          "offset71": 44,
+          "offset72": 48,
+          "instruction": "str",
+          "mode": "store",
+          "normalized_body_sha256": "8e4adeda3e10ea078d7fed0c4ad5a67cb9518662e5b6930a04e3d19525ccd35a"
+        }
+      ]
+    },
+    {
+      "owner": "ForgeQueueManipulateRsp",
+      "field": "return_item_list",
+      "old": 20000,
+      "current": 8,
+      "native_type72": 51216,
+      "protobuf_type": 11,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 964,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        },
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 364,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        },
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 484,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        },
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 596,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        }
+      ]
+    },
+    {
+      "owner": "ForgeQueueManipulateRsp",
+      "field": "output_item_list",
+      "old": 20001,
+      "current": 15,
+      "native_type72": 51216,
+      "protobuf_type": 11,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 84,
+          "offset71": 40,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        },
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 132,
+          "offset71": 40,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        },
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 244,
+          "offset71": 40,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        },
+        {
+          "handler71": "0x117917b8",
+          "handler72": "0xc07ae88",
+          "instruction_offset": 348,
+          "offset71": 40,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "6e8e5dce4eb8d9dcc77b8459badc62c8bfbf6256b356cb169df6624ec081a84b"
+        }
+      ]
+    },
+    {
+      "owner": "PersonalLineAllDataRsp",
+      "field": "ongoing_personal_line_list",
+      "old": 20000,
+      "current": 13,
+      "native_type72": 55293,
+      "protobuf_type": 13,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x85eb9b0",
+          "handler72": "0xb2bc048",
+          "instruction_offset": 136,
+          "offset71": 32,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "a56675cbce1634b7b797c9738ecf2da45f949e46d90d430432e0d717d82ef2fc"
+        }
+      ]
+    },
+    {
+      "owner": "PersonalLineAllDataRsp",
+      "field": "can_be_unlocked_personal_line_list",
+      "old": 20001,
+      "current": 10,
+      "native_type72": 55293,
+      "protobuf_type": 13,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x85eb9b0",
+          "handler72": "0xb2bc048",
+          "instruction_offset": 176,
+          "offset71": 48,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "a56675cbce1634b7b797c9738ecf2da45f949e46d90d430432e0d717d82ef2fc"
+        }
+      ]
+    },
+    {
+      "owner": "TakeFurnitureMakeRsp",
+      "field": "return_item_list",
+      "old": 20000,
+      "current": 7,
+      "native_type72": 64167,
+      "protobuf_type": 11,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x11460f5c",
+          "handler72": "0xe0e4b38",
+          "instruction_offset": 544,
+          "offset71": 32,
+          "offset72": 24,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "4fa1c60ea7fd4917b58d553fcfae1827a5c10e23cb9607bb58154d8c4e427e40"
+        }
+      ]
+    },
+    {
+      "owner": "TakeFurnitureMakeRsp",
+      "field": "output_item_list",
+      "old": 20001,
+      "current": 1,
+      "native_type72": 64167,
+      "protobuf_type": 11,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x11460f5c",
+          "handler72": "0xe0e4b38",
+          "instruction_offset": 152,
+          "offset71": 40,
+          "offset72": 32,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "4fa1c60ea7fd4917b58d553fcfae1827a5c10e23cb9607bb58154d8c4e427e40"
+        }
+      ]
+    },
+    {
+      "owner": "_TakeAllForgeOutputRsp",
+      "field": "output_item_list",
+      "old": 20000,
+      "current": 14,
+      "native_type72": 20877,
+      "protobuf_type": 11,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 148,
+          "offset71": 32,
+          "offset72": 48,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        },
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 196,
+          "offset71": 32,
+          "offset72": 48,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        },
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 308,
+          "offset71": 32,
+          "offset72": 48,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        },
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 412,
+          "offset71": 32,
+          "offset72": 48,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        }
+      ]
+    },
+    {
+      "owner": "_TakeAllForgeOutputRsp",
+      "field": "return_item_list",
+      "old": 20001,
+      "current": 8,
+      "native_type72": 20877,
+      "protobuf_type": 11,
+      "protobuf_cardinality": 3,
+      "independent_collection_type_audit": "native-proto-collection-type-correspondences.json",
+      "native_instructions": [
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 1172,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        },
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 428,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        },
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 552,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        },
+        {
+          "handler71": "0x117982d8",
+          "handler72": "0xc07bd3c",
+          "instruction_offset": 664,
+          "offset71": 24,
+          "offset72": 40,
+          "instruction": "ldr",
+          "mode": "load",
+          "normalized_body_sha256": "bc868fff8d588e6f2f099b8f65cbd05bdd3833f67e7150adff734bbb9be06ff7"
+        }
+      ]
+    }
+  ],
+  "displaced_legacy_fields": [
+    {
+      "owner": "ActivityInfo",
+      "field": "is_banner_cleared",
+      "old": 10,
+      "parked": 20008,
+      "replaces": "is_play_open_anim",
+      "reason": "Preserve the old API field while reserving the verified current wire slot for its named role"
+    },
+    {
+      "owner": "BattlePassProduct",
+      "field": "LJKGANJLFNJ",
+      "old": 5,
+      "parked": 20001,
+      "replaces": "extra_product_id",
+      "reason": "Preserve the old API field while reserving the verified current wire slot for its named role"
+    },
+    {
+      "owner": "GetPlayerTokenReq",
+      "field": "FDCECMCNKGC",
+      "old": 965,
+      "parked": 20003,
+      "replaces": "_gate_ticket",
+      "reason": "Preserve the old API field while reserving the verified current wire slot for its named role"
+    }
+  ],
+  "descriptor_validation": {
+    "compiled_proto_files": 2105,
+    "descriptor_files": 2105,
+    "verified_opcode_bindings": 11,
+    "corrected_field_numbers": 57,
+    "displaced_legacy_api_fields": 3,
+    "unplanned_descriptor_changes": 0,
+    "duplicate_new_opcode_bindings": 0,
+    "descriptor_sha256": "3892d2e56fec227d775d44c96ad1d6b9b8e914a79b8721ec1f7f744a62728f20",
+    "all_message_and_enum_declarations_preserved": true,
+    "untouched_manual_gacha_info_preserved": true,
+    "no_end_to_end_client_test_claimed": true
+  },
+  "native_ascension_sender_cases": 22,
+  "native_field_instruction_cases": 276,
+  "semantic_source_spelling_not_claimed": true,
+  "live_android_session_tested": false,
+  "formatter_note": "The existing Spotless/Google Java Format combination fails with NoSuchMethodError for JavaFormatterOptions.Style.valueOf; no formatting dependency changes were made.",
+  "targeted_java_tests": {
+    "class_name": "emu.grasscutter.net.Verified72BindingsTest",
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}
