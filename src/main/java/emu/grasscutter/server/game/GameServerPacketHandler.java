@@ -79,13 +79,9 @@ public final class GameServerPacketHandler {
         registerIfAbsent(ReliquaryDustSystem.OPCODE_DUST_CONFIRM_REQ_B,
                 emu.grasscutter.server.packet.recv.HandlerReliquaryDustConfirmReqB.class);
 
-        // BuyResinReq was missing from the 7.0 dump; live click confirmed opcode 29821.
-        if (!this.handlers.containsKey(PacketOpcodes.BuyResinReq)) {
-            this.handlers.put(PacketOpcodes.BuyResinReq,
-                    new emu.grasscutter.server.packet.recv.HandlerBuyResinReq());
-            Grasscutter.getLogger().info("Registered BuyResinReq handler at opcode {}",
-                    PacketOpcodes.BuyResinReq);
-        }
+        // 热替换后也保持树脂购买请求已注册。
+        registerIfAbsent(PacketOpcodes.BuyResinReq,
+                emu.grasscutter.server.packet.recv.HandlerBuyResinReq.class);
         // Handbook preparation / quick-open (may be missed by Reflections after hot-patch).
         if (!this.handlers.containsKey(PacketOpcodes.DungeonQuickOpenReq)) {
             this.registerPacketHandler(

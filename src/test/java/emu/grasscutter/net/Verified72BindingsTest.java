@@ -8,8 +8,16 @@ import com.google.protobuf.CodedInputStream;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq;
 import emu.grasscutter.net.proto.AvatarPromoteReqParser;
+import emu.grasscutter.net.proto.DelBackupAvatarTeamReqOuterClass.DelBackupAvatarTeamReq;
+import emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
+import emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq;
+import emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq;
+import emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp;
 import emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource;
+import emu.grasscutter.net.proto.ReadMailNotifyOuterClass.ReadMailNotify;
+import emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq;
+import emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq;
 import emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp;
 import java.util.HashMap;
 import java.util.HexFormat;
@@ -66,5 +74,71 @@ final class Verified72BindingsTest {
         assertEquals(203, response.getReturnItemList(0).getItemId());
         assertEquals(2, response.getReturnItemList(0).getCount());
         assertArrayEquals(bytes, response.toByteArray());
+    }
+
+    @Test
+    void profileRequestsUseTheNativeCardAndSignatureFields() throws Exception {
+        assertEquals(3230, PacketOpcodes.SetNameCardReq);
+        var card = SetNameCardReq.parseFrom(HexFormat.of().parseHex("58ffffffff0f"));
+        assertEquals(0xffffffffL, Integer.toUnsignedLong(card.getNameCardId()));
+
+        assertEquals(4867, PacketOpcodes.SetPlayerSignatureReq);
+        var bytes = HexFormat.of().parseHex("4a06e7adbee5908d");
+        var signature = SetPlayerSignatureReq.parseFrom(bytes);
+        assertEquals("签名", signature.getSignature());
+        assertArrayEquals(bytes, signature.toByteArray());
+    }
+
+    @Test
+    void homeMusicRequestAndReplyUseTheCurrentClientBindings() throws Exception {
+        assertEquals(28560, PacketOpcodes.HomeChangeBgmReq);
+        assertEquals(25773, PacketOpcodes.HomeChangeBgmRsp);
+        var request = HomeChangeBgmReq.parseFrom(HexFormat.of().parseHex("20e907"));
+        assertEquals(1001, request.getBgmId());
+
+        var bytes = HexFormat.of().parseHex("688401");
+        assertEquals(132, HomeChangeBgmRsp.parseFrom(bytes).getRetcode());
+        assertArrayEquals(bytes, HomeChangeBgmRsp.newBuilder().setRetcode(132).build().toByteArray());
+    }
+
+    @Test
+    void teamDeletionUsesTheCurrentIdField() throws Exception {
+        assertEquals(2864, PacketOpcodes.DelBackupAvatarTeamReq);
+        var request = DelBackupAvatarTeamReq.parseFrom(HexFormat.of().parseHex("207b2809"));
+        assertEquals(9, request.getBackupAvatarTeamId());
+        assertEquals(812, PacketOpcodes.GetAllUnlockNameCardReq);
+    }
+
+    @Test
+    void mailOperationsUseTheirOwnIdLists() throws Exception {
+        assertEquals(29775, PacketOpcodes.GetMailItemReq);
+        var claimBytes = HexFormat.of().parseHex("7a0601ffffffff0f");
+        var claim = GetMailItemReq.parseFrom(claimBytes);
+        assertEquals(1, claim.getMailIdList(0));
+        assertEquals(0xffffffffL, Integer.toUnsignedLong(claim.getMailIdList(1)));
+        assertArrayEquals(claimBytes, claim.toByteArray());
+
+        assertEquals(24171, PacketOpcodes.DelMailReq);
+        var deletion = DelMailReq.parseFrom(HexFormat.of().parseHex("3a03010207"));
+        assertEquals(java.util.List.of(1, 2, 7), deletion.getMailIdListList());
+
+        assertEquals(6678, PacketOpcodes.ReadMailNotify);
+        var read = ReadMailNotify.parseFrom(HexFormat.of().parseHex("3202092a"));
+        assertEquals(java.util.List.of(9, 42), read.getMailIdListList());
+    }
+
+    @Test
+    void emptyRequestsHaveDistinctCurrentBindings() {
+        assertEquals(21907, PacketOpcodes.GetProfilePictureDataReq);
+        assertEquals(21795, PacketOpcodes.GetPlayerAskFriendListReq);
+        assertEquals(1684, PacketOpcodes.GetPlayerFriendListReq);
+        assertEquals(29401, PacketOpcodes.GetCityReputationMapInfoReq);
+        assertEquals(20856, PacketOpcodes.GetMapMarkTipsReq);
+        assertEquals(28289, PacketOpcodes.BackMyWorldReq);
+        assertEquals(20545, PacketOpcodes.BuyResinReq);
+
+        var tips = new emu.grasscutter.server.packet.send.PacketGetMapMarkTipsRsp();
+        assertEquals(25684, tips.getOpcode());
+        assertArrayEquals(new byte[0], tips.getData());
     }
 }
