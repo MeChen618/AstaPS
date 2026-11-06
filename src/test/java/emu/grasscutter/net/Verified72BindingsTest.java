@@ -14,6 +14,8 @@ import emu.grasscutter.net.proto.DelBackupAvatarTeamReqOuterClass.DelBackupAvata
 import emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq;
+import emu.grasscutter.net.proto.GetPushTipsRewardReqOuterClass.GetPushTipsRewardReq;
+import emu.grasscutter.net.proto.GetPushTipsRewardRspOuterClass.GetPushTipsRewardRsp;
 import emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq;
 import emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp;
 import emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq;
@@ -218,5 +220,20 @@ final class Verified72BindingsTest {
         assertEquals(8792, PacketOpcodes.HomeChooseModuleReq);
         var choice = HomeChooseModuleReq.parseFrom(HexFormat.of().parseHex("68071804"));
         assertEquals(4, choice.getModuleId());
+    }
+
+    @Test
+    void pushTipRewardsReplyWithTheCurrentIdListAndRetcode() throws Exception {
+        assertEquals(24813, PacketOpcodes.GetPushTipsRewardReq);
+        var request = GetPushTipsRewardReq.parseFrom(HexFormat.of().parseHex("12070129ffffffff0f"));
+        assertEquals(java.util.List.of(1, 41, -1), request.getPushTipsIdListList());
+
+        var packet = new emu.grasscutter.server.packet.send.PacketGetPushTipsRewardRsp(
+                132, request.getPushTipsIdListList());
+        assertEquals(9626, packet.getOpcode());
+        assertArrayEquals(HexFormat.of().parseHex("3a070129ffffffff0f588401"), packet.getData());
+        var reply = GetPushTipsRewardRsp.parseFrom(packet.getData());
+        assertEquals(request.getPushTipsIdListList(), reply.getPushTipsIdListList());
+        assertEquals(132, reply.getRetcode());
     }
 }

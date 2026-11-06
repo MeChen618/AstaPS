@@ -1990,7 +1990,7 @@ public final class PacketOpcodes {
     public static final int ExitTransPointRegionNotify = 3410; // 7.1: 7612
     // public static final int FBKBFEHGJPE = 22932;
     public static final int _UseTreasureKeyRsp = 29907; // 7.1: 23742
-    public static final int GetPushTipsRewardRsp = 0; // 7.2 CmdId unknown (7.1: 21994)
+    public static final int GetPushTipsRewardRsp = 9626; // 7.1: 21994
     // public static final int KEMNJHOGDKE = 4355;
     public static final int EvtBeingHealedNotify = 1642; // 7.1: 2496
     public static final int IrodoriMasterGalleryCgEndNotify = 0; // 7.2 CmdId unknown (7.1: 9746)

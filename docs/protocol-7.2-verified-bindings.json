@@ -264,6 +264,13 @@
       "cmd": 8792,
       "current_type": 70365,
       "source": "native_call_chain"
+    },
+    {
+      "message": "GetPushTipsRewardRsp",
+      "old": 0,
+      "cmd": 9626,
+      "current_type": 45692,
+      "source": "native_call_chain"
     }
   ],
   "corrected_fields": [
@@ -650,6 +657,22 @@
       "current": 3,
       "current_field": "module_id",
       "current_type": 70365
+    },
+    {
+      "owner": "GetPushTipsRewardRsp",
+      "field": "push_tips_id_list",
+      "old": 6,
+      "current": 7,
+      "current_field": "push_tips_id_list",
+      "current_type": 45692
+    },
+    {
+      "owner": "GetPushTipsRewardRsp",
+      "field": "retcode",
+      "old": 5,
+      "current": 11,
+      "current_field": "retcode",
+      "current_type": 45692
     },
     {
       "owner": "_AutochessRecordSocialBrief",
@@ -1790,7 +1813,7 @@
       ]
     }
   ],
-  "newly_enabled_opcode_count": 33,
+  "newly_enabled_opcode_count": 34,
   "corrected_existing_opcode_count": 6,
   "displaced_legacy_fields": [
     {
@@ -1821,12 +1844,12 @@
   "descriptor_validation": {
     "compiled_proto_files": 2105,
     "descriptor_files": 2105,
-    "verified_opcode_bindings": 39,
-    "corrected_field_numbers": 78,
+    "verified_opcode_bindings": 40,
+    "corrected_field_numbers": 80,
     "displaced_legacy_api_fields": 3,
     "unplanned_descriptor_changes": 0,
     "duplicate_new_opcode_bindings": 0,
-    "descriptor_sha256": "bc88de9780c838f4604e3cfdb97d0f07f6d8087339a6a934c7b74417956c37f1",
+    "descriptor_sha256": "544cd84e910d9293f3ab89937f36e20eb8eb60c4b559fd8fea8fcfddac7e3118",
     "all_message_and_enum_declarations_preserved": true,
     "untouched_manual_gacha_info_preserved": true,
     "no_end_to_end_client_test_claimed": true
@@ -1870,6 +1893,16 @@
       "scope": "Original native mail senders, single/favorite deletion, single and batch attachment claim loops, read-before-claim sequence, list add/clear and attachment/special-row predicates are executed in both builds. Typed repeated-field clear/copy, row lookup, allocation, capacity checks, read-cache pre-send callback and transport use controlled fixtures. IFix, error/overflow branches, over-capacity warnings and live network sessions are not exercised. No request/response transaction is inferred solely from sender shape."
     },
     {
+      "file": "verified-match-and-collection-requests.json",
+      "passed": 397,
+      "scope": "Original match/draft sender instructions, post-send branches and repeated-ID copy/add loops execute in both builds; current CmdId getters execute. Config ID decoding executes with synthetic substitution tables and is not a wire mask. Allocation, readonly flags, typed collection operations, config lookup, local callback lookup/action and transport use fixtures. Callback business identities, caller execution, IFix replacement paths, complete request/reply transactions and live networking are outside scope."
+    },
+    {
+      "file": "verified-multiword-requests.json",
+      "passed": 1005,
+      "scope": "Original two-word sender bodies and current CmdId getters execute in both builds. Exact argument moves and corresponding field-store instructions disambiguate reordered uint32 fields. Allocation, independent readonly states and transport are fixtures; IFix is disabled. Caller execution, business-domain validation, paired responses and live networking are not exercised; high-bit values only test serialization bit preservation."
+    },
+    {
       "file": "verified-namecard-backup-requests.json",
       "passed": 100,
       "scope": "Original empty request sender, both confirmation-gated team deletion senders, selected-index resolver and ordinary list getter in both builds. Allocation, readonly flags, synthetic team lists, transport and the final dialog action use controlled fixtures. Out-of-range index error paths, IFix and live network sessions are not exercised."
@@ -1883,6 +1916,16 @@
       "file": "verified-profile-home-requests.json",
       "passed": 244,
       "scope": "Original request/reply bodies, changed-card caller, nonnull string check, half-second request throttle and selected music config decoder. Allocator, readonly state, card membership, engine clock, UI/coroutine services and transport are controlled fixtures; the config substitution table is synthetic. Null string throwing, IFix replacement branches and live Android/network transactions are outside this verification."
+    },
+    {
+      "file": "verified-remaining-simple-requests.json",
+      "passed": 816,
+      "scope": "Original primitive/empty request senders and current CmdId getters execute. Caller identity uses globally unique normalized bodies, exact sender call positions and at least three independently supported other calls. Allocation, per-field readonly results, cached scene-play bool and transport are fixtures; IFix is disabled. Caller execution, request/response transactions, server business behavior and live networking are not exercised. Unknown field roles remain unnamed; no mask or server binding is inferred from sender shape alone."
+    },
+    {
+      "file": "verified-scoped-reply-consumers.json",
+      "passed": 160,
+      "scope": "Original retcode branches and two native event producers execute in both builds, plus current CmdId getters. Named reply identities use complete paired-module consumer sets, full native ABI, closed field-type compatibility, independently supported callees/events and reverse conflict checks. Error/UI services, boxing, event construction and dispatch are fixtures; IFix is disabled. Extra unconsumed field names and live request/response transactions are not inferred."
     },
     {
       "file": "verified-story-home-requests.json",
@@ -1923,11 +1966,11 @@
     }
   ],
   "disabled_opcode_source_audit": {
-    "source_referenced_disabled_opcodes": 120,
-    "remaining_from_original_list": 65,
+    "source_referenced_disabled_opcodes": 119,
+    "remaining_from_original_list": 64,
     "additional_to_original_list": 55,
     "disabled_handler_names": 45,
-    "outbound_source_names": 54,
+    "outbound_source_names": 53,
     "records": [
       {
         "name": "AddBackupAvatarTeamReq",
@@ -2346,19 +2389,6 @@
         ],
         "has_disabled_handler": false,
         "has_outbound_source": false
-      },
-      {
-        "name": "GetPushTipsRewardRsp",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketGetPushTipsRewardRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
       },
       {
         "name": "GetUgcBriefInfoReq",
@@ -3586,7 +3616,7 @@
   "live_android_session_tested": false,
   "formatter_note": "The existing Spotless/Google Java Format combination fails with NoSuchMethodError for JavaFormatterOptions.Style.valueOf; no formatting dependency changes were made.",
   "active_opcode_binding_audit": {
-    "checked_active_named_bindings": 1348,
+    "checked_active_named_bindings": 1349,
     "known_current_cmd_mismatches": 0,
     "mismatches": [],
     "unmatched_active_binding_count": 1,
@@ -3607,14 +3637,14 @@
   },
   "targeted_java_tests": {
     "class_name": "emu.grasscutter.net.Verified72BindingsTest",
-    "tests": 15,
+    "tests": 16,
     "failures": 0,
     "errors": 0,
     "skipped": 0
   },
   "latest_targeted_test_run": {
     "classes": 4,
-    "tests": 79,
+    "tests": 80,
     "failures": 0,
     "errors": 0,
     "skipped": 0
