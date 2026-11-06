@@ -10,7 +10,7 @@ public final class PacketOpcodes {
     // ============================================
     public static final int NONE = 0;
     public static final int Unk = 0;
-    public static final int ActivityTakeWatcherRewardReq = 25045; // 7.1: 23105
+    public static final int ActivityTakeWatcherRewardReq = 1504; // 7.1: 23105
     public static final int AddCustomTeamReq = 0;
     public static final int AskAddFriendReq = 29876; // 7.1: 3092
     public static final int BuyBattlePassLevelReq = 4815; // 7.1: 20941
@@ -29,7 +29,7 @@ public final class PacketOpcodes {
     public static final int GetProfilePictureDataReq = 21907; // 7.1: 27037
     public static final int GetUgcBriefInfoReq = 0;
     public static final int HomeChangeEditModeReq = 0; // 7.2 CmdId unknown (7.1: 29665)
-    public static final int HomeChangeModuleReq = 0; // 7.2 CmdId unknown (7.1: 9972)
+    public static final int HomeChangeModuleReq = 21043; // 7.1: 9972
     public static final int HomeChooseModuleReq = 0;
     public static final int HomeEnterEditModeFinishReq = 0; // 7.1 CmdId unknown (kitkat names this empty message, not trusted)
     public static final int HomeGetBasicInfoReq = 0; // 7.1 CmdId unknown (kitkat names this empty message, not trusted)

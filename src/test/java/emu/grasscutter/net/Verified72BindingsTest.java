@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.protobuf.CodedInputStream;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq;
 import emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq;
 import emu.grasscutter.net.proto.AvatarPromoteReqParser;
 import emu.grasscutter.net.proto.CancelCoopTaskReqOuterClass.CancelCoopTaskReq;
@@ -15,6 +16,7 @@ import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq;
 import emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq;
 import emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp;
+import emu.grasscutter.net.proto.HomeChangeModuleReqOuterClass.HomeChangeModuleReq;
 import emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource;
 import emu.grasscutter.net.proto.ReadMailNotifyOuterClass.ReadMailNotify;
 import emu.grasscutter.net.proto.ReceivedTrialAvatarActivityRewardReqOuterClass.ReceivedTrialAvatarActivityRewardReq;
@@ -161,5 +163,27 @@ final class Verified72BindingsTest {
         assertArrayEquals(
                 HexFormat.of().parseHex("109f01"),
                 ReceivedTrialAvatarActivityRewardReq.newBuilder().setTrialAvatarIndexId(159).build().toByteArray());
+    }
+
+    @Test
+    void homeRealmSwitchUsesTheCurrentTargetField() throws Exception {
+        assertEquals(21043, PacketOpcodes.HomeChangeModuleReq);
+        var request = HomeChangeModuleReq.parseFrom(HexFormat.of().parseHex("70075004"));
+        assertEquals(4, request.getTargetModuleId());
+        assertArrayEquals(
+                HexFormat.of().parseHex("5004"),
+                HomeChangeModuleReq.newBuilder().setTargetModuleId(4).build().toByteArray());
+    }
+
+    @Test
+    void activityWatcherClaimKeepsBothIdsInTheirCurrentFields() throws Exception {
+        assertEquals(1504, PacketOpcodes.ActivityTakeWatcherRewardReq);
+        var bytes = HexFormat.of().parseHex("30e907408a27");
+        var request = ActivityTakeWatcherRewardReq.parseFrom(bytes);
+        assertEquals(5002, request.getActivityId());
+        assertEquals(1001, request.getWatcherId());
+        assertArrayEquals(
+                bytes,
+                ActivityTakeWatcherRewardReq.newBuilder().setActivityId(5002).setWatcherId(1001).build().toByteArray());
     }
 }
