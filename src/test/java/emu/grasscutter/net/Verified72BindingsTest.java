@@ -8,6 +8,7 @@ import com.google.protobuf.CodedInputStream;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq;
 import emu.grasscutter.net.proto.AvatarPromoteReqParser;
+import emu.grasscutter.net.proto.CancelCoopTaskReqOuterClass.CancelCoopTaskReq;
 import emu.grasscutter.net.proto.DelBackupAvatarTeamReqOuterClass.DelBackupAvatarTeamReq;
 import emu.grasscutter.net.proto.DelMailReqOuterClass.DelMailReq;
 import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
@@ -16,6 +17,7 @@ import emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq;
 import emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp;
 import emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource;
 import emu.grasscutter.net.proto.ReadMailNotifyOuterClass.ReadMailNotify;
+import emu.grasscutter.net.proto.ReceivedTrialAvatarActivityRewardReqOuterClass.ReceivedTrialAvatarActivityRewardReq;
 import emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq;
 import emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq;
 import emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp;
@@ -132,6 +134,7 @@ final class Verified72BindingsTest {
         assertEquals(21907, PacketOpcodes.GetProfilePictureDataReq);
         assertEquals(21795, PacketOpcodes.GetPlayerAskFriendListReq);
         assertEquals(1684, PacketOpcodes.GetPlayerFriendListReq);
+        assertEquals(22361, PacketOpcodes.GetOnlinePlayerListReq);
         assertEquals(29401, PacketOpcodes.GetCityReputationMapInfoReq);
         assertEquals(20856, PacketOpcodes.GetMapMarkTipsReq);
         assertEquals(28289, PacketOpcodes.BackMyWorldReq);
@@ -140,5 +143,23 @@ final class Verified72BindingsTest {
         var tips = new emu.grasscutter.server.packet.send.PacketGetMapMarkTipsRsp();
         assertEquals(25684, tips.getOpcode());
         assertArrayEquals(new byte[0], tips.getData());
+    }
+
+    @Test
+    void cooperativeTaskCancellationUsesTheCurrentChapterField() throws Exception {
+        assertEquals(26546, PacketOpcodes.CancelCoopTaskReq);
+        var bytes = HexFormat.of().parseHex("20a09c01");
+        assertEquals(20000, CancelCoopTaskReq.parseFrom(bytes).getChapterId());
+        assertArrayEquals(bytes, CancelCoopTaskReq.newBuilder().setChapterId(20000).build().toByteArray());
+    }
+
+    @Test
+    void trialRewardUsesTheCurrentTrialIndexField() throws Exception {
+        assertEquals(20742, PacketOpcodes.ReceivedTrialAvatarActivityRewardReq);
+        var request = ReceivedTrialAvatarActivityRewardReq.parseFrom(HexFormat.of().parseHex("0807109f01"));
+        assertEquals(159, request.getTrialAvatarIndexId());
+        assertArrayEquals(
+                HexFormat.of().parseHex("109f01"),
+                ReceivedTrialAvatarActivityRewardReq.newBuilder().setTrialAvatarIndexId(159).build().toByteArray());
     }
 }

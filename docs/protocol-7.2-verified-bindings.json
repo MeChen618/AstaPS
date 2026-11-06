@@ -193,6 +193,28 @@
       "current_type": 46396,
       "source": "native_call_chain",
       "empty_request_without_unused_server_schema": true
+    },
+    {
+      "message": "CancelCoopTaskReq",
+      "old": 0,
+      "cmd": 26546,
+      "current_type": 26151,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "GetOnlinePlayerListReq",
+      "old": 3966,
+      "cmd": 22361,
+      "current_type": 64612,
+      "source": "native_call_chain",
+      "empty_request_without_unused_server_schema": true
+    },
+    {
+      "message": "ReceivedTrialAvatarActivityRewardReq",
+      "old": 0,
+      "cmd": 20742,
+      "current_type": 40886,
+      "source": "native_call_chain"
     }
   ],
   "corrected_fields": [
@@ -515,6 +537,22 @@
       "current": 3,
       "current_field": "id_list",
       "current_type": 60812
+    },
+    {
+      "owner": "CancelCoopTaskReq",
+      "field": "chapter_id",
+      "old": 9,
+      "current": 4,
+      "current_field": "chapter_id",
+      "current_type": 26151
+    },
+    {
+      "owner": "ReceivedTrialAvatarActivityRewardReq",
+      "field": "trial_avatar_index_id",
+      "old": 1,
+      "current": 2,
+      "current_field": "trial_avatar_index_id",
+      "current_type": 40886
     },
     {
       "owner": "_AutochessRecordSocialBrief",
@@ -1655,8 +1693,8 @@
       ]
     }
   ],
-  "newly_enabled_opcode_count": 25,
-  "corrected_existing_opcode_count": 4,
+  "newly_enabled_opcode_count": 27,
+  "corrected_existing_opcode_count": 5,
   "displaced_legacy_fields": [
     {
       "owner": "ActivityInfo",
@@ -1686,12 +1724,12 @@
   "descriptor_validation": {
     "compiled_proto_files": 2105,
     "descriptor_files": 2105,
-    "verified_opcode_bindings": 29,
-    "corrected_field_numbers": 70,
+    "verified_opcode_bindings": 32,
+    "corrected_field_numbers": 72,
     "displaced_legacy_api_fields": 3,
     "unplanned_descriptor_changes": 0,
     "duplicate_new_opcode_bindings": 0,
-    "descriptor_sha256": "5068f7030a48a20fbd5cc5cfcfc81036f3d3750757f09603fcbf9f6420db1a69",
+    "descriptor_sha256": "1255f9471e44118ffd0303a4c366575d591dc940bf3018089267d6f6c7b95025",
     "all_message_and_enum_declarations_preserved": true,
     "untouched_manual_gacha_info_preserved": true,
     "no_end_to_end_client_test_claimed": true
@@ -1703,6 +1741,11 @@
       "file": "verified-achievement-profile-requests.json",
       "passed": 267,
       "scope": "Original achievement/category claim UI gates, typed senders, native list add/contains, pooled-list cleanup and profile query/caller in both clients. Dictionary presence/get, allocation, repeated-field copying, pool callbacks, transport and final UI service use controlled fixtures. No IFix, native hash-table internals, error branches, live server eligibility or network interoperability is claimed."
+    },
+    {
+      "file": "verified-coop-cancel-request.json",
+      "passed": 81,
+      "scope": "Original unique caller and typed request sender execute with different cached chapter IDs, exact gate values and readonly fixtures in both builds. Allocation, readonly status and transport use controlled fixtures; IFix and live coop task cancellation are not exercised."
     },
     {
       "file": "verified-existing-empty-requests.json",
@@ -1720,16 +1763,26 @@
       "scope": "Original empty request sender, both confirmation-gated team deletion senders, selected-index resolver and ordinary list getter in both builds. Allocation, readonly flags, synthetic team lists, transport and the final dialog action use controlled fixtures. Out-of-range index error paths, IFix and live network sessions are not exercised."
     },
     {
+      "file": "verified-online-player-query.json",
+      "passed": 5,
+      "scope": "Original full multiplayer-lobby initializer, empty sender and native ordinary-list clear execute in both clients. UI services, metadata globals, delegate/packet allocation, widget callback and transport use controlled fixtures. Matching fixture call order is supporting flow evidence, not an independent proof of every UI callee identity. IFix, null/error branches, lobby refresh timing and live networking are not exercised."
+    },
+    {
       "file": "verified-profile-home-requests.json",
       "passed": 244,
       "scope": "Original request/reply bodies, changed-card caller, nonnull string check, half-second request throttle and selected music config decoder. Allocator, readonly state, card membership, engine clock, UI/coroutine services and transport are controlled fixtures; the config substitution table is synthetic. Null string throwing, IFix replacement branches and live Android/network transactions are outside this verification."
+    },
+    {
+      "file": "verified-trial-avatar-reward-request.json",
+      "passed": 41,
+      "scope": "Both retained trial-avatar interfaces and original sender execute in both builds, covering zero-index suppression, uint32 index bits and readonly fixtures. Allocation, readonly status and transport are controlled fixtures; IFix and real reward eligibility/granting are not exercised."
     }
   ],
   "disabled_opcode_source_audit": {
-    "source_referenced_disabled_opcodes": 128,
-    "remaining_from_original_list": 72,
+    "source_referenced_disabled_opcodes": 126,
+    "remaining_from_original_list": 70,
     "additional_to_original_list": 56,
-    "disabled_handler_names": 52,
+    "disabled_handler_names": 50,
     "outbound_source_names": 55,
     "records": [
       {
@@ -1788,19 +1841,6 @@
         ],
         "has_disabled_handler": false,
         "has_outbound_source": true
-      },
-      {
-        "name": "CancelCoopTaskReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerCancelCoopTaskReq.java",
-            "line": 9,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
       },
       {
         "name": "CheckUgcStateReq",
@@ -2828,19 +2868,6 @@
         "has_outbound_source": false
       },
       {
-        "name": "ReceivedTrialAvatarActivityRewardReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerReceivedTrialAvatarActivityRewardReq.java",
-            "line": 11,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
-      },
-      {
         "name": "ReformFireworksRsp",
         "in_original_checklist": true,
         "references": [
@@ -3498,20 +3525,14 @@
   "live_android_session_tested": false,
   "formatter_note": "The existing Spotless/Google Java Format combination fails with NoSuchMethodError for JavaFormatterOptions.Style.valueOf; no formatting dependency changes were made.",
   "active_opcode_binding_audit": {
-    "checked_active_named_bindings": 1337,
+    "checked_active_named_bindings": 1340,
     "known_current_cmd_mismatches": 0,
     "mismatches": [],
-    "unmatched_active_binding_count": 4,
+    "unmatched_active_binding_count": 3,
     "unmatched_active_bindings": [
       {
         "name": "ActivityTakeWatcherRewardReq",
         "cmd": 25045,
-        "current_name_candidates": 0,
-        "numeric_value_has_current_native_getter": true
-      },
-      {
-        "name": "GetOnlinePlayerListReq",
-        "cmd": 3966,
         "current_name_candidates": 0,
         "numeric_value_has_current_native_getter": true
       },
@@ -3532,14 +3553,14 @@
   },
   "targeted_java_tests": {
     "class_name": "emu.grasscutter.net.Verified72BindingsTest",
-    "tests": 9,
+    "tests": 11,
     "failures": 0,
     "errors": 0,
     "skipped": 0
   },
   "latest_targeted_test_run": {
     "classes": 4,
-    "tests": 73,
+    "tests": 75,
     "failures": 0,
     "errors": 0,
     "skipped": 0

@@ -15,7 +15,7 @@ public final class PacketOpcodes {
     public static final int AskAddFriendReq = 29876; // 7.1: 3092
     public static final int BuyBattlePassLevelReq = 4815; // 7.1: 20941
     public static final int BuyResinReq = 20545;
-    public static final int CancelCoopTaskReq = 0; // 7.2 CmdId unknown (7.1: 27925)
+    public static final int CancelCoopTaskReq = 26546; // 7.1: 27925
     public static final int CheckUgcStateReq = 0; // 7.2 CmdId unknown (7.1: 3955)
     public static final int CheckUgcUpdateReq = 0;
     public static final int DeleteFriendReq = 0; // 7.2 CmdId unknown (7.1: 3037)
@@ -76,7 +76,7 @@ public final class PacketOpcodes {
     public static final int SetPlayerPropReq = 8505; // 7.1: 26049
     public static final int QuestDestroyNpcRsp = 3635; // 7.1: 3992
     public static final int HomeBalloonGalleryScoreNotify = 6303; // 7.1: 28366
-    public static final int ReceivedTrialAvatarActivityRewardReq = 0; // 7.2 CmdId unknown (7.1: 25238)
+    public static final int ReceivedTrialAvatarActivityRewardReq = 20742; // 7.1: 25238
     // public static final int GBCOJGLPABH = 25603;
     public static final int ReliquaryUpgradeReq = 27964; // 7.1: 7294
     public static final int PhotoActivityFinishReq = 22586; // 7.1: 1560
@@ -184,7 +184,7 @@ public final class PacketOpcodes {
     public static final int SelectWorktopOptionRsp = 25915; // 7.1: 7515
     // public static final int NALEHDDJJKA = 22066;
     // public static final int GCAHPDOBHLD = 23905;
-    public static final int GetOnlinePlayerListReq = 3966; // 7.1: 27872
+    public static final int GetOnlinePlayerListReq = 22361; // 7.1: 27872
     public static final int HomeGetFishFarmingInfoRsp = 9614; // 7.1: 541
     public static final int DestroyMaterialRsp = 20672; // 7.1: 24340
     // public static final int EFEMPNMOAJA = 6257;
