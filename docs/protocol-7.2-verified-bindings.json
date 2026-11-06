@@ -1898,9 +1898,14 @@
       "scope": "Original match/draft sender instructions, post-send branches and repeated-ID copy/add loops execute in both builds; current CmdId getters execute. Config ID decoding executes with synthetic substitution tables and is not a wire mask. Allocation, readonly flags, typed collection operations, config lookup, local callback lookup/action and transport use fixtures. Callback business identities, caller execution, IFix replacement paths, complete request/reply transactions and live networking are outside scope."
     },
     {
+      "file": "verified-mp-play-owner-requests.json",
+      "passed": 162,
+      "scope": "Original MP-play invitation/check request bodies and CmdId getters execute in both builds. Declared MP-play field names distinguish same-shaped scene-play counterparts; full native ABI/callee identities and all module senders are checked. Allocation, readonly results, cached state, post-send collection cleanup and transport use fixtures. Response schemas are independent naming controls, not captured transaction proof. IFix and live networking are outside scope."
+    },
+    {
       "file": "verified-multiword-requests.json",
-      "passed": 1005,
-      "scope": "Original two-word sender bodies and current CmdId getters execute in both builds. Exact argument moves and corresponding field-store instructions disambiguate reordered uint32 fields. Allocation, independent readonly states and transport are fixtures; IFix is disabled. Caller execution, business-domain validation, paired responses and live networking are not exercised; high-bit values only test serialization bit preservation."
+      "passed": 1086,
+      "scope": "Original two-word sender bodies, scene invitation sender and current CmdId getters execute in both builds. Exact argument moves and corresponding field-store instructions disambiguate reordered uint32 fields. The scene invitation uses its independently verified owner-check companion and the same cached skip-match byte. Allocation, independent readonly states, the post-send cleanup and transport are fixtures; IFix is disabled. Caller execution, business-domain validation, paired responses and live networking are not exercised; high-bit values only test serialization bit preservation."
     },
     {
       "file": "verified-namecard-backup-requests.json",
@@ -1916,6 +1921,11 @@
       "file": "verified-profile-home-requests.json",
       "passed": 244,
       "scope": "Original request/reply bodies, changed-card caller, nonnull string check, half-second request throttle and selected music config decoder. Allocator, readonly state, card membership, engine clock, UI/coroutine services and transport are controlled fixtures; the config substitution table is synthetic. Null string throwing, IFix replacement branches and live Android/network transactions are outside this verification."
+    },
+    {
+      "file": "verified-quick-enter-reply-adjudication.json",
+      "passed": 11,
+      "scope": "Original reply error/success branches in both clients and the current CmdId getter execute. The semantic name uses bidirectionally unique typed consumers within independently paired modules and an independently verified request. Error UI and IFix-disabled flags are fixtures. The frozen public baseline remains unchanged; only the documented weaker alias is replaced. No live pending-request transaction or recovered original 7.2 source spelling is claimed."
     },
     {
       "file": "verified-remaining-simple-requests.json",
