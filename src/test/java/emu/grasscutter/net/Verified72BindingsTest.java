@@ -16,13 +16,18 @@ import emu.grasscutter.net.proto.GetGachaInfoRspOuterClass.GetGachaInfoRsp;
 import emu.grasscutter.net.proto.GetMailItemReqOuterClass.GetMailItemReq;
 import emu.grasscutter.net.proto.HomeChangeBgmReqOuterClass.HomeChangeBgmReq;
 import emu.grasscutter.net.proto.HomeChangeBgmRspOuterClass.HomeChangeBgmRsp;
+import emu.grasscutter.net.proto.HomeChangeEditModeReqOuterClass.HomeChangeEditModeReq;
 import emu.grasscutter.net.proto.HomeChangeModuleReqOuterClass.HomeChangeModuleReq;
+import emu.grasscutter.net.proto.HomeChooseModuleReqOuterClass.HomeChooseModuleReq;
 import emu.grasscutter.net.proto.HomeResourceOuterClass.HomeResource;
 import emu.grasscutter.net.proto.ReadMailNotifyOuterClass.ReadMailNotify;
 import emu.grasscutter.net.proto.ReceivedTrialAvatarActivityRewardReqOuterClass.ReceivedTrialAvatarActivityRewardReq;
 import emu.grasscutter.net.proto.SetNameCardReqOuterClass.SetNameCardReq;
 import emu.grasscutter.net.proto.SetPlayerSignatureReqOuterClass.SetPlayerSignatureReq;
 import emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMakeRsp;
+import emu.grasscutter.net.proto.TowerBuffSelectReqOuterClass.TowerBuffSelectReq;
+import emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp;
+import emu.grasscutter.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq;
 import java.util.HashMap;
 import java.util.HexFormat;
 import java.util.Map;
@@ -185,5 +190,33 @@ final class Verified72BindingsTest {
         assertArrayEquals(
                 bytes,
                 ActivityTakeWatcherRewardReq.newBuilder().setActivityId(5002).setWatcherId(1001).build().toByteArray());
+    }
+
+    @Test
+    void storyUnlockAndHomeEditModeUseTheirCurrentRequests() throws Exception {
+        assertEquals(28530, PacketOpcodes.UnlockPersonalLineReq);
+        var story = UnlockPersonalLineReq.parseFrom(HexFormat.of().parseHex("68a09c01"));
+        assertEquals(20000, story.getPersonalLineId());
+
+        assertEquals(29979, PacketOpcodes.HomeChangeEditModeReq);
+        var bytes = HexFormat.of().parseHex("6001");
+        assertTrue(HomeChangeEditModeReq.parseFrom(bytes).getIsEnterEditMode());
+        assertArrayEquals(bytes, HomeChangeEditModeReq.newBuilder().setIsEnterEditMode(true).build().toByteArray());
+    }
+
+    @Test
+    void towerBuffSelectionAndFirstRealmChoiceUseCurrentFields() throws Exception {
+        assertEquals(705, PacketOpcodes.TowerBuffSelectReq);
+        var selection = TowerBuffSelectReq.parseFrom(HexFormat.of().parseHex("60e90710d20f"));
+        assertEquals(2002, selection.getTowerBuffId());
+
+        assertEquals(8282, PacketOpcodes.TowerBuffSelectRsp);
+        var reply = TowerBuffSelectRsp.parseFrom(HexFormat.of().parseHex("20d20960d20f"));
+        assertEquals(2002, reply.getTowerBuffId());
+        assertEquals(0, reply.getRetcode());
+
+        assertEquals(8792, PacketOpcodes.HomeChooseModuleReq);
+        var choice = HomeChooseModuleReq.parseFrom(HexFormat.of().parseHex("68071804"));
+        assertEquals(4, choice.getModuleId());
     }
 }

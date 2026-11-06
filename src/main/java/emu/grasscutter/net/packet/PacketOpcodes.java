@@ -28,9 +28,9 @@ public final class PacketOpcodes {
     public static final int GetHomeLevelUpRewardReq = 4857; // 7.1: 2113
     public static final int GetProfilePictureDataReq = 21907; // 7.1: 27037
     public static final int GetUgcBriefInfoReq = 0;
-    public static final int HomeChangeEditModeReq = 0; // 7.2 CmdId unknown (7.1: 29665)
+    public static final int HomeChangeEditModeReq = 29979; // 7.1: 29665
     public static final int HomeChangeModuleReq = 21043; // 7.1: 9972
-    public static final int HomeChooseModuleReq = 0;
+    public static final int HomeChooseModuleReq = 8792;
     public static final int HomeEnterEditModeFinishReq = 0; // 7.1 CmdId unknown (kitkat names this empty message, not trusted)
     public static final int HomeGetBasicInfoReq = 0; // 7.1 CmdId unknown (kitkat names this empty message, not trusted)
     public static final int HomeGetOnlineStatusReq = 0; // 7.2 CmdId unknown (7.1: 6555)
@@ -50,7 +50,7 @@ public final class PacketOpcodes {
     public static final int SkipPlayerGameTimeReq = 0; // 7.2 CmdId unknown (7.1: 29432)
     public static final int TheaterLobbySceneJumpReq = 0;
     public static final int UiSettingInputTypeNotify = 1419; // 7.1: 29767
-    public static final int UnlockPersonalLineReq = 0; // 7.2 CmdId unknown (7.1: 5896)
+    public static final int UnlockPersonalLineReq = 28530; // 7.1: 5896
     public static final int _UnlockPersonalLineReqAlt = 0; // 7.2 CmdId unknown (7.1: 21679)
     // ============================================
     // 以下是原有的 opcode 定义
@@ -1474,7 +1474,7 @@ public final class PacketOpcodes {
     public static final int WidgetWeatherWizardDataNotify = 25712; // 7.1: 9150
     public static final int SetBattlePassViewedReq = 21064; // 7.1: 23538
     public static final int AvatarFollowRouteNotify = 7558; // 7.1: 8449
-    public static final int TowerBuffSelectRsp = 0; // 7.2 CmdId unknown (7.1: 9661)
+    public static final int TowerBuffSelectRsp = 8282; // 7.1: 9661
     // public static final int CHDGBLAODCL = 22966;
     public static final int GetMapAreaRsp = 25820; // 7.1: 22137
     // public static final int InstableSprayEnterDungeonReq = 5618;
@@ -2459,7 +2459,7 @@ public final class PacketOpcodes {
     public static final int GadgetInteractReq = 1891; // 7.1: 5765
     public static final int DungeonChallengeBeginNotify = 5314; // 7.1: 7266
     public static final int VintageMarketStartStorePlayReq = 0; // 7.2 CmdId unknown (7.1: 28850)
-    public static final int TowerBuffSelectReq = 0; // 7.2 CmdId unknown (7.1: 4779)
+    public static final int TowerBuffSelectReq = 705; // 7.1: 4779
     // public static final int EEELEGHNJJO = 9657;
     // public static final int IHODNAJFGHA = 5598;
     // public static final int CCNLHAKKGJP = 3266;

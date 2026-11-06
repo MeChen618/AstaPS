@@ -229,6 +229,41 @@
       "cmd": 1504,
       "current_type": 58213,
       "source": "native_call_chain"
+    },
+    {
+      "message": "UnlockPersonalLineReq",
+      "old": 0,
+      "cmd": 28530,
+      "current_type": 62583,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "HomeChangeEditModeReq",
+      "old": 0,
+      "cmd": 29979,
+      "current_type": 21387,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "TowerBuffSelectReq",
+      "old": 0,
+      "cmd": 705,
+      "current_type": 18582,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "TowerBuffSelectRsp",
+      "old": 0,
+      "cmd": 8282,
+      "current_type": 14352,
+      "source": "native_call_chain"
+    },
+    {
+      "message": "HomeChooseModuleReq",
+      "old": 0,
+      "cmd": 8792,
+      "current_type": 70365,
+      "source": "native_call_chain"
     }
   ],
   "corrected_fields": [
@@ -591,6 +626,30 @@
       "current": 6,
       "current_field": "watcher_id",
       "current_type": 58213
+    },
+    {
+      "owner": "TowerBuffSelectReq",
+      "field": "tower_buff_id",
+      "old": 12,
+      "current": 2,
+      "current_field": "tower_buff_id",
+      "current_type": 18582
+    },
+    {
+      "owner": "TowerBuffSelectRsp",
+      "field": "tower_buff_id",
+      "old": 4,
+      "current": 12,
+      "current_field": "tower_buff_id",
+      "current_type": 14352
+    },
+    {
+      "owner": "HomeChooseModuleReq",
+      "field": "module_id",
+      "old": 13,
+      "current": 3,
+      "current_field": "module_id",
+      "current_type": 70365
     },
     {
       "owner": "_AutochessRecordSocialBrief",
@@ -1731,7 +1790,7 @@
       ]
     }
   ],
-  "newly_enabled_opcode_count": 28,
+  "newly_enabled_opcode_count": 33,
   "corrected_existing_opcode_count": 6,
   "displaced_legacy_fields": [
     {
@@ -1762,12 +1821,12 @@
   "descriptor_validation": {
     "compiled_proto_files": 2105,
     "descriptor_files": 2105,
-    "verified_opcode_bindings": 34,
-    "corrected_field_numbers": 75,
+    "verified_opcode_bindings": 39,
+    "corrected_field_numbers": 78,
     "displaced_legacy_api_fields": 3,
     "unplanned_descriptor_changes": 0,
     "duplicate_new_opcode_bindings": 0,
-    "descriptor_sha256": "49ba840c40374fbd009bf4e9bd5c241221048b7c026d556ef5b1d558f8fd6df9",
+    "descriptor_sha256": "bc88de9780c838f4604e3cfdb97d0f07f6d8087339a6a934c7b74417956c37f1",
     "all_message_and_enum_declarations_preserved": true,
     "untouched_manual_gacha_info_preserved": true,
     "no_end_to_end_client_test_claimed": true
@@ -1801,6 +1860,11 @@
       "scope": "Original home-manager wrapper and request sender in both builds, target uint32 bits, readonly fixture and exact ordering of the post-send flag write. Allocation, readonly state and transport use controlled fixtures. Global CFG uniqueness, response pairing by transaction, flag business meaning, IFix and live realm switching are not claimed."
     },
     {
+      "file": "verified-invitation-result-requests.json",
+      "passed": 243,
+      "scope": "Original three typed uint32/bool senders and current native CmdId getters. Both invitation dispatchers are statically matched with exact sender call positions and an independently named dungeon branch. Allocation, readonly flags and transport are fixtures. Dispatcher execution, request/response pairing, real invitation acceptance and live networking are not exercised; server bindings remain withheld."
+    },
+    {
       "file": "verified-mail-requests.json",
       "passed": 133,
       "scope": "Original native mail senders, single/favorite deletion, single and batch attachment claim loops, read-before-claim sequence, list add/clear and attachment/special-row predicates are executed in both builds. Typed repeated-field clear/copy, row lookup, allocation, capacity checks, read-cache pre-send callback and transport use controlled fixtures. IFix, error/overflow branches, over-capacity warnings and live network sessions are not exercised. No request/response transaction is inferred solely from sender shape."
@@ -1821,17 +1885,49 @@
       "scope": "Original request/reply bodies, changed-card caller, nonnull string check, half-second request throttle and selected music config decoder. Allocator, readonly state, card membership, engine clock, UI/coroutine services and transport are controlled fixtures; the config substitution table is synthetic. Null string throwing, IFix replacement branches and live Android/network transactions are outside this verification."
     },
     {
+      "file": "verified-story-home-requests.json",
+      "passed": 41,
+      "scope": "Original typed request senders in both builds and native CmdId getters. Unique caller contexts are checked statically. Allocation, readonly flags, home-state return four and transport are controlled fixtures. The home edit warning branch and its unresolved getter, IFix, server reward/business behavior, home scene reply pairing and live networking are not exercised."
+    },
+    {
+      "file": "verified-tower-home-choose.json",
+      "passed": 113,
+      "scope": "Original request senders, both realm confirmation callbacks and tower reply success/error consumer execute in both builds. Allocation, readonly flags, coroutine service and transport use fixtures. The response buff-ID name uses the matched reference shape and shared request symbol; no native reply buff-ID consumption, live request/response transaction, IFix or live game session is claimed."
+    },
+    {
       "file": "verified-trial-avatar-reward-request.json",
       "passed": 41,
       "scope": "Both retained trial-avatar interfaces and original sender execute in both builds, covering zero-index suppression, uint32 index bits and readonly fixtures. Allocation, readonly status and transport are controlled fixtures; IFix and real reward eligibility/granting are not exercised."
     }
   ],
+  "main_request_identities_with_server_binding_withheld": [
+    {
+      "name": "PlayerApplyEnterMpResultReq",
+      "cmd": 4544,
+      "reason": "The corresponding current response identity/payload still needs verification."
+    },
+    {
+      "name": "PlayerApplyEnterHomeResultReq",
+      "cmd": 7623,
+      "reason": "The corresponding current response identity/payload still needs verification."
+    },
+    {
+      "name": "PlayerApplyHomeCreateBlueprintResultReq",
+      "cmd": 25479,
+      "reason": "The corresponding current response identity/payload still needs verification."
+    },
+    {
+      "name": "HomeSceneInitFinishReq",
+      "cmd": 28172,
+      "reason": "The paired HomeSceneInitFinishRsp is not yet identified in the current build."
+    }
+  ],
   "disabled_opcode_source_audit": {
-    "source_referenced_disabled_opcodes": 125,
-    "remaining_from_original_list": 69,
-    "additional_to_original_list": 56,
-    "disabled_handler_names": 49,
-    "outbound_source_names": 55,
+    "source_referenced_disabled_opcodes": 120,
+    "remaining_from_original_list": 65,
+    "additional_to_original_list": 55,
+    "disabled_handler_names": 45,
+    "outbound_source_names": 54,
     "records": [
       {
         "name": "AddBackupAvatarTeamReq",
@@ -2377,32 +2473,6 @@
         ],
         "has_disabled_handler": false,
         "has_outbound_source": true
-      },
-      {
-        "name": "HomeChangeEditModeReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeChangeEditModeReq.java",
-            "line": 15,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
-      },
-      {
-        "name": "HomeChooseModuleReq",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeChooseModuleReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
       },
       {
         "name": "HomeEnterEditModeFinishReq",
@@ -3243,32 +3313,6 @@
         "has_outbound_source": false
       },
       {
-        "name": "TowerBuffSelectReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerTowerBuffSelectReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
-      },
-      {
-        "name": "TowerBuffSelectRsp",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketTowerBuffSelectRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
         "name": "TowerMiddleLevelChangeTeamNotify",
         "in_original_checklist": false,
         "references": [
@@ -3345,24 +3389,6 @@
         ],
         "has_disabled_handler": false,
         "has_outbound_source": true
-      },
-      {
-        "name": "UnlockPersonalLineReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerUnlockPersonalLineReq.java",
-            "line": 17,
-            "role": "disabled_handler_registration"
-          },
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerUnlockPersonalLineReq.java",
-            "line": 22,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
       },
       {
         "name": "WatcherChangeNotify",
@@ -3560,36 +3586,35 @@
   "live_android_session_tested": false,
   "formatter_note": "The existing Spotless/Google Java Format combination fails with NoSuchMethodError for JavaFormatterOptions.Style.valueOf; no formatting dependency changes were made.",
   "active_opcode_binding_audit": {
-    "checked_active_named_bindings": 1342,
+    "checked_active_named_bindings": 1348,
     "known_current_cmd_mismatches": 0,
     "mismatches": [],
-    "unmatched_active_binding_count": 2,
+    "unmatched_active_binding_count": 1,
     "unmatched_active_bindings": [
       {
         "name": "_FlowerLandReputationInfo",
         "cmd": 6087,
         "current_name_candidates": 0,
-        "numeric_value_has_current_native_getter": true
-      },
-      {
-        "name": "WindSeedType1Notify",
-        "cmd": 21002,
-        "current_name_candidates": 0,
+        "referenced_in_main_source": false,
         "numeric_value_has_current_native_getter": true
       }
     ],
+    "established_schema_aliases_checked": {
+      "WindSeedType1Notify": "_PlayerNormalLuaShellNotify"
+    },
+    "unmatched_source_referenced_active_binding_count": 0,
     "scope": "Checks all uniquely named current-command correspondences. A missing/ambiguous current name is retained for research; a numeric CmdId match alone does not prove protocol identity, field correctness or runtime reachability."
   },
   "targeted_java_tests": {
     "class_name": "emu.grasscutter.net.Verified72BindingsTest",
-    "tests": 13,
+    "tests": 15,
     "failures": 0,
     "errors": 0,
     "skipped": 0
   },
   "latest_targeted_test_run": {
     "classes": 4,
-    "tests": 77,
+    "tests": 79,
     "failures": 0,
     "errors": 0,
     "skipped": 0
