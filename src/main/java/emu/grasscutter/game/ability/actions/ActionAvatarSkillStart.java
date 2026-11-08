@@ -64,6 +64,28 @@ public class ActionAvatarSkillStart extends AbilityActionHandler {
             }
         }
 
+        // 任务推进：技能使用时直接通知任务系统（不依赖客户端 EvtDoSkillSuccNotify，
+        // 该消息在 7.2 里可能没有 CmdId，导致“使用元素战技”类任务无法完成）
+        try {
+            var questPlayer = ability.getPlayerOwner();
+            if (questPlayer != null) {
+                questPlayer.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_SKILL, action.skillID);
+                // 教学类任务用的是“通用元素战技 id”（10067），角色实际技能 id 是 11xxx
+                // 所以非爆发技能再补发一次 10067
+                try {
+                    var av = questPlayer.getCurrentAvatar();
+                    var depot = av == null ? null : av.getSkillDepot();
+                    int energySkill = depot == null ? -1 : depot.getEnergySkill();
+                    if (action.skillID != energySkill) {
+                        questPlayer.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_SKILL, 10067);
+                    }
+                } catch (Throwable ignored2) {
+                }
+            }
+        } catch (Throwable ignored) {
+            // 任务钩子不能影响技能释放本身
+        }
+
        if (action.skillID == 11065) {
             Avatar avatar = ability.getPlayerOwner().getCurrentAvatar();
             if (GAME_OPTIONS.energyUsage) {

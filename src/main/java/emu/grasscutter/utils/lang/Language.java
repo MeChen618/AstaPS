@@ -579,6 +579,20 @@ public final class Language {
                                                 i -> ARR_GC_LANGUAGES[i],
                                                 i -> i,
                                                 (i1, i2) -> i1))); // Have to handle duplicates referring back to the first
+        static {
+            // 兼容客户端发来的地区化语言码：zh-SG / zh-Hans / zh-Hant 等映射到已有文本
+            if (MAP_GC_LANGUAGES.containsKey("zh-CN")) {
+                int zh = MAP_GC_LANGUAGES.getInt("zh-CN");
+                for (String alias : new String[]{"zh-SG", "zh-Hans", "zh-Hans-CN", "zh"})
+                    MAP_GC_LANGUAGES.put(alias, zh);
+            }
+            if (MAP_GC_LANGUAGES.containsKey("zh-TW")) {
+                int tw = MAP_GC_LANGUAGES.getInt("zh-TW");
+                for (String alias : new String[]{"zh-Hant", "zh-Hant-TW"})
+                    MAP_GC_LANGUAGES.put(alias, tw);
+            }
+        }
+
         public String[] strings = new String[ARR_LANGUAGES.length];
 
         public TextStrings() {}
