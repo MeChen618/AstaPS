@@ -3,13 +3,16 @@ package emu.grasscutter.server.packet.send;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.protobuf.Descriptors.FieldDescriptor;
+
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.TakeAchievementGoalRewardRspOuterClass.TakeAchievementGoalRewardRsp;
+
+import org.junit.jupiter.api.Test;
+
 import java.util.HexFormat;
 import java.util.List;
-import org.junit.jupiter.api.Test;
 
 final class PacketTakeAchievementGoalRewardRspTest {
     @Test

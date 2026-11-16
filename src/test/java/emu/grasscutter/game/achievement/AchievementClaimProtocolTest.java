@@ -3,6 +3,7 @@ package emu.grasscutter.game.achievement;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.protobuf.CodedOutputStream;
+
 import emu.grasscutter.ServerResourceFixture;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.BasePacket;
@@ -16,14 +17,17 @@ import emu.grasscutter.server.game.GameServerPacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.recv.HandlerTakeAchievementRewardReq;
 import emu.grasscutter.server.packet.send.PacketTakeAchievementRewardRsp;
-import java.io.ByteArrayOutputStream;
-import java.util.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import sun.misc.Unsafe;
+
+import java.io.ByteArrayOutputStream;
+import java.util.*;
 
 /** Real request routing and packet builders, with no inventory or database mutations. */
 @ExtendWith(ServerResourceFixture.class)
@@ -51,10 +55,15 @@ final class AchievementClaimProtocolTest {
 
     @Test
     void generatedRequestUsesNativeField12() throws Exception {
-        assertEquals(12, TakeAchievementRewardReq.getDescriptor().findFieldByName("id_list").getNumber());
+        assertEquals(
+                12,
+                TakeAchievementRewardReq.getDescriptor().findFieldByName("id_list").getNumber());
         var nativeFixture = HexFormat.of().parseHex("6203f98005");
-        assertEquals(List.of(82041), TakeAchievementRewardReq.parseFrom(nativeFixture).getIdListList());
-        assertArrayEquals(nativeFixture, TakeAchievementRewardReq.newBuilder().addIdList(82041).build().toByteArray());
+        assertEquals(
+                List.of(82041), TakeAchievementRewardReq.parseFrom(nativeFixture).getIdListList());
+        assertArrayEquals(
+                nativeFixture,
+                TakeAchievementRewardReq.newBuilder().addIdList(82041).build().toByteArray());
     }
 
     @ParameterizedTest
@@ -66,8 +75,19 @@ final class AchievementClaimProtocolTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"", "5203f98005", "6203f980", "65f9800500", "64", "620100",
-            "6206f98005f98005", "6203f9800500", "6203f980058080", "6203f980051c"})
+    @ValueSource(
+            strings = {
+                "",
+                "5203f98005",
+                "6203f980",
+                "65f9800500",
+                "64",
+                "620100",
+                "6206f98005f98005",
+                "6203f9800500",
+                "6203f980058080",
+                "6203f980051c"
+            })
     void malformedMissingAndDuplicateIdsCannotReachRewards(String hex) throws Exception {
         handle(hex);
         assertRejected();
@@ -135,9 +155,13 @@ final class AchievementClaimProtocolTest {
         assertEquals(Retcode.RET_REWARD_HAS_TAKEN_VALUE, decoded.getRetcode());
         assertEquals(0, decoded.getIdListCount());
         assertEquals(0, decoded.getItemListCount());
-        assertEquals(2, TakeAchievementRewardRsp.getDescriptor().findFieldByName("retcode").getNumber());
-        assertEquals(6, TakeAchievementRewardRsp.getDescriptor().findFieldByName("id_list").getNumber());
-        assertEquals(12, TakeAchievementRewardRsp.getDescriptor().findFieldByName("item_list").getNumber());
+        assertEquals(
+                2, TakeAchievementRewardRsp.getDescriptor().findFieldByName("retcode").getNumber());
+        assertEquals(
+                6, TakeAchievementRewardRsp.getDescriptor().findFieldByName("id_list").getNumber());
+        assertEquals(
+                12,
+                TakeAchievementRewardRsp.getDescriptor().findFieldByName("item_list").getNumber());
     }
 
     private void handle(String hex) throws Exception {

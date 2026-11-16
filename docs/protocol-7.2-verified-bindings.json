@@ -1841,19 +1841,6 @@
       "reason": "Preserve the old API field while reserving the verified current wire slot for its named role"
     }
   ],
-  "descriptor_validation": {
-    "compiled_proto_files": 2105,
-    "descriptor_files": 2105,
-    "verified_opcode_bindings": 40,
-    "corrected_field_numbers": 80,
-    "displaced_legacy_api_fields": 3,
-    "unplanned_descriptor_changes": 0,
-    "duplicate_new_opcode_bindings": 0,
-    "descriptor_sha256": "544cd84e910d9293f3ab89937f36e20eb8eb60c4b559fd8fea8fcfddac7e3118",
-    "all_message_and_enum_declarations_preserved": true,
-    "untouched_manual_gacha_info_preserved": true,
-    "no_end_to_end_client_test_claimed": true
-  },
   "native_ascension_sender_cases": 22,
   "native_field_instruction_cases": 332,
   "additional_native_flow_verifications": [
@@ -1976,1675 +1963,1220 @@
     }
   ],
   "disabled_opcode_source_audit": {
-    "source_referenced_disabled_opcodes": 119,
-    "remaining_from_original_list": 64,
-    "additional_to_original_list": 55,
-    "disabled_handler_names": 45,
-    "outbound_source_names": 53,
+    "scope": "All static Java source references, excluding the constant table and naming utility; references do not prove runtime reachability.",
+    "source_referenced_zero_constants": 125,
+    "zero_handler_annotations": 49,
     "records": [
       {
         "name": "AddBackupAvatarTeamReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerAddBackupAvatarTeamReq.java",
-            "line": 6,
-            "role": "disabled_handler_registration"
+            "line": 6
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
+      },
+      {
+        "name": "AddCustomTeamReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerAddCustomTeamReq.java",
+            "line": 8
+          }
+        ]
+      },
+      {
+        "name": "AddCustomTeamRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketAddCustomTeamRsp.java",
+            "line": 10
+          }
+        ]
       },
       {
         "name": "AvatarChangeElementTypeRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketAvatarChangeElementTypeRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketAvatarChangeElementTypeRsp.java",
-            "line": 13,
-            "role": "outbound_packet_source"
+            "line": 13
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "AvatarDelNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketAvatarDelNotify.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "BuyBattlePassLevelRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketBuyBattlePassLevelRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "CheckUgcStateReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerCheckUgcStateReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "CheckUgcStateRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketCheckUgcStateRsp.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "CheckUgcUpdateReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerCheckUgcUpdateReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "ClientAbilitiesInitFinishCombineRsp1",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerClientAbilitiesInitFinishCombineNotify.java",
-            "line": 25,
-            "role": "other_source_reference"
+            "line": 25
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "ClientAbilitiesInitFinishCombineRsp2",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerClientAbilitiesInitFinishCombineNotify.java",
-            "line": 26,
-            "role": "other_source_reference"
+            "line": 26
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "CombineReqUnionCmd",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/game/GameServerPacketHandler.java",
-            "line": 58,
-            "role": "other_source_reference"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
-      },
-      {
-        "name": "CraftingAvatarDataNotify",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketCraftingAvatarDataNotify.java",
-            "line": 14,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "DelTeamEntityNotify",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketDelTeamEntityNotify.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 63
           },
           {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketDelTeamEntityNotify.java",
-            "line": 22,
-            "role": "outbound_packet_source"
+            "path": "src/main/java/emu/grasscutter/server/game/GameServerPacketHandler.java",
+            "line": 64
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
+      },
+      {
+        "name": "CustomTeamListNotify",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketCustomTeamListNotify.java",
+            "line": 10
+          }
+        ]
       },
       {
         "name": "DeleteFriendReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerDeleteFriendReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "DungeonPlayerDieRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketDungeonPlayerDieRsp.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "DungeonRestartReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerDungeonRestartReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "DungeonRestartRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerDungeonRestartReq.java",
-            "line": 25,
-            "role": "other_source_reference"
+            "line": 25
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
-      },
-      {
-        "name": "DungeonSlipRevivePointActivateRsp",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketDungeonSlipRevivePointActivateRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ELBLIGDECNMReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerELBLIGDECNMReq.java",
-            "line": 13,
-            "role": "disabled_handler_registration"
+            "line": 13
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerELBLIGDECNMReq.java",
-            "line": 20,
-            "role": "disabled_handler_registration"
+            "line": 20
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "ELBLIGDECNMRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerELBLIGDECNMReq.java",
-            "line": 19,
-            "role": "other_source_reference"
+            "line": 19
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "ELBLIGDECNMRsp2",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerELBLIGDECNMReq.java",
-            "line": 18,
-            "role": "other_source_reference"
+            "line": 18
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
-      },
-      {
-        "name": "EndCameraSceneLookNotify",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketEndCameraSceneLookNotify.java",
-            "line": 9,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "EntityAiKillSelfNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerEntityAiKillSelfNotify.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "ExecuteGadgetLuaRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketExecuteGadgetLuaRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ExecuteGroupTriggerRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketExecuteGroupTriggerRsp.java",
-            "line": 8,
-            "role": "outbound_packet_source"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ForgeGetQueueDataReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerForgeGetQueueDataReq.java",
-            "line": 6,
-            "role": "disabled_handler_registration"
+            "line": 6
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetAllH5ActivityInfoReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetAllH5ActivityInfoReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetFriendShowAvatarInfoReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetFriendShowAvatarInfoReq.java",
-            "line": 9,
-            "role": "disabled_handler_registration"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetFriendShowNameCardInfoReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetFriendShowNameCardInfoReq.java",
-            "line": 11,
-            "role": "disabled_handler_registration"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetHeadFrameDataReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetHeadFrameDataReq.java",
-            "line": 11,
-            "role": "disabled_handler_registration"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetHomeLevelUpRewardRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketGetHomeLevelUpRewardRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "GetPlayerBlacklistRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetPlayerBlacklistReq.java",
-            "line": 11,
-            "role": "other_source_reference"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetUgcBriefInfoReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetUgcBriefInfoReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetWorldMpInfoReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerGetWorldMpInfoReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "GetWorldMpInfoRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketGetWorldMpInfoRsp.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "GmTalkReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/dispatch/PacketIds.java",
-            "line": 12,
-            "role": "other_source_reference"
+            "line": 12
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HPNIJELOPEB_Req",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHPNIJELOPEB_Req.java",
-            "line": 13,
-            "role": "disabled_handler_registration"
+            "line": 13
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHPNIJELOPEB_Req.java",
-            "line": 19,
-            "role": "disabled_handler_registration"
+            "line": 19
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HPNIJELOPEB_Rsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHPNIJELOPEB_Req.java",
-            "line": 18,
-            "role": "other_source_reference"
+            "line": 18
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HomeAvatarSummonEventRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeAvatarSummonEventRsp.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeAvatarSummonEventRsp.java",
-            "line": 18,
-            "role": "outbound_packet_source"
+            "line": 18
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "HomeAvatarSummonFinishRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeAvatarSummonFinishRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "HomeEnterEditModeFinishReq",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeEnterEditModeFinishReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
-      },
-      {
-        "name": "HomeEnterEditModeFinishRsp",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeEnterEditModeFinishRsp.java",
-            "line": 8,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "HomeGetBasicInfoReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeGetBasicInfoReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HomeGetOnlineStatusReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeGetOnlineStatusReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HomeResourceTakeFetterExpReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeResourceTakeFetterExpReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HomeResourceTakeHomeCoinReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeResourceTakeHomeCoinReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HomeResourceTakeHomeCoinRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeResourceTakeHomeCoinRsp.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "HomeSceneInitFinishReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeSceneInitFinishReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "HomeSceneInitFinishRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeSceneInitFinishRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "HomeSceneJumpRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeSceneJumpRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "HomeTransferRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeTransferReq.java",
-            "line": 36,
-            "role": "other_source_reference"
+            "line": 36
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "IceCreatureDataNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/icecreature/IceCreatureSystem.java",
-            "line": 222,
-            "role": "other_source_reference"
+            "line": 222
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "IceCreatureGadgetDisappearNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/icecreature/IceCreatureSystem.java",
-            "line": 270,
-            "role": "other_source_reference"
+            "line": 270
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "IceCreatureSetTypeGadgetReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerIceCreatureSetTypeGadgetReq.java",
-            "line": 11,
-            "role": "disabled_handler_registration"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "InteractDailyDungeonInfoNotify",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/game/GameServerPacketHandler.java",
-            "line": 61,
-            "role": "other_source_reference"
+            "line": 67
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerInteractDailyDungeonInfoNotify.java",
-            "line": 9,
-            "role": "disabled_handler_registration"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "LaunchFireworksRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketLaunchFireworksRsp.java",
-            "line": 8,
-            "role": "outbound_packet_source"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "MarkNewNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMarkNewNotify.java",
-            "line": 11,
-            "role": "outbound_packet_source"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
+      },
+      {
+        "name": "MusicGameCreateBeatmapReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerMusicGameCreateBeatmapReq.java",
+            "line": 19
+          }
+        ]
+      },
+      {
+        "name": "MusicGameCreateBeatmapRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameCreateBeatmapRsp.java",
+            "line": 12
+          }
+        ]
+      },
+      {
+        "name": "MusicGameGetBeatmapReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerMusicGameGetBeatmapReq.java",
+            "line": 11
+          }
+        ]
+      },
+      {
+        "name": "MusicGameGetBeatmapRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameGetBeatmapRsp.java",
+            "line": 15
+          }
+        ]
+      },
+      {
+        "name": "MusicGameSearchBeatmapReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerMusicGameSearchBeatmapReq.java",
+            "line": 11
+          }
+        ]
+      },
+      {
+        "name": "MusicGameSearchBeatmapRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameSearchBeatmapRsp.java",
+            "line": 13
+          },
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameSearchBeatmapRsp.java",
+            "line": 25
+          }
+        ]
       },
       {
         "name": "MusicGameSettleReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerMusicGameSettleReq.java",
-            "line": 12,
-            "role": "disabled_handler_registration"
+            "line": 12
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "MusicGameSettleRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameSettleRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameSettleRsp.java",
-            "line": 20,
-            "role": "outbound_packet_source"
+            "line": 20
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "MusicGameStartRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameStartRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
+      },
+      {
+        "name": "MusicGameStartToPlayOthersBeatmapReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerMusicGameStartToPlayOthersBeatmapReq.java",
+            "line": 10
+          }
+        ]
+      },
+      {
+        "name": "MusicGameStartToPlayOthersBeatmapRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMusicGameStartToPlayOthersBeatmapRsp.java",
+            "line": 13
+          }
+        ]
       },
       {
         "name": "NALBKOPFIFD",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerUnlockPersonalLineReq.java",
-            "line": 46,
-            "role": "other_source_reference"
+            "line": 46
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
-        "name": "PlayerApplyEnterHomeNotify",
-        "in_original_checklist": true,
+        "name": "NONE",
         "references": [
           {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketPlayerApplyEnterHomeNotify.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/Handler.java",
+            "line": 6
+          },
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/Packet.java",
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "PlayerApplyEnterHomeResultReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerApplyEnterHomeResultReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerApplyEnterHomeResultRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketPlayerApplyEnterHomeResultRsp.java",
-            "line": 8,
-            "role": "outbound_packet_source"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "PlayerApplyEnterMpReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerApplyEnterMpReq.java",
-            "line": 9,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerApplyEnterMpResultReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerApplyEnterMpResultReq.java",
-            "line": 9,
-            "role": "disabled_handler_registration"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerApplyEnterMpResultRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerApplyEnterMpResultReq.java",
-            "line": 53,
-            "role": "other_source_reference"
+            "line": 53
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketPlayerApplyEnterMpResultRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "PlayerChatRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketPlayerChatRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "PlayerEnterChildMapLayerNotify",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerEnterChildMapLayerNotify.java",
-            "line": 6,
-            "role": "disabled_handler_registration"
+            "line": 6
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerEnterMapLayerNotify",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerEnterMapLayerNotify.java",
-            "line": 6,
-            "role": "disabled_handler_registration"
+            "line": 6
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerForceExitReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerForceExitReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerForceExitRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerForceExitReq.java",
-            "line": 13,
-            "role": "other_source_reference"
+            "line": 13
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerGetForceQuitBanInfoReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerGetForceQuitBanInfoReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "PlayerOfferingReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/entity/gadget/OfferingHelper.java",
-            "line": 595,
-            "role": "other_source_reference"
+            "line": 595
           },
           {
             "path": "src/main/java/emu/grasscutter/server/game/GameServerPacketHandler.java",
-            "line": 103,
-            "role": "other_source_reference"
+            "line": 110
           },
           {
             "path": "src/main/java/emu/grasscutter/server/game/GameServerPacketHandler.java",
-            "line": 106,
-            "role": "other_source_reference"
+            "line": 113
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerPlayerOfferingReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "QuestDelNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketDelQuestNotify.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ReadPrivateChatRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerReadPrivateChatReq.java",
-            "line": 15,
-            "role": "other_source_reference"
+            "line": 15
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "ReformFireworksRsp",
-        "in_original_checklist": true,
         "references": [
           {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReformFireworksRsp.java",
+            "line": 12
+          },
+          {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketFireworkSetRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ReliquaryOfferCompanionNotify",
-        "in_original_checklist": false,
         "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReliquaryDustDataNotify.java",
-            "line": 11,
-            "role": "outbound_packet_source"
-          },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReliquaryOfferCompanionNotify.java",
-            "line": 36,
-            "role": "outbound_packet_source"
+            "line": 36
+          },
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReliquaryDustDataNotify.java",
+            "line": 11
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
-        "name": "ReliquaryOfferDataNotify",
-        "in_original_checklist": false,
+        "name": "RemoveCustomTeamReq",
         "references": [
           {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReliquaryOfferDataNotify.java",
-            "line": 42,
-            "role": "outbound_packet_source"
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerRemoveCustomTeamReq.java",
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
-        "name": "ReliquaryOfferDefineReq",
-        "in_original_checklist": false,
+        "name": "RemoveCustomTeamRsp",
         "references": [
           {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerReliquaryOfferDefineReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketRemoveCustomTeamRsp.java",
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
-      },
-      {
-        "name": "ReliquaryOfferDefineRsp",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReliquaryOfferDefineRsp.java",
-            "line": 19,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "ReliquaryOfferExtractReq",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerReliquaryOfferExtractReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
-      },
-      {
-        "name": "ReliquaryOfferExtractRsp",
-        "in_original_checklist": false,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketReliquaryOfferExtractRsp.java",
-            "line": 18,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SceneEntityDrownReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerSceneEntityDrownReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SceneEntityDrownRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSceneEntityDrownRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SceneEntityUpdateNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSceneEntityUpdateNotify.java",
-            "line": 13,
-            "role": "outbound_packet_source"
+            "line": 13
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSceneEntityUpdateNotify.java",
-            "line": 24,
-            "role": "outbound_packet_source"
+            "line": 24
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSceneEntityUpdateNotify.java",
-            "line": 41,
-            "role": "outbound_packet_source"
+            "line": 41
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "SceneKickPlayerReq",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerSceneKickPlayerReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
-          }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SetBattlePassViewedRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSetBattlePassViewedRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SetChatEmojiCollectionRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSetChatEmojiCollectionRsp.java",
-            "line": 7,
-            "role": "outbound_packet_source"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SetFriendEnterHomeOptionRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSetFriendEnterHomeOptionRsp.java",
-            "line": 7,
-            "role": "outbound_packet_source"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SetPlayerHeadImageReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerSetPlayerHeadImageReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SetPlayerHeadImageRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSetPlayerHeadImageRsp.java",
-            "line": 11,
-            "role": "outbound_packet_source"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SetPlayerPropRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSetPlayerPropRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ShowClientGuideNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketShowClientGuideNotify.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "ShowLoadingScreenNotify",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketShowLoadingScreenNotify.java",
-            "line": 17,
-            "role": "outbound_packet_source"
+            "line": 17
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SkipPlayerGameTimeReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerSkipPlayerGameTimeReq.java",
-            "line": 8,
-            "role": "disabled_handler_registration"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SkipPlayerGameTimeRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketSkipPlayerGameTimeRsp.java",
-            "line": 8,
-            "role": "outbound_packet_source"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "SnezhnayaTrainCallNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/train/SnezhnayaTrainSystem.java",
-            "line": 154,
-            "role": "other_source_reference"
+            "line": 154
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SnezhnayaTrainCallReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerSnezhnayaTrainCallReq.java",
-            "line": 11,
-            "role": "disabled_handler_registration"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SnezhnayaTrainSetRouteReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerSnezhnayaTrainSetRouteReq.java",
-            "line": 11,
-            "role": "disabled_handler_registration"
+            "line": 11
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "SnezhnayaTrainStateNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/train/SnezhnayaTrainSystem.java",
-            "line": 215,
-            "role": "other_source_reference"
+            "line": 215
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "TowerMiddleLevelChangeTeamNotify",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketTowerMiddleLevelChangeTeamNotify.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "TowerSurrenderRsp",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketTowerSurrenderRsp.java",
-            "line": 18,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
-      },
-      {
-        "name": "TowerTeamSelectRsp",
-        "in_original_checklist": true,
-        "references": [
-          {
-            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketTowerTeamSelectRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
-          }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "TpsAmmunitionChangeNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/tps/TpsWeaponSystem.java",
-            "line": 419,
-            "role": "other_source_reference"
+            "line": 419
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "TpsEquipChangeNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketTpsEquipChangeNotify.java",
-            "line": 12,
-            "role": "outbound_packet_source"
+            "line": 12
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "UnfreezeGroupLimitNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketUnfreezeGroupLimitNotify.java",
-            "line": 8,
-            "role": "outbound_packet_source"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
+      },
+      {
+        "name": "Unk2700_ACILPONNGGK_ClientReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerHomeUnknown2Req.java",
+            "line": 9
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_BEDLIGJANCJ_ClientReq",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerChangeHomeBgmReq.java",
+            "line": 11
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_FJEHHCPCBLG_ServerNotify",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketChangeHomeBgmNotify.java",
+            "line": 9
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_JDMPECKFGIG_ServerNotify",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeUnknown1Notify.java",
+            "line": 10
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_KIIOGMKFNNP_ServerRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketHomeUnknown2Rsp.java",
+            "line": 9
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_LOHBMOKOPLH_ServerNotify",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketUnlockedHomeBgmNotify.java",
+            "line": 10
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_MEBFPBDNPGO_ServerNotify",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketUnlockHomeBgmNotify.java",
+            "line": 9
+          }
+        ]
+      },
+      {
+        "name": "Unk2700_OGHMHELMBNN_ServerRsp",
+        "references": [
+          {
+            "path": "src/main/java/emu/grasscutter/server/packet/send/PacketChangeHomeBgmRsp.java",
+            "line": 9
+          }
+        ]
       },
       {
         "name": "WatcherChangeNotify",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketWatcherChangeNotify.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "WearTpsEquipReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerWearTpsEquipReq.java",
-            "line": 10,
-            "role": "disabled_handler_registration"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "WearTpsEquipRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketWearTpsEquipRsp.java",
-            "line": 10,
-            "role": "outbound_packet_source"
+            "line": 10
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "WidgetDoBagRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketWidgetDoBagRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketWidgetDoBagRsp.java",
-            "line": 21,
-            "role": "outbound_packet_source"
+            "line": 21
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "WorldPlayerReviveReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerWorldPlayerReviveReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "WorldPlayerReviveRsp",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketWorldPlayerReviveRsp.java",
-            "line": 9,
-            "role": "outbound_packet_source"
+            "line": 9
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "_AvatarEscoffierSkillCookDataNotify",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/ability/EscoffierSkillCookOpcodes.java",
-            "line": 12,
-            "role": "other_source_reference"
+            "line": 12
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "_AvatarEscoffierSkillCookReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/ability/EscoffierSkillCookOpcodes.java",
-            "line": 8,
-            "role": "other_source_reference"
+            "line": 8
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "_AvatarExtraLevelUpgradeRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/game/avatar/AvatarExtraLevelOpcodes.java",
-            "line": 15,
-            "role": "other_source_reference"
+            "line": 15
           },
           {
             "path": "src/main/java/emu/grasscutter/game/avatar/AvatarExtraLevelOpcodes.java",
-            "line": 56,
-            "role": "other_source_reference"
+            "line": 56
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "_MoveTeamReq",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerMoveTeamReq.java",
-            "line": 32,
-            "role": "disabled_handler_registration"
+            "line": 32
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "_MoveTeamRsp",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/send/PacketMoveTeamRsp.java",
-            "line": 19,
-            "role": "outbound_packet_source"
+            "line": 19
           }
-        ],
-        "has_disabled_handler": false,
-        "has_outbound_source": true
+        ]
       },
       {
         "name": "_TakeAllForgeOutputReq",
-        "in_original_checklist": true,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerTakeAllForgeOutputReq.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       },
       {
         "name": "_UnlockPersonalLineReqAlt",
-        "in_original_checklist": false,
         "references": [
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerUnlockPersonalLineReqAlt.java",
-            "line": 7,
-            "role": "disabled_handler_registration"
+            "line": 7
           },
           {
             "path": "src/main/java/emu/grasscutter/server/packet/recv/HandlerUnlockPersonalLineReqAlt.java",
-            "line": 13,
-            "role": "disabled_handler_registration"
+            "line": 13
           }
-        ],
-        "has_disabled_handler": true,
-        "has_outbound_source": false
+        ]
       }
-    ],
-    "sentinel_constants_excluded": [
-      "NONE"
-    ],
-    "comments_and_string_literals_ignored": true,
-    "execution_reachability_not_inferred": true,
-    "scope": "References to zero-valued public constants in actual main Java source. This is broader than the original proto-backed checklist; a reference alone does not prove the feature is reachable in the current client or that an old CmdId still exists."
+    ]
   },
   "semantic_source_spelling_not_claimed": true,
   "live_android_session_tested": false,
-  "formatter_note": "The existing Spotless/Google Java Format combination fails with NoSuchMethodError for JavaFormatterOptions.Style.valueOf; no formatting dependency changes were made.",
-  "active_opcode_binding_audit": {
-    "checked_active_named_bindings": 1349,
-    "known_current_cmd_mismatches": 0,
-    "mismatches": [],
-    "unmatched_active_binding_count": 1,
-    "unmatched_active_bindings": [
-      {
-        "name": "_FlowerLandReputationInfo",
-        "cmd": 6087,
-        "current_name_candidates": 0,
-        "referenced_in_main_source": false,
-        "numeric_value_has_current_native_getter": true
-      }
-    ],
-    "established_schema_aliases_checked": {
-      "WindSeedType1Notify": "_PlayerNormalLuaShellNotify"
-    },
-    "unmatched_source_referenced_active_binding_count": 0,
-    "scope": "Checks all uniquely named current-command correspondences. A missing/ambiguous current name is retained for research; a numeric CmdId match alone does not prove protocol identity, field correctness or runtime reachability."
-  },
+  "formatter_note": "Changed Java regions and new Java sources formatted with Google Java Format 1.37.0 (AOSP style); no formatter dependency change.",
   "targeted_java_tests": {
     "class_name": "emu.grasscutter.net.Verified72BindingsTest",
     "tests": 16,
@@ -3653,10 +3185,115 @@
     "skipped": 0
   },
   "latest_targeted_test_run": {
-    "classes": 4,
-    "tests": 80,
+    "tests": 129,
     "failures": 0,
     "errors": 0,
-    "skipped": 0
-  }
+    "skipped": 0,
+    "scope": "Verified72BindingsTest, artifact protocol/transaction tests, achievement protocol/reply tests, and inventory tests"
+  },
+  "initial_descriptor_validation": {
+    "compiled_proto_files": 2105,
+    "descriptor_files": 2105,
+    "verified_opcode_bindings": 40,
+    "corrected_field_numbers": 80,
+    "displaced_legacy_api_fields": 3,
+    "unplanned_descriptor_changes": 0,
+    "duplicate_new_opcode_bindings": 0,
+    "descriptor_sha256": "544cd84e910d9293f3ab89937f36e20eb8eb60c4b559fd8fea8fcfddac7e3118",
+    "all_message_and_enum_declarations_preserved": true,
+    "untouched_manual_gacha_info_preserved": true,
+    "no_end_to_end_client_test_claimed": true
+  },
+  "descriptor_validation": {
+    "server_proto_files": 2177,
+    "new_proto_files": 72,
+    "client_messages_checked": 79,
+    "client_layout_errors": [],
+    "aliases_without_exact_client_message_name": [],
+    "server_descriptor_sha256": "7a2d7aa2eeeb0136c04a6daf66d4127820dc8425015c37dffc6f8f20e4b14175",
+    "live_client_tested": false,
+    "nested_type_identity_mismatches": 0
+  },
+  "public_main_repair": {
+    "enabled_zero_bindings": 50,
+    "corrected_active_bindings": 6,
+    "added_named_aliases": 39,
+    "intentional_legacy_alias_pairs": {
+      "ReliquaryOfferDefineReq": "GetReliquaryPurchaseReq",
+      "ReliquaryOfferDefineRsp": "GetReliquaryPurchaseRsp",
+      "ReliquaryOfferExtractReq": "GetReliquaryOfferingReq",
+      "ReliquaryOfferExtractRsp": "GetReliquaryOfferingRsp",
+      "ReliquaryOfferDataNotify": "GetReliquaryOfferPurchaseInfoNotify"
+    },
+    "unified_artifact_request_routes": 21,
+    "new_opcode_binding_collisions_excluding_intentional_aliases": 0,
+    "unknown_opcode_crafting_fallback_removed": true,
+    "resource_configuration_required": true,
+    "default_lock_scheme_set_ids": [
+      15041
+    ],
+    "live_android_session_tested": false
+  },
+  "full_suite_comparison": {
+    "baseline": {
+      "classes": 255,
+      "tests": 1491,
+      "failures": 82,
+      "errors": 0,
+      "skipped": 4
+    },
+    "patched": {
+      "classes": 258,
+      "tests": 1528,
+      "failures": 74,
+      "errors": 0,
+      "skipped": 4
+    },
+    "new_failing_cases": [],
+    "resolved_failing_cases": [
+      {
+        "class_name": "emu.grasscutter.server.packet.send.PacketTakeAchievementGoalRewardRspTest",
+        "test": "successPacketUsesPackedGoalIdsAndNestedItems()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.server.packet.send.PacketTakeAchievementGoalRewardRspTest",
+        "test": "generatedDescriptorMatchesNativeReader()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.server.packet.send.PacketTakeAchievementGoalRewardRspTest",
+        "test": "defaultErrorRetainsAlreadyTakenSemanticsOnFieldSeven()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.server.packet.send.PacketTakeAchievementGoalRewardRspTest",
+        "test": "mapsTheResponseAndRequest()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.game.player.PushTipsManagerTest",
+        "test": "rewardNeedsFinishedTipAndIsPaidOnce()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.game.achievement.AchievementGoalRequestProtocolTest",
+        "test": "canonicalCategoryGiftReachesGoalBoundaryThroughDispatch()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.game.achievement.AchievementClaimProtocolTest",
+        "test": "responseBuildersUseNativeSuccessAndErrorFields()",
+        "count": 1
+      },
+      {
+        "class_name": "emu.grasscutter.game.achievement.AchievementClaimProtocolTest",
+        "test": "capturedClaimRoutesToTheRewardBoundary()",
+        "count": 1
+      }
+    ]
+  },
+  "jar_and_strict_generated_compilation_passed": true,
+  "jar_zip_integrity_checked": true,
+  "full_suite_passed": false
 }

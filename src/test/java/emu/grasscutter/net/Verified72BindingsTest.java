@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.protobuf.CodedInputStream;
+
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.ActivityTakeWatcherRewardReqOuterClass.ActivityTakeWatcherRewardReq;
 import emu.grasscutter.net.proto.AvatarPromoteReqOuterClass.AvatarPromoteReq;
@@ -30,10 +31,12 @@ import emu.grasscutter.net.proto.TakeFurnitureMakeRspOuterClass.TakeFurnitureMak
 import emu.grasscutter.net.proto.TowerBuffSelectReqOuterClass.TowerBuffSelectReq;
 import emu.grasscutter.net.proto.TowerBuffSelectRspOuterClass.TowerBuffSelectRsp;
 import emu.grasscutter.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq;
+
+import org.junit.jupiter.api.Test;
+
 import java.util.HashMap;
 import java.util.HexFormat;
 import java.util.Map;
-import org.junit.jupiter.api.Test;
 
 final class Verified72BindingsTest {
     @Test
@@ -109,7 +112,8 @@ final class Verified72BindingsTest {
 
         var bytes = HexFormat.of().parseHex("688401");
         assertEquals(132, HomeChangeBgmRsp.parseFrom(bytes).getRetcode());
-        assertArrayEquals(bytes, HomeChangeBgmRsp.newBuilder().setRetcode(132).build().toByteArray());
+        assertArrayEquals(
+                bytes, HomeChangeBgmRsp.newBuilder().setRetcode(132).build().toByteArray());
     }
 
     @Test
@@ -159,17 +163,23 @@ final class Verified72BindingsTest {
         assertEquals(26546, PacketOpcodes.CancelCoopTaskReq);
         var bytes = HexFormat.of().parseHex("20a09c01");
         assertEquals(20000, CancelCoopTaskReq.parseFrom(bytes).getChapterId());
-        assertArrayEquals(bytes, CancelCoopTaskReq.newBuilder().setChapterId(20000).build().toByteArray());
+        assertArrayEquals(
+                bytes, CancelCoopTaskReq.newBuilder().setChapterId(20000).build().toByteArray());
     }
 
     @Test
     void trialRewardUsesTheCurrentTrialIndexField() throws Exception {
         assertEquals(20742, PacketOpcodes.ReceivedTrialAvatarActivityRewardReq);
-        var request = ReceivedTrialAvatarActivityRewardReq.parseFrom(HexFormat.of().parseHex("0807109f01"));
+        var request =
+                ReceivedTrialAvatarActivityRewardReq.parseFrom(
+                        HexFormat.of().parseHex("0807109f01"));
         assertEquals(159, request.getTrialAvatarIndexId());
         assertArrayEquals(
                 HexFormat.of().parseHex("109f01"),
-                ReceivedTrialAvatarActivityRewardReq.newBuilder().setTrialAvatarIndexId(159).build().toByteArray());
+                ReceivedTrialAvatarActivityRewardReq.newBuilder()
+                        .setTrialAvatarIndexId(159)
+                        .build()
+                        .toByteArray());
     }
 
     @Test
@@ -191,7 +201,11 @@ final class Verified72BindingsTest {
         assertEquals(1001, request.getWatcherId());
         assertArrayEquals(
                 bytes,
-                ActivityTakeWatcherRewardReq.newBuilder().setActivityId(5002).setWatcherId(1001).build().toByteArray());
+                ActivityTakeWatcherRewardReq.newBuilder()
+                        .setActivityId(5002)
+                        .setWatcherId(1001)
+                        .build()
+                        .toByteArray());
     }
 
     @Test
@@ -203,7 +217,9 @@ final class Verified72BindingsTest {
         assertEquals(29979, PacketOpcodes.HomeChangeEditModeReq);
         var bytes = HexFormat.of().parseHex("6001");
         assertTrue(HomeChangeEditModeReq.parseFrom(bytes).getIsEnterEditMode());
-        assertArrayEquals(bytes, HomeChangeEditModeReq.newBuilder().setIsEnterEditMode(true).build().toByteArray());
+        assertArrayEquals(
+                bytes,
+                HomeChangeEditModeReq.newBuilder().setIsEnterEditMode(true).build().toByteArray());
     }
 
     @Test
@@ -228,12 +244,60 @@ final class Verified72BindingsTest {
         var request = GetPushTipsRewardReq.parseFrom(HexFormat.of().parseHex("12070129ffffffff0f"));
         assertEquals(java.util.List.of(1, 41, -1), request.getPushTipsIdListList());
 
-        var packet = new emu.grasscutter.server.packet.send.PacketGetPushTipsRewardRsp(
-                132, request.getPushTipsIdListList());
+        var packet =
+                new emu.grasscutter.server.packet.send.PacketGetPushTipsRewardRsp(
+                        132, request.getPushTipsIdListList());
         assertEquals(9626, packet.getOpcode());
         assertArrayEquals(HexFormat.of().parseHex("3a070129ffffffff0f588401"), packet.getData());
         var reply = GetPushTipsRewardRsp.parseFrom(packet.getData());
         assertEquals(request.getPushTipsIdListList(), reply.getPushTipsIdListList());
         assertEquals(132, reply.getRetcode());
+    }
+
+    @Test
+    void multiplayerRequestsAndHostRoutingUseCurrentFields() throws Exception {
+        assertEquals(9526, PacketOpcodes.PlayerApplyEnterMpReq);
+        var request =
+                emu.grasscutter.net.proto.PlayerApplyEnterMpReqOuterClass.PlayerApplyEnterMpReq
+                        .parseFrom(HexFormat.of().parseHex("607b"));
+        assertEquals(123, request.getTargetUid());
+        var notification =
+                emu.grasscutter.net.proto.PlayerApplyEnterMpNotifyOuterClass
+                        .PlayerApplyEnterMpNotify.parseFrom(HexFormat.of().parseHex("08076809"));
+        assertEquals(7, notification.getSrcThreadIndex());
+        assertEquals(9, notification.getSrcAppId());
+        assertEquals(24164, PacketOpcodes.PlayerApplyEnterHomeNotify);
+        var home =
+                emu.grasscutter.net.proto.PlayerApplyEnterHomeNotifyOuterClass
+                        .PlayerApplyEnterHomeNotify.parseFrom(
+                        HexFormat.of().parseHex("48097202087b"));
+        assertEquals(9, home.getSrcAppId());
+        assertEquals(123, home.getSrcPlayerInfo().getUid());
+        assertEquals(21380, PacketOpcodes.SceneKickPlayerReq);
+    }
+
+    @Test
+    void towerAndHomeCompletionRepliesHaveCurrentRoutes() throws Exception {
+        assertEquals(3450, PacketOpcodes.TowerTeamSelectRsp);
+        assertEquals(2048, PacketOpcodes.TowerSurrenderRsp);
+        assertEquals(
+                132,
+                emu.grasscutter.net.proto.TowerTeamSelectRspOuterClass.TowerTeamSelectRsp.parseFrom(
+                                HexFormat.of().parseHex("288401"))
+                        .getRetcode());
+        assertEquals(
+                132,
+                emu.grasscutter.net.proto.TowerSurrenderRspOuterClass.TowerSurrenderRsp.parseFrom(
+                                HexFormat.of().parseHex("408401"))
+                        .getRetcode());
+        assertEquals(7167, PacketOpcodes.HomeEnterEditModeFinishReq);
+        var packet = new emu.grasscutter.server.packet.send.PacketHomeEnterEditModeFinishRsp();
+        assertEquals(7570, packet.getOpcode());
+        assertEquals(22143, PacketOpcodes.DelTeamEntityNotify);
+        var removed =
+                emu.grasscutter.net.proto.DelTeamEntityNotifyOuterClass.DelTeamEntityNotify
+                        .parseFrom(HexFormat.of().parseHex("420207087803"));
+        assertEquals(java.util.List.of(7, 8), removed.getDelEntityIdListList());
+        assertEquals(3, removed.getSceneId());
     }
 }

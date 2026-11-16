@@ -1,10 +1,12 @@
 package emu.grasscutter.server.packet.recv;
 
 import com.google.protobuf.CodedInputStream;
+
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.TakeAchievementRewardReqOuterClass.TakeAchievementRewardReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketTakeAchievementRewardRsp;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -47,7 +49,8 @@ public class HandlerTakeAchievementRewardReq extends PacketHandler {
         while (!input.isAtEnd()) {
             int tag = input.readTag();
             if ((tag >>> 3) != TakeAchievementRewardReq.ID_LIST_FIELD_NUMBER) {
-                if (!input.skipField(tag)) throw new IOException("Unexpected end-group in achievement claim");
+                if (!input.skipField(tag))
+                    throw new IOException("Unexpected end-group in achievement claim");
                 continue;
             }
             if ((tag & 7) == 0) {

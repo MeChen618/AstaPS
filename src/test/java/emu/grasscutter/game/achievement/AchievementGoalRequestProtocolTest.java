@@ -3,20 +3,24 @@ package emu.grasscutter.game.achievement;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.protobuf.CodedOutputStream;
+
 import emu.grasscutter.ServerResourceFixture;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.TakeAchievementGoalRewardReqOuterClass.TakeAchievementGoalRewardReq;
 import emu.grasscutter.server.game.*;
 import emu.grasscutter.server.packet.recv.HandlerTakeAchievementGoalRewardReq;
-import java.io.ByteArrayOutputStream;
-import java.util.*;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+
 import sun.misc.Unsafe;
+
+import java.io.ByteArrayOutputStream;
+import java.util.*;
 
 /**
  * Synthetic category requests exercise real dispatch and full framing before the reward boundary.
@@ -54,14 +58,25 @@ final class AchievementGoalRequestProtocolTest {
         assertEquals("UINT32", field.getType().name());
         assertEquals(
                 List.of(10),
-                TakeAchievementGoalRewardReq.parseFrom(HexFormat.of().parseHex("1a010a")).getIdListList());
+                TakeAchievementGoalRewardReq.parseFrom(HexFormat.of().parseHex("1a010a"))
+                        .getIdListList());
         assertArrayEquals(
                 HexFormat.of().parseHex("1a010a"),
                 TakeAchievementGoalRewardReq.newBuilder().addIdList(10).build().toByteArray());
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"1a010a", "180a", "08011a010a", "1a010a2001", "1a010a220178", "1a010a2d01000000", "1a010a08ffffffffffffffffff01", "1a010a290100000000000000"})
+    @ValueSource(
+            strings = {
+                "1a010a",
+                "180a",
+                "08011a010a",
+                "1a010a2001",
+                "1a010a220178",
+                "1a010a2d01000000",
+                "1a010a08ffffffffffffffffff01",
+                "1a010a290100000000000000"
+            })
     void packedUnpackedAndUnknownFieldsAreAccepted(String hex) throws Exception {
         handle(HexFormat.of().parseHex(hex));
         assertEquals(1, achievements.calls);
