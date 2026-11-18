@@ -31,6 +31,8 @@ public final class QuestManager extends BasePlayerManager {
 
     private long lastHourCheck = 0;
     private long lastDayCheck = 0;
+    /** Throttle for the periodic "left the scene range" sampling (see onTick). */
+    private transient long nextRangeCheckTime = 0;
 
     // One thread, not four: quest events mutate shared quest state and racing them corrupted it.
     public static final ExecutorService eventExecutor =
@@ -377,6 +379,18 @@ public final class QuestManager extends BasePlayerManager {
         this.checkTimeVars();
         // trigger game time tick for quests
         this.queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK);
+
+        // "Leave scene range" is a position condition, not something the client reports, so it has
+        // to be sampled. Throttled to once per second: the handler reads the live position and the
+        // radius is measured in metres, so finer sampling buys nothing.
+        var now = System.currentTimeMillis();
+        if (now >= this.nextRangeCheckTime) {
+            this.nextRangeCheckTime = now + 1000;
+            var scene = this.getPlayer().getScene();
+            if (scene != null) {
+                this.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE_RANGE, scene.getId(), 0);
+            }
+        }
     }
 
     private void checkTimeVars() {
@@ -489,6 +503,11 @@ public final class QuestManager extends BasePlayerManager {
         this.queueEvent(QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_EQUAL, variable, value);
         this.queueEvent(QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_GREATER, variable, value);
         this.queueEvent(QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_LESS, variable, value);
+        // 7.x finish conditions also watch quest global vars; before this they were never fired, so
+        // those steps could not complete. Handlers read the current value, not this payload.
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL, variable, value);
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_NOT_EQUAL, variable, value);
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER, variable, value);
         this.getPlayer().sendPacket(new PacketQuestGlobalVarNotify(getPlayer()));
     }
 

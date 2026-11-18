@@ -1,5 +1,7 @@
 package emu.grasscutter.game.quest;
 
+import static emu.grasscutter.utils.lang.Language.translate;
+
 import dev.morphia.annotations.*;
 import emu.grasscutter.*;
 import emu.grasscutter.data.GameData;
@@ -308,6 +310,19 @@ public class GameQuest {
         AmberFlightExamSupport.stopWithQuest(this);
 
         this.getOwner().sendPacket(new PacketQuestListUpdateNotify(this));
+        // A failed step has to be visible. QuestListUpdateNotify alone leaves the old HUD entry in
+        // place, so the step is also removed from the list and a common-tips dialog names it -
+        // that is what makes a fail condition (e.g. walking out of a quest's range) observable.
+        this.getOwner().sendPacket(new PacketDelQuestNotify(this.getSubQuestId()));
+        this.getOwner()
+                .sendPacket(
+                        new PacketShowCommonTipsNotify(
+                                translate("messages.game.quest_failed_title"),
+                                translate(
+                                        "messages.game.quest_failed_content",
+                                        this.getSubQuestId(),
+                                        this.getMainQuestId()),
+                                5));
 
         // Some subQuests have conditions that subQuests fail (even from different MainQuests)
         this.triggerStateEvents();
