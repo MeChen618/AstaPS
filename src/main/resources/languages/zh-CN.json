@@ -6,7 +6,9 @@
       "connect": "客户端 %s 已连接",
       "disconnect": "客户端 %s 已断开连接",
       "game_update_error": "游戏更新时发生错误",
-      "command_error": "命令发生错误："
+      "command_error": "命令发生错误：",
+      "quest_failed_title": "任务失败",
+      "quest_failed_content": "任务步骤 %s（主线 %s）判定失败，已从任务列表移除。"
     },
     "dispatch": {
       "address_bind": "[Dispatch] Dispatch 服务器启动于 \u001b[1m\u001b[33m%s:%s\u001b[0m",

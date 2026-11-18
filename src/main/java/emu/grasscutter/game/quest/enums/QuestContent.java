@@ -80,6 +80,17 @@ public enum QuestContent implements QuestTrigger {
     QUEST_CONTENT_IRODORI_POETRY_FINISH_FILL_POETRY(153), // missing, finish
     QUEST_CONTENT_ACTIVITY_TRIGGER_UPDATE(154), // missing
     QUEST_CONTENT_GADGET_STATE_CHANGE(155), // missing
+    // Names used by the 7.x quest data that this enum never carried. Without them the JSON type
+    // string resolves to QUEST_CONTENT_NONE and the whole condition is dropped at load time, so
+    // the step can never complete even when a handler exists. Lookup is by name (contentStringMap).
+    QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL(1001),
+    QUEST_CONTENT_QUEST_GLOBAL_VAR_NOT_EQUAL(1002),
+    QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER(1003),
+    QUEST_CONTENT_ITEM_NUM_EQUAL(1004),
+    QUEST_CONTENT_ITEM_NUM_GREATER(1005),
+    // param[0] is a SCENE id: every distinct value used by the 7.x data is a member of
+    // SceneExcelConfigData (3 = Mondstadt, 100, 1004, 20220, 51345, ...). param[1] is always 0.
+    QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE(1006),
     QUEST_CONTENT_UNKNOWN(9999);
 
     private final int value;

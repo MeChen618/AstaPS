@@ -6,7 +6,9 @@
       "connect": "Client connected from %s",
       "disconnect": "Client disconnected from %s",
       "game_update_error": "An error occurred during game update.",
-      "command_error": "Command error:"
+      "command_error": "Command error:",
+      "quest_failed_title": "Quest Failed",
+      "quest_failed_content": "Sub quest %s (main %s) failed and was removed from the quest list."
     },
     "dispatch": {
       "address_bind": "[Dispatch] Dispatch server started at \u001b[1m\u001b[33m%s:%s\u001b[0m",

@@ -45,6 +45,14 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
             }
         }
         questManager.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE, scene.getPrevScene());
+        // "Present at a specific scene": param[0] is a scene id (data-proven - every distinct value
+        // used by the quest table is a member of SceneExcelConfigData). Fired here because this is
+        // the moment the scene is ready. Logged at INFO so scene entry is verifiable.
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE, scene.getId(), 0);
+        emu.grasscutter.Grasscutter.getLogger()
+                .info("[QuestContent] fired PRESENT_AT_SPECIFIC_SCENE sceneId={} uid={}",
+                        scene.getId(), player.getUid());
 
         if (!freshPlayerBootstrap) session.send(new PacketPostEnterSceneRsp(player));
 

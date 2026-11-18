@@ -81,6 +81,12 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_BATCH_SET_QUEST_VAR(71),
     QUEST_EXEC_SET_IS_GAME_TIME_LOCKED_V2(72),
     QUEST_EXEC_SET_OPEN_STATE_V2(73),
+    // Names from the 7.2 quest data; the values are internal only.
+    // BATCH_SET_OPEN_STATE: param0/param1 are comma separated lists (ids / values) of equal length.
+    QUEST_EXEC_BATCH_SET_OPEN_STATE(74),
+    QUEST_EXEC_UNLOCK_AVATAR_TEAM_V2(75),
+    QUEST_EXEC_UNLOCK_MIRROR_AVATAR_TEAM(76),
+    QUEST_EXEC_UNLOCK_DUNGEON_MIRROR_AVATAR_TEAM(77),
     QUEST_EXEC_UNKNOWN(9999);
 
     private final int value;

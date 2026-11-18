@@ -1,0 +1,81 @@
+{
+  "quest_table": "E:\\Genshin\\AstaPS\\resources\\ExcelBinOutput\\QuestExcelConfigData.json",
+  "quest_table_sha256": "8c8016d25293102c461df0d86728e70c357ed60b2c444948d52389efa3ca847c",
+  "quest_rows": 33217,
+  "conditions": {
+    "QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL": {
+      "total": 286,
+      "finish": 236,
+      "fail": 50,
+      "subquests": 228
+    },
+    "QUEST_CONTENT_QUEST_GLOBAL_VAR_NOT_EQUAL": {
+      "total": 22,
+      "finish": 10,
+      "fail": 12,
+      "subquests": 16
+    },
+    "QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER": {
+      "total": 12,
+      "finish": 11,
+      "fail": 1,
+      "subquests": 11
+    },
+    "QUEST_CONTENT_ITEM_NUM_EQUAL": {
+      "total": 25,
+      "finish": 25,
+      "fail": 0,
+      "subquests": 20
+    },
+    "QUEST_CONTENT_ITEM_NUM_GREATER": {
+      "total": 6,
+      "finish": 6,
+      "fail": 0,
+      "subquests": 6
+    },
+    "QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE": {
+      "total": 338,
+      "finish": 314,
+      "fail": 24,
+      "subquests": 326
+    },
+    "QUEST_CONTENT_LEAVE_SCENE_RANGE": {
+      "total": 930,
+      "finish": 76,
+      "fail": 854,
+      "subquests": 930
+    }
+  },
+  "execs": {
+    "QUEST_EXEC_BATCH_SET_OPEN_STATE": {
+      "total": 24,
+      "subquests": 20
+    },
+    "QUEST_EXEC_NOTIFY_DAILY_TASK": {
+      "total": 451,
+      "subquests": 451
+    },
+    "QUEST_EXEC_UNLOCK_AVATAR_TEAM": {
+      "total": 197,
+      "subquests": 141
+    },
+    "QUEST_EXEC_UNLOCK_AVATAR_TEAM_V2": {
+      "total": 162,
+      "subquests": 119
+    },
+    "QUEST_EXEC_UNLOCK_DUNGEON_MIRROR_AVATAR_TEAM": {
+      "total": 17,
+      "subquests": 15
+    },
+    "QUEST_EXEC_UNLOCK_MIRROR_AVATAR_TEAM": {
+      "total": 1068,
+      "subquests": 848
+    }
+  },
+  "totals": {
+    "conditions": 1619,
+    "condition_subquests": 1520,
+    "execs": 1919,
+    "exec_subquests": 1583
+  }
+}
