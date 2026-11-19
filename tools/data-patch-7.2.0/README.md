@@ -1,65 +1,40 @@
-# 7.2.0 data patch: avatar name hashes + chapter hashes + missing TextMap entries
+# 7.2.0 resource patch for avatar and chapter text hashes
 
-`resources/` (game data) is not tracked by this repository, so the fixes below ship as a
-patch you apply to **your own** resources copy. Nothing here touches the server code.
+Use this tool on a copy of the 7.2.0 resources that matches the bundled mappings. It updates the avatar names used by server lookups such as handbook and command search. It also aligns chapter hashes in the resource data for consumers of those fields. AstaPS currently sends the client a chapter ID and state, so an in-game chapter title fix still needs client-side verification.
 
-## What was wrong
+The mappings cover 154 avatar names, 92 hash fields across 46 chapters, and 22 Simplified Chinese TextMap entries. The checks establish which values are present in the selected resources. The target text mappings still need to be checked against the intended 7.2.0 resource build.
 
-`AvatarExcelConfigData.nameTextMapHash` and the two chapter hashes in
-`ChapterExcelConfigData` (`chapterNumTextMapHash`, `chapterTitleTextMapHash`) are just
-**keys into `TextMap/TextMapCHS.json`**. When the key is absent, the client gets an empty
-string — avatar names and chapter titles render blank.
+## Apply and verify
 
-On the 7.2.0 resource set used here, 154 avatar hashes and 92 chapter hashes are absent from
-`TextMapCHS.json`, so names/titles are blank. The patch replaces them with keys that do exist.
+Run from the repository root.
 
-## Evidence (reproducible)
-
-```
-$ python tools/data-patch-7.2.0/validate_data_patch.py <resources> --expect tools/data-patch-7.2.0/expected-report.json
-{
-  "textmap_entries": 620459,
-  "avatar":  { "entries": 154, "fields": 154,
-               "old_hash_resolvable_in_textmap": 0,   "new_hash_resolvable_in_textmap": 154 },
-  "chapter": { "chapters": 46, "fields": 92,
-               "old_hash_resolvable_in_textmap": 0,   "new_hash_resolvable_in_textmap": 92 },
-  "textmap_added": { "entries": 22, "already_present": 22 }
-}
+```sh
+python tools/data-patch-7.2.0/validate_data_patch.py /path/to/resources
+python tools/data-patch-7.2.0/apply_data_patch.py /path/to/resources --dry
+python tools/data-patch-7.2.0/apply_data_patch.py /path/to/resources
+python tools/data-patch-7.2.0/validate_data_patch.py /path/to/resources \
+    --expect tools/data-patch-7.2.0/expected-report.json
 ```
 
-* `old_hash_resolvable_in_textmap = 0` — none of the current keys resolve to text: this is the bug.
-* `new_hash_resolvable_in_textmap = fields` — every key the patch writes resolves to text.
-* samples: avatar `10000002` old `1006042610` → *(empty)*, new `3733770008` → `神里绫华`;
-  chapter `1001` old `988250` → *(empty)*, new `3424465551` → `序章 第一幕`.
+The tools follow the server's table precedence. It searches `Server/` first, then `ExcelBinOutput/`, and accepts an active JSON table. If a higher-priority TSJ or TSV file is active, both tools report which file the server would load.
 
-## Contents
+The preview reports fields that would change, values already applied, and working values it will preserve. The default validator checks that the resource set can be patched. With `--expect`, it also checks that every mapped field and each of the 22 exact TextMap entries is present on disk. A variant that preserves different working values can pass the preview and fail strict verification.
 
-| file | meaning |
-|---|---|
-| `avatar_fix.json` | 154 avatar ids → `nameTextMapHash` old/new |
-| `chapter_fix.json` | 46 chapter ids → `chapterNumTextMapHash` / `chapterTitleTextMapHash` old/new |
-| `textmap_added.json` | 22 TextMap keys that the server-side table needs but the client TextMap lacks |
-| `apply_data_patch.py` | applies the three files to a resources directory |
-| `validate_data_patch.py` | recomputes the numbers above; `--expect` fails on mismatch |
-| `expected-report.json` | the invariants any correct application must satisfy |
+Each changed file is backed up with a unique suffix and replaced atomically. The tool checks the inputs before writing and publishes new text entries before the tables that refer to them. Running it again after a partial write completes the remaining changes. A fully applied patch is a no-op.
 
-## Usage
+Restart the server after updating its resources. If the tables changed while the TextMap file stayed the same, move `TextMap/TextMapCache.bin` under the configured cache directory aside before restarting so AstaPS indexes the new hashes.
 
-```
-python tools/data-patch-7.2.0/validate_data_patch.py <resources>          # 先看现状
-python tools/data-patch-7.2.0/apply_data_patch.py   <resources> --dry    # 预演
-python tools/data-patch-7.2.0/apply_data_patch.py   <resources>          # 应用
-python tools/data-patch-7.2.0/validate_data_patch.py <resources> --expect tools/data-patch-7.2.0/expected-report.json
+## Safety checks
+
+- A hash changes only when the current value matches the expected old value, its Chinese text is missing, and the replacement has nonblank Chinese text.
+- If a change would remove a working translation from another installed TextMap, the preview reports the affected field.
+- Missing rows, unexpected unresolved hashes, missing target text, and conflicting TextMap additions stop the patch before any resource files are written.
+- `--dry` leaves resource files and backups untouched.
+
+## Tests
+
+```sh
+python -B -m unittest discover -s tools/data-patch-7.2.0 -v
 ```
 
-## Safety
-
-* writing a hash that does not resolve to text is skipped and reported (the script checks the
-  merged TextMap first), so a wrong patch cannot blank a name that currently works;
-* every target file is backed up as `<file>.bak_<timestamp>` before being written;
-* `--dry` never writes;
-* re-running is idempotent — an already-applied row is left as is.
-
-## Scope
-
-Data only. Server-side quest logic is a separate change (see the quest conditions/execs PR).
+The tests use temporary fixtures. They cover preview, strict verification, reruns, backups, loader precedence, working translations, and recovery after a failed write.
