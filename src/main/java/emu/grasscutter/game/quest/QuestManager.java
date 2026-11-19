@@ -541,8 +541,14 @@ public final class QuestManager extends BasePlayerManager {
     }
 
     public GameMainQuest addMainQuest(QuestData questConfig) {
+        return addMainQuest(questConfig, false);
+    }
+
+    private GameMainQuest addMainQuest(QuestData questConfig, boolean byCommand) {
         var mainQuest = new GameMainQuest(getPlayer(), questConfig.getMainId());
+        mainQuest.setAddedByCommand(byCommand);
         this.getMainQuests().put(mainQuest.getParentQuestId(), mainQuest);
+        if (byCommand) mainQuest.save();
         this.getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(mainQuest));
 
         return mainQuest;
@@ -573,19 +579,25 @@ public final class QuestManager extends BasePlayerManager {
 
         // Create main quest if it doesnt exist
         if (mainQuest == null) {
-            mainQuest = addMainQuest(questConfig);
-        }
-        if (byCommand && !mainQuest.isAddedByCommand()) {
+            var parentData = GameData.getMainQuestDataMap().get(questConfig.getMainId());
+            if (parentData == null || parentData.getSubQuests() == null
+                    || Arrays.stream(parentData.getSubQuests())
+                            .noneMatch(child -> child.getSubId() == questConfig.getSubId())) {
+                Grasscutter.getLogger().warn("Missing parent quest data for subquest {}", questConfig.getSubId());
+                return null;
+            }
+            mainQuest = addMainQuest(questConfig, byCommand);
+        } else if (byCommand && !mainQuest.isAddedByCommand()) {
             mainQuest.setAddedByCommand(true);
             mainQuest.save();
+            this.getPlayer().sendPacket(new PacketFinishedParentQuestUpdateNotify(mainQuest));
         }
 
         // Sub quest
         var quest = mainQuest.getChildQuestById(questConfig.getSubId());
+        if (quest == null) return null;
         // Forcefully start
         quest.start();
-        // Check conditions.
-        this.checkQuestAlreadyFulfilled(quest);
 
         return quest;
     }
@@ -742,12 +754,10 @@ public final class QuestManager extends BasePlayerManager {
                             for (var condition : quest.getQuestData().getFinishCond()) {
                                 switch (condition.getType()) {
                                     case QUEST_CONTENT_OBTAIN_ITEM, QUEST_CONTENT_ITEM_LESS_THAN -> {
-                                        // check if we already own enough of the item
-                                        var item = getPlayer().getInventory().getItemByGuid(condition.getParam()[0]);
-                                        queueEvent(
-                                                condition.getType(),
-                                                condition.getParam()[0],
-                                                item != null ? item.getCount() : 0);
+                                        int[] params = condition.getParam();
+                                        if (params != null && params.length > 0) {
+                                            queueEvent(condition.getType(), params[0]);
+                                        }
                                     }
                                     case QUEST_CONTENT_UNLOCK_TRANS_POINT -> {
                                         var scenePoints =
