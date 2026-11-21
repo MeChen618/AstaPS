@@ -67,5 +67,9 @@ public final class TalkManager extends BasePlayerManager {
 
         mainQuest.getTalks().put(talkId, new TalkData(talkId, ""));
         mainQuest.save();
+        if (mainQuestId == 311 && (talkId == 30902 || talkId == 30904)) {
+            // 丽莎对话完成后立即重查锁区门槛。
+            this.getPlayer().getProgressManager().tryUnlockOpenStates();
+        }
     }
 }

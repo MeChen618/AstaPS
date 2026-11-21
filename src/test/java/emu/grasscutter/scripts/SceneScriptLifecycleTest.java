@@ -1,6 +1,7 @@
 package emu.grasscutter.scripts;
 
 import static emu.grasscutter.scripts.constants.EventType.EVENT_TIMER_EVENT;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import emu.grasscutter.Grasscutter;
@@ -14,14 +15,16 @@ import emu.grasscutter.game.world.TestWorld.TestScene;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.*;
 import emu.grasscutter.server.event.player.PlayerTeleportEvent.TeleportType;
-import java.util.*;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicInteger;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.luaj.vm2.LuaTable;
 import org.luaj.vm2.LuaValue;
+
+import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @ExtendWith(ServerResourceFixture.class)
 final class SceneScriptLifecycleTest {
@@ -82,6 +85,72 @@ final class SceneScriptLifecycleTest {
     }
 
     @Test
+    void offeringEventsWaitForTheirOwnGroupWithoutBlockingOtherGroups() throws Exception {
+        var entered = new java.util.concurrent.CountDownLatch(1);
+        var release = new java.util.concurrent.CountDownLatch(1);
+        var visits = new AtomicInteger();
+        var manager =
+                new SceneScriptManager(scene) {
+                    @Override
+                    public Set<SceneTrigger> getTriggersByEvent(int eventId) {
+                        if (visits.incrementAndGet() == 1) {
+                            entered.countDown();
+                            try {
+                                assertTrue(release.await(5, java.util.concurrent.TimeUnit.SECONDS));
+                            } catch (InterruptedException exception) {
+                                Thread.currentThread().interrupt();
+                                throw new AssertionError(exception);
+                            }
+                        }
+                        return Set.of();
+                    }
+                };
+        var first = manager.callEvent(new ScriptArgs(7, EventType.EVENT_OFFERING_LEVELUP, 1, 2));
+        try {
+            assertTrue(entered.await(5, java.util.concurrent.TimeUnit.SECONDS));
+            var second =
+                    manager.callEvent(new ScriptArgs(7, EventType.EVENT_OFFERING_LEVELUP, 1, 3));
+            manager.callEvent(new ScriptArgs(8, EventType.EVENT_OFFERING_LEVELUP, 5, 1))
+                    .get(5, java.util.concurrent.TimeUnit.SECONDS);
+            assertEquals(2, visits.get());
+            assertFalse(second.isDone());
+            release.countDown();
+            first.get(5, java.util.concurrent.TimeUnit.SECONDS);
+            second.get(5, java.util.concurrent.TimeUnit.SECONDS);
+            assertEquals(3, visits.get());
+        } finally {
+            release.countDown();
+        }
+    }
+
+    @Test
+    void luaOfferingQueryReadsTheWorldHostAndHandlesMissingContext() throws Exception {
+        var savePath = java.nio.file.Path.of("data/offering_levels.json");
+        byte[] previousSave =
+                java.nio.file.Files.exists(savePath)
+                        ? java.nio.file.Files.readAllBytes(savePath)
+                        : null;
+        player.setUid(991794);
+        player.getQuestGlobalVariables().put(910005, 7);
+        var lib = new ScriptLib();
+        assertEquals(0, lib.GetOfferingLevel(5));
+        lib.setSceneScriptManager(scene.getScriptManager());
+        try {
+            assertEquals(7, lib.GetOfferingLevel(5));
+            assertEquals(0, lib.GetOfferingLevel(-1));
+        } finally {
+            lib.removeSceneScriptManager();
+            var field =
+                    emu.grasscutter.game.entity.gadget.OfferingHelper.class.getDeclaredField(
+                            "LEVELS");
+            field.setAccessible(true);
+            ((Map<?, ?>) field.get(null)).remove(player.getUid());
+            if (previousSave == null) java.nio.file.Files.deleteIfExists(savePath);
+            else java.nio.file.Files.write(savePath, previousSave);
+        }
+    }
+
+    @Test
     void groupTimerFiresOnceAfterItsSeconds() {
         var events = new ArrayList<ScriptArgs>();
         var manager = timerManager(events);
@@ -122,10 +191,13 @@ final class SceneScriptLifecycleTest {
             pos.set("y", 2);
             pos.set("z", 3);
             var args = new LuaTable();
-            args.set("uid_list", LuaValue.listOf(new LuaValue[] {LuaValue.valueOf(player.getUid())}));
+            args.set(
+                    "uid_list",
+                    LuaValue.listOf(new LuaValue[] {LuaValue.valueOf(player.getUid())}));
             args.set("pos", pos);
 
-            assertNotEquals(0, lib.TransPlayerToPos(args), "a rejected transfer must report failure");
+            assertNotEquals(
+                    0, lib.TransPlayerToPos(args), "a rejected transfer must report failure");
             world.transferResult = true;
             assertEquals(0, lib.TransPlayerToPos(args));
         } finally {

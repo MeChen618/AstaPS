@@ -62,6 +62,17 @@ public class PacketGetScenePointRsp extends BasePacket {
             if (pointId == 7) has7 = unlockedSet.contains(7);
         }
 
+        p.addAllLockedPointList(
+                player.getForceLockedScenePoints(sceneId).stream().sorted().toList());
+        synchronized (player) {
+            new java.util.TreeMap<>(player.getScenePointVisibility(sceneId))
+                    .forEach(
+                            (pointId, visible) -> {
+                                if (visible) p.addUnhidePointList(pointId);
+                                else p.addHidePointList(pointId);
+                            });
+        }
+
         // Scene-point and scene-area snapshots must agree about visible map regions.
         // Fog-off mode does not unlock points or persist additional area flags.
         p.addAllUnlockAreaList(SceneAreaVisibility.forPlayer(player, sceneId));

@@ -11,14 +11,11 @@ public class HandlerPlayerGetForceQuitBanInfoReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
 
-        if (session.getServer().getMultiplayerSystem().leaveCoop(session.getPlayer())) {
-            // Success
-            session.send(
-                    new PacketPlayerGetForceQuitBanInfoRsp(RetcodeOuterClass.Retcode.RET_SUCC_VALUE));
-        } else {
-            // Fail
-            session.send(
-                    new PacketPlayerGetForceQuitBanInfoRsp(RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE));
-        }
+        // 查询处罚不会退出联机；当前没有强退匹配处罚。
+        session.send(
+                new PacketPlayerGetForceQuitBanInfoRsp(
+                        session.getPlayer() == null
+                                ? RetcodeOuterClass.Retcode.RET_SVR_ERROR_VALUE
+                                : RetcodeOuterClass.Retcode.RET_SUCC_VALUE));
     }
 }

@@ -60,6 +60,7 @@ public class GameQuest {
     }
 
     public void start() {
+        if (!this.getMainQuest().prepareRewardIndexActions(this.questData.getBeginExec())) return;
         this.acceptTime = Utils.getCurrentSeconds();
         this.startTime = this.acceptTime;
         this.startGameDay = getOwner().getWorld().getTotalGameTimeDays();
@@ -102,9 +103,7 @@ public class GameQuest {
         // different MainQuests)
         this.triggerStateEvents();
 
-        this.getQuestData()
-                .getBeginExec()
-                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
+        this.executeActions(this.questData.getBeginExec());
         this.getOwner().getQuestManager().checkQuestAlreadyFulfilled(this);
         MondstadtStoryQuestSupport.enableDungeonEntry(this);
         AmberFlightExamSupport.ensure(this);
@@ -236,6 +235,8 @@ public class GameQuest {
                 return;
             }
 
+            if (!this.getMainQuest().prepareRewardIndexActions(this.questData.getFinishExec())) return;
+
             this.state = QuestState.QUEST_STATE_FINISHED;
         }
         this.finishTime = Utils.getCurrentSeconds();
@@ -250,9 +251,7 @@ public class GameQuest {
             this.getMainQuest().finish();
         }
 
-        this.getQuestData()
-                .getFinishExec()
-                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
+        this.executeActions(this.questData.getFinishExec());
         // Some subQuests have conditions that subQuests are finished (even from different MainQuests)
         this.getOwner()
                 .getQuestManager()
@@ -301,8 +300,17 @@ public class GameQuest {
         Grasscutter.getLogger().debug("Quest {} was completed.", subQuestId);
     }
 
+    private void executeActions(List<QuestData.QuestExecParam> actions) {
+        if (actions == null) return;
+        for (var action : actions) {
+            if (action.getType() == QuestExec.QUEST_EXEC_UPDATE_PARENT_QUEST_REWARD_INDEX) continue;
+            getOwner().getServer().getQuestSystem().triggerExec(this, action, action.getParam());
+        }
+    }
+
     // TODO
     public void fail() {
+        if (!this.getMainQuest().prepareRewardIndexActions(this.questData.getFailExec())) return;
         this.state = QuestState.QUEST_STATE_FAILED;
         this.finishTime = Utils.getCurrentSeconds();
         AmberFlightExamSupport.stopWithQuest(this);
@@ -312,9 +320,7 @@ public class GameQuest {
         // Some subQuests have conditions that subQuests fail (even from different MainQuests)
         this.triggerStateEvents();
 
-        this.getQuestData()
-                .getFailExec()
-                .forEach(e -> getOwner().getServer().getQuestSystem().triggerExec(this, e, e.getParam()));
+        this.executeActions(this.questData.getFailExec());
 
         if (this.getQuestData().getTrialAvatarList() != null) {
             this.getQuestData()

@@ -225,6 +225,20 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         return quest != null && quest.getState() == QuestState.QUEST_STATE_FINISHED;
     }
 
+    private boolean isOpenStateQuestFinished(int questId) {
+        if (this.isQuestFinished(questId)) return true;
+        int sibling = HIDDEN_QUEST_SIBLINGS.getOrDefault(questId, 0);
+        if (sibling != 0 && this.isQuestFinished(sibling)) return true;
+        if (questId != 35001 || !this.isQuestFinished(30904)) return false;
+
+        // 隐藏任务可能没接到，但解锁所需的丽莎对话已存档。
+        var mainQuest = this.player.getQuestManager().getMainQuestById(311);
+        return mainQuest != null
+                && mainQuest.getTalks() != null
+                && (mainQuest.getTalks().containsKey(30902)
+                        || mainQuest.getTalks().containsKey(30904));
+    }
+
     private boolean areConditionsMet(OpenStateData openState) {
         // Check all conditions and test if at least one of them is violated.
         for (var condition : openState.getCond()) {
@@ -237,10 +251,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                 }
                 case OPEN_STATE_COND_QUEST -> {
                     // check sub quest id for quest finished met requirements
-                    if (!this.isQuestFinished(condition.getParam())) {
-                        int sibling = HIDDEN_QUEST_SIBLINGS.getOrDefault(condition.getParam(), 0);
-                        if (sibling == 0 || !this.isQuestFinished(sibling)) return false;
-                    }
+                    if (!this.isOpenStateQuestFinished(condition.getParam())) return false;
                 }
                 case OPEN_STATE_COND_PARENT_QUEST -> {
                     // check main quest id for quest finished met requirements
@@ -935,15 +946,36 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                         entityIds.size());
     }
 
-    /**
-     * Lock a quest-controlled scene point on the client and in persisted player state.
-     * ScenePointUnlockNotify's generated field 4 is the 7.1 locked-point wire field.
-     */
+    /** 任务锁点不撤销永久解锁，也不改变地图显隐。 */
     public boolean lockTransPoint(int sceneId, int pointId) {
         if (sceneId <= 0 || pointId <= 0) return false;
-        applyQuestPointLock(this.player.getForceLockedScenePoints(sceneId), pointId);
-        this.player.sendPacket(PacketScenePointUnlockNotify.lock(sceneId, pointId));
-        this.player.save();
+        synchronized (this.player) {
+            applyQuestPointLock(this.player.getForceLockedScenePoints(sceneId), pointId);
+            this.player.save();
+            this.player.sendPacket(PacketScenePointUnlockNotify.lock(sceneId, pointId));
+        }
+        return true;
+    }
+
+    public boolean setTransPointVisibility(
+            int sceneId, java.util.Collection<Integer> pointIds, boolean visible) {
+        if (sceneId <= 0
+                || pointIds == null
+                || pointIds.isEmpty()
+                || pointIds.stream().anyMatch(id -> id == null || id <= 0)) return false;
+        synchronized (this.player) {
+            var states = this.player.getScenePointVisibility(sceneId);
+            var changed = new java.util.ArrayList<Integer>();
+            for (int pointId : new java.util.LinkedHashSet<>(pointIds)) {
+                if (!java.util.Objects.equals(states.put(pointId, visible), visible))
+                    changed.add(pointId);
+            }
+            if (!changed.isEmpty()) {
+                this.player.save();
+                this.player.sendPacket(
+                        PacketScenePointUnlockNotify.visibility(sceneId, changed, visible));
+            }
+        }
         return true;
     }
 
@@ -989,6 +1021,9 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.player
                 .getQuestManager()
                 .queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_TRANS_POINT, sceneId, pointId);
+        this.player
+                .getQuestManager()
+                .queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_ANY_TRANS_POINT, sceneId, pointId);
         try {
             if (this.player.getScene() != null) {
                 this.player

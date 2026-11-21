@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+message GadgetChainLevelUpdateNotify {
+  map<uint32, uint32> gadget_chain_level_map = 15;
+}

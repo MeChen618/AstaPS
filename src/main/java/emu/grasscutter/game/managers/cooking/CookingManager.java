@@ -5,14 +5,18 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.InventoryAddPolicy;
 import emu.grasscutter.game.player.*;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.CookRecipeDataOuterClass;
 import emu.grasscutter.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq;
 import emu.grasscutter.net.proto.PlayerCookReqOuterClass.PlayerCookReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.packet.send.*;
+
 import io.netty.util.internal.ThreadLocalRandom;
+
 import java.util.*;
 
 public class CookingManager extends BasePlayerManager {
@@ -32,19 +36,22 @@ public class CookingManager extends BasePlayerManager {
         }
     }
 
-    private static int firstSaneCount(int... candidates) {
-        for (int c : candidates) {
-            if (c >= 1 && c <= 99) return c;
-        }
-        return 1;
+    public boolean isRecipeUnlocked(int id) {
+        var data = GameData.getCookRecipeDataMap().get(id);
+        return data != null
+                && (data.isDefaultUnlocked() || this.player.getUnlockedRecipies().containsKey(id));
     }
 
-    public boolean unlockRecipe(int id) {
-        if (this.player.getUnlockedRecipies().containsKey(id)) {
+    public synchronized boolean unlockRecipe(int id) {
+        if (GameData.getCookRecipeDataMap().get(id) == null || isRecipeUnlocked(id)) {
             return false;
         }
         this.player.getUnlockedRecipies().put(id, 0);
         this.player.sendPacket(new PacketCookRecipeDataNotify(id));
+        this.player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_UNLOCKED_RECIPE, id);
+        this.player
+                .getQuestManager()
+                .queueEvent(QuestContent.QUEST_CONTENT_NOT_UNLOCKED_RECIPE, id);
         return true;
     }
 
@@ -57,9 +64,13 @@ public class CookingManager extends BasePlayerManager {
         };
     }
 
-    public void handlePlayerCookReq(PlayerCookReq req) {
+    public synchronized void handlePlayerCookReq(PlayerCookReq req) {
         int recipeId = req.getRecipeId();
-        int count = firstSaneCount(req.getCookCount());
+        int count = req.getCookCount();
+        if (count < 1 || count > 99) {
+            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+            return;
+        }
         int quality = req.getQteQuality();
         if (quality < 0 || quality > 3) {
             quality = 0;
@@ -76,6 +87,7 @@ public class CookingManager extends BasePlayerManager {
 
         var recipeData = GameData.getCookRecipeDataMap().get(recipeId);
         if (recipeData == null
+                || !isRecipeUnlocked(recipeId)
                 || recipeData.getInputVec() == null
                 || recipeData.getInputVec().isEmpty()
                 || recipeData.getQualityOutputVec() == null
@@ -86,13 +98,6 @@ public class CookingManager extends BasePlayerManager {
 
         int proficiency = this.player.getUnlockedRecipies().getOrDefault(recipeId, 0);
 
-        boolean success =
-                player.getInventory().payItems(recipeData.getInputVec(), count, ActionReason.Cook);
-        if (!success) {
-            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
-            return;
-        }
-
         var outputs = recipeData.getQualityOutputVec();
         // quality 1/2/3 → index 0/1/2; quality 0 (unset) → best available (usually delicious)
         int qualityIndex;
@@ -102,10 +107,12 @@ public class CookingManager extends BasePlayerManager {
             qualityIndex = Math.min(2, outputs.size() - 1);
         }
         ItemParamData resultParam = outputs.get(qualityIndex);
-        if (resultParam.getId() <= 0) {
-            // fall back to first valid quality entry
-            resultParam =
-                    outputs.stream().filter(p -> p.getId() > 0).findFirst().orElse(resultParam);
+        if (resultParam == null
+                || resultParam.getId() <= 0
+                || resultParam.getCount() <= 0
+                || (long) resultParam.getCount() * count > Integer.MAX_VALUE) {
+            this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+            return;
         }
         ItemData resultItemData = GameData.getItemDataMap().get(resultParam.getId());
         if (resultItemData == null) {
@@ -116,7 +123,18 @@ public class CookingManager extends BasePlayerManager {
         int specialtyCount = 0;
         double specialtyChance = this.getSpecialtyChance(resultItemData);
         var bonusData = GameData.getCookBonusDataMap().get(avatar);
-        if (bonusData != null && recipeId == bonusData.getRecipeId()) {
+        ItemData specialtyItemData = null;
+        if (bonusData != null
+                && recipeId == bonusData.getRecipeId()
+                && player.getAvatars().getAvatarById(avatar) != null) {
+            if (bonusData.getParamVec() == null
+                    || bonusData.getParamVec().length == 0
+                    || (specialtyItemData =
+                                    GameData.getItemDataMap().get(bonusData.getReplacementItemId()))
+                            == null) {
+                this.player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+                return;
+            }
             for (int i = 0; i < count; i++) {
                 if (ThreadLocalRandom.current().nextDouble() <= specialtyChance) {
                     specialtyCount++;
@@ -130,23 +148,33 @@ public class CookingManager extends BasePlayerManager {
             GameItem cookResultNormal =
                     new GameItem(resultItemData, resultParam.getCount() * normalCount);
             cookResults.add(cookResultNormal);
-            this.player.getInventory().addItem(cookResultNormal, ActionReason.Cook);
         }
 
-        if (specialtyCount > 0 && bonusData != null) {
-            ItemData specialtyItemData =
-                    GameData.getItemDataMap().get(bonusData.getReplacementItemId());
-            if (specialtyItemData != null) {
-                GameItem cookResultSpecialty =
-                        new GameItem(specialtyItemData, resultParam.getCount() * specialtyCount);
-                cookResults.add(cookResultSpecialty);
-                this.player.getInventory().addItem(cookResultSpecialty, ActionReason.Cook);
-            }
+        if (specialtyCount > 0) {
+            cookResults.add(
+                    new GameItem(specialtyItemData, resultParam.getCount() * specialtyCount));
+        }
+
+        // 先确认整批产物能收下，再在同一个背包锁内扣材料。
+        var inventory = player.getInventory();
+        var delivered =
+                inventory.addItems(
+                        cookResults,
+                        ActionReason.Cook,
+                        InventoryAddPolicy.ALL_OR_NOTHING,
+                        () ->
+                                inventory.payItems(
+                                        recipeData.getInputVec(), count, ActionReason.Cook),
+                        () -> {});
+        if (!delivered.allAccepted()) {
+            player.sendPacket(new PacketPlayerCookRsp(Retcode.RET_FAIL));
+            return;
         }
 
         // quality 0 is treated as perfect for proficiency; also accept explicit perfect (3)
         if (quality == 0 || quality == MANUAL_PERFECT_COOK_QUALITY) {
-            proficiency = Math.min(proficiency + count, recipeData.getMaxProficiency());
+            proficiency =
+                    (int) Math.min((long) proficiency + count, recipeData.getMaxProficiency());
             this.player.getUnlockedRecipies().put(recipeId, proficiency);
         }
 

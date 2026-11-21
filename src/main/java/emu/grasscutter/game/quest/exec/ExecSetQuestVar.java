@@ -5,11 +5,17 @@ import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 
-@QuestValueExec(QuestExec.QUEST_EXEC_SET_QUEST_VAR)
+@QuestValueExec(
+        value = QuestExec.QUEST_EXEC_SET_QUEST_VAR,
+        aliases = QuestExec.QUEST_EXEC_UPDATE_PARENT_QUEST_REWARD_INDEX)
 public class ExecSetQuestVar extends QuestExecHandler {
     @Override
-    public boolean execute(GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
-        quest.getMainQuest().setQuestVar(Integer.parseInt(paramStr[0]), Integer.parseInt(paramStr[1]));
+    public boolean execute(
+            GameQuest quest, QuestData.QuestExecParam condition, String... paramStr) {
+        if (condition.getType() == QuestExec.QUEST_EXEC_UPDATE_PARENT_QUEST_REWARD_INDEX)
+            return quest.getMainQuest().updateRewardIndex(paramStr);
+        quest.getMainQuest()
+                .setQuestVar(Integer.parseInt(paramStr[0]), Integer.parseInt(paramStr[1]));
         return true;
     }
 }

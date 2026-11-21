@@ -40,6 +40,23 @@ import java.util.Map;
 
 final class Verified72BindingsTest {
     @Test
+    void cancellingAHangoutUsesItsOwnResponseOpcodeAndFields() throws Exception {
+        var packet = new emu.grasscutter.server.packet.send.PacketCancelCoopTaskRsp(123, 1);
+        assertEquals(3565, packet.getOpcode());
+        assertArrayEquals(HexFormat.of().parseHex("3001387b"), packet.getData());
+    }
+
+    @Test
+    void worldAreaSnapshotUsesTheNativePackedField() throws Exception {
+        var wire = HexFormat.of().parseHex("aa2b0301027b");
+        var message = emu.grasscutter.net.proto.PlayerWorldSceneInfoListNotifyOuterClass
+                .PlayerWorldSceneInfoListNotify.parseFrom(wire);
+        assertEquals(java.util.List.of(1, 2, 123), message.getUnlockedAreaIdListList());
+        assertArrayEquals(wire, message.toByteArray());
+        assertTrue(message.getUnknownFields().asMap().isEmpty());
+    }
+
+    @Test
     void ascensionUsesTheNativeRequestGuid() throws Exception {
         // Native 7.2 request: uint64 guid = 3, including GUID bits above 32 bits.
         var bytes = HexFormat.of().parseHex("188180808010");

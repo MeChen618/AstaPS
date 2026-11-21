@@ -9,6 +9,7 @@ import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.game.quest.enums.*;
 import emu.grasscutter.game.world.Position;
@@ -33,6 +34,10 @@ public class GameMainQuest {
     @Getter private long[] timeVar;
     @Getter private ParentQuestState state;
     @Getter private boolean isFinished;
+    @Getter private int rewardIndex;
+    private Integer completionRewardId;
+    // null 表示旧存档，不能自动补发无法确认是否已领取的奖励。
+    @Getter private Boolean completionRewardGranted;
     // Completion evidence for MQ1000 rescue plot reports that arrive before acceptance.
     @Getter @Setter(AccessLevel.PACKAGE) private boolean liyueRescuePlotReported;
     @Getter @Setter(AccessLevel.PACKAGE) private int liyueAmberSuite;
@@ -61,6 +66,7 @@ public class GameMainQuest {
         this.timeVar =
                 new long[] {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // theoretically max is 10 here
         this.state = ParentQuestState.PARENT_QUEST_STATE_NONE;
+        this.completionRewardGranted = false;
         this.questGroupSuites = new ArrayList<>();
         addAllChildQuests();
     }
@@ -142,12 +148,19 @@ public class GameMainQuest {
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_EQUAL, index, value);
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_GREATER, index, value);
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_LESS, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value, parentQuestId);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value, parentQuestId);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value, parentQuestId);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_NOT_EQUAL, index, value, parentQuestId);
 
         this.getOwner()
-                .sendPacket(new PacketQuestUpdateQuestVarNotify(this.getParentQuestId(), this.questVars));
+                .sendPacket(
+                        new PacketQuestUpdateQuestVarNotify(
+                                this.getParentQuestId(), this.questVars));
     }
 
     public GameQuest getChildQuestById(int id) {
@@ -170,37 +183,146 @@ public class GameMainQuest {
                         .debug(
                                 "Skip main quest {} finishing because it's already finished",
                                 this.getParentQuestId());
+                this.tryGrantCompletionReward();
                 return;
             }
 
             this.isFinished = true;
             this.state = ParentQuestState.PARENT_QUEST_STATE_FINISHED;
+            this.completionRewardGranted = false;
+            this.completionRewardId = this.resolveCompletionRewardId();
+            this.save();
         }
 
-        this.getOwner().getQuestManager().queueEvent(
-                QuestContent.QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL, this.getParentQuestId());
+        this.getOwner()
+                .getQuestManager()
+                .queueEvent(
+                        QuestContent.QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
+                        this.getParentQuestId());
 
         this.getOwner().getSession().send(new PacketFinishedParentQuestUpdateNotify(this));
         this.getOwner().getSession().send(new PacketCodexDataUpdateNotify(this));
 
-        this.save();
-
-        // Add rewards
-        MainQuestData mainQuestData = GameData.getMainQuestDataMap().get(this.getParentQuestId());
-        if (mainQuestData.getRewardIdList() != null) {
-            for (int rewardId : mainQuestData.getRewardIdList()) {
-                RewardData rewardData = GameData.getRewardDataMap().get(rewardId);
-                if (rewardData == null) {
-                    continue;
-                }
-
-                this.getOwner()
-                        .getInventory()
-                        .addItemParamDatas(rewardData.getRewardItemList(), ActionReason.QuestReward);
-            }
-        }
+        this.tryGrantCompletionReward();
 
         this.tryStartFollowingQuests();
+    }
+
+    public synchronized boolean updateRewardIndex(String... params) {
+        Integer index = parseRewardIndex(params);
+        if (index == null) return false;
+        if (this.isFinished || this.state == ParentQuestState.PARENT_QUEST_STATE_FINISHED)
+            return index == this.rewardIndex;
+        if (index != this.rewardIndex) {
+            this.rewardIndex = index;
+            this.save();
+        }
+        return true;
+    }
+
+    private Integer parseRewardIndex(String... params) {
+        if (params == null || params.length != 1 || params[0] == null) return null;
+        var data = GameData.getMainQuestDataMap().get(this.parentQuestId);
+        if (data == null || data.getRewardIdList() == null) return null;
+        try {
+            int index = Integer.parseInt(params[0].trim());
+            return index >= 0 && index < data.getRewardIdList().length ? index : null;
+        } catch (NumberFormatException invalid) {
+            return null;
+        }
+    }
+
+    /** 先确定奖励分支，再发布任务状态变化，避免结算抢在完成动作前执行。 */
+    synchronized boolean prepareRewardIndexActions(List<QuestData.QuestExecParam> actions) {
+        if (actions == null) return true;
+        Integer selected = null;
+        for (var action : actions) {
+            if (action == null
+                    || action.getType() != QuestExec.QUEST_EXEC_UPDATE_PARENT_QUEST_REWARD_INDEX)
+                continue;
+            Integer next = parseRewardIndex(action.getParam());
+            if (next == null) {
+                Grasscutter.getLogger()
+                        .warn(
+                                "Invalid reward index for parent quest {}: {}",
+                                this.parentQuestId,
+                                Arrays.toString(action.getParam()));
+                return false;
+            }
+            selected = next;
+        }
+        return selected == null || updateRewardIndex(String.valueOf(selected));
+    }
+
+    public synchronized boolean tryGrantCompletionReward() {
+        if (!this.isFinished && this.state != ParentQuestState.PARENT_QUEST_STATE_FINISHED)
+            return false;
+        if (!Boolean.FALSE.equals(this.completionRewardGranted)) return true;
+        try {
+            if (this.completionRewardId == null) {
+                Integer selected = this.resolveCompletionRewardId();
+                if (selected == null) return false;
+                this.completionRewardId = selected;
+                this.save();
+            }
+            var items = new ArrayList<GameItem>();
+            if (this.completionRewardId != 0) {
+                RewardData reward = GameData.getRewardDataMap().get((int) this.completionRewardId);
+                if (reward == null) return false;
+                for (var item : reward.getAllRewardItems())
+                    items.addAll(
+                            InventoryGrantBuilder.create(
+                                    GameData.getItemDataMap().get(item.getId()),
+                                    item.getCount(),
+                                    1));
+            }
+            Runnable confirm =
+                    () -> {
+                        this.completionRewardGranted = true;
+                        this.save();
+                    };
+            if (items.isEmpty()) {
+                confirm.run();
+                return true;
+            }
+            var result =
+                    this.getOwner()
+                            .getInventory()
+                            .addItems(
+                                    items,
+                                    ActionReason.QuestReward,
+                                    InventoryAddPolicy.ALL_OR_NOTHING,
+                                    () -> true,
+                                    confirm);
+            if (!result.allAccepted() && Boolean.TRUE.equals(this.completionRewardGranted))
+                Grasscutter.getLogger()
+                        .error(
+                                "Parent quest reward delivery needs inspection uid={} main={}"
+                                    + " reward={}",
+                                this.ownerUid,
+                                this.parentQuestId,
+                                this.completionRewardId);
+            return result.allAccepted();
+        } catch (RuntimeException failure) {
+            Grasscutter.getLogger()
+                    .warn(
+                            "Parent quest reward failed uid={} main={} reward={}",
+                            this.ownerUid,
+                            this.parentQuestId,
+                            this.completionRewardId,
+                            failure);
+            return false;
+        }
+    }
+
+    private Integer resolveCompletionRewardId() {
+        var data = GameData.getMainQuestDataMap().get(this.parentQuestId);
+        if (data == null) return null;
+        int[] ids = data.getRewardIdList();
+        if (ids == null || ids.length == 0) return 0;
+        if (this.rewardIndex < 0 || this.rewardIndex >= ids.length || ids[this.rewardIndex] < 0)
+            return null;
+        return ids[this.rewardIndex];
     }
 
     /** Retries only successor startup after this parent has already been persisted as finished. */

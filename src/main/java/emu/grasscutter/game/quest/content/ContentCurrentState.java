@@ -2,21 +2,29 @@ package emu.grasscutter.game.quest.content;
 
 import static emu.grasscutter.game.quest.enums.QuestContent.*;
 
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.world.Position;
 
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 @QuestValueContent(
         value = QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL,
         aliases = {
-            QUEST_CONTENT_QUEST_GLOBAL_VAR_NOT_EQUAL, QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER,
-            QUEST_CONTENT_QUEST_GLOBAL_VAR_LESS, QUEST_CONTENT_ITEM_NUM_EQUAL,
-            QUEST_CONTENT_ITEM_NUM_GREATER, QUEST_CONTENT_ITEM_NUM_LESS,
-            QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE, QUEST_CONTENT_LEAVE_SCENE_RANGE,
-            QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL
+            QUEST_CONTENT_QUEST_GLOBAL_VAR_NOT_EQUAL,
+            QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER,
+            QUEST_CONTENT_QUEST_GLOBAL_VAR_LESS,
+            QUEST_CONTENT_ITEM_NUM_EQUAL,
+            QUEST_CONTENT_ITEM_NUM_GREATER,
+            QUEST_CONTENT_ITEM_NUM_LESS,
+            QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE,
+            QUEST_CONTENT_LEAVE_SCENE_RANGE,
+            QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
+            QUEST_CONTENT_UNLOCKED_RECIPE,
+            QUEST_CONTENT_NOT_UNLOCKED_RECIPE
         })
 public final class ContentCurrentState extends BaseContent {
     private static final Pattern POINT =
@@ -30,6 +38,19 @@ public final class ContentCurrentState extends BaseContent {
             int... params) {
         var expected = condition.getParam();
         var type = condition.getType();
+        if (type == QUEST_CONTENT_UNLOCKED_RECIPE || type == QUEST_CONTENT_NOT_UNLOCKED_RECIPE) {
+            var ids = parseIds(condition.getParamStr());
+            if (ids.length == 0
+                    || (params.length > 0 && Arrays.stream(ids).noneMatch(id -> id == params[0]))) {
+                return false;
+            }
+            var cooking = quest.getOwner().getCookingManager();
+            if (Arrays.stream(ids).anyMatch(id -> !GameData.getCookRecipeDataMap().containsKey(id)))
+                return false;
+            // 40015 的三种菜谱是可选项，学会其中一种即可。
+            boolean learned = Arrays.stream(ids).anyMatch(cooking::isRecipeUnlocked);
+            return type == QUEST_CONTENT_UNLOCKED_RECIPE ? learned : !learned;
+        }
         int required = type == QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE ? 1 : 2;
         if (expected == null || expected.length < required) return false;
         if (params.length > 0 && params[0] != expected[0]) return false;
@@ -90,10 +111,26 @@ public final class ContentCurrentState extends BaseContent {
                     QUEST_CONTENT_ITEM_NUM_GREATER,
                     QUEST_CONTENT_ITEM_NUM_LESS,
                     QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE,
-                    QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL ->
+                    QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
+                    QUEST_CONTENT_UNLOCKED_RECIPE,
+                    QUEST_CONTENT_NOT_UNLOCKED_RECIPE ->
                     true;
             default -> false;
         };
+    }
+
+    static int[] parseIds(String spec) {
+        if (spec == null || spec.isBlank()) return new int[0];
+        try {
+            int[] ids =
+                    Arrays.stream(spec.split(",", -1))
+                            .map(String::trim)
+                            .mapToInt(Integer::parseInt)
+                            .toArray();
+            return Arrays.stream(ids).allMatch(id -> id > 0) ? ids : new int[0];
+        } catch (NumberFormatException ignored) {
+            return new int[0];
+        }
     }
 
     static Position parsePoint(String spec, int sceneId) {

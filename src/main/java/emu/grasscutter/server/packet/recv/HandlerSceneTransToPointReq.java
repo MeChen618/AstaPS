@@ -27,10 +27,11 @@ public class HandlerSceneTransToPointReq extends PacketHandler {
                 dungeonManager != null
                         && player.getSceneId() == req.getSceneId()
                         && dungeonManager.isWayPointActive(req.getPointId());
+        boolean unlocked = player.getUnlockedScenePoints(req.getSceneId()).contains(req.getPointId());
         if (scenePointEntry != null
-                && (dungeonPoint
-                        || (player.getUnlockedScenePoints(req.getSceneId()).contains(req.getPointId())
-                                && !player.isScenePointForceLocked(req.getSceneId(), req.getPointId())))) {
+                && !player.isScenePointHidden(req.getSceneId(), req.getPointId())
+                && !player.isScenePointForceLocked(req.getSceneId(), req.getPointId())
+                && (dungeonPoint || unlocked)) {
             if (player
                     .getCurHomeWorld()
                     .isInHome(player)) {

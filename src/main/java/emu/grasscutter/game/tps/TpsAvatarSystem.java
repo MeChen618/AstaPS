@@ -27,6 +27,9 @@ public final class TpsAvatarSystem {
     /** CONST_VALUE_INIT_TPS_WEAPON_ID: what the TPS traveler carries before any choice is made. */
     public static final int INIT_TPS_WEAPON_ID = 224001;
 
+    /** TPS 基础体力为 200，协议值放大 100 倍。 */
+    public static final int BASE_STAMINA = 20_000;
+
     private static final int TRAVELER_FEMALE = 10000007;
 
     private TpsAvatarSystem() {}

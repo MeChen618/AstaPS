@@ -4,7 +4,7 @@ import emu.grasscutter.game.dungeons.enums.DungeonSubType;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
 
-/** Validation for 7.1 domain restarts after a successful reward claim. */
+/** Validation for solo domain restarts after a successful reward claim. */
 public final class DungeonRestartGuard {
     private DungeonRestartGuard() {}
 

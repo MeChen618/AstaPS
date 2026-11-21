@@ -35,6 +35,7 @@ public class HandlerSceneInitFinishReq extends PacketHandler {
         session.send(new PacketSceneForceUnlockNotify(1, true));
         session.send(new PacketHostPlayerNotify(world));
         session.send(new PacketSceneDataNotify(player));
+        emu.grasscutter.game.entity.gadget.OfferingHelper.sendSceneOwnerChainLevels(player, true);
 
         session.send(new PacketSceneTimeNotify(player));
         session.send(new PacketPlayerGameTimeNotify(player));

@@ -6,7 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.gson.Gson;
 
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.excels.CookRecipeData;
 import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.*;
 
@@ -82,5 +85,74 @@ final class ContentCurrentStateTest {
         assertFalse(handler.execute(null, condition, "", 2031));
         condition.setParam(new int[0]);
         assertFalse(handler.execute(null, condition, ""));
+    }
+
+    @Test
+    void recipeAlternativesAcceptOneKnownRecipeAndRecheckTheCurrentUnlocks() {
+        var gson = new Gson();
+        var old = new java.util.HashMap<Integer, CookRecipeData>();
+        for (int id : new int[] {3107, 2105, 2102}) {
+            old.put(
+                    id,
+                    GameData.getCookRecipeDataMap()
+                            .put(id, gson.fromJson("{\"id\":" + id + "}", CookRecipeData.class)));
+        }
+        try {
+            var player =
+                    new Player() {
+                        private final CookingManager cooking = new CookingManager(this);
+
+                        @Override
+                        public CookingManager getCookingManager() {
+                            return cooking;
+                        }
+                    };
+            var data =
+                    gson.fromJson(
+                            "{\"subId\":4001503,\"mainId\":40015,\"finishCond\":[],\"failCond\":[]}",
+                            QuestData.class);
+            var quest =
+                    new GameQuest(null, data) {
+                        @Override
+                        public Player getOwner() {
+                            return player;
+                        }
+                    };
+            var condition = new QuestData.QuestContentCondition();
+            condition.setType(QUEST_CONTENT_UNLOCKED_RECIPE);
+            condition.setParamStr("3107,2105,2102");
+            var handler = new ContentCurrentState();
+            assertFalse(handler.execute(quest, condition, "", 3107));
+            player.getUnlockedRecipies().put(3107, 0);
+            assertTrue(handler.execute(quest, condition, "", 3107));
+            player.getUnlockedRecipies().put(2105, 0);
+            player.getUnlockedRecipies().put(2102, 0);
+            assertTrue(handler.execute(quest, condition, "", 2102));
+            assertFalse(handler.execute(null, condition, "", 9999));
+            condition.setType(QUEST_CONTENT_NOT_UNLOCKED_RECIPE);
+            condition.setParamStr("2102");
+            assertFalse(handler.execute(quest, condition, "", 2102));
+            player.getUnlockedRecipies().remove(2102);
+            assertTrue(handler.execute(quest, condition, "", 2102));
+            condition.setParamStr("999999");
+            assertFalse(handler.execute(quest, condition, ""));
+            assertTrue(ContentCurrentState.checkOnStart(QUEST_CONTENT_UNLOCKED_RECIPE));
+            assertTrue(ContentCurrentState.checkOnStart(QUEST_CONTENT_NOT_UNLOCKED_RECIPE));
+        } finally {
+            old.forEach(
+                    (id, row) -> {
+                        if (row == null) GameData.getCookRecipeDataMap().remove((int) id);
+                        else GameData.getCookRecipeDataMap().put((int) id, row);
+                    });
+        }
+    }
+
+    @Test
+    void recipeListsRejectEmptyMalformedAndNonPositiveIds() {
+        for (String spec : new String[] {null, "", "3107,", "3107,NaN", "0", "-1"}) {
+            assertEquals(0, ContentCurrentState.parseIds(spec).length);
+        }
+        assertArrayEquals(
+                new int[] {3107, 2105, 2102}, ContentCurrentState.parseIds("3107, 2105,2102"));
     }
 }
