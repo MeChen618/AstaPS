@@ -336,6 +336,7 @@ public final class QuestManager extends BasePlayerManager {
     }
 
     public void onLogin() {
+        this.retryPendingCompletionRewards();
         if (this.isQuestingEnabled()) {
             // The sweep is what fills a fresh quest log at login; see questing.triggerAllOnLogin.
             if (GAME_OPTIONS.questing.triggerAllOnLogin) {
@@ -384,6 +385,10 @@ public final class QuestManager extends BasePlayerManager {
             nextRangeCheckTime = now + 1000;
             this.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE_RANGE, scene.getId());
         }
+    }
+
+    public void retryPendingCompletionRewards() {
+        for (var quest : this.getMainQuests().values()) quest.tryGrantCompletionReward();
     }
 
     private void checkTimeVars() {
