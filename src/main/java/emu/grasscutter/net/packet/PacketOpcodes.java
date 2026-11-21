@@ -44,7 +44,7 @@ public final class PacketOpcodes {
     public static final int PlayerApplyEnterHomeResultReq = 0; // 7.2 CmdId unknown (7.1: 20101)
     public static final int PlayerEnterChildMapLayerNotify = 0;
     public static final int PlayerEnterMapLayerNotify = 0;
-    public static final int PlayerGetForceQuitBanInfoReq = 0;
+    public static final int PlayerGetForceQuitBanInfoReq = 6686;
     public static final int RemoveCustomTeamReq = 0;
     public static final int SceneKickPlayerReq = 21380;
     public static final int SkipPlayerGameTimeReq = 0; // 7.2 CmdId unknown (7.1: 29432)
@@ -1305,7 +1305,7 @@ public final class PacketOpcodes {
     public static final int BartenderLevelProgressNotify = 7131; // 7.1: 6349
     public static final int MultistagePlayInfoNotify = 23302; // 7.1: 23357
     // public static final int JHDPNGBDDLJ = 6610;
-    public static final int GetWorldMpInfoRsp = 0; // 7.2 CmdId unknown (7.1: 9016)
+    public static final int GetWorldMpInfoRsp = 5681;
     public static final int HomeSetBlueprintSlotOptionReq = 4917; // 7.1: 7407
     public static final int StartCoopPointReq = 5660; // 7.1: 3213
     public static final int AvatarEquipChangeNotify = 5724; // 7.1: 24582
@@ -2177,7 +2177,7 @@ public final class PacketOpcodes {
     public static final int ClearRoguelikeCurseNotify = 0; // 7.2 CmdId unknown (7.1: 21804)
     // public static final int ANENBCAMLIG = 8516;
     public static final int WorldPlayerReviveRsp = 0; // 7.2 CmdId unknown (7.1: 9129)
-    public static final int GetWorldMpInfoReq = 0; // 7.1 CmdId unknown (kitkat names this empty message, not trusted)
+    public static final int GetWorldMpInfoReq = 3966;
     public static final int LanternRiteStartFireworksReformRsp = 0; // 7.2 CmdId unknown (7.1: 24748)
     public static final int SceneAudioNotify = 3778; // 7.1: 1922
     public static final int ScenePlayBattleInterruptNotify = 20012; // 7.1: 20684
@@ -3067,7 +3067,7 @@ public final class PacketOpcodes {
     public static final int Opcode6231 = -1012; // no 7.1 CmdId known
     public static final int PlayerOfferingReq = 0; // 7.2 CmdId unknown (7.1: 4465)
     public static final int PushTipsReadFinishReq = 23199; // 7.1: 22209
-    public static final int SetCoopChapterViewedRsp = -1014; // no 7.1 CmdId known
+    public static final int SetCoopChapterViewedRsp = 29832;
     public static final int SetReliquaryStarStateReq = 4737; // 7.1: 5672
     public static final int SetReliquaryStarStateRsp = 8599; // 7.1: 7536
     public static final int ShowLoadingScreenNotify = 0; // 7.2 CmdId unknown (7.1: 27335)

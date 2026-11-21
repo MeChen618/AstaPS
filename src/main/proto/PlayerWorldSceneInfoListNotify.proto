@@ -5,6 +5,6 @@ option java_package = "emu.grasscutter.net.proto";
 import "PlayerWorldSceneInfo.proto";
 
 message PlayerWorldSceneInfoListNotify {
-  repeated uint32 IIFJABJJJBF = 20000;
+  repeated uint32 unlocked_area_id_list = 693;
   repeated PlayerWorldSceneInfo info_list = 6;
 }

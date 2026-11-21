@@ -9,6 +9,7 @@ public class HandlerGetWorldMpInfoReq extends PacketHandler {
 
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
-        session.send(new PacketGetWorldMpInfoRsp(session.getPlayer().getWorld()));
+        var player = session.getPlayer();
+        session.send(new PacketGetWorldMpInfoRsp(player == null ? null : player.getWorld()));
     }
 }

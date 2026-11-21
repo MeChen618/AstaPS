@@ -3277,5 +3277,829 @@
   },
   "jar_and_strict_generated_compilation_passed": true,
   "jar_zip_integrity_checked": true,
-  "full_suite_passed": false
+  "full_suite_passed": false,
+  "public_query_and_boundary_repair": {
+    "baseline_commit": "6cb95ac51e0abfa8f6b67859820883ca70bec86b",
+    "client_scope": "Original recovered 7.2.0 Android ARM64 sample; no 7.2.50 beta CmdIDs are imported.",
+    "native_cmd_getter_cases": 8,
+    "native_cmd_getters": [
+      {
+        "name": "GetWorldMpInfoReq",
+        "definition": 75205,
+        "raw_name": "FEMJCABBELO",
+        "command": {
+          "method_index": 623716,
+          "method": "AMPEGOHOBJM",
+          "rva": "0xc44e804",
+          "value": 3966
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "56af778ec2f831e6102ce026ba70fb8675418f9fe9e6fc53691636368b10ed64",
+        "fields": []
+      },
+      {
+        "name": "GetWorldMpInfoRsp",
+        "definition": 80824,
+        "raw_name": "BGMNAILJLBI",
+        "command": {
+          "method_index": 668232,
+          "method": "AMPEGOHOBJM",
+          "rva": "0x128f87cc",
+          "value": 5681
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "d827692245a822fe6ae5192a6b2ee112f0dd230639466ed99d640d796dac25a8",
+        "fields": [
+          {
+            "raw_name": "LDLIEKOAFBP",
+            "name": "retcode",
+            "number": 5,
+            "memory_offset": 24,
+            "native_reader_evidence": [
+              {
+                "tag": 40,
+                "field_number": 5,
+                "wire": 0,
+                "offset": 24,
+                "address": "0x128f88e0",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374796,
+                  311396572
+                ],
+                "method_rva": "0x128f8864"
+              }
+            ]
+          },
+          {
+            "raw_name": "PBHBBLAHCMP",
+            "name": "quit_mp_valid_time",
+            "number": 13,
+            "memory_offset": 28,
+            "native_reader_evidence": [
+              {
+                "tag": 104,
+                "field_number": 13,
+                "wire": 0,
+                "offset": 28,
+                "address": "0x128f88b4",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374728,
+                  311396528
+                ],
+                "method_rva": "0x128f8864"
+              }
+            ]
+          },
+          {
+            "raw_name": "IIOFPLCDKPN",
+            "name": "IIOFPLCDKPN",
+            "number": 2,
+            "memory_offset": 32,
+            "native_reader_evidence": [
+              {
+                "tag": 16,
+                "field_number": 2,
+                "wire": 0,
+                "offset": 32,
+                "address": "0x128f88d0",
+                "mode": "reader_store",
+                "stored_value": [
+                  "and",
+                  [
+                    "call",
+                    251393076,
+                    311396552
+                  ],
+                  1,
+                  32
+                ],
+                "method_rva": "0x128f8864"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "PlayerGetForceQuitBanInfoReq",
+        "definition": 68762,
+        "raw_name": "POKKECFNBGP",
+        "command": {
+          "method_index": 569317,
+          "method": "AMPEGOHOBJM",
+          "rva": "0xb97e568",
+          "value": 6686
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "2b98c6e89d5ac4e18ff238174be548e5a411dc1bb63683d79ce2ce91148d50b3",
+        "fields": []
+      },
+      {
+        "name": "PlayerGetForceQuitBanInfoRsp",
+        "definition": 38637,
+        "raw_name": "NDABIGKJHCD",
+        "command": {
+          "method_index": 323788,
+          "method": "AMPEGOHOBJM",
+          "rva": "0x12554d90",
+          "value": 26490
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "7466f75e0a030c711402df35935b63b6f03fc302903ea664f17f02f942d99b8d",
+        "fields": [
+          {
+            "raw_name": "BPNAOGPBFLN",
+            "name": "expire_time",
+            "number": 11,
+            "memory_offset": 24,
+            "native_reader_evidence": [
+              {
+                "tag": 88,
+                "field_number": 11,
+                "wire": 0,
+                "offset": 24,
+                "address": "0x12554e94",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374728,
+                  307580560
+                ],
+                "method_rva": "0x12554e44"
+              }
+            ]
+          },
+          {
+            "raw_name": "LEAAMOJKBOM",
+            "name": "match_id",
+            "number": 7,
+            "memory_offset": 28,
+            "native_reader_evidence": [
+              {
+                "tag": 56,
+                "field_number": 7,
+                "wire": 0,
+                "offset": 28,
+                "address": "0x12554ebc",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374728,
+                  307580600
+                ],
+                "method_rva": "0x12554e44"
+              }
+            ]
+          },
+          {
+            "raw_name": "LDLIEKOAFBP",
+            "name": "retcode",
+            "number": 6,
+            "memory_offset": 32,
+            "native_reader_evidence": [
+              {
+                "tag": 48,
+                "field_number": 6,
+                "wire": 0,
+                "offset": 32,
+                "address": "0x12554eac",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374796,
+                  307580584
+                ],
+                "method_rva": "0x12554e44"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "CancelCoopTaskReq",
+        "definition": 26151,
+        "raw_name": "BNMOLGBHDDP",
+        "command": {
+          "method_index": 207986,
+          "method": "AMPEGOHOBJM",
+          "rva": "0xd76a6a4",
+          "value": 26546
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "fbc2e879009ecf4ec25c4eea04a2922ac0df33ee986b675ac6eabfaa0957faab",
+        "fields": [
+          {
+            "raw_name": "JPECNOKDFLN",
+            "name": "chapter_id",
+            "number": 4,
+            "memory_offset": 24,
+            "native_reader_evidence": [
+              {
+                "tag": 32,
+                "field_number": 4,
+                "wire": 0,
+                "offset": 24,
+                "address": "0xd76a690",
+                "mode": "writer_value_argument",
+                "value_expression": [
+                  "field",
+                  24
+                ],
+                "method_rva": "0xd76a658"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "CancelCoopTaskRsp",
+        "definition": 77577,
+        "raw_name": "LAGPBIIOIHH",
+        "command": {
+          "method_index": 642697,
+          "method": "AMPEGOHOBJM",
+          "rva": "0x7e3d264",
+          "value": 3565
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "a1de7833dd3059792a444fad2526f87c2c2dccf35c299fc89dbee378bb6e007d",
+        "fields": [
+          {
+            "raw_name": "JPECNOKDFLN",
+            "name": "chapter_id",
+            "number": 7,
+            "memory_offset": 24,
+            "native_reader_evidence": [
+              {
+                "tag": 56,
+                "field_number": 7,
+                "wire": 0,
+                "offset": 24,
+                "address": "0x7e3d314",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374728,
+                  132371216
+                ],
+                "method_rva": "0x7e3d2bc"
+              }
+            ]
+          },
+          {
+            "raw_name": "LDLIEKOAFBP",
+            "name": "retcode",
+            "number": 6,
+            "memory_offset": 28,
+            "native_reader_evidence": [
+              {
+                "tag": 48,
+                "field_number": 6,
+                "wire": 0,
+                "offset": 28,
+                "address": "0x7e3d324",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374796,
+                  132371232
+                ],
+                "method_rva": "0x7e3d2bc"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SetCoopChapterViewedRsp",
+        "definition": 84475,
+        "raw_name": "HLFJPOHLDMC",
+        "command": {
+          "method_index": 699774,
+          "method": "AMPEGOHOBJM",
+          "rva": "0x7f31cd8",
+          "value": 29832
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "d2760fa151bbfebc3ee0c206cfcc05847ee877c4a722db934a15e9c48736d580",
+        "fields": [
+          {
+            "raw_name": "JPECNOKDFLN",
+            "name": "chapter_id",
+            "number": 2,
+            "memory_offset": 24,
+            "native_reader_evidence": [
+              {
+                "tag": 16,
+                "field_number": 2,
+                "wire": 0,
+                "offset": 24,
+                "address": "0x7f31c20",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374728,
+                  133372956
+                ],
+                "method_rva": "0x7f31bb8"
+              }
+            ]
+          },
+          {
+            "raw_name": "LDLIEKOAFBP",
+            "name": "retcode",
+            "number": 5,
+            "memory_offset": 28,
+            "native_reader_evidence": [
+              {
+                "tag": 40,
+                "field_number": 5,
+                "wire": 0,
+                "offset": 28,
+                "address": "0x7f31c10",
+                "mode": "reader_store",
+                "stored_value": [
+                  "call",
+                  251374796,
+                  133372940
+                ],
+                "method_rva": "0x7f31bb8"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "PlayerWorldSceneInfoListNotify",
+        "definition": 85466,
+        "raw_name": "NGMBGBKEDLA",
+        "command": {
+          "method_index": 707866,
+          "method": "AMPEGOHOBJM",
+          "rva": "0x12998834",
+          "value": 29592
+        },
+        "native_getter_verified": true,
+        "getter_sha256": "9b56f78d37cae53f2233aed26dc5b9aca40be0dd9f06d5314197594bb6d1458c",
+        "fields": [
+          {
+            "raw_name": "FIBADBJEMCP",
+            "name": "unlocked_area_id_list",
+            "number": 693,
+            "memory_offset": 24,
+            "native_reader_evidence": [
+              {
+                "tag": 5546,
+                "field_number": 693,
+                "wire": 2,
+                "offset": 24,
+                "address": "0x12998728",
+                "mode": "reader_load",
+                "method_rva": "0x1299868c"
+              },
+              {
+                "tag": 5544,
+                "field_number": 693,
+                "wire": 0,
+                "offset": 24,
+                "address": "0x12998728",
+                "mode": "reader_load",
+                "method_rva": "0x1299868c"
+              },
+              {
+                "tag": 5546,
+                "field_number": 693,
+                "wire": 2,
+                "offset": 24,
+                "address": "0x1299874c",
+                "mode": "static_codec_argument",
+                "method_rva": "0x1299868c"
+              }
+            ]
+          },
+          {
+            "raw_name": "BGGPFKNPLGL",
+            "name": "info_list",
+            "number": 6,
+            "memory_offset": 32,
+            "native_reader_evidence": [
+              {
+                "tag": 50,
+                "field_number": 6,
+                "wire": 2,
+                "offset": 32,
+                "address": "0x129986ec",
+                "mode": "reader_load",
+                "method_rva": "0x1299868c"
+              },
+              {
+                "tag": 50,
+                "field_number": 6,
+                "wire": 2,
+                "offset": 32,
+                "address": "0x1299870c",
+                "mode": "static_codec_argument",
+                "method_rva": "0x1299868c"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "request_allocation_and_transport_flows": [
+      {
+        "method_index": 692453,
+        "rva": "0x9572490",
+        "truncated": false,
+        "abi_uncertain": false,
+        "allocations": [
+          {
+            "rva": "0x95724b4",
+            "type_index": 389103,
+            "definition_index": 75205
+          }
+        ],
+        "send_calls": [
+          {
+            "rva": "0x95724e4",
+            "target": "0xec74384",
+            "arguments": [
+              {
+                "register": "r1",
+                "definition_index": 75205,
+                "site": [
+                  "allocation",
+                  156705972
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "method_index": 692734,
+        "rva": "0x95c9518",
+        "truncated": false,
+        "abi_uncertain": false,
+        "allocations": [
+          {
+            "rva": "0x95c9554",
+            "type_index": 369196,
+            "definition_index": 68762
+          }
+        ],
+        "send_calls": [
+          {
+            "rva": "0x95c9584",
+            "target": "0xec74384",
+            "arguments": [
+              {
+                "register": "r1",
+                "definition_index": 68762,
+                "site": [
+                  "allocation",
+                  157062484
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "consumer_methods": [
+      {
+        "method_index": 692503,
+        "rva": "0x9575a9c",
+        "message": "GetWorldMpInfoRsp",
+        "observed_behavior": "Copies uint32 at +28 (field 13) to module +0x3ec and handles retcode at +24 (field 5). The unused bool retains the existing server compatibility name is_in_mp_mode."
+      },
+      {
+        "method_index": 692748,
+        "rva": "0x95bdcd8",
+        "message": "PlayerGetForceQuitBanInfoRsp",
+        "observed_behavior": "Tests retcode +32, match_id +28, and expire_time +24; absence of a match/expiry follows the no-ban UI branch."
+      }
+    ],
+    "enabled_zero_bindings": {
+      "GetWorldMpInfoReq": 3966,
+      "GetWorldMpInfoRsp": 5681,
+      "PlayerGetForceQuitBanInfoReq": 6686
+    },
+    "corrected_placeholder_constant": {
+      "SetCoopChapterViewedRsp": {
+        "before": -1014,
+        "after": 29832,
+        "usage": "Currently unused by its own packet; not a substitute for CancelCoopTaskRsp."
+      }
+    },
+    "corrected_fields": {
+      "GetWorldMpInfoRsp": {
+        "retcode": {
+          "before": 1,
+          "after": 5
+        },
+        "is_in_mp_mode": {
+          "before": 8,
+          "after": 2
+        },
+        "quit_mp_valid_time": {
+          "before": 12,
+          "after": 13
+        }
+      },
+      "PlayerWorldSceneInfoListNotify": {
+        "unlocked_area_id_list": {
+          "before_name": "IIFJABJJJBF",
+          "before": 20000,
+          "after": 693
+        }
+      }
+    },
+    "handler_changes": [
+      "Force-quit-ban status queries no longer invoke leaveCoop; no match-ban policy is implemented, so valid players receive zero/default no-ban state.",
+      "Queries with a missing player/world return an error rather than throwing.",
+      "CancelCoopTaskRsp uses its own CmdID 3565 and existing native fields. Cancellation itself is not implemented and now returns an explicit error instead of false success."
+    ],
+    "starter_boundary": {
+      "open_state": 47,
+      "hidden_quest": 35001,
+      "existing_completed_quest_alias": 31101,
+      "new_talk_history_fallback_requires_finished_quest": 30904,
+      "saved_talk_parent": 311,
+      "saved_talk_alternatives": [
+        30902,
+        30904
+      ],
+      "live_trigger": "Recheck open states after saving either matching Lisa talk; normal login recheck repairs existing records.",
+      "does_not_finish_or_accept_quests": true,
+      "resource_rows": {
+        "quests": [
+          {
+            "subId": 30904,
+            "mainId": 309,
+            "acceptCond": [
+              {
+                "type": "QUEST_COND_STATE_EQUAL",
+                "param": [
+                  30903,
+                  3
+                ],
+                "param_str": ""
+              }
+            ],
+            "finishCond": [
+              {
+                "param_str": "",
+                "param": [
+                  30904,
+                  0
+                ],
+                "count": 0,
+                "type": "QUEST_CONTENT_FINISH_PLOT"
+              }
+            ],
+            "finishCondComb": null
+          },
+          {
+            "subId": 31101,
+            "mainId": 311,
+            "acceptCond": [
+              {
+                "type": "QUEST_COND_STATE_EQUAL",
+                "param": [
+                  30904,
+                  3,
+                  0
+                ],
+                "param_str": ""
+              }
+            ],
+            "finishCond": [
+              {
+                "param_str": "",
+                "param": [
+                  30902,
+                  0
+                ],
+                "count": 0,
+                "type": "QUEST_CONTENT_COMPLETE_TALK"
+              },
+              {
+                "param_str": "",
+                "param": [
+                  30904,
+                  0
+                ],
+                "count": 0,
+                "type": "QUEST_CONTENT_COMPLETE_TALK"
+              }
+            ],
+            "finishCondComb": "LOGIC_OR"
+          },
+          {
+            "subId": 35001,
+            "mainId": 350,
+            "acceptCond": [
+              {
+                "type": "QUEST_COND_STATE_EQUAL",
+                "param": [
+                  0,
+                  3
+                ],
+                "param_str": ""
+              }
+            ],
+            "finishCond": [
+              {
+                "param_str": "",
+                "param": [
+                  30902,
+                  0
+                ],
+                "count": 0,
+                "type": "QUEST_CONTENT_COMPLETE_TALK"
+              },
+              {
+                "param_str": "",
+                "param": [
+                  30904,
+                  0
+                ],
+                "count": 0,
+                "type": "QUEST_CONTENT_COMPLETE_TALK"
+              }
+            ],
+            "finishCondComb": null
+          }
+        ],
+        "open_states": [
+          {
+            "id": 47,
+            "cond": [
+              {
+                "cond_type": "OPEN_STATE_COND_QUEST",
+                "param": 35001
+              },
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ]
+          }
+        ],
+        "talks": [
+          {
+            "id": 30902,
+            "questId": 311,
+            "beginCond": [
+              {
+                "param": [
+                  "31101",
+                  "2",
+                  ""
+                ],
+                "type": "QUEST_COND_STATE_EQUAL"
+              },
+              {
+                "param": [
+                  "46904",
+                  "2",
+                  ""
+                ],
+                "type": "QUEST_COND_STATE_EQUAL"
+              },
+              {
+                "param": [
+                  "",
+                  ""
+                ]
+              },
+              {
+                "param": [
+                  "",
+                  ""
+                ]
+              }
+            ],
+            "beginCondComb": "LOGIC_AND"
+          },
+          {
+            "id": 30904,
+            "questId": 311,
+            "beginCond": [
+              {
+                "param": [
+                  "31101",
+                  "2",
+                  ""
+                ],
+                "type": "QUEST_COND_STATE_EQUAL"
+              },
+              {
+                "param": [
+                  "46904",
+                  "3",
+                  ""
+                ],
+                "type": "QUEST_COND_STATE_EQUAL"
+              },
+              {
+                "param": [
+                  "",
+                  ""
+                ]
+              },
+              {
+                "param": [
+                  "",
+                  ""
+                ]
+              }
+            ],
+            "beginCondComb": "LOGIC_AND"
+          }
+        ]
+      },
+      "resource_scope": "Reviewed resource rows agree with the pre-existing 7.1 hidden-quest sibling mapping. These rows alone do not certify the version of a complete resource pack."
+    },
+    "audit_before": {
+      "opcode_constants": 1934,
+      "zero_opcode_constants": 516,
+      "zero_receiver_count": 39
+    },
+    "audit_after": {
+      "opcode_constants": 1934,
+      "zero_opcode_constants": 513,
+      "receiver_names": 310,
+      "zero_receiver_count": 37,
+      "unknown_receiver_constants": [],
+      "receiver_opcode_collisions": {},
+      "reference_receiver_mismatches": [
+        {
+          "name": "DungeonRestartReq",
+          "server_cmd": 0,
+          "reference_cmd": 7857
+        },
+        {
+          "name": "HomeSceneInitFinishReq",
+          "server_cmd": 0,
+          "reference_cmd": 28172
+        },
+        {
+          "name": "PlayerApplyEnterHomeResultReq",
+          "server_cmd": 0,
+          "reference_cmd": 7623
+        },
+        {
+          "name": "PlayerOfferingReq",
+          "server_cmd": 0,
+          "reference_cmd": 148
+        },
+        {
+          "name": "SceneEntityDrownReq",
+          "server_cmd": 0,
+          "reference_cmd": 1724
+        },
+        {
+          "name": "SnezhnayaTrainCallReq",
+          "server_cmd": 0,
+          "reference_cmd": 24039
+        },
+        {
+          "name": "WorldPlayerReviveReq",
+          "server_cmd": 0,
+          "reference_cmd": 21369
+        }
+      ]
+    },
+    "audit_command": "python tools/protocol-coverage.py --reference-cmdid /path/to/7.2.0/cmdid.csv",
+    "limitations": [
+      "Counts cover direct enabled receiver annotations; NONE, comments, and quoted text are excluded, aliases resolved. A named CSV match is a candidate, not proof that a route is ready.",
+      "Seven remaining reference-matched receiver routes are deliberately withheld pending response, nested-payload, or handler review.",
+      "Native getter execution and typed static flow analysis do not replace a matching live Android playthrough. The reported account save was not provided; other missed story gates remain possible."
+    ],
+    "live_client_tested": false,
+    "validation": {
+      "tests": 1582,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 4,
+      "suites": 268,
+      "passed": 1578,
+      "java": "21",
+      "gradle": "9.8.1",
+      "command": "./gradlew test jar -PexcludeTags=integration -PskipHandbook=1 --no-build-cache --no-configuration-cache --offline",
+      "jar_integrity_passed": true,
+      "source_audit_equals_compiled_constants": 1934,
+      "integration_tests_excluded": true
+    }
+  }
 }

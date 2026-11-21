@@ -30,8 +30,8 @@ final class KitkatMappedProtocolTest {
 
     @Test
     void onlyVerifiedCurrentEmptyQueriesAreEnabled() {
-        // 世界信息仍缺回包字段；地图提示已有 7.2 原生调用链确认。
-        assertEquals(0, PacketOpcodes.GetWorldMpInfoReq);
+        // 这两条空请求均已核对 7.2 原生发包链。
+        assertEquals(3966, PacketOpcodes.GetWorldMpInfoReq);
         assertEquals(20856, PacketOpcodes.GetMapMarkTipsReq);
     }
 }

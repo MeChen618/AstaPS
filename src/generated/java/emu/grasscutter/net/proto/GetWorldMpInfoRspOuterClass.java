@@ -31,19 +31,19 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     int getRetcode();
 
     /**
-     * <code>bool is_in_mp_mode = 8;</code>
+     * <code>bool is_in_mp_mode = 2;</code>
      * @return The isInMpMode.
      */
     boolean getIsInMpMode();
 
     /**
-     * <code>uint32 quit_mp_valid_time = 12;</code>
+     * <code>uint32 quit_mp_valid_time = 13;</code>
      * @return The quitMpValidTime.
      */
     int getQuitMpValidTime();
@@ -90,10 +90,10 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
               emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp.class, emu.grasscutter.net.proto.GetWorldMpInfoRspOuterClass.GetWorldMpInfoRsp.Builder.class);
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 1;
+    public static final int RETCODE_FIELD_NUMBER = 5;
     private int retcode_ = 0;
     /**
-     * <code>int32 retcode = 1;</code>
+     * <code>int32 retcode = 5;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -101,10 +101,10 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
       return retcode_;
     }
 
-    public static final int IS_IN_MP_MODE_FIELD_NUMBER = 8;
+    public static final int IS_IN_MP_MODE_FIELD_NUMBER = 2;
     private boolean isInMpMode_ = false;
     /**
-     * <code>bool is_in_mp_mode = 8;</code>
+     * <code>bool is_in_mp_mode = 2;</code>
      * @return The isInMpMode.
      */
     @java.lang.Override
@@ -112,10 +112,10 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
       return isInMpMode_;
     }
 
-    public static final int QUIT_MP_VALID_TIME_FIELD_NUMBER = 12;
+    public static final int QUIT_MP_VALID_TIME_FIELD_NUMBER = 13;
     private int quitMpValidTime_ = 0;
     /**
-     * <code>uint32 quit_mp_valid_time = 12;</code>
+     * <code>uint32 quit_mp_valid_time = 13;</code>
      * @return The quitMpValidTime.
      */
     @java.lang.Override
@@ -137,30 +137,30 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(1, retcode_);
-      }
       if (isInMpMode_ != false) {
-        output.writeBool(8, isInMpMode_);
+        output.writeBool(2, isInMpMode_);
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(5, retcode_);
       }
       if (quitMpValidTime_ != 0) {
-        output.writeUInt32(12, quitMpValidTime_);
+        output.writeUInt32(13, quitMpValidTime_);
       }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, retcode_);
-      }
       if (isInMpMode_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isInMpMode_);
+          .computeBoolSize(2, isInMpMode_);
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, retcode_);
       }
       if (quitMpValidTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, quitMpValidTime_);
+          .computeUInt32Size(13, quitMpValidTime_);
       }
       return size;
     }
@@ -433,21 +433,21 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
               case 0:
                 done = true;
                 break;
-              case 8: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 64: {
+              case 16: {
                 isInMpMode_ = input.readBool();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 64
-              case 96: {
+              } // case 16
+              case 40: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 104: {
                 quitMpValidTime_ = input.readUInt32();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 96
+              } // case 104
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -467,7 +467,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 5;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -475,7 +475,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 5;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -487,7 +487,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
         return this;
       }
       /**
-       * <code>int32 retcode = 1;</code>
+       * <code>int32 retcode = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -499,7 +499,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
 
       private boolean isInMpMode_ ;
       /**
-       * <code>bool is_in_mp_mode = 8;</code>
+       * <code>bool is_in_mp_mode = 2;</code>
        * @return The isInMpMode.
        */
       @java.lang.Override
@@ -507,7 +507,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
         return isInMpMode_;
       }
       /**
-       * <code>bool is_in_mp_mode = 8;</code>
+       * <code>bool is_in_mp_mode = 2;</code>
        * @param value The isInMpMode to set.
        * @return This builder for chaining.
        */
@@ -519,7 +519,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
         return this;
       }
       /**
-       * <code>bool is_in_mp_mode = 8;</code>
+       * <code>bool is_in_mp_mode = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsInMpMode() {
@@ -531,7 +531,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
 
       private int quitMpValidTime_ ;
       /**
-       * <code>uint32 quit_mp_valid_time = 12;</code>
+       * <code>uint32 quit_mp_valid_time = 13;</code>
        * @return The quitMpValidTime.
        */
       @java.lang.Override
@@ -539,7 +539,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
         return quitMpValidTime_;
       }
       /**
-       * <code>uint32 quit_mp_valid_time = 12;</code>
+       * <code>uint32 quit_mp_valid_time = 13;</code>
        * @param value The quitMpValidTime to set.
        * @return This builder for chaining.
        */
@@ -551,7 +551,7 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
         return this;
       }
       /**
-       * <code>uint32 quit_mp_valid_time = 12;</code>
+       * <code>uint32 quit_mp_valid_time = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuitMpValidTime() {
@@ -627,8 +627,8 @@ public final class GetWorldMpInfoRspOuterClass extends com.google.protobuf.Gener
   static {
     java.lang.String[] descriptorData = {
       "\n\027GetWorldMpInfoRsp.proto\"W\n\021GetWorldMpI" +
-      "nfoRsp\022\017\n\007retcode\030\001 \001(\005\022\025\n\ris_in_mp_mode" +
-      "\030\010 \001(\010\022\032\n\022quit_mp_valid_time\030\014 \001(\rB\033\n\031em" +
+      "nfoRsp\022\017\n\007retcode\030\005 \001(\005\022\025\n\ris_in_mp_mode" +
+      "\030\002 \001(\010\022\032\n\022quit_mp_valid_time\030\r \001(\rB\033\n\031em" +
       "u.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

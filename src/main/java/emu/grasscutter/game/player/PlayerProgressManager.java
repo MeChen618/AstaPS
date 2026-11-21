@@ -225,6 +225,20 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         return quest != null && quest.getState() == QuestState.QUEST_STATE_FINISHED;
     }
 
+    private boolean isOpenStateQuestFinished(int questId) {
+        if (this.isQuestFinished(questId)) return true;
+        int sibling = HIDDEN_QUEST_SIBLINGS.getOrDefault(questId, 0);
+        if (sibling != 0 && this.isQuestFinished(sibling)) return true;
+        if (questId != 35001 || !this.isQuestFinished(30904)) return false;
+
+        // 隐藏任务可能没接到，但解锁所需的丽莎对话已存档。
+        var mainQuest = this.player.getQuestManager().getMainQuestById(311);
+        return mainQuest != null
+                && mainQuest.getTalks() != null
+                && (mainQuest.getTalks().containsKey(30902)
+                        || mainQuest.getTalks().containsKey(30904));
+    }
+
     private boolean areConditionsMet(OpenStateData openState) {
         // Check all conditions and test if at least one of them is violated.
         for (var condition : openState.getCond()) {
@@ -237,10 +251,7 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                 }
                 case OPEN_STATE_COND_QUEST -> {
                     // check sub quest id for quest finished met requirements
-                    if (!this.isQuestFinished(condition.getParam())) {
-                        int sibling = HIDDEN_QUEST_SIBLINGS.getOrDefault(condition.getParam(), 0);
-                        if (sibling == 0 || !this.isQuestFinished(sibling)) return false;
-                    }
+                    if (!this.isOpenStateQuestFinished(condition.getParam())) return false;
                 }
                 case OPEN_STATE_COND_PARENT_QUEST -> {
                     // check main quest id for quest finished met requirements
