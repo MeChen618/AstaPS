@@ -71,7 +71,9 @@ public enum PlayerProperty {
         PROP_PHLOGISTON_MAX_VALUE(
                 10053, 0, 10000),
     PROP_CUR_PHLOGISTON(10054),
-    PROP_RELIQUARY_TRANSFER_EXP(10055, 0); // 圣遗物分解的结余经验。
+    PROP_RELIQUARY_TRANSFER_EXP(10055, 0), // 圣遗物分解的结余经验。
+    PROP_MAX_TPS_STAMINA(10080, 0, 40_000), // 基础 200，供奉最多增加 200；协议值放大 100 倍。
+    PROP_CUR_PERSIST_TPS_STAMINA(10081, true);
 
     private static final int inf = Integer.MAX_VALUE; // Maybe this should be something else?
     private static final Int2ObjectMap<PlayerProperty> map = new Int2ObjectOpenHashMap<>();

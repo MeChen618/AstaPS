@@ -781,6 +781,8 @@ public class Player implements PlayerHook, FieldFetch {
         this.setOrFetch(PlayerProperty.PROP_IS_TRANSFERABLE, 1);
         this.setOrFetch(PlayerProperty.PROP_MAX_STAMINA,
             withQuesting ? 10000 : 24000);
+        this.setOrFetch(PlayerProperty.PROP_MAX_TPS_STAMINA,
+            emu.grasscutter.game.tps.TpsAvatarSystem.BASE_STAMINA);
         this.setOrFetch(PlayerProperty.PROP_DIVE_MAX_STAMINA,
                 withQuesting ? 10000 : 0);
         this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 200);
@@ -790,6 +792,8 @@ public class Player implements PlayerHook, FieldFetch {
 
         this.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA,
             this.getProperty(PlayerProperty.PROP_MAX_STAMINA));
+        this.setProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA,
+            this.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA), false);
         this.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA,
                 this.getProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA));
         this.setProperty(PlayerProperty.PROP_CUR_PHLOGISTON,
@@ -2014,6 +2018,7 @@ public class Player implements PlayerHook, FieldFetch {
             return switch (prop) {
                 case PROP_CUR_SPRING_VOLUME -> getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
                 case PROP_CUR_PERSIST_STAMINA -> getProperty(PlayerProperty.PROP_MAX_STAMINA);
+                case PROP_CUR_PERSIST_TPS_STAMINA -> getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA);
                 default -> 0;
             };
         } else {

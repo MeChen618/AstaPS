@@ -11,12 +11,15 @@ import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.PlayerProperty;
 import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.world.TestWorld;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify;
 import emu.grasscutter.net.proto.GadgetChainLevelUpdateNotifyOuterClass.GadgetChainLevelUpdateNotify;
+import emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify;
 import emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp;
+import emu.grasscutter.net.proto.PlayerPropNotifyOuterClass.PlayerPropNotify;
 import emu.grasscutter.net.proto.SceneOwnerGadgetChainLevelNotifyOuterClass.SceneOwnerGadgetChainLevelNotify;
 import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
 import emu.grasscutter.scripts.SceneScriptManager;
@@ -187,7 +190,7 @@ final class OfferingRequestTest {
                 "consumeItemConfigVec:[{id:304,count:-1}]",
                 "consumeItemConfigVec:[]",
                 "consumeItemConfigVec:[{id:304,count:25}],condVec:[{actionType:'OFFERING_ACTION_OPEN_ROUTINE',param:'ROUTINE_SNOW_MOUNTAIN'}]",
-                "consumeItemConfigVec:[{id:304,count:25}],condVec:[{actionType:'OFFERING_ACTION_IMPROVE_TPS_STAMINA',param:'40'}]"
+                "consumeItemConfigVec:[{id:304,count:25}],condVec:[{actionType:'OFFERING_ACTION_IMPROVE_TPS_STAMINA',param:'-40'}]"
             })
     void malformedOrUnsupportedLevelsAreNotCharged(String row) throws Exception {
         config("[{offeringId:2,level:1,rewardId:" + REWARD + "," + row + "}]");
@@ -202,6 +205,146 @@ final class OfferingRequestTest {
         player.getOpenStates().put(OfferingHelper.OPEN_STATE_ORAIONOKAMI, 0);
         assertNotEquals(0, offer("1802").getRetcode());
         assertEquals(0, player.inventory.payments);
+    }
+
+    @Test
+    void tpsOfferingRaisesOnlyItsOwnStaminaAndNotifiesNativeProperties() throws Exception {
+        config(tpsLevels(5, "40"));
+        player.setProperty(PlayerProperty.PROP_MAX_TPS_STAMINA, 20_000, false);
+        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA, 12_500, false);
+        player.setProperty(PlayerProperty.PROP_MAX_STAMINA, 24_000, false);
+        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA, 18_000, false);
+        var reply = offer("1813");
+        assertEquals(0, reply.getRetcode());
+        assertEquals(5, reply.getOfferingData().getLevel());
+        assertEquals(40_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        assertEquals(12_500, player.getProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA));
+        assertEquals(24_000, player.getProperty(PlayerProperty.PROP_MAX_STAMINA));
+        assertEquals(18_000, player.getProperty(PlayerProperty.PROP_CUR_PERSIST_STAMINA));
+        assertEquals(5, player.lastSavedVariables.get(910019));
+        assertEquals(40_000, player.lastSavedProperties.get(10080));
+        assertEquals(12_500, player.lastSavedProperties.get(10081));
+        Map<Integer, Long> notified = new HashMap<>();
+        for (var packet : player.sent) {
+            if (packet.getOpcode() == PacketOpcodes.PlayerPropNotify)
+                PlayerPropNotify.parseFrom(packet.getData())
+                        .getPropMapMap()
+                        .forEach((id, value) -> notified.put(id, value.getVal()));
+        }
+        assertEquals(40_000L, notified.get(10080));
+        assertEquals(12_500L, notified.get(10081));
+        assertEquals(35, player.inventory.getItemCountById(SIGIL));
+        assertNotEquals(0, offer("1813").getRetcode());
+        assertEquals(1, player.inventory.payments);
+    }
+
+    @Test
+    void tpsStaminaRestoresFromOfferingProgressWithoutStackingOrRefilling() throws Exception {
+        config(tpsLevels(5, "40"));
+        player.getQuestGlobalVariables().put(910019, 3);
+        player.getProperties().remove(10080);
+        player.getProperties().remove(10081);
+        OfferingHelper.onPlayerLogin(player);
+        assertEquals(32_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        assertEquals(20_000, player.getProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA));
+        assertTrue(player.setProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA, 31_000, false));
+        assertFalse(player.setProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA, 32_001, false));
+        cache("LEVELS").remove(UID);
+        Files.deleteIfExists(STATE);
+        OfferingHelper.onPlayerLogin(player);
+        OfferingHelper.onPlayerLogin(player);
+        assertEquals(32_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        assertEquals(31_000, player.getProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA));
+        var snapshot =
+                player.sent.stream()
+                        .filter(
+                                packet ->
+                                        packet.getOpcode()
+                                                == PacketOpcodes.PlayerOfferingDataNotify)
+                        .reduce((first, last) -> last)
+                        .orElseThrow();
+        var offering =
+                PlayerOfferingDataNotify.parseFrom(snapshot.getData())
+                        .getOfferingDataListList()
+                        .stream()
+                        .filter(data -> data.getOfferingId() == 19)
+                        .findFirst()
+                        .orElseThrow();
+        assertEquals(3, offering.getLevel());
+        assertEquals(0, player.inventory.payments);
+    }
+
+    @Test
+    void refusedTpsPaymentDoesNotChangeOrSaveStamina() throws Exception {
+        config(tpsLevels(1, "40"));
+        player.setProperty(PlayerProperty.PROP_MAX_TPS_STAMINA, 20_000, false);
+        player.setProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA, 12_500, false);
+        player.inventory.rejectPayment = true;
+        assertNotEquals(0, offer("1813").getRetcode());
+        assertEquals(20_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        assertEquals(12_500, player.getProperty(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA));
+        assertEquals(0, OfferingHelper.getLevel(player, 19));
+        assertEquals(0, player.saves);
+        assertEquals(60, player.inventory.getItemCountById(SIGIL));
+    }
+
+    @Test
+    void tpsStaminaAndGadgetChainUpgradeTogetherAfterAllActionsPass() throws Exception {
+        config(
+                "[{offeringId:19,level:1,consumeItemConfigVec:[{id:304,count:3}],"
+                    + "condVec:[{actionType:'OFFERING_ACTION_IMPROVE_TPS_STAMINA',param:'40'},"
+                    + "{actionType:'OFFERING_ACTION_SET_GADGET_CHAIN_LEVEL',param:'100011,2'}]}]");
+        chains("[]");
+        player.setProperty(PlayerProperty.PROP_MAX_TPS_STAMINA, 20_000, false);
+        assertNotEquals(0, offer("1813").getRetcode());
+        assertEquals(0, player.inventory.payments);
+        assertEquals(20_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        chains("[{chainId:100011,initLevel:1,maxLevel:10}]");
+        assertEquals(0, offer("1813").getRetcode());
+        assertEquals(24_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        assertEquals(1, OfferingHelper.getLevel(player, 19));
+        assertEquals(57, player.inventory.getItemCountById(SIGIL));
+        var change =
+                player.sent.stream()
+                        .filter(packet -> packet.getOpcode() == 21874)
+                        .findFirst()
+                        .orElseThrow();
+        assertEquals(
+                Map.of(100011, 2),
+                GadgetChainLevelChangeNotify.parseFrom(change.getData())
+                        .getGadgetChainLevelMapMap());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"0", "-40", "201", "2147483647", "40,40", "abc"})
+    void invalidTpsStaminaIncrementsAreNotCharged(String increment) throws Exception {
+        config(tpsLevels(1, increment));
+        assertNotEquals(0, offer("1813").getRetcode());
+        assertEquals(0, player.inventory.payments);
+        assertEquals(60, player.inventory.getItemCountById(SIGIL));
+        assertEquals(0, OfferingHelper.getLevel(player, 19));
+    }
+
+    @Test
+    void tpsOfferingStopsBeforeTheFirstTierExceedingItsLimit() throws Exception {
+        config(tpsLevels(6, "40"));
+        assertEquals(0, offer("1813").getRetcode());
+        assertEquals(5, OfferingHelper.getLevel(player, 19));
+        assertEquals(40_000, player.getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA));
+        assertEquals(35, player.inventory.getItemCountById(SIGIL));
+    }
+
+    private static String tpsLevels(int count, String increment) {
+        var rows = new ArrayList<String>();
+        for (int level = 1; level <= count; level++)
+            rows.add(
+                    "{offeringId:19,level:"
+                            + level
+                            + ",consumeItemConfigVec:[{id:304,count:5}],"
+                            + "condVec:[{actionType:'OFFERING_ACTION_IMPROVE_TPS_STAMINA',param:'"
+                            + increment
+                            + "'}]}");
+        return "[" + String.join(",", rows) + "]";
     }
 
     @Test
@@ -562,6 +705,7 @@ final class OfferingRequestTest {
         private final RecordingInventory inventory = new RecordingInventory(this);
         private int saves;
         private Map<Integer, Integer> lastSavedVariables;
+        private Map<Integer, Integer> lastSavedProperties;
 
         @Override
         public Inventory getInventory() {
@@ -572,6 +716,7 @@ final class OfferingRequestTest {
         public void save() {
             saves++;
             lastSavedVariables = new HashMap<>(getQuestGlobalVariables());
+            lastSavedProperties = new HashMap<>(getProperties());
         }
 
         @Override

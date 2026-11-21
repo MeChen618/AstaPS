@@ -10,6 +10,8 @@ import emu.grasscutter.game.inventory.InventoryAddResult;
 import emu.grasscutter.game.inventory.InventoryGrantBuilder;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.PlayerProperty;
+import emu.grasscutter.game.tps.TpsAvatarSystem;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify;
@@ -25,6 +27,7 @@ import emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferi
 import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
 import emu.grasscutter.scripts.constants.EventType;
 import emu.grasscutter.scripts.data.ScriptArgs;
+import emu.grasscutter.server.packet.send.PacketPlayerPropNotify;
 import emu.grasscutter.utils.ProtoWire;
 
 import java.io.ByteArrayOutputStream;
@@ -38,8 +41,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * Helper for offering objects (Sacred Sakura, Frostbearing Tree, Tree of Dreams and the like):
  * gadget to offeringId mapping, the login notify and the interaction responses.
  *
- * <p>The client shows the F prompt based on SceneGadgetInfo.offering_info, and opens the offering page
- * based on PlayerOfferingDataNotify.
+ * <p>The client shows the F prompt based on SceneGadgetInfo.offering_info, and opens the offering
+ * page based on PlayerOfferingDataNotify.
  */
 public final class OfferingHelper {
     /** Sacred Sakura OfferingGadget. */
@@ -69,8 +72,10 @@ public final class OfferingHelper {
         GADGET_TO_OFFERING.put(73077192, 16); // firmament
     }
 
-    /** In-process cache. The source of truth is the player questGlobalVariables / JSON on disk, so a
-     * restart cannot swallow sigils without recording the level. */
+    /**
+     * In-process cache. The source of truth is the player questGlobalVariables / JSON on disk, so a
+     * restart cannot swallow sigils without recording the level.
+     */
     private static final ConcurrentHashMap<Integer, ConcurrentHashMap<Integer, Integer>> LEVELS =
             new ConcurrentHashMap<>();
 
@@ -335,26 +340,34 @@ public final class OfferingHelper {
         return out.toByteArray();
     }
 
-    /** Sends unlocked offering progress on login; without it the client does not consider the offering
-     * available and never shows the interaction UI. */
+    /**
+     * Sends unlocked offering progress on login; without it the client does not consider the
+     * offering available and never shows the interaction UI.
+     */
     public static void onPlayerLogin(Player player) {
         if (player == null || player.getSession() == null) {
             return;
         }
         try {
-            if (player.getProgressManager().getOpenState(OPEN_STATE_ORAIONOKAMI) == 0) {
-                player.getProgressManager().forceSetOpenState(OPEN_STATE_ORAIONOKAMI, 1);
+            synchronized (player) {
+                if (player.getProgressManager().getOpenState(OPEN_STATE_ORAIONOKAMI) == 0) {
+                    player.getProgressManager().forceSetOpenState(OPEN_STATE_ORAIONOKAMI, 1);
+                }
+                ensureLevelConfigs();
+                LEVELS.put(player.getUid(), loadPlayerLevels(player));
+                if (levelsLoaded) {
+                    writeTpsStamina(player, getTpsStaminaLimit(player, 0, 0));
+                    sendTpsStamina(player);
+                }
+                syncOfferingNotify(player);
+                sendChainLevelSnapshot(player);
+                Grasscutter.getLogger()
+                        .debug(
+                                "OfferingHelper login notify uid={} sakuraLv={} notifyOp={}",
+                                player.getUid(),
+                                getLevel(player, OFFERING_ORAIONOKAMI),
+                                PacketOpcodes.PlayerOfferingDataNotify);
             }
-            ensureLevelConfigs();
-            LEVELS.put(player.getUid(), loadPlayerLevels(player));
-            syncOfferingNotify(player);
-            sendChainLevelSnapshot(player);
-            Grasscutter.getLogger()
-                    .debug(
-                            "OfferingHelper login notify uid={} sakuraLv={} notifyOp={}",
-                            player.getUid(),
-                            getLevel(player, OFFERING_ORAIONOKAMI),
-                            PacketOpcodes.PlayerOfferingDataNotify);
         } catch (Throwable t) {
             Grasscutter.getLogger().warn("OfferingHelper onPlayerLogin failed: {}", t.toString());
         }
@@ -375,8 +388,8 @@ public final class OfferingHelper {
     }
 
     /**
-     * The player interacts with an offering: reply with GadgetInteractRsp plus PlayerOfferingRsp to open
-     * the offering page.
+     * The player interacts with an offering: reply with GadgetInteractRsp plus PlayerOfferingRsp to
+     * open the offering page.
      *
      * @return true when handled
      */
@@ -537,7 +550,8 @@ public final class OfferingHelper {
             int failure,
             List<ItemParamData> costs,
             List<ItemParamData> bonuses,
-            List<LevelRow> rows) {}
+            List<LevelRow> rows,
+            int tpsStamina) {}
 
     private static UpgradePlan planUpgrade(Player player, int offeringId) {
         int target = getLevel(player, offeringId);
@@ -545,6 +559,7 @@ public final class OfferingHelper {
         List<ItemParamData> costs = new ArrayList<>();
         Map<Integer, Integer> bonuses = new LinkedHashMap<>();
         List<LevelRow> rows = new ArrayList<>();
+        int tpsStamina = 0;
         while (target < Integer.MAX_VALUE) {
             var row = LEVEL_ROWS.get(levelKey(offeringId, target + 1));
             if (row == null) break;
@@ -559,6 +574,7 @@ public final class OfferingHelper {
                 break;
             }
             var candidateBonuses = new LinkedHashMap<>(bonuses);
+            int candidateTpsStamina = tpsStamina;
             try {
                 if (row.automatic && row.rewardId > 0) {
                     var reward = GameData.getRewardDataMap().get(row.rewardId);
@@ -568,7 +584,9 @@ public final class OfferingHelper {
                         addBonus(candidateBonuses, item.getId(), item.getCount());
                 }
                 for (var action : row.actions) {
-                    if (action.type == OfferingActionType.SET_GADGET_CHAIN_LEVEL) {
+                    if (action.type == OfferingActionType.IMPROVE_TPS_STAMINA) {
+                        candidateTpsStamina = getTpsStaminaLimit(player, offeringId, row.level);
+                    } else if (action.type == OfferingActionType.SET_GADGET_CHAIN_LEVEL) {
                         var config = gadgetChains.get(action.first);
                         if (config == null || action.second > config.maximum)
                             throw new IllegalArgumentException("Missing gadget chain config");
@@ -584,6 +602,7 @@ public final class OfferingHelper {
             }
             costs = candidateCosts;
             bonuses = candidateBonuses;
+            tpsStamina = candidateTpsStamina;
             rows.add(row);
             target++;
         }
@@ -591,7 +610,42 @@ public final class OfferingHelper {
                 bonuses.entrySet().stream()
                         .map(entry -> new ItemParamData(entry.getKey(), entry.getValue()))
                         .toList();
-        return new UpgradePlan(target, failure, costs, rewards, rows);
+        return new UpgradePlan(target, failure, costs, rewards, rows, tpsStamina);
+    }
+
+    private static int getTpsStaminaLimit(Player player, int offeringId, int level) {
+        int stamina = TpsAvatarSystem.BASE_STAMINA;
+        for (var row : LEVEL_ROWS.values()) {
+            int completed = row.offeringId == offeringId ? level : getLevel(player, row.offeringId);
+            if (!row.supported || row.level > completed) continue;
+            for (var action : row.actions) {
+                if (action.type == OfferingActionType.IMPROVE_TPS_STAMINA)
+                    stamina = Math.addExact(stamina, Math.multiplyExact(action.first, 100));
+            }
+        }
+        if (stamina > PlayerProperty.PROP_MAX_TPS_STAMINA.getMax())
+            throw new IllegalArgumentException("Invalid offering TPS stamina limit");
+        return stamina;
+    }
+
+    private static void writeTpsStamina(Player player, int maximum) {
+        var properties = player.getProperties();
+        int previous = properties.getOrDefault(PlayerProperty.PROP_MAX_TPS_STAMINA.getId(), 0);
+        int current =
+                properties.getOrDefault(PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA.getId(), 0);
+        // 老存档首次补齐；重复同步和供奉升级不会额外回满体力。
+        properties.put(PlayerProperty.PROP_MAX_TPS_STAMINA.getId(), maximum);
+        properties.put(
+                PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA.getId(),
+                previous <= 0
+                        ? TpsAvatarSystem.BASE_STAMINA
+                        : Math.max(0, Math.min(current, maximum)));
+    }
+
+    private static void sendTpsStamina(Player player) {
+        player.sendPacket(new PacketPlayerPropNotify(player, PlayerProperty.PROP_MAX_TPS_STAMINA));
+        player.sendPacket(
+                new PacketPlayerPropNotify(player, PlayerProperty.PROP_CUR_PERSIST_TPS_STAMINA));
     }
 
     private static void addBonus(Map<Integer, Integer> bonuses, int itemId, int count) {
@@ -618,11 +672,13 @@ public final class OfferingHelper {
                     player.getQuestGlobalVariables().put(action.first, action.second);
             }
         }
+        if (plan.tpsStamina > 0) writeTpsStamina(player, plan.tpsStamina);
         // 自动奖励领取标记和任务变量随等级一起保存。
         setLevel(player, offeringId, plan.target);
     }
 
     private static void applyUpgradeActions(Player player, int offeringId, UpgradePlan plan) {
+        if (plan.tpsStamina > 0) sendTpsStamina(player);
         Map<Integer, Integer> variables = new LinkedHashMap<>();
         Map<Integer, Integer> chains = new LinkedHashMap<>();
         var scene = player.getScene();
@@ -648,6 +704,7 @@ public final class OfferingHelper {
                     case SET_GADGET_CHAIN_LEVEL -> chains.put(action.first, action.second);
                     case SET_QUEST_GLOBAL_VAR -> variables.put(action.first, action.second);
                     case GRANT_UNIQUE_ITEM -> {} // 道具已通过同一批背包发放。
+                    case IMPROVE_TPS_STAMINA -> {} // 属性已随供奉等级保存。
                 }
             }
         }
@@ -849,8 +906,8 @@ public final class OfferingHelper {
     }
 
     /**
-     * Fallback for when no handler is registered: accept only the known PlayerOfferingReq opcode so other
-     * packets are not intercepted by mistake.
+     * Fallback for when no handler is registered: accept only the known PlayerOfferingReq opcode so
+     * other packets are not intercepted by mistake.
      */
     public static boolean tryHandleUnknownOfferingReq(Player player, int opcode, byte[] payload) {
         return tryHandleUnknownOfferingReq(player, opcode, payload, null);
@@ -876,9 +933,12 @@ public final class OfferingHelper {
             return;
         }
         try {
+            ensureLevelConfigs();
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             boolean hasSakura = false;
-            for (int offeringId : GADGET_TO_OFFERING.values().stream().distinct().sorted().toList()) {
+            var offeringIds = new java.util.TreeSet<>(GADGET_TO_OFFERING.values());
+            LEVEL_ROWS.values().forEach(row -> offeringIds.add(row.offeringId));
+            for (int offeringId : offeringIds) {
                 if (!isOfferingOpen(player, offeringId)) {
                     continue;
                 }
@@ -983,7 +1043,8 @@ public final class OfferingHelper {
         NOTIFY_GROUP,
         SET_GADGET_CHAIN_LEVEL,
         GRANT_UNIQUE_ITEM,
-        SET_QUEST_GLOBAL_VAR
+        SET_QUEST_GLOBAL_VAR,
+        IMPROVE_TPS_STAMINA
     }
 
     private record OfferingAction(OfferingActionType type, int first, int second) {}
