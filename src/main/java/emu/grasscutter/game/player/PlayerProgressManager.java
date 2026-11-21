@@ -989,6 +989,9 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         this.player
                 .getQuestManager()
                 .queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_TRANS_POINT, sceneId, pointId);
+        this.player
+                .getQuestManager()
+                .queueEvent(QuestContent.QUEST_CONTENT_UNLOCK_ANY_TRANS_POINT, sceneId, pointId);
         try {
             if (this.player.getScene() != null) {
                 this.player

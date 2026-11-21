@@ -142,12 +142,19 @@ public class GameMainQuest {
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_EQUAL, index, value);
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_GREATER, index, value);
         questManager.queueEvent(QuestCond.QUEST_COND_QUEST_VAR_LESS, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value);
-        questManager.queueEvent(QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_EQUAL, index, value, parentQuestId);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_GREATER, index, value, parentQuestId);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_LESS, index, value, parentQuestId);
+        questManager.queueEvent(
+                QuestContent.QUEST_CONTENT_QUEST_VAR_NOT_EQUAL, index, value, parentQuestId);
 
         this.getOwner()
-                .sendPacket(new PacketQuestUpdateQuestVarNotify(this.getParentQuestId(), this.questVars));
+                .sendPacket(
+                        new PacketQuestUpdateQuestVarNotify(
+                                this.getParentQuestId(), this.questVars));
     }
 
     public GameQuest getChildQuestById(int id) {

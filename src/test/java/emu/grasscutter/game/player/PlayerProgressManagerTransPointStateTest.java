@@ -2,10 +2,62 @@ package emu.grasscutter.game.player;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashSet;
+import com.google.gson.Gson;
+
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ScenePointEntry;
+import emu.grasscutter.data.common.PointData;
+import emu.grasscutter.game.quest.QuestEventRecorder;
+import emu.grasscutter.game.quest.QuestManager;
+import emu.grasscutter.game.quest.enums.QuestContent;
+import emu.grasscutter.net.packet.BasePacket;
+
 import org.junit.jupiter.api.Test;
 
+import java.util.HashSet;
+import java.util.List;
+
 final class PlayerProgressManagerTransPointStateTest {
+    @Test
+    void unlockingARealPointEmitsTheListedPointEventOnlyOnce() {
+        var point =
+                new Gson()
+                        .fromJson(
+                                "{\"id\":814,\"$type\":\"SceneTransPoint\",\"mapVisibility\":\"Never\"}",
+                                PointData.class);
+        int key = (3 << 16) + 814;
+        var old = GameData.getScenePointEntryMap().put(key, new ScenePointEntry(3, point));
+        try {
+            class RecordingPlayer extends Player {
+                final QuestEventRecorder recorder = new QuestEventRecorder(this);
+
+                @Override
+                public QuestManager getQuestManager() {
+                    return recorder.manager();
+                }
+
+                @Override
+                public void sendPacket(BasePacket packet) {}
+
+                @Override
+                public void save() {}
+            }
+            var player = new RecordingPlayer();
+            var manager = new PlayerProgressManager(player);
+            assertTrue(manager.unlockTransPoint(3, 814, false));
+            assertFalse(manager.unlockTransPoint(3, 814, false));
+            assertEquals(
+                    List.of(
+                            QuestContent.QUEST_CONTENT_UNLOCK_TRANS_POINT,
+                            QuestContent.QUEST_CONTENT_UNLOCK_ANY_TRANS_POINT),
+                    player.recorder.types());
+            assertTrue(player.getUnlockedScenePoints(3).contains(814));
+        } finally {
+            if (old == null) GameData.getScenePointEntryMap().remove(key);
+            else GameData.getScenePointEntryMap().put(key, old);
+        }
+    }
+
     @Test
     void questLockPreservesPermanentUnlockState() {
         var unlocked = new HashSet<Integer>();

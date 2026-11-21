@@ -1,0 +1,44 @@
+{
+  "client": "Supplied 7.2.0 CN Android ARM64 sample",
+  "libyuanshen_so_sha256": "e6aee61ab16f6eef534360024960f43df64b5705d79e3960d4194164e123a9f2",
+  "global_metadata_sha256": "b48c2f3ed40009e02b5cff0d0e104dce36f3ebb688be6ae1c425e64dc798d73d",
+  "enum_type_definition_index": 85818,
+  "fields": [
+    {
+      "name": "QUEST_CONTENT_UNLOCKED_RECIPE",
+      "value": 138,
+      "metadata_field_index": 427101,
+      "default_data_offset": 35503604,
+      "little_endian_bytes": "8a000000"
+    },
+    {
+      "name": "QUEST_CONTENT_NOT_UNLOCKED_RECIPE",
+      "value": 139,
+      "metadata_field_index": 427102,
+      "default_data_offset": 35503608,
+      "little_endian_bytes": "8b000000"
+    },
+    {
+      "name": "QUEST_CONTENT_UNLOCK_ANY_TRANS_POINT",
+      "value": 167,
+      "metadata_field_index": 427129,
+      "default_data_offset": 35503716,
+      "little_endian_bytes": "a7000000"
+    },
+    {
+      "name": "QUEST_CONTENT_QUEST_VAR_NOT_EQUAL",
+      "value": 171,
+      "metadata_field_index": 427133,
+      "default_data_offset": 35503732,
+      "little_endian_bytes": "ab000000"
+    },
+    {
+      "name": "QUEST_CONTENT_LEAVE_VEHICLE",
+      "value": 182,
+      "metadata_field_index": 427142,
+      "default_data_offset": 35503768,
+      "little_endian_bytes": "b6000000"
+    }
+  ],
+  "limits": "These defaults verify enum values, not every gameplay condition parameter or in-game quest flow."
+}

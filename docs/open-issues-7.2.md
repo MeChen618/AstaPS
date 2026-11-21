@@ -4,6 +4,11 @@ Reviewed on 2026-11-20 against `04a94ef8` (main, including #252 and #254).
 This document distinguishes code changes, existing fixes, and remaining reproduction or data gaps.
 Offline tests do not establish that every affected client flow works in game.
 
+Follow-up on 2026-11-21: [recipe, waypoint, variable, and vehicle quest events](quest-state-events-7.2.md)
+adds cooking admission fixes and five further condition bindings. On the same census fixture,
+registered condition occurrences rise from 44,852 to 44,884; 1,122 remain without handlers.
+The original review and its baseline counts below are retained for comparison.
+
 ## Changes in this branch
 
 - Friendship reward requests with a GUID and no level now collect all eligible, unclaimed

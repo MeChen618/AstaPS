@@ -10,6 +10,7 @@ import emu.grasscutter.game.ability.*;
 import emu.grasscutter.data.binout.config.fields.ConfigAbilityData;
 import emu.grasscutter.game.ability.Ability;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility;
 import emu.grasscutter.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier;
 import emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry;
@@ -69,7 +70,37 @@ public class EntityVehicle extends EntityBaseGadget {
                 }
 
                 fillFightProps(configGadget);
+                if (getFightProperty(FightProperty.FIGHT_PROP_MAX_HP) <= 0) {
+                    setFightProperty(FightProperty.FIGHT_PROP_MAX_HP, 1000);
+                    setFightProperty(FightProperty.FIGHT_PROP_CUR_HP, 1000);
+                }
                 this.initAbilities();
+    }
+
+    public synchronized boolean updateMember(VehicleMember member, boolean boarding) {
+        if (member == null || member.getUid() <= 0) return false;
+        boolean present = vehicleMembers.stream().anyMatch(m -> m.getUid() == member.getUid());
+        if (boarding == present) return false;
+        if (boarding) vehicleMembers.add(member);
+        else vehicleMembers.removeIf(m -> m.getUid() == member.getUid());
+
+        // 切角色会改变 GUID，乘员身份按 UID 判断。
+        Player rider =
+                owner.getUid() == member.getUid()
+                        ? owner
+                        : getScene().getPlayers().stream()
+                                .filter(p -> p.getUid() == member.getUid())
+                                .findFirst()
+                                .orElse(null);
+        if (rider != null) {
+            rider.getQuestManager()
+                    .queueEvent(
+                            boarding
+                                    ? QuestContent.QUEST_CONTENT_ENTER_VEHICLE
+                                    : QuestContent.QUEST_CONTENT_LEAVE_VEHICLE,
+                            gadgetId);
+        }
+        return true;
     }
 
     @Override
