@@ -946,15 +946,36 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
                         entityIds.size());
     }
 
-    /**
-     * Lock a quest-controlled scene point on the client and in persisted player state.
-     * ScenePointUnlockNotify's generated field 4 is the 7.1 locked-point wire field.
-     */
+    /** 任务锁点不撤销永久解锁，也不改变地图显隐。 */
     public boolean lockTransPoint(int sceneId, int pointId) {
         if (sceneId <= 0 || pointId <= 0) return false;
-        applyQuestPointLock(this.player.getForceLockedScenePoints(sceneId), pointId);
-        this.player.sendPacket(PacketScenePointUnlockNotify.lock(sceneId, pointId));
-        this.player.save();
+        synchronized (this.player) {
+            applyQuestPointLock(this.player.getForceLockedScenePoints(sceneId), pointId);
+            this.player.save();
+            this.player.sendPacket(PacketScenePointUnlockNotify.lock(sceneId, pointId));
+        }
+        return true;
+    }
+
+    public boolean setTransPointVisibility(
+            int sceneId, java.util.Collection<Integer> pointIds, boolean visible) {
+        if (sceneId <= 0
+                || pointIds == null
+                || pointIds.isEmpty()
+                || pointIds.stream().anyMatch(id -> id == null || id <= 0)) return false;
+        synchronized (this.player) {
+            var states = this.player.getScenePointVisibility(sceneId);
+            var changed = new java.util.ArrayList<Integer>();
+            for (int pointId : new java.util.LinkedHashSet<>(pointIds)) {
+                if (!java.util.Objects.equals(states.put(pointId, visible), visible))
+                    changed.add(pointId);
+            }
+            if (!changed.isEmpty()) {
+                this.player.save();
+                this.player.sendPacket(
+                        PacketScenePointUnlockNotify.visibility(sceneId, changed, visible));
+            }
+        }
         return true;
     }
 

@@ -174,6 +174,7 @@ public class Player implements PlayerHook, FieldFetch {
     private Map<String, Map<Integer, Integer>> transPointRewardSnapshots;
     /** Debug/test: points forced locked even if GetScenePointRsp would otherwise unlock-all. */
     @Getter @Setter private Map<Integer, Set<Integer>> forceLockedScenePoints;
+    private Map<Integer, Map<Integer, Boolean>> scenePointVisibility;
     @Getter @Setter private List<Integer> chatEmojiIdList;
     @Getter @Setter private boolean playedFirstLoginCutscene;
 
@@ -691,6 +692,15 @@ public class Player implements PlayerHook, FieldFetch {
         }
         var locked = this.forceLockedScenePoints.get(sceneId);
         return locked != null && locked.contains(pointId);
+    }
+
+    public synchronized Map<Integer, Boolean> getScenePointVisibility(int sceneId) {
+        if (this.scenePointVisibility == null) this.scenePointVisibility = new HashMap<>();
+        return this.scenePointVisibility.computeIfAbsent(sceneId, id -> new ConcurrentHashMap<>());
+    }
+
+    public synchronized boolean isScenePointHidden(int sceneId, int pointId) {
+        return Boolean.FALSE.equals(getScenePointVisibility(sceneId).get(pointId));
     }
 
     public int getLevel() {
