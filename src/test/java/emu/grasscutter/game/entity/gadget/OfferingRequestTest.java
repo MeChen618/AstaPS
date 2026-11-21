@@ -11,9 +11,18 @@ import emu.grasscutter.data.excels.RewardData;
 import emu.grasscutter.game.inventory.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.props.SceneType;
+import emu.grasscutter.game.world.TestWorld;
 import emu.grasscutter.net.packet.*;
+import emu.grasscutter.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify;
+import emu.grasscutter.net.proto.GadgetChainLevelUpdateNotifyOuterClass.GadgetChainLevelUpdateNotify;
 import emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp;
+import emu.grasscutter.net.proto.SceneOwnerGadgetChainLevelNotifyOuterClass.SceneOwnerGadgetChainLevelNotify;
 import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
+import emu.grasscutter.scripts.SceneScriptManager;
+import emu.grasscutter.scripts.ScriptLoader;
+import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.server.game.*;
 
 import org.junit.jupiter.api.*;
@@ -38,6 +47,7 @@ final class OfferingRequestTest {
     private RewardData previousReward;
     private Map<Object, Object> previousRows;
     private boolean previousLoaded;
+    private Object previousChains;
     private byte[] previousState;
     private RecordingPlayer player;
     private GameSession session;
@@ -47,6 +57,9 @@ final class OfferingRequestTest {
         previousState = Files.exists(STATE) ? Files.readAllBytes(STATE) : null;
         previousRows = new HashMap<>(cache("LEVEL_ROWS"));
         previousLoaded = loaded().getBoolean(null);
+        var chainField = OfferingHelper.class.getDeclaredField("gadgetChains");
+        chainField.setAccessible(true);
+        previousChains = chainField.get(null);
         cache("LEVELS").remove(UID);
         cache("TAKEN").remove(UID);
         for (int id : new int[] {SIGIL, SECOND, PRIZE, 202}) {
@@ -99,6 +112,12 @@ final class OfferingRequestTest {
         cache("LEVEL_ROWS").clear();
         cache("LEVEL_ROWS").putAll(previousRows);
         loaded().setBoolean(null, previousLoaded);
+        var chainField = OfferingHelper.class.getDeclaredField("gadgetChains");
+        chainField.setAccessible(true);
+        chainField.set(null, previousChains);
+        emu.grasscutter.game.quest.QuestManager.eventExecutor
+                .submit(() -> {})
+                .get(5, TimeUnit.SECONDS);
         cache("LEVELS").remove(UID);
         cache("TAKEN").remove(UID);
         for (var item : previousItems.entrySet()) {
@@ -167,8 +186,8 @@ final class OfferingRequestTest {
             strings = {
                 "consumeItemConfigVec:[{id:304,count:-1}]",
                 "consumeItemConfigVec:[]",
-                "consumeItemConfigVec:[{id:304,count:25}],isAutoTakeReward:true",
-                "consumeItemConfigVec:[{id:304,count:25}],condVec:[{actionType:'OFFERING_ACTION_NOTIFY_GROUP',param:'133301220'}]"
+                "consumeItemConfigVec:[{id:304,count:25}],condVec:[{actionType:'OFFERING_ACTION_OPEN_ROUTINE',param:'ROUTINE_SNOW_MOUNTAIN'}]",
+                "consumeItemConfigVec:[{id:304,count:25}],condVec:[{actionType:'OFFERING_ACTION_IMPROVE_TPS_STAMINA',param:'40'}]"
             })
     void malformedOrUnsupportedLevelsAreNotCharged(String row) throws Exception {
         config("[{offeringId:2,level:1,rewardId:" + REWARD + "," + row + "}]");
@@ -247,6 +266,231 @@ final class OfferingRequestTest {
     }
 
     @Test
+    void automaticRewardsAreAdmittedBeforePaymentAndAreClaimedOnce() throws Exception {
+        config(
+                "[{offeringId:2,level:1,rewardId:"
+                        + REWARD
+                        + ",isAutoTakeReward:true,consumeItemConfigVec:[{id:304,count:25}]}]");
+        player.inventory.rejectGrant = true;
+        assertNotEquals(0, offer("1802").getRetcode());
+        assertEquals(0, player.inventory.payments);
+        assertEquals(0, OfferingHelper.getLevel(player, 2));
+        player.inventory.rejectGrant = false;
+        player.inventory.rejectPayment = true;
+        assertNotEquals(0, offer("1802").getRetcode());
+        assertTrue(player.inventory.grants.isEmpty());
+        assertEquals(0, OfferingHelper.getLevel(player, 2));
+        player.inventory.rejectPayment = false;
+        var reply = offer("1802");
+        assertEquals(0, reply.getRetcode());
+        assertEquals(35, player.inventory.getItemCountById(SIGIL));
+        assertEquals(2, reply.getItemListCount());
+        assertEquals(2, player.inventory.grants.size());
+        assertEquals(List.of(1), reply.getOfferingData().getTakenLevelRewardListList());
+        assertNotEquals(0, reward("08025001").getRetcode());
+        assertEquals(2, player.inventory.grants.size());
+    }
+
+    @Test
+    void missingAutomaticRewardDefinitionCannotSpendMaterials() throws Exception {
+        config(
+                "[{offeringId:2,level:1,rewardId:"
+                        + REWARD
+                        + ",isAutoTakeReward:true,consumeItemConfigVec:[{id:304,count:25}]}]");
+        GameData.getRewardDataMap().remove(REWARD);
+        assertNotEquals(0, offer("1802").getRetcode());
+        assertEquals(0, player.inventory.payments);
+        assertEquals(0, OfferingHelper.getLevel(player, 2));
+    }
+
+    @Test
+    void uniqueGiftAndQuestVariableAreCommittedWithTheLevel() throws Exception {
+        String action = "{actionType:'OFFERING_ACTION_GRANT_UNIQUE_ITEM',param:'" + SECOND + "'}";
+        config(
+                "[{offeringId:2,level:1,rewardId:"
+                        + REWARD
+                        + ",consumeItemConfigVec:[{id:304,count:25}],condVec:["
+                        + action
+                        + "]},"
+                        + "{offeringId:2,level:2,rewardId:"
+                        + REWARD
+                        + ",consumeItemConfigVec:[{id:304,count:25}],condVec:["
+                        + action
+                        + ",{actionType:'OFFERING_ACTION_SET_QUEST_GLOBAL_VAR',param:'7603901,1'}]}]");
+        player.inventory.rejectGrant = true;
+        assertNotEquals(0, offer("1802").getRetcode());
+        assertEquals(0, player.inventory.payments);
+        assertFalse(player.getQuestGlobalVariables().containsKey(7603901));
+        player.inventory.rejectGrant = false;
+        var reply = offer("1802");
+        assertEquals(0, reply.getRetcode());
+        assertEquals(1, reply.getItemListCount());
+        assertEquals(SECOND, reply.getItemList(0).getItemId());
+        assertEquals(1, reply.getItemList(0).getCount());
+        assertEquals(1, player.getQuestGlobalVariables().get(7603901));
+        assertEquals(1, player.lastSavedVariables.get(7603901));
+        assertEquals(1, player.inventory.grants.size());
+    }
+
+    @Test
+    void anOwnedUniqueGiftDoesNotBlockAnOtherwiseAffordableUpgrade() throws Exception {
+        config(
+                "[{offeringId:2,level:1,consumeItemConfigVec:[{id:304,count:25}],"
+                        + "condVec:[{actionType:'OFFERING_ACTION_GRANT_UNIQUE_ITEM',param:'"
+                        + SECOND
+                        + "'}]}]");
+        player.inventory.stock(SECOND, 1);
+        player.inventory.rejectGrant = true;
+        assertEquals(0, offer("1802").getRetcode());
+        assertTrue(player.inventory.grants.isEmpty());
+        assertEquals(1, player.inventory.getItemCountById(SECOND));
+    }
+
+    @Test
+    void missingGadgetChainConfigAndMalformedArgumentsAreRejectedBeforePayment() throws Exception {
+        config(
+                "[{offeringId:2,level:1,consumeItemConfigVec:[{id:304,count:25}],"
+                    + "condVec:[{actionType:'OFFERING_ACTION_SET_GADGET_CHAIN_LEVEL',param:'100002,2'}]}]");
+        chains("[]");
+        assertNotEquals(0, offer("1802").getRetcode());
+        assertEquals(0, player.inventory.payments);
+        config(
+                "[{offeringId:2,level:1,consumeItemConfigVec:[{id:304,count:25}],"
+                    + "condVec:[{actionType:'OFFERING_ACTION_SET_QUEST_GLOBAL_VAR',param:'7603901'}]}]");
+        assertNotEquals(0, offer("1802").getRetcode());
+        assertEquals(0, player.inventory.payments);
+    }
+
+    @Test
+    void automaticPoolLevelsRestoreTheirChainFromThePlayerSave() throws Exception {
+        config(
+                "[{offeringId:3,level:1,rewardId:"
+                        + REWARD
+                        + ",isAutoTakeReward:true,consumeItemConfigVec:[{id:304,count:25}],"
+                        + "condVec:[{actionType:'OFFERING_ACTION_SET_GADGET_CHAIN_LEVEL',param:'100003,1'}]}]");
+        chains("[{chainId:100003,maxLevel:10}]");
+        assertEquals(0, offer("1803").getRetcode());
+        var change =
+                player.sent.stream()
+                        .filter(packet -> packet.getOpcode() == 21874)
+                        .findFirst()
+                        .orElseThrow();
+        assertEquals(
+                Map.of(100003, 1),
+                GadgetChainLevelChangeNotify.parseFrom(change.getData())
+                        .getGadgetChainLevelMapMap());
+        Files.deleteIfExists(STATE);
+        cache("LEVELS").remove(UID);
+        assertEquals(1, OfferingHelper.getLevel(player, 3));
+        player.sent.clear();
+        OfferingHelper.onPlayerLogin(player);
+        var snapshot =
+                player.sent.stream()
+                        .filter(packet -> packet.getOpcode() == 26386)
+                        .findFirst()
+                        .orElseThrow();
+        assertEquals(
+                Map.of(100003, 1),
+                GadgetChainLevelUpdateNotify.parseFrom(snapshot.getData())
+                        .getGadgetChainLevelMapMap());
+    }
+
+    @Test
+    void sceneEntryUsesTheHostsGadgetChainInsteadOfTheVisitors() throws Exception {
+        config(
+                "[{offeringId:2,level:3,consumeItemConfigVec:[{id:304,count:25}],"
+                    + "condVec:[{actionType:'OFFERING_ACTION_SET_GADGET_CHAIN_LEVEL',param:'100002,2'}]}]");
+        chains("[{chainId:100002,initLevel:1,maxLevel:15}]");
+        OfferingHelper.setLevel(player, 2, 3);
+        var world = TestWorld.create(player);
+        var guest = new RecordingPlayer();
+        guest.setUid(UID + 1);
+        guest.setWorld(world);
+        guest.getQuestGlobalVariables().put(910002, 0);
+        OfferingHelper.sendSceneOwnerChainLevels(guest, true);
+        var packet = guest.sent.getFirst();
+        assertEquals(29077, packet.getOpcode());
+        var snapshot = SceneOwnerGadgetChainLevelNotify.parseFrom(packet.getData());
+        assertTrue(snapshot.getIsEnterWorld());
+        assertEquals(Map.of(100002, 2), snapshot.getGadgetChainLevelMapMap());
+        assertEquals(0, guest.getQuestGlobalVariables().get(910002));
+    }
+
+    @Test
+    void notifyGroupReceivesEveryCommittedLevelInOrder() throws Exception {
+        ScriptLoader.init();
+        var config = emu.grasscutter.Grasscutter.getConfig().server.game;
+        boolean previous = config.enableScriptInBigWorld;
+        config.enableScriptInBigWorld = false;
+        try {
+            var world = TestWorld.create(player);
+            List<ScriptArgs> events = new ArrayList<>();
+            var scene =
+                    new TestWorld.TestScene(world, 3, SceneType.SCENE_WORLD) {
+                        private final SceneScriptManager manager =
+                                new SceneScriptManager(this) {
+                                    @Override
+                                    public Future<?> callEvent(ScriptArgs args) {
+                                        events.add(args);
+                                        return CompletableFuture.completedFuture(null);
+                                    }
+                                };
+
+                        @Override
+                        public SceneScriptManager getScriptManager() {
+                            return manager;
+                        }
+                    };
+            player.setScene(scene);
+            config(
+                    "[{offeringId:6,level:1,isAutoTakeReward:true,consumeItemConfigVec:[{id:304,count:25}],"
+                        + "condVec:[{actionType:'OFFERING_ACTION_NOTIFY_GROUP',param:'133317140'}]},"
+                        + "{offeringId:6,level:2,isAutoTakeReward:true,consumeItemConfigVec:[{id:304,count:25}],"
+                        + "condVec:[{actionType:'OFFERING_ACTION_NOTIFY_GROUP',param:'133317140'}]}]");
+            var reply = offer("1806");
+            assertEquals(0, reply.getRetcode());
+            assertEquals(List.of(1, 2), events.stream().map(event -> event.param2).toList());
+            assertTrue(
+                    events.stream()
+                            .allMatch(
+                                    event ->
+                                            event.param1 == 6
+                                                    && event.group_id == 133317140
+                                                    && event.type
+                                                            == EventType.EVENT_OFFERING_LEVELUP));
+            assertEquals(List.of(1, 2), reply.getOfferingData().getTakenLevelRewardListList());
+            assertTrue(player.inventory.grants.isEmpty());
+        } finally {
+            config.enableScriptInBigWorld = previous;
+        }
+    }
+
+    private static void chains(String json) throws Exception {
+        var parser = OfferingHelper.class.getDeclaredMethod("parseGadgetChains", JsonArray.class);
+        parser.setAccessible(true);
+        var field = OfferingHelper.class.getDeclaredField("gadgetChains");
+        field.setAccessible(true);
+        field.set(null, parser.invoke(null, JsonParser.parseString(json).getAsJsonArray()));
+    }
+
+    @Test
+    void gadgetChainNotificationsUseTheNativeMapAndEntryTags() throws Exception {
+        var changeWire = HexFormat.of().parseHex("120608a28d061002");
+        var change = GadgetChainLevelChangeNotify.parseFrom(changeWire);
+        assertEquals(Map.of(100002, 2), change.getGadgetChainLevelMapMap());
+        assertArrayEquals(changeWire, change.toByteArray());
+        var updateWire = HexFormat.of().parseHex("7a0608a28d061002");
+        var update = GadgetChainLevelUpdateNotify.parseFrom(updateWire);
+        assertEquals(Map.of(100002, 2), update.getGadgetChainLevelMapMap());
+        assertArrayEquals(updateWire, update.toByteArray());
+        var ownerWire = HexFormat.of().parseHex("18015a0608a28d061002");
+        var owner = SceneOwnerGadgetChainLevelNotify.parseFrom(ownerWire);
+        assertTrue(owner.getIsEnterWorld());
+        assertEquals(Map.of(100002, 2), owner.getGadgetChainLevelMapMap());
+        assertArrayEquals(ownerWire, owner.toByteArray());
+    }
+
+    @Test
     void nativeReplyAndNestedProgressFieldsRoundTrip() throws Exception {
         var offeringWire = HexFormat.of().parseHex("10017208380258077a020102");
         var offering = PlayerOfferingRsp.parseFrom(offeringWire);
@@ -317,6 +561,7 @@ final class OfferingRequestTest {
         private final List<BasePacket> sent = new CopyOnWriteArrayList<>();
         private final RecordingInventory inventory = new RecordingInventory(this);
         private int saves;
+        private Map<Integer, Integer> lastSavedVariables;
 
         @Override
         public Inventory getInventory() {
@@ -326,6 +571,7 @@ final class OfferingRequestTest {
         @Override
         public void save() {
             saves++;
+            lastSavedVariables = new HashMap<>(getQuestGlobalVariables());
         }
 
         @Override
@@ -362,6 +608,22 @@ final class OfferingRequestTest {
                 ActionReason reason) {
             payments++;
             return !rejectPayment && super.payItems(items, quantity, reason);
+        }
+
+        @Override
+        public synchronized InventoryAddResult addItems(
+                Collection<GameItem> items,
+                ActionReason reason,
+                InventoryAddPolicy policy,
+                java.util.function.BooleanSupplier authorize,
+                Runnable confirmed) {
+            if (rejectGrant)
+                return InventoryAddResult.rejected(items, InventoryAddResult.Status.CAPACITY_FULL);
+            if (!authorize.getAsBoolean())
+                return InventoryAddResult.rejected(
+                        items, InventoryAddResult.Status.AUTHORIZATION_FAILED);
+            confirmed.run();
+            return addItems(items, reason, policy);
         }
 
         @Override

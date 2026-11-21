@@ -937,6 +937,17 @@ public class ScriptLib {
         return posToLua(entity != null ? entity.getPosition() : null);
     }
 
+    public int GetOfferingLevel(int offeringId) {
+        var manager = sceneScriptManager.getIfExists();
+        if (manager == null
+                || manager.getScene() == null
+                || manager.getScene().getWorld() == null
+                || manager.getScene().getWorld().getHost() == null
+                || offeringId <= 0) return 0;
+        return emu.grasscutter.game.entity.gadget.OfferingHelper.getLevel(
+                manager.getScene().getWorld().getHost(), offeringId);
+    }
+
     public int GetQuestState(int entityId, int questId) {
         logger.debug("[LUA] Call GetQuestState with {} {}", entityId, questId);
 

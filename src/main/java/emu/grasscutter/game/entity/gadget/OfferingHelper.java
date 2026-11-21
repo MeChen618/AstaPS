@@ -5,19 +5,26 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.entity.EntityGadget;
 import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.InventoryAddPolicy;
+import emu.grasscutter.game.inventory.InventoryAddResult;
 import emu.grasscutter.game.inventory.InventoryGrantBuilder;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
+import emu.grasscutter.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify;
+import emu.grasscutter.net.proto.GadgetChainLevelUpdateNotifyOuterClass.GadgetChainLevelUpdateNotify;
 import emu.grasscutter.net.proto.OfferingInfoOuterClass.OfferingInfo;
 import emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify;
 import emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData;
 import emu.grasscutter.net.proto.PlayerOfferingReqOuterClass.PlayerOfferingReq;
 import emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.net.proto.SceneOwnerGadgetChainLevelNotifyOuterClass.SceneOwnerGadgetChainLevelNotify;
 import emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq;
 import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
+import emu.grasscutter.scripts.constants.EventType;
+import emu.grasscutter.scripts.data.ScriptArgs;
 import emu.grasscutter.utils.ProtoWire;
 
 import java.io.ByteArrayOutputStream;
@@ -179,7 +186,9 @@ public final class OfferingHelper {
     private static synchronized ConcurrentHashMap<Integer, Integer> loadPlayerLevels(Player player) {
         ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
         try {
-            for (int oid : GADGET_TO_OFFERING.values()) {
+            var offeringIds = new java.util.HashSet<>(GADGET_TO_OFFERING.values());
+            LEVEL_ROWS.values().forEach(row -> offeringIds.add(row.offeringId));
+            for (int oid : offeringIds) {
                 Integer v = player.getQuestGlobalVariables().get(qgvKey(oid));
                 if (v != null && v > 0) {
                     map.put(oid, v);
@@ -336,8 +345,10 @@ public final class OfferingHelper {
             if (player.getProgressManager().getOpenState(OPEN_STATE_ORAIONOKAMI) == 0) {
                 player.getProgressManager().forceSetOpenState(OPEN_STATE_ORAIONOKAMI, 1);
             }
+            ensureLevelConfigs();
             LEVELS.put(player.getUid(), loadPlayerLevels(player));
             syncOfferingNotify(player);
+            sendChainLevelSnapshot(player);
             Grasscutter.getLogger()
                     .debug(
                             "OfferingHelper login notify uid={} sakuraLv={} notifyOp={}",
@@ -412,8 +423,7 @@ public final class OfferingHelper {
         return true;
     }
 
-    /** Submitting: level up as many times as possible in one go, spending the available sigils, without
-     * granting rewards. Rewards go through TakeOfferingLevelReward. */
+    /** 按配置升级，自动奖励先过背包检查再扣材料。 */
     public static boolean tryLevelUp(Player player, int offeringId) {
         return tryLevelUp(player, offeringId, null);
     }
@@ -445,45 +455,269 @@ public final class OfferingHelper {
                 return true;
             }
             ensureProgressLoaded(player);
-            int previous = getLevel(player, offeringId);
-            int target = previous;
-            int failure = Retcode.RET_OFFERING_LEVEL_LIMIT_VALUE;
-            List<ItemParamData> costs = new ArrayList<>();
-            while (target < Integer.MAX_VALUE) {
-                var row = LEVEL_ROWS.get(levelKey(offeringId, target + 1));
-                if (row == null) break;
-                if (!row.supported) {
-                    failure = Retcode.RET_SVR_ERROR_VALUE;
-                    break;
+            UpgradePlan plan;
+            var inventory = player.getInventory();
+            try {
+                synchronized (inventory) {
+                    plan = planUpgrade(player, offeringId);
+                    if (plan.rows.isEmpty()) {
+                        sendOfferingRsp(player, offeringId, plan.failure, null, requestHeader);
+                        return true;
+                    }
+                    Runnable commit = () -> commitUpgrade(player, offeringId, plan);
+                    List<GameItem> items = materializeRewards(plan.bonuses);
+                    if (items.isEmpty()) {
+                        if (!inventory.payItems(plan.costs, 1, ActionReason.OfferingItem)) {
+                            sendOfferingRsp(
+                                    player,
+                                    offeringId,
+                                    Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE,
+                                    null,
+                                    requestHeader);
+                            return true;
+                        }
+                        commit.run();
+                    } else {
+                        // 奖励先过背包检查，再扣材料并记录本次升级。
+                        var result =
+                                inventory.addItems(
+                                        items,
+                                        ActionReason.OfferingItem,
+                                        InventoryAddPolicy.ALL_OR_NOTHING,
+                                        () ->
+                                                inventory.payItems(
+                                                        plan.costs, 1, ActionReason.OfferingItem),
+                                        commit);
+                        if (!result.allAccepted()) {
+                            int error =
+                                    result.entries().stream()
+                                                    .anyMatch(
+                                                            entry ->
+                                                                    entry.status()
+                                                                            == InventoryAddResult
+                                                                                    .Status
+                                                                                    .AUTHORIZATION_FAILED)
+                                            ? Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE
+                                            : Retcode.RET_ITEM_EXCEED_LIMIT_VALUE;
+                            sendOfferingRsp(player, offeringId, error, null, requestHeader);
+                            return true;
+                        }
+                    }
                 }
-                var candidate = new ArrayList<>(costs);
-                candidate.addAll(row.costs);
-                if (!player.getInventory().canPayItems(candidate, 1)) {
-                    failure = Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE;
-                    break;
-                }
-                costs = candidate;
-                target++;
-            }
-            if (target == previous) {
-                sendOfferingRsp(player, offeringId, failure, null, requestHeader);
-                return true;
-            }
-            // 所有材料一次校验和扣除，失败时不推进等级。
-            if (!player.getInventory().payItems(costs, 1, ActionReason.OfferingItem)) {
+            } catch (RuntimeException failure) {
+                Grasscutter.getLogger()
+                        .warn(
+                                "Offering upgrade failed uid={} offering={}",
+                                player.getUid(),
+                                offeringId,
+                                failure);
                 sendOfferingRsp(
-                        player,
-                        offeringId,
-                        Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE,
-                        null,
-                        requestHeader);
+                        player, offeringId, Retcode.RET_SVR_ERROR_VALUE, null, requestHeader);
                 return true;
             }
-            setLevel(player, offeringId, target);
-            sendOfferingRsp(player, offeringId, Retcode.RET_SUCC_VALUE, null, requestHeader, true);
+            try {
+                applyUpgradeActions(player, offeringId, plan);
+            } catch (RuntimeException failure) {
+                Grasscutter.getLogger()
+                        .warn(
+                                "Offering action notification failed uid={} offering={}",
+                                player.getUid(),
+                                offeringId,
+                                failure);
+            }
+            sendOfferingRsp(
+                    player, offeringId, Retcode.RET_SUCC_VALUE, plan.bonuses, requestHeader, true);
             syncOfferingNotify(player);
             return true;
         }
+    }
+
+    private record UpgradePlan(
+            int target,
+            int failure,
+            List<ItemParamData> costs,
+            List<ItemParamData> bonuses,
+            List<LevelRow> rows) {}
+
+    private static UpgradePlan planUpgrade(Player player, int offeringId) {
+        int target = getLevel(player, offeringId);
+        int failure = Retcode.RET_OFFERING_LEVEL_LIMIT_VALUE;
+        List<ItemParamData> costs = new ArrayList<>();
+        Map<Integer, Integer> bonuses = new LinkedHashMap<>();
+        List<LevelRow> rows = new ArrayList<>();
+        while (target < Integer.MAX_VALUE) {
+            var row = LEVEL_ROWS.get(levelKey(offeringId, target + 1));
+            if (row == null) break;
+            if (!row.supported) {
+                failure = Retcode.RET_SVR_ERROR_VALUE;
+                break;
+            }
+            var candidateCosts = new ArrayList<>(costs);
+            candidateCosts.addAll(row.costs);
+            if (!player.getInventory().canPayItems(candidateCosts, 1)) {
+                failure = Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE;
+                break;
+            }
+            var candidateBonuses = new LinkedHashMap<>(bonuses);
+            try {
+                if (row.automatic && row.rewardId > 0) {
+                    var reward = GameData.getRewardDataMap().get(row.rewardId);
+                    if (reward == null || reward.getAllRewardItems().isEmpty())
+                        throw new IllegalArgumentException("Missing automatic offering reward");
+                    for (var item : reward.getAllRewardItems())
+                        addBonus(candidateBonuses, item.getId(), item.getCount());
+                }
+                for (var action : row.actions) {
+                    if (action.type == OfferingActionType.SET_GADGET_CHAIN_LEVEL) {
+                        var config = gadgetChains.get(action.first);
+                        if (config == null || action.second > config.maximum)
+                            throw new IllegalArgumentException("Missing gadget chain config");
+                    } else if (action.type == OfferingActionType.GRANT_UNIQUE_ITEM
+                            && player.getInventory().getItemCountById(action.first) == 0
+                            && !candidateBonuses.containsKey(action.first)) {
+                        addBonus(candidateBonuses, action.first, 1);
+                    }
+                }
+            } catch (IllegalArgumentException | ArithmeticException invalid) {
+                failure = Retcode.RET_SVR_ERROR_VALUE;
+                break;
+            }
+            costs = candidateCosts;
+            bonuses = candidateBonuses;
+            rows.add(row);
+            target++;
+        }
+        var rewards =
+                bonuses.entrySet().stream()
+                        .map(entry -> new ItemParamData(entry.getKey(), entry.getValue()))
+                        .toList();
+        return new UpgradePlan(target, failure, costs, rewards, rows);
+    }
+
+    private static void addBonus(Map<Integer, Integer> bonuses, int itemId, int count) {
+        if (itemId <= 0 || count <= 0 || GameData.getItemDataMap().get(itemId) == null)
+            throw new IllegalArgumentException("Invalid offering bonus");
+        bonuses.merge(itemId, count, Math::addExact);
+    }
+
+    private static List<GameItem> materializeRewards(List<ItemParamData> rewards) {
+        List<GameItem> items = new ArrayList<>();
+        for (var item : rewards)
+            items.addAll(
+                    InventoryGrantBuilder.create(
+                            GameData.getItemDataMap().get(item.getId()), item.getCount(), 1));
+        return items;
+    }
+
+    private static void commitUpgrade(Player player, int offeringId, UpgradePlan plan) {
+        var taken = getTakenSet(player, offeringId);
+        for (var row : plan.rows) {
+            if (row.automatic) taken.add(row.level);
+            for (var action : row.actions) {
+                if (action.type == OfferingActionType.SET_QUEST_GLOBAL_VAR)
+                    player.getQuestGlobalVariables().put(action.first, action.second);
+            }
+        }
+        // 自动奖励领取标记和任务变量随等级一起保存。
+        setLevel(player, offeringId, plan.target);
+    }
+
+    private static void applyUpgradeActions(Player player, int offeringId, UpgradePlan plan) {
+        Map<Integer, Integer> variables = new LinkedHashMap<>();
+        Map<Integer, Integer> chains = new LinkedHashMap<>();
+        var scene = player.getScene();
+        var world = player.getWorld();
+        boolean ownsScene =
+                scene != null
+                        && world != null
+                        && world.getHost() != null
+                        && world.getHost().getUid() == player.getUid();
+        for (var row : plan.rows) {
+            for (var action : row.actions) {
+                switch (action.type) {
+                    case NOTIFY_GROUP -> {
+                        if (ownsScene)
+                            scene.getScriptManager()
+                                    .callEvent(
+                                            new ScriptArgs(
+                                                    action.first,
+                                                    EventType.EVENT_OFFERING_LEVELUP,
+                                                    offeringId,
+                                                    row.level));
+                    }
+                    case SET_GADGET_CHAIN_LEVEL -> chains.put(action.first, action.second);
+                    case SET_QUEST_GLOBAL_VAR -> variables.put(action.first, action.second);
+                    case GRANT_UNIQUE_ITEM -> {} // 道具已通过同一批背包发放。
+                }
+            }
+        }
+        variables.forEach(
+                (id, value) -> player.getQuestManager().triggerQuestGlobalVarAction(id, value));
+        if (!chains.isEmpty()) {
+            var change =
+                    GadgetChainLevelChangeNotify.newBuilder().putAllGadgetChainLevelMap(chains);
+            sendMessage(player, PacketOpcodes.GadgetChainLevelChangeNotify, change.build());
+            if (ownsScene) {
+                var packet = new BasePacket(PacketOpcodes._SceneOwnerGadgetChainLevelNotify);
+                packet.setData(
+                        SceneOwnerGadgetChainLevelNotify.newBuilder()
+                                .putAllGadgetChainLevelMap(chains));
+                world.broadcastPacket(packet);
+            }
+        }
+    }
+
+    public static Map<Integer, Integer> getGadgetChainLevels(Player player) {
+        ensureLevelConfigs();
+        Map<Integer, Integer> levels = new LinkedHashMap<>();
+        if (player == null || !levelsLoaded) return levels;
+        LEVEL_ROWS.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEach(
+                        entry -> {
+                            var row = entry.getValue();
+                            for (var action : row.actions) {
+                                if (action.type != OfferingActionType.SET_GADGET_CHAIN_LEVEL)
+                                    continue;
+                                var config = gadgetChains.get(action.first);
+                                if (config == null || action.second > config.maximum) continue;
+                                levels.putIfAbsent(action.first, config.initial);
+                                if (row.level <= getLevel(player, row.offeringId))
+                                    levels.put(action.first, action.second);
+                            }
+                        });
+        return levels;
+    }
+
+    private static void sendChainLevelSnapshot(Player player) {
+        var levels = getGadgetChainLevels(player);
+        if (!levels.isEmpty())
+            sendMessage(
+                    player,
+                    PacketOpcodes.GadgetChainLevelUpdateNotify,
+                    GadgetChainLevelUpdateNotify.newBuilder()
+                            .putAllGadgetChainLevelMap(levels)
+                            .build());
+    }
+
+    public static void sendSceneOwnerChainLevels(Player player, boolean entering) {
+        if (player == null || player.getWorld() == null || player.getWorld().getHost() == null)
+            return;
+        sendMessage(
+                player,
+                PacketOpcodes._SceneOwnerGadgetChainLevelNotify,
+                SceneOwnerGadgetChainLevelNotify.newBuilder()
+                        .setIsEnterWorld(entering)
+                        .putAllGadgetChainLevelMap(
+                                getGadgetChainLevels(player.getWorld().getHost()))
+                        .build());
+    }
+
+    private static void sendMessage(
+            Player player, int opcode, com.google.protobuf.MessageLite message) {
+        var packet = new BasePacket(opcode);
+        packet.setData(message);
+        player.sendPacket(packet);
     }
 
     /**
@@ -745,18 +979,85 @@ public final class OfferingHelper {
         return ((long) offeringId << 32) | Integer.toUnsignedLong(level);
     }
 
+    private enum OfferingActionType {
+        NOTIFY_GROUP,
+        SET_GADGET_CHAIN_LEVEL,
+        GRANT_UNIQUE_ITEM,
+        SET_QUEST_GLOBAL_VAR
+    }
+
+    private record OfferingAction(OfferingActionType type, int first, int second) {}
+
+    private record ChainConfig(int initial, int maximum) {}
+
+    private static volatile Map<Integer, ChainConfig> gadgetChains = Map.of();
+
     private static final class LevelRow {
         final int offeringId;
+        final int level;
         final int rewardId;
         final List<ItemParamData> costs;
         final boolean supported;
+        final boolean automatic;
+        final List<OfferingAction> actions;
 
-        LevelRow(int offeringId, int rewardId, List<ItemParamData> costs, boolean supported) {
+        LevelRow(
+                int offeringId,
+                int level,
+                int rewardId,
+                List<ItemParamData> costs,
+                boolean supported,
+                boolean automatic,
+                List<OfferingAction> actions) {
             this.offeringId = offeringId;
+            this.level = level;
             this.rewardId = rewardId;
             this.costs = List.copyOf(costs);
             this.supported = supported;
+            this.automatic = automatic;
+            this.actions = List.copyOf(actions);
         }
+    }
+
+    private static OfferingAction parseAction(com.google.gson.JsonObject entry) {
+        var type =
+                OfferingActionType.valueOf(
+                        entry.get("actionType")
+                                .getAsString()
+                                .replaceFirst("^OFFERING_ACTION_", ""));
+        String[] parts =
+                entry.has("param")
+                        ? entry.get("param").getAsString().split(",", -1)
+                        : new String[0];
+        int expected =
+                type == OfferingActionType.SET_GADGET_CHAIN_LEVEL
+                                || type == OfferingActionType.SET_QUEST_GLOBAL_VAR
+                        ? 2
+                        : 1;
+        if (parts.length != expected)
+            throw new IllegalArgumentException("Invalid offering action arguments");
+        int first = Integer.parseInt(parts[0].trim());
+        int second = expected == 2 ? Integer.parseInt(parts[1].trim()) : 0;
+        if (first <= 0 || (type == OfferingActionType.SET_GADGET_CHAIN_LEVEL && second < 0))
+            throw new IllegalArgumentException("Invalid offering action values");
+        return new OfferingAction(type, first, second);
+    }
+
+    private static Map<Integer, ChainConfig> parseGadgetChains(com.google.gson.JsonArray array) {
+        Map<Integer, ChainConfig> chains = new LinkedHashMap<>();
+        for (var element : array) {
+            var row = element.getAsJsonObject();
+            int id = row.get("chainId").getAsInt();
+            int initial = row.has("initLevel") ? row.get("initLevel").getAsInt() : 0;
+            int maximum = row.has("maxLevel") ? row.get("maxLevel").getAsInt() : 0;
+            if (id <= 0
+                    || initial < 0
+                    || maximum < initial
+                    || maximum <= 0
+                    || chains.putIfAbsent(id, new ChainConfig(initial, maximum)) != null)
+                throw new IllegalArgumentException("Invalid gadget chain config");
+        }
+        return Map.copyOf(chains);
     }
 
     private static Map<Long, LevelRow> parseLevelConfigs(com.google.gson.JsonArray array) {
@@ -791,8 +1092,9 @@ public final class OfferingHelper {
             }
             // 忍冬之树初始等级免费；其余缺少消耗的配置不能直接升级。
             if (costs.isEmpty() && !(id == 1 && level == 1)) supported = false;
-            if (object.has("isAutoTakeReward") && object.get("isAutoTakeReward").getAsBoolean())
-                supported = false;
+            boolean automatic =
+                    object.has("isAutoTakeReward") && object.get("isAutoTakeReward").getAsBoolean();
+            List<OfferingAction> actions = new ArrayList<>();
             if (object.has("condVec")) {
                 for (var action : object.getAsJsonArray("condVec")) {
                     if (!action.isJsonObject()) {
@@ -800,12 +1102,19 @@ public final class OfferingHelper {
                         break;
                     }
                     var entry = action.getAsJsonObject();
-                    // 额外动作尚未实现，不能先扣材料再跳过效果。
-                    if (entry.has("actionType") && !entry.get("actionType").getAsString().isBlank())
-                        supported = false;
+                    if (entry.has("actionType")
+                            && !entry.get("actionType").getAsString().isBlank()) {
+                        try {
+                            actions.add(parseAction(entry));
+                        } catch (IllegalArgumentException invalid) {
+                            supported = false;
+                        }
+                    }
                 }
             }
-            if (rows.putIfAbsent(levelKey(id, level), new LevelRow(id, rewardId, costs, supported))
+            if (rows.putIfAbsent(
+                            levelKey(id, level),
+                            new LevelRow(id, level, rewardId, costs, supported, automatic, actions))
                     != null)
                 throw new IllegalArgumentException("Duplicate offering level " + id + ":" + level);
         }
@@ -825,6 +1134,16 @@ public final class OfferingHelper {
                                 com.google.gson.JsonParser.parseString(
                                                 java.nio.file.Files.readString(path))
                                         .getAsJsonArray());
+                var chainPath =
+                        emu.grasscutter.utils.FileUtils.getExcelPath(
+                                "GadgetChainExcelConfigData.json");
+                gadgetChains =
+                        java.nio.file.Files.exists(chainPath)
+                                ? parseGadgetChains(
+                                        com.google.gson.JsonParser.parseString(
+                                                        java.nio.file.Files.readString(chainPath))
+                                                .getAsJsonArray())
+                                : Map.of();
                 LEVEL_ROWS.clear();
                 LEVEL_ROWS.putAll(rows);
                 levelsLoaded = true;
