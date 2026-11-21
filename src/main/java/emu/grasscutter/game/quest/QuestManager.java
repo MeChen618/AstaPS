@@ -31,6 +31,7 @@ public final class QuestManager extends BasePlayerManager {
 
     private long lastHourCheck = 0;
     private long lastDayCheck = 0;
+    private transient long nextRangeCheckTime;
 
     // One thread, not four: quest events mutate shared quest state and racing them corrupted it.
     public static final ExecutorService eventExecutor =
@@ -377,6 +378,12 @@ public final class QuestManager extends BasePlayerManager {
         this.checkTimeVars();
         // trigger game time tick for quests
         this.queueEvent(QuestContent.QUEST_CONTENT_GAME_TIME_TICK);
+        long now = System.currentTimeMillis();
+        var scene = this.getPlayer().getScene();
+        if (scene != null && now >= nextRangeCheckTime) {
+            nextRangeCheckTime = now + 1000;
+            this.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE_RANGE, scene.getId());
+        }
     }
 
     private void checkTimeVars() {
@@ -486,6 +493,10 @@ public final class QuestManager extends BasePlayerManager {
     }
 
     public void triggerQuestGlobalVarAction(int variable, int value) {
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_EQUAL, variable);
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_NOT_EQUAL, variable);
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_GREATER, variable);
+        this.queueEvent(QuestContent.QUEST_CONTENT_QUEST_GLOBAL_VAR_LESS, variable);
         this.queueEvent(QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_EQUAL, variable, value);
         this.queueEvent(QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_GREATER, variable, value);
         this.queueEvent(QuestCond.QUEST_COND_QUEST_GLOBAL_VAR_LESS, variable, value);
@@ -747,6 +758,14 @@ public final class QuestManager extends BasePlayerManager {
      * @param quest The ID of the quest.
      */
     public void checkQuestAlreadyFulfilled(GameQuest quest) {
+        java.util.stream.Stream.concat(
+                        quest.getQuestData().getFinishCond().stream(),
+                        quest.getQuestData().getFailCond().stream())
+                .filter(
+                        c ->
+                                emu.grasscutter.game.quest.content.ContentCurrentState.checkOnStart(
+                                        c.getType()))
+                .forEach(c -> queueEvent(c.getType()));
         if (isQuestingActive()) LiyueRescuePlotRecovery.replayReportedCompletion(quest);
         Grasscutter.getThreadPool()
                 .submit(
