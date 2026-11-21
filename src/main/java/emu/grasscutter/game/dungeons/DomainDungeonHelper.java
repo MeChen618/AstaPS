@@ -477,9 +477,8 @@ public final class DomainDungeonHelper {
         Scene scene = player.getScene();
         DungeonManager dungeonManager2 = dungeonManager = scene != null ? scene.getDungeonManager() : null;
         if (dungeonManager != null && dungeonManager.getDungeonData() != null && dungeonManager.getDungeonData().getId() == n3) {
-            player.getServer().getDungeonSystem().restartDungeon(player);
-            DomainDungeonHelper.onPlayerEnterDomain(player);
-            bl = true;
+            bl = player.getServer().getDungeonSystem().restartDungeon(player);
+            if (bl) DomainDungeonHelper.onPlayerEnterDomain(player);
         } else {
             bl = player.getServer().getDungeonSystem().enterDungeon(player, n2, n3, true);
             if (bl) {

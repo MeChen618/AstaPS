@@ -27,6 +27,7 @@ public class TestWorld extends World {
     /** Transfers seen while {@link #transferResult} is set; null runs the real transfer. */
     public List<TeleportProperties> transfers;
     public Boolean transferResult;
+    public java.util.function.BiConsumer<Player, TeleportProperties> transferEffect;
 
     private TestWorld() {
         super((Player) null); // Never runs: World's constructors need a running GameServer.
@@ -72,6 +73,7 @@ public class TestWorld extends World {
     public boolean transferPlayerToScene(Player player, TeleportProperties properties) {
         if (transferResult == null) return super.transferPlayerToScene(player, properties);
         transfers.add(properties);
+        if (transferResult && transferEffect != null) transferEffect.accept(player, properties);
         return transferResult;
     }
 

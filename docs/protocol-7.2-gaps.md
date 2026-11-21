@@ -2,22 +2,6 @@
 
 Only messages the server code uses are listed.
 
-## Public query and starter-boundary repair (2026-11-21)
-
-The 7.2.0 Android native CmdID getters and typed senders confirm world multiplayer information `3966 -> 5681` and force-quit-ban information `6686 -> 26490`. The world reply uses `is_in_mp_mode = 2`, `retcode = 5`, and `quit_mp_valid_time = 13`. The bool keeps its existing server compatibility name; its native consumer does not read it. Querying ban status no longer calls `leaveCoop`. No timed match-ban policy exists in this server, so valid players receive default no-ban status. Missing players/worlds receive errors.
-
-`PacketCancelCoopTaskRsp` used the unrelated, negative `SetCoopChapterViewedRsp` placeholder. It now sends its own existing CmdID **3565**, with chapter ID field 7 and retcode field 6. The unrelated viewed-chapter constant is corrected to its separately verified **29832**. Actual hangout cancellation remains unimplemented and returns an explicit failure rather than pretending that progress was cancelled.
-
-`PlayerWorldSceneInfoListNotify.unlocked_area_id_list` now uses native field **693**, replacing compatibility slot 20000. This preserves the existing area-snapshot contents; it does not verify all boundary gameplay. The starter-boundary gate (open state 47 / hidden quest 35001) also recognizes saved Lisa talks 30902 or 30904 in parent 311 **only after quest 30904 is finished**. Matching talk saves recheck the gate immediately, and the normal login recheck repairs old saved history. It does not start/finish hidden quests or unlock the gate from unrelated talks.
-
-The source audit resolves aliases and ignores comments, quoted text, disabled annotations, and `NONE`. Zero constants decrease **516 -> 513**, and enabled receiver names with a zero CmdID decrease **39 -> 37**. No positive receiver collisions are introduced. Among uniquely named reference matches, no positive server constant differs from the recovered current CmdID; this does not certify obfuscated or absent names. Seven identified receiver routes remain disabled: dungeon restart, offering submission, home-scene completion, home application result, drowning, train call, and world-player revival. Their replies, nested payloads, or handler behavior still require review; identifying the request alone is insufficient.
-
-Run `python tools/protocol-coverage.py --reference-cmdid /path/to/7.2.0/cmdid.csv` to reproduce the audit. Native getters, selected reader evidence, send-call sites, resource gates, and validation limits are recorded under `public_query_and_boundary_repair` in `protocol-7.2-verified-bindings.json`. The affected player save and a matching live client session remain untested.
-
-Validation: Java 21 / Gradle 9.8.1, **1,578 passed, 4 skipped, zero failures**, JAR build and ZIP integrity passed. The opcode source audit matches all 1,934 compiled constants. Integration-tagged tests and matching live-client playthroughs are excluded.
-
-The counts and lists below describe earlier recovery snapshots; this dated section supersedes them for these repaired routes and fields.
-
 ## Verified bindings in this update
 
 The initial recovery verified 40 CmdId bindings: enabled 34 missing bindings and corrected 6 stale active bindings. Corrected 80 field numbers. 30 corrections come from matched original native field accesses; the others use verified current named fields, including ascension and the swapped home resource value/capacity. Three conflicting legacy fields were moved to unused compatibility slots rather than overwriting the confirmed roles.

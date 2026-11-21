@@ -1,18 +1,25 @@
 package emu.grasscutter.game.entity.gadget;
 
-import emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify;
-import emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData;
-import emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp;
-import emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq;
-import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
 import emu.grasscutter.Grasscutter;
+import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.common.ItemParamData;
 import emu.grasscutter.game.entity.EntityGadget;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.InventoryGrantBuilder;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.BasePacket;
 import emu.grasscutter.net.packet.PacketOpcodes;
 import emu.grasscutter.net.proto.OfferingInfoOuterClass.OfferingInfo;
+import emu.grasscutter.net.proto.PlayerOfferingDataNotifyOuterClass.PlayerOfferingDataNotify;
+import emu.grasscutter.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData;
+import emu.grasscutter.net.proto.PlayerOfferingReqOuterClass.PlayerOfferingReq;
+import emu.grasscutter.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
+import emu.grasscutter.net.proto.TakeOfferingLevelRewardReqOuterClass.TakeOfferingLevelRewardReq;
+import emu.grasscutter.net.proto.TakeOfferingLevelRewardRspOuterClass.TakeOfferingLevelRewardRsp;
 import emu.grasscutter.utils.ProtoWire;
+
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -169,7 +176,7 @@ public final class OfferingHelper {
         TAKEN.computeIfAbsent(player.getUid(), u -> loadPlayerTaken(player));
     }
 
-    private static ConcurrentHashMap<Integer, Integer> loadPlayerLevels(Player player) {
+    private static synchronized ConcurrentHashMap<Integer, Integer> loadPlayerLevels(Player player) {
         ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
         try {
             for (int oid : GADGET_TO_OFFERING.values()) {
@@ -210,7 +217,7 @@ public final class OfferingHelper {
         return map;
     }
 
-    private static ConcurrentHashMap<Integer, java.util.Set<Integer>> loadPlayerTaken(Player player) {
+    private static synchronized ConcurrentHashMap<Integer, java.util.Set<Integer>> loadPlayerTaken(Player player) {
         ConcurrentHashMap<Integer, java.util.Set<Integer>> map = new ConcurrentHashMap<>();
         try {
             ensureLevelsFile();
@@ -243,7 +250,7 @@ public final class OfferingHelper {
         return map;
     }
 
-    private static void savePlayerProgress(int uid) {
+    private static synchronized void savePlayerProgress(int uid) {
         try {
             ensureLevelsFile();
             com.google.gson.JsonObject root = new com.google.gson.JsonObject();
@@ -294,8 +301,8 @@ public final class OfferingHelper {
 
     /**
      * The offering packets are still assembled field by field (so retcode 0 is always on the wire),
-     * but every field number comes from the generated 7.1 classes; they used to be pinned to a 7.0
-     * capture, which a 7.1 client reads as different fields.
+     * but every field number comes from the current generated classes; they used to be pinned to a
+     * 7.0 capture, which a 7.1 client reads as different fields.
      */
     private static byte[] wireOfferingData(Player player, int offeringId, boolean isNewMaxLevel) {
         ensureProgressLoaded(player);
@@ -411,117 +418,171 @@ public final class OfferingHelper {
         return tryLevelUp(player, offeringId, null);
     }
 
-    public static boolean tryLevelUp(Player player, int offeringId, byte[] requestHeader) {
-        if (player == null || offeringId <= 0) {
-            return false;
+    public static boolean handleOfferingRequest(
+            Player player, byte[] payload, byte[] requestHeader) {
+        if (player == null) return false;
+        int offeringId;
+        try {
+            offeringId =
+                    PlayerOfferingReq.parseFrom(payload == null ? new byte[0] : payload)
+                            .getOfferingId();
+        } catch (com.google.protobuf.InvalidProtocolBufferException invalid) {
+            sendOfferingRsp(player, 0, Retcode.RET_SVR_ERROR_VALUE, null, requestHeader);
+            return true;
         }
-        ensureLevelConfigs();
-        ensureProgressLoaded(player);
-        int cur = getLevel(player, offeringId);
-        int gained = 0;
-        int lastRewardId = 0;
+        return tryLevelUp(player, offeringId, requestHeader);
+    }
 
-        while (true) {
-            LevelRow next = LEVEL_ROWS.get(offeringId * 1000 + (cur + 1));
-            if (next == null) {
-                break;
+    public static boolean tryLevelUp(Player player, int offeringId, byte[] requestHeader) {
+        if (player == null) return false;
+        synchronized (player) {
+            ensureLevelConfigs();
+            if (!levelsLoaded
+                    || !isKnownOfferingId(offeringId)
+                    || !isOfferingOpen(player, offeringId)) {
+                sendOfferingRsp(
+                        player, 0, Retcode.RET_OFFERING_NOT_OPEN_VALUE, null, requestHeader);
+                return true;
             }
-            if (next.consumeId > 0 && next.consumeCount > 0) {
-                var inv = player.getInventory();
-                if (inv.getItemCountById(next.consumeId) < next.consumeCount) {
+            ensureProgressLoaded(player);
+            int previous = getLevel(player, offeringId);
+            int target = previous;
+            int failure = Retcode.RET_OFFERING_LEVEL_LIMIT_VALUE;
+            List<ItemParamData> costs = new ArrayList<>();
+            while (target < Integer.MAX_VALUE) {
+                var row = LEVEL_ROWS.get(levelKey(offeringId, target + 1));
+                if (row == null) break;
+                if (!row.supported) {
+                    failure = Retcode.RET_SVR_ERROR_VALUE;
                     break;
                 }
-                inv.removeItemById(next.consumeId, next.consumeCount);
+                var candidate = new ArrayList<>(costs);
+                candidate.addAll(row.costs);
+                if (!player.getInventory().canPayItems(candidate, 1)) {
+                    failure = Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE;
+                    break;
+                }
+                costs = candidate;
+                target++;
             }
-            cur = next.level;
-            lastRewardId = next.rewardId;
-            gained++;
-        }
-
-        if (gained == 0) {
-            LevelRow next = LEVEL_ROWS.get(offeringId * 1000 + (getLevel(player, offeringId) + 1));
-            if (next == null) {
-                sendOfferingRsp(
-                        player, offeringId, Retcode.RET_OFFERING_LEVEL_LIMIT_VALUE, null, requestHeader);
-            } else {
-                sendOfferingRsp(
-                        player, offeringId, Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE, null, requestHeader);
+            if (target == previous) {
+                sendOfferingRsp(player, offeringId, failure, null, requestHeader);
+                return true;
             }
+            // 所有材料一次校验和扣除，失败时不推进等级。
+            if (!player.getInventory().payItems(costs, 1, ActionReason.OfferingItem)) {
+                sendOfferingRsp(
+                        player,
+                        offeringId,
+                        Retcode.RET_ITEM_COUNT_NOT_ENOUGH_VALUE,
+                        null,
+                        requestHeader);
+                return true;
+            }
+            setLevel(player, offeringId, target);
+            sendOfferingRsp(player, offeringId, Retcode.RET_SUCC_VALUE, null, requestHeader, true);
             syncOfferingNotify(player);
             return true;
         }
-
-        setLevel(player, offeringId, cur);
-        // Do not stuff rewards into the Rsp item_list, which would pop an acquisition toast on level up.
-        // The reward page handles claiming.
-        sendOfferingRsp(player, offeringId, Retcode.RET_SUCC_VALUE, null, requestHeader, true);
-        syncOfferingNotify(player);
-
-        Grasscutter.getLogger()
-                .debug(
-                        "OfferingHelper offerAll uid={} offeringId={} ->{} steps={} lastRewardId={} (rewards pending claim)",
-                        player.getUid(),
-                        offeringId,
-                        cur,
-                        gained,
-                        lastRewardId);
-        return true;
     }
 
     /**
      * Claims one tier from the reward screen. TakeOfferingLevelRewardReq: offering_id=1, level=10.
      */
+    public static boolean handleRewardRequest(Player player, byte[] payload, byte[] requestHeader) {
+        if (player == null) return false;
+        try {
+            var request =
+                    TakeOfferingLevelRewardReq.parseFrom(payload == null ? new byte[0] : payload);
+            return tryTakeLevelReward(
+                    player, request.getOfferingId(), request.getLevel(), requestHeader);
+        } catch (com.google.protobuf.InvalidProtocolBufferException invalid) {
+            sendTakeRewardRsp(player, 0, 0, Retcode.RET_SVR_ERROR_VALUE, null, requestHeader);
+            return true;
+        }
+    }
+
     public static boolean tryTakeLevelReward(
             Player player, int offeringId, int takeLevel, byte[] requestHeader) {
-        if (player == null || offeringId <= 0 || takeLevel <= 0) {
-            return false;
-        }
-        ensureLevelConfigs();
-        ensureProgressLoaded(player);
-        int cur = getLevel(player, offeringId);
-        if (takeLevel > cur) {
-            sendTakeRewardRsp(
-                    player,
-                    offeringId,
-                    takeLevel,
-                    Retcode.RET_OFFERING_LEVEL_NOT_REACH_VALUE,
-                    null,
-                    requestHeader);
-            return true;
-        }
-        if (getTakenSet(player, offeringId).contains(takeLevel)) {
-            sendTakeRewardRsp(
-                    player,
-                    offeringId,
-                    takeLevel,
-                    Retcode.RET_OFFERING_LEVEL_HAS_TAKEN_VALUE,
-                    null,
-                    requestHeader);
-            return true;
-        }
-        LevelRow row = LEVEL_ROWS.get(offeringId * 1000 + takeLevel);
-        java.util.List<emu.grasscutter.data.common.ItemParamData> granted = new java.util.ArrayList<>();
-        if (row != null && row.rewardId > 0) {
-            var reward = emu.grasscutter.data.GameData.getRewardDataMap().get(row.rewardId);
-            if (reward != null && reward.getRewardItemList() != null) {
-                granted.addAll(reward.getRewardItemList());
-                player.getInventory()
-                        .addItemParamDatas(
-                                reward.getRewardItemList(),
-                                emu.grasscutter.game.props.ActionReason.OfferingItem);
-            }
-        }
-        markTaken(player, offeringId, takeLevel);
-        sendTakeRewardRsp(player, offeringId, takeLevel, Retcode.RET_SUCC_VALUE, granted, requestHeader);
-        syncOfferingNotify(player);
-        Grasscutter.getLogger()
-                .debug(
-                        "OfferingHelper takeReward uid={} offeringId={} level={} items={}",
-                        player.getUid(),
+        if (player == null) return false;
+        synchronized (player) {
+            ensureLevelConfigs();
+            if (!levelsLoaded
+                    || !isKnownOfferingId(offeringId)
+                    || !isOfferingOpen(player, offeringId)) {
+                sendTakeRewardRsp(
+                        player,
                         offeringId,
                         takeLevel,
-                        granted.size());
-        return true;
+                        Retcode.RET_OFFERING_NOT_OPEN_VALUE,
+                        null,
+                        requestHeader);
+                return true;
+            }
+            ensureProgressLoaded(player);
+            if (takeLevel <= 0 || takeLevel > getLevel(player, offeringId)) {
+                sendTakeRewardRsp(
+                        player,
+                        offeringId,
+                        takeLevel,
+                        Retcode.RET_OFFERING_LEVEL_NOT_REACH_VALUE,
+                        null,
+                        requestHeader);
+                return true;
+            }
+            if (getTakenSet(player, offeringId).contains(takeLevel)) {
+                sendTakeRewardRsp(
+                        player,
+                        offeringId,
+                        takeLevel,
+                        Retcode.RET_OFFERING_LEVEL_HAS_TAKEN_VALUE,
+                        null,
+                        requestHeader);
+                return true;
+            }
+            var row = LEVEL_ROWS.get(levelKey(offeringId, takeLevel));
+            var reward = row == null ? null : GameData.getRewardDataMap().get(row.rewardId);
+            List<ItemParamData> granted = reward == null ? List.of() : reward.getAllRewardItems();
+            List<GameItem> items = new ArrayList<>();
+            try {
+                if (granted.isEmpty())
+                    throw new IllegalArgumentException("Missing offering reward");
+                for (var item : granted) {
+                    if (item == null || item.getId() <= 0 || item.getCount() <= 0)
+                        throw new IllegalArgumentException("Invalid offering reward");
+                    items.addAll(
+                            InventoryGrantBuilder.create(
+                                    GameData.getItemDataMap().get(item.getId()),
+                                    item.getCount(),
+                                    1));
+                }
+            } catch (IllegalArgumentException invalid) {
+                sendTakeRewardRsp(
+                        player,
+                        offeringId,
+                        takeLevel,
+                        Retcode.RET_SVR_ERROR_VALUE,
+                        null,
+                        requestHeader);
+                return true;
+            }
+            // 背包拒收时保留未领取状态，允许玩家整理后重试。
+            if (!player.getInventory().addItems(items, ActionReason.OfferingItem).allAccepted()) {
+                sendTakeRewardRsp(
+                        player,
+                        offeringId,
+                        takeLevel,
+                        Retcode.RET_ITEM_EXCEED_LIMIT_VALUE,
+                        null,
+                        requestHeader);
+                return true;
+            }
+            markTaken(player, offeringId, takeLevel);
+            sendTakeRewardRsp(
+                    player, offeringId, takeLevel, Retcode.RET_SUCC_VALUE, granted, requestHeader);
+            syncOfferingNotify(player);
+            return true;
+        }
     }
 
     private static void sendTakeRewardRsp(
@@ -563,68 +624,16 @@ public final class OfferingHelper {
 
     public static boolean tryHandleUnknownOfferingReq(
             Player player, int opcode, byte[] payload, byte[] requestHeader) {
-        if (player == null) {
-            return false;
-        }
-        if (opcode == PacketOpcodes.TakeOfferingLevelRewardReq) {
-            int offeringId = OFFERING_ORAIONOKAMI;
-            int takeLevel = 0;
-            if (payload != null && payload.length > 0) {
-                try {
-                    com.google.protobuf.CodedInputStream in =
-                            com.google.protobuf.CodedInputStream.newInstance(payload);
-                    while (!in.isAtEnd()) {
-                        int tag = in.readTag();
-                        int field = tag >>> 3;
-                        if ((tag & 7) != 0) {
-                            in.skipField(tag);
-                            continue;
-                        }
-                        int v = in.readUInt32();
-                        if (field == TakeOfferingLevelRewardReq.OFFERING_ID_FIELD_NUMBER) {
-                            offeringId = v;
-                        } else if (field == TakeOfferingLevelRewardReq.LEVEL_FIELD_NUMBER) {
-                            takeLevel = v;
-                        }
-                    }
-                } catch (Throwable ignored) {
-                }
-            }
-            return tryTakeLevelReward(player, offeringId, takeLevel, requestHeader);
-        }
-        if (opcode != PacketOpcodes.PlayerOfferingReq) {
-            return false;
-        }
-        int offeringId = OFFERING_ORAIONOKAMI;
-        if (payload != null && payload.length > 0 && payload.length <= 64) {
-            try {
-                com.google.protobuf.CodedInputStream in =
-                        com.google.protobuf.CodedInputStream.newInstance(payload);
-                while (!in.isAtEnd()) {
-                    int tag = in.readTag();
-                    if ((tag & 7) == 0) {
-                        int v = in.readUInt32();
-                        if (v >= 1 && v <= 22 && isKnownOfferingId(v)) {
-                            offeringId = v;
-                            break;
-                        }
-                    } else {
-                        in.skipField(tag);
-                    }
-                }
-            } catch (Throwable ignored) {
-            }
-        }
-        Grasscutter.getLogger()
-                .debug(
-                        "OfferingHelper handle opcode {} as PlayerOfferingReq offeringId={}",
-                        opcode,
-                        offeringId);
-        return tryLevelUp(player, offeringId, requestHeader);
+        if (player == null || opcode <= 0) return false;
+        if (opcode == PacketOpcodes.TakeOfferingLevelRewardReq)
+            return handleRewardRequest(player, payload, requestHeader);
+        if (opcode == PacketOpcodes.PlayerOfferingReq)
+            return handleOfferingRequest(player, payload, requestHeader);
+        return false;
     }
 
     private static boolean isKnownOfferingId(int id) {
-        return GADGET_TO_OFFERING.containsValue(id) || id == OFFERING_ORAIONOKAMI;
+        return id > 0 && LEVEL_ROWS.values().stream().anyMatch(row -> row.offeringId == id);
     }
 
     /** Full sync of offering progress. */
@@ -697,16 +706,19 @@ public final class OfferingHelper {
                             wireItemParam(it.getId(), it.getCount()));
                 }
             }
-            ProtoWire.writeBytes(
-                    out,
-                    PlayerOfferingRsp.OFFERING_DATA_FIELD_NUMBER,
-                    wireOfferingData(player, offeringId, isNewMaxLevel));
+            if (offeringId > 0) {
+                ProtoWire.writeBytes(
+                        out,
+                        PlayerOfferingRsp.OFFERING_DATA_FIELD_NUMBER,
+                        wireOfferingData(player, offeringId, isNewMaxLevel));
+            }
             // retcode is always written out, including 0
             ProtoWire.writeUint32Force(out, PlayerOfferingRsp.RETCODE_FIELD_NUMBER, retcode);
             sendRaw(player, PacketOpcodes.PlayerOfferingRsp, out.toByteArray(), requestHeader);
             Grasscutter.getLogger()
                     .debug(
-                            "OfferingHelper Rsp uid={} offeringId={} level={} ret={} items={} op={}",
+                            "OfferingHelper Rsp uid={} offeringId={} level={} ret={} items={}"
+                                + " op={}",
                             player.getUid(),
                             offeringId,
                             getLevel(player, offeringId),
@@ -725,74 +737,100 @@ public final class OfferingHelper {
             java.util.List<emu.grasscutter.data.common.ItemParamData> items) {
         sendOfferingRsp(player, offeringId, retcode, items, null, false);
     }
-    private static final ConcurrentHashMap<Integer, LevelRow> LEVEL_ROWS = new ConcurrentHashMap<>();
+
+    private static final ConcurrentHashMap<Long, LevelRow> LEVEL_ROWS = new ConcurrentHashMap<>();
     private static volatile boolean levelsLoaded = false;
+
+    private static long levelKey(int offeringId, int level) {
+        return ((long) offeringId << 32) | Integer.toUnsignedLong(level);
+    }
 
     private static final class LevelRow {
         final int offeringId;
-        final int level;
         final int rewardId;
-        final int consumeId;
-        final int consumeCount;
+        final List<ItemParamData> costs;
+        final boolean supported;
 
-        LevelRow(int offeringId, int level, int rewardId, int consumeId, int consumeCount) {
+        LevelRow(int offeringId, int rewardId, List<ItemParamData> costs, boolean supported) {
             this.offeringId = offeringId;
-            this.level = level;
             this.rewardId = rewardId;
-            this.consumeId = consumeId;
-            this.consumeCount = consumeCount;
+            this.costs = List.copyOf(costs);
+            this.supported = supported;
         }
     }
 
-    private static void ensureLevelConfigs() {
-        if (levelsLoaded) {
-            return;
-        }
-        synchronized (LEVEL_ROWS) {
-            if (levelsLoaded) {
-                return;
+    private static Map<Long, LevelRow> parseLevelConfigs(com.google.gson.JsonArray array) {
+        Map<Long, LevelRow> rows = new LinkedHashMap<>();
+        for (var element : array) {
+            var object = element.getAsJsonObject();
+            int id = object.has("offeringId") ? object.get("offeringId").getAsInt() : 0;
+            int level = object.has("level") ? object.get("level").getAsInt() : 0;
+            if (id <= 0 || level <= 0) continue;
+            int rewardId = object.has("rewardId") ? object.get("rewardId").getAsInt() : 0;
+            List<ItemParamData> costs = new ArrayList<>();
+            boolean supported =
+                    rewardId >= 0
+                            && object.has("consumeItemConfigVec")
+                            && object.get("consumeItemConfigVec").isJsonArray();
+            if (supported) {
+                for (var cost : object.getAsJsonArray("consumeItemConfigVec")) {
+                    if (!cost.isJsonObject()) {
+                        supported = false;
+                        break;
+                    }
+                    var entry = cost.getAsJsonObject();
+                    int itemId = entry.has("id") ? entry.get("id").getAsInt() : 0;
+                    int count = entry.has("count") ? entry.get("count").getAsInt() : 0;
+                    if (itemId == 0 && count == 0) continue;
+                    if (itemId <= 0 || count <= 0) {
+                        supported = false;
+                        break;
+                    }
+                    costs.add(new ItemParamData(itemId, count));
+                }
             }
+            // 忍冬之树初始等级免费；其余缺少消耗的配置不能直接升级。
+            if (costs.isEmpty() && !(id == 1 && level == 1)) supported = false;
+            if (object.has("isAutoTakeReward") && object.get("isAutoTakeReward").getAsBoolean())
+                supported = false;
+            if (object.has("condVec")) {
+                for (var action : object.getAsJsonArray("condVec")) {
+                    if (!action.isJsonObject()) {
+                        supported = false;
+                        break;
+                    }
+                    var entry = action.getAsJsonObject();
+                    // 额外动作尚未实现，不能先扣材料再跳过效果。
+                    if (entry.has("actionType") && !entry.get("actionType").getAsString().isBlank())
+                        supported = false;
+                }
+            }
+            if (rows.putIfAbsent(levelKey(id, level), new LevelRow(id, rewardId, costs, supported))
+                    != null)
+                throw new IllegalArgumentException("Duplicate offering level " + id + ":" + level);
+        }
+        return rows;
+    }
+
+    private static void ensureLevelConfigs() {
+        if (levelsLoaded) return;
+        synchronized (LEVEL_ROWS) {
+            if (levelsLoaded) return;
             try {
-                // Same as everywhere else: follow the configured resource folder rather than
-                // assuming it is called "resources".
-                java.nio.file.Path p =
+                var path =
                         emu.grasscutter.utils.FileUtils.getExcelPath(
                                 "OfferingLevelUpExcelConfigData.json");
-                String json = java.nio.file.Files.readString(p);
-                // Lightweight parse that does not depend on Gson field-name differences.
-                var arr = new com.google.gson.JsonParser().parse(json).getAsJsonArray();
-                for (var el : arr) {
-                    var o = el.getAsJsonObject();
-                    int oid = o.has("offeringId") ? o.get("offeringId").getAsInt() : 0;
-                    int level = o.has("level") ? o.get("level").getAsInt() : 0;
-                    int rewardId = o.has("rewardId") ? o.get("rewardId").getAsInt() : 0;
-                    if (oid <= 0 || level <= 0) {
-                        continue;
-                    }
-                    int consumeId = 0;
-                    int consumeCount = 0;
-                    if (o.has("consumeItemConfigVec") && o.get("consumeItemConfigVec").isJsonArray()) {
-                        for (var c : o.getAsJsonArray("consumeItemConfigVec")) {
-                            if (!c.isJsonObject()) {
-                                continue;
-                            }
-                            var co = c.getAsJsonObject();
-                            int id = co.has("id") ? co.get("id").getAsInt() : 0;
-                            int cnt = co.has("count") ? co.get("count").getAsInt() : 0;
-                            if (id > 0 && cnt > 0) {
-                                consumeId = id;
-                                consumeCount = cnt;
-                                break;
-                            }
-                        }
-                    }
-                    LEVEL_ROWS.put(oid * 1000 + level, new LevelRow(oid, level, rewardId, consumeId, consumeCount));
-                }
+                var rows =
+                        parseLevelConfigs(
+                                com.google.gson.JsonParser.parseString(
+                                                java.nio.file.Files.readString(path))
+                                        .getAsJsonArray());
+                LEVEL_ROWS.clear();
+                LEVEL_ROWS.putAll(rows);
                 levelsLoaded = true;
+            } catch (Exception exception) {
                 Grasscutter.getLogger()
-                        .debug("OfferingHelper loaded {} level rows", LEVEL_ROWS.size());
-            } catch (Throwable t) {
-                Grasscutter.getLogger().warn("OfferingHelper load levels failed: {}", t.toString());
+                        .warn("Offering levels could not be loaded: {}", exception.toString());
             }
         }
     }

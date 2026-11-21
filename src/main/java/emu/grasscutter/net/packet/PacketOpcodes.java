@@ -2613,7 +2613,7 @@ public final class PacketOpcodes {
     public static final int BargainTerminateNotify = 5746; // 7.1: 7831
     public static final int HomeLimitedShopInfoRsp = 22429; // 7.1: 2652
     public static final int ReunionBriefInfoReq = 4610; // 7.1: 5886
-    public static final int DungeonRestartReq = 0; // 7.2 CmdId unknown (7.1: 9381)
+    public static final int DungeonRestartReq = 7857;
     // public static final int OfferingPariSearchRsp = 25683;
     public static final int PushTipsChangeNotify = 22373; // 7.1: 4737
     public static final int DragonSpineCoinChangeNotify = 0; // 7.2 CmdId unknown (7.1: 24405)
@@ -2892,7 +2892,7 @@ public final class PacketOpcodes {
     // public static final int NJAABBHJMHC = 2964;
     // public static final int NGCINBOFFMJ = 27068;
     // public static final int KAOPMFDDDAD = 2162;
-    public static final int DungeonRestartRsp = 0; // 7.2 CmdId unknown (7.1: 25275)
+    public static final int DungeonRestartRsp = 9666;
     public static final int EvtFaceToDirNotify = 20780; // 7.1: 6608
     // public static final int LNHGOKMJLOH = 21976;
     // public static final int ILMFEODGCFB = 1954;
@@ -3065,7 +3065,7 @@ public final class PacketOpcodes {
     public static final int HCEMMAHMHLE_Req = -1011; // no 7.1 CmdId known
     public static final int MusicGameBookAllDataNotify = 7274; // 7.1: 8786
     public static final int Opcode6231 = -1012; // no 7.1 CmdId known
-    public static final int PlayerOfferingReq = 0; // 7.2 CmdId unknown (7.1: 4465)
+    public static final int PlayerOfferingReq = 148;
     public static final int PushTipsReadFinishReq = 23199; // 7.1: 22209
     public static final int SetCoopChapterViewedRsp = 29832;
     public static final int SetReliquaryStarStateReq = 4737; // 7.1: 5672
