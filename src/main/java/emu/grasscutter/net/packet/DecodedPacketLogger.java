@@ -21,12 +21,12 @@ public final class DecodedPacketLogger {
     private DecodedPacketLogger() {}
 
     /**
-     * Log a packet independently of whether the server has a handler for its opcode.
-     * Payload decoding is optional, and undecodable bytes remain available for debugging.
+     * Log a packet independently of whether the server has a handler for its opcode. Payload
+     * decoding is optional, and undecodable bytes remain available for debugging.
      */
     public static void logDecodedPacket(GameSession session, String direction, int opcode,
             byte[] payload, PacketHandler handler) {
-        if (payload == null || !shouldDump(opcode)) {
+        if (payload == null || !shouldDump(opcode, "RECV".equals(direction), handler)) {
             return;
         }
 
@@ -90,12 +90,17 @@ public final class DecodedPacketLogger {
     }
 
     static boolean shouldDump(int opcode) {
+        return shouldDump(opcode, false, null);
+    }
+
+    static boolean shouldDump(int opcode, boolean received, PacketHandler handler) {
         if (PacketOpcodes.BANNED_PACKETS.contains(opcode)) {
             return false;
         }
         return switch (GAME_INFO.logPackets) {
             case ALL -> !PacketOpcodesUtils.LOOP_PACKETS.contains(opcode)
                     || GAME_INFO.isShowLoopPackets;
+            case MISSING -> received && handler == null;
             case WHITELIST -> SERVER.debugWhitelist.contains(opcode);
             case BLACKLIST -> !SERVER.debugBlacklist.contains(opcode);
             default -> false;

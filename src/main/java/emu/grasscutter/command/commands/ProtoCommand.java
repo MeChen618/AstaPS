@@ -11,6 +11,8 @@ import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
 import com.google.protobuf.Descriptors;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import picocli.CommandLine;
@@ -161,7 +163,7 @@ public final class ProtoCommand implements CommandHandler {
         }
     }
 
-    @CommandLine.Command(name = "mode", description = "Set packet logging mode: none, all, whitelist, or blacklist.")
+    @CommandLine.Command(name = "mode", description = "Set packet logging mode: none, all, missing, whitelist, or blacklist.")
     private static final class Mode implements Runnable {
         private final Player sender;
 
@@ -177,12 +179,13 @@ public final class ProtoCommand implements CommandHandler {
             ServerDebugMode selected = switch (mode.toLowerCase(java.util.Locale.ROOT)) {
                 case "none" -> ServerDebugMode.NONE;
                 case "all" -> ServerDebugMode.ALL;
+                case "missing" -> ServerDebugMode.MISSING;
                 case "whitelist" -> ServerDebugMode.WHITELIST;
                 case "blacklist" -> ServerDebugMode.BLACKLIST;
                 default -> null;
             };
             if (selected == null) {
-                report(sender, "Unknown packet logging mode. Use none, all, whitelist, or blacklist.");
+                report(sender, "Unknown packet logging mode. Use none, all, missing, whitelist, or blacklist.");
                 return;
             }
             GAME_INFO.logPackets = selected;
@@ -240,11 +243,11 @@ public final class ProtoCommand implements CommandHandler {
         private final Player sender;
         private final boolean whitelist;
 
-        @Parameters(index = "0", paramLabel = "<add|remove>")
+        @Parameters(index = "0", paramLabel = "<add|remove|clear>")
         private String action;
 
-        @Parameters(index = "1", paramLabel = "<opcode>")
-        private int opcode;
+        @Parameters(index = "1", arity = "0..*", paramLabel = "[opcode...]")
+        private List<Integer> opcodes = new ArrayList<>();
 
         private OpcodeFilter(Player sender, boolean whitelist) {
             this.sender = sender;
@@ -253,43 +256,70 @@ public final class ProtoCommand implements CommandHandler {
 
         @Override
         public void run() {
-            if (opcode <= 0) {
-                report(sender, "Opcode must be a positive integer.");
+            String normalizedAction = action.toLowerCase(java.util.Locale.ROOT);
+            if (!normalizedAction.equals("add")
+                    && !normalizedAction.equals("remove")
+                    && !normalizedAction.equals("clear")) {
+                report(sender, "Expected add, remove, or clear.");
                 return;
             }
 
             Set<Integer> configured = whitelist ? currentWhitelist() : currentBlacklist();
             var updated = new TreeSet<>(configured);
-            String normalizedAction = action.toLowerCase(java.util.Locale.ROOT);
-            if (!normalizedAction.equals("add") && !normalizedAction.equals("remove")) {
-                report(sender, "Expected add or remove.");
-                return;
-            }
-            boolean changed =
-                    normalizedAction.equals("add") ? updated.add(opcode) : updated.remove(opcode);
-
-            Set<Integer> result = Set.copyOf(updated);
-            if (whitelist) {
-                SERVER.debugWhitelist = result;
+            if (normalizedAction.equals("clear")) {
+                if (!opcodes.isEmpty()) {
+                    report(sender, "Clear does not accept opcodes.");
+                    return;
+                }
+                updated.clear();
             } else {
-                SERVER.debugBlacklist = result;
+                if (opcodes.isEmpty()) {
+                    report(sender, "At least one opcode is required for add or remove.");
+                    return;
+                }
+                for (int opcode : opcodes) {
+                    if (opcode <= 0) {
+                        report(sender, "Opcode must be a positive integer.");
+                        return;
+                    }
+                }
+
+                for (int opcode : opcodes) {
+                    if (normalizedAction.equals("add")) {
+                        updated.add(opcode);
+                    } else {
+                        updated.remove(opcode);
+                    }
+                }
+            }
+
+            if (whitelist) {
+                SERVER.debugWhitelist = Set.copyOf(updated);
+            } else {
+                SERVER.debugBlacklist = Set.copyOf(updated);
             }
 
             String filterName = whitelist ? "Whitelist" : "Blacklist";
-            report(sender, changed
-                    ? filterName + (normalizedAction.equals("add") ? " added " : " removed ") + opcode + "."
-                    : filterName + " already had no change for opcode " + opcode + ".");
+            if (normalizedAction.equals("clear")) {
+                report(sender, configured.isEmpty()
+                        ? filterName + " was already empty."
+                        : filterName + " cleared.");
+            } else {
+                report(sender, configured.equals(updated)
+                        ? filterName + " already had no change for opcodes " + opcodes + "."
+                        : filterName + (normalizedAction.equals("add") ? " added " : " removed ") + opcodes + ".");
+            }
         }
     }
 
-    @CommandLine.Command(name = "whitelist", description = "Add or remove an opcode from the packet whitelist.")
+    @CommandLine.Command(name = "whitelist", description = "Add, remove, or clear packet whitelist opcodes.")
     private static final class Whitelist extends OpcodeFilter {
         private Whitelist(Player sender) {
             super(sender, true);
         }
     }
 
-    @CommandLine.Command(name = "blacklist", description = "Add or remove an opcode from the packet blacklist.")
+    @CommandLine.Command(name = "blacklist", description = "Add, remove, or clear packet blacklist opcodes.")
     private static final class Blacklist extends OpcodeFilter {
         private Blacklist(Player sender) {
             super(sender, false);

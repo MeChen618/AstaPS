@@ -24,19 +24,35 @@ final class ProtoCommandTest {
         assertEquals("grasscutter.command.debug", ProtoCommand.class.getAnnotation(Command.class).permission());
         assertDoesNotThrow(() -> command.parseArgs());
         assertDoesNotThrow(() -> command.parseArgs("mode", "whitelist"));
+        assertDoesNotThrow(() -> command.parseArgs("mode", "mising"));
         assertDoesNotThrow(() -> command.parseArgs("payload", "on"));
         assertDoesNotThrow(() -> command.parseArgs("loops", "off"));
         assertDoesNotThrow(() -> command.parseArgs("whitelist", "add", "123"));
+        assertDoesNotThrow(() -> command.parseArgs("whitelist", "add", "123", "124"));
         assertDoesNotThrow(() -> command.parseArgs("blacklist", "remove", "123"));
+        assertDoesNotThrow(() -> command.parseArgs("blacklist", "remove", "123", "124"));
+        assertDoesNotThrow(() -> command.parseArgs("whitelist", "clear"));
+        assertDoesNotThrow(() -> command.parseArgs("blacklist", "clear"));
         assertDoesNotThrow(() -> command.parseArgs("info", "2060"));
     }
 
     @Test
-    void filtersRequireAnActionAndOpcode() {
+    void filtersRejectNonNumericOpcodes() {
         var command = new ProtoCommand().createCommandLine(null, null);
 
-        assertThrows(CommandLine.ParameterException.class, () -> command.parseArgs("whitelist", "add"));
         assertThrows(CommandLine.ParameterException.class, () -> command.parseArgs("blacklist", "remove", "abc"));
+    }
+
+    @Test
+    void modeCommandSupportsUnhandledMode() {
+        var previousMode = GAME_INFO.logPackets;
+        try {
+            var command = new ProtoCommand().createCommandLine(null, null);
+            command.execute("mode", "missing");
+            assertEquals(ServerDebugMode.MISSING, GAME_INFO.logPackets);
+        } finally {
+            GAME_INFO.logPackets = previousMode;
+        }
     }
 
     @Test
@@ -54,14 +70,23 @@ final class ProtoCommandTest {
             command.execute("mode", "whitelist");
             command.execute("payload", "on");
             command.execute("loops", "on");
-            command.execute("whitelist", "add", "123");
-            command.execute("blacklist", "add", "456");
+            command.execute("whitelist", "add", "123", "124");
+            command.execute("blacklist", "add", "456", "789");
+
+            assertEquals(Set.of(123, 124), SERVER.debugWhitelist);
+            assertEquals(Set.of(456, 789), SERVER.debugBlacklist);
+
+            command.execute("whitelist", "remove", "123", "124");
+            assertEquals(Set.of(), SERVER.debugWhitelist);
+            command.execute("whitelist", "add", "123", "124");
+            command.execute("whitelist", "clear");
+            command.execute("blacklist", "clear");
 
             assertEquals(ServerDebugMode.WHITELIST, GAME_INFO.logPackets);
             assertTrue(GAME_INFO.isShowPacketPayload);
             assertTrue(GAME_INFO.isShowLoopPackets);
-            assertEquals(Set.of(123), SERVER.debugWhitelist);
-            assertEquals(Set.of(456), SERVER.debugBlacklist);
+            assertEquals(Set.of(), SERVER.debugWhitelist);
+            assertEquals(Set.of(), SERVER.debugBlacklist);
         } finally {
             GAME_INFO.logPackets = previousMode;
             GAME_INFO.isShowPacketPayload = previousPayload;

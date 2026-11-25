@@ -61,6 +61,12 @@ final class DecodedPacketLoggerTest {
             GAME_INFO.logPackets = ServerDebugMode.BLACKLIST;
             assertFalse(DecodedPacketLogger.shouldDump(987654));
             assertTrue(DecodedPacketLogger.shouldDump(123456));
+
+            GAME_INFO.logPackets = ServerDebugMode.MISSING;
+            assertTrue(DecodedPacketLogger.shouldDump(987654, true, null));
+            assertFalse(DecodedPacketLogger.shouldDump(987654, false, null));
+            assertFalse(DecodedPacketLogger.shouldDump(
+                    987654, true, new HandlerUnionCmdNotify()));
         } finally {
             GAME_INFO.logPackets = oldMode;
             GAME_INFO.isShowLoopPackets = oldLoops;
