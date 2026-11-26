@@ -89,7 +89,6 @@ Parked at field 20000 and up until verified. These are not current client field 
 - `EvtBeingHealedNotify`: GOKLCPHOLGL, real_heal_amount, CMCCNKMGKHG, heal_amount
 - `EvtBulletHitNotify`: single_bullet_id, hit_entity_id
 - `EvtCreateGadgetNotify`: AAMABJDMIFN, NHNFGNMNDDE, LMLMALLLGBB, PBLACGNNCDF
-- `ForgeQueueData`: next_finish_timestamp, unfinish_count, queue_id, total_finish_timestamp
 - `FurnitureMakeRsp`: NDADFCDJOBK
 - `GadgetInteractReq`: DOGHJJCHDLF, IKMNHOHNBKJ, LPCDPGNKGFL, IKDIFBEOEKM, HDJABIODGCI, EBEELPIEKEL
 - `GetAllMailResultNotify`: total_page_count, page_index
@@ -130,7 +129,7 @@ Parked at field 20000 and up until verified. These are not current client field 
 - `SceneTeamAvatar`: tps_weapon_list
 - `Shop`: city_reputation_level, hogdkcckgap
 - `ShopGoods`: MEODDILKAAD, ELPGDNACFOA, mcoin, OCFMGIPGLDK, scoin, HBFOJABHIND, AJCBLGEDLFK, single_limit, NGPHJJIEDEH, MMMFLNHEDNI, LDCJFLOPNMP, AIALJDFIEAI, EKBHAAKJINF, KAGKMENGAFH, MBMIKDBJNAN, DCMBDJMCGGP
-- `StoreWeightLimitNotify`: CDHAIJGOKFC, DKIEKFJMMIH, OAJHCKBKFPP, reliquary_count_limit, KADABCKKMGA, _beyond_hall_facility_count_limit
+- `StoreWeightLimitNotify`: CDHAIJGOKFC, DKIEKFJMMIH, OAJHCKBKFPP, reliquary_count_limit, KADABCKKMGA, \_beyond_hall_facility_count_limit
 - `TeamEnterSceneInfo`: JFAHOBMFLFE, FOMPMBNENPH
 - `TowerAllDataRsp`: commemorative_reward_id, EFABCDDNIFA, valid_tower_record_num, skip_to_floor_index, GKIFECKDHKD
 - `TowerCurLevelRecord`: cur_level_index, cur_floor_id
@@ -138,7 +137,7 @@ Parked at field 20000 and up until verified. These are not current client field 
 - `TowerLevelStarCondData`: cond_value, star_cond_index
 - `TpsAmmunitionChange`: ammunition_config_id
 - `TrialAvatarActivityDetailInfo`: CBPJGGEBMBI
-- `TrialAvatarActivityRewardDetailInfo`: _passed_training_step_list, _available_training_step_list, _is_avatar_owned, passed_dungeon, _is_skip_training
+- `TrialAvatarActivityRewardDetailInfo`: \_passed_training_step_list, \_available_training_step_list, \_is_avatar_owned, passed_dungeon, \_is_skip_training
 - `UgcMusicBriefInfo`: CCJOGFPEKID, COAEPKLMKPE, self_max_score, HHBOBIJKFPJ, NLCMMJILBKJ, IIPJKAOBBBD, MOIDOMCHPFG, note_count, CDEMBFGJAPH
 - `WeaponPromoteRsp`: old_promote_level, cur_promote_level
 - `WorldPlayerDieNotify`: OBOKABMLGHI, murderer_entity_id, AOMDIHGJMNK
@@ -147,46 +146,46 @@ Parked at field 20000 and up until verified. These are not current client field 
 
 Pairs where a message has exactly one unmatched 7.1 field and one unmatched 7.2 field of the same type (`recover_lost_72.py --single`). Not applied: check each against a capture first.
 
-- AbilityMetaModifierChange.MFBDIICANOF: 20000 -> 2  (7.1 LFGDCBHDFIL = 7.2 JHCJKEDLDAD, single-message)
-- AbilityMetaModifierChange.OCAMKBCONED: 20003 -> 4  (7.1 GMEPMCLHEDP = 7.2 HKFKIALDHIO, single-message)
-- AbilityMetaUpdateMoonOvergrowValue.FOMPMBNENPH: 20000 -> 11  (7.1 GCNOLPNPHPA = 7.2 value, single-message)
-- TpsAmmunitionChange.ammunition_config_id: 20000 -> 6  (7.1 PPFJCENMNEO = 7.2 item_id, single-message)
-- AbilityMetaUpdateTpsWeaponAmmunition.FENKFADBDID: 20000 -> 1  (7.1 FENKFADBDID = 7.2 AEIMHKMPHOG, single-message)
-- TrialAvatarActivityDetailInfo.CBPJGGEBMBI: 20000 -> 6  (7.1 MMHPPBIEGFG = 7.2 OIEPLMDMEAM, single-message)
-- OneoffGatherPointDetectorData.CBENILCDDCB: 20000 -> 1  (7.1 HDCCPLEDJMH = 7.2 CDLEKEGELMD, single-message)
-- AvatarInfo.tps_weapon_list: 20000 -> 37  (7.1 MJGFMDADPJE = 7.2 weapon_list, single-message)
-- SceneAvatarInfo.tps_weapon_list: 20000 -> 31  (7.1 MJGFMDADPJE = 7.2 weapon_list, single-message)
-- AvatarEnterSceneInfo.tps_weapon_list: 20000 -> 12  (7.1 LMAIAOIPHJL = 7.2 weapon_list, single-message)
-- BattlePassSchedule.JIPEKMKKHOI: 20000 -> 8  (7.1 DFDNNGJHJIC = 7.2 AMBABCAPMGE, single-message)
-- ShopGoods.KAGKMENGAFH: 20013 -> 1055  (7.1 AEHELDJPPPH = 7.2 LAJHLJGOMPH, single-message)
-- CardProductRewardNotify.OABOKBGPEHG: 20000 -> 8  (7.1 DDOINBPHJMP = 7.2 FOFGCGMLPIB, single-message)
-- ChatInfo.ALKIPKCAPFL: 20000 -> 4  (7.1 LOEJDBPKKNF = 7.2 MIBOFEIBECN, single-message)
-- CodexDataUpdateNotify.OBEHJKBNDJG: 20000 -> 2  (7.1 NELOMLLAKME = 7.2 KBGFCJCMNFP, single-message)
-- DailyDungeonEntryInfo.ODDLACNLJOF: 20000 -> 1  (7.1 HAOOOFEBAMI = 7.2 BMOKOMEOKCP, single-message)
-- EnterSceneDoneRsp.PPKIKFGEINK: 20000 -> 12  (7.1 OGCIHDJAHHL = 7.2 MFLHLEMFIGI, single-message)
-- EntityFightPropChangeReasonNotify.EFIBMPKIJJH: 20000 -> 3  (7.1 HNBCFDELLDN = 7.2 GCFBFOHHHJJ, single-message)
-- EvtBeingHealedNotify.CMCCNKMGKHG: 20002 -> 13  (7.1 AFAHAOFIJJO = 7.2 is_mute, single-message)
-- EvtBeingHealedNotify.GOKLCPHOLGL: 20000 -> 2  (7.1 JONDCAMLJOF = 7.2 heal_tag, single-message)
-- ParentQuest.GFFBOKNBJLC: 20000 -> 7  (7.1 PAJJMIMGHHI = 7.2 KANNCEMKHIG, single-message)
-- FurnitureMakeRsp.NDADFCDJOBK: 20000 -> 11  (7.1 IKCDMDEPMDC = 7.2 OEGCONFIHLI, single-message)
-- IceCreatureAllGadgetInfoNotify.ice_creature_gadget_info_list: 20000 -> 10  (7.1 _ice_creature_gadget_info_list = 7.2 _ice_creature_info_list, single-message)
-- IceCreatureBuildReq.global_value_list: 20001 -> 4  (7.1 LNLLJKPOIOL = 7.2 FLJBADCNDMB, single-message)
-- IceCreatureBuildReq.unk_11: 20002 -> 12  (7.1 IFBHPHJDCEO = 7.2 JCNJDMFCMHM, single-message)
-- IceCreatureGadgetRemoveReq.unk_15: 20000 -> 11  (7.1 IIMAFOBOEMA = 7.2 FCBLDNACNJK, single-message)
-- InvestigationMonsterUpdateNotify.JDEPBCMJPOP: 20000 -> 4  (7.1 GAKDKMHBFGA = 7.2 ICDBOBCNCMB, single-message)
-- MarkTargetInvestigationMonsterNotify.GHPPPJJLDJN: 20000 -> 5  (7.1 ILJJLKDMFIK = 7.2 JNLDEIPGDPI, single-message)
-- TeamEnterSceneInfo.FOMPMBNENPH: 20002 -> 9  (7.1 GCNOLPNPHPA = 7.2 AGJIEAHJPJC, single-message)
-- PlayerEnterSceneNotify.ALLIIBMKFLN: 20001 -> 763  (7.1 NJEOMOIDMNM = 7.2 LFPEKBJIJNG, single-message)
-- PlayerEnterSceneNotify.BGICEPHCGEO: 20003 -> 46  (7.1 NJDJMFJCMBM = 7.2 LMKLCDPJOBJ, single-message)
-- PlayerLocationInfo.HPOIENCPHFN: 20000 -> 4  (7.1 IEPPHCJANGA = 7.2 HFFCDKKCIMN, single-message)
-- PlayerLoginRsp.KKNBKGBLHDM: 20002 -> 265  (7.1 HMMPPDIBFAO = 7.2 HIHJANHKAMO, single-message)
-- PlayerLoginRsp.stop_server_info: 20000 -> 1314  (7.1 BMCDKDDKIBH = 7.2 LBDHEONCLNL, single-message)
-- PlayerOfferingData.taken_random_level_reward_map: 20000 -> 2  (7.1 PKOKLIFNFIB = 7.2 CBMCLHIIEKD, single-message)
-- PlayerWorldSceneInfoListNotify.IIFJABJJJBF: 20000 -> 693  (7.1 FMIPEDBGOMN = 7.2 unlocked_area_id_list, single-message)
-- QueryPathRsp.FBLCJIHADLH: 20001 -> 3  (7.1 MLPCGBFDBGC = 7.2 OCOOOCJJPCC, single-message)
-- QueryPathRsp.INAAJKIFKIF: 20000 -> 10  (7.1 ANBCOBHEMFO = 7.2 EGDBEDNAFGL, single-message)
-- QuestTransmitReq.NCEIBFLFIPM: 20000 -> 13  (7.1 EOPPLJLCEIJ = 7.2 HEJLIMPMKLL, single-message)
-- SceneTeamAvatar.tps_weapon_list: 20000 -> 645  (7.1 LMAIAOIPHJL = 7.2 weapon_list, single-message)
+- AbilityMetaModifierChange.MFBDIICANOF: 20000 -> 2 (7.1 LFGDCBHDFIL = 7.2 JHCJKEDLDAD, single-message)
+- AbilityMetaModifierChange.OCAMKBCONED: 20003 -> 4 (7.1 GMEPMCLHEDP = 7.2 HKFKIALDHIO, single-message)
+- AbilityMetaUpdateMoonOvergrowValue.FOMPMBNENPH: 20000 -> 11 (7.1 GCNOLPNPHPA = 7.2 value, single-message)
+- TpsAmmunitionChange.ammunition_config_id: 20000 -> 6 (7.1 PPFJCENMNEO = 7.2 item_id, single-message)
+- AbilityMetaUpdateTpsWeaponAmmunition.FENKFADBDID: 20000 -> 1 (7.1 FENKFADBDID = 7.2 AEIMHKMPHOG, single-message)
+- TrialAvatarActivityDetailInfo.CBPJGGEBMBI: 20000 -> 6 (7.1 MMHPPBIEGFG = 7.2 OIEPLMDMEAM, single-message)
+- OneoffGatherPointDetectorData.CBENILCDDCB: 20000 -> 1 (7.1 HDCCPLEDJMH = 7.2 CDLEKEGELMD, single-message)
+- AvatarInfo.tps_weapon_list: 20000 -> 37 (7.1 MJGFMDADPJE = 7.2 weapon_list, single-message)
+- SceneAvatarInfo.tps_weapon_list: 20000 -> 31 (7.1 MJGFMDADPJE = 7.2 weapon_list, single-message)
+- AvatarEnterSceneInfo.tps_weapon_list: 20000 -> 12 (7.1 LMAIAOIPHJL = 7.2 weapon_list, single-message)
+- BattlePassSchedule.JIPEKMKKHOI: 20000 -> 8 (7.1 DFDNNGJHJIC = 7.2 AMBABCAPMGE, single-message)
+- ShopGoods.KAGKMENGAFH: 20013 -> 1055 (7.1 AEHELDJPPPH = 7.2 LAJHLJGOMPH, single-message)
+- CardProductRewardNotify.OABOKBGPEHG: 20000 -> 8 (7.1 DDOINBPHJMP = 7.2 FOFGCGMLPIB, single-message)
+- ChatInfo.ALKIPKCAPFL: 20000 -> 4 (7.1 LOEJDBPKKNF = 7.2 MIBOFEIBECN, single-message)
+- CodexDataUpdateNotify.OBEHJKBNDJG: 20000 -> 2 (7.1 NELOMLLAKME = 7.2 KBGFCJCMNFP, single-message)
+- DailyDungeonEntryInfo.ODDLACNLJOF: 20000 -> 1 (7.1 HAOOOFEBAMI = 7.2 BMOKOMEOKCP, single-message)
+- EnterSceneDoneRsp.PPKIKFGEINK: 20000 -> 12 (7.1 OGCIHDJAHHL = 7.2 MFLHLEMFIGI, single-message)
+- EntityFightPropChangeReasonNotify.EFIBMPKIJJH: 20000 -> 3 (7.1 HNBCFDELLDN = 7.2 GCFBFOHHHJJ, single-message)
+- EvtBeingHealedNotify.CMCCNKMGKHG: 20002 -> 13 (7.1 AFAHAOFIJJO = 7.2 is_mute, single-message)
+- EvtBeingHealedNotify.GOKLCPHOLGL: 20000 -> 2 (7.1 JONDCAMLJOF = 7.2 heal_tag, single-message)
+- ParentQuest.GFFBOKNBJLC: 20000 -> 7 (7.1 PAJJMIMGHHI = 7.2 KANNCEMKHIG, single-message)
+- FurnitureMakeRsp.NDADFCDJOBK: 20000 -> 11 (7.1 IKCDMDEPMDC = 7.2 OEGCONFIHLI, single-message)
+- IceCreatureAllGadgetInfoNotify.ice_creature_gadget_info_list: 20000 -> 10 (7.1 \_ice_creature_gadget_info_list = 7.2 \_ice_creature_info_list, single-message)
+- IceCreatureBuildReq.global_value_list: 20001 -> 4 (7.1 LNLLJKPOIOL = 7.2 FLJBADCNDMB, single-message)
+- IceCreatureBuildReq.unk_11: 20002 -> 12 (7.1 IFBHPHJDCEO = 7.2 JCNJDMFCMHM, single-message)
+- IceCreatureGadgetRemoveReq.unk_15: 20000 -> 11 (7.1 IIMAFOBOEMA = 7.2 FCBLDNACNJK, single-message)
+- InvestigationMonsterUpdateNotify.JDEPBCMJPOP: 20000 -> 4 (7.1 GAKDKMHBFGA = 7.2 ICDBOBCNCMB, single-message)
+- MarkTargetInvestigationMonsterNotify.GHPPPJJLDJN: 20000 -> 5 (7.1 ILJJLKDMFIK = 7.2 JNLDEIPGDPI, single-message)
+- TeamEnterSceneInfo.FOMPMBNENPH: 20002 -> 9 (7.1 GCNOLPNPHPA = 7.2 AGJIEAHJPJC, single-message)
+- PlayerEnterSceneNotify.ALLIIBMKFLN: 20001 -> 763 (7.1 NJEOMOIDMNM = 7.2 LFPEKBJIJNG, single-message)
+- PlayerEnterSceneNotify.BGICEPHCGEO: 20003 -> 46 (7.1 NJDJMFJCMBM = 7.2 LMKLCDPJOBJ, single-message)
+- PlayerLocationInfo.HPOIENCPHFN: 20000 -> 4 (7.1 IEPPHCJANGA = 7.2 HFFCDKKCIMN, single-message)
+- PlayerLoginRsp.KKNBKGBLHDM: 20002 -> 265 (7.1 HMMPPDIBFAO = 7.2 HIHJANHKAMO, single-message)
+- PlayerLoginRsp.stop_server_info: 20000 -> 1314 (7.1 BMCDKDDKIBH = 7.2 LBDHEONCLNL, single-message)
+- PlayerOfferingData.taken_random_level_reward_map: 20000 -> 2 (7.1 PKOKLIFNFIB = 7.2 CBMCLHIIEKD, single-message)
+- PlayerWorldSceneInfoListNotify.IIFJABJJJBF: 20000 -> 693 (7.1 FMIPEDBGOMN = 7.2 unlocked_area_id_list, single-message)
+- QueryPathRsp.FBLCJIHADLH: 20001 -> 3 (7.1 MLPCGBFDBGC = 7.2 OCOOOCJJPCC, single-message)
+- QueryPathRsp.INAAJKIFKIF: 20000 -> 10 (7.1 ANBCOBHEMFO = 7.2 EGDBEDNAFGL, single-message)
+- QuestTransmitReq.NCEIBFLFIPM: 20000 -> 13 (7.1 EOPPLJLCEIJ = 7.2 HEJLIMPMKLL, single-message)
+- SceneTeamAvatar.tps_weapon_list: 20000 -> 645 (7.1 LMAIAOIPHJL = 7.2 weapon_list, single-message)
 
 ## Handwritten parsers
 

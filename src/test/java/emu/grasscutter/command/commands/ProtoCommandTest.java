@@ -52,7 +52,7 @@ final class ProtoCommandTest {
             var command = new ProtoCommand().createCommandLine(null, null);
             command.execute("field", "ForgeQueueData", "unfinish_count", "5");
             assertTrue(emu.grasscutter.net.packet.ProtoFieldNumberOverrides.listFieldNumbers()
-                    .contains("ForgeQueueData.unfinish_count: 20001 -> 5"));
+                    .contains("ForgeQueueData.unfinish_count: 15 -> 5"));
 
             command.execute("field", "ForgeQueueData", "unfinish_count", "reset");
             assertTrue(emu.grasscutter.net.packet.ProtoFieldNumberOverrides.listFieldNumbers().isEmpty());
@@ -140,9 +140,9 @@ final class ProtoCommandTest {
         assertTrue(byMessageName.contains("Opcode: UNKNOWN"));
         assertTrue(byMessageName.contains("Name: ForgeQueueData"));
         assertTrue(byMessageName.contains("message ForgeQueueData {\n"
-                + "  uint32 next_finish_timestamp = 20000;\n"
+                + "  uint32 next_finish_timestamp = 14;\n"
                 + "  uint32 finish_count = 3;\n"
-                + "  uint32 unfinish_count = 20001;"));
+                + "  uint32 unfinish_count = 15;"));
     }
 
     @Test

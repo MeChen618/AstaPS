@@ -20,7 +20,7 @@ public final class PacketOpcodes {
     public static final int CheckUgcUpdateReq = 0;
     public static final int DeleteFriendReq = 0; // 7.2 CmdId unknown (7.1: 3037)
     public static final int EntityAiKillSelfNotify = 0; // 7.2 CmdId unknown (7.1: 29500)
-    public static final int ForgeGetQueueDataReq = 0; // 7.2 CmdId unknown (7.1: 26968)
+    public static final int ForgeGetQueueDataReq = 1147; // 7.2 CmdId unknown (7.1: 26968)
     public static final int GetAllH5ActivityInfoReq = 0;
     public static final int GetCompoundDataReq = 29739; // 7.1: 8732
     public static final int GetFriendShowAvatarInfoReq = 0; // 7.2 CmdId unknown (7.1: 24487)
@@ -1651,7 +1651,7 @@ public final class PacketOpcodes {
     public static final int PlayerSignatureAuditDataNotify = 0; // 7.1 CmdId unknown (7.0: 21073)
     // public static final int AMBMIOEKPKJ = 28628;
     public static final int _TakeAllForgeOutputRsp = 5436; // 7.1: 3416
-    public static final int _TakeAllForgeOutputReq = 0; // 7.2 CmdId unknown (7.1: 28982)
+    public static final int _TakeAllForgeOutputReq = 20915; // 7.2 CmdId unknown (7.1: 28982)
     public static final int _BeyondProfilePictureDataNotify = 3237; // 7.1: 6326
     public static final int GCGGrowthLevelNotify = 6893; // 7.1: 24807
     // public static final int PABHHNCJPIO = 4727;
@@ -3019,7 +3019,7 @@ public final class PacketOpcodes {
     public static final int Unk2700_MEBFPBDNPGO_ServerNotify = 0; // 7.1 CmdId unknown (7.0: 1)
     public static final int Unk2700_OGHMHELMBNN_ServerRsp = 0; // 7.1 CmdId unknown (7.0: 1)
     public static final int WindSeedType1Notify = 21002; // 7.1: 29056
-    
+
     // TPS (Third-Person Shooter) weapon system. See docs/tps/README.md for how these were matched.
     public static final int WearTpsEquipReq = 0; // 7.2 CmdId unknown (7.1: 20756)
     public static final int WearTpsEquipRsp = 0; // 7.2 CmdId unknown (7.1: 25902)

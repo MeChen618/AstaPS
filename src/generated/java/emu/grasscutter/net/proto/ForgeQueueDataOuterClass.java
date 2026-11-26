@@ -31,7 +31,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 next_finish_timestamp = 20000;</code>
+     * <code>uint32 next_finish_timestamp = 14;</code>
      * @return The nextFinishTimestamp.
      */
     int getNextFinishTimestamp();
@@ -43,13 +43,13 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
     int getFinishCount();
 
     /**
-     * <code>uint32 unfinish_count = 20001;</code>
+     * <code>uint32 unfinish_count = 15;</code>
      * @return The unfinishCount.
      */
     int getUnfinishCount();
 
     /**
-     * <code>uint32 queue_id = 20002;</code>
+     * <code>uint32 queue_id = 7;</code>
      * @return The queueId.
      */
     int getQueueId();
@@ -61,7 +61,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
     int getAvatarId();
 
     /**
-     * <code>uint32 total_finish_timestamp = 20003;</code>
+     * <code>uint32 total_finish_timestamp = 11;</code>
      * @return The totalFinishTimestamp.
      */
     int getTotalFinishTimestamp();
@@ -114,10 +114,10 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
               emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.class, emu.grasscutter.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.Builder.class);
     }
 
-    public static final int NEXT_FINISH_TIMESTAMP_FIELD_NUMBER = 20000;
+    public static final int NEXT_FINISH_TIMESTAMP_FIELD_NUMBER = 14;
     private int nextFinishTimestamp_ = 0;
     /**
-     * <code>uint32 next_finish_timestamp = 20000;</code>
+     * <code>uint32 next_finish_timestamp = 14;</code>
      * @return The nextFinishTimestamp.
      */
     @java.lang.Override
@@ -136,10 +136,10 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
       return finishCount_;
     }
 
-    public static final int UNFINISH_COUNT_FIELD_NUMBER = 20001;
+    public static final int UNFINISH_COUNT_FIELD_NUMBER = 15;
     private int unfinishCount_ = 0;
     /**
-     * <code>uint32 unfinish_count = 20001;</code>
+     * <code>uint32 unfinish_count = 15;</code>
      * @return The unfinishCount.
      */
     @java.lang.Override
@@ -147,10 +147,10 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
       return unfinishCount_;
     }
 
-    public static final int QUEUE_ID_FIELD_NUMBER = 20002;
+    public static final int QUEUE_ID_FIELD_NUMBER = 7;
     private int queueId_ = 0;
     /**
-     * <code>uint32 queue_id = 20002;</code>
+     * <code>uint32 queue_id = 7;</code>
      * @return The queueId.
      */
     @java.lang.Override
@@ -169,10 +169,10 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
       return avatarId_;
     }
 
-    public static final int TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER = 20003;
+    public static final int TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER = 11;
     private int totalFinishTimestamp_ = 0;
     /**
-     * <code>uint32 total_finish_timestamp = 20003;</code>
+     * <code>uint32 total_finish_timestamp = 11;</code>
      * @return The totalFinishTimestamp.
      */
     @java.lang.Override
@@ -211,20 +211,20 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
       if (finishCount_ != 0) {
         output.writeUInt32(3, finishCount_);
       }
+      if (queueId_ != 0) {
+        output.writeUInt32(7, queueId_);
+      }
       if (avatarId_ != 0) {
         output.writeUInt32(9, avatarId_);
       }
+      if (totalFinishTimestamp_ != 0) {
+        output.writeUInt32(11, totalFinishTimestamp_);
+      }
       if (nextFinishTimestamp_ != 0) {
-        output.writeUInt32(20000, nextFinishTimestamp_);
+        output.writeUInt32(14, nextFinishTimestamp_);
       }
       if (unfinishCount_ != 0) {
-        output.writeUInt32(20001, unfinishCount_);
-      }
-      if (queueId_ != 0) {
-        output.writeUInt32(20002, queueId_);
-      }
-      if (totalFinishTimestamp_ != 0) {
-        output.writeUInt32(20003, totalFinishTimestamp_);
+        output.writeUInt32(15, unfinishCount_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -238,25 +238,25 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, finishCount_);
       }
+      if (queueId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, queueId_);
+      }
       if (avatarId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, avatarId_);
       }
+      if (totalFinishTimestamp_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, totalFinishTimestamp_);
+      }
       if (nextFinishTimestamp_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20000, nextFinishTimestamp_);
+          .computeUInt32Size(14, nextFinishTimestamp_);
       }
       if (unfinishCount_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20001, unfinishCount_);
-      }
-      if (queueId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20002, queueId_);
-      }
-      if (totalFinishTimestamp_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20003, totalFinishTimestamp_);
+          .computeUInt32Size(15, unfinishCount_);
       }
       return size;
     }
@@ -582,31 +582,31 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000002;
                 break;
               } // case 24
+              case 56: {
+                queueId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
               case 72: {
                 avatarId_ = input.readUInt32();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 72
-              case 160000: {
-                nextFinishTimestamp_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 160000
-              case 160008: {
-                unfinishCount_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 160008
-              case 160016: {
-                queueId_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 160016
-              case 160024: {
+              case 88: {
                 totalFinishTimestamp_ = input.readUInt32();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 160024
+              } // case 88
+              case 112: {
+                nextFinishTimestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                unfinishCount_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -626,7 +626,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
 
       private int nextFinishTimestamp_ ;
       /**
-       * <code>uint32 next_finish_timestamp = 20000;</code>
+       * <code>uint32 next_finish_timestamp = 14;</code>
        * @return The nextFinishTimestamp.
        */
       @java.lang.Override
@@ -634,7 +634,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return nextFinishTimestamp_;
       }
       /**
-       * <code>uint32 next_finish_timestamp = 20000;</code>
+       * <code>uint32 next_finish_timestamp = 14;</code>
        * @param value The nextFinishTimestamp to set.
        * @return This builder for chaining.
        */
@@ -646,7 +646,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return this;
       }
       /**
-       * <code>uint32 next_finish_timestamp = 20000;</code>
+       * <code>uint32 next_finish_timestamp = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearNextFinishTimestamp() {
@@ -690,7 +690,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
 
       private int unfinishCount_ ;
       /**
-       * <code>uint32 unfinish_count = 20001;</code>
+       * <code>uint32 unfinish_count = 15;</code>
        * @return The unfinishCount.
        */
       @java.lang.Override
@@ -698,7 +698,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return unfinishCount_;
       }
       /**
-       * <code>uint32 unfinish_count = 20001;</code>
+       * <code>uint32 unfinish_count = 15;</code>
        * @param value The unfinishCount to set.
        * @return This builder for chaining.
        */
@@ -710,7 +710,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return this;
       }
       /**
-       * <code>uint32 unfinish_count = 20001;</code>
+       * <code>uint32 unfinish_count = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnfinishCount() {
@@ -722,7 +722,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
 
       private int queueId_ ;
       /**
-       * <code>uint32 queue_id = 20002;</code>
+       * <code>uint32 queue_id = 7;</code>
        * @return The queueId.
        */
       @java.lang.Override
@@ -730,7 +730,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return queueId_;
       }
       /**
-       * <code>uint32 queue_id = 20002;</code>
+       * <code>uint32 queue_id = 7;</code>
        * @param value The queueId to set.
        * @return This builder for chaining.
        */
@@ -742,7 +742,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return this;
       }
       /**
-       * <code>uint32 queue_id = 20002;</code>
+       * <code>uint32 queue_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearQueueId() {
@@ -786,7 +786,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
 
       private int totalFinishTimestamp_ ;
       /**
-       * <code>uint32 total_finish_timestamp = 20003;</code>
+       * <code>uint32 total_finish_timestamp = 11;</code>
        * @return The totalFinishTimestamp.
        */
       @java.lang.Override
@@ -794,7 +794,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return totalFinishTimestamp_;
       }
       /**
-       * <code>uint32 total_finish_timestamp = 20003;</code>
+       * <code>uint32 total_finish_timestamp = 11;</code>
        * @param value The totalFinishTimestamp to set.
        * @return This builder for chaining.
        */
@@ -806,7 +806,7 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
         return this;
       }
       /**
-       * <code>uint32 total_finish_timestamp = 20003;</code>
+       * <code>uint32 total_finish_timestamp = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalFinishTimestamp() {
@@ -913,13 +913,13 @@ public final class ForgeQueueDataOuterClass extends com.google.protobuf.Generate
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024ForgeQueueData.proto\"\274\001\n\016ForgeQueueDat" +
-      "a\022\037\n\025next_finish_timestamp\030\240\234\001 \001(\r\022\024\n\014fi" +
-      "nish_count\030\003 \001(\r\022\030\n\016unfinish_count\030\241\234\001 \001" +
-      "(\r\022\022\n\010queue_id\030\242\234\001 \001(\r\022\021\n\tavatar_id\030\t \001(" +
-      "\r\022 \n\026total_finish_timestamp\030\243\234\001 \001(\r\022\020\n\010f" +
-      "orge_id\030\002 \001(\rB\033\n\031emu.grasscutter.net.pro" +
-      "tob\006proto3"
+      "\n\024ForgeQueueData.proto\"\264\001\n\016ForgeQueueDat" +
+      "a\022\035\n\025next_finish_timestamp\030\016 \001(\r\022\024\n\014fini" +
+      "sh_count\030\003 \001(\r\022\026\n\016unfinish_count\030\017 \001(\r\022\020" +
+      "\n\010queue_id\030\007 \001(\r\022\021\n\tavatar_id\030\t \001(\r\022\036\n\026t" +
+      "otal_finish_timestamp\030\013 \001(\r\022\020\n\010forge_id\030" +
+      "\002 \001(\rB\033\n\031emu.grasscutter.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
