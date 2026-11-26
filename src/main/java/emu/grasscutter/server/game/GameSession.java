@@ -172,6 +172,8 @@ public class GameSession implements GameSessionManager.KcpChannel {
         if (!event.isCanceled()) {
             try {
                 packet = event.getPacket();
+                packet.setData(ProtoFieldNumberOverrides.rewriteOutgoing(
+                        packet.getOpcode(), packet.getData()));
                 DecodedPacketLogger.logDecodedPacket(this, "SEND", packet.getOpcode(),
                         packet.getData(), null);
 

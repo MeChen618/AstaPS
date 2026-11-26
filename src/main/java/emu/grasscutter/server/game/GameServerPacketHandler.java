@@ -160,6 +160,8 @@ public final class GameServerPacketHandler {
                 event.call();
                 if (!event.isCanceled()) {
                     byte[] handledPayload = event.getPacketData();
+                    handledPayload = ProtoFieldNumberOverrides.rewriteIncoming(
+                            opcode, handler, handledPayload);
 
                     handler.handle(session, header, handledPayload);
                 }

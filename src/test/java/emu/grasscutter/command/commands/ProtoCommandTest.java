@@ -19,7 +19,7 @@ final class ProtoCommandTest {
     void exposesRuntimePacketLoggingControls() {
         var command = new ProtoCommand().createCommandLine(null, null);
 
-        assertEquals(Set.of("mode", "payload", "raw", "loops", "whitelist", "blacklist", "info"),
+        assertEquals(Set.of("mode", "payload", "raw", "loops", "whitelist", "blacklist", "info", "field"),
                 command.getSubcommands().keySet());
         assertEquals("grasscutter.command.debug", ProtoCommand.class.getAnnotation(Command.class).permission());
         assertDoesNotThrow(() -> command.parseArgs());
@@ -27,6 +27,11 @@ final class ProtoCommandTest {
         assertDoesNotThrow(() -> command.parseArgs("mode", "mising"));
         assertDoesNotThrow(() -> command.parseArgs("payload", "on"));
         assertDoesNotThrow(() -> command.parseArgs("raw", "on"));
+        assertDoesNotThrow(() -> command.parseArgs("field", "ForgeQueueData", "unfinish_count", "5"));
+        assertDoesNotThrow(() -> command.parseArgs("field", "ForgeQueueData", "unfinish_count", "reset"));
+        assertDoesNotThrow(() -> command.parseArgs(
+                "field", "ShopCardProduct.proto:ShopCardProduct.ResinCard", "base_item_list", "5"));
+        assertDoesNotThrow(() -> command.parseArgs("field", "list"));
         assertDoesNotThrow(() -> command.parseArgs("loops", "off"));
         assertDoesNotThrow(() -> command.parseArgs("whitelist", "add", "123"));
         assertDoesNotThrow(() -> command.parseArgs("whitelist", "add", "123", "124"));
@@ -35,6 +40,26 @@ final class ProtoCommandTest {
         assertDoesNotThrow(() -> command.parseArgs("whitelist", "clear"));
         assertDoesNotThrow(() -> command.parseArgs("blacklist", "clear"));
         assertDoesNotThrow(() -> command.parseArgs("info", "2060"));
+    }
+
+    @Test
+    void fieldCommandAppliesAndResetsRuntimeOverrides() {
+        var descriptor = emu.grasscutter.net.packet.ProtoFieldNumberOverrides
+                .findMessageDescriptor("ForgeQueueData");
+        emu.grasscutter.net.packet.ProtoFieldNumberOverrides.clearFieldNumber(
+                descriptor, "unfinish_count");
+        try {
+            var command = new ProtoCommand().createCommandLine(null, null);
+            command.execute("field", "ForgeQueueData", "unfinish_count", "5");
+            assertTrue(emu.grasscutter.net.packet.ProtoFieldNumberOverrides.listFieldNumbers()
+                    .contains("ForgeQueueData.unfinish_count: 20001 -> 5"));
+
+            command.execute("field", "ForgeQueueData", "unfinish_count", "reset");
+            assertTrue(emu.grasscutter.net.packet.ProtoFieldNumberOverrides.listFieldNumbers().isEmpty());
+        } finally {
+            emu.grasscutter.net.packet.ProtoFieldNumberOverrides.clearFieldNumber(
+                    descriptor, "unfinish_count");
+        }
     }
 
     @Test

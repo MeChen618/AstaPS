@@ -48,10 +48,12 @@ public final class DecodedPacketLogger {
     static String formatPayload(int opcode, byte[] payload, PacketHandler handler,
             boolean includeRawFields) {
         var parser = findParser(opcode, handler);
+        byte[] decodedPayload = ProtoFieldNumberOverrides.toGeneratedFieldNumbers(
+                opcode, handler, payload);
         String formatted = null;
         if (parser.isPresent()) {
             try {
-                Object result = parser.get().invoke(null, (Object) payload);
+                Object result = parser.get().invoke(null, (Object) decodedPayload);
                 if (result instanceof Message message) {
                     formatted = message.toString();
                 }

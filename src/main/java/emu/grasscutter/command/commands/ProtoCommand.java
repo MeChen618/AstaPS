@@ -9,8 +9,8 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.command.CommandOutput;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.net.packet.PacketOpcodesUtils;
+import emu.grasscutter.net.packet.ProtoFieldNumberOverrides;
 import com.google.protobuf.Descriptors;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -33,6 +33,7 @@ public final class ProtoCommand implements CommandHandler {
         commandLine.addSubcommand("whitelist", new Whitelist(sender));
         commandLine.addSubcommand("blacklist", new Blacklist(sender));
         commandLine.addSubcommand("info", new Info(sender));
+        commandLine.addSubcommand("field", new Field(sender));
         return commandLine;
     }
 
@@ -43,6 +44,9 @@ public final class ProtoCommand implements CommandHandler {
         CommandOutput.sendMessage(sender, "Loop packet logging: " + (GAME_INFO.isShowLoopPackets ? "on" : "off"));
         CommandOutput.sendMessage(sender, "Whitelist: " + new TreeSet<>(currentWhitelist()));
         CommandOutput.sendMessage(sender, "Blacklist: " + new TreeSet<>(currentBlacklist()));
+        var fieldOverrides = ProtoFieldNumberOverrides.listFieldNumbers();
+        CommandOutput.sendMessage(sender, "Proto field overrides: "
+                + (fieldOverrides.isEmpty() ? "none" : String.join(", ", fieldOverrides)));
         CommandOutput.sendMessage(sender, "Changes apply immediately and are not saved to config.json.");
     }
 
@@ -75,7 +79,7 @@ public final class ProtoCommand implements CommandHandler {
         var output = new StringBuilder()
                 .append("Opcode: ").append(opcodeLabel)
                 .append("\nName: ").append(messageName);
-        var descriptor = findDescriptor(messageName);
+        var descriptor = ProtoFieldNumberOverrides.findMessageDescriptor(messageName);
         if (descriptor == null) {
             return output.append("\nStructure: unavailable (no protobuf definition found for ")
                     .append(messageName).append(").").toString();
@@ -98,21 +102,6 @@ public final class ProtoCommand implements CommandHandler {
         try {
             return Integer.valueOf(input);
         } catch (NumberFormatException ignored) {
-            return null;
-        }
-    }
-
-    private static Descriptors.Descriptor findDescriptor(String messageName) {
-        if (messageName == null || messageName.equals("UNKNOWN") || messageName.isBlank()) {
-            return null;
-        }
-        String outerClassName = "emu.grasscutter.net.proto." + messageName + "OuterClass";
-        try {
-            Class<?> outerClass = Class.forName(outerClassName);
-            var fileDescriptor = (Descriptors.FileDescriptor) outerClass.getMethod("getDescriptor").invoke(null);
-            return fileDescriptor.findMessageTypeByName(messageName);
-        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
-                | InvocationTargetException exception) {
             return null;
         }
     }
@@ -148,6 +137,82 @@ public final class ProtoCommand implements CommandHandler {
         @Override
         public void run() {
             report(sender, formatProtoInfo(selector));
+        }
+    }
+
+    @CommandLine.Command(
+            name = "field",
+            description = "Set, reset, or list runtime protobuf field-number overrides. Use "
+                    + "<source.proto:Message.Nested> for nested messages.")
+    private static final class Field implements Runnable {
+        private final Player sender;
+
+        @Parameters(index = "0", arity = "0..1", paramLabel = "<message|source.proto:message|list>")
+        private String message;
+
+        @Parameters(index = "1", arity = "0..1", paramLabel = "[field]")
+        private String field;
+
+        @Parameters(index = "2", arity = "0..1", paramLabel = "[number|reset]")
+        private String value;
+
+        private Field(Player sender) {
+            this.sender = sender;
+        }
+
+        @Override
+        public void run() {
+            if (message == null || message.equalsIgnoreCase("list")) {
+                if (field != null || value != null) {
+                    report(sender, "Usage: proto field <message|source.proto:Message.Nested> <field> "
+                            + "<number|reset>, or proto field list.");
+                    return;
+                }
+                var active = ProtoFieldNumberOverrides.listFieldNumbers();
+                report(sender, active.isEmpty() ? "No runtime protobuf field overrides."
+                        : "Runtime protobuf field overrides: " + String.join(", ", active));
+                return;
+            }
+
+            if (field == null || value == null) {
+                report(sender, "Usage: proto field <message|source.proto:Message.Nested> <field> "
+                        + "<number|reset>, or proto field list.");
+                return;
+            }
+
+            var descriptor = ProtoFieldNumberOverrides.findMessageDescriptor(message);
+            if (descriptor == null) {
+                report(sender, "No generated protobuf message found for " + message + ".");
+                return;
+            }
+            if (descriptor.findFieldByName(field) == null) {
+                report(sender, "No field named " + field + " in " + message + ".");
+                return;
+            }
+
+            if (value.equalsIgnoreCase("reset")) {
+                boolean removed = ProtoFieldNumberOverrides.clearFieldNumber(descriptor, field);
+                report(sender, removed
+                        ? "Reset " + message + "." + field + " to its generated field number."
+                        : message + "." + field + " has no runtime override.");
+                return;
+            }
+
+            final int newNumber;
+            try {
+                newNumber = Integer.parseInt(value);
+            } catch (NumberFormatException exception) {
+                report(sender, "Expected a positive field number or reset.");
+                return;
+            }
+
+            try {
+                ProtoFieldNumberOverrides.setFieldNumber(descriptor, field, newNumber);
+                report(sender, message + "." + field + " now uses field number " + newNumber
+                        + " at packet boundaries (runtime only).");
+            } catch (IllegalArgumentException exception) {
+                report(sender, "Could not set " + message + "." + field + ": " + exception.getMessage());
+            }
         }
     }
 
