@@ -19,13 +19,14 @@ final class ProtoCommandTest {
     void exposesRuntimePacketLoggingControls() {
         var command = new ProtoCommand().createCommandLine(null, null);
 
-        assertEquals(Set.of("mode", "payload", "loops", "whitelist", "blacklist", "info"),
+        assertEquals(Set.of("mode", "payload", "raw", "loops", "whitelist", "blacklist", "info"),
                 command.getSubcommands().keySet());
         assertEquals("grasscutter.command.debug", ProtoCommand.class.getAnnotation(Command.class).permission());
         assertDoesNotThrow(() -> command.parseArgs());
         assertDoesNotThrow(() -> command.parseArgs("mode", "whitelist"));
         assertDoesNotThrow(() -> command.parseArgs("mode", "mising"));
         assertDoesNotThrow(() -> command.parseArgs("payload", "on"));
+        assertDoesNotThrow(() -> command.parseArgs("raw", "on"));
         assertDoesNotThrow(() -> command.parseArgs("loops", "off"));
         assertDoesNotThrow(() -> command.parseArgs("whitelist", "add", "123"));
         assertDoesNotThrow(() -> command.parseArgs("whitelist", "add", "123", "124"));
@@ -59,6 +60,7 @@ final class ProtoCommandTest {
     void commandsUpdateTheLivePacketSettings() {
         var previousMode = GAME_INFO.logPackets;
         var previousPayload = GAME_INFO.isShowPacketPayload;
+        var previousRawFields = GAME_INFO.isShowPacketRawFields;
         var previousLoops = GAME_INFO.isShowLoopPackets;
         var previousWhitelist = SERVER.debugWhitelist;
         var previousBlacklist = SERVER.debugBlacklist;
@@ -69,6 +71,7 @@ final class ProtoCommandTest {
             var command = new ProtoCommand().createCommandLine(null, null);
             command.execute("mode", "whitelist");
             command.execute("payload", "on");
+            command.execute("raw", "on");
             command.execute("loops", "on");
             command.execute("whitelist", "add", "123", "124");
             command.execute("blacklist", "add", "456", "789");
@@ -84,12 +87,14 @@ final class ProtoCommandTest {
 
             assertEquals(ServerDebugMode.WHITELIST, GAME_INFO.logPackets);
             assertTrue(GAME_INFO.isShowPacketPayload);
+            assertTrue(GAME_INFO.isShowPacketRawFields);
             assertTrue(GAME_INFO.isShowLoopPackets);
             assertEquals(Set.of(), SERVER.debugWhitelist);
             assertEquals(Set.of(), SERVER.debugBlacklist);
         } finally {
             GAME_INFO.logPackets = previousMode;
             GAME_INFO.isShowPacketPayload = previousPayload;
+            GAME_INFO.isShowPacketRawFields = previousRawFields;
             GAME_INFO.isShowLoopPackets = previousLoops;
             SERVER.debugWhitelist = previousWhitelist;
             SERVER.debugBlacklist = previousBlacklist;

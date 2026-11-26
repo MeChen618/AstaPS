@@ -1,6 +1,7 @@
 package emu.grasscutter.utils;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 /**
  * Describes a protobuf payload without knowing its schema.
@@ -16,8 +17,23 @@ public final class ProtoSniff {
 
     private ProtoSniff() {}
 
-    /** One line per payload: {@code #2="10008" #347=varint(2) #1475=<344 b64>}. */
+    /** Describes a payload and maxDepth level of nested length-delimited protobuf messages. */
     public static String describe(byte[] data) {
+        return describe(data, 5);
+    }
+
+    /**
+     * Describes a payload up to {@code maxDepth} message levels deep. The top-level payload is
+     * depth 1.
+     */
+    public static String describe(byte[] data, int maxDepth) {
+        if (maxDepth < 1) {
+            throw new IllegalArgumentException("maxDepth must be at least 1");
+        }
+        return describe(data, 1, maxDepth);
+    }
+
+    private static String describe(byte[] data, int depth, int maxDepth) {
         if (data == null || data.length == 0) return "(empty)";
         var sb = new StringBuilder();
         int i = 0;
@@ -54,13 +70,19 @@ public final class ProtoSniff {
                     case 2 -> {
                         long[] len = varint(data, i);
                         i = (int) len[1];
-                        int n = (int) len[0];
-                        if (n < 0 || i + n > data.length) {
-                            sb.append("<bad len ").append(n).append('>');
+                        if (len[0] < 0 || len[0] > data.length - i) {
+                            sb.append("<bad len ").append(len[0]).append('>');
                             i = data.length;
                             break;
                         }
+                        int n = (int) len[0];
                         sb.append(renderBytes(data, i, n));
+                        if (depth < maxDepth && n > 0 && !isPrintable(data, i, n)) {
+                            byte[] nested = Arrays.copyOfRange(data, i, i + n);
+                            if (isValidMessage(nested)) {
+                                sb.append(" { ").append(describe(nested, depth + 1, maxDepth)).append(" }");
+                            }
+                        }
                         i += n;
                     }
                     case 5 -> {
@@ -85,19 +107,62 @@ public final class ProtoSniff {
     /** Length-delimited fields are the informative ones, so say what they look like. */
     private static String renderBytes(byte[] data, int off, int n) {
         var s = new String(data, off, n, StandardCharsets.UTF_8);
-        boolean printable = true;
-        for (int k = 0; k < s.length(); k++) {
-            char c = s.charAt(k);
-            if (c < 0x20 || c > 0x7e) {
-                printable = false;
-                break;
-            }
-        }
-        if (printable && n > 0) {
+        if (isPrintable(s) && n > 0) {
             if (n > 48) return "\"" + s.substring(0, 24) + "…\"(" + n + " chars)";
             return "\"" + s + "\"";
         }
         return "<" + n + " bytes>";
+    }
+
+    private static boolean isPrintable(byte[] data, int off, int n) {
+        return isPrintable(new String(data, off, n, StandardCharsets.UTF_8));
+    }
+
+    private static boolean isPrintable(String s) {
+        for (int k = 0; k < s.length(); k++) {
+            char c = s.charAt(k);
+            if (c < 0x20 || c > 0x7e) return false;
+        }
+        return true;
+    }
+
+    private static boolean isValidMessage(byte[] data) {
+        int i = 0;
+        int fields = 0;
+        while (i < data.length) {
+            long[] kv;
+            try {
+                kv = varint(data, i);
+            } catch (RuntimeException exception) {
+                return false;
+            }
+            long key = kv[0];
+            i = (int) kv[1];
+            long field = key >>> 3;
+            int wire = (int) (key & 7);
+            if (field == 0 || field > 536870911) return false;
+            try {
+                switch (wire) {
+                    case 0 -> i = (int) varint(data, i)[1];
+                    case 1 -> i += 8;
+                    case 2 -> {
+                        long[] length = varint(data, i);
+                        i = (int) length[1];
+                        if (length[0] < 0 || length[0] > data.length - i) return false;
+                        i += (int) length[0];
+                    }
+                    case 5 -> i += 4;
+                    default -> {
+                        return false;
+                    }
+                }
+            } catch (RuntimeException exception) {
+                return false;
+            }
+            if (i > data.length) return false;
+            fields++;
+        }
+        return fields > 0;
     }
 
     private static long[] varint(byte[] data, int pos) {

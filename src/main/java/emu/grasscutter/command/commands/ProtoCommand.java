@@ -28,6 +28,7 @@ public final class ProtoCommand implements CommandHandler {
         var commandLine = new CommandLine(new Root(sender));
         commandLine.addSubcommand("mode", new Mode(sender));
         commandLine.addSubcommand("payload", new Payload(sender));
+        commandLine.addSubcommand("raw", new Raw(sender));
         commandLine.addSubcommand("loops", new Loops(sender));
         commandLine.addSubcommand("whitelist", new Whitelist(sender));
         commandLine.addSubcommand("blacklist", new Blacklist(sender));
@@ -38,6 +39,7 @@ public final class ProtoCommand implements CommandHandler {
     private static void showStatus(Player sender) {
         CommandOutput.sendMessage(sender, "Proto logging mode: " + GAME_INFO.logPackets);
         CommandOutput.sendMessage(sender, "Payload logging: " + (GAME_INFO.isShowPacketPayload ? "on" : "off"));
+        CommandOutput.sendMessage(sender, "Raw field logging: " + (GAME_INFO.isShowPacketRawFields ? "on" : "off"));
         CommandOutput.sendMessage(sender, "Loop packet logging: " + (GAME_INFO.isShowLoopPackets ? "on" : "off"));
         CommandOutput.sendMessage(sender, "Whitelist: " + new TreeSet<>(currentWhitelist()));
         CommandOutput.sendMessage(sender, "Blacklist: " + new TreeSet<>(currentBlacklist()));
@@ -213,6 +215,30 @@ public final class ProtoCommand implements CommandHandler {
             }
             GAME_INFO.isShowPacketPayload = enabled;
             report(sender, "Decoded packet content logging " + (enabled ? "enabled." : "disabled."));
+        }
+    }
+
+    @CommandLine.Command(name = "raw", description = "Enable or disable raw protobuf field logging alongside decoded content.")
+    private static final class Raw implements Runnable {
+        private final Player sender;
+
+        @Parameters(index = "0", paramLabel = "<on|off>")
+        private String value;
+
+        private Raw(Player sender) {
+            this.sender = sender;
+        }
+
+        @Override
+        public void run() {
+            Boolean enabled = parseToggle(value);
+            if (enabled == null) {
+                report(sender, "Expected on or off.");
+                return;
+            }
+            GAME_INFO.isShowPacketRawFields = enabled;
+            report(sender, "Raw protobuf field logging " + (enabled ? "enabled." : "disabled.")
+                    + " It is shown only when payload logging is enabled.");
         }
     }
 

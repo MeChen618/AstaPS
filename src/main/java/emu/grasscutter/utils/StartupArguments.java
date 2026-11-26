@@ -117,6 +117,7 @@ public interface StartupArguments {
             // Override default debug configs
             GAME_INFO.isShowLoopPackets = DEBUG_MODE_INFO.isShowLoopPackets;
             GAME_INFO.isShowPacketPayload = DEBUG_MODE_INFO.isShowPacketPayload;
+            GAME_INFO.isShowPacketRawFields = DEBUG_MODE_INFO.isShowPacketRawFields;
             GAME_INFO.logPackets = DEBUG_MODE_INFO.logPackets;
             DISPATCH_INFO.logRequests = DEBUG_MODE_INFO.logRequests;
 

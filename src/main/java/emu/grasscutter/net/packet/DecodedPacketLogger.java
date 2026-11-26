@@ -8,6 +8,7 @@ import com.google.protobuf.Message;
 import com.google.protobuf.UnknownFieldSet;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.server.game.GameSession;
+import emu.grasscutter.utils.ProtoSniff;
 import java.lang.reflect.Method;
 import java.util.HexFormat;
 import java.util.Map;
@@ -35,30 +36,42 @@ public final class DecodedPacketLogger {
         Grasscutter.getLogger().info("{}: {} ({}){}", direction, name, opcode, handlerLabel);
 
         if (GAME_INFO.isShowPacketPayload) {
-            Grasscutter.getLogger().info("{}", formatPayload(opcode, payload, handler));
+            Grasscutter.getLogger().info("{}",
+                    formatPayload(opcode, payload, handler, GAME_INFO.isShowPacketRawFields));
         }
     }
 
     static String formatPayload(int opcode, byte[] payload, PacketHandler handler) {
+        return formatPayload(opcode, payload, handler, false);
+    }
+
+    static String formatPayload(int opcode, byte[] payload, PacketHandler handler,
+            boolean includeRawFields) {
         var parser = findParser(opcode, handler);
+        String formatted = null;
         if (parser.isPresent()) {
             try {
                 Object result = parser.get().invoke(null, (Object) payload);
                 if (result instanceof Message message) {
-                    return message.toString();
+                    formatted = message.toString();
                 }
             } catch (ReflectiveOperationException ignored) {
                 // Preserve the wire bytes if this payload cannot be decoded as its named message.
             }
         }
 
-        var raw = new StringBuilder("payload=").append(HexFormat.of().formatHex(payload));
-        try {
-            raw.append(", rawFields=").append(UnknownFieldSet.parseFrom(payload));
-        } catch (InvalidProtocolBufferException ignored) {
-            raw.append(" (non-protobuf payload)");
+        if (formatted == null) {
+            var raw = new StringBuilder("payload=").append(HexFormat.of().formatHex(payload));
+            try {
+                raw.append(", rawFields=").append(UnknownFieldSet.parseFrom(payload));
+            } catch (InvalidProtocolBufferException ignored) {
+                raw.append(" (non-protobuf payload)");
+            }
+            formatted = raw.toString();
         }
-        return raw.toString();
+
+        return includeRawFields ? formatted + "\nrawWireFields=" + ProtoSniff.describe(payload)
+                : formatted;
     }
 
     static Optional<Method> findParser(int opcode, PacketHandler handler) {

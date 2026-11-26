@@ -320,6 +320,8 @@ public class ConfigContainer {
         public volatile ServerDebugMode logPackets = ServerDebugMode.NONE;
         /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
         public volatile boolean isShowPacketPayload = false;
+        /* Show schema-independent protobuf wire fields alongside decoded packet payloads */
+        public volatile boolean isShowPacketRawFields = false;
         /* Show annoying loop packets or no */
         public volatile boolean isShowLoopPackets = false;
 
@@ -376,6 +378,9 @@ public class ConfigContainer {
 
         /* Show packet payload in console or no (in any case the payload is shown in encrypted view) */
         public boolean isShowPacketPayload = false;
+
+        /* Show schema-independent protobuf wire fields alongside decoded packet payloads */
+        public boolean isShowPacketRawFields = false;
 
         /* Show annoying loop packets or no */
         public boolean isShowLoopPackets = false;

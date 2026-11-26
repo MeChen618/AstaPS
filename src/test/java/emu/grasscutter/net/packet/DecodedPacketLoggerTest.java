@@ -23,6 +23,21 @@ final class DecodedPacketLoggerTest {
     }
 
     @Test
+    void includesRawWireFieldsAlongsideDecodedPayloadWhenEnabled() {
+        byte[] payload = EvtBulletDeactiveNotify.newBuilder()
+                .setEntityId(42).build().toByteArray();
+
+        String decodedOnly = DecodedPacketLogger.formatPayload(
+                PacketOpcodes.EvtBulletDeactiveNotify, payload, null);
+        String decodedAndRaw = DecodedPacketLogger.formatPayload(
+                PacketOpcodes.EvtBulletDeactiveNotify, payload, null, true);
+
+        assertFalse(decodedOnly.contains("rawWireFields="));
+        assertTrue(decodedAndRaw.contains("entity_id: 42"));
+        assertTrue(decodedAndRaw.contains("rawWireFields=#5=varint(42)"));
+    }
+
+    @Test
     void unknownOpcodeWithoutHandlerRetainsWireFieldsAndHex() {
         String rendered = DecodedPacketLogger.formatPayload(987654, new byte[] {8, 5}, null);
         assertTrue(rendered.contains("payload=0805"));
