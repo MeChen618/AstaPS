@@ -6,17 +6,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.gson.Gson;
 
+import emu.grasscutter.Grasscutter;
+import emu.grasscutter.ServerResourceFixture;
 import emu.grasscutter.data.GameData;
+import emu.grasscutter.data.binout.ScriptSceneData;
 import emu.grasscutter.data.excels.CookRecipeData;
 import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.props.SceneType;
 import emu.grasscutter.game.quest.*;
+import emu.grasscutter.game.world.TestWorld;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+@ExtendWith(ServerResourceFixture.class)
 final class ContentCurrentStateTest {
     @Test
     void registersEveryStateAliasWithItsClientEnumValue() {
@@ -74,6 +81,72 @@ final class ContentCurrentStateTest {
         assertNull(ContentCurrentState.parsePoint("[4_14622:1,2,3]", 3));
         assertNull(ContentCurrentState.parsePoint("[3_14622:NaN,2,3]", 3));
         assertNull(ContentCurrentState.parsePoint("[3_14622:1,2]", 3));
+    }
+
+    @Test
+    void namedRangeChecksTheLoadedScenePointAndTheConfiguredRadius() {
+        var gson = new Gson();
+        var scripts = GameData.getScriptSceneDataMap();
+        String key = "flat.luas.scenes.full_globals.lua.json";
+        var previousCombat = GameData.getConfigGlobalCombat();
+        var gameConfig = Grasscutter.getConfig().server.game;
+        boolean scriptsEnabled = gameConfig.enableScriptInBigWorld;
+        var previous = scripts.put(key, gson.fromJson("""
+                {"scriptObjectList":{
+                    "3/scene3_dummy_points.lua":{"dummy_points":{
+                        "QuestGate.pos":[10,20,30],
+                        "QuestGate.rot":[0,180,0],
+                        "Incomplete.pos":[1,2],
+                        "MissingCoordinate.pos":[1,null,3]
+                    }},
+                    "4/scene4_dummy_points.lua":{"dummy_points":{
+                        "OtherSceneOnly.pos":[10,20,30]
+                    }}
+                }}
+                """, ScriptSceneData.class));
+        try {
+            gameConfig.enableScriptInBigWorld = false;
+            var player = new Player();
+            player.setSceneLoadState(Player.SceneLoadState.LOADED);
+            var world = TestWorld.create(player);
+            var matchingScene = new TestWorld.TestScene(world, 3, SceneType.SCENE_WORLD);
+            player.setScene(matchingScene);
+            var data = gson.fromJson(
+                    "{\"mainId\":10101,\"subId\":1010101,\"finishCond\":[],\"failCond\":[]}",
+                    QuestData.class);
+            var quest = new GameQuest(null, data) {
+                @Override
+                public Player getOwner() {
+                    return player;
+                }
+            };
+            var condition = new QuestData.QuestContentCondition();
+            condition.setType(QUEST_CONTENT_LEAVE_SCENE_RANGE);
+            condition.setParam(new int[] {3, 5});
+            condition.setParamStr(" QuestGate ");
+            var handler = new ContentCurrentState();
+
+            player.getPosition().set(13, 24, 30);
+            assertFalse(handler.execute(quest, condition, "", 3));
+            player.getPosition().set(16, 20, 30);
+            assertTrue(handler.execute(quest, condition, "", 3));
+            assertFalse(handler.execute(quest, condition, "", 4));
+
+            player.setScene(new TestWorld.TestScene(world, 4, SceneType.SCENE_WORLD));
+            assertFalse(handler.execute(quest, condition, "", 3));
+            player.setScene(matchingScene);
+            for (String name : new String[] {
+                    "MissingPoint", "OtherSceneOnly", "Incomplete", "MissingCoordinate"
+            }) {
+                condition.setParamStr(name);
+                assertFalse(handler.execute(quest, condition, "", 3), name);
+            }
+        } finally {
+            gameConfig.enableScriptInBigWorld = scriptsEnabled;
+            GameData.setConfigGlobalCombat(previousCombat);
+            if (previous == null) scripts.remove(key);
+            else scripts.put(key, previous);
+        }
     }
 
     @Test

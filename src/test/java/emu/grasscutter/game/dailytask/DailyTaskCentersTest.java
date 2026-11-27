@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScriptSceneData;
 import emu.grasscutter.data.excels.DailyTaskData;
+import emu.grasscutter.game.world.SceneDummyPoints;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,7 +24,7 @@ class DailyTaskCentersTest {
     @Test
     void readsAuthoredLuaCentersWithBareAndQuotedNames() {
         var points =
-                DailyTaskCenters.read(
+                SceneDummyPoints.read(
                         new StringReader(
                                 """
                                 dummy_points = {
@@ -50,7 +51,7 @@ class DailyTaskCentersTest {
             map.clear();
             var state = new DailyTaskGroupLifecycle.State(null, null);
             state.luaCenters =
-                    DailyTaskCenters.read(
+                    SceneDummyPoints.read(
                             new StringReader(
                                     "dummy_points = { Event_10100V2 = { pos = { x = 10, y = 20, z ="
                                         + " 30 } } }"));
@@ -90,14 +91,14 @@ class DailyTaskCentersTest {
     @Test
     void missingOrMalformedFileFailsClosedAndNoScriptLibrariesAreExposed() throws Exception {
         assertTrue(
-                DailyTaskCenters.load(Path.of("resources", "absent-commission-centers.lua"))
+                SceneDummyPoints.load(Path.of("resources", "absent-commission-centers.lua"))
                         .isEmpty());
         assertThrows(
                 RuntimeException.class,
-                () -> DailyTaskCenters.read(new StringReader("dummy_points = {")));
+                () -> SceneDummyPoints.read(new StringReader("dummy_points = {")));
         assertThrows(
                 RuntimeException.class,
-                () -> DailyTaskCenters.read(new StringReader("io.open('anything')")));
-        assertTrue(DailyTaskCenters.read(new StringReader("unused = {} ")).isEmpty());
+                () -> SceneDummyPoints.read(new StringReader("io.open('anything')")));
+        assertTrue(SceneDummyPoints.read(new StringReader("unused = {} ")).isEmpty());
     }
 }
