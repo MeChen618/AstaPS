@@ -5,6 +5,7 @@ import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import it.unimi.dsi.fastutil.ints.*;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import lombok.*;
@@ -21,6 +22,10 @@ public class PlayerProgress {
      * This only applies to one-time dungeons.
      */
     private IntArrayList completedDungeons;
+
+    // Replace the snapshot so an asynchronous player save can iterate it safely.
+    @Getter(AccessLevel.NONE)
+    private volatile Map<Integer, DungeonExitPoint> questDungeonExits = Map.of();
 
     // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
     // not sure where to put this, this should be saved to DB but not to individual quest, since
@@ -148,6 +153,24 @@ public class PlayerProgress {
                 .debug("Dungeon {} has been marked complete for {}.", dungeonId, this.getPlayer().getUid());
     }
 
+    public DungeonExitPoint getQuestDungeonExit(int dungeonId) {
+        var exits = this.questDungeonExits;
+        return exits == null ? null : exits.get(dungeonId);
+    }
+
+    public synchronized boolean setQuestDungeonExit(int dungeonId, int sceneId, int pointId) {
+        var exits = this.questDungeonExits;
+        var previous = exits == null ? null : exits.get(dungeonId);
+        if (previous != null && previous.sceneId == sceneId && previous.pointId == pointId) {
+            return false;
+        }
+
+        var updated = exits == null ? new HashMap<Integer, DungeonExitPoint>() : new HashMap<>(exits);
+        updated.put(dungeonId, new DungeonExitPoint(sceneId, pointId));
+        this.questDungeonExits = updated;
+        return true;
+    }
+
     public boolean hasPlayerObtainedItemHistorically(int itemId) {
         return itemHistory.containsKey(itemId);
     }
@@ -167,6 +190,15 @@ public class PlayerProgress {
 
     public int resetCurrentProgress(String progressId) {
         return questProgressCountMap.merge(progressId, 0, Integer::min);
+    }
+
+    @Entity(useDiscriminator = false)
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor(access = AccessLevel.PRIVATE)
+    public static class DungeonExitPoint {
+        private int sceneId;
+        private int pointId;
     }
 
     @Entity

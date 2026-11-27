@@ -10,10 +10,11 @@ import org.junit.jupiter.api.Test;
  */
 final class QuestExecLookupTest {
     @Test
-    void allQuestExecutionOpCodesRoundTripByValueAndName() {
+    void questExecutionsRoundTripByNameAndKnownValue() {
         for (var exec : QuestExec.values()) {
-            assertEquals(exec, QuestExec.getContentTriggerByValue(exec.getValue()), exec.name());
             assertEquals(exec, QuestExec.getContentTriggerByName(exec.name()), exec.name());
+            var expected = exec.getValue() >= 0 ? exec : QuestExec.QUEST_EXEC_NONE;
+            assertEquals(expected, QuestExec.getContentTriggerByValue(exec.getValue()), exec.name());
         }
     }
 

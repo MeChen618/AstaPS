@@ -172,6 +172,36 @@ public final class DungeonSystem extends BaseGameSystem {
         return true;
     }
 
+    public static boolean setQuestDungeonExit(Player player, int dungeonId, int sceneId, int pointId) {
+        if (dungeonId <= 0 || !GameData.getDungeonDataMap().containsKey(dungeonId)
+                || resolveQuestDungeonExit(sceneId, pointId) == null) {
+            return false;
+        }
+        if (player.getPlayerProgress().setQuestDungeonExit(dungeonId, sceneId, pointId)) {
+            player.save();
+        }
+        return true;
+    }
+
+    private static ScenePointEntry resolveQuestDungeonExit(int sceneId, int pointId) {
+        // Scene point keys use 16 bits for the point ID.
+        if (sceneId <= 0 || pointId <= 0 || pointId > 0xffff) return null;
+        var scene = GameData.getSceneDataMap().get(sceneId);
+        if (scene == null || scene.getSceneType() != SceneType.SCENE_WORLD) return null;
+
+        var entry = GameData.getScenePointEntryById(sceneId, pointId);
+        if (entry == null || entry.getSceneId() != sceneId) return null;
+        var point = entry.getPointData();
+        if (!"DungeonExit".equals(point.getType())) return null;
+
+        var position = point.getTranPos();
+        if (position == null || !Float.isFinite(position.getX())
+                || !Float.isFinite(position.getY()) || !Float.isFinite(position.getZ())) {
+            return null;
+        }
+        return entry;
+    }
+
     public void exitDungeon(Player player) {
         Scene scene = player.getScene();
 
@@ -197,10 +227,21 @@ public final class DungeonSystem extends BaseGameSystem {
         }
 
         if (dungeonData != null) {
-            ScenePointEntry entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
-
-            if (!towerDungeon && entry != null) {
-                prevPos.set(entry.getPointData().getTranPos());
+            if (!towerDungeon) {
+                var target = scene.getHost() == player
+                        ? player.getPlayerProgress().getQuestDungeonExit(dungeonData.getId())
+                        : null;
+                var entry = target == null
+                        ? null
+                        : resolveQuestDungeonExit(target.getSceneId(), target.getPointId());
+                if (entry != null) {
+                    prevScene = entry.getSceneId();
+                } else {
+                    entry = GameData.getScenePointEntryById(prevScene, scene.getPrevScenePoint());
+                }
+                if (entry != null && entry.getPointData().getTranPos() != null) {
+                    prevPos.set(entry.getPointData().getTranPos());
+                }
             }
             if (!dungeonManager.isFinishedSuccessfully()) {
                 dungeonManager.quitDungeon();
