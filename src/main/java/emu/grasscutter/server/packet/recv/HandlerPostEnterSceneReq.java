@@ -3,8 +3,12 @@ package emu.grasscutter.server.packet.recv;
 import static emu.grasscutter.config.Configuration.GAME_OPTIONS;
 
 import emu.grasscutter.game.ability.EscoffierSkillCookHelper;
+import emu.grasscutter.game.home.HomeWorld;
 import emu.grasscutter.game.player.EntryNotice;
+import emu.grasscutter.game.player.Player;
+import emu.grasscutter.game.player.Player.SceneLoadState;
 import emu.grasscutter.game.quest.enums.QuestContent;
+import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.PostEnterSceneReqOuterClass.PostEnterSceneReq;
 import emu.grasscutter.server.born.BornIntroGate;
@@ -39,6 +43,7 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
                 questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD, scene.getId());
                 questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD_SCENE, scene.getId());
             }
+            case SCENE_HOME_WORLD -> queueHomeEntryQuestEvent(player, scene);
             case SCENE_DUNGEON -> {
                 var dungeonManager = scene.getDungeonManager();
                 if (dungeonManager != null) dungeonManager.startDungeon();
@@ -59,8 +64,17 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         if (!freshPlayerBootstrap) this.playOpeningCutscene(player);
     }
 
+    static void queueHomeEntryQuestEvent(Player player, Scene scene) {
+        if (player.getSceneLoadState() == SceneLoadState.LOADED
+                && scene.getWorld() instanceof HomeWorld home
+                && home.getHost() == player) {
+            player.getQuestManager()
+                    .queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_HOME_WORLD, scene.getId());
+        }
+    }
+
     /** Fired here rather than at login: a cutscene sent before the scene is up is discarded. */
-    private void playOpeningCutscene(emu.grasscutter.game.player.Player player) {
+    private void playOpeningCutscene(Player player) {
         int cutscene = GAME_OPTIONS.firstLoginCutscene;
         if (GAME_OPTIONS.disableCutscenes || cutscene <= 0 || player.isPlayedFirstLoginCutscene()) return;
 
