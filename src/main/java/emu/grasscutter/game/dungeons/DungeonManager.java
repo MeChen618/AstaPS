@@ -20,6 +20,7 @@ import emu.grasscutter.server.packet.send.*;
 import emu.grasscutter.utils.Utils;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.*;
 import javax.annotation.Nullable;
 import lombok.*;
@@ -57,6 +58,7 @@ public final class DungeonManager {
         return rewardedPlayers.contains(uid);
     }
     private final Set<Integer> activeDungeonWayPoints = new HashSet<>();
+    private final CompletableFuture<Void> domainPreparation = new CompletableFuture<>();
     private boolean ended = false;
     private int newestWayPoint = 0;
     @Getter private int startSceneTime = 0;
@@ -74,6 +76,18 @@ public final class DungeonManager {
             this.passConfigData = GameData.getDungeonPassConfigDataMap().get(dungeonData.getPassCond());
         }
         this.finishedConditions = new int[this.passConfigData.getConds().size()];
+    }
+
+    public void whenDomainPrepared(Runnable callback) {
+        domainPreparation.thenRun(callback);
+    }
+
+    boolean isDomainPrepared() {
+        return domainPreparation.isDone();
+    }
+
+    void markDomainPrepared() {
+        domainPreparation.complete(null);
     }
 
     public void triggerEvent(DungeonPassConditionType conditionType, int... params) {

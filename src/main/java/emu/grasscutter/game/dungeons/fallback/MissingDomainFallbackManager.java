@@ -2,6 +2,7 @@ package emu.grasscutter.game.dungeons.fallback;
 
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.excels.dungeon.DungeonData;
+import emu.grasscutter.game.dungeons.DungeonManager;
 import emu.grasscutter.game.dungeons.challenge.WorldChallenge;
 import emu.grasscutter.game.dungeons.challenge.trigger.InTimeTrigger;
 import emu.grasscutter.game.dungeons.challenge.trigger.KillMonsterCountTrigger;
@@ -939,10 +940,10 @@ public final class MissingDomainFallbackManager {
 			return;
 		}
 
-        scene.runWhenHostInitialized(
-                () -> Grasscutter.getGameServer()
-                        .getScheduler()
-                        .scheduleDelayedTask(() -> prepareFallbackDomain(scene, config), 1));
+        var dungeon = scene.getDungeonManager();
+        if (dungeon == null) return;
+        scene.runWhenHostInitialized(() -> dungeon.whenDomainPrepared(
+                () -> scheduleForRun(scene, dungeon, () -> prepareFallbackDomain(scene, dungeon, config))));
     }
 
     public static boolean handleSelectWorktopOption(Scene scene, GameEntity entity, int optionId) {
@@ -983,24 +984,27 @@ public final class MissingDomainFallbackManager {
         return true;
     }
 
-    private static void prepareFallbackDomain(Scene scene, FallbackDomainConfig config) {
-        if (scene == null || scene.getDungeonManager() == null) {
-            return;
-        }
+    private static void scheduleForRun(Scene scene, DungeonManager dungeon, Runnable task) {
+        var server = Grasscutter.getGameServer();
+        if (server == null) return;
+        server.getScheduler().scheduleDelayedTask(() -> {
+            // Scene removal and script destruction take the same monitor.
+            synchronized (scene) {
+                if (scene.getDungeonManager() == dungeon && !scene.getScriptManager().isDestroyed()) {
+                    task.run();
+                }
+            }
+        }, 1);
+    }
 
+    private static void prepareFallbackDomain(Scene scene, DungeonManager dungeon, FallbackDomainConfig config) {
         loadGroup(scene, config.combatGroupId);
         loadGroup(scene, config.rewardGroupId);
 
-        Grasscutter.getGameServer()
-                .getScheduler()
-                .scheduleDelayedTask(() -> setupStarterKey(scene, config), 1);
+        scheduleForRun(scene, dungeon, () -> setupStarterKey(scene, config));
     }
 
     private static void setupStarterKey(Scene scene, FallbackDomainConfig config) {
-        if (scene == null) {
-            return;
-        }
-
         GameEntity entity = scene.getEntityByConfigId(config.starterKeyConfigId, config.combatGroupId);
         EntityGadget gadget;
 
