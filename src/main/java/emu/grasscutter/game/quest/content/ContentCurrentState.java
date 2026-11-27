@@ -21,6 +21,7 @@ import java.util.regex.Pattern;
             QUEST_CONTENT_ITEM_NUM_EQUAL,
             QUEST_CONTENT_ITEM_NUM_GREATER,
             QUEST_CONTENT_ITEM_NUM_LESS,
+            QUEST_CONTENT_CITY_LEVEL_UP,
             QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE,
             QUEST_CONTENT_LEAVE_SCENE_RANGE,
             QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
@@ -71,6 +72,12 @@ public final class ContentCurrentState extends BaseContent {
                     QUEST_CONTENT_ITEM_NUM_GREATER,
                     QUEST_CONTENT_ITEM_NUM_LESS ->
                     compare(type, player.getInventory().getItemCountById(expected[0]), expected[1]);
+            case QUEST_CONTENT_CITY_LEVEL_UP -> {
+                if (expected[0] <= 0 || expected[1] <= 0) yield false;
+                var cities = player.getCityInfoData();
+                var city = cities == null ? null : cities.get(expected[0]);
+                yield city != null && city.getLevel() >= expected[1];
+            }
             case QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE ->
                     player.getScene() != null && player.getScene().getId() == expected[0];
             case QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL -> {
@@ -109,6 +116,7 @@ public final class ContentCurrentState extends BaseContent {
                     QUEST_CONTENT_ITEM_NUM_EQUAL,
                     QUEST_CONTENT_ITEM_NUM_GREATER,
                     QUEST_CONTENT_ITEM_NUM_LESS,
+                    QUEST_CONTENT_CITY_LEVEL_UP,
                     QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE,
                     QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
                     QUEST_CONTENT_UNLOCKED_RECIPE,

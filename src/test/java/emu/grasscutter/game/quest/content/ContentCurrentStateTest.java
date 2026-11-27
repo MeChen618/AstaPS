@@ -12,6 +12,7 @@ import emu.grasscutter.data.GameData;
 import emu.grasscutter.data.binout.ScriptSceneData;
 import emu.grasscutter.data.excels.CookRecipeData;
 import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.city.CityInfoData;
 import emu.grasscutter.game.managers.cooking.CookingManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.props.SceneType;
@@ -20,6 +21,7 @@ import emu.grasscutter.game.world.TestWorld;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -29,9 +31,52 @@ final class ContentCurrentStateTest {
     void registersEveryStateAliasWithItsClientEnumValue() {
         var handlers = new Int2ObjectOpenHashMap<BaseContent>();
         new QuestSystem(null).registerHandler(handlers, ContentCurrentState.class);
-        for (int id : new int[] {150, 160, 161, 162, 168, 169, 170, 172, 177, 186}) {
+        for (int id : new int[] {109, 150, 160, 161, 162, 168, 169, 170, 172, 177, 186}) {
             assertInstanceOf(ContentCurrentState.class, handlers.get(id));
         }
+    }
+
+    @Test
+    void cityLevelGateRechecksTheCorrectSavedStatueLevel() {
+        var player = new Player();
+        var data = new Gson().fromJson(
+                "{\"subId\":46902,\"mainId\":469,\"finishCond\":[],\"failCond\":[]}",
+                QuestData.class);
+        var quest = new GameQuest(null, data) {
+            @Override
+            public Player getOwner() {
+                return player;
+            }
+        };
+        var condition = new QuestData.QuestContentCondition();
+        condition.setType(QUEST_CONTENT_CITY_LEVEL_UP);
+        condition.setParam(new int[] {1, 2});
+        var handler = new ContentCurrentState();
+
+        player.setCityInfoData(null);
+        assertFalse(handler.execute(quest, condition, "", 1));
+        assertNull(player.getCityInfoData());
+
+        var otherCity = new CityInfoData(2);
+        otherCity.setLevel(10);
+        player.setCityInfoData(Map.of(2, otherCity));
+        assertFalse(handler.execute(quest, condition, "", 1));
+
+        var city = new CityInfoData(1);
+        player.setCityInfoData(Map.of(1, city, 2, otherCity));
+        assertFalse(handler.execute(quest, condition, "", 1));
+        city.setLevel(2);
+        assertTrue(handler.execute(quest, condition, "", 1));
+        assertFalse(handler.execute(quest, condition, "", 2));
+        city.setLevel(4);
+        assertTrue(handler.execute(quest, condition, "", 1));
+        assertTrue(handler.execute(quest, condition, ""));
+        assertTrue(ContentCurrentState.checkOnStart(QUEST_CONTENT_CITY_LEVEL_UP));
+
+        condition.setParam(new int[] {1, 0});
+        assertFalse(handler.execute(quest, condition, "", 1));
+        condition.setParam(new int[] {1});
+        assertFalse(handler.execute(quest, condition, "", 1));
     }
 
     @Test
