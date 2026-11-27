@@ -46,9 +46,9 @@ public final class QuestSystem extends BaseGameSystem {
                 QuestValueExec opcode = handlerClass.getAnnotation(QuestValueExec.class);
                 value = opcode.value().getValue();
                 var handler = handlerClass.getDeclaredConstructor().newInstance();
-                if (value > 0) map.put(value, handler);
+                if (value != 0) map.put(value, handler);
                 for (var alias : opcode.aliases()) {
-                    if (alias.getValue() > 0) map.put(alias.getValue(), handler);
+                    if (alias.getValue() != 0) map.put(alias.getValue(), handler);
                 }
                 return;
             } else if (handlerClass.isAnnotationPresent(QuestValueContent.class)) {
