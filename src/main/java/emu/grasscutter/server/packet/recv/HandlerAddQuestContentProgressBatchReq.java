@@ -18,13 +18,11 @@ public class HandlerAddQuestContentProgressBatchReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = _AddQuestContentProgressBatchReq.parseFrom(payload);
-        var questManager = session.getPlayer().getQuestManager();
+        var player = session.getPlayer();
 
         for (var info : req.getProgressInfoListList()) {
             var type = QuestContent.getContentTriggerByValue(info.getContentType());
-            if (type != null) {
-                questManager.queueEvent(type, info.getParam());
-            }
+            HandlerAddQuestContentProgressReq.queueReportedProgress(player, type, info.getParam());
         }
     }
 }

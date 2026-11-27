@@ -39,16 +39,15 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         switch (scene.getSceneType()) {
             case SCENE_ROOM ->
                     questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_ROOM, scene.getId(), 0);
-            case SCENE_WORLD -> {
-                questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD, scene.getId());
-                questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD_SCENE, scene.getId());
-            }
+            case SCENE_WORLD ->
+                    questManager.queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD, scene.getId());
             case SCENE_HOME_WORLD -> queueHomeEntryQuestEvent(player, scene);
             case SCENE_DUNGEON -> {
                 var dungeonManager = scene.getDungeonManager();
                 if (dungeonManager != null) dungeonManager.startDungeon();
             }
         }
+        queueOwnWorldSceneEntryQuestEvent(player, scene);
         questManager.queueEvent(QuestContent.QUEST_CONTENT_LEAVE_SCENE, scene.getPrevScene());
         questManager.queueEvent(QuestContent.QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE, scene.getId());
 
@@ -62,6 +61,17 @@ public class HandlerPostEnterSceneReq extends PacketHandler {
         // Fresh 7.1 starts the opening from AQ351/35104. Do not add the independent legacy
         // first-login cutscene on top of that bootstrap.
         if (!freshPlayerBootstrap) this.playOpeningCutscene(player);
+    }
+
+    static void queueOwnWorldSceneEntryQuestEvent(Player player, Scene scene) {
+        if (player.getSceneLoadState() != SceneLoadState.LOADED
+                || scene.getWorld().getHost() != player) return;
+
+        switch (scene.getSceneType()) {
+            case SCENE_WORLD, SCENE_ROOM, SCENE_DUNGEON ->
+                    player.getQuestManager()
+                            .queueEvent(QuestContent.QUEST_CONTENT_ENTER_MY_WORLD_SCENE, scene.getId());
+        }
     }
 
     static void queueHomeEntryQuestEvent(Player player, Scene scene) {
