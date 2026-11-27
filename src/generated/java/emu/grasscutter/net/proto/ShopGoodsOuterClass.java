@@ -141,10 +141,10 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
     int getHcoin();
 
     /**
-     * <code>uint32 OCFMGIPGLDK = 20003;</code>
-     * @return The oCFMGIPGLDK.
+     * <code>uint32 buy_limit = 11;</code>
+     * @return The buyLimit.
      */
-    int getOCFMGIPGLDK();
+    int getBuyLimit();
 
     /**
      * <code>uint32 scoin = 20004;</code>
@@ -177,7 +177,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
     int getAJCBLGEDLFK();
 
     /**
-     * <code>uint32 single_limit = 20007;</code>
+     * <code>uint32 single_limit = 1983;</code>
      * @return The singleLimit.
      */
     int getSingleLimit();
@@ -520,15 +520,15 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       return hcoin_;
     }
 
-    public static final int OCFMGIPGLDK_FIELD_NUMBER = 20003;
-    private int oCFMGIPGLDK_ = 0;
+    public static final int BUY_LIMIT_FIELD_NUMBER = 11;
+    private int buyLimit_ = 0;
     /**
-     * <code>uint32 OCFMGIPGLDK = 20003;</code>
-     * @return The oCFMGIPGLDK.
+     * <code>uint32 buy_limit = 11;</code>
+     * @return The buyLimit.
      */
     @java.lang.Override
-    public int getOCFMGIPGLDK() {
-      return oCFMGIPGLDK_;
+    public int getBuyLimit() {
+      return buyLimit_;
     }
 
     public static final int SCOIN_FIELD_NUMBER = 20004;
@@ -586,10 +586,10 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       return aJCBLGEDLFK_;
     }
 
-    public static final int SINGLE_LIMIT_FIELD_NUMBER = 20007;
+    public static final int SINGLE_LIMIT_FIELD_NUMBER = 1983;
     private int singleLimit_ = 0;
     /**
-     * <code>uint32 single_limit = 20007;</code>
+     * <code>uint32 single_limit = 1983;</code>
      * @return The singleLimit.
      */
     @java.lang.Override
@@ -800,6 +800,9 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       if (beginTime_ != 0) {
         output.writeUInt32(7, beginTime_);
       }
+      if (buyLimit_ != 0) {
+        output.writeUInt32(11, buyLimit_);
+      }
       if (maxLevel_ != 0) {
         output.writeUInt32(12, maxLevel_);
       }
@@ -815,6 +818,9 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       if (discountBeginTime_ != 0) {
         output.writeUInt32(984, discountBeginTime_);
       }
+      if (singleLimit_ != 0) {
+        output.writeUInt32(1983, singleLimit_);
+      }
       if (getMEODDILKAADList().size() > 0) {
         output.writeUInt32NoTag(160002);
         output.writeUInt32NoTag(mEODDILKAADMemoizedSerializedSize);
@@ -828,9 +834,6 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       if (mcoin_ != 0) {
         output.writeUInt32(20002, mcoin_);
       }
-      if (oCFMGIPGLDK_ != 0) {
-        output.writeUInt32(20003, oCFMGIPGLDK_);
-      }
       if (scoin_ != 0) {
         output.writeUInt32(20004, scoin_);
       }
@@ -839,9 +842,6 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       }
       if (aJCBLGEDLFK_ != 0) {
         output.writeUInt32(20006, aJCBLGEDLFK_);
-      }
-      if (singleLimit_ != 0) {
-        output.writeUInt32(20007, singleLimit_);
       }
       if (nGPHJJIEDEH_ != false) {
         output.writeBool(20008, nGPHJJIEDEH_);
@@ -912,6 +912,10 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, beginTime_);
       }
+      if (buyLimit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, buyLimit_);
+      }
       if (maxLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, maxLevel_);
@@ -931,6 +935,10 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       if (discountBeginTime_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(984, discountBeginTime_);
+      }
+      if (singleLimit_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1983, singleLimit_);
       }
       {
         int dataSize = 0;
@@ -954,10 +962,6 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(20002, mcoin_);
       }
-      if (oCFMGIPGLDK_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20003, oCFMGIPGLDK_);
-      }
       if (scoin_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(20004, scoin_);
@@ -969,10 +973,6 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       if (aJCBLGEDLFK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(20006, aJCBLGEDLFK_);
-      }
-      if (singleLimit_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20007, singleLimit_);
       }
       if (nGPHJJIEDEH_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1082,8 +1082,8 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
           != other.getMcoin()) return false;
       if (getHcoin()
           != other.getHcoin()) return false;
-      if (getOCFMGIPGLDK()
-          != other.getOCFMGIPGLDK()) return false;
+      if (getBuyLimit()
+          != other.getBuyLimit()) return false;
       if (getScoin()
           != other.getScoin()) return false;
       if (getBeginTime()
@@ -1155,8 +1155,8 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
       hash = (53 * hash) + getMcoin();
       hash = (37 * hash) + HCOIN_FIELD_NUMBER;
       hash = (53 * hash) + getHcoin();
-      hash = (37 * hash) + OCFMGIPGLDK_FIELD_NUMBER;
-      hash = (53 * hash) + getOCFMGIPGLDK();
+      hash = (37 * hash) + BUY_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getBuyLimit();
       hash = (37 * hash) + SCOIN_FIELD_NUMBER;
       hash = (53 * hash) + getScoin();
       hash = (37 * hash) + BEGIN_TIME_FIELD_NUMBER;
@@ -1356,7 +1356,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         endTime_ = 0;
         mcoin_ = 0;
         hcoin_ = 0;
-        oCFMGIPGLDK_ = 0;
+        buyLimit_ = 0;
         scoin_ = 0;
         beginTime_ = 0;
         hBFOJABHIND_ = 0;
@@ -1472,7 +1472,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
           result.hcoin_ = hcoin_;
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.oCFMGIPGLDK_ = oCFMGIPGLDK_;
+          result.buyLimit_ = buyLimit_;
         }
         if (((from_bitField0_ & 0x00002000) != 0)) {
           result.scoin_ = scoin_;
@@ -1600,8 +1600,8 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         if (other.getHcoin() != 0) {
           setHcoin(other.getHcoin());
         }
-        if (other.getOCFMGIPGLDK() != 0) {
-          setOCFMGIPGLDK(other.getOCFMGIPGLDK());
+        if (other.getBuyLimit() != 0) {
+          setBuyLimit(other.getBuyLimit());
         }
         if (other.getScoin() != 0) {
           setScoin(other.getScoin());
@@ -1754,6 +1754,11 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
                 bitField0_ |= 0x00004000;
                 break;
               } // case 56
+              case 88: {
+                buyLimit_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 88
               case 96: {
                 maxLevel_ = input.readUInt32();
                 bitField0_ |= 0x00000040;
@@ -1781,6 +1786,11 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
                 bitField0_ |= 0x00010000;
                 break;
               } // case 7872
+              case 15864: {
+                singleLimit_ = input.readUInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 15864
               case 160000: {
                 int v = input.readUInt32();
                 ensureMEODDILKAADIsMutable();
@@ -1807,11 +1817,6 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
                 bitField0_ |= 0x00000400;
                 break;
               } // case 160016
-              case 160024: {
-                oCFMGIPGLDK_ = input.readUInt32();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 160024
               case 160032: {
                 scoin_ = input.readUInt32();
                 bitField0_ |= 0x00002000;
@@ -1827,11 +1832,6 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
                 bitField0_ |= 0x00020000;
                 break;
               } // case 160048
-              case 160056: {
-                singleLimit_ = input.readUInt32();
-                bitField0_ |= 0x00040000;
-                break;
-              } // case 160056
               case 160064: {
                 nGPHJJIEDEH_ = input.readBool();
                 bitField0_ |= 0x00080000;
@@ -2644,34 +2644,34 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         return this;
       }
 
-      private int oCFMGIPGLDK_ ;
+      private int buyLimit_ ;
       /**
-       * <code>uint32 OCFMGIPGLDK = 20003;</code>
-       * @return The oCFMGIPGLDK.
+       * <code>uint32 buy_limit = 11;</code>
+       * @return The buyLimit.
        */
       @java.lang.Override
-      public int getOCFMGIPGLDK() {
-        return oCFMGIPGLDK_;
+      public int getBuyLimit() {
+        return buyLimit_;
       }
       /**
-       * <code>uint32 OCFMGIPGLDK = 20003;</code>
-       * @param value The oCFMGIPGLDK to set.
+       * <code>uint32 buy_limit = 11;</code>
+       * @param value The buyLimit to set.
        * @return This builder for chaining.
        */
-      public Builder setOCFMGIPGLDK(int value) {
+      public Builder setBuyLimit(int value) {
 
-        oCFMGIPGLDK_ = value;
+        buyLimit_ = value;
         bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 OCFMGIPGLDK = 20003;</code>
+       * <code>uint32 buy_limit = 11;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOCFMGIPGLDK() {
+      public Builder clearBuyLimit() {
         bitField0_ = (bitField0_ & ~0x00001000);
-        oCFMGIPGLDK_ = 0;
+        buyLimit_ = 0;
         onChanged();
         return this;
       }
@@ -2838,7 +2838,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
 
       private int singleLimit_ ;
       /**
-       * <code>uint32 single_limit = 20007;</code>
+       * <code>uint32 single_limit = 1983;</code>
        * @return The singleLimit.
        */
       @java.lang.Override
@@ -2846,7 +2846,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         return singleLimit_;
       }
       /**
-       * <code>uint32 single_limit = 20007;</code>
+       * <code>uint32 single_limit = 1983;</code>
        * @param value The singleLimit to set.
        * @return This builder for chaining.
        */
@@ -2858,7 +2858,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
         return this;
       }
       /**
-       * <code>uint32 single_limit = 20007;</code>
+       * <code>uint32 single_limit = 1983;</code>
        * @return This builder for chaining.
        */
       public Builder clearSingleLimit() {
@@ -3528,25 +3528,25 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
   static {
     java.lang.String[] descriptorData = {
       "\n\017ShopGoods.proto\032\021AOGBDADBNNH.proto\032\017It" +
-      "emParam.proto\"\230\005\n\tShopGoods\022\022\n\nbought_nu" +
+      "emParam.proto\"\223\005\n\tShopGoods\022\022\n\nbought_nu" +
       "m\030\017 \001(\r\022\025\n\013MEODDILKAAD\030\240\234\001 \003(\r\022\036\n\ngoods_" +
       "item\030\r \001(\0132\n.ItemParam\022\"\n\016cost_item_list" +
       "\030\005 \003(\0132\n.ItemParam\022\020\n\010goods_id\030\001 \001(\r\022\021\n\t" +
       "min_level\030\004 \001(\r\022\021\n\tmax_level\030\014 \001(\r\022\025\n\013EL" +
       "PGDNACFOA\030\241\234\001 \001(\r\022\031\n\021next_refresh_time\030\003" +
       " \001(\r\022\020\n\010end_time\030\006 \001(\r\022\017\n\005mcoin\030\242\234\001 \001(\r\022" +
-      "\r\n\005hcoin\030\002 \001(\r\022\025\n\013OCFMGIPGLDK\030\243\234\001 \001(\r\022\017\n" +
-      "\005scoin\030\244\234\001 \001(\r\022\022\n\nbegin_time\030\007 \001(\r\022\025\n\013HB" +
-      "FOJABHIND\030\245\234\001 \001(\r\022\034\n\023discount_begin_time" +
-      "\030\330\007 \001(\r\022\025\n\013AJCBLGEDLFK\030\246\234\001 \001(\r\022\026\n\014single" +
-      "_limit\030\247\234\001 \001(\r\022\025\n\013NGPHJJIEDEH\030\250\234\001 \001(\010\022\025\n" +
-      "\013MMMFLNHEDNI\030\251\234\001 \003(\r\022\025\n\013LDCJFLOPNMP\030\252\234\001 " +
-      "\001(\r\022\025\n\013AIALJDFIEAI\030\253\234\001 \003(\r\022\025\n\013EKBHAAKJIN" +
-      "F\030\254\234\001 \001(\r\022#\n\013KAGKMENGAFH\030\255\234\001 \003(\0132\014.AOGBD" +
-      "ADBNNH\022\025\n\013MBMIKDBJNAN\030\256\234\001 \001(\010\022\032\n\021discoun" +
-      "t_end_time\030\336\003 \001(\r\022\025\n\013DCMBDJMCGGP\030\257\234\001 \001(\r" +
-      "B0\n\031emu.grasscutter.net.protoB\023ShopGoods" +
-      "OuterClassb\006proto3"
+      "\r\n\005hcoin\030\002 \001(\r\022\021\n\tbuy_limit\030\013 \001(\r\022\017\n\005sco" +
+      "in\030\244\234\001 \001(\r\022\022\n\nbegin_time\030\007 \001(\r\022\025\n\013HBFOJA" +
+      "BHIND\030\245\234\001 \001(\r\022\034\n\023discount_begin_time\030\330\007 " +
+      "\001(\r\022\025\n\013AJCBLGEDLFK\030\246\234\001 \001(\r\022\025\n\014single_lim" +
+      "it\030\277\017 \001(\r\022\025\n\013NGPHJJIEDEH\030\250\234\001 \001(\010\022\025\n\013MMMF" +
+      "LNHEDNI\030\251\234\001 \003(\r\022\025\n\013LDCJFLOPNMP\030\252\234\001 \001(\r\022\025" +
+      "\n\013AIALJDFIEAI\030\253\234\001 \003(\r\022\025\n\013EKBHAAKJINF\030\254\234\001" +
+      " \001(\r\022#\n\013KAGKMENGAFH\030\255\234\001 \003(\0132\014.AOGBDADBNN" +
+      "H\022\025\n\013MBMIKDBJNAN\030\256\234\001 \001(\010\022\032\n\021discount_end" +
+      "_time\030\336\003 \001(\r\022\025\n\013DCMBDJMCGGP\030\257\234\001 \001(\rB0\n\031e" +
+      "mu.grasscutter.net.protoB\023ShopGoodsOuter" +
+      "Classb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3559,7 +3559,7 @@ public final class ShopGoodsOuterClass extends com.google.protobuf.GeneratedFile
     internal_static_ShopGoods_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_ShopGoods_descriptor,
-        new java.lang.String[] { "BoughtNum", "MEODDILKAAD", "GoodsItem", "CostItemList", "GoodsId", "MinLevel", "MaxLevel", "ELPGDNACFOA", "NextRefreshTime", "EndTime", "Mcoin", "Hcoin", "OCFMGIPGLDK", "Scoin", "BeginTime", "HBFOJABHIND", "DiscountBeginTime", "AJCBLGEDLFK", "SingleLimit", "NGPHJJIEDEH", "MMMFLNHEDNI", "LDCJFLOPNMP", "AIALJDFIEAI", "EKBHAAKJINF", "KAGKMENGAFH", "MBMIKDBJNAN", "DiscountEndTime", "DCMBDJMCGGP", });
+        new java.lang.String[] { "BoughtNum", "MEODDILKAAD", "GoodsItem", "CostItemList", "GoodsId", "MinLevel", "MaxLevel", "ELPGDNACFOA", "NextRefreshTime", "EndTime", "Mcoin", "Hcoin", "BuyLimit", "Scoin", "BeginTime", "HBFOJABHIND", "DiscountBeginTime", "AJCBLGEDLFK", "SingleLimit", "NGPHJJIEDEH", "MMMFLNHEDNI", "LDCJFLOPNMP", "AIALJDFIEAI", "EKBHAAKJINF", "KAGKMENGAFH", "MBMIKDBJNAN", "DiscountEndTime", "DCMBDJMCGGP", });
     descriptor.resolveAllFeaturesImmutable();
     emu.grasscutter.net.proto.AOGBDADBNNHOuterClass.getDescriptor();
     emu.grasscutter.net.proto.ItemParamOuterClass.getDescriptor();

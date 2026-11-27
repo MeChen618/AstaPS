@@ -154,6 +154,7 @@ public class HandlerBuyGoodsReq extends PacketHandler {
             session.send(
                     new PacketBuyGoodsRsp(
                             buyGoodsReq.getShopType(),
+                            buyCount,
                             limit.getHasBoughtInPeriod(),
                             sg,
                             refreshes ? limit.getNextRefreshTime() : 0));
