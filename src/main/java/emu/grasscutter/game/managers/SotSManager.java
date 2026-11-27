@@ -433,7 +433,6 @@ public class SotSManager extends BasePlayerManager {
 
         var cityInfo = this.getCityInfo(cityId);
         int remainingOffer = itemNum;
-        int totalConsumed = 0;
         boolean anyLevelUp = false;
 
         // "Offer all" used to only process one level per request; loop until max
@@ -480,7 +479,6 @@ public class SotSManager extends BasePlayerManager {
                 player.getInventory().removeItemById(costItemId, use);
                 cityInfo.setNumCrystal(cityInfo.getNumCrystal() + use);
                 remainingOffer -= use;
-                totalConsumed += use;
             }
 
             if (cityInfo.getNumCrystal() < nextLevelCrystal) {
@@ -529,11 +527,6 @@ public class SotSManager extends BasePlayerManager {
             player.sendPacket(new PacketSceneForceUnlockNotify(1, true));
         }
 
-        // handle quest once if anything was offered
-        if (totalConsumed >= 1 || anyLevelUp) {
-            player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_CITY_LEVEL_UP, cityId, areaId);
-        }
-
         // update data
         this.addCityInfo(cityInfo);
 
@@ -541,6 +534,10 @@ public class SotSManager extends BasePlayerManager {
         player.sendPacket(
                 new PacketLevelupCityRsp(
                         sceneId, cityInfo.getLevel(), cityId, cityInfo.getNumCrystal(), areaId, 0));
+
+        if (anyLevelUp) {
+            player.getQuestManager().queueEvent(QuestContent.QUEST_CONTENT_CITY_LEVEL_UP, cityId);
+        }
 
         try {
             emu.grasscutter.game.player.InvestigationHandbookHelper.trigger(
