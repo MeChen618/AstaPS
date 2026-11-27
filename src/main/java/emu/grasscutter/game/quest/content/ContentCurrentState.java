@@ -7,6 +7,7 @@ import emu.grasscutter.data.excels.quest.QuestData;
 import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import emu.grasscutter.game.world.Position;
+import emu.grasscutter.game.world.SceneDummyPoints;
 
 import java.util.Arrays;
 import java.util.regex.Pattern;
@@ -27,6 +28,7 @@ import java.util.regex.Pattern;
             QUEST_CONTENT_NOT_UNLOCKED_RECIPE
         })
 public final class ContentCurrentState extends BaseContent {
+    private static final SceneDummyPoints SCENE_DUMMY_POINTS = new SceneDummyPoints();
     private static final Pattern POINT =
             Pattern.compile("\\[(\\d+)_[^:]+:([^,]+),([^,]+),([^,\\]]+)(?:,[^\\]]*)?\\]");
 
@@ -77,12 +79,9 @@ public final class ContentCurrentState extends BaseContent {
             }
             case QUEST_CONTENT_LEAVE_SCENE_RANGE -> {
                 var scene = player.getScene();
+                if (scene == null || scene.getId() != expected[0] || expected[1] < 0) yield false;
                 var center = parsePoint(condition.getParamStr(), expected[0]);
-                yield scene != null
-                        && scene.getId() == expected[0]
-                        && expected[1] >= 0
-                        && center != null
-                        && player.getPosition().computeDistance(center) > expected[1];
+                yield center != null && player.getPosition().computeDistance(center) > expected[1];
             }
             default -> false;
         };
@@ -134,8 +133,11 @@ public final class ContentCurrentState extends BaseContent {
     }
 
     static Position parsePoint(String spec, int sceneId) {
-        if (spec == null) return null;
-        var match = POINT.matcher(spec.trim());
+        if (spec == null || spec.isBlank()) return null;
+        var point = spec.trim();
+        if (!point.startsWith("[")) return SCENE_DUMMY_POINTS.resolve(sceneId, point);
+
+        var match = POINT.matcher(point);
         if (!match.matches()) return null;
         try {
             if (Integer.parseInt(match.group(1)) != sceneId) return null;

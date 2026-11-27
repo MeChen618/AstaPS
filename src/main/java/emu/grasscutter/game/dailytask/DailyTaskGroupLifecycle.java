@@ -127,7 +127,7 @@ public final class DailyTaskGroupLifecycle {
     }
 
     static Position center(DailyTaskData data) {
-        return validDistances(data) ? jsonCenter(data) : null;
+        return validDistances(data) ? SceneDummyPoints.fromSceneData(3, data.getCenterPosition()) : null;
     }
 
     static Position center(DailyTaskData data, State state) {
@@ -135,23 +135,10 @@ public final class DailyTaskGroupLifecycle {
         if (point != null || !validDistances(data)) return point;
         if (state.luaCenters == null)
             state.luaCenters =
-                    DailyTaskCenters.load(
+                    SceneDummyPoints.load(
                             emu.grasscutter.utils.FileUtils.getScriptPath(
                                     "Scene/3/scene3_dummy_points.lua"));
         return state.luaCenters.get(data.getCenterPosition());
-    }
-
-    private static Position jsonCenter(DailyTaskData data) {
-        var globals =
-                GameData.getScriptSceneDataMap().get("flat.luas.scenes.full_globals.lua.json");
-        if (globals == null || globals.getScriptObjectList() == null) return null;
-        var script = globals.getScriptObjectList().get("3/scene3_dummy_points.lua");
-        if (script == null || script.getDummyPoints() == null) return null;
-        var xyz = script.getDummyPoints().get(data.getCenterPosition() + ".pos");
-        if (xyz == null
-                || xyz.size() != 3
-                || xyz.stream().anyMatch(v -> v == null || !Float.isFinite(v))) return null;
-        return new Position(xyz.get(0), xyz.get(1), xyz.get(2));
     }
 
     /**
