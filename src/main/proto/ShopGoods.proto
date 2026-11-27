@@ -19,13 +19,13 @@ message ShopGoods {
   uint32 end_time = 6;
   uint32 mcoin = 20002;
   uint32 hcoin = 2;
-  uint32 OCFMGIPGLDK = 20003;
+  uint32 buy_limit = 11;
   uint32 scoin = 20004;
   uint32 begin_time = 7;
   uint32 HBFOJABHIND = 20005;
   uint32 discount_begin_time = 984;
   uint32 AJCBLGEDLFK = 20006;
-  uint32 single_limit = 20007;
+  uint32 single_limit = 1983;
   bool NGPHJJIEDEH = 20008;
   repeated uint32 MMMFLNHEDNI = 20009;
   uint32 LDCJFLOPNMP = 20010;

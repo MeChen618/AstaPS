@@ -7,13 +7,14 @@ import emu.grasscutter.net.proto.*;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 
 public class PacketBuyGoodsRsp extends BasePacket {
-    public PacketBuyGoodsRsp(int shopType, int boughtNum, ShopInfo shopInfo, int nextRefreshTime) {
+    public PacketBuyGoodsRsp(
+            int shopType, int buyCount, int boughtNum, ShopInfo shopInfo, int nextRefreshTime) {
         super(PacketOpcodes.BuyGoodsRsp);
 
         BuyGoodsRspOuterClass.BuyGoodsRsp buyGoodsRsp =
                 BuyGoodsRspOuterClass.BuyGoodsRsp.newBuilder()
                         .setShopType(shopType)
-                        .setBuyCount(boughtNum)
+                        .setBuyCount(buyCount)
                         .addGoodsList(
                                 ShopGoodsBuilder.fromShopInfo(shopInfo, boughtNum, nextRefreshTime))
                         .build();

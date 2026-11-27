@@ -25,9 +25,6 @@ public final class ShopGoodsBuilder {
             disableType = DISABLE_TYPE_SOLD_OUT;
         }
 
-        // buy_limit (OCFMGIPGLDK), disable_type (ELPGDNACFOA), scoin, mcoin, the level range and
-        // single_limit are unplaced in 7.1 and sit on unused numbers (LunaGC_7.1.0's ShopGoods), so
-        // setting them is harmless; the price reaches the client through cost_item_list below.
         ShopGoods.Builder goods =
                 ShopGoods.newBuilder()
                         .setGoodsId(info.getGoodsId())
@@ -39,9 +36,8 @@ public final class ShopGoodsBuilder {
                         .setScoin(info.getScoin())
                         .setHcoin(info.getHcoin())
                         .setMcoin(info.getMcoin())
-                        .setOCFMGIPGLDK(buyLimit)
-                        // Caps the purchase slider; monthly remaining uses buy_limit - bought_num.
-                        .setSingleLimit(buyLimit > 0 ? Math.max(1, buyLimit - bought) : 0)
+                        .setBuyLimit(buyLimit)
+                        .setSingleLimit(buyLimit > 0 ? buyLimit - bought : 0)
                         .setBeginTime(info.getBeginTime())
                         .setEndTime(info.getEndTime())
                         .setMinLevel(info.getMinLevel())

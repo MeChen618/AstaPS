@@ -55,7 +55,7 @@ These server protocol paths still require verified 7.2 bindings. Some empty requ
 
 `AABLEDJBAKK`, `AbilityMetaSpecialEnergy`, `AvatarChangeElementTypeRsp`, `AvatarDelNotify`, `AvatarTraceEffectChangeNotify`, `BMJNJLKCODG`, `BPAEPJHBOFM`, `BuyBattlePassLevelRsp`, `CheckUgcStateReq`, `CheckUgcStateRsp`, `CheckUgcUpdateReq`, `DeleteFriendReq`, `DungeonPlayerDieRsp`, `EntityAiKillSelfNotify`, `ExecuteGadgetLuaRsp`, `ExecuteGroupTriggerRsp`, `GetFriendShowAvatarInfoReq`, `GetFriendShowNameCardInfoReq`, `GetHomeLevelUpRewardRsp`, `GetShopReqNew`, `GetShopRspNew`, `GetUgcBriefInfoReq`, `GetWorldMpInfoRsp`, `HomeAvatarSummonEventRsp`, `HomeAvatarSummonFinishRsp`, `HomeResourceTakeHomeCoinRsp`, `HomeSceneInitFinishReq`, `HomeSceneJumpRsp`, `IceCreatureDataNotify`, `IceCreatureGadgetDisappearNotify`, `IceCreatureGadgetInfo`, `IceCreatureSetTypeGadgetReq`, `MarkNewNotify`, `MusicGameSettleReq`, `NALBKOPFIFD`, `PlayerApplyEnterHomeResultReq`, `PlayerApplyEnterHomeResultRsp`, `PlayerApplyEnterMpResultRsp`, `PlayerChatRsp`, `PropChangeDetailInfo`, `QuestDelNotify`, `ReadPrivateChatRsp`, `ReformFireworksRsp`, `SceneEntityDrownReq`, `SceneEntityDrownRsp`, `SceneEntityUpdateNotify`, `SetBattlePassViewedRsp`, `SetPlayerHeadImageRsp`, `SetPlayerPropRsp`, `ShowClientGuideNotify`, `SkipPlayerGameTimeReq`, `SkipPlayerGameTimeRsp`, `SnezhnayaTrainCallNotify`, `SnezhnayaTrainCallReq`, `SnezhnayaTrainSetRouteReq`, `SnezhnayaTrainStateNotify`, `TowerMiddleLevelChangeTeamNotify`, `TpsAmmunitionChangeNotify`, `TpsEquipChangeNotify`, `TpsWeaponAmmunitionInfo`, `UnfreezeGroupLimitNotify`, `WatcherChangeNotify`, `WearTpsEquipReq`, `WearTpsEquipRsp`, `WidgetDoBagRsp`, `WorldPlayerReviveRsp`
 
-## Fields with no verified 7.2 number (251 in 83 messages)
+## Fields with no verified 7.2 number (245 in 82 messages)
 
 Parked at field 20000 and up until verified. These are not current client field numbers; protobuf still writes them if server code explicitly sets them. The three displaced legacy fields stay available as Java API names, but must not be used as current client fields.
 
@@ -128,7 +128,7 @@ Parked at field 20000 and up until verified. These are not current client field 
 - `SceneAvatarInfo`: tps_weapon_list
 - `SceneTeamAvatar`: tps_weapon_list
 - `Shop`: city_reputation_level, hogdkcckgap
-- `ShopGoods`: MEODDILKAAD, ELPGDNACFOA, mcoin, OCFMGIPGLDK, scoin, HBFOJABHIND, AJCBLGEDLFK, single_limit, NGPHJJIEDEH, MMMFLNHEDNI, LDCJFLOPNMP, AIALJDFIEAI, EKBHAAKJINF, KAGKMENGAFH, MBMIKDBJNAN, DCMBDJMCGGP
+- `ShopGoods`: MEODDILKAAD, ELPGDNACFOA, mcoin, scoin, HBFOJABHIND, AJCBLGEDLFK, NGPHJJIEDEH, MMMFLNHEDNI, LDCJFLOPNMP, AIALJDFIEAI, EKBHAAKJINF, KAGKMENGAFH, MBMIKDBJNAN, DCMBDJMCGGP
 - `StoreWeightLimitNotify`: CDHAIJGOKFC, DKIEKFJMMIH, OAJHCKBKFPP, reliquary_count_limit, KADABCKKMGA, \_beyond_hall_facility_count_limit
 - `TeamEnterSceneInfo`: JFAHOBMFLFE, FOMPMBNENPH
 - `TowerAllDataRsp`: commemorative_reward_id, EFABCDDNIFA, valid_tower_record_num, skip_to_floor_index, GKIFECKDHKD
