@@ -1362,6 +1362,21 @@ public final class PlayerProgressManager extends BasePlayerDataManager {
         player.getQuestManager().queueEvent(QuestCond.QUEST_COND_HISTORY_GOT_ANY_ITEM, id, newCount);
     }
 
+    public boolean setMapLayerUnlockState(Set<Integer> layerIds, boolean unlocked) {
+        if (layerIds == null || layerIds.isEmpty()
+                || layerIds.stream().anyMatch(
+                        id -> id == null || id <= 0 || !GameData.getMapLayerDataMap().containsKey(id))) {
+            return false;
+        }
+        synchronized (this.player) {
+            if (this.player.getPlayerProgress().setMapLayersUnlocked(layerIds, unlocked)) {
+                this.player.save();
+                this.player.sendPacket(new PacketPlayerWorldSceneInfoListNotify(this.player));
+            }
+        }
+        return true;
+    }
+
     /******************************************************************************************************************
      ******************************************************************************************************************
      * SCENETAGS

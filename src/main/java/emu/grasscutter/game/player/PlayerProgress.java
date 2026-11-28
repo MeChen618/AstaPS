@@ -6,7 +6,9 @@ import emu.grasscutter.game.quest.*;
 import emu.grasscutter.game.quest.enums.QuestContent;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import lombok.*;
 
@@ -26,6 +28,10 @@ public class PlayerProgress {
     // Replace the snapshot so an asynchronous player save can iterate it safely.
     @Getter(AccessLevel.NONE)
     private volatile Map<Integer, DungeonExitPoint> questDungeonExits = Map.of();
+
+    // A fresh save uses the map layers advertised by the server unless a quest locks them.
+    @Getter(AccessLevel.NONE)
+    private volatile Set<Integer> lockedMapLayerIds = Set.of();
 
     // keep track of EXEC_ADD_QUEST_PROGRESS count, will be used in CONTENT_ADD_QUEST_PROGRESS
     // not sure where to put this, this should be saved to DB but not to individual quest, since
@@ -169,6 +175,18 @@ public class PlayerProgress {
         updated.put(dungeonId, new DungeonExitPoint(sceneId, pointId));
         this.questDungeonExits = updated;
         return true;
+    }
+
+    public Set<Integer> getLockedMapLayerIds() {
+        var locked = this.lockedMapLayerIds;
+        return locked == null ? Set.of() : Set.copyOf(locked);
+    }
+
+    synchronized boolean setMapLayersUnlocked(Set<Integer> layerIds, boolean unlocked) {
+        var updated = new HashSet<>(this.getLockedMapLayerIds());
+        boolean changed = unlocked ? updated.removeAll(layerIds) : updated.addAll(layerIds);
+        if (changed) this.lockedMapLayerIds = Set.copyOf(updated);
+        return changed;
     }
 
     public boolean hasPlayerObtainedItemHistorically(int itemId) {

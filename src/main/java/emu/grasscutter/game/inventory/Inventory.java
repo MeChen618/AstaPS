@@ -109,6 +109,15 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         return inventoryTab != null ? inventoryTab.getItemCountById(itemId) : 0;
     }
 
+    public boolean hasWidget(int materialId) {
+        if (materialId <= 0) return false;
+        var item = getItemById(materialId);
+        return item != null
+                && item.getCount() > 0
+                && item.getItemData() != null
+                && item.getItemData().getMaterialType() == MaterialType.MATERIAL_WIDGET;
+    }
+
     public boolean addItem(int itemId) {
         return addItem(itemId, 1);
     }

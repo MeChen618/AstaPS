@@ -93,6 +93,8 @@ public enum QuestContent implements QuestTrigger {
     QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE(177),
     QUEST_CONTENT_LEAVE_VEHICLE(182),
     QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL(186),
+    // Name-based resource condition with an internal handler key.
+    QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED(-1),
     QUEST_CONTENT_UNKNOWN(9999);
 
     private final int value;
@@ -112,7 +114,7 @@ public enum QuestContent implements QuestTrigger {
         Stream.of(values())
                 .forEach(
                         e -> {
-                            contentMap.put(e.getValue(), e);
+                            if (e.getValue() >= 0) contentMap.put(e.getValue(), e);
                             contentStringMap.put(e.name(), e);
                         });
     }
