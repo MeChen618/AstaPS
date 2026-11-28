@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// 7.2 CKMJCGBJBPE, CmdID 9768. Cache order differs from wire field order.
+message GetParentQuestVideoKeyRsp {
+  string video_key_2 = 3; // MGKAKJNCIEI
+  string video_key_1 = 4; // IGLPPIEKGMH
+  uint32 parent_quest_id = 5;
+  int32 retcode = 14;
+}

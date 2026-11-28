@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+// 7.2 LHOHHGOFGOL, CmdID 2974. See docs/parent-quest-video-keys-7.2.md.
+message GetParentQuestVideoKeyReq {
+  uint32 parent_quest_id = 2;
+}

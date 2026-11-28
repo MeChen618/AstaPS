@@ -2716,6 +2716,7 @@ public final class PacketOpcodes {
     public static final int _QuestFocusQuitRsp = 27014; // 7.1: 20244
     public static final int LuminanceStoneChallengeSettleNotify = 0; // 7.2 CmdId unknown (7.1: 4931)
     public static final int _SetWidgetQuickSlotListRsp = 0; // 7.1 CmdId unknown (7.0: 28556)
+    public static final int GetParentQuestVideoKeyReq = 2974; // 7.2: LHOHHGOFGOL
     public static final int GetParentQuestVideoKeyRsp = 9768; // 7.1: 9147
     public static final int QuestDestroyNpcReq = 21951; // 7.1: 23280
     public static final int HomeModuleSeenReq = 28933; // 7.1: 23679

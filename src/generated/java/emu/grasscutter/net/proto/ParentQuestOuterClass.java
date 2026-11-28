@@ -150,16 +150,24 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
         int index);
 
     /**
-     * <code>string HONCJCKFDJE = 20001;</code>
-     * @return The hONCJCKFDJE.
+     * <pre>
+     * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+     * </pre>
+     *
+     * <code>string video_key_1 = 395;</code>
+     * @return The videoKey1.
      */
-    java.lang.String getHONCJCKFDJE();
+    java.lang.String getVideoKey1();
     /**
-     * <code>string HONCJCKFDJE = 20001;</code>
-     * @return The bytes for hONCJCKFDJE.
+     * <pre>
+     * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+     * </pre>
+     *
+     * <code>string video_key_1 = 395;</code>
+     * @return The bytes for videoKey1.
      */
     com.google.protobuf.ByteString
-        getHONCJCKFDJEBytes();
+        getVideoKey1Bytes();
 
     /**
      * <code>repeated int32 quest_var = 6;</code>
@@ -179,16 +187,24 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
     int getQuestVar(int index);
 
     /**
-     * <code>string EODCGKGCGDN = 20002;</code>
-     * @return The eODCGKGCGDN.
+     * <pre>
+     * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+     * </pre>
+     *
+     * <code>string video_key_2 = 773;</code>
+     * @return The videoKey2.
      */
-    java.lang.String getEODCGKGCGDN();
+    java.lang.String getVideoKey2();
     /**
-     * <code>string EODCGKGCGDN = 20002;</code>
-     * @return The bytes for eODCGKGCGDN.
+     * <pre>
+     * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+     * </pre>
+     *
+     * <code>string video_key_2 = 773;</code>
+     * @return The bytes for videoKey2.
      */
     com.google.protobuf.ByteString
-        getEODCGKGCGDNBytes();
+        getVideoKey2Bytes();
 
     /**
      * <code>uint32 parent_quest_state = 1;</code>
@@ -263,9 +279,9 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
       childQuestList_ = java.util.Collections.emptyList();
       inferencePageList_ = java.util.Collections.emptyList();
       gFFBOKNBJLC_ = java.util.Collections.emptyList();
-      hONCJCKFDJE_ = "";
+      videoKey1_ = "";
       questVar_ = emptyIntList();
-      eODCGKGCGDN_ = "";
+      videoKey2_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -525,39 +541,47 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
       return gFFBOKNBJLC_.get(index);
     }
 
-    public static final int HONCJCKFDJE_FIELD_NUMBER = 20001;
+    public static final int VIDEO_KEY_1_FIELD_NUMBER = 395;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object hONCJCKFDJE_ = "";
+    private volatile java.lang.Object videoKey1_ = "";
     /**
-     * <code>string HONCJCKFDJE = 20001;</code>
-     * @return The hONCJCKFDJE.
+     * <pre>
+     * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+     * </pre>
+     *
+     * <code>string video_key_1 = 395;</code>
+     * @return The videoKey1.
      */
     @java.lang.Override
-    public java.lang.String getHONCJCKFDJE() {
-      java.lang.Object ref = hONCJCKFDJE_;
+    public java.lang.String getVideoKey1() {
+      java.lang.Object ref = videoKey1_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        hONCJCKFDJE_ = s;
+        videoKey1_ = s;
         return s;
       }
     }
     /**
-     * <code>string HONCJCKFDJE = 20001;</code>
-     * @return The bytes for hONCJCKFDJE.
+     * <pre>
+     * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+     * </pre>
+     *
+     * <code>string video_key_1 = 395;</code>
+     * @return The bytes for videoKey1.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getHONCJCKFDJEBytes() {
-      java.lang.Object ref = hONCJCKFDJE_;
+        getVideoKey1Bytes() {
+      java.lang.Object ref = videoKey1_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        hONCJCKFDJE_ = b;
+        videoKey1_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -594,39 +618,47 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
     }
     private int questVarMemoizedSerializedSize = -1;
 
-    public static final int EODCGKGCGDN_FIELD_NUMBER = 20002;
+    public static final int VIDEO_KEY_2_FIELD_NUMBER = 773;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object eODCGKGCGDN_ = "";
+    private volatile java.lang.Object videoKey2_ = "";
     /**
-     * <code>string EODCGKGCGDN = 20002;</code>
-     * @return The eODCGKGCGDN.
+     * <pre>
+     * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+     * </pre>
+     *
+     * <code>string video_key_2 = 773;</code>
+     * @return The videoKey2.
      */
     @java.lang.Override
-    public java.lang.String getEODCGKGCGDN() {
-      java.lang.Object ref = eODCGKGCGDN_;
+    public java.lang.String getVideoKey2() {
+      java.lang.Object ref = videoKey2_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        eODCGKGCGDN_ = s;
+        videoKey2_ = s;
         return s;
       }
     }
     /**
-     * <code>string EODCGKGCGDN = 20002;</code>
-     * @return The bytes for eODCGKGCGDN.
+     * <pre>
+     * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+     * </pre>
+     *
+     * <code>string video_key_2 = 773;</code>
+     * @return The bytes for videoKey2.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getEODCGKGCGDNBytes() {
-      java.lang.Object ref = eODCGKGCGDN_;
+        getVideoKey2Bytes() {
+      java.lang.Object ref = videoKey2_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        eODCGKGCGDN_ = b;
+        videoKey2_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -782,14 +814,14 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(15, getRandomInfo());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(videoKey1_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 395, videoKey1_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(videoKey2_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 773, videoKey2_);
+      }
       for (int i = 0; i < gFFBOKNBJLC_.size(); i++) {
         output.writeMessage(20000, gFFBOKNBJLC_.get(i));
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(hONCJCKFDJE_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 20001, hONCJCKFDJE_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(eODCGKGCGDN_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 20002, eODCGKGCGDN_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -873,6 +905,12 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getRandomInfo());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(videoKey1_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(395, videoKey1_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(videoKey2_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(773, videoKey2_);
+      }
 
           {
             final int count = gFFBOKNBJLC_.size();
@@ -882,12 +920,6 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
             }
             size += 3 * count;
           }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(hONCJCKFDJE_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(20001, hONCJCKFDJE_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(eODCGKGCGDN_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(20002, eODCGKGCGDN_);
-      }
       return size;
     }
     @java.lang.Override
@@ -925,12 +957,12 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
           .equals(other.getInferencePageListList())) return false;
       if (!getGFFBOKNBJLCList()
           .equals(other.getGFFBOKNBJLCList())) return false;
-      if (!getHONCJCKFDJE()
-          .equals(other.getHONCJCKFDJE())) return false;
+      if (!getVideoKey1()
+          .equals(other.getVideoKey1())) return false;
       if (!getQuestVarList()
           .equals(other.getQuestVarList())) return false;
-      if (!getEODCGKGCGDN()
-          .equals(other.getEODCGKGCGDN())) return false;
+      if (!getVideoKey2()
+          .equals(other.getVideoKey2())) return false;
       if (getParentQuestState()
           != other.getParentQuestState()) return false;
       if (getAcceptTime()
@@ -978,14 +1010,14 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
         hash = (37 * hash) + GFFBOKNBJLC_FIELD_NUMBER;
         hash = (53 * hash) + getGFFBOKNBJLCList().hashCode();
       }
-      hash = (37 * hash) + HONCJCKFDJE_FIELD_NUMBER;
-      hash = (53 * hash) + getHONCJCKFDJE().hashCode();
+      hash = (37 * hash) + VIDEO_KEY_1_FIELD_NUMBER;
+      hash = (53 * hash) + getVideoKey1().hashCode();
       if (getQuestVarCount() > 0) {
         hash = (37 * hash) + QUEST_VAR_FIELD_NUMBER;
         hash = (53 * hash) + getQuestVarList().hashCode();
       }
-      hash = (37 * hash) + EODCGKGCGDN_FIELD_NUMBER;
-      hash = (53 * hash) + getEODCGKGCGDN().hashCode();
+      hash = (37 * hash) + VIDEO_KEY_2_FIELD_NUMBER;
+      hash = (53 * hash) + getVideoKey2().hashCode();
       hash = (37 * hash) + PARENT_QUEST_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getParentQuestState();
       hash = (37 * hash) + ACCEPT_TIME_FIELD_NUMBER;
@@ -1195,9 +1227,9 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
           gFFBOKNBJLCBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000010);
-        hONCJCKFDJE_ = "";
+        videoKey1_ = "";
         questVar_ = emptyIntList();
-        eODCGKGCGDN_ = "";
+        videoKey2_ = "";
         parentQuestState_ = 0;
         acceptTime_ = 0;
         isRandom_ = false;
@@ -1282,14 +1314,14 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.hONCJCKFDJE_ = hONCJCKFDJE_;
+          result.videoKey1_ = videoKey1_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           questVar_.makeImmutable();
           result.questVar_ = questVar_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.eODCGKGCGDN_ = eODCGKGCGDN_;
+          result.videoKey2_ = videoKey2_;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.parentQuestState_ = parentQuestState_;
@@ -1414,8 +1446,8 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
             }
           }
         }
-        if (!other.getHONCJCKFDJE().isEmpty()) {
-          hONCJCKFDJE_ = other.hONCJCKFDJE_;
+        if (!other.getVideoKey1().isEmpty()) {
+          videoKey1_ = other.videoKey1_;
           bitField0_ |= 0x00000020;
           onChanged();
         }
@@ -1430,8 +1462,8 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
           }
           onChanged();
         }
-        if (!other.getEODCGKGCGDN().isEmpty()) {
-          eODCGKGCGDN_ = other.eODCGKGCGDN_;
+        if (!other.getVideoKey2().isEmpty()) {
+          videoKey2_ = other.videoKey2_;
           bitField0_ |= 0x00000080;
           onChanged();
         }
@@ -1581,6 +1613,16 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
                 bitField0_ |= 0x00000004;
                 break;
               } // case 122
+              case 3162: {
+                videoKey1_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 3162
+              case 6186: {
+                videoKey2_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 6186
               case 160002: {
                 emu.grasscutter.net.proto.CAHLGJBEIIJOuterClass.CAHLGJBEIIJ m =
                     input.readMessage(
@@ -1594,16 +1636,6 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
                 }
                 break;
               } // case 160002
-              case 160010: {
-                hONCJCKFDJE_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 160010
-              case 160018: {
-                eODCGKGCGDN_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 160018
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2567,73 +2599,93 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
         return gFFBOKNBJLCBuilder_;
       }
 
-      private java.lang.Object hONCJCKFDJE_ = "";
+      private java.lang.Object videoKey1_ = "";
       /**
-       * <code>string HONCJCKFDJE = 20001;</code>
-       * @return The hONCJCKFDJE.
+       * <pre>
+       * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+       * </pre>
+       *
+       * <code>string video_key_1 = 395;</code>
+       * @return The videoKey1.
        */
-      public java.lang.String getHONCJCKFDJE() {
-        java.lang.Object ref = hONCJCKFDJE_;
+      public java.lang.String getVideoKey1() {
+        java.lang.Object ref = videoKey1_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          hONCJCKFDJE_ = s;
+          videoKey1_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string HONCJCKFDJE = 20001;</code>
-       * @return The bytes for hONCJCKFDJE.
+       * <pre>
+       * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+       * </pre>
+       *
+       * <code>string video_key_1 = 395;</code>
+       * @return The bytes for videoKey1.
        */
       public com.google.protobuf.ByteString
-          getHONCJCKFDJEBytes() {
-        java.lang.Object ref = hONCJCKFDJE_;
+          getVideoKey1Bytes() {
+        java.lang.Object ref = videoKey1_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          hONCJCKFDJE_ = b;
+          videoKey1_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string HONCJCKFDJE = 20001;</code>
-       * @param value The hONCJCKFDJE to set.
+       * <pre>
+       * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+       * </pre>
+       *
+       * <code>string video_key_1 = 395;</code>
+       * @param value The videoKey1 to set.
        * @return This builder for chaining.
        */
-      public Builder setHONCJCKFDJE(
+      public Builder setVideoKey1(
           java.lang.String value) {
         java.util.Objects.requireNonNull(value);
-        hONCJCKFDJE_ = value;
+        videoKey1_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>string HONCJCKFDJE = 20001;</code>
+       * <pre>
+       * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+       * </pre>
+       *
+       * <code>string video_key_1 = 395;</code>
        * @return This builder for chaining.
        */
-      public Builder clearHONCJCKFDJE() {
-        hONCJCKFDJE_ = getDefaultInstance().getHONCJCKFDJE();
+      public Builder clearVideoKey1() {
+        videoKey1_ = getDefaultInstance().getVideoKey1();
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
-       * <code>string HONCJCKFDJE = 20001;</code>
-       * @param value The bytes for hONCJCKFDJE to set.
+       * <pre>
+       * 7.2 IGLPPIEKGMH: first component of the client's parent video-key cache.
+       * </pre>
+       *
+       * <code>string video_key_1 = 395;</code>
+       * @param value The bytes for videoKey1 to set.
        * @return This builder for chaining.
        */
-      public Builder setHONCJCKFDJEBytes(
+      public Builder setVideoKey1Bytes(
           com.google.protobuf.ByteString value) {
         java.util.Objects.requireNonNull(value);
         checkByteStringIsUtf8(value);
-        hONCJCKFDJE_ = value;
+        videoKey1_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
@@ -2723,73 +2775,93 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
         return this;
       }
 
-      private java.lang.Object eODCGKGCGDN_ = "";
+      private java.lang.Object videoKey2_ = "";
       /**
-       * <code>string EODCGKGCGDN = 20002;</code>
-       * @return The eODCGKGCGDN.
+       * <pre>
+       * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+       * </pre>
+       *
+       * <code>string video_key_2 = 773;</code>
+       * @return The videoKey2.
        */
-      public java.lang.String getEODCGKGCGDN() {
-        java.lang.Object ref = eODCGKGCGDN_;
+      public java.lang.String getVideoKey2() {
+        java.lang.Object ref = videoKey2_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          eODCGKGCGDN_ = s;
+          videoKey2_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string EODCGKGCGDN = 20002;</code>
-       * @return The bytes for eODCGKGCGDN.
+       * <pre>
+       * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+       * </pre>
+       *
+       * <code>string video_key_2 = 773;</code>
+       * @return The bytes for videoKey2.
        */
       public com.google.protobuf.ByteString
-          getEODCGKGCGDNBytes() {
-        java.lang.Object ref = eODCGKGCGDN_;
+          getVideoKey2Bytes() {
+        java.lang.Object ref = videoKey2_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          eODCGKGCGDN_ = b;
+          videoKey2_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string EODCGKGCGDN = 20002;</code>
-       * @param value The eODCGKGCGDN to set.
+       * <pre>
+       * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+       * </pre>
+       *
+       * <code>string video_key_2 = 773;</code>
+       * @param value The videoKey2 to set.
        * @return This builder for chaining.
        */
-      public Builder setEODCGKGCGDN(
+      public Builder setVideoKey2(
           java.lang.String value) {
         java.util.Objects.requireNonNull(value);
-        eODCGKGCGDN_ = value;
+        videoKey2_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>string EODCGKGCGDN = 20002;</code>
+       * <pre>
+       * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+       * </pre>
+       *
+       * <code>string video_key_2 = 773;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEODCGKGCGDN() {
-        eODCGKGCGDN_ = getDefaultInstance().getEODCGKGCGDN();
+      public Builder clearVideoKey2() {
+        videoKey2_ = getDefaultInstance().getVideoKey2();
         bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
-       * <code>string EODCGKGCGDN = 20002;</code>
-       * @param value The bytes for eODCGKGCGDN to set.
+       * <pre>
+       * 7.2 MGKAKJNCIEI: second component, also sent in GetParentQuestVideoKeyRsp.
+       * </pre>
+       *
+       * <code>string video_key_2 = 773;</code>
+       * @param value The bytes for videoKey2 to set.
        * @return This builder for chaining.
        */
-      public Builder setEODCGKGCGDNBytes(
+      public Builder setVideoKey2Bytes(
           com.google.protobuf.ByteString value) {
         java.util.Objects.requireNonNull(value);
         checkByteStringIsUtf8(value);
-        eODCGKGCGDN_ = value;
+        videoKey2_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
@@ -3123,22 +3195,22 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
     java.lang.String[] descriptorData = {
       "\n\021ParentQuest.proto\032\021CAHLGJBEIIJ.proto\032\020" +
       "ChildQuest.proto\032\027InferencePageInfo.prot" +
-      "o\032\033ParentQuestRandomInfo.proto\"\225\004\n\013Paren" +
+      "o\032\033ParentQuestRandomInfo.proto\"\223\004\n\013Paren" +
       "tQuest\0222\n\014time_var_map\030\003 \003(\0132\034.ParentQue" +
       "st.TimeVarMapEntry\022%\n\020child_quest_list\030\014" +
       " \003(\0132\013.ChildQuest\022+\n\013random_info\030\017 \001(\0132\026" +
       ".ParentQuestRandomInfo\022/\n\023inference_page" +
       "_list\030\013 \003(\0132\022.InferencePageInfo\022#\n\013GFFBO" +
-      "KNBJLC\030\240\234\001 \003(\0132\014.CAHLGJBEIIJ\022\025\n\013HONCJCKF" +
-      "DJE\030\241\234\001 \001(\t\022\021\n\tquest_var\030\006 \003(\005\022\025\n\013EODCGK" +
-      "GCGDN\030\242\234\001 \001(\t\022\032\n\022parent_quest_state\030\001 \001(" +
-      "\r\022\023\n\013accept_time\030\010 \001(\r\022\021\n\tis_random\030\r \001(" +
-      "\010\022\023\n\013is_finished\030\n \001(\010\022\026\n\016_is_focus_mode" +
-      "\030\t \001(\010\022\023\n\013DDHKDIOKFIF\030\004 \001(\010\022\025\n\rquest_var" +
-      "_seq\030\016 \001(\r\022\027\n\017parent_quest_id\030\005 \001(\r\0321\n\017T" +
-      "imeVarMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001" +
-      "(\r:\0028\001B\033\n\031emu.grasscutter.net.protob\006pro" +
-      "to3"
+      "KNBJLC\030\240\234\001 \003(\0132\014.CAHLGJBEIIJ\022\024\n\013video_ke" +
+      "y_1\030\213\003 \001(\t\022\021\n\tquest_var\030\006 \003(\005\022\024\n\013video_k" +
+      "ey_2\030\205\006 \001(\t\022\032\n\022parent_quest_state\030\001 \001(\r\022" +
+      "\023\n\013accept_time\030\010 \001(\r\022\021\n\tis_random\030\r \001(\010\022" +
+      "\023\n\013is_finished\030\n \001(\010\022\026\n\016_is_focus_mode\030\t" +
+      " \001(\010\022\023\n\013DDHKDIOKFIF\030\004 \001(\010\022\025\n\rquest_var_s" +
+      "eq\030\016 \001(\r\022\027\n\017parent_quest_id\030\005 \001(\r\0321\n\017Tim" +
+      "eVarMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r" +
+      ":\0028\001B\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3153,7 +3225,7 @@ public final class ParentQuestOuterClass extends com.google.protobuf.GeneratedFi
     internal_static_ParentQuest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_ParentQuest_descriptor,
-        new java.lang.String[] { "TimeVarMap", "ChildQuestList", "RandomInfo", "InferencePageList", "GFFBOKNBJLC", "HONCJCKFDJE", "QuestVar", "EODCGKGCGDN", "ParentQuestState", "AcceptTime", "IsRandom", "IsFinished", "IsFocusMode", "DDHKDIOKFIF", "QuestVarSeq", "ParentQuestId", });
+        new java.lang.String[] { "TimeVarMap", "ChildQuestList", "RandomInfo", "InferencePageList", "GFFBOKNBJLC", "VideoKey1", "QuestVar", "VideoKey2", "ParentQuestState", "AcceptTime", "IsRandom", "IsFinished", "IsFocusMode", "DDHKDIOKFIF", "QuestVarSeq", "ParentQuestId", });
     internal_static_ParentQuest_TimeVarMapEntry_descriptor =
       internal_static_ParentQuest_descriptor.getNestedType(0);
     internal_static_ParentQuest_TimeVarMapEntry_fieldAccessorTable = new
