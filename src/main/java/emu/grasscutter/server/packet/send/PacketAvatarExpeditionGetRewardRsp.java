@@ -3,19 +3,28 @@ package emu.grasscutter.server.packet.send;
 import emu.grasscutter.game.expedition.ExpeditionInfo;
 import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.net.packet.*;
-import emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp;
-import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
 import emu.grasscutter.net.proto.AvatarExpeditionBasicInfo._AvatarExpeditionBasicInfo;
+import emu.grasscutter.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp;
 import emu.grasscutter.net.proto.AvatarExpeditionRewardInfo._AvatarExpeditionRewardInfo;
+import emu.grasscutter.net.proto.ItemParamOuterClass.ItemParam;
+
 import java.util.*;
 
 public class PacketAvatarExpeditionGetRewardRsp extends BasePacket {
     public PacketAvatarExpeditionGetRewardRsp(
             Map<Long, ExpeditionInfo> expeditionInfo,
             Collection<_AvatarExpeditionRewardInfo> rewardInfos) {
+        this(expeditionInfo, rewardInfos, 0);
+    }
+
+    public PacketAvatarExpeditionGetRewardRsp(
+            Map<Long, ExpeditionInfo> expeditionInfo,
+            Collection<_AvatarExpeditionRewardInfo> rewardInfos,
+            int retcode) {
         super(PacketOpcodes.AvatarExpeditionGetRewardRsp);
 
-        AvatarExpeditionGetRewardRsp.Builder proto = AvatarExpeditionGetRewardRsp.newBuilder();
+        AvatarExpeditionGetRewardRsp.Builder proto =
+                AvatarExpeditionGetRewardRsp.newBuilder().setRetcode(retcode);
         expeditionInfo.forEach((key, e) -> proto.putExpeditionInfoMap(key, e.toProto()));
         if (rewardInfos != null) {
             proto.addAllExpeditionRewardList(rewardInfos);
@@ -34,7 +43,8 @@ public class PacketAvatarExpeditionGetRewardRsp extends BasePacket {
                             .setHourTime(expInfo.getHourTime())
                             .build());
         } else {
-            b.setBasicInfo(_AvatarExpeditionBasicInfo.newBuilder().setAvatarGuid(avatarGuid).build());
+            b.setBasicInfo(
+                    _AvatarExpeditionBasicInfo.newBuilder().setAvatarGuid(avatarGuid).build());
         }
         if (items != null) {
             for (GameItem item : items) {

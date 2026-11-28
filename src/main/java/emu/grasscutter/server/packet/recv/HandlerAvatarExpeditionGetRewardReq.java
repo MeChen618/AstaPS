@@ -5,10 +5,12 @@ import emu.grasscutter.game.inventory.GameItem;
 import emu.grasscutter.game.props.ActionReason;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.AvatarExpeditionGetRewardReqOuterClass.AvatarExpeditionGetRewardReq;
-import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
 import emu.grasscutter.net.proto.AvatarExpeditionRewardInfo._AvatarExpeditionRewardInfo;
+import emu.grasscutter.net.proto.PacketHeadOuterClass.PacketHead;
+import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.*;
+
 import java.util.*;
 
 @Opcodes(PacketOpcodes.AvatarExpeditionGetRewardReq)
@@ -45,21 +47,40 @@ public class HandlerAvatarExpeditionGetRewardReq extends PacketHandler {
             }
         }
 
+        int retcode = 0;
         for (var entry : toClaim) {
             long guid = entry.getKey();
             ExpeditionInfo expInfo = entry.getValue();
             List<GameItem> items = ExpeditionHelper.rollRewards(player, expInfo);
+            if (items.isEmpty()) {
+                retcode = Retcode.RET_FAIL_VALUE;
+                break;
+            }
             allItems.addAll(items);
             rewardInfos.add(PacketAvatarExpeditionGetRewardRsp.toRewardInfo(guid, expInfo, items));
-            player.removeExpeditionInfo(guid);
         }
 
-        if (!allItems.isEmpty()) {
-            player.getInventory().addItems(allItems, ActionReason.ExpeditionReward);
+        if (retcode == 0 && !allItems.isEmpty()) {
+            // The inventory admits the entire batch or refuses it. Keep every expedition
+            // claimable until delivery succeeds, including when claiming all at once.
+            if (player.getInventory()
+                    .addItems(allItems, ActionReason.ExpeditionReward)
+                    .allAccepted()) {
+                for (var entry : toClaim) {
+                    player.removeExpeditionInfo(entry.getKey());
+                }
+            } else {
+                retcode = Retcode.RET_FAIL_VALUE;
+            }
+        }
+        if (retcode != 0) {
+            rewardInfos.clear();
         }
 
         player.save();
-        var rsp = new PacketAvatarExpeditionGetRewardRsp(player.getExpeditionInfo(), rewardInfos);
+        var rsp =
+                new PacketAvatarExpeditionGetRewardRsp(
+                        player.getExpeditionInfo(), rewardInfos, retcode);
         if (clientSeq > 0) {
             rsp.buildHeader(clientSeq);
         }
