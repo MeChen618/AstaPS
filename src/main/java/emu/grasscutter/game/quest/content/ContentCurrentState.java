@@ -119,6 +119,7 @@ public final class ContentCurrentState extends BaseContent {
                     QUEST_CONTENT_CITY_LEVEL_UP,
                     QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE,
                     QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
+                    QUEST_CONTENT_FINISH_DUNGEON,
                     QUEST_CONTENT_UNLOCKED_RECIPE,
                     QUEST_CONTENT_NOT_UNLOCKED_RECIPE ->
                     true;
