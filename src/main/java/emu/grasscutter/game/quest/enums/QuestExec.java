@@ -87,8 +87,9 @@ public enum QuestExec implements QuestTrigger {
     QUEST_EXEC_BATCH_SET_QUEST_VAR(112),
     QUEST_EXEC_SET_OPEN_STATE_V2(118),
     QUEST_EXEC_BATCH_SET_OPEN_STATE(123),
-    // Loaded by name from quest resources. The negative key is internal to the handler registry.
+    // Loaded by name from quest resources. Negative keys are internal to the handler registry.
     QUEST_EXEC_MODIFY_DUNGEON_EXIT_POINT(-1),
+    QUEST_EXEC_EXIT_VEHICLE(-3),
     QUEST_EXEC_UNKNOWN(9999);
 
     private final int value;
