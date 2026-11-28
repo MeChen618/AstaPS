@@ -110,7 +110,7 @@ Parked at field 20000 and up until verified. These are not current client field 
 - `MassiveEntityElementOpBatchNotify`: user_id, op_idx, source_element_type, reaction_source_type
 - `MusicGameActivityDetailInfo`: NCCMPNEBJLA, EPEEHJNIPNB
 - `OneoffGatherPointDetectorData`: CBENILCDDCB
-- `ParentQuest`: GFFBOKNBJLC, HONCJCKFDJE, EODCGKGCGDN
+- `ParentQuest`: GFFBOKNBJLC (video strings recovered at fields 395/773; see `parent-quest-video-keys-7.2.md`)
 - `PersonalLineAllDataRsp`: NIPKCPGAMKF
 - `PingReq`: BLOPFLFBDAE, MCCPJDKDNMJ
 - `PlayerEnterDungeonReq`: BAEJLCIOPMI

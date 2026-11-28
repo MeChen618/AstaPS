@@ -1,5 +1,6 @@
 package emu.grasscutter.server.packet.send;
 
+import emu.grasscutter.data.GameData;
 import emu.grasscutter.game.quest.GameMainQuest;
 import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.game.quest.enums.ParentQuestState;
@@ -33,15 +34,17 @@ public class PacketFinishedParentQuestUpdateNotify extends BasePacket {
 
         var proto = FinishedParentQuestUpdateNotify.newBuilder();
         for (int id : mainQuestIds) {
-            proto.addParentQuestList(
+            var parent =
                     emu.grasscutter.net.proto.ParentQuestOuterClass.ParentQuest.newBuilder()
                             .setParentQuestId(id)
                             .setIsFinished(true)
                             .setParentQuestState(
                                     emu.grasscutter.game.quest.enums.ParentQuestState
                                             .PARENT_QUEST_STATE_FINISHED
-                                            .getValue())
-                            .build());
+                                            .getValue());
+            var videoKey = GameData.getParentQuestVideoKeys().get(id);
+            if (videoKey != null) videoKey.applyTo(parent);
+            proto.addParentQuestList(parent);
         }
         this.setData(proto);
     }

@@ -97,6 +97,7 @@ public final class ResourceLoader {
 
         loadSpawnData();
         loadQuests();
+        loadParentQuestVideoKeys();
         loadScriptSceneData();
 
         loadScenePoints();
@@ -700,6 +701,28 @@ public final class ResourceLoader {
         for (OpenConfigEntry entry : list) {
             GameData.getOpenConfigEntries().put(entry.getName(), entry);
         }
+    }
+
+    private static void loadParentQuestVideoKeys() {
+        var keys = GameData.getParentQuestVideoKeys();
+        keys.clear();
+        // The data folder overrides the resource distribution, as with other local resource fixes.
+        for (var path :
+                List.of(
+                        getResourcePath(ParentQuestVideoKey.FILE_NAME),
+                        FileUtils.getDataUserPath(ParentQuestVideoKey.FILE_NAME))) {
+            if (!Files.exists(path)) continue;
+            try {
+                keys.putAll(ParentQuestVideoKey.load(path));
+            } catch (IOException | RuntimeException e) {
+                // Parser exceptions may contain key material. Report the file, never its contents.
+                Grasscutter.getLogger()
+                        .error(
+                                "Unable to load {}. Check the format in docs/parent-quest-video-keys-7.2.md.",
+                                path);
+            }
+        }
+        Grasscutter.getLogger().info("Loaded {} parent-quest video-key records.", keys.size());
     }
 
     private static void loadQuests() {

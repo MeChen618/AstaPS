@@ -45,6 +45,7 @@ import emu.grasscutter.data.excels.world.WorldAreaData;
 import emu.grasscutter.data.excels.world.WorldLevelData;
 import emu.grasscutter.data.server.*;
 import emu.grasscutter.game.dungeons.DungeonDropEntry;
+import emu.grasscutter.game.quest.ParentQuestVideoKey;
 import emu.grasscutter.game.quest.QuestEncryptionKey;
 import emu.grasscutter.game.quest.RewindData;
 import emu.grasscutter.game.quest.TeleportData;
@@ -83,6 +84,9 @@ public final class GameData {
 
     private static final Int2ObjectMap<MainQuestData> mainQuestData = new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<QuestEncryptionKey> questsKeys = new Int2ObjectOpenHashMap<>();
+    @Getter
+    private static final Int2ObjectMap<ParentQuestVideoKey> parentQuestVideoKeys =
+            new Int2ObjectOpenHashMap<>();
     private static final Int2ObjectMap<SceneNpcBornData> npcBornData = new Int2ObjectOpenHashMap<>();
     private static final Map<String, AbilityEmbryoEntry> abilityEmbryos = new HashMap<>();
 
