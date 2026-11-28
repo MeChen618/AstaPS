@@ -6,6 +6,7 @@ import emu.grasscutter.data.excels.quest.QuestData.*;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.conditions.BaseCondition;
 import emu.grasscutter.game.quest.content.BaseContent;
+import emu.grasscutter.game.quest.enums.QuestExec;
 import emu.grasscutter.game.quest.handlers.QuestExecHandler;
 import emu.grasscutter.server.game.*;
 
@@ -46,9 +47,9 @@ public final class QuestSystem extends BaseGameSystem {
                 QuestValueExec opcode = handlerClass.getAnnotation(QuestValueExec.class);
                 value = opcode.value().getValue();
                 var handler = handlerClass.getDeclaredConstructor().newInstance();
-                if (value > 0) map.put(value, handler);
+                if (value != 0) map.put(value, handler);
                 for (var alias : opcode.aliases()) {
-                    if (alias.getValue() > 0) map.put(alias.getValue(), handler);
+                    if (alias.getValue() != 0) map.put(alias.getValue(), handler);
                 }
                 return;
             } else if (handlerClass.isAnnotationPresent(QuestValueContent.class)) {
@@ -117,26 +118,30 @@ public final class QuestSystem extends BaseGameSystem {
     }
 
     public void triggerExec(GameQuest quest, QuestExecParam execParam, String... params) {
-        QuestExecHandler handler = execHandlers.get(execParam.getType().getValue());
+        var type = execParam.getType();
+        if (type == null) return;
+        QuestExecHandler handler = execHandlers.get(type.getValue());
 
         if (handler == null || quest.getQuestData() == null) {
             Grasscutter.getLogger()
                     .debug(
                             "Could not trigger exec {} at {}",
-                            execParam.getType().getValue(),
+                            type,
                             quest.getQuestData());
             return;
         }
 
-        QuestManager.eventExecutor.submit(
-                () -> {
-                    if (!handler.execute(quest, execParam, params)) {
-                        Grasscutter.getLogger()
-                                .debug(
-                                        "Execute trigger failed for {} at {}.",
-                                        execParam.getType().name(),
-                                        quest.getQuestData());
-                    }
-                });
+        Runnable execute = () -> {
+            if (!handler.execute(quest, execParam, params)) {
+                Grasscutter.getLogger()
+                        .debug("Execute trigger failed for {} at {}.", type, quest.getQuestData());
+            }
+        };
+        // Completing a quest can settle the current dungeon in the same call.
+        if (type == QuestExec.QUEST_EXEC_MODIFY_DUNGEON_EXIT_POINT) {
+            execute.run();
+        } else {
+            QuestManager.eventExecutor.submit(execute);
+        }
     }
 }
