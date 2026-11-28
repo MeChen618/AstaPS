@@ -73,7 +73,7 @@ public class Scene {
     private final LongSupplier sceneTimeSource;
     private long lastSceneTimeNanos;
     private long elapsedSceneTimeNanos;
-    @Getter @Setter DungeonManager dungeonManager;
+    @Getter private volatile DungeonManager dungeonManager;
     @Getter Int2ObjectMap<Route> sceneRoutes;
     private Set<SpawnDataEntry.GridBlockId> loadedGridBlocks;
     private int loadedBlossomRevision;
@@ -224,8 +224,12 @@ public class Scene {
     }
 
     public void triggerDungeonEvent(DungeonPassConditionType conditionType, int... params) {
-        if (this.dungeonManager == null) return;
-        this.dungeonManager.triggerEvent(conditionType, params);
+        var dungeon = this.dungeonManager;
+        if (dungeon != null) dungeon.triggerEvent(conditionType, params);
+    }
+
+    public synchronized void setDungeonManager(DungeonManager dungeonManager) {
+        this.dungeonManager = dungeonManager;
     }
 
     public boolean isInScene(GameEntity entity) {
@@ -971,13 +975,14 @@ public class Scene {
 
     private Position getRespawnLocation(Player player) {
 
-        var lastCheckpointPos = dungeonManager != null ? dungeonManager.getRespawnLocation() : null;
+        var dungeon = this.dungeonManager;
+        var lastCheckpointPos = dungeon != null ? dungeon.getRespawnLocation() : null;
         return lastCheckpointPos != null ? lastCheckpointPos : getDefaultLocation(player);
     }
 
     private Position getRespawnRotation(Player player) {
-        var lastCheckpointRot =
-                this.dungeonManager != null ? this.dungeonManager.getRespawnRotation() : null;
+        var dungeon = this.dungeonManager;
+        var lastCheckpointRot = dungeon != null ? dungeon.getRespawnRotation() : null;
         return lastCheckpointRot != null ? lastCheckpointRot : this.getDefaultRotation(player);
     }
 

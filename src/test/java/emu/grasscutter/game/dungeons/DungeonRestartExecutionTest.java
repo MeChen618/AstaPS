@@ -34,8 +34,6 @@ final class DungeonRestartExecutionTest {
     private static final int PASS = 991763;
     private SceneData previousScene;
     private DungeonPassConfigData previousPass;
-    private Map<Integer, Long> domainEnterTimes;
-    private Long previousEnterTime;
     private TestDungeonData data;
     private Player player;
     private TestWorld world;
@@ -76,13 +74,6 @@ final class DungeonRestartExecutionTest {
                                                 DungeonPassConfigData.class));
         player = new Player();
         player.setUid(991760);
-        var clock = DomainDungeonHelper.class.getDeclaredField("LAST_ENTER_MS");
-        clock.setAccessible(true);
-        @SuppressWarnings("unchecked")
-        var times = (Map<Integer, Long>) clock.get(null);
-        domainEnterTimes = times;
-        // 本组只验证重开边界，跳过另有测试覆盖的异步场景组加载。
-        previousEnterTime = times.put(player.getUid(), Long.MAX_VALUE);
         world = TestWorld.create(player);
         scene = new TestScene(world, SCENE, SceneType.SCENE_DUNGEON);
         scene.getPlayers().add(player);
@@ -105,8 +96,6 @@ final class DungeonRestartExecutionTest {
 
     @AfterEach
     void restore() {
-        if (previousEnterTime == null) domainEnterTimes.remove(player.getUid());
-        else domainEnterTimes.put(player.getUid(), previousEnterTime);
         if (previousScene == null) GameData.getSceneDataMap().remove(SCENE);
         else GameData.getSceneDataMap().put(SCENE, previousScene);
         if (previousPass == null) GameData.getDungeonPassConfigDataMap().remove(PASS);

@@ -47,9 +47,7 @@ import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.Scene;
 import emu.grasscutter.game.world.data.TeleportProperties;
 import emu.grasscutter.scripts.SceneScriptManager;
-import emu.grasscutter.scripts.data.SceneBlock;
 import emu.grasscutter.scripts.data.SceneConfig;
-import emu.grasscutter.scripts.data.SceneGroup;
 import emu.grasscutter.server.game.GameServerPacketHandler;
 import emu.grasscutter.server.game.GameSession;
 import it.unimi.dsi.fastutil.ints.Int2IntMaps;
@@ -57,16 +55,12 @@ import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public final class DomainDungeonHelper {
     private static final int DOMAIN_WEATHER_ID = 1;
     private static final float DEFAULT_ENTRY_RADIUS = 45.0f;
-    private static final long ENTER_DEBOUNCE_MS = 1500L;
     private static final Int2IntMap CLIENT_SCENE_CACHE = Int2IntMaps.synchronize(new Int2IntOpenHashMap());
-    private static final ConcurrentHashMap<Integer, Long> LAST_ENTER_MS = new ConcurrentHashMap();
 
     private DomainDungeonHelper() {
     }
@@ -151,21 +145,6 @@ public final class DomainDungeonHelper {
             Grasscutter.getLogger().debug("Domain exit scene sync uid={} from {} to {}", new Object[]{player.getUid(), player.getSceneId(), n});
             player.setSceneId(n);
         }
-    }
-
-    public static void onDungeonRestart(Player player, Scene scene) {
-        if (player == null || scene == null) {
-            return;
-        }
-        LAST_ENTER_MS.remove(player.getUid());
-        scene.setChallenge(null);
-        scene.setKilledMonsterCount(0);
-        DomainDungeonHelper.applyDomainWeather(player);
-        DomainDungeonHelper.syncPlayerClientSceneId(player);
-        DomainSceneResetHelper.clearGridCache(scene);
-        DomainSceneResetHelper.refreshToInitSuites(scene);
-        DomainDungeonHelper.applyDomainSpawn(player);
-        DomainChallengeKeyHelper.revealChallengeKeys(scene);
     }
 
     public static void syncPlayerClientSceneId(Player player) {
@@ -262,93 +241,45 @@ public final class DomainDungeonHelper {
     }
 
     public static void onPlayerEnterDomain(Player player) {
-        if (player == null) {
-            return;
-        }
-        long l = System.currentTimeMillis();
-        Long l2 = LAST_ENTER_MS.get(player.getUid());
-        if (l2 != null && l - l2 < 1500L) {
-            return;
-        }
-        LAST_ENTER_MS.put(player.getUid(), l);
+        if (player == null) return;
         Scene scene = player.getScene();
-        if (scene == null || !DomainDungeonHelper.isDomainScene(scene)) {
-            return;
-        }
-        DomainSceneResetHelper.clearGridCache(scene);
-        DomainDungeonHelper.applyDomainWeather(player);
-        DomainDungeonHelper.syncPlayerClientSceneId(player);
-        SceneScriptManager sceneScriptManager = scene.getScriptManager();
-        if (sceneScriptManager != null) {
-            SceneScriptManager.eventExecutor.execute(() -> DomainDungeonHelper.finishDomainEnterDeferred(player, scene));
-        }
-    }
+        if (!isDomainScene(scene)) return;
+        var dungeon = scene.getDungeonManager();
+        var scripts = scene.getScriptManager();
+        if (dungeon == null || scripts == null || scripts.isDestroyed()) return;
 
-    private static void finishDomainEnterDeferred(Player player, Scene scene) {
-        if (player == null || scene == null || !DomainDungeonHelper.isDomainScene(scene)) {
-            return;
-        }
-        try {
-            DomainDungeonHelper.ensureGroupsLoaded(scene);
-            DomainSceneResetHelper.refreshToInitSuites(scene);
-            DomainDungeonHelper.applyTalentPackVariable(scene);
-            DomainDungeonHelper.applyDomainSpawn(player);
-            DomainChallengeKeyHelper.revealChallengeKeys(scene);
-            Grasscutter.getLogger().info("Domain enter done uid={} serverScene={} clientScene={}", new Object[]{player.getUid(), scene.getId(), DomainDungeonHelper.resolveClientSceneId(scene.getId())});
-        }
-        catch (Throwable throwable) {
-            Grasscutter.getLogger().warn("Domain deferred enter failed scene={}: {}", (Object)scene.getId(), (Object)throwable.toString());
-        }
-    }
-
-    public static void ensureGroupsLoaded(Scene scene) {
-        if (scene == null || !DomainDungeonHelper.isDomainScene(scene)) {
-            return;
-        }
-        SceneScriptManager sceneScriptManager = scene.getScriptManager();
-        if (sceneScriptManager == null) {
-            return;
-        }
-        if (sceneScriptManager.isInit() && !scene.getLoadedGroups().isEmpty()) {
-            return;
-        }
-        if (!sceneScriptManager.isInit()) {
-            DomainDungeonHelper.scheduleEnsureGroupsLoaded(scene);
-            return;
-        }
-        if (!scene.getLoadedGroups().isEmpty()) {
-            return;
-        }
-        ArrayList<SceneGroup> arrayList = new ArrayList<SceneGroup>();
-        for (SceneBlock sceneBlock : sceneScriptManager.getBlocks().values()) {
-            scene.loadBlock(sceneBlock);
-            if (sceneBlock.groups == null) continue;
-            for (SceneGroup sceneGroup : sceneBlock.groups.values()) {
-                if (sceneGroup == null || sceneGroup.dynamic_load) continue;
-                arrayList.add(sceneGroup);
+        applyDomainWeather(player);
+        syncPlayerClientSceneId(player);
+        scripts.whenInitialized(ready -> {
+            if (ready) {
+                SceneScriptManager.eventExecutor.execute(
+                        () -> finishDomainEnterDeferred(player, scene, dungeon, scripts));
             }
-        }
-        if (!arrayList.isEmpty()) {
-            scene.onLoadGroup(arrayList);
-            scene.onRegisterGroups();
-            Grasscutter.getLogger().debug("Preloaded {} domain groups for scene {}", (Object)arrayList.size(), (Object)scene.getId());
-        }
+        });
     }
 
-    private static void scheduleEnsureGroupsLoaded(Scene scene) {
-        if (scene == null) {
-            return;
-        }
-        SceneScriptManager.eventExecutor.execute(() -> {
-            try {
-                Thread.sleep(30L);
-            }
-            catch (InterruptedException interruptedException) {
-                Thread.currentThread().interrupt();
+    private static void finishDomainEnterDeferred(
+            Player player, Scene scene, DungeonManager dungeon, SceneScriptManager scripts) {
+        synchronized (scene) {
+            // The original instance may have been abandoned or replaced during script loading.
+            if (scene.getDungeonManager() != dungeon
+                    || scripts.isDestroyed()
+                    || player.getScene() != scene
+                    || !scene.getPlayers().contains(player)) {
                 return;
             }
-            DomainDungeonHelper.ensureGroupsLoaded(scene);
-        });
+            try {
+                if (!dungeon.isDomainPrepared()) {
+                    DomainSceneResetHelper.clearGridCache(scene);
+                    DomainSceneResetHelper.refreshToInitSuites(scene);
+                    applyTalentPackVariable(scene);
+                    dungeon.markDomainPrepared();
+                }
+                applyDomainSpawn(player);
+            } catch (RuntimeException e) {
+                Grasscutter.getLogger().warn("Domain entry failed for scene {}", scene.getId(), e);
+            }
+        }
     }
 
     public static void applyDomainWeather(Player player) {
@@ -478,12 +409,8 @@ public final class DomainDungeonHelper {
         DungeonManager dungeonManager2 = dungeonManager = scene != null ? scene.getDungeonManager() : null;
         if (dungeonManager != null && dungeonManager.getDungeonData() != null && dungeonManager.getDungeonData().getId() == n3) {
             bl = player.getServer().getDungeonSystem().restartDungeon(player);
-            if (bl) DomainDungeonHelper.onPlayerEnterDomain(player);
         } else {
             bl = player.getServer().getDungeonSystem().enterDungeon(player, n2, n3, true);
-            if (bl) {
-                DomainDungeonHelper.onPlayerEnterDomain(player);
-            }
         }
         if (!bl) {
             Grasscutter.getLogger().debug("Quick open failed for entry {} (point {} dungeon {})", new Object[]{n, n2, n3});

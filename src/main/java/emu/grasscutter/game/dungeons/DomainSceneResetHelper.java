@@ -43,11 +43,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 public final class DomainSceneResetHelper {
-    private static final ConcurrentHashMap<Integer, Long> LAST_RESET_MS = new ConcurrentHashMap();
-    private static final long RESET_DEBOUNCE_MS = 1500L;
     private static final int REWARD_TREE_GADGET_ID = 70350008;
 
     private DomainSceneResetHelper() {
@@ -77,17 +74,7 @@ public final class DomainSceneResetHelper {
             Grasscutter.getLogger().warn("Domain reset skipped scene={} scriptManager not ready", (Object)scene.getId());
             return;
         }
-        long l = System.currentTimeMillis();
         int n = scene.getId();
-        Long l2 = LAST_RESET_MS.get(n);
-        if (l2 != null && l - l2 < 1500L) {
-            int n2 = DomainSceneResetHelper.forceRespawnDomainProps(sceneScriptManager, scene);
-            Grasscutter.getLogger().info("Domain reset debounce scene={} still forcedGadgets={}", (Object)n, (Object)n2);
-            DomainChallengeKeyHelper.revealChallengeKeys(scene);
-            DomainSceneResetHelper.broadcastNonAvatarEntities(scene);
-            return;
-        }
-        LAST_RESET_MS.put(n, l);
         DomainMonsterSpawnHelper.clearDomainSpawnRecords(scene);
         ArrayList<SceneGroup> arrayList = new ArrayList<>();
         for (SceneBlock sceneBlock : sceneScriptManager.getBlocks().values()) {
@@ -98,7 +85,7 @@ public final class DomainSceneResetHelper {
                 if (!sceneGroup.isLoaded()) {
                     sceneGroup.load(n);
                 }
-                arrayList.add(sceneGroup);
+                if (!scene.getLoadedGroups().contains(sceneGroup)) arrayList.add(sceneGroup);
             }
         }
         if (!arrayList.isEmpty()) {
@@ -123,7 +110,7 @@ public final class DomainSceneResetHelper {
                 for (int i = 1; i <= sceneGroup.suites.size(); ++i) {
                     SceneSuite sceneSuite;
                     if (i == n5 || (sceneSuite = sceneGroup.getSuiteByIndex(i)) == null) continue;
-                    sceneScriptManager.killGroupSuite(sceneGroup, sceneSuite);
+                    // Resetting a suite should not send monster kills to dungeon settlement.
                     sceneScriptManager.removeGroupSuite(sceneGroup, sceneSuite);
                 }
                 if (sceneGroupInstance != null) {
@@ -260,14 +247,7 @@ public final class DomainSceneResetHelper {
         } else if (gameEntity != null) {
             DomainSceneResetHelper.removeQuietly(scene, gameEntity);
         }
-        boolean bl5 = sceneGadget.isOneoff;
-        sceneGadget.isOneoff = false;
-        try {
-            entityGadget = sceneScriptManager.createGadget(sceneGroup.id, sceneGroup.block_id, sceneGadget, sceneGadget.state);
-        }
-        finally {
-            sceneGadget.isOneoff = bl5;
-        }
+        entityGadget = sceneScriptManager.createGadget(sceneGroup.id, sceneGroup.block_id, sceneGadget, sceneGadget.state);
         if (entityGadget == null) {
             Grasscutter.getLogger().warn("Domain createGadget failed scene={} group={} cfg={} gadgetId={}", new Object[]{scene.getId(), sceneGroup.id, sceneGadget.config_id, sceneGadget.gadget_id});
             return 0;
