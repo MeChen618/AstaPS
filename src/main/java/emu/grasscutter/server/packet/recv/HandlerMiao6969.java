@@ -15,7 +15,7 @@ import emu.grasscutter.server.game.GameSession;
  *       重新发一份 25989 就相当于把新的资料当场推给客户端。
  *       本版：6969 -> 存值 -> 25989(带seq) -> 6326 -> 4162。撤掉 9219（它只会关界面、不更新）。
  */
-@Opcodes(6969)
+@Opcodes(value = 6969, disabled = true) // Legacy 7.1 route; 7.2 uses the typed appearance handlers.
 public class HandlerMiao6969 extends PacketHandler {
 
     private static final int[] FRAME_IDS = {100000, 100011, 100012, 100013, 100014};

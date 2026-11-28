@@ -17,7 +17,7 @@ final class KitkatMappedProtocolTest {
         assertEquals(0, PacketOpcodes.SceneEntityDrownRsp);
         assertEquals(27218, PacketOpcodes.DungeonWayPointActivateReq);
         assertEquals(25477, PacketOpcodes.HomeSceneJumpReq);
-        assertEquals(0, PacketOpcodes.SetPlayerHeadImageReq);
+        assertEquals(22526, PacketOpcodes.SetPlayerHeadImageReq);
     }
 
     @Test

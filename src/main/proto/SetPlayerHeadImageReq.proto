@@ -1,0 +1,6 @@
+syntax = "proto3";
+option java_package = "emu.grasscutter.net.proto";
+// 7.2 FKCONDDAJAE, sent from the portrait dialog's Use button.
+message SetPlayerHeadImageReq {
+  uint32 profile_picture_id = 3;
+}

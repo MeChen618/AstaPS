@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Snezhnaya's Frigid (严寒) meter: the team abilities that run it, where they apply, and the server side
  * of the two values it shows.
  *
- * <p>The Snezhnaya level-1 areas (80100..80500, areaID1 55..59 in scene 3) grant the
+ * <p>The Snezhnaya world areas, including the 7.2 additions, grant the
  * {@code DynamicAbility_IceCreature_V7_0_Team} and {@code DynamicAbility_SnezhnayaTrain_V7_0_Team}
  * ability groups to the team and {@code DynamicAbility_IceCreature_V7_0_Avatar} to every character
  * (see {@link emu.grasscutter.game.icecreature.IceCreatureAbilities}). The Frigid team abilities are
@@ -74,11 +74,11 @@ public final class SnezhnayaFrigid {
                     "SceneObj_Area_Zd_SnezhnayaFrigid_TeamAbility_WarmArea");
 
     private static final int OVERWORLD_SCENE = 3;
-    private static final int FIRST_AREA = 55;
-    private static final int LAST_AREA = 59;
+    private static final String ICE_CREATURE_GROUP = "DynamicAbility_IceCreature_V7_0_Team";
 
     /** Per-player warmth and Frigid, for this server session. */
     private static final Map<Integer, State> STATES = new ConcurrentHashMap<>();
+    private static final Map<Integer, Integer> REPORTED_AREAS = new ConcurrentHashMap<>();
 
     private SnezhnayaFrigid() {}
 
@@ -92,11 +92,43 @@ public final class SnezhnayaFrigid {
                     && position.getZ() >= 5161f && position.getZ() <= 9367f;
         }
         int area = index.level1AreaAt(position.getX(), position.getZ());
-        return area >= FIRST_AREA && area <= LAST_AREA;
+        return isSnezhnayaArea(sceneId, area);
+    }
+
+    static boolean isSnezhnayaArea(int sceneId, int areaId) {
+        if (sceneId != OVERWORLD_SCENE || areaId <= 0) return false;
+        boolean hasGroups = false;
+        for (var area : GameData.getWorldAreaDataMap().values()) {
+            var groups = area.getTeamAbilityGroupList();
+            if (groups == null || !groups.contains(ICE_CREATURE_GROUP)) continue;
+            hasGroups = true;
+            if (area.getSceneId() == sceneId && area.getParentArea() == areaId) return true;
+        }
+        // Older resource dumps omit the group column. Include both supported Snezhnaya releases.
+        return !hasGroups && areaId >= 55 && areaId <= 61;
     }
 
     public static boolean isIn(Player player) {
-        return player.getScene() != null && contains(player.getScene().getId(), player.getPosition());
+        if (player.getScene() == null || player.getScene().getId() != OVERWORLD_SCENE) return false;
+        var reported = REPORTED_AREAS.get(player.getUid());
+        if (reported != null && !WorldAreaIndex.forScene(OVERWORLD_SCENE).hasArea(reported)) {
+            return isSnezhnayaArea(OVERWORLD_SCENE, reported);
+        }
+        return contains(OVERWORLD_SCENE, player.getPosition());
+    }
+
+    /** Use the client's area report when the resource set lacks that area's position outline. */
+    public static void onAreaEntered(Player player, int areaId) {
+        var area = GameData.getWorldAreaDataMap().get(areaId);
+        int parent = area == null ? areaId & 0xffff : area.getParentArea();
+        if (player.getScene() != null
+                && player.getScene().getId() == OVERWORLD_SCENE
+                && parent > 0) {
+            REPORTED_AREAS.put(player.getUid(), parent);
+        } else {
+            REPORTED_AREAS.remove(player.getUid());
+        }
+        refresh(player);
     }
 
     /** Whether the Frigid team abilities are currently granted. */
@@ -115,6 +147,7 @@ public final class SnezhnayaFrigid {
      * for scene entry: the team control block in the enter-scene packets then already carries them.
      */
     public static void syncForSceneEntry(Player player) {
+        REPORTED_AREAS.remove(player.getUid());
         if (player.getTeamManager() == null) return;
         boolean in = isIn(player);
         if (in == isGranted(player)) return;

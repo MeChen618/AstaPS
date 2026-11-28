@@ -31,21 +31,50 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+     * <pre>
+     * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+     * </pre>
+     *
+     * <code>repeated uint32 special_profile_picture_list = 14;</code>
      * @return A list containing the specialProfilePictureList.
      */
     java.util.List<java.lang.Integer> getSpecialProfilePictureListList();
     /**
-     * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+     * <pre>
+     * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+     * </pre>
+     *
+     * <code>repeated uint32 special_profile_picture_list = 14;</code>
      * @return The count of specialProfilePictureList.
      */
     int getSpecialProfilePictureListCount();
     /**
-     * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+     * <pre>
+     * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+     * </pre>
+     *
+     * <code>repeated uint32 special_profile_picture_list = 14;</code>
      * @param index The index of the element to return.
      * @return The specialProfilePictureList at the given index.
      */
     int getSpecialProfilePictureList(int index);
+
+    /**
+     * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+     * @return A list containing the unlockedProfileFrameList.
+     */
+    java.util.List<java.lang.Integer> getUnlockedProfileFrameListList();
+    /**
+     * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+     * @return The count of unlockedProfileFrameList.
+     */
+    int getUnlockedProfileFrameListCount();
+    /**
+     * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+     * @param index The index of the element to return.
+     * @return The unlockedProfileFrameList at the given index.
+     */
+    int getUnlockedProfileFrameList(int index);
 
     /**
      * <code>int32 retcode = 12;</code>
@@ -76,6 +105,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
     }
     private GetProfilePictureDataRsp() {
       specialProfilePictureList_ = emptyIntList();
+      unlockedProfileFrameList_ = emptyIntList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -96,12 +126,16 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
               emu.grasscutter.net.proto.GetProfilePictureDataRspOuterClass.GetProfilePictureDataRsp.class, emu.grasscutter.net.proto.GetProfilePictureDataRspOuterClass.GetProfilePictureDataRsp.Builder.class);
     }
 
-    public static final int SPECIAL_PROFILE_PICTURE_LIST_FIELD_NUMBER = 20000;
+    public static final int SPECIAL_PROFILE_PICTURE_LIST_FIELD_NUMBER = 14;
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList specialProfilePictureList_ =
         emptyIntList();
     /**
-     * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+     * <pre>
+     * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+     * </pre>
+     *
+     * <code>repeated uint32 special_profile_picture_list = 14;</code>
      * @return A list containing the specialProfilePictureList.
      */
     @java.lang.Override
@@ -110,14 +144,22 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
       return specialProfilePictureList_;
     }
     /**
-     * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+     * <pre>
+     * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+     * </pre>
+     *
+     * <code>repeated uint32 special_profile_picture_list = 14;</code>
      * @return The count of specialProfilePictureList.
      */
     public int getSpecialProfilePictureListCount() {
       return specialProfilePictureList_.size();
     }
     /**
-     * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+     * <pre>
+     * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+     * </pre>
+     *
+     * <code>repeated uint32 special_profile_picture_list = 14;</code>
      * @param index The index of the element to return.
      * @return The specialProfilePictureList at the given index.
      */
@@ -125,6 +167,36 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
       return specialProfilePictureList_.getInt(index);
     }
     private int specialProfilePictureListMemoizedSerializedSize = -1;
+
+    public static final int UNLOCKED_PROFILE_FRAME_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList unlockedProfileFrameList_ =
+        emptyIntList();
+    /**
+     * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+     * @return A list containing the unlockedProfileFrameList.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+        getUnlockedProfileFrameListList() {
+      return unlockedProfileFrameList_;
+    }
+    /**
+     * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+     * @return The count of unlockedProfileFrameList.
+     */
+    public int getUnlockedProfileFrameListCount() {
+      return unlockedProfileFrameList_.size();
+    }
+    /**
+     * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+     * @param index The index of the element to return.
+     * @return The unlockedProfileFrameList at the given index.
+     */
+    public int getUnlockedProfileFrameList(int index) {
+      return unlockedProfileFrameList_.getInt(index);
+    }
+    private int unlockedProfileFrameListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 12;
     private int retcode_ = 0;
@@ -152,11 +224,18 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (getUnlockedProfileFrameListList().size() > 0) {
+        output.writeUInt32NoTag(42);
+        output.writeUInt32NoTag(unlockedProfileFrameListMemoizedSerializedSize);
+      }
+      for (int i = 0; i < unlockedProfileFrameList_.size(); i++) {
+        output.writeUInt32NoTag(unlockedProfileFrameList_.getInt(i));
+      }
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
       }
       if (getSpecialProfilePictureListList().size() > 0) {
-        output.writeUInt32NoTag(160002);
+        output.writeUInt32NoTag(114);
         output.writeUInt32NoTag(specialProfilePictureListMemoizedSerializedSize);
       }
       for (int i = 0; i < specialProfilePictureList_.size(); i++) {
@@ -166,6 +245,20 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
     }
     private int computeSerializedSize_0() {
       int size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < unlockedProfileFrameList_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(unlockedProfileFrameList_.getInt(i));
+        }
+        size += dataSize;
+        if (!getUnlockedProfileFrameListList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream
+              .computeInt32SizeNoTag(dataSize);
+        }
+        unlockedProfileFrameListMemoizedSerializedSize = dataSize;
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, retcode_);
@@ -178,7 +271,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         }
         size += dataSize;
         if (!getSpecialProfilePictureListList().isEmpty()) {
-          size += 3;
+          size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
@@ -210,6 +303,8 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
 
       if (!getSpecialProfilePictureListList()
           .equals(other.getSpecialProfilePictureListList())) return false;
+      if (!getUnlockedProfileFrameListList()
+          .equals(other.getUnlockedProfileFrameListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -226,6 +321,10 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
       if (getSpecialProfilePictureListCount() > 0) {
         hash = (37 * hash) + SPECIAL_PROFILE_PICTURE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSpecialProfilePictureListList().hashCode();
+      }
+      if (getUnlockedProfileFrameListCount() > 0) {
+        hash = (37 * hash) + UNLOCKED_PROFILE_FRAME_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getUnlockedProfileFrameListList().hashCode();
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
@@ -361,6 +460,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         super.clear();
         bitField0_ = 0;
         specialProfilePictureList_ = emptyIntList();
+        unlockedProfileFrameList_ = emptyIntList();
         retcode_ = 0;
         return this;
       }
@@ -400,6 +500,10 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
           result.specialProfilePictureList_ = specialProfilePictureList_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          unlockedProfileFrameList_.makeImmutable();
+          result.unlockedProfileFrameList_ = unlockedProfileFrameList_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.retcode_ = retcode_;
         }
       }
@@ -424,6 +528,17 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
           } else {
             ensureSpecialProfilePictureListIsMutable();
             specialProfilePictureList_.addAll(other.specialProfilePictureList_);
+          }
+          onChanged();
+        }
+        if (!other.unlockedProfileFrameList_.isEmpty()) {
+          if (unlockedProfileFrameList_.isEmpty()) {
+            unlockedProfileFrameList_ = other.unlockedProfileFrameList_;
+            unlockedProfileFrameList_.makeImmutable();
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureUnlockedProfileFrameListIsMutable();
+            unlockedProfileFrameList_.addAll(other.unlockedProfileFrameList_);
           }
           onChanged();
         }
@@ -454,18 +569,34 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
               case 0:
                 done = true;
                 break;
+              case 40: {
+                int v = input.readUInt32();
+                ensureUnlockedProfileFrameListIsMutable();
+                unlockedProfileFrameList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnlockedProfileFrameListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unlockedProfileFrameList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
               case 96: {
                 retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 96
-              case 160000: {
+              case 112: {
                 int v = input.readUInt32();
                 ensureSpecialProfilePictureListIsMutable();
                 specialProfilePictureList_.addInt(v);
                 break;
-              } // case 160000
-              case 160002: {
+              } // case 112
+              case 114: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
                 ensureSpecialProfilePictureListIsMutable();
@@ -474,7 +605,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
                 }
                 input.popLimit(limit);
                 break;
-              } // case 160002
+              } // case 114
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -500,7 +631,11 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         bitField0_ |= 0x00000001;
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @return A list containing the specialProfilePictureList.
        */
       public java.util.List<java.lang.Integer>
@@ -509,14 +644,22 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         return specialProfilePictureList_;
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @return The count of specialProfilePictureList.
        */
       public int getSpecialProfilePictureListCount() {
         return specialProfilePictureList_.size();
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @param index The index of the element to return.
        * @return The specialProfilePictureList at the given index.
        */
@@ -524,7 +667,11 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         return specialProfilePictureList_.getInt(index);
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @param index The index to set the value at.
        * @param value The specialProfilePictureList to set.
        * @return This builder for chaining.
@@ -539,7 +686,11 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         return this;
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @param value The specialProfilePictureList to add.
        * @return This builder for chaining.
        */
@@ -552,7 +703,11 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         return this;
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @param values The specialProfilePictureList to add.
        * @return This builder for chaining.
        */
@@ -566,12 +721,100 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
         return this;
       }
       /**
-       * <code>repeated uint32 special_profile_picture_list = 20000;</code>
+       * <pre>
+       * MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+       * </pre>
+       *
+       * <code>repeated uint32 special_profile_picture_list = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearSpecialProfilePictureList() {
         specialProfilePictureList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList unlockedProfileFrameList_ = emptyIntList();
+      private void ensureUnlockedProfileFrameListIsMutable() {
+        if (!unlockedProfileFrameList_.isModifiable()) {
+          unlockedProfileFrameList_ = makeMutableCopy(unlockedProfileFrameList_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @return A list containing the unlockedProfileFrameList.
+       */
+      public java.util.List<java.lang.Integer>
+          getUnlockedProfileFrameListList() {
+        unlockedProfileFrameList_.makeImmutable();
+        return unlockedProfileFrameList_;
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @return The count of unlockedProfileFrameList.
+       */
+      public int getUnlockedProfileFrameListCount() {
+        return unlockedProfileFrameList_.size();
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @param index The index of the element to return.
+       * @return The unlockedProfileFrameList at the given index.
+       */
+      public int getUnlockedProfileFrameList(int index) {
+        return unlockedProfileFrameList_.getInt(index);
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The unlockedProfileFrameList to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnlockedProfileFrameList(
+          int index, int value) {
+
+        ensureUnlockedProfileFrameListIsMutable();
+        unlockedProfileFrameList_.setInt(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @param value The unlockedProfileFrameList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addUnlockedProfileFrameList(int value) {
+
+        ensureUnlockedProfileFrameListIsMutable();
+        unlockedProfileFrameList_.addInt(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @param values The unlockedProfileFrameList to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllUnlockedProfileFrameList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUnlockedProfileFrameListIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, unlockedProfileFrameList_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 unlocked_profile_frame_list = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnlockedProfileFrameList() {
+        unlockedProfileFrameList_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -593,7 +836,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
       public Builder setRetcode(int value) {
 
         retcode_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -602,7 +845,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -673,10 +916,11 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036GetProfilePictureDataRsp.proto\"S\n\030GetP" +
-      "rofilePictureDataRsp\022&\n\034special_profile_" +
-      "picture_list\030\240\234\001 \003(\r\022\017\n\007retcode\030\014 \001(\005B\033\n" +
-      "\031emu.grasscutter.net.protob\006proto3"
+      "\n\036GetProfilePictureDataRsp.proto\"v\n\030GetP" +
+      "rofilePictureDataRsp\022$\n\034special_profile_" +
+      "picture_list\030\016 \003(\r\022#\n\033unlocked_profile_f" +
+      "rame_list\030\005 \003(\r\022\017\n\007retcode\030\014 \001(\005B\033\n\031emu." +
+      "grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -687,7 +931,7 @@ public final class GetProfilePictureDataRspOuterClass extends com.google.protobu
     internal_static_GetProfilePictureDataRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_GetProfilePictureDataRsp_descriptor,
-        new java.lang.String[] { "SpecialProfilePictureList", "Retcode", });
+        new java.lang.String[] { "SpecialProfilePictureList", "UnlockedProfileFrameList", "Retcode", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

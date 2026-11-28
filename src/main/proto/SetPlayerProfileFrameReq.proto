@@ -1,0 +1,6 @@
+syntax = "proto3";
+option java_package = "emu.grasscutter.net.proto";
+// 7.2 NBACHCMCPLE.
+message SetPlayerProfileFrameReq {
+  uint32 profile_frame_id = 2;
+}

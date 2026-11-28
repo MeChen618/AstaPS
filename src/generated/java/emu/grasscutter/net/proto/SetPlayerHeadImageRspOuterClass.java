@@ -31,22 +31,34 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ProfilePicture profile_picture = 14;</code>
+     * <pre>
+     * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+     * </pre>
+     *
+     * <code>.ProfilePicture profile_picture = 6;</code>
      * @return Whether the profilePicture field is set.
      */
     boolean hasProfilePicture();
     /**
-     * <code>.ProfilePicture profile_picture = 14;</code>
+     * <pre>
+     * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+     * </pre>
+     *
+     * <code>.ProfilePicture profile_picture = 6;</code>
      * @return The profilePicture.
      */
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture();
     /**
-     * <code>.ProfilePicture profile_picture = 14;</code>
+     * <pre>
+     * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+     * </pre>
+     *
+     * <code>.ProfilePicture profile_picture = 6;</code>
      */
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder();
 
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     int getRetcode();
@@ -94,10 +106,14 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
     }
 
     private int bitField0_;
-    public static final int PROFILE_PICTURE_FIELD_NUMBER = 14;
+    public static final int PROFILE_PICTURE_FIELD_NUMBER = 6;
     private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
     /**
-     * <code>.ProfilePicture profile_picture = 14;</code>
+     * <pre>
+     * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+     * </pre>
+     *
+     * <code>.ProfilePicture profile_picture = 6;</code>
      * @return Whether the profilePicture field is set.
      */
     @java.lang.Override
@@ -105,7 +121,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.ProfilePicture profile_picture = 14;</code>
+     * <pre>
+     * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+     * </pre>
+     *
+     * <code>.ProfilePicture profile_picture = 6;</code>
      * @return The profilePicture.
      */
     @java.lang.Override
@@ -113,17 +133,21 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
       return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
     /**
-     * <code>.ProfilePicture profile_picture = 14;</code>
+     * <pre>
+     * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+     * </pre>
+     *
+     * <code>.ProfilePicture profile_picture = 6;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
       return profilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
 
-    public static final int RETCODE_FIELD_NUMBER = 6;
+    public static final int RETCODE_FIELD_NUMBER = 15;
     private int retcode_ = 0;
     /**
-     * <code>int32 retcode = 6;</code>
+     * <code>int32 retcode = 15;</code>
      * @return The retcode.
      */
     @java.lang.Override
@@ -145,23 +169,23 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (retcode_ != 0) {
-        output.writeInt32(6, retcode_);
-      }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(14, getProfilePicture());
+        output.writeMessage(6, getProfilePicture());
+      }
+      if (retcode_ != 0) {
+        output.writeInt32(15, retcode_);
       }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
-      if (retcode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, retcode_);
-      }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getProfilePicture());
+          .computeMessageSize(6, getProfilePicture());
+      }
+      if (retcode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, retcode_);
       }
       return size;
     }
@@ -442,18 +466,18 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
               case 0:
                 done = true;
                 break;
-              case 48: {
-                retcode_ = input.readInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 48
-              case 114: {
+              case 50: {
                 input.readMessage(
                     internalGetProfilePictureFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 114
+              } // case 50
+              case 120: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -475,14 +499,22 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> profilePictureBuilder_;
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        * @return The profilePicture.
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getProfilePicture() {
@@ -493,7 +525,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public Builder setProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -507,7 +543,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public Builder setProfilePicture(
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
@@ -521,7 +561,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public Builder mergeProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
@@ -542,7 +586,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public Builder clearProfilePicture() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -555,7 +603,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
         bitField0_ |= 0x00000001;
@@ -563,7 +615,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return internalGetProfilePictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
         if (profilePictureBuilder_ != null) {
@@ -574,7 +630,11 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.ProfilePicture profile_picture = 14;</code>
+       * <pre>
+       * CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+       * </pre>
+       *
+       * <code>.ProfilePicture profile_picture = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> 
@@ -592,7 +652,7 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
 
       private int retcode_ ;
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 15;</code>
        * @return The retcode.
        */
       @java.lang.Override
@@ -600,7 +660,7 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return retcode_;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 15;</code>
        * @param value The retcode to set.
        * @return This builder for chaining.
        */
@@ -612,7 +672,7 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>int32 retcode = 6;</code>
+       * <code>int32 retcode = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
@@ -689,8 +749,8 @@ public final class SetPlayerHeadImageRspOuterClass extends com.google.protobuf.G
     java.lang.String[] descriptorData = {
       "\n\033SetPlayerHeadImageRsp.proto\032\024ProfilePi" +
       "cture.proto\"R\n\025SetPlayerHeadImageRsp\022(\n\017" +
-      "profile_picture\030\016 \001(\0132\017.ProfilePicture\022\017" +
-      "\n\007retcode\030\006 \001(\005B\033\n\031emu.grasscutter.net.p" +
+      "profile_picture\030\006 \001(\0132\017.ProfilePicture\022\017" +
+      "\n\007retcode\030\017 \001(\005B\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
