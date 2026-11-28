@@ -1,6 +1,7 @@
 package emu.grasscutter.game.icecreature;
 
 import com.google.protobuf.InvalidProtocolBufferException;
+
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.config.Configuration;
 import emu.grasscutter.game.entity.EntityGadget;
@@ -18,7 +19,6 @@ import emu.grasscutter.net.proto.IceCreatureBuildReqOuterClass.IceCreatureBuildR
 import emu.grasscutter.net.proto.IceCreatureBuildRspOuterClass.IceCreatureBuildRsp;
 import emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify;
 import emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget;
-import emu.grasscutter.net.proto.IceCreatureSetTypeGadgetReqOuterClass.IceCreatureSetTypeGadgetReq;
 import emu.grasscutter.net.proto.IceCreatureGadgetDisappearNotifyOuterClass.IceCreatureGadgetDisappearNotify;
 import emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail;
 import emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo;
@@ -27,12 +27,14 @@ import emu.grasscutter.net.proto.IceCreatureGadgetRemoveReqOuterClass.IceCreatur
 import emu.grasscutter.net.proto.IceCreatureGadgetRemoveRspOuterClass.IceCreatureGadgetRemoveRsp;
 import emu.grasscutter.net.proto.IceCreatureLikeReqOuterClass.IceCreatureLikeReq;
 import emu.grasscutter.net.proto.IceCreatureLikeRspOuterClass.IceCreatureLikeRsp;
+import emu.grasscutter.net.proto.IceCreatureSetTypeGadgetReqOuterClass.IceCreatureSetTypeGadgetReq;
 import emu.grasscutter.net.proto.RetcodeOuterClass.Retcode;
 import emu.grasscutter.net.proto.VisionTypeOuterClass.VisionType;
 import emu.grasscutter.server.packet.send.PacketIceCreature;
 import emu.grasscutter.server.packet.send.PacketLifeStateChangeNotify;
 import emu.grasscutter.server.packet.send.PacketSceneEntityDisappearNotify;
 import emu.grasscutter.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,10 +139,17 @@ public final class IceCreatureSystem {
                     .filter(r -> r.getEntityId() != 0 && req.getEntityIdListList().contains(r.getEntityId()))
                     .toList();
             retcode = doomed.isEmpty() ? FAIL : OK;
-            log("remove request entities {} scene {} flag {}: matched {} of {} standing creatures {}",
-                    req.getEntityIdListList(), req.getSceneId(), req.getUnk15(), doomed.size(),
+            log(
+                    "remove request entities {} scene {} flag {}: matched {} of {} standing"
+                        + " creatures {}",
+                    req.getEntityIdListList(),
+                    req.getSceneId(),
+                    req.getUnk15(),
+                    doomed.size(),
                     player.getIceCreatures().size(),
-                    player.getIceCreatures().stream().map(r -> r.getGuid() + "@" + r.getEntityId()).toList());
+                    player.getIceCreatures().stream()
+                            .map(r -> r.getGuid() + "@" + r.getEntityId())
+                            .toList());
             removeRecords(player, doomed);
         }
         int entityId = req.getEntityIdListCount() == 0 ? 0 : req.getEntityIdList(0);
@@ -198,42 +207,63 @@ public final class IceCreatureSystem {
     }
 
     /**
-     * The player's Ice Creature state (cmd 25312): which creatures the build wheel unlocks, the look
-     * each type uses, the creatures they have built and their total likes. Without it the wheel only
-     * offers the default creature. Every wheel type is unlocked here.
+     * The 7.2 build wheel's unlocked gadgets and selected looks. Standing creature details are sent
+     * separately by onEnterSceneDone and the build response. Every wheel type is unlocked here.
      */
     public static void sendData(Player player) {
-        var config = IceCreatureConfig.get();
-        var notify = IceCreatureDataNotify.newBuilder();
-        var unlocked = new java.util.TreeSet<Integer>();
-        var chosen = player.getIceCreatureTypeGadgets();
-        config.getBuildableGadgetsByType().forEach((type, gadgets) -> {
-            unlocked.addAll(gadgets);
-            int look = chosen.getOrDefault(type, gadgets.get(0));
-            notify.addTypeGadgetList(IceCreatureTypeGadget.newBuilder()
-                    .setType(type)
-                    .setGadgetId(gadgets.contains(look) ? look : gadgets.get(0)));
-        });
-        notify.addAllUnlockedGadgetIdList(unlocked);
-        synchronized (player) {
-            for (var record : player.getIceCreatures()) notify.addBuiltGuidList(record.getGuid());
-            notify.setTotalLikeNum(totalLikes(player));
-        }
-        player.sendPacket(new PacketIceCreature(PacketOpcodes.IceCreatureDataNotify, notify.build()));
+        player.sendPacket(new PacketIceCreature(PacketOpcodes.IceCreatureDataNotify, data(player, IceCreatureConfig.get())));
     }
 
-    /** cmd 29885: the player picked another look for one creature type on the build wheel. */
+    static IceCreatureDataNotify data(Player player, IceCreatureConfig config) {
+        var notify = IceCreatureDataNotify.newBuilder();
+        var unlocked = new java.util.TreeSet<Integer>();
+        synchronized (player) {
+            var chosen = player.getIceCreatureTypeGadgets();
+            var replacements = player.getIceCreatureAutoReplace();
+            config.getBuildableGadgetsByType()
+                    .forEach(
+                            (type, gadgets) -> {
+                                unlocked.addAll(gadgets);
+                                int look = chosen.getOrDefault(type, gadgets.get(0));
+                                notify.addTypeGadgetList(
+                                        IceCreatureTypeGadget.newBuilder()
+                                                .setType(type)
+                                                .setGadgetId(
+                                                        gadgets.contains(look)
+                                                                ? look
+                                                                : gadgets.get(0))
+                                                .setAutoReplaceValue(
+                                                        replacements.getOrDefault(type, 0)));
+                            });
+        }
+        return notify.addAllUnlockedGadgetIdList(unlocked).build();
+    }
+
+    /** The player picked another look for one creature type on the build wheel. */
     public static void onSetTypeGadget(Player player, IceCreatureSetTypeGadgetReq req) {
-        var gadgets = IceCreatureConfig.get().getBuildableGadgetsByType().get(req.getType());
-        if (gadgets == null || !gadgets.contains(req.getGadgetId())) {
-            log("refused look {} for type {}: not one of its gadgets", req.getGadgetId(), req.getType());
+        if (!setTypeGadget(player, req, IceCreatureConfig.get())) {
+            log(
+                    "refused look {} for type {}: not one of its gadgets",
+                    req.getGadgetId(),
+                    req.getType());
         } else {
-            synchronized (player) {
-                player.getIceCreatureTypeGadgets().put(req.getType(), req.getGadgetId());
-            }
             log("type {} now builds as gadget {}", req.getType(), req.getGadgetId());
         }
         sendData(player);
+    }
+
+    static boolean setTypeGadget(
+            Player player, IceCreatureSetTypeGadgetReq req, IceCreatureConfig config) {
+        var gadgets = config.getBuildableGadgetsByType().get(req.getType());
+        if (gadgets == null
+                || !gadgets.contains(req.getGadgetId())
+                || req.getAutoReplaceValue() < 0
+                || req.getAutoReplaceValue() > 2) return false;
+        synchronized (player) {
+            player.getIceCreatureTypeGadgets().put(req.getType(), req.getGadgetId());
+            player.getIceCreatureAutoReplace().put(req.getType(), req.getAutoReplaceValue());
+        }
+        return true;
     }
 
     static int totalLikes(Player player) {
@@ -243,8 +273,8 @@ public final class IceCreatureSystem {
     }
 
     /**
-     * Build material the player has left. Every standing creature holds its cost, so removing one gives
-     * the cost back, and the value survives relogs because the creatures do.
+     * Build material the player has left. Every standing creature holds its cost, so removing one
+     * gives the cost back, and the value survives relogs because the creatures do.
      */
     public static float materialLeft(Player player) {
         return materialLeft(IceCreatureConfig.get().getMaterialLimit(), player.getIceCreatures());
@@ -258,20 +288,28 @@ public final class IceCreatureSystem {
 
     private static void removeRecords(Player player, List<IceCreatureRecord> doomed) {
         if (doomed.isEmpty()) return;
-        var notify = IceCreatureGadgetDisappearNotify.newBuilder()
-                .setReason(IceCreatureGadgetDisappearNotify.Reason.REASON_REMOVE);
+        var notify =
+                IceCreatureGadgetDisappearNotify.newBuilder()
+                        .setReason(IceCreatureGadgetDisappearNotify.Reason.REASON_REMOVE);
         for (var record : new ArrayList<>(doomed)) {
             notify.addIceCreatureGadgetInfoList(info(player, record));
             despawn(player, record);
             player.getIceCreatures().remove(record);
-            log("removed guid {} (type {}), refunding {}", record.getGuid(), record.getType(), record.getCost());
+            log(
+                    "removed guid {} (type {}), refunding {}",
+                    record.getGuid(),
+                    record.getType(),
+                    record.getCost());
         }
         SnezhnayaFrigid.sendBuildMaterial(player);
-        player.sendPacket(new PacketIceCreature(PacketOpcodes.IceCreatureGadgetDisappearNotify, notify.build()));
+        player.sendPacket(
+                new PacketIceCreature(
+                        PacketOpcodes.IceCreatureGadgetDisappearNotify, notify.build()));
     }
 
     private static void spawn(Scene scene, IceCreatureRecord record) {
-        var gadget = new EntityGadget(scene, record.getGadgetId(), record.getPos(), record.getRot());
+        var gadget =
+                new EntityGadget(scene, record.getGadgetId(), record.getPos(), record.getRot());
         for (byte[] raw : record.getGlobalValues()) {
             try {
                 var value = AbilityScalarValueEntry.parseFrom(raw);
@@ -291,8 +329,10 @@ public final class IceCreatureSystem {
         if (scene != null && record.getSceneId() == scene.getId()) {
             var entity = scene.getEntityById(record.getEntityId());
             if (entity instanceof EntityGadget gadget) {
-                // LIFE_DEAD runs the true-ice onKill dissolve. The client keeps these invincible gadgets
-                // standing on a DIE disappear alone, so REMOVE follows once the die time has played.
+                // LIFE_DEAD runs the true-ice onKill dissolve. The client keeps these invincible
+                // gadgets
+                // standing on a DIE disappear alone, so REMOVE follows once the die time has
+                // played.
                 scene.broadcastPacket(new PacketLifeStateChangeNotify(gadget, LifeState.LIFE_DEAD));
                 scene.removeEntity(gadget, VisionType.VisionType_VISION_DIE);
                 int ticks = (int) Math.ceil(dieSeconds(gadget) * 1000d

@@ -42,17 +42,17 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureLimitType getLimitType();
 
     /**
-     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
      * @return Whether the iceCreatureGadgetInfo field is set.
      */
     boolean hasIceCreatureGadgetInfo();
     /**
-     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
      * @return The iceCreatureGadgetInfo.
      */
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo getIceCreatureGadgetInfo();
     /**
-     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
      */
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder getIceCreatureGadgetInfoOrBuilder();
 
@@ -124,10 +124,10 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
       return result == null ? emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureLimitType.UNRECOGNIZED : result;
     }
 
-    public static final int ICE_CREATURE_GADGET_INFO_FIELD_NUMBER = 20001;
+    public static final int ICE_CREATURE_GADGET_INFO_FIELD_NUMBER = 8;
     private emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo iceCreatureGadgetInfo_;
     /**
-     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
      * @return Whether the iceCreatureGadgetInfo field is set.
      */
     @java.lang.Override
@@ -135,7 +135,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
      * @return The iceCreatureGadgetInfo.
      */
     @java.lang.Override
@@ -143,7 +143,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
       return iceCreatureGadgetInfo_ == null ? emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.getDefaultInstance() : iceCreatureGadgetInfo_;
     }
     /**
-     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+     * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder getIceCreatureGadgetInfoOrBuilder() {
@@ -175,19 +175,23 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(8, getIceCreatureGadgetInfo());
+      }
       if (retcode_ != 0) {
         output.writeInt32(11, retcode_);
       }
       if (limitType_ != emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureLimitType.ICE_CREATURE_LIMIT_TYPE_NONE.getNumber()) {
         output.writeEnum(12, limitType_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(20001, getIceCreatureGadgetInfo());
-      }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getIceCreatureGadgetInfo());
+      }
       if (retcode_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, retcode_);
@@ -195,10 +199,6 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
       if (limitType_ != emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureLimitType.ICE_CREATURE_LIMIT_TYPE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, limitType_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(20001, getIceCreatureGadgetInfo());
       }
       return size;
     }
@@ -489,6 +489,13 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
               case 0:
                 done = true;
                 break;
+              case 66: {
+                input.readMessage(
+                    internalGetIceCreatureGadgetInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
               case 88: {
                 retcode_ = input.readInt32();
                 bitField0_ |= 0x00000004;
@@ -499,13 +506,6 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000001;
                 break;
               } // case 96
-              case 160010: {
-                input.readMessage(
-                    internalGetIceCreatureGadgetInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 160010
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -579,14 +579,14 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder> iceCreatureGadgetInfoBuilder_;
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        * @return Whether the iceCreatureGadgetInfo field is set.
        */
       public boolean hasIceCreatureGadgetInfo() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        * @return The iceCreatureGadgetInfo.
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo getIceCreatureGadgetInfo() {
@@ -597,7 +597,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       public Builder setIceCreatureGadgetInfo(emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo value) {
         if (iceCreatureGadgetInfoBuilder_ == null) {
@@ -611,7 +611,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       public Builder setIceCreatureGadgetInfo(
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder builderForValue) {
@@ -625,7 +625,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       public Builder mergeIceCreatureGadgetInfo(emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo value) {
         if (iceCreatureGadgetInfoBuilder_ == null) {
@@ -646,7 +646,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       public Builder clearIceCreatureGadgetInfo() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -659,7 +659,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder getIceCreatureGadgetInfoBuilder() {
         bitField0_ |= 0x00000002;
@@ -667,7 +667,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         return internalGetIceCreatureGadgetInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder getIceCreatureGadgetInfoOrBuilder() {
         if (iceCreatureGadgetInfoBuilder_ != null) {
@@ -678,7 +678,7 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 20001;</code>
+       * <code>.IceCreatureGadgetInfo ice_creature_gadget_info = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder> 
@@ -792,11 +792,11 @@ public final class IceCreatureBuildRspOuterClass extends com.google.protobuf.Gen
   static {
     java.lang.String[] descriptorData = {
       "\n\031IceCreatureBuildRsp.proto\032\033IceCreature" +
-      "GadgetInfo.proto\"\215\001\n\023IceCreatureBuildRsp" +
+      "GadgetInfo.proto\"\213\001\n\023IceCreatureBuildRsp" +
       "\022)\n\nlimit_type\030\014 \001(\0162\025.IceCreatureLimitT" +
-      "ype\022:\n\030ice_creature_gadget_info\030\241\234\001 \001(\0132" +
-      "\026.IceCreatureGadgetInfo\022\017\n\007retcode\030\013 \001(\005" +
-      "B\033\n\031emu.grasscutter.net.protob\006proto3"
+      "ype\0228\n\030ice_creature_gadget_info\030\010 \001(\0132\026." +
+      "IceCreatureGadgetInfo\022\017\n\007retcode\030\013 \001(\005B\033" +
+      "\n\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -57,25 +57,25 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> 
         getGlobalValueListList();
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry getGlobalValueList(int index);
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     int getGlobalValueListCount();
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> 
         getGlobalValueListOrBuilderList();
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder getGlobalValueListOrBuilder(
         int index);
@@ -87,23 +87,23 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
     int getMapLayerId();
 
     /**
-     * <code>bool unk_11 = 20002;</code>
+     * <code>bool unk_11 = 12;</code>
      * @return The unk11.
      */
     boolean getUnk11();
 
     /**
-     * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+     * <code>.BPAEPJHBOFM build_detail = 2;</code>
      * @return Whether the buildDetail field is set.
      */
     boolean hasBuildDetail();
     /**
-     * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+     * <code>.BPAEPJHBOFM build_detail = 2;</code>
      * @return The buildDetail.
      */
     emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM getBuildDetail();
     /**
-     * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+     * <code>.BPAEPJHBOFM build_detail = 2;</code>
      */
     emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder getBuildDetailOrBuilder();
 
@@ -123,17 +123,17 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder();
 
     /**
-     * <code>repeated fixed64 replace_guid_list = 20004;</code>
+     * <code>repeated fixed64 replace_guid_list = 11;</code>
      * @return A list containing the replaceGuidList.
      */
     java.util.List<java.lang.Long> getReplaceGuidListList();
     /**
-     * <code>repeated fixed64 replace_guid_list = 20004;</code>
+     * <code>repeated fixed64 replace_guid_list = 11;</code>
      * @return The count of replaceGuidList.
      */
     int getReplaceGuidListCount();
     /**
-     * <code>repeated fixed64 replace_guid_list = 20004;</code>
+     * <code>repeated fixed64 replace_guid_list = 11;</code>
      * @param index The index of the element to return.
      * @return The replaceGuidList at the given index.
      */
@@ -235,18 +235,18 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
-    public static final int GLOBAL_VALUE_LIST_FIELD_NUMBER = 20001;
+    public static final int GLOBAL_VALUE_LIST_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
     private java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> globalValueList_;
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> getGlobalValueListList() {
       return globalValueList_;
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> 
@@ -254,21 +254,21 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return globalValueList_;
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     @java.lang.Override
     public int getGlobalValueListCount() {
       return globalValueList_.size();
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry getGlobalValueList(int index) {
       return globalValueList_.get(index);
     }
     /**
-     * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+     * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder getGlobalValueListOrBuilder(
@@ -287,10 +287,10 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return mapLayerId_;
     }
 
-    public static final int UNK_11_FIELD_NUMBER = 20002;
+    public static final int UNK_11_FIELD_NUMBER = 12;
     private boolean unk11_ = false;
     /**
-     * <code>bool unk_11 = 20002;</code>
+     * <code>bool unk_11 = 12;</code>
      * @return The unk11.
      */
     @java.lang.Override
@@ -298,10 +298,10 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return unk11_;
     }
 
-    public static final int BUILD_DETAIL_FIELD_NUMBER = 20003;
+    public static final int BUILD_DETAIL_FIELD_NUMBER = 2;
     private emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM buildDetail_;
     /**
-     * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+     * <code>.BPAEPJHBOFM build_detail = 2;</code>
      * @return Whether the buildDetail field is set.
      */
     @java.lang.Override
@@ -309,7 +309,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+     * <code>.BPAEPJHBOFM build_detail = 2;</code>
      * @return The buildDetail.
      */
     @java.lang.Override
@@ -317,7 +317,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return buildDetail_ == null ? emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.getDefaultInstance() : buildDetail_;
     }
     /**
-     * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+     * <code>.BPAEPJHBOFM build_detail = 2;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder getBuildDetailOrBuilder() {
@@ -350,12 +350,12 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return rot_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
     }
 
-    public static final int REPLACE_GUID_LIST_FIELD_NUMBER = 20004;
+    public static final int REPLACE_GUID_LIST_FIELD_NUMBER = 11;
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList replaceGuidList_ =
         emptyLongList();
     /**
-     * <code>repeated fixed64 replace_guid_list = 20004;</code>
+     * <code>repeated fixed64 replace_guid_list = 11;</code>
      * @return A list containing the replaceGuidList.
      */
     @java.lang.Override
@@ -364,14 +364,14 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       return replaceGuidList_;
     }
     /**
-     * <code>repeated fixed64 replace_guid_list = 20004;</code>
+     * <code>repeated fixed64 replace_guid_list = 11;</code>
      * @return The count of replaceGuidList.
      */
     public int getReplaceGuidListCount() {
       return replaceGuidList_.size();
     }
     /**
-     * <code>repeated fixed64 replace_guid_list = 20004;</code>
+     * <code>repeated fixed64 replace_guid_list = 11;</code>
      * @param index The index of the element to return.
      * @return The replaceGuidList at the given index.
      */
@@ -409,6 +409,12 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getPos());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getBuildDetail());
+      }
+      for (int i = 0; i < globalValueList_.size(); i++) {
+        output.writeMessage(4, globalValueList_.get(i));
+      }
       if (mapLayerId_ != 0) {
         output.writeUInt32(8, mapLayerId_);
       }
@@ -418,24 +424,18 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       if (limitType_ != emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureLimitType.ICE_CREATURE_LIMIT_TYPE_NONE.getNumber()) {
         output.writeEnum(10, limitType_);
       }
-      if (gadgetId_ != 0) {
-        output.writeUInt32(15, gadgetId_);
-      }
-      for (int i = 0; i < globalValueList_.size(); i++) {
-        output.writeMessage(20001, globalValueList_.get(i));
-      }
-      if (unk11_ != false) {
-        output.writeBool(20002, unk11_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(20003, getBuildDetail());
-      }
       if (getReplaceGuidListList().size() > 0) {
-        output.writeUInt32NoTag(160034);
+        output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(replaceGuidListMemoizedSerializedSize);
       }
       for (int i = 0; i < replaceGuidList_.size(); i++) {
         output.writeFixed64NoTag(replaceGuidList_.getLong(i));
+      }
+      if (unk11_ != false) {
+        output.writeBool(12, unk11_);
+      }
+      if (gadgetId_ != 0) {
+        output.writeUInt32(15, gadgetId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -445,6 +445,19 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getPos());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getBuildDetail());
+      }
+
+          {
+            final int count = globalValueList_.size();
+            for (int i = 0; i < count; i++) {
+              size += com.google.protobuf.CodedOutputStream
+                .computeMessageSizeNoTag(globalValueList_.get(i));
+            }
+            size += 1 * count;
+          }
       if (mapLayerId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, mapLayerId_);
@@ -457,37 +470,24 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(10, limitType_);
       }
-      if (gadgetId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, gadgetId_);
-      }
-
-          {
-            final int count = globalValueList_.size();
-            for (int i = 0; i < count; i++) {
-              size += com.google.protobuf.CodedOutputStream
-                .computeMessageSizeNoTag(globalValueList_.get(i));
-            }
-            size += 3 * count;
-          }
-      if (unk11_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(20002, unk11_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(20003, getBuildDetail());
-      }
       {
         int dataSize = 0;
         dataSize = 8 * getReplaceGuidListList().size();
         size += dataSize;
         if (!getReplaceGuidListList().isEmpty()) {
-          size += 3;
+          size += 1;
           size += com.google.protobuf.CodedOutputStream
               .computeInt32SizeNoTag(dataSize);
         }
         replaceGuidListMemoizedSerializedSize = dataSize;
+      }
+      if (unk11_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, unk11_);
+      }
+      if (gadgetId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(15, gadgetId_);
       }
       return size;
     }
@@ -931,6 +931,26 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000002;
                 break;
               } // case 10
+              case 18: {
+                input.readMessage(
+                    internalGetBuildDetailFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 18
+              case 34: {
+                emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry m =
+                    input.readMessage(
+                        emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.parser(),
+                        extensionRegistry);
+                if (globalValueListBuilder_ == null) {
+                  ensureGlobalValueListIsMutable();
+                  globalValueList_.add(m);
+                } else {
+                  globalValueListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
               case 64: {
                 mapLayerId_ = input.readUInt32();
                 bitField0_ |= 0x00000008;
@@ -948,43 +968,13 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000001;
                 break;
               } // case 80
-              case 120: {
-                gadgetId_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 120
-              case 160010: {
-                emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry m =
-                    input.readMessage(
-                        emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.parser(),
-                        extensionRegistry);
-                if (globalValueListBuilder_ == null) {
-                  ensureGlobalValueListIsMutable();
-                  globalValueList_.add(m);
-                } else {
-                  globalValueListBuilder_.addMessage(m);
-                }
-                break;
-              } // case 160010
-              case 160016: {
-                unk11_ = input.readBool();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 160016
-              case 160026: {
-                input.readMessage(
-                    internalGetBuildDetailFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 160026
-              case 160033: {
+              case 89: {
                 long v = input.readFixed64();
                 ensureReplaceGuidListIsMutable();
                 replaceGuidList_.addLong(v);
                 break;
-              } // case 160033
-              case 160034: {
+              } // case 89
+              case 90: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
                 int alloc = length > 4096 ? 4096 : length;
@@ -994,7 +984,17 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
                 }
                 input.popLimit(limit);
                 break;
-              } // case 160034
+              } // case 90
+              case 96: {
+                unk11_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 96
+              case 120: {
+                gadgetId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 120
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1196,7 +1196,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
           emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> globalValueListBuilder_;
 
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> getGlobalValueListList() {
         if (globalValueListBuilder_ == null) {
@@ -1206,7 +1206,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public int getGlobalValueListCount() {
         if (globalValueListBuilder_ == null) {
@@ -1216,7 +1216,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry getGlobalValueList(int index) {
         if (globalValueListBuilder_ == null) {
@@ -1226,7 +1226,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder setGlobalValueList(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry value) {
@@ -1241,7 +1241,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder setGlobalValueList(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder builderForValue) {
@@ -1255,7 +1255,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder addGlobalValueList(emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry value) {
         if (globalValueListBuilder_ == null) {
@@ -1269,7 +1269,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder addGlobalValueList(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry value) {
@@ -1284,7 +1284,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder addGlobalValueList(
           emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder builderForValue) {
@@ -1298,7 +1298,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder addGlobalValueList(
           int index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder builderForValue) {
@@ -1312,7 +1312,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder addAllGlobalValueList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> values) {
@@ -1327,7 +1327,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder clearGlobalValueList() {
         if (globalValueListBuilder_ == null) {
@@ -1340,7 +1340,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public Builder removeGlobalValueList(int index) {
         if (globalValueListBuilder_ == null) {
@@ -1353,14 +1353,14 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder getGlobalValueListBuilder(
           int index) {
         return internalGetGlobalValueListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder getGlobalValueListOrBuilder(
           int index) {
@@ -1370,7 +1370,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder> 
            getGlobalValueListOrBuilderList() {
@@ -1381,14 +1381,14 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder addGlobalValueListBuilder() {
         return internalGetGlobalValueListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder addGlobalValueListBuilder(
           int index) {
@@ -1396,7 +1396,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
             index, emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .AbilityScalarValueEntry global_value_list = 20001;</code>
+       * <code>repeated .AbilityScalarValueEntry global_value_list = 4;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder> 
            getGlobalValueListBuilderList() {
@@ -1451,7 +1451,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
 
       private boolean unk11_ ;
       /**
-       * <code>bool unk_11 = 20002;</code>
+       * <code>bool unk_11 = 12;</code>
        * @return The unk11.
        */
       @java.lang.Override
@@ -1459,7 +1459,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return unk11_;
       }
       /**
-       * <code>bool unk_11 = 20002;</code>
+       * <code>bool unk_11 = 12;</code>
        * @param value The unk11 to set.
        * @return This builder for chaining.
        */
@@ -1471,7 +1471,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>bool unk_11 = 20002;</code>
+       * <code>bool unk_11 = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk11() {
@@ -1485,14 +1485,14 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder> buildDetailBuilder_;
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        * @return Whether the buildDetail field is set.
        */
       public boolean hasBuildDetail() {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        * @return The buildDetail.
        */
       public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM getBuildDetail() {
@@ -1503,7 +1503,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       public Builder setBuildDetail(emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM value) {
         if (buildDetailBuilder_ == null) {
@@ -1517,7 +1517,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       public Builder setBuildDetail(
           emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder builderForValue) {
@@ -1531,7 +1531,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       public Builder mergeBuildDetail(emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM value) {
         if (buildDetailBuilder_ == null) {
@@ -1552,7 +1552,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       public Builder clearBuildDetail() {
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -1565,7 +1565,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder getBuildDetailBuilder() {
         bitField0_ |= 0x00000020;
@@ -1573,7 +1573,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return internalGetBuildDetailFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder getBuildDetailOrBuilder() {
         if (buildDetailBuilder_ != null) {
@@ -1584,7 +1584,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         }
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 20003;</code>
+       * <code>.BPAEPJHBOFM build_detail = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder> 
@@ -1733,7 +1733,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         bitField0_ |= 0x00000080;
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @return A list containing the replaceGuidList.
        */
       public java.util.List<java.lang.Long>
@@ -1742,14 +1742,14 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return replaceGuidList_;
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @return The count of replaceGuidList.
        */
       public int getReplaceGuidListCount() {
         return replaceGuidList_.size();
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @param index The index of the element to return.
        * @return The replaceGuidList at the given index.
        */
@@ -1757,7 +1757,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return replaceGuidList_.getLong(index);
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @param index The index to set the value at.
        * @param value The replaceGuidList to set.
        * @return This builder for chaining.
@@ -1772,7 +1772,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @param value The replaceGuidList to add.
        * @return This builder for chaining.
        */
@@ -1785,7 +1785,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @param values The replaceGuidList to add.
        * @return This builder for chaining.
        */
@@ -1799,7 +1799,7 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
         return this;
       }
       /**
-       * <code>repeated fixed64 replace_guid_list = 20004;</code>
+       * <code>repeated fixed64 replace_guid_list = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearReplaceGuidList() {
@@ -1909,15 +1909,15 @@ public final class IceCreatureBuildReqOuterClass extends com.google.protobuf.Gen
       "\n\031IceCreatureBuildReq.proto\032\035AbilityScal" +
       "arValueEntry.proto\032\021BPAEPJHBOFM.proto\032\033I" +
       "ceCreatureGadgetInfo.proto\032\014Vector.proto" +
-      "\"\241\002\n\023IceCreatureBuildReq\022)\n\nlimit_type\030\n" +
+      "\"\231\002\n\023IceCreatureBuildReq\022)\n\nlimit_type\030\n" +
       " \001(\0162\025.IceCreatureLimitType\022\024\n\003pos\030\001 \001(\013" +
-      "2\007.Vector\0225\n\021global_value_list\030\241\234\001 \003(\0132\030" +
-      ".AbilityScalarValueEntry\022\024\n\014map_layer_id" +
-      "\030\010 \001(\r\022\020\n\006unk_11\030\242\234\001 \001(\010\022$\n\014build_detail" +
-      "\030\243\234\001 \001(\0132\014.BPAEPJHBOFM\022\024\n\003rot\030\t \001(\0132\007.Ve" +
-      "ctor\022\033\n\021replace_guid_list\030\244\234\001 \003(\006\022\021\n\tgad" +
-      "get_id\030\017 \001(\rB\033\n\031emu.grasscutter.net.prot" +
-      "ob\006proto3"
+      "2\007.Vector\0223\n\021global_value_list\030\004 \003(\0132\030.A" +
+      "bilityScalarValueEntry\022\024\n\014map_layer_id\030\010" +
+      " \001(\r\022\016\n\006unk_11\030\014 \001(\010\022\"\n\014build_detail\030\002 \001" +
+      "(\0132\014.BPAEPJHBOFM\022\024\n\003rot\030\t \001(\0132\007.Vector\022\031" +
+      "\n\021replace_guid_list\030\013 \003(\006\022\021\n\tgadget_id\030\017" +
+      " \001(\rB\033\n\031emu.grasscutter.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

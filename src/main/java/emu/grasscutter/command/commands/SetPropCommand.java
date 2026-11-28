@@ -274,8 +274,10 @@ public final class SetPropCommand implements CommandHandler {
             targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, 0);
         } else {
             targetPlayer.setProperty(PlayerProperty.PROP_PLAYER_CAN_DIVE, 1);
-            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, 10000);
-            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, 10000);
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA,
+                    PlayerProperty.PROP_DIVE_MAX_STAMINA.getMax());
+            targetPlayer.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA,
+                    targetPlayer.getProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA));
         }
         return true;
     }

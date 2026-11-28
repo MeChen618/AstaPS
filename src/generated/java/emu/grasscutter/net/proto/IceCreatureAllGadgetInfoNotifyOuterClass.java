@@ -37,25 +37,25 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
     int getUid();
 
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     java.util.List<emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo> 
         getIceCreatureGadgetInfoListList();
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo getIceCreatureGadgetInfoList(int index);
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     int getIceCreatureGadgetInfoListCount();
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     java.util.List<? extends emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder> 
         getIceCreatureGadgetInfoListOrBuilderList();
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder getIceCreatureGadgetInfoListOrBuilder(
         int index);
@@ -114,18 +114,18 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
       return uid_;
     }
 
-    public static final int ICE_CREATURE_GADGET_INFO_LIST_FIELD_NUMBER = 20000;
+    public static final int ICE_CREATURE_GADGET_INFO_LIST_FIELD_NUMBER = 10;
     @SuppressWarnings("serial")
     private java.util.List<emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo> iceCreatureGadgetInfoList_;
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo> getIceCreatureGadgetInfoListList() {
       return iceCreatureGadgetInfoList_;
     }
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder> 
@@ -133,21 +133,21 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
       return iceCreatureGadgetInfoList_;
     }
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     @java.lang.Override
     public int getIceCreatureGadgetInfoListCount() {
       return iceCreatureGadgetInfoList_.size();
     }
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo getIceCreatureGadgetInfoList(int index) {
       return iceCreatureGadgetInfoList_.get(index);
     }
     /**
-     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+     * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder getIceCreatureGadgetInfoListOrBuilder(
@@ -173,7 +173,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         output.writeUInt32(2, uid_);
       }
       for (int i = 0; i < iceCreatureGadgetInfoList_.size(); i++) {
-        output.writeMessage(20000, iceCreatureGadgetInfoList_.get(i));
+        output.writeMessage(10, iceCreatureGadgetInfoList_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -190,7 +190,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
               size += com.google.protobuf.CodedOutputStream
                 .computeMessageSizeNoTag(iceCreatureGadgetInfoList_.get(i));
             }
-            size += 3 * count;
+            size += 1 * count;
           }
       return size;
     }
@@ -497,7 +497,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
                 bitField0_ |= 0x00000001;
                 break;
               } // case 16
-              case 160002: {
+              case 82: {
                 emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo m =
                     input.readMessage(
                         emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.parser(),
@@ -509,7 +509,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
                   iceCreatureGadgetInfoListBuilder_.addMessage(m);
                 }
                 break;
-              } // case 160002
+              } // case 82
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -572,7 +572,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder> iceCreatureGadgetInfoListBuilder_;
 
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo> getIceCreatureGadgetInfoListList() {
         if (iceCreatureGadgetInfoListBuilder_ == null) {
@@ -582,7 +582,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         }
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public int getIceCreatureGadgetInfoListCount() {
         if (iceCreatureGadgetInfoListBuilder_ == null) {
@@ -592,7 +592,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         }
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo getIceCreatureGadgetInfoList(int index) {
         if (iceCreatureGadgetInfoListBuilder_ == null) {
@@ -602,7 +602,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         }
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder setIceCreatureGadgetInfoList(
           int index, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo value) {
@@ -617,7 +617,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder setIceCreatureGadgetInfoList(
           int index, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder builderForValue) {
@@ -631,7 +631,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder addIceCreatureGadgetInfoList(emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo value) {
         if (iceCreatureGadgetInfoListBuilder_ == null) {
@@ -645,7 +645,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder addIceCreatureGadgetInfoList(
           int index, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo value) {
@@ -660,7 +660,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder addIceCreatureGadgetInfoList(
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder builderForValue) {
@@ -674,7 +674,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder addIceCreatureGadgetInfoList(
           int index, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder builderForValue) {
@@ -688,7 +688,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder addAllIceCreatureGadgetInfoList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo> values) {
@@ -703,7 +703,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder clearIceCreatureGadgetInfoList() {
         if (iceCreatureGadgetInfoListBuilder_ == null) {
@@ -716,7 +716,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public Builder removeIceCreatureGadgetInfoList(int index) {
         if (iceCreatureGadgetInfoListBuilder_ == null) {
@@ -729,14 +729,14 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         return this;
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder getIceCreatureGadgetInfoListBuilder(
           int index) {
         return internalGetIceCreatureGadgetInfoListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder getIceCreatureGadgetInfoListOrBuilder(
           int index) {
@@ -746,7 +746,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         }
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfoOrBuilder> 
            getIceCreatureGadgetInfoListOrBuilderList() {
@@ -757,14 +757,14 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
         }
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder addIceCreatureGadgetInfoListBuilder() {
         return internalGetIceCreatureGadgetInfoListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder addIceCreatureGadgetInfoListBuilder(
           int index) {
@@ -772,7 +772,7 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
             index, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 20000;</code>
+       * <code>repeated .IceCreatureGadgetInfo ice_creature_gadget_info_list = 10;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetInfo.Builder> 
            getIceCreatureGadgetInfoListBuilderList() {
@@ -859,11 +859,11 @@ public final class IceCreatureAllGadgetInfoNotifyOuterClass extends com.google.p
   static {
     java.lang.String[] descriptorData = {
       "\n$IceCreatureAllGadgetInfoNotify.proto\032\033" +
-      "IceCreatureGadgetInfo.proto\"n\n\036IceCreatu" +
-      "reAllGadgetInfoNotify\022\013\n\003uid\030\002 \001(\r\022?\n\035ic" +
-      "e_creature_gadget_info_list\030\240\234\001 \003(\0132\026.Ic" +
-      "eCreatureGadgetInfoB\033\n\031emu.grasscutter.n" +
-      "et.protob\006proto3"
+      "IceCreatureGadgetInfo.proto\"l\n\036IceCreatu" +
+      "reAllGadgetInfoNotify\022\013\n\003uid\030\002 \001(\r\022=\n\035ic" +
+      "e_creature_gadget_info_list\030\n \003(\0132\026.IceC" +
+      "reatureGadgetInfoB\033\n\031emu.grasscutter.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

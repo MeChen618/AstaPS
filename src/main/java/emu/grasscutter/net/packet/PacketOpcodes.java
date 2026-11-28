@@ -3036,8 +3036,8 @@ public final class PacketOpcodes {
     public static final int IceCreatureGadgetRemoveRsp = 1003; // 7.1: 24183
     public static final int IceCreatureAllGadgetInfoNotify = 24204; // 7.1: 6301
     public static final int IceCreatureGadgetDisappearNotify = 0; // 7.2 CmdId unknown (7.1: 22946)
-    public static final int IceCreatureDataNotify = 0; // 7.2 CmdId unknown (7.1: 25312)
-    public static final int IceCreatureSetTypeGadgetReq = 0; // 7.2 CmdId unknown (7.1: 29885)
+    public static final int IceCreatureDataNotify = 27355; // 7.2 PIOFANAELFP
+    public static final int IceCreatureSetTypeGadgetReq = 6439; // 7.2 GBCHKPECGFB
 
     // Snezhnaya player train (Grey Eyes), names inferred from an official 7.1 capture.
     public static final int SnezhnayaTrainCallReq = 0; // 7.2 CmdId unknown (7.1: 3893)

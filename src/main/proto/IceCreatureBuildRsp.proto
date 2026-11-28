@@ -6,6 +6,6 @@ import "IceCreatureGadgetInfo.proto";
 
 message IceCreatureBuildRsp {
   IceCreatureLimitType limit_type = 12;
-  IceCreatureGadgetInfo ice_creature_gadget_info = 20001;
+  IceCreatureGadgetInfo ice_creature_gadget_info = 8;
   int32 retcode = 11;
 }

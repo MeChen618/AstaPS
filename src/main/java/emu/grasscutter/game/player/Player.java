@@ -162,6 +162,8 @@ public class Player implements PlayerHook, FieldFetch {
     private List<emu.grasscutter.game.icecreature.IceCreatureRecord> iceCreatures;
     /** The look the Ice Creature build wheel uses per creature type, as the client last chose. */
     private Map<Integer, Integer> iceCreatureTypeGadgets;
+    /** The build wheel's auto-replace preference per creature type. */
+    private Map<Integer, Integer> iceCreatureAutoReplace;
     @Getter @Setter private Map<Integer, Set<Integer>> unlockedSceneAreas;
     /** Map area states a quest changed with QUEST_EXEC_CHANGE_MAP_AREA_STATE, by map area id. */
     private Map<Integer, Boolean> mapAreaStates;
@@ -794,7 +796,7 @@ public class Player implements PlayerHook, FieldFetch {
         this.setOrFetch(PlayerProperty.PROP_MAX_TPS_STAMINA,
             emu.grasscutter.game.tps.TpsAvatarSystem.BASE_STAMINA);
         this.setOrFetch(PlayerProperty.PROP_DIVE_MAX_STAMINA,
-                withQuesting ? 10000 : 0);
+                PlayerProperty.PROP_DIVE_MAX_STAMINA.getMax());
         this.setOrFetch(PlayerProperty.PROP_PLAYER_RESIN, 200);
         this.setOrFetch(PlayerProperty.PROP_PHLOGISTON_MAX_VALUE, 10000);
         // The active scene enables phlogiston when the player actually enters Natlan.
@@ -1618,6 +1620,13 @@ public class Player implements PlayerHook, FieldFetch {
         return this.iceCreatureTypeGadgets;
     }
 
+    public Map<Integer, Integer> getIceCreatureAutoReplace() {
+        if (this.iceCreatureAutoReplace == null) {
+            this.iceCreatureAutoReplace = new HashMap<>();
+        }
+        return this.iceCreatureAutoReplace;
+    }
+
     public Map<Integer, Integer> getTpsAmmunition() {
         if (this.tpsAmmunition == null) {
             this.tpsAmmunition = new HashMap<>();
@@ -1837,6 +1846,7 @@ public class Player implements PlayerHook, FieldFetch {
 
         getQuestManager().onLogin();
 
+        getStaminaManager().onPlayerLogin();
         session.send(new PacketPlayerDataNotify(this));
         session.send(new PacketStoreWeightLimitNotify());
         session.send(new PacketPlayerStoreNotify(this));
@@ -2029,6 +2039,7 @@ public class Player implements PlayerHook, FieldFetch {
                 case PROP_CUR_SPRING_VOLUME -> getProperty(PlayerProperty.PROP_MAX_SPRING_VOLUME);
                 case PROP_CUR_PERSIST_STAMINA -> getProperty(PlayerProperty.PROP_MAX_STAMINA);
                 case PROP_CUR_PERSIST_TPS_STAMINA -> getProperty(PlayerProperty.PROP_MAX_TPS_STAMINA);
+                case PROP_DIVE_CUR_STAMINA -> getProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA);
                 default -> 0;
             };
         } else {

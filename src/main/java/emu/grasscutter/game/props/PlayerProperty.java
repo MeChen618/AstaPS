@@ -64,9 +64,9 @@ public enum PlayerProperty {
     PROP_PLAYER_ONLINE_TIME(10047), // New; unknown/un-used.
     PROP_PLAYER_CAN_DIVE(10048, 0, 1), // Can the player dive? [0, 1]
     PROP_DIVE_MAX_STAMINA(
-            10049, 0, 10000), // The maximum stamina of the player when diving. [0, 10000]
+            10049, 0, 12000), // 7.2 CONST_VALUE_DIVE_STAMINA_LIMIT = 120, scaled by 100.
     PROP_DIVE_CUR_STAMINA(
-        10050, 0, 10000), // The current stamina of the player when diving. [0, 10000]
+        10050, true), // Current diving stamina is bounded by PROP_DIVE_MAX_STAMINA.
         PROP_PHLOGISTON_ENABLE(10052, 0, 1), 
         PROP_PHLOGISTON_MAX_VALUE(
                 10053, 0, 10000),

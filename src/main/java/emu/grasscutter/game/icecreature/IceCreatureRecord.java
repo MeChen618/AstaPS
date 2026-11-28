@@ -24,7 +24,7 @@ public class IceCreatureRecord {
     private int createTime;
     private int likeNum;
     private int cost;
-    /** IceCreatureBuildReq field 11, echoed back in the gadget info; its meaning is unknown. */
+    /** IceCreatureBuildReq field 12 in 7.2, echoed back in the gadget info; meaning unknown. */
     private boolean flag;
     /** The serialized beacon/decorate choice from the build request, echoed back as-is. */
     private byte[] buildDetail;

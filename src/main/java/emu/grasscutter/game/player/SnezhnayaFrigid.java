@@ -8,6 +8,7 @@ import emu.grasscutter.game.world.Position;
 import emu.grasscutter.game.world.WorldAreaIndex;
 import emu.grasscutter.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry;
 import emu.grasscutter.server.packet.send.PacketServerGlobalValueChangeNotify;
+
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -110,9 +111,24 @@ public final class SnezhnayaFrigid {
         return STATES.computeIfAbsent(player.getUid(), uid -> new State());
     }
 
+    /** Sets the authoritative energy balance, so the next cold tick uses the new value too. */
+    public static boolean setEnergy(Player player, float energy) {
+        if (!Float.isFinite(energy) || energy < 0f || energy > MAX_ENERGY) return false;
+        var state = stateOf(player);
+        synchronized (state) {
+            state.energy = energy;
+        }
+        var team = player.getTeamManager() == null ? null : player.getTeamManager().getEntity();
+        if (team != null) {
+            player.sendPacket(new PacketServerGlobalValueChangeNotify(team.getId(), ENERGY_GV, energy));
+        }
+        return true;
+    }
+
     /**
-     * Grants or withdraws the abilities for the player's current position without notifying the client,
-     * for scene entry: the team control block in the enter-scene packets then already carries them.
+     * Grants or withdraws the abilities for the player's current position without notifying the
+     * client, for scene entry: the team control block in the enter-scene packets then already
+     * carries them.
      */
     public static void syncForSceneEntry(Player player) {
         if (player.getTeamManager() == null) return;
@@ -123,11 +139,15 @@ public final class SnezhnayaFrigid {
         emu.grasscutter.game.icecreature.IceCreatureAbilities.sync(player, in, false);
     }
 
-    /** Applies a seamless border crossing: updates the team abilities and, on entry, resends both values. */
+    /**
+     * Applies a seamless border crossing: updates the team abilities and, on entry, resends both
+     * values.
+     */
     public static void refresh(Player player) {
         if (player.getTeamManager() == null || player.getSession() == null) return;
         var pos = player.getPosition();
-        // A move can briefly report the origin before the real position arrives; that is not a border
+        // A move can briefly report the origin before the real position arrives; that is not a
+        // border
         // crossing, and treating it as one withdrew and regranted the abilities within a frame.
         if (pos == null || (pos.getX() == 0f && pos.getY() == 0f && pos.getZ() == 0f)) return;
         boolean in = isIn(player);
@@ -228,7 +248,8 @@ public final class SnezhnayaFrigid {
                         : WorldAreaIndex.forScene(scene.getId()).level1AreaAt(pos.getX(), pos.getZ());
         Grasscutter.getLogger()
                 .debug(
-                        "[SnezhnayaFrigid] {} Frigid abilities on {}: uid={} scene={} pos={} area={}",
+                        "[SnezhnayaFrigid] {} Frigid abilities on {}: uid={} scene={} pos={}"
+                            + " area={}",
                         in ? "grant" : "withdraw",
                         reason,
                         player.getUid(),

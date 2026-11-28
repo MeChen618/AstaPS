@@ -31,24 +31,24 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gadget_id = 5;</code>
+     * <code>uint32 gadget_id = 3;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
 
     /**
-     * <code>uint32 type = 4;</code>
+     * <code>uint32 type = 9;</code>
      * @return The type.
      */
     int getType();
 
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
      * @return The enum numeric value on the wire for autoReplace.
      */
     int getAutoReplaceValue();
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
      * @return The autoReplace.
      */
     emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace getAutoReplace();
@@ -96,10 +96,10 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
               emu.grasscutter.net.proto.IceCreatureSetTypeGadgetReqOuterClass.IceCreatureSetTypeGadgetReq.class, emu.grasscutter.net.proto.IceCreatureSetTypeGadgetReqOuterClass.IceCreatureSetTypeGadgetReq.Builder.class);
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 5;
+    public static final int GADGET_ID_FIELD_NUMBER = 3;
     private int gadgetId_ = 0;
     /**
-     * <code>uint32 gadget_id = 5;</code>
+     * <code>uint32 gadget_id = 3;</code>
      * @return The gadgetId.
      */
     @java.lang.Override
@@ -107,10 +107,10 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
       return gadgetId_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 4;
+    public static final int TYPE_FIELD_NUMBER = 9;
     private int type_ = 0;
     /**
-     * <code>uint32 type = 4;</code>
+     * <code>uint32 type = 9;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -118,17 +118,17 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
       return type_;
     }
 
-    public static final int AUTO_REPLACE_FIELD_NUMBER = 12;
+    public static final int AUTO_REPLACE_FIELD_NUMBER = 5;
     private int autoReplace_ = 0;
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
      * @return The enum numeric value on the wire for autoReplace.
      */
     @java.lang.Override public int getAutoReplaceValue() {
       return autoReplace_;
     }
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
      * @return The autoReplace.
      */
     @java.lang.Override public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace getAutoReplace() {
@@ -150,30 +150,30 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != 0) {
-        output.writeUInt32(4, type_);
-      }
       if (gadgetId_ != 0) {
-        output.writeUInt32(5, gadgetId_);
+        output.writeUInt32(3, gadgetId_);
       }
       if (autoReplace_ != emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.ICE_CREATURE_AUTO_REPLACE_NONE.getNumber()) {
-        output.writeEnum(12, autoReplace_);
+        output.writeEnum(5, autoReplace_);
+      }
+      if (type_ != 0) {
+        output.writeUInt32(9, type_);
       }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
-      if (type_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, type_);
-      }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, gadgetId_);
+          .computeUInt32Size(3, gadgetId_);
       }
       if (autoReplace_ != emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.ICE_CREATURE_AUTO_REPLACE_NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(12, autoReplace_);
+          .computeEnumSize(5, autoReplace_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, type_);
       }
       return size;
     }
@@ -444,21 +444,21 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
               case 0:
                 done = true;
                 break;
-              case 32: {
-                type_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 32
-              case 40: {
+              case 24: {
                 gadgetId_ = input.readUInt32();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 40
-              case 96: {
+              } // case 24
+              case 40: {
                 autoReplace_ = input.readEnum();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 96
+              } // case 40
+              case 72: {
+                type_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -478,7 +478,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
 
       private int gadgetId_ ;
       /**
-       * <code>uint32 gadget_id = 5;</code>
+       * <code>uint32 gadget_id = 3;</code>
        * @return The gadgetId.
        */
       @java.lang.Override
@@ -486,7 +486,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return gadgetId_;
       }
       /**
-       * <code>uint32 gadget_id = 5;</code>
+       * <code>uint32 gadget_id = 3;</code>
        * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
@@ -498,7 +498,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 5;</code>
+       * <code>uint32 gadget_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
@@ -510,7 +510,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
 
       private int type_ ;
       /**
-       * <code>uint32 type = 4;</code>
+       * <code>uint32 type = 9;</code>
        * @return The type.
        */
       @java.lang.Override
@@ -518,7 +518,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return type_;
       }
       /**
-       * <code>uint32 type = 4;</code>
+       * <code>uint32 type = 9;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -530,7 +530,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return this;
       }
       /**
-       * <code>uint32 type = 4;</code>
+       * <code>uint32 type = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -542,14 +542,14 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
 
       private int autoReplace_ = 0;
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
        * @return The enum numeric value on the wire for autoReplace.
        */
       @java.lang.Override public int getAutoReplaceValue() {
         return autoReplace_;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
        * @param value The enum numeric value on the wire for autoReplace to set.
        * @return This builder for chaining.
        */
@@ -560,7 +560,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return this;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
        * @return The autoReplace.
        */
       @java.lang.Override
@@ -569,7 +569,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return result == null ? emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.UNRECOGNIZED : result;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
        * @param value The autoReplace to set.
        * @throws IllegalArgumentException if UNRECOGNIZED is provided.
        * @return This builder for chaining.
@@ -582,7 +582,7 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
         return this;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 12;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearAutoReplace() {
@@ -659,8 +659,8 @@ public final class IceCreatureSetTypeGadgetReqOuterClass extends com.google.prot
     java.lang.String[] descriptorData = {
       "\n!IceCreatureSetTypeGadgetReq.proto\032\033Ice" +
       "CreatureDataNotify.proto\"m\n\033IceCreatureS" +
-      "etTypeGadgetReq\022\021\n\tgadget_id\030\005 \001(\r\022\014\n\004ty" +
-      "pe\030\004 \001(\r\022-\n\014auto_replace\030\014 \001(\0162\027.IceCrea" +
+      "etTypeGadgetReq\022\021\n\tgadget_id\030\003 \001(\r\022\014\n\004ty" +
+      "pe\030\t \001(\r\022-\n\014auto_replace\030\005 \001(\0162\027.IceCrea" +
       "tureAutoReplaceB\033\n\031emu.grasscutter.net.p" +
       "rotob\006proto3"
     };

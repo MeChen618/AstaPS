@@ -232,8 +232,8 @@ final class DailyTaskEligibilityTest {
     }
 
     private static int today() {
-        var date = java.time.LocalDate.now(java.time.ZoneId.systemDefault());
-        return date.getYear() * 10000 + date.getMonthValue() * 100 + date.getDayOfMonth();
+        // The stored quota belongs to the game day, including the hours before the 04:00 reset.
+        return emu.grasscutter.utils.GameDay.dateKey(emu.grasscutter.utils.Utils.getCurrentSeconds());
     }
 
     private static <T> T allocate(Class<T> type) throws Exception {

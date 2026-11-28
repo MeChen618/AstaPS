@@ -157,6 +157,16 @@ public class StaminaManager extends BasePlayerManager {
         super(player);
     }
 
+    /** Restore legacy zero-cap saves before the login property snapshot reaches the client. */
+    public void onPlayerLogin() {
+        int max = player.getProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA);
+        if (max <= 0) {
+            max = PlayerProperty.PROP_DIVE_MAX_STAMINA.getMax();
+            player.setProperty(PlayerProperty.PROP_DIVE_MAX_STAMINA, max, false);
+        }
+        player.setProperty(PlayerProperty.PROP_DIVE_CUR_STAMINA, max, false);
+    }
+
     public static void initialize() {
         // TODO: Initialize foods etc.
     }

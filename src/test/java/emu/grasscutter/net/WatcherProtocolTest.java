@@ -11,9 +11,11 @@ import emu.grasscutter.net.proto.WatcherEventNotifyOuterClass.WatcherEventNotify
 import emu.grasscutter.net.proto.WatcherEventTypeNotifyOuterClass.WatcherEventTypeNotify;
 import emu.grasscutter.server.packet.send.PacketWatcherAllDataNotify;
 import emu.grasscutter.server.packet.send.PacketWatcherChangeNotify;
+
+import org.junit.jupiter.api.Test;
+
 import java.util.HexFormat;
 import java.util.List;
-import org.junit.jupiter.api.Test;
 
 final class WatcherProtocolTest {
     private static String hex(byte[] data) {
@@ -44,7 +46,9 @@ final class WatcherProtocolTest {
         assertEquals(29994, PacketOpcodes.WatcherEventNotify);
 
         // watcher_trigger_type (10) = 113, param_list (7) = [70510009], add_progress (3) = 1.
-        var type = WatcherEventTypeNotify.parseFrom(HexFormat.of().parseHex("5071" + "3a04b9cbcf21" + "1801"));
+        var type =
+                WatcherEventTypeNotify.parseFrom(
+                        HexFormat.of().parseHex("5071" + "3a04b9cbcf21" + "1801"));
         assertEquals(113, type.getWatcherTriggerType());
         assertEquals(List.of(70510009), type.getParamListList());
         assertEquals(1, type.getAddProgress());
@@ -53,35 +57,33 @@ final class WatcherProtocolTest {
     @Test
     void unlockTransPointRspRetcodeOnEight() {
         assertEquals(6339, PacketOpcodes.UnlockTransPointRsp);
-        assertEquals("4001", hex(UnlockTransPointRsp.newBuilder().setRetcode(1).build().toByteArray()));
+        assertEquals(
+                "4001", hex(UnlockTransPointRsp.newBuilder().setRetcode(1).build().toByteArray()));
     }
 
     @Test
-    void legacyIceCreatureDataPreservesTheCapturedLayout() {
-        assertEquals(0, PacketOpcodes.IceCreatureDataNotify);
+    void iceCreatureWheelUsesSevenTwoNativeFields() {
+        assertEquals(27355, PacketOpcodes.IceCreatureDataNotify);
         var data =
                 IceCreatureDataNotify.newBuilder()
                         .addUnlockedGadgetIdList(73094016)
-                        .addTypeGadgetList(IceCreatureTypeGadget.newBuilder().setGadgetId(73094016).setType(1))
-                        .setTotalLikeNum(2805)
-                        .addBuiltGuidList(1)
+                        .addTypeGadgetList(
+                                IceCreatureTypeGadget.newBuilder().setGadgetId(73094016).setType(1))
                         .build()
                         .toByteArray();
-        // built_guid_list 4 (packed fixed64), type_gadget_list 10 {4, 7}, 13 = 2805, 14 packed.
-        assertEquals(
-                "2208" + "0100000000000000"
-                        + "5207" + "2080a7ed22" + "3801"
-                        + "68f515"
-                        + "720480a7ed22",
-                hex(data));
+        // PIOFANAELFP: unlocks 8; choices 9 -> HODBNMLKJKP {gadget 10, type 12}.
+        assertEquals("420480a7ed22" + "4a07" + "5080a7ed22" + "6001", hex(data));
     }
 
     @Test
-    void legacyIceCreatureSetTypeGadgetPreservesItsFields() throws Exception {
-        assertEquals(0, PacketOpcodes.IceCreatureSetTypeGadgetReq);
-        // type (4) = 21, gadget_id (5) = 73174021.
-        var req = IceCreatureSetTypeGadgetReq.parseFrom(HexFormat.of().parseHex("2015" + "288598f222"));
+    void iceCreatureSelectionParsesSevenTwoNativeFields() throws Exception {
+        assertEquals(6439, PacketOpcodes.IceCreatureSetTypeGadgetReq);
+        // GBCHKPECGFB: gadget_id (3) = 73174021, auto_replace (5) = 2, type (9) = 21.
+        var req =
+                IceCreatureSetTypeGadgetReq.parseFrom(
+                        HexFormat.of().parseHex("188598f22228024815"));
         assertEquals(21, req.getType());
         assertEquals(73174021, req.getGadgetId());
+        assertEquals(2, req.getAutoReplaceValue());
     }
 }

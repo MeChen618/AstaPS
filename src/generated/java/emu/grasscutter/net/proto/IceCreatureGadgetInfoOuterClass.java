@@ -157,154 +157,154 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 area_id = 1;</code>
+     * <code>uint32 area_id = 4;</code>
      * @return The areaId.
      */
     int getAreaId();
 
     /**
-     * <code>fixed32 create_time = 2;</code>
+     * <code>fixed32 create_time = 7;</code>
      * @return The createTime.
      */
     int getCreateTime();
 
     /**
-     * <code>string creator_nickname = 3;</code>
+     * <code>string creator_nickname = 2;</code>
      * @return The creatorNickname.
      */
     java.lang.String getCreatorNickname();
     /**
-     * <code>string creator_nickname = 3;</code>
+     * <code>string creator_nickname = 2;</code>
      * @return The bytes for creatorNickname.
      */
     com.google.protobuf.ByteString
         getCreatorNicknameBytes();
 
     /**
-     * <code>uint32 like_num = 4;</code>
+     * <code>uint32 like_num = 5;</code>
      * @return The likeNum.
      */
     int getLikeNum();
 
     /**
-     * <code>string online_id = 5;</code>
+     * <code>string online_id = 13;</code>
      * @return The onlineId.
      */
     java.lang.String getOnlineId();
     /**
-     * <code>string online_id = 5;</code>
+     * <code>string online_id = 13;</code>
      * @return The bytes for onlineId.
      */
     com.google.protobuf.ByteString
         getOnlineIdBytes();
 
     /**
-     * <code>uint64 guid = 6;</code>
+     * <code>uint64 guid = 15;</code>
      * @return The guid.
      */
     long getGuid();
 
     /**
-     * <code>uint32 gadget_id = 7;</code>
+     * <code>uint32 gadget_id = 12;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
 
     /**
-     * <code>.ProfilePicture creator_profile_picture = 8;</code>
+     * <code>.ProfilePicture creator_profile_picture = 11;</code>
      * @return Whether the creatorProfilePicture field is set.
      */
     boolean hasCreatorProfilePicture();
     /**
-     * <code>.ProfilePicture creator_profile_picture = 8;</code>
+     * <code>.ProfilePicture creator_profile_picture = 11;</code>
      * @return The creatorProfilePicture.
      */
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getCreatorProfilePicture();
     /**
-     * <code>.ProfilePicture creator_profile_picture = 8;</code>
+     * <code>.ProfilePicture creator_profile_picture = 11;</code>
      */
     emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getCreatorProfilePictureOrBuilder();
 
     /**
-     * <code>uint32 unk_9 = 9;</code>
+     * <code>uint32 unk_9 = 10;</code>
      * @return The unk9.
      */
     int getUnk9();
 
     /**
-     * <code>string xbox_gamertag = 10;</code>
+     * <code>string xbox_gamertag = 14;</code>
      * @return The xboxGamertag.
      */
     java.lang.String getXboxGamertag();
     /**
-     * <code>string xbox_gamertag = 10;</code>
+     * <code>string xbox_gamertag = 14;</code>
      * @return The bytes for xboxGamertag.
      */
     com.google.protobuf.ByteString
         getXboxGamertagBytes();
 
     /**
-     * <code>uint32 entity_id = 11;</code>
+     * <code>uint32 entity_id = 9;</code>
      * @return The entityId.
      */
     int getEntityId();
 
     /**
-     * <code>uint32 creator_uid = 12;</code>
+     * <code>uint32 creator_uid = 8;</code>
      * @return The creatorUid.
      */
     int getCreatorUid();
 
     /**
-     * <code>.Vector pos = 13;</code>
+     * <code>.Vector pos = 1;</code>
      * @return Whether the pos field is set.
      */
     boolean hasPos();
     /**
-     * <code>.Vector pos = 13;</code>
+     * <code>.Vector pos = 1;</code>
      * @return The pos.
      */
     emu.grasscutter.net.proto.VectorOuterClass.Vector getPos();
     /**
-     * <code>.Vector pos = 13;</code>
+     * <code>.Vector pos = 1;</code>
      */
     emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder();
 
     /**
-     * <code>uint32 map_layer_id = 14;</code>
+     * <code>uint32 map_layer_id = 6;</code>
      * @return The mapLayerId.
      */
     int getMapLayerId();
 
     /**
-     * <code>.IceCreatureGadgetDetail detail = 15;</code>
+     * <code>.IceCreatureGadgetDetail detail = 3;</code>
      * @return Whether the detail field is set.
      */
     boolean hasDetail();
     /**
-     * <code>.IceCreatureGadgetDetail detail = 15;</code>
+     * <code>.IceCreatureGadgetDetail detail = 3;</code>
      * @return The detail.
      */
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail getDetail();
     /**
-     * <code>.IceCreatureGadgetDetail detail = 15;</code>
+     * <code>.IceCreatureGadgetDetail detail = 3;</code>
      */
     emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetailOrBuilder getDetailOrBuilder();
 
     /**
-     * <code>uint32 scene_id = 241;</code>
+     * <code>uint32 scene_id = 739;</code>
      * @return The sceneId.
      */
     int getSceneId();
 
     /**
-     * <code>bool is_hidden = 1071;</code>
+     * <code>bool is_hidden = 1637;</code>
      * @return The isHidden.
      */
     boolean getIsHidden();
 
     /**
-     * <code>bool unk_1401 = 1401;</code>
+     * <code>bool unk_1401 = 1249;</code>
      * @return The unk1401.
      */
     boolean getUnk1401();
@@ -355,10 +355,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
     }
 
     private int bitField0_;
-    public static final int AREA_ID_FIELD_NUMBER = 1;
+    public static final int AREA_ID_FIELD_NUMBER = 4;
     private int areaId_ = 0;
     /**
-     * <code>uint32 area_id = 1;</code>
+     * <code>uint32 area_id = 4;</code>
      * @return The areaId.
      */
     @java.lang.Override
@@ -366,10 +366,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return areaId_;
     }
 
-    public static final int CREATE_TIME_FIELD_NUMBER = 2;
+    public static final int CREATE_TIME_FIELD_NUMBER = 7;
     private int createTime_ = 0;
     /**
-     * <code>fixed32 create_time = 2;</code>
+     * <code>fixed32 create_time = 7;</code>
      * @return The createTime.
      */
     @java.lang.Override
@@ -377,11 +377,11 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return createTime_;
     }
 
-    public static final int CREATOR_NICKNAME_FIELD_NUMBER = 3;
+    public static final int CREATOR_NICKNAME_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object creatorNickname_ = "";
     /**
-     * <code>string creator_nickname = 3;</code>
+     * <code>string creator_nickname = 2;</code>
      * @return The creatorNickname.
      */
     @java.lang.Override
@@ -398,7 +398,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string creator_nickname = 3;</code>
+     * <code>string creator_nickname = 2;</code>
      * @return The bytes for creatorNickname.
      */
     @java.lang.Override
@@ -416,10 +416,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       }
     }
 
-    public static final int LIKE_NUM_FIELD_NUMBER = 4;
+    public static final int LIKE_NUM_FIELD_NUMBER = 5;
     private int likeNum_ = 0;
     /**
-     * <code>uint32 like_num = 4;</code>
+     * <code>uint32 like_num = 5;</code>
      * @return The likeNum.
      */
     @java.lang.Override
@@ -427,11 +427,11 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return likeNum_;
     }
 
-    public static final int ONLINE_ID_FIELD_NUMBER = 5;
+    public static final int ONLINE_ID_FIELD_NUMBER = 13;
     @SuppressWarnings("serial")
     private volatile java.lang.Object onlineId_ = "";
     /**
-     * <code>string online_id = 5;</code>
+     * <code>string online_id = 13;</code>
      * @return The onlineId.
      */
     @java.lang.Override
@@ -448,7 +448,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string online_id = 5;</code>
+     * <code>string online_id = 13;</code>
      * @return The bytes for onlineId.
      */
     @java.lang.Override
@@ -466,10 +466,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       }
     }
 
-    public static final int GUID_FIELD_NUMBER = 6;
+    public static final int GUID_FIELD_NUMBER = 15;
     private long guid_ = 0L;
     /**
-     * <code>uint64 guid = 6;</code>
+     * <code>uint64 guid = 15;</code>
      * @return The guid.
      */
     @java.lang.Override
@@ -477,10 +477,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return guid_;
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 7;
+    public static final int GADGET_ID_FIELD_NUMBER = 12;
     private int gadgetId_ = 0;
     /**
-     * <code>uint32 gadget_id = 7;</code>
+     * <code>uint32 gadget_id = 12;</code>
      * @return The gadgetId.
      */
     @java.lang.Override
@@ -488,10 +488,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return gadgetId_;
     }
 
-    public static final int CREATOR_PROFILE_PICTURE_FIELD_NUMBER = 8;
+    public static final int CREATOR_PROFILE_PICTURE_FIELD_NUMBER = 11;
     private emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture creatorProfilePicture_;
     /**
-     * <code>.ProfilePicture creator_profile_picture = 8;</code>
+     * <code>.ProfilePicture creator_profile_picture = 11;</code>
      * @return Whether the creatorProfilePicture field is set.
      */
     @java.lang.Override
@@ -499,7 +499,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.ProfilePicture creator_profile_picture = 8;</code>
+     * <code>.ProfilePicture creator_profile_picture = 11;</code>
      * @return The creatorProfilePicture.
      */
     @java.lang.Override
@@ -507,17 +507,17 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return creatorProfilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : creatorProfilePicture_;
     }
     /**
-     * <code>.ProfilePicture creator_profile_picture = 8;</code>
+     * <code>.ProfilePicture creator_profile_picture = 11;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getCreatorProfilePictureOrBuilder() {
       return creatorProfilePicture_ == null ? emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : creatorProfilePicture_;
     }
 
-    public static final int UNK_9_FIELD_NUMBER = 9;
+    public static final int UNK_9_FIELD_NUMBER = 10;
     private int unk9_ = 0;
     /**
-     * <code>uint32 unk_9 = 9;</code>
+     * <code>uint32 unk_9 = 10;</code>
      * @return The unk9.
      */
     @java.lang.Override
@@ -525,11 +525,11 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return unk9_;
     }
 
-    public static final int XBOX_GAMERTAG_FIELD_NUMBER = 10;
+    public static final int XBOX_GAMERTAG_FIELD_NUMBER = 14;
     @SuppressWarnings("serial")
     private volatile java.lang.Object xboxGamertag_ = "";
     /**
-     * <code>string xbox_gamertag = 10;</code>
+     * <code>string xbox_gamertag = 14;</code>
      * @return The xboxGamertag.
      */
     @java.lang.Override
@@ -546,7 +546,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string xbox_gamertag = 10;</code>
+     * <code>string xbox_gamertag = 14;</code>
      * @return The bytes for xboxGamertag.
      */
     @java.lang.Override
@@ -564,10 +564,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       }
     }
 
-    public static final int ENTITY_ID_FIELD_NUMBER = 11;
+    public static final int ENTITY_ID_FIELD_NUMBER = 9;
     private int entityId_ = 0;
     /**
-     * <code>uint32 entity_id = 11;</code>
+     * <code>uint32 entity_id = 9;</code>
      * @return The entityId.
      */
     @java.lang.Override
@@ -575,10 +575,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return entityId_;
     }
 
-    public static final int CREATOR_UID_FIELD_NUMBER = 12;
+    public static final int CREATOR_UID_FIELD_NUMBER = 8;
     private int creatorUid_ = 0;
     /**
-     * <code>uint32 creator_uid = 12;</code>
+     * <code>uint32 creator_uid = 8;</code>
      * @return The creatorUid.
      */
     @java.lang.Override
@@ -586,10 +586,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return creatorUid_;
     }
 
-    public static final int POS_FIELD_NUMBER = 13;
+    public static final int POS_FIELD_NUMBER = 1;
     private emu.grasscutter.net.proto.VectorOuterClass.Vector pos_;
     /**
-     * <code>.Vector pos = 13;</code>
+     * <code>.Vector pos = 1;</code>
      * @return Whether the pos field is set.
      */
     @java.lang.Override
@@ -597,7 +597,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.Vector pos = 13;</code>
+     * <code>.Vector pos = 1;</code>
      * @return The pos.
      */
     @java.lang.Override
@@ -605,17 +605,17 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
     /**
-     * <code>.Vector pos = 13;</code>
+     * <code>.Vector pos = 1;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
       return pos_ == null ? emu.grasscutter.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
-    public static final int MAP_LAYER_ID_FIELD_NUMBER = 14;
+    public static final int MAP_LAYER_ID_FIELD_NUMBER = 6;
     private int mapLayerId_ = 0;
     /**
-     * <code>uint32 map_layer_id = 14;</code>
+     * <code>uint32 map_layer_id = 6;</code>
      * @return The mapLayerId.
      */
     @java.lang.Override
@@ -623,10 +623,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return mapLayerId_;
     }
 
-    public static final int DETAIL_FIELD_NUMBER = 15;
+    public static final int DETAIL_FIELD_NUMBER = 3;
     private emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail detail_;
     /**
-     * <code>.IceCreatureGadgetDetail detail = 15;</code>
+     * <code>.IceCreatureGadgetDetail detail = 3;</code>
      * @return Whether the detail field is set.
      */
     @java.lang.Override
@@ -634,7 +634,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>.IceCreatureGadgetDetail detail = 15;</code>
+     * <code>.IceCreatureGadgetDetail detail = 3;</code>
      * @return The detail.
      */
     @java.lang.Override
@@ -642,17 +642,17 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return detail_ == null ? emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail.getDefaultInstance() : detail_;
     }
     /**
-     * <code>.IceCreatureGadgetDetail detail = 15;</code>
+     * <code>.IceCreatureGadgetDetail detail = 3;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetailOrBuilder getDetailOrBuilder() {
       return detail_ == null ? emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail.getDefaultInstance() : detail_;
     }
 
-    public static final int SCENE_ID_FIELD_NUMBER = 241;
+    public static final int SCENE_ID_FIELD_NUMBER = 739;
     private int sceneId_ = 0;
     /**
-     * <code>uint32 scene_id = 241;</code>
+     * <code>uint32 scene_id = 739;</code>
      * @return The sceneId.
      */
     @java.lang.Override
@@ -660,10 +660,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return sceneId_;
     }
 
-    public static final int IS_HIDDEN_FIELD_NUMBER = 1071;
+    public static final int IS_HIDDEN_FIELD_NUMBER = 1637;
     private boolean isHidden_ = false;
     /**
-     * <code>bool is_hidden = 1071;</code>
+     * <code>bool is_hidden = 1637;</code>
      * @return The isHidden.
      */
     @java.lang.Override
@@ -671,10 +671,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return isHidden_;
     }
 
-    public static final int UNK_1401_FIELD_NUMBER = 1401;
+    public static final int UNK_1401_FIELD_NUMBER = 1249;
     private boolean unk1401_ = false;
     /**
-     * <code>bool unk_1401 = 1401;</code>
+     * <code>bool unk_1401 = 1249;</code>
      * @return The unk1401.
      */
     @java.lang.Override
@@ -696,132 +696,132 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (areaId_ != 0) {
-        output.writeUInt32(1, areaId_);
-      }
-      if (createTime_ != 0) {
-        output.writeFixed32(2, createTime_);
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(1, getPos());
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creatorNickname_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, creatorNickname_);
-      }
-      if (likeNum_ != 0) {
-        output.writeUInt32(4, likeNum_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(onlineId_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, onlineId_);
-      }
-      if (guid_ != 0L) {
-        output.writeUInt64(6, guid_);
-      }
-      if (gadgetId_ != 0) {
-        output.writeUInt32(7, gadgetId_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(8, getCreatorProfilePicture());
-      }
-      if (unk9_ != 0) {
-        output.writeUInt32(9, unk9_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(xboxGamertag_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 10, xboxGamertag_);
-      }
-      if (entityId_ != 0) {
-        output.writeUInt32(11, entityId_);
-      }
-      if (creatorUid_ != 0) {
-        output.writeUInt32(12, creatorUid_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(13, getPos());
-      }
-      if (mapLayerId_ != 0) {
-        output.writeUInt32(14, mapLayerId_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, creatorNickname_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(15, getDetail());
+        output.writeMessage(3, getDetail());
+      }
+      if (areaId_ != 0) {
+        output.writeUInt32(4, areaId_);
+      }
+      if (likeNum_ != 0) {
+        output.writeUInt32(5, likeNum_);
+      }
+      if (mapLayerId_ != 0) {
+        output.writeUInt32(6, mapLayerId_);
+      }
+      if (createTime_ != 0) {
+        output.writeFixed32(7, createTime_);
+      }
+      if (creatorUid_ != 0) {
+        output.writeUInt32(8, creatorUid_);
+      }
+      if (entityId_ != 0) {
+        output.writeUInt32(9, entityId_);
+      }
+      if (unk9_ != 0) {
+        output.writeUInt32(10, unk9_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(11, getCreatorProfilePicture());
+      }
+      if (gadgetId_ != 0) {
+        output.writeUInt32(12, gadgetId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(onlineId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 13, onlineId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(xboxGamertag_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 14, xboxGamertag_);
+      }
+      if (guid_ != 0L) {
+        output.writeUInt64(15, guid_);
       }
       if (sceneId_ != 0) {
-        output.writeUInt32(241, sceneId_);
-      }
-      if (isHidden_ != false) {
-        output.writeBool(1071, isHidden_);
+        output.writeUInt32(739, sceneId_);
       }
       if (unk1401_ != false) {
-        output.writeBool(1401, unk1401_);
+        output.writeBool(1249, unk1401_);
+      }
+      if (isHidden_ != false) {
+        output.writeBool(1637, isHidden_);
       }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
-      if (areaId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, areaId_);
-      }
-      if (createTime_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFixed32Size(2, createTime_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creatorNickname_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, creatorNickname_);
-      }
-      if (likeNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, likeNum_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(onlineId_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, onlineId_);
-      }
-      if (guid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, guid_);
-      }
-      if (gadgetId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, gadgetId_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getCreatorProfilePicture());
-      }
-      if (unk9_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(9, unk9_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(xboxGamertag_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, xboxGamertag_);
-      }
-      if (entityId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(11, entityId_);
-      }
-      if (creatorUid_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, creatorUid_);
-      }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getPos());
+          .computeMessageSize(1, getPos());
       }
-      if (mapLayerId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, mapLayerId_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(creatorNickname_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, creatorNickname_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getDetail());
+          .computeMessageSize(3, getDetail());
+      }
+      if (areaId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, areaId_);
+      }
+      if (likeNum_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, likeNum_);
+      }
+      if (mapLayerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, mapLayerId_);
+      }
+      if (createTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(7, createTime_);
+      }
+      if (creatorUid_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(8, creatorUid_);
+      }
+      if (entityId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(9, entityId_);
+      }
+      if (unk9_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, unk9_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getCreatorProfilePicture());
+      }
+      if (gadgetId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, gadgetId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(onlineId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, onlineId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(xboxGamertag_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, xboxGamertag_);
+      }
+      if (guid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(15, guid_);
       }
       if (sceneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(241, sceneId_);
-      }
-      if (isHidden_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1071, isHidden_);
+          .computeUInt32Size(739, sceneId_);
       }
       if (unk1401_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1401, unk1401_);
+          .computeBoolSize(1249, unk1401_);
+      }
+      if (isHidden_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1637, isHidden_);
       }
       return size;
     }
@@ -1313,102 +1313,102 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
               case 0:
                 done = true;
                 break;
-              case 8: {
-                areaId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 8
-              case 21: {
-                createTime_ = input.readFixed32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 21
-              case 26: {
-                creatorNickname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 32: {
-                likeNum_ = input.readUInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                onlineId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              case 48: {
-                guid_ = input.readUInt64();
-                bitField0_ |= 0x00000020;
-                break;
-              } // case 48
-              case 56: {
-                gadgetId_ = input.readUInt32();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 56
-              case 66: {
-                input.readMessage(
-                    internalGetCreatorProfilePictureFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 66
-              case 72: {
-                unk9_ = input.readUInt32();
-                bitField0_ |= 0x00000100;
-                break;
-              } // case 72
-              case 82: {
-                xboxGamertag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
-                break;
-              } // case 82
-              case 88: {
-                entityId_ = input.readUInt32();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 88
-              case 96: {
-                creatorUid_ = input.readUInt32();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 96
-              case 106: {
+              case 10: {
                 input.readMessage(
                     internalGetPosFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00001000;
                 break;
-              } // case 106
-              case 112: {
-                mapLayerId_ = input.readUInt32();
-                bitField0_ |= 0x00002000;
+              } // case 10
+              case 18: {
+                creatorNickname_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
                 break;
-              } // case 112
-              case 122: {
+              } // case 18
+              case 26: {
                 input.readMessage(
                     internalGetDetailFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00004000;
                 break;
-              } // case 122
-              case 1928: {
+              } // case 26
+              case 32: {
+                areaId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 40: {
+                likeNum_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 48: {
+                mapLayerId_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 48
+              case 61: {
+                createTime_ = input.readFixed32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 61
+              case 64: {
+                creatorUid_ = input.readUInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 64
+              case 72: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 72
+              case 80: {
+                unk9_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
+              case 90: {
+                input.readMessage(
+                    internalGetCreatorProfilePictureFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 90
+              case 96: {
+                gadgetId_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 96
+              case 106: {
+                onlineId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 106
+              case 114: {
+                xboxGamertag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 114
+              case 120: {
+                guid_ = input.readUInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 120
+              case 5912: {
                 sceneId_ = input.readUInt32();
                 bitField0_ |= 0x00008000;
                 break;
-              } // case 1928
-              case 8568: {
-                isHidden_ = input.readBool();
-                bitField0_ |= 0x00010000;
-                break;
-              } // case 8568
-              case 11208: {
+              } // case 5912
+              case 9992: {
                 unk1401_ = input.readBool();
                 bitField0_ |= 0x00020000;
                 break;
-              } // case 11208
+              } // case 9992
+              case 13096: {
+                isHidden_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 13096
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1428,7 +1428,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int areaId_ ;
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 area_id = 4;</code>
        * @return The areaId.
        */
       @java.lang.Override
@@ -1436,7 +1436,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return areaId_;
       }
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 area_id = 4;</code>
        * @param value The areaId to set.
        * @return This builder for chaining.
        */
@@ -1448,7 +1448,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 area_id = 1;</code>
+       * <code>uint32 area_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
@@ -1460,7 +1460,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int createTime_ ;
       /**
-       * <code>fixed32 create_time = 2;</code>
+       * <code>fixed32 create_time = 7;</code>
        * @return The createTime.
        */
       @java.lang.Override
@@ -1468,7 +1468,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return createTime_;
       }
       /**
-       * <code>fixed32 create_time = 2;</code>
+       * <code>fixed32 create_time = 7;</code>
        * @param value The createTime to set.
        * @return This builder for chaining.
        */
@@ -1480,7 +1480,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>fixed32 create_time = 2;</code>
+       * <code>fixed32 create_time = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
@@ -1492,7 +1492,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private java.lang.Object creatorNickname_ = "";
       /**
-       * <code>string creator_nickname = 3;</code>
+       * <code>string creator_nickname = 2;</code>
        * @return The creatorNickname.
        */
       public java.lang.String getCreatorNickname() {
@@ -1508,7 +1508,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>string creator_nickname = 3;</code>
+       * <code>string creator_nickname = 2;</code>
        * @return The bytes for creatorNickname.
        */
       public com.google.protobuf.ByteString
@@ -1525,7 +1525,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>string creator_nickname = 3;</code>
+       * <code>string creator_nickname = 2;</code>
        * @param value The creatorNickname to set.
        * @return This builder for chaining.
        */
@@ -1538,7 +1538,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>string creator_nickname = 3;</code>
+       * <code>string creator_nickname = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatorNickname() {
@@ -1548,7 +1548,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>string creator_nickname = 3;</code>
+       * <code>string creator_nickname = 2;</code>
        * @param value The bytes for creatorNickname to set.
        * @return This builder for chaining.
        */
@@ -1564,7 +1564,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int likeNum_ ;
       /**
-       * <code>uint32 like_num = 4;</code>
+       * <code>uint32 like_num = 5;</code>
        * @return The likeNum.
        */
       @java.lang.Override
@@ -1572,7 +1572,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return likeNum_;
       }
       /**
-       * <code>uint32 like_num = 4;</code>
+       * <code>uint32 like_num = 5;</code>
        * @param value The likeNum to set.
        * @return This builder for chaining.
        */
@@ -1584,7 +1584,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 like_num = 4;</code>
+       * <code>uint32 like_num = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearLikeNum() {
@@ -1596,7 +1596,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private java.lang.Object onlineId_ = "";
       /**
-       * <code>string online_id = 5;</code>
+       * <code>string online_id = 13;</code>
        * @return The onlineId.
        */
       public java.lang.String getOnlineId() {
@@ -1612,7 +1612,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>string online_id = 5;</code>
+       * <code>string online_id = 13;</code>
        * @return The bytes for onlineId.
        */
       public com.google.protobuf.ByteString
@@ -1629,7 +1629,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>string online_id = 5;</code>
+       * <code>string online_id = 13;</code>
        * @param value The onlineId to set.
        * @return This builder for chaining.
        */
@@ -1642,7 +1642,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>string online_id = 5;</code>
+       * <code>string online_id = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
@@ -1652,7 +1652,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>string online_id = 5;</code>
+       * <code>string online_id = 13;</code>
        * @param value The bytes for onlineId to set.
        * @return This builder for chaining.
        */
@@ -1668,7 +1668,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private long guid_ ;
       /**
-       * <code>uint64 guid = 6;</code>
+       * <code>uint64 guid = 15;</code>
        * @return The guid.
        */
       @java.lang.Override
@@ -1676,7 +1676,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return guid_;
       }
       /**
-       * <code>uint64 guid = 6;</code>
+       * <code>uint64 guid = 15;</code>
        * @param value The guid to set.
        * @return This builder for chaining.
        */
@@ -1688,7 +1688,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint64 guid = 6;</code>
+       * <code>uint64 guid = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
@@ -1700,7 +1700,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int gadgetId_ ;
       /**
-       * <code>uint32 gadget_id = 7;</code>
+       * <code>uint32 gadget_id = 12;</code>
        * @return The gadgetId.
        */
       @java.lang.Override
@@ -1708,7 +1708,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return gadgetId_;
       }
       /**
-       * <code>uint32 gadget_id = 7;</code>
+       * <code>uint32 gadget_id = 12;</code>
        * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
@@ -1720,7 +1720,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 7;</code>
+       * <code>uint32 gadget_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
@@ -1734,14 +1734,14 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> creatorProfilePictureBuilder_;
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        * @return Whether the creatorProfilePicture field is set.
        */
       public boolean hasCreatorProfilePicture() {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        * @return The creatorProfilePicture.
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture getCreatorProfilePicture() {
@@ -1752,7 +1752,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       public Builder setCreatorProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (creatorProfilePictureBuilder_ == null) {
@@ -1766,7 +1766,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       public Builder setCreatorProfilePicture(
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
@@ -1780,7 +1780,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       public Builder mergeCreatorProfilePicture(emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (creatorProfilePictureBuilder_ == null) {
@@ -1801,7 +1801,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       public Builder clearCreatorProfilePicture() {
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -1814,7 +1814,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getCreatorProfilePictureBuilder() {
         bitField0_ |= 0x00000080;
@@ -1822,7 +1822,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return internalGetCreatorProfilePictureFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       public emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getCreatorProfilePictureOrBuilder() {
         if (creatorProfilePictureBuilder_ != null) {
@@ -1833,7 +1833,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.ProfilePicture creator_profile_picture = 8;</code>
+       * <code>.ProfilePicture creator_profile_picture = 11;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder, emu.grasscutter.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder> 
@@ -1851,7 +1851,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int unk9_ ;
       /**
-       * <code>uint32 unk_9 = 9;</code>
+       * <code>uint32 unk_9 = 10;</code>
        * @return The unk9.
        */
       @java.lang.Override
@@ -1859,7 +1859,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return unk9_;
       }
       /**
-       * <code>uint32 unk_9 = 9;</code>
+       * <code>uint32 unk_9 = 10;</code>
        * @param value The unk9 to set.
        * @return This builder for chaining.
        */
@@ -1871,7 +1871,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 unk_9 = 9;</code>
+       * <code>uint32 unk_9 = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk9() {
@@ -1883,7 +1883,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private java.lang.Object xboxGamertag_ = "";
       /**
-       * <code>string xbox_gamertag = 10;</code>
+       * <code>string xbox_gamertag = 14;</code>
        * @return The xboxGamertag.
        */
       public java.lang.String getXboxGamertag() {
@@ -1899,7 +1899,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>string xbox_gamertag = 10;</code>
+       * <code>string xbox_gamertag = 14;</code>
        * @return The bytes for xboxGamertag.
        */
       public com.google.protobuf.ByteString
@@ -1916,7 +1916,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>string xbox_gamertag = 10;</code>
+       * <code>string xbox_gamertag = 14;</code>
        * @param value The xboxGamertag to set.
        * @return This builder for chaining.
        */
@@ -1929,7 +1929,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>string xbox_gamertag = 10;</code>
+       * <code>string xbox_gamertag = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearXboxGamertag() {
@@ -1939,7 +1939,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>string xbox_gamertag = 10;</code>
+       * <code>string xbox_gamertag = 14;</code>
        * @param value The bytes for xboxGamertag to set.
        * @return This builder for chaining.
        */
@@ -1955,7 +1955,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int entityId_ ;
       /**
-       * <code>uint32 entity_id = 11;</code>
+       * <code>uint32 entity_id = 9;</code>
        * @return The entityId.
        */
       @java.lang.Override
@@ -1963,7 +1963,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return entityId_;
       }
       /**
-       * <code>uint32 entity_id = 11;</code>
+       * <code>uint32 entity_id = 9;</code>
        * @param value The entityId to set.
        * @return This builder for chaining.
        */
@@ -1975,7 +1975,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 entity_id = 11;</code>
+       * <code>uint32 entity_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
@@ -1987,7 +1987,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int creatorUid_ ;
       /**
-       * <code>uint32 creator_uid = 12;</code>
+       * <code>uint32 creator_uid = 8;</code>
        * @return The creatorUid.
        */
       @java.lang.Override
@@ -1995,7 +1995,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return creatorUid_;
       }
       /**
-       * <code>uint32 creator_uid = 12;</code>
+       * <code>uint32 creator_uid = 8;</code>
        * @param value The creatorUid to set.
        * @return This builder for chaining.
        */
@@ -2007,7 +2007,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 creator_uid = 12;</code>
+       * <code>uint32 creator_uid = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatorUid() {
@@ -2021,14 +2021,14 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> posBuilder_;
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
         return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        * @return The pos.
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector getPos() {
@@ -2039,7 +2039,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       public Builder setPos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -2053,7 +2053,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       public Builder setPos(
           emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
@@ -2067,7 +2067,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       public Builder mergePos(emu.grasscutter.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
@@ -2088,7 +2088,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       public Builder clearPos() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -2101,7 +2101,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
         bitField0_ |= 0x00001000;
@@ -2109,7 +2109,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return internalGetPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       public emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
         if (posBuilder_ != null) {
@@ -2120,7 +2120,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.Vector pos = 13;</code>
+       * <code>.Vector pos = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.VectorOuterClass.Vector, emu.grasscutter.net.proto.VectorOuterClass.Vector.Builder, emu.grasscutter.net.proto.VectorOuterClass.VectorOrBuilder> 
@@ -2138,7 +2138,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int mapLayerId_ ;
       /**
-       * <code>uint32 map_layer_id = 14;</code>
+       * <code>uint32 map_layer_id = 6;</code>
        * @return The mapLayerId.
        */
       @java.lang.Override
@@ -2146,7 +2146,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return mapLayerId_;
       }
       /**
-       * <code>uint32 map_layer_id = 14;</code>
+       * <code>uint32 map_layer_id = 6;</code>
        * @param value The mapLayerId to set.
        * @return This builder for chaining.
        */
@@ -2158,7 +2158,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 map_layer_id = 14;</code>
+       * <code>uint32 map_layer_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearMapLayerId() {
@@ -2172,14 +2172,14 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail.Builder, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetailOrBuilder> detailBuilder_;
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        * @return Whether the detail field is set.
        */
       public boolean hasDetail() {
         return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        * @return The detail.
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail getDetail() {
@@ -2190,7 +2190,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       public Builder setDetail(emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail value) {
         if (detailBuilder_ == null) {
@@ -2204,7 +2204,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       public Builder setDetail(
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail.Builder builderForValue) {
@@ -2218,7 +2218,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       public Builder mergeDetail(emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail value) {
         if (detailBuilder_ == null) {
@@ -2239,7 +2239,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       public Builder clearDetail() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -2252,7 +2252,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail.Builder getDetailBuilder() {
         bitField0_ |= 0x00004000;
@@ -2260,7 +2260,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return internalGetDetailFieldBuilder().getBuilder();
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetailOrBuilder getDetailOrBuilder() {
         if (detailBuilder_ != null) {
@@ -2271,7 +2271,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.IceCreatureGadgetDetail detail = 15;</code>
+       * <code>.IceCreatureGadgetDetail detail = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetail.Builder, emu.grasscutter.net.proto.IceCreatureGadgetInfoOuterClass.IceCreatureGadgetDetailOrBuilder> 
@@ -2289,7 +2289,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private int sceneId_ ;
       /**
-       * <code>uint32 scene_id = 241;</code>
+       * <code>uint32 scene_id = 739;</code>
        * @return The sceneId.
        */
       @java.lang.Override
@@ -2297,7 +2297,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return sceneId_;
       }
       /**
-       * <code>uint32 scene_id = 241;</code>
+       * <code>uint32 scene_id = 739;</code>
        * @param value The sceneId to set.
        * @return This builder for chaining.
        */
@@ -2309,7 +2309,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 scene_id = 241;</code>
+       * <code>uint32 scene_id = 739;</code>
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
@@ -2321,7 +2321,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private boolean isHidden_ ;
       /**
-       * <code>bool is_hidden = 1071;</code>
+       * <code>bool is_hidden = 1637;</code>
        * @return The isHidden.
        */
       @java.lang.Override
@@ -2329,7 +2329,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return isHidden_;
       }
       /**
-       * <code>bool is_hidden = 1071;</code>
+       * <code>bool is_hidden = 1637;</code>
        * @param value The isHidden to set.
        * @return This builder for chaining.
        */
@@ -2341,7 +2341,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>bool is_hidden = 1071;</code>
+       * <code>bool is_hidden = 1637;</code>
        * @return This builder for chaining.
        */
       public Builder clearIsHidden() {
@@ -2353,7 +2353,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private boolean unk1401_ ;
       /**
-       * <code>bool unk_1401 = 1401;</code>
+       * <code>bool unk_1401 = 1249;</code>
        * @return The unk1401.
        */
       @java.lang.Override
@@ -2361,7 +2361,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return unk1401_;
       }
       /**
-       * <code>bool unk_1401 = 1401;</code>
+       * <code>bool unk_1401 = 1249;</code>
        * @param value The unk1401 to set.
        * @return This builder for chaining.
        */
@@ -2373,7 +2373,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>bool unk_1401 = 1401;</code>
+       * <code>bool unk_1401 = 1249;</code>
        * @return This builder for chaining.
        */
       public Builder clearUnk1401() {
@@ -2439,23 +2439,23 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bytes storage = 1;</code>
+     * <code>bytes storage = 3;</code>
      * @return The storage.
      */
     com.google.protobuf.ByteString getStorage();
 
     /**
-     * <code>.BPAEPJHBOFM build_detail = 3;</code>
+     * <code>.BPAEPJHBOFM build_detail = 13;</code>
      * @return Whether the buildDetail field is set.
      */
     boolean hasBuildDetail();
     /**
-     * <code>.BPAEPJHBOFM build_detail = 3;</code>
+     * <code>.BPAEPJHBOFM build_detail = 13;</code>
      * @return The buildDetail.
      */
     emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM getBuildDetail();
     /**
-     * <code>.BPAEPJHBOFM build_detail = 3;</code>
+     * <code>.BPAEPJHBOFM build_detail = 13;</code>
      */
     emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder getBuildDetailOrBuilder();
   }
@@ -2503,10 +2503,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
     }
 
     private int bitField0_;
-    public static final int STORAGE_FIELD_NUMBER = 1;
+    public static final int STORAGE_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString storage_ = com.google.protobuf.ByteString.EMPTY;
     /**
-     * <code>bytes storage = 1;</code>
+     * <code>bytes storage = 3;</code>
      * @return The storage.
      */
     @java.lang.Override
@@ -2514,10 +2514,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return storage_;
     }
 
-    public static final int BUILD_DETAIL_FIELD_NUMBER = 3;
+    public static final int BUILD_DETAIL_FIELD_NUMBER = 13;
     private emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM buildDetail_;
     /**
-     * <code>.BPAEPJHBOFM build_detail = 3;</code>
+     * <code>.BPAEPJHBOFM build_detail = 13;</code>
      * @return Whether the buildDetail field is set.
      */
     @java.lang.Override
@@ -2525,7 +2525,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.BPAEPJHBOFM build_detail = 3;</code>
+     * <code>.BPAEPJHBOFM build_detail = 13;</code>
      * @return The buildDetail.
      */
     @java.lang.Override
@@ -2533,7 +2533,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       return buildDetail_ == null ? emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.getDefaultInstance() : buildDetail_;
     }
     /**
-     * <code>.BPAEPJHBOFM build_detail = 3;</code>
+     * <code>.BPAEPJHBOFM build_detail = 13;</code>
      */
     @java.lang.Override
     public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder getBuildDetailOrBuilder() {
@@ -2555,10 +2555,10 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!storage_.isEmpty()) {
-        output.writeBytes(1, storage_);
+        output.writeBytes(3, storage_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(3, getBuildDetail());
+        output.writeMessage(13, getBuildDetail());
       }
       getUnknownFields().writeTo(output);
     }
@@ -2566,11 +2566,11 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       int size = 0;
       if (!storage_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, storage_);
+          .computeBytesSize(3, storage_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getBuildDetail());
+          .computeMessageSize(13, getBuildDetail());
       }
       return size;
     }
@@ -2851,18 +2851,18 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
               case 0:
                 done = true;
                 break;
-              case 10: {
+              case 26: {
                 storage_ = input.readBytes();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
-              case 26: {
+              } // case 26
+              case 106: {
                 input.readMessage(
                     internalGetBuildDetailFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 26
+              } // case 106
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2882,7 +2882,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
 
       private com.google.protobuf.ByteString storage_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>bytes storage = 1;</code>
+       * <code>bytes storage = 3;</code>
        * @return The storage.
        */
       @java.lang.Override
@@ -2890,7 +2890,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return storage_;
       }
       /**
-       * <code>bytes storage = 1;</code>
+       * <code>bytes storage = 3;</code>
        * @param value The storage to set.
        * @return This builder for chaining.
        */
@@ -2902,7 +2902,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>bytes storage = 1;</code>
+       * <code>bytes storage = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearStorage() {
@@ -2916,14 +2916,14 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder> buildDetailBuilder_;
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        * @return Whether the buildDetail field is set.
        */
       public boolean hasBuildDetail() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        * @return The buildDetail.
        */
       public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM getBuildDetail() {
@@ -2934,7 +2934,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       public Builder setBuildDetail(emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM value) {
         if (buildDetailBuilder_ == null) {
@@ -2948,7 +2948,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       public Builder setBuildDetail(
           emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder builderForValue) {
@@ -2962,7 +2962,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       public Builder mergeBuildDetail(emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM value) {
         if (buildDetailBuilder_ == null) {
@@ -2983,7 +2983,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       public Builder clearBuildDetail() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2996,7 +2996,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder getBuildDetailBuilder() {
         bitField0_ |= 0x00000002;
@@ -3004,7 +3004,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         return internalGetBuildDetailFieldBuilder().getBuilder();
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       public emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder getBuildDetailOrBuilder() {
         if (buildDetailBuilder_ != null) {
@@ -3015,7 +3015,7 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>.BPAEPJHBOFM build_detail = 3;</code>
+       * <code>.BPAEPJHBOFM build_detail = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFM.Builder, emu.grasscutter.net.proto.BPAEPJHBOFMOuterClass.BPAEPJHBOFMOrBuilder> 
@@ -3104,18 +3104,18 @@ public final class IceCreatureGadgetInfoOuterClass extends com.google.protobuf.G
       "\n\033IceCreatureGadgetInfo.proto\032\021BPAEPJHBO" +
       "FM.proto\032\024ProfilePicture.proto\032\014Vector.p" +
       "roto\"\255\003\n\025IceCreatureGadgetInfo\022\017\n\007area_i" +
-      "d\030\001 \001(\r\022\023\n\013create_time\030\002 \001(\007\022\030\n\020creator_" +
-      "nickname\030\003 \001(\t\022\020\n\010like_num\030\004 \001(\r\022\021\n\tonli" +
-      "ne_id\030\005 \001(\t\022\014\n\004guid\030\006 \001(\004\022\021\n\tgadget_id\030\007" +
-      " \001(\r\0220\n\027creator_profile_picture\030\010 \001(\0132\017." +
-      "ProfilePicture\022\r\n\005unk_9\030\t \001(\r\022\025\n\rxbox_ga" +
-      "mertag\030\n \001(\t\022\021\n\tentity_id\030\013 \001(\r\022\023\n\013creat" +
-      "or_uid\030\014 \001(\r\022\024\n\003pos\030\r \001(\0132\007.Vector\022\024\n\014ma" +
-      "p_layer_id\030\016 \001(\r\022(\n\006detail\030\017 \001(\0132\030.IceCr" +
-      "eatureGadgetDetail\022\021\n\010scene_id\030\361\001 \001(\r\022\022\n" +
-      "\tis_hidden\030\257\010 \001(\010\022\021\n\010unk_1401\030\371\n \001(\010\"N\n\027" +
-      "IceCreatureGadgetDetail\022\017\n\007storage\030\001 \001(\014" +
-      "\022\"\n\014build_detail\030\003 \001(\0132\014.BPAEPJHBOFM*\210\001\n" +
+      "d\030\004 \001(\r\022\023\n\013create_time\030\007 \001(\007\022\030\n\020creator_" +
+      "nickname\030\002 \001(\t\022\020\n\010like_num\030\005 \001(\r\022\021\n\tonli" +
+      "ne_id\030\r \001(\t\022\014\n\004guid\030\017 \001(\004\022\021\n\tgadget_id\030\014" +
+      " \001(\r\0220\n\027creator_profile_picture\030\013 \001(\0132\017." +
+      "ProfilePicture\022\r\n\005unk_9\030\n \001(\r\022\025\n\rxbox_ga" +
+      "mertag\030\016 \001(\t\022\021\n\tentity_id\030\t \001(\r\022\023\n\013creat" +
+      "or_uid\030\010 \001(\r\022\024\n\003pos\030\001 \001(\0132\007.Vector\022\024\n\014ma" +
+      "p_layer_id\030\006 \001(\r\022(\n\006detail\030\003 \001(\0132\030.IceCr" +
+      "eatureGadgetDetail\022\021\n\010scene_id\030\343\005 \001(\r\022\022\n" +
+      "\tis_hidden\030\345\014 \001(\010\022\021\n\010unk_1401\030\341\t \001(\010\"N\n\027" +
+      "IceCreatureGadgetDetail\022\017\n\007storage\030\003 \001(\014" +
+      "\022\"\n\014build_detail\030\r \001(\0132\014.BPAEPJHBOFM*\210\001\n" +
       "\024IceCreatureLimitType\022 \n\034ICE_CREATURE_LI" +
       "MIT_TYPE_NONE\020\000\022&\n\"ICE_CREATURE_LIMIT_TY" +
       "PE_AREA_LIMIT\020\001\022&\n\"ICE_CREATURE_LIMIT_TY" +
