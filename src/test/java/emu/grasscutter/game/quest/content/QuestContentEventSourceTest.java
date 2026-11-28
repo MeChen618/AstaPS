@@ -6,9 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.google.gson.Gson;
 
+import emu.grasscutter.data.excels.ItemData;
 import emu.grasscutter.data.excels.quest.QuestData;
+import emu.grasscutter.game.inventory.GameItem;
+import emu.grasscutter.game.inventory.Inventory;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.quest.*;
+import emu.grasscutter.game.quest.enums.QuestContent;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -88,6 +92,58 @@ final class QuestContentEventSourceTest {
         assertInstanceOf(ContentUnlockTransPoint.class, handlers.get(167));
         assertInstanceOf(ContentQuestVarEqual.class, handlers.get(171));
         assertInstanceOf(ContentEnterVehicle.class, handlers.get(182));
+    }
+
+    @Test
+    void specificWidgetConditionChecksTheOwnedSlotOnAttachAndResume() {
+        var gson = new Gson();
+        var data =
+                gson.fromJson(
+                        """
+                        {"subId":701129,"mainId":7011,"failCond":[],
+                         "finishCond":[{"type":"QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED","param":[220133,0]}]}
+                        """,
+                        QuestData.class);
+        var widgetData = gson.fromJson(
+                """
+                {"id":220133,"itemType":"ITEM_MATERIAL","materialType":"MATERIAL_WIDGET","stackLimit":1}
+                """,
+                ItemData.class);
+        var item = new GameItem(widgetData, 1);
+        var player =
+                new Player() {
+                    private final Inventory testInventory = new Inventory(this) {
+                        @Override
+                        public GameItem getItemById(int itemId) {
+                            return item.getItemId() == itemId ? item : null;
+                        }
+                    };
+
+                    @Override
+                    public Inventory getInventory() {
+                        return testInventory;
+                    }
+                };
+        var quest = new GameQuest(null, data) {
+            @Override
+            public Player getOwner() {
+                return player;
+            }
+        };
+        var condition = data.getFinishCond().getFirst();
+        var system = new QuestSystem(null);
+        assertEquals(QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED, condition.getType());
+        assertEquals(QUEST_CONTENT_NONE, QuestContent.getContentTriggerByValue(
+                QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED.getValue()));
+        assertTrue(ContentCurrentState.checkOnStart(condition.getType()));
+
+        assertFalse(system.triggerContent(quest, condition, "", 220133));
+        player.setWidgetId(220133);
+        assertTrue(system.triggerContent(quest, condition, "", 220133));
+        assertTrue(system.triggerContent(quest, condition, ""));
+        assertFalse(system.triggerContent(quest, condition, "", 220132));
+        item.setCount(0);
+        assertFalse(system.triggerContent(quest, condition, ""));
     }
 
     @Test

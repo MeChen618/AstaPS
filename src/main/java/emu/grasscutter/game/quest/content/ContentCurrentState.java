@@ -26,7 +26,8 @@ import java.util.regex.Pattern;
             QUEST_CONTENT_LEAVE_SCENE_RANGE,
             QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
             QUEST_CONTENT_UNLOCKED_RECIPE,
-            QUEST_CONTENT_NOT_UNLOCKED_RECIPE
+            QUEST_CONTENT_NOT_UNLOCKED_RECIPE,
+            QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED
         })
 public final class ContentCurrentState extends BaseContent {
     private static final SceneDummyPoints SCENE_DUMMY_POINTS = new SceneDummyPoints();
@@ -54,7 +55,10 @@ public final class ContentCurrentState extends BaseContent {
             boolean learned = Arrays.stream(ids).anyMatch(cooking::isRecipeUnlocked);
             return type == QUEST_CONTENT_UNLOCKED_RECIPE ? learned : !learned;
         }
-        int required = type == QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE ? 1 : 2;
+        int required = switch (type) {
+            case QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE, QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED -> 1;
+            default -> 2;
+        };
         if (expected == null || expected.length < required) return false;
         if (params.length > 0 && params[0] != expected[0]) return false;
         var player = quest.getOwner();
@@ -80,6 +84,9 @@ public final class ContentCurrentState extends BaseContent {
             }
             case QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE ->
                     player.getScene() != null && player.getScene().getId() == expected[0];
+            case QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED ->
+                    player.getWidgetId() == expected[0]
+                            && player.getInventory().hasWidget(expected[0]);
             case QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL -> {
                 var parent = player.getQuestManager().getMainQuestById(expected[0]);
                 yield parent != null && parent.getState().getValue() == expected[1];
@@ -120,6 +127,7 @@ public final class ContentCurrentState extends BaseContent {
                     QUEST_CONTENT_PRESENT_AT_SPECIFIC_SCENE,
                     QUEST_CONTENT_PARENT_QUEST_STATE_EQUAL,
                     QUEST_CONTENT_UNLOCKED_RECIPE,
+                    QUEST_CONTENT_SPECIFIC_WIDGET_ATTACHED,
                     QUEST_CONTENT_NOT_UNLOCKED_RECIPE ->
                     true;
             default -> false;

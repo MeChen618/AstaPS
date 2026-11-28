@@ -43,10 +43,13 @@ public class PacketPlayerWorldSceneInfoListNotify extends BasePacket {
 
             // Map layer information (Big world)
             if (scene == 3) {
+                var lockedLayers = player.getPlayerProgress().getLockedMapLayerIds();
                 worldInfoBuilder.setMapLayerInfo(
                         MapLayerInfo._MapLayerInfo.newBuilder()
                                 .addAllUnlockMapLayerList(
-                                        GameData.getMapLayerDataMap().keySet()) // MapLayer Ids
+                                        GameData.getMapLayerDataMap().keySet().stream()
+                                                .filter(id -> !lockedLayers.contains(id))
+                                                .toList())
                                 // the floor list is the one unnamed repeated field of 7.0's _MapLayerInfo
                                 .addAllUnlockMapLayerGroupList(
                                         GameData.getMapLayerGroupDataMap()
