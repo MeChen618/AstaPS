@@ -7,10 +7,10 @@ import emu.grasscutter.config.ConfigContainer.GameOptions.BirthdayMailOptions.Gi
 import emu.grasscutter.game.mail.Mail.MailContent;
 import emu.grasscutter.game.mail.Mail.MailItem;
 import emu.grasscutter.game.player.Player;
+import emu.grasscutter.utils.GameDay;
 import emu.grasscutter.utils.Utils;
 import emu.grasscutter.utils.lang.Language;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,20 +36,18 @@ import java.util.List;
  */
 public final class BirthdayMailSystem {
     private BirthdayMailSystem() {}
-	
-	/**
-	 * Checks birthday mail using the server machine's current local date.
-	 */
-	public static void checkAndSend(Player player) {
-		checkAndSend(player, LocalDate.now(ZoneId.systemDefault()));
-	}	
+
+    /** Checks birthday mail on the same game day used by the daily reset. */
+    public static void checkAndSend(Player player) {
+        checkAndSend(player, GameDay.date(Utils.getCurrentSeconds()));
+    }
 
     /**
      * Checks whether the player's birthday is today and, if so, sends them a gift mail - but only
      * once per year.
      *
      * @param player The player to check.
-     * @param today The current date, in the server's local time zone.
+     * @param today The current game date.
      */
     public static void checkAndSend(Player player, LocalDate today) {
         var options = GAME_OPTIONS.birthdayMail;

@@ -10,13 +10,18 @@ import emu.grasscutter.game.battlepass.BattlePassManager;
 import emu.grasscutter.game.player.Player;
 import emu.grasscutter.game.player.PlayerBirthday;
 import emu.grasscutter.game.props.WatcherTriggerType;
+import emu.grasscutter.utils.GameDay;
+import emu.grasscutter.utils.Utils;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.TimeZone;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,6 +30,7 @@ import sun.misc.Unsafe;
 
 @ExtendWith(ServerResourceFixture.class)
 final class BirthdayMailDailyResetTest {
+    private static final ZoneId RESET_ZONE = ZoneId.of("Asia/Shanghai");
     private BirthdayMailOptions originalOptions;
     private LocalDate today;
 
@@ -32,12 +38,38 @@ final class BirthdayMailDailyResetTest {
     void configureMail() {
         originalOptions = GAME_OPTIONS.birthdayMail;
         GAME_OPTIONS.birthdayMail = new BirthdayMailOptions();
-        today = LocalDate.now(ZoneId.systemDefault());
+        today = GameDay.date(Utils.getCurrentSeconds());
     }
 
     @AfterEach
     void restoreMailOptions() {
         GAME_OPTIONS.birthdayMail = originalOptions;
+    }
+
+    @Test
+    void settingBirthdayAndDailyResetUseTheSameDayAndSendOnce() throws Exception {
+        var now = Instant.ofEpochSecond(Utils.getCurrentSeconds());
+        today = GameDay.date(now.getEpochSecond());
+        var hostOffset = ZoneOffset.ofHours(-12);
+        if (now.atOffset(hostOffset).toLocalDate().equals(today)) {
+            hostOffset = ZoneOffset.ofHours(14);
+        }
+        var previousZone = TimeZone.getDefault();
+        try {
+            TimeZone.setDefault(TimeZone.getTimeZone(hostOffset));
+            assertNotEquals(today, now.atZone(ZoneId.systemDefault()).toLocalDate());
+            var player = playerWithBirthday(today);
+
+            BirthdayMailSystem.checkAndSend(player);
+            assertEquals(1, player.mail.messages.size());
+            doDailyReset(player);
+
+            assertEquals(1, player.mail.messages.size());
+            assertEquals(today.getYear(), player.getLastBirthdayMailYear());
+            assertEquals(today, resetDate(player));
+        } finally {
+            TimeZone.setDefault(previousZone);
+        }
     }
 
     @Test
@@ -86,14 +118,13 @@ final class BirthdayMailDailyResetTest {
     @Test
     void theSameLoadedPlayerReceivesMailWhenItsDailyResetBecomesStale() throws Exception {
         var player = playerWithBirthday(today);
-        player.setLastDailyReset((int) today.atStartOfDay(ZoneId.systemDefault()).toEpochSecond());
+        player.setLastDailyReset(resetStart(today));
         doDailyReset(player);
         assertTrue(player.mail.messages.isEmpty());
         assertEquals(0, player.battlePass.dailyResets);
 
         // Simulate the previous reset belonging to the preceding date without reconstructing Player.
-        player.setLastDailyReset((int) today.minusDays(1)
-                .atStartOfDay(ZoneId.systemDefault()).toEpochSecond());
+        player.setLastDailyReset(resetStart(today.minusDays(1)));
         doDailyReset(player);
 
         assertEquals(1, player.mail.messages.size());
@@ -107,8 +138,7 @@ final class BirthdayMailDailyResetTest {
         var player = playerWithBirthday(today);
         doDailyReset(player);
 
-        player.setLastDailyReset((int) today.minusDays(1)
-                .atStartOfDay(ZoneId.systemDefault()).toEpochSecond());
+        player.setLastDailyReset(resetStart(today.minusDays(1)));
         doDailyReset(player);
 
         assertEquals(1, player.mail.messages.size());
@@ -178,14 +208,16 @@ final class BirthdayMailDailyResetTest {
         account.setLocale(Locale.US);
         player.setAccount(account);
         player.setResinBuyCount(3);
-        player.setLastDailyReset((int) today.minusDays(1)
-                .atStartOfDay(ZoneId.systemDefault()).toEpochSecond());
+        player.setLastDailyReset(resetStart(today.minusDays(1)));
         return player;
     }
 
     private static LocalDate resetDate(Player player) {
-        return java.time.Instant.ofEpochSecond(player.getLastDailyReset())
-                .atZone(ZoneId.systemDefault()).toLocalDate();
+        return GameDay.date(player.getLastDailyReset());
+    }
+
+    private static int resetStart(LocalDate date) {
+        return (int) date.atTime(4, 0).atZone(RESET_ZONE).toEpochSecond();
     }
 
     private static void doDailyReset(Player player) throws Exception {
