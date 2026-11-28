@@ -65,14 +65,13 @@ Regression tests use independent native wire vectors for the wheel, selection an
 exercise default/non-cube/invalid selections; check the placement/restoration envelopes; and
 verify that the energy command sends the actual team global-value packet.
 
-The complete nonintegration test run passed: 1707 tests, zero failures/errors/skips. The two
+The isolated nonintegration test run passed: 1699 passed, zero failures/errors and four skipped. The two
 existing daily-commission test fixtures now use the game's reset-day helper instead of the
 calendar date, so their expected stored day is valid between midnight and 04:00 too. No daily
-commission runtime code changed. The actual local resource audit covers 458 layers, 204 groups,
-342 resource floors and ten wheel types with sixteen gadgets. The test JAR passes ZIP integrity.
+commission runtime code changed. The actual local resource audit covers ten wheel types with sixteen gadgets. The test JAR passes ZIP integrity.
 
 After restarting with `ServerStart.cmd`, relog, open the Ice Creature selection page, select a
 non-cube type and alternate look, place it, and verify the choice after another relog. Run
 `/kresnik 0`, `/kresnik 250`, `/kresnik 500`, and `/kresnik` and inspect the energy bar.
 Also repeat the Fontaine sprint checks in `dive-stamina.md`.
-Automated checks do not establish the observed client result. 
+Automated checks do not establish the observed client result.
