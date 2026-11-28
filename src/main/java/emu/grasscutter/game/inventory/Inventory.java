@@ -741,6 +741,31 @@ public class Inventory extends BasePlayerManager implements Iterable<GameItem> {
         return true;
     }
 
+    /** Removes the entire stock of each configured material after validating the whole list. */
+    public synchronized boolean removeAllMaterialStacks(Set<Integer> itemIds) {
+        if (itemIds.isEmpty()) return false;
+        for (int itemId : itemIds) {
+            var data = GameData.getItemDataMap().get(itemId);
+            if (itemId <= 0 || data == null || data.getItemType() != ItemType.ITEM_MATERIAL) {
+                return false;
+            }
+        }
+
+        // Older saves can contain multiple GUIDs for an ID even though the material tab indexes one.
+        var stacks = new ArrayList<GameItem>();
+        for (var item : this.store.values()) {
+            if (item.getCount() <= 0 || !itemIds.contains(item.getItemId())) continue;
+            if (item.getItemData() == null || item.getItemType() != ItemType.ITEM_MATERIAL) {
+                return false;
+            }
+            stacks.add(item);
+        }
+        for (var item : stacks) {
+            if (!this.removeItem(item, item.getCount())) return false;
+        }
+        return true;
+    }
+
     public void removeItems(List<GameItem> items) {
         // TODO Bulk delete
         for (GameItem item : items) {
