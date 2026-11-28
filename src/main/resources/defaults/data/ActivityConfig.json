@@ -1,5 +1,13 @@
 [
   {
+    "activityId": 5269,
+    "activityType": 5701,
+    "scheduleId": 5269012,
+    "meetCondList": [],
+    "beginTime": "2026-09-30T10:00:00+08:00",
+    "endTime": "2026-11-11T09:59:59+08:00"
+  },
+  {
     "activityId": 5072,
     "activityType": 2202,
     "scheduleId": 5072001,
