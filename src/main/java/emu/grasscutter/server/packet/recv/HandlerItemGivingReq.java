@@ -1,116 +1,95 @@
 package emu.grasscutter.server.packet.recv;
 
-import emu.grasscutter.Grasscutter;
 import emu.grasscutter.data.GameData;
-import emu.grasscutter.game.quest.enums.QuestCond;
-import emu.grasscutter.game.quest.enums.QuestContent;
+import emu.grasscutter.data.excels.giving.GivingData;
+import emu.grasscutter.data.excels.giving.GivingData.GiveMethod;
+import emu.grasscutter.data.excels.giving.GivingData.GiveType;
+import emu.grasscutter.game.inventory.Inventory;
+import emu.grasscutter.game.inventory.ItemType;
+import emu.grasscutter.game.props.ActionReason;
+import emu.grasscutter.game.quest.QuestManager;
 import emu.grasscutter.net.packet.*;
 import emu.grasscutter.net.proto.ItemGivingReqOuterClass.ItemGivingReq;
 import emu.grasscutter.server.game.GameSession;
 import emu.grasscutter.server.packet.send.PacketItemGivingRsp;
 import emu.grasscutter.server.packet.send.PacketItemGivingRsp.Mode;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @Opcodes(PacketOpcodes.ItemGivingReq)
 public final class HandlerItemGivingReq extends PacketHandler {
     @Override
     public void handle(GameSession session, byte[] header, byte[] payload) throws Exception {
         var req = ItemGivingReq.parseFrom(payload);
-
         var player = session.getPlayer();
-        var inventory = player.getInventory();
+        if (player == null) return;
 
-        var giveId = req.getGivingId();
-        var items = req.getItemParamListList();
+        // Run alongside quest transitions so a retry observes updated objective progress.
+        QuestManager.eventExecutor.execute(() -> {
+            if (session.getState() == GameSession.SessionState.INACTIVE
+                    || player.getSession() != session) return;
+            int givingId = req.getGivingId();
+            var data = GameData.getGivingDataMap().get(givingId);
+            boolean success = givingId > 0 && data != null && data.getGiveType() == GiveType.QUEST
+                    && data.getGivingMethod() == GiveMethod.GIVING_METHOD_EXACT
+                    && player.getQuestManager().tryCompleteExactItemGiving(
+                            givingId, () -> submitExactItems(player.getInventory(), data, req));
+            session.send(success
+                    ? new PacketItemGivingRsp(givingId, Mode.EXACT_SUCCESS)
+                    : new PacketItemGivingRsp());
+        });
+    }
 
-/*        switch (req.getItemGivingType()) {
-            case QUEST -> {
-                var questManager = player.getQuestManager();
-                var activeGivings = player.getPlayerProgress().getItemGivings();
-                if (!activeGivings.containsKey(giveId)) return;
+    private static boolean submitExactItems(Inventory inventory, GivingData data, ItemGivingReq req) {
+        var costs = data.getExactItems();
+        if (costs == null) return false;
+        var expected = new HashMap<Integer, Integer>();
+        for (var cost : costs) {
+            if (cost == null) return false;
+            // The authored table pads its fixed-size array with empty entries.
+            if (cost.getId() == 0 && cost.getCount() == 0) continue;
+            if (!addQuantity(expected, cost.getId(), cost.getCount())) return false;
+        }
+        if (expected.isEmpty()) return false;
 
-                // Check the items against the resources.
-                var data = GameData.getGivingDataMap().get(giveId);
-                if (data == null)
-                    throw new IllegalArgumentException("No giving data found for " + giveId + ".");
+        boolean hasItemIds = req.getItemParamListCount() > 0;
+        boolean hasGuids = req.getItemGuidCountMapCount() > 0;
+        if (!hasItemIds && !hasGuids) return false;
+        if (hasItemIds) {
+            var byId = new HashMap<Integer, Integer>();
+            for (var item : req.getItemParamListList()) {
+                if (!addQuantity(byId, item.getItemId(), item.getCount())) return false;
+            }
+            if (!expected.equals(byId)) return false;
+        }
 
-                switch (data.getGivingMethod()) {
-                    case GIVING_METHOD_EXACT -> {
-                        // Check if the player has all the items.
-                        if (!inventory.hasAllItems(items)) {
-                            player.sendPacket(new PacketItemGivingRsp());
-                            return;
-                        }
-
-                        // Remove the items if the quest specifies.
-                        if (data.isRemoveItem()) {
-                            inventory.removeItems(items);
-                        }
-
-                        // Send the response packet.
-                        player.sendPacket(new PacketItemGivingRsp(giveId, Mode.EXACT_SUCCESS));
-                        // Remove the action from the active givings.
-                        questManager.removeGivingItemAction(giveId);
-                        // Queue the content and condition actions.
-                        questManager.queueEvent(QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, 0);
-                        questManager.queueEvent(QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, 0);
-                    }
-                    case GIVING_METHOD_VAGUE_GROUP, GIVING_METHOD_GROUP -> {
-                        var matchedGroups = new ArrayList<Integer>();
-                        var givenItems = new HashMap<Integer, Integer>();
-
-                        // Resolve potential item IDs.
-                        var groupData = GameData.getGivingGroupDataMap();
-                        data.getGivingGroupIds().stream()
-                                .map(groupId -> groupData.get((int) groupId))
-                                .filter(Objects::nonNull)
-                                .forEach(
-                                        group -> {
-                                            var itemIds = group.getItemIds();
-
-                                            // Match item stacks to the group items.
-                                            items.forEach(
-                                                    param -> {
-                                                        // Get the item instance.
-                                                        var itemInstance = inventory.getFirstItem(param.getItemId());
-                                                        if (itemInstance == null) return;
-
-                                                        // Get the item ID.
-                                                        var itemId = itemInstance.getItemId();
-                                                        if (!itemIds.contains(itemId)) return;
-
-                                                        // Add the item to the given items.
-                                                        givenItems.put(itemId, param.getCount());
-                                                        matchedGroups.add(group.getId());
-                                                    });
-                                        });
-
-                        // Check if the player has any items.
-                        if (givenItems.isEmpty() && matchedGroups.isEmpty()) {
-                            player.sendPacket(new PacketItemGivingRsp());
-                        } else {
-                            // Remove the items if the quest specifies.
-                            if (data.isRemoveItem()) {
-                                inventory.removeItems(items);
-                            }
-
-                            // Send the response packet.
-                            player.sendPacket(new PacketItemGivingRsp(matchedGroups.get(0), Mode.GROUP_SUCCESS));
-                            // Mark the giving action as completed.
-                            questManager.markCompleted(giveId);
-                            // Queue the content and condition actions.
-                            questManager.queueEvent(
-                                    QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, giveId, matchedGroups.get(0));
-                            questManager.queueEvent(
-                                    QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, giveId, matchedGroups.get(0));
-                        }
+        synchronized (inventory) {
+            if (hasGuids) {
+                var byGuid = new HashMap<Integer, Integer>();
+                for (var entry : req.getItemGuidCountMapMap().entrySet()) {
+                    var item = inventory.getItemByGuid(entry.getKey());
+                    int count = entry.getValue();
+                    if (item == null || item.getItemType() != ItemType.ITEM_MATERIAL
+                            || item.getCount() < count
+                            || inventory.getItemById(item.getItemId()) != item
+                            || !addQuantity(byGuid, item.getItemId(), count)) {
+                        return false;
                     }
                 }
+                if (!expected.equals(byGuid)) return false;
             }
-            case GADGET -> {
-                Grasscutter.getLogger().debug("Unimplemented gadget giving was executed for {}.", giveId);
-                player.sendPacket(new PacketItemGivingRsp());
-            }
-        }*/
+
+            return data.isRemoveItem()
+                    ? inventory.payItems(costs, 1, ActionReason.ItemGiving)
+                    : inventory.canPayItems(costs, 1);
+        }
+    }
+
+    private static boolean addQuantity(Map<Integer, Integer> quantities, int itemId, int count) {
+        if (itemId <= 0 || count <= 0) return false;
+        long total = (long) quantities.getOrDefault(itemId, 0) + count;
+        if (total > Integer.MAX_VALUE) return false;
+        quantities.put(itemId, (int) total);
+        return true;
     }
 }

@@ -17,6 +17,7 @@ import io.netty.util.concurrent.FastThreadLocalThread;
 import it.unimi.dsi.fastutil.ints.*;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
@@ -130,6 +131,49 @@ public final class QuestManager extends BasePlayerManager {
         }
 
         this.sendGivingRecords();
+    }
+
+    /**
+     * Completes an exact hand-in during quest event processing. Validate the active authored
+     * objective before accepting payment, including objectives without an activation exec.
+     */
+    public synchronized boolean tryCompleteExactItemGiving(int givingId, BooleanSupplier submitItems) {
+        var pending = getActiveMainQuests().stream()
+                .flatMap(main -> main.getActiveQuests().stream())
+                .filter(QuestManager::isQuestVisible)
+                .filter(quest -> hasPendingExactGiving(quest, givingId))
+                .toList();
+        if (pending.isEmpty() || !submitItems.getAsBoolean()) return false;
+
+        // Record progress before another request can charge for this objective.
+        triggerEvent(QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING, "", givingId, 0);
+        pending.stream()
+                .filter(quest -> quest.getState() == QuestState.QUEST_STATE_UNFINISHED)
+                .forEach(GameQuest::save);
+        var givings = player.getPlayerProgress().getItemGivings();
+        if (givings != null && givings.containsKey(givingId)) {
+            removeGivingItemAction(givingId);
+        }
+        triggerEvent(QuestCond.QUEST_COND_ITEM_GIVING_FINISHED, "", givingId, 0);
+        return true;
+    }
+
+    private static boolean hasPendingExactGiving(GameQuest quest, int givingId) {
+        var data = quest.getQuestData();
+        if (data == null || data.getFinishCond() == null) return false;
+        var conditions = data.getFinishCond();
+        var progress = quest.getFinishProgressList();
+        if (progress == null || progress.length != conditions.size()) return false;
+        for (int i = 0; i < conditions.size(); i++) {
+            var condition = conditions.get(i);
+            if (condition == null || condition.getType() != QuestContent.QUEST_CONTENT_FINISH_ITEM_GIVING
+                    || progress[i] != 0) continue;
+            var params = condition.getParam();
+            if (params != null && params.length >= 2 && params[0] == givingId && params[1] == 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
