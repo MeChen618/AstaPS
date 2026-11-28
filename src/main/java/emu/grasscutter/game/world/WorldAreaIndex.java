@@ -53,6 +53,11 @@ public final class WorldAreaIndex {
         return this.areas.isEmpty();
     }
 
+    /** Some resource sets have Excel rows for a new area but still carry older outlines. */
+    public boolean hasArea(int areaId) {
+        return this.areas.stream().anyMatch(area -> area.id == areaId);
+    }
+
     /** The level-1 area containing (x, z), or 0 when the point lies in none of them. */
     public int level1AreaAt(float x, float z) {
         for (Area area : this.areas) {

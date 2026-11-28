@@ -13,7 +13,7 @@ import emu.grasscutter.server.game.GameSession;
  *
  * [v30] 照 6969 的做法：解析 field9 -> setProfileFrameId + save -> 回 25989(带seq) -> 6326/4162。
  */
-@Opcodes(21517)
+@Opcodes(value = 21517, disabled = true) // Legacy 7.1 route; 7.2 uses the typed frame handler.
 public class HandlerMiao21517 extends PacketHandler {
 
     private static byte[] head(int seq) {

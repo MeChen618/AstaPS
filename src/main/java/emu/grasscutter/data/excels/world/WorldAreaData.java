@@ -1,8 +1,10 @@
 package emu.grasscutter.data.excels.world;
 
 import com.google.gson.annotations.SerializedName;
+
 import emu.grasscutter.data.*;
 import emu.grasscutter.game.props.ElementType;
+
 import lombok.Getter;
 
 /**
@@ -35,6 +37,8 @@ public class WorldAreaData extends GameResource {
     @Getter
     @SerializedName(value = "sceneID", alternate = "SceneID")
     private int sceneId;
+
+    @Getter private java.util.List<String> teamAbilityGroupList;
 
     @Override
     public int getId() {

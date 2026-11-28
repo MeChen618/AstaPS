@@ -3,6 +3,8 @@ syntax = "proto3";
 option java_package = "emu.grasscutter.net.proto";
 
 message GetProfilePictureDataRsp {
-  repeated uint32 special_profile_picture_list = 20000;
+  // MCKPIBALIIE: the portrait dialog reads HJBPILJAPFM (+0x20) as pictures.
+  repeated uint32 special_profile_picture_list = 14;
+  repeated uint32 unlocked_profile_frame_list = 5;
   int32 retcode = 12;
 }

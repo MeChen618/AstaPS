@@ -16,6 +16,8 @@ public class HandlerEnterWorldAreaReq extends PacketHandler {
 
         session.getPlayer().setArea(enterWorld.getAreaId(), enterWorld.getAreaType());
         session.send(new PacketEnterWorldAreaRsp(head.getClientSequenceId(), enterWorld));
+        emu.grasscutter.game.player.SnezhnayaFrigid.onAreaEntered(
+                session.getPlayer(), enterWorld.getAreaId());
         // session.send(new PacketScenePlayerLocationNotify(session.getPlayer()));
     }
 }

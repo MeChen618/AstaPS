@@ -240,7 +240,8 @@ public final class PacketOpcodes {
     public static final int AcceptCityReputationRequestRsp = 0; // 7.1 CmdId unknown (7.0: 1148)
     public static final int GetActivityInfoReq = 22947; // 7.1: 186
     // public static final int JDIHBJAEPDK = 16;
-    public static final int SetPlayerHeadImageReq = 0; // 7.2 CmdId unknown (7.1: 6969)
+    public static final int SetPlayerHeadImageReq = 22526; // 7.2 FKCONDDAJAE
+    public static final int SetPlayerProfileFrameReq = 29096; // 7.2 NBACHCMCPLE
     // public static final int MKIAGIKCAOB = 24143;
     public static final int CombatInvocationsNotify = 5791; // 7.1: 6930
     public static final int _AnecdoteConflictInfoReq = 0; // 7.1 CmdId unknown (7.0: 1189)
@@ -2104,7 +2105,7 @@ public final class PacketOpcodes {
     // public static final int BEAPIGNCAOB = 28824;
     // public static final int BONPIFJDHPA = 280;
     public static final int HomeAvatarCostumeChangeNotify = 25647; // 7.1: 28844
-    public static final int SetPlayerHeadImageRsp = 0; // 7.2 CmdId unknown (7.1: 1191)
+    public static final int SetPlayerHeadImageRsp = 675; // 7.2 CDLELGKBDMM appearance refresh
     // public static final int KPBMKIMLDJC = 26643;
     public static final int AvatarDieAnimationEndRsp = 29820; // 7.1: 26739
     // public static final int DEAEILCILDB = 5234;

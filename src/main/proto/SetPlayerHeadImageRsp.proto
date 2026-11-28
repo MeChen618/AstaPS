@@ -5,6 +5,7 @@ option java_package = "emu.grasscutter.net.proto";
 import "ProfilePicture.proto";
 
 message SetPlayerHeadImageRsp {
-  ProfilePicture profile_picture = 14;
-  int32 retcode = 6;
+  // CDLELGKBDMM: the client applies the full appearance and refreshes the portrait dialog.
+  ProfilePicture profile_picture = 6;
+  int32 retcode = 15;
 }
