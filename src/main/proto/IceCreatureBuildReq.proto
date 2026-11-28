@@ -10,11 +10,11 @@ import "Vector.proto";
 message IceCreatureBuildReq {
   IceCreatureLimitType limit_type = 10;
   Vector pos = 1;
-  repeated AbilityScalarValueEntry global_value_list = 20001;
+  repeated AbilityScalarValueEntry global_value_list = 4;
   uint32 map_layer_id = 8;
-  bool unk_11 = 20002;
-  BPAEPJHBOFM build_detail = 20003;
+  bool unk_11 = 12;
+  BPAEPJHBOFM build_detail = 2;
   Vector rot = 9;
-  repeated fixed64 replace_guid_list = 20004;
+  repeated fixed64 replace_guid_list = 11;
   uint32 gadget_id = 15;
 }

@@ -175,8 +175,8 @@ final class DailyTaskLoginSyncTest {
     }
 
     private static int today() {
-        var date = java.time.LocalDate.now(java.time.ZoneId.systemDefault());
-        return date.getYear() * 10000 + date.getMonthValue() * 100 + date.getDayOfMonth();
+        // Login must use the stored commission day, which changes at 04:00 rather than midnight.
+        return emu.grasscutter.utils.GameDay.dateKey(emu.grasscutter.utils.Utils.getCurrentSeconds());
     }
 
     private static <T> T allocate(Class<T> type) throws Exception {

@@ -157,68 +157,57 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated fixed64 built_guid_list = 4;</code>
-     * @return A list containing the builtGuidList.
-     */
-    java.util.List<java.lang.Long> getBuiltGuidListList();
-    /**
-     * <code>repeated fixed64 built_guid_list = 4;</code>
-     * @return The count of builtGuidList.
-     */
-    int getBuiltGuidListCount();
-    /**
-     * <code>repeated fixed64 built_guid_list = 4;</code>
-     * @param index The index of the element to return.
-     * @return The builtGuidList at the given index.
-     */
-    long getBuiltGuidList(int index);
-
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> 
-        getTypeGadgetListList();
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget getTypeGadgetList(int index);
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    int getTypeGadgetListCount();
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    java.util.List<? extends emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder> 
-        getTypeGadgetListOrBuilderList();
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder getTypeGadgetListOrBuilder(
-        int index);
-
-    /**
-     * <code>uint32 total_like_num = 13;</code>
-     * @return The totalLikeNum.
-     */
-    int getTotalLikeNum();
-
-    /**
-     * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
+     * <pre>
+     * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+     * </pre>
+     *
+     * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
      * @return A list containing the unlockedGadgetIdList.
      */
     java.util.List<java.lang.Integer> getUnlockedGadgetIdListList();
     /**
-     * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
+     * <pre>
+     * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+     * </pre>
+     *
+     * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
      * @return The count of unlockedGadgetIdList.
      */
     int getUnlockedGadgetIdListCount();
     /**
-     * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
+     * <pre>
+     * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+     * </pre>
+     *
+     * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
      * @param index The index of the element to return.
      * @return The unlockedGadgetIdList at the given index.
      */
     int getUnlockedGadgetIdList(int index);
+
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> 
+        getTypeGadgetListList();
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget getTypeGadgetList(int index);
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    int getTypeGadgetListCount();
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    java.util.List<? extends emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder> 
+        getTypeGadgetListOrBuilderList();
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder getTypeGadgetListOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code IceCreatureDataNotify}
@@ -242,9 +231,8 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       super(builder);
     }
     private IceCreatureDataNotify() {
-      builtGuidList_ = emptyLongList();
-      typeGadgetList_ = java.util.Collections.emptyList();
       unlockedGadgetIdList_ = emptyIntList();
+      typeGadgetList_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -265,94 +253,16 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
               emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify.class, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify.Builder.class);
     }
 
-    public static final int BUILT_GUID_LIST_FIELD_NUMBER = 4;
-    @SuppressWarnings("serial")
-    private com.google.protobuf.Internal.LongList builtGuidList_ =
-        emptyLongList();
-    /**
-     * <code>repeated fixed64 built_guid_list = 4;</code>
-     * @return A list containing the builtGuidList.
-     */
-    @java.lang.Override
-    public java.util.List<java.lang.Long>
-        getBuiltGuidListList() {
-      return builtGuidList_;
-    }
-    /**
-     * <code>repeated fixed64 built_guid_list = 4;</code>
-     * @return The count of builtGuidList.
-     */
-    public int getBuiltGuidListCount() {
-      return builtGuidList_.size();
-    }
-    /**
-     * <code>repeated fixed64 built_guid_list = 4;</code>
-     * @param index The index of the element to return.
-     * @return The builtGuidList at the given index.
-     */
-    public long getBuiltGuidList(int index) {
-      return builtGuidList_.getLong(index);
-    }
-    private int builtGuidListMemoizedSerializedSize = -1;
-
-    public static final int TYPE_GADGET_LIST_FIELD_NUMBER = 10;
-    @SuppressWarnings("serial")
-    private java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> typeGadgetList_;
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> getTypeGadgetListList() {
-      return typeGadgetList_;
-    }
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder> 
-        getTypeGadgetListOrBuilderList() {
-      return typeGadgetList_;
-    }
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    @java.lang.Override
-    public int getTypeGadgetListCount() {
-      return typeGadgetList_.size();
-    }
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget getTypeGadgetList(int index) {
-      return typeGadgetList_.get(index);
-    }
-    /**
-     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
-     */
-    @java.lang.Override
-    public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder getTypeGadgetListOrBuilder(
-        int index) {
-      return typeGadgetList_.get(index);
-    }
-
-    public static final int TOTAL_LIKE_NUM_FIELD_NUMBER = 13;
-    private int totalLikeNum_ = 0;
-    /**
-     * <code>uint32 total_like_num = 13;</code>
-     * @return The totalLikeNum.
-     */
-    @java.lang.Override
-    public int getTotalLikeNum() {
-      return totalLikeNum_;
-    }
-
-    public static final int UNLOCKED_GADGET_ID_LIST_FIELD_NUMBER = 14;
+    public static final int UNLOCKED_GADGET_ID_LIST_FIELD_NUMBER = 8;
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unlockedGadgetIdList_ =
         emptyIntList();
     /**
-     * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
+     * <pre>
+     * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+     * </pre>
+     *
+     * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
      * @return A list containing the unlockedGadgetIdList.
      */
     @java.lang.Override
@@ -361,14 +271,22 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       return unlockedGadgetIdList_;
     }
     /**
-     * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
+     * <pre>
+     * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+     * </pre>
+     *
+     * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
      * @return The count of unlockedGadgetIdList.
      */
     public int getUnlockedGadgetIdListCount() {
       return unlockedGadgetIdList_.size();
     }
     /**
-     * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
+     * <pre>
+     * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+     * </pre>
+     *
+     * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
      * @param index The index of the element to return.
      * @return The unlockedGadgetIdList at the given index.
      */
@@ -376,6 +294,47 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       return unlockedGadgetIdList_.getInt(index);
     }
     private int unlockedGadgetIdListMemoizedSerializedSize = -1;
+
+    public static final int TYPE_GADGET_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> typeGadgetList_;
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> getTypeGadgetListList() {
+      return typeGadgetList_;
+    }
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder> 
+        getTypeGadgetListOrBuilderList() {
+      return typeGadgetList_;
+    }
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    @java.lang.Override
+    public int getTypeGadgetListCount() {
+      return typeGadgetList_.size();
+    }
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget getTypeGadgetList(int index) {
+      return typeGadgetList_.get(index);
+    }
+    /**
+     * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
+     */
+    @java.lang.Override
+    public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder getTypeGadgetListOrBuilder(
+        int index) {
+      return typeGadgetList_.get(index);
+    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -392,54 +351,20 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (getBuiltGuidListList().size() > 0) {
-        output.writeUInt32NoTag(34);
-        output.writeUInt32NoTag(builtGuidListMemoizedSerializedSize);
-      }
-      for (int i = 0; i < builtGuidList_.size(); i++) {
-        output.writeFixed64NoTag(builtGuidList_.getLong(i));
-      }
-      for (int i = 0; i < typeGadgetList_.size(); i++) {
-        output.writeMessage(10, typeGadgetList_.get(i));
-      }
-      if (totalLikeNum_ != 0) {
-        output.writeUInt32(13, totalLikeNum_);
-      }
       if (getUnlockedGadgetIdListList().size() > 0) {
-        output.writeUInt32NoTag(114);
+        output.writeUInt32NoTag(66);
         output.writeUInt32NoTag(unlockedGadgetIdListMemoizedSerializedSize);
       }
       for (int i = 0; i < unlockedGadgetIdList_.size(); i++) {
         output.writeUInt32NoTag(unlockedGadgetIdList_.getInt(i));
       }
+      for (int i = 0; i < typeGadgetList_.size(); i++) {
+        output.writeMessage(9, typeGadgetList_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
-      {
-        int dataSize = 0;
-        dataSize = 8 * getBuiltGuidListList().size();
-        size += dataSize;
-        if (!getBuiltGuidListList().isEmpty()) {
-          size += 1;
-          size += com.google.protobuf.CodedOutputStream
-              .computeInt32SizeNoTag(dataSize);
-        }
-        builtGuidListMemoizedSerializedSize = dataSize;
-      }
-
-          {
-            final int count = typeGadgetList_.size();
-            for (int i = 0; i < count; i++) {
-              size += com.google.protobuf.CodedOutputStream
-                .computeMessageSizeNoTag(typeGadgetList_.get(i));
-            }
-            size += 1 * count;
-          }
-      if (totalLikeNum_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(13, totalLikeNum_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < unlockedGadgetIdList_.size(); i++) {
@@ -454,6 +379,15 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         }
         unlockedGadgetIdListMemoizedSerializedSize = dataSize;
       }
+
+          {
+            final int count = typeGadgetList_.size();
+            for (int i = 0; i < count; i++) {
+              size += com.google.protobuf.CodedOutputStream
+                .computeMessageSizeNoTag(typeGadgetList_.get(i));
+            }
+            size += 1 * count;
+          }
       return size;
     }
     @java.lang.Override
@@ -478,14 +412,10 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       }
       emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify other = (emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify) obj;
 
-      if (!getBuiltGuidListList()
-          .equals(other.getBuiltGuidListList())) return false;
-      if (!getTypeGadgetListList()
-          .equals(other.getTypeGadgetListList())) return false;
-      if (getTotalLikeNum()
-          != other.getTotalLikeNum()) return false;
       if (!getUnlockedGadgetIdListList()
           .equals(other.getUnlockedGadgetIdListList())) return false;
+      if (!getTypeGadgetListList()
+          .equals(other.getTypeGadgetListList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -497,19 +427,13 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getBuiltGuidListCount() > 0) {
-        hash = (37 * hash) + BUILT_GUID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getBuiltGuidListList().hashCode();
+      if (getUnlockedGadgetIdListCount() > 0) {
+        hash = (37 * hash) + UNLOCKED_GADGET_ID_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getUnlockedGadgetIdListList().hashCode();
       }
       if (getTypeGadgetListCount() > 0) {
         hash = (37 * hash) + TYPE_GADGET_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTypeGadgetListList().hashCode();
-      }
-      hash = (37 * hash) + TOTAL_LIKE_NUM_FIELD_NUMBER;
-      hash = (53 * hash) + getTotalLikeNum();
-      if (getUnlockedGadgetIdListCount() > 0) {
-        hash = (37 * hash) + UNLOCKED_GADGET_ID_LIST_FIELD_NUMBER;
-        hash = (53 * hash) + getUnlockedGadgetIdListList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -642,7 +566,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        builtGuidList_ = emptyLongList();
+        unlockedGadgetIdList_ = emptyIntList();
         if (typeGadgetListBuilder_ == null) {
           typeGadgetList_ = java.util.Collections.emptyList();
         } else {
@@ -650,8 +574,6 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
           typeGadgetListBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
-        totalLikeNum_ = 0;
-        unlockedGadgetIdList_ = emptyIntList();
         return this;
       }
 
@@ -699,13 +621,6 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       private void buildPartial0(emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          builtGuidList_.makeImmutable();
-          result.builtGuidList_ = builtGuidList_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.totalLikeNum_ = totalLikeNum_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
           unlockedGadgetIdList_.makeImmutable();
           result.unlockedGadgetIdList_ = unlockedGadgetIdList_;
         }
@@ -723,14 +638,14 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
 
       public Builder mergeFrom(emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify other) {
         if (other == emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureDataNotify.getDefaultInstance()) return this;
-        if (!other.builtGuidList_.isEmpty()) {
-          if (builtGuidList_.isEmpty()) {
-            builtGuidList_ = other.builtGuidList_;
-            builtGuidList_.makeImmutable();
+        if (!other.unlockedGadgetIdList_.isEmpty()) {
+          if (unlockedGadgetIdList_.isEmpty()) {
+            unlockedGadgetIdList_ = other.unlockedGadgetIdList_;
+            unlockedGadgetIdList_.makeImmutable();
             bitField0_ |= 0x00000001;
           } else {
-            ensureBuiltGuidListIsMutable();
-            builtGuidList_.addAll(other.builtGuidList_);
+            ensureUnlockedGadgetIdListIsMutable();
+            unlockedGadgetIdList_.addAll(other.unlockedGadgetIdList_);
           }
           onChanged();
         }
@@ -760,20 +675,6 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
             }
           }
         }
-        if (other.getTotalLikeNum() != 0) {
-          setTotalLikeNum(other.getTotalLikeNum());
-        }
-        if (!other.unlockedGadgetIdList_.isEmpty()) {
-          if (unlockedGadgetIdList_.isEmpty()) {
-            unlockedGadgetIdList_ = other.unlockedGadgetIdList_;
-            unlockedGadgetIdList_.makeImmutable();
-            bitField0_ |= 0x00000008;
-          } else {
-            ensureUnlockedGadgetIdListIsMutable();
-            unlockedGadgetIdList_.addAll(other.unlockedGadgetIdList_);
-          }
-          onChanged();
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -798,24 +699,23 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
               case 0:
                 done = true;
                 break;
-              case 33: {
-                long v = input.readFixed64();
-                ensureBuiltGuidListIsMutable();
-                builtGuidList_.addLong(v);
+              case 64: {
+                int v = input.readUInt32();
+                ensureUnlockedGadgetIdListIsMutable();
+                unlockedGadgetIdList_.addInt(v);
                 break;
-              } // case 33
-              case 34: {
+              } // case 64
+              case 66: {
                 int length = input.readRawVarint32();
                 int limit = input.pushLimit(length);
-                int alloc = length > 4096 ? 4096 : length;
-                ensureBuiltGuidListIsMutable(alloc / 8);
+                ensureUnlockedGadgetIdListIsMutable();
                 while (input.getBytesUntilLimit() > 0) {
-                  builtGuidList_.addLong(input.readFixed64());
+                  unlockedGadgetIdList_.addInt(input.readUInt32());
                 }
                 input.popLimit(limit);
                 break;
-              } // case 34
-              case 82: {
+              } // case 66
+              case 74: {
                 emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget m =
                     input.readMessage(
                         emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.parser(),
@@ -827,28 +727,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
                   typeGadgetListBuilder_.addMessage(m);
                 }
                 break;
-              } // case 82
-              case 104: {
-                totalLikeNum_ = input.readUInt32();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 104
-              case 112: {
-                int v = input.readUInt32();
-                ensureUnlockedGadgetIdListIsMutable();
-                unlockedGadgetIdList_.addInt(v);
-                break;
-              } // case 112
-              case 114: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                ensureUnlockedGadgetIdListIsMutable();
-                while (input.getBytesUntilLimit() > 0) {
-                  unlockedGadgetIdList_.addInt(input.readUInt32());
-                }
-                input.popLimit(limit);
-                break;
-              } // case 114
+              } // case 74
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -866,91 +745,113 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       }
       private int bitField0_;
 
-      private com.google.protobuf.Internal.LongList builtGuidList_ = emptyLongList();
-      private void ensureBuiltGuidListIsMutable() {
-        if (!builtGuidList_.isModifiable()) {
-          builtGuidList_ = makeMutableCopy(builtGuidList_);
-        }
-        bitField0_ |= 0x00000001;
-      }
-      private void ensureBuiltGuidListIsMutable(int capacity) {
-        if (!builtGuidList_.isModifiable()) {
-          builtGuidList_ = makeMutableCopy(builtGuidList_, capacity);
+      private com.google.protobuf.Internal.IntList unlockedGadgetIdList_ = emptyIntList();
+      private void ensureUnlockedGadgetIdListIsMutable() {
+        if (!unlockedGadgetIdList_.isModifiable()) {
+          unlockedGadgetIdList_ = makeMutableCopy(unlockedGadgetIdList_);
         }
         bitField0_ |= 0x00000001;
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
-       * @return A list containing the builtGuidList.
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
+       * @return A list containing the unlockedGadgetIdList.
        */
-      public java.util.List<java.lang.Long>
-          getBuiltGuidListList() {
-        builtGuidList_.makeImmutable();
-        return builtGuidList_;
+      public java.util.List<java.lang.Integer>
+          getUnlockedGadgetIdListList() {
+        unlockedGadgetIdList_.makeImmutable();
+        return unlockedGadgetIdList_;
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
-       * @return The count of builtGuidList.
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
+       * @return The count of unlockedGadgetIdList.
        */
-      public int getBuiltGuidListCount() {
-        return builtGuidList_.size();
+      public int getUnlockedGadgetIdListCount() {
+        return unlockedGadgetIdList_.size();
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
        * @param index The index of the element to return.
-       * @return The builtGuidList at the given index.
+       * @return The unlockedGadgetIdList at the given index.
        */
-      public long getBuiltGuidList(int index) {
-        return builtGuidList_.getLong(index);
+      public int getUnlockedGadgetIdList(int index) {
+        return unlockedGadgetIdList_.getInt(index);
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
        * @param index The index to set the value at.
-       * @param value The builtGuidList to set.
+       * @param value The unlockedGadgetIdList to set.
        * @return This builder for chaining.
        */
-      public Builder setBuiltGuidList(
-          int index, long value) {
+      public Builder setUnlockedGadgetIdList(
+          int index, int value) {
 
-        ensureBuiltGuidListIsMutable();
-        builtGuidList_.setLong(index, value);
+        ensureUnlockedGadgetIdListIsMutable();
+        unlockedGadgetIdList_.setInt(index, value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
-       * @param value The builtGuidList to add.
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
+       * @param value The unlockedGadgetIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addBuiltGuidList(long value) {
+      public Builder addUnlockedGadgetIdList(int value) {
 
-        ensureBuiltGuidListIsMutable();
-        builtGuidList_.addLong(value);
+        ensureUnlockedGadgetIdListIsMutable();
+        unlockedGadgetIdList_.addInt(value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
-       * @param values The builtGuidList to add.
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
+       * @param values The unlockedGadgetIdList to add.
        * @return This builder for chaining.
        */
-      public Builder addAllBuiltGuidList(
-          java.lang.Iterable<? extends java.lang.Long> values) {
-        ensureBuiltGuidListIsMutable();
+      public Builder addAllUnlockedGadgetIdList(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureUnlockedGadgetIdListIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, builtGuidList_);
+            values, unlockedGadgetIdList_);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated fixed64 built_guid_list = 4;</code>
+       * <pre>
+       * 7.2 PIOFANAELFP: the wheel consumes LNGEPLAGDIG into its gadget unlock set.
+       * </pre>
+       *
+       * <code>repeated uint32 unlocked_gadget_id_list = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearBuiltGuidList() {
-        builtGuidList_ = emptyLongList();
+      public Builder clearUnlockedGadgetIdList() {
+        unlockedGadgetIdList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
@@ -969,7 +870,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
           emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder> typeGadgetListBuilder_;
 
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> getTypeGadgetListList() {
         if (typeGadgetListBuilder_ == null) {
@@ -979,7 +880,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public int getTypeGadgetListCount() {
         if (typeGadgetListBuilder_ == null) {
@@ -989,7 +890,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget getTypeGadgetList(int index) {
         if (typeGadgetListBuilder_ == null) {
@@ -999,7 +900,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder setTypeGadgetList(
           int index, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget value) {
@@ -1014,7 +915,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder setTypeGadgetList(
           int index, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder builderForValue) {
@@ -1028,7 +929,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder addTypeGadgetList(emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget value) {
         if (typeGadgetListBuilder_ == null) {
@@ -1042,7 +943,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder addTypeGadgetList(
           int index, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget value) {
@@ -1057,7 +958,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder addTypeGadgetList(
           emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder builderForValue) {
@@ -1071,7 +972,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder addTypeGadgetList(
           int index, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder builderForValue) {
@@ -1085,7 +986,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder addAllTypeGadgetList(
           java.lang.Iterable<? extends emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget> values) {
@@ -1100,7 +1001,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder clearTypeGadgetList() {
         if (typeGadgetListBuilder_ == null) {
@@ -1113,7 +1014,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public Builder removeTypeGadgetList(int index) {
         if (typeGadgetListBuilder_ == null) {
@@ -1126,14 +1027,14 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder getTypeGadgetListBuilder(
           int index) {
         return internalGetTypeGadgetListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder getTypeGadgetListOrBuilder(
           int index) {
@@ -1143,7 +1044,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public java.util.List<? extends emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadgetOrBuilder> 
            getTypeGadgetListOrBuilderList() {
@@ -1154,14 +1055,14 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         }
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder addTypeGadgetListBuilder() {
         return internalGetTypeGadgetListFieldBuilder().addBuilder(
             emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.getDefaultInstance());
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder addTypeGadgetListBuilder(
           int index) {
@@ -1169,7 +1070,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
             index, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.getDefaultInstance());
       }
       /**
-       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 10;</code>
+       * <code>repeated .IceCreatureTypeGadget type_gadget_list = 9;</code>
        */
       public java.util.List<emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder> 
            getTypeGadgetListBuilderList() {
@@ -1188,122 +1089,6 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
           typeGadgetList_ = null;
         }
         return typeGadgetListBuilder_;
-      }
-
-      private int totalLikeNum_ ;
-      /**
-       * <code>uint32 total_like_num = 13;</code>
-       * @return The totalLikeNum.
-       */
-      @java.lang.Override
-      public int getTotalLikeNum() {
-        return totalLikeNum_;
-      }
-      /**
-       * <code>uint32 total_like_num = 13;</code>
-       * @param value The totalLikeNum to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTotalLikeNum(int value) {
-
-        totalLikeNum_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>uint32 total_like_num = 13;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTotalLikeNum() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        totalLikeNum_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Internal.IntList unlockedGadgetIdList_ = emptyIntList();
-      private void ensureUnlockedGadgetIdListIsMutable() {
-        if (!unlockedGadgetIdList_.isModifiable()) {
-          unlockedGadgetIdList_ = makeMutableCopy(unlockedGadgetIdList_);
-        }
-        bitField0_ |= 0x00000008;
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @return A list containing the unlockedGadgetIdList.
-       */
-      public java.util.List<java.lang.Integer>
-          getUnlockedGadgetIdListList() {
-        unlockedGadgetIdList_.makeImmutable();
-        return unlockedGadgetIdList_;
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @return The count of unlockedGadgetIdList.
-       */
-      public int getUnlockedGadgetIdListCount() {
-        return unlockedGadgetIdList_.size();
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @param index The index of the element to return.
-       * @return The unlockedGadgetIdList at the given index.
-       */
-      public int getUnlockedGadgetIdList(int index) {
-        return unlockedGadgetIdList_.getInt(index);
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @param index The index to set the value at.
-       * @param value The unlockedGadgetIdList to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnlockedGadgetIdList(
-          int index, int value) {
-
-        ensureUnlockedGadgetIdListIsMutable();
-        unlockedGadgetIdList_.setInt(index, value);
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @param value The unlockedGadgetIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addUnlockedGadgetIdList(int value) {
-
-        ensureUnlockedGadgetIdListIsMutable();
-        unlockedGadgetIdList_.addInt(value);
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @param values The unlockedGadgetIdList to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllUnlockedGadgetIdList(
-          java.lang.Iterable<? extends java.lang.Integer> values) {
-        ensureUnlockedGadgetIdListIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, unlockedGadgetIdList_);
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated uint32 unlocked_gadget_id_list = 14;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnlockedGadgetIdList() {
-        unlockedGadgetIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:IceCreatureDataNotify)
@@ -1362,24 +1147,24 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 gadget_id = 4;</code>
+     * <code>uint32 gadget_id = 10;</code>
      * @return The gadgetId.
      */
     int getGadgetId();
 
     /**
-     * <code>uint32 type = 7;</code>
+     * <code>uint32 type = 12;</code>
      * @return The type.
      */
     int getType();
 
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
      * @return The enum numeric value on the wire for autoReplace.
      */
     int getAutoReplaceValue();
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
      * @return The autoReplace.
      */
     emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace getAutoReplace();
@@ -1427,10 +1212,10 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
               emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.class, emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureTypeGadget.Builder.class);
     }
 
-    public static final int GADGET_ID_FIELD_NUMBER = 4;
+    public static final int GADGET_ID_FIELD_NUMBER = 10;
     private int gadgetId_ = 0;
     /**
-     * <code>uint32 gadget_id = 4;</code>
+     * <code>uint32 gadget_id = 10;</code>
      * @return The gadgetId.
      */
     @java.lang.Override
@@ -1438,10 +1223,10 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       return gadgetId_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 7;
+    public static final int TYPE_FIELD_NUMBER = 12;
     private int type_ = 0;
     /**
-     * <code>uint32 type = 7;</code>
+     * <code>uint32 type = 12;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -1449,17 +1234,17 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       return type_;
     }
 
-    public static final int AUTO_REPLACE_FIELD_NUMBER = 14;
+    public static final int AUTO_REPLACE_FIELD_NUMBER = 7;
     private int autoReplace_ = 0;
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
      * @return The enum numeric value on the wire for autoReplace.
      */
     @java.lang.Override public int getAutoReplaceValue() {
       return autoReplace_;
     }
     /**
-     * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+     * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
      * @return The autoReplace.
      */
     @java.lang.Override public emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace getAutoReplace() {
@@ -1481,30 +1266,30 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (autoReplace_ != emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.ICE_CREATURE_AUTO_REPLACE_NONE.getNumber()) {
+        output.writeEnum(7, autoReplace_);
+      }
       if (gadgetId_ != 0) {
-        output.writeUInt32(4, gadgetId_);
+        output.writeUInt32(10, gadgetId_);
       }
       if (type_ != 0) {
-        output.writeUInt32(7, type_);
-      }
-      if (autoReplace_ != emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.ICE_CREATURE_AUTO_REPLACE_NONE.getNumber()) {
-        output.writeEnum(14, autoReplace_);
+        output.writeUInt32(12, type_);
       }
       getUnknownFields().writeTo(output);
     }
     private int computeSerializedSize_0() {
       int size = 0;
+      if (autoReplace_ != emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.ICE_CREATURE_AUTO_REPLACE_NONE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, autoReplace_);
+      }
       if (gadgetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, gadgetId_);
+          .computeUInt32Size(10, gadgetId_);
       }
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(7, type_);
-      }
-      if (autoReplace_ != emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.ICE_CREATURE_AUTO_REPLACE_NONE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(14, autoReplace_);
+          .computeUInt32Size(12, type_);
       }
       return size;
     }
@@ -1775,21 +1560,21 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
               case 0:
                 done = true;
                 break;
-              case 32: {
-                gadgetId_ = input.readUInt32();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 32
               case 56: {
-                type_ = input.readUInt32();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 56
-              case 112: {
                 autoReplace_ = input.readEnum();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 112
+              } // case 56
+              case 80: {
+                gadgetId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 96: {
+                type_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1809,7 +1594,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
 
       private int gadgetId_ ;
       /**
-       * <code>uint32 gadget_id = 4;</code>
+       * <code>uint32 gadget_id = 10;</code>
        * @return The gadgetId.
        */
       @java.lang.Override
@@ -1817,7 +1602,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return gadgetId_;
       }
       /**
-       * <code>uint32 gadget_id = 4;</code>
+       * <code>uint32 gadget_id = 10;</code>
        * @param value The gadgetId to set.
        * @return This builder for chaining.
        */
@@ -1829,7 +1614,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 gadget_id = 4;</code>
+       * <code>uint32 gadget_id = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
@@ -1841,7 +1626,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
 
       private int type_ ;
       /**
-       * <code>uint32 type = 7;</code>
+       * <code>uint32 type = 12;</code>
        * @return The type.
        */
       @java.lang.Override
@@ -1849,7 +1634,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return type_;
       }
       /**
-       * <code>uint32 type = 7;</code>
+       * <code>uint32 type = 12;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -1861,7 +1646,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>uint32 type = 7;</code>
+       * <code>uint32 type = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -1873,14 +1658,14 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
 
       private int autoReplace_ = 0;
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
        * @return The enum numeric value on the wire for autoReplace.
        */
       @java.lang.Override public int getAutoReplaceValue() {
         return autoReplace_;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
        * @param value The enum numeric value on the wire for autoReplace to set.
        * @return This builder for chaining.
        */
@@ -1891,7 +1676,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
        * @return The autoReplace.
        */
       @java.lang.Override
@@ -1900,7 +1685,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return result == null ? emu.grasscutter.net.proto.IceCreatureDataNotifyOuterClass.IceCreatureAutoReplace.UNRECOGNIZED : result;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
        * @param value The autoReplace to set.
        * @throws IllegalArgumentException if UNRECOGNIZED is provided.
        * @return This builder for chaining.
@@ -1913,7 +1698,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
         return this;
       }
       /**
-       * <code>.IceCreatureAutoReplace auto_replace = 14;</code>
+       * <code>.IceCreatureAutoReplace auto_replace = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAutoReplace() {
@@ -1993,19 +1778,17 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033IceCreatureDataNotify.proto\"\233\001\n\025IceCre" +
-      "atureDataNotify\022\027\n\017built_guid_list\030\004 \003(\006" +
-      "\0220\n\020type_gadget_list\030\n \003(\0132\026.IceCreature" +
-      "TypeGadget\022\026\n\016total_like_num\030\r \001(\r\022\037\n\027un" +
-      "locked_gadget_id_list\030\016 \003(\r\"g\n\025IceCreatu" +
-      "reTypeGadget\022\021\n\tgadget_id\030\004 \001(\r\022\014\n\004type\030" +
-      "\007 \001(\r\022-\n\014auto_replace\030\016 \001(\0162\027.IceCreatur" +
-      "eAutoReplace*\230\001\n\026IceCreatureAutoReplace\022" +
-      "\"\n\036ICE_CREATURE_AUTO_REPLACE_NONE\020\000\022*\n&I" +
-      "CE_CREATURE_AUTO_REPLACE_AUTO_REPLACE\020\001\022" +
-      ".\n*ICE_CREATURE_AUTO_REPLACE_NOT_AUTO_RE" +
-      "PLACE\020\002B\033\n\031emu.grasscutter.net.protob\006pr" +
-      "oto3"
+      "\n\033IceCreatureDataNotify.proto\"j\n\025IceCrea" +
+      "tureDataNotify\022\037\n\027unlocked_gadget_id_lis" +
+      "t\030\010 \003(\r\0220\n\020type_gadget_list\030\t \003(\0132\026.IceC" +
+      "reatureTypeGadget\"g\n\025IceCreatureTypeGadg" +
+      "et\022\021\n\tgadget_id\030\n \001(\r\022\014\n\004type\030\014 \001(\r\022-\n\014a" +
+      "uto_replace\030\007 \001(\0162\027.IceCreatureAutoRepla" +
+      "ce*\230\001\n\026IceCreatureAutoReplace\022\"\n\036ICE_CRE" +
+      "ATURE_AUTO_REPLACE_NONE\020\000\022*\n&ICE_CREATUR" +
+      "E_AUTO_REPLACE_AUTO_REPLACE\020\001\022.\n*ICE_CRE" +
+      "ATURE_AUTO_REPLACE_NOT_AUTO_REPLACE\020\002B\033\n" +
+      "\031emu.grasscutter.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2016,7 +1799,7 @@ public final class IceCreatureDataNotifyOuterClass extends com.google.protobuf.G
     internal_static_IceCreatureDataNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IceCreatureDataNotify_descriptor,
-        new java.lang.String[] { "BuiltGuidList", "TypeGadgetList", "TotalLikeNum", "UnlockedGadgetIdList", });
+        new java.lang.String[] { "UnlockedGadgetIdList", "TypeGadgetList", });
     internal_static_IceCreatureTypeGadget_descriptor =
       getDescriptor().getMessageType(1);
     internal_static_IceCreatureTypeGadget_fieldAccessorTable = new

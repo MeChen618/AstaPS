@@ -360,6 +360,9 @@
     "openstate": {
       "description": "Query or set OpenStates by name: openstate <name|id> [true|false]. Find names with openstate list [filter]."
     },
+    "kresnik": {
+      "description": "Query Kresnik energy, or set its current value from 0 to 500."
+    },
     "prop": {
       "description": "Query or modify player properties such as worldlevel, godmode, stamina, energy and battle-pass level. Omit [value] to query; supply it to set. Map unlocks use `unlock map`; OpenStates use `openstate`."
     },

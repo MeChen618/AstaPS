@@ -360,6 +360,9 @@
     "openstate": {
       "description": "按名称查询或修改开放状态：openstate <name|id> [true|false]；openstate list [filter] 可查名称。"
     },
+    "kresnik": {
+      "description": "查询克什尼克能量，或将当前能量设置为 0 至 500。"
+    },
     "prop": {
       "description": "查询或修改世界等级、无敌模式、体力、元素能量和纪行等级等玩家属性。省略 [value] 查询，提供值则修改。地图解锁用 unlock map，开放状态用 openstate。"
     },

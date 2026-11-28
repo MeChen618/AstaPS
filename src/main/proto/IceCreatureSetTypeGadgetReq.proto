@@ -5,7 +5,7 @@ option java_package = "emu.grasscutter.net.proto";
 import "IceCreatureDataNotify.proto";
 
 message IceCreatureSetTypeGadgetReq {
-  uint32 gadget_id = 5;
-  uint32 type = 4;
-  IceCreatureAutoReplace auto_replace = 12;
+  uint32 gadget_id = 3;
+  uint32 type = 9;
+  IceCreatureAutoReplace auto_replace = 5;
 }
